@@ -10,7 +10,7 @@ OUT = ROOT / 'docs'
 SRC = (ROOT / 'index.html').read_text()
 
 NAME, SHORT = 'Macro Menu', 'Macro Menu'
-THEME, BG = '#1E6B47', '#F3F5F0'
+THEME, BG = '#023530', '#FFFFFF'
 DESC = 'Find the fast-food order that fits your calories, protein and budget, build meals and track your day.'
 
 # The artifact file starts with <title>, font links and <style>; those belong in <head>.
@@ -105,28 +105,29 @@ self.addEventListener('fetch', e => {{
 def icons():
     from PIL import Image, ImageDraw, ImageFont
     (OUT / 'icons').mkdir(parents=True, exist_ok=True)
-    font_path = '/System/Library/Fonts/Supplemental/Arial Bold.ttf'
+    font_path = '/System/Library/Fonts/Supplemental/Georgia.ttf'
 
     def draw(size, safe, rounded):
         img = Image.new('RGBA', (size, size), (0, 0, 0, 0))
         d = ImageDraw.Draw(img)
         r = int(size * 0.22) if rounded else 0
         d.rounded_rectangle([0, 0, size - 1, size - 1], radius=r, fill=THEME)
+        # rounded green shapes cropped by the tile, as in the app header
+        shapes = Image.new('RGBA', (size, size), (0, 0, 0, 0))
+        g = ImageDraw.Draw(shapes)
+        u = size / 100
+        g.rounded_rectangle([58 * u, -18 * u, 124 * u, 26 * u], radius=22 * u, fill='#01714C')
+        g.ellipse([66 * u, 66 * u, 130 * u, 130 * u], fill='#01A656')
+        g.rounded_rectangle([-20 * u, 78 * u, 40 * u, 118 * u], radius=18 * u, fill='#01714C')
+        mask = Image.new('L', (size, size), 0)
+        ImageDraw.Draw(mask).rounded_rectangle([0, 0, size - 1, size - 1], radius=r, fill=255)
+        img.paste(shapes, (0, 0), Image.composite(shapes, Image.new('RGBA', (size, size)), mask))
         inner = size * safe
-        f = ImageFont.truetype(font_path, int(inner * 0.46))
-        text = 'MM'
+        f = ImageFont.truetype(font_path, int(inner * 0.5))
+        text = 'M'
         tb = d.textbbox((0, 0), text, font=f)
         tw, th = tb[2] - tb[0], tb[3] - tb[1]
-        x = (size - tw) / 2 - tb[0]
-        y = size / 2 - th * 0.62 - tb[1]
-        d.text((x, y), text, font=f, fill='#FFFFFF')
-        # three macro bars: protein, carbs, fat
-        bw, bh = inner * 0.62, inner * 0.07
-        bx, by = (size - bw) / 2, size / 2 + th * 0.55
-        for frac, col in ((0.42, '#7FA2FF'), (0.33, '#E5B04A'), (0.25, '#EE8067')):
-            w = bw * frac
-            d.rounded_rectangle([bx, by, bx + w - inner * 0.015, by + bh], radius=bh / 2, fill=col)
-            bx += w
+        d.text(((size - tw) / 2 - tb[0], (size - th) / 2 - tb[1]), text, font=f, fill='#FFFFFF')
         return img
 
     draw(512, 0.86, True).save(OUT / 'icons/icon-512.png')

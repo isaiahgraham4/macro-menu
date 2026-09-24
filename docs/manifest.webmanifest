@@ -6,8 +6,8 @@
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#F3F5F0",
-  "theme_color": "#1E6B47",
+  "background_color": "#FFFFFF",
+  "theme_color": "#023530",
   "lang": "en-AU",
   "categories": [
     "food",
