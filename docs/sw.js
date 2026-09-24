@@ -1,5 +1,5 @@
 // Macro Menu offline cache. Version changes whenever index.html changes.
-const CACHE = 'macro-menu-205f7dd6e8';
+const CACHE = 'macro-menu-72ba21fefa';
 const CORE = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png'];
 
 self.addEventListener('install', e => {

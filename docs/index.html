@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-AU" data-standalone data-version="205f7dd6e8">
+<html lang="en-AU" data-standalone data-version="72ba21fefa">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -277,6 +277,21 @@ button{cursor:pointer}
 .sets{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 .calc-out{font-size:14px;padding:10px 12px;border-radius:8px;background:var(--accent-soft)}
 .calc-out b{font-family:var(--mono)}
+.daynav{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
+.daynav-t{min-width:0;flex:1 1 auto;display:flex;flex-direction:column}
+.daynav-t h2{margin:0}
+.daynav #dayPrev,.daynav #dayNext{font-size:20px;line-height:1;padding:6px 12px}
+.daypick{position:relative;overflow:hidden}
+.daypick input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.hist{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-soft)}
+.hist li button{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line-soft);padding:10px 4px;align-items:center}
+.hist li button:hover{background:var(--surface-2)}
+.hist li button[aria-current="date"]{background:var(--accent-soft)}
+.hist .d{font-weight:600}
+.hist .v{font-family:var(--mono);font-size:13px;text-align:right}
+.hist .v.bad{color:var(--bad)}.hist .v.ok{color:var(--ok)}
+.hist .bar{grid-column:1 / -1;margin-top:2px}
+.hist .sub{grid-column:1 / -1;font-size:12px;color:var(--ink-3);font-family:var(--mono)}
 .prog{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
 .prog .gauge{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:10px 12px}
 
@@ -510,15 +525,26 @@ button{cursor:pointer}
 
       <!-- TODAY -->
       <div class="panel" id="panel-today" hidden>
-        <h2>Today</h2>
-        <p class="lede">Log meals from the meal builder and track them against your targets. "Find for what's left" searches with whatever remains.</p>
+        <div class="daynav">
+          <button type="button" class="btn sm" id="dayPrev" aria-label="Previous day">‹</button>
+          <div class="daynav-t"><h2 id="dayTitle">Today</h2><span class="muted small" id="daySub"></span></div>
+          <button type="button" class="btn sm" id="dayNext" aria-label="Next day">›</button>
+          <label class="btn sm ghost daypick">Pick a day<input type="date" id="dayPick" aria-label="Pick a day"></label>
+          <button type="button" class="btn sm primary" id="dayToday" hidden>Back to today</button>
+        </div>
+        <p class="lede" id="dayLede">Log meals from the meal builder and track them against your targets. Each day starts fresh at midnight, and past days stay here to look back on.</p>
         <ul class="prog" id="progList"></ul>
         <div class="section">
-          <h3>Logged today</h3>
+          <h3 id="logTitle">Logged today</h3>
           <ul class="saved" id="logList"></ul>
         </div>
         <div class="section">
-          <h3>Log something else</h3>
+          <h3>Recent days</h3>
+          <p class="note" id="histAvg" style="margin:0 0 8px"></p>
+          <ul class="hist" id="histList"></ul>
+        </div>
+        <div class="section">
+          <h3 id="qTitle">Log something else</h3>
           <form class="box" id="quickLog">
             <div class="fields">
               <div class="field" style="grid-column:span 2"><label for="qName">What</label><input id="qName" required placeholder="e.g. Protein shake"></div>
@@ -1324,7 +1350,7 @@ const KEY = 'drivethru-macros.v1';
 const TARGETS = [['cal','Calories','Cal','max'],['p','Protein','g','min'],['c','Carbs','g','max'],['f','Fat','g','max'],
   ['fibre','Fibre','g','min'],['sugar','Sugars','g','max'],['sat','Sat fat','g','max'],['sodium','Sodium','mg','max']];
 const GOAL_DEFAULT = {cal:2200, p:150, c:null, f:null, fibre:null, sugar:null, sat:null, sodium:null, dir:{}, mealCal:500, mealP:40};
-const DEFAULT = {foods:[], meals:[], goals:GOAL_DEFAULT, goalSets:null, goalSet:null, body:{}, log:{}, tray:[]};
+const DEFAULT = {foods:[], meals:[], goals:GOAL_DEFAULT, goalSets:null, goalSet:null, body:{}, log:{}, dayGoals:{}, tray:[]};
 let S;
 try { S = Object.assign(structuredClone(DEFAULT), JSON.parse(localStorage.getItem(KEY) || 'null') || {}); } catch { S = structuredClone(DEFAULT); }
 // Target sets (e.g. training day / rest day). S.goals always points at the active set's targets.
@@ -1332,10 +1358,14 @@ if (!Array.isArray(S.goalSets) || !S.goalSets.length) S.goalSets = [{id:'g1', na
 S.goalSets.forEach(g => g.goals = {...GOAL_DEFAULT, ...g.goals, dir:{...(g.goals?.dir || {})}});
 function useGoalSet(id){ const g = S.goalSets.find(x => x.id === id) || S.goalSets[0]; S.goalSet = g.id; S.goals = g.goals; }
 useGoalSet(S.goalSet);
-const goalDir = k => k === 'cal' ? 'max' : k === 'p' ? 'min' : S.goals.dir[k] || TARGETS.find(t => t[0] === k)[3];
+const goalDir = (k, g = S.goals) => k === 'cal' ? 'max' : k === 'p' ? 'min' : g.dir?.[k] || TARGETS.find(t => t[0] === k)[3];
 function save(){
-  const keep = Object.keys(S.log).sort().slice(-21); // keep 3 weeks of log
+  // Keep a year of days. Each day remembers the targets it was tracked against, so changing targets later doesn't rewrite history.
+  const today = dayKey();
+  if ((S.log[today] || []).length) S.dayGoals[today] = {name:(S.goalSets.find(g => g.id === S.goalSet) || {}).name || '', goals:{...S.goals, dir:{...S.goals.dir}}};
+  const keep = Object.keys(S.log).filter(k => S.log[k]?.length).sort().slice(-366);
   S.log = Object.fromEntries(keep.map(k => [k, S.log[k]]));
+  S.dayGoals = Object.fromEntries(Object.entries(S.dayGoals).filter(([k]) => S.log[k]));
   try { localStorage.setItem(KEY, JSON.stringify(S)); } catch {}
 }
 // Older saves may hold ids from before a menu name was corrected.
@@ -2215,17 +2245,20 @@ $('#ordForm').addEventListener('submit', e => {
 });
 
 /* ---------- TODAY ---------- */
-// Today's totals, plus sugars/fibre/etc. from logged items that list them (nutN = how many did).
-function todayTotals(){
-  const log = S.log[dayKey()] || [], t = sum(log);
+// A day's totals, plus sugars/fibre/etc. from logged items that list them (nutN = how many did).
+function dayTotals(key){
+  const log = S.log[key] || [], t = sum(log);
   t.nut = {}; t.nutN = {}; t.n = log.length;
   log.forEach(m => Object.entries(m.nut || {}).forEach(([k, v]) => { t.nut[k] = (t.nut[k] || 0) + v; t.nutN[k] = (t.nutN[k] || 0) + 1; }));
   return t;
 }
+const todayTotals = () => dayTotals(dayKey());
+// Targets for a day: today's live targets, or the ones saved with a past day.
+const goalsFor = key => key === dayKey() ? S.goals : S.dayGoals[key]?.goals || S.goals;
 const tgtVal = (k, t) => ['cal','p','c','f'].includes(k) ? t[k] : t.nut[k] || 0;
 const tgtNum = (k, v) => k === 'cal' || k === 'sodium' ? fmt(v) : gr(v);
-function gaugeHTML(k, t){
-  const [, label, unit] = TARGETS.find(x => x[0] === k), goal = S.goals[k], v = tgtVal(k, t), dir = goalDir(k);
+function gaugeHTML(k, t, g = S.goals){
+  const [, label, unit] = TARGETS.find(x => x[0] === k), goal = g[k], v = tgtVal(k, t), dir = goalDir(k, g);
   const u = unit === 'Cal' ? '' : ' ' + unit;
   const over = dir === 'max' && v > goal, done = dir === 'min' && v >= goal;
   const left = dir === 'max' ? (over ? `${tgtNum(k, v - goal)}${u} over` : `${tgtNum(k, goal - v)}${u} left`) : (done ? 'Target hit' : `${tgtNum(k, goal - v)}${u} to go`);
@@ -2235,19 +2268,73 @@ function gaugeHTML(k, t){
     <div class="bar ${k === 'p' ? 'p' : k === 'c' ? 'c' : k === 'f' ? 'f' : ''}${over ? ' over' : ''}"><i style="width:${goal ? Math.min(100, v / goal * 100) : 0}%"></i></div>
     <div class="small muted left">${left}${partial ? ' <span title="Some foods logged today don\'t list this">*</span>' : ''}</div></div>`;
 }
-const activeTargets = () => TARGETS.map(x => x[0]).filter(k => S.goals[k] != null);
+const activeTargets = (g = S.goals) => TARGETS.map(x => x[0]).filter(k => g[k] != null);
+let viewDay = dayKey();
+const keyDate = key => { const [y, m, d] = key.split('-').map(Number); return new Date(y, m - 1, d); };
+const shiftDay = (key, n) => { const d = keyDate(key); d.setDate(d.getDate() + n); return dayKey(d); };
+function dayName(key, long){
+  const today = dayKey();
+  if (key === today) return 'Today';
+  if (key === shiftDay(today, -1)) return 'Yesterday';
+  return keyDate(key).toLocaleDateString('en-AU', long ? {weekday:'long', day:'numeric', month:'long'} : {weekday:'short', day:'numeric', month:'short'});
+}
 function renderToday(){
-  const t = todayTotals();
-  // The header shows energy and the macros; the Today tab shows every target that's on.
+  const t = todayTotals(), today = dayKey();
+  if (viewDay > today) viewDay = today;
+  // The header always shows today; the Today tab shows whichever day you're looking at.
   $('#gauges').innerHTML = activeTargets().filter(k => ['cal','p','c','f'].includes(k)).map(k => gaugeHTML(k, t)).join('');
-  $('#progList').innerHTML = activeTargets().map(k => `<li>${gaugeHTML(k, t)}</li>`).join('');
+  const isToday = viewDay === today, vt = dayTotals(viewDay), vg = goalsFor(viewDay);
+  $('#dayTitle').textContent = dayName(viewDay);
+  $('#daySub').textContent = (isToday || viewDay === shiftDay(today, -1) ? keyDate(viewDay).toLocaleDateString('en-AU', {weekday:'long', day:'numeric', month:'long'}) : '') +
+    (!isToday && S.dayGoals[viewDay]?.name && S.goalSets.length > 1 ? ` · ${S.dayGoals[viewDay].name} targets` : '');
+  $('#dayNext').disabled = isToday; $('#dayToday').hidden = isToday;
+  $('#dayPick').max = today; $('#dayPick').value = viewDay;
+  $('#dayLede').hidden = !isToday;
+  $('#progList').innerHTML = activeTargets(vg).map(k => `<li>${gaugeHTML(k, vt, vg)}</li>`).join('');
+  $('#logTitle').textContent = isToday ? 'Logged today' : `Logged ${dayName(viewDay).startsWith('Yesterday') ? 'yesterday' : 'on ' + dayName(viewDay)}`;
+  $('#qTitle').textContent = isToday ? 'Log something else' : `Add something to ${dayName(viewDay) === 'Yesterday' ? 'yesterday' : dayName(viewDay)}`;
+  renderHistory();
   const multi = S.goalSets.length > 1;
   $('#setPickWrap').hidden = !multi;
   if (multi) $('#setPick').innerHTML = S.goalSets.map(g => `<option value="${g.id}"${g.id === S.goalSet ? ' selected' : ''}>${esc(g.name)}</option>`).join('');
-  const log = S.log[dayKey()] || [];
-  $('#logList').innerHTML = log.length ? log.map(m => `<li><span class="nm">${esc(m.name)}<small>${new Date(m.at).toLocaleTimeString('en-AU', {hour:'numeric', minute:'2-digit'})} · ${fmt(m.cal)} Cal · P ${gr(m.p)} · C ${gr(m.c)} · F ${gr(m.f)}</small></span><button class="btn sm ghost danger" data-ldel="${m.id}">Remove</button></li>`).join('')
-    : `<li class="muted small"><span>Nothing logged today. Build a meal and press <b>Log today</b>, or add something below.</span></li>`;
+  const log = S.log[viewDay] || [];
+  $('#logList').innerHTML = log.length ? log.map(m => `<li><span class="nm">${esc(m.name)}<small>${m.late ? 'added later' : new Date(m.at).toLocaleTimeString('en-AU', {hour:'numeric', minute:'2-digit'})} · ${fmt(m.cal)} Cal · P ${gr(m.p)} · C ${gr(m.c)} · F ${gr(m.f)}</small></span><span class="row-gap">${isToday ? '' : `<button class="btn sm" data-lagain="${m.id}">Log again today</button>`}<button class="btn sm ghost danger" data-ldel="${m.id}">Remove</button></span></li>`).join('')
+    : `<li class="muted small"><span>${isToday ? 'Nothing logged today. Build a meal and press <b>Log today</b>, or add something below.' : 'Nothing was logged this day.'}</span></li>`;
 }
+// The last 30 days you logged at a glance (today always shows), plus a 7-day average.
+function renderHistory(){
+  const today = dayKey(), days = [...Array(30)].map((_, i) => shiftDay(today, -i));
+  $('#histList').innerHTML = days.filter(k => k === today || (S.log[k] || []).length).map(k => {
+    const log = S.log[k] || [], t = dayTotals(k), g = goalsFor(k), over = t.cal > g.cal, hitP = t.p >= g.p;
+    return `<li><button type="button" data-day="${k}"${k === viewDay ? ' aria-current="date"' : ''}>
+      <span class="d">${esc(dayName(k))}</span>
+      <span class="v${!log.length ? '' : over ? ' bad' : ' ok'}">${log.length ? `${fmt(t.cal)} / ${fmt(g.cal)} Cal` : '–'}</span>
+      <span class="sub">${log.length ? `P ${gr(t.p)}g${hitP ? ' ✓' : ` of ${fmt(g.p)}`} · C ${gr(t.c)} · F ${gr(t.f)} · ${log.length} item${log.length === 1 ? '' : 's'}` : 'Nothing logged'}</span>
+      ${log.length ? `<div class="bar${over ? ' over' : ''}"><i style="width:${Math.min(100, t.cal / g.cal * 100)}%"></i></div>` : ''}
+    </button></li>`;
+  }).join('');
+  const logged = days.slice(1, 8).filter(k => (S.log[k] || []).length);
+  $('#histList').insertAdjacentHTML('beforeend', days.slice(1).some(k => (S.log[k] || []).length) ? '' : '<li class="muted small" style="padding:10px 4px">Past days you log will show up here. Use <b>Pick a day</b> to look further back.</li>');
+  if (logged.length) {
+    const tot = logged.map(k => dayTotals(k)), avg = f => tot.reduce((a, t) => a + f(t), 0) / tot.length;
+    $('#histAvg').textContent = `Average over the ${logged.length} logged day${logged.length === 1 ? '' : 's'} before today (last 7 days): ${fmt(avg(t => t.cal))} Cal · protein ${gr(avg(t => t.p))}g · carbs ${gr(avg(t => t.c))}g · fat ${gr(avg(t => t.f))}g.`;
+  } else $('#histAvg').textContent = '';
+}
+function showDay(key){ viewDay = key > dayKey() ? dayKey() : key; renderToday(); }
+$('#dayPrev').addEventListener('click', () => showDay(shiftDay(viewDay, -1)));
+$('#dayNext').addEventListener('click', () => showDay(shiftDay(viewDay, 1)));
+$('#dayToday').addEventListener('click', () => showDay(dayKey()));
+$('#dayPick').addEventListener('change', e => { if (e.target.value) showDay(e.target.value); });
+$('#histList').addEventListener('click', e => { const b = e.target.closest('[data-day]'); if (b) { showDay(b.dataset.day); $('#panel-today').scrollIntoView({behavior:'smooth', block:'start'}); } });
+// A new day starts at midnight even if the app stays open.
+let lastDay = dayKey();
+function checkNewDay(){
+  const d = dayKey(); if (d === lastDay) return;
+  if (viewDay === lastDay) viewDay = d;
+  lastDay = d; save(); renderAll(); toast('New day. Today starts fresh; yesterday is under Recent days.');
+}
+setInterval(checkNewDay, 60000);
+document.addEventListener('visibilitychange', () => { if (!document.hidden) checkNewDay(); });
 
 // Target form: one box per nutrient; optional ones have an "at most / at least" switch and turn off when empty.
 function renderGoalForm(){
@@ -2330,13 +2417,18 @@ $('#calcUse').addEventListener('click', () => {
   save(); renderGoalForm(); renderToday(); renderTray(); toast(`Targets set for ${S.goalSets.find(x => x.id === S.goalSet).name}`);
 });
 
-$('#logList').addEventListener('click', e => { const b = e.target.closest('[data-ldel]'); if (b) { S.log[dayKey()] = (S.log[dayKey()] || []).filter(m => m.id !== b.dataset.ldel); save(); renderToday(); renderTray(); } });
+$('#logList').addEventListener('click', e => {
+  const b = e.target.closest('[data-ldel]'), a = e.target.closest('[data-lagain]');
+  if (b) { S.log[viewDay] = (S.log[viewDay] || []).filter(m => m.id !== b.dataset.ldel); save(); renderToday(); renderTray(); }
+  if (a) { const m = (S.log[viewDay] || []).find(x => x.id === a.dataset.lagain); if (m) { (S.log[dayKey()] ||= []).push({...m, id:uid(), at:Date.now(), late:undefined}); save(); renderToday(); renderTray(); toast(`Logged “${m.name}” today`); } }
+});
 $('#qNut').innerHTML = [['sugar','Sugars','g'],['fibre','Fibre','g'],['sat','Sat fat','g'],['sodium','Sodium','mg']].map(([k, l, u]) => `<div class="field"><label for="qn_${k}">${l} ${u}</label><input id="qn_${k}" data-qn="${k}" type="number" min="0" step="any"></div>`).join('');
 $('#quickLog').addEventListener('submit', e => {
   e.preventDefault();
   const nut = {}; document.querySelectorAll('[data-qn]').forEach(i => { const v = num(i.value); if (v != null) nut[i.dataset.qn] = v; });
-  (S.log[dayKey()] ||= []).push({id:uid(), name:$('#qName').value.trim(), cal:num($('#qCal').value) || 0, p:num($('#qP').value) || 0, c:num($('#qC').value) || 0, f:num($('#qF').value) || 0, nut, at:Date.now()});
-  save(); e.target.reset(); renderToday(); renderTray(); toast('Logged');
+  const late = viewDay !== dayKey();
+  (S.log[viewDay] ||= []).push({id:uid(), name:$('#qName').value.trim(), cal:num($('#qCal').value) || 0, p:num($('#qP').value) || 0, c:num($('#qC').value) || 0, f:num($('#qF').value) || 0, nut, at:Date.now(), ...(late ? {late:true} : {})});
+  save(); e.target.reset(); renderToday(); renderTray(); toast(late ? `Added to ${dayName(viewDay)}` : 'Logged');
 });
 $('#useLeft').addEventListener('click', () => {
   const t = todayTotals(), g = S.goals;
