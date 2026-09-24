@@ -11,6 +11,8 @@ SRC = (ROOT / 'index.html').read_text()
 
 NAME, SHORT = 'Macro Menu', 'Macro Menu'
 THEME, BG = '#023530', '#FFFFFF'
+# App icon: black tile, charcoal shapes, white serif M
+ICON_BG, ICON_2, ICON_3 = '#000000', '#262626', '#3A3A3A'
 DESC = 'Find the fast-food order that fits your calories, protein and budget, build meals and track your day.'
 
 # The artifact file starts with <title>, font links and <style>; those belong in <head>.
@@ -23,7 +25,8 @@ RESET = """<style>
 body{margin:0}img{max-width:100%}[hidden]{display:none!important}
 </style>"""
 
-version = hashlib.sha1(SRC.encode()).hexdigest()[:10]
+# Includes this script, so icon or manifest changes also start a fresh cache.
+version = hashlib.sha1((SRC + pathlib.Path(__file__).read_text()).encode()).hexdigest()[:10]
 
 REGISTER = f"""<script>
 if ('serviceWorker' in navigator) {{
@@ -111,14 +114,14 @@ def icons():
         img = Image.new('RGBA', (size, size), (0, 0, 0, 0))
         d = ImageDraw.Draw(img)
         r = int(size * 0.22) if rounded else 0
-        d.rounded_rectangle([0, 0, size - 1, size - 1], radius=r, fill=THEME)
+        d.rounded_rectangle([0, 0, size - 1, size - 1], radius=r, fill=ICON_BG)
         # rounded green shapes cropped by the tile, as in the app header
         shapes = Image.new('RGBA', (size, size), (0, 0, 0, 0))
         g = ImageDraw.Draw(shapes)
         u = size / 100
-        g.rounded_rectangle([58 * u, -18 * u, 124 * u, 26 * u], radius=22 * u, fill='#01714C')
-        g.ellipse([66 * u, 66 * u, 130 * u, 130 * u], fill='#01A656')
-        g.rounded_rectangle([-20 * u, 78 * u, 40 * u, 118 * u], radius=18 * u, fill='#01714C')
+        g.rounded_rectangle([58 * u, -18 * u, 124 * u, 26 * u], radius=22 * u, fill=ICON_2)
+        g.ellipse([66 * u, 66 * u, 130 * u, 130 * u], fill=ICON_3)
+        g.rounded_rectangle([-20 * u, 78 * u, 40 * u, 118 * u], radius=18 * u, fill=ICON_2)
         mask = Image.new('L', (size, size), 0)
         ImageDraw.Draw(mask).rounded_rectangle([0, 0, size - 1, size - 1], radius=r, fill=255)
         img.paste(shapes, (0, 0), Image.composite(shapes, Image.new('RGBA', (size, size)), mask))
@@ -134,7 +137,7 @@ def icons():
     draw(192, 0.86, True).resize((192, 192)).save(OUT / 'icons/icon-192.png')
     draw(512, 0.62, False).save(OUT / 'icons/icon-maskable-512.png')
     ap = draw(180, 0.86, False)
-    bg = Image.new('RGB', (180, 180), THEME); bg.paste(ap, (0, 0), ap); bg.save(OUT / 'icons/apple-touch-icon.png')
+    bg = Image.new('RGB', (180, 180), ICON_BG); bg.paste(ap, (0, 0), ap); bg.save(OUT / 'icons/apple-touch-icon.png')
 
 
 OUT.mkdir(exist_ok=True)
