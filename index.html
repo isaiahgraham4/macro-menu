@@ -37,6 +37,7 @@ button{cursor:pointer}
 .num{font-family:var(--mono);font-variant-numeric:tabular-nums}
 .muted{color:var(--ink-2)}
 .small{font-size:13px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .label{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
 
 /* header */
@@ -44,14 +45,21 @@ button{cursor:pointer}
 .brand h1{font-size:clamp(30px,5vw,44px);font-weight:800;letter-spacing:-.02em}
 .brand h1 span{color:var(--accent)}
 .brand p{margin:4px 0 0;color:var(--ink-2);max-width:52ch;font-size:14px}
-.today{display:grid;grid-template-columns:1fr 1fr auto;gap:10px 18px;align-items:end;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;min-width:min(100%,460px)}
+.today{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 18px;align-items:end;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;min-width:min(100%,460px);max-width:640px}
+.today .set{grid-column:1/-1;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-2)}
+.today .set select{border:1px solid var(--line);border-radius:6px;background:var(--surface-2);padding:3px 6px;font-weight:600;font-size:13px}
+.today-acts{display:grid;gap:6px}
+@media (max-width:700px){.today-acts{grid-template-columns:minmax(0,1fr) auto}}
+.gauges{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px 18px}
 .gauge .row{display:flex;justify-content:space-between;gap:8px;font-size:13px;white-space:nowrap}
-@media (max-width:700px){.today{grid-template-columns:1fr 1fr;width:100%}.today .btn{grid-column:1/-1}}
+@media (max-width:700px){.today{grid-template-columns:minmax(0,1fr);width:100%}.gauges{grid-template-columns:1fr 1fr}}
 .gauge b{font-family:var(--mono);font-weight:600}
 .bar{height:6px;border-radius:3px;background:var(--surface-2);overflow:hidden;margin-top:5px}
 .bar i{display:block;height:100%;background:var(--accent);border-radius:3px}
-.bar.p i{background:var(--p)}
+.bar.p i{background:var(--p)}.bar.c i{background:var(--c)}.bar.f i{background:var(--f)}
 .bar.over i{background:var(--bad)}
+.gauge.done .left{color:var(--ok)}
+.gauge.bad .left{color:var(--bad)}
 
 /* layout */
 .layout{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:24px;align-items:start}
@@ -229,6 +237,61 @@ button{cursor:pointer}
 .foot a{color:var(--ink-2)}
 .sources{margin:0;padding-left:18px;display:grid;gap:2px}
 @media (prefers-reduced-motion:no-preference){.card,.rank li{transition:border-color .15s}}
+
+/* targets */
+.gfield .gl{display:flex;justify-content:space-between;align-items:center;gap:6px;margin-bottom:4px}
+.gfield .gl label{margin:0}
+.gfield .gl select{border:1px solid var(--line);border-radius:6px;background:var(--surface-2);padding:2px 4px;font-size:12px;font-weight:600;color:var(--ink-2)}
+.gfield input::placeholder{color:var(--ink-3)}
+.sets{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.calc-out{font-size:14px;padding:10px 12px;border-radius:8px;background:var(--accent-soft)}
+.calc-out b{font-family:var(--mono)}
+.prog{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.prog .gauge{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:10px 12px}
+
+/* bottom tab bar (phones) */
+.bnav{display:none}
+.bnav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;border:0;background:none;padding:7px 2px 6px;font-size:11px;font-weight:600;color:var(--ink-3);position:relative;min-width:0}
+.bnav svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.bnav button[aria-current="page"]{color:var(--accent)}
+.bnav .badge{position:absolute;top:3px;left:calc(50% + 6px);min-width:17px;height:17px;padding:0 4px;border-radius:9px;background:var(--accent);color:var(--accent-ink);font-size:11px;line-height:17px;font-family:var(--mono)}
+@media (max-width:900px){
+  body{padding-bottom:calc(150px + env(safe-area-inset-bottom,0px))}
+  .top{padding-block:16px 14px;gap:12px}
+  .brand h1{font-size:28px}
+  .brand p{display:none}
+  .tabs{display:none}
+  .bnav{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:12;background:var(--surface);border-top:1px solid var(--line);padding:0 4px env(safe-area-inset-bottom,0px)}
+  .mbar{bottom:calc(58px + env(safe-area-inset-bottom,0px));padding:8px 16px;background:var(--rule)}
+  body[data-tab="meal"] .mbar{display:none}
+  body:not([data-tab="meal"]) .tray{display:none}
+  body[data-tab="meal"] .layout > section{display:none}
+  .tray{border:0;background:none;padding:0}
+  .toast{bottom:calc(120px + env(safe-area-inset-bottom,0px))}
+  .panel h2{font-size:20px}
+  .panel > p.lede{font-size:14px;margin-bottom:12px}
+  .controls{padding:12px;gap:12px}
+  .results{grid-template-columns:minmax(0,1fr);gap:10px}
+  .card{padding:12px;gap:6px}
+  .card .acts .btn{padding-block:9px}
+}
+@media (max-width:640px){
+  .nip .kcal-big{font-size:15px}
+  .sheet{place-items:end center;padding:0}
+  .sheet-card{border-radius:16px 16px 0 0;max-height:88vh;padding-bottom:calc(18px + env(safe-area-inset-bottom,0px))}
+}
+/* touch screens: no zoom-on-focus (iOS zooms inputs under 16px) and bigger tap targets */
+@media (pointer:coarse), (max-width:900px){
+  :is(input,select,textarea):not(#_){font-size:16px}
+  .field.big input:not(#_){font-size:20px}
+  button,label,a,summary{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+  .chip{padding:8px 13px;font-size:14px}
+  .seg button{padding:10px 14px}
+  .btn.sm{padding:8px 11px;min-height:36px}
+  .step{height:36px}.step button{width:36px}
+  .sugg button{padding:12px 10px}
+  .gfield .gl select{padding:3px 6px}
+}
 </style>
 
 <div class="wrap">
@@ -238,17 +301,9 @@ button{cursor:pointer}
       <p>Tell it what you've got left. It finds the fast-food order that fits your calories and protein.</p>
     </div>
     <div class="today" aria-label="Today so far">
-      <div class="gauge">
-        <div class="row"><span>Calories</span><span><b id="tCal">0</b> / <span id="tCalGoal" class="num">0</span></span></div>
-        <div class="bar" id="tCalBar"><i style="width:0"></i></div>
-        <div class="small muted" id="tCalLeft"></div>
-      </div>
-      <div class="gauge">
-        <div class="row"><span>Protein</span><span><b id="tP">0</b> / <span id="tPGoal" class="num">0</span> g</span></div>
-        <div class="bar p" id="tPBar"><i style="width:0"></i></div>
-        <div class="small muted" id="tPLeft"></div>
-      </div>
-      <button class="btn primary sm" id="useLeft" type="button">Find for what's left</button>
+      <div class="set" id="setPickWrap" hidden><label for="setPick">Targets</label><select id="setPick"></select></div>
+      <div class="gauges" id="gauges"></div>
+      <div class="today-acts"><button class="btn primary sm" id="useLeft" type="button">Find for what's left</button><button class="btn sm" id="editTargets" type="button">Edit targets</button></div>
     </div>
   </header>
 
@@ -269,10 +324,15 @@ button{cursor:pointer}
           <div class="fields">
             <div class="field big"><label for="fCal">Calories left</label><div class="unit"><input id="fCal" type="number" inputmode="numeric" min="50" step="10" value="500"><span>Cal</span></div></div>
             <div class="field big"><label for="fP">Protein wanted</label><div class="unit"><input id="fP" type="number" inputmode="numeric" min="0" step="1" value="40"><span>g</span></div></div>
-            <div class="field"><label for="fC">Max carbs <span class="muted">(optional)</span></label><div class="unit"><input id="fC" type="number" inputmode="numeric" min="0" placeholder="any"><span>g</span></div></div>
-            <div class="field"><label for="fF">Max fat <span class="muted">(optional)</span></label><div class="unit"><input id="fF" type="number" inputmode="numeric" min="0" placeholder="any"><span>g</span></div></div>
-            <div class="field"><label for="fS">Max spend <span class="muted">(optional)</span></label><div class="unit"><input id="fS" type="number" inputmode="decimal" min="0" step="0.5" placeholder="any"><span>$</span></div></div>
           </div>
+          <details class="more" id="fMore">
+            <summary>Limits: carbs, fat, spend <span class="muted" id="fMoreN"></span></summary>
+            <div class="fields" style="margin-top:8px">
+              <div class="field"><label for="fC">Max carbs</label><div class="unit"><input id="fC" type="number" inputmode="numeric" min="0" placeholder="any"><span>g</span></div></div>
+              <div class="field"><label for="fF">Max fat</label><div class="unit"><input id="fF" type="number" inputmode="numeric" min="0" placeholder="any"><span>g</span></div></div>
+              <div class="field"><label for="fS">Max spend</label><div class="unit"><input id="fS" type="number" inputmode="decimal" min="0" step="0.5" placeholder="any"><span>$</span></div></div>
+            </div>
+          </details>
           <div class="sub">
             <div><div class="label" style="margin-bottom:4px">Items per order</div>
               <div class="seg" id="fItems"><button type="button" data-v="1">1</button><button type="button" data-v="2" aria-pressed="true">Up to 2</button><button type="button" data-v="3">Up to 3</button></div></div>
@@ -408,14 +468,9 @@ button{cursor:pointer}
       <!-- TODAY -->
       <div class="panel" id="panel-today" hidden>
         <h2>Today</h2>
-        <p class="lede">Set your daily targets, then log meals from the meal builder. "Find for what's left" uses what remains.</p>
-        <form class="controls" id="goalForm">
-          <div class="fields">
-            <div class="field big"><label for="gCal">Daily calories</label><div class="unit"><input id="gCal" type="number" min="800" step="50"><span>Cal</span></div></div>
-            <div class="field big"><label for="gP">Daily protein</label><div class="unit"><input id="gP" type="number" min="0" step="5"><span>g</span></div></div>
-          </div>
-        </form>
-        <div class="section" style="margin-top:0">
+        <p class="lede">Log meals from the meal builder and track them against your targets. "Find for what's left" searches with whatever remains.</p>
+        <ul class="prog" id="progList"></ul>
+        <div class="section">
           <h3>Logged today</h3>
           <ul class="saved" id="logList"></ul>
         </div>
@@ -429,7 +484,50 @@ button{cursor:pointer}
               <div class="field"><label for="qC">Carbs g</label><input id="qC" type="number" min="0" step="any" value="0"></div>
               <div class="field"><label for="qF">Fat g</label><input id="qF" type="number" min="0" step="any" value="0"></div>
             </div>
+            <details class="more"><summary>More nutrients <span class="muted">(optional)</span></summary>
+              <div class="fields" id="qNut" style="margin-top:8px"></div>
+            </details>
             <div><button class="btn primary" type="submit">Log it</button></div>
+          </form>
+        </div>
+
+        <div class="section" id="targets">
+          <h3>Your targets</h3>
+          <form class="controls" id="goalForm">
+            <div>
+              <div class="label" style="margin-bottom:6px">Target sets</div>
+              <div class="sets" id="setChips"></div>
+              <p class="note" style="margin:6px 0 0">Keep different targets for different days, like training and rest days, and switch between them here or at the top.</p>
+            </div>
+            <div class="fields" id="goalFields"></div>
+            <p class="note" style="margin:-4px 0 0">Leave a box empty to stop tracking it. Sugars, fibre, saturated fat and sodium count only foods that list them.</p>
+            <div>
+              <div class="label" style="margin-bottom:6px">A typical meal</div>
+              <div class="fields">
+                <div class="field"><label for="gMealCal">Calories</label><div class="unit"><input id="gMealCal" type="number" inputmode="numeric" min="50" step="10" data-g="mealCal"><span>Cal</span></div></div>
+                <div class="field"><label for="gMealP">Protein</label><div class="unit"><input id="gMealP" type="number" inputmode="numeric" min="0" step="1" data-g="mealP"><span>g</span></div></div>
+              </div>
+              <p class="note" style="margin:6px 0 0">"Find a meal" starts with these numbers.</p>
+            </div>
+            <details class="more" id="calcBox">
+              <summary>Work out my targets</summary>
+              <div class="box" style="margin-top:8px">
+                <div class="fields">
+                  <div class="field"><label for="bSex">Sex</label><select id="bSex" data-b="sex"><option value="m">Male</option><option value="f">Female</option></select></div>
+                  <div class="field"><label for="bAge">Age</label><input id="bAge" type="number" inputmode="numeric" min="14" max="100" data-b="age"></div>
+                  <div class="field"><label for="bH">Height</label><div class="unit"><input id="bH" type="number" inputmode="numeric" min="120" max="230" data-b="h"><span>cm</span></div></div>
+                  <div class="field"><label for="bW">Weight</label><div class="unit"><input id="bW" type="number" inputmode="decimal" min="35" max="250" step="0.1" data-b="w"><span>kg</span></div></div>
+                  <div class="field" style="grid-column:span 2"><label for="bAct">Activity</label><select id="bAct" data-b="act">
+                    <option value="1.2">Mostly sitting, little exercise</option><option value="1.375">Light: exercise 1–3 days a week</option><option value="1.55">Moderate: exercise 3–5 days a week</option><option value="1.725">Hard: exercise 6–7 days a week</option><option value="1.9">Very hard: physical job plus training</option></select></div>
+                  <div class="field" style="grid-column:span 2"><label for="bGoal">Goal</label><select id="bGoal" data-b="goal">
+                    <option value="-550">Lose about 0.5 kg a week</option><option value="-275">Lose about 0.25 kg a week</option><option value="0">Stay the same</option><option value="275">Gain about 0.25 kg a week</option></select></div>
+                  <div class="field"><label for="bPk">Protein per kg</label><div class="unit"><input id="bPk" type="number" inputmode="decimal" min="0.8" max="3.3" step="0.1" data-b="pk"><span>g</span></div></div>
+                  <div class="field"><label for="bFat">Fat share</label><div class="unit"><input id="bFat" type="number" inputmode="numeric" min="15" max="45" step="1" data-b="fat"><span>%</span></div></div>
+                </div>
+                <div class="calc-out" id="calcOut" role="status"></div>
+                <div class="row-gap"><button class="btn primary" type="button" id="calcUse" disabled>Use these targets</button><span class="note">Estimate only (Mifflin-St Jeor). Adjust after a few weeks of tracking your weight.</span></div>
+              </div>
+            </details>
           </form>
         </div>
       </div>
@@ -461,6 +559,13 @@ button{cursor:pointer}
 </div>
 
 <div class="mbar" id="mbar"><span id="mbarText"></span><button class="btn sm" id="mbarGo" type="button">View meal</button></div>
+<nav class="bnav" id="bnav" aria-label="Sections">
+  <button type="button" data-tab="find"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>Find</button>
+  <button type="button" data-tab="best"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V11M12 20V5M19 20v-6"/></svg>Best</button>
+  <button type="button" data-tab="meal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11h16a8 8 0 0 1-16 0zM9 8c0-1.5 1-2 1-3.5M13 8c0-1.5 1-2 1-3.5"/></svg>Meal<span class="badge" id="bnavN" hidden></span></button>
+  <button type="button" data-tab="mine"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5h10a1 1 0 0 1 1 1v16l-6-4-6 4v-16a1 1 0 0 1 1-1z"/></svg>My foods</button>
+  <button type="button" data-tab="today"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>Today</button>
+</nav>
 <div class="sheet" id="sheet" hidden><div class="sheet-card" id="sheetCard"></div></div>
 <div class="toast" id="toast" hidden role="status"></div>
 
@@ -1138,6 +1243,8 @@ function sumExtras(list){
   });
   return [...rows.values()].map(r => ({...r, partial: r.n < list.length}));
 }
+// Per-key totals of the standard optional nutrients (what a logged meal keeps for sugar/fibre/sodium targets).
+function nutTotals(list){ const o = {}; list.forEach(x => { const q = x.qty ?? 1; NUTS.forEach(([k]) => { if (x.nut?.[k] != null) o[k] = Math.round(((o[k] || 0) + x.nut[k] * q) * 10) / 10; }); }); return o; }
 const nutVal = (v, u) => (u === 'mg' || v >= 10 ? fmt(v) : gr(v)) + ' ' + u;
 // Serving size from text like "500 ml", "1 tub (170 g)", "244 g" -> {amt, unit}; null when it has none.
 function parseServe(serve){
@@ -1170,9 +1277,19 @@ const flagChip = x => mismatch(x) ? `<span class="flag" title="The published ene
 
 /* ---------- storage (this browser) ---------- */
 const KEY = 'drivethru-macros.v1';
-const DEFAULT = {foods:[], meals:[], goals:{cal:2200, p:150}, log:{}, tray:[]};
+// Daily targets: [key, label, unit, default direction]. 'max' = stay under it, 'min' = reach it. cal and p are always on; the rest are off when null.
+const TARGETS = [['cal','Calories','Cal','max'],['p','Protein','g','min'],['c','Carbs','g','max'],['f','Fat','g','max'],
+  ['fibre','Fibre','g','min'],['sugar','Sugars','g','max'],['sat','Sat fat','g','max'],['sodium','Sodium','mg','max']];
+const GOAL_DEFAULT = {cal:2200, p:150, c:null, f:null, fibre:null, sugar:null, sat:null, sodium:null, dir:{}, mealCal:500, mealP:40};
+const DEFAULT = {foods:[], meals:[], goals:GOAL_DEFAULT, goalSets:null, goalSet:null, body:{}, log:{}, tray:[]};
 let S;
 try { S = Object.assign(structuredClone(DEFAULT), JSON.parse(localStorage.getItem(KEY) || 'null') || {}); } catch { S = structuredClone(DEFAULT); }
+// Target sets (e.g. training day / rest day). S.goals always points at the active set's targets.
+if (!Array.isArray(S.goalSets) || !S.goalSets.length) S.goalSets = [{id:'g1', name:'Everyday', goals:{...GOAL_DEFAULT, ...S.goals, dir:{...(S.goals?.dir || {})}}}];
+S.goalSets.forEach(g => g.goals = {...GOAL_DEFAULT, ...g.goals, dir:{...(g.goals?.dir || {})}});
+function useGoalSet(id){ const g = S.goalSets.find(x => x.id === id) || S.goalSets[0]; S.goalSet = g.id; S.goals = g.goals; }
+useGoalSet(S.goalSet);
+const goalDir = k => k === 'cal' ? 'max' : k === 'p' ? 'min' : S.goals.dir[k] || TARGETS.find(t => t[0] === k)[3];
 function save(){
   const keep = Object.keys(S.log).sort().slice(-21); // keep 3 weeks of log
   S.log = Object.fromEntries(keep.map(k => [k, S.log[k]]));
@@ -1225,12 +1342,20 @@ function splitBar(t){
 const macroSpans = t => { const na = t.missing || t.c == null; return `<div class="macros"><span><i class="ip"></i>P <b>${gr(t.p)}g</b></span><span><i class="ic"></i>C <b>${na && !t.c ? '–' : gr(t.c) + 'g'}</b></span><span><i class="if"></i>F <b>${na && !t.f ? '–' : gr(t.f) + 'g'}</b></span></div>`; };
 
 /* ---------- tabs ---------- */
-function showTab(name){
+// On phones the meal builder is its own tab in the bottom bar; on wider screens it sits beside the panels.
+const phone = matchMedia('(max-width:900px)');
+function showTab(name, keepScroll){
+  if (name === 'meal' && !phone.matches) name = 'find';
+  const prev = document.body.dataset.tab;
+  document.body.dataset.tab = name;
   document.querySelectorAll('.tab').forEach(b => b.setAttribute('aria-selected', b.dataset.tab === name));
-  ['find','best','mine','today'].forEach(n => $('#panel-'+n).hidden = n !== name);
+  document.querySelectorAll('.bnav button').forEach(b => b.dataset.tab === name ? b.setAttribute('aria-current', 'page') : b.removeAttribute('aria-current'));
+  if (name !== 'meal') ['find','best','mine','today'].forEach(n => $('#panel-'+n).hidden = n !== name);
+  if (phone.matches && prev && prev !== name && !keepScroll) window.scrollTo(0, 0);
   try { sessionStorage.setItem('dtm.tab', name); } catch {}
 }
-document.querySelectorAll('.tab').forEach(b => b.addEventListener('click', () => showTab(b.dataset.tab)));
+document.querySelectorAll('.tab, .bnav button').forEach(b => b.addEventListener('click', () => showTab(b.dataset.tab)));
+phone.addEventListener('change', () => { if (!phone.matches && document.body.dataset.tab === 'meal') showTab('find'); });
 
 /* ---------- chips ---------- */
 function makeChips(el, state, onChange, withAll){
@@ -1333,6 +1458,8 @@ function runFind(){
   const q = {budget, target, maxC:num($('#fC').value), maxF:num($('#fF').value), maxS:num($('#fS').value), maxItems:+getItems(), sort:$('#fSort').value};
   const {res, total} = budget > 0 ? findMeals(q) : {res:[], total:0};
   lastFind = res;
+  const nLim = [q.maxC, q.maxF, q.maxS].filter(v => v != null).length;
+  $('#fMoreN').textContent = nLim ? `(${nLim} on)` : '';
   const hits = res.filter(r => r.short < 0.5).length;
   $('#findCount').textContent = budget > 0 ? `${fmt(total)} orders fit ${fmt(budget)} Cal · showing the top ${res.length}${target ? `, ${hits} hit ${target}g protein` : ''}` : '';
   $('#findResults').innerHTML = res.length ? res.map((r, i) => {
@@ -1404,13 +1531,25 @@ function renderTray(){
     <tr><td><span class="dot if"></span>Fat, total <span class="muted small">${pc(kf)}</span></td><td>${gr(t.f)} g</td></tr>
     ${sumExtras(list).map(r => `<tr><td class="sub">${esc(r.label)}${r.partial ? '<span class="muted">*</span>' : ''}</td><td>${nutVal(r.val, r.unit)}</td></tr>`).join('')}
   </table>${sumExtras(list).some(r => r.partial) ? '<p class="note small" style="margin:6px 0 0">* Only from items that list it.</p>' : ''}${list.length ? `<div style="margin-top:8px">${splitBar(t)}</div>` : ''}${t.missing ? `<p class="note small" style="margin:6px 0 0">Carbs and fat leave out ${t.missing} item${t.missing === 1 ? '' : 's'} whose chain only publishes protein and energy.</p>` : ''}`;
-  const today = todayTotals(), leftCal = S.goals.cal - today.cal - t.cal, leftP = S.goals.p - today.p - t.p;
+  const today = todayTotals(), leftCal = S.goals.cal - today.cal - t.cal;
+  // Carbs and fat join the message when they have a target.
+  const cf = (tot, add) => ['c','f'].filter(k => S.goals[k] != null).map(k => {
+    const left = S.goals[k] - tot[k] - (add ? add[k] : 0), nm = k === 'c' ? 'carbs' : 'fat';
+    return goalDir(k) === 'min' ? (left > 0 ? `<b>${gr(left)}g</b> ${nm} to go` : `${nm} target hit`) : (left >= 0 ? `<b>${gr(left)}g</b> ${nm} left` : `<b>${gr(-left)}g</b> ${nm} over`);
+  });
   $('#trayFit').className = 'fit' + (leftCal < 0 ? ' over' : '');
-  $('#trayFit').innerHTML = list.length
-    ? (leftCal >= 0 ? `After this meal: <b>${fmt(leftCal)}</b> Cal left today` : `This puts you <b>${fmt(-leftCal)}</b> Cal over today's target`) + (leftP > 0 ? `, <b>${gr(leftP)}g</b> protein to go.` : `, protein target hit.`)
-    : `Today you have <b>${fmt(Math.max(0, S.goals.cal - today.cal))}</b> Cal and <b>${gr(Math.max(0, S.goals.p - today.p))}g</b> protein left.`;
+  if (list.length) {
+    const leftP = S.goals.p - today.p - t.p;
+    const bits = [leftP > 0 ? `<b>${gr(leftP)}g</b> protein to go` : 'protein target hit', ...cf(today, t)];
+    $('#trayFit').innerHTML = (leftCal >= 0 ? `After this meal: <b>${fmt(leftCal)}</b> Cal left today` : `This puts you <b>${fmt(-leftCal)}</b> Cal over today's target`) + ', ' + bits.join(', ') + '.';
+  } else {
+    const leftP = S.goals.p - today.p, bits = [leftP > 0 ? `<b>${gr(leftP)}g</b> protein to go` : 'protein target hit', ...cf(today)];
+    $('#trayFit').innerHTML = `Today you have <b>${fmt(Math.max(0, S.goals.cal - today.cal))}</b> Cal left, ${bits.join(', ')}.`;
+  }
   $('#mbar').classList.toggle('on', list.length > 0);
   const cnt = list.length;
+  const n = S.tray.reduce((a, x) => a + (isWhole(x.qty) ? x.qty : 1), 0);
+  $('#bnavN').hidden = !n; $('#bnavN').textContent = n;
   $('#mbarText').innerHTML = `Meal · ${cnt} item${cnt === 1 ? '' : 's'} · <b>${fmt(t.cal)}</b> Cal · P <b>${gr(t.p)}g</b>`;
   ['copyMeal','imgMeal','logMeal','saveMeal','clearTray'].forEach(id => $('#'+id).disabled = !list.length);
 }
@@ -1422,7 +1561,7 @@ $('#trayItems').addEventListener('click', e => {
   if (pb) openPortion(pb.dataset.portion, 'edit');
 });
 $('#clearTray').addEventListener('click', () => { S.tray = []; save(); renderTray(); });
-$('#mbarGo').addEventListener('click', () => $('#tray').scrollIntoView({behavior:'smooth', block:'start'}));
+$('#mbarGo').addEventListener('click', () => showTab('meal'));
 
 // search
 const traySearch = $('#traySearch'), sugg = $('#traySugg');
@@ -1446,7 +1585,7 @@ function mealText(){
 $('#copyMeal').addEventListener('click', () => copyText(mealText()));
 $('#logMeal').addEventListener('click', () => {
   const list = trayList(), t = sum(list), name = $('#mealName').value.trim() || list.map(f => portionPrefix(f) + f.name).join(', ');
-  (S.log[dayKey()] ||= []).push({id:uid(), name, ...t, at:Date.now()});
+  (S.log[dayKey()] ||= []).push({id:uid(), name, ...t, nut:nutTotals(list), at:Date.now()});
   S.tray = []; $('#mealName').value = ''; save(); renderAll(); toast('Logged to today');
 });
 $('#saveMeal').addEventListener('click', () => {
@@ -1725,7 +1864,7 @@ $('#panel-mine').addEventListener('click', e => {
   if (d.mdel) confirmBtn(t, () => { S.meals = S.meals.filter(m => m.id !== d.mdel); save(); renderMine(); toast('Deleted'); });
 });
 $('#exportBtn').addEventListener('click', async () => {
-  const data = JSON.stringify({app:'macro-menu', v:1, foods:S.foods, meals:S.meals, goals:S.goals}, null, 2);
+  const data = JSON.stringify({app:'macro-menu', v:1, foods:S.foods, meals:S.meals, goals:S.goals, goalSets:S.goalSets, goalSet:S.goalSet}, null, 2);
   const dl = await getDownloads();
   if (dl) { try { await dl.save({filename:`macro-menu-backup-${dayKey()}.json`, data}); toast('Backup saved'); } catch (e) { if (e?.code !== 'declined') copyText(data); } }
   else copyText(data);
@@ -1750,7 +1889,16 @@ $('#importFile').addEventListener('change', async e => {
     S.foods = add.concat(S.foods);
     const haveM = new Set(S.meals.map(m => m.id));
     S.meals = (Array.isArray(d.meals) ? d.meals.filter(m => m && !haveM.has(m.id) && Array.isArray(m.items)).map(m => ({id:String(m.id), name:String(m.name || 'Meal'), items:m.items.map(x => ({id:String(x.id), qty:+x.qty || 1}))})) : []).concat(S.meals);
-    save(); renderAll(); toast(`Imported ${add.length} food${add.length === 1 ? '' : 's'}`);
+    // Target sets come across by name; a set you already have with the same name keeps your version.
+    if (Array.isArray(d.goalSets)) d.goalSets.forEach(g => {
+      if (!g || !g.goals || S.goalSets.some(x => x.name === g.name)) return;
+      const goals = {...GOAL_DEFAULT, dir:{}};
+      TARGETS.forEach(([k]) => { const v = g.goals[k]; goals[k] = v == null || !Number.isFinite(+v) ? (k === 'cal' || k === 'p' ? GOAL_DEFAULT[k] : null) : +v; });
+      ['mealCal','mealP'].forEach(k => { if (Number.isFinite(+g.goals[k]) && g.goals[k] != null) goals[k] = +g.goals[k]; });
+      if (g.goals.dir && typeof g.goals.dir === 'object') Object.entries(g.goals.dir).forEach(([k, v]) => { if (v === 'min' || v === 'max') goals.dir[k] = v; });
+      S.goalSets.push({id:uid(), name:String(g.name || 'Targets').slice(0, 40), goals});
+    });
+    save(); renderAll(); renderGoalForm(); toast(`Imported ${add.length} food${add.length === 1 ? '' : 's'}`);
   } catch { toast("That file isn't a Macro Menu backup."); }
   e.target.value = '';
 });
@@ -1891,37 +2039,137 @@ $('#ordForm').addEventListener('submit', e => {
 });
 
 /* ---------- TODAY ---------- */
-function todayTotals(){ return sum(S.log[dayKey()] || []); }
+// Today's totals, plus sugars/fibre/etc. from logged items that list them (nutN = how many did).
+function todayTotals(){
+  const log = S.log[dayKey()] || [], t = sum(log);
+  t.nut = {}; t.nutN = {}; t.n = log.length;
+  log.forEach(m => Object.entries(m.nut || {}).forEach(([k, v]) => { t.nut[k] = (t.nut[k] || 0) + v; t.nutN[k] = (t.nutN[k] || 0) + 1; }));
+  return t;
+}
+const tgtVal = (k, t) => ['cal','p','c','f'].includes(k) ? t[k] : t.nut[k] || 0;
+const tgtNum = (k, v) => k === 'cal' || k === 'sodium' ? fmt(v) : gr(v);
+function gaugeHTML(k, t){
+  const [, label, unit] = TARGETS.find(x => x[0] === k), goal = S.goals[k], v = tgtVal(k, t), dir = goalDir(k);
+  const u = unit === 'Cal' ? '' : ' ' + unit;
+  const over = dir === 'max' && v > goal, done = dir === 'min' && v >= goal;
+  const left = dir === 'max' ? (over ? `${tgtNum(k, v - goal)}${u} over` : `${tgtNum(k, goal - v)}${u} left`) : (done ? 'Target hit' : `${tgtNum(k, goal - v)}${u} to go`);
+  const partial = !['cal','p','c','f'].includes(k) && t.n && (t.nutN[k] || 0) < t.n;
+  return `<div class="gauge${over ? ' bad' : done ? ' done' : ''}">
+    <div class="row"><span>${label}${dir === 'min' && !['p'].includes(k) ? ' <span class="muted small">min</span>' : ''}</span><span><b>${tgtNum(k, v)}</b> / <span class="num">${tgtNum(k, goal)}</span>${u}</span></div>
+    <div class="bar ${k === 'p' ? 'p' : k === 'c' ? 'c' : k === 'f' ? 'f' : ''}${over ? ' over' : ''}"><i style="width:${goal ? Math.min(100, v / goal * 100) : 0}%"></i></div>
+    <div class="small muted left">${left}${partial ? ' <span title="Some foods logged today don\'t list this">*</span>' : ''}</div></div>`;
+}
+const activeTargets = () => TARGETS.map(x => x[0]).filter(k => S.goals[k] != null);
 function renderToday(){
-  const t = todayTotals(), g = S.goals;
-  $('#tCal').textContent = fmt(t.cal); $('#tCalGoal').textContent = fmt(g.cal);
-  $('#tP').textContent = gr(t.p); $('#tPGoal').textContent = fmt(g.p);
-  const cb = $('#tCalBar'); cb.classList.toggle('over', t.cal > g.cal); cb.firstElementChild.style.width = Math.min(100, t.cal / g.cal * 100) + '%';
-  $('#tPBar').firstElementChild.style.width = Math.min(100, g.p ? t.p / g.p * 100 : 0) + '%';
-  $('#tCalLeft').textContent = t.cal <= g.cal ? `${fmt(g.cal - t.cal)} left` : `${fmt(t.cal - g.cal)} over`;
-  $('#tPLeft').textContent = t.p < g.p ? `${gr(g.p - t.p)} g to go` : 'Target hit';
-  if (document.activeElement !== $('#gCal')) $('#gCal').value = g.cal;
-  if (document.activeElement !== $('#gP')) $('#gP').value = g.p;
+  const t = todayTotals();
+  // The header shows energy and the macros; the Today tab shows every target that's on.
+  $('#gauges').innerHTML = activeTargets().filter(k => ['cal','p','c','f'].includes(k)).map(k => gaugeHTML(k, t)).join('');
+  $('#progList').innerHTML = activeTargets().map(k => `<li>${gaugeHTML(k, t)}</li>`).join('');
+  const multi = S.goalSets.length > 1;
+  $('#setPickWrap').hidden = !multi;
+  if (multi) $('#setPick').innerHTML = S.goalSets.map(g => `<option value="${g.id}"${g.id === S.goalSet ? ' selected' : ''}>${esc(g.name)}</option>`).join('');
   const log = S.log[dayKey()] || [];
   $('#logList').innerHTML = log.length ? log.map(m => `<li><span class="nm">${esc(m.name)}<small>${new Date(m.at).toLocaleTimeString('en-AU', {hour:'numeric', minute:'2-digit'})} · ${fmt(m.cal)} Cal · P ${gr(m.p)} · C ${gr(m.c)} · F ${gr(m.f)}</small></span><button class="btn sm ghost danger" data-ldel="${m.id}">Remove</button></li>`).join('')
-    : `<li class="muted small">Nothing logged today. Build a meal and press <b>Log today</b>, or add something below.</li>`;
+    : `<li class="muted small"><span>Nothing logged today. Build a meal and press <b>Log today</b>, or add something below.</span></li>`;
 }
-$('#goalForm').addEventListener('input', () => {
-  const c = num($('#gCal').value), p = num($('#gP').value);
-  if (c > 0) S.goals.cal = c; if (p != null && p >= 0) S.goals.p = p;
+
+// Target form: one box per nutrient; optional ones have an "at most / at least" switch and turn off when empty.
+function renderGoalForm(){
+  const g = S.goals;
+  $('#setChips').innerHTML = S.goalSets.map(x => `<button type="button" class="chip" data-set="${x.id}" aria-pressed="${x.id === S.goalSet}">${esc(x.name)}</button>`).join('') +
+    `<button type="button" class="btn sm ghost" id="setNew">+ New set</button><button type="button" class="btn sm ghost" id="setRename">Rename</button>` +
+    (S.goalSets.length > 1 ? `<button type="button" class="btn sm ghost danger" id="setDel">Delete</button>` : '');
+  $('#goalFields').innerHTML = TARGETS.map(([k, label, unit]) => {
+    const fixed = k === 'cal' || k === 'p', v = g[k] ?? '';
+    const step = k === 'cal' ? 50 : k === 'sodium' ? 100 : 1;
+    const dirSel = fixed ? `<span class="muted small">${k === 'cal' ? 'at most' : 'at least'}</span>` : `<select data-dir="${k}" aria-label="${label}: at most or at least"><option value="max"${goalDir(k) === 'max' ? ' selected' : ''}>at most</option><option value="min"${goalDir(k) === 'min' ? ' selected' : ''}>at least</option></select>`;
+    return `<div class="field gfield${fixed ? ' big' : ''}"><div class="gl"><label for="g_${k}">${fixed ? 'Daily ' + label.toLowerCase() : label}</label>${dirSel}</div>
+      <div class="unit"><input id="g_${k}" data-g="${k}" type="number" inputmode="numeric" min="0" step="${step}" value="${v}"${fixed ? '' : ' placeholder="Not tracked"'}><span>${unit}</span></div></div>`;
+  }).join('');
+  $('#gMealCal').value = g.mealCal ?? ''; $('#gMealP').value = g.mealP ?? '';
+}
+$('#goalForm').addEventListener('input', e => {
+  const k = e.target.dataset.g, d = e.target.dataset.dir;
+  if (d) S.goals.dir[d] = e.target.value;
+  if (k) {
+    const v = num(e.target.value);
+    if (k === 'cal') { if (v > 0) S.goals.cal = v; }
+    else if (k === 'p') { if (v != null && v >= 0) S.goals.p = v; }
+    else if (k === 'mealCal' || k === 'mealP') {
+      if (v != null && v >= 0) { S.goals[k] = v; $(k === 'mealCal' ? '#fCal' : '#fP').value = v; runFind(); }
+    }
+    else S.goals[k] = v != null && v >= 0 ? v : null;
+  }
   save(); renderToday(); renderTray();
 });
+$('#goalForm').addEventListener('change', e => { if (e.target.dataset.dir) { save(); renderToday(); renderTray(); } });
 $('#goalForm').addEventListener('submit', e => e.preventDefault());
+function switchSet(id){ useGoalSet(id); save(); renderGoalForm(); renderToday(); renderTray(); }
+function nameSheet(title, value, onSave){
+  openSheet(`<h3>${title}</h3><div class="field"><label for="setName">Name</label><input id="setName" maxlength="40" value="${esc(value)}" placeholder="e.g. Training day"></div>
+    <div class="row-gap"><button class="btn primary" id="setNameOk">Save</button><button class="btn ghost" data-close>Cancel</button></div>`);
+  const i = $('#setName'), ok = () => { const n = i.value.trim(); if (!n) { i.focus(); return; } closeSheet(); onSave(n); };
+  i.focus(); i.select();
+  $('#setNameOk').addEventListener('click', ok);
+  i.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); ok(); } });
+}
+$('#setChips').addEventListener('click', e => {
+  const t = e.target.closest('button'); if (!t) return;
+  if (t.dataset.set) switchSet(t.dataset.set);
+  if (t.id === 'setNew') nameSheet('New target set', '', n => {
+    // Starts as a copy of the current set, so you only change what differs.
+    const g = {id:uid(), name:n, goals:{...S.goals, dir:{...S.goals.dir}}};
+    S.goalSets.push(g); switchSet(g.id); toast(`Made “${n}”. Change its numbers below.`);
+  });
+  if (t.id === 'setRename') { const g = S.goalSets.find(x => x.id === S.goalSet); nameSheet('Rename target set', g.name, n => { g.name = n; save(); renderGoalForm(); renderToday(); }); }
+  if (t.id === 'setDel') confirmBtn(t, () => { const nm = S.goalSets.find(x => x.id === S.goalSet).name; S.goalSets = S.goalSets.filter(x => x.id !== S.goalSet); switchSet(S.goalSets[0].id); toast(`Deleted “${nm}”`); });
+});
+$('#setPick').addEventListener('change', e => { switchSet(e.target.value); toast(`Using ${S.goalSets.find(x => x.id === S.goalSet).name} targets`); });
+$('#editTargets').addEventListener('click', () => { showTab('today', true); $('#targets').scrollIntoView({behavior:'smooth', block:'start'}); });
+
+// Estimate from body stats: Mifflin-St Jeor x activity, then protein per kg, fat as a share of calories, carbs = the rest.
+const BODY_DEF = {sex:'m', act:'1.375', goal:'-275', pk:'1.8', fat:'25'};
+function calcTargets(){
+  const b = {...BODY_DEF, ...S.body}, w = +b.w, h = +b.h, a = +b.age;
+  if (!(w > 30 && h > 100 && a > 10)) return null;
+  const bmr = 10*w + 6.25*h - 5*a + (b.sex === 'f' ? -161 : 5);
+  const tdee = bmr * (+b.act || 1.375), cal = Math.max(b.sex === 'f' ? 1200 : 1500, Math.round((tdee + (+b.goal || 0)) / 50) * 50);
+  const p = Math.round(w * (+b.pk || 1.8)), f = Math.round(cal * (+b.fat || 25) / 100 / 9), c = Math.max(0, Math.round((cal - p*4 - f*9) / 4));
+  return {tdee:Math.round(tdee / 10) * 10, cal, p, f, c};
+}
+function renderCalc(){
+  const b = {...BODY_DEF, ...S.body};
+  [['bSex','sex'],['bAge','age'],['bH','h'],['bW','w'],['bAct','act'],['bGoal','goal'],['bPk','pk'],['bFat','fat']].forEach(([id, k]) => { if (document.activeElement !== $('#'+id)) $('#'+id).value = b[k] ?? ''; });
+  const r = calcTargets();
+  $('#calcUse').disabled = !r;
+  $('#calcOut').innerHTML = r ? `You burn about <b>${fmt(r.tdee)}</b> Cal a day. Suggested: <b>${fmt(r.cal)}</b> Cal · protein <b>${r.p}g</b> · carbs <b>${r.c}g</b> · fat <b>${r.f}g</b>.`
+    : 'Enter your age, height and weight to get an estimate.';
+}
+$('#calcBox').addEventListener('input', e => { const k = e.target.dataset.b; if (!k) return; S.body[k] = e.target.value; e.stopPropagation(); save(); renderCalc(); });
+$('#calcBox').addEventListener('change', e => { const k = e.target.dataset.b; if (k) { S.body[k] = e.target.value; save(); renderCalc(); } });
+$('#calcUse').addEventListener('click', () => {
+  const r = calcTargets(); if (!r) return;
+  Object.assign(S.goals, {cal:r.cal, p:r.p, c:r.c, f:r.f});
+  S.goals.dir.c = 'max'; S.goals.dir.f = 'max';
+  save(); renderGoalForm(); renderToday(); renderTray(); toast(`Targets set for ${S.goalSets.find(x => x.id === S.goalSet).name}`);
+});
+
 $('#logList').addEventListener('click', e => { const b = e.target.closest('[data-ldel]'); if (b) { S.log[dayKey()] = (S.log[dayKey()] || []).filter(m => m.id !== b.dataset.ldel); save(); renderToday(); renderTray(); } });
+$('#qNut').innerHTML = [['sugar','Sugars','g'],['fibre','Fibre','g'],['sat','Sat fat','g'],['sodium','Sodium','mg']].map(([k, l, u]) => `<div class="field"><label for="qn_${k}">${l} ${u}</label><input id="qn_${k}" data-qn="${k}" type="number" min="0" step="any"></div>`).join('');
 $('#quickLog').addEventListener('submit', e => {
   e.preventDefault();
-  (S.log[dayKey()] ||= []).push({id:uid(), name:$('#qName').value.trim(), cal:num($('#qCal').value) || 0, p:num($('#qP').value) || 0, c:num($('#qC').value) || 0, f:num($('#qF').value) || 0, at:Date.now()});
+  const nut = {}; document.querySelectorAll('[data-qn]').forEach(i => { const v = num(i.value); if (v != null) nut[i.dataset.qn] = v; });
+  (S.log[dayKey()] ||= []).push({id:uid(), name:$('#qName').value.trim(), cal:num($('#qCal').value) || 0, p:num($('#qP').value) || 0, c:num($('#qC').value) || 0, f:num($('#qF').value) || 0, nut, at:Date.now()});
   save(); e.target.reset(); renderToday(); renderTray(); toast('Logged');
 });
 $('#useLeft').addEventListener('click', () => {
-  const t = todayTotals();
-  $('#fCal').value = Math.max(0, Math.round(S.goals.cal - t.cal));
-  $('#fP').value = Math.max(0, Math.round(S.goals.p - t.p));
+  const t = todayTotals(), g = S.goals;
+  $('#fCal').value = Math.max(0, Math.round(g.cal - t.cal));
+  $('#fP').value = Math.max(0, Math.round(g.p - t.p));
+  // Carb and fat limits carry over as the search's caps.
+  let caps = 0;
+  [['c','#fC'],['f','#fF']].forEach(([k, id]) => { if (g[k] != null && goalDir(k) === 'max') { $(id).value = Math.max(0, Math.round(g[k] - t[k])); caps++; } });
+  if (caps) $('#fMore').open = true;
   showTab('find'); runFind(); $('#panel-find').scrollIntoView({behavior:'smooth', block:'start'});
 });
 
@@ -1931,9 +2179,16 @@ function renderAll(){
   renderFindChips(); renderBestChips(); runFind(); renderBest(); renderMine(); renderToday(); renderTray();
 }
 $('#chainLinks').innerHTML = CHAINS.filter(c => c.url).map(c => `<li><a href="${c.url}" target="_blank" rel="noopener">${esc(c.name)}</a>: ${esc(c.src)}${c.alt ? ` (<a href="${c.alt}" target="_blank" rel="noopener">gygcalories.com</a>)` : ''}. <span class="muted">Prices: ${esc(c.psrc || '')}.</span></li>`).join('');
+if (S.goals.mealCal) $('#fCal').value = S.goals.mealCal;
+if (S.goals.mealP != null) $('#fP').value = S.goals.mealP;
+if (!phone.matches) $('#fMore').open = true; // phones keep the limits folded away
 resetRecForm();
 resetOrdForm();
 foodPreview();
+renderGoalForm();
+renderCalc();
 renderAll();
-try { const t = sessionStorage.getItem('dtm.tab'); if (t) showTab(t); } catch {}
+let startTab = 'find';
+try { startTab = sessionStorage.getItem('dtm.tab') || 'find'; } catch {}
+showTab(startTab);
 </script>
