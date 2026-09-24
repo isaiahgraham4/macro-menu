@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-AU" data-standalone data-version="965cd343de">
+<html lang="en-AU" data-standalone data-version="916dcb3a6a">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -209,23 +209,20 @@ button{cursor:pointer}
 .orow{display:grid;grid-template-columns:minmax(0,2fr) minmax(64px,1fr) 70px 32px;gap:6px;align-items:center}
 .orow input,.orow select{padding:7px 8px;border:1px solid var(--line);border-radius:6px;background:var(--surface);width:100%;min-width:0;font-size:14px}
 .orow .x{border:0;background:none;color:var(--ink-3);font-size:18px}
-.ord-row{display:grid;grid-template-columns:92px minmax(0,1fr) 84px 32px;gap:6px;align-items:center}
-.ord-row.own{grid-template-columns:92px minmax(0,1.6fr) repeat(4,minmax(52px,.6fr)) 32px}
-.ord-row input,.ord-row select{padding:7px 8px;border:1px solid var(--line);border-radius:6px;background:var(--surface);width:100%;min-width:0;font-size:14px}
-.ord-row .x{border:0;background:none;color:var(--ink-3);font-size:18px}
-.ord-scroll .ing{gap:8px}
-@media (max-width:640px){
-  .ord-row{grid-template-columns:minmax(0,1fr) 80px 32px;padding-bottom:8px;border-bottom:1px solid var(--line)}
-  .ord-row > :nth-child(1){grid-column:1;grid-row:1}
-  .ord-row > :nth-child(2){grid-column:1 / -1;grid-row:2}
-  .ord-row > [data-k="qty"]{grid-column:2;grid-row:1}
-  .ord-row > .x{grid-column:3;grid-row:1}
-  .ord-row.own{grid-template-columns:repeat(4,minmax(0,1fr))}
-  .ord-row.own > :nth-child(1){grid-column:1 / 4}
-  .ord-row.own > .x{grid-column:4;justify-self:end}
-  .ord-row.own > :nth-child(2){grid-column:1 / -1}
-  .ord-row.own > [data-k="cal"],.ord-row.own > [data-k="p"],.ord-row.own > [data-k="c"],.ord-row.own > [data-k="f"]{grid-row:3;grid-column:auto}
-}
+.ord-list{list-style:none;margin:0;padding:0;display:grid;border-top:1px solid var(--line)}
+.ord-list:empty{display:none}
+.ord-list > li{display:grid;grid-template-columns:22px minmax(0,1fr) auto 32px;gap:4px 8px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
+.ord-list .sg{font-family:var(--mono);font-weight:700;text-align:center;color:var(--ok)}
+.ord-list .sg.neg{color:var(--bad)}.ord-list .sg.sw{color:var(--p)}
+.ord-list .nm{font-weight:600;font-size:14px}
+.ord-list .nm small{display:block;font-weight:500;color:var(--ink-3);font-size:12px;font-family:var(--mono)}
+.ord-list .x{border:0;background:none;color:var(--ink-3);font-size:20px;width:32px;height:32px}
+.ord-list li.own{grid-template-columns:repeat(4,minmax(0,1fr)) 32px}
+.ord-list li.own > .own-top{grid-column:1 / 5;display:grid;grid-template-columns:96px minmax(0,1fr);gap:6px}
+.ord-list li.own input,.ord-list li.own select{padding:7px 8px;border:1px solid var(--line);border-radius:6px;background:var(--surface);width:100%;min-width:0;font-size:14px}
+.ord-list li.own .x{grid-column:5;grid-row:1}
+.ord-list li.own .own-num{grid-row:2}
+@media (max-width:640px){#ordForm .fields{grid-template-columns:minmax(0,1fr)}#ordForm .fields .field{grid-column:auto!important}}
 .tag.alt{color:var(--p)}
 .scan{display:grid;grid-template-columns:120px minmax(0,1fr);gap:12px;align-items:start}
 .scan img{width:120px;max-height:160px;object-fit:cover;border-radius:8px;border:1px solid var(--line)}
@@ -453,16 +450,19 @@ button{cursor:pointer}
         <div class="section">
           <h3 id="ordTitle">Build a custom order</h3>
           <form class="box" id="ordForm">
-            <p class="note" style="margin:0">Start from a menu item, then add extras (like extra chicken), take things off, or add your own adjustment. It's saved under that place, so <b>Find a meal</b> and <b>Best picks</b> can suggest it.</p>
+            <p class="note" style="margin:0">Pick the menu item, then add extras, swap or take things off. The lists only show changes that item allows. It's saved under that place, so <b>Find a meal</b> and <b>Best picks</b> can suggest it.</p>
             <div class="fields">
               <div class="field"><label for="oPlace">Place</label><select id="oPlace"></select></div>
-              <div class="field" style="grid-column:span 2"><label for="oBase">Start from</label><select id="oBase"></select></div>
+              <div class="field" style="grid-column:span 2"><label for="oBase">Menu item</label><select id="oBase"></select></div>
             </div>
-            <div class="ord-scroll"><div class="ing" id="oRows"></div></div>
-            <div class="row-gap">
-              <button type="button" class="btn sm" id="oAddItem">+ Menu item or extra</button>
-              <button type="button" class="btn sm" id="oAddOwn">+ My own adjustment</button>
+            <div class="fields" id="oPick">
+              <div class="field" id="oAddF"><label for="oAdd">Add</label><select id="oAdd"></select></div>
+              <div class="field" id="oSwapF"><label for="oSwap">Swap</label><select id="oSwap"></select></div>
+              <div class="field" id="oRemF"><label for="oRem">Take off</label><select id="oRem"></select></div>
             </div>
+            <p class="note" id="oPickNote" style="margin:0" hidden></p>
+            <ul class="ord-list" id="oRows"></ul>
+            <div class="row-gap"><button type="button" class="btn sm" id="oAddOwn">+ My own adjustment</button><span class="note">For anything not listed, in your own numbers.</span></div>
             <div class="field"><label for="oName">Name</label><input id="oName" placeholder="Leave blank to name it automatically"></div>
             <div class="fit" id="oTotals"></div>
             <div class="row-gap"><button class="btn primary" type="submit" id="oSave">Save custom order</button><button class="btn ghost" type="button" id="oCancel" hidden>Cancel edit</button></div>
@@ -839,13 +839,13 @@ const MENU = {
     ["Ground Beef Quesadilla", "main", 2030, 24.0, 35.1, 27.4, "160 g, mild", {"sat": 15.9, "sugar": 2.6, "fibre": 1.5, "sodium": 822.0}, 9.3, 1],
     ["Pulled Pork Quesadilla", "main", 1890, 26.7, 33.4, 23.1, "160 g, mild", {"sat": 13.5, "sugar": 2.0, "fibre": 1.0, "sodium": 862.0}, 9.3, 1],
     ["Pulled Shiitake Mushroom Quesadilla", "main", 2180, 21.8, 35.6, 31.2, "160 g, mild", {"sat": 17.5, "sugar": 2.2, "fibre": 5.9, "sodium": 1040.0}, 9.3, 1],
-    ["Sautéed Vegetables with Guacamoleamole Quesadilla", "main", 1990, 17.6, 36.6, 28.2, "195 g, mild", {"sat": 14.1, "sugar": 4.4, "fibre": 2.7, "sodium": 810.0}, 9.3, 1],
+    ["Sautéed Vegetables with Guacamole Quesadilla", "main", 1990, 17.6, 36.6, 28.2, "195 g, mild", {"sat": 14.1, "sugar": 4.4, "fibre": 2.7, "sodium": 810.0}, 9.3, 1],
     ["Shredded Beef Brisket Quesadilla", "main", 1980, 29.9, 33.5, 24.3, "160 g, mild", {"sat": 13.9, "sugar": 2.1, "fibre": 1.0, "sodium": 814.0}, 10.3, 1],
     ["Grilled Chicken Quesadilla Plus", "main", 2250, 31.0, 35.0, 30.1, "241 g, mild", {"sat": 15.2, "sugar": 3.6, "fibre": 2.0, "sodium": 1020.0}, 11.4, 1],
     ["Ground Beef Quesadilla Plus", "main", 2370, 25.2, 36.5, 35.1, "241 g, mild", {"sat": 18.0, "sugar": 3.9, "fibre": 2.4, "sodium": 1020.0}, 11.4, 1],
     ["Pulled Pork Quesadilla Plus", "main", 2220, 27.9, 34.7, 30.8, "241 g, mild", {"sat": 15.7, "sugar": 3.3, "fibre": 2.0, "sodium": 1060.0}, 11.4, 1],
     ["Pulled Shiitake Mushroom Quesadilla Plus", "main", 2520, 23.0, 36.9, 39.0, "241 g, mild", {"sat": 19.7, "sugar": 3.5, "fibre": 6.9, "sodium": 1240.0}, 11.4, 1],
-    ["Sautéed Vegetables with Guacamoleamole Quesadilla Plus", "main", 2580, 31.7, 35.1, 38.6, "276 g, mild", {"sat": 17.5, "sugar": 3.6, "fibre": 2.5, "sodium": 1110.0}, 11.4, 1],
+    ["Sautéed Vegetables with Guacamole Quesadilla Plus", "main", 2580, 31.7, 35.1, 38.6, "276 g, mild", {"sat": 17.5, "sugar": 3.6, "fibre": 2.5, "sodium": 1110.0}, 11.4, 1],
     ["Shredded Beef Brisket Quesadilla Plus", "main", 2320, 31.1, 34.8, 32.0, "241 g, mild", {"sat": 16.1, "sugar": 3.4, "fibre": 2.0, "sodium": 1010.0}, 12.4, 1],
     ["Crispy Chicken Tenders Caesar Salad", "main", 2760, 26.4, 27.7, 48.8, "305 g, mild", {"sat": 9.4, "sugar": 3.5, "fibre": 4.7, "sodium": 1230.0}, 15.0, 1],
     ["Grilled Chicken Caesar Salad", "main", 2420, 37.5, 15.1, 40.6, "305 g, mild", {"sat": 9.2, "sugar": 3.7, "fibre": 3.3, "sodium": 822.0}, 15.0, 1],
@@ -855,13 +855,13 @@ const MENU = {
     ["Ground Beef Soft Taco (1)", "main", 897, 11.2, 16.7, 11.1, "118 g, mild", {"sat": 5.9, "sugar": 2.2, "fibre": 1.4, "sodium": 470.0}, 5.8, 1],
     ["Pulled Pork Soft Taco (1)", "main", 781, 13.3, 15.3, 7.7, "118 g, mild", {"sat": 4.0, "sugar": 1.7, "fibre": 1.0, "sodium": 502.0}, 5.8, 1],
     ["Pulled Shiitake Mushroom Soft Taco (1)", "main", 1180, 6.9, 18.2, 19.7, "118 g, mild", {"sat": 6.2, "sugar": 3.9, "fibre": 3.0, "sodium": 574.0}, 5.8, 1],
-    ["Sautéed Vegetables with Guacamoleamole Soft Taco (1)", "main", 1020, 9.4, 17.1, 14.2, "188 g, mild", {"sat": 7.2, "sugar": 1.9, "fibre": 5.0, "sodium": 646.0}, 5.8, 1],
+    ["Sautéed Vegetables with Guacamole Soft Taco (1)", "main", 1020, 9.4, 17.1, 14.2, "188 g, mild", {"sat": 7.2, "sugar": 1.9, "fibre": 5.0, "sodium": 646.0}, 5.8, 1],
     ["Shredded Beef Brisket Soft Taco (1)", "main", 860, 15.9, 15.4, 8.6, "118 g, mild", {"sat": 4.3, "sugar": 1.8, "fibre": 1.0, "sodium": 463.0}, 6.8, 1],
     ["Grilled Chicken Hard Taco (1)", "main", 777, 14.8, 13.2, 7.7, "109 g, mild", {"sat": 2.7, "sugar": 1.7, "fibre": 1.7, "sodium": 987.0}, 5.8, 1],
     ["Ground Beef Hard Taco (1)", "main", 869, 10.2, 14.4, 11.7, "109 g, mild", {"sat": 5.0, "sugar": 2.0, "fibre": 2.0, "sodium": 985.0}, 5.8, 1],
     ["Pulled Pork Hard Taco (1)", "main", 753, 12.3, 13.0, 8.3, "109 g, mild", {"sat": 3.1, "sugar": 1.5, "fibre": 1.7, "sodium": 1020.0}, 5.8, 1],
     ["Pulled Shiitake Mushroom Hard Taco (1)", "main", 988, 8.4, 14.8, 14.8, "109 g, mild", {"sat": 6.3, "sugar": 1.7, "fibre": 5.6, "sodium": 1160.0}, 5.8, 1],
-    ["Sautéed Vegetables with Guacamoleamole Hard Taco (1)", "main", 1150, 5.8, 15.8, 20.3, "179 g, mild", {"sat": 5.3, "sugar": 3.7, "fibre": 3.6, "sodium": 1090.0}, 5.8, 1],
+    ["Sautéed Vegetables with Guacamole Hard Taco (1)", "main", 1150, 5.8, 15.8, 20.3, "179 g, mild", {"sat": 5.3, "sugar": 3.7, "fibre": 3.6, "sodium": 1090.0}, 5.8, 1],
     ["Shredded Beef Brisket Hard Taco (1)", "main", 832, 14.9, 13.1, 9.2, "109 g, mild", {"sat": 3.4, "sugar": 1.6, "fibre": 1.7, "sodium": 978.0}, 6.8, 1],
     ["$3 Taco (mild ground beef)", "main", 675, 7.3, 12.6, 8.7, "74 g", {"sat": 3.3, "sugar": 1.1, "fibre": 1.6, "sodium": 798.0}, 3.0, 1],
     ["$3 Taco (spicy ground beef)", "main", 707, 7.4, 13.6, 9.1, "81 g", {"sat": 3.5, "sugar": 1.4, "fibre": 1.7, "sodium": 876.0}, 3.0, 1],
@@ -907,7 +907,7 @@ const MENU = {
     ["Extra Pulled Pork", "extra", 984, 25.5, 0.8, 14.5, "100 g · regular burrito/bowl/salad", {"sat": 5.0, "sugar": 0.8, "fibre": 0.0, "sodium": 311.0}],
     ["Extra Pulled Shiitake Mushroom", "extra", 1130, 11.2, 4.5, 21.2, "100 g · regular burrito/bowl/salad", {"sat": 9.9, "sugar": 0.6, "fibre": 9.8, "sodium": 762.0}],
     ["Extra Sautéed Vegetables", "extra", 223, 1.7, 6.0, 2.0, "100 g · regular burrito/bowl/salad", {"sat": 0.2, "sugar": 4.4, "fibre": 2.3, "sodium": 109.0}],
-    ["Extra Sautéed Vegetables with Guacamoleamole", "extra", 749, 2.9, 6.5, 15.2, "170 g", {"sat": 3.1, "sugar": 4.9, "fibre": 3.3, "sodium": 298.0}],
+    ["Extra Sautéed Vegetables with Guacamole", "extra", 749, 2.9, 6.5, 15.2, "170 g", {"sat": 3.1, "sugar": 4.9, "fibre": 3.3, "sodium": 298.0}],
     ["Extra Shredded Beef Brisket", "extra", 741, 27.4, 0.3, 7.3, "100 g · regular burrito/bowl/salad", {"sat": 2.7, "sugar": 0.3, "fibre": 0.0, "sodium": 305.0}],
     ["Extra Crispy Chicken Tenders (2)", "extra", 944, 16.2, 13.4, 11.8, "100 g · regular burrito/bowl/salad", {"sat": 1.2, "sugar": 0.6, "fibre": 1.4, "sodium": 730.0}],
     ["Extra Pickled Jalapeños", "extra", 18, 0.05, 0.7, 0.05, "18 g", {"sat": 0.05, "sugar": 0.4, "fibre": 0.3, "sodium": 246.0}],
@@ -969,49 +969,49 @@ const MENU = {
     ["Little G's Ground Beef Burrito", "main", 1850, 19.0, 47.5, 19.1, "175 g, mild", {"sat": 10.1, "sugar": 2.5, "fibre": 1.5, "sodium": 772.0}, 6.5, 1],
     ["Little G's Pulled Pork Burrito", "main", 1700, 21.7, 45.8, 14.8, "175 g, mild", {"sat": 7.7, "sugar": 1.8, "fibre": 1.0, "sodium": 812.0}, 6.5, 1],
     ["Little G's Pulled Shiitake Mushroom Burrito", "main", 2000, 16.8, 48.0, 23.0, "175 g, mild", {"sat": 11.7, "sugar": 2.1, "fibre": 5.9, "sodium": 993.0}, 6.5, 1],
-    ["Little G's Sautéed Vegetables with Guacamoleamole Burrito", "main", 1810, 12.6, 49.0, 20.0, "210 g, mild", {"sat": 8.3, "sugar": 4.2, "fibre": 2.7, "sodium": 761.0}, 6.5, 1],
+    ["Little G's Sautéed Vegetables with Guacamole Burrito", "main", 1810, 12.6, 49.0, 20.0, "210 g, mild", {"sat": 8.3, "sugar": 4.2, "fibre": 2.7, "sodium": 761.0}, 6.5, 1],
     ["Little G's Shredded Beef Brisket Burrito", "main", 1800, 24.9, 45.9, 16.0, "175 g, mild", {"sat": 8.1, "sugar": 1.9, "fibre": 1.0, "sodium": 764.0}, 6.5, 1],
     ["Little G's Grilled Chicken Bowl", "main", 1810, 23.1, 41.9, 18.9, "214 g, mild", {"sat": 6.4, "sugar": 0.9, "fibre": 1.0, "sodium": 771.0}, 6.5, 1],
     ["Little G's Ground Beef Bowl", "main", 1930, 17.3, 43.3, 23.9, "214 g, mild", {"sat": 9.2, "sugar": 1.3, "fibre": 1.4, "sodium": 768.0}, 6.5, 1],
     ["Little G's Pulled Pork Bowl", "main", 1780, 20.0, 41.6, 19.6, "214 g, mild", {"sat": 6.9, "sugar": 0.6, "fibre": 1.0, "sodium": 808.0}, 6.5, 1],
     ["Little G's Pulled Shiitake Mushroom Bowl", "main", 2080, 15.1, 43.8, 27.7, "214 g, mild", {"sat": 10.9, "sugar": 0.9, "fibre": 5.9, "sodium": 989.0}, 6.5, 1],
-    ["Little G's Sautéed Vegetables with Guacamoleamole Bowl", "main", 1620, 10.4, 44.5, 18.1, "214 g, mild", {"sat": 6.0, "sugar": 2.8, "fibre": 2.1, "sodium": 662.0}, 6.5, 1],
+    ["Little G's Sautéed Vegetables with Guacamole Bowl", "main", 1620, 10.4, 44.5, 18.1, "214 g, mild", {"sat": 6.0, "sugar": 2.8, "fibre": 2.1, "sodium": 662.0}, 6.5, 1],
     ["Little G's Shredded Beef Brisket Bowl", "main", 1880, 23.2, 41.7, 20.8, "214 g, mild", {"sat": 7.3, "sugar": 0.7, "fibre": 1.0, "sodium": 760.0}, 6.5, 1],
     ["Little G's Cheese Nachos", "main", 1420, 8.0, 30.3, 20.3, "70 g", {"sat": 5.2, "sugar": 0.8, "fibre": 2.7, "sodium": 278.0}, 6.5, 1],
     ["Little G's Grilled Chicken Nachos", "main", 1720, 21.6, 30.6, 22.0, "120 g, mild", {"sat": 5.7, "sugar": 1.2, "fibre": 2.7, "sodium": 441.0}, 6.5, 1],
     ["Little G's Ground Beef Nachos", "main", 1840, 15.8, 32.0, 27.0, "120 g, mild", {"sat": 8.5, "sugar": 1.5, "fibre": 3.2, "sodium": 439.0}, 6.5, 1],
     ["Little G's Pulled Pork Nachos", "main", 1690, 18.5, 30.3, 22.7, "120 g, mild", {"sat": 6.2, "sugar": 0.9, "fibre": 2.7, "sodium": 479.0}, 6.5, 1],
     ["Little G's Pulled Shiitake Mushroom Nachos", "main", 1990, 13.6, 32.5, 30.9, "120 g, mild", {"sat": 10.1, "sugar": 1.1, "fibre": 7.6, "sodium": 659.0}, 6.5, 1],
-    ["Little G's Sautéed Vegetables with Guacamoleamole Nachos", "main", 1800, 9.4, 33.5, 27.9, "155 g, mild", {"sat": 6.7, "sugar": 3.3, "fibre": 4.4, "sodium": 427.0}, 6.5, 1],
+    ["Little G's Sautéed Vegetables with Guacamole Nachos", "main", 1800, 9.4, 33.5, 27.9, "155 g, mild", {"sat": 6.7, "sugar": 3.3, "fibre": 4.4, "sodium": 427.0}, 6.5, 1],
     ["Little G's Shredded Beef Brisket Nachos", "main", 1790, 21.7, 30.4, 23.9, "120 g, mild", {"sat": 6.6, "sugar": 1.0, "fibre": 2.7, "sodium": 431.0}, 6.5, 1],
     ["Little G's Apple", "side", 290, 0.4, 14.9, 0.2, "120 g", {"sat": 0.0, "sugar": 14.4, "fibre": 2.8, "sodium": 1.0}],
     ["Little G's Fries with Chipotle Seasoning", "side", 750, 2.6, 20.3, 9.2, "60 g", {"sat": 0.8, "sugar": 0.4, "fibre": 2.1, "sodium": 237.0}],
     ["Little G's Fries with Plain Salt", "side", 750, 2.6, 20.3, 9.2, "60 g", {"sat": 0.8, "sugar": 0.4, "fibre": 2.1, "sodium": 307.0}],
     ["Brekkie Burrito with Bacon", "breakfast", 2460, 25.3, 45.2, 33.3, "240 g, mild", {"sat": 12.1, "sugar": 2.7, "fibre": 3.2, "sodium": 1340.0}, 8.8, 1],
     ["Brekkie Burrito with Free Range Chicken Chorizo", "breakfast", 2420, 22.7, 44.7, 33.7, "240 g, mild", {"sat": 12.0, "sugar": 2.5, "fibre": 3.2, "sodium": 1200.0}, 8.8, 1],
-    ["Brekkie Burrito with Sautéed Vegetables with Guacamoleamole", "breakfast", 2470, 19.3, 46.6, 35.6, "275 g, mild", {"sat": 11.7, "sugar": 3.9, "fibre": 4.4, "sodium": 1080.0}, 8.8, 1],
+    ["Brekkie Burrito with Sautéed Vegetables with Guacamole", "breakfast", 2470, 19.3, 46.6, 35.6, "275 g, mild", {"sat": 11.7, "sugar": 3.9, "fibre": 4.4, "sodium": 1080.0}, 8.8, 1],
     ["Brekkie Burrito with Pulled Shiitake Mushroom", "breakfast", 2480, 21.6, 45.9, 34.7, "240 g, mild", {"sat": 13.2, "sugar": 2.6, "fibre": 6.1, "sodium": 1180.0}, 8.8, 1],
     ["Big Brekkie Burrito with Bacon", "breakfast", 4080, 40.2, 74.7, 56.2, "405 g, mild", {"sat": 19.2, "sugar": 4.4, "fibre": 5.8, "sodium": 2280.0}, 12.5, 1],
     ["Big Brekkie Burrito with Free Range Chicken Chorizo", "breakfast", 4010, 35.8, 73.9, 56.8, "405 g, mild", {"sat": 18.9, "sugar": 4.1, "fibre": 5.8, "sodium": 2040.0}, 12.5, 1],
-    ["Big Brekkie Burrito with Sautéed Vegetables with Guacamoleamole", "breakfast", 3930, 29.8, 76.9, 55.6, "440 g, mild", {"sat": 17.5, "sugar": 6.3, "fibre": 7.5, "sodium": 1770.0}, 12.5, 1],
+    ["Big Brekkie Burrito with Sautéed Vegetables with Guacamole", "breakfast", 3930, 29.8, 76.9, 55.6, "440 g, mild", {"sat": 17.5, "sugar": 6.3, "fibre": 7.5, "sodium": 1770.0}, 12.5, 1],
     ["Big Brekkie Burrito with Pulled Shiitake Mushroom", "breakfast", 4120, 33.9, 75.9, 58.6, "405 g, mild", {"sat": 20.9, "sugar": 4.2, "fibre": 10.7, "sodium": 2000.0}, 12.5, 1],
     ["Brekkie Bowl with Bacon", "breakfast", 1790, 30.8, 10.5, 29.1, "219 g, mild", {"sat": 11.9, "sugar": 1.7, "fibre": 1.0, "sodium": 1130.0}, 10.5, 1],
     ["Brekkie Bowl with Free Range Chicken Chorizo", "breakfast", 1720, 26.4, 9.7, 29.7, "219 g, mild", {"sat": 11.6, "sugar": 1.4, "fibre": 1.0, "sodium": 894.0}, 10.5, 1],
-    ["Brekkie Bowl with Sautéed Vegetables with Guacamoleamole", "breakfast", 1640, 20.4, 12.7, 28.5, "254 g, mild", {"sat": 10.2, "sugar": 3.6, "fibre": 2.6, "sodium": 623.0}, 10.5, 1],
+    ["Brekkie Bowl with Sautéed Vegetables with Guacamole", "breakfast", 1640, 20.4, 12.7, 28.5, "254 g, mild", {"sat": 10.2, "sugar": 3.6, "fibre": 2.6, "sodium": 623.0}, 10.5, 1],
     ["Brekkie Bowl with Pulled Shiitake Mushroom", "breakfast", 1830, 24.5, 11.7, 31.5, "219 g, mild", {"sat": 13.6, "sugar": 1.5, "fibre": 5.9, "sodium": 855.0}, 10.5, 1],
     ["Toast with avocado", "breakfast", 906, 5.1, 27.5, 9.4, "90 g", {"sat": 1.9, "sugar": 2.0, "fibre": 0.5, "sodium": 337.0}, 4.9, 1],
     ["Toast with guacamole", "breakfast", 865, 5.1, 27.6, 8.3, "90 g", {"sat": 1.7, "sugar": 2.1, "fibre": 0.5, "sodium": 340.0}, 4.9, 1],
     ["Brekkie Quesadilla Plus with Bacon", "breakfast", 2480, 29.3, 35.7, 36.6, "241 g, mild", {"sat": 17.9, "sugar": 3.7, "fibre": 2.0, "sodium": 1510.0}],
     ["Brekkie Quesadilla Plus with Free Range Chicken Chorizo", "breakfast", 2410, 24.8, 34.9, 37.2, "241 g, mild", {"sat": 17.7, "sugar": 3.5, "fibre": 2.0, "sodium": 1280.0}],
-    ["Brekkie Quesadilla Plus with Sautéed Vegetables with Guacamoleamole", "breakfast", 2330, 18.8, 37.9, 36.0, "276 g, mild", {"sat": 16.3, "sugar": 5.7, "fibre": 3.6, "sodium": 1010.0}],
+    ["Brekkie Quesadilla Plus with Sautéed Vegetables with Guacamole", "breakfast", 2330, 18.8, 37.9, 36.0, "276 g, mild", {"sat": 16.3, "sugar": 5.7, "fibre": 3.6, "sodium": 1010.0}],
     ["Brekkie Quesadilla Plus with Pulled Shiitake Mushroom", "breakfast", 2520, 23.0, 36.9, 39.0, "241 g, mild", {"sat": 19.7, "sugar": 3.5, "fibre": 6.9, "sodium": 1240.0}],
     ["Brekkie Taco with Bacon", "breakfast", 816, 11.0, 15.4, 9.8, "86 g, mild", {"sat": 4.4, "sugar": 1.8, "fibre": 0.6, "sodium": 542.0}],
     ["Brekkie Taco with Free Range Chicken Chorizo", "breakfast", 789, 9.2, 15.1, 10.0, "86 g, mild", {"sat": 4.3, "sugar": 1.7, "fibre": 0.6, "sodium": 448.0}],
-    ["Brekkie Taco with Sautéed Vegetables with Guacamoleamole", "breakfast", 1340, 8.2, 16.8, 24.3, "178 g, mild", {"sat": 7.0, "sugar": 3.1, "fibre": 2.4, "sodium": 551.0}],
+    ["Brekkie Taco with Sautéed Vegetables with Guacamole", "breakfast", 1340, 8.2, 16.8, 24.3, "178 g, mild", {"sat": 7.0, "sugar": 3.1, "fibre": 2.4, "sodium": 551.0}],
     ["Brekkie Taco with Pulled Shiitake Mushroom", "breakfast", 832, 8.5, 15.9, 10.8, "86 g, mild", {"sat": 5.1, "sugar": 1.7, "fibre": 2.6, "sodium": 433.0}],
     ["Brekkie Quesadilla with Bacon", "breakfast", 2140, 28.1, 34.4, 28.9, "160 g, mild", {"sat": 15.8, "sugar": 2.4, "fibre": 1.0, "sodium": 1320.0}],
     ["Brekkie Quesadilla with Free Range Chicken Chorizo", "breakfast", 2070, 23.6, 33.6, 29.4, "160 g, mild", {"sat": 15.5, "sugar": 2.2, "fibre": 1.0, "sodium": 1080.0}],
-    ["Brekkie Quesadilla with Sautéed Vegetables with Guacamoleamole", "breakfast", 1990, 17.6, 36.6, 28.2, "195 g, mild", {"sat": 14.1, "sugar": 4.4, "fibre": 2.7, "sodium": 810.0}],
+    ["Brekkie Quesadilla with Sautéed Vegetables with Guacamole", "breakfast", 1990, 17.6, 36.6, 28.2, "195 g, mild", {"sat": 14.1, "sugar": 4.4, "fibre": 2.7, "sodium": 810.0}],
     ["Brekkie Quesadilla with Pulled Shiitake Mushroom", "breakfast", 2180, 21.8, 35.6, 31.2, "160 g, mild", {"sat": 17.5, "sugar": 2.2, "fibre": 5.9, "sodium": 1040.0}],
     ["Brekkie Extra: Bacon", "extra", 315, 7.1, 0.6, 5.0, "30 g", {"sat": 1.9, "sugar": 0.3, "fibre": 0.0, "sodium": 393.0}],
     ["Brekkie Extra: Free Range Chicken Chorizo", "extra", 274, 4.5, 0.2, 5.3, "30 g", {"sat": 1.8, "sugar": 0.2, "fibre": 0.0, "sodium": 252.0}],
@@ -1075,7 +1075,7 @@ const MENU = {
     ["Mini Extra: Pulled Pork", "extra", 272, 10.5, 0.05, 2.5, "50 g", {"sat": 1.0, "sugar": 0.05, "fibre": 0.0, "sodium": 201.0}],
     ["Mini Extra: Pulled Shiitake Mushroom", "extra", 565, 5.6, 2.3, 10.6, "50 g", {"sat": 5.0, "sugar": 0.3, "fibre": 4.9, "sodium": 381.0}],
     ["Mini Extra: Sautéed Vegetables", "extra", 112, 0.9, 3.0, 1.0, "50 g", {"sat": 0.1, "sugar": 2.2, "fibre": 1.1, "sodium": 55.0}],
-    ["Mini Extra: Sautéed Vegetables with Guacamoleamole", "extra", 374, 1.5, 3.2, 7.6, "85 g", {"sat": 1.5, "sugar": 2.4, "fibre": 1.7, "sodium": 149.0}],
+    ["Mini Extra: Sautéed Vegetables with Guacamole", "extra", 374, 1.5, 3.2, 7.6, "85 g", {"sat": 1.5, "sugar": 2.4, "fibre": 1.7, "sodium": 149.0}],
     ["Mini Extra: Shredded Beef Brisket", "extra", 370, 13.7, 0.2, 3.7, "50 g", {"sat": 1.4, "sugar": 0.2, "fibre": 0.0, "sodium": 152.0}],
     ["Mini Extra: Crispy Chicken Tender (1)", "extra", 472, 8.1, 6.7, 5.9, "50 g", {"sat": 0.6, "sugar": 0.3, "fibre": 0.7, "sodium": 365.0}],
     ["Mini Extra: Seasoned Corn", "extra", 151, 0.9, 6.0, 0.7, "30 g", {"sat": 0.05, "sugar": 0.8, "fibre": 1.0, "sodium": 145.0}],
@@ -1314,20 +1314,79 @@ function save(){
   S.log = Object.fromEntries(keep.map(k => [k, S.log[k]]));
   try { localStorage.setItem(KEY, JSON.stringify(S)); } catch {}
 }
-const builtinById = id => BUILTIN.find(f => f.id === id);
-// A custom order = a menu item plus/minus other menu items and your own adjustments; totals are rebuilt from the menu each time.
+// Older saves may hold ids from before a menu name was corrected.
+const builtinById = id => BUILTIN.find(f => f.id === id) || BUILTIN.find(f => f.id === String(id).replace('guacamoleamole', 'guacamole'));
+// GYG build options per item type, from gygcalories.com's calculator (built on GYG's published guide).
+// o = [id, name, kJ, protein, carbs, fat, sat fat, sugars, fibre, sodium]; t[type] = {f: extra filling, a: extras, s: swaps, r: take off}, as indexes into o.
+const GYG_MODS = {"o":[["grilled-chicken","Extra Grilled Chicken",604,27.2,0.7,3.5,1,0.7,0,326],["ground-beef","Extra Ground Beef",833,15.6,3.6,13.5,6.6,1.4,0.9,321],["pulled-pork","Extra Pulled Pork",984,25.5,0.8,14.5,5,0.8,0,311],["sauteed-vegetables","Extra Sautéed Vegetables",223,1.7,6,2,0.2,4.4,2.3,109],["sauteed-vegetables-with-guacamole","Extra Sautéed Vegetables with Guacamole",749,2.9,6.5,15.2,3.1,4.9,3.3,298],["pulled-shiitake-mushroom","Extra Pulled Shiitake Mushroom",1130,11.2,4.5,21.2,9.9,0.6,9.8,762],["shredded-beef-brisket","Extra Shredded Beef Brisket",741,27.4,0.3,7.3,2.7,0.3,0,305],["guacamole","Guacamole",526,1.2,0.5,13.2,2.9,0.5,1,189],["spanish-onions","Spanish Onions",22,0.2,0.9,0,0,0.7,0.2,2],["swap-rice-for-lettuce","Swap Rice for Lettuce",-613,-3,-30.5,-1.6,-0.3,0.4,0.6,-283],["swap-rice-for-brown-rice","Swap White Rice for Brown Rice",-60,-0.5,-5.2,0.8,0.2,0.3,0.9,-27],["swap-black-beans-for-pinto-beans","Swap Black Beans for Pinto Beans",147,2.8,1,0.7,0.1,0.5,0.4,146],["shredded-lettuce","Shredded Lettuce",25,0.4,0.5,0,0,0.5,0.6,5],["fresh-coriander","Fresh Coriander",5,0.1,0,0,0,0,0.1,2],["smokey-chipotle-salsa","Smokey Chipotle Salsa",38,0.1,2,0,0,1.4,0.1,210],["brown-rice","Brown Rice",584,2.9,25.6,2.5,0.5,0.4,0.9,288],["sour-cream","Sour Cream",251,0.86,1.3,5.7,3.9,1.3,0,12],["seasoned-corn","Seasoned Corn",302,1.9,11.9,1.4,0.1,1.7,1.9,290],["herb-mayo-vg","Herb Mayo (VG)",1200,0.6,0.8,31.6,2.2,0.6,0,207],["queso-plain","Queso Plain",405,5.9,1.6,7.6,5.1,0.4,0,312],["chipotle-mayo","Chipotle Mayo",780,0.5,1,20.4,1.5,0.8,0,178],["pickled-jalapenos","Pickled Jalapeños",18,0,0.7,0,0,0.4,0.3,246],["roasted-jalapeno-salsa","Roasted Jalapeño Salsa",10,0,0.4,0,0,0.2,0.1,73],["habanero-salsa","Habanero Salsa",26,0,1.4,0,0,1.1,0.1,134],["jalapeno-ketchup","Jalapeño Ketchup",161,0.1,8.9,0,0,6.7,0.1,384],["fresh-jalapenos","Fresh Jalapeños",27,0.3,1.4,0.1,0,0.9,0.6,3],["crushed-corn-chips-regular","Crushed Corn Chips (Regular)",326,1.1,8.5,4.3,0.4,0.2,0.8,42],["cheese","Cheese",388,4.6,0,11.1,8,null,null,null],["pico-de-gallo","Pico De Gallo",14,0.2,0.4,0.1,0,0.4,0.2,5],["white-rice","White Rice",643,3.4,31,1.7,0.25,0.1,0,288],["black-beans","Black Beans",77,0.9,3.6,0.2,0,0,1.4,2],["queso-mild","Queso Mild",419,6.2,2,7.6,5.1,0.8,0.2,362],["queso-spicy","Queso Spicy",422,6.2,2.1,7.6,5.1,0.9,0.3,362],["sweet-chipotle-bbq-sauce","Sweet Chipotle BBQ Dipping Sauce",403,0.7,22.6,0.1,0,21,0,418],["remove-cheese","No Cheese",-447,-7.2,-0.3,-9,-6.2,-0.3,0,-216],["remove-tomatillo-salsa","No Tomatillo Salsa",-66,-0.4,-2.3,-0.4,0,-1.5,-0.8,-288],["remove-black-beans","No Black Beans",-229,-2.7,-10.8,-0.6,-0.2,0,-4.2,-243],["remove-white-rice","No White Rice",-643,-3.4,-31,-1.7,-0.3,-0.1,0,-288],["remove-pico-de-gallo","No Pico de Gallo",-28,-0.4,-0.9,0,0,-0.8,-0.5,-101],["grilled-chicken","Extra Grilled Chicken",639,25.3,0.3,5.5,1.7,0.3,0,272],["crispy-chicken-tenders","Extra Crispy Chicken Tenders",1010,13.4,13.3,14.6,2.2,0.3,0.8,540],["no-caesar-dressing","No Caesar Dressing",-892,-0.8,-0.8,-23.4,-1.9,-0.4,0,-225],["half-caesar-dressing","Half Caesar Dressing",-446,-0.4,-0.4,-11.7,-1,-0.2,0,-112],["caesar-dressing-only","Extra Caesar Dressing",892,0.8,0.8,23.4,1.9,0.4,0,225],["swap-rice-for-lettuce","Swap Rice for Lettuce",-777,-3.1,-30.8,-5.0,-1.1,-0.3,-1.9,8],["swap-rice-for-brown-rice","Swap White Rice for Brown Rice",-91,-0.8,-8.1,1.2,0.3,0.5,1.4,-42],["remove-cheese","No Cheese",-419,-6.2,-2,-7.6,-5.1,-0.8,-0.2,-362],["remove-tomatillo-salsa","No Tomatillo Salsa",-165,-0.9,-5.8,-0.9,-0.1,-3.7,-2,-720],["remove-black-beans","No Black Beans",-205,-2.4,-9.6,-0.5,-0.1,0,-3.7,-5],["remove-white-rice","No White Rice",-778,-4.2,-37.3,-2.1,-0.3,-0.1,0,-382],["remove-pico-de-gallo","No Pico de Gallo",-14,-0.2,-0.4,-0.1,0,-0.4,-0.2,-5],["remove-corn-chips","No Corn Chips",-561,-1.8,-14.7,-7.4,-0.7,-0.4,-1.4,-73],["remove-fries","No Fries",-1000,-3.5,-27.1,-12.3,-1,-0.5,-2.8,-316],["remove-guacamole","No Guacamole",-526,-1.2,-0.5,-13.2,-2.9,-0.5,-1,-189],["remove-sour-cream","No Sour Cream",-161,-0.55,-0.81,-3.7,-2.5,-0.81,0,-8],["remove-fries","No Fries",-2250,-7.9,-61,-27.7,-2.3,-1.1,-6.3,-711],["remove-cheese","No Cheese",-596,-9.6,-0.4,-12,-8.3,-0.4,0,-288],["remove-pickled-jalapenos","No Pickled Jalapeños",-18,-0.1,-0.7,-0.1,-0.1,-0.4,-0.3,-246],["remove-tomatillo-salsa","No Tomatillo Salsa",-132,-0.8,-4.6,-0.8,0,-3,-1.6,-576],["remove-cheese","No Cheese",-745,-12,-0.5,-15,-10.3,-0.5,0,-360],["remove-pico-de-gallo","No Pico de Gallo",-56,-0.8,-1.8,0,0,-1.6,-1,-202],["remove-guacamole","No Guacamole",-789,-1.8,-0.8,-19.8,-4.4,-0.8,-1.5,-284],["remove-guacamole","No Guacamole",-263,-0.6,-0.3,-6.6,-1.5,-0.3,-0.5,-95],["remove-sour-cream","No Sour Cream",-80,-0.28,-0.4,-1.8,-1.2,-0.4,0,-4],["remove-lettuce","No Lettuce",-50,-0.8,-1,-0.2,0,-1,-1.2,-10],["grilled-chicken","Extra Grilled Chicken",302,13.6,0.4,1.8,0.5,0.4,0,163],["ground-beef","Extra Ground Beef",416,7.8,1.8,6.8,3.3,0.7,0.5,161],["pulled-pork","Extra Pulled Pork",272,10.5,0,2.5,1,0,0,201],["pulled-shiitake-mushroom","Extra Pulled Shiitake Mushroom",565,5.6,2.3,10.6,5,0.3,4.9,381],["sauteed-vegetables","Extra Sautéed Vegetables",112,0.9,3,1,0.1,2.2,1.1,55],["sauteed-vegetables-guac","Extra Sautéed Vegetables with Guacamole",374,1.5,3.2,7.6,1.5,2.4,1.7,149],["shredded-beef-brisket","Extra Shredded Beef Brisket",370,13.7,0.2,3.7,1.4,0.2,0,152],["swap-rice-for-brown-rice","Swap White Rice for Brown Rice",-27,-0.2,-2.4,0.3,0.1,0.2,0.4,0],["crushed-corn-chips-mini","Crushed Corn Chips (Mini/Kids)",196,0.6,5.1,2.6,0.2,0.1,0.5,25],["guacamole","Guacamole",263,0.6,0.2,6.6,1.4,0.2,0.5,95],["seasoned-corn","Seasoned Corn",151,0.9,6,0.7,0,0.8,1,145],["sour-cream","Sour Cream",126,0.43,0.63,2.9,1.9,0.63,0,6],["shredded-lettuce","Shredded Lettuce",12,0.2,0.25,0.05,null,0.25,0.3,2],["herb-mayo-vg","Herb Mayo (VG)",600,0.3,0.4,15.8,1.1,0.3,0,104],["queso-plain","Queso Plain",202,3.0,0.8,3.8,2.5,0.2,0,156],["chipotle-mayo","Chipotle Mayo",390,0.25,0.5,10.2,0.75,0.4,0,89],["pickled-jalapenos","Pickled Jalapeños",9,0.05,0.35,0.05,0.05,0.2,0.15,123],["fresh-coriander","Fresh Coriander",2,0.05,0.05,0.05,null,null,0.05,1],["spanish-onions","Spanish Onions",11,0.1,0.45,0.05,0,0.35,0.1,1],["roasted-jalapeno-salsa","Roasted Jalapeño Salsa",5,0.05,0.2,0.05,0,0.1,0.05,36],["smokey-chipotle-salsa","Smokey Chipotle Salsa",19,0.05,1,0.05,0,0.7,0.05,105],["habanero-salsa","Habanero Salsa",13,0.05,0.7,0.05,0,0.55,0.05,67],["jalapeno-ketchup","Jalapeño Ketchup",80,0.25,4.1,0.05,0.05,3.9,0.05,220],["fresh-jalapenos","Fresh Jalapeños",14,0.15,0.7,0.05,0,0.45,0.3,2],["cheese","Cheese",194,2.3,0,5.6,4,null,null,null],["pico-de-gallo","Pico De Gallo",7,0.1,0.2,0.05,0,0.2,0.1,2],["white-rice","White Rice",322,1.7,15.5,0.86,0.12,0.05,0,144],["black-beans","Black Beans",38,0.45,1.8,0.1,0.05,0,0.7,1],["queso-mild","Queso Mild",210,3.1,1,3.8,2.5,0.4,0.1,181],["queso-spicy","Queso Spicy",211,3.1,1.1,3.8,2.5,0.45,0.15,181],["brown-rice","Brown Rice",292,1.4,12.8,1.2,0.25,0.2,0.45,144],["sweet-chipotle-bbq-sauce","Sweet Chipotle BBQ Dipping Sauce",202,0.35,11.3,0.05,0.05,10.5,0,209],["remove-white-rice","No White Rice",-286,-1.5,-13.8,-0.8,-0.1,0,0,-128],["remove-black-beans","No Black Beans",-115,-1.4,-5.4,-0.3,-0.1,0,-2.1,-122],["remove-tomatillo-salsa","No Tomatillo Salsa",-33,-0.2,-1.2,-0.2,0,-0.8,-0.4,-144],["remove-cheese","No Cheese",-298,-4.8,-0.2,-6,-4.1,-0.2,0,-144],["remove-pico-de-gallo","No Pico de Gallo",-14,-0.2,-0.5,0,0,-0.4,-0.3,-51],["swap-rice-for-brown-rice","Swap White Rice for Brown Rice",-65,-0.6,-6,0.9,0.3,0.3,1,0],["remove-white-rice","No White Rice",-714,-3.8,-34.4,-1.9,-0.3,-0.1,0,-320],["remove-tomatillo-salsa","No Tomatillo Salsa",-99,-0.6,-3.5,-0.6,0,-2.3,-1.2,-432],["remove-pico-de-gallo","No Pico de Gallo",-32,-0.5,-1,0,0,-0.9,-0.6,-114],["remove-guacamole","No Guacamole",-338,-0.8,-0.3,-8.5,-1.9,-0.3,-0.6,-122],["remove-fries","No Fries",-1500,-5.3,-40.7,-18.5,-1.5,-0.7,-4.2,-474],["remove-corn-chips","No Corn Chips",-1079,-3.5,-28.3,-14.2,-1.3,-0.8,-2.7,-140],["crispy-chicken-tenders","Extra Crispy Chicken Tenders",505,6.7,6.7,7.3,1.1,0.2,0.4,270],["no-caesar-dressing","No Caesar Dressing",-446,-0.4,-0.4,-11.7,-1,-0.2,0,-112],["half-caesar-dressing","Half Caesar Dressing",-223,-0.2,-0.2,-5.9,-0.5,-0.1,0,-56],["caesar-dressing-only","Extra Caesar Dressing",446,0.4,0.4,11.7,1,0.2,0,112],["grilled-chicken","Extra Grilled Chicken",320,12.7,0.2,2.8,0.9,0.2,0,136],["remove-chipotle-mayo","No Chipotle Mayo",-260,-0.2,-0.3,-6.8,-0.5,-0.3,0,-59],["bacon","Extra Bacon",315,7.1,0.6,5,1.9,0.3,0,393],["free-range-chicken-chorizo","Extra Free Range Chicken Chorizo",274,4.5,0.2,5.3,1.8,0.2,0,252],["sauteed-vegetables-with-guacamole","Extra Sautéed Vegetables with Guacamole",67,0.5,1.8,0.6,0.1,1.3,0.7,33],["free-range-scrambled-eggs","Extra Free Range Scrambled Eggs",353,6.7,0.8,6.1,2.3,0.1,0,105],["bacon","Bacon",315,7.1,0.6,5,1.9,0.3,0,393],["free-range-chicken-chorizo","Free Range Chicken Chorizo",274,4.5,0.2,5.3,1.8,0.2,0,252],["pulled-shiitake-mushroom","Pulled Shiitake Mushroom",1130,11.2,4.5,21.2,9.9,0.6,9.8,762],["sauteed-vegetables-with-guacamole","Sautéed Vegetables with Guacamole",67,0.5,1.8,0.6,0,1.3,0.7,33],["free-range-scrambled-eggs","Free Range Scrambled Eggs",353,6.7,0.8,6.1,2.3,0,0,105],["hashbrown","Hashbrown",666,1.8,13.1,10.7,1.3,0.2,1.9,342],["toast","Toast (1 Slice)",602,4.5,27.3,1.7,0.2,1.8,0,246],["pico-de-gallo","Pico de Gallo",14,0.2,0.4,0,0,0.4,0.2,50],["remove-lettuce","No Lettuce",-17,-0.3,-0.3,-0.1,0,-0.3,-0.4,-3],["remove-cheese","No Cheese",-75,-1.2,-0.1,-1.5,-1,-0.1,0,-36],["swap-cheese-for-herb-mayo","Swap Cheese for Herb Mayo [VG]",71,-2.1,-0.9,3.3,-1.5,0,0,-29],["remove-lettuce","No Lettuce",-8,-0.1,-0.2,0,0,-0.2,-0.2,-2],["remove-cheese","No Cheese",-149,-2.4,-0.1,-3,-2.1,-0.1,0,-72]],"t":{"burrito":{"f":[0,1,2,3,4,5,6],"a":[7,8,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33],"s":[9,10,11],"r":[34,35,36,37,38]},"caesarBurrito":{"f":[39,40,5],"a":[43,7,8,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33],"s":[9,10,11],"r":[41,42]},"caesarCaliBurrito":{"f":[39,40,5],"a":[43,7,8,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33],"r":[41,42]},"caesarSalad":{"f":[39,40,5],"a":[43,7,8,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33],"r":[41,42]},"bowl":{"f":[0,1,2,3,4,5,6],"a":[7,8,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33],"s":[44,45,11],"r":[46,47,48,49,50,51]},"caliBurrito":{"f":[0,1,2,3,4,5,6],"a":[7,8,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33],"r":[52,34,38,53,54]},"nachoFries":{"f":[0,1,2,3,4,5,6],"a":[7,8,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33],"r":[55,56,54,57]},"nachos":{"f":[0,1,2,3,4,5,6],"a":[7,8,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33],"r":[55,56,54,57]},"enchiladas":{"f":[0,1,2,3,4,5,6],"a":[7,8,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33],"s":[10,11],"r":[37,36,58,59,60,61]},"quesadillas":{"f":[0,1,2,3,4,5,6],"a":[7,8,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33],"r":[59,62,63]},"quesadillasPlus":{"f":[0,1,2,3,4,5,6],"a":[7,8,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33],"r":[59,38,62,63]},"salads":{"f":[0,1,2,3,4,5,6],"a":[7,8,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33],"r":[53,64]},"miniBurrito":{"f":[65,66,67,68,69,70,71],"a":[73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96],"s":[72],"r":[97,98,99,100,101]},"miniBowl":{"f":[65,66,67,68,69,70,71],"a":[73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96],"s":[102],"r":[103,98,99,100,101,51]},"miniCaliBurrito":{"f":[65,66,67,68,69,70,71],"a":[73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96],"r":[100,101,63]},"miniEnchilada":{"f":[65,66,67,68,69,70,71],"a":[73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96],"r":[97,98,104,34,105,106]},"miniNachoFries":{"f":[65,66,67,68,69,70,71],"a":[73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96],"r":[107,34,63]},"miniNachos":{"f":[65,66,67,68,69,70,71],"a":[73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96],"r":[108,98,99,34,101,62]},"miniSalad":{"f":[65,66,67,68,69,70,71],"a":[73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96]},"miniCaesarSalad":{"f":[65,109,68],"a":[112,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96],"r":[110,111]},"miniCaesarCaliBurrito":{"f":[113,109,68],"a":[112,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96],"r":[110,111]},"miniCaesarBurrito":{"f":[113,109,68],"a":[112,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96],"r":[110,111]},"chickenTenderTaco":{"f":[65,66,67,68,69,70,71],"a":[73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96],"r":[114]},"pulledShiitakeTaco":{"f":[65,66,67,68,69,70,71],"a":[73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96],"r":[114]},"quesoFries":{"a":[73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96]},"littleGsBurrito":{"f":[65,66,67,68,69,70,71],"a":[73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96]},"littleGsBowl":{"f":[65,66,67,68,69,70,71],"a":[73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96]},"littleGsNachos":{"f":[65,66,67,68,69,70,71],"a":[73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96]},"breakfastBurrito":{"f":[115,116,5,117,118],"a":[7,124,28,125,8,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,29,30,31,32,33]},"bigBrekkieBurrito":{"f":[115,116,5,117,118],"a":[7,124,28,125,8,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,29,30,31,32,33]},"brekkieBowl":{"f":[115,116,5,117,118],"a":[7,124,28,125,8,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,29,30,31,32,33]},"toast":{"a":[119,120,121,122,123,74,124,126,125]},"brekkieQuesadilla":{"f":[115,116,5,117,118],"a":[74,124,126,125]},"brekkieQuesadillaPlus":{"f":[115,116,5,117,118],"a":[74,124,126,125]},"breakfastTaco":{"f":[115,116,5,117,118],"a":[73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96]},"threeDollarTaco":{"f":[65,66,67,68,69,70,71],"a":[73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96],"r":[127,128]},"regularTaco":{"f":[65,66,67,68,69,70,71],"a":[73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96],"s":[129],"r":[130,131,101]}}};
+// Which calculator type a GYG menu item is.
+function gygType(name){
+  const n = name;
+  if (/^Little G's/.test(n)) return /Bowl/.test(n) ? 'littleGsBowl' : /Nachos/.test(n) ? 'littleGsNachos' : /Burrito/.test(n) ? 'littleGsBurrito' : null;
+  if (/^Big Brekkie Burrito/.test(n)) return 'bigBrekkieBurrito';
+  if (/^Brekkie Burrito/.test(n)) return 'breakfastBurrito';
+  if (/^Brekkie Bowl/.test(n)) return 'brekkieBowl';
+  if (/^Brekkie Quesadilla Plus/.test(n)) return 'brekkieQuesadillaPlus';
+  if (/^Brekkie Quesadilla/.test(n)) return 'brekkieQuesadilla';
+  if (/^Brekkie Taco/.test(n)) return 'breakfastTaco';
+  if (/^Toast/.test(n)) return 'toast';
+  if (/^\$3 Taco/.test(n)) return 'threeDollarTaco';
+  if (/Tender Taco/.test(n)) return 'chickenTenderTaco';
+  if (/Crispy Chicken Tenders/.test(n) && !/Caesar/.test(n)) return 'crispyChickenTenders';
+  const t = /Caesar Cali Burrito/.test(n) ? 'caesarCaliBurrito' : /Caesar Burrito/.test(n) ? 'caesarBurrito' : /Caesar Salad/.test(n) ? 'caesarSalad'
+    : /Cali Burrito/.test(n) ? 'caliBurrito' : /Nacho Fries/.test(n) ? 'nachoFries' : /Nachos/.test(n) ? 'nachos' : /Enchilada/.test(n) ? 'enchiladas'
+    : /Bowl/.test(n) ? 'bowl' : /Burrito/.test(n) ? 'burrito' : /Quesadilla Plus/.test(n) ? 'quesadillasPlus' : /Quesadilla/.test(n) ? 'quesadillas'
+    : /(Soft|Hard) Taco/.test(n) ? 'regularTaco' : /Queso Fries/.test(n) ? 'quesoFries' : /Salad/.test(n) ? 'salads' : null;
+  if (!t || !/\bMini\b/.test(n)) return t;
+  return {bowl:'miniBowl', burrito:'miniBurrito', caliBurrito:'miniCaliBurrito', enchiladas:'miniEnchilada', nachoFries:'miniNachoFries', nachos:'miniNachos',
+    salads:'miniSalad', caesarSalad:'miniCaesarSalad', caesarBurrito:'miniCaesarBurrito', caesarCaliBurrito:'miniCaesarCaliBurrito'}[t] || null;
+}
+const tidyNut = o => { const n = Object.fromEntries(Object.entries(o).filter(([, v]) => v != null)); return Object.keys(n).length ? n : undefined; };
+// Every change a menu item allows: [{key, id, kind, name, kj, p, c, f, nut, price}]. kind: f = extra filling, a = extra, s = swap, r = take off.
+// Swaps and take-offs carry their own negative amounts, so every change is simply added on.
+function modsFor(base){
+  if (!base) return [];
+  const g = base.chain === 'gyg' && GYG_MODS.t[gygType(base.name)];
+  if (g) return ['f','a','s','r'].flatMap(k => (g[k] || []).map(i => {
+    const [id, name, kj, p, c, f, sat, sugar, fibre, sodium] = GYG_MODS.o[i];
+    return {key:`gyg:${k}:${id}`, id, kind:k, name, kj, p, c, f, nut:tidyNut({sat, sugar, fibre, sodium})};
+  }));
+  // Elsewhere: that place's own add-ons that are sold with this kind of item (Subway's extra meat, GYG's dipping sauces).
+  return BUILTIN.filter(x => x.chain === base.chain && x.cat === 'extra' && extraFits(base, x))
+    .map(x => ({key:'item:' + x.id, id:x.id, kind:'a', name:x.name, kj:x.kj, p:x.p, c:x.c, f:x.f, nut:x.nut, price:x.price}));
+}
+// A take-off and a swap of the same ingredient can't both apply (no rice + brown rice), so they share a group.
+const modGroup = m => m.kind === 'r' || m.kind === 's' ? (m.id.match(/rice|beans|cheese|caesar-dressing|fries|sour-cream|guacamole|pico|lettuce|tomatillo|corn-chips|jalapeno/) || [m.id])[0] : null;
+
+// A custom order = a menu item plus changes; totals are rebuilt from the menu each time.
+// Row types: mod (a change from modsFor, qty times), own (your own numbers, sign ±1), item (older saves: another menu item, sign ±1).
 function orderTotals(o){
   const base = builtinById(o.base); if (!base) return null;
-  const parts = [{...base, qty:1}];
-  let missing = !known(base);
-  const t = {kj:kjOf(base), p:base.p, c:base.c ?? 0, f:base.f ?? 0, price:base.price ?? null};
+  const mods = new Map(modsFor(base).map(m => [m.key, m]));
+  let missing = !known(base), priceFrom = !!base.pf;
+  const t = {kj:kjOf(base), p:base.p, c:base.c ?? 0, f:base.f ?? 0, price:base.price ?? null, nut:base.nut ? {...base.nut} : null};
+  const addNut = (nut, q) => { if (!t.nut || !nut) return; for (const k in t.nut) if (nut[k] != null) t.nut[k] += nut[k] * q; };
   (o.rows || []).forEach(r => {
-    const sg = r.sign < 0 ? -1 : 1;
-    if (r.t === 'item') { const it = builtinById(r.id); if (!it) return; const q = (+r.qty || 1) * sg; t.kj += kjOf(it)*q; t.p += it.p*q; t.c += (it.c ?? 0)*q; t.f += (it.f ?? 0)*q; if (!known(it)) missing = true; if (sg > 0) t.price = t.price != null && it.price != null ? t.price + it.price*q : null; }
-    else { t.kj += (+r.cal || 0) * 4.184 * sg; t.p += (+r.p || 0)*sg; t.c += (+r.c || 0)*sg; t.f += (+r.f || 0)*sg; }
+    if (r.t === 'mod') {
+      const m = mods.get(r.key) || r; // the saved copy covers a change the menu no longer lists
+      const q = m.kind === 'r' || m.kind === 's' ? 1 : Math.max(0, +r.qty || 1);
+      t.kj += (+m.kj || 0) * q; t.p += (+m.p || 0) * q; t.c += (+m.c || 0) * q; t.f += (+m.f || 0) * q; addNut(m.nut, q);
+      if (m.kind === 'f' || m.kind === 'a') { if (m.price != null && t.price != null) t.price += m.price * q; else priceFrom = true; }
+    } else if (r.t === 'item') {
+      const it = builtinById(r.id); if (!it) return;
+      const q = (+r.qty || 1) * (r.sign < 0 ? -1 : 1);
+      t.kj += kjOf(it)*q; t.p += it.p*q; t.c += (it.c ?? 0)*q; t.f += (it.f ?? 0)*q; addNut(it.nut, q);
+      if (!known(it)) missing = true;
+      if (q > 0) { if (it.price != null && t.price != null) t.price += it.price * q; else priceFrom = true; }
+    } else {
+      const sg = r.sign < 0 ? -1 : 1;
+      t.kj += (+r.cal || 0) * 4.184 * sg; t.p += (+r.p || 0)*sg; t.c += (+r.c || 0)*sg; t.f += (+r.f || 0)*sg;
+    }
   });
   const r1 = n => Math.max(0, Math.round(n * 10) / 10);
-  return {kj:Math.max(0, Math.round(t.kj)), cal:Math.max(0, Math.round(t.kj / 4.184)), p:r1(t.p), c:missing ? null : r1(t.c), f:missing ? null : r1(t.f), price:t.price != null ? Math.round(t.price * 100) / 100 : undefined, pf:base.pf};
+  const nut = t.nut ? Object.fromEntries(Object.entries(t.nut).map(([k, v]) => [k, k === 'sodium' ? Math.max(0, Math.round(v)) : r1(v)])) : undefined;
+  return {kj:Math.max(0, Math.round(t.kj)), cal:Math.max(0, Math.round(t.kj / 4.184)), p:r1(t.p), c:missing ? null : r1(t.c), f:missing ? null : r1(t.f),
+    price:t.price != null ? Math.round(t.price * 100) / 100 : undefined, pf:priceFrom, ...(nut ? {nut} : {})};
 }
 const allFoods = () => BUILTIN.concat(S.foods.map(f => f.kind === 'order' ? {...f, ...(orderTotals(f) || {}), chain:f.place} : {...f, chain:'mine'}));
 const byId = id => allFoods().find(f => f.id === id);
@@ -1862,9 +1921,7 @@ $('#panel-mine').addEventListener('click', e => {
   if (d.fedit) {
     const f = S.foods.find(x => x.id === d.fedit);
     if (f.kind === 'order') {
-      resetOrdForm(f.place); editOrd = f.id; $('#oBase').innerHTML = itemOptions(f.place, f.base, true);
-      (f.rows || []).forEach(ordRow); $('#oName').value = f.name;
-      $('#ordTitle').textContent = 'Edit custom order'; $('#oSave').textContent = 'Update order'; $('#oCancel').hidden = false; ordPreview();
+      loadOrder(f);
       $('#ordForm').scrollIntoView({behavior:'smooth', block:'center'});
     } else if (f.kind === 'recipe') {
       resetRecForm(); document.querySelectorAll('.ing-item').forEach(r => r.remove());
@@ -1997,61 +2054,134 @@ $('#scanFile').addEventListener('change', async e => {
 });
 
 /* ---------- custom orders ---------- */
-let editOrd = null;
+let editOrd = null, ordRows = [];
 const menuOf = place => BUILTIN.filter(f => f.chain === place);
-function itemOptions(place, sel, mainsOnly){
-  const list = menuOf(place), groups = [['Meals', f => isAnchor(f)], ['Extras & add-ons', f => f.cat === 'extra'], ['Swaps (bread, rice)', f => f.cat === 'swap'], ['Sides, drinks & sweets', f => !isAnchor(f) && f.cat !== 'extra' && f.cat !== 'swap']];
-  return groups.filter((g, i) => !mainsOnly || i === 0).map(([label, fn]) => { const items = list.filter(fn); return items.length ? `<optgroup label="${label}">${items.map(f => `<option value="${esc(f.id)}"${f.id === sel ? ' selected' : ''}>${esc(f.name)}</option>`).join('')}</optgroup>` : ''; }).join('');
+// GYG's menu is long, so its items are grouped by type (Bowls, Burritos, Minis...); other places by meal time.
+const GYG_GROUPS = [['Bowls', /^(bowl)$/], ['Burritos', /^burrito$/], ['Cali burritos', /^caliBurrito$/], ['Caesar', /^caesar/], ['Nachos & nacho fries', /^nacho/], ['Enchiladas', /^enchiladas$/],
+  ['Quesadillas', /^quesadillas/], ['Tacos', /Taco$/], ['Salads', /^salads$/], ['Crispy chicken tenders', /^crispyChickenTenders$/], ['Minis', /^mini/], ["Little G's (kids)", /^littleGs/], ['Breakfast', /^(breakfast|bigBrekkie|brekkie|toast)/]];
+function baseOptions(place, sel){
+  const list = menuOf(place).filter(isAnchor), opt = f => `<option value="${esc(f.id)}"${f.id === sel ? ' selected' : ''}>${esc(f.name)}</option>`;
+  const group = (label, items) => items.length ? `<optgroup label="${esc(label)}">${items.map(opt).join('')}</optgroup>` : '';
+  if (place === 'gyg') {
+    const used = new Set();
+    const html = GYG_GROUPS.map(([label, re]) => { const items = list.filter(f => !used.has(f.id) && re.test(gygType(f.name) || '')); items.forEach(f => used.add(f.id)); return group(label, items); }).join('');
+    return html + group('Other', list.filter(f => !used.has(f.id)));
+  }
+  return group('Meals', list.filter(f => f.cat !== 'breakfast')) + group('Breakfast', list.filter(f => f.cat === 'breakfast'));
 }
 function fillPlaces(sel){
   $('#oPlace').innerHTML = CHAINS.filter(c => c.id !== 'mine').map(c => `<option value="${c.id}"${c.id === sel ? ' selected' : ''}>${esc(c.name)}</option>`).join('');
 }
-function ordRow(r = {t:'item', sign:1, qty:1}){
-  const row = document.createElement('div');
-  const signSel = `<select data-k="sign" aria-label="Add or remove"><option value="1"${r.sign < 0 ? '' : ' selected'}>Add</option><option value="-1"${r.sign < 0 ? ' selected' : ''}>Remove</option></select>`;
-  if (r.t === 'item') {
-    row.className = 'ord-row';
-    const pick = r.id || (menuOf($('#oPlace').value).filter(f => f.cat === 'extra').sort((x, y) => y.p - x.p)[0] || {}).id;
-    row.innerHTML = signSel + `<select data-k="id" aria-label="Menu item">${itemOptions($('#oPlace').value, pick)}</select><input data-k="qty" type="number" step="any" min="0" inputmode="decimal" value="${r.qty ?? 1}" aria-label="Servings" title="Servings"><button type="button" class="x" aria-label="Remove this line">×</button>`;
-  } else {
-    row.className = 'ord-row own';
-    row.innerHTML = signSel + `<input data-k="name" placeholder="e.g. extra chicken" value="${esc(r.name || '')}" aria-label="What">` + ['cal','p','c','f'].map(k => `<input data-k="${k}" type="number" step="any" min="0" inputmode="decimal" placeholder="${{cal:'Cal',p:'P g',c:'C g',f:'F g'}[k]}" value="${r[k] ?? ''}" aria-label="${{cal:'Calories',p:'Protein',c:'Carbs',f:'Fat'}[k]}">`).join('') + `<button type="button" class="x" aria-label="Remove this line">×</button>`;
-  }
-  row.dataset.t = r.t;
-  $('#oRows').appendChild(row);
+const signed = (v, d = 1) => (v >= 0 ? '+' : '−') + (d ? gr(Math.abs(v)) : fmt(Math.abs(v)));
+const modLine = (m, q = 1) => `${signed(m.kj / 4.184 * q, 0)} Cal · P ${signed(m.p * q)} · C ${signed((m.c || 0) * q)} · F ${signed((m.f || 0) * q)}`;
+// The three pickers only offer what this item allows; something already chosen shows as ticked.
+function renderPickers(){
+  const base = builtinById($('#oBase').value), mods = modsFor(base), have = new Set(ordRows.filter(r => r.t === 'mod').map(r => r.key));
+  const opt = m => `<option value="${esc(m.key)}">${have.has(m.key) ? '✓ ' : ''}${esc(m.name)} (${modLine(m)})</option>`;
+  const fill = mods.filter(m => m.kind === 'f'), extra = mods.filter(m => m.kind === 'a'), swaps = mods.filter(m => m.kind === 's'), rems = mods.filter(m => m.kind === 'r');
+  $('#oAdd').innerHTML = `<option value="">Add something…</option>` + (fill.length ? `<optgroup label="Extra filling">${fill.map(opt).join('')}</optgroup>` : '') + (extra.length ? (fill.length ? `<optgroup label="Extras">${extra.map(opt).join('')}</optgroup>` : extra.map(opt).join('')) : '');
+  $('#oSwap').innerHTML = `<option value="">Swap something…</option>` + swaps.map(opt).join('');
+  $('#oRem').innerHTML = `<option value="">Take something off…</option>` + rems.map(opt).join('');
+  $('#oAddF').hidden = !fill.length && !extra.length; $('#oSwapF').hidden = !swaps.length; $('#oRemF').hidden = !rems.length;
+  const place = chainName($('#oPlace').value);
+  const note = !base ? '' : !mods.length ? `${place} doesn't publish add-ons or ingredient amounts for this item. Use <b>My own adjustment</b> to change it.`
+    : !rems.length ? `${place} doesn't publish ingredient amounts for this item, so nothing can be taken off. Use <b>My own adjustment</b> for that.` : '';
+  $('#oPickNote').innerHTML = note; $('#oPickNote').hidden = !note;
 }
+function renderOrdRows(){
+  const base = builtinById($('#oBase').value), mods = new Map(modsFor(base).map(m => [m.key, m]));
+  $('#oRows').innerHTML = ordRows.map((r, i) => {
+    if (r.t === 'own') return `<li class="own" data-i="${i}"><div class="own-top"><select data-k="sign" aria-label="Add or take off"><option value="1"${r.sign < 0 ? '' : ' selected'}>Add</option><option value="-1"${r.sign < 0 ? ' selected' : ''}>Take off</option></select><input data-k="name" placeholder="e.g. no mayo" value="${esc(r.name || '')}" aria-label="What"></div>` +
+      ['cal','p','c','f'].map(k => `<input class="own-num" data-k="${k}" type="number" step="any" min="0" inputmode="decimal" placeholder="${{cal:'Cal',p:'P g',c:'C g',f:'F g'}[k]}" value="${r[k] ?? ''}" aria-label="${{cal:'Calories',p:'Protein',c:'Carbs',f:'Fat'}[k]}">`).join('') +
+      `<button type="button" class="x" aria-label="Remove this change">×</button></li>`;
+    if (r.t === 'item') { const it = builtinById(r.id); const sg = r.sign < 0 ? -1 : 1;
+      return `<li data-i="${i}"><span class="sg${sg < 0 ? ' neg' : ''}">${sg < 0 ? '−' : '+'}</span><span class="nm">${r.qty !== 1 ? r.qty + ' × ' : ''}${esc(it ? it.name : 'Item no longer on the menu')}<small>${it ? modLine({kj:kjOf(it), p:it.p, c:it.c, f:it.f}, r.qty * sg) : ''}</small></span><span></span><button type="button" class="x" aria-label="Remove this change">×</button></li>`; }
+    const m = mods.get(r.key) || r, multi = m.kind === 'f' || m.kind === 'a';
+    return `<li data-i="${i}"><span class="sg${m.kind === 'r' ? ' neg' : m.kind === 's' ? ' sw' : ''}">${m.kind === 'r' ? '−' : m.kind === 's' ? '⇄' : '+'}</span>
+      <span class="nm">${esc(m.name)}${mods.has(r.key) ? '' : ' <span class="muted">(not listed for this item)</span>'}<small>${modLine(m, multi ? r.qty : 1)}</small></span>
+      ${multi ? `<span class="step"><button type="button" data-dq="-1" aria-label="Less">−</button><span class="amt" style="text-decoration:none">${r.qty}</span><button type="button" data-dq="1" aria-label="More">+</button></span>` : '<span></span>'}
+      <button type="button" class="x" aria-label="Remove this change">×</button></li>`;
+  }).join('');
+}
+function addMod(key){
+  const base = builtinById($('#oBase').value), m = modsFor(base).find(x => x.key === key); if (!m) return;
+  const have = ordRows.find(r => r.key === key);
+  if (have) { if (m.kind === 'f' || m.kind === 'a') have.qty++; }
+  else {
+    // Taking off the rice replaces swapping the rice, and so on.
+    const g = modGroup(m);
+    if (g) { const clash = ordRows.find(r => r.t === 'mod' && r.kind !== 'f' && r.kind !== 'a' && modGroup(r) === g); if (clash) { ordRows = ordRows.filter(r => r !== clash); toast(`Replaced “${clash.name}”`); } }
+    ordRows.push({t:'mod', key, qty:1, id:m.id, kind:m.kind, name:m.name, kj:m.kj, p:m.p, c:m.c, f:m.f, ...(m.nut ? {nut:m.nut} : {}), ...(m.price != null ? {price:m.price} : {})});
+  }
+  renderOrdRows(); renderPickers(); ordPreview();
+}
+['#oAdd','#oSwap','#oRem'].forEach(id => $(id).addEventListener('change', e => { const k = e.target.value; e.target.value = ''; if (k) addMod(k); }));
 function readOrder(){
-  const rows = [...$('#oRows').children].map(el => {
-    const g = k => el.querySelector(`[data-k="${k}"]`)?.value;
-    return el.dataset.t === 'item' ? {t:'item', sign:+g('sign'), id:g('id'), qty:num(g('qty')) ?? 1} : {t:'own', sign:+g('sign'), name:(g('name') || '').trim(), cal:num(g('cal')), p:num(g('p')), c:num(g('c')), f:num(g('f'))};
-  }).filter(r => r.t === 'item' ? r.id && r.qty > 0 : (r.name || r.cal || r.p || r.c || r.f));
+  const rows = ordRows.map(r => r.t === 'own' ? {t:'own', sign:r.sign < 0 ? -1 : 1, name:(r.name || '').trim(), cal:num(r.cal), p:num(r.p), c:num(r.c), f:num(r.f)} : {...r})
+    .filter(r => r.t !== 'own' || r.name || r.cal || r.p || r.c || r.f);
   return {place:$('#oPlace').value, base:$('#oBase').value, rows};
 }
 function autoName(o){
   const base = builtinById(o.base); if (!base) return '';
-  return base.name + o.rows.map(r => { const sg = r.sign < 0 ? ' − ' : ' + '; if (r.t === 'item') { const it = builtinById(r.id); return it ? sg + (r.qty !== 1 ? `${+r.qty.toFixed(2)} × ` : '') + it.name : ''; } return sg + (r.name || 'adjustment'); }).join('');
+  return base.name + o.rows.map(r => {
+    if (r.t === 'mod') return r.kind === 'r' ? ', ' + r.name.toLowerCase() : r.kind === 's' ? ', ' + r.name.replace(/^Swap /, '').toLowerCase().replace(/ for /, ' → ') : ' + ' + (r.qty > 1 ? r.qty + ' × ' : '') + r.name.replace(/^Extra /, 'extra ');
+    if (r.t === 'item') { const it = builtinById(r.id); return it ? (r.sign < 0 ? ' − ' : ' + ') + (r.qty !== 1 ? `${+r.qty.toFixed(2)} × ` : '') + it.name : ''; }
+    return (r.sign < 0 ? ' − ' : ' + ') + (r.name || 'adjustment');
+  }).join('');
 }
 function ordPreview(){
-  const o = readOrder(), t = orderTotals(o);
+  const o = readOrder(), t = orderTotals(o), base = builtinById(o.base);
   $('#oName').placeholder = autoName(o) || 'Leave blank to name it automatically';
-  $('#oTotals').innerHTML = t ? `Your order: <b>${fmt(t.cal)} Cal</b> (${fmt(t.kj)} kJ) · Protein <b>${gr(t.p)}g</b> · Carbs ${gm(t.c)} · Fat ${gm(t.f)}` + (t.c == null ? ' <span class="muted">(this place doesn\'t publish carbs or fat)</span>' : '') : 'Pick a place and a menu item to start from.';
+  if (!t) { $('#oTotals').innerHTML = 'Pick a place and a menu item to start from.'; return; }
+  const d = (a, b) => { const x = a - b; return Math.abs(x) < 0.05 ? '' : ` <span class="muted">(${x > 0 ? '+' : '−'}${gr(Math.abs(x))})</span>`; };
+  $('#oTotals').innerHTML = `Your order: <b>${fmt(t.cal)} Cal</b>${d(t.cal, base.cal)} · Protein <b>${gr(t.p)}g</b>${d(t.p, base.p)} · Carbs ${gm(t.c)}${t.c != null ? d(t.c, base.c) : ''} · Fat ${gm(t.f)}${t.f != null ? d(t.f, base.f) : ''}` +
+    (t.price != null ? ` · ${t.pf ? 'from ' : ''}${money(t.price)}` : '') +
+    (t.c == null ? ' <span class="muted">(this place doesn\'t publish carbs or fat)</span>' : '') +
+    `<br><span class="muted small">The menu item alone: ${fmt(base.cal)} Cal · P ${gr(base.p)}g · C ${gm(base.c)} · F ${gm(base.f)}</span>`;
+}
+function setBase(id){
+  if (id) $('#oBase').value = id;
+  // Keep your own numbers; keep changes the new item also allows, re-read at its portion sizes.
+  const mods = new Map(modsFor(builtinById($('#oBase').value)).map(m => [m.key, m]));
+  const before = ordRows.length;
+  ordRows = ordRows.filter(r => r.t === 'own' || (r.t === 'mod' && mods.has(r.key))).map(r => r.t === 'mod' ? {...r, ...mods.get(r.key), t:'mod', qty:r.qty} : r);
+  if (ordRows.length < before) toast("Dropped changes this item doesn't allow");
+  renderOrdRows(); renderPickers(); ordPreview();
 }
 function resetOrdForm(place){
-  editOrd = null; $('#ordForm').reset(); $('#oRows').innerHTML = '';
-  fillPlaces(place || 'gyg'); $('#oBase').innerHTML = itemOptions($('#oPlace').value, null, true);
-  $('#ordTitle').textContent = 'Build a custom order'; $('#oSave').textContent = 'Save custom order'; $('#oCancel').hidden = true; ordPreview();
+  editOrd = null; ordRows = []; $('#ordForm').reset();
+  fillPlaces(place || 'gyg'); $('#oBase').innerHTML = baseOptions($('#oPlace').value);
+  $('#ordTitle').textContent = 'Build a custom order'; $('#oSave').textContent = 'Save custom order'; $('#oCancel').hidden = true;
+  renderOrdRows(); renderPickers(); ordPreview();
 }
-$('#oPlace').addEventListener('change', () => { $('#oBase').innerHTML = itemOptions($('#oPlace').value, null, true); [...$('#oRows').children].forEach(el => { const s = el.querySelector('[data-k="id"]'); if (s) s.innerHTML = itemOptions($('#oPlace').value); }); ordPreview(); });
-$('#oAddItem').addEventListener('click', () => { ordRow({t:'item', sign:1, qty:1}); ordPreview(); });
-$('#oAddOwn').addEventListener('click', () => { ordRow({t:'own', sign:1}); ordPreview(); $('#oRows').lastElementChild.querySelector('[data-k="name"]').focus(); });
-$('#oRows').addEventListener('click', e => { if (e.target.closest('.x')) { e.target.closest('.ord-row').remove(); ordPreview(); } });
-$('#ordForm').addEventListener('input', ordPreview);
-$('#ordForm').addEventListener('change', ordPreview);
+function loadOrder(f){
+  resetOrdForm(f.place); editOrd = f.id;
+  $('#oBase').innerHTML = baseOptions(f.place, builtinById(f.base)?.id);
+  ordRows = (f.rows || []).map(r => ({...r, qty:r.qty ?? 1}));
+  $('#oName').value = f.name;
+  $('#ordTitle').textContent = 'Edit custom order'; $('#oSave').textContent = 'Update order'; $('#oCancel').hidden = false;
+  renderOrdRows(); renderPickers(); ordPreview();
+}
+$('#oPlace').addEventListener('change', () => { $('#oBase').innerHTML = baseOptions($('#oPlace').value); ordRows = ordRows.filter(r => r.t === 'own'); setBase(); });
+$('#oBase').addEventListener('change', () => setBase());
+$('#oAddOwn').addEventListener('click', () => { ordRows.push({t:'own', sign:-1}); renderOrdRows(); ordPreview(); $('#oRows').lastElementChild.querySelector('[data-k="name"]').focus(); });
+$('#oRows').addEventListener('click', e => {
+  const li = e.target.closest('li[data-i]'); if (!li) return;
+  const r = ordRows[+li.dataset.i];
+  if (e.target.closest('.x')) ordRows.splice(+li.dataset.i, 1);
+  else if (e.target.closest('[data-dq]')) { r.qty = Math.max(1, r.qty + +e.target.closest('[data-dq]').dataset.dq); }
+  else return;
+  renderOrdRows(); renderPickers(); ordPreview();
+});
+// Your own lines are edited in place, so typing doesn't lose focus.
+$('#oRows').addEventListener('input', e => { const li = e.target.closest('li.own'), k = e.target.dataset.k; if (!li || !k) return; ordRows[+li.dataset.i][k] = k === 'sign' ? +e.target.value : e.target.value; ordPreview(); });
+$('#oRows').addEventListener('change', e => { const li = e.target.closest('li.own'); if (li && e.target.dataset.k === 'sign') { ordRows[+li.dataset.i].sign = +e.target.value; ordPreview(); } });
+$('#oName').addEventListener('input', ordPreview);
 $('#oCancel').addEventListener('click', () => resetOrdForm());
 $('#ordForm').addEventListener('submit', e => {
   e.preventDefault();
   const o = readOrder(); if (!builtinById(o.base)) { toast('Pick a menu item to start from'); return; }
-  const food = {id: editOrd || uid(), kind:'order', cat:'main', place:o.place, base:o.base, rows:o.rows, name:$('#oName').value.trim() || autoName(o), serve:'Custom order', ...orderTotals(o)};
+  const food = {id: editOrd || uid(), kind:'order', cat:'main', place:o.place, base:builtinById(o.base).id, rows:o.rows, name:$('#oName').value.trim() || autoName(o), serve:'Custom order', ...orderTotals(o)};
   const i = S.foods.findIndex(x => x.id === food.id);
   i >= 0 ? S.foods[i] = food : S.foods.unshift(food);
   save(); resetOrdForm(o.place); renderAll(); toast(`Saved “${food.name}” under ${chainName(o.place)}`);
