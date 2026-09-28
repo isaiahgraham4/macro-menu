@@ -4,3 +4,5 @@ macro-menu-qr.png
 graphify-out/
 xcuserdata/
 DerivedData/
+# Big Noodle Titling licence does not allow redistribution; keep it local.
+ios/MacroMenu/Fonts/big_noodle_titling.ttf
