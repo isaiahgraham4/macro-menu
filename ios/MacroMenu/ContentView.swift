@@ -22,6 +22,8 @@ struct ContentView: View {
     @State private var store = AppStore()
     @State private var location = LocationStore()
     @State private var nav = Navigator()
+    @State private var health = HealthSync()
+    @State private var cloud = CloudSync()
     @State private var settings = false
     @AppStorage("leanr.onboarding.completed") private var onboardingCompleted = false
     @AppStorage(MacroColours.proteinKey) private var proteinColour = "blue"
@@ -43,7 +45,20 @@ struct ContentView: View {
         .onChange(of: proteinColour) { store.refreshWidgets() }
         .onChange(of: carbsColour) { store.refreshWidgets() }
         .onChange(of: fatColour) { store.refreshWidgets() }
-        .onChange(of: scenePhase) { if scenePhase == .active { store.refreshWidgets() } }
+        .onChange(of: scenePhase) {
+            if scenePhase == .active {
+                store.refreshWidgets()
+                cloud.schedule(after: 0)
+                Task { await health.refresh() }
+            }
+        }
+        .task {
+            health.store = store; cloud.store = store
+            store.logsChanged = { [health] old, new in health.follow(old: old, new: new) }
+            store.saved = { [cloud] in cloud.markDirty() }
+            await cloud.sync()
+            await health.refresh()
+        }
         .onOpenURL { url in
             if url.scheme == "leanr", url.host == "today" {
                 settings = false; nav.todayStack = UUID(); nav.tab = .today
@@ -53,20 +68,32 @@ struct ContentView: View {
         .environment(store)
         .environment(location)
         .environment(nav)
+        .environment(health)
+        .environment(cloud)
         .preferredColorScheme(appearance.colorScheme)
         .fullScreenCover(isPresented: Binding(get: { !onboardingCompleted }, set: { if !$0 { onboardingCompleted = true } })) {
             LeanrOnboarding { onboardingCompleted = true }
-                .environment(store).tint(accent)
+                .environment(store).environment(location).environment(health).tint(accent)
                 .preferredColorScheme(appearance.colorScheme)
         }
         .sheet(isPresented: $settings) {
-            NavigationStack { SettingsView() }.tint(accent).font(.roboto()).environment(store).environment(location).environment(nav).preferredColorScheme(appearance.colorScheme)
+            NavigationStack { SettingsView() }.tint(accent).font(.roboto()).environment(store).environment(location).environment(nav)
+                .environment(health).environment(cloud).preferredColorScheme(appearance.colorScheme)
         }
         .safeAreaInset(edge: .top) {
             if let error = store.loadError { Text(error).font(.roboto(.caption)).padding().frame(maxWidth: .infinity).background(.red.opacity(0.12)) }
         }
         .overlay(alignment: .top) {
-            if let notice = store.notice {
+            if let step = store.undo {
+                HStack(spacing: 14) {
+                    Text(store.notice ?? step.label).font(.roboto(.subheadline, weight: .semibold)).lineLimit(1)
+                    Button("Undo") { store.undoLast() }.font(.roboto(.subheadline, weight: .bold))
+                }
+                .padding(.leading, 20).padding(.trailing, 16).padding(.vertical, 12)
+                .background(.regularMaterial, in: Capsule()).padding(.top, 8).padding(.horizontal, 16)
+                .accessibilityAddTraits(.updatesFrequently)
+                .task(id: step.id) { try? await Task.sleep(for: .seconds(5)); if !Task.isCancelled { store.dismissUndo(step.id); store.notice = nil } }
+            } else if let notice = store.notice {
                 Text(notice).font(.roboto(.subheadline, weight: .semibold)).padding(.horizontal,20).padding(.vertical,12)
                     .background(.regularMaterial, in: Capsule()).padding(.top,8)
                     .accessibilityAddTraits(.updatesFrequently)

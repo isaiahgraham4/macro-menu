@@ -2,10 +2,10 @@ import SwiftUI
 import UIKit
 import CoreText
 
-/// Bundled typefaces: Big Noodle Titling for big titles, Roboto for everything else.
+/// Bundled typefaces: Bebas Neue for big titles, Roboto for everything else. Both are free to ship (SIL OFL / Apache).
 enum AppFonts {
-    static let display = "BigNoodleTitling"
-    /// Big Noodle is condensed, so titles are drawn this much larger than the system sizes.
+    static let display = "BebasNeue-Regular"
+    /// Bebas Neue is condensed, so titles are drawn this much larger than the system sizes.
     static let displayScale: CGFloat = 1.35
 
     /// Registers the bundled fonts and styles the navigation and tab bars. Call once at launch.
@@ -53,7 +53,7 @@ extension Font {
         return .custom(face, size: AppFonts.size(style), relativeTo: style)
     }
 
-    /// Big Noodle Titling, for big titles.
+    /// Bebas Neue, for big titles.
     static func display(_ style: Font.TextStyle = .largeTitle) -> Font {
         .custom(AppFonts.display, size: AppFonts.size(style) * AppFonts.displayScale, relativeTo: style)
     }

@@ -71,5 +71,70 @@ for (const food of data.foods) {
   }
 }
 console.log(`Added ${added} McDonald's ingredient removals.`);
+
+// Subway lists every sub's standard build and each ingredient's nutrition per portion (subway-ingredients.json),
+// so its "take off" options carry full nutrition. Breads and the main filling stay on.
+const subway = require('./subway-ingredients.json');
+const SUBWAY_LABELS = {'Old English Cheese': 'Cheese', 'Three Cheeses': 'Cheese'};
+const pick = name => subway.subs[name] || subway.subs[name.replace(/ Brekkie$/, '')] || subway.subs[name + ' on Rye'];
+function subwayBuild(name) {
+  let m;
+  if ((m = name.match(/^6" (.+)$/))) return {parts: pick(m[1]), scale: 1};
+  if ((m = name.match(/^Footlong (.+)$/))) return {parts: pick(m[1]), scale: 2};
+  if ((m = name.match(/^(.+) 6"$/))) return {parts: pick(m[1]), scale: 1};
+  if ((m = name.match(/^(.+) Wrap$/))) {
+    const parts = pick(m[1]);
+    return {parts: parts && parts.map(part => /Bread$/.test(part) ? 'Flour Wrap' : part), scale: 1};
+  }
+  // Regular salads only list their cheese and dressing; the salad itself is a bigger serve than on a sub.
+  if ((m = name.match(/^(.+) Salad \(regular\)$/))) return {parts: subway.salads[m[1]], scale: 1, toppingsOnly: true};
+  return {};
+}
+let subwayAdded = 0, subwayItems = 0;
+for (const food of data.foods.filter(f => f.chain === 'sub')) {
+  const {parts, scale, toppingsOnly} = subwayBuild(food.name);
+  if (!parts) continue;
+  const missing = parts.filter(part => !subway.parts[part]);
+  if (missing.length) throw Error(`${food.name}: unknown Subway parts ${missing}`);
+  if (!toppingsOnly) {
+    // The parts should add up to the published total; if not, the build is out of date, so skip it.
+    const total = parts.reduce((sum, part) => sum + subway.parts[part][0], 0) * scale;
+    if (Math.abs(total - food.kj) > food.kj * 0.03) { console.warn(`${food.name}: parts add to ${Math.round(total)} kJ, menu lists ${food.kj}`); continue; }
+  }
+  const keys = new Set((food.modifiers || []).map(mod => mod.key));
+  let any = false;
+  for (const part of parts) {
+    if (subway.base.includes(part)) continue;
+    const [kj, p, f, sat, c, sugar, fibre, sodium] = subway.parts[part].map(v => v * scale);
+    if (kj > food.kj * 0.55) continue;
+    const name = SUBWAY_LABELS[part] || part;
+    const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    if (keys.has(`r:${slug}`)) continue;
+    keys.add(`r:${slug}`);
+    food.modifiers = [...(food.modifiers || []), {key: `r:${slug}`, id: `no-${slug}`, kind: 'r', name: `No ${name}`,
+      kj: -round(kj), p: -round(p), c: -round(c), f: -round(f),
+      nut: {sat: -round(sat), sugar: -round(sugar), fibre: -round(fibre), sodium: -round(sodium)}, price: 0}];
+    subwayAdded++; any = true;
+  }
+  if (any) subwayItems++;
+}
+console.log(`Added ${subwayAdded} Subway ingredient removals across ${subwayItems} items.`);
+
+// Hungry Jack's doesn't list ingredient nutrition, but some burgers come with and without cheese.
+// The difference between the two is exactly what the cheese adds.
+const HJ_CHEESE = [['hj:whopper-with-cheese', 'hj:whopper'], ['hj:double-whopper-with-cheese', 'hj:double-whopper'],
+  ['hj:cheeseburger', 'hj:hamburger'], ['hj:plant-based-whopper-with-cheese', 'hj:plant-based-whopper']];
+const byId = Object.fromEntries(data.foods.map(f => [f.id, f]));
+for (const [withId, withoutId] of HJ_CHEESE) {
+  const withCheese = byId[withId], without = byId[withoutId];
+  if (!withCheese || !without) { console.warn(`Missing ${withId} or ${withoutId}`); continue; }
+  const diff = key => round((withCheese[key] ?? 0) - (without[key] ?? 0));
+  if (diff('kj') <= 0 || diff('f') < 0 || diff('p') < 0) { console.warn(`${withId}: cheese difference doesn't add up`); continue; }
+  const nut = Object.fromEntries(Object.keys(withCheese.nut || {}).filter(k => without.nut?.[k] != null)
+    .map(k => [k, -round(withCheese.nut[k] - without.nut[k])]));
+  withCheese.modifiers = [...(withCheese.modifiers || []), {key: 'r:cheese', id: 'no-cheese', kind: 'r', name: 'No Cheese',
+    kj: -diff('kj'), p: -diff('p'), c: -diff('c'), f: -diff('f'), nut, price: 0}];
+}
+console.log(`Added Hungry Jack's cheese removals to ${HJ_CHEESE.length} burgers.`);
 fs.writeFileSync(path.join(root, 'ios/MacroMenu/MenuData.json'), JSON.stringify(data));
 console.log(`Exported ${data.foods.length} foods across ${data.chains.length-1} restaurants.`);

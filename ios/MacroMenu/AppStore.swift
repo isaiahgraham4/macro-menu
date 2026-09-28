@@ -8,6 +8,13 @@ final class AppStore {
     private(set) var loadError: String?
     var errorMessage: String?
     var notice: String?
+    /// The state before the last undoable change, offered briefly as "Undo".
+    struct UndoStep: Identifiable { let id = UUID(); var label: String; var snapshot: AppData }
+    private(set) var undo: UndoStep?
+    /// Called after local changes (not iCloud updates) so Apple Health can follow the log and weights.
+    var logsChanged: ((_ old: AppData, _ new: AppData) -> Void)?
+    /// Called after every local save, so iCloud sync knows there's something to upload.
+    var saved: (() -> Void)?
     private let url: URL
     init(url: URL = URL.applicationSupportDirectory.appending(path: "MacroMenu/app-state.json"), catalogURL: URL? = Bundle.main.url(forResource: "MenuData", withExtension: "json"), legacyURL: URL? = URL.applicationSupportDirectory.appending(path: "MacroMenu/foods.json")) {
         self.url = url
@@ -45,10 +52,34 @@ final class AppStore {
         try FileManager.default.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true)
         try bytes.write(to: url, options: .atomic)
     }
-    @discardableResult func change(_ action: (inout AppData) -> Void) -> Bool {
+    /// Saves a change. With `undo`, the banner offers to reverse it; any other change clears that offer.
+    @discardableResult func change(undo label: String? = nil, _ action: (inout AppData) -> Void) -> Bool {
         var updated = data; action(&updated)
-        do { try write(updated); data = updated; refreshWidgets(); return true }
-        catch { errorMessage = "Couldn’t save: \(error.localizedDescription)"; return false }
+        let old = data
+        do { try write(updated) } catch { errorMessage = "Couldn’t save: \(error.localizedDescription)"; return false }
+        data = updated
+        undo = label.map { UndoStep(label: $0, snapshot: old) }
+        refreshWidgets()
+        logsChanged?(old, updated)
+        saved?()
+        return true
+    }
+    func undoLast() {
+        guard let step = undo else { return }
+        let old = data
+        do { try write(step.snapshot) } catch { errorMessage = "Couldn’t undo: \(error.localizedDescription)"; return }
+        data = step.snapshot; undo = nil; notice = nil
+        refreshWidgets()
+        logsChanged?(old, data)
+        saved?()
+    }
+    func dismissUndo(_ id: UndoStep.ID) { if undo?.id == id { undo = nil } }
+    /// Takes data synced from another device. Doesn't touch Apple Health or trigger another upload.
+    @discardableResult func applySynced(_ incoming: AppData) -> Bool {
+        guard incoming.isValid else { return false }
+        do { try write(incoming) } catch { return false }
+        data = incoming; undo = nil; refreshWidgets()
+        return true
     }
     @discardableResult func saveFood(_ food: Food) -> Bool {
         change { state in
@@ -66,7 +97,7 @@ final class AppStore {
     }
     @discardableResult func log(_ items: [Portion], name: String, date: Date, clearTray: Bool = false, mealTime: MealTime? = nil) -> Bool {
         let key = dayKey(date), currentGoals = goals
-        return change {
+        return change(undo: "Logged \(name)") {
             $0.logs[key, default: []].append(LogEntry(name: name, items: items, mealTime: mealTime))
             if $0.dayGoals[key] == nil { $0.dayGoals[key] = currentGoals }
             if clearTray { $0.tray = [] }
@@ -83,27 +114,38 @@ final class AppStore {
     }
     func merge(_ backup: AppData) -> Bool {
         guard backup.isValid else { errorMessage = "This backup is invalid."; return false }
-        return change { state in
-            for food in backup.foods {
-                if let i = state.foods.firstIndex(where: { $0.id == food.id }) { state.foods[i] = food }
-                else { state.foods.append(food) }
-            }
-            for meal in backup.meals {
-                if let i = state.meals.firstIndex(where: { $0.id == meal.id }) { state.meals[i] = meal }
-                else { state.meals.append(meal) }
-            }
-            for (day, entries) in backup.logs {
-                for entry in entries {
-                    if let i = state.logs[day]?.firstIndex(where: { $0.id == entry.id }) { state.logs[day]?[i] = entry }
-                    else { state.logs[day, default: []].append(entry) }
-                }
-            }
-            for goal in backup.goalSets {
-                if let i = state.goalSets.firstIndex(where: { $0.id == goal.id }) { state.goalSets[i] = goal }
-                else { state.goalSets.append(goal) }
-            }
-            state.dayGoals.merge(backup.dayGoals) { _, incoming in incoming }
-            if state.tray.isEmpty { state.tray = backup.tray }
+        return change { state in state = Self.merged(state, backup) }
+    }
+    /// Everything in `current` plus `incoming`; entries with the same ID take the incoming version.
+    static func merged(_ current: AppData, _ backup: AppData) -> AppData {
+        var state = current
+        for food in backup.foods {
+            if let i = state.foods.firstIndex(where: { $0.id == food.id }) { state.foods[i] = food }
+            else { state.foods.append(food) }
         }
+        for meal in backup.meals {
+            if let i = state.meals.firstIndex(where: { $0.id == meal.id }) { state.meals[i] = meal }
+            else { state.meals.append(meal) }
+        }
+        for (day, entries) in backup.logs {
+            for entry in entries {
+                if let i = state.logs[day]?.firstIndex(where: { $0.id == entry.id }) { state.logs[day]?[i] = entry }
+                else { state.logs[day, default: []].append(entry) }
+            }
+        }
+        for goal in backup.goalSets {
+            if let i = state.goalSets.firstIndex(where: { $0.id == goal.id }) { state.goalSets[i] = goal }
+            else { state.goalSets.append(goal) }
+        }
+        state.dayGoals.merge(backup.dayGoals) { _, incoming in incoming }
+        if state.tray.isEmpty { state.tray = backup.tray }
+        if !backup.weightLog.isEmpty {
+            var weights = state.weightLog
+            for weight in backup.weightLog {
+                if let i = weights.firstIndex(where: { $0.id == weight.id }) { weights[i] = weight } else { weights.append(weight) }
+            }
+            state.weights = weights
+        }
+        return state
     }
 }

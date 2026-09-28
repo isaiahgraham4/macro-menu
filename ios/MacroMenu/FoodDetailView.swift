@@ -92,6 +92,10 @@ struct FoodDetailView: View {
                     } footer: {
                         if removals.contains(where: { $0.est == true }) {
                             Text("Calories for each ingredient are from \(store.chainName(food.chain)). Protein, carbs and fat are estimated from the ingredient type; saturated fat, sugars and sodium stay as listed.")
+                        } else if food.chain == "hj" {
+                            Text("Worked out from Hungry Jack's figures for this burger with and without cheese.")
+                        } else {
+                            Text("Nutrition for each ingredient is from \(store.chainName(food.chain))'s published figures.")
                         }
                     }
                 }

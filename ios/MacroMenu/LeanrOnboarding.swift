@@ -79,6 +79,8 @@ struct LeanrBackground: View {
 
 struct LeanrOnboarding: View {
     @Environment(AppStore.self) private var store
+    @Environment(LocationStore.self) private var location
+    @Environment(HealthSync.self) private var health
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var round = 0
     @State private var guess = 600.0
@@ -88,7 +90,18 @@ struct LeanrOnboarding: View {
     @State private var targetPrompt = false
     @State private var estimatingTargets = false
     @State private var targetSaveFailed = false
+    /// After the quiz: 0 targets, 1 location, 2 Apple Health. Steps already answered are skipped.
+    @State private var setupStep = 0
     var complete: () -> Void
+
+    private func advance() {
+        withAnimation(motion) {
+            var next = setupStep + 1
+            if next == 1 && location.status != .notDetermined { next += 1 }
+            if next == 2 && (health.enabled || !health.isAvailable) { next += 1 }
+            if next > 2 { complete() } else { setupStep = next }
+        }
+    }
 
     private var meals: [Food] {
         let ids = [
@@ -105,6 +118,18 @@ struct LeanrOnboarding: View {
     private var actualTotal: Double { answeredMeals.reduce(0) { $0 + $1.cal } }
     private var calorieGap: Double { actualTotal - guessedTotal }
 
+    private func setupCard(icon: String, title: String, text: String, action: String, perform: @escaping () -> Void) -> some View {
+        VStack(alignment: .leading, spacing: 22) {
+            Image(systemName: icon).font(.system(size: 48)).foregroundStyle(.tint)
+            Text(title).font(.system(.largeTitle, design: .rounded, weight: .bold))
+            Text(text).foregroundStyle(.secondary)
+            Button(action: perform) {
+                Text(action).frame(maxWidth: .infinity).padding(.vertical, 8)
+            }.buttonStyle(.borderedProminent).controlSize(.large)
+            Button("Not now", action: advance).frame(maxWidth: .infinity, minHeight: 44)
+        }.padding(.vertical, 24)
+    }
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 26) {
@@ -116,20 +141,39 @@ struct LeanrOnboarding: View {
                     }.foregroundStyle(.secondary).frame(minHeight: 44)
                 }
                 if targetPrompt {
-                    VStack(alignment: .leading, spacing: 22) {
-                        Image(systemName: "target").font(.system(size: 48)).foregroundStyle(.tint)
-                        Text("Want to find your targets?")
-                            .font(.system(.largeTitle, design: .rounded, weight: .bold))
-                        Text("Estimate your maintenance calories and daily protein, carbs and fat from your age, height, weight and activity level. Choose whether you want to maintain, lose or gain weight.")
-                            .foregroundStyle(.secondary)
-                        Text("This is optional. You can review the estimate before applying it, and change your targets later in Settings.")
-                            .font(.subheadline).foregroundStyle(.secondary)
-                        Button { estimatingTargets = true } label: {
-                            Text("Find my targets").frame(maxWidth: .infinity).padding(.vertical, 8)
-                        }.buttonStyle(.borderedProminent).controlSize(.large)
-                        Button("Not now — start using Leanr", action: complete)
-                            .frame(maxWidth: .infinity, minHeight: 44)
-                    }.padding(.vertical, 24)
+                    HStack(spacing: 6) {
+                        ForEach(0..<3) { index in
+                            Capsule().fill(index <= setupStep ? Color.accentColor : Color.secondary.opacity(0.2)).frame(height: 4)
+                        }
+                    }.accessibilityLabel("Setup step \(setupStep + 1) of 3")
+                    if setupStep == 1 {
+                        setupCard(icon: "location.fill", title: "Find food near you",
+                                  text: "See the closest restaurants on the map and how far away each order is. Leanr only uses your location while it’s open, to find nearby restaurants with Apple Maps.",
+                                  action: "Allow location") {
+                            location.request(); advance()
+                        }
+                    } else if setupStep == 2 {
+                        setupCard(icon: "heart.fill", title: "Connect Apple Health",
+                                  text: "Save the food you log to Health, and bring in your weight and active energy for a smarter calorie target. You choose exactly what to share on the next screen.",
+                                  action: "Connect Apple Health") {
+                            Task { _ = await health.connect(); advance() }
+                        }
+                    } else {
+                        VStack(alignment: .leading, spacing: 22) {
+                            Image(systemName: "target").font(.system(size: 48)).foregroundStyle(.tint)
+                            Text("Want to find your targets?")
+                                .font(.system(.largeTitle, design: .rounded, weight: .bold))
+                            Text("Estimate your maintenance calories and daily protein, carbs and fat from your age, height, weight and activity level. Choose whether you want to maintain, lose or gain weight.")
+                                .foregroundStyle(.secondary)
+                            Text("This is optional. You can review the estimate before applying it, and change your targets later in Settings.")
+                                .font(.subheadline).foregroundStyle(.secondary)
+                            Button { estimatingTargets = true } label: {
+                                Text("Find my targets").frame(maxWidth: .infinity).padding(.vertical, 8)
+                            }.buttonStyle(.borderedProminent).controlSize(.large)
+                            Button("Not now", action: advance)
+                                .frame(maxWidth: .infinity, minHeight: 44)
+                        }.padding(.vertical, 24)
+                    }
                 } else if !finished, let meal {
                     HStack(spacing: 6) {
                         ForEach(meals.indices, id: \.self) { index in
@@ -232,7 +276,7 @@ struct LeanrOnboarding: View {
                 TargetCalculator { values in
                     if store.applyEstimatedTargets(values) {
                         estimatingTargets = false
-                        complete()
+                        advance()
                     } else { targetSaveFailed = true }
                 }
                 .alert("Couldn’t save targets", isPresented: $targetSaveFailed) {

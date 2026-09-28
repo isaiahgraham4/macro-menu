@@ -15,7 +15,13 @@ struct MyFoodsView: View {
     @State private var editing: Food?
     @State private var editingRecipe: Food?
     @State private var search = ""
-    var rows: [Food] { store.data.foods.filter { search.isEmpty || $0.name.localizedCaseInsensitiveContains(search) || $0.barcode?.contains(search) == true } }
+    var rows: [Food] {
+        let digits = search.filter(\.isNumber)
+        if digits.count >= 4, digits.count == search.filter({ !$0.isWhitespace }).count {
+            return store.data.foods.filter { $0.barcode?.contains(digits) == true }
+        }
+        return FoodSearch.filter(store.data.foods, query: search) { $0.name }
+    }
     var body: some View {
         LeanrList {
             Section {
@@ -33,7 +39,7 @@ struct MyFoodsView: View {
                         .swipeActions(edge: .leading) {
                             Button("Edit") { if food.ingredients != nil { editingRecipe = food } else { editing = food } }.tint(.blue)
                         }
-                        .swipeActions { Button("Delete", role: .destructive) { store.change { $0.foods.removeAll { $0.id == food.id } } } }
+                        .swipeActions { Button("Delete", role: .destructive) { store.change(undo: "Deleted \(food.name)") { $0.foods.removeAll { $0.id == food.id } } } }
                 }
             }
         }.navigationTitle("My foods").searchable(text: $search)

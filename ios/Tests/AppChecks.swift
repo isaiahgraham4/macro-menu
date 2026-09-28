@@ -193,6 +193,65 @@ import Foundation
         query = FindQuery(); query.calories = 300; query.protein = 25; query.maxItems = 2
         let simple = MealFinder.find(tiny,query: query)
         assert(simple.first?.total.cal == 300 && simple.first?.total.p == 25)
-        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing and finder (\(Date().timeIntervalSince(start).formatted())s).")
+        // Weight trend, maintenance and quick re-log.
+        let calendar = Calendar(identifier: .gregorian)
+        let day0 = calendar.date(from: DateComponents(year: 2026, month: 6, day: 1, hour: 8))!
+        func day(_ n: Int) -> Date { calendar.date(byAdding: .day, value: n, to: day0)! }
+        let flat = WeightTrend.points((0..<10).map { WeightEntry(date: day($0), kg: 80) }, calendar: calendar)
+        assert(flat.count == 10 && flat.allSatisfy { abs($0.trend - 80) < 0.0001 })
+        let jump = WeightTrend.points([WeightEntry(date: day(0), kg: 80), WeightEntry(date: day(1), kg: 82)], calendar: calendar)
+        assert(abs(jump[1].trend - 80.2) < 0.0001)
+        let gap = WeightTrend.points([WeightEntry(date: day(0), kg: 80), WeightEntry(date: day(3), kg: 82)], calendar: calendar)
+        assert(abs(gap[1].trend - (80 + 2 * (1 - pow(0.9, 3)))) < 0.0001)
+        let sameDay = WeightTrend.points([WeightEntry(date: day(0), kg: 80), WeightEntry(date: day(0).addingTimeInterval(3600), kg: 81)], calendar: calendar)
+        assert(sameDay.count == 1 && sameDay[0].kg == 81)
+        assert(WeightTrend.points([WeightEntry(date: day(0), kg: 5)], calendar: calendar).isEmpty)
+        // Losing 0.1 kg a day while eating 2,000 Cal means maintenance is about 2,000 + 770.
+        let losing = WeightTrend.points((0..<60).map { WeightEntry(date: day($0), kg: 90 - Double($0) * 0.1) }, calendar: calendar)
+        assert(abs(WeightTrend.weeklyChange(losing, now: day(60), calendar: calendar)! + 0.7) < 0.05)
+        let steadyFood = Food(id: "steady", name: "Steady", kj: 2000 * 4.184, cal: 2000, p: 100, c: 200, f: 70)
+        var dietLogs: [String: [LogEntry]] = [:]
+        for n in 30..<60 { dietLogs[dayKey(day(n))] = [LogEntry(name: "Day", items: [Portion(food: steadyFood)], time: day(n))] }
+        let maintenance = WeightTrend.maintenance(logs: dietLogs, points: losing, now: day(60), calendar: calendar)!
+        assert(abs(maintenance.calories - 2770) < 60 && maintenance.loggedDays == 28)
+        assert(WeightTrend.maintenance(logs: [:], points: losing, now: day(60), calendar: calendar) == nil)
+        let lunch = LogEntry(name: "Wrap", items: [Portion(food: steadyFood)], time: day(1), mealTime: .lunch)
+        let quickLogs = [dayKey(day(1)): [lunch, LogEntry(name: "Toast", items: [Portion(food: steadyFood)], time: day(1), mealTime: .breakfast)],
+                         dayKey(day(2)): [LogEntry(name: "Wrap", items: [Portion(food: steadyFood)], time: day(2), mealTime: .lunch)]]
+        assert(QuickLog.previous(.lunch, before: day(2), logs: quickLogs, calendar: calendar).map(\.name) == ["Wrap"])
+        assert(QuickLog.previous(.dinner, before: day(2), logs: quickLogs, calendar: calendar).isEmpty)
+        let frequent = QuickLog.frequent(logs: quickLogs, now: day(3), calendar: calendar)
+        assert(frequent.map(\.name) == ["Wrap", "Toast"] && frequent[0].time == day(2))
+
+        // Forgiving search.
+        assert(FoodSearch.score("McChicken", query: "mchicken") != nil)
+        assert(FoodSearch.score("McChicken", query: "mc chicken") == 0)
+        assert(FoodSearch.score("Chicken Nuggets 10 pack", query: "nugets") != nil)
+        assert(FoodSearch.score("Big Mac", query: "whopper") == nil)
+        assert(FoodSearch.score("Hungry Jack’s Whopper", query: "hungry jacks") == 0)
+        assert(FoodSearch.score("Fries", query: "frz") == nil)
+        let found = FoodSearch.filter(["Double McChicken", "McChicken", "Big Mac"], query: "mcchicken") { $0 }
+        assert(found == ["Double McChicken", "McChicken"])
+        let typo = FoodSearch.filter(["Big Mac", "McChicken"], query: "mchiken") { $0 }
+        assert(typo == ["McChicken"])
+        assert(FoodSearch.score("Chicken McWings 3 pc", query: "mchiken") == nil)
+        assert(RecentSearches.list(RecentSearches.adding("Wrap", to: RecentSearches.adding("wrap", to: "fries"))) == ["Wrap", "fries"])
+
+        // Undo and merging weights.
+        let undoURL = root.appending(path: "undo.json")
+        let undoStore = AppStore(url: undoURL, catalogURL: catalogURL, legacyURL: nil)
+        assert(undoStore.log([Portion(food: steadyFood)], name: "Snack", date: day0))
+        assert(undoStore.undo?.label == "Logged Snack")
+        undoStore.undoLast()
+        assert(undoStore.data.logs[dayKey(day0)]?.isEmpty ?? true && undoStore.undo == nil)
+        assert(AppStore(url: undoURL, catalogURL: catalogURL, legacyURL: nil).data.logs[dayKey(day0)]?.isEmpty ?? true)
+        assert(undoStore.change { $0.weights = [WeightEntry(date: day0, kg: 80)] } && undoStore.undo == nil)
+        var other = AppData(); other.weights = [WeightEntry(date: day(1), kg: 79)]
+        assert(AppStore.merged(undoStore.data, other).weightLog.count == 2)
+        let oldFormat = try JSONEncoder().encode(AppData())
+        let reloadedOld = try JSONDecoder().decode(AppData.self, from: oldFormat)
+        assert(reloadedOld.weights == nil && reloadedOld.isValid)
+
+        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search and undo (\(Date().timeIntervalSince(start).formatted())s).")
     }
 }

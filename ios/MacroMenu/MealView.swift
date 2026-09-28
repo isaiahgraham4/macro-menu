@@ -39,7 +39,7 @@ struct MealView: View {
                           }
                       }
                     }.padding(.vertical, 4)
-                }.onDelete { offsets in store.change { $0.tray.remove(atOffsets: offsets) } }
+                }.onDelete { offsets in store.change(undo: "Removed from your meal") { $0.tray.remove(atOffsets: offsets) } }
                 Button { picking = true } label: { Label("Add food", systemImage: "plus.circle.fill") }
             }
             if !store.data.tray.isEmpty {
@@ -86,12 +86,12 @@ struct MealView: View {
                             Spacer()
                             Button("Add") { store.add(meal.items) }.buttonStyle(.bordered).font(.roboto(.subheadline, weight: .medium))
                         }.padding(.vertical, 2)
-                    }.onDelete { offsets in store.change { $0.meals.remove(atOffsets: offsets) } }
+                    }.onDelete { offsets in store.change(undo: "Deleted saved meal") { $0.meals.remove(atOffsets: offsets) } }
                 }
             }
         }.navigationTitle("This meal")
             .toolbar { if !store.data.tray.isEmpty { Button("Clear", role: .destructive) { clear = true } } }
-            .confirmationDialog("Clear this meal?", isPresented: $clear, titleVisibility: .visible) { Button("Clear meal", role: .destructive) { store.change { $0.tray = [] } } }
+            .confirmationDialog("Clear this meal?", isPresented: $clear, titleVisibility: .visible) { Button("Clear meal", role: .destructive) { store.change(undo: "Cleared your meal") { $0.tray = [] } } }
             .sheet(isPresented: $picking) { NavigationStack { BrowseView { portion in store.add([portion]); picking = false }.toolbar { Button("Done") { picking = false } } } }
             .onChange(of: store.data.tray) { image = nil }
             .onChange(of: name) { image = nil }

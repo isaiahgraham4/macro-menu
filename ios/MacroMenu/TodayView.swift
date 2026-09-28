@@ -87,12 +87,14 @@ struct TodayView: View {
                     Button("Edit") { editingTargets = true }.font(.roboto(.subheadline, weight: .medium)).textCase(nil)
                 }
             }
+            Section { BodySummary() }
             Section("Logged meals") {
                 Picker("Log to", selection: $mealTime) {
                     ForEach(MealTime.allCases) { Text($0.title).tag($0) }
                 }
                 Button { barcode = true } label: { Label("Scan product barcode", systemImage: "barcode.viewfinder") }
             }
+            quickLog
             ForEach(MealTime.allCases) { category in
                 let meals = entries.filter { $0.mealTime == category }
                 Section {
@@ -171,6 +173,60 @@ struct TodayView: View {
                 if followingToday { date = value }
             }
     }
+    /// One-tap logging: the same meal as yesterday, or a meal you log often.
+    @ViewBuilder private var quickLog: some View {
+        let yesterday = QuickLog.previous(mealTime, before: date, logs: store.data.logs)
+        let frequent = QuickLog.frequent(logs: store.data.logs, now: date)
+        if !yesterday.isEmpty || !frequent.isEmpty {
+            Section {
+                if !yesterday.isEmpty {
+                    Button {
+                        let items = yesterday.flatMap(\.items)
+                        let name = yesterday.count == 1 ? yesterday[0].name : "Yesterday’s \(mealTime.title.lowercased())"
+                        if store.log(fresh(items), name: name, date: date, mealTime: mealTime) { store.notice = "Logged \(name)" }
+                    } label: {
+                        HStack {
+                            Label {
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text("Same as yesterday’s \(mealTime.title.lowercased())").font(.roboto(.headline))
+                                    Text(yesterday.map(\.name).joined(separator: ", ")).font(.roboto(.caption)).foregroundStyle(.secondary).lineLimit(1)
+                                }
+                            } icon: { Image(systemName: "arrow.uturn.backward.circle.fill") }
+                            Spacer()
+                            Text("\(Nutrition(yesterday.flatMap(\.items)).cal.number) Cal").font(.roboto(.subheadline)).foregroundStyle(.secondary)
+                        }
+                    }
+                }
+                if !frequent.isEmpty {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 10) {
+                            ForEach(frequent) { entry in
+                                Button {
+                                    if store.log(fresh(entry.items), name: entry.name, date: date, mealTime: mealTime) { store.notice = "Logged \(entry.name)" }
+                                } label: {
+                                    VStack(alignment: .leading, spacing: 4) {
+                                        Text(entry.name).font(.roboto(.subheadline, weight: .medium)).lineLimit(2).multilineTextAlignment(.leading)
+                                        Spacer(minLength: 0)
+                                        Text("\(Nutrition(entry.items).cal.number) Cal · \(Nutrition(entry.items).p.number) g protein")
+                                            .font(.roboto(.caption)).foregroundStyle(.secondary)
+                                    }
+                                    .frame(width: 150, height: 76, alignment: .topLeading).padding(12)
+                                    .background(.fill.tertiary, in: RoundedRectangle(cornerRadius: 14))
+                                }
+                                .buttonStyle(.plain)
+                                .accessibilityLabel("Log \(entry.name) to \(mealTime.title)")
+                            }
+                        }
+                    }
+                    .scrollClipDisabled()
+                }
+            } header: { Text("Log again") } footer: {
+                Text("Adds to \(mealTime.title.lowercased()). Change the meal time above.")
+            }
+        }
+    }
+    /// Copies of logged items with new IDs, so the new entry is independent of the old one.
+    private func fresh(_ items: [Portion]) -> [Portion] { items.map { var copy = $0; copy.id = UUID(); return copy } }
     private func logRow(_ entry: LogEntry) -> some View {
         Button { editing = entry } label: {
             HStack(alignment: .firstTextBaseline) {
@@ -183,7 +239,7 @@ struct TodayView: View {
             }.padding(.vertical, 2)
         }
         .swipeActions {
-            Button("Delete", role: .destructive) { store.change { $0.logs[key]?.removeAll { $0.id == entry.id } } }
+            Button("Delete", role: .destructive) { store.change(undo: "Deleted \(entry.name)") { $0.logs[key]?.removeAll { $0.id == entry.id } } }
             Button("Copy to today") {
                 if store.log(entry.items, name: entry.name, date: Date(), mealTime: entry.mealTime) { store.notice = "Copied to today" }
             }.tint(.blue)
@@ -294,7 +350,7 @@ struct TargetsView: View {
                         Button("Edit") { editing = goal }.buttonStyle(.borderless)
                     }.swipeActions {
                         if store.data.goalSets.count > 1 {
-                            Button("Delete", role: .destructive) { store.change { $0.goalSets.removeAll { $0.id == goal.id } } }
+                            Button("Delete", role: .destructive) { store.change(undo: "Deleted \(goal.name)") { $0.goalSets.removeAll { $0.id == goal.id } } }
                         }
                     }
                 }
@@ -347,16 +403,26 @@ struct GoalEditor: View {
 }
 struct TargetCalculator: View {
     @Environment(\.dismiss) private var dismiss
+    @Environment(AppStore.self) private var store
+    @Environment(HealthSync.self) private var health
     var apply: ([String: Double]) -> Void
-    @State private var female = false
-    @State private var age = 30.0
-    @State private var height = 175.0
-    @State private var weight = 75.0
-    @State private var activity = 1.375
-    @State private var adjustment = 0.0
-    @State private var proteinPerKG = 1.6
-    @State private var fatPercent = 25.0
-    var maintenance: Double { (10 * weight + 6.25 * height - 5 * age + (female ? -161 : 5)) * activity }
+    // Remembered, so updating targets later only needs what's changed.
+    @AppStorage("calc.female") private var female = false
+    @AppStorage("calc.age") private var age = 30.0
+    @AppStorage("calc.height") private var height = 175.0
+    @AppStorage("calc.weight") private var weight = 75.0
+    @AppStorage("calc.activity") private var activity = 1.375
+    @AppStorage("calc.adjustment") private var adjustment = 0.0
+    @AppStorage("calc.proteinPerKG") private var proteinPerKG = 1.6
+    @AppStorage("calc.fatPercent") private var fatPercent = 25.0
+    @State private var useMeasured = true
+    private var points: [WeightTrend.Point] { WeightTrend.points(store.data.weightLog) }
+    private var measured: WeightTrend.Maintenance? { WeightTrend.maintenance(logs: store.data.logs, points: points) }
+    private static let activityLevels = [1.2, 1.375, 1.55, 1.725, 1.9]
+    var bmr: Double { 10 * weight + 6.25 * height - 5 * age + (female ? -161 : 5) }
+    var equation: Double { bmr * activity }
+    /// Measured from your log and weight trend when there's enough data, otherwise the equation's estimate.
+    var maintenance: Double { useMeasured ? measured?.calories ?? equation : equation }
     var calories: Double { maintenance + adjustment }
     var protein: Double { weight * proteinPerKG }
     var fat: Double { calories * fatPercent / 100 / 9 }
@@ -364,6 +430,34 @@ struct TargetCalculator: View {
     var valid: Bool { (18...100).contains(age) && (120...230).contains(height) && (35...250).contains(weight) && (0.8...3.3).contains(proteinPerKG) && (15...45).contains(fatPercent) && calories > 0 && protein * 4 + fat * 9 <= calories }
     var body: some View {
         LeanrForm {
+            if points.last != nil || measured != nil || health.averageActiveEnergy != nil {
+                Section {
+                    if let last = points.last {
+                        LabeledContent("Trend weight", value: "\(last.trend.number) kg")
+                        if abs(last.trend - weight) >= 0.1 { Button("Use my trend weight") { weight = last.trend.tenth } }
+                    }
+                    if let measured {
+                        Toggle(isOn: $useMeasured) {
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text("Use my measured maintenance")
+                                Text("\(measured.calories.rounded().number) Cal/day from \(measured.loggedDays) logged days").font(.roboto(.caption)).foregroundStyle(.secondary)
+                            }
+                        }
+                    }
+                    if let active = health.averageActiveEnergy {
+                        LabeledContent("Active energy (Apple Health)", value: "\(active.rounded().number) Cal/day")
+                        if !(useMeasured && measured != nil) {
+                            Button("Set activity from Apple Health") {
+                                // Resting burn plus measured activity, plus about 10% for digesting food.
+                                let factor = 1.1 * (bmr + active) / max(bmr, 1)
+                                activity = Self.activityLevels.min { abs($0 - factor) < abs($1 - factor) } ?? activity
+                            }
+                        }
+                    }
+                } header: { Text("From your data") } footer: {
+                    if measured != nil && useMeasured { Text("Measured maintenance replaces the activity-based estimate below. Your goal is still added or subtracted.") }
+                }
+            }
             Section("Body measurements") {
                 Picker("Sex used in equation", selection: $female) { Text("Male").tag(false); Text("Female").tag(true) }
                 NumberField(title: "Age (18–100)", value: $age)
@@ -379,7 +473,7 @@ struct TargetCalculator: View {
             }
             Section("Estimate") {
                 if valid {
-                    LabeledContent("Estimated maintenance", value: maintenance.number + " Cals/day")
+                    LabeledContent(useMeasured && measured != nil ? "Measured maintenance" : "Estimated maintenance", value: maintenance.rounded().number + " Cals/day")
                     LabeledContent("Daily calorie target", value: calories.number + " Cals")
                     LabeledContent("Protein", value: protein.number + " g")
                     LabeledContent("Carbs", value: carbs.number + " g")
@@ -389,5 +483,6 @@ struct TargetCalculator: View {
                 Text("Mifflin–St Jeor estimate for adults. Actual needs vary; review against your own progress.").font(.roboto(.caption)).foregroundStyle(.secondary)
             }
         }.navigationTitle("Estimate targets").toolbar { Button("Cancel") { dismiss() } }
+            .onAppear { if let last = points.last { weight = last.trend.tenth } }
     }
 }

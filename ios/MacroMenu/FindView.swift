@@ -127,16 +127,22 @@ struct BrowseView: View {
     @State private var chain = "all"
     @State private var category = "all"
     @State private var sort = "density"
+    @AppStorage(RecentSearches.storageKey) private var recent = ""
     var pick: ((Portion) -> Void)?
     static let categories = [("all", "All items"), ("main", "Mains"), ("breakfast", "Breakfast"), ("side", "Sides"), ("drink", "Drinks"), ("sweet", "Desserts"), ("extra", "Extras")]
     var rows: [Food] {
-        let words = search.lowercased().split(separator: " ")
+        // Exact matches first, then typos from closest to furthest; each group in the chosen order.
+        var scores: [String: Int] = [:]
         var rows = store.foods.filter { food in
-            (chain == "all" || food.chain == chain) && (category == "all" || food.cat == category) && food.cat != "swap" &&
-            words.allSatisfy { (food.name + " " + store.chainName(food.chain)).localizedCaseInsensitiveContains($0) }
+            guard (chain == "all" || food.chain == chain) && (category == "all" || food.cat == category) && food.cat != "swap" else { return false }
+            guard let score = FoodSearch.score(food.name + " " + store.chainName(food.chain), query: search) else { return false }
+            scores[food.id] = score
+            return true
         }
         if sort == "value" { rows = rows.filter { ($0.price ?? 0) > 0 } }
         rows.sort { a,b in
+            let scoreA = scores[a.id] ?? 0, scoreB = scores[b.id] ?? 0
+            if scoreA != scoreB { return scoreA < scoreB }
             switch sort {
             case "protein": return a.p > b.p
             case "calories": return a.cal < b.cal
@@ -161,7 +167,9 @@ struct BrowseView: View {
             Section {
                 if rows.isEmpty { ContentUnavailableView.search(text: search) }
                 ForEach(rows) { food in
-                    NavigationLink { FoodDetailView(food: food, pick: pick) } label: { FoodRow(food: food) }
+                    NavigationLink {
+                        FoodDetailView(food: food, pick: pick).onAppear { recent = RecentSearches.adding(search, to: recent) }
+                    } label: { FoodRow(food: food) }
                 }
             } header: {
                 HStack {
@@ -174,6 +182,17 @@ struct BrowseView: View {
                 }
             }
         }.searchable(text: $search, prompt: "Food or restaurant")
+            .searchSuggestions {
+                if search.isEmpty && !recent.isEmpty {
+                    Section("Recent searches") {
+                        ForEach(RecentSearches.list(recent), id: \.self) { text in
+                            Label(text, systemImage: "clock.arrow.circlepath").searchCompletion(text)
+                        }
+                        Button("Clear recent searches", role: .destructive) { recent = "" }
+                    }
+                }
+            }
+            .onSubmit(of: .search) { recent = RecentSearches.adding(search, to: recent) }
             .navigationTitle(pick == nil ? "Best choices" : "Choose a food")
             .toolbar { if pick == nil { NavigationLink { SourcesView() } label: { Image(systemName: "info.circle") } } }
     }

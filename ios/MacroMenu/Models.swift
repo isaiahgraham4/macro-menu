@@ -139,7 +139,7 @@ enum MealTime: String, Codable, CaseIterable, Identifiable, Sendable {
     }
 }
 
-struct LogEntry: Codable, Identifiable, Sendable {
+struct LogEntry: Codable, Identifiable, Hashable, Sendable {
     var id = UUID()
     var name: String
     var items: [Portion]
@@ -166,10 +166,13 @@ struct AppData: Codable, Sendable {
     var goalSets: [Goals] = [Goals()]
     var activeGoal: UUID?
     var dayGoals: [String: Goals] = [:]
+    /// Optional so saved data and backups from before the weight log still load.
+    var weights: [WeightEntry]? = nil
+    var weightLog: [WeightEntry] { weights ?? [] }
     var isValid: Bool {
         version == 2 && foods.allSatisfy(\.isValid) && meals.allSatisfy(\.isValid) && tray.allSatisfy(\.isValid) &&
         logs.values.flatMap { $0 }.allSatisfy(\.isValid) && !goalSets.isEmpty && goalSets.allSatisfy(\.isValid) &&
-        dayGoals.values.allSatisfy(\.isValid) && Set(foods.map(\.id)).count == foods.count &&
+        dayGoals.values.allSatisfy(\.isValid) && weightLog.allSatisfy(\.isValid) && Set(foods.map(\.id)).count == foods.count &&
         Set(meals.map(\.id)).count == meals.count && Set(goalSets.map(\.id)).count == goalSets.count &&
         logs.keys.allSatisfy { $0.range(of: #"^\d{4}-\d{2}-\d{2}$"#, options: .regularExpression) != nil }
     }
@@ -194,4 +197,29 @@ func dayKey(_ date: Date) -> String {
 }
 func mealText(_ name: String, _ items: [Portion]) -> String {
     name + "\n" + items.map { "\($0.quantity.number) × \($0.food.name)" }.joined(separator: "\n") + "\n" + Nutrition(items).text + "\n" + Nutrition(items).priceText
+}
+
+/// Past meals to log again in one tap.
+enum QuickLog {
+    /// What was logged to `mealTime` the day before `date`.
+    static func previous(_ mealTime: MealTime, before date: Date, logs: [String: [LogEntry]], calendar: Calendar = .current) -> [LogEntry] {
+        guard let yesterday = calendar.date(byAdding: .day, value: -1, to: date) else { return [] }
+        return (logs[dayKey(yesterday)] ?? []).filter { $0.mealTime == mealTime }
+    }
+
+    /// Meals logged most often in the last `days` days, newest copy of each; ties go to the most recent.
+    static func frequent(logs: [String: [LogEntry]], now: Date = Date(), days: Int = 30, limit: Int = 6, calendar: Calendar = .current) -> [LogEntry] {
+        guard let start = calendar.date(byAdding: .day, value: -days, to: calendar.startOfDay(for: now)) else { return [] }
+        let startKey = dayKey(start)
+        var groups: [String: (count: Int, latest: LogEntry)] = [:]
+        for (day, entries) in logs where day >= startKey {
+            for entry in entries where !entry.items.isEmpty {
+                let key = entry.name.lowercased() + "|" + entry.items.map { "\($0.food.id)×\($0.quantity)" }.sorted().joined(separator: ",")
+                let current = groups[key]
+                let latest = current.map { $0.latest.time > entry.time ? $0.latest : entry } ?? entry
+                groups[key] = ((current?.count ?? 0) + 1, latest)
+            }
+        }
+        return groups.values.sorted { ($0.count, $0.latest.time) > ($1.count, $1.latest.time) }.prefix(limit).map(\.latest)
+    }
 }
