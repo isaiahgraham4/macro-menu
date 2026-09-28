@@ -4,6 +4,7 @@ Find the Australian fast-food order that fits your calories, protein and budget,
 
 - `index.html`: the app source (also published as a Claude artifact).
 - `build.py`: builds the installable web app into `docs/` (served by GitHub Pages).
+- `ios/MacroMenu.xcodeproj`: the native SwiftUI app (iOS 18+). All five tabs now have native screens. See `ios/README.md` for features, storage, migration and checks. Files added to `ios/MacroMenu/` show up in Xcode automatically.
 - To update the live app: edit `index.html`, run `python3 build.py`, then commit and push.
 
 Nutrition figures come from each chain's published Australian nutrition info; prices are Melbourne CBD pick-up prices. Both change, so check the sources listed in the app.
