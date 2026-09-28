@@ -70,8 +70,8 @@ struct FoodDetailView: View {
                 if let serving = food.servingWeight {
                     Toggle("Measure in \(serving.1)", isOn: $useWeight)
                     if useWeight { NumberField(title: "Amount (\(serving.1))", value: $weight) }
-                    else { NumberField(title: "Servings", value: $quantity) }
-                } else { NumberField(title: "Servings", value: $quantity) }
+                    else { NumberField(title: "Servings", value: $quantity, places: 2) }
+                } else { NumberField(title: "Servings", value: $quantity, places: 2) }
                 Text("\(amount.number) × \(food.serve)").font(.roboto(.caption)).foregroundStyle(.secondary)
             }
             if food.chain != "mine" {

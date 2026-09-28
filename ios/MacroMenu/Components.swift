@@ -11,18 +11,23 @@ struct FoodDocument: FileDocument {
     }
     func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper { FileWrapper(regularFileWithContents: data) }
 }
+/// Number boxes show at most one decimal place (two for prices and servings).
+func decimalFormat(_ places: Int = 1) -> FloatingPointFormatStyle<Double> { .number.precision(.fractionLength(0...places)) }
+
 struct NumberField: View {
     var title: String
     @Binding var value: Double
+    var places = 1
     var body: some View {
-        HStack { Text(title); Spacer(); TextField(title, value: $value, format: .number).keyboardType(.decimalPad).multilineTextAlignment(.trailing).frame(maxWidth: 120) }
+        HStack { Text(title); Spacer(); TextField(title, value: $value, format: decimalFormat(places)).keyboardType(.decimalPad).multilineTextAlignment(.trailing).frame(maxWidth: 120) }
     }
 }
 struct OptionalNumberField: View {
     var title: String
     @Binding var value: Double?
+    var places = 1
     var body: some View {
-        HStack { Text(title); Spacer(); TextField("Not set", value: $value, format: .number).keyboardType(.decimalPad).multilineTextAlignment(.trailing).frame(maxWidth: 120).accessibilityLabel(title) }
+        HStack { Text(title); Spacer(); TextField("Not set", value: $value, format: decimalFormat(places)).keyboardType(.decimalPad).multilineTextAlignment(.trailing).frame(maxWidth: 120).accessibilityLabel(title) }
     }
 }
 struct NutritionView: View {

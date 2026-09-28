@@ -48,7 +48,7 @@ struct FindView: View {
                     }
                 }.pickerStyle(.menu).labelsHidden()
                 DisclosureGroup("Budget & macro limits") {
-                    OptionalNumberField(title: "Budget (AUD)", value: $query.budget)
+                    OptionalNumberField(title: "Budget (AUD)", value: $query.budget, places: 2)
                     OptionalNumberField(title: "Carbs up to (g)", value: $query.carbs)
                     OptionalNumberField(title: "Fat up to (g)", value: $query.fat)
                     Text("Price and macro filters exclude items with missing values.").font(.roboto(.caption)).foregroundStyle(.secondary)

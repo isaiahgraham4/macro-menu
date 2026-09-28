@@ -105,7 +105,7 @@ struct StatField: View {
         VStack(alignment: .leading, spacing: 2) {
             Text(title).font(.roboto(.caption)).foregroundStyle(.secondary)
             HStack(alignment: .firstTextBaseline, spacing: 4) {
-                TextField(title, value: $value, format: .number)
+                TextField(title, value: $value, format: decimalFormat())
                     .font(.roboto(.title2, weight: .bold)).keyboardType(.decimalPad).monospacedDigit()
                 Text(unit).font(.roboto(.subheadline)).foregroundStyle(.secondary)
             }

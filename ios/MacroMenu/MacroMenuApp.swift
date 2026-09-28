@@ -7,6 +7,12 @@ struct MacroMenuApp: App {
         WindowGroup {
             ContentView()
                 .background(KeyboardDismissal())
+                // Tapping a number box selects its number, so one delete clears it and typing replaces it.
+                .onReceive(NotificationCenter.default.publisher(for: UITextField.textDidBeginEditingNotification)) { note in
+                    guard let field = note.object as? UITextField,
+                          [.decimalPad, .numberPad].contains(field.keyboardType) else { return }
+                    Task { @MainActor in field.selectAll(nil) }
+                }
         }
     }
 }

@@ -136,6 +136,9 @@ struct FoodEditor: View {
         value.cal = (energyUnit == "kJ" ? energy / 4.184 : energy) * ratio
         value.kj = value.cal * 4.184; value.p *= ratio; value.c = value.c.map { $0 * ratio }; value.f = value.f.map { $0 * ratio }
         value.nut = value.nut?.mapValues { $0 * ratio }
+        // Saved foods keep one decimal place, like everywhere they're shown.
+        value.cal = value.cal.tenth; value.kj = value.cal * 4.184; value.p = value.p.tenth
+        value.c = value.c?.tenth; value.f = value.f?.tenth; value.nut = value.nut?.mapValues(\.tenth)
         if per100 { value.serve = "\(servingSize.number) \(servingUnit)" }
         value.barcode = barcodeCode
         return value
@@ -164,7 +167,7 @@ struct FoodEditor: View {
                     }.disabled(!servingSize.isFinite || servingSize <= 0)
                 }
                 if savePortion != nil {
-                    NumberField(title: "Number of servings", value: $servings)
+                    NumberField(title: "Number of servings", value: $servings, places: 2)
                     Text("For example, 0.5 for half a serving or 2 for two servings.").font(.caption).foregroundStyle(.secondary)
                 }
             }
@@ -243,7 +246,7 @@ struct FoodEditor: View {
                 NumberField(title: "Protein (g)", value: $draft.p)
                 OptionalNumberField(title: "Carbs (g)", value: $draft.c)
                 OptionalNumberField(title: "Fat (g)", value: $draft.f)
-                OptionalNumberField(title: "Price per serving (AUD)", value: $draft.price)
+                OptionalNumberField(title: "Price per serving (AUD)", value: $draft.price, places: 2)
             }
             Section("Optional nutrients") {
                 ForEach(nutrientNames.dropFirst(4), id: \.key) { n in
@@ -514,14 +517,14 @@ struct RecipeEditor: View {
     }
     var body: some View {
         LeanrForm {
-            Section { TextField("Recipe name", text: $name); NumberField(title: "Recipe makes (servings)", value: $servings) }
+            Section { TextField("Recipe name", text: $name); NumberField(title: "Recipe makes (servings)", value: $servings, places: 2) }
             Section("Ingredients") {
                 ForEach(ingredients) { item in
                     VStack(alignment: .leading) {
                         Text(item.food.name).font(.roboto(.headline))
                         NumberField(title: "Servings of ingredient", value: Binding(get: { ingredients.first { $0.id == item.id }?.quantity ?? 1 }, set: { quantity in
                             if let i = ingredients.firstIndex(where: { $0.id == item.id }) { ingredients[i].quantity = quantity }
-                        }))
+                        }), places: 2)
                     }
                 }.onDelete { ingredients.remove(atOffsets: $0) }
                 Button("Choose a food") { picking = true }

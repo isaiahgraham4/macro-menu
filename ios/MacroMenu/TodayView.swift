@@ -263,7 +263,7 @@ struct LogEditor: View {
                 ForEach(MealTime.allCases) { Text($0.title).tag(Optional($0)) }
             }
             ForEach($entry.items) { $item in
-                Section(item.food.name) { NumberField(title: "Servings", value: $item.quantity) }
+                Section(item.food.name) { NumberField(title: "Servings", value: $item.quantity, places: 2) }
             }.onDelete { entry.items.remove(atOffsets: $0) }
             NutritionView(total: Nutrition(entry.items))
         }.navigationTitle("Edit logged meal")

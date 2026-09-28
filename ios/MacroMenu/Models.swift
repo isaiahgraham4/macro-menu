@@ -182,7 +182,11 @@ let nutrientNames: [(key: String, label: String, unit: String)] = [
     ("sodium","Sodium","mg"),("potassium","Potassium","mg"),("calcium","Calcium","mg"),
     ("iron","Iron","mg"),("chol","Cholesterol","mg"),("caffeine","Caffeine","mg")]
 
-extension Double { var number: String { formatted(.number.precision(.fractionLength(0...1))) } }
+extension Double {
+    var number: String { formatted(.number.precision(.fractionLength(0...1))) }
+    /// Rounded to one decimal place.
+    var tenth: Double { (self * 10).rounded() / 10 }
+}
 func dayKey(_ date: Date) -> String {
     let formatter = DateFormatter(); formatter.calendar = Calendar(identifier: .gregorian)
     formatter.locale = Locale(identifier: "en_US_POSIX"); formatter.dateFormat = "yyyy-MM-dd"
