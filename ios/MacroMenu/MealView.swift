@@ -8,7 +8,12 @@ struct MealView: View {
     @State private var mealTime = MealTime.suggested()
     @State private var clear = false
     @State private var image: UIImage?
-    var title: String { name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? "My meal" : name }
+    var title: String { name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? suggestedName : name }
+    /// What's in the meal, customisations included, e.g. "McChicken · No McChicken Sauce, 2 × Small Fries".
+    var suggestedName: String {
+        let names = store.data.tray.map { ($0.quantity == 1 ? "" : "\($0.quantity.number) × ") + $0.food.name }
+        return names.isEmpty ? "My meal" : names.joined(separator: ", ")
+    }
     var body: some View {
         LeanrList {
             Section {
@@ -40,7 +45,7 @@ struct MealView: View {
             if !store.data.tray.isEmpty {
                 Section("Meal totals") { NutritionView(total: Nutrition(store.data.tray)) }
                 Section("Log it") {
-                    TextField("Name this meal", text: $name)
+                    TextField("Name this meal", text: $name, prompt: Text(suggestedName), axis: .vertical)
                     DatePicker("Log date", selection: $date, in: ...Date(), displayedComponents: .date)
                     Picker("Meal time", selection: $mealTime) {
                         ForEach(MealTime.allCases) { Text($0.title).tag($0) }
