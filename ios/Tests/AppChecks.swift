@@ -236,6 +236,47 @@ import Foundation
         assert(typo == ["McChicken"])
         assert(FoodSearch.score("Chicken McWings 3 pc", query: "mchiken") == nil)
         assert(RecentSearches.list(RecentSearches.adding("Wrap", to: RecentSearches.adding("wrap", to: "fries"))) == ["Wrap", "fries"])
+        // The quick typo check stops early but must agree with a full edit distance against the word and the candidate's starts.
+        func editDistance(_ a: [Int], _ b: [Int]) -> Int {
+            var row = Array(0...b.count)
+            for i in a.indices {
+                var previous = row[0]; row[0] = i + 1
+                for j in b.indices {
+                    let current = row[j + 1]
+                    row[j + 1] = a[i] == b[j] ? previous : min(previous, row[j + 1], row[j]) + 1
+                    previous = current
+                }
+            }
+            return row[b.count]
+        }
+        struct SplitMix: RandomNumberGenerator {
+            var state: UInt64
+            mutating func next() -> UInt64 {
+                state &+= 0x9E3779B97F4A7C15
+                var z = state
+                z = (z ^ (z >> 30)) &* 0xBF58476D1CE4E5B9; z = (z ^ (z >> 27)) &* 0x94D049BB133111EB
+                return z ^ (z >> 31)
+            }
+        }
+        var generator = SplitMix(state: 42)
+        func randomWord() -> [Int] { (0..<Int.random(in: 1...9, using: &generator)).map { _ in Int.random(in: 97...100, using: &generator) } }
+        for _ in 0..<3000 {
+            let word = randomWord(), candidate = randomWord(), limit = Int.random(in: 0...2, using: &generator)
+            let lengths = (max(1, word.count - 1)...(word.count + 1)).map { min($0, candidate.count) } + [candidate.count]
+            let expected = lengths.map { editDistance(word, Array(candidate.prefix($0))) }.min()!
+            assert(FoodSearch.closeness(word, candidate, limit: limit) == (expected <= limit ? expected : nil))
+        }
+        // Characters, not code units: an emoji is one letter.
+        assert(FoodSearch.letters("b🍔rger").count == 6 && FoodSearch.letters("é").count == 1)
+        // Best choices: a renamed food is found by its new name, and "Protein per dollar" leaves out unpriced foods.
+        var renamed = Food(id: "mine-1", name: "Protein shake", kj: 800, cal: 190, p: 30, price: 4)
+        let unpriced = Food(id: "mine-2", name: "Protein bar", kj: 800, cal: 190, p: 20)
+        assert(FoodSearch.browse([renamed, unpriced], chainNames: [:], request: .init(search: "shake")).map(\.id) == ["mine-1"])
+        renamed.name = "Whey drink"
+        assert(FoodSearch.browse([renamed, unpriced], chainNames: [:], request: .init(search: "shake")).isEmpty)
+        assert(FoodSearch.browse([renamed, unpriced], chainNames: [:], request: .init(search: "whey")).map(\.id) == ["mine-1"])
+        assert(FoodSearch.browse([renamed, unpriced], chainNames: [:], request: .init(sort: "value")).map(\.id) == ["mine-1"])
+        assert(FoodSearch.browse([renamed, unpriced], chainNames: [:], request: .init(sort: "protein")).map(\.id) == ["mine-1", "mine-2"])
 
         // Undo and merging weights.
         let undoURL = root.appending(path: "undo.json")

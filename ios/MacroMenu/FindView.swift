@@ -130,29 +130,24 @@ struct BrowseView: View {
     @AppStorage(RecentSearches.storageKey) private var recent = ""
     var pick: ((Portion) -> Void)?
     static let categories = [("all", "All items"), ("main", "Mains"), ("breakfast", "Breakfast"), ("side", "Sides"), ("drink", "Drinks"), ("sweet", "Desserts"), ("extra", "Extras")]
-    var rows: [Food] {
-        // Exact matches first, then typos from closest to furthest; each group in the chosen order.
-        var scores: [String: Int] = [:]
-        var rows = store.foods.filter { food in
-            guard (chain == "all" || food.chain == chain) && (category == "all" || food.cat == category) && food.cat != "swap" else { return false }
-            guard let score = FoodSearch.score(food.name + " " + store.chainName(food.chain), query: search) else { return false }
-            scores[food.id] = score
-            return true
-        }
-        if sort == "value" { rows = rows.filter { ($0.price ?? 0) > 0 } }
-        rows.sort { a,b in
-            let scoreA = scores[a.id] ?? 0, scoreB = scores[b.id] ?? 0
-            if scoreA != scoreB { return scoreA < scoreB }
-            switch sort {
-            case "protein": return a.p > b.p
-            case "calories": return a.cal < b.cal
-            case "value": return a.p / (a.price ?? 1) > b.p / (b.price ?? 1)
-            case "name": return a.name < b.name
-            default: return a.p / max(a.cal,1) > b.p / max(b.cal,1)
-            }
-        }
-        return rows
+    @State private var rows: [Food] = []
+    /// The request the rows were worked out for; nil until the first list is ready.
+    @State private var shown: FoodSearch.Browse?
+    private var request: FoodSearch.Browse { .init(search: search, chain: chain, category: category, sort: sort) }
+    /// Also redo the list when your own foods change or the menu loads.
+    private struct Key: Equatable { var request: FoodSearch.Browse; var custom: [Food]; var catalog: Int }
+
+    private func update(_ request: FoodSearch.Browse) async {
+        // Wait for a pause in typing so each keystroke doesn't start a new search.
+        if let shown, shown.search != request.search, !request.search.isEmpty { try? await Task.sleep(for: .milliseconds(120)) }
+        guard !Task.isCancelled else { return }
+        let foods = store.foods
+        let names = Dictionary(store.catalog.chains.map { ($0.id, $0.name) }) { a, _ in a }
+        let work = Task.detached(priority: .userInitiated) { FoodSearch.browse(foods, chainNames: names, request: request) }
+        let result = await withTaskCancellationHandler { await work.value } onCancel: { work.cancel() }
+        if !Task.isCancelled { rows = result; shown = request }
     }
+
     var body: some View {
         LeanrList {
             Section {
@@ -165,15 +160,15 @@ struct BrowseView: View {
                 }
             }
             Section {
-                if rows.isEmpty { ContentUnavailableView.search(text: search) }
+                if shown == request && rows.isEmpty { ContentUnavailableView.search(text: search) }
                 ForEach(rows) { food in
                     NavigationLink {
-                        FoodDetailView(food: food, pick: pick).onAppear { recent = RecentSearches.adding(search, to: recent) }
+                        FoodDetailView(food: food, pick: pick).onAppear { recent = RecentSearches.adding(shown?.search ?? search, to: recent) }
                     } label: { FoodRow(food: food) }
                 }
             } header: {
                 HStack {
-                    Text("\(rows.count) foods")
+                    if shown != nil { Text("\(rows.count) foods") }
                     Spacer()
                     Picker("Sort", selection: $sort) {
                         Text("Protein per calorie").tag("density"); Text("Most protein").tag("protein"); Text("Lowest calories").tag("calories")
@@ -182,6 +177,7 @@ struct BrowseView: View {
                 }
             }
         }.searchable(text: $search, prompt: "Food or restaurant")
+            .task(id: Key(request: request, custom: store.data.foods, catalog: store.catalog.foods.count)) { await update(request) }
             .searchSuggestions {
                 if search.isEmpty && !recent.isEmpty {
                     Section("Recent searches") {
