@@ -61,13 +61,13 @@ struct TargetsWidgetView: View {
                 } else {
                     VStack(spacing: 12) {
                         Image(systemName: "lock.fill").font(.title).foregroundStyle(accent)
-                        Text("All targets").font(.title2.bold())
-                        Text("Open Leanr to unlock this widget.").font(.subheadline).foregroundStyle(.secondary)
+                        Text("All targets").font(.display(.title2))
+                        Text("Open Leanr to unlock this widget.").font(.roboto(.subheadline)).foregroundStyle(.secondary)
                     }.frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             } else {
                 VStack(spacing: 10) {
-                    Label("Leanr", systemImage: "leaf.fill").font(.headline)
+                    Label("Leanr", systemImage: "leaf.fill").font(.roboto(.headline))
                     Text("Open Leanr to sync your targets").multilineTextAlignment(.center)
                 }.frame(maxWidth: .infinity, maxHeight: .infinity)
             }
@@ -80,18 +80,18 @@ struct TargetsWidgetView: View {
     private var dashboard: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
-                Label("Leanr", systemImage: "leaf.fill").font(.headline).foregroundStyle(accent)
+                Label("Leanr", systemImage: "leaf.fill").font(.roboto(.headline)).foregroundStyle(accent)
                 Spacer()
             }
             HStack(alignment: .firstTextBaseline, spacing: 4) {
-                Text(entry.eatenValue).font(.system(size: 30, weight: .bold, design: .rounded))
-                Text("/ \(entry.targetValue) cals").font(.subheadline).foregroundStyle(.secondary)
+                Text(entry.eatenValue).font(.roboto(size: 30, weight: .bold)).monospacedDigit()
+                Text("/ \(entry.targetValue) cals").font(.roboto(.subheadline)).foregroundStyle(.secondary)
                 Spacer(minLength: 0)
             }.lineLimit(1).minimumScaleFactor(0.6)
             ProgressView(value: entry.progress).tint(accent)
                 .accessibilityLabel("Calories: \(entry.eatenValue) of \(entry.targetValue)")
             if targets.isEmpty {
-                Text("Add nutrient targets in Leanr to see them here.").font(.subheadline).foregroundStyle(.secondary)
+                Text("Add nutrient targets in Leanr to see them here.").font(.roboto(.subheadline)).foregroundStyle(.secondary)
                 Spacer(minLength: 0)
             } else {
                 GeometryReader { geometry in
@@ -107,7 +107,7 @@ struct TargetsWidgetView: View {
                 }
             }
             Text(partial.isEmpty ? "Today · Your active targets" : "+ Partial totals: some food data is missing")
-                .font(.system(size: 9)).foregroundStyle(.secondary).lineLimit(1).minimumScaleFactor(0.7)
+                .font(.roboto(size: 9)).foregroundStyle(.secondary).lineLimit(1).minimumScaleFactor(0.7)
         }
     }
 
@@ -117,16 +117,16 @@ struct TargetsWidgetView: View {
         return VStack(alignment: .leading, spacing: compact ? 1 : 4) {
             if compact {
                 HStack(spacing: 3) {
-                    Text(target.name).font(.system(size: 9, weight: .semibold))
+                    Text(target.name).font(.roboto(size: 9, weight: .semibold))
                     Spacer(minLength: 0)
                     Text("\(number(value))\(incomplete ? "+" : "")/\(number(target.target)) \(target.unit)")
-                        .font(.system(size: 8)).monospacedDigit().foregroundStyle(.secondary)
+                        .font(.roboto(size: 8)).monospacedDigit().foregroundStyle(.secondary)
                 }.lineLimit(1).minimumScaleFactor(0.6)
             } else {
-            Text(target.name).font(.system(size: compact ? 10 : 12, weight: .semibold))
+            Text(target.name).font(.roboto(size: compact ? 10 : 12, weight: .semibold))
                 .lineLimit(1).minimumScaleFactor(0.75)
             Text("\(number(value))\(incomplete ? "+" : "") / \(target.minimum ? "≥" : "≤")\(number(target.target)) \(target.unit)")
-                .font(.system(size: compact ? 9 : 11)).monospacedDigit()
+                .font(.roboto(size: compact ? 9 : 11)).monospacedDigit()
                 .lineLimit(1).minimumScaleFactor(0.6).foregroundStyle(.secondary)
             }
             ProgressView(value: min(1, max(0, value / target.target)))

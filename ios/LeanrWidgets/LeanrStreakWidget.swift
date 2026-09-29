@@ -23,20 +23,20 @@ struct StreakWidgetView: View {
             if family == .accessoryCircular {
                 VStack(spacing: 1) {
                     Image(systemName: "flame.fill").font(.caption).foregroundStyle(accent)
-                    Text(entry.calories == nil ? "—" : "\(count)").font(.title2.bold()).minimumScaleFactor(0.5)
-                    Text("days").font(.system(size: 9))
+                    Text(entry.calories == nil ? "—" : "\(count)").font(.roboto(.title2, weight: .bold)).minimumScaleFactor(0.5)
+                    Text("days").font(.roboto(size: 9))
                 }
             } else {
                 VStack(alignment: .leading, spacing: family == .accessoryRectangular ? 2 : 8) {
                     Label("Tracking streak", systemImage: "flame.fill")
-                        .font(.caption.weight(.semibold)).foregroundStyle(accent)
+                        .font(.roboto(.caption, weight: .semibold)).foregroundStyle(accent)
                     Text(entry.calories == nil ? "—" : "\(count) day\(count == 1 ? "" : "s")")
-                        .font(family == .accessoryRectangular ? .headline : .largeTitle.bold())
+                        .font(family == .accessoryRectangular ? .roboto(.headline) : .roboto(.largeTitle, weight: .bold))
                         .lineLimit(1).minimumScaleFactor(0.5)
                     Text(entry.calories == nil ? "Open Leanr to sync" : tracked ? "Tracked today" : "Log today to \(count > 0 ? "keep it going" : "start")")
-                        .font(.caption).foregroundStyle(.secondary)
+                        .font(.roboto(.caption)).foregroundStyle(.secondary)
                     if family == .systemMedium {
-                        Text("Consistency counts. Every logged day helps.").font(.caption).foregroundStyle(.secondary)
+                        Text("Consistency counts. Every logged day helps.").font(.roboto(.caption)).foregroundStyle(.secondary)
                     }
                 }.frame(maxWidth: .infinity, alignment: .leading)
             }

@@ -47,12 +47,12 @@ struct CaloriesWidgetView: View {
                 circularProgress
             case .accessoryRectangular:
                 VStack(alignment: .leading, spacing: 3) {
-                    Label("Leanr", systemImage: "leaf.fill").font(.caption.weight(.semibold))
+                    Label("Leanr", systemImage: "leaf.fill").font(.roboto(.caption, weight: .semibold))
                     if entry.remaining != nil {
-                        Text("\(entry.value) \(entry.caption)").font(.headline).minimumScaleFactor(0.7).lineLimit(1)
+                        Text("\(entry.value) \(entry.caption)").font(.roboto(.headline)).minimumScaleFactor(0.7).lineLimit(1)
                         ProgressView(value: entry.progress).tint(accent)
                     } else {
-                        Text(entry.prompt).font(.caption)
+                        Text(entry.prompt).font(.roboto(.caption))
                     }
                 }
             default:
@@ -81,14 +81,14 @@ struct CaloriesWidgetView: View {
                 }
                 VStack(spacing: 1) {
                     Text(entry.eatenValue)
-                        .font(.system(size: 16, weight: .bold, design: .rounded))
+                        .font(.roboto(size: 16, weight: .bold)).monospacedDigit()
                         .lineLimit(1).minimumScaleFactor(0.5)
                     HStack(spacing: 2) {
-                        Text("cals").font(.system(size: 7, weight: .medium))
+                        Text("cals").font(.roboto(size: 7, weight: .medium))
                         Image(systemName: "leaf.fill").font(.system(size: 6))
                     }
                     Text("/\(entry.targetValue)")
-                        .font(.system(size: 9, weight: .semibold, design: .rounded))
+                        .font(.roboto(size: 9, weight: .semibold)).monospacedDigit()
                         .lineLimit(1).minimumScaleFactor(0.5)
                 }.frame(width: max(0, side - 20), height: max(0, side - 20))
             }
@@ -101,19 +101,19 @@ struct CaloriesWidgetView: View {
         HStack(spacing: 16) {
             VStack(alignment: .leading, spacing: 5) {
                 Label("Leanr", systemImage: "leaf.fill")
-                    .font(.system(.caption, design: .rounded, weight: .bold)).foregroundStyle(accent)
+                    .font(.roboto(.caption, weight: .bold)).foregroundStyle(accent)
                 Spacer(minLength: 2)
                 if entry.remaining != nil {
-                    Text(entry.value).font(.system(size: 38, weight: .bold, design: .rounded))
+                    Text(entry.value).font(.roboto(size: 38, weight: .bold)).monospacedDigit()
                         .minimumScaleFactor(0.5).lineLimit(1).contentTransition(.numericText())
-                    Text(entry.caption).font(.system(.subheadline, design: .rounded, weight: .medium))
+                    Text(entry.caption).font(.roboto(.subheadline, weight: .medium))
                         .lineLimit(1).minimumScaleFactor(0.75)
                     Spacer(minLength: 2)
                     Text("\(formatted(entry.calories?.eaten(on: entry.date) ?? 0)) / \(formatted(entry.calories?.target ?? 0)) Cal")
-                        .font(.caption2).foregroundStyle(.secondary).lineLimit(1).minimumScaleFactor(0.7)
+                        .font(.roboto(.caption2)).foregroundStyle(.secondary).lineLimit(1).minimumScaleFactor(0.7)
                 } else {
-                    Text(entry.prompt).font(.system(.headline, design: .rounded))
-                    Text("Your daily balance, at a glance.").font(.caption).foregroundStyle(.secondary)
+                    Text(entry.prompt).font(.roboto(.headline))
+                    Text("Your daily balance, at a glance.").font(.roboto(.caption)).foregroundStyle(.secondary)
                     Spacer(minLength: 0)
                 }
             }.frame(maxWidth: .infinity, alignment: .leading)
@@ -125,7 +125,7 @@ struct CaloriesWidgetView: View {
                         .rotationEffect(.degrees(-90))
                     VStack(spacing: 4) {
                         Image(systemName: "fork.knife").font(.title3).foregroundStyle(accent)
-                        Text("Today").font(.caption.weight(.medium))
+                        Text("Today").font(.roboto(.caption, weight: .medium))
                     }
                 }.frame(width: 92, height: 92).padding(6).accessibilityHidden(true)
             }

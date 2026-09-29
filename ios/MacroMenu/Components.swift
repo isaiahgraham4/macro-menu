@@ -117,7 +117,7 @@ struct MealShareCard: View {
     var items: [Portion]
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
-            Label("MACRO MENU", systemImage: "fork.knife").font(.roboto(.caption, weight: .bold)).foregroundStyle(AppAccent.resolved(accentRaw).color)
+            Label("LEANR", systemImage: "leaf.fill").font(.roboto(.caption, weight: .bold)).foregroundStyle(AppAccent.resolved(accentRaw).color)
             Text(name).font(.display())
             ForEach(items) { item in Text("\(item.quantity.number) × \(item.food.name)").font(.roboto(.body)) }
             Divider(); NutritionView(total: Nutrition(items))

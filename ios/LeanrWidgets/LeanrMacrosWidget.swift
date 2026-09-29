@@ -20,9 +20,9 @@ struct MacrosWidgetView: View {
     var body: some View {
         Group {
             if entry.calories == nil {
-                Text("Open Leanr to sync your targets").font(.subheadline)
+                Text("Open Leanr to sync your targets").font(.roboto(.subheadline))
             } else if entry.calories?.premiumUnlocked != true {
-                Label("Open Leanr to unlock this widget", systemImage: "lock.fill").font(.subheadline)
+                Label("Open Leanr to unlock this widget", systemImage: "lock.fill").font(.roboto(.subheadline))
             } else {
                 GeometryReader { geometry in
                     let diameter = min(geometry.size.height, geometry.size.width * 0.37)
@@ -51,14 +51,14 @@ struct MacrosWidgetView: View {
                     .rotationEffect(.degrees(-90)).widgetAccentable()
             }
             VStack(spacing: 2) {
-                Text(entry.value).font(.system(size: 27, weight: .bold, design: .rounded))
+                Text(entry.value).font(.roboto(size: 27, weight: .bold)).monospacedDigit()
                     .lineLimit(1).minimumScaleFactor(0.5)
                 Image(systemName: "leaf.fill")
-                    .font(.system(size: 10, weight: .semibold))
+                    .font(.roboto(size: 10, weight: .semibold))
                     .foregroundStyle(accent)
                     .widgetAccentable()
                 Text(entry.remaining == nil ? "Set target" : ((entry.remaining ?? 0) < 0 ? "Cals over" : "Cals left"))
-                    .font(.system(size: 11)).foregroundStyle(.secondary)
+                    .font(.roboto(size: 11)).foregroundStyle(.secondary)
                     .lineLimit(1).minimumScaleFactor(0.7)
             }.padding(14)
         }.padding(5)
@@ -77,7 +77,7 @@ struct MacrosWidgetView: View {
                 Text(name).foregroundStyle(.secondary)
                 Spacer(minLength: 0)
                 Text("\(number(value))\(partial ? "+" : "") / \(targetText) g").monospacedDigit()
-            }.font(.system(size: 11, weight: .medium)).lineLimit(1).minimumScaleFactor(0.65)
+            }.font(.roboto(size: 11, weight: .medium)).lineLimit(1).minimumScaleFactor(0.65)
             GeometryReader { geometry in
                 ZStack(alignment: .leading) {
                     Capsule().fill(.primary.opacity(0.16))
