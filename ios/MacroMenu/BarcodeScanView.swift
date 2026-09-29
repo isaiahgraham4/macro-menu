@@ -46,7 +46,7 @@ struct BarcodeScanView: View {
             LeanrList {
                 if let saved {
                     Section {
-                        Text(saved.food.name).font(.headline)
+                        Text(saved.food.name).font(.roboto(.headline))
                         Text("Nutrition per \(saved.food.serve)").foregroundStyle(.secondary)
                         NutritionView(total: Nutrition([Portion(food: saved.food)]))
                         Button("Use this food") {
@@ -60,12 +60,12 @@ struct BarcodeScanView: View {
                     }
                 } else if let product {
                     Section("Product found") {
-                        Text(product.food.name).font(.headline)
+                        Text(product.food.name).font(.roboto(.headline))
                         Text(product.per100 ? "Nutrition per 100 \(product.unit)" : "Nutrition per \(product.food.serve)")
                             .foregroundStyle(.secondary)
                         NutritionView(total: Nutrition([Portion(food: product.food)]))
                         Text("Check this matches your package. You'll choose your serving and review the numbers before saving.")
-                            .font(.caption).foregroundStyle(.secondary)
+                            .font(.roboto(.caption)).foregroundStyle(.secondary)
                         Link("Source: Open Food Facts · ODbL", destination: product.sourceURL)
                         Button("Use nutrition & choose serving") { use(product); if dismissAfterUse { dismiss() } }
                             .buttonStyle(.borderedProminent)
@@ -81,9 +81,9 @@ struct BarcodeScanView: View {
                             }
                             .frame(height: 260).clipShape(RoundedRectangle(cornerRadius: 16))
                             Text("Point at the product barcode. Keep it steady; the scan starts automatically. Pinch to zoom.")
-                                .font(.caption).foregroundStyle(.secondary)
+                                .font(.roboto(.caption)).foregroundStyle(.secondary)
                         }
-                        if let cameraMessage { Text(cameraMessage).font(.caption).foregroundStyle(.secondary) }
+                        if let cameraMessage { Text(cameraMessage).font(.roboto(.caption)).foregroundStyle(.secondary) }
                         if denied {
                             Button("Allow camera in Settings") {
                                 if let url = URL(string: UIApplication.openSettingsURLString) { UIApplication.shared.open(url) }
@@ -183,7 +183,7 @@ struct BarcodeCaptureView: View {
                         BarcodeCamera { code in found(code); dismiss() } failed: { reason in ready = false; message = reason }
                             .frame(height: 260).clipShape(RoundedRectangle(cornerRadius: 16))
                         Text("Point at the product barcode. It's added as soon as it's read.")
-                            .font(.caption).foregroundStyle(.secondary)
+                            .font(.roboto(.caption)).foregroundStyle(.secondary)
                     }
                     if let message { Text(message).foregroundStyle(.secondary) }
                     if denied {
@@ -228,7 +228,7 @@ struct RecentBarcodeSection: View {
                         VStack(alignment: .leading, spacing: 4) {
                             Text(product.food.name).foregroundStyle(.primary)
                             Text("\(product.food.cal.number) Cals · \(product.food.serve)")
-                                .font(.caption).foregroundStyle(.secondary)
+                                .font(.roboto(.caption)).foregroundStyle(.secondary)
                         }
                     }
                 }

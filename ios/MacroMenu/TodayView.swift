@@ -35,8 +35,8 @@ struct TodayView: View {
             Section {
                 HStack {
                     VStack(alignment: .leading, spacing: 6) {
-                        Text("Leanr").font(.system(.title, design: .rounded, weight: .bold))
-                        Text("Your day, on the board.").font(.subheadline)
+                        Text("Leanr").font(.display(.title))
+                        Text("Your day, on the board.").font(.roboto(.subheadline))
                     }
                     Spacer()
                     Image(systemName: "leaf.fill").font(.largeTitle)
@@ -98,7 +98,7 @@ struct TodayView: View {
             ForEach(MealTime.allCases) { category in
                 let meals = entries.filter { $0.mealTime == category }
                 Section {
-                    if meals.isEmpty { Text("Nothing logged yet").font(.subheadline).foregroundStyle(.secondary) }
+                    if meals.isEmpty { Text("Nothing logged yet").font(.roboto(.subheadline)).foregroundStyle(.secondary) }
                     ForEach(meals) { entry in logRow(entry) }
                 } header: {
                     HStack {
@@ -271,7 +271,7 @@ struct MealTimeDetailView: View {
         LeanrList {
             Section {
                 Text(date.formatted(date: .complete, time: .omitted))
-                    .font(.subheadline).foregroundStyle(.secondary)
+                    .font(.roboto(.subheadline)).foregroundStyle(.secondary)
                 NutritionView(total: Nutrition(entries.flatMap(\.items)))
             } header: {
                 Text("\(mealTime.title) totals")
@@ -287,12 +287,12 @@ struct MealTimeDetailView: View {
                     Button { editing = entry } label: {
                         VStack(alignment: .leading, spacing: 6) {
                             HStack {
-                                Text(entry.name).font(.headline)
+                                Text(entry.name).font(.roboto(.headline))
                                 Spacer()
                                 Image(systemName: "chevron.right").font(.caption)
                             }
                             Text(Nutrition(entry.items).text)
-                                .font(.caption).foregroundStyle(.secondary)
+                                .font(.roboto(.caption)).foregroundStyle(.secondary)
                         }.foregroundStyle(.primary)
                     }
                 }

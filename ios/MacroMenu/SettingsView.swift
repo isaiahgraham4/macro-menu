@@ -21,7 +21,7 @@ struct SettingsView: View {
                     }
                 }
                 Text("System follows your device’s appearance and changes automatically with it.")
-                    .font(.caption).foregroundStyle(.secondary)
+                    .font(.roboto(.caption)).foregroundStyle(.secondary)
             }
             Section {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 6), spacing: 16) {
@@ -57,8 +57,8 @@ struct SettingsView: View {
                                     .overlay {
                                         if locked { Image(systemName: "lock.fill").foregroundStyle(.white).shadow(radius: 3) }
                                     }
-                                    .overlay { RoundedRectangle(cornerRadius: 15, style: .continuous).stroke(icon == currentIcon ? Color.accentColor : .clear, lineWidth: 3) }
-                                Text(icon.name).font(.caption.weight(.medium))
+                                    .overlay { RoundedRectangle(cornerRadius: 15, style: .continuous).stroke(icon == currentIcon ? AnyShapeStyle(.tint) : AnyShapeStyle(.clear), lineWidth: 3) }
+                                Text(icon.name).font(.roboto(.caption, weight: .medium))
                             }
                         }
                         .buttonStyle(.plain).disabled(locked)
@@ -91,7 +91,7 @@ struct SettingsView: View {
                 Toggle(isOn: Binding(get: { cloud.enabled }, set: { cloud.enabled = $0 })) { Label("Sync with iCloud", systemImage: "icloud") }
                 if cloud.enabled {
                     if let problem = cloud.problem {
-                        Text(problem).font(.caption).foregroundStyle(.orange)
+                        Text(problem).font(.roboto(.caption)).foregroundStyle(.orange)
                     } else if let last = cloud.lastSynced {
                         LabeledContent("Last synced", value: last.formatted(.relative(presentation: .named)))
                     }

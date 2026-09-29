@@ -3,14 +3,17 @@ import SwiftUI
 // Small building blocks that give the list screens some structure: summary rings and bars,
 // filter chips, side-by-side number tiles and action tiles.
 
-/// Colour for a nutrient: macros keep their own colours, everything else uses the app colour.
+/// Colour for a nutrient: macros use the colours chosen in Settings (the defaults when Premium is locked),
+/// everything else uses the app colour.
 func nutrientStyle(_ key: String) -> AnyShapeStyle {
-    switch key {
-    case "p": AnyShapeStyle(.blue)
-    case "c": AnyShapeStyle(.orange)
-    case "f": AnyShapeStyle(.red)
-    default: AnyShapeStyle(.tint)
-    }
+    guard ["p", "c", "f"].contains(key) else { return AnyShapeStyle(.tint) }
+    let defaults = UserDefaults.standard
+    let choices = Premium.isUnlocked ? [
+        "p": defaults.string(forKey: MacroColours.proteinKey),
+        "c": defaults.string(forKey: MacroColours.carbsKey),
+        "f": defaults.string(forKey: MacroColours.fatKey)
+    ].compactMapValues { $0 } : [:]
+    return AnyShapeStyle(MacroColours.colour(key, choices: choices))
 }
 
 /// Calories eaten against a target, with what's left in the middle.

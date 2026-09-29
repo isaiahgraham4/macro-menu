@@ -16,7 +16,7 @@ colors:
   grain-brown: "#A2845E"
   grouped-cell: "#FFFFFF"
   share-card-white: "#FFFFFF"
-  accent-green: "#34C759"
+  accent-green: "#01714C"
   accent-mint: "#00C7BE"
   accent-teal: "#30B0C7"
   accent-cyan: "#32ADE6"
@@ -150,7 +150,7 @@ The palette is a warm neutral ground with one user-chosen accent and three fixed
 - **Counter Emerald** (`emerald`, `emerald-night` in dark mode): the brand green and the default accent. It tints the tab bar, prominent buttons, selected chips, tile icons, the calorie ring's progress and the worktop's corner glow. It is defined in the asset catalog as `AccentColor`.
 
 ### Secondary: the accent presets
-- **Twelve accent presets** (`accent-*`): the user picks one in Settings (`AppAccent`, stored under `accent`), and it replaces Counter Emerald wherever the accent applies. Custom accents are planned as a Premium feature, so a locked user falls back to the default. Always read it through `AppAccent.resolved(...)`.
+- **Twelve accent presets** (`accent-*`): the user picks one in Settings (`AppAccent`, stored under `accent`), and it replaces Counter Emerald wherever the accent applies. Custom accents are planned as a Premium feature, so a locked user falls back to the default. Always read it through `AppAccent.resolved(...)`. The Green preset is Counter Emerald itself (`AppAccent.emerald`); the other eleven are iOS system colours.
 
 ### Tertiary: macro signals
 - **Protein Blue** (`protein-blue`), **Carbs Orange** (`carbs-orange`) and **Fat Red** (`fat-red`) are the macro defaults. They colour macro figures, the energy-split bar and nutrient target bars. Users can recolour them from the preset list (`MacroColours`, planned Premium).
@@ -282,7 +282,3 @@ A fixed 390pt, always-light white card with 28pt padding: a small accent "LEANR"
 - **Don't** hard-code `.green` for accent UI. The only fixed green is the "Protein target met" pill.
 - **Don't** render the worktop texture at more than 7% ink, or keep it when the user has Increase Contrast turned on.
 - **Don't** use the system font, SF Rounded or Big Noodle Titling anywhere that ships.
-
-### Known drift (fix when those files are next touched)
-- The **Green** accent preset resolves to iOS system green (`accent-green`), not Counter Emerald. Emerald is the confirmed brand green, so the preset should use the `AccentColor` asset.
-- `nutrientStyle(_:)` in `DesignKit.swift` hard-codes blue, orange and red, so target bars ignore the user's macro colour choices. That breaks the Fixed Meaning Rule.

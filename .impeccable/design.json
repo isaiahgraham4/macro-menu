@@ -1,0 +1,593 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-29T16:59:53+00:00",
+  "title": "Design System: Leanr",
+  "extensions": {
+    "colorMeta": {
+      "emerald": {
+        "role": "primary",
+        "displayName": "Counter Emerald",
+        "canonical": "oklch(48.5% 0.106 162.0)",
+        "tonalRamp": [
+          "#000F07",
+          "#022C1C",
+          "#0A4C33",
+          "#156E4C",
+          "#38946C",
+          "#60B990",
+          "#87E0B5",
+          "#C5FEE0"
+        ]
+      },
+      "emerald-night": {
+        "role": "primary",
+        "displayName": "Counter Emerald (dark mode)",
+        "canonical": "oklch(72.6% 0.164 156.2)",
+        "tonalRamp": [
+          "#000F05",
+          "#022C17",
+          "#094C2C",
+          "#146F43",
+          "#18985C",
+          "#27C278",
+          "#5DEA9D",
+          "#C5FFD9"
+        ]
+      },
+      "protein-blue": {
+        "role": "tertiary",
+        "displayName": "Protein Blue",
+        "canonical": "oklch(60.3% 0.218 257.4)",
+        "tonalRamp": [
+          "#000A21",
+          "#002150",
+          "#013C83",
+          "#0659BA",
+          "#1C7BF4",
+          "#68A5FD",
+          "#AACDFF",
+          "#E5EFFE"
+        ]
+      },
+      "carbs-orange": {
+        "role": "tertiary",
+        "displayName": "Carbs Orange",
+        "canonical": "oklch(76.5% 0.175 62.6)",
+        "tonalRamp": [
+          "#150800",
+          "#381C00",
+          "#5E3403",
+          "#874E09",
+          "#B86A03",
+          "#EA8A11",
+          "#FCBB81",
+          "#FEEBDA"
+        ]
+      },
+      "fat-red": {
+        "role": "tertiary",
+        "displayName": "Fat Red",
+        "canonical": "oklch(65.4% 0.232 28.7)",
+        "tonalRamp": [
+          "#1F0000",
+          "#4A0403",
+          "#790E0A",
+          "#B20005",
+          "#EB201B",
+          "#FB7666",
+          "#FDB6AB",
+          "#FFE9E5"
+        ]
+      },
+      "worktop-cream": {
+        "role": "neutral",
+        "displayName": "Worktop Cream",
+        "canonical": "oklch(96.1% 0.021 91.6)",
+        "tonalRamp": [
+          "#0E0B03",
+          "#282419",
+          "#444034",
+          "#625D51",
+          "#858073",
+          "#A9A496",
+          "#CFCABC",
+          "#F3EEDF"
+        ]
+      },
+      "worktop-sage": {
+        "role": "neutral",
+        "displayName": "Worktop Sage",
+        "canonical": "oklch(94.5% 0.023 128.7)",
+        "tonalRamp": [
+          "#080D04",
+          "#21261A",
+          "#3C4235",
+          "#5A6053",
+          "#7C8375",
+          "#A0A899",
+          "#C6CEBE",
+          "#EAF2E2"
+        ]
+      },
+      "worktop-wheat": {
+        "role": "neutral",
+        "displayName": "Worktop Wheat",
+        "canonical": "oklch(93.1% 0.035 78.7)",
+        "tonalRamp": [
+          "#120900",
+          "#2D2210",
+          "#4A3E2B",
+          "#685C48",
+          "#8C7E69",
+          "#B1A28D",
+          "#D7C8B2",
+          "#FBECD5"
+        ]
+      },
+      "worktop-night": {
+        "role": "neutral",
+        "displayName": "Worktop Night",
+        "canonical": "oklch(23.9% 0.014 154.2)",
+        "tonalRamp": [
+          "#070D09",
+          "#1F2621",
+          "#3A423C",
+          "#58605A",
+          "#7A837C",
+          "#9EA7A1",
+          "#C4CDC6",
+          "#E8F1EA"
+        ]
+      },
+      "worktop-umber": {
+        "role": "neutral",
+        "displayName": "Worktop Umber",
+        "canonical": "oklch(26.3% 0.016 79.5)",
+        "tonalRamp": [
+          "#0F0A04",
+          "#28231B",
+          "#443F36",
+          "#635D54",
+          "#857F76",
+          "#AAA49A",
+          "#D0CABF",
+          "#F4EEE3"
+        ]
+      },
+      "cutting-board": {
+        "role": "neutral",
+        "displayName": "Cutting Board",
+        "canonical": "oklch(83.6% 0.070 77.4)",
+        "tonalRamp": [
+          "#120900",
+          "#322000",
+          "#543A0B",
+          "#74582D",
+          "#987B4F",
+          "#BD9F73",
+          "#E4C597",
+          "#FFECCF"
+        ]
+      },
+      "grain-brown": {
+        "role": "neutral",
+        "displayName": "Grain Brown",
+        "canonical": "oklch(63.2% 0.064 72.8)",
+        "tonalRamp": [
+          "#130900",
+          "#341F01",
+          "#543A14",
+          "#745833",
+          "#987A55",
+          "#BE9F78",
+          "#E5C59D",
+          "#FEEBD5"
+        ]
+      },
+      "grouped-cell": {
+        "role": "neutral",
+        "displayName": "Grouped Cell",
+        "canonical": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#242424",
+          "#404040",
+          "#5D5D5D",
+          "#808080",
+          "#A4A4A4",
+          "#CACACA",
+          "#EEEEEE"
+        ]
+      },
+      "share-card-white": {
+        "role": "neutral",
+        "displayName": "Share-card White",
+        "canonical": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#242424",
+          "#404040",
+          "#5D5D5D",
+          "#808080",
+          "#A4A4A4",
+          "#CACACA",
+          "#EEEEEE"
+        ]
+      },
+      "accent-green": {
+        "role": "secondary",
+        "displayName": "Green accent preset",
+        "canonical": "oklch(48.5% 0.106 162.0)",
+        "tonalRamp": [
+          "#000F07",
+          "#022C1C",
+          "#0A4C33",
+          "#156E4C",
+          "#38946C",
+          "#60B990",
+          "#87E0B5",
+          "#C5FEE0"
+        ]
+      },
+      "accent-mint": {
+        "role": "secondary",
+        "displayName": "Mint accent preset",
+        "canonical": "oklch(74.8% 0.130 189.0)",
+        "tonalRamp": [
+          "#000F0D",
+          "#012B28",
+          "#074A46",
+          "#116C67",
+          "#12938C",
+          "#21BCB4",
+          "#46E5DC",
+          "#B6FFF8"
+        ]
+      },
+      "accent-teal": {
+        "role": "secondary",
+        "displayName": "Teal accent preset",
+        "canonical": "oklch(70.0% 0.111 212.7)",
+        "tonalRamp": [
+          "#000E12",
+          "#012931",
+          "#074853",
+          "#116978",
+          "#1090A4",
+          "#39B6CE",
+          "#67DEF5",
+          "#D0F6FF"
+        ]
+      },
+      "accent-cyan": {
+        "role": "secondary",
+        "displayName": "Cyan accent preset",
+        "canonical": "oklch(70.7% 0.133 233.9)",
+        "tonalRamp": [
+          "#000D17",
+          "#01283A",
+          "#064561",
+          "#10668B",
+          "#0F8BBD",
+          "#38B1EA",
+          "#90D5FB",
+          "#DEF2FE"
+        ]
+      },
+      "accent-blue": {
+        "role": "secondary",
+        "displayName": "Blue accent preset",
+        "canonical": "oklch(60.3% 0.218 257.4)",
+        "tonalRamp": [
+          "#000A21",
+          "#002150",
+          "#013C83",
+          "#0659BA",
+          "#1C7BF4",
+          "#68A5FD",
+          "#AACDFF",
+          "#E5EFFE"
+        ]
+      },
+      "accent-indigo": {
+        "role": "secondary",
+        "displayName": "Indigo accent preset",
+        "canonical": "oklch(52.9% 0.191 278.3)",
+        "tonalRamp": [
+          "#08002F",
+          "#1C0769",
+          "#3320A0",
+          "#4C46C5",
+          "#6B6CEE",
+          "#929AF9",
+          "#BFC6FD",
+          "#EAEDFF"
+        ]
+      },
+      "accent-purple": {
+        "role": "secondary",
+        "displayName": "Purple accent preset",
+        "canonical": "oklch(61.5% 0.213 312.4)",
+        "tonalRamp": [
+          "#150120",
+          "#38004F",
+          "#5F0581",
+          "#8521B1",
+          "#AA4DD9",
+          "#CE7AFB",
+          "#E3B6FE",
+          "#F6E9FE"
+        ]
+      },
+      "accent-pink": {
+        "role": "secondary",
+        "displayName": "Pink accent preset",
+        "canonical": "oklch(65.0% 0.238 17.9)",
+        "tonalRamp": [
+          "#1E0003",
+          "#4A0010",
+          "#7A0521",
+          "#AE0E33",
+          "#EC0747",
+          "#FD717C",
+          "#FFB4B5",
+          "#FEE9E9"
+        ]
+      },
+      "accent-red": {
+        "role": "secondary",
+        "displayName": "Red accent preset",
+        "canonical": "oklch(65.4% 0.232 28.7)",
+        "tonalRamp": [
+          "#1F0000",
+          "#4A0403",
+          "#790E0A",
+          "#B20005",
+          "#EB201B",
+          "#FB7666",
+          "#FDB6AB",
+          "#FFE9E5"
+        ]
+      },
+      "accent-orange": {
+        "role": "secondary",
+        "displayName": "Orange accent preset",
+        "canonical": "oklch(76.5% 0.175 62.6)",
+        "tonalRamp": [
+          "#150800",
+          "#381C00",
+          "#5E3403",
+          "#874E09",
+          "#B86A03",
+          "#EA8A11",
+          "#FCBB81",
+          "#FEEBDA"
+        ]
+      },
+      "accent-brown": {
+        "role": "secondary",
+        "displayName": "Brown accent preset",
+        "canonical": "oklch(63.2% 0.064 72.8)",
+        "tonalRamp": [
+          "#130900",
+          "#341F01",
+          "#543A14",
+          "#745833",
+          "#987A55",
+          "#BE9F78",
+          "#E5C59D",
+          "#FEEBD5"
+        ]
+      },
+      "accent-graphite": {
+        "role": "secondary",
+        "displayName": "Graphite accent preset",
+        "canonical": "oklch(64.8% 0.007 286.2)",
+        "tonalRamp": [
+          "#0B0B0E",
+          "#242427",
+          "#3F3F44",
+          "#5D5D62",
+          "#808084",
+          "#A4A4A9",
+          "#CACACF",
+          "#EEEEF3"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Large navigation titles and the share-card meal name. Bebas Neue at 1.35x the largeTitle style."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Inline navigation titles."
+      },
+      "stat-hero": {
+        "displayName": "Stat Hero",
+        "purpose": "Calorie total in the nutrition summary."
+      },
+      "stat": {
+        "displayName": "Stat",
+        "purpose": "Ring centre, typed stat fields, headline numbers."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Food names, prominent button labels."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "App-wide default."
+      },
+      "subheadline": {
+        "displayName": "Subheadline",
+        "purpose": "Chips, row metadata, toasts, nutrient rows."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Stat captions, target-bar names, tile labels."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Serving/chain lines, units, source and partial notes."
+      },
+      "tab-label": {
+        "displayName": "Tab Label",
+        "purpose": "Tab bar item titles."
+      }
+    },
+    "shadows": [
+      {
+        "name": "glyph-lift",
+        "value": "0 0 3px rgba(0,0,0,0.33)",
+        "purpose": "Only shadow in the app: keeps the lock glyph legible on a colour swatch in Settings."
+      }
+    ],
+    "motion": [
+      {
+        "name": "undo-window",
+        "value": "5s",
+        "purpose": "Undo toast lifetime."
+      },
+      {
+        "name": "notice-window",
+        "value": "2s",
+        "purpose": "Plain notice lifetime; tap dismisses."
+      }
+    ],
+    "breakpoints": []
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Stock bordered-prominent button filled with the accent; one per screen, usually pinned in the bottom action bar.",
+      "html": "<button class=\"ds-btn-primary\">Log meal</button>",
+      "css": ".ds-btn-primary { font-family: Roboto, -apple-system, sans-serif; font-size:17px; font-weight:500; color:#fff; background:#01714C; border:none; border-radius:9999px; padding:14px 24px; width:320px; transition: filter .15s, transform .15s; } .ds-btn-primary:hover { filter:brightness(1.08); } .ds-btn-primary:active { transform:scale(.98); filter:brightness(.92); } .ds-btn-primary:focus-visible { outline:3px solid #2BC47A; outline-offset:2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Stock bordered button, accent-tinted fill and label.",
+      "html": "<button class=\"ds-btn-secondary\">Log again today</button>",
+      "css": ".ds-btn-secondary { font-family: Roboto, -apple-system, sans-serif; font-size:15px; font-weight:500; color:#01714C; background:rgba(1,113,76,.14); border:none; border-radius:9999px; padding:8px 14px; transition: background .15s; } .ds-btn-secondary:hover { background:rgba(1,113,76,.22); } .ds-btn-secondary:focus-visible { outline:3px solid #2BC47A; outline-offset:2px; }"
+    },
+    {
+      "name": "Filter Chips",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Capsule filters in a row placed straight on the worktop; accent fill when selected.",
+      "html": "<div class=\"ds-chips\"><button class=\"ds-chip ds-chip-on\">All</button><button class=\"ds-chip\">McDonald's</button><button class=\"ds-chip\">GYG</button><button class=\"ds-chip\">Subway</button></div>",
+      "css": ".ds-chips { display:flex; gap:8px; padding:12px; background: linear-gradient(135deg,#F7F2E3,#E8F0E0,#F5E6CF); } .ds-chip { font-family: Roboto, -apple-system, sans-serif; font-size:15px; font-weight:500; white-space:nowrap; padding:8px 14px; border:none; border-radius:9999px; background:#fff; color:#1c1c1e; cursor:pointer; transition: background .15s; } .ds-chip:hover { background:#f2f2f7; } .ds-chip-on, .ds-chip-on:hover { background:#01714C; color:#fff; } .ds-chip:focus-visible { outline:3px solid #2BC47A; outline-offset:2px; }"
+    },
+    {
+      "name": "Stat Fields",
+      "kind": "input",
+      "refersTo": "stat-field",
+      "description": "Typed numbers shown large on translucent field tiles, in side-by-side pairs.",
+      "html": "<div class=\"ds-stats\"><label class=\"ds-stat\"><span>Calories</span><div><input value=\"650\" inputmode=\"decimal\"><em>Cal</em></div></label><label class=\"ds-stat\"><span>Protein</span><div><input value=\"40\" inputmode=\"decimal\"><em>g</em></div></label></div>",
+      "css": ".ds-stats { display:flex; gap:10px; padding:12px; width:340px; background: linear-gradient(135deg,#F7F2E3,#E8F0E0,#F5E6CF); } .ds-stat { flex:1; display:block; padding:12px; border-radius:14px; background:rgba(118,118,128,.12); font-family: Roboto, -apple-system, sans-serif; } .ds-stat span { font-size:12px; color:#6c6c70; } .ds-stat div { display:flex; align-items:baseline; gap:4px; } .ds-stat input { width:70px; border:none; background:none; font:700 22px Roboto, sans-serif; font-variant-numeric:tabular-nums; color:#1c1c1e; padding:0; } .ds-stat input:focus-visible { outline:none; } .ds-stat:focus-within { box-shadow: inset 0 0 0 2px #01714C; } .ds-stat em { font-style:normal; font-size:15px; color:#6c6c70; }"
+    },
+    {
+      "name": "Action Tiles",
+      "kind": "card",
+      "refersTo": "action-tile",
+      "description": "Accent icon over a short label on a grouped-cell tile; rows sit directly on the worktop.",
+      "html": "<div class=\"ds-tiles\"><button class=\"ds-tile\"><svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\"><path d=\"M4 7h2l1-2h10l1 2h2v12H4z M12 9a4 4 0 1 0 0 8a4 4 0 0 0 0-8z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linejoin=\"round\"/></svg><span>Scan label</span></button><button class=\"ds-tile\"><svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\"><path d=\"M3 5v14M6 5v14M9 5v14M13 5v14M15 5v14M18 5v14M21 5v14\" stroke=\"currentColor\" stroke-width=\"1.6\"/></svg><span>Scan barcode</span></button><button class=\"ds-tile\"><svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\"><path d=\"M12 5v14M5 12h14\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/></svg><span>Add a food</span></button></div>",
+      "css": ".ds-tiles { display:flex; gap:10px; padding:12px; width:340px; background: linear-gradient(135deg,#F7F2E3,#E8F0E0,#F5E6CF); } .ds-tile { flex:1; min-height:78px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; padding:0 4px; border:none; border-radius:16px; background:#fff; color:#01714C; cursor:pointer; transition: transform .12s, background .15s; } .ds-tile span { font-family: Roboto, -apple-system, sans-serif; font-size:12px; font-weight:500; color:#1c1c1e; } .ds-tile:hover { background:#fbfbfd; } .ds-tile:active { transform:scale(.97); } .ds-tile:focus-visible { outline:3px solid #2BC47A; outline-offset:2px; }"
+    },
+    {
+      "name": "Calorie Ring",
+      "kind": "custom",
+      "refersTo": "calorie-ring",
+      "description": "Signature: calories left in the centre of a 12pt accent ring; turns orange when over.",
+      "html": "<div class=\"ds-ring\" role=\"img\" aria-label=\"1,240 of 2,000 calories\"><svg viewBox=\"0 0 116 116\" width=\"116\" height=\"116\"><circle cx=\"58\" cy=\"58\" r=\"52\" fill=\"none\" stroke=\"rgba(60,60,67,.18)\" stroke-width=\"12\"/><circle cx=\"58\" cy=\"58\" r=\"52\" fill=\"none\" stroke=\"#01714C\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-dasharray=\"202.6 326.7\" transform=\"rotate(-90 58 58)\"/></svg><div><b>760</b><span>Cal left</span></div></div>",
+      "css": ".ds-ring { position:relative; width:116px; height:116px; } .ds-ring div { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; font-family: Roboto, -apple-system, sans-serif; } .ds-ring b { font-size:22px; font-weight:700; font-variant-numeric:tabular-nums; color:#1c1c1e; } .ds-ring span { font-size:12px; color:#6c6c70; } .ds-ring circle { transition: stroke-dasharray .4s ease-out; }"
+    },
+    {
+      "name": "Target Bars",
+      "kind": "custom",
+      "refersTo": "target-bar",
+      "description": "Signature: label and value over a 6pt capsule in the nutrient's colour; figure turns orange past a maximum.",
+      "html": "<div class=\"ds-bars\"><div class=\"ds-bar\"><p><span>Protein</span><b>112 / 150 g</b></p><i><u style=\"width:75%;background:#007AFF\"></u></i></div><div class=\"ds-bar\"><p><span>Carbs</span><b>180 / 220 g</b></p><i><u style=\"width:82%;background:#FF9500\"></u></i></div><div class=\"ds-bar ds-over\"><p><span>Fat</span><b>74 / 65 g</b></p><i><u style=\"width:100%;background:#FF3B30\"></u></i></div></div>",
+      "css": ".ds-bars { width:300px; display:grid; gap:12px; padding:14px; background:#fff; border-radius:12px; font-family: Roboto, -apple-system, sans-serif; } .ds-bar p { margin:0 0 5px; display:flex; justify-content:space-between; font-size:12px; } .ds-bar span { font-weight:500; color:#6c6c70; } .ds-bar b { font-weight:400; font-variant-numeric:tabular-nums; color:#1c1c1e; } .ds-over b { color:#FF9500; } .ds-bar i { display:block; height:6px; border-radius:9999px; background:rgba(60,60,67,.12); overflow:hidden; } .ds-bar u { display:block; height:100%; border-radius:9999px; transition: width .4s ease-out; }"
+    },
+    {
+      "name": "Undo Toast",
+      "kind": "custom",
+      "refersTo": "undo-toast",
+      "description": "Floating material capsule at the top: message plus Undo, gone after five seconds.",
+      "html": "<div class=\"ds-toast\" role=\"status\"><span>Logged Zinger Protein Bowl</span><button>Undo</button></div>",
+      "css": ".ds-toast { display:inline-flex; align-items:center; gap:14px; padding:12px 16px 12px 20px; border-radius:9999px; background:rgba(242,242,247,.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); font-family: Roboto, -apple-system, sans-serif; font-size:15px; font-weight:600; color:#1c1c1e; } .ds-toast button { border:none; background:none; font:700 15px Roboto, sans-serif; color:#01714C; cursor:pointer; padding:0; } .ds-toast button:hover { text-decoration:underline; } .ds-toast button:focus-visible { outline:2px solid #01714C; outline-offset:3px; border-radius:4px; }"
+    },
+    {
+      "name": "Navigation Title",
+      "kind": "nav",
+      "refersTo": "display",
+      "description": "Bebas Neue large title over the worktop, gear at the top right.",
+      "html": "<header class=\"ds-nav\"><button aria-label=\"Settings\"><svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\"><circle cx=\"12\" cy=\"12\" r=\"3.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><path d=\"M12 2.8v2.6M12 18.6v2.6M2.8 12h2.6M18.6 12h2.6M5.5 5.5l1.8 1.8M16.7 16.7l1.8 1.8M5.5 18.5l1.8-1.8M16.7 7.3l1.8-1.8\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/></svg></button><h1>Find a meal</h1></header>",
+      "css": ".ds-nav { width:360px; padding:8px 16px 12px; background: linear-gradient(135deg,#F7F2E3,#E8F0E0,#F5E6CF); } .ds-nav button { display:block; margin-left:auto; border:none; background:none; color:#01714C; cursor:pointer; padding:4px; } .ds-nav button:focus-visible { outline:2px solid #01714C; border-radius:6px; } .ds-nav h1 { margin:4px 0 0; font-family:'Bebas Neue', Impact, sans-serif; font-weight:400; font-size:46px; line-height:1; letter-spacing:.01em; color:#1c1c1e; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Order Counter",
+    "overview": "Leanr is the counter you stand at when you order: you read the menu, weigh it against what's left in your day, and pick. The screens have that decisiveness. Bebas Neue headlines read like a menu board, and big Roboto numbers answer the question before any label does. The first thing on each screen is a choice or a number, never decoration.\n\nThe counter sits in a warm kitchen, not a gym. Every screen rests on the worktop: a cream-to-wheat gradient with faint timber grain, off-canvas plate rings, paper flecks and a soft accent glow in the top corner. That surface is what makes Leanr feel homely rather than clinical. Controls on top of it are stock iOS, warmed up with Leanr's fonts and accent rather than restyled. Native behaviour, gestures and Dynamic Type stay intact.\n\nDensity is moderate: grouped lists, a few signature summaries (the calorie ring, target bars, stat tiles), and one prominent action per screen, pinned above the tab bar.",
+    "keyCharacteristics": [
+      "Menu-board display type over a readable Roboto interface.",
+      "A warm, textured worktop under every list, form and sheet.",
+      "Numbers as heroes: bold and tabular, with gaps marked plainly (`+`, \"partial\").",
+      "Stock iOS controls tinted with the chosen accent. No custom chrome.",
+      "Macro colours that mean the same thing everywhere."
+    ],
+    "rules": [
+      {
+        "name": "The One Accent Rule",
+        "body": "Only the resolved accent carries brand colour in the interface. Never hard-code `.green` or the emerald hex for accent UI; read `AppAccent.resolved(...)` or `.tint`.",
+        "section": "colors"
+      },
+      {
+        "name": "The Fixed Meaning Rule",
+        "body": "Macro colours and the over/met signals mean the same thing on every screen and in every widget. Read macro colours through `MacroColours`, never as literal `.blue`, `.orange` or `.red`.",
+        "section": "colors"
+      },
+      {
+        "name": "The Helper Rule",
+        "body": "Set type only with `.display(_:)` and `.roboto(_:weight:)`. Never use system fonts or `.custom` directly in the app or its widgets. Big Noodle Titling is local-only and must never be referenced in shipped code.",
+        "section": "typography"
+      },
+      {
+        "name": "The Steady Numbers Rule",
+        "body": "Any number that updates in place (calories, grams, targets, totals) uses `.monospacedDigit()`, so the figures don't jitter as they change.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Counter Rule",
+        "body": "No drop shadows on cards, tiles, buttons or sheets. To separate something, change the fill or use material, never add a shadow.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Quiet Texture Rule",
+        "body": "The worktop's grain, rings and flecks stay at or below 7% ink opacity and never carry information. When the user has Increase Contrast turned on, the texture and accent glow are removed and only the gradient remains.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** wrap every list and form screen in `LeanrList` or `LeanrForm` so it sits on the worktop.",
+      "**Do** tint accent UI with `AppAccent.resolved(...)`, and let the Premium lock fall back to Counter Emerald.",
+      "**Do** use `.display()` for screen names and `.roboto()` for everything else, including in widgets.",
+      "**Do** make the answer the biggest thing on screen: calories left, grams short, a price.",
+      "**Do** mark missing data visibly with `+`, \"(partial)\" or \"Not set\", never with a zero.",
+      "**Do** group a compound visual (ring, bar, summary) into one accessibility element with a spoken label."
+    ],
+    "donts": [
+      "**Don't** replace stock iOS controls with custom-drawn buttons, toggles or pickers.",
+      "**Don't** add drop shadows or glossy effects; the counter is flat.",
+      "**Don't** hard-code `.green` for accent UI. The only fixed green is the \"Protein target met\" pill.",
+      "**Don't** render the worktop texture at more than 7% ink, or keep it when the user has Increase Contrast turned on.",
+      "**Don't** use the system font, SF Rounded or Big Noodle Titling anywhere that ships."
+    ]
+  }
+}

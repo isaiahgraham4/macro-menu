@@ -164,7 +164,7 @@ struct FoodEditor: View {
                 if per100 {
                     NumberField(title: "Size of one serving", value: $servingSize)
                     Picker("Unit", selection: $servingUnit) { Text("g").tag("g"); Text("mL").tag("mL") }.pickerStyle(.segmented)
-                    Text("Enter the package's serving size to convert the per-100 values.").font(.caption).foregroundStyle(.secondary)
+                    Text("Enter the package's serving size to convert the per-100 values.").font(.roboto(.caption)).foregroundStyle(.secondary)
                     Button("Convert to per serving") {
                         let converted = result
                         draft = converted
@@ -174,7 +174,7 @@ struct FoodEditor: View {
                 }
                 if savePortion != nil {
                     NumberField(title: "Number of servings", value: $servings, places: 2)
-                    Text("For example, 0.5 for half a serving or 2 for two servings.").font(.caption).foregroundStyle(.secondary)
+                    Text("For example, 0.5 for half a serving or 2 for two servings.").font(.roboto(.caption)).foregroundStyle(.secondary)
                 }
             }
             Section {
@@ -189,9 +189,9 @@ struct FoodEditor: View {
                         .buttonStyle(.borderless).accessibilityLabel("Scan barcode")
                 }
                 if barcodeInvalid {
-                    Text("Check the digits. Product barcodes have 8, 12, 13 or 14 digits.").font(.caption).foregroundStyle(.orange)
+                    Text("Check the digits. Product barcodes have 8, 12, 13 or 14 digits.").font(.roboto(.caption)).foregroundStyle(.orange)
                 } else if let code = barcodeCode, let other = BarcodeLookup.match(code, in: store.data.foods.filter { $0.id != draft.id }) {
-                    Text("\(other.name) already has this barcode. Scanning it will open that food.").font(.caption).foregroundStyle(.orange)
+                    Text("\(other.name) already has this barcode. Scanning it will open that food.").font(.roboto(.caption)).foregroundStyle(.orange)
                 }
             } header: { Text("Barcode") } footer: {
                 Text("Add the barcode when scanning doesn't find this product. Next time you scan it, Leanr opens this food.")
@@ -200,8 +200,8 @@ struct FoodEditor: View {
                 Button { barcodeLookup = true } label: { Label("Scan product barcode", systemImage: "barcode.viewfinder") }
                     .disabled(scanning)
                 if let note = draft.note, note.hasPrefix("Source: Open Food Facts") {
-                    Text(note).font(.caption).foregroundStyle(.secondary)
-                    Text("Confirm the nutrition basis and serving amount below before saving.").font(.caption).foregroundStyle(.secondary)
+                    Text(note).font(.roboto(.caption)).foregroundStyle(.secondary)
+                    Text("Confirm the nutrition basis and serving amount below before saving.").font(.roboto(.caption)).foregroundStyle(.secondary)
                 }
             }
             Section("Read a nutrition label") {
@@ -230,7 +230,7 @@ struct FoodEditor: View {
                     Picker("Numeric column", selection: $scanColumn) { Text("First").tag(0); Text("Second").tag(1) }.pickerStyle(.segmented)
                         .onChange(of: scanColumn) { fillScannedNutrition() }
                     if !scanBasisConfirmed {
-                        Text("The column heading wasn't recognised. Check the selected column and the per-100 toggle before confirming.").font(.caption).foregroundStyle(.orange)
+                        Text("The column heading wasn't recognised. Check the selected column and the per-100 toggle before confirming.").font(.roboto(.caption)).foregroundStyle(.orange)
                         Button("I've checked the nutrition basis") { scanBasisConfirmed = true }
                     }
                     let recognised = LabelParser.suggestions(scannedText, column: scanColumn)

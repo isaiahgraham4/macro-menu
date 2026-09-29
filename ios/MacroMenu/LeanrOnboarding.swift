@@ -25,6 +25,7 @@ struct CuttingBoard: View {
 
 /// A warm worktop with quiet grain and an engraved plate motif at the edges.
 struct LeanrBackground: View {
+    @AppStorage(AppAccent.storageKey) private var accentRaw = AppAccent.standard.rawValue
     @Environment(\.colorScheme) private var scheme
     @Environment(\.colorSchemeContrast) private var contrast
     private var dark: Bool { scheme == .dark }
@@ -39,7 +40,7 @@ struct LeanrBackground: View {
                     startPoint: .topLeading, endPoint: .bottomTrailing
                 )
                 if contrast != .increased {
-                    RadialGradient(colors: [Color.accentColor.opacity(dark ? 0.12 : 0.09), .clear],
+                    RadialGradient(colors: [AppAccent.resolved(accentRaw).color.opacity(dark ? 0.12 : 0.09), .clear],
                                    center: .topTrailing, startRadius: 0, endRadius: geometry.size.width * 0.95)
                     Canvas { context, size in
                         let ink = dark ? Color.white : Color.brown
@@ -121,7 +122,7 @@ struct LeanrOnboarding: View {
     private func setupCard(icon: String, title: String, text: String, action: String, perform: @escaping () -> Void) -> some View {
         VStack(alignment: .leading, spacing: 22) {
             Image(systemName: icon).font(.system(size: 48)).foregroundStyle(.tint)
-            Text(title).font(.system(.largeTitle, design: .rounded, weight: .bold))
+            Text(title).font(.display())
             Text(text).foregroundStyle(.secondary)
             Button(action: perform) {
                 Text(action).frame(maxWidth: .infinity).padding(.vertical, 8)
@@ -134,7 +135,7 @@ struct LeanrOnboarding: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 26) {
                 HStack {
-                    Label("Leanr", systemImage: "leaf.fill").font(.system(.title2, design: .rounded, weight: .bold))
+                    Label("Leanr", systemImage: "leaf.fill").font(.display(.title2))
                     Spacer()
                     Button("Skip") {
                         if targetPrompt { complete() } else { targetPrompt = true }
@@ -143,7 +144,7 @@ struct LeanrOnboarding: View {
                 if targetPrompt {
                     HStack(spacing: 6) {
                         ForEach(0..<3) { index in
-                            Capsule().fill(index <= setupStep ? Color.accentColor : Color.secondary.opacity(0.2)).frame(height: 4)
+                            Capsule().fill(index <= setupStep ? AnyShapeStyle(.tint) : AnyShapeStyle(Color.secondary.opacity(0.2))).frame(height: 4)
                         }
                     }.accessibilityLabel("Setup step \(setupStep + 1) of 3")
                     if setupStep == 1 {
@@ -162,11 +163,11 @@ struct LeanrOnboarding: View {
                         VStack(alignment: .leading, spacing: 22) {
                             Image(systemName: "target").font(.system(size: 48)).foregroundStyle(.tint)
                             Text("Want to find your targets?")
-                                .font(.system(.largeTitle, design: .rounded, weight: .bold))
+                                .font(.display())
                             Text("Estimate your maintenance calories and daily protein, carbs and fat from your age, height, weight and activity level. Choose whether you want to maintain, lose or gain weight.")
                                 .foregroundStyle(.secondary)
                             Text("This is optional. You can review the estimate before applying it, and change your targets later in Settings.")
-                                .font(.subheadline).foregroundStyle(.secondary)
+                                .font(.roboto(.subheadline)).foregroundStyle(.secondary)
                             Button { estimatingTargets = true } label: {
                                 Text("Find my targets").frame(maxWidth: .infinity).padding(.vertical, 8)
                             }.buttonStyle(.borderedProminent).controlSize(.large)
@@ -177,25 +178,25 @@ struct LeanrOnboarding: View {
                 } else if !finished, let meal {
                     HStack(spacing: 6) {
                         ForEach(meals.indices, id: \.self) { index in
-                            Capsule().fill(index <= round ? Color.accentColor : Color.secondary.opacity(0.2)).frame(height: 4)
+                            Capsule().fill(index <= round ? AnyShapeStyle(.tint) : AnyShapeStyle(Color.secondary.opacity(0.2))).frame(height: 4)
                         }
                     }.accessibilityLabel("Question \(round + 1) of \(meals.count)")
                     VStack(alignment: .leading, spacing: 8) {
-                        Text("A little food for thought.").font(.system(.largeTitle, design: .rounded, weight: .bold))
+                        Text("A little food for thought.").font(.display())
                         Text("How many calories do you think are in this?").foregroundStyle(.secondary)
                     }
                     VStack(spacing: 16) {
                         HStack {
-                            Text("ON THE BOARD").font(.caption.weight(.bold)).tracking(2)
+                            Text("ON THE BOARD").font(.roboto(.caption, weight: .bold)).tracking(2)
                             Spacer()
-                            Text(meal.chain == "mcd" ? "Macca’s" : store.chainName(meal.chain)).font(.headline)
+                            Text(meal.chain == "mcd" ? "Macca’s" : store.chainName(meal.chain)).font(.roboto(.headline))
                         }
                         Image(systemName: "takeoutbag.and.cup.and.straw.fill")
                             .font(.system(size: 60)).padding(.vertical, 8)
-                        Text(meal.name).font(.system(.title2, design: .rounded, weight: .bold)).multilineTextAlignment(.center)
+                        Text(meal.name).font(.display(.title2)).multilineTextAlignment(.center)
                         Text(meal.chain == "kfc" ? "10 wings · no sides or drink" : "Burger only · no sides or drink")
-                            .font(.caption).multilineTextAlignment(.center)
-                        if !meal.serve.isEmpty { Text(meal.serve).font(.caption).multilineTextAlignment(.center) }
+                            .font(.roboto(.caption)).multilineTextAlignment(.center)
+                        if !meal.serve.isEmpty { Text(meal.serve).font(.roboto(.caption)).multilineTextAlignment(.center) }
                     }
                     .foregroundStyle(Color(red: 0.23, green: 0.17, blue: 0.10))
                     .padding(28).frame(maxWidth: .infinity)
@@ -204,18 +205,18 @@ struct LeanrOnboarding: View {
 
                     if revealed {
                         VStack(alignment: .leading, spacing: 12) {
-                            Text("\(meal.cal.number) calories").font(.system(.largeTitle, design: .rounded, weight: .bold)).contentTransition(.numericText())
+                            Text("\(meal.cal.number) calories").font(.roboto(.largeTitle, weight: .bold)).monospacedDigit().contentTransition(.numericText())
                             Text(abs(guess - meal.cal) <= 50 ? "Close guess! You were within 50 calories." : "Your guess: \(Int(guess)) Cal · about \(Int(abs(guess - meal.cal).rounded())) Cal away.")
                             Text("No need to guess with Leanr. See calories and protein, compare your options, and build a meal that works for you.").foregroundStyle(.secondary)
-                            Text("\(meal.p.number) g protein · Bundled \(store.chainName(meal.chain)) Australia menu data. Servings and recipes may vary.").font(.caption).foregroundStyle(.secondary)
+                            Text("\(meal.p.number) g protein · Bundled \(store.chainName(meal.chain)) Australia menu data. Servings and recipes may vary.").font(.roboto(.caption)).foregroundStyle(.secondary)
                         }.accessibilityElement(children: .combine).accessibilityAddTraits(.updatesFrequently)
                         .transition(.opacity)
                     } else {
                         VStack(spacing: 12) {
-                            Text("\(Int(guess)) Cal").font(.system(.largeTitle, design: .rounded, weight: .bold)).monospacedDigit().contentTransition(.numericText())
+                            Text("\(Int(guess)) Cal").font(.roboto(.largeTitle, weight: .bold)).monospacedDigit().contentTransition(.numericText())
                             Slider(value: $guess, in: 100...1600, step: 25)
                                 .accessibilityLabel("Your calorie guess").accessibilityValue("\(Int(guess)) calories")
-                            HStack { Text("100 Cal"); Spacer(); Text("1,600 Cal") }.font(.caption).foregroundStyle(.secondary)
+                            HStack { Text("100 Cal"); Spacer(); Text("1,600 Cal") }.font(.roboto(.caption)).foregroundStyle(.secondary)
                         }
                     }
                     Button {
@@ -232,18 +233,18 @@ struct LeanrOnboarding: View {
                     VStack(alignment: .leading, spacing: 24) {
                         if !answeredMeals.isEmpty {
                             Text(calorieGap > 0 ? "The calories you didn’t count." : "Your guesses, added up.")
-                                .font(.system(.largeTitle, design: .rounded, weight: .bold))
+                                .font(.display())
                             VStack(alignment: .leading, spacing: 16) {
                                 Text("\(abs(calorieGap).number) Cal")
-                                    .font(.system(.largeTitle, design: .rounded, weight: .bold))
+                                    .font(.roboto(.largeTitle, weight: .bold)).monospacedDigit()
                                     .contentTransition(.numericText())
                                 Text(calorieGap > 0 ? "more than you guessed" : calorieGap < 0 ? "less than you guessed" : "difference — spot on!")
-                                    .font(.headline)
+                                    .font(.roboto(.headline))
                                 Divider()
                                 LabeledContent("Your guesses", value: "\(guessedTotal.number) Cal")
                                 LabeledContent("Menu total", value: "\(actualTotal.number) Cal")
                                 Text("Across \(answeredMeals.count) quiz items combined. Overestimates offset underestimates in this total.")
-                                    .font(.caption)
+                                    .font(.roboto(.caption))
                             }
                             .foregroundStyle(Color(red: 0.23, green: 0.17, blue: 0.10))
                             .padding(24).frame(maxWidth: .infinity, alignment: .leading)
@@ -257,7 +258,7 @@ struct LeanrOnboarding: View {
                                     .foregroundStyle(.secondary)
                             }
                         } else {
-                            Text("Your favourites.\nA little more informed.").font(.system(.largeTitle, design: .rounded, weight: .bold))
+                            Text("Your favourites.\nA little more informed.").font(.display())
                         }
                         Label("Compare restaurant meals", systemImage: "magnifyingglass")
                         Label("Build a meal around your targets", systemImage: "fork.knife")
@@ -270,6 +271,7 @@ struct LeanrOnboarding: View {
             }.padding(24).frame(maxWidth: 600).frame(maxWidth: .infinity)
         }
         .background { LeanrBackground() }
+        .font(.roboto())
         .interactiveDismissDisabled()
         .sheet(isPresented: $estimatingTargets) {
             NavigationStack {

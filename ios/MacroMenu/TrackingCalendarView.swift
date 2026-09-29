@@ -21,12 +21,12 @@ struct TrackingCalendarView: View {
             LeanrList {
                 Section {
                     Label("\(streak) day\(streak == 1 ? "" : "s") in a row", systemImage: "flame.fill")
-                        .font(.title2.bold()).foregroundStyle(.tint)
+                        .font(.roboto(.title2, weight: .bold)).foregroundStyle(.tint)
                     Text("Every day you log food counts. Staying within your target isn’t required.")
-                        .font(.subheadline).foregroundStyle(.secondary)
+                        .font(.roboto(.subheadline)).foregroundStyle(.secondary)
                     if !snapshot.trackingDays.contains(dayKey(context.date)) {
                         Text(streak > 0 ? "Log today to continue your streak." : "Log food today to start your streak.")
-                            .font(.subheadline.weight(.medium))
+                            .font(.roboto(.subheadline, weight: .medium))
                     }
                 }
                 Section {
@@ -34,7 +34,7 @@ struct TrackingCalendarView: View {
                         Button { move(-1) } label: { Image(systemName: "chevron.left").frame(width: 44, height: 44) }
                             .accessibilityLabel("Previous month")
                         Spacer()
-                        Text(start.formatted(.dateTime.month(.wide).year())).font(.headline)
+                        Text(start.formatted(.dateTime.month(.wide).year())).font(.roboto(.headline))
                         Spacer()
                         Button { move(1) } label: { Image(systemName: "chevron.right").frame(width: 44, height: 44) }
                             .disabled(calendar.isDate(start, equalTo: context.date, toGranularity: .month))
@@ -43,7 +43,7 @@ struct TrackingCalendarView: View {
                     LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 4), count: 7), spacing: 10) {
                         ForEach(0..<7, id: \.self) { index in
                             Text(calendar.veryShortStandaloneWeekdaySymbols[(index + calendar.firstWeekday - 1) % 7])
-                                .font(.caption).foregroundStyle(.secondary)
+                                .font(.roboto(.caption)).foregroundStyle(.secondary)
                         }
                         ForEach(0..<offset, id: \.self) { _ in Color.clear.frame(height: 44) }
                         ForEach(days, id: \.self) { day in dayCell(day, now: context.date, snapshot: snapshot) }
@@ -83,10 +83,10 @@ struct TrackingCalendarView: View {
                             .rotationEffect(.degrees(-90))
                     }
                     Text("\(calendar.component(.day, from: day))")
-                        .font(.system(size: 12, weight: calendar.isDateInToday(day) ? .bold : .regular))
+                        .font(.roboto(size: 12, weight: calendar.isDateInToday(day) ? .bold : .regular)).monospacedDigit()
                         .foregroundStyle(.primary)
                 }.frame(height: 32).padding(.horizontal, 2)
-                Circle().fill(logged ? Color.accentColor : .clear).frame(width: 4, height: 4)
+                Circle().fill(logged ? AnyShapeStyle(.tint) : AnyShapeStyle(.clear)).frame(width: 4, height: 4)
             }.frame(maxWidth: .infinity, minHeight: 44).opacity(future ? 0.3 : 1)
                 .contentShape(Rectangle())
         }.buttonStyle(.plain).disabled(future)
