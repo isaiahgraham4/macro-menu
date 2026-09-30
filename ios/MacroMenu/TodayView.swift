@@ -15,6 +15,7 @@ struct TodayView: View {
     @State private var showingCalendar = false
     @State private var now = Date()
     @State private var mealTime = MealTime.suggested()
+    @Environment(\.dynamicTypeSize) private var typeSize
     private let timer = Timer.publish(every: 30, on: .main, in: .common).autoconnect()
     var key: String { dayKey(date) }
     var entries: [LogEntry] { store.data.logs[key] ?? [] }
@@ -39,21 +40,23 @@ struct TodayView: View {
                         Text("Your day, on the board.").font(.roboto(.subheadline))
                     }
                     Spacer()
-                    Image(systemName: "leaf.fill").font(.largeTitle)
+                    Image(systemName: "leaf.fill").font(.largeTitle).accessibilityHidden(true)
                 }
                 .foregroundStyle(Color(red: 0.23, green: 0.17, blue: 0.10))
                 .padding(24).background { CuttingBoard() }
                 .listRowInsets(EdgeInsets()).listRowBackground(Color.clear)
             }
             Section {
-                HStack(spacing: 8) {
-                    Button { shift(-1) } label: { Image(systemName: "chevron.left").frame(width: 28, height: 28) }.accessibilityLabel("Previous day")
-                    Spacer()
-                    DatePicker("Day", selection: $date, in: ...Date(), displayedComponents: .date)
-                        .labelsHidden()
-                        .controlSize(.small)
-                    Spacer()
-                    Button { shift(1) } label: { Image(systemName: "chevron.right").frame(width: 28, height: 28) }.disabled(isToday).accessibilityLabel("Next day")
+                let previous = Button { shift(-1) } label: { Image(systemName: "chevron.left").frame(width: 44, height: 44).contentShape(Rectangle()) }.accessibilityLabel("Previous day")
+                let next = Button { shift(1) } label: { Image(systemName: "chevron.right").frame(width: 44, height: 44).contentShape(Rectangle()) }.disabled(isToday).accessibilityLabel("Next day")
+                let picker = DatePicker("Day", selection: $date, in: ...Date(), displayedComponents: .date).labelsHidden().controlSize(.small)
+                Group {
+                    if typeSize.isAccessibilitySize {
+                        // At the largest text sizes the date needs the whole row, so the arrows go underneath.
+                        VStack(spacing: 4) { picker; HStack { previous; Spacer(); next } }
+                    } else {
+                        HStack(spacing: 8) { previous; Spacer(); picker; Spacer(); next }
+                    }
                 }
                 .buttonStyle(.borderless)
                 .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
@@ -61,7 +64,9 @@ struct TodayView: View {
             }
             Section {
                 VStack(spacing: 18) {
-                    HStack(spacing: 20) {
+                    // The ring sits above the bars at the largest text sizes, so neither gets squeezed.
+                    let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(spacing: 20)) : AnyLayout(HStackLayout(spacing: 20))
+                    layout {
                         if let cal = goals.values["cal"] { CalorieRing(eaten: total.cal, target: cal) }
                         VStack(spacing: 14) {
                             if macroKeys.isEmpty {
@@ -71,7 +76,7 @@ struct TodayView: View {
                         }
                     }
                     if !otherKeys.isEmpty {
-                        LazyVGrid(columns: [GridItem(.flexible(), spacing: 16), GridItem(.flexible())], spacing: 14) {
+                        LazyVGrid(columns: typeSize.isAccessibilitySize ? [GridItem(.flexible())] : [GridItem(.flexible(), spacing: 16), GridItem(.flexible())], spacing: 14) {
                             ForEach(otherKeys, id: \.self) { key in bar(key) }
                         }
                     }
@@ -87,14 +92,16 @@ struct TodayView: View {
                     Button("Edit") { editingTargets = true }.font(.roboto(.subheadline, weight: .medium)).textCase(nil)
                 }
             }
-            Section { BodySummary() }
+            Section {
+                BodySummary()
+                NavigationLink { WeeklyReviewView() } label: { Label("Your week", systemImage: "chart.bar.xaxis") }
+            }
             Section("Logged meals") {
                 Picker("Log to", selection: $mealTime) {
                     ForEach(MealTime.allCases) { Text($0.title).tag($0) }
                 }
                 Button { barcode = true } label: { Label("Scan product barcode", systemImage: "barcode.viewfinder") }
             }
-            quickLog
             ForEach(MealTime.allCases) { category in
                 let meals = entries.filter { $0.mealTime == category }
                 Section {
@@ -173,60 +180,6 @@ struct TodayView: View {
                 if followingToday { date = value }
             }
     }
-    /// One-tap logging: the same meal as yesterday, or a meal you log often.
-    @ViewBuilder private var quickLog: some View {
-        let yesterday = QuickLog.previous(mealTime, before: date, logs: store.data.logs)
-        let frequent = QuickLog.frequent(logs: store.data.logs, now: date)
-        if !yesterday.isEmpty || !frequent.isEmpty {
-            Section {
-                if !yesterday.isEmpty {
-                    Button {
-                        let items = yesterday.flatMap(\.items)
-                        let name = yesterday.count == 1 ? yesterday[0].name : "Yesterday’s \(mealTime.title.lowercased())"
-                        if store.log(fresh(items), name: name, date: date, mealTime: mealTime) { store.notice = "Logged \(name)" }
-                    } label: {
-                        HStack {
-                            Label {
-                                VStack(alignment: .leading, spacing: 2) {
-                                    Text("Same as yesterday’s \(mealTime.title.lowercased())").font(.roboto(.headline))
-                                    Text(yesterday.map(\.name).joined(separator: ", ")).font(.roboto(.caption)).foregroundStyle(.secondary).lineLimit(1)
-                                }
-                            } icon: { Image(systemName: "arrow.uturn.backward.circle.fill") }
-                            Spacer()
-                            Text("\(Nutrition(yesterday.flatMap(\.items)).cal.number) Cal").font(.roboto(.subheadline)).foregroundStyle(.secondary)
-                        }
-                    }
-                }
-                if !frequent.isEmpty {
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 10) {
-                            ForEach(frequent) { entry in
-                                Button {
-                                    if store.log(fresh(entry.items), name: entry.name, date: date, mealTime: mealTime) { store.notice = "Logged \(entry.name)" }
-                                } label: {
-                                    VStack(alignment: .leading, spacing: 4) {
-                                        Text(entry.name).font(.roboto(.subheadline, weight: .medium)).lineLimit(2).multilineTextAlignment(.leading)
-                                        Spacer(minLength: 0)
-                                        Text("\(Nutrition(entry.items).cal.number) Cal · \(Nutrition(entry.items).p.number) g protein")
-                                            .font(.roboto(.caption)).foregroundStyle(.secondary)
-                                    }
-                                    .frame(width: 150, height: 76, alignment: .topLeading).padding(12)
-                                    .background(.fill.tertiary, in: RoundedRectangle(cornerRadius: 14))
-                                }
-                                .buttonStyle(.plain)
-                                .accessibilityLabel("Log \(entry.name) to \(mealTime.title)")
-                            }
-                        }
-                    }
-                    .scrollClipDisabled()
-                }
-            } header: { Text("Log again") } footer: {
-                Text("Adds to \(mealTime.title.lowercased()). Change the meal time above.")
-            }
-        }
-    }
-    /// Copies of logged items with new IDs, so the new entry is independent of the old one.
-    private func fresh(_ items: [Portion]) -> [Portion] { items.map { var copy = $0; copy.id = UUID(); return copy } }
     private func logRow(_ entry: LogEntry) -> some View {
         Button { editing = entry } label: {
             HStack(alignment: .firstTextBaseline) {

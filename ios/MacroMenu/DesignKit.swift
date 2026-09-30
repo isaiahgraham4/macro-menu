@@ -20,6 +20,8 @@ func nutrientStyle(_ key: String) -> AnyShapeStyle {
 struct CalorieRing: View {
     var eaten: Double
     var target: Double
+    /// Grows with the text size so "Cal left" still fits inside.
+    @ScaledMetric(relativeTo: .title2) private var size = 116.0
     var body: some View {
         let over = eaten > target
         ZStack {
@@ -29,10 +31,10 @@ struct CalorieRing: View {
                 .rotationEffect(.degrees(-90))
             VStack(spacing: 0) {
                 Text(abs(target - eaten).number).font(.roboto(.title2, weight: .bold)).monospacedDigit().minimumScaleFactor(0.6)
-                Text(over ? "Cal over" : "Cal left").font(.roboto(.caption)).foregroundStyle(.secondary)
-            }.padding(14)
+                Text(over ? "Cal over" : "Cal left").font(.roboto(.caption)).foregroundStyle(.secondary).minimumScaleFactor(0.7)
+            }.padding(14).lineLimit(1)
         }
-        .frame(width: 116, height: 116)
+        .frame(width: min(size, 260), height: min(size, 260))
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("\(eaten.number) of \(target.number) calories")
     }
@@ -48,12 +50,14 @@ struct TargetBar: View {
     var style: AnyShapeStyle
     var body: some View {
         let over = !minimum && value > target
+        let figures = Text("\(value.number) / \(target.number) \(unit)").font(.roboto(.caption)).monospacedDigit()
+            .foregroundStyle(over ? AnyShapeStyle(.orange) : AnyShapeStyle(.primary))
+        let name = Text(label).font(.roboto(.caption, weight: .medium)).foregroundStyle(.secondary)
         VStack(alignment: .leading, spacing: 5) {
-            HStack(alignment: .firstTextBaseline) {
-                Text(label).font(.roboto(.caption, weight: .medium)).foregroundStyle(.secondary)
-                Spacer(minLength: 4)
-                Text("\(value.number) / \(target.number) \(unit)").font(.roboto(.caption)).monospacedDigit()
-                    .foregroundStyle(over ? AnyShapeStyle(.orange) : AnyShapeStyle(.primary))
+            // Side by side when there's room; the figures drop below the name at large text sizes.
+            ViewThatFits(in: .horizontal) {
+                HStack(alignment: .firstTextBaseline) { name.fixedSize(); Spacer(minLength: 4); figures.fixedSize() }
+                VStack(alignment: .leading, spacing: 2) { name; figures }
             }
             GeometryReader { geo in
                 ZStack(alignment: .leading) {

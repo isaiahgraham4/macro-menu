@@ -15,6 +15,6 @@ Additional associations checked against Apple's AASA CDN on 27 September 2026:
 Association records: `https://app-site-association.cdn-apple.com/a/v1/<host>`.
 Red Rooster also publishes the exact link on `https://www.redrooster.com.au/appy-deals/`.
 
-Hungry Jack's, GYG and Nando's retain their existing configured links. Subway Australia and Spudbar currently show explicit App Store buttons because no verified app-launch link was found. The global Subway domain claims a different app identifier from Australia's `au.com.subcard.app`, so it is not used.
+Hungry Jack's, GYG and Nando's retain their existing configured links. Subway Australia, Spudbar, Zambrero and Boost Juice currently show explicit App Store buttons because no verified app-launch link was found. The global Subway domain claims a different app identifier from Australia's `au.com.subcard.app`, so it is not used.
 
 Manual acceptance check: with each Australian restaurant app installed, tap its Open button and confirm that app comes forward. Without it installed, confirm the AU App Store listing opens. Association-file validation alone cannot prove that every installed app version claims and handles a domain; device testing is still required.

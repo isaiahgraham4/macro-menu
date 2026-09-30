@@ -8,6 +8,8 @@ struct MealView: View {
     @State private var mealTime = MealTime.suggested()
     @State private var clear = false
     @State private var image: UIImage?
+    /// "Log again" cards widen with the text size.
+    @ScaledMetric(relativeTo: .subheadline) private var cardWidth = 150.0
     var title: String { name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? suggestedName : name }
     /// What's in the meal, customisations included, e.g. "McChicken · No McChicken Sauce, 2 × Small Fries".
     var suggestedName: String {
@@ -75,6 +77,7 @@ struct MealView: View {
                     }
                 }
             }
+            quickLog
             if !store.data.meals.isEmpty {
                 Section("Saved meals") {
                     ForEach(store.data.meals) { meal in
@@ -95,6 +98,62 @@ struct MealView: View {
             .sheet(isPresented: $picking) { NavigationStack { BrowseView { portion in store.add([portion]); picking = false }.toolbar { Button("Done") { picking = false } } } }
             .onChange(of: store.data.tray) { image = nil }
             .onChange(of: name) { image = nil }
+    }
+    /// One-tap logging: the same meal as yesterday, or a meal you log often.
+    @ViewBuilder private var quickLog: some View {
+        let yesterday = QuickLog.previous(mealTime, before: date, logs: store.data.logs)
+        let frequent = QuickLog.frequent(logs: store.data.logs, now: date)
+        if !yesterday.isEmpty || !frequent.isEmpty {
+            Section {
+                if store.data.tray.isEmpty {
+                    Picker("Log to", selection: $mealTime) { ForEach(MealTime.allCases) { Text($0.title).tag($0) } }
+                }
+                if !yesterday.isEmpty {
+                    Button {
+                        let items = yesterday.flatMap(\.items)
+                        let name = yesterday.count == 1 ? yesterday[0].name : "Yesterday’s \(mealTime.title.lowercased())"
+                        if store.log(QuickLog.copies(items), name: name, date: date, mealTime: mealTime) { store.notice = "Logged \(name)" }
+                    } label: {
+                        HStack {
+                            Label {
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text("Same as yesterday’s \(mealTime.title.lowercased())").font(.roboto(.headline))
+                                    Text(yesterday.map(\.name).joined(separator: ", ")).font(.roboto(.caption)).foregroundStyle(.secondary).lineLimit(1)
+                                }
+                            } icon: { Image(systemName: "arrow.uturn.backward.circle.fill") }
+                            Spacer()
+                            Text("\(Nutrition(yesterday.flatMap(\.items)).cal.number) Cal").font(.roboto(.subheadline)).foregroundStyle(.secondary)
+                        }
+                    }
+                }
+                if !frequent.isEmpty {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 10) {
+                            ForEach(frequent) { entry in
+                                Button {
+                                    if store.log(QuickLog.copies(entry.items), name: entry.name, date: date, mealTime: mealTime) { store.notice = "Logged \(entry.name)" }
+                                } label: {
+                                    VStack(alignment: .leading, spacing: 4) {
+                                        Text(entry.name).font(.roboto(.subheadline, weight: .medium)).lineLimit(2).multilineTextAlignment(.leading)
+                                        Spacer(minLength: 0)
+                                        Text("\(Nutrition(entry.items).cal.number) Cal · \(Nutrition(entry.items).p.number) g protein")
+                                            .font(.roboto(.caption)).foregroundStyle(.secondary)
+                                    }
+                                    .frame(width: min(cardWidth, 300), alignment: .topLeading).frame(minHeight: 76, alignment: .topLeading).padding(12)
+                                    .background(.fill.tertiary, in: RoundedRectangle(cornerRadius: 14))
+                                }
+                                .buttonStyle(.plain)
+                                .accessibilityLabel("Log \(entry.name) to \(mealTime.title)")
+                            }
+                        }
+                    }
+                    .scrollClipDisabled()
+                }
+            } header: { Text("Log again") } footer: {
+                let day = Calendar.current.isDateInToday(date) ? "today" : "on " + date.formatted(date: .abbreviated, time: .omitted)
+                Text("Logs straight to \(mealTime.title.lowercased()) \(day), without changing the meal you're building.")
+            }
+        }
     }
     private func quantity(_ item: Portion) -> Binding<Double> {
         Binding(get: { store.data.tray.first { $0.id == item.id }?.quantity ?? item.quantity }, set: { value in

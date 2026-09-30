@@ -25,7 +25,6 @@ struct FindView: View {
                             Text("Browse foods ranked by protein, calories or value").font(.roboto(.caption)).foregroundStyle(.secondary)
                         }
                         Spacer()
-                        Image(systemName: "chevron.right").font(.caption.weight(.semibold)).foregroundStyle(.tertiary)
                     }
                 }
             }
@@ -135,7 +134,7 @@ struct BrowseView: View {
     @State private var shown: FoodSearch.Browse?
     private var request: FoodSearch.Browse { .init(search: search, chain: chain, category: category, sort: sort) }
     /// Also redo the list when your own foods change or the menu loads.
-    private struct Key: Equatable { var request: FoodSearch.Browse; var custom: [Food]; var catalog: Int }
+    private struct Key: Equatable { var request: FoodSearch.Browse; var custom: [Food]; var catalog: String }
 
     private func update(_ request: FoodSearch.Browse) async {
         // Wait for a pause in typing so each keystroke doesn't start a new search.
@@ -177,7 +176,7 @@ struct BrowseView: View {
                 }
             }
         }.searchable(text: $search, prompt: "Food or restaurant")
-            .task(id: Key(request: request, custom: store.data.foods, catalog: store.catalog.foods.count)) { await update(request) }
+            .task(id: Key(request: request, custom: store.data.foods, catalog: store.catalog.revision ?? String(store.catalog.foods.count))) { await update(request) }
             .searchSuggestions {
                 if search.isEmpty && !recent.isEmpty {
                     Section("Recent searches") {
@@ -190,6 +189,6 @@ struct BrowseView: View {
             }
             .onSubmit(of: .search) { recent = RecentSearches.adding(search, to: recent) }
             .navigationTitle(pick == nil ? "Best choices" : "Choose a food")
-            .toolbar { if pick == nil { NavigationLink { SourcesView() } label: { Image(systemName: "info.circle") } } }
+            .toolbar { if pick == nil { NavigationLink { SourcesView() } label: { Image(systemName: "info.circle") }.accessibilityLabel("Menu sources") } }
     }
 }

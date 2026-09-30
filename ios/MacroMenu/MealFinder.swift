@@ -62,8 +62,10 @@ enum MealFinder {
         }
         for chain in Set(foods.map(\.chain)).sorted() where q.chains.isEmpty || q.chains.contains(chain) {
             let eligible = foods.filter { $0.chain == chain && $0.cat != "swap" && $0.cal > 0 && $0.cal <= q.calories }
-            let mains = eligible.filter(\.isAnchor)
-            let sides = eligible.filter { !$0.isAnchor && ($0.cal >= 50 || $0.cat == "drink") }.sorted { $0.cal < $1.cal }
+            // A chain with no mains (a juice bar) builds orders around its drinks instead.
+            let anchors = foods.contains { $0.chain == chain && $0.isAnchor }
+            let mains = anchors ? eligible.filter(\.isAnchor) : eligible
+            let sides = anchors ? eligible.filter { !$0.isAnchor && ($0.cal >= 50 || $0.cat == "drink") }.sorted { $0.cal < $1.cal } : []
             for main in mains {
                 if Task.isCancelled { return [] }
                 consider([main])

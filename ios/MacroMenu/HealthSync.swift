@@ -82,6 +82,9 @@ final class HealthSync {
         }
     }
 
+    /// Waits for Health updates already under way, so Siri can finish before the app is suspended.
+    func finishPending() async { await queue?.value }
+
     /// Reads today's and recent active energy, and imports weights recorded in Health by other apps and devices.
     func refresh() async {
         guard enabled else { return }

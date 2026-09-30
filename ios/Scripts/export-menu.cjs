@@ -1,13 +1,9 @@
-// Export only the data and pure modifier functions from the existing web source.
+// Builds ios/MacroMenu/MenuData.json from menu-source.js (the menus and the rules for customising orders).
 const fs = require('fs');
 const vm = require('vm');
 const path = require('path');
 const root = path.resolve(__dirname, '../..');
-const source = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
-const between = (a,b) => source.slice(source.indexOf(a), source.indexOf(b, source.indexOf(a)));
-const code = between('const CHAINS =', '/* ---------- helpers') + '\n' +
- between('const GYG_MODS =', '// A take-off and a swap') + '\n' +
- between('function extraFits(', 'function findMeals(') + '\n' +
+const code = fs.readFileSync(path.join(__dirname, 'menu-source.js'), 'utf8') + '\n' +
  `JSON.stringify({chains:CHAINS, foods:BUILTIN.map(f=>({...f, modifiers:modsFor(f)}))})`;
 const result = vm.runInNewContext(code, {}, {timeout: 5000});
 const data = JSON.parse(result);
@@ -136,5 +132,13 @@ for (const [withId, withoutId] of HJ_CHEESE) {
     kj: -diff('kj'), p: -diff('p'), c: -diff('c'), f: -diff('f'), nut, price: 0}];
 }
 console.log(`Added Hungry Jack's cheese removals to ${HJ_CHEESE.length} burgers.`);
-fs.writeFileSync(path.join(root, 'ios/MacroMenu/MenuData.json'), JSON.stringify(data));
+// format: the app only accepts formats it understands. revision: a fingerprint of the menu.
+// published: when this revision was first exported; unchanged menus keep their date, so a re-export isn't "newer".
+const crypto = require('crypto');
+const bundledPath = path.join(root, 'ios/MacroMenu/MenuData.json');
+const revision = crypto.createHash('sha256').update(JSON.stringify({chains: data.chains, foods: data.foods})).digest('hex').slice(0, 16);
+let published = new Date().toISOString();
+try { const previous = JSON.parse(fs.readFileSync(bundledPath, 'utf8')); if (previous.revision === revision && previous.published) published = previous.published; } catch {}
+const menu = JSON.stringify({format: 1, revision, published, chains: data.chains, foods: data.foods});
+fs.writeFileSync(bundledPath, menu);
 console.log(`Exported ${data.foods.length} foods across ${data.chains.length-1} restaurants.`);

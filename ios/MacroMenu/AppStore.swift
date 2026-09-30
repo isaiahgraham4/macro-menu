@@ -15,6 +15,8 @@ final class AppStore {
     var logsChanged: ((_ old: AppData, _ new: AppData) -> Void)?
     /// Called after every local save, so iCloud sync knows there's something to upload.
     var saved: (() -> Void)?
+    /// Called after data from another device is taken in.
+    var synced: (() -> Void)?
     private let url: URL
     init(url: URL = URL.applicationSupportDirectory.appending(path: "MacroMenu/app-state.json"), catalogURL: URL? = Bundle.main.url(forResource: "MenuData", withExtension: "json"), legacyURL: URL? = URL.applicationSupportDirectory.appending(path: "MacroMenu/foods.json")) {
         self.url = url
@@ -35,6 +37,8 @@ final class AppStore {
         refreshWidgets()
     }
     var foods: [Food] { catalog.foods + data.foods }
+    /// Switches to a newer restaurant menu. Logged meals keep the figures they were logged with.
+    func useMenu(_ menu: MenuCatalog) { catalog = menu }
     var goals: Goals { data.goalSets.first { $0.id == data.activeGoal } ?? data.goalSets[0] }
     @discardableResult func applyEstimatedTargets(_ values: [String: Double]) -> Bool {
         let activeID = goals.id
@@ -79,6 +83,7 @@ final class AppStore {
         guard incoming.isValid else { return false }
         do { try write(incoming) } catch { return false }
         data = incoming; undo = nil; refreshWidgets()
+        synced?()
         return true
     }
     @discardableResult func saveFood(_ food: Food) -> Bool {

@@ -2,7 +2,7 @@ import SwiftUI
 
 @main
 struct MacroMenuApp: App {
-    init() { AppFonts.setUp() }
+    init() { AppFonts.setUp(); AppServices.start() }
     var body: some Scene {
         WindowGroup {
             ContentView()

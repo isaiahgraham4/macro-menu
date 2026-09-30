@@ -7,7 +7,7 @@ The app uses SwiftUI and requires no third-party packages or API keys.
 
 - Find: combinations of up to three items from one restaurant, ranked by fit,
   calories, protein, price or protein per dollar; optional budget and macro caps.
-- Best: search all 1,026 bundled menu foods, filter by restaurant/category and
+- Best: search all 1,282 bundled menu foods from 12 restaurants, filter by restaurant/category and
   compare nutrition, prices and protein density. Source links are in the toolbar.
 - Meal: fractional servings, gram/mL portions when a serving weight is known,
   restaurant adjustments, personal adjustments, saved meals, logging to a chosen
@@ -22,8 +22,9 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   manual entry. No Claude service or cloud image processing is used.
 - Today: dated meal logs, editable quantities, copying meals to today, day sharing,
   logged-day averages, target sets, optional nutrient goals and an adult
-  Mifflin–St Jeor target calculator. "Log again" logs yesterday's meal for the
-  chosen meal time, or one of your most-logged meals, in one tap.
+  Mifflin–St Jeor target calculator.
+- Meal: "Log again" logs yesterday's meal for the chosen meal time, or one of your
+  most-logged meals, in one tap, without touching the meal you're building.
 - Weight: weigh-ins, a smoothed trend (each day moves the trend 10% of the way to
   the scale), weekly change, and measured maintenance (average logged intake less
   trend change × 7,700 Cal/kg over four weeks; needs 10 logged days and two weeks
@@ -45,9 +46,30 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   regular wraps, breakfast, and cheese/dressing on regular salads) and Hungry
   Jack's cheese (the difference between with- and without-cheese versions). KFC
   doesn't publish ingredient nutrition.
+- Siri and Shortcuts: "Log my usual lunch in Leanr" logs the meal most often
+  logged to that meal time in the last 30 days. "What fits at KFC in Leanr"
+  runs the finder against what's left of today's targets (capped at your typical
+  meal before 4 pm). The logic is in `Assistant.swift`, the intents in
+  `LeanrIntents.swift`; both use the shared store in `AppServices.swift`.
+- Meal reminders (Settings → Targets): per meal, at a chosen time, only if nothing
+  is logged to that meal yet. Notifications are booked two weeks ahead and
+  rebooked when the log changes. The optional Sunday 6 pm weekly review
+  notification carries that week's summary.
+- Your week (Today): days logged, averages over logged days, protein and calorie
+  days, weight-trend change and most-logged meals, with a shareable card.
+- CSV export (Settings → Your data): every logged food, or daily totals with that
+  day's targets. Figures a food didn't list are blank, and an "Incomplete" column
+  names partial totals.
+- Menu updates: `MenuUpdates.swift` can download a newer `MenuData.json` (known
+  format, newer, every item valid; the bundled copy is the fallback), but it's
+  switched off (`MenuUpdates.url` is nil) because the menu isn't hosted anywhere.
+  Settings → About shows the date of the menu in use.
 
-Restaurant nutrition and prices are the existing web app's September 2026
-snapshot, not live data. Missing values remain unknown. A macro or budget filter
+Restaurant nutrition and prices are a September 2026 snapshot, not live data.
+Zambrero (July 2026 sheet; burritos, bowls, nachos
+and tacos without sauce, sauces as extras) and Boost Juice (original and medium
+sizes; boosters aren't published) have no prices yet. Three Zambrero per-serve rows
+misprinted on the sheet are worked out from its per-100 g figures. Missing values remain unknown. A macro or budget filter
 excludes items without the required figures. Totals mark partial nutrient and
 price data. Custom changes without published prices make that price unknown.
 
@@ -74,7 +96,13 @@ From the repository root:
 node ios/Scripts/export-menu.cjs
 ```
 
-The exporter uses only the web source's menu data and pure modifier functions,
+The menus live in `ios/Scripts/menu-source.js` (chains, every item's published
+figures and the rules for customising orders). The exporter turns that into
+`ios/MacroMenu/MenuData.json`, stamped with a format number, a content fingerprint
+and a publish date that only changes when the menu does. The Macro Menu web app
+(`index.html`, `docs/`) is no longer updated; don't edit or publish it.
+
+The exporter runs the menu source's data and pure modifier functions,
 then adds ingredient removals from `mcd-ingredients.json`, `subway-ingredients.json`
 and Hungry Jack's with/without-cheese pairs. Subway builds are checked against
 each item's published total and skipped (with a warning) if they drift over 3%.
@@ -83,6 +111,9 @@ Title font: Bebas Neue (SIL Open Font License, `ios/Licenses/BebasNeue-OFL.txt`)
 Fonts whose licences don't allow redistribution live in `ios/LocalFonts/`, which
 is ignored by git.
 `MenuData.json` is included automatically by Xcode's synchronized app folder.
+
+App Store and TestFlight steps, privacy answers, screenshots and a listing draft are
+in `AppStore/README.md`.
 
 ## Checks
 

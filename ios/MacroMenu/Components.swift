@@ -1,8 +1,9 @@
 import SwiftUI
 import UniformTypeIdentifiers
 
+/// A file to save through the share sheet: a JSON backup or a CSV export.
 struct FoodDocument: FileDocument {
-    static var readableContentTypes: [UTType] { [.json] }
+    static var readableContentTypes: [UTType] { [.json, .commaSeparatedText] }
     var data: Data
     init(data: Data) { self.data = data }
     init(configuration: ReadConfiguration) throws {

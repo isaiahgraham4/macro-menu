@@ -294,6 +294,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Leanr;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Leanr uses the camera to scan product barcodes and read nutrition labels.";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Leanr reads your weight and active energy to show your weight trend and estimate your calorie target.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Leanr saves the food you log and the weights you enter to Apple Health.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Leanr uses your location while you’re using the app to show the closest restaurants.";
@@ -334,6 +335,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Leanr;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Leanr uses the camera to scan product barcodes and read nutrition labels.";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Leanr reads your weight and active energy to show your weight trend and estimate your calorie target.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Leanr saves the food you log and the weights you enter to Apple Health.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Leanr uses your location while you’re using the app to show the closest restaurants.";

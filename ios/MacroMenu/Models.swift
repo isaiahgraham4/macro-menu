@@ -177,7 +177,18 @@ struct AppData: Codable, Sendable {
         logs.keys.allSatisfy { $0.range(of: #"^\d{4}-\d{2}-\d{2}$"#, options: .regularExpression) != nil }
     }
 }
-struct MenuCatalog: Codable, Sendable { var chains: [Chain]; var foods: [Food] }
+struct MenuCatalog: Codable, Sendable {
+    /// Which layout this file uses, a fingerprint of its contents, and when it was published (ISO 8601).
+    /// Optional so older menu files still load.
+    var format: Int?
+    var revision: String?
+    var published: String?
+    var chains: [Chain]
+    var foods: [Food]
+    init(format: Int? = nil, revision: String? = nil, published: String? = nil, chains: [Chain], foods: [Food]) {
+        self.format = format; self.revision = revision; self.published = published; self.chains = chains; self.foods = foods
+    }
+}
 
 let nutrientNames: [(key: String, label: String, unit: String)] = [
     ("cal","Calories","Cal"),("p","Protein","g"),("c","Carbs","g"),("f","Fat","g"),
@@ -201,6 +212,9 @@ func mealText(_ name: String, _ items: [Portion]) -> String {
 
 /// Past meals to log again in one tap.
 enum QuickLog {
+    /// Copies of logged items with new IDs, so a new entry is independent of the old one.
+    static func copies(_ items: [Portion]) -> [Portion] { items.map { var copy = $0; copy.id = UUID(); return copy } }
+
     /// What was logged to `mealTime` the day before `date`.
     static func previous(_ mealTime: MealTime, before date: Date, logs: [String: [LogEntry]], calendar: Calendar = .current) -> [LogEntry] {
         guard let yesterday = calendar.date(byAdding: .day, value: -1, to: date) else { return [] }

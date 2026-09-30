@@ -8,7 +8,13 @@ import Foundation
         defer { try? FileManager.default.removeItem(at: root) }
         let catalogURL = URL(fileURLWithPath: CommandLine.arguments[1])
         let catalog = try JSONDecoder().decode(MenuCatalog.self,from: Data(contentsOf: catalogURL))
-        assert(catalog.foods.count == 1026)
+        assert(catalog.foods.count == 1282)
+        assert(Set(catalog.foods.map(\.chain)).isSubset(of: Set(catalog.chains.map(\.id))))
+        // A juice bar has no mains, so its drinks are the order.
+        let juice = MealFinder.find(catalog.foods, query: FindQuery(chains: ["boost"], calories: 700, protein: 25, maxItems: 1))
+        assert(!juice.isEmpty && juice.allSatisfy { $0.chain == "boost" && $0.total.cal <= 700 } && juice[0].total.p >= 20)
+        let burrito = MealFinder.find(catalog.foods, query: FindQuery(chains: ["zam"], calories: 900, protein: 40, maxItems: 2))
+        assert(!burrito.isEmpty && burrito.allSatisfy { $0.items[0].food.cat == "main" })
         assert(catalog.foods.allSatisfy(\.isValid))
         assert(Set(catalog.foods.map(\.id)).count == catalog.foods.count)
         assert(catalog.foods.contains { !($0.modifiers ?? []).isEmpty })
@@ -278,6 +284,116 @@ import Foundation
         assert(FoodSearch.browse([renamed, unpriced], chainNames: [:], request: .init(sort: "value")).map(\.id) == ["mine-1"])
         assert(FoodSearch.browse([renamed, unpriced], chainNames: [:], request: .init(sort: "protein")).map(\.id) == ["mine-1", "mine-2"])
 
+        // Siri: the usual meal, what's left today, and what fits.
+        let wrap = Food(id: "wrap", name: "Chicken wrap", kj: 2000, cal: 480, p: 35)
+        let toast = Food(id: "toast", name: "Toast", kj: 1000, cal: 240, p: 8)
+        var usualLogs: [String: [LogEntry]] = [:]
+        for n in 1...3 { usualLogs[dayKey(day(n))] = [LogEntry(name: "Wrap", items: [Portion(food: wrap)], time: day(n), mealTime: .lunch)] }
+        usualLogs[dayKey(day(4))] = [LogEntry(name: "Toast", items: [Portion(food: toast)], time: day(4), mealTime: .lunch),
+                                     LogEntry(name: "Toast", items: [Portion(food: toast)], time: day(4), mealTime: .breakfast)]
+        assert(Assistant.usual(.lunch, logs: usualLogs, now: day(5), calendar: calendar)?.name == "Wrap")
+        assert(Assistant.usual(.breakfast, logs: usualLogs, now: day(5), calendar: calendar)?.name == "Toast")
+        assert(Assistant.usual(.dinner, logs: usualLogs, now: day(5), calendar: calendar) == nil)
+        let copied = QuickLog.copies(usualLogs[dayKey(day(1))]![0].items)
+        assert(copied[0].food == wrap && copied[0].id != usualLogs[dayKey(day(1))]![0].items[0].id)
+        var siriData = AppData(); siriData.logs[dayKey(day(5))] = [LogEntry(name: "Wrap", items: [Portion(food: wrap)], time: day(5), mealTime: .lunch)]
+        let siriGoals = Goals()  // 2,200 Cal and 150 g protein; a typical meal is 500 Cal with 40 g protein.
+        let left = Assistant.remaining(siriData, goals: siriGoals, now: day(5))
+        assert(left.calories == 1720 && left.protein == 115)
+        let noon = calendar.date(bySettingHour: 12, minute: 0, second: 0, of: day(5))!
+        let evening = calendar.date(bySettingHour: 18, minute: 0, second: 0, of: day(5))!
+        let lunchBudget = Assistant.budget(siriData, goals: siriGoals, chain: "kfc", now: noon, calendar: calendar)!
+        assert(lunchBudget.calories == 500 && lunchBudget.protein == 40 && lunchBudget.chains == ["kfc"])
+        let dinnerBudget = Assistant.budget(siriData, goals: siriGoals, chain: "kfc", now: evening, calendar: calendar)!
+        assert(dinnerBudget.calories == 1720 && dinnerBudget.protein == 115)
+        var fullDay = siriData; fullDay.logs[dayKey(day(5))]! += [LogEntry(name: "Big", items: [Portion(food: steadyFood)], time: day(5))]
+        assert(Assistant.budget(fullDay, goals: siriGoals, chain: "kfc", now: evening, calendar: calendar) == nil)
+        assert(Assistant.fitsAnswer(restaurant: "KFC", query: nil, matches: [], caloriesLeft: -280) == "You've used today's calories, so nothing at KFC fits. You're 280 Cal over today's target.")
+        let pair = [Portion(food: wrap), Portion(food: wrap), Portion(food: toast)]
+        assert(Assistant.describe(pair) == "2 × Chicken wrap + Toast")
+        let answer = Assistant.fitsAnswer(restaurant: "KFC", query: lunchBudget, matches: [MealMatch(items: [Portion(food: wrap)], total: Nutrition([Portion(food: wrap)]))], caloriesLeft: 1720)
+        assert(answer == "At KFC, for up to 500 Cal with 40 g protein:\n• Chicken wrap: 480 Cal, 35 g protein")
+        assert(Assistant.fitsAnswer(restaurant: "KFC", query: lunchBudget, matches: [], caloriesLeft: 1720) == "Nothing at KFC fits in 500 Cal.")
+        // Siri's restaurant names match the menu.
+        for id in Set(Assistant.nicknames.values) { assert(catalog.chains.contains { $0.id == id }, "unknown chain \(id)") }
+
+        // Meal reminders: two weeks ahead, none for meals already logged, none in the past.
+        let reminderNow = calendar.date(bySettingHour: 12, minute: 0, second: 0, of: day(5))!
+        let planned = MealReminders.plan([(meal: .breakfast, minutes: 9 * 60), (meal: .lunch, minutes: 13 * 60), (meal: .dinner, minutes: 19 * 60)],
+                                         logs: siriData.logs, now: reminderNow, calendar: calendar)
+        assert(!planned.contains { $0.id == "reminder.breakfast.\(dayKey(day(5)))" })
+        assert(!planned.contains { $0.id == "reminder.lunch.\(dayKey(day(5)))" })
+        assert(planned.contains { $0.id == "reminder.dinner.\(dayKey(day(5)))" && calendar.component(.hour, from: $0.date) == 19 })
+        assert(planned.count == 1 + 13 * 3 && planned.allSatisfy { $0.date > reminderNow })
+
+        // Daylight saving: Melbourne's clocks go forward on 4 Oct 2026, and a 1:30 pm reminder stays at 1:30 pm.
+        var victoria = Calendar(identifier: .gregorian); victoria.timeZone = TimeZone(identifier: "Australia/Melbourne")!
+        let changeover = victoria.date(from: DateComponents(year: 2026, month: 10, day: 3, hour: 20))!
+        let dstPlan = MealReminders.plan([(meal: .lunch, minutes: 13 * 60 + 30)], logs: [:], now: changeover, calendar: victoria)
+        assert(dstPlan.allSatisfy { victoria.component(.hour, from: $0.date) == 13 && victoria.component(.minute, from: $0.date) == 30 })
+        // Reminders are rebooked when anything they depend on changes, and not for unrelated saves.
+        let before = MealReminders.inputs(siriData, goals: siriGoals, now: noon, calendar: calendar)
+        var trayOnly = siriData; trayOnly.tray = [Portion(food: toast)]
+        assert(MealReminders.inputs(trayOnly, goals: siriGoals, now: noon, calendar: calendar) == before)
+        var weighed = siriData; weighed.weights = [WeightEntry(date: noon, kg: 80)]
+        assert(MealReminders.inputs(weighed, goals: siriGoals, now: noon, calendar: calendar) != before)
+        var newTarget = siriGoals; newTarget.values["p"] = 170
+        assert(MealReminders.inputs(siriData, goals: newTarget, now: noon, calendar: calendar) != before)
+        var lunchLogged = siriData; lunchLogged.logs[dayKey(day(6))] = [LogEntry(name: "Wrap", items: [Portion(food: wrap)], time: day(6), mealTime: .lunch)]
+        assert(MealReminders.inputs(lunchLogged, goals: siriGoals, now: noon, calendar: calendar) != before)
+
+        // CSV exports: blanks for missing figures, quoting, and no spreadsheet formulas.
+        assert(LogExport.field("Wrap, large") == "\"Wrap, large\"" && LogExport.field("Say \"hi\"") == "\"Say \"\"hi\"\"\"")
+        assert(LogExport.field("=HYPERLINK(1)") == "'=HYPERLINK(1)" && LogExport.field("-5") == "-5")
+        var csvData = AppData()
+        let partial = Food(id: "p1", name: "Mystery, bowl", kj: 1000, cal: 240, p: 20, c: nil, f: 9, nut: ["fibre": 4])
+        let plain = Food(id: "p2", name: "Apple", kj: 400, cal: 95, p: 0.5, c: 25, f: 0.3)
+        csvData.logs[dayKey(day(1))] = [LogEntry(name: "Lunch", items: [Portion(food: partial, quantity: 2), Portion(food: plain)], time: day(1), mealTime: .lunch)]
+        let itemRows = LogExport.items(csvData) { $0 == "mine" ? "My foods" : $0 }.components(separatedBy: "\r\n")
+        assert(itemRows.count == 4 && itemRows[0].hasPrefix("Date,Time,Meal time,Meal,Food,Restaurant,Serving,Quantity,Calories,kJ,Protein (g),Carbs (g),Fat (g)"))
+        assert(itemRows[1].hasPrefix("\(dayKey(day(1))),08:00,Lunch,Lunch,\"Mystery, bowl\",My foods,1 serving,2,480,2000,40,,18,"))
+        let dayRows = LogExport.days(csvData).components(separatedBy: "\r\n")
+        assert(dayRows.count == 3 && dayRows[1].hasPrefix("\(dayKey(day(1))),1,575,40.5,25,18.3,,,,8,"))
+        assert(dayRows[1].contains(",Carbs; Fibre,") && dayRows[1].hasSuffix(",2200,150,,,,,,,,,,,,"))
+        // A day where no food listed carbs exports a blank, not 0.
+        var noCarbs = AppData(); noCarbs.logs[dayKey(day(2))] = [LogEntry(name: "Spud", items: [Portion(food: partial)], time: day(2))]
+        assert(LogExport.days(noCarbs).components(separatedBy: "\r\n")[1].hasPrefix("\(dayKey(day(2))),1,240,20,,9,"))
+
+        // Weekly review: averages over logged days only, protein days, weight trend and repeat meals.
+        var week = AppData()
+        for n in 0...1 { week.logs[dayKey(day(n))] = [LogEntry(name: "Wrap", items: [Portion(food: wrap)], time: day(n)), LogEntry(name: "wrap", items: [Portion(food: wrap)], time: day(n))] }
+        week.logs[dayKey(day(2))] = [LogEntry(name: "Toast", items: [Portion(food: toast)], time: day(2))]
+        week.logs[dayKey(day(8))] = [LogEntry(name: "Next week", items: [Portion(food: steadyFood)], time: day(8))]
+        week.weights = [WeightEntry(date: day(-3), kg: 80), WeightEntry(date: day(5), kg: 79)]
+        let review = WeeklyReview.make(week, goals: Goals(), ending: day(6), calendar: calendar)
+        assert(review.loggedDays == 3 && review.averageCalories == 720 && abs(review.averageProtein! - 148.0 / 3) < 0.001)
+        assert(review.calorieTarget == 2200 && review.proteinTarget == 150 && review.proteinDays == 0 && review.calorieDays == 3)
+        assert(abs(review.weightChange! + (1 - pow(0.9, 8))) < 0.0001 && review.topMeals == [WeeklyReview.Meal(name: "Wrap", count: 4)])
+        assert(review.summary == "Logged 3 of 7 days · avg 720 Cal · protein target hit 0 days · trend −0.6 kg.")
+        assert(WeeklyReview.make(AppData(), goals: Goals(), ending: day(6), calendar: calendar).summary == "Nothing logged this week yet.")
+        let wednesday = calendar.date(bySettingHour: 12, minute: 0, second: 0, of: day(2))!
+        assert(MealReminders.nextReview(after: wednesday, calendar: calendar) == calendar.date(bySettingHour: 18, minute: 0, second: 0, of: day(6)))
+        let sundayNight = calendar.date(bySettingHour: 19, minute: 0, second: 0, of: day(6))!
+        assert(MealReminders.nextReview(after: sundayNight, calendar: calendar) == calendar.date(bySettingHour: 18, minute: 0, second: 0, of: day(13)))
+
+        // Menu updates: only a newer menu in a known format, with every item valid, replaces the one in use.
+        assert(catalog.format == MenuUpdates.format && catalog.published != nil && catalog.revision != nil)
+        var newer = catalog; newer.published = "2099-01-01T00:00:00.000Z"
+        assert(MenuUpdates.acceptable(newer, over: catalog))
+        assert(!MenuUpdates.acceptable(catalog, over: catalog))
+        assert(!MenuUpdates.acceptable(catalog, over: newer))
+        var future = newer; future.format = 2; assert(!MenuUpdates.acceptable(future, over: catalog))
+        var orphan = newer; orphan.foods[0].chain = "nowhere"; assert(!MenuUpdates.acceptable(orphan, over: catalog))
+        var twin = newer; twin.foods[1].id = twin.foods[0].id; assert(!MenuUpdates.acceptable(twin, over: catalog))
+        var negativeMenu = newer; negativeMenu.foods[0].cal = -1; assert(!MenuUpdates.acceptable(negativeMenu, over: catalog))
+        var shrunk = newer; shrunk.foods = Array(shrunk.foods.prefix(10)); assert(!MenuUpdates.acceptable(shrunk, over: catalog))
+        let cachedMenu = root.appending(path: "cached-menu.json")
+        try JSONEncoder().encode(newer).write(to: cachedMenu)
+        assert(MenuUpdates.best(bundled: catalog, cachedAt: cachedMenu).published == newer.published)
+        try Data("not json".utf8).write(to: cachedMenu)
+        assert(MenuUpdates.best(bundled: catalog, cachedAt: cachedMenu).published == catalog.published)
+        assert(MenuUpdates.best(bundled: catalog, cachedAt: root.appending(path: "missing.json")).published == catalog.published)
+
         // Undo and merging weights.
         let undoURL = root.appending(path: "undo.json")
         let undoStore = AppStore(url: undoURL, catalogURL: catalogURL, legacyURL: nil)
@@ -293,6 +409,6 @@ import Foundation
         let reloadedOld = try JSONDecoder().decode(AppData.self, from: oldFormat)
         assert(reloadedOld.weights == nil && reloadedOld.isValid)
 
-        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search and undo (\(Date().timeIntervalSince(start).formatted())s).")
+        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates and undo (\(Date().timeIntervalSince(start).formatted())s).")
     }
 }

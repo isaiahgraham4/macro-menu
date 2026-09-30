@@ -11,6 +11,8 @@ final class Navigator {
     /// Changing this rebuilds the Find tab, returning it to its main screen.
     private(set) var findStack = UUID()
     var todayStack = UUID()
+    /// Set when the weekly review notification is tapped.
+    var showWeeklyReview = false
 
     func showOptions(at chain: String) {
         findChain = chain; findStack = UUID(); tab = .find
@@ -19,11 +21,11 @@ final class Navigator {
 
 struct ContentView: View {
     @Environment(\.scenePhase) private var scenePhase
-    @State private var store = AppStore()
+    @State private var store = AppServices.store
     @State private var location = LocationStore()
-    @State private var nav = Navigator()
-    @State private var health = HealthSync()
-    @State private var cloud = CloudSync()
+    @State private var nav = AppServices.nav
+    @State private var health = AppServices.health
+    @State private var cloud = AppServices.cloud
     @State private var settings = false
     @AppStorage("leanr.onboarding.completed") private var onboardingCompleted = false
     @AppStorage(MacroColours.proteinKey) private var proteinColour = "blue"
@@ -49,14 +51,14 @@ struct ContentView: View {
             if scenePhase == .active {
                 store.refreshWidgets()
                 cloud.schedule(after: 0)
+                AppServices.rebookReminders()
                 Task { await health.refresh() }
+                Task { await AppServices.checkMenu() }
             }
         }
         .task {
-            health.store = store; cloud.store = store
-            store.logsChanged = { [health] old, new in health.follow(old: old, new: new) }
-            store.saved = { [cloud] in cloud.markDirty() }
             await cloud.sync()
+            AppServices.rebookReminders()
             await health.refresh()
         }
         .onOpenURL { url in
@@ -75,6 +77,11 @@ struct ContentView: View {
             LeanrOnboarding { onboardingCompleted = true }
                 .environment(store).environment(location).environment(health).tint(accent)
                 .preferredColorScheme(appearance.colorScheme)
+        }
+        .sheet(isPresented: $nav.showWeeklyReview) {
+            NavigationStack {
+                WeeklyReviewView().toolbar { ToolbarItem(placement: .confirmationAction) { Button("Done") { nav.showWeeklyReview = false } } }
+            }.tint(accent).font(.roboto()).environment(store).preferredColorScheme(appearance.colorScheme)
         }
         .sheet(isPresented: $settings) {
             NavigationStack { SettingsView() }.tint(accent).font(.roboto()).environment(store).environment(location).environment(nav)

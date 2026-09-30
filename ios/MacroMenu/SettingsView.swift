@@ -11,7 +11,14 @@ struct SettingsView: View {
     @AppStorage(AppIconTheme.storageKey) private var iconRaw = AppIconTheme.black.rawValue
     private var current: AppAccent { AppAccent.resolved(accentRaw) }
     private var currentIcon: AppIconTheme { AppIconTheme(rawValue: iconRaw) ?? .black }
+    @Environment(AppStore.self) private var store
     var version: String { Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "" }
+    /// When the restaurant menu in use was published.
+    var menuDate: String {
+        let precise = ISO8601DateFormatter(); precise.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        guard let text = store.catalog.published, let date = precise.date(from: text) ?? ISO8601DateFormatter().date(from: text) else { return "Built in" }
+        return date.formatted(date: .abbreviated, time: .omitted)
+    }
     var body: some View {
         LeanrList {
             Section("Appearance") {
@@ -75,6 +82,7 @@ struct SettingsView: View {
                 NavigationLink { TargetsView() } label: { Label("Targets & target sets", systemImage: "target") }
                 NavigationLink { WeightView() } label: { Label("Weight log", systemImage: "scalemass") }
                 NavigationLink { MacroColourSettings() } label: { Label("Target colours", systemImage: "paintpalette") }
+                NavigationLink { ReminderSettings() } label: { Label("Meal reminders", systemImage: "bell") }
             }
             Section {
                 if health.isAvailable {
@@ -105,6 +113,7 @@ struct SettingsView: View {
                 LabeledContent("App", value: "Leanr")
                 Button("Play the calorie quiz") { showQuiz = true }
                 NavigationLink { SourcesView() } label: { Label("Menu sources", systemImage: "info.circle") }
+                LabeledContent("Menu updated", value: menuDate)
                 LabeledContent("Version", value: version)
             }
         }.navigationTitle("Settings")
@@ -144,5 +153,60 @@ struct MacroColourSettings: View {
                     .tag(colour.rawValue)
             }
         }
+    }
+}
+
+/// Per-meal "Nothing logged yet" reminders.
+struct ReminderSettings: View {
+    @Environment(AppStore.self) private var store
+    @Environment(\.openURL) private var openURL
+    @State private var denied = false
+    /// Bumped to redraw after a setting is saved, since the settings live in UserDefaults.
+    @State private var revision = 0
+    var body: some View {
+        LeanrList {
+            let _ = revision
+            ForEach(MealReminders.meals) { meal in
+                Section {
+                    Toggle(meal.title, isOn: Binding(get: { MealReminders.isOn(meal) }, set: { on in
+                        if on {
+                            Task {
+                                if await MealReminders.requestPermission() { save(MealReminders.enabledKey(meal), true) } else { denied = true }
+                            }
+                        } else { save(MealReminders.enabledKey(meal), false) }
+                    }))
+                    if MealReminders.isOn(meal) {
+                        DatePicker("Remind me at", selection: Binding(get: { time(MealReminders.minutes(meal)) }, set: { date in
+                            let parts = Calendar.current.dateComponents([.hour, .minute], from: date)
+                            save(MealReminders.timeKey(meal), (parts.hour ?? 0) * 60 + (parts.minute ?? 0))
+                        }), displayedComponents: .hourAndMinute)
+                    }
+                }
+            }
+            Section {
+                Text("Leanr only reminds you if nothing has been logged to that meal by then. Log it and today's reminder is cancelled.")
+                    .font(.roboto(.subheadline)).foregroundStyle(.secondary)
+            }
+            Section {
+                Toggle("Weekly review", isOn: Binding(get: { MealReminders.weeklyOn }, set: { on in
+                    if on {
+                        Task { if await MealReminders.requestPermission() { save(MealReminders.weeklyKey, true) } else { denied = true } }
+                    } else { save(MealReminders.weeklyKey, false) }
+                }))
+            } footer: { Text("Sundays at 6 pm: days logged, average calories, protein days and your weight trend.") }
+        }
+        .navigationTitle("Meal reminders")
+        .alert("Notifications are off for Leanr", isPresented: $denied) {
+            Button("Open Settings") { if let url = URL(string: UIApplication.openNotificationSettingsURLString) { openURL(url) } }
+            Button("Cancel", role: .cancel) {}
+        } message: { Text("Turn on notifications for Leanr in the Settings app to get meal reminders.") }
+    }
+    private func time(_ minutes: Int) -> Date {
+        Calendar.current.date(bySettingHour: minutes / 60, minute: minutes % 60, second: 0, of: Date()) ?? Date()
+    }
+    private func save(_ key: String, _ value: Any) {
+        UserDefaults.standard.set(value, forKey: key)
+        revision += 1
+        MealReminders.refresh(store.data, goals: store.goals)
     }
 }

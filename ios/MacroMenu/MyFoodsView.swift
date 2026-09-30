@@ -3,6 +3,7 @@ import PhotosUI
 import Vision
 import ImageIO
 import UIKit
+import UniformTypeIdentifiers
 import VisionKit
 import AVFoundation
 
@@ -56,8 +57,8 @@ struct MyFoodsView: View {
 struct BackupSection: View {
     @Environment(AppStore.self) private var store
     @State private var importing = false
-    @State private var exporting = false
-    @State private var document = FoodDocument(data: Data())
+    /// The file being saved, its type and suggested name.
+    @State private var export: (document: FoodDocument, type: UTType, name: String)?
     @State private var pending: AppData?
     @State private var confirm = false
     /// Shown here because the main screen's alerts can't appear over the Settings sheet.
@@ -65,17 +66,24 @@ struct BackupSection: View {
     var body: some View {
         Section {
             Button {
-                do { document = FoodDocument(data: try store.export()); exporting = true }
+                do { export = (FoodDocument(data: try store.export()), .json, "Leanr-\(dayKey(Date()))") }
                 catch { message = error.localizedDescription }
             } label: { Label("Export all app data", systemImage: "square.and.arrow.up") }
             Button { importing = true } label: { Label("Import backup", systemImage: "square.and.arrow.down") }
+            Button {
+                export = (csvFile(LogExport.items(store.data, chainName: store.chainName)), .commaSeparatedText, "Leanr food log \(dayKey(Date()))")
+            } label: { Label("Export food log (CSV)", systemImage: "tablecells") }
+            Button {
+                export = (csvFile(LogExport.days(store.data)), .commaSeparatedText, "Leanr daily totals \(dayKey(Date()))")
+            } label: { Label("Export daily totals (CSV)", systemImage: "calendar") }
         } header: {
             Text("Your data")
         } footer: {
-            Text("Foods, recipes, saved meals, daily logs, targets and your current meal are saved on this device. Export a backup to transfer them. Native backups and Macro Menu web exports are supported; web exports do not include daily history.")
+            Text("Foods, recipes, saved meals, daily logs, targets and your current meal are saved on this device. Export a backup to transfer them. Native backups and Macro Menu web exports are supported; web exports do not include daily history. CSV files open in Numbers, Excel or Google Sheets; figures a food didn't list are left blank.")
         }
         .disabled(store.loadError != nil)
-        .fileExporter(isPresented: $exporting, document: document, contentType: .json, defaultFilename: "Leanr-\(dayKey(Date()))") { result in
+        .fileExporter(isPresented: Binding(get: { export != nil }, set: { if !$0 { export = nil } }), document: export?.document,
+                      contentType: export?.type ?? .json, defaultFilename: export?.name) { result in
             if case .failure(let error) = result { message = error.localizedDescription }
         }
         .fileImporter(isPresented: $importing, allowedContentTypes: [.json]) { result in
@@ -96,6 +104,8 @@ struct BackupSection: View {
         }
         .alert(message ?? "", isPresented: Binding(get: { message != nil }, set: { if !$0 { message = nil } })) { Button("OK") { message = nil } }
     }
+    /// A byte-order mark so Excel reads names with accents correctly.
+    private func csvFile(_ text: String) -> FoodDocument { FoodDocument(data: Data(("\u{FEFF}" + text).utf8)) }
 }
 
 struct FoodEditor: View {
