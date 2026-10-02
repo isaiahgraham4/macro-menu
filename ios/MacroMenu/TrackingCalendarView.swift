@@ -5,7 +5,12 @@ struct TrackingCalendarView: View {
     @Environment(\.dismiss) private var dismiss
     @Binding var selectedDate: Date
     @State private var month = Date()
-    private var calendar: Calendar { Calendar(identifier: .gregorian) }
+    /// Gregorian, but with the phone's language and first day of the week, so the letters and columns match the user's own calendar.
+    private var calendar: Calendar {
+        var result = Calendar(identifier: .gregorian)
+        result.locale = .current; result.timeZone = .current; result.firstWeekday = Calendar.current.firstWeekday
+        return result
+    }
     private var start: Date { calendar.dateInterval(of: .month, for: month)!.start }
     private var days: [Date] {
         (calendar.range(of: .day, in: .month, for: start) ?? 1..<1).compactMap {
@@ -41,11 +46,13 @@ struct TrackingCalendarView: View {
                             .accessibilityLabel("Next month")
                     }.buttonStyle(.borderless)
                     LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 4), count: 7), spacing: 10) {
+                        // Each kind of cell gets its own IDs: letters and blanks both counting from 0 made the grid treat them as the same cells, and the letters went missing.
                         ForEach(0..<7, id: \.self) { index in
                             Text(calendar.veryShortStandaloneWeekdaySymbols[(index + calendar.firstWeekday - 1) % 7])
                                 .font(.roboto(.caption)).foregroundStyle(.secondary)
+                                .accessibilityLabel(calendar.standaloneWeekdaySymbols[(index + calendar.firstWeekday - 1) % 7])
                         }
-                        ForEach(0..<offset, id: \.self) { _ in Color.clear.frame(height: 44) }
+                        ForEach((0..<offset).map { "blank-\($0)" }, id: \.self) { _ in Color.clear.frame(height: 44) }
                         ForEach(days, id: \.self) { day in dayCell(day, now: context.date, snapshot: snapshot) }
                     }
                 } footer: {

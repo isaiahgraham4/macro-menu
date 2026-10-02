@@ -10,13 +10,15 @@ struct BarcodeProduct: Codable, Sendable {
 
 enum RecentBarcodes {
     static let storageKey = "recentBarcodeProducts"
+    /// How many scans are remembered and offered.
+    static let limit = 10
     static func products(from data: Data) -> [BarcodeProduct] {
         ((try? JSONDecoder().decode([BarcodeProduct].self, from: data)) ?? [])
-            .filter { $0.food.isValid }.prefix(20).map { $0 }
+            .filter { $0.food.isValid }.prefix(limit).map { $0 }
     }
     static func recording(_ product: BarcodeProduct, in data: Data) -> Data {
         let recent = [product] + products(from: data).filter { $0.sourceURL != product.sourceURL }
-        return (try? JSONEncoder().encode(Array(recent.prefix(20)))) ?? data
+        return (try? JSONEncoder().encode(Array(recent.prefix(limit)))) ?? data
     }
 }
 

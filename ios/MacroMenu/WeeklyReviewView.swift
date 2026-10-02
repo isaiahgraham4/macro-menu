@@ -58,7 +58,11 @@ private struct StatGrid: View {
     var review: WeeklyReview
     @Environment(\.dynamicTypeSize) private var typeSize
     var body: some View {
-        LazyVGrid(columns: typeSize.isAccessibilitySize ? [GridItem(.flexible())] : [GridItem(.flexible(), spacing: 12), GridItem(.flexible())], spacing: 12) {
+        VStack(spacing: 12) {
+          tile("Total calories", "\(review.totalCalories.rounded().number) Cal", review.totalCalorieTarget.map {
+              "Target \($0.rounded().number) Cal over \(review.loggedDays == 7 ? "the week" : review.loggedDays == 1 ? "the day you logged" : "the \(review.loggedDays) days you logged")"
+          })
+          LazyVGrid(columns: typeSize.isAccessibilitySize ? [GridItem(.flexible())] : [GridItem(.flexible(), spacing: 12), GridItem(.flexible())], spacing: 12) {
             tile("Days logged", "\(review.loggedDays) of 7", nil)
             tile("Avg calories", review.averageCalories.map { "\($0.rounded().number)" } ?? "–",
                  review.calorieTarget.map { "Target \($0.rounded().number) Cal" })
@@ -68,6 +72,7 @@ private struct StatGrid: View {
             tile("Calories on target", review.calorieTarget == nil ? "–" : "\(review.calorieDays) \(review.calorieDays == 1 ? "day" : "days")", "At or under target")
             tile("Weight trend", review.weightChange.map { "\(WeeklyReview.signed($0)) kg" } ?? "–",
                  review.trendWeight.map { "Now \($0.number) kg" } ?? "Weigh in to see it")
+          }
         }.padding(.vertical, 4)
     }
     private func tile(_ title: String, _ value: String, _ detail: String?) -> some View {

@@ -108,6 +108,14 @@ final class AppStore {
             if clearTray { $0.tray = [] }
         }
     }
+    /// Logs straight to today, under the meal time that fits the clock unless one is given.
+    /// With `yesterday`, it goes to the day before instead, for a meal that was forgotten.
+    @discardableResult func logNow(_ items: [Portion], name: String, mealTime: MealTime = .suggested(), yesterday: Bool = false) -> Bool {
+        let date = yesterday ? Calendar.current.date(byAdding: .day, value: -1, to: Date()) ?? Date() : Date()
+        guard log(QuickLog.copies(items), name: name, date: date, mealTime: mealTime) else { return false }
+        notice = "Logged to \(yesterday ? "yesterday’s " : "")\(mealTime.title.lowercased())"
+        return true
+    }
     func export() throws -> Data {
         let encoder = JSONEncoder(); encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
         return try encoder.encode(data)

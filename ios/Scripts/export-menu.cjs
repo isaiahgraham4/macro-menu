@@ -42,6 +42,27 @@ const label = raw => LABELS[raw] || (/BEEF PATT/.test(raw) ? 'Beef' : /CHICKEN P
   : /BUN$/.test(raw) ? 'Bun' : /TORTILLA/.test(raw) ? 'Tortilla'
   : raw.toLowerCase().replace(/\b\w/g, c => c.toUpperCase()).replace(/\bMc(\w)/g, (_, c) => 'Mc' + c.toUpperCase()));
 const round = x => Math.round(x * 10) / 10;
+const byId = Object.fromEntries(data.foods.map(f => [f.id, f]));
+// Parts McDonald's also sells on their own, with full nutrition: scale that to the part's energy instead of estimating.
+const SOLD_ALONE = [[/^MCCHICKEN SAUCE$/, 'mcd:dipping-sauce-mcchicken'], [/^BIG MAC SAUCE$/, 'mcd:dipping-sauce-big-mac'],
+  [/^TARTAR SAUCE$/, 'mcd:dipping-sauce-tartare'], [/^KETCHUP$/, 'mcd:dipping-sauce-ketchup'],
+  [/^TOMATO CHILLI JAM$/, 'mcd:dipping-sauce-tomato-chilli-jam'], [/^HASH BROWN$/, 'mcd:hash-brown']];
+/** Protein, carbs and fat for `kj` of a McDonald's part, with `est` when they're worked out from the ingredient type. */
+function partNutrition(raw, kj, food) {
+  const alone = SOLD_ALONE.find(([re]) => re.test(raw));
+  const source = alone && byId[alone[1]];
+  if (source) {
+    const k = kj / source.kj;
+    const nut = Object.fromEntries(Object.entries(source.nut || {}).map(([key, v]) => [key, round(v * k)]));
+    return {p: round(source.p * k), c: round((source.c ?? 0) * k), f: round((source.f ?? 0) * k), nut, est: false};
+  }
+  const [, ps, cs, fs] = SPLITS.find(([re]) => re.test(raw)) || [null,
+    ...(() => { const e = food.p * 4 + (food.c ?? 0) * 4 + (food.f ?? 0) * 9 || 1; return [food.p * 4 / e, (food.c ?? 0) * 4 / e, (food.f ?? 0) * 9 / e]; })()];
+  const kcal = kj / 4.184;
+  return {p: round(kcal * ps / 4), c: round(kcal * cs / 4), f: round(kcal * fs / 9), est: true};
+}
+const negate = n => ({p: -n.p, c: -n.c, f: -n.f, ...(n.nut ? {nut: Object.fromEntries(Object.entries(n.nut).map(([k, v]) => [k, -v]))} : {}), ...(n.est ? {est: true} : {})});
+const slugOf = name => name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 let added = 0;
 for (const food of data.foods) {
   const entry = ingredients[food.id];
@@ -55,18 +76,54 @@ for (const food of data.foods) {
     // One unlisted part (often the patty) is whatever energy the others don't account for.
     const kj = listed ?? (missing.length === 1 ? itemKj - known : null);
     if (kj == null || kj <= 0 || SKIP.test(raw) || kj > itemKj * 0.55) continue;
-    const [, ps, cs, fs] = SPLITS.find(([re]) => re.test(raw)) || [null,
-      ...(() => { const e = food.p * 4 + (food.c ?? 0) * 4 + (food.f ?? 0) * 9 || 1; return [food.p * 4 / e, (food.c ?? 0) * 4 / e, (food.f ?? 0) * 9 / e]; })()];
-    const kcal = kj / 4.184, name = label(raw);
-    let slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''), key = `r:${slug}`;
+    const name = label(raw), slug = slugOf(name);
+    let key = `r:${slug}`;
     for (let n = 2; keys.has(key); n++) key = `r:${slug}-${n}`;
     keys.add(key);
     food.modifiers = [...(food.modifiers || []), {key, id: `no-${slug}`, kind: 'r', name: `No ${name}`,
-      kj: -kj, p: -round(kcal * ps / 4), c: -round(kcal * cs / 4), f: -round(kcal * fs / 9), price: 0, est: true}];
+      kj: -kj, ...negate(partNutrition(raw, kj, food)), price: 0}];
     added++;
   }
 }
 console.log(`Added ${added} McDonald's ingredient removals.`);
+
+// What McDonald's will add to a burger, McMuffin or wrap: another patty, slice, rasher or egg, more of its sauce or salad,
+// or bacon and cheese where it has none. Energy is McDonald's own figure for that ingredient.
+// One patty, slice or rasher, as it comes in the single versions (Cheeseburger, Quarter Pounder, McChicken…).
+const UNITS = [
+  [/^10:1 BEEF PATT/, 'Beef Patty', 'f', 446], [/^4:1 BEEF PATT/, 'Quarter Pounder Patty', 'f', 1050],
+  [/^MCCHICKEN PATTY/, 'McChicken Patty', 'f', 767], [/^MCCRISPY CHICKEN PATTY/, 'McCrispy Chicken', 'f', 1250],
+  [/^MCSPICY CHICKEN PATTY/, 'McSpicy Chicken', 'f', 1280], [/^FILET-O-FISH PORTION/, 'Fish', 'f', 524],
+  [/^BEEF SAUSAGE/, 'Sausage', 'f', 471], [/^EGG$/, 'Egg', 'f', 295], [/^HASH BROWN$/, 'Hash Brown', 'a', 600],
+  [/^BACON$/, 'Bacon', 'a', 116], [/^SLICED CHEESE$|^WHITE CHEDDAR CHEESE$/, 'Cheese', 'a', 202],
+];
+// Sauces and salad go on again at the item's own portion.
+const AGAIN = /SAUCE|KETCHUP|MUSTARD|CHILLI JAM|PICKLES|ONIONS|LETTUCE|TOMATO|SLAW/;
+const BUILT = /BUN$|MUFFIN$|TORTILLA$/;
+let extras = 0;
+for (const food of data.foods) {
+  const entry = ingredients[food.id];
+  if (!entry || !entry[2].some(([raw]) => BUILT.test(raw))) continue;
+  const mods = [], seen = new Set();
+  const add = (raw, name, kind, kj) => {
+    const slug = slugOf(name);
+    if (seen.has(slug) || !(kj > 0)) return;
+    seen.add(slug);
+    mods.push({key: `${kind}:${slug}`, id: `extra-${slug}`, kind, name, kj, ...partNutrition(raw, kj, food), price: null});
+  };
+  for (const [raw, listed] of entry[2]) {
+    const unit = UNITS.find(([re]) => re.test(raw));
+    if (unit) add(raw, `Extra ${unit[1]}`, unit[2], unit[3]);
+    else if (AGAIN.test(raw) && listed > 0) add(raw, `Extra ${label(raw)}`, 'a', listed);
+  }
+  if (!seen.has('extra-bacon')) add('BACON', 'Add Bacon', 'a', 116);
+  if (!seen.has('extra-cheese')) add('SLICED CHEESE', 'Add Cheese', 'a', 202);
+  // Estimated extras keep the item's other nutrients as listed, like the removals.
+  for (const mod of mods) { if (!mod.est) delete mod.est; if (mod.price == null) delete mod.price; }
+  food.modifiers = [...(food.modifiers || []), ...mods];
+  extras += mods.length;
+}
+console.log(`Added ${extras} McDonald's extras.`);
 
 // Subway lists every sub's standard build and each ingredient's nutrition per portion (subway-ingredients.json),
 // so its "take off" options carry full nutrition. Breads and the main filling stay on.
@@ -116,22 +173,52 @@ for (const food of data.foods.filter(f => f.chain === 'sub')) {
 }
 console.log(`Added ${subwayAdded} Subway ingredient removals across ${subwayItems} items.`);
 
-// Hungry Jack's doesn't list ingredient nutrition, but some burgers come with and without cheese.
-// The difference between the two is exactly what the cheese adds.
-const HJ_CHEESE = [['hj:whopper-with-cheese', 'hj:whopper'], ['hj:double-whopper-with-cheese', 'hj:double-whopper'],
-  ['hj:cheeseburger', 'hj:hamburger'], ['hj:plant-based-whopper-with-cheese', 'hj:plant-based-whopper']];
-const byId = Object.fromEntries(data.foods.map(f => [f.id, f]));
-for (const [withId, withoutId] of HJ_CHEESE) {
-  const withCheese = byId[withId], without = byId[withoutId];
-  if (!withCheese || !without) { console.warn(`Missing ${withId} or ${withoutId}`); continue; }
-  const diff = key => round((withCheese[key] ?? 0) - (without[key] ?? 0));
-  if (diff('kj') <= 0 || diff('f') < 0 || diff('p') < 0) { console.warn(`${withId}: cheese difference doesn't add up`); continue; }
-  const nut = Object.fromEntries(Object.keys(withCheese.nut || {}).filter(k => without.nut?.[k] != null)
-    .map(k => [k, -round(withCheese.nut[k] - without.nut[k])]));
-  withCheese.modifiers = [...(withCheese.modifiers || []), {key: 'r:cheese', id: 'no-cheese', kind: 'r', name: 'No Cheese',
-    kj: -diff('kj'), p: -diff('p'), c: -diff('c'), f: -diff('f'), nut, price: 0}];
+// Hungry Jack's and KFC don't list what an extra adds, but sell some burgers with and without it.
+// The difference between the two published items is exactly what that extra adds, so it can go on or come off.
+// [what, without, with, items it can be added to, items it can be taken off, kind]
+const PAIRS = [
+  ['Cheese', 'hj:whopper', 'hj:whopper-with-cheese', ['hj:whopper'], ['hj:whopper-with-cheese'], 'a'],
+  ['Cheese', 'hj:double-whopper', 'hj:double-whopper-with-cheese', ['hj:double-whopper'], ['hj:double-whopper-with-cheese'], 'a'],
+  ['Cheese', 'hj:hamburger', 'hj:cheeseburger', ['hj:hamburger'], ['hj:cheeseburger'], 'a'],
+  ['Cheese', 'hj:plant-based-whopper', 'hj:plant-based-whopper-with-cheese', ['hj:plant-based-whopper'], ['hj:plant-based-whopper-with-cheese'], 'a'],
+  ['Whopper Patty', 'hj:whopper', 'hj:double-whopper', ['hj:whopper', 'hj:whopper-with-cheese', 'hj:double-whopper', 'hj:double-whopper-with-cheese',
+    'hj:triple-whopper-with-cheese', 'hj:angry-whopper', 'hj:cowboy-whopper', 'hj:double-cowboy-whopper', 'hj:ultimate-double-whopper'], [], 'f'],
+  ['Patty & Cheese', 'hj:cheeseburger', 'hj:double-cheeseburger', ['hj:cheeseburger', 'hj:double-cheeseburger', 'hj:triple-cheeseburger', 'hj:bbq-cheeseburger'], [], 'f'],
+  ['Bacon & Cheese', 'hj:grilled-chicken-burger', 'hj:grilled-chicken-with-bacon-cheese', ['hj:grilled-chicken-burger', 'hj:spicy-grilled-chicken-burger'],
+    ['hj:grilled-chicken-with-bacon-cheese'], 'a'],
+  ['Bacon & Cheese', 'hj:classic-jack-s-fried-chicken', 'hj:cheesy-bacon-classic-jack-s-fried-chicken', ['hj:classic-jack-s-fried-chicken'],
+    ['hj:cheesy-bacon-classic-jack-s-fried-chicken'], 'a'],
+  ['Bacon & Cheese', 'hj:spicy-jack-s-fried-chicken', 'hj:cheesy-bacon-spicy-jack-s-fried-chicken', ['hj:spicy-jack-s-fried-chicken'],
+    ['hj:cheesy-bacon-spicy-jack-s-fried-chicken'], 'a'],
+  ['Bacon & Cheese', 'kfc:original-crispy-burger', 'kfc:original-crispy-bacon-cheese-burger', ['kfc:original-crispy-burger'], ['kfc:original-crispy-bacon-cheese-burger'], 'a'],
+  ['Bacon & Cheese', 'kfc:zinger-burger', 'kfc:zinger-bacon-cheese-burger', ['kfc:zinger-burger'], ['kfc:zinger-bacon-cheese-burger'], 'a'],
+];
+let paired = 0;
+for (const [what, withoutId, withId, addTo, takeOff, kind] of PAIRS) {
+  const withIt = byId[withId], without = byId[withoutId];
+  if (!withIt || !without) throw Error(`Missing ${withId} or ${withoutId}`);
+  const diff = key => round((withIt[key] ?? 0) - (without[key] ?? 0));
+  if (diff('kj') <= 0 || diff('f') < 0 || diff('p') < 0) throw Error(`${withId}: ${what} difference doesn't add up`);
+  const nut = Object.fromEntries(Object.keys(withIt.nut || {}).filter(k => without.nut?.[k] != null)
+    .map(k => [k, Math.max(0, round(withIt.nut[k] - without.nut[k]))]));
+  const amounts = {kj: diff('kj'), p: diff('p'), c: diff('c'), f: diff('f'), nut};
+  const slug = slugOf(what), name = kind === 'f' ? `Extra ${what}` : `Add ${what}`;
+  for (const id of addTo) {
+    const food = byId[id];
+    if (!food) throw Error(`Missing ${id}`);
+    food.modifiers = [...(food.modifiers || []), {key: `${kind}:${slug}`, id: `extra-${slug}`, kind, name, ...amounts, price: null}]
+      .map(m => { if (m.price == null) delete m.price; return m; });
+    paired++;
+  }
+  for (const id of takeOff) {
+    const food = byId[id];
+    if (!food) throw Error(`Missing ${id}`);
+    food.modifiers = [...(food.modifiers || []), {key: `r:${slug}`, id: `no-${slug}`, kind: 'r', name: `No ${what}`,
+      kj: -amounts.kj, p: -amounts.p, c: -amounts.c, f: -amounts.f, nut: Object.fromEntries(Object.entries(nut).map(([k, v]) => [k, -v])), price: 0}];
+    paired++;
+  }
 }
-console.log(`Added Hungry Jack's cheese removals to ${HJ_CHEESE.length} burgers.`);
+console.log(`Added ${paired} Hungry Jack's and KFC extras and removals worked out from pairs of burgers.`);
 // format: the app only accepts formats it understands. revision: a fingerprint of the menu.
 // published: when this revision was first exported; unchanged menus keep their date, so a re-export isn't "newer".
 const crypto = require('crypto');

@@ -88,7 +88,10 @@ struct FindView: View {
                             }
                             NutritionView(total: match.total, details: false)
                             HStack {
-                                Button("Add to meal") { store.add(match.items) }.buttonStyle(.borderedProminent)
+                                let name = match.items.map(\.food.name).joined(separator: " + ")
+                                Button("Log it") { store.logNow(match.items, name: name) }.buttonStyle(.borderedProminent)
+                                    .contextMenu { YesterdayMenu { store.logNow(match.items, name: name, mealTime: $0, yesterday: true) } }
+                                Button("Add to meal") { store.add(match.items) }.buttonStyle(.bordered)
                                 ShareLink(item: mealText("Suggested order", match.items)) { Image(systemName: "square.and.arrow.up") }.buttonStyle(.bordered).accessibilityLabel("Share order")
                             }
                         }.padding(.vertical, 6)
@@ -128,7 +131,14 @@ struct BrowseView: View {
     @State private var sort = "density"
     @AppStorage(RecentSearches.storageKey) private var recent = ""
     var pick: ((Portion) -> Void)?
+    /// What choosing a food does, for the button on its details, e.g. "Log to Lunch".
+    var pickTitle = "Use this portion"
+    /// What the "+" on a row does, for VoiceOver.
+    var quickAddLabel = "Log"
     static let categories = [("all", "All items"), ("main", "Mains"), ("breakfast", "Breakfast"), ("side", "Sides"), ("drink", "Drinks"), ("sweet", "Desserts"), ("extra", "Extras")]
+    /// Where the "+" on a row logs to, when nothing else is choosing the food.
+    @State private var yesterday = false
+    @State private var meal = MealTime.suggested()
     @State private var rows: [Food] = []
     /// The request the rows were worked out for; nil until the first list is ready.
     @State private var shown: FoodSearch.Browse?
@@ -147,8 +157,19 @@ struct BrowseView: View {
         if !Task.isCancelled { rows = result; shown = request }
     }
 
+    /// One serving, without opening the food: handed to whoever is choosing, or logged to today.
+    private func quickAdd(_ food: Food) {
+        recent = RecentSearches.adding(shown?.search ?? search, to: recent)
+        if let pick { pick(Portion(food: food)) } else { store.logNow([Portion(food: food)], name: food.name, mealTime: meal, yesterday: yesterday) }
+    }
+
     var body: some View {
         LeanrList {
+            if pick == nil {
+                Section {
+                    LogTargetPicker(yesterday: $yesterday, meal: $meal)
+                } footer: { Text("Tap + on a food to log it there. Pick Yesterday for something you forgot.") }
+            }
             Section {
                 ChipRow {
                     Chip(title: "All restaurants", selected: chain == "all") { chain = "all" }
@@ -158,12 +179,24 @@ struct BrowseView: View {
                     ForEach(BrowseView.categories, id: \.0) { tag, label in Chip(title: label, selected: category == tag) { category = tag } }
                 }
             }
+            if search.isEmpty && chain == "all" && category == "all" {
+                let recentFoods = QuickLog.recentFoods(logs: store.data.logs)
+                if !recentFoods.isEmpty {
+                    Section("Recently logged") {
+                        ForEach(recentFoods) { food in
+                            NavigationLink { FoodDetailView(food: food, pick: pick, pickTitle: pickTitle, logYesterday: yesterday, logMeal: pick == nil ? meal : nil) } label: {
+                                FoodRow(food: food, quickAdd: { quickAdd(food) }, quickAddLabel: quickAddLabel)
+                            }
+                        }
+                    }
+                }
+            }
             Section {
                 if shown == request && rows.isEmpty { ContentUnavailableView.search(text: search) }
                 ForEach(rows) { food in
                     NavigationLink {
-                        FoodDetailView(food: food, pick: pick).onAppear { recent = RecentSearches.adding(shown?.search ?? search, to: recent) }
-                    } label: { FoodRow(food: food) }
+                        FoodDetailView(food: food, pick: pick, pickTitle: pickTitle, logYesterday: yesterday, logMeal: pick == nil ? meal : nil).onAppear { recent = RecentSearches.adding(shown?.search ?? search, to: recent) }
+                    } label: { FoodRow(food: food, quickAdd: { quickAdd(food) }, quickAddLabel: quickAddLabel) }
                 }
             } header: {
                 HStack {

@@ -95,7 +95,7 @@ struct MealView: View {
         }.navigationTitle("This meal")
             .toolbar { if !store.data.tray.isEmpty { Button("Clear", role: .destructive) { clear = true } } }
             .confirmationDialog("Clear this meal?", isPresented: $clear, titleVisibility: .visible) { Button("Clear meal", role: .destructive) { store.change(undo: "Cleared your meal") { $0.tray = [] } } }
-            .sheet(isPresented: $picking) { NavigationStack { BrowseView { portion in store.add([portion]); picking = false }.toolbar { Button("Done") { picking = false } } } }
+            .sheet(isPresented: $picking) { NavigationStack { BrowseView(pick: { portion in store.add([portion]); picking = false }, pickTitle: "Add to meal", quickAddLabel: "Add").toolbar { Button("Done") { picking = false } } } }
             .onChange(of: store.data.tray) { image = nil }
             .onChange(of: name) { image = nil }
     }

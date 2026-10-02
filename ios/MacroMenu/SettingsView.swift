@@ -136,21 +136,41 @@ struct MacroColourSettings: View {
     @AppStorage(MacroColours.fatKey) private var fat = "red"
     var body: some View {
         LeanrList {
-            Section {
-                picker("Protein", selection: $protein)
-                picker("Carbs", selection: $carbs)
-                picker("Fat", selection: $fat)
-                Button("Reset to default colours") { protein = "blue"; carbs = "orange"; fat = "red" }
-            } footer: {
-                Text("Choose separate colours for your macros in Leanr and its widgets. This will be a Premium feature when subscriptions launch.")
+            Group {
+                swatches("Protein", key: "p", selection: $protein)
+                swatches("Carbs", key: "c", selection: $carbs)
+                swatches("Fat", key: "f", selection: $fat)
+                Section {
+                    Button("Reset to default colours") { protein = "blue"; carbs = "orange"; fat = "red" }
+                } footer: {
+                    Text("Choose separate colours for your macros in Leanr and its widgets. This will be a Premium feature when subscriptions launch.")
+                }
             }.disabled(!Premium.isUnlocked)
         }.navigationTitle("Target colours")
     }
-    private func picker(_ title: String, selection: Binding<String>) -> some View {
-        Picker(title, selection: selection) {
-            ForEach(AppAccent.allCases) { colour in
-                Label { Text(colour.name) } icon: { Image(systemName: "circle.fill").foregroundStyle(colour.color) }
-                    .tag(colour.rawValue)
+    /// Real colour swatches, like App colour: a menu picker redraws its icons in the tint colour, so every choice looked the same.
+    private func swatches(_ title: String, key: String, selection: Binding<String>) -> some View {
+        let current = MacroColours.colour(key, choices: [key: selection.wrappedValue])
+        let name = AppAccent(rawValue: selection.wrappedValue)?.name ?? ""
+        return Section {
+            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 6), spacing: 16) {
+                ForEach(AppAccent.allCases) { colour in
+                    let chosen = colour.rawValue == selection.wrappedValue
+                    Button { selection.wrappedValue = colour.rawValue } label: {
+                        Circle().fill(colour.color).frame(width: 36, height: 36)
+                            .overlay { if chosen { Image(systemName: "checkmark").fontWeight(.bold).foregroundStyle(.white) } }
+                            .background { Circle().strokeBorder(colour.color, lineWidth: 2).padding(-5).opacity(chosen ? 1 : 0) }
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel("\(title), \(colour.name)").accessibilityAddTraits(chosen ? .isSelected : [])
+                }
+            }.padding(.vertical, 8)
+        } header: {
+            HStack(spacing: 6) {
+                Text(title)
+                Spacer()
+                Circle().fill(current).frame(width: 10, height: 10)
+                Text(name).textCase(nil)
             }
         }
     }

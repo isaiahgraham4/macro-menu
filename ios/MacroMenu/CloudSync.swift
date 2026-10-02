@@ -59,7 +59,7 @@ final class CloudSync {
         do { remote = try await Self.read(file) } catch { problem = "Couldn’t read your iCloud copy. \(error.localizedDescription)"; return }
 
         var upload: AppData?
-        if let remote, remote.data.isValid, remote.modified != lastRemote {
+        if let remote, remote.data.isValid, !Self.same(remote.modified, lastRemote) {
             // A fresh install has nothing worth merging (only default targets), so it just takes the iCloud copy.
             let fresh = store.data.foods.isEmpty && store.data.logs.isEmpty && store.data.meals.isEmpty && store.data.weightLog.isEmpty
             if dirty && !fresh {
@@ -80,11 +80,19 @@ final class CloudSync {
             upload = store.data
         }
         guard let upload else { problem = nil; return }
-        let snapshot = Snapshot(modified: Date(), data: upload)
+        // Whole seconds, because that's all the iCloud copy keeps; otherwise our own upload looks like
+        // a change from another device and the next sync merges it back in, undoing deletions.
+        let snapshot = Snapshot(modified: Date(timeIntervalSince1970: Date().timeIntervalSince1970.rounded(.down)), data: upload)
         do { try await Self.write(snapshot, to: file) } catch { problem = "Couldn’t upload to iCloud. \(error.localizedDescription)"; return }
         defaults.set(snapshot.modified, forKey: Self.remoteKey)
         defaults.set(false, forKey: Self.dirtyKey)
         lastSynced = snapshot.modified; problem = nil
+    }
+
+    /// The same upload, allowing for times saved with fractions of a second before they were rounded.
+    nonisolated static func same(_ remote: Date, _ last: Date?) -> Bool {
+        guard let last else { return false }
+        return abs(remote.timeIntervalSince(last)) < 1
     }
 
     private static func fileURL() async -> URL? {

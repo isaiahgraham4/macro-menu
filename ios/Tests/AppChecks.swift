@@ -8,7 +8,7 @@ import Foundation
         defer { try? FileManager.default.removeItem(at: root) }
         let catalogURL = URL(fileURLWithPath: CommandLine.arguments[1])
         let catalog = try JSONDecoder().decode(MenuCatalog.self,from: Data(contentsOf: catalogURL))
-        assert(catalog.foods.count == 1282)
+        assert(catalog.foods.count == 1316)
         assert(Set(catalog.foods.map(\.chain)).isSubset(of: Set(catalog.chains.map(\.id))))
         // A juice bar has no mains, so its drinks are the order.
         let juice = MealFinder.find(catalog.foods, query: FindQuery(chains: ["boost"], calories: 700, protein: 25, maxItems: 1))
@@ -18,6 +18,14 @@ import Foundation
         assert(catalog.foods.allSatisfy(\.isValid))
         assert(Set(catalog.foods.map(\.id)).count == catalog.foods.count)
         assert(catalog.foods.contains { !($0.modifiers ?? []).isEmpty })
+        // Adding a patty or taking off a sauce: McDonald's from its ingredient energy, Hungry Jack's and KFC from pairs of burgers.
+        func mod(_ food: String, _ name: String) -> Modifier? { catalog.foods.first { $0.id == food }?.modifiers?.first { $0.name == name } }
+        assert(mod("mcd:big-mac", "Extra Beef Patty")?.kj == 446 && mod("mcd:big-mac", "Extra Beef Patty")?.est == true)
+        assert(mod("mcd:big-mac", "No Big Mac Sauce")?.kj == -376 && mod("mcd:big-mac", "No Big Mac Sauce")?.est == nil)
+        assert(mod("mcd:nashville-mccrispy", "Add Cheese") != nil && mod("mcd:bacon-egg-mcmuffin", "Add Bacon") == nil)
+        assert(mod("hj:whopper", "Extra Whopper Patty")?.kj == 1106 && mod("hj:whopper", "Extra Whopper Patty")?.kind == "f")
+        assert(mod("kfc:zinger-burger", "Add Bacon & Cheese")?.kj == 424 && mod("kfc:zinger-bacon-cheese-burger", "No Bacon & Cheese")?.kj == -424)
+        assert(catalog.foods.flatMap { $0.modifiers ?? [] }.allSatisfy { [$0.kj, $0.p, $0.c ?? 0, $0.f ?? 0].allSatisfy(\.isFinite) })
         let original = Food(id: "original", chain: "kfc", name: "Burger", kj: 2500, cal: 600, p: 30)
         let retained = Food(id: "retained", chain: "kfc", name: "Alternative", kj: 2000, cal: 480, p: 26)
         var lowProtein = retained; lowProtein.id = "low"; lowProtein.cal = 300; lowProtein.p = 10
@@ -185,6 +193,14 @@ import Foundation
         assert(abs(LabelParser.suggestions("836.8 kJ 1673.6 kJ", column: 0)["cal"]! - 200) < 0.01)
         assert(abs(LabelParser.suggestions("Energy (kJ)\n836.8 1673.6", column: 1)["cal"]! - 400) < 0.01)
         assert(abs(LabelParser.suggestions("Energy 836.8 k J", column: 0)["cal"]! - 200) < 0.01)
+        // A zero read as the letter O still counts as a column, so the next value isn't taken for it.
+        let misread = LabelParser.suggestions("Trans fat Og 0.1g\nProtein O.5g 2g\nSodium 5mg Omg", column: 0)
+        assert(misread["trans"] == 0 && misread["p"] == 0.5 && misread["sodium"] == 5)
+        assert(LabelParser.suggestions("Sodium 5mg Omg\nProtein 3 g 6 g", column: 1) == ["sodium": 0, "p": 6])
+        // Per-100 figures with a serving size on the label are converted to that serving.
+        let perHundred = "Serving size: 30g\nAvg qty per 100g\nEnergy 1500 kJ\nProtein 10g\nFat, total 20g"
+        let converted = LabelParser.servingSuggestions(perHundred, column: 0)
+        assert(converted["p"] == 3 && converted["f"] == 6 && abs(converted["cal"]! - 450 / 4.184) < 0.01)
         var query = FindQuery(); query.calories = 700; query.protein = 35; query.budget = 20; query.maxItems = 3
         let start = Date()
         let matches = MealFinder.find(catalog.foods,query: query)
@@ -369,7 +385,12 @@ import Foundation
         assert(review.loggedDays == 3 && review.averageCalories == 720 && abs(review.averageProtein! - 148.0 / 3) < 0.001)
         assert(review.calorieTarget == 2200 && review.proteinTarget == 150 && review.proteinDays == 0 && review.calorieDays == 3)
         assert(abs(review.weightChange! + (1 - pow(0.9, 8))) < 0.0001 && review.topMeals == [WeeklyReview.Meal(name: "Wrap", count: 4)])
-        assert(review.summary == "Logged 3 of 7 days · avg 720 Cal · protein target hit 0 days · trend −0.6 kg.")
+        assert(review.totalCalories == 2160 && review.totalCalorieTarget == 6600)
+        assert(review.summary == "Logged 3 of 7 days · 2,160 Cal in total · avg 720 · protein target hit 0 days · trend −0.6 kg.")
+        // Recently logged foods: newest first, each once, and nothing from before the window.
+        let recentFoods = QuickLog.recentFoods(logs: week.logs, now: day(8), days: 30, calendar: calendar)
+        assert(recentFoods.first?.id == steadyFood.id && Set(recentFoods.map { $0.chain + $0.name }).count == recentFoods.count)
+        assert(QuickLog.recentFoods(logs: week.logs, now: day(60), days: 30, calendar: calendar).isEmpty)
         assert(WeeklyReview.make(AppData(), goals: Goals(), ending: day(6), calendar: calendar).summary == "Nothing logged this week yet.")
         let wednesday = calendar.date(bySettingHour: 12, minute: 0, second: 0, of: day(2))!
         assert(MealReminders.nextReview(after: wednesday, calendar: calendar) == calendar.date(bySettingHour: 18, minute: 0, second: 0, of: day(6)))

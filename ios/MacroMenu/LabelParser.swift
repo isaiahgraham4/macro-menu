@@ -67,6 +67,8 @@ enum LabelParser {
             var lower = line.lowercased().trimmingCharacters(in: CharacterSet.whitespaces.union(CharacterSet(charactersIn: "-–—•")))
                 .replacingOccurrences(of: #"k\s+j\b"#, with: "kj", options: .regularExpression)
                 .replacingOccurrences(of: #"k\s+cal\b"#, with: "kcal", options: .regularExpression)
+                // A zero is often read as the letter O ("Og"); left alone it drops out and shifts the columns.
+                .replacingOccurrences(of: #"(?<![a-z0-9.])o(?=(?:\.\d+)?\s?(?:mg|g)\b)"#, with: "0", options: .regularExpression)
             // OCR may put the energy heading on the line before its values.
             if let heading = pendingEnergyLabel, lower.first?.isNumber == true {
                 lower = heading + " " + lower

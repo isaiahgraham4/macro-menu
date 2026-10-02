@@ -85,7 +85,20 @@ struct NutritionView: View {
 struct FoodRow: View {
     @Environment(AppStore.self) private var store
     var food: Food
+    /// Shows a "+" that adds one serving without opening the food.
+    var quickAdd: (() -> Void)?
+    var quickAddLabel = "Log"
     var body: some View {
+        HStack(spacing: 8) {
+            details
+            if let quickAdd {
+                Button(action: quickAdd) {
+                    Image(systemName: "plus.circle.fill").font(.title2).frame(width: 44, height: 44).contentShape(Rectangle())
+                }.buttonStyle(.borderless).accessibilityLabel("\(quickAddLabel) \(food.name)")
+            }
+        }
+    }
+    private var details: some View {
         VStack(alignment: .leading, spacing: 5) {
             Text(food.name).font(.roboto(.headline)).foregroundStyle(.primary)
             Text(food.serve.isEmpty ? store.chainName(food.chain) : "\(store.chainName(food.chain)) · \(food.serve)").font(.roboto(.caption)).foregroundStyle(.secondary)
@@ -95,6 +108,27 @@ struct FoodRow: View {
                 if let price = food.price { Text((food.pf == true ? "From " : "") + price.formatted(.currency(code: "AUD"))).font(.roboto(.caption)) }
             }.foregroundStyle(.secondary)
         }.padding(.vertical,4)
+    }
+}
+/// Today or yesterday, and which meal: where one-tap logging goes.
+struct LogTargetPicker: View {
+    @Binding var yesterday: Bool
+    @Binding var meal: MealTime
+    var body: some View {
+        HStack(spacing: 12) {
+            Picker("Day to log to", selection: $yesterday) { Text("Today").tag(false); Text("Yesterday").tag(true) }.pickerStyle(.segmented)
+            Picker("Meal to log to", selection: $meal) { ForEach(MealTime.allCases) { Text($0.title).tag($0) } }
+                .pickerStyle(.menu).labelsHidden().fixedSize()
+        }
+    }
+}
+/// "Log to yesterday's …" choices for a menu, for a meal that was forgotten.
+struct YesterdayMenu: View {
+    var log: (MealTime) -> Void
+    var body: some View {
+        Section("Forgot it yesterday?") {
+            ForEach(MealTime.allCases) { meal in Button("Yesterday’s \(meal.title.lowercased())") { log(meal) } }
+        }
     }
 }
 struct SourcesView: View {

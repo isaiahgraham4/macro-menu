@@ -5,6 +5,10 @@ struct FoodDetailView: View {
     @Environment(\.dismiss) private var dismiss
     var food: Food
     var pick: ((Portion) -> Void)?
+    var pickTitle = "Use this portion"
+    /// Where the log button goes by default: yesterday instead of today, and a meal other than the one the clock suggests.
+    var logYesterday = false
+    var logMeal: MealTime?
     @State private var quantity = 1.0
     @State private var useWeight = false
     @State private var weight = 100.0
@@ -54,6 +58,8 @@ struct FoodDetailView: View {
     }
     var amount: Double { useWeight ? weight / (food.servingWeight?.0 ?? 100) : quantity }
     var portion: Portion { Portion(food: adjusted, quantity: amount) }
+    /// "McDonald's", "Hungry Jack's" or "KFC's", for "… energy" and "… figures".
+    var owner: String { let name = store.chainName(food.chain); return name.hasSuffix("'s") || name.hasSuffix("’s") ? name : name + "'s" }
     var customized: Bool { changes.values.contains { $0 > 0 } || ownAdjustment != nil }
     var body: some View {
         LeanrForm {
@@ -68,7 +74,11 @@ struct FoodDetailView: View {
             Section("Nutrition for your portion") { NutritionView(total: Nutrition([portion])) }
             Section("Portion") {
                 if let serving = food.servingWeight {
-                    Toggle("Measure in \(serving.1)", isOn: $useWeight)
+                    Picker("Measure in", selection: $useWeight) {
+                        Text("Servings").tag(false); Text(serving.1 == "g" ? "Grams" : "mL").tag(true)
+                    }.pickerStyle(.segmented)
+                        // Start from one serving's weight, so switching doesn't change the portion.
+                        .onChange(of: useWeight) { if useWeight { weight = (serving.0 * quantity).tenth } else { quantity = ((weight / serving.0) * 100).rounded() / 100 } }
                     if useWeight { NumberField(title: "Amount (\(serving.1))", value: $weight) }
                     else { NumberField(title: "Servings", value: $quantity, places: 2) }
                 } else { NumberField(title: "Servings", value: $quantity, places: 2) }
@@ -91,15 +101,16 @@ struct FoodDetailView: View {
                         Text("Remove ingredients")
                     } footer: {
                         if removals.contains(where: { $0.est == true }) {
-                            Text("Calories for each ingredient are from \(store.chainName(food.chain)). Protein, carbs and fat are estimated from the ingredient type; saturated fat, sugars and sodium stay as listed.")
-                        } else if food.chain == "hj" {
-                            Text("Worked out from Hungry Jack's figures for this burger with and without cheese.")
+                            Text("Calories for each ingredient are from \(store.chainName(food.chain)). For parts it doesn't sell on their own, protein, carbs and fat are estimated from the ingredient type and other nutrients stay as listed.")
+                        } else if food.chain == "hj" || food.chain == "kfc" {
+                            Text("Worked out from \(owner) figures for the same burger with and without it.")
                         } else {
-                            Text("Nutrition for each ingredient is from \(store.chainName(food.chain))'s published figures.")
+                            Text("Nutrition for each ingredient is from \(owner) published figures.")
                         }
                     }
                 }
-                Section("Customise your order") {
+                let additions = (food.modifiers ?? []).filter { $0.kind == "f" || $0.kind == "a" }
+                Section {
                     ForEach([("f","Extra filling"),("a","Extras"),("s","Swaps")], id: \.0) { kind, label in
                         let mods = (food.modifiers ?? []).filter { $0.kind == kind }
                         if !mods.isEmpty {
@@ -108,7 +119,12 @@ struct FoodDetailView: View {
                                     if kind == "s" {
                                         Toggle(mod.name, isOn: selection(mod))
                                     } else {
-                                        Stepper("\(mod.name) · \((changes[mod.key] ?? 0).number)", value: Binding(get: { changes[mod.key] ?? 0 }, set: { changes[mod.key] = $0 }), in: 0...5)
+                                        Stepper(value: Binding(get: { changes[mod.key] ?? 0 }, set: { changes[mod.key] = $0 }), in: 0...5) {
+                                            VStack(alignment: .leading, spacing: 2) {
+                                                Text("\(mod.name) · \((changes[mod.key] ?? 0).number)")
+                                                Text("+\((mod.kj / 4.184).rounded().number) Cal each").font(.roboto(.caption)).foregroundStyle(.secondary).monospacedDigit()
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -125,6 +141,14 @@ struct FoodDetailView: View {
                         Button { subtract = false; editingAdjustment = true } label: { Label("Add something else", systemImage: "plus.circle") }
                     }
                     if customized { TextField("Name this custom order", text: $customName) }
+                } header: {
+                    Text("Customise your order")
+                } footer: {
+                    if additions.contains(where: { $0.est == true }) {
+                        Text("Extras use \(owner) energy for that ingredient. For parts it doesn't sell on their own, protein, carbs and fat are estimated from the ingredient type.")
+                    } else if (food.chain == "hj" || food.chain == "kfc") && additions.contains(where: { !$0.key.hasPrefix("item:") }) {
+                        Text("Extras are the difference between two \(store.chainName(food.chain)) burgers sold with and without them.")
+                    }
                 }
             }
             if pick == nil { NearestPlaceSection(chain: food.chain) }
@@ -141,9 +165,29 @@ struct FoodDetailView: View {
             }
             .safeAreaInset(edge: .bottom) {
                 BottomActionBar {
-                    Button { addPortion() } label: {
-                        Text(pick == nil ? "Add to meal · \(Nutrition([portion]).cal.number) Cal" : "Use this portion").frame(maxWidth: .infinity)
-                    }.disabled(!portion.isValid)
+                    if pick != nil {
+                        Button { addPortion() } label: { Text("\(pickTitle) · \(Nutrition([portion]).cal.number) Cal").frame(maxWidth: .infinity) }
+                            .disabled(!portion.isValid)
+                    } else {
+                        let suggested = logMeal ?? MealTime.suggested()
+                        HStack(spacing: 10) {
+                            Button { logPortion(suggested, yesterday: logYesterday) } label: {
+                                Text("Log to \(logYesterday ? "yesterday’s \(suggested.title.lowercased())" : suggested.title) · \(Nutrition([portion]).cal.number) Cal")
+                                    .lineLimit(1).minimumScaleFactor(0.7).frame(maxWidth: .infinity)
+                            }
+                            Menu {
+                                Section("Today") {
+                                    ForEach(MealTime.allCases.filter { logYesterday || $0 != suggested }) { meal in
+                                        Button(meal.title) { logPortion(meal, yesterday: false) }
+                                    }
+                                }
+                                YesterdayMenu { logPortion($0, yesterday: true) }
+                                Divider()
+                                Button("Add to the meal I'm building", systemImage: "fork.knife") { addPortion() }
+                            } label: { Image(systemName: "ellipsis").frame(width: 24, height: 22) }
+                                .buttonStyle(.bordered).accessibilityLabel("More ways to add")
+                        }.disabled(!portion.isValid)
+                    }
                 }
             }
             .sheet(isPresented: $editingAdjustment) {
@@ -163,6 +207,11 @@ struct FoodDetailView: View {
         var value = portion
         if customized { value.food.id = UUID().uuidString }
         if let pick { pick(value) } else { store.add([value]); dismiss() }
+    }
+    private func logPortion(_ mealTime: MealTime, yesterday: Bool) {
+        var value = portion
+        if customized { value.food.id = UUID().uuidString }
+        if store.logNow([value], name: value.food.name, mealTime: mealTime, yesterday: yesterday) { dismiss() }
     }
     private func saveCustom() {
         var value = adjusted; value.id = UUID().uuidString; value.chain = "mine"

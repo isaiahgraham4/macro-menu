@@ -25,7 +25,7 @@ func barcodeChecks() throws {
         item.sourceURL = URL(string: "https://world.openfoodfacts.org/product/\(index)")!
         scanHistory = RecentBarcodes.recording(item, in: scanHistory)
     }
-    assert(RecentBarcodes.products(from: scanHistory).count == 20)
+    assert(RecentBarcodes.products(from: scanHistory).count == RecentBarcodes.limit && RecentBarcodes.limit == 10)
     assert(RecentBarcodes.products(from: scanHistory).first?.sourceURL.lastPathComponent == "24")
     let kcal = try parse(#"{"status":1,"product":{"product_name":"Drink","product_quantity_unit":"ml","nutriments":{"energy-kcal_100g":50,"energy_100g":999,"proteins_100g":0}}}"#)
     assert(kcal.food.cal == 50 && kcal.unit == "mL" && kcal.food.serve == "100 mL")

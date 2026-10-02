@@ -285,7 +285,12 @@ struct OrderDetailView: View {
             }
             .safeAreaInset(edge: .bottom) {
                 BottomActionBar {
-                    Button { store.add(match.items) } label: { Text("Add to meal · \(match.total.cal.number) Cal").frame(maxWidth: .infinity) }
+                    HStack(spacing: 10) {
+                        Button { store.logNow(match.items, name: match.items.map(\.food.name).joined(separator: " + ")) } label: {
+                            Text("Log it · \(match.total.cal.number) Cal").frame(maxWidth: .infinity)
+                        }
+                        Button("Add to meal") { store.add(match.items) }.buttonStyle(.bordered)
+                    }
                 }
             }
     }

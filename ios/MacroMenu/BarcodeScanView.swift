@@ -220,20 +220,28 @@ struct RecentBarcodeSection: View {
         let products = RecentBarcodes.products(from: recentData)
         if !products.isEmpty {
             Section {
-                ForEach(products, id: \.sourceURL) { product in
-                    Button {
-                        recentData = RecentBarcodes.recording(product, in: recentData)
-                        use(product)
-                    } label: {
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text(product.food.name).foregroundStyle(.primary)
+                // A dropdown, so the last few scans don't push the rest of the screen down.
+                Menu {
+                    ForEach(products, id: \.sourceURL) { product in
+                        Button {
+                            recentData = RecentBarcodes.recording(product, in: recentData)
+                            use(product)
+                        } label: {
+                            Text(product.food.name)
                             Text("\(product.food.cal.number) Cals · \(product.food.serve)")
-                                .font(.roboto(.caption)).foregroundStyle(.secondary)
                         }
                     }
+                } label: {
+                    HStack {
+                        Label("Recently scanned", systemImage: "clock.arrow.circlepath")
+                        Spacer()
+                        Text("\(products.count)").foregroundStyle(.secondary).monospacedDigit()
+                        Image(systemName: "chevron.up.chevron.down").font(.caption).foregroundStyle(.secondary)
+                    }.frame(minHeight: 28).contentShape(Rectangle())
                 }
-            } header: { Text("Recently scanned") } footer: {
-                Text("Reuse a scanned product, then check its serving size and choose how many servings.")
+                .accessibilityLabel("Recently scanned, \(products.count) products")
+            } footer: {
+                Text("Reuse one of your last \(RecentBarcodes.limit) scans, then check its serving size and how much you had.")
             }
         }
     }

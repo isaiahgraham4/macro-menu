@@ -221,6 +221,22 @@ enum QuickLog {
         return (logs[dayKey(yesterday)] ?? []).filter { $0.mealTime == mealTime }
     }
 
+    /// Foods logged in the last `days` days, newest first, each listed once.
+    static func recentFoods(logs: [String: [LogEntry]], now: Date = Date(), days: Int = 30, limit: Int = 8, calendar: Calendar = .current) -> [Food] {
+        guard let start = calendar.date(byAdding: .day, value: -days, to: calendar.startOfDay(for: now)) else { return [] }
+        let startKey = dayKey(start)
+        var seen = Set<String>(), foods: [Food] = []
+        for day in logs.keys.filter({ $0 >= startKey }).sorted(by: >) {
+            for entry in (logs[day] ?? []).sorted(by: { $0.time > $1.time }) {
+                for item in entry.items where seen.insert(item.food.chain + "|" + item.food.name.lowercased()).inserted {
+                    foods.append(item.food)
+                    if foods.count == limit { return foods }
+                }
+            }
+        }
+        return foods
+    }
+
     /// Meals logged most often in the last `days` days, newest copy of each; ties go to the most recent.
     static func frequent(logs: [String: [LogEntry]], now: Date = Date(), days: Int = 30, limit: Int = 6, calendar: Calendar = .current) -> [LogEntry] {
         guard let start = calendar.date(byAdding: .day, value: -days, to: calendar.startOfDay(for: now)) else { return [] }

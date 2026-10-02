@@ -7,6 +7,9 @@ struct WeeklyReview: Equatable, Sendable {
     var start: Date
     var end: Date
     var loggedDays: Int
+    /// Everything logged in the week, and the targets of the logged days added up.
+    var totalCalories: Double
+    var totalCalorieTarget: Double?
     /// Averages over the days you logged, not all seven.
     var averageCalories: Double?
     var averageProtein: Double?
@@ -47,6 +50,8 @@ struct WeeklyReview: Equatable, Sendable {
             .sorted { ($0.count, $1.name) > ($1.count, $0.name) }.prefix(3).map { Meal(name: $0.name, count: $0.count) }
 
         return WeeklyReview(start: first, end: last, loggedDays: calories.count,
+                            totalCalories: calories.reduce(0, +),
+                            totalCalorieTarget: calorieTargets.isEmpty ? nil : calorieTargets.reduce(0, +),
                             averageCalories: average(calories), averageProtein: average(protein),
                             calorieTarget: average(calorieTargets), proteinTarget: average(proteinTargets),
                             proteinDays: proteinDays, calorieDays: calorieDays,
@@ -58,7 +63,8 @@ struct WeeklyReview: Equatable, Sendable {
     var summary: String {
         guard loggedDays > 0 else { return "Nothing logged this week yet." }
         var parts = ["Logged \(loggedDays) of 7 days"]
-        if let averageCalories { parts.append("avg \(averageCalories.rounded().number) Cal") }
+        parts.append("\(totalCalories.rounded().number) Cal in total")
+        if let averageCalories { parts.append("avg \(averageCalories.rounded().number)") }
         if proteinTarget != nil { parts.append("protein target hit \(proteinDays) \(proteinDays == 1 ? "day" : "days")") }
         if let weightChange { parts.append("trend \(Self.signed(weightChange)) kg") }
         return parts.joined(separator: " · ") + "."

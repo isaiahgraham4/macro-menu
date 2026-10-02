@@ -127,8 +127,12 @@ struct TodayView: View {
                             Button("Scan barcode") { mealTime = category; barcode = true }
                             Button("Quick log / scan label") { mealTime = category; quick = true }
                             Button("Choose menu item") { mealTime = category; choosing = true }
-                        } label: { Image(systemName: "plus.circle").font(.title3).padding(4) }
+                        } label: { Image(systemName: "plus.circle").font(.title3).padding(4) } primaryAction: {
+                            // A tap goes straight to the menu; holding shows the other ways to add.
+                            mealTime = category; choosing = true
+                        }
                             .accessibilityLabel("Add to \(category.title)")
+                            .accessibilityHint("Opens the menu. Hold for barcode and quick log.")
                     }
                 }
             }
@@ -170,9 +174,9 @@ struct TodayView: View {
                     store.log([Portion(food: $0)], name: $0.name, date: date, mealTime: mealTime)
                 }
             }
-            .sheet(isPresented: $choosing) { NavigationStack { BrowseView { portion in
-                if store.log([portion],name: portion.food.name,date: date, mealTime: mealTime) { choosing = false }
-            }.toolbar { Button("Done") { choosing = false } } } }
+            .sheet(isPresented: $choosing) { NavigationStack { BrowseView(pick: { portion in
+                if store.log([portion],name: portion.food.name,date: date, mealTime: mealTime) { choosing = false; store.notice = "Logged to \(mealTime.title.lowercased())" }
+            }, pickTitle: "Log to \(mealTime.title)").toolbar { Button("Done") { choosing = false } } } }
             .sheet(item: $editing) { entry in NavigationStack { LogEditor(entry: entry, day: key) } }
             .onReceive(timer) { value in
                 let followingToday = dayKey(date) == dayKey(now)
@@ -248,6 +252,9 @@ struct MealTimeDetailView: View {
                                 .font(.roboto(.caption)).foregroundStyle(.secondary)
                         }.foregroundStyle(.primary)
                     }
+                    .swipeActions {
+                        Button("Delete", role: .destructive) { store.change(undo: "Deleted \(entry.name)") { $0.logs[dayKey(date)]?.removeAll { $0.id == entry.id } } }
+                    }
                 }
             }
         }
@@ -275,6 +282,11 @@ struct LogEditor: View {
                 Section(item.food.name) { NumberField(title: "Servings", value: $item.quantity, places: 2) }
             }.onDelete { entry.items.remove(atOffsets: $0) }
             NutritionView(total: Nutrition(entry.items))
+            Section {
+                Button(role: .destructive) {
+                    if store.change(undo: "Deleted \(entry.name)", { $0.logs[day]?.removeAll { $0.id == entry.id } }) { dismiss() }
+                } label: { Label("Delete from log", systemImage: "trash").foregroundStyle(.red).frame(maxWidth: .infinity) }
+            }
         }.navigationTitle("Edit logged meal")
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } }

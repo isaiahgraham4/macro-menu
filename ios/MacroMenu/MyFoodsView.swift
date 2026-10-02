@@ -36,7 +36,10 @@ struct MyFoodsView: View {
             Section("Saved foods & recipes") {
                 if rows.isEmpty { ContentUnavailableView("Your own menu", systemImage: "bookmark", description: Text("Save foods, recipes and custom orders. They appear throughout the app.")) }
                 ForEach(rows) { food in
-                    NavigationLink { FoodDetailView(food: food) } label: { FoodRow(food: food) }
+                    NavigationLink { FoodDetailView(food: food) } label: {
+                        FoodRow(food: food, quickAdd: { store.logNow([Portion(food: food)], name: food.name) })
+                    }
+                        .contextMenu { YesterdayMenu { store.logNow([Portion(food: food)], name: food.name, mealTime: $0, yesterday: true) } }
                         .swipeActions(edge: .leading) {
                             Button("Edit") { if food.ingredients != nil { editingRecipe = food } else { editing = food } }.tint(.blue)
                         }
@@ -115,6 +118,9 @@ struct FoodEditor: View {
     let save: (Food) -> Bool
     let savePortion: ((Portion) -> Bool)?
     @State private var servings = 1.0
+    /// Logging by weight: how many grams or mL were eaten, instead of a number of servings.
+    @State private var byWeight = false
+    @State private var weight = 100.0
     @State private var scanBasisConfirmed = true
     @State private var per100 = false
     @State private var servingSize = 100.0
@@ -142,8 +148,19 @@ struct FoodEditor: View {
         _draft = State(initialValue: initial); _energy = State(initialValue: initial.cal); self.save = save
         _per100 = State(initialValue: scannedProduct?.per100 ?? false)
         _servingUnit = State(initialValue: scannedProduct?.unit ?? "g")
-        _servingSize = State(initialValue: scannedProduct?.per100 == true ? 0 : 100)
         self.savePortion = savePortion
+        // Per-100 figures with no pack serving: log by weight, so the grams eaten can be typed straight in.
+        _byWeight = State(initialValue: scannedProduct?.per100 == true && savePortion != nil)
+    }
+    /// What one serving weighs, when that's known: the size entered for per-100 figures, or a weight in the serving text.
+    var servingWeight: (amount: Double, unit: String)? {
+        if per100 { return servingSize.isFinite && servingSize > 0 ? (servingSize, servingUnit) : nil }
+        return draft.servingWeight.map { ($0.0, $0.1) }
+    }
+    /// Servings to log: typed directly, or worked out from the weight eaten.
+    var quantity: Double {
+        if byWeight, let servingWeight { return weight / servingWeight.amount }
+        return servings
     }
     var result: Food {
         var value = draft
@@ -169,12 +186,14 @@ struct FoodEditor: View {
             }
             Section("Food") {
                 TextField("Name", text: $draft.name)
-                TextField("Serving size (e.g. 150 g)", text: $draft.serve)
+                if !per100 { TextField("Serving size (e.g. 150 g)", text: $draft.serve) }
                 Toggle("Enter nutrition per 100 g / mL", isOn: $per100)
+                    // Per-100 figures are logged by the weight eaten unless you switch back to servings.
+                    .onChange(of: per100) { if savePortion != nil { byWeight = per100 } }
                 if per100 {
                     NumberField(title: "Size of one serving", value: $servingSize)
                     Picker("Unit", selection: $servingUnit) { Text("g").tag("g"); Text("mL").tag("mL") }.pickerStyle(.segmented)
-                    Text("Enter the package's serving size to convert the per-100 values.").font(.roboto(.caption)).foregroundStyle(.secondary)
+                    Text("Leave this at 100 to keep the label's figures, or enter the pack's serving size.").font(.roboto(.caption)).foregroundStyle(.secondary)
                     Button("Convert to per serving") {
                         let converted = result
                         draft = converted
@@ -182,9 +201,24 @@ struct FoodEditor: View {
                         per100 = false
                     }.disabled(!servingSize.isFinite || servingSize <= 0)
                 }
-                if savePortion != nil {
-                    NumberField(title: "Number of servings", value: $servings, places: 2)
-                    Text("For example, 0.5 for half a serving or 2 for two servings.").font(.roboto(.caption)).foregroundStyle(.secondary)
+            }
+            if savePortion != nil {
+                Section("How much you had") {
+                    if let servingWeight {
+                        Picker("Measure in", selection: $byWeight) {
+                            Text("Servings").tag(false); Text(servingWeight.unit == "g" ? "Grams" : "mL").tag(true)
+                        }.pickerStyle(.segmented)
+                        if byWeight {
+                            NumberField(title: "Amount (\(servingWeight.unit))", value: $weight)
+                            Text("\(weight.number) \(servingWeight.unit) is \(quantity.formatted(.number.precision(.fractionLength(0...2)))) × the \(servingWeight.amount.number) \(servingWeight.unit) serving.")
+                                .font(.roboto(.caption)).foregroundStyle(.secondary)
+                        }
+                    }
+                    if !byWeight || servingWeight == nil {
+                        NumberField(title: "Number of servings", value: $servings, places: 2)
+                        Text(servingWeight == nil ? "Add a weight to the serving size, like 150 g, to enter grams instead." : "For example, 0.5 for half a serving or 2 for two servings.")
+                            .font(.roboto(.caption)).foregroundStyle(.secondary)
+                    }
                 }
             }
             Section {
@@ -243,7 +277,10 @@ struct FoodEditor: View {
                         Text("The column heading wasn't recognised. Check the selected column and the per-100 toggle before confirming.").font(.roboto(.caption)).foregroundStyle(.orange)
                         Button("I've checked the nutrition basis") { scanBasisConfirmed = true }
                     }
-                    let recognised = LabelParser.suggestions(scannedText, column: scanColumn)
+                    // The same figures the button fills in, so what's listed is what you get.
+                    let recognised = LabelParser.servingSuggestions(scannedText, column: scanColumn)
+                    Text(per100 ? "Per 100 \(servingUnit)" : "Per serving" + (servingWeight.map { " (\($0.amount.number) \($0.unit))" } ?? ""))
+                        .font(.roboto(.caption, weight: .semibold)).foregroundStyle(.secondary)
                     ForEach(nutrientNames.filter { recognised[$0.key] != nil }, id: \.key) { nutrient in
                         LabeledContent(nutrient.label, value: "\(recognised[nutrient.key]!.number) \(nutrient.unit)")
                     }
@@ -285,8 +322,8 @@ struct FoodEditor: View {
             }
             Section("Per-serving preview") { NutritionView(total: Nutrition([Portion(food: result)])) }
             if savePortion != nil {
-                Section("Total for \(servings.number) servings") {
-                    NutritionView(total: Nutrition([Portion(food: result, quantity: servings.isFinite && servings > 0 ? servings : 0)]))
+                Section(byWeight && servingWeight != nil ? "Total for \(weight.number) \(servingWeight?.unit ?? "g")" : "Total for \(servings.number) servings") {
+                    NutritionView(total: Nutrition([Portion(food: result, quantity: quantity.isFinite && quantity > 0 ? quantity : 0)]))
                 }
             }
         }.navigationTitle("Food details").navigationBarTitleDisplayMode(.inline)
@@ -294,9 +331,9 @@ struct FoodEditor: View {
                 ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } }
                 ToolbarItem(placement: .confirmationAction) {
                     Button(savePortion == nil ? "Save" : "Log food") {
-                        let succeeded = savePortion.map { $0(Portion(food: result, quantity: servings)) } ?? save(result)
+                        let succeeded = savePortion.map { $0(Portion(food: result, quantity: quantity)) } ?? save(result)
                         if succeeded { dismiss() } else { saveFailed = true }
-                    }.disabled(!result.isValid || barcodeInvalid || servingSize <= 0 || scanning || !scanBasisConfirmed || !servings.isFinite || servings <= 0 || servings > 10000)
+                    }.disabled(!result.isValid || barcodeInvalid || servingSize <= 0 || scanning || !scanBasisConfirmed || !quantity.isFinite || quantity <= 0 || quantity > 10000)
                 }
             }
             .alert("Couldn’t save food", isPresented: $saveFailed) { Button("OK", role: .cancel) {} } message: { Text("Your data was not changed. Check available storage and any data recovery message in the app.") }
@@ -347,8 +384,9 @@ struct FoodEditor: View {
         let existingID = draft.id, existingBarcode = draft.barcode
         draft = product.food; draft.id = existingID
         if draft.barcode == nil { draft.barcode = existingBarcode }
-        per100 = product.per100; servingSize = product.per100 ? 0 : 100; servingUnit = product.unit
+        per100 = product.per100; servingSize = 100; servingUnit = product.unit
         servings = 1; scanBasisConfirmed = true
+        byWeight = product.per100 && savePortion != nil; weight = 100
         energyUnit = "Cal"; energy = product.food.cal
         scannedText = ""; scanPreview = nil; scanError = nil; scanColumn = 0
     }
@@ -390,9 +428,12 @@ struct FoodEditor: View {
         let values = LabelParser.servingSuggestions(scannedText, column: scanColumn)
         let hundred = layout.per100Column == scanColumn
         per100 = hundred && layout.amount == nil
-        servingSize = per100 ? 0 : (layout.amount ?? 100)
+        // Per-100 figures with no serving size on the label: keep them per 100, and log by the weight eaten.
+        servingSize = layout.amount ?? 100
         servingUnit = layout.unit
-        draft.serve = layout.servingDescription ?? (per100 ? "Enter serving size" : "1 serving")
+        draft.serve = layout.servingDescription ?? (per100 ? "100 \(layout.unit)" : "1 serving")
+        byWeight = per100 && savePortion != nil
+        if let amount = layout.amount { weight = amount }
         scanBasisConfirmed = layout.servingColumn == scanColumn || hundred
         let calories = values["cal"] ?? 0
         energy = energyUnit == "kJ" ? calories * 4.184 : calories
@@ -556,7 +597,7 @@ struct RecipeEditor: View {
                 ToolbarItem(placement: .confirmationAction) { Button("Save") { if store.saveFood(recipe) { dismiss() } }.disabled(!recipe.isValid || ingredients.isEmpty || servings <= 0) }
             }
             .onAppear { if let food, ingredients.isEmpty { name = food.name; servings = food.recipeYield ?? 1; ingredients = food.ingredients ?? [] } }
-            .sheet(isPresented: $picking) { NavigationStack { BrowseView { portion in ingredients.append(portion); picking = false }.toolbar { Button("Done") { picking = false } } } }
+            .sheet(isPresented: $picking) { NavigationStack { BrowseView(pick: { portion in ingredients.append(portion); picking = false }, pickTitle: "Add to recipe", quickAddLabel: "Add").toolbar { Button("Done") { picking = false } } } }
             .sheet(isPresented: $own) { NavigationStack { FoodEditor(food: nil) { ingredients.append(Portion(food: $0)); own = false; return true } } }
     }
 }
