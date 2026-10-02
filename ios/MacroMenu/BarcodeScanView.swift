@@ -15,7 +15,9 @@ struct BarcodeFoodFlow: View {
         if editing {
             NavigationStack { FoodEditor(food: nil, scannedProduct: product, barcode: barcode, savePortion: savePortion, save: save) }
         } else {
-            BarcodeScanView(dismissAfterUse: false, manualEntry: { barcode = $0; editing = true }) {
+            // Logging (from Today) or saving (from My foods) can happen right on the scan screen; the editor is there for changes.
+            BarcodeScanView(dismissAfterUse: false, manualEntry: { barcode = $0; editing = true },
+                            quick: savePortion.map { .log($0) } ?? .save) {
                 product = $0; editing = true
             }
         }
@@ -29,6 +31,8 @@ struct BarcodeScanView: View {
     var dismissAfterUse = true
     /// Called with the barcode that wasn't found, if any, so the food can be entered by hand and keep it.
     var manualEntry: ((String?) -> Void)? = nil
+    /// What the scan screen can do in one tap, without opening the editor. Nil when the scan just fills in a food being edited.
+    var quick: BarcodeQuickActions.Mode? = nil
     let use: (BarcodeProduct) -> Void
     @State private var digits = ""
     @State private var pending: String?
@@ -48,27 +52,40 @@ struct BarcodeScanView: View {
                     Section {
                         Text(saved.food.name).font(.roboto(.headline))
                         Text("Nutrition per \(saved.food.serve)").foregroundStyle(.secondary)
-                        NutritionView(total: Nutrition([Portion(food: saved.food)]))
-                        Button("Use this food") {
-                            use(BarcodeProduct(food: saved.food, per100: false, unit: saved.food.servingWeight?.1 ?? "g",
-                                               sourceURL: URL(string: "leanr://barcode/\(saved.code)")!))
-                            if dismissAfterUse { dismiss() }
-                        }.buttonStyle(.borderedProminent)
+                        NutritionView(total: Nutrition([Portion(food: saved.food)]), details: quick == nil)
+                        if let quick {
+                            BarcodeQuickActions(food: saved.food, per100: saved.food.serve.hasPrefix("100 "), inMyFoods: true, mode: quick) { dismiss() }
+                        }
+                        if quick == nil || quick?.logs == true {
+                            Button(quick == nil ? "Use this food" : "Change details first") {
+                                use(BarcodeProduct(food: saved.food, per100: false, unit: saved.food.servingWeight?.1 ?? "g",
+                                                   sourceURL: URL(string: "leanr://barcode/\(saved.code)")!))
+                                if dismissAfterUse { dismiss() }
+                            }.buttonStyle(.bordered)
+                        }
                         Button("Scan another product") { reset() }
-                    } header: { Text("In your foods") } footer: {
-                        Text("You added barcode \(saved.code) to this food. Change it from the food's editor in My foods.")
+                    } header: { Text("In My foods") } footer: {
+                        Text("You saved barcode \(saved.code) with this food. Change it from the food's editor in My foods.")
                     }
                 } else if let product {
                     Section("Product found") {
                         Text(product.food.name).font(.roboto(.headline))
                         Text(product.per100 ? "Nutrition per 100 \(product.unit)" : "Nutrition per \(product.food.serve)")
                             .foregroundStyle(.secondary)
-                        NutritionView(total: Nutrition([Portion(food: product.food)]))
-                        Text("Check this matches your package. You'll choose your serving and review the numbers before saving.")
-                            .font(.roboto(.caption)).foregroundStyle(.secondary)
+                        if let quick {
+                            // Logging comes first, so it's reachable without scrolling; the full panel is a tap away.
+                            NutritionView(total: Nutrition([Portion(food: product.food)]), details: false)
+                            BarcodeQuickActions(food: product.food, per100: product.per100, inMyFoods: false, mode: quick) { dismiss() }
+                            Button("Edit details first") { use(product) }.buttonStyle(.bordered)
+                            DisclosureGroup("Full nutrition") { NutritionView(total: Nutrition([Portion(food: product.food)])) }
+                            Text("Check this matches your package before logging.").font(.roboto(.caption)).foregroundStyle(.secondary)
+                        } else {
+                            NutritionView(total: Nutrition([Portion(food: product.food)]))
+                            Text("Check this matches your package. You'll choose your serving and review the numbers before saving.")
+                                .font(.roboto(.caption)).foregroundStyle(.secondary)
+                            Button("Use nutrition & choose serving") { use(product); if dismissAfterUse { dismiss() } }.buttonStyle(.borderedProminent)
+                        }
                         Link("Source: Open Food Facts · ODbL", destination: product.sourceURL)
-                        Button("Use nutrition & choose serving") { use(product); if dismissAfterUse { dismiss() } }
-                            .buttonStyle(.borderedProminent)
                         Button("Scan another product") { reset() }
                     }
                 } else {
@@ -101,7 +118,10 @@ struct BarcodeScanView: View {
                         }
                     }
                     RecentBarcodeSection { selected in
-                        pending = nil; message = nil; product = selected
+                        pending = nil; message = nil
+                        // A recent scan you've since saved opens from My foods.
+                        if let code = selected.food.barcode, let food = BarcodeLookup.match(code, in: store.data.foods) { saved = (code, food) }
+                        else { product = selected }
                     }
                     Section("Or enter the barcode") {
                         TextField("Barcode number", text: $digits).keyboardType(.numberPad)
@@ -212,6 +232,93 @@ struct BarcodeCaptureView: View {
     }
 }
 
+/// Logs or saves a scanned product in one tap: how much you had, whether to keep it in My foods, then Log.
+struct BarcodeQuickActions: View {
+    enum Mode {
+        /// Logging, e.g. from Today: hands back the portion to log.
+        case log((Portion) -> Bool)
+        /// Adding to My foods.
+        case save
+        var logs: Bool { if case .log = self { true } else { false } }
+    }
+    @Environment(AppStore.self) private var store
+    let food: Food
+    /// Already in My foods, so there's nothing to save.
+    let inMyFoods: Bool
+    let mode: Mode
+    let done: () -> Void
+    /// Remembered, so it stays how you left it.
+    @AppStorage(FoodEditor.keepKey) private var keep = true
+    @State private var byWeight: Bool
+    @State private var servings = 1.0
+    @State private var weight: Double
+    @State private var failed = false
+
+    init(food: Food, per100: Bool, inMyFoods: Bool, mode: Mode, done: @escaping () -> Void) {
+        self.food = food; self.inMyFoods = inMyFoods; self.mode = mode; self.done = done
+        // Per-100 figures are logged by weight, so the grams eaten can be typed straight in.
+        _byWeight = State(initialValue: per100 && food.servingWeight != nil)
+        _weight = State(initialValue: food.servingWeight?.0 ?? 100)
+    }
+    private var quantity: Double {
+        if byWeight, let serving = food.servingWeight { return weight / serving.0 }
+        return servings
+    }
+    private var valid: Bool { quantity.isFinite && quantity > 0 && quantity <= 10000 }
+
+    var body: some View {
+        Group {
+            switch mode {
+            case .log(let logPortion):
+                if let serving = food.servingWeight {
+                    Picker("Measure in", selection: $byWeight) {
+                        Text("Servings").tag(false); Text(serving.1 == "g" ? "Grams" : "mL").tag(true)
+                    }.pickerStyle(.segmented)
+                }
+                if byWeight, let serving = food.servingWeight { NumberField(title: "Amount (\(serving.1))", value: $weight) }
+                else { NumberField(title: "Servings", value: $servings, places: 2) }
+                if !inMyFoods {
+                    Toggle(isOn: $keep) {
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("Save to My foods")
+                            Text("Log it again with one tap, and scanning it opens it straight away.").font(.roboto(.caption)).foregroundStyle(.secondary)
+                        }
+                    }
+                }
+                Button { log(logPortion) } label: {
+                    Text("Log · \(Nutrition([Portion(food: food, quantity: valid ? quantity : 0)]).cal.rounded().number) Cal").frame(maxWidth: .infinity)
+                }.buttonStyle(.borderedProminent).disabled(!valid)
+                .task(id: food.id) { useLastAmount() }
+            case .save:
+                if inMyFoods {
+                    Label("Already in My foods", systemImage: "checkmark.circle").foregroundStyle(.secondary)
+                } else {
+                    Button {
+                        if let kept = store.saveToMyFoods(food) { store.notice = "Saved \(kept.name) to My foods"; done() } else { failed = true }
+                    } label: { Text("Save to My foods").frame(maxWidth: .infinity) }.buttonStyle(.borderedProminent)
+                }
+            }
+        }
+        .alert("Couldn’t save food", isPresented: $failed) { Button("OK", role: .cancel) {} } message: {
+            Text("Your data was not changed. Check available storage and any data recovery message in the app.")
+        }
+    }
+
+    /// A food you've logged before starts at the amount you had last time.
+    private func useLastAmount() {
+        guard inMyFoods, let last = QuickLog.lastQuantity(of: food.id, logs: store.data.logs) else { return }
+        if byWeight, let serving = food.servingWeight { weight = (last * serving.0).tenth } else { servings = last }
+    }
+
+    private func log(_ logPortion: (Portion) -> Bool) {
+        var item = food, kept = false
+        if keep && !inMyFoods, let saved = store.saveToMyFoods(food) { item = saved; kept = true }
+        guard logPortion(Portion(food: item, quantity: quantity)) else { failed = true; return }
+        if kept { store.notice = "Logged and saved to My foods" }
+        done()
+    }
+}
+
 struct RecentBarcodeSection: View {
     @AppStorage(RecentBarcodes.storageKey) private var recentData = Data()
     let use: (BarcodeProduct) -> Void
@@ -241,7 +348,7 @@ struct RecentBarcodeSection: View {
                 }
                 .accessibilityLabel("Recently scanned, \(products.count) products")
             } footer: {
-                Text("Reuse one of your last \(RecentBarcodes.limit) scans, then check its serving size and how much you had.")
+                Text("Reuse one of your last \(RecentBarcodes.limit) scans. Ones you saved open from My foods.")
             }
         }
     }

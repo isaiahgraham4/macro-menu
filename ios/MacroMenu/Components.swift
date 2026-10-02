@@ -110,6 +110,15 @@ struct FoodRow: View {
         }.padding(.vertical,4)
     }
 }
+/// Pins a food to the top of the "+" menu and the Log again widget, or unpins it.
+struct PinButton: View {
+    @Environment(AppStore.self) private var store
+    var food: Food
+    var body: some View {
+        let pinned = store.isPinned(food)
+        Button(pinned ? "Unpin" : "Pin to top", systemImage: pinned ? "pin.slash" : "pin") { store.togglePin(food) }
+    }
+}
 /// Today or yesterday, and which meal: where one-tap logging goes.
 struct LogTargetPicker: View {
     @Binding var yesterday: Bool

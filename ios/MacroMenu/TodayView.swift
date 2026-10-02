@@ -124,6 +124,18 @@ struct TodayView: View {
                         .buttonStyle(.plain)
                         .accessibilityLabel("View \(category.title) calories and macros")
                         Menu {
+                            let pinned = store.pinnedFoods
+                            if !pinned.isEmpty {
+                                Section("Pinned") {
+                                    ForEach(pinned) { food in
+                                        Button("\(food.name) · \(food.cal.number) Cal", systemImage: "pin") {
+                                            if store.log([Portion(food: food)], name: food.name, date: date, mealTime: category) {
+                                                store.notice = "Logged to \(category.title.lowercased())"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                             Button("Scan barcode") { mealTime = category; barcode = true }
                             Button("Quick log / scan label") { mealTime = category; quick = true }
                             Button("Choose menu item") { mealTime = category; choosing = true }
@@ -132,7 +144,7 @@ struct TodayView: View {
                             mealTime = category; choosing = true
                         }
                             .accessibilityLabel("Add to \(category.title)")
-                            .accessibilityHint("Opens the menu. Hold for barcode and quick log.")
+                            .accessibilityHint("Opens the menu. Hold for pinned foods, barcode and quick log.")
                     }
                 }
             }

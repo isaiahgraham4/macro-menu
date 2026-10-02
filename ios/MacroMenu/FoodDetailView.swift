@@ -17,6 +17,13 @@ struct FoodDetailView: View {
     @State private var ownAdjustment: Food?
     @State private var editingAdjustment = false
     @State private var subtract = false
+    /// The custom order pinned from this screen, so the pin button can show it and unpin it.
+    @State private var pinnedCustom: Food?
+    /// What pinning a custom order saves: the order as set up now, under its own ID.
+    private var pinnable: Food {
+        if let pinnedCustom, pinnedCustom.name == adjusted.name, pinnedCustom.kj == adjusted.kj { return pinnedCustom }
+        var value = adjusted; value.id = UUID().uuidString; return value
+    }
     var adjusted: Food {
         var result = food
         let selected = (food.modifiers ?? []).filter { (changes[$0.key] ?? 0) > 0 }
@@ -159,6 +166,14 @@ struct FoodDetailView: View {
             }
         }.navigationTitle("Food details").navigationBarTitleDisplayMode(.inline)
             .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    // A custom order is pinned as it's set up now, as its own food.
+                    let target = customized ? pinnable : food
+                    let pinned = store.isPinned(target)
+                    Button { store.togglePin(target); if customized { pinnedCustom = pinned ? nil : target } } label: {
+                        Image(systemName: pinned ? "pin.fill" : "pin")
+                    }.accessibilityLabel(pinned ? "Unpin" : "Pin to top")
+                }
                 ToolbarItem(placement: .topBarTrailing) {
                     ShareLink(item: mealText(adjusted.name, [portion])) { Image(systemName: "square.and.arrow.up") }.accessibilityLabel("Share nutrition")
                 }

@@ -8,7 +8,7 @@ import Foundation
         defer { try? FileManager.default.removeItem(at: root) }
         let catalogURL = URL(fileURLWithPath: CommandLine.arguments[1])
         let catalog = try JSONDecoder().decode(MenuCatalog.self,from: Data(contentsOf: catalogURL))
-        assert(catalog.foods.count == 1316)
+        assert(catalog.foods.count == 1309)
         assert(Set(catalog.foods.map(\.chain)).isSubset(of: Set(catalog.chains.map(\.id))))
         // A juice bar has no mains, so its drinks are the order.
         let juice = MealFinder.find(catalog.foods, query: FindQuery(chains: ["boost"], calories: 700, protein: 25, maxItems: 1))
@@ -426,10 +426,57 @@ import Foundation
         assert(undoStore.change { $0.weights = [WeightEntry(date: day0, kg: 80)] } && undoStore.undo == nil)
         var other = AppData(); other.weights = [WeightEntry(date: day(1), kg: 79)]
         assert(AppStore.merged(undoStore.data, other).weightLog.count == 2)
+        // Pinned foods and the Log again widget.
+        let pinURL = root.appending(path: "pins.json")
+        let pinStore = AppStore(url: pinURL, catalogURL: catalogURL, legacyURL: nil)
+        let zinger = pinStore.foods.first { $0.id == "kfc:zinger-burger" }!
+        pinStore.togglePin(zinger)
+        assert(pinStore.isPinned(zinger) && pinStore.pinnedFoods.map(\.id) == [zinger.id] && pinStore.notice == "Pinned Zinger Burger")
+        assert(AppStore(url: pinURL, catalogURL: catalogURL, legacyURL: nil).isPinned(zinger))
+        assert(pinStore.pinnedFoods[0].modifiers != nil, "a pinned menu item shows the current menu version")
+        assert(pinStore.quickLogOptions().contains { $0.id == "pin:kfc:zinger-burger" && $0.lastLogged == nil && $0.calories == zinger.cal })
+        assert(pinStore.logAgain("pin:kfc:zinger-burger") && !pinStore.logAgain("pin:missing") && !pinStore.logAgain("usual:nonsense"))
+        let now = Date(), slot = MealTime.suggested(at: now)
+        assert(pinStore.data.logs[dayKey(now)]?.last?.mealTime == slot)
+        let afterLog = pinStore.quickLogOptions(now: now)
+        assert(afterLog.first { $0.id == "pin:kfc:zinger-burger" }?.lastLogged == dayKey(now))
+        assert(afterLog.contains { $0.id == "usual:\(slot.rawValue)" && $0.name == "Zinger Burger" && $0.lastLogged == dayKey(now) })
+        var snapshot = WidgetCalories(target: 2000, dailyCalories: [:]); snapshot.quickLogOptions = afterLog
+        assert(snapshot.quickLogs(at: now).first?.id == "usual:\(slot.rawValue)", "the usual meal for now comes first")
+        assert(snapshot.quickLogs(at: now).filter { $0.name == "Zinger Burger" }.count == 1, "a pin that is also the usual meal shows once")
+        assert(!pinStore.logAgain("usual:\(slot.rawValue)", at: now.addingTimeInterval(3)), "a double tap logs once")
+        assert(pinStore.logAgain("usual:\(slot.rawValue)", at: now.addingTimeInterval(20)) && pinStore.data.logs[dayKey(now)]?.count == 2)
+        let queuedAt = calendar.date(byAdding: .day, value: -1, to: calendar.date(bySettingHour: 12, minute: 30, second: 0, of: now)!)!
+        assert(pinStore.applyQueuedQuickLogs([.init(option: "pin:kfc:zinger-burger", date: queuedAt), .init(option: "pin:gone", date: queuedAt)]) == 1)
+        assert(pinStore.data.logs[dayKey(queuedAt)]?.last?.mealTime == .lunch, "a queued log keeps its own time")
+        assert(["breakfast", "lunch", "dinner", "snacks"].allSatisfy { MealTime(rawValue: $0) != nil })
+        for food in pinStore.foods.filter({ $0.chain == "kfc" }).prefix(AppStore.pinLimit) where !pinStore.isPinned(food) { pinStore.togglePin(food) }
+        assert(pinStore.data.pinned?.count == AppStore.pinLimit)
+        pinStore.togglePin(pinStore.foods.first { $0.chain == "hj" }!)
+        assert(pinStore.data.pinned?.count == AppStore.pinLimit && pinStore.notice?.hasPrefix("You can pin up to") == true)
+        pinStore.togglePin(zinger)
+        assert(!pinStore.isPinned(zinger) && pinStore.notice == "Unpinned Zinger Burger")
+        var pinsFromBackup = AppData(); pinsFromBackup.pinned = [zinger]
+        assert(AppStore.merged(AppData(), pinsFromBackup).pinned?.map(\.id) == [zinger.id])
+
+        // Saving a scanned product to My foods: rounded like the editor, and the same barcode updates rather than duplicates.
+        let scanStore = AppStore(url: root.appending(path: "scans.json"), catalogURL: catalogURL, legacyURL: nil)
+        var scanned = Food(name: "Greek yoghurt", kj: 123.456 * 4.184, cal: 123.456, p: 10.04, c: 5.55, f: 2.06, serve: "100 g")
+        scanned.barcode = "9300601000017"
+        let kept = scanStore.saveToMyFoods(scanned)!
+        assert(kept.chain == "mine" && kept.cal == 123.5 && kept.p == 10 && scanStore.data.foods.count == 1)
+        var rescanned = scanned; rescanned.id = UUID().uuidString; rescanned.name = "Greek yoghurt (new label)"; rescanned.barcode = "09300601000017"
+        assert(scanStore.saveToMyFoods(rescanned)?.id == kept.id && scanStore.data.foods.count == 1 && scanStore.data.foods[0].name == "Greek yoghurt (new label)")
+        assert(BarcodeLookup.match("9300601000017", in: scanStore.data.foods)?.id == kept.id)
+        assert(QuickLog.lastQuantity(of: kept.id, logs: scanStore.data.logs) == nil)
+        assert(scanStore.log([Portion(food: kept, quantity: 0.2)], name: kept.name, date: day0))
+        assert(scanStore.log([Portion(food: kept, quantity: 0.35)], name: kept.name, date: day(2)))
+        assert(QuickLog.lastQuantity(of: kept.id, logs: scanStore.data.logs) == 0.35, "the most recent amount is offered next time")
+
         let oldFormat = try JSONEncoder().encode(AppData())
         let reloadedOld = try JSONDecoder().decode(AppData.self, from: oldFormat)
         assert(reloadedOld.weights == nil && reloadedOld.isValid)
 
-        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates and undo (\(Date().timeIntervalSince(start).formatted())s).")
+        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget and saving scans (\(Date().timeIntervalSince(start).formatted())s).")
     }
 }

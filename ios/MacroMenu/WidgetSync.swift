@@ -34,6 +34,45 @@ extension AppData {
 }
 
 extension AppStore {
+    /// What the Log again widget can log: the usual meal for each meal time, then pinned foods.
+    func quickLogOptions(now: Date = Date()) -> [WidgetQuickLog] {
+        let today = data.logs[dayKey(now)] ?? []
+        var options: [WidgetQuickLog] = MealTime.allCases.compactMap { meal in
+            guard let usual = Assistant.usual(meal, logs: data.logs, now: now) else { return nil }
+            let logged = today.contains { $0.mealTime == meal && $0.name == usual.name }
+            return WidgetQuickLog(id: "usual:\(meal.rawValue)", name: usual.name, calories: Nutrition(usual.items).cal,
+                                  mealTime: meal.rawValue, lastLogged: logged ? dayKey(now) : nil)
+        }
+        options += pinnedFoods.map { food in
+            let logged = today.contains { $0.items.contains { $0.food.id == food.id } }
+            return WidgetQuickLog(id: "pin:\(food.id)", name: food.name, calories: food.cal, lastLogged: logged ? dayKey(now) : nil)
+        }
+        return options
+    }
+
+    /// Logs one of the widget's options: a usual meal to its own meal time, or a serving of a pinned food to the meal time it is at `date`.
+    /// The same thing logged in the last 10 seconds is taken as a double tap, since the widget can take a moment to show its tick.
+    @discardableResult func logAgain(_ option: String, at date: Date = Date()) -> Bool {
+        func justLogged(_ name: String) -> Bool {
+            (data.logs[dayKey(date)] ?? []).contains { $0.name == name && abs($0.time.timeIntervalSince(date)) < 10 }
+        }
+        if option.hasPrefix("usual:"), let meal = MealTime(rawValue: String(option.dropFirst(6))),
+           let usual = Assistant.usual(meal, logs: data.logs, now: date) {
+            guard !justLogged(usual.name) else { return false }
+            return log(QuickLog.copies(usual.items), name: usual.name, date: date, mealTime: meal)
+        }
+        if option.hasPrefix("pin:"), let food = pinnedFoods.first(where: { "pin:\($0.id)" == option }) {
+            guard !justLogged(food.name) else { return false }
+            return log([Portion(food: food)], name: food.name, date: date, mealTime: .suggested(at: date))
+        }
+        return false
+    }
+
+    /// Logs requests the widget had to queue, then clears them. Returns how many were logged.
+    @discardableResult func applyQueuedQuickLogs(_ requests: [QuickLogQueue.Request]) -> Int {
+        requests.filter { logAgain($0.option, at: $0.date) }.count
+    }
+
     func refreshWidgets() {
         #if os(iOS)
         guard let url = WidgetCalories.fileURL else { return }
@@ -45,12 +84,14 @@ extension AppStore {
                     WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.premiumKind)
                     WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.macrosKind)
                     WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.streakKind)
+                    WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.logAgainKind)
                 }
                 return
             }
             var snapshot = data.widgetCalories
             snapshot.accent = AppAccent.resolved(UserDefaults.standard.string(forKey: AppAccent.storageKey) ?? AppAccent.standard.rawValue).rawValue
             snapshot.premiumUnlocked = Premium.isUnlocked
+            snapshot.quickLogOptions = quickLogOptions()
             snapshot.macroColours = Premium.isUnlocked ? [
                 "p": UserDefaults.standard.string(forKey: MacroColours.proteinKey) ?? "blue",
                 "c": UserDefaults.standard.string(forKey: MacroColours.carbsKey) ?? "orange",
@@ -62,6 +103,7 @@ extension AppStore {
             WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.premiumKind)
             WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.macrosKind)
             WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.streakKind)
+            WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.logAgainKind)
         } catch {
             Logger(subsystem: "com.isaiahgraham.MacroMenu", category: "Widgets")
                 .error("Couldn't share calorie totals: \(error.localizedDescription)")

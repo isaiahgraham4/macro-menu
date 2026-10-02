@@ -23,6 +23,7 @@ import UserNotifications
         // Meals, targets and weigh-ins from another device change what's reminded, too.
         store.synced = { rebookReminders() }
         rebookReminders()
+        logQueued()
         LeanrShortcuts.updateAppShortcutParameters()
         // A menu downloaded earlier may be newer than the one built into the app.
         let bundled = store.catalog
@@ -32,6 +33,21 @@ import UserNotifications
             if MenuUpdates.acceptable(best, over: store.catalog) { useMenu(best) }
             await checkMenu()
         }
+    }
+
+    /// The Log again widget's button: logs the option now, then waits for Apple Health so it isn't cut off if Leanr goes back to sleep.
+    static func logAgain(_ option: String) async {
+        start()
+        if store.logAgain(option) { store.notice = "Logged from your widget" }
+        await health.finishPending()
+    }
+
+    /// Logs anything the widget had to queue while Leanr couldn't run it.
+    static func logQueued() {
+        let requests = QuickLogQueue.read()
+        guard !requests.isEmpty else { return }
+        QuickLogQueue.write([])
+        if store.applyQueuedQuickLogs(requests) > 0 { store.notice = "Logged from your widget" }
     }
 
     /// Looks for a newer menu online; runs at most every few hours unless forced. Overlapping calls share one check.

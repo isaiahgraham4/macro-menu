@@ -180,14 +180,30 @@ struct BrowseView: View {
                 }
             }
             if search.isEmpty && chain == "all" && category == "all" {
-                let recentFoods = QuickLog.recentFoods(logs: store.data.logs)
+                let pinned = store.pinnedFoods
+                if !pinned.isEmpty {
+                    Section {
+                        ForEach(pinned) { food in
+                            NavigationLink { FoodDetailView(food: food, pick: pick, pickTitle: pickTitle, logYesterday: yesterday, logMeal: pick == nil ? meal : nil) } label: {
+                                FoodRow(food: food, quickAdd: { quickAdd(food) }, quickAddLabel: quickAddLabel)
+                            }
+                            .contextMenu { PinButton(food: food) }
+                            .swipeActions { Button("Unpin", systemImage: "pin.slash") { store.togglePin(food) }.tint(.orange) }
+                        }
+                    } header: { Label("Pinned", systemImage: "pin.fill") }
+                }
+                // Pinned foods already sit above, so they don't repeat here.
+                let recentFoods = QuickLog.recentFoods(logs: store.data.logs).filter { food in !pinned.contains { $0.id == food.id } }
                 if !recentFoods.isEmpty {
-                    Section("Recently logged") {
+                    Section {
                         ForEach(recentFoods) { food in
                             NavigationLink { FoodDetailView(food: food, pick: pick, pickTitle: pickTitle, logYesterday: yesterday, logMeal: pick == nil ? meal : nil) } label: {
                                 FoodRow(food: food, quickAdd: { quickAdd(food) }, quickAddLabel: quickAddLabel)
                             }
+                            .contextMenu { PinButton(food: food) }
                         }
+                    } header: { Text("Recently logged") } footer: {
+                        if pinned.isEmpty { Text("Touch and hold a food to pin it here, so your regulars stay at the top.") }
                     }
                 }
             }
@@ -197,6 +213,7 @@ struct BrowseView: View {
                     NavigationLink {
                         FoodDetailView(food: food, pick: pick, pickTitle: pickTitle, logYesterday: yesterday, logMeal: pick == nil ? meal : nil).onAppear { recent = RecentSearches.adding(shown?.search ?? search, to: recent) }
                     } label: { FoodRow(food: food, quickAdd: { quickAdd(food) }, quickAddLabel: quickAddLabel) }
+                    .contextMenu { PinButton(food: food) }
                 }
             } header: {
                 HStack {

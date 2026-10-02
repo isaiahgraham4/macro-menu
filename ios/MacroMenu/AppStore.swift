@@ -92,6 +92,37 @@ final class AppStore {
             else { state.foods.append(food) }
         }
     }
+    /// Keeps a logged food (usually a scanned product) in My foods, so the "+" there or scanning it again logs it straight away.
+    /// A food that already has this barcode is updated rather than added twice. Returns the saved food.
+    @discardableResult func saveToMyFoods(_ food: Food) -> Food? {
+        var value = food; value.chain = "mine"; value.modifiers = nil
+        // One decimal place, like foods saved from the editor.
+        value.cal = value.cal.tenth; value.kj = value.cal * 4.184; value.p = value.p.tenth
+        value.c = value.c?.tenth; value.f = value.f?.tenth; value.nut = value.nut?.mapValues(\.tenth)
+        if let code = food.barcode, let existing = BarcodeLookup.match(code, in: data.foods) { value.id = existing.id }
+        return saveFood(value) ? value : nil
+    }
+    static let pinLimit = 8
+    /// Pinned foods with today's figures where the item is still on the menu or in My foods.
+    var pinnedFoods: [Food] {
+        let pins = data.pinned ?? []
+        guard !pins.isEmpty else { return [] }
+        let ids = Set(pins.map(\.id))
+        let current = Dictionary(foods.filter { ids.contains($0.id) }.map { ($0.id, $0) }) { a, _ in a }
+        return pins.map { current[$0.id] ?? $0 }
+    }
+    func isPinned(_ food: Food) -> Bool { (data.pinned ?? []).contains { $0.id == food.id } }
+    /// Pins or unpins a food. Pins past the limit are refused with a notice rather than pushing an older one out.
+    func togglePin(_ food: Food) {
+        if isPinned(food) {
+            if change({ $0.pinned?.removeAll { $0.id == food.id } }) { notice = "Unpinned \(food.name)" }
+        } else if (data.pinned ?? []).count >= Self.pinLimit {
+            notice = "You can pin up to \(Self.pinLimit) foods. Unpin one first."
+        } else {
+            var copy = food; copy.modifiers = nil
+            if change({ $0.pinned = ($0.pinned ?? []) + [copy] }) { notice = "Pinned \(food.name)" }
+        }
+    }
     func add(_ items: [Portion]) {
         if change({ state in
             for item in items {
@@ -151,6 +182,11 @@ final class AppStore {
             else { state.goalSets.append(goal) }
         }
         state.dayGoals.merge(backup.dayGoals) { _, incoming in incoming }
+        if let pins = backup.pinned {
+            var merged = state.pinned ?? []
+            for pin in pins where !merged.contains(where: { $0.id == pin.id }) { merged.append(pin) }
+            state.pinned = Array(merged.prefix(pinLimit))
+        }
         if state.tray.isEmpty { state.tray = backup.tray }
         if !backup.weightLog.isEmpty {
             var weights = state.weightLog

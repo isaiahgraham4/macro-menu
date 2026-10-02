@@ -17,6 +17,8 @@ struct WidgetCalories: Codable, Equatable, Sendable {
     var premiumUnlocked: Bool? = nil
     var trackedDays: [String]? = nil
     var macroColours: [String: String]? = nil
+    /// Usual meals and pinned foods for the Log again widget.
+    var quickLogOptions: [WidgetQuickLog]? = nil
     var trackingDays: Set<String> { Set(trackedDays ?? Array(dailyCalories.filter { $0.value > 0 }.keys)) }
     func streak(on date: Date, calendar: Calendar = Calendar(identifier: .gregorian)) -> Int {
         TrackingStreak.count(days: trackingDays, on: date, calendar: calendar)
@@ -90,4 +92,77 @@ struct WidgetNutrientTarget: Codable, Equatable, Identifiable, Sendable {
     var unit: String
     var target: Double
     var minimum: Bool
+}
+
+/// One thing the Log again widget offers: your usual meal for a meal time, or a pinned food.
+struct WidgetQuickLog: Codable, Equatable, Identifiable, Sendable {
+    /// "usual:breakfast" or "pin:<food ID>".
+    var id: String
+    var name: String
+    var calories: Double
+    /// For a usual meal, the meal time it's for and logs to.
+    var mealTime: String?
+    /// The day it was last logged ("yyyy-MM-dd") when the snapshot was made, to show a tick once it's in today's log.
+    var lastLogged: String?
+    var isUsual: Bool { id.hasPrefix("usual:") }
+}
+
+/// Meal times by the clock, shared with the widget so it can switch to the next meal on its own.
+enum MealSlot {
+    static func at(_ date: Date, calendar: Calendar = .current) -> String {
+        switch calendar.component(.hour, from: date) {
+        case 5..<11: "breakfast"
+        case 11..<16: "lunch"
+        case 16..<22: "dinner"
+        default: "snacks"
+        }
+    }
+    /// The next times the meal time changes, soonest first.
+    static func changes(after date: Date, calendar: Calendar = .current) -> [Date] {
+        [5, 11, 16, 22].compactMap {
+            calendar.nextDate(after: date, matching: DateComponents(hour: $0, minute: 0), matchingPolicy: .nextTime)
+        }.sorted()
+    }
+}
+
+extension WidgetCalories {
+    static let logAgainKind = "LeanrLogAgain"
+    /// What the Log again widget shows at `date`: the usual meal for that meal time first, then pinned foods.
+    func quickLogs(at date: Date) -> [WidgetQuickLog] {
+        let slot = MealSlot.at(date), options = quickLogOptions ?? []
+        let usual = options.filter { $0.isUsual && $0.mealTime == slot }
+        // A pinned food that is also the usual meal shows once.
+        return usual + options.filter { pin in !pin.isUsual && !usual.contains { $0.name == pin.name } }
+    }
+}
+
+/// Requests from the widget that Leanr couldn't log straight away. The app logs them, with their original time, next time it runs.
+enum QuickLogQueue {
+    struct Request: Codable, Equatable, Sendable { var option: String; var date: Date }
+    static var fileURL: URL? {
+        FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: WidgetCalories.groupID)?
+            .appendingPathComponent("quick-log-queue.json")
+    }
+    static func read() -> [Request] {
+        guard let url = fileURL, let bytes = try? Data(contentsOf: url) else { return [] }
+        return (try? JSONDecoder().decode([Request].self, from: bytes)) ?? []
+    }
+    static func write(_ requests: [Request]) {
+        guard let url = fileURL else { return }
+        if requests.isEmpty { try? FileManager.default.removeItem(at: url); return }
+        try? JSONEncoder().encode(requests).write(to: url, options: [.atomic, .completeFileProtectionUntilFirstUserAuthentication])
+    }
+    static func add(_ option: String, at date: Date) { write(read() + [Request(option: option, date: date)]) }
+
+    /// Shows a queued request on the widgets straight away: its calories in today's total and a tick on the option.
+    static func showQueued(_ option: String, at date: Date) {
+        guard var snapshot = WidgetCalories.read(), let url = WidgetCalories.fileURL,
+              let index = snapshot.quickLogOptions?.firstIndex(where: { $0.id == option }),
+              let item = snapshot.quickLogOptions?[index] else { return }
+        let day = WidgetCalories.dayKey(date)
+        snapshot.dailyCalories[day, default: 0] += item.calories
+        snapshot.trackedDays = Array(Set((snapshot.trackedDays ?? []) + [day])).sorted()
+        snapshot.quickLogOptions?[index].lastLogged = day
+        try? JSONEncoder().encode(snapshot).write(to: url, options: [.atomic, .completeFileProtectionUntilFirstUserAuthentication])
+    }
 }

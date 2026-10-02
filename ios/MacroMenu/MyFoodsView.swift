@@ -39,7 +39,7 @@ struct MyFoodsView: View {
                     NavigationLink { FoodDetailView(food: food) } label: {
                         FoodRow(food: food, quickAdd: { store.logNow([Portion(food: food)], name: food.name) })
                     }
-                        .contextMenu { YesterdayMenu { store.logNow([Portion(food: food)], name: food.name, mealTime: $0, yesterday: true) } }
+                        .contextMenu { PinButton(food: food); YesterdayMenu { store.logNow([Portion(food: food)], name: food.name, mealTime: $0, yesterday: true) } }
                         .swipeActions(edge: .leading) {
                             Button("Edit") { if food.ingredients != nil { editingRecipe = food } else { editing = food } }.tint(.blue)
                         }
@@ -142,6 +142,9 @@ struct FoodEditor: View {
     @State private var customNutrient = ""
     @State private var customUnit = "mg"
     @State private var customValue = 0.0
+    /// When logging, also keep the food in My foods. On for barcode products (remembered, shared with the scan screen), off for one-offs.
+    @State private var keepInMyFoods: Bool
+    static let keepKey = "barcode.saveToMyFoods"
     init(food: Food?, scannedProduct: BarcodeProduct? = nil, barcode: String? = nil, savePortion: ((Portion) -> Bool)? = nil, save: @escaping (Food) -> Bool) {
         var initial = scannedProduct?.food ?? food ?? Food(name: "", kj: 0, cal: 0, p: 0, c: nil, f: nil)
         if let barcode { initial.barcode = barcode }
@@ -151,7 +154,10 @@ struct FoodEditor: View {
         self.savePortion = savePortion
         // Per-100 figures with no pack serving: log by weight, so the grams eaten can be typed straight in.
         _byWeight = State(initialValue: scannedProduct?.per100 == true && savePortion != nil)
+        _keepInMyFoods = State(initialValue: initial.barcode != nil && (UserDefaults.standard.object(forKey: Self.keepKey) as? Bool ?? true))
     }
+    /// Already one of your foods, so logging it doesn't need to save it again.
+    private var inMyFoods: Bool { store.data.foods.contains { $0.id == draft.id } }
     /// What one serving weighs, when that's known: the size entered for per-100 figures, or a weight in the serving text.
     var servingWeight: (amount: Double, unit: String)? {
         if per100 { return servingSize.isFinite && servingSize > 0 ? (servingSize, servingUnit) : nil }
@@ -218,6 +224,12 @@ struct FoodEditor: View {
                         NumberField(title: "Number of servings", value: $servings, places: 2)
                         Text(servingWeight == nil ? "Add a weight to the serving size, like 150 g, to enter grams instead." : "For example, 0.5 for half a serving or 2 for two servings.")
                             .font(.roboto(.caption)).foregroundStyle(.secondary)
+                    }
+                    if !inMyFoods {
+                        Toggle("Save to My foods", isOn: Binding(get: { keepInMyFoods }, set: { value in
+                            keepInMyFoods = value
+                            if draft.barcode != nil { UserDefaults.standard.set(value, forKey: Self.keepKey) }
+                        }))
                     }
                 }
             }
@@ -331,7 +343,12 @@ struct FoodEditor: View {
                 ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } }
                 ToolbarItem(placement: .confirmationAction) {
                     Button(savePortion == nil ? "Save" : "Log food") {
-                        let succeeded = savePortion.map { $0(Portion(food: result, quantity: quantity)) } ?? save(result)
+                        let succeeded: Bool
+                        if let savePortion {
+                            var item = result
+                            if keepInMyFoods && !inMyFoods, let kept = store.saveToMyFoods(item) { item = kept }
+                            succeeded = savePortion(Portion(food: item, quantity: quantity))
+                        } else { succeeded = save(result) }
                         if succeeded { dismiss() } else { saveFailed = true }
                     }.disabled(!result.isValid || barcodeInvalid || servingSize <= 0 || scanning || !scanBasisConfirmed || !quantity.isFinite || quantity <= 0 || quantity > 10000)
                 }
@@ -387,6 +404,7 @@ struct FoodEditor: View {
         per100 = product.per100; servingSize = 100; servingUnit = product.unit
         servings = 1; scanBasisConfirmed = true
         byWeight = product.per100 && savePortion != nil; weight = 100
+        if draft.barcode != nil { keepInMyFoods = UserDefaults.standard.object(forKey: Self.keepKey) as? Bool ?? true }
         energyUnit = "Cal"; energy = product.food.cal
         scannedText = ""; scanPreview = nil; scanError = nil; scanColumn = 0
     }

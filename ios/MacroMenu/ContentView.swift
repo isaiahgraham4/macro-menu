@@ -49,6 +49,7 @@ struct ContentView: View {
         .onChange(of: fatColour) { store.refreshWidgets() }
         .onChange(of: scenePhase) {
             if scenePhase == .active {
+                AppServices.logQueued()
                 store.refreshWidgets()
                 cloud.schedule(after: 0)
                 AppServices.rebookReminders()

@@ -41,11 +41,21 @@ The app uses SwiftUI and requires no third-party packages or API keys.
 - Undo: logging and deletes show a five-second Undo banner.
 - Search: forgiving matching (one typo in 4–6 letter words, two in longer ones,
   first letter must match) with exact matches first; recent searches.
-- Ingredient removals: McDonald's (official energy, estimated macros), GYG,
-  Subway (full official nutrition from its per-ingredient guide; 6", footlong,
-  regular wraps, breakfast, and cheese/dressing on regular salads) and Hungry
-  Jack's cheese (the difference between with- and without-cheese versions). KFC
-  doesn't publish ingredient nutrition.
+- Customising orders: McDonald's removals and extras (extra patty, fillet, egg,
+  cheese, bacon, sauce; official energy, estimated macros except for parts sold
+  on their own), GYG, Subway (full official nutrition from its per-ingredient
+  guide; 6", footlong, regular wraps, breakfast, and cheese/dressing on regular
+  salads), and Hungry Jack's and KFC cheese, bacon and extra patties (the
+  difference between two burgers sold with and without them).
+- Pinned foods: touch and hold a food (or use the pin on its details) to keep it
+  at the top of the food chooser and the Today "+" menu. Up to 8; stored in
+  `AppData.pinned` with a copy of the food, shown with current menu figures.
+- Log again widget (Home Screen and Lock Screen): the usual meal for this time of
+  day, then pinned foods, each with a log button. `LogAgainIntent`
+  (`Shared/LogAgain.swift`) is a Live Activity intent, so it runs in the app's
+  process and logs through the normal store (Health and iCloud included). If it
+  ever runs in the widget instead, the request is queued in the App Group and
+  logged when Leanr next starts. A repeat tap within 10 seconds is ignored.
 - Siri and Shortcuts: "Log my usual lunch in Leanr" logs the meal most often
   logged to that meal time in the last 30 days. "What fits at KFC in Leanr"
   runs the finder against what's left of today's targets (capped at your typical

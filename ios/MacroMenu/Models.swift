@@ -129,14 +129,8 @@ enum MealTime: String, Codable, CaseIterable, Identifiable, Sendable {
     case breakfast, lunch, dinner, snacks
     var id: Self { self }
     var title: String { rawValue.capitalized }
-    static func suggested(at date: Date = Date()) -> MealTime {
-        switch Calendar.current.component(.hour, from: date) {
-        case 5..<11: .breakfast
-        case 11..<16: .lunch
-        case 16..<22: .dinner
-        default: .snacks
-        }
-    }
+    /// By the clock, using the same hours as the Log again widget.
+    static func suggested(at date: Date = Date()) -> MealTime { MealTime(rawValue: MealSlot.at(date)) ?? .snacks }
 }
 
 struct LogEntry: Codable, Identifiable, Hashable, Sendable {
@@ -169,8 +163,12 @@ struct AppData: Codable, Sendable {
     /// Optional so saved data and backups from before the weight log still load.
     var weights: [WeightEntry]? = nil
     var weightLog: [WeightEntry] { weights ?? [] }
+    /// Foods pinned to the top of the "+" menu and the Log again widget. Copies, so a pin still works if the item leaves the menu.
+    /// Optional so saved data and backups from before pinning still load.
+    var pinned: [Food]? = nil
     var isValid: Bool {
         version == 2 && foods.allSatisfy(\.isValid) && meals.allSatisfy(\.isValid) && tray.allSatisfy(\.isValid) &&
+        (pinned ?? []).allSatisfy(\.isValid) &&
         logs.values.flatMap { $0 }.allSatisfy(\.isValid) && !goalSets.isEmpty && goalSets.allSatisfy(\.isValid) &&
         dayGoals.values.allSatisfy(\.isValid) && weightLog.allSatisfy(\.isValid) && Set(foods.map(\.id)).count == foods.count &&
         Set(meals.map(\.id)).count == meals.count && Set(goalSets.map(\.id)).count == goalSets.count &&
@@ -219,6 +217,16 @@ enum QuickLog {
     static func previous(_ mealTime: MealTime, before date: Date, logs: [String: [LogEntry]], calendar: Calendar = .current) -> [LogEntry] {
         guard let yesterday = calendar.date(byAdding: .day, value: -1, to: date) else { return [] }
         return (logs[dayKey(yesterday)] ?? []).filter { $0.mealTime == mealTime }
+    }
+
+    /// How many servings of a food were logged most recently, if it's been logged at all.
+    static func lastQuantity(of foodID: String, logs: [String: [LogEntry]]) -> Double? {
+        for day in logs.keys.sorted(by: >) {
+            for entry in (logs[day] ?? []).sorted(by: { $0.time > $1.time }) {
+                if let item = entry.items.first(where: { $0.food.id == foodID }) { return item.quantity }
+            }
+        }
+        return nil
     }
 
     /// Foods logged in the last `days` days, newest first, each listed once.

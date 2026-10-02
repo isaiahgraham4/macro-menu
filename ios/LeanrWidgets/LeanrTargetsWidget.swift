@@ -8,6 +8,7 @@ struct LeanrWidgetBundle: WidgetBundle {
         LeanrTargetsWidget()
         LeanrMacrosWidget()
         LeanrStreakWidget()
+        LeanrLogAgainWidget()
     }
 }
 
