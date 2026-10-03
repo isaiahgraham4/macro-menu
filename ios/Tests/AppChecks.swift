@@ -443,7 +443,7 @@ import Foundation
         assert(undoStore.change { $0.weights = [WeightEntry(date: day0, kg: 80)] } && undoStore.undo == nil)
         var other = AppData(); other.weights = [WeightEntry(date: day(1), kg: 79)]
         assert(AppStore.merged(undoStore.data, other).weightLog.count == 2)
-        // Opening hours from Google Places: open/closed now, the next change, and the week Monday first.
+        // Opening hours: open/closed now, the next change, and the week Monday first.
         var melb = Calendar(identifier: .gregorian); melb.timeZone = TimeZone(identifier: "Australia/Melbourne")!
         func at(_ day: Int, _ hour: Int, _ minute: Int = 0) -> Date { melb.date(from: DateComponents(year: 2026, month: 10, day: day, hour: hour, minute: minute))! }
         // 11 Oct 2026 is a Sunday (a week after daylight saving starts). Daily 8 am to 10 pm, in Melbourne (+11:00 in summer).
@@ -468,11 +468,35 @@ import Foundation
         assert(dstDaily.status(at: at(4, 0, 26)) == .closed(opens: at(4, 8)))
         assert(dstDaily.status(at: at(4, 12)) == .open(closes: at(4, 22)))
 
-        // Google's JSON: this week's hours (with holidays) win over the usual ones; no hours gives nil.
-        let json = #"{"utcOffsetMinutes":660,"regularOpeningHours":{"periods":[{"open":{"day":1,"hour":9,"minute":0},"close":{"day":1,"hour":17,"minute":0}}]},"currentOpeningHours":{"periods":[{"open":{"day":1,"hour":10,"minute":30},"close":{"day":1,"hour":16,"minute":0}}]}}"#
-        let parsed = PlaceHours.parse(Data(json.utf8))!
-        assert(parsed.periods == [.init(openDay: 1, openMinute: 630, closeDay: 1, closeMinute: 960)] && parsed.utcOffsetMinutes == 660)
-        assert(PlaceHours.parse(Data(#"{"utcOffsetMinutes":660}"#.utf8)) == nil && PlaceHours.parse(Data("nonsense".utf8)) == nil)
+        // OpenStreetMap opening_hours text: day ranges and lists, past midnight, additive rules, holidays skipped.
+        let osm = PlaceHours.parseOSM("Mo-We,Su 09:00-23:00; Th-Sa 10:00-02:00; PH off")!
+        assert(osm.status(at: at(11, 12)) == .open(closes: at(11, 23)), "Sunday is in Mo-We,Su")
+        assert(osm.status(at: at(11, 1, 30)) == .open(closes: at(11, 2)), "Saturday's late close runs into Sunday")
+        assert(osm.status(at: at(15, 23, 30)) == .open(closes: at(16, 2)) && osm.week[3].hours.contains("–"))
+        let lateFriday = PlaceHours.parseOSM("Mo-Su 11:00-23:00, Fr 11:00-24:00")!
+        assert(lateFriday.status(at: at(16, 23, 30)) == .open(closes: at(17, 0)) && lateFriday.status(at: at(15, 23, 30)) == .closed(opens: at(16, 11)))
+        assert(PlaceHours.parseOSM("24/7")!.isAlwaysOpen && PlaceHours.parseOSM("Mo-Su 00:00-00:00")!.isAlwaysOpen && PlaceHours.parseOSM("Mo-Su 00:00-24:00")!.isAlwaysOpen)
+        let splitDay = PlaceHours.parseOSM("Mo-Fr 06:00-24:00; Sa 00:00-01:00,06:00-24:00; Su off")!
+        assert(splitDay.status(at: at(17, 3)) == .closed(opens: at(17, 6)) && splitDay.status(at: at(11, 12)) == .closed(opens: at(12, 6)))
+        assert(PlaceHours.parseOSM("Mo-Fr 10:00-20:00; Dec 25 off") != nil, "date rules are skipped")
+        assert(PlaceHours.parseOSM("Mo-Th, Su 10:00-23:00; Fr, Sa 10:00-22:00")!.status(at: at(11, 22, 30)) == .open(closes: at(11, 23)), "spaced day lists")
+        assert(PlaceHours.parseOSM("PH,Mo-Su 00:00-24:00")!.isAlwaysOpen, "holidays inside a day list are ignored")
+        assert(PlaceHours.parseOSM("sunrise-sunset") == nil && PlaceHours.parseOSM("Mo-Fr 10:00+") == nil && PlaceHours.parseOSM("off") == nil
+               && PlaceHours.parseOSM("by appointment") == nil, "anything not understood gives no hours rather than wrong ones")
+        // Picking the restaurant in an Overpass answer: the closest match by name or brand, within 120 m.
+        let overpass = try JSONDecoder().decode(OSMHours.Response.self, from: Data(#"""
+        {"elements":[
+          {"type":"node","lat":-37.81000,"lon":144.96300,"tags":{"name":"Hungry Jack's","opening_hours":"24/7"}},
+          {"type":"way","center":{"lat":-37.81030,"lon":144.96300},"tags":{"brand":"KFC","name":"KFC Swanston St","opening_hours":"Mo-Su 10:00-22:00"}},
+          {"type":"node","lat":-37.81005,"lon":144.96300,"tags":{"name":"KFC kiosk","opening_hours":"Mo-Su 11:00-21:00"}},
+          {"type":"node","lat":-37.82000,"lon":144.96300,"tags":{"name":"KFC far away","opening_hours":"Mo-Su 06:00-23:00"}}
+        ]}
+        """#.utf8))
+        assert(OSMHours.pick(overpass.elements, latitude: -37.81, longitude: 144.963, match: ["kfc"]) == "Mo-Su 11:00-21:00")
+        assert(OSMHours.pick(overpass.elements, latitude: -37.8103, longitude: 144.963, match: ["kfc"]) == "Mo-Su 10:00-22:00")
+        assert(OSMHours.pick(overpass.elements, latitude: -37.83, longitude: 144.963, match: ["kfc"]) == nil, "nothing within 120 m")
+        assert(OSMHours.pick(overpass.elements, latitude: -37.81, longitude: 144.963, match: ["subway"]) == nil)
+        assert(OSMHours.query([(-37.81, 144.963)]).contains(#"nwr(around:120,-37.81000,144.96300)["opening_hours"];"#))
 
         // Delivery estimate: by distance, and never while the restaurant is closed.
         let openNow = PlaceHours.Status.open(closes: Date().addingTimeInterval(3600))
@@ -540,6 +564,6 @@ import Foundation
         let reloadedOld = try JSONDecoder().decode(AppData.self, from: oldFormat)
         assert(reloadedOld.weights == nil && reloadedOld.isValid)
 
-        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, opening hours and delivery (\(Date().timeIntervalSince(start).formatted())s).")
+        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, opening hours from OpenStreetMap and delivery (\(Date().timeIntervalSince(start).formatted())s).")
     }
 }

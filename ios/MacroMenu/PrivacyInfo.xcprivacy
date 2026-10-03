@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <!-- Leanr keeps your data on your device, in your iCloud and (if you connect it) in Apple Health. Nothing is sent to us,
      and nothing is used for tracking. Barcode lookups send only the barcode number to Open Food Facts.
-     Opening hours are looked up with Google Places, which receives the name and position of restaurants near you:
+     Opening hours are looked up on OpenStreetMap (Overpass API), which receives the positions of restaurants near you:
      declared as coarse location, for app functionality, not linked to you. -->
 <plist version="1.0">
 <dict>

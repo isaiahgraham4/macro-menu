@@ -287,8 +287,8 @@ struct OpenNowFooter: View {
     var body: some View {
         if on {
             if !location.isAuthorized { Text("Allow location on the Map tab to hide restaurants that are closed near you.") }
-            else if !PlaceHoursStore.shared.isConfigured { Text("Opening hours aren't set up yet, so every restaurant is shown.") }
-            else if !closed.isEmpty { Text("Hidden while closed near you: \(OpenNow.describe(closed, names: store.chainName)).") }
+            else if !closed.isEmpty { Text("Hidden while closed near you: \(OpenNow.describe(closed, names: store.chainName)). Restaurants without listed hours are always shown.") }
+            else { Text("Restaurants without listed hours are always shown.") }
         }
     }
 }

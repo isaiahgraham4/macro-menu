@@ -1,6 +1,6 @@
 import Foundation
 
-/// A restaurant's weekly opening hours, read from Google Places, and whether it's open at a given moment.
+/// A restaurant's weekly opening hours, read from OpenStreetMap, and whether it's open at a given moment.
 /// Times are the restaurant's own clock times; `utcOffsetMinutes` says which time zone that clock is in.
 struct PlaceHours: Equatable, Sendable {
     /// One opening in the week. Days run Sunday (0) to Saturday (6); minutes are after midnight.
@@ -26,8 +26,8 @@ struct PlaceHours: Equatable, Sendable {
 
     private static let week = 7 * 1440
 
-    /// The time zone the hours are in. Google gives only today's offset, so a restaurant on the phone's offset uses the
-    /// phone's time zone, which knows when daylight saving changes; one elsewhere uses the fixed offset.
+    /// The time zone the hours are in: the phone's own (restaurants are nearby) unless an offset is given. A restaurant on the
+    /// phone's offset uses the phone's time zone, which knows when daylight saving changes; one elsewhere uses the fixed offset.
     var timeZone: TimeZone {
         if let zone { return zone }
         guard let offset = utcOffsetMinutes, offset * 60 != TimeZone.current.secondsFromGMT() else { return .current }
@@ -127,30 +127,136 @@ struct PlaceHours: Equatable, Sendable {
         return date.formatted(Date.FormatStyle(date: .omitted, time: .shortened, timeZone: TimeZone(secondsFromGMT: 0)!))
     }
 
-    // MARK: Google Places (New) JSON
+    // MARK: OpenStreetMap opening_hours
 
-    private struct Response: Decodable {
-        struct Hours: Decodable {
-            struct Point: Decodable { var day: Int?; var hour: Int?; var minute: Int? }
-            struct Span: Decodable { var open: Point?; var close: Point? }
-            var periods: [Span]?
+    private static let dayNames = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+
+    /// Reads an OpenStreetMap `opening_hours` value, such as "Mo-Fr 06:00-24:00; Sa,Su 07:00-23:00", "Mo-Su 10:00-02:00"
+    /// or "24/7". Public holiday, school holiday and date rules are skipped. Nil when the value uses anything else, or
+    /// says nothing about which days it's open, so hours are never guessed.
+    static func parseOSM(_ text: String) -> PlaceHours? {
+        var days: [[(Int, Int)]?] = Array(repeating: nil, count: 7)
+        for rule in text.split(separator: ";") {
+            // ", " followed by days after a time or "off" starts another rule that adds to the ones before it.
+            for (index, part) in additiveParts(String(rule)).enumerated() {
+                // "Mo-Th, Su 10:00-23:00" lists days with spaces too.
+                let trimmed = part.trimmingCharacters(in: .whitespaces).replacingOccurrences(of: #",\s+(?=[A-Za-z])"#, with: ",", options: .regularExpression)
+                if trimmed.isEmpty { continue }
+                if skipped(trimmed) { continue }
+                guard let (selected, spans) = osmRule(trimmed) else { return nil }
+                for day in selected {
+                    if index == 0 || spans.isEmpty { days[day] = spans } else { days[day] = (days[day] ?? []) + spans }
+                }
+            }
         }
-        var regularOpeningHours: Hours?
-        var currentOpeningHours: Hours?
-        var utcOffsetMinutes: Int?
+        guard days.contains(where: { !($0 ?? []).isEmpty }) else { return nil }
+        if days.allSatisfy({ $0?.contains { $0.0 == 0 && $0.1 >= 1440 } ?? false }) {
+            return PlaceHours(periods: [.init(openDay: 0, openMinute: 0, closeDay: nil, closeMinute: nil)], utcOffsetMinutes: nil)
+        }
+        let periods = days.enumerated().flatMap { day, spans in
+            (spans ?? []).map { start, end in
+                Period(openDay: day, openMinute: start, closeDay: (day + end / 1440) % 7, closeMinute: end % 1440)
+            }
+        }
+        return PlaceHours(periods: periods, utcOffsetMinutes: nil)
     }
 
-    /// Reads a Place Details response. This week's hours (which include public holidays) win over the usual ones.
-    /// Nil when the place doesn't list any hours.
-    static func parse(_ data: Data) -> PlaceHours? {
-        guard let response = try? JSONDecoder().decode(Response.self, from: data),
-              let spans = response.currentOpeningHours?.periods ?? response.regularOpeningHours?.periods, !spans.isEmpty else { return nil }
-        let periods = spans.compactMap { span -> Period? in
-            guard let open = span.open, let day = open.day else { return nil }
-            return Period(openDay: day, openMinute: (open.hour ?? 0) * 60 + (open.minute ?? 0),
-                          closeDay: span.close?.day, closeMinute: span.close.map { ($0.hour ?? 0) * 60 + ($0.minute ?? 0) })
+    /// Splits "Mo-Th 10:00-22:00, Fr-Sa 10:00-02:00" into its rules, leaving day lists like "Mo-We,Su" whole.
+    private static func additiveParts(_ rule: String) -> [String] {
+        var parts: [String] = [], current = ""
+        let pieces = rule.components(separatedBy: ",")
+        for (index, piece) in pieces.enumerated() {
+            if index > 0 {
+                let before = current.trimmingCharacters(in: .whitespaces).lowercased()
+                let next = piece.trimmingCharacters(in: .whitespaces)
+                let endsRule = before.last?.isNumber == true || before.hasSuffix("off") || before.hasSuffix("closed")
+                if endsRule && next.first?.isLetter == true { parts.append(current); current = piece; continue }
+                current += ","
+            }
+            current += piece
         }
-        return periods.isEmpty ? nil : PlaceHours(periods: periods, utcOffsetMinutes: response.utcOffsetMinutes)
+        parts.append(current)
+        return parts
+    }
+
+    /// Public and school holidays, months, dates and weeks: rules the app leaves out.
+    private static func skipped(_ rule: String) -> Bool {
+        let selector = rule.prefix { $0 != " " }
+        let first = String(selector.prefix { $0 != "," && $0 != "-" })
+        let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+        let holidaysOnly = selector.split(separator: ",").allSatisfy { $0 == "PH" || $0 == "SH" }
+        return holidaysOnly || first == "week" || months.contains(first) || first.allSatisfy(\.isNumber) && first.count == 4
+    }
+
+    /// One rule: the days it covers (Sunday 0) and its opening spans in minutes after midnight (an end past 1440 runs
+    /// into the next day). No spans means closed those days.
+    private static func osmRule(_ rule: String) -> ([Int], [(Int, Int)])? {
+        var rest = Substring(rule)
+        var selected = Array(0..<7)
+        if let first = rest.first, first.isLetter, !rest.hasPrefix("off"), !rest.hasPrefix("closed"), !rest.hasPrefix("open") {
+            let selector = rest.prefix { $0 != " " }
+            rest = rest.dropFirst(selector.count).drop { $0 == " " }
+            selected = []
+            for item in selector.split(separator: ",") where item != "PH" && item != "SH" {
+                let ends = item.split(separator: "-").map(String.init)
+                guard let from = ends.first.flatMap({ dayNames.firstIndex(of: $0) }) else { return nil }
+                guard ends.count == 2 else { if ends.count == 1 { selected.append(from); continue } else { return nil } }
+                guard let to = dayNames.firstIndex(of: ends[1]) else { return nil }
+                var day = from
+                while true { selected.append(day); if day == to { break }; day = (day + 1) % 7 }
+            }
+        }
+        let times = rest.trimmingCharacters(in: .whitespaces)
+        if times == "off" || times == "closed" { return (selected, []) }
+        if times.isEmpty || times == "open" || times == "24/7" { return (selected, [(0, 1440)]) }
+        var spans: [(Int, Int)] = []
+        for span in times.split(separator: ",") {
+            let ends = span.trimmingCharacters(in: .whitespaces).split(separator: "-")
+            guard ends.count == 2, let start = minutes(ends[0]), var end = minutes(ends[1]), start < 1440 else { return nil }
+            if end <= start { end += 1440 }
+            spans.append((start, end))
+        }
+        return (selected, spans)
+    }
+
+    /// "06:30" as 390; hours up to 48 for times past midnight.
+    private static func minutes(_ text: Substring) -> Int? {
+        let parts = text.split(separator: ":")
+        guard parts.count == 2, parts[1].count == 2, let hour = Int(parts[0]), let minute = Int(parts[1]),
+              (0...48).contains(hour), (0..<60).contains(minute) else { return nil }
+        return hour * 60 + minute
     }
 }
 
+/// Finds a restaurant's hours in an OpenStreetMap (Overpass) answer: the closest mapped place within `radius` metres
+/// whose name or brand matches the chain.
+enum OSMHours {
+    struct Element: Decodable, Sendable {
+        struct Centre: Decodable, Sendable { var lat: Double; var lon: Double }
+        var lat: Double?
+        var lon: Double?
+        var center: Centre?
+        var tags: [String: String]?
+    }
+    struct Response: Decodable, Sendable { var elements: [Element] }
+
+    static let radius = 120.0
+
+    static func pick(_ elements: [Element], latitude: Double, longitude: Double, match: [String]) -> String? {
+        let found = elements.compactMap { element -> (String, Double)? in
+            guard let tags = element.tags, let hours = tags["opening_hours"],
+                  let lat = element.lat ?? element.center?.lat, let lon = element.lon ?? element.center?.lon else { return nil }
+            let names = [tags["name"], tags["brand"], tags["name:en"]].compactMap { $0?.lowercased() }
+            guard names.contains(where: { name in match.contains { name.contains($0) } }) else { return nil }
+            let metres = hypot((lat - latitude) * 111_000, (lon - longitude) * 111_000 * cos(latitude * .pi / 180))
+            return metres <= radius ? (hours, metres) : nil
+        }
+        return found.min { $0.1 < $1.1 }?.0
+    }
+
+    /// One Overpass query for every place at once: anything with opening hours near each of them.
+    static func query(_ spots: [(latitude: Double, longitude: Double)]) -> String {
+        let parts = spots.map { String(format: "nwr(around:%.0f,%.5f,%.5f)[\"opening_hours\"];", radius, $0.latitude, $0.longitude) }
+        return "[out:json][timeout:25];(" + parts.joined() + ");out tags center;"
+    }
+}

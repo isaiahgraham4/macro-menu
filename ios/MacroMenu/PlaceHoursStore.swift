@@ -3,36 +3,34 @@ import Observation
 import MapKit
 import CoreLocation
 
-/// Looks up restaurants' opening hours with Google Places, for Open/Closed on nearby restaurants.
+/// Looks up restaurants' opening hours on OpenStreetMap, for Open/Closed on nearby restaurants. Free, with no key or account.
 ///
-/// The API key lives in `GooglePlaces.plist` (key `APIKey`) next to this file, which git ignores. Without it,
-/// nothing is looked up and rows just offer Apple's place card.
-///
-/// Google's terms let apps keep place IDs, but not other place content, so IDs are saved and hours are only
-/// held in memory for a short while.
+/// Requests go to the public Overpass API in batches (one request for every restaurant on screen), and answers are kept on
+/// the phone for a week, which OpenStreetMap's licence allows. Restaurants whose hours aren't mapped just offer Apple's
+/// place card. Hours shown must credit "© OpenStreetMap contributors".
 @MainActor @Observable
 final class PlaceHoursStore {
     static let shared = PlaceHoursStore()
 
     enum Entry: Equatable { case loading, loaded(PlaceHours), unavailable }
     private(set) var entries: [String: Entry] = [:]
-    @ObservationIgnored private var fetched: [String: Date] = [:]
-    @ObservationIgnored private let apiKey: String?
-    @ObservationIgnored private let idsKey = "googlePlaces.ids"
-    /// How long hours are reused before they're looked up again.
-    private let freshFor: TimeInterval = 30 * 60
+
+    /// What OpenStreetMap said about a restaurant: its `opening_hours` text, or nil when it has none.
+    private struct Cached: Codable { var text: String?; var at: Date }
+    @ObservationIgnored private var cache: [String: Cached]
+    @ObservationIgnored private var pending: [String: Lookup] = [:]
+    @ObservationIgnored private var inFlight: Set<String> = []
+    @ObservationIgnored private var flushing = false
+    @ObservationIgnored private let cacheKey = "osmHours.cache"
+    /// Mapped hours are reused for a week; a restaurant with none is checked again after three days.
+    private let freshFor: TimeInterval = 7 * 86_400, missingFor: TimeInterval = 3 * 86_400
+    nonisolated private static let server = URL(string: "https://overpass-api.de/api/interpreter")!
+
+    struct Lookup: Sendable { var key: String; var latitude, longitude: Double; var match: [String] }
 
     init() {
-        let url = Bundle.main.url(forResource: "GooglePlaces", withExtension: "plist")
-        let key = url.flatMap { NSDictionary(contentsOf: $0)?["APIKey"] as? String }?.trimmingCharacters(in: .whitespacesAndNewlines)
-        apiKey = (key?.isEmpty ?? true) ? nil : key
-    }
-
-    var isConfigured: Bool {
-        #if DEBUG
-        if UserDefaults.standard.bool(forKey: "debug.demoHours") { return true }
-        #endif
-        return apiKey != nil
+        let saved = UserDefaults.standard.data(forKey: cacheKey).flatMap { try? JSONDecoder().decode([String: Cached].self, from: $0) } ?? [:]
+        cache = saved.filter { Date().timeIntervalSince($0.value.at) < 30 * 86_400 }
     }
 
     /// Identifies a restaurant across searches: its name and position to about 10 m.
@@ -42,82 +40,77 @@ final class PlaceHoursStore {
 
     func entry(_ key: String) -> Entry? { entries[key] }
 
-    /// Fetches hours for a restaurant unless they're already fresh or on the way.
-    func load(key: String, name: String, address: String, latitude: Double, longitude: Double) async {
-        guard isConfigured else { return }
-        if entries[key] == .loading { return }
-        if let at = fetched[key], Date().timeIntervalSince(at) < freshFor { return }
-        entries[key] = .loading
+    /// Shows a restaurant's hours from the phone's copy if it's recent, otherwise asks OpenStreetMap. Requests made
+    /// within a moment of each other go together in one query.
+    func load(key: String, chain: String, name: String, latitude: Double, longitude: Double) async {
         #if DEBUG
-        if UserDefaults.standard.bool(forKey: "debug.demoHours") {
-            entries[key] = .loaded(Self.demo(for: key)); fetched[key] = Date(); return
-        }
+        if UserDefaults.standard.bool(forKey: "debug.demoHours") { entries[key] = .loaded(Self.demo(for: key)); return }
         #endif
-        guard let apiKey else { return }
-        let hours: PlaceHours?
-        if let id = await placeID(for: key, name: name, address: address, latitude: latitude, longitude: longitude, apiKey: apiKey) {
-            hours = await Self.details(id: id, apiKey: apiKey)
-        } else { hours = nil }
-        entries[key] = hours.map(Entry.loaded) ?? .unavailable
-        fetched[key] = Date()
+        if let saved = cache[key], Date().timeIntervalSince(saved.at) < (saved.text == nil ? missingFor : freshFor) {
+            if entries[key] == nil || entries[key] == .loading { show(saved.text, for: key) }
+            return
+        }
+        guard pending[key] == nil, !inFlight.contains(key) else { return }
+        let match = ChainPlace.all[chain]?.match ?? [name.lowercased()]
+        pending[key] = Lookup(key: key, latitude: latitude, longitude: longitude, match: match)
+        if entries[key] == nil || entries[key] == .unavailable { entries[key] = .loading }
+        guard !flushing else { return }
+        flushing = true
+        // The store's own task, so a row scrolling away (which cancels its view's task) doesn't cancel everyone's lookup.
+        Task { await flush() }
     }
 
-    /// The Google place ID for a restaurant: saved from an earlier search, or found by name near its position.
-    private func placeID(for key: String, name: String, address: String, latitude: Double, longitude: Double, apiKey: String) async -> String? {
-        var saved = UserDefaults.standard.dictionary(forKey: idsKey) as? [String: String] ?? [:]
-        if let id = saved[key] { return id }
-        guard let id = await Self.search(name: name, address: address, latitude: latitude, longitude: longitude, apiKey: apiKey) else { return nil }
-        saved[key] = id
-        UserDefaults.standard.set(saved, forKey: idsKey)
-        return id
+    private func flush() async {
+        try? await Task.sleep(for: .milliseconds(400))
+        while !pending.isEmpty {
+            let batch = Array(pending.values.prefix(25))
+            batch.forEach { pending[$0.key] = nil; inFlight.insert($0.key) }
+            await fetch(batch)
+            batch.forEach { inFlight.remove($0.key) }
+        }
+        flushing = false
     }
 
-    nonisolated private static func request(_ url: URL, apiKey: String, fields: String) -> URLRequest {
-        var request = URLRequest(url: url, timeoutInterval: 10)
-        request.setValue(apiKey, forHTTPHeaderField: "X-Goog-Api-Key")
-        request.setValue(fields, forHTTPHeaderField: "X-Goog-FieldMask")
-        // Lets the key be restricted to this app in Google Cloud.
-        request.setValue(Bundle.main.bundleIdentifier, forHTTPHeaderField: "X-Ios-Bundle-Identifier")
-        return request
+    private func show(_ text: String?, for key: String) {
+        entries[key] = text.flatMap(PlaceHours.parseOSM).map(Entry.loaded) ?? .unavailable
     }
 
-    /// Text Search asking only for IDs and positions, biased to within 150 m of the restaurant.
-    nonisolated private static func search(name: String, address: String, latitude: Double, longitude: Double, apiKey: String) async -> String? {
-        var request = request(URL(string: "https://places.googleapis.com/v1/places:searchText")!, apiKey: apiKey, fields: "places.id,places.location")
+    private func fetch(_ batch: [Lookup]) async {
+        let query = OSMHours.query(batch.map { ($0.latitude, $0.longitude) })
+        guard let elements = await Self.overpass(query) else {
+            // Couldn't reach OpenStreetMap: hours already showing stay, the rest offer Apple's card and are tried next time.
+            for lookup in batch where entries[lookup.key] == .loading { entries[lookup.key] = .unavailable }
+            return
+        }
+        let now = Date()
+        for lookup in batch {
+            let text = OSMHours.pick(elements, latitude: lookup.latitude, longitude: lookup.longitude, match: lookup.match)
+            cache[lookup.key] = Cached(text: text, at: now)
+            show(text, for: lookup.key)
+        }
+        UserDefaults.standard.set(try? JSONEncoder().encode(cache), forKey: cacheKey)
+    }
+
+    /// Runs a query on the public Overpass server, trying once more after a short wait if it's busy.
+    nonisolated private static func overpass(_ query: String) async -> [OSMHours.Element]? {
+        var request = URLRequest(url: server, timeoutInterval: 25)
         request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        let body: [String: Any] = [
-            "textQuery": address.isEmpty ? name : "\(name), \(address)",
-            "maxResultCount": 3,
-            "locationBias": ["circle": ["center": ["latitude": latitude, "longitude": longitude], "radius": 150.0]]
-        ]
-        request.httpBody = try? JSONSerialization.data(withJSONObject: body)
-        guard let (data, response) = try? await URLSession.shared.data(for: request),
-              (response as? HTTPURLResponse)?.statusCode == 200 else { return nil }
-        struct Found: Decodable {
-            struct Place: Decodable { struct Spot: Decodable { var latitude: Double; var longitude: Double }; var id: String; var location: Spot? }
-            var places: [Place]?
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        // Overpass asks apps to identify themselves.
+        request.setValue("Leanr/1.0 (iOS; \(Bundle.main.bundleIdentifier ?? "Leanr"))", forHTTPHeaderField: "User-Agent")
+        var form = URLComponents(); form.queryItems = [URLQueryItem(name: "data", value: query)]
+        request.httpBody = form.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B").data(using: .utf8)
+        for attempt in 0..<2 {
+            if attempt > 0 { try? await Task.sleep(for: .seconds(3)) }
+            guard let (data, response) = try? await URLSession.shared.data(for: request) else { continue }
+            guard (response as? HTTPURLResponse)?.statusCode == 200 else { continue }
+            return (try? JSONDecoder().decode(OSMHours.Response.self, from: data))?.elements
         }
-        let places = (try? JSONDecoder().decode(Found.self, from: data))?.places ?? []
-        // The closest result, and only if it's really the same spot rather than another branch down the road.
-        let near = places.compactMap { place -> (String, Double)? in
-            guard let spot = place.location else { return nil }
-            let metres = hypot((spot.latitude - latitude) * 111_000, (spot.longitude - longitude) * 111_000 * cos(latitude * .pi / 180))
-            return metres <= 150 ? (place.id, metres) : nil
-        }
-        return near.min { $0.1 < $1.1 }?.0
-    }
-
-    nonisolated private static func details(id: String, apiKey: String) async -> PlaceHours? {
-        guard let url = URL(string: "https://places.googleapis.com/v1/places/\(id)") else { return nil }
-        let request = request(url, apiKey: apiKey, fields: "regularOpeningHours,currentOpeningHours,utcOffsetMinutes")
-        guard let (data, response) = try? await URLSession.shared.data(for: request),
-              (response as? HTTPURLResponse)?.statusCode == 200 else { return nil }
-        return PlaceHours.parse(data)
+        return nil
     }
 
     #if DEBUG
-    /// Sample hours for trying the screens without a key: run with `-debug.demoHours YES`.
+    /// Sample hours for trying the screens: run with `-debug.demoHours YES`.
     private static func demo(for key: String) -> PlaceHours {
         switch abs(key.hashValue) % 3 {
         case 0: return PlaceHours(periods: [.init(openDay: 0, openMinute: 0, closeDay: nil, closeMinute: nil)], utcOffsetMinutes: nil)
@@ -148,18 +141,12 @@ final class PlaceHoursStore {
 
     /// Finds the closest restaurant of every chain and looks up its hours. Location is never asked for here.
     static func load(location: LocationStore) async {
-        guard location.isAuthorized, PlaceHoursStore.shared.isConfigured else { return }
+        guard location.isAuthorized else { return }
         await location.load(Array(ChainPlace.all.keys))
-        struct Lookup: Sendable { var key, name, address: String; var latitude, longitude: Double }
-        let lookups = location.places.values.compactMap(\.first).map {
-            Lookup(key: $0.hoursKey, name: $0.item.name ?? $0.chain, address: $0.address, latitude: $0.coordinate.latitude, longitude: $0.coordinate.longitude)
-        }
-        // All at once; each result shows as soon as it arrives, since the hours are observed.
-        for lookup in lookups {
-            Task {
-                await PlaceHoursStore.shared.load(key: lookup.key, name: lookup.name, address: lookup.address,
-                                                  latitude: lookup.latitude, longitude: lookup.longitude)
-            }
+        // Started together so they share one OpenStreetMap query; the hours are observed, so lists update as they arrive.
+        for place in location.places.values.compactMap(\.first) {
+            let key = place.hoursKey, chain = place.chain, name = place.item.name ?? place.chain, spot = place.coordinate
+            Task { await PlaceHoursStore.shared.load(key: key, chain: chain, name: name, latitude: spot.latitude, longitude: spot.longitude) }
         }
     }
 
@@ -173,3 +160,4 @@ final class PlaceHoursStore {
         }.joined(separator: ", ")
     }
 }
+

@@ -51,14 +51,15 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   at the top of the food chooser and the Today "+" menu. Up to 8; stored in
   `AppData.pinned` with a copy of the food, shown with current menu figures.
 - Opening hours (Map tab, nearest restaurant on orders, and suggested orders on Find): "Open · closes 10:00 pm" or
-  "Closed · opens 8:00 am" (orange within an hour of closing); tap for the week, today in bold. Hours come from Google
-  Places (`PlaceHoursStore.swift`, model and status in `PlaceHours.swift`). Apple doesn't let apps read hours, so
-  without a key rows offer Apple's place card instead, and map pins always show Apple's callout with hours.
-  Setup: create a Google Cloud project, enable **Places API (New)**, make an API key restricted to that API and to iOS
-  apps with bundle ID `com.isaiahgraham.MacroMenu`, then save it as `MacroMenu/GooglePlaces.plist` with a string `APIKey`
-  (git ignores this file). Place IDs are kept (allowed by Google's terms); hours are only kept in memory for 30 minutes.
-  The ID lookup asks only for IDs and positions; hours use the Place Details opening-hours fields, which Google bills
-  at its Enterprise rate after the monthly free allowance. Debug builds can show sample hours with `-debug.demoHours YES`.
+  "Closed · opens 8:00 am" (orange within an hour of closing); tap for the week, today in bold. Hours come from
+  OpenStreetMap (`PlaceHoursStore.swift`; the `opening_hours` reader and status are in `PlaceHours.swift`), free with no
+  key or account. Restaurants on screen are looked up together in one Overpass API request, and answers are kept on the
+  phone for a week (three days when a restaurant has no hours mapped). Apple doesn't let apps read hours, so restaurants
+  without mapped hours offer Apple's place card instead, and map pins always show Apple's callout with hours. In
+  Melbourne about 1 in 5 of these chains' restaurants have hours on OpenStreetMap; anyone can add them at
+  openstreetmap.org and the app picks them up within a week. The week view credits "© OpenStreetMap contributors", which
+  the ODbL licence requires.
+  Debug builds can show sample hours with `-debug.demoHours YES`.
 - Open now only (Find's suggested orders and Best choices, on by default): leaves out chains whose closest restaurant
   is closed, says which ones in the footer, and offers "Show anyway" if every chosen restaurant is closed. Your own
   foods are never hidden, and nothing is hidden when choosing a food to log. Unknown hours count as open

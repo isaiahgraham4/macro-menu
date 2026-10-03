@@ -290,8 +290,8 @@ struct DeliveryLine: View {
     }
 }
 
-/// Whether a restaurant is open, from Google Places; tapping shows the week's times.
-/// Without hours (no key set up, or Google doesn't list them), it offers Apple's place card instead.
+/// Whether a restaurant is open, from OpenStreetMap; tapping shows the week's times.
+/// Without hours (not mapped, or OpenStreetMap can't be reached), it offers Apple's place card instead.
 struct PlaceHoursView: View {
     let place: NearbyPlace
     var compact = false
@@ -311,7 +311,7 @@ struct PlaceHoursView: View {
             }
         }
         .task(id: key) {
-            await hours.load(key: key, name: place.item.name ?? place.chain, address: place.address,
+            await hours.load(key: key, chain: place.chain, name: place.item.name ?? place.chain,
                              latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
         }
         .mapItemDetailSheet(item: $appleCard)
@@ -347,7 +347,8 @@ struct PlaceHoursView: View {
                             .foregroundStyle(index == today ? .primary : .secondary)
                         }
                         HStack {
-                            Text("Hours: Google Maps").font(.roboto(.caption2)).foregroundStyle(.secondary)
+                            Link("Hours © OpenStreetMap contributors", destination: URL(string: "https://www.openstreetmap.org/copyright")!)
+                                .font(.roboto(.caption2)).foregroundStyle(.secondary)
                             Spacer()
                             Button("More in Apple Maps") { appleCard = place.item }.font(.roboto(.caption2, weight: .medium)).buttonStyle(.borderless)
                         }.padding(.top, 2)
