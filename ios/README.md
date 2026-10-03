@@ -50,6 +50,24 @@ The app uses SwiftUI and requires no third-party packages or API keys.
 - Pinned foods: touch and hold a food (or use the pin on its details) to keep it
   at the top of the food chooser and the Today "+" menu. Up to 8; stored in
   `AppData.pinned` with a copy of the food, shown with current menu figures.
+- Opening hours (Map tab, nearest restaurant on orders, and suggested orders on Find): "Open · closes 10:00 pm" or
+  "Closed · opens 8:00 am" (orange within an hour of closing); tap for the week, today in bold. Hours come from Google
+  Places (`PlaceHoursStore.swift`, model and status in `PlaceHours.swift`). Apple doesn't let apps read hours, so
+  without a key rows offer Apple's place card instead, and map pins always show Apple's callout with hours.
+  Setup: create a Google Cloud project, enable **Places API (New)**, make an API key restricted to that API and to iOS
+  apps with bundle ID `com.isaiahgraham.MacroMenu`, then save it as `MacroMenu/GooglePlaces.plist` with a string `APIKey`
+  (git ignores this file). Place IDs are kept (allowed by Google's terms); hours are only kept in memory for 30 minutes.
+  The ID lookup asks only for IDs and positions; hours use the Place Details opening-hours fields, which Google bills
+  at its Enterprise rate after the monthly free allowance. Debug builds can show sample hours with `-debug.demoHours YES`.
+- Open now only (Find's suggested orders and Best choices, on by default): leaves out chains whose closest restaurant
+  is closed, says which ones in the footer, and offers "Show anyway" if every chosen restaurant is closed. Your own
+  foods are never hidden, and nothing is hidden when choosing a food to log. Unknown hours count as open
+  (`OpenNow` in `PlaceHoursStore.swift`).
+- Delivery (under the hours on the same rows): "Delivery likely" within 5 km, "Delivery may reach you" up to 8 km,
+  otherwise "Probably too far to deliver", and "Closed, so no delivery right now" when the hours say it's closed
+  (`Delivery.swift`). Distance is from your location, or the place searched on the Map tab. It's an estimate:
+  delivery apps don't let other apps check an address. Tapping it lists Uber Eats, DoorDash, Menulog and the chain's
+  own app to confirm and order.
 - Log again widget (Home Screen and Lock Screen): the usual meal for this time of
   day, then pinned foods, each with a log button. `LogAgainIntent`
   (`Shared/LogAgain.swift`) is a Live Activity intent, so it runs in the app's
@@ -61,8 +79,14 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   runs the finder against what's left of today's targets (capped at your typical
   meal before 4 pm). The logic is in `Assistant.swift`, the intents in
   `LeanrIntents.swift`; both use the shared store in `AppServices.swift`.
-- Meal reminders (Settings → Targets): per meal, at a chosen time, only if nothing
-  is logged to that meal yet. Notifications are booked two weeks ahead and
+- Meal reminders (Settings → Targets): breakfast, lunch, dinner and a late-night
+  one, each ticked on and timed separately (or "Turn on all reminders"). A meal
+  reminder only goes out if nothing is logged to that meal; the late-night one
+  (the Snacks slot, 9:30 pm by default) only if nothing at all was logged that day.
+  Six messages per reminder rotate by day (`MealReminders.message`), in a fixed order so
+  rebooking doesn't change tomorrow's wording. Choosing reminders is a Premium
+  feature (`Premium.isUnlocked`; locked clears the booked meal reminders and keeps
+  the weekly review). Notifications are booked two weeks ahead and
   rebooked when the log changes. The optional Sunday 6 pm weekly review
   notification carries that week's summary.
 - Your week (Today): days logged, averages over logged days, protein and calorie

@@ -7,3 +7,5 @@ DerivedData/
 # Fonts whose licences don't allow redistribution stay local.
 ios/LocalFonts/
 ios/MacroMenu/Fonts/big_noodle_titling.ttf
+# Google Places API key for opening hours (see ios/README.md).
+ios/MacroMenu/GooglePlaces.plist

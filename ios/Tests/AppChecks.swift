@@ -342,6 +342,23 @@ import Foundation
         assert(planned.contains { $0.id == "reminder.dinner.\(dayKey(day(5)))" && calendar.component(.hour, from: $0.date) == 19 })
         assert(planned.count == 1 + 13 * 3 && planned.allSatisfy { $0.date > reminderNow })
 
+        // The late-night reminder checks the whole day: any entry at all cancels it, while a logged meal cancels only its own.
+        let night = [(meal: MealTime.dinner, minutes: 19 * 60), (meal: MealTime.snacks, minutes: 21 * 60 + 30)]
+        let nightPlan = MealReminders.plan(night, logs: siriData.logs, now: reminderNow, calendar: calendar)
+        assert(!nightPlan.contains { $0.id == "reminder.snacks.\(dayKey(day(5)))" }, "something was logged that day, so no late-night nudge")
+        assert(nightPlan.contains { $0.id == "reminder.snacks.\(dayKey(day(6)))" && calendar.component(.hour, from: $0.date) == 21 && calendar.component(.minute, from: $0.date) == 30 })
+        assert(MealReminders.meals == [.breakfast, .lunch, .dinner, .snacks] && MealReminders.title(.snacks) == "Late night" && MealReminders.defaultMinutes(.snacks) == 21 * 60 + 30)
+        // Wording varies by day, repeats only after a full cycle, and is the same every time it's worked out.
+        for meal in MealReminders.meals {
+            let words = (0..<6).map { MealReminders.message(meal, on: calendar.date(byAdding: .day, value: $0, to: day(0))!, calendar: calendar) }
+            assert(Set(words.map(\.body)).count == 6 && words.allSatisfy { !$0.title.isEmpty && !$0.body.isEmpty })
+            assert(MealReminders.message(meal, on: day(0), calendar: calendar) == MealReminders.message(meal, on: day(0), calendar: calendar))
+            assert(MealReminders.message(meal, on: day(0), calendar: calendar).title != MealReminders.message(meal, on: day(1), calendar: calendar).title)
+        }
+        assert(MealReminders.message(.snacks, on: day(0), calendar: calendar).body != MealReminders.message(.dinner, on: day(0), calendar: calendar).body)
+        // Turning log reminders off (Premium locked) counts as a change, so the booked ones are cleared.
+        assert(MealReminders.inputs(siriData, goals: siriGoals, now: noon, calendar: calendar, logReminders: false) != MealReminders.inputs(siriData, goals: siriGoals, now: noon, calendar: calendar))
+
         // Daylight saving: Melbourne's clocks go forward on 4 Oct 2026, and a 1:30 pm reminder stays at 1:30 pm.
         var victoria = Calendar(identifier: .gregorian); victoria.timeZone = TimeZone(identifier: "Australia/Melbourne")!
         let changeover = victoria.date(from: DateComponents(year: 2026, month: 10, day: 3, hour: 20))!
@@ -426,6 +443,52 @@ import Foundation
         assert(undoStore.change { $0.weights = [WeightEntry(date: day0, kg: 80)] } && undoStore.undo == nil)
         var other = AppData(); other.weights = [WeightEntry(date: day(1), kg: 79)]
         assert(AppStore.merged(undoStore.data, other).weightLog.count == 2)
+        // Opening hours from Google Places: open/closed now, the next change, and the week Monday first.
+        var melb = Calendar(identifier: .gregorian); melb.timeZone = TimeZone(identifier: "Australia/Melbourne")!
+        func at(_ day: Int, _ hour: Int, _ minute: Int = 0) -> Date { melb.date(from: DateComponents(year: 2026, month: 10, day: day, hour: hour, minute: minute))! }
+        // 11 Oct 2026 is a Sunday (a week after daylight saving starts). Daily 8 am to 10 pm, in Melbourne (+11:00 in summer).
+        let daily = PlaceHours(periods: (0..<7).map { .init(openDay: $0, openMinute: 480, closeDay: $0, closeMinute: 1320) }, utcOffsetMinutes: 660)
+        assert(daily.status(at: at(11, 12, 19)) == .open(closes: at(11, 22)))
+        assert(daily.status(at: at(11, 0, 19)) == .closed(opens: at(11, 8)))
+        assert(daily.status(at: at(11, 22, 30)) == .closed(opens: at(12, 8)))
+        assert(daily.summary(at: at(11, 22, 30)).hasPrefix("Closed · opens 8:00") && daily.summary(at: at(11, 22, 30)).hasSuffix("tomorrow"))
+        assert(daily.summary(at: at(11, 12)).hasPrefix("Open · closes 10:00"))
+        assert(daily.week.count == 7 && daily.week[0].day == "Monday" && daily.week[6].day == "Sunday" && daily.week[0].hours.contains("–"))
+        // Open past midnight: Saturday 10 am to 2 am Sunday, wrapping the end of the week. Closed Sunday otherwise.
+        let late = PlaceHours(periods: [.init(openDay: 6, openMinute: 600, closeDay: 0, closeMinute: 120)], utcOffsetMinutes: 660)
+        assert(late.status(at: at(11, 1, 30)) == .open(closes: at(11, 2)), "still Saturday night's opening at 1:30 am Sunday")
+        assert(late.status(at: at(11, 3)) == .closed(opens: at(17, 10)))
+        assert(late.week.filter { $0.hours == "Closed" }.count == 6 && late.summary(at: at(11, 3)).hasPrefix("Closed · opens Sat"))
+        // Open around the clock, either as one period with no close or as back-to-back days.
+        assert(PlaceHours(periods: [.init(openDay: 0, openMinute: 0, closeDay: nil, closeMinute: nil)], utcOffsetMinutes: 660).summary(at: at(11, 3)) == "Open 24 hours")
+        let chained = PlaceHours(periods: (0..<7).map { .init(openDay: $0, openMinute: 0, closeDay: ($0 + 1) % 7, closeMinute: 0) }, utcOffsetMinutes: 660)
+        assert(chained.status(at: at(11, 3)) == .alwaysOpen && chained.week.allSatisfy { $0.hours == "Open 24 hours" })
+        // Across the daylight-saving change (2 am, 4 Oct 2026 in Melbourne) an 8 am opening is still 8 am on the clock.
+        var dstDaily = daily; dstDaily.zone = melb.timeZone
+        assert(dstDaily.status(at: at(4, 0, 26)) == .closed(opens: at(4, 8)))
+        assert(dstDaily.status(at: at(4, 12)) == .open(closes: at(4, 22)))
+
+        // Google's JSON: this week's hours (with holidays) win over the usual ones; no hours gives nil.
+        let json = #"{"utcOffsetMinutes":660,"regularOpeningHours":{"periods":[{"open":{"day":1,"hour":9,"minute":0},"close":{"day":1,"hour":17,"minute":0}}]},"currentOpeningHours":{"periods":[{"open":{"day":1,"hour":10,"minute":30},"close":{"day":1,"hour":16,"minute":0}}]}}"#
+        let parsed = PlaceHours.parse(Data(json.utf8))!
+        assert(parsed.periods == [.init(openDay: 1, openMinute: 630, closeDay: 1, closeMinute: 960)] && parsed.utcOffsetMinutes == 660)
+        assert(PlaceHours.parse(Data(#"{"utcOffsetMinutes":660}"#.utf8)) == nil && PlaceHours.parse(Data("nonsense".utf8)) == nil)
+
+        // Delivery estimate: by distance, and never while the restaurant is closed.
+        let openNow = PlaceHours.Status.open(closes: Date().addingTimeInterval(3600))
+        assert(Delivery.estimate(metres: 1_200, status: openNow) == .likely(metres: 1_200))
+        assert(Delivery.estimate(metres: 1_200, status: nil) == .likely(metres: 1_200), "unknown hours don't block the estimate")
+        assert(Delivery.estimate(metres: 6_500, status: .alwaysOpen) == .maybe(metres: 6_500))
+        assert(Delivery.estimate(metres: 9_000, status: openNow) == .tooFar && Delivery.estimate(metres: nil, status: nil) == .tooFar)
+        assert(Delivery.estimate(metres: 1_200, status: .closed(opens: nil)) == .closed && !Delivery.closed.available && Delivery.maybe(metres: 6_000).available)
+        assert(DeliveryApp.all.map(\.name) == ["Uber Eats", "DoorDash", "Menulog"])
+        assert(DeliveryApp.all[0].search("Hungry Jack's")?.absoluteString == "https://www.ubereats.com/au/search?q=Hungry%20Jack's")
+        assert(DeliveryApp.all[1].search("Hungry Jack's")?.absoluteString == "https://www.doordash.com/search/store/Hungry%20Jack's/")
+
+        // Weights keep two decimal places, shown without trailing zeros.
+        assert(81.75.hundredth == 81.75 && 81.754.hundredth == 81.75 && 81.756.hundredth == 81.76)
+        assert(81.75.kgText == "81.75" && 82.4.kgText == "82.4" && 82.0.kgText == "82" && 81.756.hundredth.kgText == "81.76")
+
         // Pinned foods and the Log again widget.
         let pinURL = root.appending(path: "pins.json")
         let pinStore = AppStore(url: pinURL, catalogURL: catalogURL, legacyURL: nil)
@@ -477,6 +540,6 @@ import Foundation
         let reloadedOld = try JSONDecoder().decode(AppData.self, from: oldFormat)
         assert(reloadedOld.weights == nil && reloadedOld.isValid)
 
-        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget and saving scans (\(Date().timeIntervalSince(start).formatted())s).")
+        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, opening hours and delivery (\(Date().timeIntervalSince(start).formatted())s).")
     }
 }

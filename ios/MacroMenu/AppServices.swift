@@ -70,10 +70,10 @@ import UserNotifications
 
     /// Rebooks reminders if anything they depend on changed, or the day moved on.
     static func rebookReminders() {
-        let inputs = MealReminders.inputs(store.data, goals: store.goals)
+        let inputs = MealReminders.inputs(store.data, goals: store.goals, logReminders: Premium.isUnlocked)
         guard inputs != lastInputs else { return }
         lastInputs = inputs
-        MealReminders.refresh(store.data, goals: store.goals)
+        MealReminders.refresh(store.data, goals: store.goals, logReminders: Premium.isUnlocked)
     }
     private static var lastInputs: MealReminders.Inputs?
 }

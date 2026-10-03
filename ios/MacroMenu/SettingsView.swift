@@ -176,7 +176,7 @@ struct MacroColourSettings: View {
     }
 }
 
-/// Per-meal "Nothing logged yet" reminders.
+/// Reminders to log food: breakfast, lunch, dinner and late night, each ticked on and timed separately.
 struct ReminderSettings: View {
     @Environment(AppStore.self) private var store
     @Environment(\.openURL) private var openURL
@@ -186,27 +186,43 @@ struct ReminderSettings: View {
     var body: some View {
         LeanrList {
             let _ = revision
-            ForEach(MealReminders.meals) { meal in
-                Section {
-                    Toggle(meal.title, isOn: Binding(get: { MealReminders.isOn(meal) }, set: { on in
-                        if on {
+            Group {
+                if !MealReminders.meals.allSatisfy(MealReminders.isOn) {
+                    Section {
+                        Button {
                             Task {
-                                if await MealReminders.requestPermission() { save(MealReminders.enabledKey(meal), true) } else { denied = true }
+                                if await MealReminders.enableAll() { reload() } else { denied = true }
                             }
-                        } else { save(MealReminders.enabledKey(meal), false) }
-                    }))
-                    if MealReminders.isOn(meal) {
-                        DatePicker("Remind me at", selection: Binding(get: { time(MealReminders.minutes(meal)) }, set: { date in
-                            let parts = Calendar.current.dateComponents([.hour, .minute], from: date)
-                            save(MealReminders.timeKey(meal), (parts.hour ?? 0) * 60 + (parts.minute ?? 0))
-                        }), displayedComponents: .hourAndMinute)
+                        } label: { Label("Turn on all reminders", systemImage: "bell.badge") }
+                    } footer: { Text("Breakfast, lunch, dinner and late night at their usual times. Change any of them below.") }
+                }
+                ForEach(MealReminders.meals) { meal in
+                    Section {
+                        Toggle(MealReminders.title(meal), isOn: Binding(get: { MealReminders.isOn(meal) }, set: { on in
+                            if on {
+                                Task {
+                                    if await MealReminders.requestPermission() { save(MealReminders.enabledKey(meal), true) } else { denied = true }
+                                }
+                            } else { save(MealReminders.enabledKey(meal), false) }
+                        }))
+                        if MealReminders.isOn(meal) {
+                            DatePicker("Remind me at", selection: Binding(get: { time(MealReminders.minutes(meal)) }, set: { date in
+                                let parts = Calendar.current.dateComponents([.hour, .minute], from: date)
+                                save(MealReminders.timeKey(meal), (parts.hour ?? 0) * 60 + (parts.minute ?? 0))
+                            }), displayedComponents: .hourAndMinute)
+                        }
+                    } footer: {
+                        if meal == .snacks { Text("A last nudge, only if you haven't logged anything at all today.") }
                     }
                 }
-            }
-            Section {
-                Text("Leanr only reminds you if nothing has been logged to that meal by then. Log it and today's reminder is cancelled.")
-                    .font(.roboto(.subheadline)).foregroundStyle(.secondary)
-            }
+                Section {
+                    Text("Leanr only reminds you if nothing has been logged to that meal by then. Log it and today's reminder is cancelled. The wording changes from day to day.")
+                        .font(.roboto(.subheadline)).foregroundStyle(.secondary)
+                } footer: {
+                    if Premium.isUnlocked { Text("Choosing which reminders you get and when will be a Premium feature when subscriptions launch.") }
+                    else { Label("Meal reminders come with Premium.", systemImage: "lock.fill") }
+                }
+            }.disabled(!Premium.isUnlocked)
             Section {
                 Toggle("Weekly review", isOn: Binding(get: { MealReminders.weeklyOn }, set: { on in
                     if on {
@@ -226,7 +242,10 @@ struct ReminderSettings: View {
     }
     private func save(_ key: String, _ value: Any) {
         UserDefaults.standard.set(value, forKey: key)
+        reload()
+    }
+    private func reload() {
         revision += 1
-        MealReminders.refresh(store.data, goals: store.goals)
+        MealReminders.refresh(store.data, goals: store.goals, logReminders: Premium.isUnlocked)
     }
 }

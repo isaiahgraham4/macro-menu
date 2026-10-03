@@ -198,6 +198,10 @@ extension Double {
     var number: String { formatted(.number.precision(.fractionLength(0...1))) }
     /// Rounded to one decimal place.
     var tenth: Double { (self * 10).rounded() / 10 }
+    /// Rounded to two decimal places, for body weight from scales that read to 10 g.
+    var hundredth: Double { (self * 100).rounded() / 100 }
+    /// A weight in kg as typed: up to two decimal places, no trailing zeros ("81.75", "82.4", "82").
+    var kgText: String { formatted(.number.precision(.fractionLength(0...2))) }
 }
 func dayKey(_ date: Date) -> String {
     let formatter = DateFormatter(); formatter.calendar = Calendar(identifier: .gregorian)

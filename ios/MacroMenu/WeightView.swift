@@ -56,7 +56,7 @@ struct WeightView: View {
             }
 
             Section("Log weight") {
-                NumberField(title: "Weight (kg)", value: $kg)
+                NumberField(title: "Weight (kg)", value: $kg, places: 2)
                 DatePicker("Date", selection: $date, in: ...Date())
                 Button("Save weight") { save() }.disabled(!(20...400).contains(kg))
             }
@@ -91,11 +91,11 @@ struct WeightView: View {
                             Text(entry.date.formatted(date: .abbreviated, time: .shortened))
                             if entry.healthID != nil { Image(systemName: "heart.fill").font(.caption).foregroundStyle(.pink).accessibilityLabel("From Apple Health") }
                             Spacer()
-                            Text("\(entry.kg.number) kg").monospacedDigit()
+                            Text("\(entry.kg.kgText) kg").monospacedDigit()
                         }
                         .swipeActions {
                             Button("Delete", role: .destructive) {
-                                store.change(undo: "Deleted \(entry.kg.number) kg weigh-in") { $0.weights?.removeAll { $0.id == entry.id } }
+                                store.change(undo: "Deleted \(entry.kg.kgText) kg weigh-in") { $0.weights?.removeAll { $0.id == entry.id } }
                             }
                         }
                     }
@@ -121,8 +121,8 @@ struct WeightView: View {
     }
     private func signed(_ value: Double) -> String { (value > 0 ? "+" : value < 0 ? "−" : "") + abs(value).number }
     private func save() {
-        let entry = WeightEntry(date: date, kg: kg.tenth)
-        if store.change(undo: "Logged \(entry.kg.number) kg", { $0.weights = $0.weightLog + [entry] }) { date = Date() }
+        let entry = WeightEntry(date: date, kg: kg.hundredth)
+        if store.change(undo: "Logged \(entry.kg.kgText) kg", { $0.weights = $0.weightLog + [entry] }) { date = Date() }
     }
 }
 

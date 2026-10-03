@@ -14,7 +14,12 @@ Before each new upload, raise the build number (`CURRENT_PROJECT_VERSION`) in th
 
 ## Privacy
 
-- `MacroMenu/PrivacyInfo.xcprivacy` and `LeanrWidgets/PrivacyInfo.xcprivacy` declare no tracking and no collected data.
+- `MacroMenu/PrivacyInfo.xcprivacy` declares no tracking, and coarse location (app functionality, not linked) because opening
+  hours are looked up with Google Places using the name and position of restaurants near you.
+  `LeanrWidgets/PrivacyInfo.xcprivacy` declares no collected data.
+- With opening hours on, App Privacy answers change from **Data Not Collected** to: Location → Coarse Location, used for App
+  Functionality, not linked to the user, not used for tracking. The privacy policy should say Google Places receives
+  restaurant names and positions to look up opening hours.
   The app's only required-reason API is UserDefaults, for its own settings (reason `CA92.1`).
 - App Privacy answers in App Store Connect: **Data Not Collected**. Your food log, weights and targets stay on the device,
   in your iCloud and (if you connect it) in Apple Health. None of it reaches the developer. Barcode lookups send only the
