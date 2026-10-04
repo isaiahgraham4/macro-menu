@@ -70,7 +70,7 @@ final class CloudSync {
                 upload = merged
             } else {
                 // The meal being built stays on each device.
-                var incoming = remote.data; incoming.tray = store.data.tray
+                var incoming = remote.data.keepingHealthWeights(from: store.data); incoming.tray = store.data.tray
                 guard store.applySynced(incoming) else { problem = "Couldn’t save synced data on this device."; return }
                 defaults.set(remote.modified, forKey: Self.remoteKey)
                 lastSynced = remote.modified; problem = nil
@@ -82,11 +82,32 @@ final class CloudSync {
         guard let upload else { problem = nil; return }
         // Whole seconds, because that's all the iCloud copy keeps; otherwise our own upload looks like
         // a change from another device and the next sync merges it back in, undoing deletions.
-        let snapshot = Snapshot(modified: Date(timeIntervalSince1970: Date().timeIntervalSince1970.rounded(.down)), data: upload)
+        // Weights read from Apple Health stay on the device (Apple's rule for HealthKit data).
+        let snapshot = Snapshot(modified: Date(timeIntervalSince1970: Date().timeIntervalSince1970.rounded(.down)), data: upload.forICloud)
         do { try await Self.write(snapshot, to: file) } catch { problem = "Couldn’t upload to iCloud. \(error.localizedDescription)"; return }
         defaults.set(snapshot.modified, forKey: Self.remoteKey)
         defaults.set(false, forKey: Self.dirtyKey)
         lastSynced = snapshot.modified; problem = nil
+    }
+
+    /// Deletes the copy in iCloud and turns sync off on this device, so copies on other devices aren't pulled back in.
+    /// Returns false if iCloud couldn't be reached.
+    @discardableResult func deleteCopy() async -> Bool {
+        pending?.cancel()
+        enabled = false
+        let defaults = UserDefaults.standard
+        defaults.removeObject(forKey: Self.remoteKey); defaults.set(false, forKey: Self.dirtyKey)
+        lastSynced = nil; problem = nil
+        guard let file = await Self.fileURL() else { return false }
+        return await Task.detached {
+            guard FileManager.default.fileExists(atPath: file.path) || FileManager.default.isUbiquitousItem(at: file) else { return true }
+            var coordinationError: NSError?
+            var removed = false
+            NSFileCoordinator().coordinate(writingItemAt: file, options: .forDeleting, error: &coordinationError) { url in
+                removed = (try? FileManager.default.removeItem(at: url)) != nil
+            }
+            return coordinationError == nil && removed
+        }.value
     }
 
     /// The same upload, allowing for times saved with fractions of a second before they were rounded.

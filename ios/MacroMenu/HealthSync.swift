@@ -152,6 +152,14 @@ final class HealthSync {
         try? await health.save(meal)
     }
 
+    /// Removes every food and weight Leanr saved to Health. Weights from other apps and devices aren't touched.
+    func deleteEverythingSaved() async {
+        guard isAvailable else { return }
+        let mine = HKQuery.predicateForObjects(from: HKSource.default())
+        for type in Self.nutritionTypes + [Self.bodyMass] { _ = try? await health.deleteObjects(of: type, predicate: mine) }
+        _ = try? await health.deleteObjects(of: Self.food, predicate: mine)
+    }
+
     private func deleteEntry(_ id: UUID) async {
         let predicate = HKQuery.predicateForObjects(withMetadataKey: Self.entryKey, allowedValues: [id.uuidString])
         for type in Self.nutritionTypes { _ = try? await health.deleteObjects(of: type, predicate: predicate) }

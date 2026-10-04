@@ -69,3 +69,22 @@ enum WeightTrend {
         return Maintenance(calories: calories, loggedDays: intakes.count, weighInDays: window.count)
     }
 }
+
+extension AppData {
+    /// What goes to iCloud: everything except weights read from Apple Health, because Apple doesn't allow health data
+    /// from HealthKit to be stored in iCloud. Weights entered in Leanr still sync.
+    var forICloud: AppData {
+        var copy = self
+        if copy.weights != nil { copy.weights = copy.weightLog.filter { $0.healthID == nil } }
+        return copy
+    }
+
+    /// A copy from iCloud with this device's weights from Apple Health put back, since iCloud never has them.
+    func keepingHealthWeights(from local: AppData) -> AppData {
+        let fromHealth = local.weightLog.filter { $0.healthID != nil }
+        guard !fromHealth.isEmpty else { return self }
+        var copy = self
+        copy.weights = weightLog.filter { $0.healthID == nil } + fromHealth
+        return copy
+    }
+}

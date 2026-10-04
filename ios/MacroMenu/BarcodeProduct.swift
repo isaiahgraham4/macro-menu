@@ -58,6 +58,8 @@ enum BarcodeLookup {
         components.queryItems = [URLQueryItem(name: "fields", value: "product_name,product_name_en,brands,serving_size,serving_quantity_unit,product_quantity_unit,nutriments")]
         var request = URLRequest(url: components.url!, timeoutInterval: 20)
         request.setValue("Leanr/1.0 (iOS; com.isaiahgraham.MacroMenu)", forHTTPHeaderField: "User-Agent")
+        // Only the barcode goes out: no cookies are kept or sent.
+        request.httpShouldHandleCookies = false
         let (data, response) = try await URLSession.shared.data(for: request)
         try Task.checkCancellation()
         guard let http = response as? HTTPURLResponse else { throw BarcodeLookupError.unavailable }

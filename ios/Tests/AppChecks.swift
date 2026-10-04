@@ -560,10 +560,34 @@ import Foundation
         assert(scanStore.log([Portion(food: kept, quantity: 0.35)], name: kept.name, date: day(2)))
         assert(QuickLog.lastQuantity(of: kept.id, logs: scanStore.data.logs) == 0.35, "the most recent amount is offered next time")
 
+        // Weights read from Apple Health never go to iCloud, and come back from this device after a sync.
+        var withHealth = AppData()
+        withHealth.weights = [WeightEntry(date: day0, kg: 80), WeightEntry(date: day(1), kg: 79.5, healthID: UUID())]
+        assert(withHealth.forICloud.weightLog.count == 1 && withHealth.forICloud.weightLog[0].healthID == nil)
+        let fromCloud = withHealth.forICloud.keepingHealthWeights(from: withHealth)
+        assert(fromCloud.weightLog.count == 2 && fromCloud.weightLog.contains { $0.healthID != nil })
+        assert(AppData().keepingHealthWeights(from: AppData()).weights == nil)
+
+        // Delete all my data: nothing saved survives, on disk or in memory, and there's no undo back to it.
+        let eraseURL = root.appending(path: "erase.json")
+        let eraseStore = AppStore(url: eraseURL, catalogURL: catalogURL, legacyURL: nil)
+        assert(eraseStore.log([Portion(food: kept, quantity: 1)], name: kept.name, date: day0))
+        func blank(_ data: AppData) -> Bool { data.logs.isEmpty && data.foods.isEmpty && data.meals.isEmpty && data.weightLog.isEmpty && data.tray.isEmpty && (data.pinned ?? []).isEmpty }
+        assert(eraseStore.eraseEverything() && blank(eraseStore.data) && eraseStore.undo == nil)
+        assert(blank(AppStore(url: eraseURL, catalogURL: catalogURL, legacyURL: nil).data))
+
+        // The policies ship with a contact placeholder the app fills in, and the font licences ship beside them.
+        let legal = URL(fileURLWithPath: CommandLine.arguments[1]).deletingLastPathComponent().appending(path: "Legal")
+        for name in ["PrivacyPolicy.md", "Terms.md"] {
+            let text = try String(contentsOf: legal.appending(path: name), encoding: .utf8)
+            assert(text.contains("{{CONTACT}}") && text.contains("Effective "), "\(name) has its contact and date")
+        }
+        for name in ["Apache-2.0.txt", "OFL-BebasNeue.txt"] { assert(FileManager.default.fileExists(atPath: legal.appending(path: name).path)) }
+
         let oldFormat = try JSONEncoder().encode(AppData())
         let reloadedOld = try JSONDecoder().decode(AppData.self, from: oldFormat)
         assert(reloadedOld.weights == nil && reloadedOld.isValid)
 
-        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, opening hours from OpenStreetMap and delivery (\(Date().timeIntervalSince(start).formatted())s).")
+        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, opening hours from OpenStreetMap, delivery, iCloud health rules, deleting all data and the policies (\(Date().timeIntervalSince(start).formatted())s).")
     }
 }

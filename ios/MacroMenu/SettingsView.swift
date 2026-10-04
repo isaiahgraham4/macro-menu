@@ -111,10 +111,20 @@ struct SettingsView: View {
             BackupSection()
             Section("About") {
                 LabeledContent("App", value: "Leanr")
+                LabeledContent("Developer", value: AppInfo.developer)
+                if let email = AppInfo.contactEmail, let url = URL(string: "mailto:\(email)") {
+                    Link(destination: url) { LabeledContent("Contact", value: email) }
+                }
                 Button("Play the calorie quiz") { showQuiz = true }
                 NavigationLink { SourcesView() } label: { Label("Menu sources", systemImage: "info.circle") }
                 LabeledContent("Menu updated", value: menuDate)
                 LabeledContent("Version", value: version)
+            }
+            Section("Privacy and legal") {
+                NavigationLink { LegalDocumentView(document: .privacy) } label: { Label("Privacy policy", systemImage: "hand.raised") }
+                NavigationLink { LegalDocumentView(document: .terms) } label: { Label("Terms of use", systemImage: "doc.text") }
+                NavigationLink { AcknowledgementsView() } label: { Label("Acknowledgements", systemImage: "text.book.closed") }
+                NavigationLink { DeleteDataView() } label: { Label("Delete all my data", systemImage: "trash").foregroundStyle(.red) }
             }
         }.navigationTitle("Settings")
             .sheet(isPresented: $showQuiz) { LeanrOnboarding { showQuiz = false } }

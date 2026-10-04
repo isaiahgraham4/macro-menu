@@ -77,6 +77,18 @@ final class AppStore {
         logsChanged?(old, data)
         saved?()
     }
+    /// Starts again with nothing saved: no foods, log, weights, targets or meal. Can't be undone.
+    /// iCloud and Apple Health aren't touched here (see `DataDeletion`).
+    @discardableResult func eraseEverything() -> Bool {
+        let fresh = AppData()
+        // Also works when the saved file couldn't be read: that file is replaced too.
+        loadError = nil
+        do { try write(fresh) } catch { errorMessage = "Couldn’t delete your data: \(error.localizedDescription)"; return false }
+        try? FileManager.default.removeItem(at: url.deletingLastPathComponent().appending(path: "foods.json"))
+        data = fresh; undo = nil; notice = nil
+        refreshWidgets()
+        return true
+    }
     func dismissUndo(_ id: UndoStep.ID) { if undo?.id == id { undo = nil } }
     /// Takes data synced from another device. Doesn't touch Apple Health or trigger another upload.
     @discardableResult func applySynced(_ incoming: AppData) -> Bool {

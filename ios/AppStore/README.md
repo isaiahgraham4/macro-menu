@@ -12,20 +12,31 @@ Everything for a first TestFlight build is ready except the upload itself, which
 
 Before each new upload, raise the build number (`CURRENT_PROJECT_VERSION`) in the MacroMenu and LeanrWidgets targets.
 
-## Privacy
+## Privacy and legal
 
-- `MacroMenu/PrivacyInfo.xcprivacy` declares no tracking, and coarse location (app functionality, not linked) because opening
-  hours are looked up on OpenStreetMap (the public Overpass API) using the positions of restaurants near you.
-  `LeanrWidgets/PrivacyInfo.xcprivacy` declares no collected data.
-- With opening hours on, App Privacy answers change from **Data Not Collected** to: Location → Coarse Location, used for App
-  Functionality, not linked to the user, not used for tracking. The privacy policy should say OpenStreetMap's Overpass API
-  receives the positions of restaurants near you to look up opening hours.
-  The app's only required-reason API is UserDefaults, for its own settings (reason `CA92.1`).
-- App Privacy answers in App Store Connect: **Data Not Collected**. Your food log, weights and targets stay on the device,
-  in your iCloud and (if you connect it) in Apple Health. None of it reaches the developer. Barcode lookups send only the
-  barcode number to Open Food Facts, and nearby search uses Apple Maps.
+- The privacy policy and terms are in `MacroMenu/Legal/` (`PrivacyPolicy.md`, `Terms.md`) and show in the app under
+  Settings → Privacy and legal. App Store Connect needs the privacy policy at a public URL: host `PrivacyPolicy.md`
+  somewhere other than the Macro Menu site (which is no longer updated), for example a GitHub Gist or Notion page.
+- Before release, set `AppInfo.contactEmail` in `MacroMenu/LegalView.swift`. Until then the policies point people to the
+  App Support link on the App Store page, and the Contact row in Settings is hidden. Add the same address as the
+  support URL or email in App Store Connect.
+- `MacroMenu/PrivacyInfo.xcprivacy` declares no tracking, and coarse location (app functionality, not linked) because
+  opening hours are looked up on OpenStreetMap's Overpass API using the positions of restaurants near you.
+  `LeanrWidgets/PrivacyInfo.xcprivacy` declares no collected data. The app's only required-reason API is UserDefaults,
+  for its own settings (reason `CA92.1`).
+- App Privacy answers in App Store Connect: Location → Coarse Location, used for App Functionality, not linked to the
+  user, not used for tracking. Nothing else is collected. Food logs, weights and targets stay on the device, in the
+  user's iCloud and (if connected) in Apple Health. Barcode lookups send only the barcode number to Open Food Facts.
+- Weights read from Apple Health never go to iCloud (App Review Guideline 5.1.3). Weights entered in Leanr do.
+- No third-party SDKs, analytics, ads, cookies or web views. Network requests go only to Apple, Open Food Facts and
+  the Overpass API, without cookies.
+- Settings → Delete all my data erases the device data and the iCloud copy, can remove what Leanr saved to Health, and
+  turns iCloud sync off.
+- Age rating: answer the questionnaire honestly (no objectionable content). The terms ask for 13+ and the target
+  estimate is 18+.
 - Export compliance: `ITSAppUsesNonExemptEncryption` is `NO`. The app uses only standard HTTPS.
-- A privacy policy URL is required and needs hosting somewhere (not the Macro Menu site, which is no longer updated).
+- Fonts: Roboto (Apache 2.0) and Bebas Neue (SIL OFL 1.1). Their licence texts ship in `MacroMenu/Legal/` and show under
+  Settings → Acknowledgements, with Open Food Facts and OpenStreetMap credits (both ODbL).
 
 ## Screenshots
 
@@ -43,7 +54,7 @@ status bar and a week of sample meals:
 **Subtitle:** Fast food that fits your macros
 
 **Description:**
-Leanr finds the order that fits. Tell it your calories and protein and it searches the official nutrition figures from
+Leanr finds the order that fits. Tell it your calories and protein and it searches the published nutrition figures from
 McDonald's, KFC, Hungry Jack's, Subway, Guzman y Gomez, Nando's, Oporto, Red Rooster, Domino's, Spud Bar, Zambrero
 and Boost Juice for combinations from one restaurant.
 
@@ -55,7 +66,8 @@ and Boost Juice for combinations from one restaurant.
 - CSV export of your food log and daily totals.
 
 Nutrition figures are the chains' own published data; where a chain doesn't publish a figure, Leanr leaves it blank
-rather than guessing.
+rather than guessing. Custom orders and recipes are estimates. Leanr isn't medical advice and isn't affiliated with
+any restaurant.
 
 **Keywords:** macros,calories,protein,fast food,drive thru,meal finder,nutrition,diet,tracker,weight
 

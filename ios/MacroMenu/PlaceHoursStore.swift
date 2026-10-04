@@ -98,6 +98,7 @@ final class PlaceHoursStore {
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         // Overpass asks apps to identify themselves.
         request.setValue("Leanr/1.0 (iOS; \(Bundle.main.bundleIdentifier ?? "Leanr"))", forHTTPHeaderField: "User-Agent")
+        request.httpShouldHandleCookies = false
         var form = URLComponents(); form.queryItems = [URLQueryItem(name: "data", value: query)]
         request.httpBody = form.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B").data(using: .utf8)
         for attempt in 0..<2 {
