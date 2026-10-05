@@ -582,6 +582,21 @@ import Foundation
         mealStore.undoLast()
         assert(mealStore.data.meals[0].name == "Lunch" && mealStore.data.meals[0].items.count == 2)
 
+        // A logged meal can be edited in place or moved to another day, with undo.
+        let logStore = AppStore(url: root.appending(path: "logs-edit.json"), catalogURL: catalogURL, legacyURL: nil)
+        assert(logStore.log([Portion(food: mealMain, quantity: 1)], name: "Lunch", date: day0, mealTime: .lunch))
+        var logged = logStore.data.logs[dayKey(day0)]![0]
+        logged.items.append(Portion(food: mealSide, quantity: 2)); logged.name = "Big lunch"
+        assert(logStore.updateLog(logged, day: dayKey(day0), to: dayKey(day0)))
+        assert(logStore.data.logs[dayKey(day0)]!.count == 1 && logStore.data.logs[dayKey(day0)]![0].items.count == 2)
+        assert(logStore.updateLog(logged, day: dayKey(day0), to: dayKey(day(1))))
+        assert(logStore.data.logs[dayKey(day0)]!.isEmpty && logStore.data.logs[dayKey(day(1))]!.map(\.name) == ["Big lunch"])
+        assert(logStore.data.dayGoals[dayKey(day(1))] != nil, "a meal moved to a new day brings that day's targets")
+        var emptyLog = logged; emptyLog.items = []
+        assert(!logStore.updateLog(emptyLog, day: dayKey(day(1)), to: dayKey(day(1))), "an empty meal isn't saved")
+        logStore.undoLast()
+        assert(logStore.data.logs[dayKey(day0)]!.count == 1 && (logStore.data.logs[dayKey(day(1))] ?? []).isEmpty)
+
         // Weights read from Apple Health never go to iCloud, and come back from this device after a sync.
         var withHealth = AppData()
         withHealth.weights = [WeightEntry(date: day0, kg: 80), WeightEntry(date: day(1), kg: 79.5, healthID: UUID())]
@@ -610,6 +625,6 @@ import Foundation
         let reloadedOld = try JSONDecoder().decode(AppData.self, from: oldFormat)
         assert(reloadedOld.weights == nil && reloadedOld.isValid)
 
-        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, opening hours from OpenStreetMap, delivery, iCloud health rules, deleting all data, the policies and editing saved meals and no prices (\(Date().timeIntervalSince(start).formatted())s).")
+        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, opening hours from OpenStreetMap, delivery, iCloud health rules, deleting all data, the policies and editing saved and logged meals and no prices (\(Date().timeIntervalSince(start).formatted())s).")
     }
 }

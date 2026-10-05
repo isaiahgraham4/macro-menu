@@ -142,6 +142,20 @@ final class AppStore {
             if change({ $0.pinned = ($0.pinned ?? []) + [copy] }) { notice = "Pinned \(food.name)" }
         }
     }
+    /// Saves an edited logged meal, moving it to `newDay` when its date changed. Undo puts the old version back.
+    @discardableResult func updateLog(_ entry: LogEntry, day: String, to newDay: String) -> Bool {
+        guard entry.isValid, data.logs[day]?.contains(where: { $0.id == entry.id }) == true else { return false }
+        let currentGoals = goals
+        return change(undo: "Edited \(entry.name)") { state in
+            if day == newDay, let i = state.logs[day]?.firstIndex(where: { $0.id == entry.id }) {
+                state.logs[day]?[i] = entry
+            } else {
+                state.logs[day]?.removeAll { $0.id == entry.id }
+                state.logs[newDay, default: []].append(entry)
+                if state.dayGoals[newDay] == nil { state.dayGoals[newDay] = currentGoals }
+            }
+        }
+    }
     /// Saves changes to a saved meal (its name and items). Undo puts the old version back.
     @discardableResult func updateMeal(_ meal: SavedMeal) -> Bool {
         guard meal.isValid, data.meals.contains(where: { $0.id == meal.id }) else { return false }

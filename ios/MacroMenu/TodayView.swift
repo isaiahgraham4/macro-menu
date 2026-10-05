@@ -278,34 +278,106 @@ struct MealTimeDetailView: View {
     }
 }
 
+/// Changes a logged meal: its name, meal time and day, the amounts, and which foods are in it.
+/// Nothing changes until Save, and Undo puts the old version back.
 struct LogEditor: View {
     @Environment(AppStore.self) private var store
     @Environment(\.dismiss) private var dismiss
-    @State var entry: LogEntry
-    var day: String
+    @State private var entry: LogEntry
+    @State private var date: Date
+    @State private var picking = false
+    @State private var confirmingDelete = false
+    private let original: LogEntry
+    let day: String
+
+    init(entry: LogEntry, day: String) {
+        original = entry; self.day = day
+        _entry = State(initialValue: entry)
+        _date = State(initialValue: Self.date(of: day) ?? entry.time)
+    }
+
+    private var newDay: String { dayKey(date) }
+    private var changed: Bool { entry != original || newDay != day }
+
     var body: some View {
         LeanrForm {
-            TextField("Meal name", text: $entry.name)
-            Picker("Meal time", selection: $entry.mealTime) {
-                Text("Unassigned").tag(MealTime?.none)
-                ForEach(MealTime.allCases) { Text($0.title).tag(Optional($0)) }
-            }
-            ForEach($entry.items) { $item in
-                Section(item.food.name) { NumberField(title: "Servings", value: $item.quantity, places: 2) }
-            }.onDelete { entry.items.remove(atOffsets: $0) }
-            NutritionView(total: Nutrition(entry.items))
             Section {
-                Button(role: .destructive) {
-                    if store.change(undo: "Deleted \(entry.name)", { $0.logs[day]?.removeAll { $0.id == entry.id } }) { dismiss() }
-                } label: { Label("Delete from log", systemImage: "trash").foregroundStyle(.red).frame(maxWidth: .infinity) }
+                TextField("Meal name", text: $entry.name, axis: .vertical)
+                Picker("Meal time", selection: $entry.mealTime) {
+                    Text("Unassigned").tag(MealTime?.none)
+                    ForEach(MealTime.allCases) { Text($0.title).tag(Optional($0)) }
+                }
+                DatePicker("Day", selection: $date, in: ...Date(), displayedComponents: .date)
             }
-        }.navigationTitle("Edit logged meal")
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } }
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Save") { if store.change({ state in if let index = state.logs[day]?.firstIndex(where: { $0.id == entry.id }) { state.logs[day]?[index] = entry } }) { dismiss() } }.disabled(!entry.isValid)
+            Section {
+                if entry.items.isEmpty { Text("Add at least one food to keep this meal.").foregroundStyle(.secondary) }
+                ForEach($entry.items) { $item in
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text(item.food.name).font(.roboto(.headline))
+                        Text("\((item.food.cal * item.quantity).number) Cal · \((item.food.p * item.quantity).number) g protein")
+                            .font(.roboto(.caption)).foregroundStyle(.secondary)
+                        NumberField(title: "Servings", value: $item.quantity, places: 2)
+                    }
+                    .padding(.vertical, 2)
+                }
+                .onDelete { entry.items.remove(atOffsets: $0) }
+                Button { picking = true } label: { Label("Add food", systemImage: "plus.circle.fill") }
+            } header: { Text("Foods") } footer: { Text("Swipe a food to take it out.") }
+            if !entry.items.isEmpty {
+                Section("Totals") { NutritionView(total: Nutrition(entry.items)) }
+            }
+            Section {
+                Button(role: .destructive) { confirmingDelete = true } label: {
+                    Label("Delete from log", systemImage: "trash").foregroundStyle(.red).frame(maxWidth: .infinity)
                 }
             }
+        }
+        .navigationTitle("Edit logged meal")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } }
+            ToolbarItem(placement: .confirmationAction) {
+                Button("Save") { save() }.disabled(!changed || !entry.isValid || entry.name.trimmingCharacters(in: .whitespaces).isEmpty)
+            }
+        }
+        .sheet(isPresented: $picking) {
+            NavigationStack {
+                BrowseView(pick: { portion in
+                    var fresh = portion; fresh.id = UUID()
+                    if let i = entry.items.firstIndex(where: { $0.food == fresh.food }) { entry.items[i].quantity += fresh.quantity }
+                    else { entry.items.append(fresh) }
+                    picking = false
+                }, pickTitle: "Add to \(entry.name)", quickAddLabel: "Add")
+                .toolbar { Button("Done") { picking = false } }
+            }
+        }
+        .confirmationDialog("Delete \(original.name) from your log?", isPresented: $confirmingDelete, titleVisibility: .visible) {
+            Button("Delete from log", role: .destructive) {
+                if store.change(undo: "Deleted \(original.name)", { $0.logs[day]?.removeAll { $0.id == original.id } }) { dismiss() }
+            }
+        }
+    }
+
+    private func save() {
+        var saved = entry
+        saved.name = entry.name.trimmingCharacters(in: .whitespacesAndNewlines)
+        // Moved to another day: same clock time, new date.
+        if newDay != day {
+            let calendar = Calendar.current
+            let clock = calendar.dateComponents([.hour, .minute, .second], from: entry.time)
+            saved.time = calendar.date(bySettingHour: clock.hour ?? 12, minute: clock.minute ?? 0, second: clock.second ?? 0, of: date) ?? date
+        }
+        if store.updateLog(saved, day: day, to: newDay) {
+            store.notice = newDay == day ? "Saved \(saved.name)" : "Moved \(saved.name) to \(date.formatted(date: .abbreviated, time: .omitted))"
+            dismiss()
+        }
+    }
+
+    /// The start of a day key like "2026-10-05".
+    static func date(of day: String) -> Date? {
+        let formatter = DateFormatter(); formatter.calendar = Calendar(identifier: .gregorian)
+        formatter.locale = Locale(identifier: "en_US_POSIX"); formatter.dateFormat = "yyyy-MM-dd"
+        return formatter.date(from: day)
     }
 }
 

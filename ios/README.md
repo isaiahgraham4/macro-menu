@@ -128,6 +128,8 @@ A corrupt save is preserved and modifications are blocked instead of overwriting
 it. Historical log entries and saved meals retain their nutrition snapshots.
 Saved meals open in an editor (Meal tab → tap a saved meal): rename it, change amounts, add foods from the menu or
 swipe items out, then Save (`SavedMealEditor`, `AppStore.updateMeal`, with Undo).
+Logged meals on Today open the same way (tap one): rename, change the meal time or move it to another day, change
+servings, add foods or swipe them out, then Save (`LogEditor`, `AppStore.updateLog`, with Undo).
 
 My foods → Export all app data includes foods, recipes, saved meals, daily history,
 targets and the current meal. Import merges by ID after confirmation and keeps a
