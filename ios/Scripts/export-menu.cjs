@@ -221,6 +221,13 @@ for (const [what, withoutId, withId, addTo, takeOff, kind] of PAIRS) {
 console.log(`Added ${paired} Hungry Jack's and KFC extras and removals worked out from pairs of burgers.`);
 // format: the app only accepts formats it understands. revision: a fingerprint of the menu.
 // published: when this revision was first exported; unchanged menus keep their date, so a re-export isn't "newer".
+// Prices are switched off for now: they vary too much between stores. menu-source.js keeps them for later;
+// set SHOW_PRICES to true to ship them again.
+const SHOW_PRICES = false;
+if (!SHOW_PRICES) {
+  for (const food of data.foods) { delete food.price; delete food.pf; for (const mod of food.modifiers || []) delete mod.price; }
+  for (const chain of data.chains) delete chain.psrc;
+}
 const crypto = require('crypto');
 const bundledPath = path.join(root, 'ios/MacroMenu/MenuData.json');
 const revision = crypto.createHash('sha256').update(JSON.stringify({chains: data.chains, foods: data.foods})).digest('hex').slice(0, 16);

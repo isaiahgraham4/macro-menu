@@ -6,14 +6,14 @@ enum LogExport {
     static func items(_ data: AppData, chainName: (String) -> String) -> String {
         let extras = nutrientNames.dropFirst(4)
         var rows = [["Date", "Time", "Meal time", "Meal", "Food", "Restaurant", "Serving", "Quantity", "Calories", "kJ", "Protein (g)", "Carbs (g)", "Fat (g)"]
-                    + extras.map { "\($0.label) (\($0.unit))" } + ["Price (AUD)"]]
+                    + extras.map { "\($0.label) (\($0.unit))" }]
         for day in data.logs.keys.sorted() {
             for entry in (data.logs[day] ?? []).sorted(by: { $0.time < $1.time }) {
                 for item in entry.items {
                     let food = item.food, q = item.quantity
                     rows.append([day, time(entry.time), entry.mealTime?.title ?? "", entry.name, food.name, chainName(food.chain), food.serve, number(q, places: 2),
                                  number(food.cal * q), number(food.kj * q), number(food.p * q), number(food.c.map { $0 * q }), number(food.f.map { $0 * q })]
-                                + extras.map { n in number(food.nut?[n.key].map { $0 * q }) } + [number(food.price.map { $0 * q }, places: 2)])
+                                + extras.map { n in number(food.nut?[n.key].map { $0 * q }) })
                 }
             }
         }

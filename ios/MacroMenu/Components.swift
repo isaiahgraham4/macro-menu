@@ -45,8 +45,6 @@ struct NutritionView: View {
             HStack(alignment: .firstTextBaseline) {
                 Text(total.cal.number).font(.roboto(.largeTitle, weight: .bold))
                 Text("Cal").foregroundStyle(.secondary)
-                Spacer()
-                Text(total.priceText).font(.roboto(.subheadline, weight: .medium))
             }
             HStack(spacing: 0) {
                 macro("Protein", total.p, false, colour("p"))
@@ -102,11 +100,7 @@ struct FoodRow: View {
         VStack(alignment: .leading, spacing: 5) {
             Text(food.name).font(.roboto(.headline)).foregroundStyle(.primary)
             Text(food.serve.isEmpty ? store.chainName(food.chain) : "\(store.chainName(food.chain)) · \(food.serve)").font(.roboto(.caption)).foregroundStyle(.secondary)
-            HStack {
-                Text("\(food.cal.number) Cal · \(food.p.number) g protein").font(.roboto(.subheadline))
-                Spacer()
-                if let price = food.price { Text((food.pf == true ? "From " : "") + price.formatted(.currency(code: "AUD"))).font(.roboto(.caption)) }
-            }.foregroundStyle(.secondary)
+            Text("\(food.cal.number) Cal · \(food.p.number) g protein").font(.roboto(.subheadline)).foregroundStyle(.secondary)
         }.padding(.vertical,4)
     }
 }
@@ -144,11 +138,10 @@ struct SourcesView: View {
     @Environment(AppStore.self) private var store
     var body: some View {
         LeanrList {
-            Section { Text("Bundled Australian menu snapshot from 24 September 2026. Prices are Melbourne CBD pick-up prices and vary by store. Missing nutrients stay unknown. Custom orders and recipes are estimates based on their ingredients.") }
+            Section { Text("Bundled Australian menu snapshot from 24 September 2026. Missing nutrients stay unknown. Custom orders and recipes are estimates based on their ingredients.") }
             ForEach(store.catalog.chains.filter { $0.id != "mine" }) { chain in
                 Section(chain.name) {
                     Text(chain.src ?? "").font(.roboto(.subheadline))
-                    Text(chain.psrc ?? "").font(.roboto(.caption)).foregroundStyle(.secondary)
                     if let raw = chain.url, let url = URL(string: raw) { Link("View source", destination: url) }
                 }
             }
@@ -165,7 +158,7 @@ struct MealShareCard: View {
             Text(name).font(.display())
             ForEach(items) { item in Text("\(item.quantity.number) × \(item.food.name)").font(.roboto(.body)) }
             Divider(); NutritionView(total: Nutrition(items))
-            Text("Australian menu snapshot · Prices and nutrition may vary").font(.roboto(.caption)).foregroundStyle(.secondary)
+            Text("Australian menu snapshot · Nutrition may vary").font(.roboto(.caption)).foregroundStyle(.secondary)
         }.padding(28).frame(width: 390).background(.white).foregroundStyle(.black).environment(\.colorScheme, .light)
     }
 }

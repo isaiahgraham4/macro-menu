@@ -8,12 +8,11 @@ These terms apply when you use Leanr, an app made by Isaiah Graham, an independe
 
 Leanr gives general nutrition information to help you choose and log food. It isn't medical, dietary or health advice, and targets are estimates. Talk to a doctor or Accredited Practising Dietitian before changing how you eat, especially if you are pregnant or breastfeeding, under 18, have a medical condition, or have a history of disordered eating.
 
-## Nutrition, prices and allergens
+## Nutrition and allergens
 
 - Restaurant figures come from each chain's own published nutrition information on the date shown in Settings → Menu sources. Chains change recipes, and figures vary between stores and serves.
 - Custom orders (with ingredients taken off) and recipes are estimates.
 - Scanned products come from Open Food Facts, which is edited by volunteers. Check them against the package.
-- Prices are indicative Melbourne pick-up prices and vary by store.
 - Leanr isn't an allergen guide. Always check allergens with the restaurant.
 
 ## Opening hours, distances and delivery

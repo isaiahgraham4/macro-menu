@@ -8,7 +8,7 @@ import Foundation
         defer { try? FileManager.default.removeItem(at: root) }
         let catalogURL = URL(fileURLWithPath: CommandLine.arguments[1])
         let catalog = try JSONDecoder().decode(MenuCatalog.self,from: Data(contentsOf: catalogURL))
-        assert(catalog.foods.count == 1309)
+        assert(catalog.foods.count == 1307)
         assert(Set(catalog.foods.map(\.chain)).isSubset(of: Set(catalog.chains.map(\.id))))
         // A juice bar has no mains, so its drinks are the order.
         let juice = MealFinder.find(catalog.foods, query: FindQuery(chains: ["boost"], calories: 700, protein: 25, maxItems: 1))
@@ -201,12 +201,15 @@ import Foundation
         let perHundred = "Serving size: 30g\nAvg qty per 100g\nEnergy 1500 kJ\nProtein 10g\nFat, total 20g"
         let converted = LabelParser.servingSuggestions(perHundred, column: 0)
         assert(converted["p"] == 3 && converted["f"] == 6 && abs(converted["cal"]! - 450 / 4.184) < 0.01)
-        var query = FindQuery(); query.calories = 700; query.protein = 35; query.budget = 20; query.maxItems = 3
+        // Prices are off for now, so the bundled menu has none.
+        assert(catalog.foods.allSatisfy { $0.price == nil && $0.pf == nil && ($0.modifiers ?? []).allSatisfy { $0.price == nil } })
+        assert(catalog.chains.allSatisfy { $0.psrc == nil })
+        var query = FindQuery(); query.calories = 700; query.protein = 35; query.maxItems = 3
         let start = Date()
         let matches = MealFinder.find(catalog.foods,query: query)
         assert(!matches.isEmpty)
         for match in matches {
-            assert(match.items.count <= 3 && match.total.cal <= 700 && match.total.price <= 20 && !match.total.missingPrice)
+            assert(match.items.count <= 3 && match.total.cal <= 700)
             assert(Set(match.items.map { $0.food.chain }).count == 1)
         }
         query.chains = ["spud"]; query.carbs = 100
@@ -483,6 +486,11 @@ import Foundation
         assert(PlaceHours.parseOSM("PH,Mo-Su 00:00-24:00")!.isAlwaysOpen, "holidays inside a day list are ignored")
         assert(PlaceHours.parseOSM("sunrise-sunset") == nil && PlaceHours.parseOSM("Mo-Fr 10:00+") == nil && PlaceHours.parseOSM("off") == nil
                && PlaceHours.parseOSM("by appointment") == nil, "anything not understood gives no hours rather than wrong ones")
+        // The daily ceiling on OpenStreetMap requests holds all day and resets the next.
+        var limit = DailyLimit()
+        for _ in 0..<3 { assert(limit.spend(at: at(11, 9), limit: 3)) }
+        assert(!limit.spend(at: at(11, 23), limit: 3) && limit.spend(at: at(12, 0, 1), limit: 3) && limit.used == 1)
+
         // Picking the restaurant in an Overpass answer: the closest match by name or brand, within 120 m.
         let overpass = try JSONDecoder().decode(OSMHours.Response.self, from: Data(#"""
         {"elements":[
@@ -560,6 +568,20 @@ import Foundation
         assert(scanStore.log([Portion(food: kept, quantity: 0.35)], name: kept.name, date: day(2)))
         assert(QuickLog.lastQuantity(of: kept.id, logs: scanStore.data.logs) == 0.35, "the most recent amount is offered next time")
 
+        // Saved meals can be edited in place (rename, add, remove), with undo, and never saved empty.
+        let mealStore = AppStore(url: root.appending(path: "meals.json"), catalogURL: catalogURL, legacyURL: nil)
+        let mealMain = mealStore.catalog.foods[0], mealSide = mealStore.catalog.foods[1]
+        var saved = SavedMeal(name: "Lunch", items: [Portion(food: mealMain, quantity: 1), Portion(food: mealSide, quantity: 1)])
+        assert(mealStore.change { $0.meals = [saved] })
+        saved.name = "Light lunch"; saved.items.removeFirst(); saved.items[0].quantity = 2
+        assert(mealStore.updateMeal(saved) && mealStore.data.meals.count == 1)
+        assert(mealStore.data.meals[0].name == "Light lunch" && mealStore.data.meals[0].items.count == 1 && mealStore.data.meals[0].items[0].quantity == 2)
+        var emptied = saved; emptied.items = []
+        assert(!mealStore.updateMeal(emptied) && mealStore.data.meals[0].items.count == 1, "an empty meal isn't saved")
+        assert(!mealStore.updateMeal(SavedMeal(name: "Other", items: saved.items)), "only existing meals are updated")
+        mealStore.undoLast()
+        assert(mealStore.data.meals[0].name == "Lunch" && mealStore.data.meals[0].items.count == 2)
+
         // Weights read from Apple Health never go to iCloud, and come back from this device after a sync.
         var withHealth = AppData()
         withHealth.weights = [WeightEntry(date: day0, kg: 80), WeightEntry(date: day(1), kg: 79.5, healthID: UUID())]
@@ -588,6 +610,6 @@ import Foundation
         let reloadedOld = try JSONDecoder().decode(AppData.self, from: oldFormat)
         assert(reloadedOld.weights == nil && reloadedOld.isValid)
 
-        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, opening hours from OpenStreetMap, delivery, iCloud health rules, deleting all data and the policies (\(Date().timeIntervalSince(start).formatted())s).")
+        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, opening hours from OpenStreetMap, delivery, iCloud health rules, deleting all data, the policies and editing saved meals and no prices (\(Date().timeIntervalSince(start).formatted())s).")
     }
 }

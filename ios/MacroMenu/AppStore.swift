@@ -49,6 +49,13 @@ final class AppStore {
             state.dayGoals[dayKey(Date())] = state.goalSets[index]
         }
     }
+    func chain(_ id: String) -> Chain? { catalog.chains.first { $0.id == id } }
+    /// When the restaurant menu in use was published.
+    var menuDate: Date? {
+        let precise = ISO8601DateFormatter(); precise.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        guard let text = catalog.published else { return nil }
+        return precise.date(from: text) ?? ISO8601DateFormatter().date(from: text)
+    }
     func chainName(_ id: String) -> String { catalog.chains.first { $0.id == id }?.name ?? "My foods" }
     private func write(_ updated: AppData) throws {
         guard loadError == nil, updated.isValid else { throw CocoaError(.fileReadCorruptFile) }
@@ -133,6 +140,13 @@ final class AppStore {
         } else {
             var copy = food; copy.modifiers = nil
             if change({ $0.pinned = ($0.pinned ?? []) + [copy] }) { notice = "Pinned \(food.name)" }
+        }
+    }
+    /// Saves changes to a saved meal (its name and items). Undo puts the old version back.
+    @discardableResult func updateMeal(_ meal: SavedMeal) -> Bool {
+        guard meal.isValid, data.meals.contains(where: { $0.id == meal.id }) else { return false }
+        return change(undo: "Edited \(meal.name)") { state in
+            if let i = state.meals.firstIndex(where: { $0.id == meal.id }) { state.meals[i] = meal }
         }
     }
     func add(_ items: [Portion]) {

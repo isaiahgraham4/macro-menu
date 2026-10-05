@@ -311,7 +311,6 @@ struct FoodEditor: View {
                 NumberField(title: "Protein (g)", value: $draft.p)
                 OptionalNumberField(title: "Carbs (g)", value: $draft.c)
                 OptionalNumberField(title: "Fat (g)", value: $draft.f)
-                OptionalNumberField(title: "Price per serving (AUD)", value: $draft.price, places: 2)
             }
             Section("Optional nutrients") {
                 ForEach(nutrientNames.dropFirst(4), id: \.key) { n in

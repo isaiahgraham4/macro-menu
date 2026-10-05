@@ -15,9 +15,7 @@ struct SettingsView: View {
     var version: String { Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "" }
     /// When the restaurant menu in use was published.
     var menuDate: String {
-        let precise = ISO8601DateFormatter(); precise.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
-        guard let text = store.catalog.published, let date = precise.date(from: text) ?? ISO8601DateFormatter().date(from: text) else { return "Built in" }
-        return date.formatted(date: .abbreviated, time: .omitted)
+        store.menuDate?.formatted(date: .abbreviated, time: .omitted) ?? "Built in"
     }
     var body: some View {
         LeanrList {

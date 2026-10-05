@@ -6,6 +6,8 @@ struct Chain: Codable, Identifiable, Sendable {
     var url: String?
     var src: String?
     var psrc: String?
+    /// How the nutrition figures were collected, e.g. "Official nutrition guide".
+    var how: String?
 }
 
 struct Modifier: Codable, Identifiable, Hashable, Sendable {
@@ -209,7 +211,7 @@ func dayKey(_ date: Date) -> String {
     return formatter.string(from: date)
 }
 func mealText(_ name: String, _ items: [Portion]) -> String {
-    name + "\n" + items.map { "\($0.quantity.number) × \($0.food.name)" }.joined(separator: "\n") + "\n" + Nutrition(items).text + "\n" + Nutrition(items).priceText
+    name + "\n" + items.map { "\($0.quantity.number) × \($0.food.name)" }.joined(separator: "\n") + "\n" + Nutrition(items).text
 }
 
 /// Past meals to log again in one tap.

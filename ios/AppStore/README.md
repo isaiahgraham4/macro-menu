@@ -15,8 +15,9 @@ Before each new upload, raise the build number (`CURRENT_PROJECT_VERSION`) in th
 ## Privacy and legal
 
 - The privacy policy and terms are in `MacroMenu/Legal/` (`PrivacyPolicy.md`, `Terms.md`) and show in the app under
-  Settings → Privacy and legal. App Store Connect needs the privacy policy at a public URL: host `PrivacyPolicy.md`
-  somewhere other than the Macro Menu site (which is no longer updated), for example a GitHub Gist or Notion page.
+  Settings → Privacy and legal. The privacy policy is hosted as a public gist for App Store Connect:
+  https://gist.github.com/isaiahgraham4/26dad078a14afa56462a3438de13cc98 (not the Macro Menu site, which is no longer
+  updated). When `PrivacyPolicy.md` or the contact email changes, update the gist to match.
 - Before release, set `AppInfo.contactEmail` in `MacroMenu/LegalView.swift`. Until then the policies point people to the
   App Support link on the App Store page, and the Contact row in Settings is hidden. Add the same address as the
   support URL or email in App Store Connect.

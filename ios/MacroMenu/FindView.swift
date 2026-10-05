@@ -26,7 +26,7 @@ struct FindView: View {
                             .background(.tint.opacity(0.12), in: RoundedRectangle(cornerRadius: 10))
                         VStack(alignment: .leading, spacing: 3) {
                             Text("Best choices").font(.roboto(.headline))
-                            Text("Browse foods ranked by protein, calories or value").font(.roboto(.caption)).foregroundStyle(.secondary)
+                            Text("Browse foods ranked by protein or calories").font(.roboto(.caption)).foregroundStyle(.secondary)
                         }
                         Spacer()
                     }
@@ -35,7 +35,7 @@ struct FindView: View {
             Section {
                 VStack(alignment: .leading, spacing: 6) {
                     Text("An order that fits.").font(.display(.title))
-                    Text("Choose your calories, protein and budget. Find combinations from one restaurant.").foregroundStyle(.secondary)
+                    Text("Choose your calories and protein. Find combinations from one restaurant.").foregroundStyle(.secondary)
                 }.padding(.top, 6)
                 HStack(spacing: 10) {
                     StatField(title: "Calories up to", unit: "Cal", value: $query.calories)
@@ -47,14 +47,12 @@ struct FindView: View {
                     Spacer()
                     Picker("Rank by", selection: $query.sort) {
                         Text("Closest fit").tag("fit"); Text("Lowest calories").tag("lean"); Text("Most protein").tag("protein")
-                        Text("Cheapest").tag("cheap"); Text("Protein per dollar").tag("value")
                     }
                 }.pickerStyle(.menu).labelsHidden()
-                DisclosureGroup("Budget & macro limits") {
-                    OptionalNumberField(title: "Budget (AUD)", value: $query.budget, places: 2)
+                DisclosureGroup("Macro limits") {
                     OptionalNumberField(title: "Carbs up to (g)", value: $query.carbs)
                     OptionalNumberField(title: "Fat up to (g)", value: $query.fat)
-                    Text("Price and macro filters exclude items with missing values.").font(.roboto(.caption)).foregroundStyle(.secondary)
+                    Text("Macro limits leave out items with missing values.").font(.roboto(.caption)).foregroundStyle(.secondary)
                 }
                 Button { useRemaining() } label: { Label("Use what's left of today's targets", systemImage: "arrow.down.forward.circle") }
                     .font(.roboto(.subheadline))
@@ -247,7 +245,7 @@ struct BrowseView: View {
                     Spacer()
                     Picker("Sort", selection: $sort) {
                         Text("Protein per calorie").tag("density"); Text("Most protein").tag("protein"); Text("Lowest calories").tag("calories")
-                        Text("Protein per dollar").tag("value"); Text("Name").tag("name")
+                        Text("Name").tag("name")
                     }.pickerStyle(.menu).labelsHidden().textCase(nil).font(.roboto(.subheadline)).fixedSize()
                 }
             }

@@ -22,6 +22,13 @@ final class PlaceHoursStore {
     @ObservationIgnored private var inFlight: Set<String> = []
     @ObservationIgnored private var flushing = false
     @ObservationIgnored private let cacheKey = "osmHours.cache"
+    @ObservationIgnored private let limitKey = "osmHours.limit"
+    /// After a failed request, no more are sent for a while, so an outage doesn't turn into a stream of retries.
+    @ObservationIgnored private var pausedUntil = Date.distantPast
+    private let pauseAfterFailure: TimeInterval = 5 * 60
+    /// Requests per phone per day. Each covers every restaurant on screen and answers are kept a week, so normal use
+    /// needs a handful.
+    static let dailyRequests = 60
     /// Mapped hours are reused for a week; a restaurant with none is checked again after three days.
     private let freshFor: TimeInterval = 7 * 86_400, missingFor: TimeInterval = 3 * 86_400
     nonisolated private static let server = URL(string: "https://overpass-api.de/api/interpreter")!
@@ -76,8 +83,13 @@ final class PlaceHoursStore {
     }
 
     private func fetch(_ batch: [Lookup]) async {
+        guard Date() >= pausedUntil, spendDailyRequest() else {
+            for lookup in batch where entries[lookup.key] == .loading { entries[lookup.key] = .unavailable }
+            return
+        }
         let query = OSMHours.query(batch.map { ($0.latitude, $0.longitude) })
         guard let elements = await Self.overpass(query) else {
+            pausedUntil = Date().addingTimeInterval(pauseAfterFailure)
             // Couldn't reach OpenStreetMap: hours already showing stay, the rest offer Apple's card and are tried next time.
             for lookup in batch where entries[lookup.key] == .loading { entries[lookup.key] = .unavailable }
             return
@@ -89,6 +101,14 @@ final class PlaceHoursStore {
             show(text, for: lookup.key)
         }
         UserDefaults.standard.set(try? JSONEncoder().encode(cache), forKey: cacheKey)
+    }
+
+    private func spendDailyRequest() -> Bool {
+        let defaults = UserDefaults.standard
+        var limit = defaults.data(forKey: limitKey).flatMap { try? JSONDecoder().decode(DailyLimit.self, from: $0) } ?? DailyLimit()
+        let allowed = limit.spend(at: Date(), limit: Self.dailyRequests)
+        defaults.set(try? JSONEncoder().encode(limit), forKey: limitKey)
+        return allowed
     }
 
     /// Runs a query on the public Overpass server, trying once more after a short wait if it's busy.

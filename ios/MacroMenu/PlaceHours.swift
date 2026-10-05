@@ -260,3 +260,24 @@ enum OSMHours {
         return "[out:json][timeout:25];(" + parts.joined() + ");out tags center;"
     }
 }
+
+/// A ceiling on requests to a free service from this phone each day, so a bug or a loop can't hammer it (and get the app
+/// blocked). A new day starts afresh.
+struct DailyLimit: Equatable, Sendable, Codable {
+    var day = ""
+    var used = 0
+
+    static func dayKey(_ date: Date, calendar: Calendar = .current) -> String {
+        let parts = calendar.dateComponents([.year, .month, .day], from: date)
+        return String(format: "%04d-%02d-%02d", parts.year ?? 0, parts.month ?? 0, parts.day ?? 0)
+    }
+
+    /// Takes one request from today's allowance; false when it's used up.
+    mutating func spend(at date: Date, limit: Int) -> Bool {
+        let today = Self.dayKey(date)
+        if day != today { day = today; used = 0 }
+        guard used < limit else { return false }
+        used += 1
+        return true
+    }
+}

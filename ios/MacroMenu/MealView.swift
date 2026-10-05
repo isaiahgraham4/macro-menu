@@ -79,18 +79,21 @@ struct MealView: View {
             }
             quickLog
             if !store.data.meals.isEmpty {
-                Section("Saved meals") {
+                Section {
                     ForEach(store.data.meals) { meal in
                         HStack(spacing: 12) {
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(meal.name).font(.roboto(.headline))
-                                Text(Nutrition(meal.items).text).font(.roboto(.caption)).foregroundStyle(.secondary)
+                            NavigationLink { SavedMealEditor(meal: meal) } label: {
+                                VStack(alignment: .leading, spacing: 4) {
+                                    Text(meal.name).font(.roboto(.headline))
+                                    Text(Nutrition(meal.items).text).font(.roboto(.caption)).foregroundStyle(.secondary)
+                                }
                             }
-                            Spacer()
+                            .accessibilityHint("Edit this meal's name and items")
                             Button("Add") { store.add(meal.items) }.buttonStyle(.bordered).font(.roboto(.subheadline, weight: .medium))
+                                .accessibilityLabel("Add \(meal.name) to your meal")
                         }.padding(.vertical, 2)
                     }.onDelete { offsets in store.change(undo: "Deleted saved meal") { $0.meals.remove(atOffsets: offsets) } }
-                }
+                } header: { Text("Saved meals") } footer: { Text("Tap a saved meal to rename it or add and remove items.") }
             }
         }.navigationTitle("This meal")
             .toolbar { if !store.data.tray.isEmpty { Button("Clear", role: .destructive) { clear = true } } }
@@ -159,5 +162,85 @@ struct MealView: View {
         Binding(get: { store.data.tray.first { $0.id == item.id }?.quantity ?? item.quantity }, set: { value in
             if value > 0, value.isFinite { store.change { state in if let i = state.tray.firstIndex(where: { $0.id == item.id }) { state.tray[i].quantity = value } } }
         })
+    }
+}
+
+/// Changes a saved meal in place: rename it, change amounts, add foods and take them out.
+/// Nothing is saved until Save, so backing out leaves the meal as it was.
+struct SavedMealEditor: View {
+    @Environment(AppStore.self) private var store
+    @Environment(\.dismiss) private var dismiss
+    @State private var draft: SavedMeal
+    @State private var picking = false
+    @State private var confirmingDelete = false
+    private let original: SavedMeal
+
+    init(meal: SavedMeal) { original = meal; _draft = State(initialValue: meal) }
+
+    private var trimmedName: String { draft.name.trimmingCharacters(in: .whitespacesAndNewlines) }
+    private var changed: Bool { draft != original }
+
+    var body: some View {
+        LeanrList {
+            Section("Name") {
+                TextField("Meal name", text: $draft.name, axis: .vertical).font(.roboto(.body))
+            }
+            Section {
+                if draft.items.isEmpty {
+                    Text("Add at least one food to keep this meal.").foregroundStyle(.secondary)
+                }
+                ForEach($draft.items) { $item in
+                    HStack(spacing: 12) {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(item.food.name).font(.roboto(.headline))
+                            Text("\((item.food.cal * item.quantity).number) Cal · \((item.food.p * item.quantity).number) g protein")
+                                .font(.roboto(.caption)).foregroundStyle(.secondary)
+                        }
+                        Spacer()
+                        Stepper(value: $item.quantity, in: 0.5...50, step: 0.5) {
+                            Text("× \(item.quantity.number)").font(.roboto(.subheadline, weight: .medium)).monospacedDigit()
+                        }
+                        .fixedSize()
+                        .accessibilityLabel("\(item.food.name) amount")
+                    }
+                    .padding(.vertical, 2)
+                }
+                .onDelete { draft.items.remove(atOffsets: $0) }
+                Button { picking = true } label: { Label("Add food", systemImage: "plus.circle.fill") }
+            } header: { Text("Items") } footer: { Text("Swipe an item to remove it.") }
+            if !draft.items.isEmpty {
+                Section("Totals") { NutritionView(total: Nutrition(draft.items)) }
+            }
+            Section {
+                Button("Delete saved meal", role: .destructive) { confirmingDelete = true }
+            }
+        }
+        .navigationTitle("Edit meal")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .confirmationAction) {
+                Button("Save") {
+                    var meal = draft; meal.name = trimmedName
+                    if store.updateMeal(meal) { store.notice = "Saved \(meal.name)"; dismiss() }
+                }
+                .disabled(!changed || trimmedName.isEmpty || draft.items.isEmpty)
+            }
+        }
+        .sheet(isPresented: $picking) {
+            NavigationStack {
+                BrowseView(pick: { portion in
+                    var fresh = portion; fresh.id = UUID()
+                    if let i = draft.items.firstIndex(where: { $0.food == fresh.food }) { draft.items[i].quantity += fresh.quantity }
+                    else { draft.items.append(fresh) }
+                    picking = false
+                }, pickTitle: "Add to \(trimmedName.isEmpty ? "meal" : trimmedName)", quickAddLabel: "Add")
+                .toolbar { Button("Done") { picking = false } }
+            }
+        }
+        .confirmationDialog("Delete \(original.name)?", isPresented: $confirmingDelete, titleVisibility: .visible) {
+            Button("Delete saved meal", role: .destructive) {
+                if store.change(undo: "Deleted saved meal", { $0.meals.removeAll { $0.id == original.id } }) { dismiss() }
+            }
+        }
     }
 }

@@ -159,6 +159,7 @@ struct FoodDetailView: View {
                 }
             }
             if pick == nil { NearestPlaceSection(chain: food.chain) }
+            if let chain = store.chain(food.chain), chain.id != "mine" { FoodSourceSection(chain: chain) }
             if customized {
                 Section {
                     Button { saveCustom() } label: { Label("Save custom order to My foods", systemImage: "bookmark") }.disabled(!adjusted.isValid)
@@ -231,5 +232,21 @@ struct FoodDetailView: View {
     private func saveCustom() {
         var value = adjusted; value.id = UUID().uuidString; value.chain = "mine"
         if store.saveFood(value) { store.notice = "Custom order saved" }
+    }
+}
+
+/// Where a restaurant food's figures come from, so every number can be traced to the chain's own information.
+struct FoodSourceSection: View {
+    @Environment(AppStore.self) private var store
+    let chain: Chain
+    var body: some View {
+        Section {
+            if let how = chain.how { LabeledContent("From", value: how) }
+            if let src = chain.src { Text(src).font(.roboto(.caption)).foregroundStyle(.secondary) }
+            if let date = store.menuDate { LabeledContent("Menu snapshot", value: date.formatted(date: .abbreviated, time: .omitted)) }
+            if let raw = chain.url, let url = URL(string: raw) { Link("View \(chain.name)'s nutrition information", destination: url) }
+        } header: { Text("Source") } footer: {
+            Text("Figures are \(chain.name)'s own published information, as at the snapshot date. Leanr isn't affiliated with \(chain.name). Spot something wrong? Let me know through \(AppInfo.contactText).")
+        }
     }
 }

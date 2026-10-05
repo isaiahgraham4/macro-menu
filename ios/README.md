@@ -6,9 +6,9 @@ The app uses SwiftUI and requires no third-party packages or API keys.
 ## Features
 
 - Find: combinations of up to three items from one restaurant, ranked by fit,
-  calories, protein, price or protein per dollar; optional budget and macro caps.
-- Best: search all 1,282 bundled menu foods from 12 restaurants, filter by restaurant/category and
-  compare nutrition, prices and protein density. Source links are in the toolbar.
+  calories or protein; optional macro caps.
+- Best: search all 1,307 bundled menu foods from 12 restaurants, filter by restaurant/category and
+  compare nutrition and protein density. Source links are in the toolbar.
 - Meal: fractional servings, gram/mL portions when a serving weight is known,
   restaurant adjustments, personal adjustments, saved meals, logging to a chosen
   day, text copying/sharing and shareable meal images.
@@ -54,7 +54,8 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   "Closed · opens 8:00 am" (orange within an hour of closing); tap for the week, today in bold. Hours come from
   OpenStreetMap (`PlaceHoursStore.swift`; the `opening_hours` reader and status are in `PlaceHours.swift`), free with no
   key or account. Restaurants on screen are looked up together in one Overpass API request, and answers are kept on the
-  phone for a week (three days when a restaurant has no hours mapped). Apple doesn't let apps read hours, so restaurants
+  phone for a week (three days when a restaurant has no hours mapped). Each phone sends at most 60 requests a day
+  (`DailyLimit`) and pauses five minutes after a failure, so a bug or an outage can't flood the free server. Apple doesn't let apps read hours, so restaurants
   without mapped hours offer Apple's place card instead, and map pins always show Apple's callout with hours. In
   Melbourne about 1 in 5 of these chains' restaurants have hours on OpenStreetMap; anyone can add them at
   openstreetmap.org and the app picks them up within a week. The week view credits "© OpenStreetMap contributors", which
@@ -100,13 +101,23 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   switched off (`MenuUpdates.url` is nil) because the menu isn't hosted anywhere.
   Settings → About shows the date of the menu in use.
 
-Restaurant nutrition and prices are a September 2026 snapshot, not live data.
-Zambrero (July 2026 sheet; burritos, bowls, nachos
-and tacos without sauce, sauces as extras) and Boost Juice (original and medium
-sizes; boosters aren't published) have no prices yet. Three Zambrero per-serve rows
-misprinted on the sheet are worked out from its per-100 g figures. Missing values remain unknown. A macro or budget filter
-excludes items without the required figures. Totals mark partial nutrient and
-price data. Custom changes without published prices make that price unknown.
+Restaurant nutrition is a September 2026 snapshot, not live data. Zambrero (July 2026 sheet; burritos, bowls,
+nachos and tacos without sauce, sauces as extras) and Boost Juice (original and medium sizes; boosters aren't
+published) are included. Three Zambrero per-serve rows misprinted on the sheet are worked out from its per-100 g
+figures. Missing values remain unknown. A macro filter excludes items without the required figures. Totals mark
+partial nutrient data.
+
+Prices are switched off for now because they vary too much between stores. `Scripts/menu-source.js` keeps them, and
+`SHOW_PRICES` in `Scripts/export-menu.cjs` leaves them out of `MenuData.json`. The price fields stay in the data model
+so older backups still open, and the finder's budget and price sorts are kept for when prices return.
+
+## Data sources
+
+Restaurant figures come only from each chain's own published nutrition information, re-entered as facts (no copied
+descriptions, photos or logos). Each chain in `Scripts/menu-source.js` records its source (`src`), how it was collected
+(`how`) and a link (`url`); every food's page shows these under Source with the menu snapshot date. Items a chain
+publishes no figures for are left out rather than filled from third-party databases. Permission requests and the
+removal process are in `AppStore/data-permissions.md`.
 
 ## Storage and transfer
 
@@ -115,6 +126,8 @@ All tabs use one observable store. Changes are written atomically to
 Existing `foods.json` saves are migrated on first launch; the original is retained.
 A corrupt save is preserved and modifications are blocked instead of overwriting
 it. Historical log entries and saved meals retain their nutrition snapshots.
+Saved meals open in an editor (Meal tab → tap a saved meal): rename it, change amounts, add foods from the menu or
+swipe items out, then Save (`SavedMealEditor`, `AppStore.updateMeal`, with Undo).
 
 My foods → Export all app data includes foods, recipes, saved meals, daily history,
 targets and the current meal. Import merges by ID after confirmation and keeps a
