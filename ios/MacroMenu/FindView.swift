@@ -9,9 +9,6 @@ struct FindView: View {
     @State private var searching = false
     @State private var initialized = false
     @State private var searchID = UUID()
-    @AppStorage(OpenNow.storageKey) private var openOnly = true
-    /// Chains to leave out because the closest one is closed (only with "Open now only" on).
-    private var closedNow: [String: Date?] { openOnly ? OpenNow.closed(location: location) : [:] }
     var body: some View {
         LeanrList {
             Section {
@@ -66,19 +63,11 @@ struct FindView: View {
                         }
                     }
                 }
-                OpenNowToggle(isOn: $openOnly)
-            } header: { Text("Restaurants") } footer: { OpenNowFooter(on: openOnly, closed: closedNow) }
+            } header: { Text("Restaurants") }
             if searching || matches.isEmpty {
                 Section(searching ? "Finding combinations…" : "No suggestions") {
                     if searching { ProgressView().frame(maxWidth: .infinity) }
-                    else if !query.chains.isEmpty, query.chains.allSatisfy({ closedNow.keys.contains($0) }) {
-                        ContentUnavailableView {
-                            Label("Closed right now", systemImage: "clock")
-                        } description: {
-                            Text("\(OpenNow.describe(closedNow.filter { query.chains.contains($0.key) }, names: store.chainName)) near you. Turn off Open now only to see it anyway.")
-                        } actions: { Button("Show anyway") { openOnly = false } }
-                    }
-                    else { ContentUnavailableView("No matching orders", systemImage: "magnifyingglass", description: Text("Try more calories, a wider budget or different restaurants.")) }
+                    else { ContentUnavailableView("No matching orders", systemImage: "magnifyingglass", description: Text("Try more calories or different restaurants.")) }
                 }
             } else {
                 ForEach(Array(matches.enumerated()), id: \.element.id) { index, match in
@@ -117,14 +106,13 @@ struct FindView: View {
         .onAppear { if !initialized { query.calories = store.goals.mealCal; query.protein = store.goals.mealProtein; initialized = true } }
         .onChange(of: nav.findChain, initial: true) { if let chain = nav.findChain { query.chains = [chain]; nav.findChain = nil } }
         .onChange(of: store.data.foods) { searchID = UUID() }
-        .task(id: SearchKey(query: query, closed: Set(closedNow.keys), refresh: searchID)) { await search() }
-        // The closest restaurant of each chain and its hours, once location is allowed (it's never asked for here).
+        .task(id: SearchKey(query: query, refresh: searchID)) { await search() }
+        // The closest restaurant of each chain, once location is allowed (it's never asked for here).
         .task(id: location.location?.timestamp) {
             if location.isAuthorized { await location.load(Array(Set(matches.map(\.chain)))) }
-            await OpenNow.load(location: location)
         }
     }
-    private struct SearchKey: Equatable { var query: FindQuery; var closed: Set<String>; var refresh: UUID }
+    private struct SearchKey: Equatable { var query: FindQuery; var refresh: UUID }
     private func useRemaining() {
         let total = Nutrition((store.data.logs[dayKey(Date())] ?? []).flatMap(\.items))
         query.calories = max(0, (store.goals.values["cal"] ?? 2200) - total.cal)
@@ -132,9 +120,7 @@ struct FindView: View {
     }
     private func search() async {
         searching = true
-        // Your own foods aren't restaurants, so they're never left out.
-        let closed = Set(closedNow.keys)
-        let foods = store.foods.filter { !closed.contains($0.chain) }, request = query
+        let foods = store.foods, request = query
         let work = Task.detached(priority: .userInitiated) { MealFinder.find(foods, query: request) }
         let result = await withTaskCancellationHandler { await work.value } onCancel: { work.cancel() }
         if !Task.isCancelled { matches = result; searching = false }
@@ -148,11 +134,7 @@ struct BrowseView: View {
     @State private var category = "all"
     @State private var sort = "density"
     @AppStorage(RecentSearches.storageKey) private var recent = ""
-    @Environment(LocationStore.self) private var location
-    @AppStorage(OpenNow.storageKey) private var openOnly = true
     var pick: ((Portion) -> Void)?
-    /// Closed restaurants are left out when looking for something to eat, not when logging something already eaten.
-    private var closedNow: [String: Date?] { pick == nil && openOnly ? OpenNow.closed(location: location) : [:] }
     /// What choosing a food does, for the button on its details, e.g. "Log to Lunch".
     var pickTitle = "Use this portion"
     /// What the "+" on a row does, for VoiceOver.
@@ -166,14 +148,13 @@ struct BrowseView: View {
     @State private var shown: FoodSearch.Browse?
     private var request: FoodSearch.Browse { .init(search: search, chain: chain, category: category, sort: sort) }
     /// Also redo the list when your own foods change or the menu loads.
-    private struct Key: Equatable { var request: FoodSearch.Browse; var custom: [Food]; var catalog: String; var closed: Set<String> }
+    private struct Key: Equatable { var request: FoodSearch.Browse; var custom: [Food]; var catalog: String }
 
     private func update(_ request: FoodSearch.Browse) async {
         // Wait for a pause in typing so each keystroke doesn't start a new search.
         if let shown, shown.search != request.search, !request.search.isEmpty { try? await Task.sleep(for: .milliseconds(120)) }
         guard !Task.isCancelled else { return }
-        let closed = Set(closedNow.keys)
-        let foods = store.foods.filter { !closed.contains($0.chain) }
+        let foods = store.foods
         let names = Dictionary(store.catalog.chains.map { ($0.id, $0.name) }) { a, _ in a }
         let work = Task.detached(priority: .userInitiated) { FoodSearch.browse(foods, chainNames: names, request: request) }
         let result = await withTaskCancellationHandler { await work.value } onCancel: { work.cancel() }
@@ -201,8 +182,7 @@ struct BrowseView: View {
                 ChipRow {
                     ForEach(BrowseView.categories, id: \.0) { tag, label in Chip(title: label, selected: category == tag) { category = tag } }
                 }
-                if pick == nil { OpenNowToggle(isOn: $openOnly) }
-            } footer: { if pick == nil { OpenNowFooter(on: openOnly, closed: closedNow) } }
+            }
             if search.isEmpty && chain == "all" && category == "all" {
                 let pinned = store.pinnedFoods
                 if !pinned.isEmpty {
@@ -250,8 +230,7 @@ struct BrowseView: View {
                 }
             }
         }.searchable(text: $search, prompt: "Food or restaurant")
-            .task(id: Key(request: request, custom: store.data.foods, catalog: store.catalog.revision ?? String(store.catalog.foods.count), closed: Set(closedNow.keys))) { await update(request) }
-            .task(id: location.location?.timestamp) { if pick == nil { await OpenNow.load(location: location) } }
+            .task(id: Key(request: request, custom: store.data.foods, catalog: store.catalog.revision ?? String(store.catalog.foods.count))) { await update(request) }
             .searchSuggestions {
                 if search.isEmpty && !recent.isEmpty {
                     Section("Recent searches") {
@@ -265,28 +244,5 @@ struct BrowseView: View {
             .onSubmit(of: .search) { recent = RecentSearches.adding(search, to: recent) }
             .navigationTitle(pick == nil ? "Best choices" : "Choose a food")
             .toolbar { if pick == nil { NavigationLink { SourcesView() } label: { Image(systemName: "info.circle") }.accessibilityLabel("Menu sources") } }
-    }
-}
-
-/// The "Open now only" switch on Find and Best choices.
-struct OpenNowToggle: View {
-    @Binding var isOn: Bool
-    var body: some View {
-        Toggle(isOn: $isOn) { Label("Open now only", systemImage: "clock") }.font(.roboto(.subheadline))
-    }
-}
-
-/// What "Open now only" is doing: which restaurants it's hiding, or why it can't tell yet.
-struct OpenNowFooter: View {
-    @Environment(LocationStore.self) private var location
-    @Environment(AppStore.self) private var store
-    let on: Bool
-    let closed: [String: Date?]
-    var body: some View {
-        if on {
-            if !location.isAuthorized { Text("Allow location on the Map tab to hide restaurants that are closed near you.") }
-            else if !closed.isEmpty { Text("Hidden while closed near you: \(OpenNow.describe(closed, names: store.chainName)). Restaurants without listed hours are always shown.") }
-            else { Text("Restaurants without listed hours are always shown.") }
-        }
     }
 }

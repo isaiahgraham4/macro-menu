@@ -1,6 +1,6 @@
 # Leanr privacy policy
 
-Effective 5 October 2026
+Effective 6 October 2026
 
 Leanr is made by Isaiah Graham, an independent developer in Victoria, Australia ("I", "me"). This policy explains what happens to your information when you use Leanr. You can reach me at {{CONTACT}}.
 
@@ -8,7 +8,7 @@ Leanr is made by Isaiah Graham, an independent developer in Victoria, Australia 
 
 - Leanr has no account, no ads, no analytics and no tracking. It doesn't use cookies.
 - Everything you enter stays on your device and, if you choose, in your own iCloud and Apple Health. I never receive it.
-- A few features ask other services for information. They are told only what they need: a barcode number, a search, or the positions of restaurants.
+- A few features ask other services for information. They are told only what they need: a barcode number, or your position for an Apple Maps search.
 
 ## What Leanr keeps on your device
 
@@ -33,12 +33,9 @@ The camera is used to scan barcodes and read nutrition labels. This happens on y
 
 ## Location
 
-If you allow it, Leanr uses your location only while you're using the app, to find nearby restaurants.
+If you allow it, Leanr uses your location only while you're using the app, to find nearby restaurants. Apple Maps receives your position to search for them, and opening hours are shown in Apple Maps' own place card. Apple's privacy policy applies to both.
 
-- Apple Maps receives your position to search for nearby restaurants (Apple's privacy policy applies).
-- To show opening hours, Leanr sends the positions of nearby restaurants to the OpenStreetMap Overpass API, run by FOSSGIS e.V. in Germany. Your own position isn't sent, but the restaurants' positions show roughly where you are. Answers are kept on your device for up to a week.
-
-You can turn location off at any time in the Settings app. Leanr works without it.
+You can turn location off at any time in the Settings app. Leanr works without it, and you can search for a suburb or address instead.
 
 ## Barcode lookups
 
@@ -64,9 +61,14 @@ Leanr isn't designed for children under 13, and the target estimate is only for 
 
 Because I don't hold any of your data, there's nothing for me to delete on my side. If you have a question, contact me and I'll answer within 30 days.
 
-## Overseas services
+## Other services
 
-Apple (United States and elsewhere), Open Food Facts (France) and the OpenStreetMap Overpass API (Germany) receive the information described above when you use those features.
+Leanr doesn't sell or share your personal data, and it uses no analytics, advertising or tracking services. The only outside services it contacts are:
+
+- **Apple** (United States and elsewhere): Maps, iCloud and Health, which are part of your device and your Apple Account and are covered by Apple's privacy policy.
+- **Open Food Facts** (France): receives only a product's barcode number, which isn't personal information.
+
+Any service that receives data from Leanr must protect it at least as well as this policy does. If that ever changes, this policy will be updated before the app sends anything new.
 
 ## Security
 

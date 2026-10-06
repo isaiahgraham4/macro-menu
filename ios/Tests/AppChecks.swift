@@ -446,73 +446,11 @@ import Foundation
         assert(undoStore.change { $0.weights = [WeightEntry(date: day0, kg: 80)] } && undoStore.undo == nil)
         var other = AppData(); other.weights = [WeightEntry(date: day(1), kg: 79)]
         assert(AppStore.merged(undoStore.data, other).weightLog.count == 2)
-        // Opening hours: open/closed now, the next change, and the week Monday first.
-        var melb = Calendar(identifier: .gregorian); melb.timeZone = TimeZone(identifier: "Australia/Melbourne")!
-        func at(_ day: Int, _ hour: Int, _ minute: Int = 0) -> Date { melb.date(from: DateComponents(year: 2026, month: 10, day: day, hour: hour, minute: minute))! }
-        // 11 Oct 2026 is a Sunday (a week after daylight saving starts). Daily 8 am to 10 pm, in Melbourne (+11:00 in summer).
-        let daily = PlaceHours(periods: (0..<7).map { .init(openDay: $0, openMinute: 480, closeDay: $0, closeMinute: 1320) }, utcOffsetMinutes: 660)
-        assert(daily.status(at: at(11, 12, 19)) == .open(closes: at(11, 22)))
-        assert(daily.status(at: at(11, 0, 19)) == .closed(opens: at(11, 8)))
-        assert(daily.status(at: at(11, 22, 30)) == .closed(opens: at(12, 8)))
-        assert(daily.summary(at: at(11, 22, 30)).hasPrefix("Closed · opens 8:00") && daily.summary(at: at(11, 22, 30)).hasSuffix("tomorrow"))
-        assert(daily.summary(at: at(11, 12)).hasPrefix("Open · closes 10:00"))
-        assert(daily.week.count == 7 && daily.week[0].day == "Monday" && daily.week[6].day == "Sunday" && daily.week[0].hours.contains("–"))
-        // Open past midnight: Saturday 10 am to 2 am Sunday, wrapping the end of the week. Closed Sunday otherwise.
-        let late = PlaceHours(periods: [.init(openDay: 6, openMinute: 600, closeDay: 0, closeMinute: 120)], utcOffsetMinutes: 660)
-        assert(late.status(at: at(11, 1, 30)) == .open(closes: at(11, 2)), "still Saturday night's opening at 1:30 am Sunday")
-        assert(late.status(at: at(11, 3)) == .closed(opens: at(17, 10)))
-        assert(late.week.filter { $0.hours == "Closed" }.count == 6 && late.summary(at: at(11, 3)).hasPrefix("Closed · opens Sat"))
-        // Open around the clock, either as one period with no close or as back-to-back days.
-        assert(PlaceHours(periods: [.init(openDay: 0, openMinute: 0, closeDay: nil, closeMinute: nil)], utcOffsetMinutes: 660).summary(at: at(11, 3)) == "Open 24 hours")
-        let chained = PlaceHours(periods: (0..<7).map { .init(openDay: $0, openMinute: 0, closeDay: ($0 + 1) % 7, closeMinute: 0) }, utcOffsetMinutes: 660)
-        assert(chained.status(at: at(11, 3)) == .alwaysOpen && chained.week.allSatisfy { $0.hours == "Open 24 hours" })
-        // Across the daylight-saving change (2 am, 4 Oct 2026 in Melbourne) an 8 am opening is still 8 am on the clock.
-        var dstDaily = daily; dstDaily.zone = melb.timeZone
-        assert(dstDaily.status(at: at(4, 0, 26)) == .closed(opens: at(4, 8)))
-        assert(dstDaily.status(at: at(4, 12)) == .open(closes: at(4, 22)))
-
-        // OpenStreetMap opening_hours text: day ranges and lists, past midnight, additive rules, holidays skipped.
-        let osm = PlaceHours.parseOSM("Mo-We,Su 09:00-23:00; Th-Sa 10:00-02:00; PH off")!
-        assert(osm.status(at: at(11, 12)) == .open(closes: at(11, 23)), "Sunday is in Mo-We,Su")
-        assert(osm.status(at: at(11, 1, 30)) == .open(closes: at(11, 2)), "Saturday's late close runs into Sunday")
-        assert(osm.status(at: at(15, 23, 30)) == .open(closes: at(16, 2)) && osm.week[3].hours.contains("–"))
-        let lateFriday = PlaceHours.parseOSM("Mo-Su 11:00-23:00, Fr 11:00-24:00")!
-        assert(lateFriday.status(at: at(16, 23, 30)) == .open(closes: at(17, 0)) && lateFriday.status(at: at(15, 23, 30)) == .closed(opens: at(16, 11)))
-        assert(PlaceHours.parseOSM("24/7")!.isAlwaysOpen && PlaceHours.parseOSM("Mo-Su 00:00-00:00")!.isAlwaysOpen && PlaceHours.parseOSM("Mo-Su 00:00-24:00")!.isAlwaysOpen)
-        let splitDay = PlaceHours.parseOSM("Mo-Fr 06:00-24:00; Sa 00:00-01:00,06:00-24:00; Su off")!
-        assert(splitDay.status(at: at(17, 3)) == .closed(opens: at(17, 6)) && splitDay.status(at: at(11, 12)) == .closed(opens: at(12, 6)))
-        assert(PlaceHours.parseOSM("Mo-Fr 10:00-20:00; Dec 25 off") != nil, "date rules are skipped")
-        assert(PlaceHours.parseOSM("Mo-Th, Su 10:00-23:00; Fr, Sa 10:00-22:00")!.status(at: at(11, 22, 30)) == .open(closes: at(11, 23)), "spaced day lists")
-        assert(PlaceHours.parseOSM("PH,Mo-Su 00:00-24:00")!.isAlwaysOpen, "holidays inside a day list are ignored")
-        assert(PlaceHours.parseOSM("sunrise-sunset") == nil && PlaceHours.parseOSM("Mo-Fr 10:00+") == nil && PlaceHours.parseOSM("off") == nil
-               && PlaceHours.parseOSM("by appointment") == nil, "anything not understood gives no hours rather than wrong ones")
-        // The daily ceiling on OpenStreetMap requests holds all day and resets the next.
-        var limit = DailyLimit()
-        for _ in 0..<3 { assert(limit.spend(at: at(11, 9), limit: 3)) }
-        assert(!limit.spend(at: at(11, 23), limit: 3) && limit.spend(at: at(12, 0, 1), limit: 3) && limit.used == 1)
-
-        // Picking the restaurant in an Overpass answer: the closest match by name or brand, within 120 m.
-        let overpass = try JSONDecoder().decode(OSMHours.Response.self, from: Data(#"""
-        {"elements":[
-          {"type":"node","lat":-37.81000,"lon":144.96300,"tags":{"name":"Hungry Jack's","opening_hours":"24/7"}},
-          {"type":"way","center":{"lat":-37.81030,"lon":144.96300},"tags":{"brand":"KFC","name":"KFC Swanston St","opening_hours":"Mo-Su 10:00-22:00"}},
-          {"type":"node","lat":-37.81005,"lon":144.96300,"tags":{"name":"KFC kiosk","opening_hours":"Mo-Su 11:00-21:00"}},
-          {"type":"node","lat":-37.82000,"lon":144.96300,"tags":{"name":"KFC far away","opening_hours":"Mo-Su 06:00-23:00"}}
-        ]}
-        """#.utf8))
-        assert(OSMHours.pick(overpass.elements, latitude: -37.81, longitude: 144.963, match: ["kfc"]) == "Mo-Su 11:00-21:00")
-        assert(OSMHours.pick(overpass.elements, latitude: -37.8103, longitude: 144.963, match: ["kfc"]) == "Mo-Su 10:00-22:00")
-        assert(OSMHours.pick(overpass.elements, latitude: -37.83, longitude: 144.963, match: ["kfc"]) == nil, "nothing within 120 m")
-        assert(OSMHours.pick(overpass.elements, latitude: -37.81, longitude: 144.963, match: ["subway"]) == nil)
-        assert(OSMHours.query([(-37.81, 144.963)]).contains(#"nwr(around:120,-37.81000,144.96300)["opening_hours"];"#))
-
-        // Delivery estimate: by distance, and never while the restaurant is closed.
-        let openNow = PlaceHours.Status.open(closes: Date().addingTimeInterval(3600))
-        assert(Delivery.estimate(metres: 1_200, status: openNow) == .likely(metres: 1_200))
-        assert(Delivery.estimate(metres: 1_200, status: nil) == .likely(metres: 1_200), "unknown hours don't block the estimate")
-        assert(Delivery.estimate(metres: 6_500, status: .alwaysOpen) == .maybe(metres: 6_500))
-        assert(Delivery.estimate(metres: 9_000, status: openNow) == .tooFar && Delivery.estimate(metres: nil, status: nil) == .tooFar)
-        assert(Delivery.estimate(metres: 1_200, status: .closed(opens: nil)) == .closed && !Delivery.closed.available && Delivery.maybe(metres: 6_000).available)
+        // Delivery estimate: by distance from the nearest restaurant of the chain.
+        assert(Delivery.estimate(metres: 1_200) == .likely(metres: 1_200))
+        assert(Delivery.estimate(metres: 6_500) == .maybe(metres: 6_500))
+        assert(Delivery.estimate(metres: 9_000) == .tooFar && Delivery.estimate(metres: nil) == .tooFar)
+        assert(!Delivery.tooFar.available && Delivery.maybe(metres: 6_000).available)
         assert(DeliveryApp.all.map(\.name) == ["Uber Eats", "DoorDash", "Menulog"])
         assert(DeliveryApp.all[0].search("Hungry Jack's")?.absoluteString == "https://www.ubereats.com/au/search?q=Hungry%20Jack's")
         assert(DeliveryApp.all[1].search("Hungry Jack's")?.absoluteString == "https://www.doordash.com/search/store/Hungry%20Jack's/")
@@ -625,6 +563,6 @@ import Foundation
         let reloadedOld = try JSONDecoder().decode(AppData.self, from: oldFormat)
         assert(reloadedOld.weights == nil && reloadedOld.isValid)
 
-        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, opening hours from OpenStreetMap, delivery, iCloud health rules, deleting all data, the policies and editing saved and logged meals and no prices (\(Date().timeIntervalSince(start).formatted())s).")
+        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, delivery, iCloud health rules, deleting all data, the policies and editing saved and logged meals and no prices (\(Date().timeIntervalSince(start).formatted())s).")
     }
 }

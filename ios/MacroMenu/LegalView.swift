@@ -83,9 +83,7 @@ struct AcknowledgementsView: View {
                 credit("Restaurant nutrition", "Each chain's published nutrition information. See Settings → Menu sources.")
                 credit("Product data", "Open Food Facts, available under the Open Database License (ODbL).",
                        link: "https://world.openfoodfacts.org/terms-of-use")
-                credit("Opening hours", "© OpenStreetMap contributors, available under the Open Database License (ODbL).",
-                       link: "https://www.openstreetmap.org/copyright")
-                credit("Maps", "Apple Maps.")
+                credit("Maps and opening hours", "Apple Maps.")
             } header: { Text("Data") }
             Section {
                 licence("Roboto", "Copyright 2011 Google Inc. Apache License, Version 2.0.", file: "Apache-2.0")

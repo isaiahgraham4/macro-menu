@@ -316,7 +316,7 @@ struct LogEditor: View {
                         Text(item.food.name).font(.roboto(.headline))
                         Text("\((item.food.cal * item.quantity).number) Cal · \((item.food.p * item.quantity).number) g protein")
                             .font(.roboto(.caption)).foregroundStyle(.secondary)
-                        NumberField(title: "Servings", value: $item.quantity, places: 2)
+                        NumberField(title: "Servings", value: $item.quantity, places: 2, spokenTitle: "Servings of \(item.food.name)")
                     }
                     .padding(.vertical, 2)
                 }
@@ -529,7 +529,7 @@ struct TargetCalculator: View {
                     LabeledContent("Fat", value: fat.number + " g")
                     Button("Use these targets") { apply(["cal":calories.rounded(),"p":protein.rounded(),"c":carbs.rounded(),"f":fat.rounded()]) }
                 } else { Text("Enter valid measurements and macro settings.") }
-                Text("Mifflin–St Jeor estimate for adults. Actual needs vary; review against your own progress.").font(.roboto(.caption)).foregroundStyle(.secondary)
+                Text("Mifflin–St Jeor estimate for adults. Actual needs vary; review against your own progress. Talk to a doctor or Accredited Practising Dietitian before making big changes to how you eat, especially if you're pregnant, have a medical condition or have had an eating disorder.").font(.roboto(.caption)).foregroundStyle(.secondary)
             }
         }.navigationTitle("Estimate targets").toolbar { Button("Cancel") { dismiss() } }
             .onAppear { if let last = points.last { weight = last.trend.tenth } }

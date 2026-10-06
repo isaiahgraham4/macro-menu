@@ -50,24 +50,13 @@ The app uses SwiftUI and requires no third-party packages or API keys.
 - Pinned foods: touch and hold a food (or use the pin on its details) to keep it
   at the top of the food chooser and the Today "+" menu. Up to 8; stored in
   `AppData.pinned` with a copy of the food, shown with current menu figures.
-- Opening hours (Map tab, nearest restaurant on orders, and suggested orders on Find): "Open · closes 10:00 pm" or
-  "Closed · opens 8:00 am" (orange within an hour of closing); tap for the week, today in bold. Hours come from
-  OpenStreetMap (`PlaceHoursStore.swift`; the `opening_hours` reader and status are in `PlaceHours.swift`), free with no
-  key or account. Restaurants on screen are looked up together in one Overpass API request, and answers are kept on the
-  phone for a week (three days when a restaurant has no hours mapped). Each phone sends at most 60 requests a day
-  (`DailyLimit`) and pauses five minutes after a failure, so a bug or an outage can't flood the free server. Apple doesn't let apps read hours, so restaurants
-  without mapped hours offer Apple's place card instead, and map pins always show Apple's callout with hours. In
-  Melbourne about 1 in 5 of these chains' restaurants have hours on OpenStreetMap; anyone can add them at
-  openstreetmap.org and the app picks them up within a week. The week view credits "© OpenStreetMap contributors", which
-  the ODbL licence requires.
-  Debug builds can show sample hours with `-debug.demoHours YES`.
-- Open now only (Find's suggested orders and Best choices, on by default): leaves out chains whose closest restaurant
-  is closed, says which ones in the footer, and offers "Show anyway" if every chosen restaurant is closed. Your own
-  foods are never hidden, and nothing is hidden when choosing a food to log. Unknown hours count as open
-  (`OpenNow` in `PlaceHoursStore.swift`).
-- Delivery (under the hours on the same rows): "Delivery likely" within 5 km, "Delivery may reach you" up to 8 km,
-  otherwise "Probably too far to deliver", and "Closed, so no delivery right now" when the hours say it's closed
-  (`Delivery.swift`). Distance is from your location, or the place searched on the Map tab. It's an estimate:
+- Opening hours (Map tab and the nearest restaurant on orders): an "Opening hours" button opens Apple Maps' place card,
+  which shows the hours and whether it's open now; map pins show Apple's callout too. Apple doesn't let apps read hours
+  themselves. Leanr's own hours lookups (OpenStreetMap's public Overpass server) and the "Open now only" filter were
+  removed on 6 Oct 2026: Overpass asks public apps not to rely on its free servers, and App Review Guideline 5.1.2
+  requires permission before location-derived data goes to a third party.
+- Delivery (under the hours button on the same rows): "Delivery likely" within 5 km, "Delivery may reach you" up to 8 km,
+  otherwise "Probably too far to deliver" (`Delivery.swift`). Distance is from your location, or the place searched on the Map tab. It's an estimate:
   delivery apps don't let other apps check an address. Tapping it lists Uber Eats, DoorDash, Menulog and the chain's
   own app to confirm and order.
 - Log again widget (Home Screen and Lock Screen): the usual meal for this time of

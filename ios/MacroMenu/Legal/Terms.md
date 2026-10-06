@@ -1,6 +1,6 @@
 # Leanr terms of use
 
-Effective 5 October 2026
+Effective 6 October 2026
 
 These terms apply when you use Leanr, an app made by Isaiah Graham, an independent developer in Victoria, Australia. Apple's standard Licensed Application End User License Agreement also applies. Contact me at {{CONTACT}}.
 
@@ -17,7 +17,7 @@ Leanr gives general nutrition information to help you choose and log food. It is
 
 ## Opening hours, distances and delivery
 
-Opening hours come from OpenStreetMap and may be missing or out of date. "Delivery likely" is an estimate from distance. The delivery app has the final say for your address.
+Opening hours are shown in Apple Maps' place card and come from Apple. "Delivery likely" is an estimate from distance. The delivery app has the final say for your address.
 
 ## Restaurants and trademarks
 

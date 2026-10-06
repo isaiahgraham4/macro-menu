@@ -219,7 +219,7 @@ struct HoursButton: View {
     }
 }
 
-/// The nearest restaurant of a chain, with whether it's open. Shown on suggested orders.
+/// The nearest restaurant of a chain, with its opening hours and delivery estimate. Shown on suggested orders.
 /// Nothing shows until location access is allowed; asking is left to the order's own page.
 struct NearestPlaceLine: View {
     @Environment(LocationStore.self) private var location
@@ -239,13 +239,8 @@ struct NearestPlaceLine: View {
     }
 }
 
-extension NearbyPlace {
-    /// Identifies this restaurant's opening hours in `PlaceHoursStore`.
-    var hoursKey: String { PlaceHoursStore.key(name: item.name ?? chain, latitude: coordinate.latitude, longitude: coordinate.longitude) }
-}
-
 /// Whether a restaurant is likely to deliver to you, as a menu of delivery apps to check and order in.
-/// Distance is from your location (or the place you searched on the map), and a closed restaurant doesn't deliver.
+/// Distance is from your location (or the place you searched on the map).
 struct DeliveryLine: View {
     @Environment(LocationStore.self) private var location
     @Environment(AppStore.self) private var store
@@ -253,126 +248,50 @@ struct DeliveryLine: View {
     let place: NearbyPlace
     var compact = false
     var body: some View {
-        TimelineView(.everyMinute) { context in
-            let status: PlaceHours.Status? = if case .loaded(let hours) = PlaceHoursStore.shared.entry(place.hoursKey) { hours.status(at: context.date) } else { nil }
-            let delivery = Delivery.estimate(metres: place.distance, status: status)
-            let name = store.chainName(place.chain)
-            Menu {
-                Section("The delivery app confirms it for your address") {
-                    ForEach(DeliveryApp.all) { app in
-                        Button(app.name, systemImage: "bag") { if let url = app.search(name) { openURL(url) } }
-                    }
-                    if let own = ChainPlace.all[place.chain] {
-                        Button("\(own.appName) app", systemImage: "arrow.up.forward.app") { Task { await location.openApp(own) } }
-                    }
+        let delivery = Delivery.estimate(metres: place.distance)
+        let name = store.chainName(place.chain)
+        Menu {
+            Section("The delivery app confirms it for your address") {
+                ForEach(DeliveryApp.all) { app in
+                    Button(app.name, systemImage: "bag") { if let url = app.search(name) { openURL(url) } }
                 }
-            } label: {
-                HStack(spacing: 6) {
-                    Image(systemName: "scooter")
-                    Text(delivery.text).foregroundStyle(colour(delivery))
-                    Image(systemName: "chevron.down").font(.caption2.weight(.semibold)).foregroundStyle(.secondary)
+                if let own = ChainPlace.all[place.chain] {
+                    Button("\(own.appName) app", systemImage: "arrow.up.forward.app") { Task { await location.openApp(own) } }
                 }
-                .font(.roboto(compact ? .caption : .subheadline, weight: .medium))
-                .contentShape(Rectangle())
             }
-            .buttonStyle(.plain)
-            .accessibilityLabel("\(delivery.text) from \(name), \(place.distanceText) away")
-            .accessibilityHint("Shows delivery apps to check and order in")
+        } label: {
+            HStack(spacing: 6) {
+                Image(systemName: "scooter")
+                Text(delivery.text).foregroundStyle(colour(delivery))
+                Image(systemName: "chevron.down").font(.caption2.weight(.semibold)).foregroundStyle(.secondary)
+            }
+            .font(.roboto(compact ? .caption : .subheadline, weight: .medium))
+            .contentShape(Rectangle())
         }
+        .buttonStyle(.plain)
+        .accessibilityLabel("\(delivery.text) from \(name), \(place.distanceText) away")
+        .accessibilityHint("Shows delivery apps to check and order in")
     }
 
     private func colour(_ delivery: Delivery) -> Color {
         switch delivery {
         case .likely: .green
         case .maybe: .orange
-        case .tooFar, .closed: .secondary
+        case .tooFar: .secondary
         }
     }
 }
 
-/// Whether a restaurant is open, from OpenStreetMap; tapping shows the week's times.
-/// Without hours (not mapped, or OpenStreetMap can't be reached), it offers Apple's place card instead.
+/// Opening hours for a restaurant, shown in Apple's place card (Apple doesn't let apps read hours themselves).
+/// Nothing about the restaurant or the user leaves the phone beyond Apple Maps.
 struct PlaceHoursView: View {
     let place: NearbyPlace
     var compact = false
-    @State private var expanded = false
     @State private var appleCard: MKMapItem?
-    private var hours: PlaceHoursStore { PlaceHoursStore.shared }
-    private var key: String { place.hoursKey }
     var body: some View {
-        Group {
-            switch hours.entry(key) {
-            case .loaded(let week): known(week)
-            case .loading:
-                HStack(spacing: 6) { ProgressView().controlSize(.mini); Text("Checking hours…") }
-                    .font(.roboto(compact ? .caption : .subheadline)).foregroundStyle(.secondary)
-            default:
-                HoursButton { appleCard = place.item }.font(.roboto(compact ? .caption : .subheadline, weight: compact ? .semibold : .regular))
-            }
-        }
-        .task(id: key) {
-            await hours.load(key: key, chain: place.chain, name: place.item.name ?? place.chain,
-                             latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
-        }
-        .mapItemDetailSheet(item: $appleCard)
-    }
-
-    private func known(_ week: PlaceHours) -> some View {
-        TimelineView(.everyMinute) { context in
-            let status = week.status(at: context.date)
-            VStack(alignment: .leading, spacing: 6) {
-                Button { withAnimation(.snappy) { expanded.toggle() } } label: {
-                    HStack(spacing: 6) {
-                        Image(systemName: "clock")
-                        Text(week.summary(at: context.date)).foregroundStyle(colour(status, now: context.date))
-                        Image(systemName: "chevron.down").font(.caption2.weight(.semibold)).rotationEffect(.degrees(expanded ? 180 : 0))
-                            .foregroundStyle(.secondary)
-                    }
-                    .font(.roboto(compact ? .caption : .subheadline, weight: .medium))
-                    .contentShape(Rectangle())
-                }
-                .buttonStyle(.plain)
-                .accessibilityLabel(week.summary(at: context.date))
-                .accessibilityHint(expanded ? "Hides opening hours" : "Shows opening hours for the week")
-                if expanded {
-                    let today = todayIndex(week, now: context.date)
-                    VStack(alignment: .leading, spacing: 3) {
-                        ForEach(Array(week.week.enumerated()), id: \.offset) { index, day in
-                            HStack {
-                                Text(day.day)
-                                Spacer()
-                                Text(day.hours).monospacedDigit()
-                            }
-                            .font(.roboto(.caption, weight: index == today ? .semibold : .regular))
-                            .foregroundStyle(index == today ? .primary : .secondary)
-                        }
-                        HStack {
-                            Link("Hours © OpenStreetMap contributors", destination: URL(string: "https://www.openstreetmap.org/copyright")!)
-                                .font(.roboto(.caption2)).foregroundStyle(.secondary)
-                            Spacer()
-                            Button("More in Apple Maps") { appleCard = place.item }.font(.roboto(.caption2, weight: .medium)).buttonStyle(.borderless)
-                        }.padding(.top, 2)
-                    }
-                    .padding(10)
-                    .background(.secondary.opacity(0.08), in: RoundedRectangle(cornerRadius: 10))
-                }
-            }
-        }
-    }
-
-    /// Green when open, orange when closing within the hour, red when closed.
-    private func colour(_ status: PlaceHours.Status, now: Date) -> Color {
-        switch status {
-        case .alwaysOpen: .green
-        case .open(let closes): closes.timeIntervalSince(now) <= 3600 ? .orange : .green
-        case .closed: .red
-        }
-    }
-
-    /// Today's row in the Monday-first week, by the restaurant's own clock.
-    private func todayIndex(_ week: PlaceHours, now: Date) -> Int {
-        var calendar = Calendar(identifier: .gregorian); calendar.timeZone = week.timeZone
-        return (calendar.component(.weekday, from: now) + 5) % 7
+        HoursButton { appleCard = place.item }
+            .font(.roboto(compact ? .caption : .subheadline, weight: compact ? .semibold : .regular))
+            .mapItemDetailSheet(item: $appleCard)
     }
 }
 

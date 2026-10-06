@@ -21,23 +21,21 @@ Before each new upload, raise the build number (`CURRENT_PROJECT_VERSION`) in th
 - Before release, set `AppInfo.contactEmail` in `MacroMenu/LegalView.swift`. Until then the policies point people to the
   App Support link on the App Store page, and the Contact row in Settings is hidden. Add the same address as the
   support URL or email in App Store Connect.
-- `MacroMenu/PrivacyInfo.xcprivacy` declares no tracking, and coarse location (app functionality, not linked) because
-  opening hours are looked up on OpenStreetMap's Overpass API using the positions of restaurants near you.
-  `LeanrWidgets/PrivacyInfo.xcprivacy` declares no collected data. The app's only required-reason API is UserDefaults,
+- `MacroMenu/PrivacyInfo.xcprivacy` and `LeanrWidgets/PrivacyInfo.xcprivacy` declare no tracking and no collected data. The app's only required-reason API is UserDefaults,
   for its own settings (reason `CA92.1`).
-- App Privacy answers in App Store Connect: Location → Coarse Location, used for App Functionality, not linked to the
-  user, not used for tracking. Nothing else is collected. Food logs, weights and targets stay on the device, in the
+- App Privacy answers in App Store Connect: **Data Not Collected**. Location is only used on the device and by Apple Maps,
+  which Apple doesn't count as collection by the developer. Food logs, weights and targets stay on the device, in the
   user's iCloud and (if connected) in Apple Health. Barcode lookups send only the barcode number to Open Food Facts.
 - Weights read from Apple Health never go to iCloud (App Review Guideline 5.1.3). Weights entered in Leanr do.
-- No third-party SDKs, analytics, ads, cookies or web views. Network requests go only to Apple, Open Food Facts and
-  the Overpass API, without cookies.
+- No third-party SDKs, analytics, ads, cookies or web views. Network requests go only to Apple and Open Food Facts
+  (barcode number only), without cookies.
 - Settings → Delete all my data erases the device data and the iCloud copy, can remove what Leanr saved to Health, and
   turns iCloud sync off.
 - Age rating: answer the questionnaire honestly (no objectionable content). The terms ask for 13+ and the target
   estimate is 18+.
 - Export compliance: `ITSAppUsesNonExemptEncryption` is `NO`. The app uses only standard HTTPS.
 - Fonts: Roboto (Apache 2.0) and Bebas Neue (SIL OFL 1.1). Their licence texts ship in `MacroMenu/Legal/` and show under
-  Settings → Acknowledgements, with Open Food Facts and OpenStreetMap credits (both ODbL).
+  Settings → Acknowledgements, with the Open Food Facts credit (ODbL).
 
 ## Screenshots
 
