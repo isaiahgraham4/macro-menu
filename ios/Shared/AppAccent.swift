@@ -3,6 +3,32 @@ import SwiftUI
 import UIKit
 #endif
 
+extension TargetStatus {
+    /// Green when the protein goal is reached, orange when carbs or fat are over. Darker in light mode so small text stays readable.
+    /// Nil when there's nothing to say, so the text keeps its usual colour.
+    #if canImport(UIKit)
+    var colour: Color? {
+        switch self {
+        case .none: nil
+        case .reached: Color(UIColor { $0.userInterfaceStyle == .dark
+            ? UIColor(red: 0x34 / 255, green: 0xD3 / 255, blue: 0x6B / 255, alpha: 1)
+            : UIColor(red: 0x0B / 255, green: 0x7A / 255, blue: 0x2E / 255, alpha: 1) })
+        case .over: Color(UIColor { $0.userInterfaceStyle == .dark
+            ? UIColor(red: 0xFF / 255, green: 0xA0 / 255, blue: 0x2E / 255, alpha: 1)
+            : UIColor(red: 0xB8 / 255, green: 0x54 / 255, blue: 0x00 / 255, alpha: 1) })
+        }
+    }
+    #else
+    var colour: Color? {
+        switch self {
+        case .none: nil
+        case .reached: Color(red: 0x0B / 255, green: 0x7A / 255, blue: 0x2E / 255)
+        case .over: Color(red: 0xB8 / 255, green: 0x54 / 255, blue: 0x00 / 255)
+        }
+    }
+    #endif
+}
+
 enum MacroColours {
     static let proteinKey = "macroColour.protein"
     static let carbsKey = "macroColour.carbs"

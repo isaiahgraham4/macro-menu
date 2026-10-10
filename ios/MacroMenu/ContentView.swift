@@ -13,6 +13,12 @@ final class Navigator {
     var todayStack = UUID()
     /// Set when the weekly review notification is tapped.
     var showWeeklyReview = false
+    /// A food or search opened from Siri or Visual Intelligence, shown over the current tab.
+    var opened: Opened?
+    enum Opened: Identifiable {
+        case food(Food), search(String)
+        var id: String { switch self { case .food(let food): "food:" + food.id; case .search(let text): "search:" + text } }
+    }
 
     func showOptions(at chain: String) {
         findChain = chain; findStack = UUID(); tab = .find
@@ -78,6 +84,18 @@ struct ContentView: View {
             LeanrOnboarding { onboardingCompleted = true }
                 .environment(store).environment(location).environment(health).tint(accent)
                 .preferredColorScheme(appearance.colorScheme)
+        }
+        .sheet(item: $nav.opened) { opened in
+            NavigationStack {
+                Group {
+                    switch opened {
+                    case .food(let food): FoodDetailView(food: food)
+                    case .search(let text): BrowseView(initialSearch: text)
+                    }
+                }
+                .toolbar { ToolbarItem(placement: .confirmationAction) { Button("Done") { nav.opened = nil } } }
+            }.tint(accent).font(.roboto()).environment(store).environment(location).environment(nav)
+                .environment(health).environment(cloud).preferredColorScheme(appearance.colorScheme)
         }
         .sheet(isPresented: $nav.showWeeklyReview) {
             NavigationStack {

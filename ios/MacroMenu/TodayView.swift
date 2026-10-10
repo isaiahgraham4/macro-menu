@@ -10,6 +10,7 @@ struct TodayView: View {
     @State private var quick = false
     @State private var barcode = false
     @State private var choosing = false
+    @State private var photo = false
     @State private var editing: LogEntry?
     @State private var editingTargets = false
     @State private var showingCalendar = false
@@ -101,6 +102,9 @@ struct TodayView: View {
                     ForEach(MealTime.allCases) { Text($0.title).tag($0) }
                 }
                 Button { barcode = true } label: { Label("Scan product barcode", systemImage: "barcode.viewfinder") }
+                if MealPhoto.canOffer {
+                    Button { photo = true } label: { Label("Photo of your meal", systemImage: "camera.viewfinder") }
+                }
             }
             ForEach(MealTime.allCases) { category in
                 let meals = entries.filter { $0.mealTime == category }
@@ -137,6 +141,7 @@ struct TodayView: View {
                                 }
                             }
                             Button("Scan barcode") { mealTime = category; barcode = true }
+                            if MealPhoto.canOffer { Button("Photo of your meal") { mealTime = category; photo = true } }
                             Button("Quick log / scan label") { mealTime = category; quick = true }
                             Button("Choose menu item") { mealTime = category; choosing = true }
                         } label: { Image(systemName: "plus.circle").font(.title3).padding(4) } primaryAction: {
@@ -144,7 +149,7 @@ struct TodayView: View {
                             mealTime = category; choosing = true
                         }
                             .accessibilityLabel("Add to \(category.title)")
-                            .accessibilityHint("Opens the menu. Hold for pinned foods, barcode and quick log.")
+                            .accessibilityHint("Opens the menu. Hold for pinned foods, barcode, photo and quick log.")
                     }
                 }
             }
@@ -184,6 +189,15 @@ struct TodayView: View {
             .sheet(isPresented: $barcode) {
                 BarcodeFoodFlow(savePortion: { store.log([$0], name: $0.food.name, date: date, mealTime: mealTime) }) {
                     store.log([Portion(food: $0)], name: $0.name, date: date, mealTime: mealTime)
+                }
+            }
+            .sheet(isPresented: $photo) {
+                NavigationStack {
+                    MealPhotoView(mealTime: mealTime) { portions, name in
+                        guard store.log(portions, name: name, date: date, mealTime: mealTime) else { return false }
+                        store.notice = "Logged to \(mealTime.title.lowercased())"
+                        return true
+                    }
                 }
             }
             .sheet(isPresented: $choosing) { NavigationStack { BrowseView(pick: { portion in

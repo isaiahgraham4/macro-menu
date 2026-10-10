@@ -94,6 +94,36 @@ struct WidgetNutrientTarget: Codable, Equatable, Identifiable, Sendable {
     var minimum: Bool
 }
 
+/// Where a day's total stands against a target, so widgets can colour the text.
+enum TargetStatus: Equatable, Sendable {
+    case none
+    /// Protein's goal is met.
+    case reached
+    /// Carbs or fat went past the target.
+    case over
+
+    /// Protein is a goal to reach, so it's `reached` at the target or beyond. Carbs and fat are limits, so they're `over` once past it.
+    /// Totals are compared as the widget shows them (to a tenth), so "150 / 150 g" never reads as under.
+    static func of(_ id: String, value: Double, target: Double?) -> TargetStatus {
+        guard let target, target > 0, value.isFinite else { return .none }
+        let shown = (value * 10).rounded() / 10, goal = (target * 10).rounded() / 10
+        switch id {
+        case "p": return shown >= goal ? .reached : .none
+        case "c", "f": return shown > goal ? .over : .none
+        default: return .none
+        }
+    }
+
+    /// Said after a macro by VoiceOver, since the colour alone isn't enough.
+    var spoken: String {
+        switch self {
+        case .none: ""
+        case .reached: " Goal reached."
+        case .over: " Over target."
+        }
+    }
+}
+
 /// One thing the Log again widget offers: your usual meal for a meal time, or a pinned food.
 struct WidgetQuickLog: Codable, Equatable, Identifiable, Sendable {
     /// "usual:breakfast" or "pin:<food ID>".

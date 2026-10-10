@@ -115,26 +115,29 @@ struct TargetsWidgetView: View {
     private func nutrientRow(_ target: WidgetNutrientTarget, compact: Bool) -> some View {
         let value = entry.calories?.dailyNutrients?[key]?[target.id] ?? 0
         let incomplete = partial.contains(target.id)
+        // Green once the protein goal is met, orange once carbs or fat go past their target.
+        let status = TargetStatus.of(target.id, value: value, target: target.target)
         return VStack(alignment: .leading, spacing: compact ? 1 : 4) {
             if compact {
                 HStack(spacing: 3) {
-                    Text(target.name).font(.roboto(size: 9, weight: .semibold))
+                    Text(target.name).font(.roboto(size: 9, weight: .semibold)).foregroundStyle(status.colour ?? Color.primary)
                     Spacer(minLength: 0)
                     Text("\(number(value))\(incomplete ? "+" : "")/\(number(target.target)) \(target.unit)")
-                        .font(.roboto(size: 8)).monospacedDigit().foregroundStyle(.secondary)
+                        .font(.roboto(size: 8, weight: status == .none ? .regular : .bold)).monospacedDigit()
+                        .foregroundStyle(status.colour ?? Color.secondary)
                 }.lineLimit(1).minimumScaleFactor(0.6)
             } else {
             Text(target.name).font(.roboto(size: compact ? 10 : 12, weight: .semibold))
-                .lineLimit(1).minimumScaleFactor(0.75)
+                .lineLimit(1).minimumScaleFactor(0.75).foregroundStyle(status.colour ?? Color.primary)
             Text("\(number(value))\(incomplete ? "+" : "") / \(target.minimum ? "≥" : "≤")\(number(target.target)) \(target.unit)")
-                .font(.roboto(size: compact ? 9 : 11)).monospacedDigit()
-                .lineLimit(1).minimumScaleFactor(0.6).foregroundStyle(.secondary)
+                .font(.roboto(size: compact ? 9 : 11, weight: status == .none ? .regular : .bold)).monospacedDigit()
+                .lineLimit(1).minimumScaleFactor(0.6).foregroundStyle(status.colour ?? Color.secondary)
             }
             ProgressView(value: min(1, max(0, value / target.target)))
                 .tint(["p", "c", "f"].contains(target.id) ? MacroColours.colour(target.id, choices: entry.calories?.macroColours ?? [:]) : accent)
         }
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("\(target.name): \(number(value)) \(target.unit)\(incomplete ? ", partial total" : ""). Target \(target.minimum ? "at least" : "at most") \(number(target.target)) \(target.unit).")
+        .accessibilityLabel("\(target.name): \(number(value)) \(target.unit)\(incomplete ? ", partial total" : ""). Target \(target.minimum ? "at least" : "at most") \(number(target.target)) \(target.unit).\(status.spoken)")
     }
 
     private func number(_ value: Double) -> String {

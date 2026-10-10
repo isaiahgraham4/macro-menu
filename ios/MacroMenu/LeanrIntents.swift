@@ -1,4 +1,7 @@
 import AppIntents
+#if canImport(VisualIntelligence)
+import VisualIntelligence
+#endif
 
 enum MealTimeOption: String, AppEnum {
     case breakfast, lunch, dinner, snacks
@@ -78,6 +81,96 @@ struct WhatFitsIntent: AppIntent {
     }
 }
 
+/// A food Leanr knows: a menu item, an everyday food or one of yours. Siri and Visual Intelligence show its macros.
+struct FoodEntity: AppEntity {
+    static let typeDisplayRepresentation: TypeDisplayRepresentation = "Food"
+    static let defaultQuery = FoodQuery()
+    let id: String
+    let name: String
+    let detail: String
+    var displayRepresentation: DisplayRepresentation {
+        DisplayRepresentation(title: "\(name)", subtitle: "\(detail)", image: .init(systemName: "fork.knife"))
+    }
+    @MainActor init(_ food: Food, store: AppStore) {
+        id = food.id; name = food.name
+        detail = "\(food.cal.rounded().number) Cal · \(food.p.number) g protein · \(store.chainName(food.chain))\(food.serve.isEmpty ? "" : " · " + food.serve)"
+    }
+    @MainActor static func food(_ id: String) -> Food? { AppServices.store.foods.first { $0.id == id } }
+}
+
+struct FoodQuery: EntityStringQuery {
+    func entities(for identifiers: [String]) async throws -> [FoodEntity] {
+        await MainActor.run {
+            let store = AppServices.store
+            return identifiers.compactMap { id in FoodEntity.food(id).map { FoodEntity($0, store: store) } }
+        }
+    }
+    func suggestedEntities() async throws -> [FoodEntity] {
+        await MainActor.run {
+            let store = AppServices.store
+            let pinned = store.pinnedFoods, recent = QuickLog.recentFoods(logs: store.data.logs)
+            return (pinned + recent.filter { food in !pinned.contains { $0.id == food.id } }).prefix(12).map { FoodEntity($0, store: store) }
+        }
+    }
+    func entities(matching string: String) async throws -> [FoodEntity] {
+        await MainActor.run {
+            let store = AppServices.store
+            let names = Dictionary(store.catalog.chains.map { ($0.id, $0.name) }) { a, _ in a }.merging([Food.everyday: store.chainName(Food.everyday)]) { a, _ in a }
+            return FoodSearch.browse(store.foods, chainNames: names, request: .init(search: string)).prefix(10).map { FoodEntity($0, store: store) }
+        }
+    }
+}
+
+/// Opens a food in Leanr, from Siri or a Visual Intelligence result.
+struct OpenFoodIntent: OpenIntent {
+    static let title: LocalizedStringResource = "Open Food"
+    @Parameter(title: "Food", requestValueDialog: "Which food?") var target: FoodEntity
+    @MainActor func perform() async throws -> some IntentResult {
+        AppServices.start()
+        if let food = FoodEntity.food(target.id) { AppServices.nav.opened = .food(food) }
+        return .result()
+    }
+}
+
+/// "Look up a food in Leanr": its calories and macros, from Leanr's own figures.
+struct FoodMacrosIntent: AppIntent {
+    static let title: LocalizedStringResource = "Look Up a Food"
+    static let description = IntentDescription("Says the calories, protein, carbs and fat in a food from Leanr's menus, everyday foods or your own.")
+    @Parameter(title: "Food", requestValueDialog: "Which food?") var food: FoodEntity
+    @MainActor func perform() async throws -> some IntentResult & ProvidesDialog {
+        AppServices.start()
+        guard let item = FoodEntity.food(food.id) else { return .result(dialog: "Leanr couldn't find that food.") }
+        return .result(dialog: "\(Assistant.macrosAnswer(item, place: AppServices.store.chainName(item.chain)))")
+    }
+}
+
+#if canImport(VisualIntelligence)
+/// Visual Intelligence: point the camera at food, or take a screenshot of it, and Leanr shows the matching foods and their macros.
+/// Apple names what's in view on the device; Leanr only searches its own data, and keeps nothing.
+@available(iOS 26.0, *)
+struct FoodVisualSearch: IntentValueQuery {
+    func values(for input: SemanticContentDescriptor) async throws -> [FoodEntity] {
+        await MainActor.run {
+            let store = AppServices.store
+            let names = Dictionary(store.catalog.chains.map { ($0.id, $0.name) }) { a, _ in a }.merging([Food.everyday: store.chainName(Food.everyday)]) { a, _ in a }
+            return Assistant.visualMatches(labels: input.labels, foods: store.foods, chainNames: names).map { FoodEntity($0, store: store) }
+        }
+    }
+}
+
+/// "More results" from Visual Intelligence: opens Leanr's food search for what's in view.
+@available(iOS 26.0, *)
+@AppIntent(schema: .visualIntelligence.semanticContentSearch)
+struct SearchFoodsInViewIntent: AppIntent {
+    var semanticContent: SemanticContentDescriptor
+    @MainActor func perform() async throws -> some IntentResult {
+        AppServices.start()
+        AppServices.nav.opened = .search(Assistant.visualSearchText(semanticContent.labels))
+        return .result()
+    }
+}
+#endif
+
 struct LeanrShortcuts: AppShortcutsProvider {
     static var appShortcuts: [AppShortcut] {
         AppShortcut(intent: LogUsualMealIntent(), phrases: [
@@ -90,5 +183,10 @@ struct LeanrShortcuts: AppShortcutsProvider {
             "What can I get at \(\.$restaurant) with \(.applicationName)",
             "What fits in \(.applicationName)"
         ], shortTitle: "What Fits", systemImageName: "fork.knife")
+        AppShortcut(intent: FoodMacrosIntent(), phrases: [
+            "Look up a food in \(.applicationName)",
+            "How much protein is in \(\.$food) in \(.applicationName)",
+            "How many calories are in \(\.$food) in \(.applicationName)"
+        ], shortTitle: "Look Up a Food", systemImageName: "magnifyingglass")
     }
 }

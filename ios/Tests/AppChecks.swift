@@ -611,12 +611,39 @@ import Foundation
         assert(Set(searched.map(\.name)) == ["Chicken breast, raw", "Chicken breast, cooked"])
         assert(MealSwaps.options(for: Portion(food: breast), foods: everydayStore.foods).isEmpty)
         assert(FoodSearch.browse(everydayStore.foods, chainNames: [:], request: .init(search: "banana")).first?.name == "Banana")
+
+        // Photos and Visual Intelligence: what's seen is matched to Leanr's own foods, exactly, everyday foods first.
+        let photoNames = Dictionary(everydayStore.catalog.chains.map { ($0.id, $0.name) }) { a, _ in a }.merging([Food.everyday: "Everyday foods"]) { a, _ in a }
+        func seen(_ name: String, _ others: [String] = [], brand: String? = nil) -> [String] {
+            MealPhoto.matches(for: SeenFood(name: name, alternatives: others, brand: brand, count: 1), in: everydayStore.foods, chainNames: photoNames).map(\.name)
+        }
+        assert(seen("banana").first == "Banana")
+        assert(seen("rice").prefix(2).allSatisfy { $0.hasSuffix("rice, cooked") })
+        assert(seen("chicken leg", ["chicken drumstick"]) == ["Chicken drumstick, cooked"])
+        assert(seen("chair").isEmpty && seen("bananna").isEmpty)
+        assert(seen("Big Mac", brand: "McDonald's").first == "Big Mac" && seen("fries", brand: "macca's").allSatisfy { $0.contains("Fries") })
+        let visual = Assistant.visualMatches(labels: ["Food", "Fruit", "Banana"], foods: everydayStore.foods, chainNames: photoNames)
+        assert(visual.first?.name == "Banana" && Set(visual.map(\.id)).count == visual.count && visual.count <= 10)
+        assert(Assistant.visualSearchText(["Food", "Banana"]) == "Banana" && Assistant.visualSearchText(["Food"]) == "Food")
+        assert(Assistant.macrosAnswer(banana, place: "Everyday foods") == "Banana (1 medium (118 g)) from Everyday foods has 105 Cal, 1.3 g protein, 27 g carbs and 0.4 g fat.")
         assert(FoodSearch.startsWith("Chicken breast, raw", ["chicken", "bre"]) && !FoodSearch.startsWith("Raw chicken", ["chicken"]))
+
+        // Widget text: protein turns green at its goal, carbs and fat turn orange once over their target.
+        assert(TargetStatus.of("p", value: 149.9, target: 150) == .none && TargetStatus.of("p", value: 150, target: 150) == .reached)
+        assert(TargetStatus.of("p", value: 149.96, target: 150) == .reached, "shown as 150, so it's reached")
+        assert(TargetStatus.of("p", value: 220, target: 150) == .reached)
+        assert(TargetStatus.of("c", value: 250, target: 250) == .none && TargetStatus.of("c", value: 250.04, target: 250) == .none)
+        assert(TargetStatus.of("c", value: 251, target: 250) == .over && TargetStatus.of("f", value: 70.5, target: 70) == .over)
+        assert(TargetStatus.of("f", value: 10, target: 70) == .none && TargetStatus.of("p", value: 0, target: 150) == .none)
+        assert(TargetStatus.of("p", value: 200, target: nil) == .none && TargetStatus.of("p", value: 200, target: 0) == .none)
+        assert(TargetStatus.of("fibre", value: 99, target: 30) == .none && TargetStatus.of("sodium", value: 5000, target: 2000) == .none)
+        assert(TargetStatus.none.colour == nil && TargetStatus.reached.colour != nil && TargetStatus.over.colour != nil)
+        assert(TargetStatus.reached.spoken.contains("reached") && TargetStatus.over.spoken.contains("Over") && TargetStatus.none.spoken.isEmpty)
 
         let oldFormat = try JSONEncoder().encode(AppData())
         let reloadedOld = try JSONDecoder().decode(AppData.self, from: oldFormat)
         assert(reloadedOld.weights == nil && reloadedOld.isValid)
 
-        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, delivery, iCloud health rules, deleting all data, the policies, everyday foods, customised orders and editing saved and logged meals and no prices (\(Date().timeIntervalSince(start).formatted())s).")
+        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, delivery, iCloud health rules, deleting all data, the policies, everyday foods, customised orders, photo and Visual Intelligence matching, widget goal colours and editing saved and logged meals and no prices (\(Date().timeIntervalSince(start).formatted())s).")
     }
 }

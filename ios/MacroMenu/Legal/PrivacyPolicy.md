@@ -1,6 +1,6 @@
 # Leanr privacy policy
 
-Effective 10 October 2026
+Effective 11 October 2026
 
 Leanr is made by Isaiah Graham, an independent developer in Victoria, Australia ("I", "me"). This policy explains what happens to your information when you use Leanr. You can reach me at {{CONTACT}}.
 
@@ -29,7 +29,11 @@ Health information is never used for advertising or marketing, never sold, and n
 
 ## Camera
 
-The camera is used to scan barcodes and read nutrition labels. This happens on your device. Images aren't saved or sent anywhere.
+The camera is used to scan barcodes, read nutrition labels and, on iPhones with Apple Intelligence, recognise the foods in a photo of your meal. This happens on your device, using Apple's on-device model for meal photos. Photos aren't saved or sent anywhere, and you can also choose a photo from your library instead; Leanr only sees the one you pick.
+
+## Siri and Visual Intelligence
+
+You can ask Siri to look up a food or log a meal in Leanr. If you use Visual Intelligence (pointing your camera at food, or a screenshot), Apple's system tells Leanr what it sees on your device so Leanr can show matching foods from its own lists. Leanr doesn't keep what it's given, and doesn't send it anywhere. Apple's privacy policy covers Siri and Visual Intelligence themselves.
 
 ## Location
 

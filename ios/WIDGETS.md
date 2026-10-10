@@ -10,6 +10,8 @@ All existing Calories left widget sizes are free and must remain available witho
 
 The app and widget use the same `Shared/AppAccent.swift` palette. Changing the app colour publishes the resolved accent alongside calorie totals and requests a widget refresh. Older snapshots without a colour fall back to the standard green. System-rendered Lock Screen and tinted Home Screen appearances may override custom colours.
 
+In the "Calories & macros" and "All targets" widgets, a protein row turns green once the day's protein reaches its target, and carbs and fat turn orange once they go past theirs. Only the text changes; the bars keep your chosen macro colours. The rule is `TargetStatus.of` in `Shared/WidgetCalories.swift` (compared as shown, to a tenth of a gram, so "150 / 150 g" counts as reached), and VoiceOver adds "Goal reached" or "Over target". Other nutrient targets keep their normal colour.
+
 Open Leanr once after installing. On Home Screen, long-press a blank area, choose Edit → Add Widget, search Leanr, then choose Calories left. On Lock Screen, long-press, choose Customise → Lock Screen, then tap the widget area (or the date row for the inline widget).
 
 The app atomically publishes only the active calorie target and daily calorie totals to the App Group after successful saves. Unlogged meal tray items are excluded. WidgetKit is asked to reload only when these values change. It controls when updates become visible; refreshes aren't guaranteed to be immediate. The extension schedules midnight entries for seven days and requests a new timeline at the next local midnight. Past goal snapshots are not used for today's target, matching TodayView.

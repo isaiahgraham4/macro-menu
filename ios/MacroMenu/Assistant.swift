@@ -31,6 +31,38 @@ enum Assistant {
     }
 
     /// A spoken and shown answer to "What fits at …?".
+    /// "A Banana (1 medium, 118 g) has 105 Cal, 1.3 g protein, 27 g carbs and 0.4 g fat."
+    static func macrosAnswer(_ food: Food, place: String) -> String {
+        var parts = ["\(food.cal.rounded().number) Cal", "\(food.p.number) g protein"]
+        if let c = food.c { parts.append("\(c.number) g carbs") }
+        if let f = food.f { parts.append("\(f.number) g fat") }
+        let list = parts.count > 1 ? parts.dropLast().joined(separator: ", ") + " and " + parts.last! : parts[0]
+        let serve = food.serve.isEmpty ? "" : " (\(food.serve))"
+        return "\(food.name)\(serve) from \(place) has \(list)."
+    }
+
+    /// Words Visual Intelligence gives for nearly everything, which would match far too much.
+    static let vagueLabels: Set<String> = ["food", "foods", "dish", "meal", "cuisine", "ingredient", "produce", "snack", "fast food",
+        "recipe", "plate", "tableware", "dinnerware", "drink", "beverage", "fruit", "vegetable", "meat", "dessert", "baked goods"]
+
+    /// Leanr foods for what Visual Intelligence sees, best label first, without repeats.
+    static func visualMatches(labels: [String], foods: [Food], chainNames: [String: String], limit: Int = 10) -> [Food] {
+        var results: [Food] = []
+        for label in labels where !vagueLabels.contains(label.lowercased()) {
+            for food in MealPhoto.matches(for: SeenFood(name: label, count: 1), in: foods, chainNames: chainNames, limit: 6)
+            where !results.contains(where: { $0.id == food.id }) {
+                results.append(food)
+            }
+            if results.count >= limit { break }
+        }
+        return Array(results.prefix(limit))
+    }
+
+    /// What to search Leanr for from Visual Intelligence's labels: the first specific one.
+    static func visualSearchText(_ labels: [String]) -> String {
+        labels.first { !vagueLabels.contains($0.lowercased()) } ?? labels.first ?? ""
+    }
+
     static func fitsAnswer(restaurant: String, query: FindQuery?, matches: [MealMatch], caloriesLeft: Double?) -> String {
         guard let query else {
             let used = caloriesLeft.map { " You're \(abs($0).rounded().number) Cal \($0 < 0 ? "over" : "under") today's target." } ?? ""

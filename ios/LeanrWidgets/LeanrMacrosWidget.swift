@@ -72,12 +72,15 @@ struct MacrosWidgetView: View {
         let partial = entry.calories?.dailyPartialNutrients?[key]?.contains(id) == true
         let targetText = target.map { number($0) } ?? "—"
         let progress = target.map { min(1, max(0, value / $0)) } ?? 0
+        // Green once the protein goal is met, orange once carbs or fat go past their target.
+        let status = TargetStatus.of(id, value: value, target: target)
         return VStack(spacing: 5) {
             HStack(spacing: 4) {
-                Text(name).foregroundStyle(.secondary)
+                Text(name).foregroundStyle(status.colour ?? Color.secondary)
                 Spacer(minLength: 0)
                 Text("\(number(value))\(partial ? "+" : "") / \(targetText) g").monospacedDigit()
-            }.font(.roboto(size: 11, weight: .medium)).lineLimit(1).minimumScaleFactor(0.65)
+                    .foregroundStyle(status.colour ?? Color.primary)
+            }.font(.roboto(size: 11, weight: status == .none ? .medium : .bold)).lineLimit(1).minimumScaleFactor(0.65)
             GeometryReader { geometry in
                 ZStack(alignment: .leading) {
                     Capsule().fill(.primary.opacity(0.16))
@@ -89,7 +92,7 @@ struct MacrosWidgetView: View {
             }.frame(height: 5)
         }
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("\(name): \(number(value)) grams\(partial ? ", partial total" : ""). \(target == nil ? "No target set" : "Target \(targetText) grams")")
+        .accessibilityLabel("\(name): \(number(value)) grams\(partial ? ", partial total" : ""). \(target == nil ? "No target set" : "Target \(targetText) grams.")\(status.spoken)")
     }
 
     private func number(_ value: Double) -> String {

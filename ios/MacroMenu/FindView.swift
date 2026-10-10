@@ -167,6 +167,8 @@ struct BrowseView: View {
     var quickAddLabel = "Log"
     /// Opens with the keyboard up, for the Search foods row.
     var startSearching = false
+    /// Words to search for straight away, such as a food seen in a photo.
+    var initialSearch = ""
     @State private var searchShown = false
     /// Bumped by the keyboard's Search key when nothing on a menu matches, to search packaged foods instead.
     @State private var searchPackaged = 0
@@ -268,7 +270,10 @@ struct BrowseView: View {
                 }
             }
         }.searchable(text: $search, isPresented: $searchShown, prompt: "Food, product or restaurant")
-            .onAppear { if startSearching && search.isEmpty { searchShown = true } }
+            .onAppear {
+                if search.isEmpty && !initialSearch.isEmpty { search = initialSearch }
+                if startSearching && search.isEmpty { searchShown = true }
+            }
             .task(id: Key(request: request, custom: store.data.foods, catalog: store.catalog.revision ?? String(store.catalog.foods.count))) { await update(request) }
             .searchSuggestions {
                 if search.isEmpty && !recent.isEmpty {
