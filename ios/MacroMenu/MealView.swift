@@ -32,7 +32,7 @@ struct MealView: View {
                             Text("× \(item.quantity.number)").font(.roboto(.subheadline, weight: .medium)).monospacedDigit()
                         }.fixedSize()
                       }
-                      if item.food.chain != "mine" {
+                      if item.food.chain != "mine" && !item.food.isEveryday {
                           NavigationLink {
                               MealSwapsView(portionID: item.id)
                           } label: {

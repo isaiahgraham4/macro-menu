@@ -50,6 +50,14 @@ struct Food: Codable, Identifiable, Hashable, Sendable {
     /// The product barcode, so scanning it again finds this food.
     var barcode: String?
     var isAnchor: Bool { chain == "mine" || cat == "main" || cat == "breakfast" }
+    /// Everyday foods such as bananas and chicken breast, from USDA FoodData Central. Searchable everywhere, but not a restaurant.
+    static let everyday = "generic"
+    var isEveryday: Bool { chain == Food.everyday }
+    /// The USDA page for an everyday food.
+    var everydaySource: URL? {
+        guard isEveryday, id.hasPrefix("usda-") else { return nil }
+        return URL(string: "https://fdc.nal.usda.gov/food-details/\(id.dropFirst(5))/nutrients")
+    }
     var isValid: Bool {
         !id.isEmpty && !name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty &&
         [kj, cal, p, c, f, price].compactMap { $0 }.allSatisfy { $0.isFinite && $0 >= 0 } &&
@@ -57,7 +65,8 @@ struct Food: Codable, Identifiable, Hashable, Sendable {
         (ingredients ?? []).allSatisfy(\.isValid) && (recipeYield.map { $0.isFinite && $0 > 0 } ?? true)
     }
     var mismatch: Bool {
-        guard let c, let f, cal > 40 else { return false }
+        // Everyday foods are lab averages; beer and wine get most of their energy from alcohol, which isn't a macro.
+        guard !isEveryday, let c, let f, cal > 40 else { return false }
         return abs(p * 4 + c * 4 + f * 9 - cal) > max(25, cal * 0.15)
     }
     var servingWeight: (Double, String)? {

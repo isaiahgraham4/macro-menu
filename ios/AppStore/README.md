@@ -35,7 +35,8 @@ Before each new upload, raise the build number (`CURRENT_PROJECT_VERSION`) in th
   estimate is 18+.
 - Export compliance: `ITSAppUsesNonExemptEncryption` is `NO`. The app uses only standard HTTPS.
 - Fonts: Roboto (Apache 2.0) and Bebas Neue (SIL OFL 1.1). Their licence texts ship in `MacroMenu/Legal/` and show under
-  Settings → Acknowledgements, with the Open Food Facts credit (ODbL).
+  Settings → Acknowledgements, with the Open Food Facts credit (ODbL) and the USDA FoodData Central credit (public
+  domain; `MacroMenu/GenericFoods.json` is built by `Scripts/generic-foods.py`).
 
 ## Screenshots
 

@@ -12,6 +12,7 @@ Leanr gives general nutrition information to help you choose and log food. It is
 
 - Restaurant figures come from each chain's own published nutrition information on the date shown in Settings → Menu sources. Chains change recipes, and figures vary between stores and serves.
 - Custom orders (with ingredients taken off) and recipes are estimates.
+- Everyday foods (such as bananas and chicken breast) are average figures from the U.S. Department of Agriculture's FoodData Central. Brands, varieties and cooking change them.
 - Scanned and searched packaged products come from Open Food Facts, which is edited by volunteers. Check them against the package.
 - Leanr isn't an allergen guide. Always check allergens with the restaurant.
 

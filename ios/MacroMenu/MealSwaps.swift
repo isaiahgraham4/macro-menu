@@ -2,7 +2,7 @@ import Foundation
 
 enum MealSwaps {
     static func options(for portion: Portion, foods: [Food]) -> [Food] {
-        guard portion.isValid, portion.food.chain != "mine" else { return [] }
+        guard portion.isValid, portion.food.chain != "mine", !portion.food.isEveryday else { return [] }
         return foods.filter {
             $0.isValid && $0.id != portion.food.id &&
             $0.chain == portion.food.chain && $0.cat == portion.food.cat &&

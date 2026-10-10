@@ -5,6 +5,8 @@ import Observation
 final class AppStore {
     private(set) var data = AppData()
     private(set) var catalog = MenuCatalog(chains: [], foods: [])
+    /// Everyday foods (bananas, chicken breast, rice...), bundled with the app.
+    private(set) var everyday: [Food] = []
     private(set) var loadError: String?
     var errorMessage: String?
     var notice: String?
@@ -18,8 +20,12 @@ final class AppStore {
     /// Called after data from another device is taken in.
     var synced: (() -> Void)?
     private let url: URL
-    init(url: URL = URL.applicationSupportDirectory.appending(path: "MacroMenu/app-state.json"), catalogURL: URL? = Bundle.main.url(forResource: "MenuData", withExtension: "json"), legacyURL: URL? = URL.applicationSupportDirectory.appending(path: "MacroMenu/foods.json")) {
+    init(url: URL = URL.applicationSupportDirectory.appending(path: "MacroMenu/app-state.json"), catalogURL: URL? = Bundle.main.url(forResource: "MenuData", withExtension: "json"), legacyURL: URL? = URL.applicationSupportDirectory.appending(path: "MacroMenu/foods.json"),
+         everydayURL: URL? = Bundle.main.url(forResource: "GenericFoods", withExtension: "json")) {
         self.url = url
+        if let everydayURL, let foods = try? JSONDecoder().decode([Food].self, from: Data(contentsOf: everydayURL)) {
+            everyday = foods.filter { $0.isValid && $0.isEveryday }
+        }
         if let catalogURL {
             do { catalog = try JSONDecoder().decode(MenuCatalog.self, from: Data(contentsOf: catalogURL)) }
             catch { errorMessage = "Could not load restaurant menu: \(error.localizedDescription)" }
@@ -36,7 +42,9 @@ final class AppStore {
         } catch { loadError = "Saved data could not be read. The original file has been preserved. \(error.localizedDescription)" }
         refreshWidgets()
     }
-    var foods: [Food] { catalog.foods + data.foods }
+    var foods: [Food] { catalog.foods + everyday + data.foods }
+    /// Foods that make up an order: restaurant menus and your own foods, without everyday foods.
+    var orderFoods: [Food] { catalog.foods + data.foods }
     /// Switches to a newer restaurant menu. Logged meals keep the figures they were logged with.
     func useMenu(_ menu: MenuCatalog) { catalog = menu }
     var goals: Goals { data.goalSets.first { $0.id == data.activeGoal } ?? data.goalSets[0] }
@@ -56,7 +64,10 @@ final class AppStore {
         guard let text = catalog.published else { return nil }
         return precise.date(from: text) ?? ISO8601DateFormatter().date(from: text)
     }
-    func chainName(_ id: String) -> String { catalog.chains.first { $0.id == id }?.name ?? "My foods" }
+    func chainName(_ id: String) -> String {
+        if id == Food.everyday { return "Everyday foods" }
+        return catalog.chains.first { $0.id == id }?.name ?? "My foods"
+    }
     private func write(_ updated: AppData) throws {
         guard loadError == nil, updated.isValid else { throw CocoaError(.fileReadCorruptFile) }
         let bytes = try JSONEncoder().encode(updated)

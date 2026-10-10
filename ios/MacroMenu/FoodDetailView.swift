@@ -91,7 +91,7 @@ struct FoodDetailView: View {
                 } else { NumberField(title: "Servings", value: $quantity, places: 2) }
                 Text("\(amount.number) × \(food.serve)").font(.roboto(.caption)).foregroundStyle(.secondary)
             }
-            if food.chain != "mine" {
+            if food.chain != "mine" && !food.isEveryday {
                 let removals = (food.modifiers ?? []).filter { $0.kind == "r" }
                 if !removals.isEmpty {
                     Section {
@@ -160,6 +160,7 @@ struct FoodDetailView: View {
             }
             if pick == nil { NearestPlaceSection(chain: food.chain) }
             if let chain = store.chain(food.chain), chain.id != "mine" { FoodSourceSection(chain: chain) }
+            if food.isEveryday { EverydaySourceSection(food: food) }
             if customized {
                 Section {
                     Button { saveCustom() } label: { Label("Save custom order to My foods", systemImage: "bookmark") }.disabled(!adjusted.isValid)
@@ -232,6 +233,19 @@ struct FoodDetailView: View {
     private func saveCustom() {
         var value = adjusted; value.id = UUID().uuidString; value.chain = "mine"
         if store.saveFood(value) { store.notice = "Custom order saved" }
+    }
+}
+
+/// Where an everyday food's figures come from.
+struct EverydaySourceSection: View {
+    let food: Food
+    var body: some View {
+        Section {
+            LabeledContent("From", value: "USDA FoodData Central")
+            if let url = food.everydaySource { Link("View this food at FoodData Central", destination: url) }
+        } header: { Text("Source") } footer: {
+            Text("Average figures for this kind of food from the U.S. Department of Agriculture (public domain). Brands, varieties and cooking change them, so use the label when there is one.")
+        }
     }
 }
 

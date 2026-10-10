@@ -23,7 +23,7 @@ struct FindView: View {
                             .background(.tint.opacity(0.12), in: RoundedRectangle(cornerRadius: 10))
                         VStack(alignment: .leading, spacing: 3) {
                             Text("Search foods").font(.roboto(.headline))
-                            Text("Macros for menu items, your foods and packaged products").font(.roboto(.caption)).foregroundStyle(.secondary)
+                            Text("Macros for menu items, everyday foods and packaged products").font(.roboto(.caption)).foregroundStyle(.secondary)
                         }
                         Spacer()
                     }
@@ -136,7 +136,7 @@ struct FindView: View {
     }
     private func search() async {
         searching = true
-        let foods = store.foods, request = query
+        let foods = store.orderFoods, request = query
         let work = Task.detached(priority: .userInitiated) { MealFinder.find(foods, query: request) }
         let result = await withTaskCancellationHandler { await work.value } onCancel: { work.cancel() }
         if !Task.isCancelled { matches = result; searching = false }
@@ -178,7 +178,7 @@ struct BrowseView: View {
         if let shown, shown.search != request.search, !request.search.isEmpty { try? await Task.sleep(for: .milliseconds(120)) }
         guard !Task.isCancelled else { return }
         let foods = store.foods
-        let names = Dictionary(store.catalog.chains.map { ($0.id, $0.name) }) { a, _ in a }
+        let names = Dictionary(store.catalog.chains.map { ($0.id, $0.name) }) { a, _ in a }.merging([Food.everyday: store.chainName(Food.everyday)]) { a, _ in a }
         let work = Task.detached(priority: .userInitiated) { FoodSearch.browse(foods, chainNames: names, request: request) }
         let result = await withTaskCancellationHandler { await work.value } onCancel: { work.cancel() }
         if !Task.isCancelled {
@@ -202,7 +202,8 @@ struct BrowseView: View {
             }
             Section {
                 ChipRow {
-                    Chip(title: "All restaurants", selected: chain == "all") { chain = "all" }
+                    Chip(title: "All", selected: chain == "all") { chain = "all" }
+                    Chip(title: "Everyday foods", selected: chain == Food.everyday) { chain = chain == Food.everyday ? "all" : Food.everyday }
                     ForEach(store.catalog.chains) { item in Chip(title: item.name, selected: chain == item.id) { chain = chain == item.id ? "all" : item.id } }
                 }
                 ChipRow {

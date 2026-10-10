@@ -83,6 +83,8 @@ struct AcknowledgementsView: View {
                 credit("Restaurant nutrition", "Each chain's published nutrition information. See Settings → Menu sources.")
                 credit("Product data", "Open Food Facts, available under the Open Database License (ODbL).",
                        link: "https://world.openfoodfacts.org/terms-of-use")
+                credit("Everyday foods", "U.S. Department of Agriculture, Agricultural Research Service. FoodData Central (SR Legacy), public domain.",
+                       link: "https://fdc.nal.usda.gov")
                 credit("Maps and opening hours", "Apple Maps.")
             } header: { Text("Data") }
             Section {

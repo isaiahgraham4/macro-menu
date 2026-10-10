@@ -559,10 +559,28 @@ import Foundation
         }
         for name in ["Apache-2.0.txt", "OFL-BebasNeue.txt"] { assert(FileManager.default.fileExists(atPath: legal.appending(path: name).path)) }
 
+        // Everyday foods (USDA) are searchable and loggable, but never treated as a restaurant.
+        let everydayURL = URL(fileURLWithPath: CommandLine.arguments[1]).deletingLastPathComponent().appending(path: "GenericFoods.json")
+        let everydayStore = AppStore(url: root.appending(path: "everyday.json"), catalogURL: catalogURL, legacyURL: nil, everydayURL: everydayURL)
+        let everyday = everydayStore.everyday
+        assert(everyday.count >= 150 && Set(everyday.map(\.id)).count == everyday.count && Set(everyday.map(\.name)).count == everyday.count)
+        assert(everyday.allSatisfy { $0.isValid && $0.isEveryday && $0.id.hasPrefix("usda-") && $0.servingWeight != nil && $0.cal <= 1000 })
+        let banana = everyday.first { $0.name == "Banana" }!, breast = everyday.first { $0.name == "Chicken breast, cooked" }!
+        assert(abs(banana.cal - 105) < 1 && banana.serve == "1 medium (118 g)" && abs(breast.p - 31) < 0.1 && breast.serve == "100 g")
+        assert(everyday.first { $0.name == "Beer" }?.mismatch == false)
+        assert(breast.everydaySource?.absoluteString == "https://fdc.nal.usda.gov/food-details/171477/nutrients")
+        assert(everydayStore.chainName(Food.everyday) == "Everyday foods")
+        assert(everydayStore.foods.contains { $0.id == banana.id } && !everydayStore.orderFoods.contains { $0.isEveryday })
+        let searched = FoodSearch.browse(everydayStore.foods, chainNames: [Food.everyday: "Everyday foods"], request: .init(search: "chicken breast", chain: Food.everyday))
+        assert(Set(searched.map(\.name)) == ["Chicken breast, raw", "Chicken breast, cooked"])
+        assert(MealSwaps.options(for: Portion(food: breast), foods: everydayStore.foods).isEmpty)
+        assert(FoodSearch.browse(everydayStore.foods, chainNames: [:], request: .init(search: "banana")).first?.name == "Banana")
+        assert(FoodSearch.startsWith("Chicken breast, raw", ["chicken", "bre"]) && !FoodSearch.startsWith("Raw chicken", ["chicken"]))
+
         let oldFormat = try JSONEncoder().encode(AppData())
         let reloadedOld = try JSONDecoder().decode(AppData.self, from: oldFormat)
         assert(reloadedOld.weights == nil && reloadedOld.isValid)
 
-        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, delivery, iCloud health rules, deleting all data, the policies and editing saved and logged meals and no prices (\(Date().timeIntervalSince(start).formatted())s).")
+        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, delivery, iCloud health rules, deleting all data, the policies, everyday foods and editing saved and logged meals and no prices (\(Date().timeIntervalSince(start).formatted())s).")
     }
 }

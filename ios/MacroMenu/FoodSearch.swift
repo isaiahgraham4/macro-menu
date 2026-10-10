@@ -107,7 +107,10 @@ enum FoodSearch {
                   request.category == "all" || food.cat == request.category, food.cat != "swap" else { return false }
             guard !query.isEmpty else { return true }
             guard let score = score(prepared(food.name + " " + (chainNames[food.chain] ?? "My foods")), query: query) else { return false }
-            scores[food.id] = score
+            // Among equally close matches, the food named exactly that ("Banana" for "banana") comes first,
+            // then names that start with the search ("Banana Buzz"), then the rest.
+            let name = tokens(food.name)
+            scores[food.id] = score * 3 - (name == query.words ? 2 : startsWith(food.name, query.words) ? 1 : 0)
             return true
         }
         guard !Task.isCancelled else { return [] }
@@ -124,6 +127,13 @@ enum FoodSearch {
             }
         }
         return rows
+    }
+
+    /// Whether the name begins with the searched words, the last of which may still be half typed.
+    static func startsWith(_ name: String, _ words: [String]) -> Bool {
+        let names = tokens(name)
+        guard let last = words.last, names.count >= words.count else { return false }
+        return names.prefix(words.count - 1).elementsEqual(words.dropLast()) && names[words.count - 1].hasPrefix(last)
     }
 
     /// Items that match, closest first; ties keep their original order.

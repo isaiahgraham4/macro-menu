@@ -146,6 +146,21 @@ then adds ingredient removals from `mcd-ingredients.json`, `subway-ingredients.j
 and Hungry Jack's with/without-cheese pairs. Subway builds are checked against
 each item's published total and skipped (with a warning) if they drift over 3%.
 
+## Refresh everyday foods
+
+Everyday foods (bananas, chicken breast, rice and about 170 others) come from USDA
+FoodData Central's SR Legacy data, which is public domain. Download "SR Legacy, CSV"
+from https://fdc.nal.usda.gov/download-datasets, unzip it, then run:
+
+```sh
+python3 ios/Scripts/generic-foods.py path/to/FoodData_Central_sr_legacy_food_csv_2018-04
+```
+
+The script names each food's USDA entry and serving exactly, fails rather than guessing
+if one is missing, and writes `ios/MacroMenu/GenericFoods.json`. To add a food, add a
+line to `FOODS` in the script. These foods appear in search and Best choices under
+"Everyday foods", but never in "An order that fits" or Smarter swaps.
+
 Title font: Bebas Neue (SIL Open Font License, `ios/Licenses/BebasNeue-OFL.txt`).
 Fonts whose licences don't allow redistribution live in `ios/LocalFonts/`, which
 is ignored by git.
