@@ -13,6 +13,22 @@ struct FindView: View {
         LeanrList {
             Section {
                 NavigationLink {
+                    BrowseView(startSearching: true)
+                } label: {
+                    HStack(spacing: 12) {
+                        Image(systemName: "magnifyingglass")
+                            .font(.title3)
+                            .foregroundStyle(.tint)
+                            .frame(width: 34, height: 34)
+                            .background(.tint.opacity(0.12), in: RoundedRectangle(cornerRadius: 10))
+                        VStack(alignment: .leading, spacing: 3) {
+                            Text("Search foods").font(.roboto(.headline))
+                            Text("Macros for menu items, your foods and packaged products").font(.roboto(.caption)).foregroundStyle(.secondary)
+                        }
+                        Spacer()
+                    }
+                }
+                NavigationLink {
                     BrowseView()
                 } label: {
                     HStack(spacing: 12) {
@@ -139,6 +155,13 @@ struct BrowseView: View {
     var pickTitle = "Use this portion"
     /// What the "+" on a row does, for VoiceOver.
     var quickAddLabel = "Log"
+    /// Opens with the keyboard up, for the Search foods row.
+    var startSearching = false
+    @State private var searchShown = false
+    /// Bumped by the keyboard's Search key when nothing on a menu matches, to search packaged foods instead.
+    @State private var searchPackaged = 0
+    /// The Search key was pressed before the menu results were ready; decide once they are.
+    @State private var submitted = false
     static let categories = [("all", "All items"), ("main", "Mains"), ("breakfast", "Breakfast"), ("side", "Sides"), ("drink", "Drinks"), ("sweet", "Desserts"), ("extra", "Extras")]
     /// Where the "+" on a row logs to, when nothing else is choosing the food.
     @State private var yesterday = false
@@ -158,7 +181,10 @@ struct BrowseView: View {
         let names = Dictionary(store.catalog.chains.map { ($0.id, $0.name) }) { a, _ in a }
         let work = Task.detached(priority: .userInitiated) { FoodSearch.browse(foods, chainNames: names, request: request) }
         let result = await withTaskCancellationHandler { await work.value } onCancel: { work.cancel() }
-        if !Task.isCancelled { rows = result; shown = request }
+        if !Task.isCancelled {
+            rows = result; shown = request
+            if submitted { submitted = false; if result.isEmpty { searchPackaged += 1 } }
+        }
     }
 
     /// One serving, without opening the food: handed to whoever is choosing, or logged to today.
@@ -211,8 +237,9 @@ struct BrowseView: View {
                     }
                 }
             }
+            PackagedFoodsSection(search: search, trigger: searchPackaged, pick: pick, pickTitle: pickTitle, logYesterday: yesterday, logMeal: meal)
             Section {
-                if shown == request && rows.isEmpty { ContentUnavailableView.search(text: search) }
+                if shown == request && rows.isEmpty { ContentUnavailableView("No menu matches", systemImage: "magnifyingglass", description: Text("Search packaged foods above, or check the spelling.")) }
                 ForEach(rows) { food in
                     NavigationLink {
                         FoodDetailView(food: food, pick: pick, pickTitle: pickTitle, logYesterday: yesterday, logMeal: pick == nil ? meal : nil).onAppear { recent = RecentSearches.adding(shown?.search ?? search, to: recent) }
@@ -221,7 +248,7 @@ struct BrowseView: View {
                 }
             } header: {
                 HStack {
-                    if shown != nil { Text("\(rows.count) foods") }
+                    if shown != nil { Text("\(rows.count) food\(rows.count == 1 ? "" : "s")") }
                     Spacer()
                     Picker("Sort", selection: $sort) {
                         Text("Protein per calorie").tag("density"); Text("Most protein").tag("protein"); Text("Lowest calories").tag("calories")
@@ -229,7 +256,8 @@ struct BrowseView: View {
                     }.pickerStyle(.menu).labelsHidden().textCase(nil).font(.roboto(.subheadline)).fixedSize()
                 }
             }
-        }.searchable(text: $search, prompt: "Food or restaurant")
+        }.searchable(text: $search, isPresented: $searchShown, prompt: "Food, product or restaurant")
+            .onAppear { if startSearching && search.isEmpty { searchShown = true } }
             .task(id: Key(request: request, custom: store.data.foods, catalog: store.catalog.revision ?? String(store.catalog.foods.count))) { await update(request) }
             .searchSuggestions {
                 if search.isEmpty && !recent.isEmpty {
@@ -241,8 +269,132 @@ struct BrowseView: View {
                     }
                 }
             }
-            .onSubmit(of: .search) { recent = RecentSearches.adding(search, to: recent) }
-            .navigationTitle(pick == nil ? "Best choices" : "Choose a food")
+            .onSubmit(of: .search) {
+                recent = RecentSearches.adding(search, to: recent)
+                if shown == request { if rows.isEmpty { searchPackaged += 1 } } else { submitted = true }
+            }
+            .navigationTitle(pick == nil ? (startSearching ? "Search foods" : "Best choices") : "Choose a food")
             .toolbar { if pick == nil { NavigationLink { SourcesView() } label: { Image(systemName: "info.circle") }.accessibilityLabel("Menu sources") } }
+    }
+}
+
+/// Packaged foods from Open Food Facts for what's typed, fetched only when asked so nothing is sent while typing.
+struct PackagedFoodsSection: View {
+    let search: String
+    /// Searches when it changes, as if the button were tapped.
+    var trigger = 0
+    var pick: ((Portion) -> Void)?
+    var pickTitle = "Use this portion"
+    var logYesterday = false
+    var logMeal: MealTime?
+    /// What was searched for and what came back. Nil hits while waiting.
+    private struct Results: Equatable { var terms: String; var hits: [ProductHit]?; var failed: String?; var attempt = UUID() }
+    @State private var results: Results?
+    /// Searches already made this session, so going back and forth doesn't ask again.
+    @MainActor private static var cache: [String: [ProductHit]] = [:]
+
+    var body: some View {
+        let terms = ProductSearch.terms(search)
+        if !terms.isEmpty {
+            Section {
+                if let results, results.terms == terms {
+                    if let failed = results.failed {
+                        Text(failed).foregroundStyle(.secondary)
+                        Button("Try again") { start(terms) }
+                    } else if let hits = results.hits {
+                        if hits.isEmpty { Text("No packaged foods with nutrition found for “\(search)”.").foregroundStyle(.secondary) }
+                        ForEach(hits) { hit in
+                            NavigationLink {
+                                ProductDetailView(hit: hit, pick: pick, pickTitle: pickTitle, logYesterday: logYesterday, logMeal: logMeal)
+                            } label: {
+                                VStack(alignment: .leading, spacing: 5) {
+                                    Text(hit.product.food.name).font(.roboto(.headline))
+                                    Text("\(hit.product.food.cal.rounded().number) Cal · \(hit.product.food.p.tenth.number) g protein per 100 \(hit.product.unit)")
+                                        .font(.roboto(.subheadline)).foregroundStyle(.secondary)
+                                }.padding(.vertical, 4)
+                            }
+                        }
+                    } else {
+                        ProgressView("Searching Open Food Facts…").frame(maxWidth: .infinity)
+                    }
+                } else {
+                    Button { start(terms) } label: { Label("Search packaged foods for “\(search.trimmingCharacters(in: .whitespaces))”", systemImage: "barcode") }
+                }
+            } header: { Text("Packaged foods") } footer: {
+                Text("From Open Food Facts, a free database anyone can edit. Only your search words are sent, and only when you tap search. Check the package before logging.")
+            }
+            .task(id: results?.attempt) { await run() }
+            .onChange(of: trigger) { if results?.terms != terms { start(terms) } }
+        }
+    }
+
+    private func start(_ terms: String) {
+        results = Results(terms: terms, hits: Self.cache[terms])
+    }
+
+    private func run() async {
+        guard let pending = results, pending.hits == nil, pending.failed == nil else { return }
+        do {
+            let hits = try await ProductSearch.search(pending.terms)
+            guard !Task.isCancelled, results?.attempt == pending.attempt else { return }
+            Self.cache[pending.terms] = hits
+            results?.hits = hits
+        } catch {
+            guard !Task.isCancelled, results?.attempt == pending.attempt else { return }
+            results?.failed = (error as? BarcodeLookupError)?.errorDescription ?? "Couldn't connect to Open Food Facts. Check your internet connection and try again."
+        }
+    }
+}
+
+/// One packaged food from a search: its full label from Open Food Facts, with how much you had and Log.
+struct ProductDetailView: View {
+    @Environment(AppStore.self) private var store
+    @Environment(\.dismiss) private var dismiss
+    let hit: ProductHit
+    var pick: ((Portion) -> Void)?
+    var pickTitle = "Use this portion"
+    var logYesterday = false
+    var logMeal: MealTime?
+    /// The full product page, which has serving sizes the search doesn't. Nil until it arrives, or if it can't be fetched.
+    @State private var full: BarcodeProduct?
+    @State private var loading = true
+
+    var body: some View {
+        let product = full ?? hit.product
+        let saved = BarcodeLookup.match(hit.code, in: store.data.foods)
+        let food = saved ?? product.food
+        let meal = logMeal ?? MealTime.suggested()
+        LeanrForm {
+            Section {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(food.name).font(.display(.title2))
+                    Text(saved != nil ? "In My foods · \(food.serve)" : product.per100 ? "Nutrition per 100 \(product.unit)" : "Nutrition per \(food.serve)")
+                        .foregroundStyle(.secondary)
+                }.padding(.vertical, 4)
+                if loading { ProgressView("Getting the full label…").font(.roboto(.caption)) }
+            }
+            Section { NutritionView(total: Nutrition([Portion(food: food)])) }
+            Section {
+                BarcodeQuickActions(food: food, per100: saved == nil && product.per100, inMyFoods: saved != nil,
+                                    mode: .log { portion in
+                                        if let pick { pick(portion); return true }
+                                        return store.logNow([portion], name: portion.food.name, mealTime: meal, yesterday: logYesterday)
+                                    },
+                                    actionTitle: pick != nil ? pickTitle : logYesterday ? "Log to yesterday’s \(meal.title.lowercased())" : "Log to \(meal.title)") {
+                    if pick == nil { dismiss() }
+                }
+                .id(food.serve + (saved?.id ?? ""))
+            } footer: {
+                Text("Check this matches the package. Open Food Facts is edited by volunteers.")
+            }
+            Section {
+                Link("Source: Open Food Facts · ODbL", destination: product.sourceURL)
+            }
+        }
+        .navigationTitle("Product").navigationBarTitleDisplayMode(.inline)
+        .task {
+            full = try? await BarcodeLookup.fetch(code: hit.code)
+            loading = false
+        }
     }
 }

@@ -66,5 +66,27 @@ func barcodeChecks() throws {
     let decoded = try JSONDecoder().decode(Food.self, from: JSONEncoder().encode(mine))
     assert(decoded.barcode == "036000291452")
     assert(serving.food.barcode != nil)
-    print("Barcode checks passed: validation, kJ conversion, serving basis, missing data and sodium units")
+
+    // Searching by name: only letters and numbers are sent, and only complete, sensible products come back once each.
+    assert(ProductSearch.terms("  Tim Tam: \"dark\" OR * ") == "tim tam dark or")
+    assert(ProductSearch.terms("!!!").isEmpty)
+    let searchURL = ProductSearch.url("tim tam", australia: true).absoluteString
+    assert(searchURL.hasPrefix("https://search.openfoodfacts.org/search?") && searchURL.contains("en:australia"))
+    assert(!ProductSearch.url("tim tam", australia: false).absoluteString.contains("australia"))
+    let hits = try ProductSearch.parse(Data(#"""
+    {"hits":[
+      {"code":"9310072000817","product_name":"Tim Tam","brands":["Arnott's"],"quantity":"200 g","nutriments":{"energy-kj_100g":2180,"proteins_100g":4.4,"fat_100g":26}},
+      {"code":"9310072000824","product_name":"Tim Tam","brands":["Arnott's"],"nutriments":{"energy-kj_100g":2180,"proteins_100g":4.4}},
+      {"code":"9300000000001","product_name":"Protein milk","brands":"Brand","quantity":"1 L","nutriments":{"energy-kcal_100g":60,"proteins_100g":6}},
+      {"code":"9300000000002","product_name":"No protein listed","nutriments":{"energy-kcal_100g":60}},
+      {"code":"9300000000003","product_name":"Typo","nutriments":{"energy-kcal_100g":6000,"proteins_100g":6}},
+      {"code":"abc","product_name":"Bad code","nutriments":{"energy-kcal_100g":60,"proteins_100g":6}},
+      {"product_name":"No code","nutriments":{"energy-kcal_100g":60,"proteins_100g":6}}
+    ]}
+    """#.utf8))
+    assert(hits.map(\.code) == ["9310072000817", "9300000000001"])
+    assert(hits[0].product.per100 && hits[0].product.food.name == "Tim Tam · Arnott's" && abs(hits[0].product.food.cal - 521) < 0.1)
+    assert(hits[1].product.unit == "mL" && hits[1].product.food.serve == "100 mL" && hits[1].product.food.barcode == "9300000000001")
+    assert((try? ProductSearch.parse(Data("{}".utf8))) == nil)
+    print("Barcode checks passed: validation, kJ conversion, serving basis, missing data, sodium units and name search")
 }

@@ -1,6 +1,6 @@
 # Leanr terms of use
 
-Effective 6 October 2026
+Effective 10 October 2026
 
 These terms apply when you use Leanr, an app made by Isaiah Graham, an independent developer in Victoria, Australia. Apple's standard Licensed Application End User License Agreement also applies. Contact me at {{CONTACT}}.
 
@@ -12,7 +12,7 @@ Leanr gives general nutrition information to help you choose and log food. It is
 
 - Restaurant figures come from each chain's own published nutrition information on the date shown in Settings → Menu sources. Chains change recipes, and figures vary between stores and serves.
 - Custom orders (with ingredients taken off) and recipes are estimates.
-- Scanned products come from Open Food Facts, which is edited by volunteers. Check them against the package.
+- Scanned and searched packaged products come from Open Food Facts, which is edited by volunteers. Check them against the package.
 - Leanr isn't an allergen guide. Always check allergens with the restaurant.
 
 ## Opening hours, distances and delivery

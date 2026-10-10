@@ -25,10 +25,10 @@ Before each new upload, raise the build number (`CURRENT_PROJECT_VERSION`) in th
   for its own settings (reason `CA92.1`).
 - App Privacy answers in App Store Connect: **Data Not Collected**. Location is only used on the device and by Apple Maps,
   which Apple doesn't count as collection by the developer. Food logs, weights and targets stay on the device, in the
-  user's iCloud and (if connected) in Apple Health. Barcode lookups send only the barcode number to Open Food Facts.
+  user's iCloud and (if connected) in Apple Health. Barcode lookups send only the barcode number, and packaged-food searches only the search words, to Open Food Facts.
 - Weights read from Apple Health never go to iCloud (App Review Guideline 5.1.3). Weights entered in Leanr do.
 - No third-party SDKs, analytics, ads, cookies or web views. Network requests go only to Apple and Open Food Facts
-  (barcode number only), without cookies.
+  (a barcode number, or search words when the user taps Search packaged foods), without cookies.
 - Settings → Delete all my data erases the device data and the iCloud copy, can remove what Leanr saved to Health, and
   turns iCloud sync off.
 - Age rating: answer the questionnaire honestly (no objectionable content). The terms ask for 13+ and the target

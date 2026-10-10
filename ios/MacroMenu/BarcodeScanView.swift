@@ -246,6 +246,8 @@ struct BarcodeQuickActions: View {
     /// Already in My foods, so there's nothing to save.
     let inMyFoods: Bool
     let mode: Mode
+    /// The log button's words, e.g. "Log to Lunch" or "Add to meal".
+    var actionTitle = "Log"
     let done: () -> Void
     /// Remembered, so it stays how you left it.
     @AppStorage(FoodEditor.keepKey) private var keep = true
@@ -254,8 +256,8 @@ struct BarcodeQuickActions: View {
     @State private var weight: Double
     @State private var failed = false
 
-    init(food: Food, per100: Bool, inMyFoods: Bool, mode: Mode, done: @escaping () -> Void) {
-        self.food = food; self.inMyFoods = inMyFoods; self.mode = mode; self.done = done
+    init(food: Food, per100: Bool, inMyFoods: Bool, mode: Mode, actionTitle: String = "Log", done: @escaping () -> Void) {
+        self.food = food; self.inMyFoods = inMyFoods; self.mode = mode; self.actionTitle = actionTitle; self.done = done
         // Per-100 figures are logged by weight, so the grams eaten can be typed straight in.
         _byWeight = State(initialValue: per100 && food.servingWeight != nil)
         _weight = State(initialValue: food.servingWeight?.0 ?? 100)
@@ -286,7 +288,7 @@ struct BarcodeQuickActions: View {
                     }
                 }
                 Button { log(logPortion) } label: {
-                    Text("Log · \(Nutrition([Portion(food: food, quantity: valid ? quantity : 0)]).cal.rounded().number) Cal").frame(maxWidth: .infinity)
+                    Text("\(actionTitle) · \(Nutrition([Portion(food: food, quantity: valid ? quantity : 0)]).cal.rounded().number) Cal").frame(maxWidth: .infinity)
                 }.buttonStyle(.borderedProminent).disabled(!valid)
                 .task(id: food.id) { useLastAmount() }
             case .save:
@@ -314,7 +316,7 @@ struct BarcodeQuickActions: View {
         var item = food, kept = false
         if keep && !inMyFoods, let saved = store.saveToMyFoods(food) { item = saved; kept = true }
         guard logPortion(Portion(food: item, quantity: quantity)) else { failed = true; return }
-        if kept { store.notice = "Logged and saved to My foods" }
+        if kept { store.notice = actionTitle.hasPrefix("Log") ? "Logged and saved to My foods" : "Saved to My foods" }
         done()
     }
 }

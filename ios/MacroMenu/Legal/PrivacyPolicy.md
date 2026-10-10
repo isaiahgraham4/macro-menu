@@ -1,6 +1,6 @@
 # Leanr privacy policy
 
-Effective 6 October 2026
+Effective 10 October 2026
 
 Leanr is made by Isaiah Graham, an independent developer in Victoria, Australia ("I", "me"). This policy explains what happens to your information when you use Leanr. You can reach me at {{CONTACT}}.
 
@@ -8,7 +8,7 @@ Leanr is made by Isaiah Graham, an independent developer in Victoria, Australia 
 
 - Leanr has no account, no ads, no analytics and no tracking. It doesn't use cookies.
 - Everything you enter stays on your device and, if you choose, in your own iCloud and Apple Health. I never receive it.
-- A few features ask other services for information. They are told only what they need: a barcode number, or your position for an Apple Maps search.
+- A few features ask other services for information. They are told only what they need: a barcode number, the words you search for packaged foods, or your position for an Apple Maps search.
 
 ## What Leanr keeps on your device
 
@@ -37,9 +37,11 @@ If you allow it, Leanr uses your location only while you're using the app, to fi
 
 You can turn location off at any time in the Settings app. Leanr works without it, and you can search for a suburb or address instead.
 
-## Barcode lookups
+## Product lookups
 
-When you scan a product, its barcode number is sent to Open Food Facts (a non-profit in France) to look up its nutrition. Nothing else is sent.
+When you scan a product, its barcode number is sent to Open Food Facts (a non-profit in France) to look up its nutrition.
+
+When you tap "Search packaged foods", the words you typed are sent to Open Food Facts to find matching products, and opening a result sends that product's barcode number. Nothing is sent while you type, and nothing else is sent with your search.
 
 ## Links to other apps and websites
 
@@ -66,7 +68,7 @@ Because I don't hold any of your data, there's nothing for me to delete on my si
 Leanr doesn't sell or share your personal data, and it uses no analytics, advertising or tracking services. The only outside services it contacts are:
 
 - **Apple** (United States and elsewhere): Maps, iCloud and Health, which are part of your device and your Apple Account and are covered by Apple's privacy policy.
-- **Open Food Facts** (France): receives only a product's barcode number, which isn't personal information.
+- **Open Food Facts** (France): receives only a product's barcode number or the words you search for packaged foods. Neither is linked to you.
 
 Any service that receives data from Leanr must protect it at least as well as this policy does. If that ever changes, this policy will be updated before the app sends anything new.
 

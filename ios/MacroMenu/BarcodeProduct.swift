@@ -53,7 +53,11 @@ enum BarcodeLookup {
     }
 
     static func fetch(_ input: String) async throws -> BarcodeProduct {
-        let code = try validatedCode(input)
+        try await fetch(code: validatedCode(input))
+    }
+
+    /// Looks up a code Open Food Facts already uses, such as one from a search, without the check-digit test.
+    static func fetch(code: String) async throws -> BarcodeProduct {
         var components = URLComponents(string: "https://world.openfoodfacts.org/api/v2/product/\(code).json")!
         components.queryItems = [URLQueryItem(name: "fields", value: "product_name,product_name_en,brands,serving_size,serving_quantity_unit,product_quantity_unit,nutriments")]
         var request = URLRequest(url: components.url!, timeoutInterval: 20)
@@ -119,5 +123,79 @@ enum BarcodeLookup {
             return BarcodeProduct(food: food, per100: false, unit: unit, sourceURL: source)
         }
         return BarcodeProduct(food: food, per100: per100, unit: unit, sourceURL: source)
+    }
+}
+
+/// A product found by searching Open Food Facts by name.
+struct ProductHit: Identifiable, Hashable, Sendable {
+    /// Per 100 g or mL, from the search index. Opening the product fetches its full label, with serving sizes.
+    var product: BarcodeProduct
+    var code: String
+    var id: String { code }
+    static func == (a: ProductHit, b: ProductHit) -> Bool { a.code == b.code }
+    func hash(into hasher: inout Hasher) { hasher.combine(code) }
+}
+
+/// Finds packaged foods by name in Open Food Facts, for anything that isn't on a menu or in My foods.
+/// Only runs when asked: Open Food Facts doesn't allow search-as-you-type, and nothing is sent while typing.
+enum ProductSearch {
+    static let limit = 20
+
+    /// The words searched for: letters and numbers only, so typed punctuation can't change the query.
+    static func terms(_ text: String) -> String {
+        FoodSearch.tokens(text).prefix(8).map { String($0.prefix(30)) }.joined(separator: " ")
+    }
+
+    static func url(_ terms: String, australia: Bool) -> URL {
+        var components = URLComponents(string: "https://search.openfoodfacts.org/search")!
+        components.queryItems = [
+            URLQueryItem(name: "q", value: australia ? terms + #" countries_tags:"en:australia""# : terms),
+            URLQueryItem(name: "langs", value: "en"),
+            URLQueryItem(name: "page_size", value: String(limit * 2)),
+            URLQueryItem(name: "fields", value: "code,product_name,product_name_en,brands,quantity,nutriments"),
+        ]
+        return components.url!
+    }
+
+    /// Products sold in Australia first; the rest of the world only if none match.
+    static func search(_ text: String) async throws -> [ProductHit] {
+        let terms = terms(text)
+        guard !terms.isEmpty else { return [] }
+        let local = try await fetch(url(terms, australia: true))
+        return local.isEmpty ? try await fetch(url(terms, australia: false)) : local
+    }
+
+    private static func fetch(_ url: URL) async throws -> [ProductHit] {
+        var request = URLRequest(url: url, timeoutInterval: 20)
+        request.setValue("Leanr/1.0 (iOS; com.isaiahgraham.MacroMenu)", forHTTPHeaderField: "User-Agent")
+        // Only the search words go out: no cookies are kept or sent.
+        request.httpShouldHandleCookies = false
+        let (data, response) = try await URLSession.shared.data(for: request)
+        try Task.checkCancellation()
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw BarcodeLookupError.unavailable }
+        return try parse(data)
+    }
+
+    /// Products with energy and protein, without repeats, in the order Open Food Facts ranked them.
+    static func parse(_ data: Data) throws -> [ProductHit] {
+        guard let root = try JSONSerialization.jsonObject(with: data) as? [String: Any],
+              let hits = root["hits"] as? [[String: Any]] else { throw BarcodeLookupError.unavailable }
+        var seen = Set<String>()
+        var results: [ProductHit] = []
+        for var hit in hits {
+            guard let code = hit["code"] as? String, (4...14).contains(code.count), code.utf8.allSatisfy({ (48...57).contains($0) }) else { continue }
+            // The index lists brands as a list; the product page as text.
+            if let brands = hit["brands"] as? [String] { hit["brands"] = brands.joined(separator: ", ") }
+            if let quantity = hit["quantity"] as? String, LabelParser.measure(quantity)?.unit == "mL" { hit["product_quantity_unit"] = "ml" }
+            hit["serving_size"] = nil
+            let wrapped = try JSONSerialization.data(withJSONObject: ["status": 1, "product": hit])
+            guard let product = try? BarcodeLookup.parse(wrapped, code: code), product.per100,
+                  product.food.cal <= 950, product.food.p <= 100 else { continue }
+            let key = "\(product.food.name.lowercased())|\(Int(product.food.cal.rounded()))|\(Int(product.food.p.rounded()))"
+            guard seen.insert(key).inserted else { continue }
+            results.append(ProductHit(product: product, code: code))
+            if results.count == limit { break }
+        }
+        return results
     }
 }
