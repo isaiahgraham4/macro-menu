@@ -24,45 +24,7 @@ struct FoodDetailView: View {
         if let pinnedCustom, pinnedCustom.name == adjusted.name, pinnedCustom.kj == adjusted.kj { return pinnedCustom }
         var value = adjusted; value.id = UUID().uuidString; return value
     }
-    var adjusted: Food {
-        var result = food
-        let selected = (food.modifiers ?? []).filter { (changes[$0.key] ?? 0) > 0 }
-        var names: [String] = []
-        for mod in selected {
-            let q = changes[mod.key] ?? 0
-            result.kj += mod.kj * q; result.p += mod.p * q
-            if let c = result.c, let delta = mod.c { result.c = c + delta * q } else { result.c = nil }
-            if let f = result.f, let delta = mod.f { result.f = f + delta * q } else { result.f = nil }
-            for key in Array((result.nut ?? [:]).keys) {
-                if let delta = mod.nut?[key] { result.nut?[key, default: 0] += delta * q }
-                // Estimated removals leave other nutrients as listed rather than hiding them.
-                else if mod.est != true { result.nut?.removeValue(forKey: key) }
-            }
-            if let price = result.price, let delta = mod.price { result.price = max(0, price + delta * q) } else { result.price = nil }
-            names.append("\(q > 1 ? q.number + " × " : "")\(mod.name)")
-        }
-        if let ownAdjustment {
-            let sign = subtract ? -1.0 : 1.0
-            result.kj += ownAdjustment.kj * sign; result.p += ownAdjustment.p * sign
-            if let c = result.c, let delta = ownAdjustment.c { result.c = c + delta * sign } else { result.c = nil }
-            if let f = result.f, let delta = ownAdjustment.f { result.f = f + delta * sign } else { result.f = nil }
-            for key in Array((result.nut ?? [:]).keys) {
-                if let delta = ownAdjustment.nut?[key] { result.nut?[key, default: 0] += delta * sign }
-                else { result.nut?.removeValue(forKey: key) }
-            }
-            if let price = result.price, let delta = ownAdjustment.price { result.price = max(0,price + delta * sign) } else { result.price = nil }
-            names.append((subtract ? "Without " : "Extra ") + ownAdjustment.name)
-        }
-        if !names.isEmpty {
-            result.kj = max(0,result.kj); result.cal = (result.kj / 4.184).rounded(); result.p = max(0,result.p)
-            result.c = result.c.map { max(0,$0) }; result.f = result.f.map { max(0,$0) }
-            result.nut = result.nut?.mapValues { max(0,$0) }
-            result.name = customName.isEmpty ? food.name + " · " + names.joined(separator: ", ") : customName
-            result.note = "Based on \(food.name). " + names.joined(separator: ", ")
-            result.modifiers = nil
-        }
-        return result
-    }
+    var adjusted: Food { food.customised(changes, adding: ownAdjustment, subtract: subtract, name: customName) }
     var amount: Double { useWeight ? weight / (food.servingWeight?.0 ?? 100) : quantity }
     var portion: Portion { Portion(food: adjusted, quantity: amount) }
     /// "McDonald's", "Hungry Jack's" or "KFC's", for "… energy" and "… figures".
@@ -109,8 +71,8 @@ struct FoodDetailView: View {
                     } footer: {
                         if removals.contains(where: { $0.est == true }) {
                             Text("Calories for each ingredient are from \(store.chainName(food.chain)). For parts it doesn't sell on their own, protein, carbs and fat are estimated from the ingredient type and other nutrients stay as listed.")
-                        } else if food.chain == "hj" || food.chain == "kfc" {
-                            Text("Worked out from \(owner) figures for the same burger with and without it.")
+                        } else if ["hj", "kfc", "rr", "oporto"].contains(food.chain) {
+                            Text("Worked out from \(owner) figures for the same item with and without it.")
                         } else {
                             Text("Nutrition for each ingredient is from \(owner) published figures.")
                         }
@@ -153,8 +115,10 @@ struct FoodDetailView: View {
                 } footer: {
                     if additions.contains(where: { $0.est == true }) {
                         Text("Extras use \(owner) energy for that ingredient. For parts it doesn't sell on their own, protein, carbs and fat are estimated from the ingredient type.")
-                    } else if (food.chain == "hj" || food.chain == "kfc") && additions.contains(where: { !$0.key.hasPrefix("item:") }) {
-                        Text("Extras are the difference between two \(store.chainName(food.chain)) burgers sold with and without them.")
+                    } else if ["hj", "kfc", "rr", "oporto"].contains(food.chain) && additions.contains(where: { !$0.key.hasPrefix("item:") }) {
+                        Text("Extras are the difference between two \(store.chainName(food.chain)) items sold with and without them.")
+                    } else if additions.contains(where: { $0.key.hasPrefix("item:") && $0.kind == "f" }) {
+                        Text("Extra fillets use \(owner) figures for the fillet sold on its own.")
                     }
                 }
             }

@@ -84,6 +84,51 @@ struct Food: Codable, Identifiable, Hashable, Sendable {
     }
 }
 
+extension Food {
+    /// This food with modifiers applied (how many of each, by key) and optionally something else added or taken off.
+    /// Energy and macros change by each part's figures, and it's renamed "Big Mac · No Big Mac Sauce".
+    /// Unchanged when nothing is selected.
+    func customised(_ changes: [String: Double], adding own: Food? = nil, subtract: Bool = false, name custom: String = "") -> Food {
+        var result = self
+        let selected = (modifiers ?? []).filter { (changes[$0.key] ?? 0) > 0 }
+        var names: [String] = []
+        for mod in selected {
+            let q = changes[mod.key] ?? 0
+            result.kj += mod.kj * q; result.p += mod.p * q
+            if let c = result.c, let delta = mod.c { result.c = c + delta * q } else { result.c = nil }
+            if let f = result.f, let delta = mod.f { result.f = f + delta * q } else { result.f = nil }
+            for key in Array((result.nut ?? [:]).keys) {
+                if let delta = mod.nut?[key] { result.nut?[key, default: 0] += delta * q }
+                // Estimated removals leave other nutrients as listed rather than hiding them.
+                else if mod.est != true { result.nut?.removeValue(forKey: key) }
+            }
+            if let price = result.price, let delta = mod.price { result.price = max(0, price + delta * q) } else { result.price = nil }
+            names.append("\(q > 1 ? q.number + " × " : "")\(mod.name)")
+        }
+        if let ownAdjustment = own {
+            let sign = subtract ? -1.0 : 1.0
+            result.kj += ownAdjustment.kj * sign; result.p += ownAdjustment.p * sign
+            if let c = result.c, let delta = ownAdjustment.c { result.c = c + delta * sign } else { result.c = nil }
+            if let f = result.f, let delta = ownAdjustment.f { result.f = f + delta * sign } else { result.f = nil }
+            for key in Array((result.nut ?? [:]).keys) {
+                if let delta = ownAdjustment.nut?[key] { result.nut?[key, default: 0] += delta * sign }
+                else { result.nut?.removeValue(forKey: key) }
+            }
+            if let price = result.price, let delta = ownAdjustment.price { result.price = max(0,price + delta * sign) } else { result.price = nil }
+            names.append((subtract ? "Without " : "Extra ") + ownAdjustment.name)
+        }
+        if !names.isEmpty {
+            result.kj = max(0,result.kj); result.cal = (result.kj / 4.184).rounded(); result.p = max(0,result.p)
+            result.c = result.c.map { max(0,$0) }; result.f = result.f.map { max(0,$0) }
+            result.nut = result.nut?.mapValues { max(0,$0) }
+            result.name = custom.isEmpty ? name + " · " + names.joined(separator: ", ") : custom
+            result.note = "Based on \(name). " + names.joined(separator: ", ")
+            result.modifiers = nil
+        }
+        return result
+    }
+}
+
 struct Portion: Codable, Identifiable, Hashable, Sendable {
     var id = UUID()
     var food: Food

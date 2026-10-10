@@ -62,6 +62,12 @@ struct FindView: View {
                         Text("Closest fit").tag("fit"); Text("Lowest calories").tag("lean"); Text("Most protein").tag("protein")
                     }
                 }.pickerStyle(.menu).labelsHidden()
+                Toggle(isOn: $query.customise) {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Customise items to fit")
+                        Text("Take off sauce or cheese, or add another patty or fillet").font(.roboto(.caption)).foregroundStyle(.secondary)
+                    }
+                }
                 DisclosureGroup("Macro limits") {
                     OptionalNumberField(title: "Carbs up to (g)", value: $query.carbs)
                     OptionalNumberField(title: "Fat up to (g)", value: $query.fat)
@@ -100,6 +106,10 @@ struct FindView: View {
                             }
                             NavigationLink { OrderDetailView(match: match) } label: {
                                 Text(match.items.map { $0.food.name }.joined(separator: " + ")).font(.roboto(.headline))
+                            }
+                            if match.customised > 0 {
+                                Label("Ask for these changes when you order", systemImage: "slider.horizontal.3")
+                                    .font(.roboto(.caption)).foregroundStyle(.secondary)
                             }
                             NearestPlaceLine(chain: match.chain)
                             NutritionView(total: match.total, details: false)

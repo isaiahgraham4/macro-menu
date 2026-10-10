@@ -218,6 +218,42 @@ import Foundation
         query = FindQuery(); query.calories = 300; query.protein = 25; query.maxItems = 2
         let simple = MealFinder.find(tiny,query: query)
         assert(simple.first?.total.cal == 300 && simple.first?.total.p == 25)
+        print("Finder with customising: \(Date().timeIntervalSince(start).formatted())s")
+
+        // Customised orders: sauce and cheese come off, another patty goes on, the bun and meat always stay.
+        let bigMac = catalog.foods.first { $0.id == "mcd:big-mac" }!
+        let custom = MealFinder.variants(of: bigMac)
+        let changes = custom.map { $0.name.replacingOccurrences(of: "Big Mac · ", with: "") }
+        assert(changes.contains("No Big Mac Sauce") && changes.contains("Extra Beef Patty") && changes.contains("No Big Mac Sauce, Extra Beef Patty"))
+        assert(!changes.contains { $0.contains("Bun") || $0.contains("No Beef") || $0.contains("Lettuce") || $0.contains("Pickles") })
+        assert(custom.allSatisfy { MealFinder.isVariant($0) && MealFinder.baseID($0) == "mcd:big-mac" && $0.modifiers == nil && $0.isValid })
+        let noSauce = custom.first { $0.name == "Big Mac · No Big Mac Sauce" }!
+        assert(abs(noSauce.kj - (bigMac.kj - 376)) < 0.01 && noSauce.cal == ((bigMac.kj - 376) / 4.184).rounded() && noSauce.note == "Based on Big Mac. No Big Mac Sauce")
+        assert(Set(custom.map(\.id)).count == custom.count && MealFinder.variants(of: tiny[0]).isEmpty)
+        // Nothing an item is named after comes off it.
+        for id in ["mcd:cheeseburger", "mcd:bacon-egg-mcmuffin"] {
+            if let item = catalog.foods.first(where: { $0.id == id }) {
+                let names = MealFinder.variants(of: item).map(\.name)
+                assert(!names.contains { $0.contains("No Cheese") && id.contains("cheese") || $0.contains("No Bacon") && id.contains("bacon") }, "\(id): \(names)")
+            }
+        }
+        // A Big Mac is 621 Cal; without its sauce it fits a 540 Cal limit, and the finder suggests that.
+        var bigMacQuery = FindQuery(chains: ["mcd"], calories: 540, protein: 25, maxItems: 1)
+        assert(MealFinder.find([bigMac], query: bigMacQuery).first?.items.map(\.food.id) == [noSauce.id])
+        bigMacQuery.customise = false
+        assert(MealFinder.find([bigMac], query: bigMacQuery).isEmpty)
+        // An order that already fits comes first as it's sold; with more room, another patty adds protein.
+        let fitsAsSold = MealFinder.find([bigMac], query: FindQuery(chains: ["mcd"], calories: 650, protein: 20, maxItems: 1))
+        assert(fitsAsSold.first?.items[0].food.id == bigMac.id)
+        let moreProtein = MealFinder.find([bigMac], query: FindQuery(chains: ["mcd"], calories: 800, protein: 38, maxItems: 1))
+        assert(moreProtein.first?.items[0].food.name == "Big Mac · Extra Beef Patty")
+        // New options from pairs of items and fillets sold on their own.
+        let zingerBurger = catalog.foods.first { $0.id == "kfc:zinger-burger" }!
+        assert(zingerBurger.modifiers?.contains { $0.name == "Add a Zinger Fillet" && $0.kj == 936 && $0.p == 20.4 } == true)
+        let angus = catalog.foods.first { $0.id == "hj:grill-masters-bbq-smokehouse-angus" }!
+        assert(angus.modifiers?.contains { $0.name == "Make it a Double" && $0.kj == 1765 } == true)
+        assert(catalog.foods.first { $0.id == "oporto:chicken-bacon-egg-burger" }!.modifiers?.contains { $0.name == "No Chicken Fillet" && $0.kj == -1090 } == true)
+        assert(catalog.foods.first { $0.id == "hj:grill-masters-chicago-angus" }!.modifiers?.contains { $0.name == "Make it a Double" } != true)
         // Weight trend, maintenance and quick re-log.
         let calendar = Calendar(identifier: .gregorian)
         let day0 = calendar.date(from: DateComponents(year: 2026, month: 6, day: 1, hour: 8))!
@@ -581,6 +617,6 @@ import Foundation
         let reloadedOld = try JSONDecoder().decode(AppData.self, from: oldFormat)
         assert(reloadedOld.weights == nil && reloadedOld.isValid)
 
-        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, delivery, iCloud health rules, deleting all data, the policies, everyday foods and editing saved and logged meals and no prices (\(Date().timeIntervalSince(start).formatted())s).")
+        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, delivery, iCloud health rules, deleting all data, the policies, everyday foods, customised orders and editing saved and logged meals and no prices (\(Date().timeIntervalSince(start).formatted())s).")
     }
 }

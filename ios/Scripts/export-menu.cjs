@@ -173,9 +173,10 @@ for (const food of data.foods.filter(f => f.chain === 'sub')) {
 }
 console.log(`Added ${subwayAdded} Subway ingredient removals across ${subwayItems} items.`);
 
-// Hungry Jack's and KFC don't list what an extra adds, but sell some burgers with and without it.
+// Hungry Jack's, KFC, Oporto and Red Rooster don't list what an extra adds, but sell some items with and without it.
 // The difference between the two published items is exactly what that extra adds, so it can go on or come off.
-// [what, without, with, items it can be added to, items it can be taken off, kind]
+// [what, without, with, items it can be added to, items it can be taken off, kind, name to add, name to take off]
+// The names are for differences that aren't a single ingredient, such as a Grill Masters double or a Red Rooster triple.
 const PAIRS = [
   ['Cheese', 'hj:whopper', 'hj:whopper-with-cheese', ['hj:whopper'], ['hj:whopper-with-cheese'], 'a'],
   ['Cheese', 'hj:double-whopper', 'hj:double-whopper-with-cheese', ['hj:double-whopper'], ['hj:double-whopper-with-cheese'], 'a'],
@@ -192,9 +193,21 @@ const PAIRS = [
     ['hj:cheesy-bacon-spicy-jack-s-fried-chicken'], 'a'],
   ['Bacon & Cheese', 'kfc:original-crispy-burger', 'kfc:original-crispy-bacon-cheese-burger', ['kfc:original-crispy-burger'], ['kfc:original-crispy-bacon-cheese-burger'], 'a'],
   ['Bacon & Cheese', 'kfc:zinger-burger', 'kfc:zinger-bacon-cheese-burger', ['kfc:zinger-burger'], ['kfc:zinger-bacon-cheese-burger'], 'a'],
+  ['Cheese', 'hj:whopper-junior', 'hj:whopper-junior-with-cheese', ['hj:whopper-junior'], ['hj:whopper-junior-with-cheese'], 'a'],
+  // Grill Masters Chicago is left out: its single and double are published only 315 kJ apart, which looks like an error.
+  ...['bbq-smokehouse', 'spicy-chipotle', 'smoky-chipotle', 'cowboy'].map(kind =>
+    ['Double', `hj:grill-masters-${kind}-angus`, `hj:grill-masters-double-${kind}-angus`, [`hj:grill-masters-${kind}-angus`],
+      [`hj:grill-masters-double-${kind}-angus`], 'f', 'Make it a Double', 'Make it a Single']),
+  ['Double', 'hj:grill-masters-angus-bacon-cheese', 'hj:grill-masters-double-angus-bacon-cheese', ['hj:grill-masters-angus-bacon-cheese'],
+    ['hj:grill-masters-double-angus-bacon-cheese'], 'f', 'Make it a Double', 'Make it a Single'],
+  ['Chicken Fillet', 'oporto:bacon-egg-burger', 'oporto:chicken-bacon-egg-burger', ['oporto:bacon-egg-burger'],
+    ['oporto:chicken-bacon-egg-burger'], 'f', 'Add Chicken Fillet', 'No Chicken Fillet'],
+  ['Bacon', 'oporto:chicken-egg-burger', 'oporto:chicken-bacon-egg-burger', ['oporto:chicken-egg-burger'], ['oporto:chicken-bacon-egg-burger'], 'a'],
+  ...['flayva-wrap', 'rippa-roll', 'honey-bbq-rippa-roll', 'reds-burger', 'bbq-bacon-burger', 'spicy-burger', 'picklebird-burger'].map(item =>
+    ['Triple', `rr:${item}`, `rr:triple-${item}`, [`rr:${item}`], [`rr:triple-${item}`], 'f', 'Make it a Triple', 'Make it a Regular']),
 ];
 let paired = 0;
-for (const [what, withoutId, withId, addTo, takeOff, kind] of PAIRS) {
+for (const [what, withoutId, withId, addTo, takeOff, kind, addName, removeName] of PAIRS) {
   const withIt = byId[withId], without = byId[withoutId];
   if (!withIt || !without) throw Error(`Missing ${withId} or ${withoutId}`);
   const diff = key => round((withIt[key] ?? 0) - (without[key] ?? 0));
@@ -202,7 +215,7 @@ for (const [what, withoutId, withId, addTo, takeOff, kind] of PAIRS) {
   const nut = Object.fromEntries(Object.keys(withIt.nut || {}).filter(k => without.nut?.[k] != null)
     .map(k => [k, Math.max(0, round(withIt.nut[k] - without.nut[k]))]));
   const amounts = {kj: diff('kj'), p: diff('p'), c: diff('c'), f: diff('f'), nut};
-  const slug = slugOf(what), name = kind === 'f' ? `Extra ${what}` : `Add ${what}`;
+  const slug = slugOf(what), name = addName || (kind === 'f' ? `Extra ${what}` : `Add ${what}`);
   for (const id of addTo) {
     const food = byId[id];
     if (!food) throw Error(`Missing ${id}`);
@@ -213,12 +226,33 @@ for (const [what, withoutId, withId, addTo, takeOff, kind] of PAIRS) {
   for (const id of takeOff) {
     const food = byId[id];
     if (!food) throw Error(`Missing ${id}`);
-    food.modifiers = [...(food.modifiers || []), {key: `r:${slug}`, id: `no-${slug}`, kind: 'r', name: `No ${what}`,
+    food.modifiers = [...(food.modifiers || []), {key: `r:${slug}`, id: `no-${slug}`, kind: 'r', name: removeName || `No ${what}`,
       kj: -amounts.kj, p: -amounts.p, c: -amounts.c, f: -amounts.f, nut: Object.fromEntries(Object.entries(nut).map(([k, v]) => [k, -v])), price: 0}];
     paired++;
   }
 }
-console.log(`Added ${paired} Hungry Jack's and KFC extras and removals worked out from pairs of burgers.`);
+console.log(`Added ${paired} extras and removals worked out from pairs of items sold with and without them.`);
+
+// KFC sells its fillets on their own, so a burger can take another one at that item's published nutrition.
+const SOLD_SEPARATELY = [
+  ['kfc:zinger-fillet-piece', 'Add a Zinger Fillet',
+    ['kfc:zinger-burger', 'kfc:zinger-bacon-cheese-burger', 'kfc:zinger-stacker-burger', 'kfc:zinger-crunch-burger']],
+  ['kfc:original-crispy-fillet-piece', 'Add an Original Crispy Fillet',
+    ['kfc:original-crispy-burger', 'kfc:original-crispy-bacon-cheese-burger', 'kfc:original-crispy-bbq-bacon-stacker-burger']],
+];
+let separate = 0;
+for (const [itemId, name, addTo] of SOLD_SEPARATELY) {
+  const item = byId[itemId];
+  if (!item) throw Error(`Missing ${itemId}`);
+  for (const id of addTo) {
+    const food = byId[id];
+    if (!food) throw Error(`Missing ${id}`);
+    food.modifiers = [...(food.modifiers || []), {key: `item:${itemId}`, id: itemId, kind: 'f', name,
+      kj: item.kj, p: item.p, c: item.c, f: item.f, ...(item.nut ? {nut: item.nut} : {})}];
+    separate++;
+  }
+}
+console.log(`Added ${separate} extras that are sold on their own.`);
 // format: the app only accepts formats it understands. revision: a fingerprint of the menu.
 // published: when this revision was first exported; unchanged menus keep their date, so a re-export isn't "newer".
 // Prices are switched off for now: they vary too much between stores. menu-source.js keeps them for later;
