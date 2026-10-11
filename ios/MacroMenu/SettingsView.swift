@@ -7,6 +7,7 @@ struct SettingsView: View {
     @State private var healthFailed = false
     @AppStorage(AppAppearance.storageKey) private var appearance = AppAppearance.system
     @State private var showQuiz = false
+    @State private var showPremium = false
     @AppStorage(AppAccent.storageKey) private var accentRaw = AppAccent.standard.rawValue
     @AppStorage(AppIconTheme.storageKey) private var iconRaw = AppIconTheme.black.rawValue
     private var current: AppAccent { AppAccent.resolved(accentRaw) }
@@ -19,6 +20,18 @@ struct SettingsView: View {
     }
     var body: some View {
         LeanrList {
+            if Premium.subscriptionsEnabled {
+                Section {
+                    Button { showPremium = true } label: {
+                        HStack {
+                            Label("Even Leanr", systemImage: Premium.isUnlocked ? "checkmark.seal.fill" : "sparkles")
+                            Spacer()
+                            Text(Premium.isUnlocked ? PremiumAccess.statusText(Purchases.shared.entitlement) : "See what's included")
+                                .font(.roboto(.subheadline)).foregroundStyle(Color(.secondaryLabel))   // not tint-washed: the button tints .secondary
+                        }
+                    }
+                }
+            }
             Section("Appearance") {
                 Picker("Theme", selection: $appearance) {
                     ForEach(AppAppearance.allCases) { option in
@@ -32,7 +45,8 @@ struct SettingsView: View {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 6), spacing: 16) {
                     ForEach(AppAccent.allCases) { accent in
                         let locked = !Premium.isUnlocked && accent != AppAccent.standard
-                        Button { accentRaw = accent.rawValue } label: {
+                        // A locked colour opens Premium instead of doing nothing.
+                        Button { if locked { showPremium = true } else { accentRaw = accent.rawValue } } label: {
                             Circle().fill(accent.color).frame(width: 36, height: 36)
                                 .overlay {
                                     if accent == current { Image(systemName: "checkmark").fontWeight(.bold).foregroundStyle(.white) }
@@ -40,41 +54,46 @@ struct SettingsView: View {
                                 }
                                 .background { Circle().strokeBorder(accent.color, lineWidth: 2).padding(-5).opacity(accent == current ? 1 : 0) }
                         }
-                        .buttonStyle(.plain).disabled(locked)
-                        .accessibilityLabel(accent.name).accessibilityAddTraits(accent == current ? .isSelected : [])
+                        .buttonStyle(.plain)
+                        .accessibilityLabel(locked ? "\(accent.name), needs Even Leanr" : accent.name)
+                        .accessibilityAddTraits(accent == current ? .isSelected : [])
                     }
                 }.padding(.vertical, 8)
             } header: {
                 Text("App colour")
             } footer: {
                 if Premium.isUnlocked { Text("\(current.name) · Changes buttons, tabs, links and progress bars.") }
-                else { Label("More colours come with Premium.", systemImage: "lock.fill") }
+                else { Label("More colours come with Even Leanr.", systemImage: "lock.fill") }
             }
             Section {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 3), spacing: 14) {
                     ForEach(AppIconTheme.allCases) { icon in
                         let locked = !Premium.isUnlocked && icon != .black
-                        Button { selectIcon(icon) } label: {
+                        Button { if locked { showPremium = true } else { selectIcon(icon) } } label: {
                             VStack(spacing: 6) {
                                 Image(icon.previewAsset)
                                     .resizable().scaledToFill().frame(width: 66, height: 66)
                                     .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
-                                    .overlay {
-                                        if locked { Image(systemName: "lock.fill").foregroundStyle(.white).shadow(radius: 3) }
+                                    .overlay(alignment: .bottomTrailing) {
+                                        // A corner badge, so the lock doesn't sit on top of the icon's artwork.
+                                        if locked {
+                                            Image(systemName: "lock.fill").font(.roboto(.caption2, weight: .bold)).foregroundStyle(.white)
+                                                .frame(width: 22, height: 22).background(Color.black.opacity(0.6), in: Circle()).padding(4)
+                                        }
                                     }
                                     .overlay { RoundedRectangle(cornerRadius: 15, style: .continuous).stroke(icon == currentIcon ? AnyShapeStyle(.tint) : AnyShapeStyle(.clear), lineWidth: 3) }
                                 Text(icon.name).font(.roboto(.caption, weight: .medium))
                             }
                         }
-                        .buttonStyle(.plain).disabled(locked)
-                        .accessibilityLabel("\(icon.name) app icon")
+                        .buttonStyle(.plain)
+                        .accessibilityLabel(locked ? "\(icon.name) app icon, needs Even Leanr" : "\(icon.name) app icon")
                         .accessibilityAddTraits(icon == currentIcon ? .isSelected : [])
                     }
                 }.padding(.vertical, 8)
             } header: {
                 Text("App icon")
             } footer: {
-                Text("\(currentIcon.name) · More icon packs will be part of Premium when it launches.")
+                Text(Premium.isUnlocked ? "\(currentIcon.name)" : "\(currentIcon.name) · More icon packs come with Even Leanr.")
             }
             Section("Targets") {
                 NavigationLink { TargetsView() } label: { Label("Targets & target sets", systemImage: "target") }
@@ -126,6 +145,7 @@ struct SettingsView: View {
             }
         }.navigationTitle("Settings")
             .sheet(isPresented: $showQuiz) { LeanrOnboarding { showQuiz = false } }
+            .sheet(isPresented: $showPremium) { PremiumView() }
             .alert("Couldn’t connect to Apple Health", isPresented: $healthFailed) { Button("OK") {} } message: {
                 Text(health.lastError ?? "Check that Health is set up on this device, then try again.")
             }
@@ -144,6 +164,7 @@ struct MacroColourSettings: View {
     @AppStorage(MacroColours.fatKey) private var fat = "red"
     var body: some View {
         LeanrList {
+            if !Premium.isUnlocked { Section { PremiumPromptRow(message: "Separate macro colours come with Even Leanr.") } }
             Group {
                 swatches("Protein", key: "p", selection: $protein)
                 swatches("Carbs", key: "c", selection: $carbs)
@@ -151,7 +172,7 @@ struct MacroColourSettings: View {
                 Section {
                     Button("Reset to default colours") { protein = "blue"; carbs = "orange"; fat = "red" }
                 } footer: {
-                    Text("Choose separate colours for your macros in Leanr and its widgets. This will be a Premium feature when subscriptions launch.")
+                    Text("Choose separate colours for your macros in Leanr and its widgets.")
                 }
             }.disabled(!Premium.isUnlocked)
         }.navigationTitle("Target colours")
@@ -194,6 +215,7 @@ struct ReminderSettings: View {
     var body: some View {
         LeanrList {
             let _ = revision
+            if !Premium.isUnlocked { Section { PremiumPromptRow(message: "Choosing your meal reminders comes with Even Leanr.") } }
             Group {
                 if !MealReminders.meals.allSatisfy(MealReminders.isOn) {
                     Section {
@@ -227,8 +249,7 @@ struct ReminderSettings: View {
                     Text("Leanr only reminds you if nothing has been logged to that meal by then. Log it and today's reminder is cancelled. The wording changes from day to day.")
                         .font(.roboto(.subheadline)).foregroundStyle(.secondary)
                 } footer: {
-                    if Premium.isUnlocked { Text("Choosing which reminders you get and when will be a Premium feature when subscriptions launch.") }
-                    else { Label("Meal reminders come with Premium.", systemImage: "lock.fill") }
+                    if !Premium.isUnlocked { Label("Choosing which meals remind you, and when, comes with Even Leanr.", systemImage: "lock.fill") }
                 }
             }.disabled(!Premium.isUnlocked)
             Section {

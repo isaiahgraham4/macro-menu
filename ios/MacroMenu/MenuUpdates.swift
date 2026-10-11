@@ -1,12 +1,12 @@
 import Foundation
 
-/// Fetches a newer restaurant menu, so new items and price changes can arrive without an app update.
-/// Switched off for now: there's nowhere hosting the menu, so `url` is nil and no request is made.
+/// Fetches a newer restaurant menu, so new items and recipe changes can arrive without an app update.
+/// The menu is an unlisted GitHub gist (published with `Scripts/publish-menu.sh`). The request carries nothing about the user.
 /// A download is only used if it's a format this version understands, is newer than what's in use, and every item checks out.
 /// The copy built into the app is always there to fall back on.
 enum MenuUpdates {
-    /// Where MenuData.json is published. Nil means menu updates are off and the built-in menu is used.
-    static let url: URL? = nil
+    /// Where MenuData.json is published. Nil would switch menu updates off and keep the built-in menu.
+    static let url: URL? = URL(string: "https://gist.githubusercontent.com/isaiahgraham4/7e5dd29511588062da0d233fdc88cbc1/raw/MenuData.json")
     static let format = 1
     static let cacheURL = URL.applicationSupportDirectory.appending(path: "MacroMenu/MenuData.json")
     private static let checkedKey = "menu.lastChecked"

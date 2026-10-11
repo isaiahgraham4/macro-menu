@@ -8,6 +8,7 @@ struct NearbyView: View {
     @Environment(Navigator.self) private var nav
     @Environment(\.dismiss) private var dismiss
     @State private var camera: MapCameraPosition = .userLocation(fallback: .automatic)
+    @Environment(\.dynamicTypeSize) private var typeSize
     /// The restaurant pin tapped on the map, shown with Apple's place card.
     @State private var selected: MKMapItem?
     @State private var completer = PlaceCompleter()
@@ -36,7 +37,8 @@ struct NearbyView: View {
                     .mapItemDetailSelectionAccessory(.callout)
             }
             .mapControls { MapUserLocationButton() }
-            .frame(height: 300)
+            // A shorter map at the largest text sizes leaves room for the restaurant list.
+            .frame(height: typeSize.isAccessibilitySize ? 200 : 300)
             LeanrList {
                 if let area {
                     Section {
@@ -64,6 +66,8 @@ struct NearbyView: View {
             }
         }
         .navigationTitle("Map").navigationBarTitleDisplayMode(.inline)
+        // Over the map the bar ignores the app-wide Bebas title, so the title is drawn here.
+        .toolbar { ToolbarItem(placement: .principal) { Text("Map").font(.display(.title)).accessibilityAddTraits(.isHeader) } }
         .searchable(text: $query, isPresented: $searchActive, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search a suburb, address or place")
         .searchSuggestions {
             ForEach(completer.results, id: \.self) { result in
@@ -183,7 +187,9 @@ struct NearbyRow: View {
     var showChain = false
     /// Shows this restaurant's options on Find; the button is hidden when nil.
     var showOptions: (() -> Void)?
+    @Environment(\.dynamicTypeSize) private var typeSize
     var body: some View {
+        let big = typeSize.isAccessibilitySize
         VStack(alignment: .leading, spacing: 8) {
             HStack(alignment: .firstTextBaseline) {
                 Text(showChain ? store.chainName(place.chain) : (place.item.name ?? store.chainName(place.chain))).font(.roboto(.headline))
@@ -193,15 +199,16 @@ struct NearbyRow: View {
             if !place.address.isEmpty { Text(place.address).font(.roboto(.caption)).foregroundStyle(.secondary) }
             PlaceHoursView(place: place)
             DeliveryLine(place: place)
-            HStack {
-                Button { place.directions() } label: { Label("Directions", systemImage: "arrow.triangle.turn.up.right.diamond") }
+            // Side by side normally; stacked full width at the largest sizes, where they'd shrink to "…".
+            (big ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8)) : AnyLayout(HStackLayout())) {
+                Button { place.directions() } label: { IconText("Directions", systemImage: "arrow.triangle.turn.up.right.diamond").frame(maxWidth: big ? .infinity : nil, alignment: .leading) }
                 if let app = ChainPlace.all[place.chain] {
-                    Button { Task { await location.openApp(app) } } label: { Label(app.launchTitle, systemImage: "arrow.up.forward.app") }
+                    Button { Task { await location.openApp(app) } } label: { IconText(app.launchTitle, systemImage: "arrow.up.forward.app").frame(maxWidth: big ? .infinity : nil, alignment: .leading) }
                 }
-            }.buttonStyle(.bordered).font(.roboto(.subheadline)).lineLimit(1).minimumScaleFactor(0.8)
+            }.buttonStyle(.bordered).font(.roboto(.subheadline)).lineLimit(big ? nil : 1).minimumScaleFactor(big ? 1 : 0.8)
             if let showOptions {
                 Button(action: showOptions) {
-                    Label("Show \(store.chainName(place.chain)) options", systemImage: "list.bullet").frame(maxWidth: .infinity)
+                    IconText("Show \(store.chainName(place.chain)) options", systemImage: "list.bullet").frame(maxWidth: .infinity)
                 }.buttonStyle(.borderedProminent).font(.roboto(.subheadline, weight: .semibold))
             }
         }.padding(.vertical, 4)
@@ -213,7 +220,7 @@ struct NearbyRow: View {
 struct HoursButton: View {
     let action: () -> Void
     var body: some View {
-        Button(action: action) { Label("Opening hours", systemImage: "clock") }
+        Button(action: action) { IconText("Opening hours", systemImage: "clock").frame(maxWidth: .infinity, alignment: .leading) }
             .buttonStyle(.borderless).font(.roboto(.subheadline))
             .accessibilityHint("Shows this restaurant's hours and whether it's open now")
     }
@@ -260,9 +267,10 @@ struct DeliveryLine: View {
                 }
             }
         } label: {
-            HStack(spacing: 6) {
-                Image(systemName: "scooter")
-                Text(delivery.text).foregroundStyle(colour(delivery))
+            // Laid out like IconText, so the icon and text line up with "Opening hours" above it.
+            HStack(alignment: .firstTextBaseline, spacing: 8) {
+                Image(systemName: "scooter").foregroundStyle(.tint)
+                Text(delivery.text).foregroundStyle(colour(delivery)).fixedSize(horizontal: false, vertical: true)
                 Image(systemName: "chevron.down").font(.caption2.weight(.semibold)).foregroundStyle(.secondary)
             }
             .font(.roboto(compact ? .caption : .subheadline, weight: .medium))
@@ -275,7 +283,7 @@ struct DeliveryLine: View {
 
     private func colour(_ delivery: Delivery) -> Color {
         switch delivery {
-        case .likely: .green
+        case .likely: .primary   // green is reserved for "Protein target met"; orange still flags "maybe"
         case .maybe: .orange
         case .tooFar: .secondary
         }
@@ -375,6 +383,8 @@ struct OrderDetailView: View {
                 }
             }
         }.navigationTitle("Order").navigationBarTitleDisplayMode(.inline)
+        // Over the map the bar ignores the app-wide Bebas title, so the title is drawn here.
+        .toolbar { ToolbarItem(placement: .principal) { Text("Order").font(.display(.title)).accessibilityAddTraits(.isHeader) } }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     ShareLink(item: mealText("Suggested order", match.items)) { Image(systemName: "square.and.arrow.up") }.accessibilityLabel("Share order")
@@ -390,5 +400,20 @@ struct OrderDetailView: View {
                     }
                 }
             }
+    }
+}
+
+/// An icon and its text, like a Label. At the largest text sizes a Label with Roboto clipped its last
+/// characters ("Openin"), so these rows lay the two out themselves and let the text wrap.
+struct IconText: View {
+    let title: String
+    let systemImage: String
+    init(_ title: String, systemImage: String) { self.title = title; self.systemImage = systemImage }
+    var body: some View {
+        HStack(alignment: .firstTextBaseline, spacing: 8) {
+            Image(systemName: systemImage)
+            Text(title).fixedSize(horizontal: false, vertical: true)
+        }
+        .accessibilityElement(children: .combine)
     }
 }

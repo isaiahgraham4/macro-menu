@@ -31,6 +31,9 @@ struct MyFoodsView: View {
                     Button { recipe = true } label: { TileLabel(title: "Build a recipe", systemImage: "carrot") }
                     Button { customising = true } label: { TileLabel(title: "Customise an order", systemImage: "slider.horizontal.3") }
                 }
+            }
+            // Its own group: sharing the tile row's section broke the cell's rounded shape.
+            Section {
                 Button { barcode = true } label: { Label("Scan product barcode", systemImage: "barcode.viewfinder") }
             }
             Section("Saved foods & recipes") {

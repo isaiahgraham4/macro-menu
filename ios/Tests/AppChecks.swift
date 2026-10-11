@@ -455,6 +455,7 @@ import Foundation
 
         // Menu updates: only a newer menu in a known format, with every item valid, replaces the one in use.
         assert(catalog.format == MenuUpdates.format && catalog.published != nil && catalog.revision != nil)
+        assert(MenuUpdates.url?.scheme == "https" && MenuUpdates.url?.host == "gist.githubusercontent.com" && MenuUpdates.url?.lastPathComponent == "MenuData.json")
         var newer = catalog; newer.published = "2099-01-01T00:00:00.000Z"
         assert(MenuUpdates.acceptable(newer, over: catalog))
         assert(!MenuUpdates.acceptable(catalog, over: catalog))
@@ -608,9 +609,12 @@ import Foundation
         assert(everydayStore.chainName(Food.everyday) == "Everyday foods")
         assert(everydayStore.foods.contains { $0.id == banana.id } && !everydayStore.orderFoods.contains { $0.isEveryday })
         let searched = FoodSearch.browse(everydayStore.foods, chainNames: [Food.everyday: "Everyday foods"], request: .init(search: "chicken breast", chain: Food.everyday))
-        assert(Set(searched.map(\.name)) == ["Chicken breast, raw", "Chicken breast, cooked"])
+        assert(Set(searched.map(\.name)) == ["Chicken breast, raw", "Chicken breast, cooked", "Chicken breast, skin on, roasted", "Roast chicken, breast meat only"])
         assert(MealSwaps.options(for: Portion(food: breast), foods: everydayStore.foods).isEmpty)
         assert(FoodSearch.browse(everydayStore.foods, chainNames: [:], request: .init(search: "banana")).first?.name == "Banana")
+        // "rice" finds rice itself before things made with it ("Rice pudding").
+        let rice = FoodSearch.browse(everydayStore.foods, chainNames: [:], request: .init(search: "rice", chain: Food.everyday)).map(\.name)
+        assert(rice.prefix(4).allSatisfy { !$0.hasPrefix("Rice ") } && rice.contains("Rice pudding") && everyday.count >= 330)
 
         // Photos and Visual Intelligence: what's seen is matched to Leanr's own foods, exactly, everyday foods first.
         let photoNames = Dictionary(everydayStore.catalog.chains.map { ($0.id, $0.name) }) { a, _ in a }.merging([Food.everyday: "Everyday foods"]) { a, _ in a }
@@ -640,10 +644,55 @@ import Foundation
         assert(TargetStatus.none.colour == nil && TargetStatus.reached.colour != nil && TargetStatus.over.colour != nil)
         assert(TargetStatus.reached.spoken.contains("reached") && TargetStatus.over.spoken.contains("Over") && TargetStatus.none.spoken.isEmpty)
 
+        // Premium: only Leanr's own subscriptions count, until they end, and never once refunded.
+        let soon = Date().addingTimeInterval(3600), earlier = Date().addingTimeInterval(-3600), premiumNow = Date()
+        assert(PremiumAccess.isActive(productID: PremiumAccess.monthly, expires: soon, revoked: false, now: premiumNow))
+        assert(PremiumAccess.isActive(productID: PremiumAccess.yearly, expires: nil, revoked: false, now: premiumNow))
+        assert(!PremiumAccess.isActive(productID: PremiumAccess.monthly, expires: earlier, revoked: false, now: premiumNow))
+        assert(!PremiumAccess.isActive(productID: PremiumAccess.monthly, expires: soon, revoked: true, now: premiumNow))
+        assert(!PremiumAccess.isActive(productID: "com.example.other", expires: soon, revoked: false, now: premiumNow))
+        assert(PremiumAccess.productIDs == [PremiumAccess.yearly, PremiumAccess.monthly])
+        // A remembered subscription is trusted a few days past its end (renewals land late), not forever.
+        let ended = PremiumAccess.Entitlement(productID: PremiumAccess.monthly, expires: premiumNow.addingTimeInterval(-86400), renews: true)
+        assert(PremiumAccess.isRemembered(ended, now: premiumNow))
+        assert(!PremiumAccess.isRemembered(PremiumAccess.Entitlement(productID: PremiumAccess.monthly, expires: premiumNow.addingTimeInterval(-5 * 86400), renews: nil), now: premiumNow))
+        assert(!PremiumAccess.isRemembered(nil, now: premiumNow))
+        assert(!PremiumAccess.isRemembered(PremiumAccess.Entitlement(productID: "other", expires: nil, renews: nil), now: premiumNow))
+        let monthlyEntitlement = PremiumAccess.Entitlement(productID: PremiumAccess.monthly, expires: premiumNow.addingTimeInterval(86400 * 20), renews: true)
+        let yearlyEntitlement = PremiumAccess.Entitlement(productID: PremiumAccess.yearly, expires: premiumNow.addingTimeInterval(86400 * 300), renews: true)
+        assert(PremiumAccess.best([monthlyEntitlement, yearlyEntitlement]) == yearlyEntitlement && PremiumAccess.best([]) == nil)
+        let premiumDefaults = UserDefaults(suiteName: "leanr.checks.premium.\(UUID().uuidString)")!
+        assert(PremiumAccess.load(from: premiumDefaults) == nil)
+        PremiumAccess.save(monthlyEntitlement, to: premiumDefaults)
+        assert(PremiumAccess.load(from: premiumDefaults) == monthlyEntitlement)
+        PremiumAccess.save(nil, to: premiumDefaults)
+        assert(PremiumAccess.load(from: premiumDefaults) == nil)
+        assert(PremiumAccess.statusText(nil) == "Active" && PremiumAccess.statusText(PremiumAccess.Entitlement(productID: PremiumAccess.yearly, expires: nil, renews: nil)) == "Active")
+        assert(PremiumAccess.statusText(monthlyEntitlement).hasPrefix("Renews ") && PremiumAccess.statusText(.init(productID: PremiumAccess.monthly, expires: soon, renews: false)).hasPrefix("Ends "))
+        assert(PremiumAccess.statusText(.init(productID: PremiumAccess.yearly, expires: soon, renews: true, trial: true)).hasPrefix("Free trial ends "))
+        assert(PremiumAccess.statusText(.init(productID: PremiumAccess.yearly, expires: soon, renews: false, trial: true)) .hasSuffix(soon.formatted(.dateTime.day().month(.abbreviated).year().locale(Locale(identifier: "en_AU")))))
+
+        // "Log banana in Leanr": an exact name wins alone, an amount in grams uses the serving weight, bad amounts are refused.
+        let spokenNames = Dictionary(everydayStore.catalog.chains.map { ($0.id, $0.name) }) { a, _ in a }.merging([Food.everyday: "Everyday foods"]) { a, _ in a }
+        let spokenBanana = Assistant.spokenMatches(everydayStore.foods, query: "banana", chainNames: spokenNames)
+        assert(spokenBanana.map(\.name) == ["Banana"], "\(spokenBanana.map(\.name))")
+        assert(Assistant.spokenMatches(everydayStore.foods, query: "chicken", chainNames: spokenNames).count > 1)
+        assert(Assistant.spokenMatches(everydayStore.foods, query: "qzxv", chainNames: spokenNames).isEmpty)
+        let spokenBreast = everydayStore.foods.first { $0.name == "Chicken breast, cooked" }!, spokenEgg = everydayStore.foods.first { $0.name == "Egg" }!
+        assert(Assistant.servings(nil, grams: nil, of: banana) == 1 && Assistant.servings(2.5, grams: nil, of: banana) == 2.5)
+        assert(Assistant.servings(1, grams: 250, of: spokenBreast) == 2.5, "100 g serving, so 250 g is 2.5")
+        assert(Assistant.servings(nil, grams: 59, of: spokenEgg) == 59.0 / 50.0)
+        assert(Assistant.servings(0, grams: nil, of: banana) == nil && Assistant.servings(500, grams: nil, of: banana) == nil)
+        assert(Assistant.servings(nil, grams: -5, of: banana) == nil && Assistant.servings(nil, grams: 0, of: spokenBreast) == nil)
+        assert(Assistant.servings(nil, grams: 50, of: Food(name: "No weight", kj: 100, cal: 24, p: 1, serve: "1 piece")) == nil)
+        assert(Assistant.loggedAnswer(food: banana, quantity: 1, mealTime: .snacks, caloriesLeft: 1200) == "Logged Banana to snacks: 105 Cal, 1.3 g protein. 1,200 Cal left today.")
+        assert(Assistant.loggedAnswer(food: banana, quantity: 2, mealTime: .lunch, caloriesLeft: -50) == "Logged 2 × Banana to lunch: 210 Cal, 2.6 g protein. That's 50 Cal over today's target.")
+        assert(Assistant.loggedAnswer(food: banana, quantity: 1, mealTime: .dinner, caloriesLeft: nil) == "Logged Banana to dinner: 105 Cal, 1.3 g protein.")
+
         let oldFormat = try JSONEncoder().encode(AppData())
         let reloadedOld = try JSONDecoder().decode(AppData.self, from: oldFormat)
         assert(reloadedOld.weights == nil && reloadedOld.isValid)
 
-        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, delivery, iCloud health rules, deleting all data, the policies, everyday foods, customised orders, photo and Visual Intelligence matching, widget goal colours and editing saved and logged meals and no prices (\(Date().timeIntervalSince(start).formatted())s).")
+        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, delivery, iCloud health rules, deleting all data, the policies, everyday foods, customised orders, photo and Visual Intelligence matching, widget goal colours, Premium access rules, Siri logging and editing saved and logged meals and no prices (\(Date().timeIntervalSince(start).formatted())s).")
     }
 }

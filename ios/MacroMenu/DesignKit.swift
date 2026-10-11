@@ -5,7 +5,7 @@ import SwiftUI
 
 /// Colour for a nutrient: macros use the colours chosen in Settings (the defaults when Premium is locked),
 /// everything else uses the app colour.
-func nutrientStyle(_ key: String) -> AnyShapeStyle {
+@MainActor func nutrientStyle(_ key: String) -> AnyShapeStyle {
     guard ["p", "c", "f"].contains(key) else { return AnyShapeStyle(.tint) }
     let defaults = UserDefaults.standard
     let choices = Premium.isUnlocked ? [
@@ -127,13 +127,26 @@ struct StatField: View {
 struct TileLabel: View {
     var title: String
     var systemImage: String
+    @Environment(\.dynamicTypeSize) private var typeSize
+    @ScaledMetric(relativeTo: .title3) private var iconWidth = 28.0
     var body: some View {
-        VStack(spacing: 8) {
-            Image(systemName: systemImage).font(.title3).foregroundStyle(.tint).frame(height: 26)
-            Text(title).font(.roboto(.caption, weight: .medium)).multilineTextAlignment(.center).lineLimit(2).minimumScaleFactor(0.85)
+        Group {
+            if typeSize.isAccessibilitySize {
+                // At the largest sizes each tile becomes a full-width row: icon, then the whole label.
+                HStack(spacing: 12) {
+                    Image(systemName: systemImage).font(.title3).foregroundStyle(.tint).frame(width: iconWidth)
+                    Text(title).font(.roboto(.caption, weight: .medium)).frame(maxWidth: .infinity, alignment: .leading)
+                }
+                .padding(.horizontal, 16).padding(.vertical, 14)
+            } else {
+                VStack(spacing: 8) {
+                    Image(systemName: systemImage).font(.title3).foregroundStyle(.tint).frame(minHeight: 26)
+                    Text(title).font(.roboto(.caption, weight: .medium)).multilineTextAlignment(.center).lineLimit(2).minimumScaleFactor(0.85)
+                }
+                .padding(.horizontal, 4).padding(.vertical, 10)
+            }
         }
         .frame(maxWidth: .infinity, minHeight: 78)
-        .padding(.horizontal, 4)
         .background(Color(.secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 16))
         .contentShape(RoundedRectangle(cornerRadius: 16))
     }
@@ -142,8 +155,11 @@ struct TileLabel: View {
 /// A row of action tiles placed directly on the list background.
 struct TileRow<Content: View>: View {
     @ViewBuilder var content: Content
+    @Environment(\.dynamicTypeSize) private var typeSize
     var body: some View {
-        HStack(spacing: 10) { content }
+        // Tiles share a row normally and stack at the largest text sizes.
+        let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(spacing: 10)) : AnyLayout(HStackLayout(spacing: 10))
+        layout { content }
             .buttonStyle(.plain)
             .listRowInsets(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
             .listRowBackground(Color.clear)

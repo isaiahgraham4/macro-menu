@@ -1,4 +1,5 @@
 import SwiftUI
+import AppIntents
 
 enum AppTab: Hashable { case today, find, map, meal, myFoods }
 
@@ -56,6 +57,9 @@ struct ContentView: View {
         .onChange(of: scenePhase) {
             if scenePhase == .active {
                 AppServices.logQueued()
+                // Siri recognises the foods you've pinned or logged recently by name.
+                LeanrShortcuts.updateAppShortcutParameters()
+                if Premium.subscriptionsEnabled { Task { await Purchases.shared.refresh() } }
                 store.refreshWidgets()
                 cloud.schedule(after: 0)
                 AppServices.rebookReminders()

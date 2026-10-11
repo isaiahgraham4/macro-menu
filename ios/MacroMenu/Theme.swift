@@ -47,16 +47,30 @@ struct LeanrForm<Content: View>: View {
     }
 }
 
-/// Premium features. Custom app colours are free for now; when Premium launches, replace
-/// `isUnlocked` with the real purchase check and locked users fall back to the default colour.
+/// Leanr Premium: custom app colours and icons, separate macro colours, the Calories & macros and All targets widgets,
+/// and choosing which meal reminders you get. Locked users fall back to the defaults; nothing they've logged is affected.
+/// The answer comes from StoreKit (see `Purchases`); the screens that read it redraw when it changes.
 enum Premium {
-    static var isUnlocked: Bool { true }
+    /// Whether Even Leanr (the paid subscription) is on sale. While it's false, nothing is locked: every feature is
+    /// available to everyone, the Even Leanr row and screen are hidden, and StoreKit is never contacted.
+    /// Set it to true when the subscriptions exist in App Store Connect and the legal text in
+    /// `AppStore/even-leanr-legal.md` is back in Terms.md and PrivacyPolicy.md.
+    static let subscriptionsEnabled = false
+
+    @MainActor static var isUnlocked: Bool {
+        guard subscriptionsEnabled else { return true }
+        #if DEBUG
+        // For testing the unlocked screens without buying: launch with -LeanrForcePremium. Not compiled into releases.
+        if ProcessInfo.processInfo.arguments.contains("-LeanrForcePremium") { return true }
+        #endif
+        return Purchases.shared.isUnlocked
+    }
 }
 
 /// The app's primary colour, chosen in Settings. Stored under the "accent" key.
 extension AppAccent {
     /// The colour to use for a stored choice, honouring the Premium lock.
-    static func resolved(_ raw: String) -> AppAccent {
+    @MainActor static func resolved(_ raw: String) -> AppAccent {
         guard Premium.isUnlocked else { return standard }
         return AppAccent(rawValue: raw) ?? standard
     }

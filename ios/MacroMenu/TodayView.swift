@@ -32,21 +32,14 @@ struct TodayView: View {
             goals.values[n.key] != nil && (total.isPartial(n.key) || (!["cal", "p", "c", "f"].contains(n.key) && total.nut[n.key] == nil))
         }.map(\.label)
     }
+    private func ringStat(_ title: String, _ value: Double) -> some View {
+        VStack(alignment: .leading, spacing: 2) {
+            Text(title).font(.roboto(.caption)).foregroundStyle(.secondary)
+            Text("\(value.number) Cal").font(.roboto(.headline, weight: .bold)).monospacedDigit()
+        }.frame(maxWidth: .infinity, alignment: .leading)
+    }
     var body: some View {
         LeanrList {
-            Section {
-                HStack {
-                    VStack(alignment: .leading, spacing: 6) {
-                        Text("Leanr").font(.display(.title))
-                        Text("Your day, on the board.").font(.roboto(.subheadline))
-                    }
-                    Spacer()
-                    Image(systemName: "leaf.fill").font(.largeTitle).accessibilityHidden(true)
-                }
-                .foregroundStyle(Color(red: 0.23, green: 0.17, blue: 0.10))
-                .padding(24).background { CuttingBoard() }
-                .listRowInsets(EdgeInsets()).listRowBackground(Color.clear)
-            }
             Section {
                 let previous = Button { shift(-1) } label: { Image(systemName: "chevron.left").frame(width: 44, height: 44).contentShape(Rectangle()) }.accessibilityLabel("Previous day")
                 let next = Button { shift(1) } label: { Image(systemName: "chevron.right").frame(width: 44, height: 44).contentShape(Rectangle()) }.disabled(isToday).accessibilityLabel("Next day")
@@ -70,7 +63,13 @@ struct TodayView: View {
                     layout {
                         if let cal = goals.values["cal"] { CalorieRing(eaten: total.cal, target: cal) }
                         VStack(spacing: 14) {
-                            if macroKeys.isEmpty {
+                            if let cal = goals.values["cal"] {
+                                // Eaten and target beside the ring, so the ring's "left" figure has its working.
+                                // Side by side normally; stacked at the largest sizes so "2,200 Cal" stays on one line.
+                                let statLayout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 10)) : AnyLayout(HStackLayout(spacing: 16))
+                                statLayout { ringStat("Eaten", total.cal); ringStat("Target", cal) }
+                                    .accessibilityElement(children: .combine)
+                            } else if macroKeys.isEmpty {
                                 Text("\(total.cal.number) Cal eaten").font(.roboto(.title3, weight: .bold)).frame(maxWidth: .infinity, alignment: .leading)
                             }
                             ForEach(macroKeys, id: \.self) { key in bar(key) }
@@ -97,7 +96,7 @@ struct TodayView: View {
                 BodySummary()
                 NavigationLink { WeeklyReviewView() } label: { Label("Your week", systemImage: "chart.bar.xaxis") }
             }
-            Section("Logged meals") {
+            Section("Log food") {
                 Picker("Log to", selection: $mealTime) {
                     ForEach(MealTime.allCases) { Text($0.title).tag($0) }
                 }
@@ -109,18 +108,25 @@ struct TodayView: View {
             ForEach(MealTime.allCases) { category in
                 let meals = entries.filter { $0.mealTime == category }
                 Section {
-                    if meals.isEmpty { Text("Nothing logged yet").font(.roboto(.subheadline)).foregroundStyle(.secondary) }
                     ForEach(meals) { entry in logRow(entry) }
                 } header: {
                     HStack {
                         NavigationLink {
                             MealTimeDetailView(mealTime: category, date: date)
                         } label: {
+                            // An empty meal is just its header, not a cell repeating "nothing yet".
+                            let status = meals.isEmpty
+                                ? Text("Nothing yet").foregroundStyle(.secondary)
+                                : Text("\(Nutrition(meals.flatMap(\.items)).cal.number) Cals").monospacedDigit()
                             HStack {
-                                Text(category.title)
-                                Spacer()
-                                if !meals.isEmpty {
-                                    Text("\(Nutrition(meals.flatMap(\.items)).cal.number) Cals")
+                                if typeSize.isAccessibilitySize {
+                                    // At the largest sizes the status goes under the name, so neither breaks mid-word.
+                                    VStack(alignment: .leading, spacing: 2) { Text(category.title); status }
+                                    Spacer(minLength: 0)
+                                } else {
+                                    Text(category.title)
+                                    Spacer()
+                                    status
                                 }
                                 Image(systemName: "chevron.right").font(.caption.weight(.semibold))
                             }.frame(minHeight: 44).contentShape(Rectangle())
@@ -152,6 +158,8 @@ struct TodayView: View {
                             .accessibilityHint("Opens the menu. Hold for pinned foods, barcode, photo and quick log.")
                     }
                 }
+                // Empty meals sit close together as a short list of headers.
+                .listSectionSpacing(meals.isEmpty ? .custom(0) : .default)
             }
             if entries.contains(where: { $0.mealTime == nil }) {
                 Section {

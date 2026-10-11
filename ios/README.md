@@ -76,7 +76,7 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   (the Snacks slot, 9:30 pm by default) only if nothing at all was logged that day.
   Six messages per reminder rotate by day (`MealReminders.message`), in a fixed order so
   rebooking doesn't change tomorrow's wording. Choosing reminders is a Premium
-  feature (`Premium.isUnlocked`; locked clears the booked meal reminders and keeps
+  feature (`Premium.isUnlocked`, always true while `Premium.subscriptionsEnabled` is false; locked clears the booked meal reminders and keeps
   the weekly review). Notifications are booked two weeks ahead and
   rebooked when the log changes. The optional Sunday 6 pm weekly review
   notification carries that week's summary.
@@ -85,9 +85,10 @@ The app uses SwiftUI and requires no third-party packages or API keys.
 - CSV export (Settings → Your data): every logged food, or daily totals with that
   day's targets. Figures a food didn't list are blank, and an "Incomplete" column
   names partial totals.
-- Menu updates: `MenuUpdates.swift` can download a newer `MenuData.json` (known
-  format, newer, every item valid; the bundled copy is the fallback), but it's
-  switched off (`MenuUpdates.url` is nil) because the menu isn't hosted anywhere.
+- Menu updates: `MenuUpdates.swift` downloads a newer `MenuData.json` (known
+  format, newer, every item valid; the bundled copy is the fallback) from an unlisted GitHub gist, at most every
+  6 hours, asking "only if changed" (ETag) so an unchanged menu costs a 304, not 2.9 MB. The request carries nothing
+  about the user. Publish with `Scripts/publish-menu.sh` (below).
   Settings → About shows the date of the menu in use.
 
 Restaurant nutrition is a September 2026 snapshot, not live data. Zambrero (July 2026 sheet; burritos, bowls,
@@ -138,7 +139,9 @@ node ios/Scripts/export-menu.cjs
 The menus live in `ios/Scripts/menu-source.js` (chains, every item's published
 figures and the rules for customising orders). The exporter turns that into
 `ios/MacroMenu/MenuData.json`, stamped with a format number, a content fingerprint
-and a publish date that only changes when the menu does. The Macro Menu web app
+and a publish date that only changes when the menu does. To send it to phones without an app update, run the
+checks and then `sh ios/Scripts/publish-menu.sh`, which uploads it to the menu gist and waits until GitHub serves it.
+The gist is unlisted (not searchable) and its address is in `MenuUpdates.url`; the GitHub pages site stays off. The Macro Menu web app
 (`index.html`, `docs/`) is no longer updated; don't edit or publish it.
 
 The exporter runs the menu source's data and pure modifier functions,
@@ -148,7 +151,7 @@ each item's published total and skipped (with a warning) if they drift over 3%.
 
 ## Refresh everyday foods
 
-Everyday foods (bananas, chicken breast, rice and about 170 others) come from USDA
+Everyday foods (bananas, chicken breast, rice and about 335 others) come from USDA
 FoodData Central's SR Legacy data, which is public domain. Download "SR Legacy, CSV"
 from https://fdc.nal.usda.gov/download-datasets, unzip it, then run:
 

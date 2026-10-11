@@ -17,6 +17,11 @@ import UserNotifications
         guard !started else { return }
         started = true
         health.store = store; cloud.store = store
+        // Premium turning on or off changes the app colour, the widgets and which reminders are booked.
+        if Premium.subscriptionsEnabled {
+            Purchases.shared.onChange = { store.refreshWidgets(); rebookReminders() }
+            Purchases.shared.start()
+        }
         UNUserNotificationCenter.current().delegate = router
         store.logsChanged = { old, new in health.follow(old: old, new: new) }
         store.saved = { cloud.markDirty(); rebookReminders() }

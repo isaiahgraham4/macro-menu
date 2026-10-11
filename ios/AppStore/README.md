@@ -29,8 +29,10 @@ Before each new upload, raise the build number (`CURRENT_PROJECT_VERSION`) in th
 - Weights read from Apple Health never go to iCloud (App Review Guideline 5.1.3). Weights entered in Leanr do.
 - Photo of your meal (iOS 27, Apple Intelligence) and Visual Intelligence results run on the device with Apple's
   on-device model and Leanr's own data; nothing is sent, so the privacy answers don't change.
-- No third-party SDKs, analytics, ads, cookies or web views. Network requests go only to Apple and Open Food Facts
-  (a barcode number, or search words when the user taps Search packaged foods), without cookies.
+- No third-party SDKs, analytics, ads, cookies or web views. Network requests go only to Apple, Open Food Facts
+  (a barcode number, or search words when the user taps Search packaged foods) and GitHub (downloading the menu file,
+  which carries nothing about the user), without cookies. None of these count as collection, so the answer stays
+  Data Not Collected.
 - Settings → Delete all my data erases the device data and the iCloud copy, can remove what Leanr saved to Health, and
   turns iCloud sync off.
 - Age rating: answer the questionnaire honestly (no objectionable content). The terms ask for 13+ and the target
@@ -39,6 +41,39 @@ Before each new upload, raise the build number (`CURRENT_PROJECT_VERSION`) in th
 - Fonts: Roboto (Apache 2.0) and Bebas Neue (SIL OFL 1.1). Their licence texts ship in `MacroMenu/Legal/` and show under
   Settings → Acknowledgements, with the Open Food Facts credit (ODbL) and the USDA FoodData Central credit (public
   domain; `MacroMenu/GenericFoods.json` is built by `Scripts/generic-foods.py`).
+
+## Even Leanr (subscriptions): currently switched off
+
+**Subscriptions are off for now.** `Premium.subscriptionsEnabled` in `MacroMenu/Theme.swift` is `false`: every feature is unlocked
+for everyone, the Even Leanr row and screen are hidden and StoreKit is never contacted. The legal text that describes the
+subscription is held in `AppStore/even-leanr-legal.md` and must go back into Terms.md and PrivacyPolicy.md (and the hosted
+privacy gist) when the switch is turned on.
+
+The subscription is called **Even Leanr** everywhere users see it. In code it's still "Premium" (`Premium.isUnlocked`,
+`PremiumView`) and the product IDs keep `premium`; users never see those, and product IDs can't be renamed once created.
+
+`MacroMenu/Purchases.swift` reads StoreKit 2 entitlements; `MacroMenu/PremiumView.swift` is Apple's subscription view with
+the features list; `Premium.isUnlocked` (Theme.swift) is what the screens, widgets and reminders check. Premium gates: app
+colours, app icons, macro colours, the Calories & macros and All targets widgets, and choosing meal reminders.
+
+Before the first release, in App Store Connect → the app → Monetization → Subscriptions:
+
+1. Create a subscription group named "Even Leanr".
+2. Add two auto-renewable subscriptions with these exact product IDs (they're hard-coded in `PremiumAccess.swift`):
+   `com.isaiahgraham.MacroMenu.premium.yearly` (1 year) and `com.isaiahgraham.MacroMenu.premium.monthly` (1 month).
+3. Set the prices: monthly A$5.99, yearly A$49.99 (App Store Connect only offers Apple's price points, and A$49.99 is the
+   one nearest $50; `Configuration/Leanr.storekit` uses the same). Add a display name and description for each and a review
+   screenshot of the Premium screen. Then on each subscription add a **Subscription Prices → Introductory offer**: Free,
+   1 week (7 days), all countries, new subscribers. A trial is once per Apple Account across the whole group.
+4. Accept the Paid Apps agreement and add banking and tax details, or the products won't load.
+5. Add the subscriptions to the version you submit; Apple reviews them with the app.
+6. The Premium screen shows the required subscription wording and links to the privacy policy and terms itself. Also put the
+   hosted privacy policy URL in App Store Connect, and mention subscription terms in the app description.
+
+Testing without paying: in Xcode, Product → Scheme → Edit Scheme → Run → Options → StoreKit Configuration →
+`Configuration/Leanr.storekit` (set it on a scheme you don't commit), then run on a simulator. Purchases are free there, and
+Debug → StoreKit → Manage Transactions can expire or refund them. On TestFlight, purchases use Apple's sandbox and cost nothing.
+In Debug builds only, launching with `-LeanrForcePremium` shows the unlocked screens without buying.
 
 ## Screenshots
 

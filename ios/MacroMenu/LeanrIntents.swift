@@ -116,7 +116,7 @@ struct FoodQuery: EntityStringQuery {
         await MainActor.run {
             let store = AppServices.store
             let names = Dictionary(store.catalog.chains.map { ($0.id, $0.name) }) { a, _ in a }.merging([Food.everyday: store.chainName(Food.everyday)]) { a, _ in a }
-            return FoodSearch.browse(store.foods, chainNames: names, request: .init(search: string)).prefix(10).map { FoodEntity($0, store: store) }
+            return Assistant.spokenMatches(store.foods, query: string, chainNames: names).map { FoodEntity($0, store: store) }
         }
     }
 }
@@ -129,6 +129,42 @@ struct OpenFoodIntent: OpenIntent {
         AppServices.start()
         if let food = FoodEntity.food(target.id) { AppServices.nav.opened = .food(food) }
         return .result()
+    }
+}
+
+/// "Log banana in Leanr": logs a food to today, as one serving unless told otherwise.
+struct LogFoodIntent: AppIntent {
+    static let title: LocalizedStringResource = "Log a Food"
+    static let description = IntentDescription("Logs a food from Leanr's menus, everyday foods or your own foods to today.")
+    static let authenticationPolicy: IntentAuthenticationPolicy = .requiresAuthentication
+
+    @Parameter(title: "Food", requestValueDialog: "Which food?") var food: FoodEntity
+    @Parameter(title: "Servings", default: 1) var servings: Double
+    @Parameter(title: "Grams", description: "For foods weighed by the gram, such as chicken breast. Used instead of servings.") var grams: Double?
+    @Parameter(title: "Meal") var meal: MealTimeOption?
+
+    static var parameterSummary: some ParameterSummary {
+        Summary("Log \(\.$food) to \(\.$meal)") {
+            \.$servings
+            \.$grams
+        }
+    }
+
+    @MainActor func perform() async throws -> some IntentResult & ProvidesDialog {
+        AppServices.start()
+        let store = AppServices.store, mealTime = meal?.mealTime ?? MealTime.suggested()
+        guard let item = FoodEntity.food(food.id) else { return .result(dialog: "Leanr couldn't find that food.") }
+        guard let quantity = Assistant.servings(servings, grams: grams, of: item) else {
+            return .result(dialog: grams != nil && item.servingWeight == nil
+                           ? "\(item.name) isn't weighed in grams in Leanr, so tell me how many servings instead."
+                           : "That amount doesn't look right, so I haven't logged anything.")
+        }
+        guard store.log([Portion(food: item, quantity: quantity)], name: item.name, date: Date(), mealTime: mealTime) else {
+            return .result(dialog: "Leanr couldn't save that. Open the app to check your data.")
+        }
+        await AppServices.health.finishPending()
+        let left = Assistant.remaining(store.data, goals: store.goals).calories
+        return .result(dialog: "\(Assistant.loggedAnswer(food: item, quantity: quantity, mealTime: mealTime, caloriesLeft: left))")
     }
 }
 
@@ -183,6 +219,12 @@ struct LeanrShortcuts: AppShortcutsProvider {
             "What can I get at \(\.$restaurant) with \(.applicationName)",
             "What fits in \(.applicationName)"
         ], shortTitle: "What Fits", systemImageName: "fork.knife")
+        AppShortcut(intent: LogFoodIntent(), phrases: [
+            "Log \(\.$food) in \(.applicationName)",
+            "Log \(\.$food) with \(.applicationName)",
+            "Add \(\.$food) to \(.applicationName)",
+            "Log a food in \(.applicationName)"
+        ], shortTitle: "Log a Food", systemImageName: "plus.circle")
         AppShortcut(intent: FoodMacrosIntent(), phrases: [
             "Look up a food in \(.applicationName)",
             "How much protein is in \(\.$food) in \(.applicationName)",

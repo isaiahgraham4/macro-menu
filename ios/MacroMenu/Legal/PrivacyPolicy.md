@@ -71,8 +71,9 @@ Because I don't hold any of your data, there's nothing for me to delete on my si
 
 Leanr doesn't sell or share your personal data, and it uses no analytics, advertising or tracking services. The only outside services it contacts are:
 
-- **Apple** (United States and elsewhere): Maps, iCloud and Health, which are part of your device and your Apple Account and are covered by Apple's privacy policy.
+- **Apple** (United States and elsewhere): Maps, iCloud, Health, Siri and Visual Intelligence, which are part of your device and your Apple Account and are covered by Apple's privacy policy.
 - **Open Food Facts** (France): receives only a product's barcode number or the words you search for packaged foods. Neither is linked to you.
+- **GitHub** (United States): hosts the restaurant menu file. A few times a day Leanr asks it whether the menu has changed and, if it has, downloads the new one. The request contains nothing about you or your data. As with any website, GitHub sees your device's IP address and handles it under GitHub's privacy statement.
 
 Any service that receives data from Leanr must protect it at least as well as this policy does. If that ever changes, this policy will be updated before the app sends anything new.
 

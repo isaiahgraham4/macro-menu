@@ -93,12 +93,15 @@ struct FoodRow: View {
     /// Shows a "+" that adds one serving without opening the food.
     var quickAdd: (() -> Void)?
     var quickAddLabel = "Log"
+    @Environment(\.dynamicTypeSize) private var typeSize
     var body: some View {
-        HStack(spacing: 8) {
+        // At the largest text sizes the "+" moves under the details, so the name keeps the full width.
+        let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 4)) : AnyLayout(HStackLayout(spacing: 8))
+        layout {
             details
             if let quickAdd {
                 Button(action: quickAdd) {
-                    Image(systemName: "plus.circle.fill").font(.title2).frame(width: 44, height: 44).contentShape(Rectangle())
+                    Image(systemName: "plus.circle.fill").font(.title2).frame(minWidth: 44, minHeight: 44).contentShape(Rectangle())
                 }.buttonStyle(.borderless).accessibilityLabel("\(quickAddLabel) \(food.name)")
             }
         }
@@ -107,8 +110,11 @@ struct FoodRow: View {
         VStack(alignment: .leading, spacing: 5) {
             Text(food.name).font(.roboto(.headline)).foregroundStyle(.primary)
             Text(food.serve.isEmpty ? store.chainName(food.chain) : "\(store.chainName(food.chain)) · \(food.serve)").font(.roboto(.caption)).foregroundStyle(.secondary)
-            Text("\(food.cal.number) Cal · \(food.p.number) g protein").font(.roboto(.subheadline)).foregroundStyle(.secondary)
-        }.padding(.vertical,4)
+            Text("\(food.cal.number) Cal · \(food.p.number) g protein").font(.roboto(.subheadline)).foregroundStyle(.secondary).monospacedDigit()
+        }
+        // Full width, so the "+" lines up at the trailing edge on every row.
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.vertical,4)
     }
 }
 /// Pins a food to the top of the "+" menu and the Log again widget, or unpins it.

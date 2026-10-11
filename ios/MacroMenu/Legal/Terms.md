@@ -10,7 +10,7 @@ Leanr gives general nutrition information to help you choose and log food. It is
 
 ## Nutrition and allergens
 
-- Restaurant figures come from each chain's own published nutrition information on the date shown in Settings → Menu sources. Chains change recipes, and figures vary between stores and serves.
+- Restaurant figures come from each chain's own published nutrition information on the date shown in Settings → Menu sources. Chains change recipes, and figures vary between stores and serves. Leanr downloads updated menus without an app update, and the date shown is the menu in use.
 - Custom orders (with ingredients taken off) and recipes are estimates.
 - Everyday foods (such as bananas and chicken breast) are average figures from the U.S. Department of Agriculture's FoodData Central. Brands, varieties and cooking change them.
 - Scanned and searched packaged products come from Open Food Facts, which is edited by volunteers. Check them against the package.
@@ -25,16 +25,9 @@ Opening hours are shown in Apple Maps' place card and come from Apple. "Delivery
 
 Restaurant names and brands belong to their owners. Leanr isn't affiliated with, endorsed by or sponsored by any restaurant or delivery service.
 
-## Purchases and refunds
+## Cost
 
-Leanr is currently free. If paid features are offered later:
-
-- They're sold through Apple's App Store, which handles payment. The full price is shown before you buy, and there are no other fees.
-- Subscriptions renew automatically until you cancel them in your Apple Account settings at least 24 hours before the renewal date.
-- Refunds are handled by Apple. Request one at reportaproblem.apple.com.
-
-Nothing in these terms limits your rights under the Australian Consumer Law. That includes a refund or remedy when something has a major fault.
-
+Leanr is free to use. If paid features are ever added, how they're sold and refunded will be described here before they go on sale.
 ## Your data
 
 What you enter in Leanr is yours. The privacy policy explains how it's handled.

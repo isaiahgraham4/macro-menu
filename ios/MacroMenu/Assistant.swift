@@ -31,6 +31,38 @@ enum Assistant {
     }
 
     /// A spoken and shown answer to "What fits at …?".
+    /// What to offer for a spoken food name: a food named exactly that, on its own, so "banana" doesn't ask which of ten bananas.
+    /// Several exact matches (the same burger at two chains) are all offered so Siri can ask which.
+    static func spokenMatches(_ foods: [Food], query: String, chainNames: [String: String], limit: Int = 10) -> [Food] {
+        let found = FoodSearch.browse(foods, chainNames: chainNames, request: .init(search: query))
+        let words = FoodSearch.tokens(query)
+        let exact = found.filter { FoodSearch.tokens($0.name) == words }
+        return Array((exact.isEmpty ? found : exact).prefix(limit))
+    }
+
+    /// How many servings a spoken amount means: grams when the food has a weight to compare with, otherwise servings, otherwise one.
+    /// Nil when the amount isn't sensible, so Siri can say so rather than log it.
+    static func servings(_ servings: Double?, grams: Double?, of food: Food) -> Double? {
+        if let grams {
+            guard grams > 0, let weight = food.servingWeight?.0, weight > 0 else { return nil }
+            let quantity = grams / weight
+            return (0.01...100).contains(quantity) ? quantity : nil
+        }
+        let quantity = servings ?? 1
+        return quantity.isFinite && quantity > 0 && quantity <= 100 ? quantity : nil
+    }
+
+    /// "Logged 2 × Banana to snacks: 210 Cal, 2.6 g protein. 1,200 Cal left today."
+    static func loggedAnswer(food: Food, quantity: Double, mealTime: MealTime, caloriesLeft: Double?) -> String {
+        let total = Nutrition([Portion(food: food, quantity: quantity)])
+        let amount = quantity == 1 ? "" : "\(quantity.number) × "
+        var text = "Logged \(amount)\(food.name) to \(mealTime.title.lowercased()): \(total.cal.rounded().number) Cal, \(total.p.number) g protein."
+        if let left = caloriesLeft {
+            text += left >= 0 ? " \(left.rounded().number) Cal left today." : " That's \(abs(left).rounded().number) Cal over today's target."
+        }
+        return text
+    }
+
     /// "A Banana (1 medium, 118 g) has 105 Cal, 1.3 g protein, 27 g carbs and 0.4 g fat."
     static func macrosAnswer(_ food: Food, place: String) -> String {
         var parts = ["\(food.cal.rounded().number) Cal", "\(food.p.number) g protein"]

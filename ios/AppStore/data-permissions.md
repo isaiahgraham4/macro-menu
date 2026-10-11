@@ -53,4 +53,5 @@ return, only take them from public menus or in-store boards, not from inside an 
 ## If a chain asks for removal
 
 Delete its rows in `Scripts/menu-source.js`, run `node Scripts/export-menu.cjs`, update the catalogue count in
-`Tests/AppChecks.swift`, and ship a build. Logged meals keep their own copies, so users' history isn't affected.
+`Tests/AppChecks.swift`, run the checks, then `sh Scripts/publish-menu.sh` so phones drop it within about 6 hours, and ship a
+build so new installs don't have it either. Logged meals keep their own copies, so users' history isn't affected.

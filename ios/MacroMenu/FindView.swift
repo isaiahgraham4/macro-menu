@@ -9,6 +9,7 @@ struct FindView: View {
     @State private var searching = false
     @State private var initialized = false
     @State private var searchID = UUID()
+    @Environment(\.dynamicTypeSize) private var typeSize
     var body: some View {
         LeanrList {
             Section {
@@ -47,17 +48,20 @@ struct FindView: View {
             }
             Section {
                 VStack(alignment: .leading, spacing: 6) {
-                    Text("An order that fits.").font(.display(.title))
+                    Text("An order that fits").font(.roboto(.title3, weight: .bold))
                     Text("Choose your calories and protein. Find combinations from one restaurant.").foregroundStyle(.secondary)
                 }.padding(.top, 6)
-                HStack(spacing: 10) {
+                // Pairs sit side by side, and stack at the largest text sizes so numbers and labels stay whole.
+                let big = typeSize.isAccessibilitySize
+                let pair = big ? AnyLayout(VStackLayout(spacing: 10)) : AnyLayout(HStackLayout(spacing: 10))
+                pair {
                     StatField(title: "Calories up to", unit: "Cal", value: $query.calories)
                     StatField(title: "Protein target", unit: "g", value: $query.protein)
                 }
                 .listRowSeparator(.hidden)
-                HStack {
+                (big ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8)) : AnyLayout(HStackLayout())) {
                     Picker("Items per order", selection: $query.maxItems) { ForEach(1...3, id: \.self) { Text("Up to \($0) item\($0 == 1 ? "" : "s")").tag($0) } }
-                    Spacer()
+                    if !big { Spacer() }
                     Picker("Rank by", selection: $query.sort) {
                         Text("Closest fit").tag("fit"); Text("Lowest calories").tag("lean"); Text("Most protein").tag("protein")
                     }
