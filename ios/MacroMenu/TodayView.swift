@@ -13,6 +13,7 @@ struct TodayView: View {
     @State private var photo = false
     @State private var editing: LogEntry?
     @State private var editingTargets = false
+    @State private var estimating = false
     @State private var showingCalendar = false
     @State private var now = Date()
     @State private var mealTime = MealTime.suggested()
@@ -84,6 +85,10 @@ struct TodayView: View {
                         Text("Partial data for \(partialNames.joined(separator: ", ")): some logged items don't list them.")
                             .font(.roboto(.caption)).foregroundStyle(.secondary).frame(maxWidth: .infinity, alignment: .leading)
                     }
+                    // The estimate lives here, not only under Edit, so a first-time user can find it.
+                    Button { estimating = true } label: {
+                        Label("Calculate my macros", systemImage: "function").frame(maxWidth: .infinity, alignment: .leading)
+                    }.buttonStyle(.borderless).font(.roboto(.subheadline, weight: .medium))
                 }.padding(.vertical, 10)
             } header: {
                 HStack {
@@ -189,6 +194,13 @@ struct TodayView: View {
                 NavigationStack { TrackingCalendarView(selectedDate: $date) }
             }
             .navigationDestination(isPresented: $editingTargets) { TargetsView() }
+            .sheet(isPresented: $estimating) {
+                NavigationStack {
+                    TargetCalculator { values in
+                        if store.applyEstimatedTargets(values) { estimating = false; store.notice = "Targets updated" }
+                    }
+                }
+            }
             .sheet(isPresented: $quick) { NavigationStack {
                 FoodEditor(food: nil, savePortion: { store.log([$0], name: $0.food.name, date: date, mealTime: mealTime) }) {
                     store.log([Portion(food: $0)], name: $0.name, date: date, mealTime: mealTime)

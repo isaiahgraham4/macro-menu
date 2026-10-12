@@ -623,9 +623,68 @@ import Foundation
         }
         assert(seen("banana").first == "Banana")
         assert(seen("rice").prefix(2).allSatisfy { $0.hasSuffix("rice, cooked") })
+        assert(seen("rice").first == "White rice, cooked" && seen("chicken breast").first == "Chicken breast, cooked")
+        assert(seen("egg").first == "Egg" && seen("potato").first == "Potato, baked")
         assert(seen("chicken leg", ["chicken drumstick"]) == ["Chicken drumstick, cooked"])
         assert(seen("chair").isEmpty && seen("bananna").isEmpty)
-        assert(seen("Big Mac", brand: "McDonald's").first == "Big Mac" && seen("fries", brand: "macca's").allSatisfy { $0.contains("Fries") })
+        // Apple's image classifier: its chain of labels becomes one food, and a dish's parts aren't foods of their own.
+        func labels(_ pairs: [(String, Double)]) -> [VisionFoodLabels.Reading] { pairs.map { VisionFoodLabels.Reading(identifier: $0.0, confidence: $0.1) } }
+        func visionNames(_ whole: [(String, Double)], tiles: [[(String, Double)]] = []) -> [String] {
+            VisionFoodLabels.foods(whole: labels(whole), tiles: tiles.map(labels)).map(\.name)
+        }
+        assert(visionNames([("food", 0.89), ("hamburger", 0.89), ("meat", 0.89), ("seed", 0.08), ("sesame", 0.08), ("cheese", 0.07)]) == ["hamburger"])
+        assert(visionNames([("food", 0.21), ("banana", 0.21), ("fruit", 0.21), ("pacifier", 0.13), ("toy", 0.13)]) == ["banana"])
+        assert(visionNames([("food", 0.41), ("dessert", 0.34), ("baked_goods", 0.34), ("cake", 0.34), ("pancake", 0.34)]) == ["pancakes"])
+        assert(visionNames([("food", 0.57), ("cake", 0.57), ("dessert", 0.57)]) == ["cake"])
+        assert(visionNames([("food", 0.18), ("meat", 0.18), ("pepperoni", 0.18), ("cheese", 0.08), ("pizza", 0.06)]) == ["pepperoni pizza"])
+        assert(visionNames([("food", 0.8), ("pizza", 0.8), ("cheese", 0.5), ("pepperoni", 0.4)]) == ["pizza"])
+        assert(visionNames([("cookware", 0.71), ("food", 0.6), ("egg", 0.56), ("yolk", 0.56), ("fried_egg", 0.43)]) == ["egg, fried"])
+        assert(visionNames([("food", 0.7), ("egg", 0.7), ("yolk", 0.7)]) == ["egg"])
+        assert(visionNames([("dog", 0.9), ("animal", 0.9), ("food", 0.03)]).isEmpty && visionNames([("banana", 0.06)]).isEmpty)
+        assert(visionNames([("tableware", 0.7), ("plate", 0.7)]).isEmpty)
+        // A plate is read a part at a time: separate foods stay separate, the parts of the dish don't.
+        assert(visionNames([("hamburger", 0.5)], tiles: [[("fries", 0.7)], [("soda", 0.5)], [("lettuce", 0.5)], [("banana", 0.2)]])
+            == ["french fries", "hamburger", "cola"])
+        assert(visionNames([], tiles: [[("banana", 0.8)], [("banana", 0.6)]]) == ["banana"])
+        assert(VisionFoodLabels.foods(whole: labels([("hamburger", 0.9)])).allSatisfy { $0.count == 1 && $0.brand == nil })
+        // Singular and plural are the same food: "strawberry" is Strawberries, not a smoothie with strawberry in its name.
+        assert(seen("strawberry").first == "Strawberries" && seen("eggs").first == "Egg" && seen("tomatoes").first == "Tomato")
+        assert(MealPhoto.stem("strawberries") == MealPhoto.stem("strawberry") && MealPhoto.stem("peas") != MealPhoto.stem("peach"))
+        // Two engines: what both saw counts once, the classifier's foods lead, and a food only the model named is not
+        // ticked when the classifier was sure of something else.
+        func item(_ name: String, _ alternatives: [String] = [], count: Int = 1) -> SeenFood { SeenFood(name: name, alternatives: alternatives, brand: nil, count: count) }
+        let plate = [(food: item("avocado"), score: 0.8), (food: item("broccoli"), score: 0.88), (food: item("carrot"), score: 0.92)]
+        let merged = MealPhoto.merge(named: [item("strawberry")], classified: plate)
+        assert(merged.engine == .both && merged.foods.map(\.name) == ["avocado", "broccoli", "carrot", "strawberry"])
+        assert(merged.foods.prefix(3).allSatisfy(\.agreed) && merged.foods.last?.agreed == false)
+        let agreed = MealPhoto.merge(named: [item("burger", count: 2)], classified: [(food: item("hamburger", ["cheeseburger"]), score: 0.9)])
+        assert(agreed.foods.count == 1 && agreed.foods[0].count == 2 && agreed.foods[0].agreed)
+        let unsure = MealPhoto.merge(named: [item("rice")], classified: [(food: item("banana"), score: 0.2)])
+        assert(unsure.foods.count == 2 && unsure.foods.allSatisfy(\.agreed))
+        assert(MealPhoto.merge(named: [], classified: plate).engine == .imageRecognition && MealPhoto.merge(named: [item("rice")], classified: []).engine == .appleIntelligence)
+        assert(ticked("strawberry") != nil && ticked("rice") != nil)
+        var untrusted = item("strawberry"); untrusted.agreed = false
+        assert(MealPhoto.preselected(from: MealPhoto.matches(for: untrusted, in: everydayStore.foods, chainNames: photoNames), for: untrusted, chainNames: photoNames) == nil)
+        // Nearly every label looks up a food that exists, so a recognised "banana" can't turn up empty-handed.
+        let unmatched = VisionFoodLabels.names.filter { _, words in
+            MealPhoto.matches(for: SeenFood(name: words[0], alternatives: Array(words.dropFirst()), brand: nil, count: 1),
+                              in: everydayStore.foods, chainNames: photoNames).isEmpty
+        }.keys.sorted()
+        // These dishes have no everyday food yet: the row says so and offers a search.
+        assert(Set(unmatched).isSubset(of: ["casserole", "curry", "dumpling", "gyoza", "kebab"]))
+        // Only everyday foods, or the restaurant a visible brand names, are ticked by default.
+        func ticked(_ name: String, _ others: [String] = [], brand: String? = nil) -> Food? {
+            let item = SeenFood(name: name, alternatives: others, brand: brand, count: 1)
+            return MealPhoto.preselected(from: MealPhoto.matches(for: item, in: everydayStore.foods, chainNames: photoNames), for: item, chainNames: photoNames)
+        }
+        assert(MealPhoto.chain(for: "Macca's", chainNames: photoNames) == "mcd" && MealPhoto.chain(for: "McDonald's", chainNames: photoNames) == "mcd"
+            && MealPhoto.chain(for: "Burger King", chainNames: photoNames) == "hj" && MealPhoto.chain(for: "Guzman y Gomez", chainNames: photoNames) == "gyg"
+            && MealPhoto.chain(for: "", chainNames: photoNames) == nil && MealPhoto.chain(for: "Acme Burgers", chainNames: photoNames) == nil)
+        assert(ticked("banana")?.isEveryday == true)
+        assert(ticked("Big Mac") == nil && !seen("Big Mac").isEmpty)
+        assert(ticked("Big Mac", brand: "McDonald's")?.name == "Big Mac" && ticked("Big Mac", brand: "McDonald's")?.isEveryday == false)
+        assert(ticked("fries")?.isEveryday != false)
+        assert(seen("Big Mac", brand: "McDonald's").first == "Big Mac" && seen("fries", brand: "macca's").first?.contains("Fries") == true)
         let visual = Assistant.visualMatches(labels: ["Food", "Fruit", "Banana"], foods: everydayStore.foods, chainNames: photoNames)
         assert(visual.first?.name == "Banana" && Set(visual.map(\.id)).count == visual.count && visual.count <= 10)
         assert(Assistant.visualSearchText(["Food", "Banana"]) == "Banana" && Assistant.visualSearchText(["Food"]) == "Food")

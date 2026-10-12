@@ -14,7 +14,7 @@ Leanr gives general nutrition information to help you choose and log food. It is
 - Custom orders (with ingredients taken off) and recipes are estimates.
 - Everyday foods (such as bananas and chicken breast) are average figures from the U.S. Department of Agriculture's FoodData Central. Brands, varieties and cooking change them.
 - Scanned and searched packaged products come from Open Food Facts, which is edited by volunteers. Check them against the package.
-- When you log from a photo, Apple Intelligence only names the foods. The figures are Leanr's own, but the match and the amount are up to you, so check both before logging.
+- When you log from a photo, your iPhone only names the foods, and it can't count them or read portions. The figures are Leanr's own, but the match and the amount are up to you, so check both before logging.
 - Leanr isn't an allergen guide. Always check allergens with the restaurant.
 
 ## Opening hours, distances and delivery

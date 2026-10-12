@@ -28,6 +28,7 @@ struct MealPhotoView: View {
     @State private var rows: [Row] = []
     @State private var searching: Row.ID?
     @State private var failed = false
+    @State private var engine = MealPhoto.Engine.appleIntelligence
 
     private var portions: [Portion] { rows.compactMap { row in row.food.map { Portion(food: $0, quantity: row.quantity) } } }
 
@@ -43,27 +44,36 @@ struct MealPhotoView: View {
                 }
             } else {
                 Section {
-                    if let reason = MealPhoto.unavailableReason {
-                        Text(reason).foregroundStyle(.secondary)
-                    } else {
-                        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                            Button { camera = true } label: { Label("Take a photo", systemImage: "camera") }
-                        }
-                        PhotosPicker(selection: $pickerItem, matching: .images) { Label("Choose from Photos", systemImage: "photo.on.rectangle") }
+                    if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                        Button { camera = true } label: { Label("Take a photo", systemImage: "camera") }
                     }
+                    PhotosPicker(selection: $pickerItem, matching: .images) { Label("Choose from Photos", systemImage: "photo.on.rectangle") }
                 } footer: {
-                    Text("Apple Intelligence names the foods on your iPhone. The photo isn't saved or sent anywhere. The figures are Leanr's own, so check each match and how much you had.")
+                    Text("Your iPhone names the foods in the photo. Nothing is saved or sent anywhere. The figures are Leanr's own, so check each match and how much you had.")
                 }
             }
             if phase == .done {
                 if rows.isEmpty {
-                    Section { Text("No food found in this photo. Try one taken from above, with the food filling the frame.").foregroundStyle(.secondary) }
+                    Section { Text("No food found in this photo. Try one taken from above, with the food filling the frame, or search for it instead.").foregroundStyle(.secondary) }
+                } else {
+                    Section {
+                        Text(engine == .appleIntelligence
+                             ? "Named by Apple Intelligence on your iPhone. Check each match and how much you had."
+                             : "Named by your iPhone's built-in image recognition\(engine == .both ? " and Apple Intelligence" : ""). It can't count, so each food is one serving: check the amounts.")
+                            .font(.roboto(.caption)).foregroundStyle(.secondary)
+                    }
                 }
                 ForEach($rows) { $row in
                     Section {
                         if row.matches.isEmpty {
                             Text("Not in Leanr yet.").foregroundStyle(.secondary)
                         } else {
+                            if row.chosen == nil {
+                                Text(row.seen.agreed
+                                     ? "No everyday food matched. These restaurant items have similar names. Pick one only if that's what you had."
+                                     : "Only one of the two readings saw this, so it isn't ticked. Choose it if it's on the plate.")
+                                    .font(.roboto(.caption)).foregroundStyle(.secondary)
+                            }
                             Picker("Log as", selection: $row.chosen) {
                                 ForEach(row.matches) { food in
                                     Text(food.name).tag(Optional(food.id))
@@ -131,19 +141,22 @@ struct MealPhotoView: View {
 
     private func look(at picked: UIImage) {
         image = picked; rows = []; phase = .looking
-        guard #available(iOS 27.0, *), let cgImage = picked.normalisedCGImage else { phase = .failed("That photo couldn't be read."); return }
+        guard let cgImage = picked.normalisedCGImage else { phase = .failed("That photo couldn't be read."); return }
         let foods = store.foods
         let names = Dictionary(store.catalog.chains.map { ($0.id, $0.name) }) { a, _ in a }.merging([Food.everyday: store.chainName(Food.everyday)]) { a, _ in a }
         Task {
             do {
-                let seen = try await MealPhoto.foods(in: cgImage)
+                let recognised = try await MealPhoto.recognise(cgImage)
                 let found = await Task.detached(priority: .userInitiated) {
-                    seen.map { item in (item, MealPhoto.matches(for: item, in: foods, chainNames: names)) }
+                    recognised.foods.map { item in (item, MealPhoto.matches(for: item, in: foods, chainNames: names)) }
                 }.value
-                rows = found.map { item, matches in Row(seen: item, matches: matches, chosen: matches.first?.id, quantity: Double(item.count)) }
+                engine = recognised.engine
+                rows = found.map { item, matches in
+                    Row(seen: item, matches: matches, chosen: MealPhoto.preselected(from: matches, for: item, chainNames: names)?.id, quantity: Double(item.count))
+                }
                 phase = .done
             } catch {
-                phase = .failed(MealPhoto.unavailableReason ?? "Apple Intelligence couldn't look at this photo. Try again, or search for the food instead.")
+                phase = .failed("Couldn't look at this photo. Try another, or search for the food instead.")
             }
         }
     }

@@ -15,6 +15,10 @@ The app uses SwiftUI and requires no third-party packages or API keys.
 - My foods: foods per serving or per 100 g/mL, optional and custom nutrients,
   recipes with ingredient portions and a serving yield, and saved custom orders.
   Swipe a saved food right to edit or left to delete.
+- Photo of your meal (Today → Photo of your meal): foods are named on the device, by Apple Intelligence where the iPhone
+  has it, otherwise by Apple's Vision image classifier over the photo and its four quarters (`MealVision`,
+  `VisionFoodLabels`: label chains collapse to one food, a dish hides its parts, labels map to everyday-food names). Each
+  food is matched to Leanr's own data; only everyday foods, or a restaurant the photo's brand names, are ticked for you.
 - Photo labels: Apple Vision reads text on-device. Select the numeric column and
   tap Fill recognised numbers for review. Only explicitly labelled numeric rows
   are suggested; review units, serving basis and all values before saving.

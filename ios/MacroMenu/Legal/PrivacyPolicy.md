@@ -29,7 +29,7 @@ Health information is never used for advertising or marketing, never sold, and n
 
 ## Camera
 
-The camera is used to scan barcodes, read nutrition labels and, on iPhones with Apple Intelligence, recognise the foods in a photo of your meal. This happens on your device, using Apple's on-device model for meal photos. Photos aren't saved or sent anywhere, and you can also choose a photo from your library instead; Leanr only sees the one you pick.
+The camera is used to scan barcodes, read nutrition labels and recognise the foods in a photo of your meal. This happens on your device, using Apple Intelligence where your iPhone has it and Apple's built-in image recognition otherwise. Photos aren't saved or sent anywhere, and you can also choose a photo from your library instead; Leanr only sees the one you pick.
 
 ## Siri and Visual Intelligence
 
