@@ -21,6 +21,10 @@ final class HealthSync {
     private(set) var activeEnergyToday: Double?
     /// Average daily active energy over the last two weeks, counting days with any recorded.
     private(set) var averageActiveEnergy: Double?
+    /// Steps by day (day key) for the last 90 days. Kept in memory only: Health data isn't copied to iCloud or Leanr's backups.
+    private(set) var steps: [String: Double] = [:]
+    /// True once a step read has completed this launch, so the screens can tell "none yet" from "not loaded".
+    private(set) var stepsLoaded = false
     weak var store: AppStore?
     /// Health updates run one after another, so a quick log-then-undo can't leave a stray sample behind.
     private var queue: Task<Void, Never>?
@@ -36,6 +40,7 @@ final class HealthSync {
     private static var nutritionTypes: [HKQuantityType] { nutrients.map { HKQuantityType($0.type) } }
     private static let bodyMass = HKQuantityType(.bodyMass)
     private static let water = HKQuantityType(.dietaryWater)
+    private static let stepCount = HKQuantityType(.stepCount)
     private static let activeEnergy = HKQuantityType(.activeEnergyBurned)
     private static let food = HKCorrelationType(.food)
 
@@ -44,7 +49,7 @@ final class HealthSync {
         guard isAvailable else { return false }
         do {
             try await health.requestAuthorization(toShare: Set(Self.nutritionTypes + [Self.bodyMass, Self.water]),
-                                                  read: [Self.bodyMass, Self.activeEnergy])
+                                                  read: [Self.bodyMass, Self.activeEnergy, Self.stepCount])
         } catch { lastError = error.localizedDescription; return false }
         lastError = nil
         enabled = true
@@ -61,7 +66,7 @@ final class HealthSync {
     }
 
     func disconnect() {
-        enabled = false; activeEnergyToday = nil; averageActiveEnergy = nil
+        enabled = false; activeEnergyToday = nil; averageActiveEnergy = nil; steps = [:]; stepsLoaded = false
     }
 
     /// Mirrors a change in Leanr: removed or edited entries and weights come out of Health, new versions go in.
@@ -114,6 +119,35 @@ final class HealthSync {
             }
         }
         await importWeights()
+        await refreshSteps()
+    }
+
+    /// Asks for permission to read steps. For people who connected Health before steps existed, this is the first time it's asked;
+    /// afterwards it answers at once. Health doesn't say whether reading was allowed, only whether the question was asked.
+    func requestStepAccess() async {
+        guard isAvailable else { return }
+        do { try await health.requestAuthorization(toShare: [], read: [Self.stepCount]) } catch { lastError = error.localizedDescription; return }
+        enabled = true
+        await refreshSteps()
+    }
+
+    /// Reads each day's steps for the last 90 days. Health adds up what the iPhone, watch and other sources recorded without
+    /// counting the same walk twice.
+    func refreshSteps() async {
+        guard enabled else { return }
+        let calendar = Calendar.current, today = calendar.startOfDay(for: Date())
+        guard let start = calendar.date(byAdding: .day, value: -89, to: today) else { return }
+        let query = HKStatisticsCollectionQueryDescriptor(
+            predicate: .quantitySample(type: Self.stepCount, predicate: HKQuery.predicateForSamples(withStart: start, end: nil)),
+            options: .cumulativeSum, anchorDate: start, intervalComponents: DateComponents(day: 1))
+        // Until steps have been asked for, Health refuses the question; that reads as "no steps yet", with a button to allow them.
+        guard let collection = try? await query.result(for: health) else { steps = [:]; stepsLoaded = true; return }
+        var days: [String: Double] = [:]
+        for statistics in collection.statistics() {
+            if let sum = statistics.sumQuantity()?.doubleValue(for: .count()), sum > 0 { days[dayKey(statistics.startDate)] = sum.rounded() }
+        }
+        steps = days
+        stepsLoaded = true
     }
 
     private func importWeights() async {

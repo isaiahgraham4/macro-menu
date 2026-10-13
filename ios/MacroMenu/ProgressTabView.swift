@@ -25,6 +25,7 @@ struct ProgressTabView: View {
             weightSection(breakdown)
             BodySection()
             weekSection
+            StepsProgressSection(days: Dictionary(uniqueKeysWithValues: breakdown.points.map { ($0.key, $0.date) }))
             if breakdown.loggedDays == 0 {
                 Section {
                     ContentUnavailableView("Nothing logged in the last \(breakdown.days) days", systemImage: "chart.bar",

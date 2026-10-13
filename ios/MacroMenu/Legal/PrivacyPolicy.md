@@ -23,7 +23,7 @@ iCloud sync is on unless you turn it off in Settings. It keeps a copy of your fo
 Leanr only uses Apple Health if you connect it in Settings, and you choose which types it may read or write. If you connect:
 
 - Leanr writes the food you log, the water you log (one total for each day) and the weights you enter.
-- Leanr reads your weight and active energy to show your trend and estimate your target.
+- Leanr reads your weight, active energy and steps to show your trend and your steps, and to estimate your target. Step counts are only held in memory while you use Leanr; they are never saved in Leanr's data, its iCloud copy or its exports.
 
 Health information is never used for advertising or marketing, never sold, and never leaves your device except through Apple's own Health sync.
 

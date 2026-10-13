@@ -841,10 +841,23 @@ import UniformTypeIdentifiers
             let copy = try JSONDecoder().decode(AppData.self, from: JSONEncoder().encode(combined))
             assert(copy.water == combined.water && copy.waterTarget == 3000 && copy.isValid)
             var legacyJSON = try JSONSerialization.jsonObject(with: JSONEncoder().encode(AppData())) as! [String: Any]
-            for key in ["water", "waterTarget", "waterGlass", "measurements"] { legacyJSON[key] = nil }
+            for key in ["water", "waterTarget", "waterGlass", "measurements", "stepGoal"] { legacyJSON[key] = nil }
             let legacy = try JSONDecoder().decode(AppData.self, from: JSONSerialization.data(withJSONObject: legacyJSON))
             assert(legacy.water == nil && legacy.measurementLog.isEmpty && legacy.isValid)
             assert(Water.date(of: "2026-10-13") != nil && Water.date(of: "nope") == nil)
+            // Steps: only the goal is saved; averages skip days with nothing recorded.
+            assert(Steps.goal(AppData()) == 8000 && Steps.text(6420.4) == "6,420" && Steps.progress(4000, goal: 8000) == 0.5 && Steps.progress(9000, goal: 8000) == 1)
+            let stepDays = ["2026-10-10", "2026-10-11", "2026-10-12", "2026-10-13"]
+            let walked = Steps.summary(["2026-10-10": 9000, "2026-10-11": 0, "2026-10-12": 5000], days: stepDays, goal: 8000)
+            assert(walked.average == 7000 && walked.countedDays == 2 && walked.daysMet == 1 && walked.total == 14000 && walked.best == 9000)
+            assert(Steps.summary([:], days: stepDays, goal: 8000).average == nil)
+            var goalData = AppData(); goalData.stepGoal = 10_000
+            assert(goalData.isValid && Steps.goal(goalData) == 10_000)
+            goalData.stepGoal = 50; assert(!goalData.isValid)
+            assert(store.setStepGoal(12_000) && Steps.goal(store.data) == 12_000 && !store.setStepGoal(10) && Steps.goal(store.data) == 12_000)
+            var noGoal = AppData(), hasGoal = AppData(); hasGoal.stepGoal = 7_500
+            assert(AppStore.merged(noGoal, hasGoal).stepGoal == 7_500 && AppStore.merged(hasGoal, noGoal).stepGoal == 7_500)
+            noGoal.stepGoal = 9_000; assert(AppStore.merged(noGoal, hasGoal).stepGoal == 9_000)
             // Siri and Shortcuts: a glass is your glass, a bottle 500 mL, a litre a litre, and the answers read naturally.
             assert(Water.millilitres(.glass, glass: 300) == 300 && Water.millilitres(.bottle, glass: 300) == 500 && Water.millilitres(.litre, glass: 300) == 1000)
             assert(Water.Size(rawValue: "glass") == .glass && Water.singleLimit == 5000)
@@ -1051,6 +1064,6 @@ import UniformTypeIdentifiers
             assert(ProgressBreakdown.make(strict, goals: Goals(), days: 7, ending: day(6), calendar: calendar).calorieDays == 2)
         }
 
-        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, delivery, iCloud health rules, deleting all data, the policies, everyday foods, customised orders, photo and Visual Intelligence matching, widget goal colours, Premium access rules, Siri logging and editing saved and logged meals, water, measurements, progress photos, fibre and sodium nudges, the progress breakdown, what fits what's left and no prices (\(Date().timeIntervalSince(start).formatted())s).")
+        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, delivery, iCloud health rules, deleting all data, the policies, everyday foods, customised orders, photo and Visual Intelligence matching, widget goal colours, Premium access rules, Siri logging and editing saved and logged meals, water, measurements, progress photos, fibre and sodium nudges, steps, the progress breakdown, what fits what's left and no prices (\(Date().timeIntervalSince(start).formatted())s).")
     }
 }

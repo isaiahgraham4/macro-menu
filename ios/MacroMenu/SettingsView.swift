@@ -101,6 +101,7 @@ struct SettingsView: View {
                 NavigationLink { TargetsView() } label: { Label("Targets & target sets", systemImage: "target") }
                 Button { estimating = true } label: { Label("Calculate my macros", systemImage: "function") }
                 NavigationLink { WaterSettings() } label: { Label("Water target", systemImage: "drop") }
+                NavigationLink { StepsSettings() } label: { Label("Steps goal", systemImage: "figure.walk") }
                 Toggle(isOn: $suggestFoods) { Label("Suggest foods for what's left", systemImage: "lightbulb") }
                 NavigationLink { MacroColourSettings() } label: { Label("Target colours", systemImage: "paintpalette") }
                 NavigationLink { ReminderSettings() } label: { Label("Meal reminders", systemImage: "bell") }
@@ -114,7 +115,7 @@ struct SettingsView: View {
                     Text("Apple Health isn’t available on this device.").foregroundStyle(.secondary)
                 }
             } header: { Text("Apple Health") } footer: {
-                Text("Saves the food you log and your weigh-ins to Health, and reads your weight and active energy. To choose exactly what Leanr can read or write, open the Health app → your profile → Apps → Leanr.")
+                Text("Saves the food and water you log and your weigh-ins to Health, and reads your weight, active energy and steps. To choose exactly what Leanr can read or write, open the Health app → your profile → Apps → Leanr.")
             }
             Section {
                 Toggle(isOn: Binding(get: { cloud.enabled }, set: { cloud.enabled = $0 })) { Label("Sync with iCloud", systemImage: "icloud") }

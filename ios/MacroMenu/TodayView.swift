@@ -169,6 +169,7 @@ struct TodayView: View {
             }
             Section {
                 WaterRow(date: date)
+                StepsRow(date: date)
             }
             Section {
                 TileRow {

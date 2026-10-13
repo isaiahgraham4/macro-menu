@@ -209,6 +209,11 @@ final class AppStore {
         guard Water.targetRange.contains(target), Water.glassRange.contains(glass) else { return false }
         return change { $0.waterTarget = target; $0.waterGlass = glass }
     }
+    /// Saves the daily step goal if it's within range.
+    @discardableResult func setStepGoal(_ goal: Double) -> Bool {
+        guard Steps.goalRange.contains(goal) else { return false }
+        return change { $0.stepGoal = goal }
+    }
     func export() throws -> Data {
         let encoder = JSONEncoder(); encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
         return try encoder.encode(data)
@@ -259,6 +264,7 @@ final class AppStore {
         }
         if state.waterTarget == nil { state.waterTarget = backup.waterTarget }
         if state.waterGlass == nil { state.waterGlass = backup.waterGlass }
+        if state.stepGoal == nil { state.stepGoal = backup.stepGoal }
         if !backup.measurementLog.isEmpty {
             var measurements = state.measurementLog
             for entry in backup.measurementLog {

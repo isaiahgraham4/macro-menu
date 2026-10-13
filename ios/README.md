@@ -49,6 +49,11 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   most, then everyday foods (`Assistant.suggestions`).
 - Weekly review fibre and sodium: averages over days where every logged food lists the nutrient, against your target or the
   25 g / 2,000 mg guide, with short nudges once two days are counted.
+- Steps (Today under Water, Progress, Settings → Targets → Steps goal): the day's steps from Apple Health against a goal
+  (default 8,000), and a chart, average and days-at-goal over the Progress range. Read-only and held in memory
+  (`HealthSync.steps`), never in `AppData`, iCloud or backups; only the goal (`AppData.stepGoal`) is saved. Google's health
+  data has no iPhone API, so only Apple Health is read. Apple Health itself combines the iPhone, a watch and anything
+  else that writes steps to it.
 - Apple Health (Settings): writes each logged meal as a food correlation with its
   nutrients, and weigh-ins; reads weight and active energy. Every sample carries
   its Leanr entry or weight ID, so edits, deletes and undo replace exactly those

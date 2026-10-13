@@ -228,6 +228,8 @@ struct AppData: Codable, Sendable {
     var water: [String: Double]? = nil
     var waterTarget: Double? = nil
     var waterGlass: Double? = nil
+    /// The daily step goal (see `Steps`). The step counts themselves stay in Apple Health.
+    var stepGoal: Double? = nil
     /// Foods pinned to the top of the "+" menu and the Log again widget. Copies, so a pin still works if the item leaves the menu.
     /// Optional so saved data and backups from before pinning still load.
     var pinned: [Food]? = nil
@@ -238,7 +240,7 @@ struct AppData: Codable, Sendable {
             && logs.keys.allSatisfy { $0.range(of: #"^\d{4}-\d{2}-\d{2}$"#, options: .regularExpression) != nil }
         let targets = goalSets.allSatisfy(\.isValid) && dayGoals.values.allSatisfy(\.isValid)
         let body = weightLog.allSatisfy(\.isValid) && (weightGoal?.isValid ?? true)
-            && measurementLog.allSatisfy(\.isValid) && Water.isValid(self)
+            && measurementLog.allSatisfy(\.isValid) && Water.isValid(self) && Steps.isValid(self)
         let unique = Set(foods.map(\.id)).count == foods.count && Set(meals.map(\.id)).count == meals.count
             && Set(goalSets.map(\.id)).count == goalSets.count && Set(measurementLog.map(\.id)).count == measurementLog.count
         return contents && history && targets && body && unique
