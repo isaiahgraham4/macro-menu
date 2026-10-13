@@ -12,6 +12,9 @@ panels give exactly:
 - Bacon & cheese, egg & beetroot, and lettuce, carrot & egg mayo: the differences between Simply Grill'd, Crispy Bacon &
   Cheese and the Mighty Melbourne, and between the Beef Dynamic and the Dynamic Beef Cheeseburger.
 
+One kind is an estimate, marked est: taking off herbed mayo, sweet chilli mayo, chipotle mayo or tomato relish. Grill'd sells
+those as dips with full per-100 g figures, but doesn't say how much goes on a burger, so SAUCE_GRAMS of it is assumed.
+
 Usage:
     python3 ios/Scripts/grilld-menu.py fetch   # downloads the menu into ios/Scripts/grilld-source.json (about 85 requests)
     python3 ios/Scripts/grilld-menu.py build   # writes the menu rows into menu-source.js and the options into grilld-mods.json
@@ -82,6 +85,17 @@ def panel(item):
     return serve, grams
 
 
+def per_gram(item):
+    """A panel's per-100 g column, per gram."""
+    rows = item["nutrition"]["tableRows"]
+    out = {}
+    for row in rows[1:]:
+        key = ROWS.get(row[0].strip().lstrip("-– ").strip())
+        if key and number(row[3]) is not None:
+            out[key] = number(row[3]) / 100
+    return out
+
+
 def clean_name(title):
     name = title.strip().strip("'").replace("‘", "").replace("’", "'")
     name = re.sub(r"^New ", "", name).replace(" with Water", "")
@@ -114,13 +128,16 @@ def negate(amounts):
 
 CATEGORY = {"Chips & Onion Rings": "side", "Dips": "extra"}
 SKIP_CATEGORIES = {"Build Your Own", "Drinks"}
+# How much of one sauce is taken to be on a burger, for the estimated sauce removals. A Grill'd dip pot is 35 g.
+SAUCE_GRAMS = 15
+
 BUNS = {"Panini": "Panini bun", "Traditional": "Traditional bun", "Charcoal Bun": "Charcoal bun", "SuperBun": "SuperBun",
         "Gluten Free": "Gluten free bun", "No Bun": "No bun", "Mini Bun": "Mini bun"}
 
 
 def build():
     source = json.loads(SOURCE.read_text())
-    rows, mods, burgers = [], {}, {}
+    rows, mods, burgers, others = [], {}, {}, {}
     for pid, entry in source["products"].items():
         category, product = entry["category"], entry["product"]
         title = product["title"]
@@ -159,6 +176,8 @@ def build():
                 continue
             serve, grams = found
             rows.append([clean_name(title), cat, serve, f"{grams} g" if grams else "1 serving"])
+            if product.get("subtractions"):
+                others[clean_name(title)] = [s["title"][3:] for s in product["subtractions"]]
 
     # Exact differences between burgers published with the same toppings, measured without the bun.
     def no_bun(name):
@@ -202,6 +221,23 @@ def build():
             options.append(modifier("a:egg-beetroot", "a", "Add Egg & Beetroot", egg_beetroot))
         if {"Cos Lettuce", "Carrot", "Egg Mayo"} <= subs and "Dynamic" in name:
             options.append(modifier("r:salad-mayo", "r", "No Lettuce, Carrot & Egg Mayo", negate(salad_mayo)))
+
+    # Estimated: taking off one sauce. Grill'd sells these sauces as dips with full per-100 g figures, but doesn't publish how
+    # much goes on a burger, so SAUCE_GRAMS is an assumption, kept on the low side so a removal never takes off more than is there.
+    dips = {entry["product"]["title"]: per_gram(entry["product"]) for entry in source["products"].values() if entry["category"] == "Dips"}
+    sauce_dip = {"Herbed Mayo": "Herbed Mayo Dip", "Sweet Chilli Mayo": "Sweet Chilli Mayo Dip", "Chipotle Mayo": "Chipotle Mayo Dip",
+                 "Relish": "Tomato Relish Dip"}
+    for name, subs in [(n, b["subs"]) for n, b in burgers.items()] + list(others.items()):
+        options = mods.setdefault(f"grilld:{slug(name)}", [])
+        for sauce, dip in sauce_dip.items():
+            if sauce not in subs or dip not in dips:
+                continue
+            amounts = {k: round(-v * SAUCE_GRAMS, 1) for k, v in dips[dip].items()}
+            label = "Tomato Relish" if sauce == "Relish" else sauce
+            option = modifier(f"r:{slug(label).strip('-')}", "r", f"No {label}", amounts)
+            option["est"] = True
+            options.append(option)
+    mods = {k: v for k, v in mods.items() if v}
 
     MODS.write_text(json.dumps({"fetched": source["fetched"], "modifiers": mods}, indent=1) + "\n")
     def js(row):

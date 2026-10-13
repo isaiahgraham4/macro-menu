@@ -27,6 +27,11 @@ import UniformTypeIdentifiers
         assert(grilld.first { $0.name == "Mighty Melbourne" }!.modifiers!.contains { $0.name == "No Egg & Beetroot" && $0.kj < 0 })
         assert(grilld.first { $0.name == "Tenders - 3 Pack" }!.modifiers!.contains { $0.name == "Herbed Mayo Dip" })
         assert(!(simply.modifiers ?? []).contains { $0.name.hasSuffix("Dip") })
+        // Sauce removals are estimates from Grill'd's dip figures at 15 g: herbed mayo is 2,600 kJ per 100 g, so 390 kJ.
+        let noMayo = simply.modifiers!.first { $0.name == "No Herbed Mayo" }!
+        assert(noMayo.est == true && noMayo.kind == "r" && abs(noMayo.kj + 390) <= 2)
+        let estimated: [Modifier] = grilld.flatMap { $0.modifiers ?? [] }.filter { $0.est == true }
+        assert(estimated.count == 34 && estimated.allSatisfy { (m: Modifier) -> Bool in m.kind == "r" && m.kj < 0 })
         // One bun and one patty at a time.
         let bunGroups = Set(simply.modifiers!.filter { $0.key.hasPrefix("s:bun-") }.map(\.group))
         let pattyGroups = Set(simply.modifiers!.filter { $0.key.hasPrefix("s:patty-") }.map(\.group))

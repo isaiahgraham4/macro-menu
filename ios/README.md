@@ -153,7 +153,8 @@ figures. Schnitz (October 2026, from the menu's nutrition panels) is included wh
 and fat; its plates, salads, desserts and dips with energy only are left out. Grill'd (October 2026) comes from the panels in
 Grill'd's ordering app (`Scripts/grilld-menu.py fetch` then `build`); each burger is on its default bun, with bun and patty
 swaps and a few extras that are exact differences between Grill'd's published burgers (`grilld-mods.json`). Grill'd lists no
-figures for single ingredients, so a single sauce can't be taken off. Missing values remain unknown. A macro filter excludes items without the required figures. Totals mark
+figures for single ingredients; the one estimate is taking off herbed mayo, sweet chilli mayo, chipotle mayo or tomato relish,
+worked out from Grill'd's figures for that sauce as a dip at an assumed 15 g (`SAUCE_GRAMS`), marked `est`. Missing values remain unknown. A macro filter excludes items without the required figures. Totals mark
 partial nutrient data.
 
 Prices are switched off for now because they vary too much between stores. `Scripts/menu-source.js` keeps them, and

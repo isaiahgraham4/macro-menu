@@ -69,6 +69,40 @@
      "sodium": -154.0
     },
     "price": 0
+   },
+   {
+    "key": "r:herbed-mayo",
+    "id": "no-herbed-mayo",
+    "kind": "r",
+    "name": "No Herbed Mayo",
+    "kj": -389,
+    "p": -0.3,
+    "c": -1.1,
+    "f": -9.8,
+    "nut": {
+     "sat": -0.6,
+     "sugar": -0.1,
+     "sodium": -84.9
+    },
+    "price": 0,
+    "est": true
+   },
+   {
+    "key": "r:tomato-relish",
+    "id": "no-tomato-relish",
+    "kind": "r",
+    "name": "No Tomato Relish",
+    "kj": -62,
+    "p": -0.1,
+    "c": -3.1,
+    "f": -0.1,
+    "nut": {
+     "sat": -0.0,
+     "sugar": -2.6,
+     "sodium": -39.0
+    },
+    "price": 0,
+    "est": true
    }
   ],
   "grilld:cluck-norris": [
@@ -122,6 +156,23 @@
      "sodium": -262.0
     },
     "price": 0
+   },
+   {
+    "key": "r:sweet-chilli-mayo",
+    "id": "no-sweet-chilli-mayo",
+    "kind": "r",
+    "name": "No Sweet Chilli Mayo",
+    "kj": -380,
+    "p": -0.2,
+    "c": -2.4,
+    "f": -9.0,
+    "nut": {
+     "sat": -0.6,
+     "sugar": -0.1,
+     "sodium": -101.8
+    },
+    "price": 0,
+    "est": true
    }
   ],
   "grilld:big-dill-energy": [
@@ -192,6 +243,23 @@
      "sodium": 154.0
     },
     "price": 0
+   },
+   {
+    "key": "r:tomato-relish",
+    "id": "no-tomato-relish",
+    "kind": "r",
+    "name": "No Tomato Relish",
+    "kj": -62,
+    "p": -0.1,
+    "c": -3.1,
+    "f": -0.1,
+    "nut": {
+     "sat": -0.0,
+     "sugar": -2.6,
+     "sodium": -39.0
+    },
+    "price": 0,
+    "est": true
    }
   ],
   "grilld:oscar-piastri-chicken-burger": [
@@ -470,6 +538,40 @@
      "sodium": 59.0
     },
     "price": 0
+   },
+   {
+    "key": "r:herbed-mayo",
+    "id": "no-herbed-mayo",
+    "kind": "r",
+    "name": "No Herbed Mayo",
+    "kj": -389,
+    "p": -0.3,
+    "c": -1.1,
+    "f": -9.8,
+    "nut": {
+     "sat": -0.6,
+     "sugar": -0.1,
+     "sodium": -84.9
+    },
+    "price": 0,
+    "est": true
+   },
+   {
+    "key": "r:tomato-relish",
+    "id": "no-tomato-relish",
+    "kind": "r",
+    "name": "No Tomato Relish",
+    "kj": -62,
+    "p": -0.1,
+    "c": -3.1,
+    "f": -0.1,
+    "nut": {
+     "sat": -0.0,
+     "sugar": -2.6,
+     "sodium": -39.0
+    },
+    "price": 0,
+    "est": true
    }
   ],
   "grilld:crispy-bacon-cheese": [
@@ -625,6 +727,40 @@
      "sodium": 59.0
     },
     "price": 0
+   },
+   {
+    "key": "r:herbed-mayo",
+    "id": "no-herbed-mayo",
+    "kind": "r",
+    "name": "No Herbed Mayo",
+    "kj": -389,
+    "p": -0.3,
+    "c": -1.1,
+    "f": -9.8,
+    "nut": {
+     "sat": -0.6,
+     "sugar": -0.1,
+     "sodium": -84.9
+    },
+    "price": 0,
+    "est": true
+   },
+   {
+    "key": "r:tomato-relish",
+    "id": "no-tomato-relish",
+    "kind": "r",
+    "name": "No Tomato Relish",
+    "kj": -62,
+    "p": -0.1,
+    "c": -3.1,
+    "f": -0.1,
+    "nut": {
+     "sat": -0.0,
+     "sugar": -2.6,
+     "sodium": -39.0
+    },
+    "price": 0,
+    "est": true
    }
   ],
   "grilld:mighty-melbourne": [
@@ -780,6 +916,40 @@
      "sodium": -59.0
     },
     "price": 0
+   },
+   {
+    "key": "r:herbed-mayo",
+    "id": "no-herbed-mayo",
+    "kind": "r",
+    "name": "No Herbed Mayo",
+    "kj": -389,
+    "p": -0.3,
+    "c": -1.1,
+    "f": -9.8,
+    "nut": {
+     "sat": -0.6,
+     "sugar": -0.1,
+     "sodium": -84.9
+    },
+    "price": 0,
+    "est": true
+   },
+   {
+    "key": "r:tomato-relish",
+    "id": "no-tomato-relish",
+    "kind": "r",
+    "name": "No Tomato Relish",
+    "kj": -62,
+    "p": -0.1,
+    "c": -3.1,
+    "f": -0.1,
+    "nut": {
+     "sat": -0.0,
+     "sugar": -2.6,
+     "sodium": -39.0
+    },
+    "price": 0,
+    "est": true
    }
   ],
   "grilld:summer-sunset": [
@@ -901,6 +1071,40 @@
      "sodium": -166.0
     },
     "price": 0
+   },
+   {
+    "key": "r:herbed-mayo",
+    "id": "no-herbed-mayo",
+    "kind": "r",
+    "name": "No Herbed Mayo",
+    "kj": -389,
+    "p": -0.3,
+    "c": -1.1,
+    "f": -9.8,
+    "nut": {
+     "sat": -0.6,
+     "sugar": -0.1,
+     "sodium": -84.9
+    },
+    "price": 0,
+    "est": true
+   },
+   {
+    "key": "r:tomato-relish",
+    "id": "no-tomato-relish",
+    "kind": "r",
+    "name": "No Tomato Relish",
+    "kj": -62,
+    "p": -0.1,
+    "c": -3.1,
+    "f": -0.1,
+    "nut": {
+     "sat": -0.0,
+     "sugar": -2.6,
+     "sodium": -39.0
+    },
+    "price": 0,
+    "est": true
    }
   ],
   "grilld:mustard-pickled-": [
@@ -1022,6 +1226,23 @@
      "sodium": -166.0
     },
     "price": 0
+   },
+   {
+    "key": "r:tomato-relish",
+    "id": "no-tomato-relish",
+    "kind": "r",
+    "name": "No Tomato Relish",
+    "kj": -62,
+    "p": -0.1,
+    "c": -3.1,
+    "f": -0.1,
+    "nut": {
+     "sat": -0.0,
+     "sugar": -2.6,
+     "sodium": -39.0
+    },
+    "price": 0,
+    "est": true
    }
   ],
   "grilld:chilli-addict": [
@@ -1334,6 +1555,40 @@
      "sodium": 154.0
     },
     "price": 0
+   },
+   {
+    "key": "r:sweet-chilli-mayo",
+    "id": "no-sweet-chilli-mayo",
+    "kind": "r",
+    "name": "No Sweet Chilli Mayo",
+    "kj": -380,
+    "p": -0.2,
+    "c": -2.4,
+    "f": -9.0,
+    "nut": {
+     "sat": -0.6,
+     "sugar": -0.1,
+     "sodium": -101.8
+    },
+    "price": 0,
+    "est": true
+   },
+   {
+    "key": "r:tomato-relish",
+    "id": "no-tomato-relish",
+    "kind": "r",
+    "name": "No Tomato Relish",
+    "kj": -62,
+    "p": -0.1,
+    "c": -3.1,
+    "f": -0.1,
+    "nut": {
+     "sat": -0.0,
+     "sugar": -2.6,
+     "sodium": -39.0
+    },
+    "price": 0,
+    "est": true
    }
   ],
   "grilld:zen-hen": [
@@ -1472,6 +1727,23 @@
      "sodium": 154.0
     },
     "price": 0
+   },
+   {
+    "key": "r:herbed-mayo",
+    "id": "no-herbed-mayo",
+    "kind": "r",
+    "name": "No Herbed Mayo",
+    "kj": -389,
+    "p": -0.3,
+    "c": -1.1,
+    "f": -9.8,
+    "nut": {
+     "sat": -0.6,
+     "sugar": -0.1,
+     "sodium": -84.9
+    },
+    "price": 0,
+    "est": true
    }
   ],
   "grilld:simon-says": [
@@ -1593,6 +1865,40 @@
      "sodium": 232.0
     },
     "price": 0
+   },
+   {
+    "key": "r:herbed-mayo",
+    "id": "no-herbed-mayo",
+    "kind": "r",
+    "name": "No Herbed Mayo",
+    "kj": -389,
+    "p": -0.3,
+    "c": -1.1,
+    "f": -9.8,
+    "nut": {
+     "sat": -0.6,
+     "sugar": -0.1,
+     "sodium": -84.9
+    },
+    "price": 0,
+    "est": true
+   },
+   {
+    "key": "r:tomato-relish",
+    "id": "no-tomato-relish",
+    "kind": "r",
+    "name": "No Tomato Relish",
+    "kj": -62,
+    "p": -0.1,
+    "c": -3.1,
+    "f": -0.1,
+    "nut": {
+     "sat": -0.0,
+     "sugar": -2.6,
+     "sodium": -39.0
+    },
+    "price": 0,
+    "est": true
    }
   ],
   "grilld:hotbird": [
@@ -1835,6 +2141,23 @@
      "sodium": 232.0
     },
     "price": 0
+   },
+   {
+    "key": "r:herbed-mayo",
+    "id": "no-herbed-mayo",
+    "kind": "r",
+    "name": "No Herbed Mayo",
+    "kj": -389,
+    "p": -0.3,
+    "c": -1.1,
+    "f": -9.8,
+    "nut": {
+     "sat": -0.6,
+     "sugar": -0.1,
+     "sodium": -84.9
+    },
+    "price": 0,
+    "est": true
    }
   ],
   "grilld:caesar-s-palace": [
@@ -2096,6 +2419,23 @@
      "sodium": -262.0
     },
     "price": 0
+   },
+   {
+    "key": "r:herbed-mayo",
+    "id": "no-herbed-mayo",
+    "kind": "r",
+    "name": "No Herbed Mayo",
+    "kj": -389,
+    "p": -0.3,
+    "c": -1.1,
+    "f": -9.8,
+    "nut": {
+     "sat": -0.6,
+     "sugar": -0.1,
+     "sodium": -84.9
+    },
+    "price": 0,
+    "est": true
    }
   ],
   "grilld:hula-hen": [
@@ -2253,6 +2593,23 @@
      "sodium": 154.0
     },
     "price": 0
+   },
+   {
+    "key": "r:chipotle-mayo",
+    "id": "no-chipotle-mayo",
+    "kind": "r",
+    "name": "No Chipotle Mayo",
+    "kj": -380,
+    "p": -0.2,
+    "c": -0.9,
+    "f": -9.7,
+    "nut": {
+     "sat": -0.7,
+     "sugar": -0.1,
+     "sodium": -93.9
+    },
+    "price": 0,
+    "est": true
    }
   ],
   "grilld:blat": [
@@ -2323,6 +2680,23 @@
      "sodium": -262.0
     },
     "price": 0
+   },
+   {
+    "key": "r:herbed-mayo",
+    "id": "no-herbed-mayo",
+    "kind": "r",
+    "name": "No Herbed Mayo",
+    "kj": -389,
+    "p": -0.3,
+    "c": -1.1,
+    "f": -9.8,
+    "nut": {
+     "sat": -0.6,
+     "sugar": -0.1,
+     "sodium": -84.9
+    },
+    "price": 0,
+    "est": true
    }
   ],
   "grilld:bonfire-bbq": [
@@ -2463,6 +2837,23 @@
      "sodium": -262.0
     },
     "price": 0
+   },
+   {
+    "key": "r:herbed-mayo",
+    "id": "no-herbed-mayo",
+    "kind": "r",
+    "name": "No Herbed Mayo",
+    "kj": -389,
+    "p": -0.3,
+    "c": -1.1,
+    "f": -9.8,
+    "nut": {
+     "sat": -0.6,
+     "sugar": -0.1,
+     "sodium": -84.9
+    },
+    "price": 0,
+    "est": true
    }
   ],
   "grilld:wagyu-wunder": [
@@ -2603,6 +2994,40 @@
      "sodium": -262.0
     },
     "price": 0
+   },
+   {
+    "key": "r:herbed-mayo",
+    "id": "no-herbed-mayo",
+    "kind": "r",
+    "name": "No Herbed Mayo",
+    "kj": -389,
+    "p": -0.3,
+    "c": -1.1,
+    "f": -9.8,
+    "nut": {
+     "sat": -0.6,
+     "sugar": -0.1,
+     "sodium": -84.9
+    },
+    "price": 0,
+    "est": true
+   },
+   {
+    "key": "r:tomato-relish",
+    "id": "no-tomato-relish",
+    "kind": "r",
+    "name": "No Tomato Relish",
+    "kj": -62,
+    "p": -0.1,
+    "c": -3.1,
+    "f": -0.1,
+    "nut": {
+     "sat": -0.0,
+     "sugar": -2.6,
+     "sodium": -39.0
+    },
+    "price": 0,
+    "est": true
    }
   ],
   "grilld:zorba-the-sheep": [
@@ -2673,6 +3098,23 @@
      "sodium": -262.0
     },
     "price": 0
+   },
+   {
+    "key": "r:tomato-relish",
+    "id": "no-tomato-relish",
+    "kind": "r",
+    "name": "No Tomato Relish",
+    "kj": -62,
+    "p": -0.1,
+    "c": -3.1,
+    "f": -0.1,
+    "nut": {
+     "sat": -0.0,
+     "sugar": -2.6,
+     "sodium": -39.0
+    },
+    "price": 0,
+    "est": true
    }
   ],
   "grilld:beyond-mustard-pickled-": [
@@ -2794,6 +3236,23 @@
      "sodium": 186.0
     },
     "price": 0
+   },
+   {
+    "key": "r:tomato-relish",
+    "id": "no-tomato-relish",
+    "kind": "r",
+    "name": "No Tomato Relish",
+    "kj": -62,
+    "p": -0.1,
+    "c": -3.1,
+    "f": -0.1,
+    "nut": {
+     "sat": -0.0,
+     "sugar": -2.6,
+     "sodium": -39.0
+    },
+    "price": 0,
+    "est": true
    }
   ],
   "grilld:beyond-garden-goodness": [
@@ -2915,6 +3374,40 @@
      "sodium": 186.0
     },
     "price": 0
+   },
+   {
+    "key": "r:herbed-mayo",
+    "id": "no-herbed-mayo",
+    "kind": "r",
+    "name": "No Herbed Mayo",
+    "kj": -389,
+    "p": -0.3,
+    "c": -1.1,
+    "f": -9.8,
+    "nut": {
+     "sat": -0.6,
+     "sugar": -0.1,
+     "sodium": -84.9
+    },
+    "price": 0,
+    "est": true
+   },
+   {
+    "key": "r:tomato-relish",
+    "id": "no-tomato-relish",
+    "kind": "r",
+    "name": "No Tomato Relish",
+    "kj": -62,
+    "p": -0.1,
+    "c": -3.1,
+    "f": -0.1,
+    "nut": {
+     "sat": -0.0,
+     "sugar": -2.6,
+     "sodium": -39.0
+    },
+    "price": 0,
+    "est": true
    }
   ],
   "grilld:garden-goodness": [
@@ -3036,6 +3529,40 @@
      "sodium": -186.0
     },
     "price": 0
+   },
+   {
+    "key": "r:herbed-mayo",
+    "id": "no-herbed-mayo",
+    "kind": "r",
+    "name": "No Herbed Mayo",
+    "kj": -389,
+    "p": -0.3,
+    "c": -1.1,
+    "f": -9.8,
+    "nut": {
+     "sat": -0.6,
+     "sugar": -0.1,
+     "sodium": -84.9
+    },
+    "price": 0,
+    "est": true
+   },
+   {
+    "key": "r:tomato-relish",
+    "id": "no-tomato-relish",
+    "kind": "r",
+    "name": "No Tomato Relish",
+    "kj": -62,
+    "p": -0.1,
+    "c": -3.1,
+    "f": -0.1,
+    "nut": {
+     "sat": -0.0,
+     "sugar": -2.6,
+     "sodium": -39.0
+    },
+    "price": 0,
+    "est": true
    }
   ],
   "grilld:vegan-beyond-mustard-pickled": [
@@ -3121,6 +3648,23 @@
      "sodium": 186.0
     },
     "price": 0
+   },
+   {
+    "key": "r:tomato-relish",
+    "id": "no-tomato-relish",
+    "kind": "r",
+    "name": "No Tomato Relish",
+    "kj": -62,
+    "p": -0.1,
+    "c": -3.1,
+    "f": -0.1,
+    "nut": {
+     "sat": -0.0,
+     "sugar": -2.6,
+     "sodium": -39.0
+    },
+    "price": 0,
+    "est": true
    }
   ],
   "grilld:vegan-beyond-garden-goodness": [
@@ -3206,6 +3750,23 @@
      "sodium": 186.0
     },
     "price": 0
+   },
+   {
+    "key": "r:tomato-relish",
+    "id": "no-tomato-relish",
+    "kind": "r",
+    "name": "No Tomato Relish",
+    "kj": -62,
+    "p": -0.1,
+    "c": -3.1,
+    "f": -0.1,
+    "nut": {
+     "sat": -0.0,
+     "sugar": -2.6,
+     "sodium": -39.0
+    },
+    "price": 0,
+    "est": true
    }
   ],
   "grilld:vegan-garden-goodness": [
@@ -3291,6 +3852,23 @@
      "sodium": -186.0
     },
     "price": 0
+   },
+   {
+    "key": "r:tomato-relish",
+    "id": "no-tomato-relish",
+    "kind": "r",
+    "name": "No Tomato Relish",
+    "kj": -62,
+    "p": -0.1,
+    "c": -3.1,
+    "f": -0.1,
+    "nut": {
+     "sat": -0.0,
+     "sugar": -2.6,
+     "sodium": -39.0
+    },
+    "price": 0,
+    "est": true
    }
   ],
   "grilld:beef-mini-me-pack": [

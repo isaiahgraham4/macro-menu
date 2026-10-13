@@ -78,7 +78,9 @@ struct FoodDetailView: View {
                     } header: {
                         Text("Remove ingredients")
                     } footer: {
-                        if removals.contains(where: { $0.est == true }) {
+                        if food.chain == "grilld" {
+                            Text("Sauce removals are estimates: Grill'd's own figures for that sauce sold as a dip, for about 15 g, since Grill'd doesn't publish how much goes on each burger. Other removals are the difference between burgers Grill'd publishes.")
+                        } else if removals.contains(where: { $0.est == true }) {
                             Text("Calories for each ingredient are from \(store.chainName(food.chain)). For parts it doesn't sell on their own, protein, carbs and fat are estimated from the ingredient type and other nutrients stay as listed.")
                         } else if food.chain == "grilld" {
                             Text("Worked out from Grill'd figures for burgers published with and without it.")
