@@ -207,6 +207,52 @@ struct SearchFoodsInViewIntent: AppIntent {
 }
 #endif
 
+enum WaterSizeOption: String, AppEnum {
+    case glass, bottle, litre
+    static let typeDisplayRepresentation: TypeDisplayRepresentation = "Water amount"
+    static let caseDisplayRepresentations: [WaterSizeOption: DisplayRepresentation] = [
+        .glass: "Glass", .bottle: "Bottle", .litre: "Litre"]
+    var size: Water.Size { Water.Size(rawValue: rawValue) ?? .glass }
+}
+
+/// "Log a glass of water in Leanr": adds water to today, a glass by default (the size you set in Settings).
+struct LogWaterIntent: AppIntent {
+    static let title: LocalizedStringResource = "Log Water"
+    static let description = IntentDescription("Adds water to today in Leanr: a glass, a 500 mL bottle, a litre or an amount in millilitres.")
+    static let authenticationPolicy: IntentAuthenticationPolicy = .requiresAuthentication
+
+    @Parameter(title: "Amount", default: .glass) var size: WaterSizeOption
+    @Parameter(title: "Millilitres", description: "An exact amount. Used instead of the glass, bottle or litre.", inclusiveRange: (1, 5000)) var millilitres: Int?
+
+    static var parameterSummary: some ParameterSummary {
+        Summary("Log a \(\.$size) of water") { \.$millilitres }
+    }
+
+    @MainActor func perform() async throws -> some IntentResult & ProvidesDialog {
+        AppServices.start()
+        let store = AppServices.store
+        let amount = millilitres.map(Double.init) ?? Water.millilitres(size.size, glass: Water.glass(store.data))
+        guard amount > 0, amount <= Water.singleLimit, store.addWater(amount) else {
+            return .result(dialog: "Leanr couldn't save that. Open the app to check your data.")
+        }
+        await AppServices.health.finishPending()
+        let total = Water.total(store.data, on: dayKey(Date()))
+        return .result(dialog: "\(Water.loggedAnswer(added: amount, total: total, target: Water.target(store.data)))")
+    }
+}
+
+/// "How much water have I had in Leanr": today's total against the target.
+struct WaterTodayIntent: AppIntent {
+    static let title: LocalizedStringResource = "How Much Water Today"
+    static let description = IntentDescription("Says how much water you've logged today and how far that is from your target.")
+
+    @MainActor func perform() async throws -> some IntentResult & ProvidesDialog {
+        AppServices.start()
+        let store = AppServices.store
+        return .result(dialog: "\(Water.todayAnswer(total: Water.total(store.data, on: dayKey(Date())), target: Water.target(store.data)))")
+    }
+}
+
 struct LeanrShortcuts: AppShortcutsProvider {
     static var appShortcuts: [AppShortcut] {
         AppShortcut(intent: LogUsualMealIntent(), phrases: [
@@ -230,5 +276,15 @@ struct LeanrShortcuts: AppShortcutsProvider {
             "How much protein is in \(\.$food) in \(.applicationName)",
             "How many calories are in \(\.$food) in \(.applicationName)"
         ], shortTitle: "Look Up a Food", systemImageName: "magnifyingglass")
+        AppShortcut(intent: LogWaterIntent(), phrases: [
+            "Log a \(\.$size) of water in \(.applicationName)",
+            "Log water in \(.applicationName)",
+            "Log water with \(.applicationName)",
+            "Add water to \(.applicationName)"
+        ], shortTitle: "Log Water", systemImageName: "drop.fill")
+        AppShortcut(intent: WaterTodayIntent(), phrases: [
+            "How much water have I had in \(.applicationName)",
+            "How much water today in \(.applicationName)"
+        ], shortTitle: "Water Today", systemImageName: "drop")
     }
 }

@@ -88,7 +88,11 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   logged to that meal time in the last 30 days. "What fits at KFC in Leanr"
   runs the finder against what's left of today's targets (capped at your typical
   meal before 4 pm). The logic is in `Assistant.swift`, the intents in
-  `LeanrIntents.swift`; both use the shared store in `AppServices.swift`.
+  `LeanrIntents.swift`; both use the shared store in `AppServices.swift`. "Log a glass of water in Leanr" (or
+  "Log water in Leanr", a bottle or a litre) adds to today's water through `LogWaterIntent`, and "How much water have I
+  had in Leanr" reads the total back. In Shortcuts, Millilitres sets an exact amount.
+  Siri hears "Leanr" as the word "leaner", so `Configuration/App-Info.plist` lists "Leaner" and "Lean R" under
+  `INAlternativeAppNames`; every phrase works with either spelling.
 - Meal reminders (Settings → Targets): breakfast, lunch, dinner and a late-night
   one, each ticked on and timed separately (or "Turn on all reminders"). A meal
   reminder only goes out if nothing is logged to that meal; the late-night one

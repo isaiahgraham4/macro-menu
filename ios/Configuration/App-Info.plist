@@ -5,4 +5,15 @@
         <key>CFBundleURLName</key><string>com.isaiahgraham.MacroMenu</string>
         <key>CFBundleURLSchemes</key><array><string>leanr</string></array>
     </dict></array>
+    <!-- Siri hears "Leanr" as the word "leaner", so these let phrases like "Log water in Leanr" work when it's said that way. -->
+    <key>INAlternativeAppNames</key><array>
+        <dict>
+            <key>INAlternativeAppName</key><string>Leaner</string>
+            <key>INAlternativeAppNamePronunciationHint</key><string>lee ner</string>
+        </dict>
+        <dict>
+            <key>INAlternativeAppName</key><string>Lean R</string>
+            <key>INAlternativeAppNamePronunciationHint</key><string>lean are</string>
+        </dict>
+    </array>
 </dict></plist>

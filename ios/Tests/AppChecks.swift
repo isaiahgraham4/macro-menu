@@ -845,6 +845,14 @@ import UniformTypeIdentifiers
             let legacy = try JSONDecoder().decode(AppData.self, from: JSONSerialization.data(withJSONObject: legacyJSON))
             assert(legacy.water == nil && legacy.measurementLog.isEmpty && legacy.isValid)
             assert(Water.date(of: "2026-10-13") != nil && Water.date(of: "nope") == nil)
+            // Siri and Shortcuts: a glass is your glass, a bottle 500 mL, a litre a litre, and the answers read naturally.
+            assert(Water.millilitres(.glass, glass: 300) == 300 && Water.millilitres(.bottle, glass: 300) == 500 && Water.millilitres(.litre, glass: 300) == 1000)
+            assert(Water.Size(rawValue: "glass") == .glass && Water.singleLimit == 5000)
+            assert(Water.loggedAnswer(added: 250, total: 1250, target: 2000) == "Logged 250 mL of water. 1.25 L of 2 L today.")
+            assert(Water.loggedAnswer(added: 500, total: 2250, target: 2000) == "Logged 500 mL of water. 2.25 L of 2 L today. That's your 2 L target.")
+            assert(Water.todayAnswer(total: 0, target: 2000) == "You haven't logged any water today. Your target is 2 L.")
+            assert(Water.todayAnswer(total: 1250, target: 2000) == "You've had 1.25 L of water today, 750 mL to go.")
+            assert(Water.todayAnswer(total: 2000, target: 2000) == "You've had 2 L of water today, which reaches your 2 L target.")
         }
 
         // Body measurements: one reading a day, changes against the last and first, sites in order, and sync merges by ID.

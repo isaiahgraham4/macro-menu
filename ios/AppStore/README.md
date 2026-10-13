@@ -100,7 +100,7 @@ and Boost Juice for combinations from one restaurant.
 - Log meals, scan barcodes and nutrition labels, and see what's left of your day at a glance.
 - Take ingredients off: no cheese, no sauce, no mayo, with the figures adjusted.
 - Weight trend that smooths out day-to-day swings, and a measured maintenance estimate from your own data.
-- Siri: "Log my usual lunch in Leanr" or "What fits at KFC in Leanr".
+- Siri: "Log my usual lunch in Leanr", "What fits at KFC in Leanr" or "Log a glass of water in Leanr".
 - Meal reminders, a Sunday weekly review, widgets, Apple Health and iCloud sync.
 - CSV export of your food log and daily totals.
 
