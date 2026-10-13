@@ -21,6 +21,8 @@ final class AppStore {
     var saved: (() -> Void)?
     /// Called after data from another device is taken in.
     var synced: (() -> Void)?
+    /// Called whenever the widgets are brought up to date, so Apple Watch can be too.
+    var widgetsRefreshed: (() -> Void)?
     private let url: URL
     init(url: URL = URL.applicationSupportDirectory.appending(path: "MacroMenu/app-state.json"), catalogURL: URL? = Bundle.main.url(forResource: "MenuData", withExtension: "json"), legacyURL: URL? = URL.applicationSupportDirectory.appending(path: "MacroMenu/foods.json"),
          everydayURL: URL? = Bundle.main.url(forResource: "GenericFoods", withExtension: "json")) {
@@ -225,6 +227,40 @@ final class AppStore {
         guard Steps.goalRange.contains(goal) else { return false }
         return change { $0.stepGoal = goal }
     }
+    /// Uses a check-in's targets, or keeps the current ones, and notes the check-in either way.
+    @discardableResult func finishCheckIn(_ suggestion: CheckIn.Suggestion, accept: Bool) -> Bool {
+        let activeID = goals.id
+        return change(undo: accept ? "Updated your targets" : nil) { state in
+            CheckIn.record(suggestion, accepted: accept, into: &state)
+            state.checkInPace = suggestion.pace
+            guard accept, let index = state.goalSets.firstIndex(where: { $0.id == activeID }) else { return }
+            state.goalSets[index].values.merge(suggestion.values) { _, new in new }
+            state.activeGoal = activeID
+            state.dayGoals[dayKey(Date())] = state.goalSets[index]
+        }
+    }
+    @discardableResult func setCheckInPace(_ pace: Double) -> Bool {
+        guard CheckIn.paceRange.contains(pace) else { return false }
+        return change { $0.checkInPace = pace }
+    }
+    /// Adds a meal to a day's plan.
+    @discardableResult func plan(_ items: [Portion], name: String, mealTime: MealTime, on date: Date) -> Bool {
+        change { state in
+            MealPlan.pruned(&state)
+            MealPlan.add(items, name: name, mealTime: mealTime, on: dayKey(date), to: &state)
+        }
+    }
+    @discardableResult func removePlanned(_ id: LogEntry.ID, on date: Date) -> Bool {
+        change(undo: "Removed from your plan") { MealPlan.remove(id, on: dayKey(date), from: &$0) }
+    }
+    /// Logs planned meals for a day: now if it's today, otherwise at the time each was planned for.
+    @discardableResult func logPlanned(_ ids: Set<LogEntry.ID>, on date: Date) -> Bool {
+        let key = dayKey(date), currentGoals = goals
+        let time = Calendar.current.isDateInToday(date) ? Date() : Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: date) ?? date
+        return change(undo: ids.count == 1 ? "Logged from your plan" : "Logged your plan") {
+            MealPlan.log(ids, on: key, at: time, goals: currentGoals, into: &$0)
+        }
+    }
     func export() throws -> Data {
         let encoder = JSONEncoder(); encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
         return try encoder.encode(data)
@@ -276,6 +312,23 @@ final class AppStore {
         if state.waterTarget == nil { state.waterTarget = backup.waterTarget }
         if state.waterGlass == nil { state.waterGlass = backup.waterGlass }
         if state.stepGoal == nil { state.stepGoal = backup.stepGoal }
+        // Check-ins are kept by ID and the pace fills a gap; planned meals merge like the log.
+        if let incoming = backup.checkIns {
+            var records = state.checkIns ?? []
+            for record in incoming where !records.contains(where: { $0.id == record.id }) { records.append(record) }
+            state.checkIns = Array(records.sorted { $0.date < $1.date }.suffix(52))
+        }
+        if state.checkInPace == nil { state.checkInPace = backup.checkInPace }
+        if let incoming = backup.plans {
+            var plans = state.plans ?? [:]
+            for (day, entries) in incoming {
+                for entry in entries {
+                    if let i = plans[day]?.firstIndex(where: { $0.id == entry.id }) { plans[day]?[i] = entry }
+                    else { plans[day, default: []].append(entry) }
+                }
+            }
+            state.plans = plans.isEmpty ? nil : plans
+        }
         if !backup.measurementLog.isEmpty {
             var measurements = state.measurementLog
             for entry in backup.measurementLog {

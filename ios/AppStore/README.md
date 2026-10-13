@@ -32,9 +32,13 @@ Before each new upload, raise the build number (`CURRENT_PROJECT_VERSION`) in th
   and otherwise Apple's built-in Vision image classifier (`MealVision.swift`, `VisionFoodLabels.swift`), which works on
   every supported iPhone. Restaurant items are never ticked from a photo unless the photo shows that restaurant's brand.
 - No third-party SDKs, analytics, ads, cookies or web views. Network requests go only to Apple, Open Food Facts
-  (a barcode number, or search words when the user taps Search packaged foods) and GitHub (downloading the menu file,
-  which carries nothing about the user), without cookies. None of these count as collection, so the answer stays
+  (a barcode number, or search words when the user taps Search packaged foods), GitHub (downloading the menu file,
+  which carries nothing about the user) and, only when the user imports a recipe from a link, that recipe page itself
+  (a plain HTTPS request for the page), without cookies. None of these count as collection, so the answer stays
   Data Not Collected.
+- Describe your meal reads the words on the device (Apple Intelligence's on-device model on iOS 26+ where available,
+  otherwise `FoodPhrase`), and the Apple Watch app gets today's totals and quick-log options straight from the iPhone over
+  WatchConnectivity. Neither sends anything off the device, so the privacy answers don't change.
 - Settings → Delete all my data erases the device data and the iCloud copy, can remove what Leanr saved to Health, and
   turns iCloud sync off.
 - Age rating: answer the questionnaire honestly (no objectionable content). The terms ask for 13+ and the target
@@ -100,6 +104,9 @@ and Boost Juice for combinations from one restaurant.
 - Log meals, scan barcodes and nutrition labels, and see what's left of your day at a glance.
 - Take ingredients off: no cheese, no sauce, no mayo, with the figures adjusted.
 - Weight trend that smooths out day-to-day swings, and a measured maintenance estimate from your own data.
+- Type or say what you ate, plan tomorrow's meals, and import recipes from a link.
+- A weekly check-in that adjusts your calorie target to the pace you want, from your own log and weight trend.
+- Apple Watch: calories left, and your usual meals, pinned foods and water in a tap.
 - Siri: "Log my usual lunch in Leanr", "What fits at KFC in Leanr" or "Log a glass of water in Leanr".
 - Meal reminders, a Sunday weekly review, widgets, Apple Health and iCloud sync.
 - CSV export of your food log and daily totals.

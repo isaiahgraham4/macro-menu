@@ -11,6 +11,7 @@ struct TodayView: View {
     @State private var barcode = false
     @State private var choosing = false
     @State private var photo = false
+    @State private var describing = false
     @State private var editing: LogEntry?
     @State private var editingTargets = false
     @State private var showingCalendar = false
@@ -92,6 +93,9 @@ struct TodayView: View {
                     Button("Edit") { editingTargets = true }.font(.roboto(.subheadline, weight: .medium)).textCase(nil)
                 }
             }
+            if isToday && CheckIn.showOnToday(store) {
+                Section { CheckInRow() }
+            }
             Section("Log food") {
                 Picker("Log to", selection: $mealTime) {
                     ForEach(MealTime.allCases) { Text($0.title).tag($0) }
@@ -100,7 +104,10 @@ struct TodayView: View {
                 if MealPhoto.canOffer {
                     Button { photo = true } label: { Label("Photo of your meal", systemImage: "camera.viewfinder") }
                 }
+                Button { describing = true } label: { Label("Describe your meal", systemImage: "text.bubble") }
+                NavigationLink { PlanView() } label: { Label("Plan ahead", systemImage: "calendar.badge.plus") }
             }
+            PlannedSection(date: date)
             Section {
                 BodySummary()
             }
@@ -147,6 +154,7 @@ struct TodayView: View {
                             }
                             Button("Scan barcode") { mealTime = category; barcode = true }
                             if MealPhoto.canOffer { Button("Photo of your meal") { mealTime = category; photo = true } }
+                            Button("Describe your meal") { mealTime = category; describing = true }
                             Button("Quick log / scan label") { mealTime = category; quick = true }
                             Button("Choose menu item") { mealTime = category; choosing = true }
                         } label: { Image(systemName: "plus.circle").font(.title3).padding(4) } primaryAction: {
@@ -154,7 +162,7 @@ struct TodayView: View {
                             mealTime = category; choosing = true
                         }
                             .accessibilityLabel("Add to \(category.title)")
-                            .accessibilityHint("Opens the menu. Hold for pinned foods, barcode, photo and quick log.")
+                            .accessibilityHint("Opens the menu. Hold for pinned foods, barcode, photo, describing it and quick log.")
                     }
                 }
                 // Empty meals sit close together as a short list of headers.
@@ -205,6 +213,15 @@ struct TodayView: View {
             .sheet(isPresented: $photo) {
                 NavigationStack {
                     MealPhotoView(mealTime: mealTime) { portions, name in
+                        guard store.log(portions, name: name, date: date, mealTime: mealTime) else { return false }
+                        store.notice = "Logged to \(mealTime.title.lowercased())"
+                        return true
+                    }
+                }
+            }
+            .sheet(isPresented: $describing) {
+                NavigationStack {
+                    MealTextView(mealTime: mealTime) { portions, name in
                         guard store.log(portions, name: name, date: date, mealTime: mealTime) else { return false }
                         store.notice = "Logged to \(mealTime.title.lowercased())"
                         return true

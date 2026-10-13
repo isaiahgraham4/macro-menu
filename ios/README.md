@@ -56,6 +56,25 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   shared widget snapshot, which Leanr refreshes whenever Health reports new steps (HealthKit background delivery). Google's health
   data has no iPhone API, so only Apple Health is read. Apple Health itself combines the iPhone, a watch and anything
   else that writes steps to it.
+- Weekly check-in (Today when it's due, and Progress): measured maintenance (as above) plus the chosen pace in kg a week
+  gives a new calorie target, at most 300 Cal from the current one per check-in and never under 1,200 (`CheckIn`). Protein
+  stays; carbs and fat are rescaled in the same proportions. Accepting or keeping the targets records the check-in
+  (`AppData.checkIns`, last 52) and the next one is due a week later. The pace defaults from the weight goal.
+- Describe your meal (Today → Log food, and each meal's +): type or dictate "two eggs, toast with butter and a flat white".
+  Apple Intelligence (iOS 26+, on device) splits it into foods and amounts where available, otherwise `FoodPhrase.meal`
+  does; each is matched like a photo's foods and amounts become servings from the food's serving weight. Typed restaurant
+  items are ticked only when one restaurant has them or a brand was named.
+- Plan ahead (Today → Log food): set out meals for today and the next six days against the targets, with suggestions to
+  fill the gap. Plans (`AppData.plans`, by day) count for nothing until logged; on the day they appear on Today under
+  Planned, and a tick logs each one. Past days are pruned.
+- Import a recipe (My foods): paste a link; the page's schema.org Recipe is read (`RecipeImport`). Save it with the site's
+  per-serving nutrition, or match the ingredient lines (`FoodPhrase.ingredient`, raw foods first) and open the recipe
+  editor filled in.
+- Progress sections can be reordered and hidden (the arrows button; `ProgressPart`, stored in UserDefaults).
+- Apple Watch (`LeanrWatch` target, embedded in the app): calories left, protein and water, the Log again options (usual
+  meals and pinned foods) and a glass of water in a tap. The iPhone sends a `WatchSnapshot` as the application context
+  whenever the widgets refresh (`WatchLink`); the watch sends `WatchRequest`s back by message or queued user info, and
+  shows the change straight away.
 - Apple Health (Settings): writes each logged meal as a food correlation with its
   nutrients, and weigh-ins; reads weight and active energy. Every sample carries
   its Leanr entry or weight ID, so edits, deletes and undo replace exactly those

@@ -1064,6 +1064,175 @@ import UniformTypeIdentifiers
             assert(ProgressBreakdown.make(strict, goals: Goals(), days: 7, ending: day(6), calendar: calendar).calorieDays == 2)
         }
 
-        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, delivery, iCloud health rules, deleting all data, the policies, everyday foods, customised orders, photo and Visual Intelligence matching, widget goal colours, Premium access rules, Siri logging and editing saved and logged meals, water, measurements, progress photos, fibre and sodium nudges, steps, the progress breakdown, what fits what's left and no prices (\(Date().timeIntervalSince(start).formatted())s).")
+        // Meals in words and recipe ingredient lines.
+        do {
+            let breakfast = FoodPhrase.meal("Two eggs, toast with butter and a flat white")
+            assert(breakfast.map(\.name) == ["eggs", "toast", "butter", "flat white"])
+            assert(breakfast.map(\.amount) == [2, nil, nil, 1])
+            // Matched against everyday foods: toast is bread, not French toast.
+            let generic = try JSONDecoder().decode([Food].self, from: Data(contentsOf: URL(fileURLWithPath: "ios/MacroMenu/GenericFoods.json"))).filter(\.isEveryday)
+            let genericNames = [Food.everyday: "Everyday foods"]
+            func firstMatch(_ phrase: FoodPhrase) -> String? { MealPhoto.matches(for: phrase.seen, in: generic, chainNames: genericNames).first?.name }
+            assert(firstMatch(breakfast[0]) == "Egg" && firstMatch(breakfast[1]) == "White bread" && firstMatch(breakfast[2]) == "Butter")
+            assert(firstMatch(FoodPhrase.ingredient("1/2 tsp baking soda")!) == nil && firstMatch(FoodPhrase.ingredient("1 cup plain flour")!) != "Plain")
+            assert(firstMatch(FoodPhrase.ingredient("Dash of white pepper ((or black))")!) == nil)
+            assert(firstMatch(FoodPhrase.ingredient("1 1/2 tbsp vegetable oil ((or other cooking oil))")!) == "Canola oil")
+            let choy = FoodPhrase.ingredient("5 - 6  stems choy sum ((or other Asian greens))")!
+            assert(choy.name == "choy sum" && choy.amount == 5 && choy.unit == .each)
+            let cornflour = FoodPhrase.ingredient("1 tbsp cornflour / corn starch")!
+            assert(cornflour.name == "cornflour" && cornflour.alternatives == ["corn starch"])
+            assert(firstMatch(FoodPhrase.ingredient("1 1/2 tbsp light soy sauce (, or all purpose soy (Note 3))")!) == "Soy sauce")
+            assert(MealPhoto.matches(for: FoodPhrase.ingredient("350 g chicken breast")!.seen, in: generic, chainNames: genericNames, limit: 6).contains { $0.name == "Chicken breast, raw" })
+            let maccas = FoodPhrase.meal("a big mac and large fries from Maccas")
+            assert(maccas.map(\.name) == ["big mac", "large fries"] && maccas.allSatisfy { $0.brand == "maccas" })
+            assert(maccas[1].seen.alternatives == ["fries"])
+            let spoken = FoodPhrase.meal("I had 2 maccas cheeseburgers for lunch")
+            assert(spoken.count == 1 && spoken[0].name == "cheeseburgers" && spoken[0].amount == 2 && spoken[0].brand == "maccas")
+            let weighed = FoodPhrase.meal("200g chicken breast + 1.5 cups rice")
+            assert(weighed[0].name == "chicken breast" && weighed[0].amount == 200 && weighed[0].unit == .gram)
+            assert(weighed[1].name == "rice" && weighed[1].amount == 1.5 && weighed[1].unit == .cup)
+            assert(FoodPhrase.meal("eggs x2")[0].amount == 2 && FoodPhrase.meal("half a sandwich")[0].amount == 0.5)
+            assert(FoodPhrase.meal("a can of coke")[0].name == "coke" && FoodPhrase.meal("a can of coke")[0].unit == .each)
+            assert(FoodPhrase.meal("a double cheeseburger")[0].name == "double cheeseburger")
+            // Words that name one food stay together.
+            assert(FoodPhrase.meal("bacon and egg mcmuffin", known: { $0 == "bacon and egg mcmuffin" }).count == 1)
+            assert(FoodPhrase.meal("bacon and egg mcmuffin").count == 2)
+            let flour = FoodPhrase.ingredient("2 cups (300 g) plain flour, sifted")!
+            assert(flour.name == "plain flour" && flour.amount == 300 && flour.unit == .gram)
+            let tomatoes = FoodPhrase.ingredient("2 x 400g cans diced tomatoes")!
+            assert(tomatoes.name == "tomatoes" && tomatoes.amount == 800 && tomatoes.unit == .gram)
+            let salt = FoodPhrase.ingredient("Salt and pepper, to taste")!
+            assert(salt.name == "salt and pepper" && salt.amount == nil)
+            let garlic = FoodPhrase.ingredient("3 cloves garlic, crushed")!
+            assert(garlic.name == "garlic" && garlic.amount == 3 && garlic.unit == .each)
+            let oil = FoodPhrase.ingredient("1½ tbsp extra virgin olive oil")!
+            assert(oil.amount == 1.5 && oil.unit == .tablespoon && oil.name == "virgin olive oil")
+            assert(FoodPhrase.ingredient("") == nil && FoodPhrase.ingredient("2-3 carrots")?.amount == 2)
+            // Servings from the food's own serving size.
+            let breast = Food(name: "Chicken breast", kj: 700, cal: 165, p: 31, serve: "100 g")
+            assert(weighed[0].servings(of: breast) == (2, true))
+            let rice = Food(name: "Rice", kj: 900, cal: 205, p: 4, serve: "1 cup (158 g)")
+            assert(weighed[1].servings(of: rice) == (1.5, true))
+            assert(FoodPhrase(name: "x", amount: 100, unit: .gram, original: "").servings(of: Food(name: "Bar", kj: 1, cal: 1, p: 0)).sure == false)
+        }
+
+        // Recipes from a web page's schema.org block.
+        do {
+            let page = """
+                <html><head><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"Page"},
+                {"@type":["Recipe"],"name":"Chicken &amp; leek pie","recipeYield":["6","6 servings"],
+                "recipeIngredient":["500 g chicken thigh fillets, diced","2 leeks, sliced","<b>1 cup</b> (250 ml) chicken stock"],
+                "nutrition":{"@type":"NutritionInformation","calories":"1,674 kJ","proteinContent":"32 g","fatContent":"21.5g","sodiumContent":"0.6 g","fiberContent":"3 g"}}]}
+                </script></head><body></body></html>
+                """
+            let recipe = RecipeImport.recipes(inHTML: page).first!
+            assert(recipe.name == "Chicken & leek pie" && recipe.servings == 6 && recipe.ingredients.count == 3 && recipe.ingredients[2] == "1 cup (250 ml) chicken stock")
+            assert(abs(recipe.nutrition["cal"]! - 400.1) < 0.1 && recipe.nutrition["p"] == 32 && recipe.nutrition["f"] == 21.5 && recipe.nutrition["sodium"] == 600)
+            var sourced = recipe; sourced.source = URL(string: "https://www.example.com/pie")
+            let food = sourced.food!
+            assert(food.cal == 400 && food.c == nil && food.nut?["fibre"] == 3 && food.note == "From example.com" && food.isValid)
+            assert(FoodPhrase.ingredient(recipe.ingredients[2])?.amount == 250 && FoodPhrase.ingredient(recipe.ingredients[2])?.unit == .millilitre)
+            assert(RecipeImport.recipes(inHTML: "<script type='application/ld+json'>{\"@type\":\"Article\",\"name\":\"x\"}</script>").isEmpty)
+            assert(RecipeImport.servings("Serves 4") == 4 && RecipeImport.servings(8) == 8 && RecipeImport.servings("lots") == nil)
+            assert(RecipeImport.link(in: "Look at this https://www.taste.com.au/recipes/pie/abc great")?.host() == "www.taste.com.au")
+            assert(RecipeImport.link(in: "recipetineats.com/lasagna")?.scheme == "https" && RecipeImport.link(in: "pie") == nil)
+            assert(RecipeImport.link(in: "http://example.com/pie")?.absoluteString == "https://example.com/pie" && RecipeImport.link(in: "ftp://example.com/pie") == nil)
+        }
+
+        // Weekly check-in: maintenance from four weeks of logging and a falling trend, then a target for the pace asked for.
+        do {
+            let today = calendar.date(from: DateComponents(year: 2026, month: 9, day: 29, hour: 9))!
+            func ago(_ n: Int) -> Date { calendar.date(byAdding: .day, value: -n, to: today)! }
+            var data = AppData()
+            let meal = Food(id: "meal", name: "Meal", kj: 8368, cal: 2000, p: 150)
+            for n in 1...28 { data.logs[dayKey(ago(n))] = [LogEntry(name: "Day", items: [Portion(food: meal)], time: ago(n))] }
+            data.weights = (0...40).map { WeightEntry(date: ago(40 - $0), kg: 85 - Double($0) * 0.5 / 7) }
+            var goals = Goals(); goals.values = ["cal": 2200, "p": 150, "c": 200, "f": 70]
+            assert(CheckIn.readiness(data, now: today, calendar: calendar).daysNeeded == 0)
+            let suggestion = CheckIn.suggestion(data, goals: goals, pace: -0.5, now: today, calendar: calendar)!
+            assert((2400...2700).contains(suggestion.maintenance) && suggestion.weeklyChange! < -0.3)
+            assert(suggestion.calories.truncatingRemainder(dividingBy: 10) == 0 && abs(suggestion.calories - (suggestion.maintenance - 550)) < 10)
+            // Protein stays; carbs and fat share the rest as before.
+            assert(suggestion.values["p"] == nil && suggestion.values["c"]! > 0 && abs(suggestion.values["c"]! * 4 + suggestion.values["f"]! * 9 - (suggestion.calories - 600)) < 10)
+            // A big change is taken a step at a time, never below the floor.
+            let gain = CheckIn.suggestion(data, goals: goals, pace: 0.5, now: today, calendar: calendar)!
+            assert(gain.limitedByStep && gain.calories == 2500)
+            var low = goals; low.values["cal"] = 1250
+            let floor = CheckIn.suggestion(data, goals: low, pace: -1, now: today, calendar: calendar)!
+            assert(floor.calories >= CheckIn.lowest && floor.paceIsFast && !suggestion.paceIsFast)
+            assert(CheckIn.suggestion(AppData(), goals: goals, pace: 0, now: today, calendar: calendar) == nil)
+            assert(CheckIn.readiness(AppData(), now: today, calendar: calendar).daysNeeded == 10)
+            // Due once a week.
+            assert(CheckIn.isDue(data, now: today, calendar: calendar))
+            CheckIn.record(suggestion, accepted: true, now: today, into: &data)
+            assert(!CheckIn.isDue(data, now: ago(-6), calendar: calendar) && CheckIn.isDue(data, now: ago(-7), calendar: calendar))
+            assert(data.isValid && CheckIn.headline(suggestion).hasPrefix("You're losing"))
+            // The pace follows a weight goal until one is chosen.
+            data.weightGoal = WeightGoal(kg: 75, startKg: 85, set: ago(40))
+            assert(CheckIn.pace(data, now: today) == -0.5)
+            data.checkInPace = -0.25
+            assert(CheckIn.pace(data, now: today) == -0.25)
+            data.checkInPace = -3
+            assert(!data.isValid)
+        }
+
+        // Meal plans: planned meals count for nothing until logged, then move into the log.
+        do {
+            let today = calendar.date(from: DateComponents(year: 2026, month: 10, day: 13, hour: 9))!
+            let tomorrow = calendar.date(byAdding: .day, value: 1, to: today)!
+            var data = AppData()
+            let oats = Food(id: "oats", name: "Oats", kj: 1600, cal: 380, p: 14)
+            MealPlan.add([Portion(food: oats)], name: "Oats", mealTime: .breakfast, on: dayKey(tomorrow), to: &data)
+            MealPlan.add([Portion(food: oats, quantity: 2)], name: "More oats", mealTime: .lunch, on: dayKey(tomorrow), to: &data)
+            assert(data.isValid && MealPlan.entries(data, on: dayKey(tomorrow)).count == 2 && data.logs.isEmpty)
+            assert(MealPlan.summary(MealPlan.entries(data, on: dayKey(tomorrow)), goals: Goals()) == "1,140 of 2,200 Cal · 42 of 150 g protein")
+            assert(MealPlan.asLogged(data, day: dayKey(tomorrow)).logs[dayKey(tomorrow)]?.count == 2)
+            let first = MealPlan.entries(data, on: dayKey(tomorrow))[0]
+            MealPlan.log([first.id], on: dayKey(tomorrow), at: tomorrow, goals: Goals(), into: &data)
+            assert(data.logs[dayKey(tomorrow)]?.map(\.name) == ["Oats"] && data.logs[dayKey(tomorrow)]?[0].mealTime == .breakfast)
+            assert(MealPlan.entries(data, on: dayKey(tomorrow)).map(\.name) == ["More oats"] && data.dayGoals[dayKey(tomorrow)] != nil)
+            MealPlan.remove(MealPlan.entries(data, on: dayKey(tomorrow))[0].id, on: dayKey(tomorrow), from: &data)
+            assert(data.plans == nil)
+            MealPlan.add([Portion(food: oats)], name: "Old", mealTime: .dinner, on: dayKey(calendar.date(byAdding: .day, value: -2, to: today)!), to: &data)
+            MealPlan.pruned(&data, now: today)
+            assert(data.plans == nil && MealPlan.days(from: today, calendar: calendar).count == 7)
+            // Plans and check-ins merge across devices.
+            var other = AppData()
+            MealPlan.add([Portion(food: oats)], name: "Oats", mealTime: .breakfast, on: dayKey(tomorrow), to: &other)
+            other.checkInPace = -0.5
+            let merged = AppStore.merged(data, other)
+            assert(merged.plans?[dayKey(tomorrow)]?.count == 1 && merged.checkInPace == -0.5 && merged.isValid)
+        }
+
+        // Apple Watch: today's totals and the Log again options, and the requests it sends back.
+        do {
+            let root2 = FileManager.default.temporaryDirectory.appending(path: UUID().uuidString)
+            defer { try? FileManager.default.removeItem(at: root2) }
+            let watchStore = AppStore(url: root2.appending(path: "state.json"), catalogURL: nil, legacyURL: nil, everydayURL: nil)
+            let bar = Food(id: "bar", name: "Protein bar", kj: 840, cal: 200, p: 20)
+            watchStore.togglePin(bar)
+            let now = Date()
+            watchStore.log([Portion(food: bar)], name: "Protein bar", date: now, mealTime: .snacks)
+            watchStore.addWater(500, on: now)
+            let snapshot = watchStore.watchSnapshot(now: now)
+            assert(snapshot.day == dayKey(now) && snapshot.calories == 200 && snapshot.protein == 20 && snapshot.calorieTarget == 2200 && snapshot.caloriesLeft == 2000)
+            assert(snapshot.water == 500 && snapshot.waterTarget == Water.defaultTarget && snapshot.glass == Water.defaultGlass)
+            let pin = snapshot.options.first { $0.id == "pin:bar" }!
+            assert(pin.protein == 20 && pin.loggedToday)
+            // Round trip through the application context.
+            assert(WatchSnapshot(context: snapshot.context) == snapshot && WatchSnapshot(context: [:]) == nil)
+            // Shown straight away on the watch, and a new day starts from nothing.
+            let logged = snapshot.logging(WatchSnapshot.Option(id: "pin:bar", name: "Protein bar", calories: 200, protein: 20, loggedToday: false))
+            assert(logged.calories == 400 && logged.protein == 40)
+            let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: now)!
+            let fresh = snapshot.current(on: tomorrow)
+            assert(fresh.calories == 0 && fresh.water == 0 && fresh.options.allSatisfy { !$0.loggedToday } && fresh.calorieTarget == 2200)
+            assert(snapshot.current(on: now) == snapshot && snapshot.addingWater(-1000).water == 0)
+            assert(WatchRequest(message: WatchRequest.log("pin:bar").message) == .log("pin:bar"))
+            assert(WatchRequest(message: WatchRequest.water(250).message) == .water(250))
+            assert(WatchRequest(message: ["water": 99999.0]) == nil && WatchRequest(message: ["log": ""]) == nil && WatchRequest(message: [:]) == nil)
+        }
+
+        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, delivery, iCloud health rules, deleting all data, the policies, everyday foods, customised orders, photo and Visual Intelligence matching, widget goal colours, Premium access rules, Siri logging and editing saved and logged meals, water, measurements, progress photos, fibre and sodium nudges, steps, the progress breakdown, what fits what's left, meals in words, recipe ingredients, recipe pages, weekly check-ins, meal plans, Apple Watch and no prices (\(Date().timeIntervalSince(start).formatted())s).")
     }
 }

@@ -230,6 +230,11 @@ struct AppData: Codable, Sendable {
     var waterGlass: Double? = nil
     /// The daily step goal (see `Steps`). The step counts themselves stay in Apple Health.
     var stepGoal: Double? = nil
+    /// Weekly check-ins and the pace they aim for (see `CheckIn`). Optional so saved data and backups from before check-ins still load.
+    var checkIns: [CheckInRecord]? = nil
+    var checkInPace: Double? = nil
+    /// Meals planned ahead, by day (see `MealPlan`). They count towards nothing until they're logged.
+    var plans: [String: [LogEntry]]? = nil
     /// Foods pinned to the top of the "+" menu and the Log again widget. Copies, so a pin still works if the item leaves the menu.
     /// Optional so saved data and backups from before pinning still load.
     var pinned: [Food]? = nil
@@ -241,9 +246,10 @@ struct AppData: Codable, Sendable {
         let targets = goalSets.allSatisfy(\.isValid) && dayGoals.values.allSatisfy(\.isValid)
         let body = weightLog.allSatisfy(\.isValid) && (weightGoal?.isValid ?? true)
             && measurementLog.allSatisfy(\.isValid) && Water.isValid(self) && Steps.isValid(self)
+        let ahead = CheckIn.isValid(self) && MealPlan.isValid(self)
         let unique = Set(foods.map(\.id)).count == foods.count && Set(meals.map(\.id)).count == meals.count
             && Set(goalSets.map(\.id)).count == goalSets.count && Set(measurementLog.map(\.id)).count == measurementLog.count
-        return contents && history && targets && body && unique
+        return contents && history && targets && body && ahead && unique
     }
 }
 struct MenuCatalog: Codable, Sendable {

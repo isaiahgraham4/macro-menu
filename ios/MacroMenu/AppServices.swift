@@ -29,6 +29,9 @@ import UserNotifications
         store.saved = { cloud.markDirty(); rebookReminders() }
         // Meals, targets and weigh-ins from another device change what's reminded, too.
         store.synced = { rebookReminders() }
+        // Apple Watch shows today's totals and logs with a tap, so it hears about every change.
+        store.widgetsRefreshed = { WatchLink.shared.send() }
+        WatchLink.shared.start(store)
         rebookReminders()
         logQueued()
         LeanrShortcuts.updateAppShortcutParameters()

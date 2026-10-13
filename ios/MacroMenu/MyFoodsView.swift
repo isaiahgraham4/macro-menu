@@ -13,6 +13,7 @@ struct MyFoodsView: View {
     @State private var barcode = false
     @State private var recipe = false
     @State private var customising = false
+    @State private var importing = false
     @State private var editing: Food?
     @State private var editingRecipe: Food?
     @State private var search = ""
@@ -35,6 +36,7 @@ struct MyFoodsView: View {
             // Its own group: sharing the tile row's section broke the cell's rounded shape.
             Section {
                 Button { barcode = true } label: { Label("Scan product barcode", systemImage: "barcode.viewfinder") }
+                Button { importing = true } label: { Label("Import a recipe from a link", systemImage: "link") }
             }
             Section("Saved foods & recipes") {
                 if rows.isEmpty { ContentUnavailableView("Your own menu", systemImage: "bookmark", description: Text("Save foods, recipes and custom orders. They appear throughout the app.")) }
@@ -60,6 +62,7 @@ struct MyFoodsView: View {
             .sheet(isPresented: $adding) { NavigationStack { FoodEditor(food: nil) { store.saveFood($0) } } }
             .sheet(item: $editing) { food in NavigationStack { FoodEditor(food: food) { store.saveFood($0) } } }
             .sheet(isPresented: $recipe) { NavigationStack { RecipeEditor() } }
+            .sheet(isPresented: $importing) { NavigationStack { RecipeImportView() } }
             .sheet(item: $editingRecipe) { food in NavigationStack { RecipeEditor(food: food) } }
     }
 }
@@ -587,6 +590,10 @@ struct RecipeEditor: View {
     @Environment(AppStore.self) private var store
     @Environment(\.dismiss) private var dismiss
     var food: Food?
+    /// True for a recipe filled in from a web page: new, though it already has a name and ingredients.
+    var imported = false
+    /// Called after saving, as well as closing this screen.
+    var saved: (() -> Void)? = nil
     @State private var name = ""
     @State private var servings = 1.0
     @State private var ingredients: [Portion] = []
@@ -594,7 +601,7 @@ struct RecipeEditor: View {
     @State private var own = false
     var recipe: Food {
         var value = Nutrition(ingredients).food(name: name, servings: max(servings,0.001), ingredients: ingredients)
-        value.id = food?.id ?? value.id; value.serve = "1 of \(servings.number) servings"
+        value.id = food?.id ?? value.id; value.serve = "1 of \(servings.number) servings"; value.note = food?.note
         return value
     }
     var body: some View {
@@ -616,10 +623,10 @@ struct RecipeEditor: View {
                 Section("Whole recipe") { NutritionView(total: Nutrition(ingredients), details: false) }
                 Section("Per serving") { NutritionView(total: Nutrition([Portion(food: recipe)])) }
             }
-        }.navigationTitle(food == nil ? "Build a recipe" : "Edit recipe")
+        }.navigationTitle(food == nil || imported ? "Build a recipe" : "Edit recipe")
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } }
-                ToolbarItem(placement: .confirmationAction) { Button("Save") { if store.saveFood(recipe) { dismiss() } }.disabled(!recipe.isValid || ingredients.isEmpty || servings <= 0) }
+                ToolbarItem(placement: .confirmationAction) { Button("Save") { if store.saveFood(recipe) { store.notice = "Saved \(recipe.name)"; dismiss(); saved?() } }.disabled(!recipe.isValid || ingredients.isEmpty || servings <= 0) }
             }
             .onAppear { if let food, ingredients.isEmpty { name = food.name; servings = food.recipeYield ?? 1; ingredients = food.ingredients ?? [] } }
             .sheet(isPresented: $picking) { NavigationStack { BrowseView(pick: { portion in ingredients.append(portion); picking = false }, pickTitle: "Add to recipe", quickAddLabel: "Add").toolbar { Button("Done") { picking = false } } } }

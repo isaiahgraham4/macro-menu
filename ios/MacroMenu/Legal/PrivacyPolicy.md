@@ -8,15 +8,15 @@ Leanr is made by Isaiah Graham, an independent developer in Victoria, Australia 
 
 - Leanr has no account, no ads, no analytics and no tracking. It doesn't use cookies.
 - Everything you enter stays on your device and, if you choose, in your own iCloud and Apple Health. I never receive it.
-- A few features ask other services for information. They are told only what they need: a barcode number, the words you search for packaged foods, or your position for an Apple Maps search.
+- A few features ask other services for information. They are told only what they need: a barcode number, the words you search for packaged foods, your position for an Apple Maps search, or the address of a recipe page you ask Leanr to load.
 
 ## What Leanr keeps on your device
 
-Your foods, recipes, saved meals, food log, weigh-ins, water, body measurements, progress photos, targets, reminders and settings are saved on your iPhone, inside Leanr's own storage. Your target estimate uses your age, height, weight, sex and activity level. Those figures are only used for the calculation on your device.
+Your foods, recipes, saved meals, food log, meal plans, weekly check-ins, weigh-ins, water, body measurements, progress photos, targets, reminders and settings are saved on your iPhone, inside Leanr's own storage. Your target estimate uses your age, height, weight, sex and activity level. Those figures are only used for the calculation on your device.
 
 ## iCloud
 
-iCloud sync is on unless you turn it off in Settings. It keeps a copy of your foods, log, targets, water, body measurements and the weigh-ins you enter in Leanr's folder in your private iCloud Drive, so your other devices can use it. Weights read from Apple Health are never copied to iCloud, and neither are progress photos. Apple stores that copy under your Apple Account and I can't see it.
+iCloud sync is on unless you turn it off in Settings. It keeps a copy of your foods, log, meal plans, check-ins, targets, water, body measurements and the weigh-ins you enter in Leanr's folder in your private iCloud Drive, so your other devices can use it. Weights read from Apple Health are never copied to iCloud, and neither are progress photos. Apple stores that copy under your Apple Account and I can't see it.
 
 ## Apple Health
 
@@ -30,6 +30,18 @@ Health information is never used for advertising or marketing, never sold, and n
 ## Camera
 
 The camera is used to scan barcodes, read nutrition labels, recognise the foods in a photo of your meal and take progress photos. Recognising food happens on your device, using Apple Intelligence where your iPhone has it and Apple's built-in image recognition otherwise. Photos of meals aren't saved or sent anywhere, and you can also choose a photo from your library instead; Leanr only sees the one you pick.
+
+## Describing a meal
+
+If you type or say what you ate, your iPhone reads the words to find each food, using Apple Intelligence where your iPhone has it and Leanr's own reading otherwise. Both happen on your device. The words aren't saved or sent anywhere; only the foods you choose to log are kept. Saying it uses your keyboard's dictation, which Apple's privacy policy covers.
+
+## Recipe links
+
+If you import a recipe from a link, Leanr loads that page straight from the website, as a browser would, and reads only the recipe's name, servings, ingredients and nutrition. Nothing about you or your data is sent with the request. Like any website, the site sees your device's IP address and that the page was requested, and its own privacy policy applies. The page itself isn't kept; only the recipe you save is.
+
+## Apple Watch
+
+If you install Leanr on Apple Watch, your iPhone sends it today's calories, protein and water against your targets, and the meals and foods you can log from the watch. They go directly between your iPhone and your paired watch through Apple's own connection, never through a server, and the watch keeps only the latest copy. Anything you log on the watch is sent back to your iPhone and saved there like anything else you log.
 
 ## Progress photos
 
@@ -77,6 +89,7 @@ Leanr doesn't sell or share your personal data, and it uses no analytics, advert
 
 - **Apple** (United States and elsewhere): Maps, iCloud, Health, Siri and Visual Intelligence, which are part of your device and your Apple Account and are covered by Apple's privacy policy.
 - **Open Food Facts** (France): receives only a product's barcode number or the words you search for packaged foods. Neither is linked to you.
+- **Recipe websites you choose**: when you import a recipe from a link, that website receives the request for the page and nothing else.
 - **GitHub** (United States): hosts the restaurant menu file. A few times a day Leanr asks it whether the menu has changed and, if it has, downloads the new one. The request contains nothing about you or your data. As with any website, GitHub sees your device's IP address and handles it under GitHub's privacy statement.
 
 Any service that receives data from Leanr must protect it at least as well as this policy does. If that ever changes, this policy will be updated before the app sends anything new.

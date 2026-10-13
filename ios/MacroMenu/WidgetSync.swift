@@ -50,6 +50,23 @@ extension AppStore {
         return options
     }
 
+    /// Today for Apple Watch: calories, protein and water against their targets, and the Log again widget's options.
+    func watchSnapshot(now: Date = Date()) -> WatchSnapshot {
+        let key = dayKey(now), eaten = Nutrition((data.logs[key] ?? []).flatMap(\.items))
+        let target = data.dayGoals[key] ?? goals
+        let options = quickLogOptions(now: now).map { option -> WatchSnapshot.Option in
+            var protein = 0.0
+            if option.isUsual, let meal = option.mealTime.flatMap(MealTime.init(rawValue:)), let usual = Assistant.usual(meal, logs: data.logs, now: now) {
+                protein = Nutrition(usual.items).p
+            } else if let food = pinnedFoods.first(where: { "pin:\($0.id)" == option.id }) {
+                protein = food.p
+            }
+            return WatchSnapshot.Option(id: option.id, name: option.name, calories: option.calories, protein: protein, loggedToday: option.lastLogged == key)
+        }
+        return WatchSnapshot(day: key, calories: eaten.cal, calorieTarget: target.values["cal"], protein: eaten.p, proteinTarget: target.values["p"],
+                             water: Water.total(data, on: key), waterTarget: Water.target(data), glass: Water.glass(data), options: options)
+    }
+
     /// Logs one of the widget's options: a usual meal to its own meal time, or a serving of a pinned food to the meal time it is at `date`.
     /// The same thing logged in the last 10 seconds is taken as a double tap, since the widget can take a moment to show its tick.
     @discardableResult func logAgain(_ option: String, at date: Date = Date()) -> Bool {
@@ -74,6 +91,7 @@ extension AppStore {
     }
 
     func refreshWidgets() {
+        widgetsRefreshed?()
         #if os(iOS)
         guard let url = WidgetCalories.fileURL else { return }
         do {

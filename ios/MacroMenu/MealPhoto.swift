@@ -204,7 +204,8 @@ enum MealPhoto {
                 FoodSearch.browse(foods, chainNames: chainNames, request: .init(search: search, chain: place)).filter { food in
                     // Each word starts a word of the name ("leg" doesn't match inside "Little G's").
                     let words = FoodSearch.tokens(food.name + " " + (chainNames[food.chain] ?? ""))
-                    return query.words.allSatisfy { word in words.contains { $0.hasPrefix(word) || stem($0) == stem(word) } }
+                    // A couple of extra letters at most, so "egg" finds "Eggs" but "pepper" never finds "Pepperoni".
+                    return query.words.allSatisfy { word in words.contains { ($0.hasPrefix(word) && $0.count - word.count <= 2) || stem($0) == stem(word) } }
                 }
             }
             var found = exact(chain ?? Food.everyday)

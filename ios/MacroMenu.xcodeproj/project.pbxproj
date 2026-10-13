@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4D4D0000000000000000002A /* LeanrWidgets.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4D4D00000000000000000020 /* LeanrWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4D4D0000000000000000003A /* LeanrWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4D4D00000000000000000030 /* LeanrWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -17,6 +18,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 4D4D00000000000000000026;
 			remoteInfo = LeanrWidgets;
+		};
+		4D4D0000000000000000003C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4D4D00000000000000000009 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4D4D00000000000000000036;
+			remoteInfo = LeanrWatch;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -32,11 +40,23 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4D4D0000000000000000003B /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				4D4D0000000000000000003A /* LeanrWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4D4D00000000000000000001 /* MacroMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacroMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D4D00000000000000000020 /* LeanrWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LeanrWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D4D00000000000000000030 /* LeanrWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeanrWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -53,6 +73,16 @@
 		4D4D00000000000000000022 /* Shared */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		4D4D00000000000000000031 /* LeanrWatch */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = LeanrWatch;
+			sourceTree = "<group>";
+		};
+		4D4D00000000000000000032 /* WatchShared */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = WatchShared;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -72,6 +102,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4D4D00000000000000000034 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -82,6 +119,8 @@
 				4D4D00000000000000000005 /* Products */,
 				4D4D00000000000000000021 /* LeanrWidgets */,
 				4D4D00000000000000000022 /* Shared */,
+				4D4D00000000000000000031 /* LeanrWatch */,
+				4D4D00000000000000000032 /* WatchShared */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +129,7 @@
 			children = (
 				4D4D00000000000000000001 /* MacroMenu.app */,
 				4D4D00000000000000000020 /* LeanrWidgets.appex */,
+				4D4D00000000000000000030 /* LeanrWatch.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,15 +145,18 @@
 				4D4D00000000000000000003 /* Frameworks */,
 				4D4D00000000000000000008 /* Resources */,
 				4D4D0000000000000000002B /* Embed App Extensions */,
+				4D4D0000000000000000003B /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				4D4D0000000000000000002D /* PBXTargetDependency */,
+				4D4D0000000000000000003D /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				4D4D00000000000000000002 /* MacroMenu */,
 				4D4D00000000000000000022 /* Shared */,
+				4D4D00000000000000000032 /* WatchShared */,
 			);
 			name = MacroMenu;
 			packageProductDependencies = (
@@ -142,6 +185,27 @@
 			productName = LeanrWidgets;
 			productReference = 4D4D00000000000000000020 /* LeanrWidgets.appex */;
 			productType = "com.apple.product-type.app-extension";
+		};
+		4D4D00000000000000000036 /* LeanrWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D4D00000000000000000037 /* Build configuration list for PBXNativeTarget "LeanrWatch" */;
+			buildPhases = (
+				4D4D00000000000000000033 /* Sources */,
+				4D4D00000000000000000034 /* Frameworks */,
+				4D4D00000000000000000035 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				4D4D00000000000000000031 /* LeanrWatch */,
+				4D4D00000000000000000032 /* WatchShared */,
+			);
+			name = LeanrWatch;
+			productName = LeanrWatch;
+			productReference = 4D4D00000000000000000030 /* LeanrWatch.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -174,6 +238,7 @@
 			targets = (
 				4D4D00000000000000000006 /* MacroMenu */,
 				4D4D00000000000000000026 /* LeanrWidgets */,
+				4D4D00000000000000000036 /* LeanrWatch */,
 			);
 		};
 /* End PBXProject section */
@@ -187,6 +252,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4D4D00000000000000000025 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D4D00000000000000000035 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -210,6 +282,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4D4D00000000000000000033 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -217,6 +296,11 @@
 			isa = PBXTargetDependency;
 			target = 4D4D00000000000000000026 /* LeanrWidgets */;
 			targetProxy = 4D4D0000000000000000002C /* PBXContainerItemProxy */;
+		};
+		4D4D0000000000000000003D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4D4D00000000000000000036 /* LeanrWatch */;
+			targetProxy = 4D4D0000000000000000003C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -412,6 +496,68 @@
 			};
 			name = Release;
 		};
+		4D4D00000000000000000038 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 20;
+				DEVELOPMENT_TEAM = N6H3K58396;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Leanr;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.isaiahgraham.MacroMenu;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.isaiahgraham.MacroMenu.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		4D4D00000000000000000039 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 20;
+				DEVELOPMENT_TEAM = N6H3K58396;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Leanr;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.isaiahgraham.MacroMenu;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.isaiahgraham.MacroMenu.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -438,6 +584,15 @@
 			buildConfigurations = (
 				4D4D00000000000000000028 /* Debug */,
 				4D4D00000000000000000029 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D4D00000000000000000037 /* Build configuration list for PBXNativeTarget "LeanrWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D4D00000000000000000038 /* Debug */,
+				4D4D00000000000000000039 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

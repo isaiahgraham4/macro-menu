@@ -8,6 +8,9 @@ struct ProgressTabView: View {
     @AppStorage(MacroColours.proteinKey) private var proteinColour = "blue"
     @AppStorage(MacroColours.carbsKey) private var carbsColour = "orange"
     @AppStorage(MacroColours.fatKey) private var fatColour = "red"
+    @AppStorage(ProgressPart.orderKey) private var orderText = ""
+    @AppStorage(ProgressPart.hiddenKey) private var hiddenText = ""
+    @State private var arranging = false
 
     private var breakdown: ProgressBreakdown {
         ProgressBreakdown.make(store.data, goals: store.goals, days: ProgressBreakdown.ranges.contains(range) ? range : 30)
@@ -22,24 +25,39 @@ struct ProgressTabView: View {
                     Text("7 days").tag(7); Text("30 days").tag(30); Text("90 days").tag(90)
                 }.pickerStyle(.segmented)
             }
-            weightSection(breakdown)
-            StepsProgressSection(days: Dictionary(uniqueKeysWithValues: breakdown.points.map { ($0.key, $0.date) }))
-            BodySection()
-            weekSection
-            if breakdown.loggedDays == 0 {
+            ForEach(ProgressPart.shown(order: orderText, hidden: hiddenText)) { part in
+                section(part, breakdown)
+            }
+        }
+        .navigationTitle("Progress")
+        .toolbar {
+            Button { arranging = true } label: { Label("Arrange sections", systemImage: "arrow.up.arrow.down") }
+        }
+        .sheet(isPresented: $arranging) { NavigationStack { ProgressArrangeView(orderText: $orderText, hiddenText: $hiddenText) } }
+    }
+
+    @ViewBuilder private func section(_ part: ProgressPart, _ breakdown: ProgressBreakdown) -> some View {
+        let logged = breakdown.loggedDays > 0
+        switch part {
+        case .checkIn: Section { CheckInRow() }
+        case .weight: weightSection(breakdown)
+        case .steps: StepsProgressSection(days: Dictionary(uniqueKeysWithValues: breakdown.points.map { ($0.key, $0.date) }))
+        case .body: BodySection()
+        case .week: weekSection
+        case .calories:
+            if logged {
+                caloriesSection(breakdown)
+            } else {
                 Section {
                     ContentUnavailableView("Nothing logged in the last \(breakdown.days) days", systemImage: "chart.bar",
                                            description: Text("Log a few days and your averages, macro split and biggest contributors fill in here."))
                 }
-            } else {
-                caloriesSection(breakdown)
-                averagesSection(breakdown)
-                if let share = breakdown.share { macroSection(share, complete: breakdown.shareComplete) }
-                if !breakdown.mealTimes.isEmpty { mealTimeSection(breakdown) }
-                if !breakdown.topFoods.isEmpty { contributorsSection(breakdown) }
             }
+        case .averages: if logged { averagesSection(breakdown) }
+        case .macros: if logged, let share = breakdown.share { macroSection(share, complete: breakdown.shareComplete) }
+        case .meals: if logged && !breakdown.mealTimes.isEmpty { mealTimeSection(breakdown) }
+        case .contributors: if logged && !breakdown.topFoods.isEmpty { contributorsSection(breakdown) }
         }
-        .navigationTitle("Progress")
     }
 
     // MARK: Your week
@@ -239,5 +257,96 @@ struct ProgressTabView: View {
         } header: { Text("Biggest contributors") } footer: {
             Text("The foods that added the most calories over these \(breakdown.days) days.")
         }
+    }
+}
+
+/// The sections of the Progress tab, in the order and with the ones hidden that you chose.
+enum ProgressPart: String, CaseIterable, Identifiable {
+    case checkIn, weight, steps, body, week, calories, averages, macros, meals, contributors
+    var id: Self { self }
+    static let orderKey = "progress.order"
+    static let hiddenKey = "progress.hidden"
+
+    var title: String {
+        switch self {
+        case .checkIn: "Weekly check-in"
+        case .weight: "Weight"
+        case .steps: "Steps"
+        case .body: "Measurements and photos"
+        case .week: "Your week"
+        case .calories: "Calories per day"
+        case .averages: "Daily averages"
+        case .macros: "Where the calories come from"
+        case .meals: "By meal"
+        case .contributors: "Biggest contributors"
+        }
+    }
+    var systemImage: String {
+        switch self {
+        case .checkIn: "arrow.triangle.2.circlepath"
+        case .weight: "scalemass"
+        case .steps: "figure.walk"
+        case .body: "ruler"
+        case .week: "calendar"
+        case .calories: "chart.bar"
+        case .averages: "equal.circle"
+        case .macros: "chart.pie"
+        case .meals: "fork.knife"
+        case .contributors: "list.number"
+        }
+    }
+
+    /// The saved order, with any section added since put at the end. Stored as names separated by commas.
+    static func order(_ text: String) -> [ProgressPart] {
+        var parts: [ProgressPart] = []
+        for name in text.split(separator: ",") { if let part = ProgressPart(rawValue: String(name)), !parts.contains(part) { parts.append(part) } }
+        return parts + allCases.filter { !parts.contains($0) }
+    }
+    static func hidden(_ text: String) -> Set<ProgressPart> { Set(text.split(separator: ",").compactMap { ProgressPart(rawValue: String($0)) }) }
+    static func shown(order: String, hidden: String) -> [ProgressPart] {
+        let hiddenParts = self.hidden(hidden)
+        return self.order(order).filter { !hiddenParts.contains($0) }
+    }
+    static func text(_ parts: some Sequence<ProgressPart>) -> String { parts.map(\.rawValue).joined(separator: ",") }
+}
+
+/// Drag the Progress sections into the order you want, and hide the ones you don't use.
+struct ProgressArrangeView: View {
+    @Environment(\.dismiss) private var dismiss
+    @Binding var orderText: String
+    @Binding var hiddenText: String
+
+    var body: some View {
+        let order = ProgressPart.order(orderText), hidden = ProgressPart.hidden(hiddenText)
+        List {
+            Section {
+                ForEach(order) { part in
+                    HStack(spacing: 12) {
+                        Image(systemName: part.systemImage).foregroundStyle(hidden.contains(part) ? AnyShapeStyle(.tertiary) : AnyShapeStyle(.tint)).frame(width: 28)
+                        Text(part.title).foregroundStyle(hidden.contains(part) ? .secondary : .primary)
+                        Spacer()
+                        Button {
+                            var updated = hidden
+                            if updated.contains(part) { updated.remove(part) } else { updated.insert(part) }
+                            hiddenText = ProgressPart.text(ProgressPart.allCases.filter(updated.contains))
+                        } label: {
+                            Image(systemName: hidden.contains(part) ? "eye.slash" : "eye").frame(width: 44, height: 44).contentShape(Rectangle())
+                        }
+                        .buttonStyle(.borderless)
+                        .accessibilityLabel(hidden.contains(part) ? "Show \(part.title)" : "Hide \(part.title)")
+                    }
+                }
+                .onMove { from, to in
+                    var parts = order; parts.move(fromOffsets: from, toOffset: to)
+                    orderText = ProgressPart.text(parts)
+                }
+            } footer: { Text("Drag to reorder. Tap the eye to hide a section or bring it back.") }
+            Section {
+                Button("Reset to the usual order") { orderText = ""; hiddenText = "" }.disabled(orderText.isEmpty && hiddenText.isEmpty)
+            }
+        }
+        .environment(\.editMode, .constant(.active))
+        .navigationTitle("Arrange Progress").navigationBarTitleDisplayMode(.inline)
+        .toolbar { ToolbarItem(placement: .confirmationAction) { Button("Done") { dismiss() } } }
     }
 }
