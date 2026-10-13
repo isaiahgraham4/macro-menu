@@ -107,42 +107,77 @@ struct StepsSettings: View {
     }
 }
 
-/// Steps over the Progress tab's range: a bar per day against the goal, with the average and how often you reached it.
+/// Steps over the Progress tab's range: a bar per day against the goal, with the average, how often you reached the goal,
+/// and a tap or drag on the graph to read any day.
 struct StepsProgressSection: View {
     @Environment(AppStore.self) private var store
     @Environment(HealthSync.self) private var health
+    /// The days in the range, by day key.
     let days: [String: Date]
+    @State private var selected: Date?
 
     var body: some View {
         if health.isAvailable {
             let goal = Steps.goal(store.data)
             let keys = days.keys.sorted()
             let summary = Steps.summary(health.steps, days: keys, goal: goal)
+            let today = health.steps[dayKey(Date())]
             Section {
                 if let average = summary.average {
-                    Chart {
-                        ForEach(keys, id: \.self) { key in
-                            if let date = days[key], let steps = health.steps[key], steps > 0 {
-                                BarMark(x: .value("Day", date, unit: .day), y: .value("Steps", steps))
-                                    .foregroundStyle(steps >= goal ? AnyShapeStyle(.green) : AnyShapeStyle(.tint))
-                            }
-                        }
-                        RuleMark(y: .value("Goal", goal)).foregroundStyle(.secondary).lineStyle(StrokeStyle(lineWidth: 1, dash: [4, 3]))
+                    HStack(alignment: .top, spacing: 12) {
+                        figure("Today", today.map(Steps.text) ?? "–")
+                        figure("Average", Steps.text(average))
+                        figure("Best", summary.best.map(Steps.text) ?? "–")
+                        figure("At goal", "\(summary.daysMet) of \(summary.countedDays)")
                     }
-                    .frame(height: 150)
-                    .accessibilityLabel("Steps per day, average \(Steps.text(average))")
-                    LabeledContent("Average", value: "\(Steps.text(average)) steps · \(summary.countedDays) days")
-                    LabeledContent("Days at goal", value: "\(summary.daysMet) of \(summary.countedDays)")
-                    if let best = summary.best { LabeledContent("Best day", value: "\(Steps.text(best)) steps") }
+                    graph(keys: keys, goal: goal, average: average)
+                    if let selected, let steps = steps(on: selected) {
+                        Text("\(selected.formatted(.dateTime.weekday(.wide).day().month(.abbreviated))): \(Steps.text(steps)) steps")
+                            .font(.roboto(.subheadline, weight: .medium)).monospacedDigit()
+                    }
                 } else {
                     Label(health.enabled ? "No steps found in Health for these days" : "Connect Apple Health to see your steps",
                           systemImage: "figure.walk").foregroundStyle(.secondary)
                     StepsAccessButton()
                 }
             } header: { Text("Steps") } footer: {
-                Text("From \(health.stepSourceName.map { "\($0), through Apple Health" } ?? "Apple Health"). Days with no steps recorded aren't counted in the average. The goal is \(Steps.text(goal)); the goal and the source are in Settings → Targets → Steps.")
+                Text("From \(health.stepSourceName.map { "\($0), through Apple Health" } ?? "Apple Health"). Days with no steps recorded aren't counted in the average. The dashed line is your goal of \(Steps.text(goal)) and the solid line is your average. Change the goal or source in Settings → Targets → Steps.")
             }
             .task { await health.refreshSteps() }
         }
+    }
+
+    private func steps(on date: Date) -> Double? {
+        health.steps[dayKey(date)].flatMap { $0 > 0 ? $0 : nil }
+    }
+
+    private func figure(_ title: String, _ value: String) -> some View {
+        VStack(alignment: .leading, spacing: 2) {
+            Text(title).font(.roboto(.caption)).foregroundStyle(.secondary)
+            Text(value).font(.roboto(.headline, weight: .bold)).monospacedDigit().lineLimit(1).minimumScaleFactor(0.6)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .accessibilityElement(children: .combine)
+    }
+
+    private func graph(keys: [String], goal: Double, average: Double) -> some View {
+        Chart {
+            ForEach(keys, id: \.self) { key in
+                if let date = days[key], let steps = health.steps[key], steps > 0 {
+                    BarMark(x: .value("Day", date, unit: .day), y: .value("Steps", steps))
+                        .foregroundStyle(steps >= goal ? AnyShapeStyle(.green) : AnyShapeStyle(.green.opacity(0.45)))
+                        .opacity(selected == nil || dayKey(selected!) == key ? 1 : 0.5)
+                }
+            }
+            RuleMark(y: .value("Goal", goal)).foregroundStyle(.secondary).lineStyle(StrokeStyle(lineWidth: 1, dash: [4, 3]))
+                .annotation(position: .top, alignment: .trailing) {
+                    Text("Goal \(Steps.text(goal))").font(.roboto(size: 10)).foregroundStyle(.secondary)
+                }
+            RuleMark(y: .value("Average", average)).foregroundStyle(.green).lineStyle(StrokeStyle(lineWidth: 1.5))
+        }
+        .chartXSelection(value: $selected)
+        .chartYAxis { AxisMarks(position: .leading) { _ in AxisGridLine(); AxisValueLabel() } }
+        .frame(height: 190)
+        .accessibilityLabel("Steps per day, average \(Steps.text(average)), goal \(Steps.text(goal))")
     }
 }

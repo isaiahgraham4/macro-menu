@@ -160,6 +160,18 @@ final class HealthSync {
         guard enabled else { return }
         let calendar = Calendar.current, today = calendar.startOfDay(for: Date())
         guard let start = calendar.date(byAdding: .day, value: -89, to: today) else { return }
+        #if DEBUG
+        // `-demoSteps` fills in a believable 90 days, because the simulator has no Health data.
+        if CommandLine.arguments.contains("-demoSteps") {
+            var demo: [String: Double] = [:]
+            for offset in 0..<90 {
+                guard let day = calendar.date(byAdding: .day, value: -offset, to: today), offset % 11 != 7 else { continue }
+                demo[dayKey(day)] = Double(4200 + (offset * 7919) % 7600)
+            }
+            steps = demo; stepsLoaded = true; store?.updateSteps(demo)
+            return
+        }
+        #endif
         var predicate = HKQuery.predicateForSamples(withStart: start, end: nil)
         if let id = stepSourceID {
             if knownSources[id] == nil { await loadStepSources() }
