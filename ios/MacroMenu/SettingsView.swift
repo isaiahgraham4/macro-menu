@@ -8,6 +8,7 @@ struct SettingsView: View {
     @AppStorage(AppAppearance.storageKey) private var appearance = AppAppearance.system
     @State private var showQuiz = false
     @State private var showPremium = false
+    @State private var estimating = false
     @AppStorage(AppAccent.storageKey) private var accentRaw = AppAccent.standard.rawValue
     @AppStorage(AppIconTheme.storageKey) private var iconRaw = AppIconTheme.black.rawValue
     private var current: AppAccent { AppAccent.resolved(accentRaw) }
@@ -97,6 +98,7 @@ struct SettingsView: View {
             }
             Section("Targets") {
                 NavigationLink { TargetsView() } label: { Label("Targets & target sets", systemImage: "target") }
+                Button { estimating = true } label: { Label("Calculate my macros", systemImage: "function") }
                 NavigationLink { WeightView() } label: { Label("Weight log", systemImage: "scalemass") }
                 NavigationLink { MacroColourSettings() } label: { Label("Target colours", systemImage: "paintpalette") }
                 NavigationLink { ReminderSettings() } label: { Label("Meal reminders", systemImage: "bell") }
@@ -146,6 +148,13 @@ struct SettingsView: View {
         }.navigationTitle("Settings")
             .sheet(isPresented: $showQuiz) { LeanrOnboarding { showQuiz = false } }
             .sheet(isPresented: $showPremium) { PremiumView() }
+            .sheet(isPresented: $estimating) {
+                NavigationStack {
+                    TargetCalculator { values in
+                        if store.applyEstimatedTargets(values) { estimating = false; store.notice = "Targets updated" }
+                    }
+                }
+            }
             .alert("Couldn’t connect to Apple Health", isPresented: $healthFailed) { Button("OK") {} } message: {
                 Text(health.lastError ?? "Check that Health is set up on this device, then try again.")
             }

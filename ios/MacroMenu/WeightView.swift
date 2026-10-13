@@ -8,6 +8,8 @@ struct WeightView: View {
     @State private var date = Date()
     @State private var range = 90
     @State private var estimating = false
+    @State private var goalKG: Double?
+    @State private var pace = 0.5
     private var points: [WeightTrend.Point] { WeightTrend.points(store.data.weightLog) }
     private var shown: [WeightTrend.Point] {
         let start = Calendar.current.date(byAdding: .day, value: -range, to: Date()) ?? .distantPast
@@ -54,6 +56,8 @@ struct WeightView: View {
             } footer: {
                 if !points.isEmpty { Text("Dots are scale readings; the line is your trend, which smooths out day-to-day swings from water and food.") }
             }
+
+            goalSection
 
             Section("Log weight") {
                 NumberField(title: "Weight (kg)", value: $kg, places: 2)
@@ -103,7 +107,8 @@ struct WeightView: View {
             }
         }
         .navigationTitle("Weight")
-        .onAppear { if kg == 0 { kg = store.data.weightLog.max { $0.date < $1.date }?.kg ?? 0 } }
+        .onAppear { if goalKG == nil, let goal = store.data.weightGoal { goalKG = goal.kg } }
+        .onAppear { if kg == 0 { kg = (store.data.weightLog.max { $0.date < $1.date }?.kg ?? 0).hundredth } }
         .task { await health.refresh() }
         .sheet(isPresented: $estimating) {
             NavigationStack {
@@ -112,6 +117,95 @@ struct WeightView: View {
                 }
             }
         }
+    }
+
+    // MARK: Goal
+
+    private var goalStatus: WeightTrend.GoalStatus? {
+        store.data.weightGoal.flatMap { WeightTrend.goalStatus($0, points: points) }
+    }
+
+    private func dateText(_ date: Date) -> String { date.formatted(.dateTime.day().month(.abbreviated).year()) }
+
+    private func weeksText(until date: Date) -> String {
+        let days = max(0, Calendar.current.dateComponents([.day], from: Calendar.current.startOfDay(for: Date()), to: Calendar.current.startOfDay(for: date)).day ?? 0)
+        if days < 14 { return days == 1 ? "1 day" : "\(days) days" }
+        if days < 70 { return "\(Int((Double(days) / 7).rounded())) weeks" }
+        return "\(Int((Double(days) / 30.4).rounded())) months"
+    }
+
+    @ViewBuilder private var goalSection: some View {
+        let goal = store.data.weightGoal
+        Section {
+            OptionalNumberField(title: "Goal weight (kg)", value: $goalKG, places: 1)
+            if let entered = goalKG, (20...400).contains(entered), entered.hundredth != goal?.kg {
+                Button(goal == nil ? "Set goal" : "Update goal") { setGoal() }
+            }
+            if let goal, let status = goalStatus {
+                LabeledContent("Now (trend)", value: "\(status.current.number) kg")
+                switch status.direction {
+                case .reached:
+                    Label("You're at your goal weight", systemImage: "checkmark.seal.fill").foregroundStyle(.tint)
+                case .lose, .gain:
+                    LabeledContent("To go", value: "\(status.remaining.number) kg to \(status.direction == .lose ? "lose" : "gain")")
+                    ProgressView(value: status.progress) {
+                        Text("\(Int((status.progress * 100).rounded()))% of the way from \(goal.startKg.number) kg").font(.roboto(.caption))
+                    }.tint(.accentColor)
+                }
+                projection(status)
+            } else if goal != nil {
+                Text("Log a weigh-in to see how far off you are.").foregroundStyle(.secondary)
+            }
+            if goal != nil {
+                Button("Remove goal", role: .destructive) {
+                    if store.change(undo: "Removed weight goal", { $0.weightGoal = nil }) { goalKG = nil }
+                }
+            }
+        } header: { Text("Goal") } footer: {
+            Text(goal == nil
+                 ? "Set a goal weight to see how far off you are and when you could get there at your current pace."
+                 : "Projections use your trend, not a single weigh-in, so they settle as you log more. They're an estimate, not a promise.")
+        }
+    }
+
+    @ViewBuilder private func projection(_ status: WeightTrend.GoalStatus) -> some View {
+        if status.direction != .reached {
+            switch status.pace {
+            case .towards:
+                if let projected = status.projected, let weekly = status.weeklyChange {
+                    LabeledContent("At your pace", value: dateText(projected))
+                    Text("About \(weeksText(until: projected)) away, at \(signed(weekly)) kg a week.")
+                        .font(.roboto(.caption)).foregroundStyle(.secondary)
+                }
+            case .away:
+                Text("Your trend is moving the other way (\(signed(status.weeklyChange ?? 0)) kg a week), so there's no date yet.")
+                    .font(.roboto(.caption)).foregroundStyle(.secondary)
+            case .flat:
+                Text("Your trend is steady, so there's no date at this pace.").font(.roboto(.caption)).foregroundStyle(.secondary)
+            case .tooFar:
+                Text("At this pace it's more than five years away.").font(.roboto(.caption)).foregroundStyle(.secondary)
+            case .unknown:
+                Text("A week or more of weigh-ins shows your pace and a date.").font(.roboto(.caption)).foregroundStyle(.secondary)
+            }
+            // What a chosen pace would mean, whatever the trend is doing now.
+            Picker("If you aim for", selection: $pace) {
+                ForEach([0.25, 0.5, 0.75, 1.0], id: \.self) { Text("\($0.kgText) kg/wk").tag($0) }
+            }.pickerStyle(.segmented)
+            if let date = WeightTrend.date(toCover: status.remaining, kgPerWeek: pace) {
+                let calories = WeightTrend.dailyCalorieDifference(kgPerWeek: pace).rounded()
+                LabeledContent("At \(pace.kgText) kg a week", value: dateText(date))
+                Text("About \(weeksText(until: date)), \(calories.number) Cal a day \(status.direction == .lose ? "below" : "above") what holds your weight. Slower is easier to keep up.")
+                    .font(.roboto(.caption)).foregroundStyle(.secondary)
+            }
+        }
+    }
+
+    private func setGoal() {
+        guard let entered = goalKG, (20...400).contains(entered) else { return }
+        let target = entered.hundredth
+        let start = (points.last?.trend ?? store.data.weightLog.max { $0.date < $1.date }?.kg ?? target).hundredth
+        let goal = WeightGoal(kg: target, startKg: (20...400).contains(start) ? start : target, set: Date())
+        if store.change(undo: "Set goal weight to \(goal.kg.kgText) kg", { $0.weightGoal = goal }) { goalKG = goal.kg }
     }
 
     private var yDomain: ClosedRange<Double> {
@@ -143,6 +237,11 @@ struct BodySummary: View {
                                 .font(.roboto(.caption)).foregroundStyle(.secondary)
                         } else {
                             Text("Weight trend").font(.roboto(.caption)).foregroundStyle(.secondary)
+                        }
+                        if let goal = store.data.weightGoal, let status = WeightTrend.goalStatus(goal, points: points) {
+                            Text(status.direction == .reached ? "At your goal of \(goal.kg.kgText) kg"
+                                 : "Goal \(goal.kg.kgText) kg · \(status.remaining.number) kg to go")
+                                .font(.roboto(.caption)).foregroundStyle(.secondary)
                         }
                     } else {
                         Text("Log your weight").font(.roboto(.headline))

@@ -219,6 +219,8 @@ struct AppData: Codable, Sendable {
     /// Optional so saved data and backups from before the weight log still load.
     var weights: [WeightEntry]? = nil
     var weightLog: [WeightEntry] { weights ?? [] }
+    /// The weight being aimed for. Optional so saved data and backups from before goals still load.
+    var weightGoal: WeightGoal? = nil
     /// Foods pinned to the top of the "+" menu and the Log again widget. Copies, so a pin still works if the item leaves the menu.
     /// Optional so saved data and backups from before pinning still load.
     var pinned: [Food]? = nil
@@ -226,7 +228,7 @@ struct AppData: Codable, Sendable {
         version == 2 && foods.allSatisfy(\.isValid) && meals.allSatisfy(\.isValid) && tray.allSatisfy(\.isValid) &&
         (pinned ?? []).allSatisfy(\.isValid) &&
         logs.values.flatMap { $0 }.allSatisfy(\.isValid) && !goalSets.isEmpty && goalSets.allSatisfy(\.isValid) &&
-        dayGoals.values.allSatisfy(\.isValid) && weightLog.allSatisfy(\.isValid) && Set(foods.map(\.id)).count == foods.count &&
+        dayGoals.values.allSatisfy(\.isValid) && weightLog.allSatisfy(\.isValid) && (weightGoal?.isValid ?? true) && Set(foods.map(\.id)).count == foods.count &&
         Set(meals.map(\.id)).count == meals.count && Set(goalSets.map(\.id)).count == goalSets.count &&
         logs.keys.allSatisfy { $0.range(of: #"^\d{4}-\d{2}-\d{2}$"#, options: .regularExpression) != nil }
     }

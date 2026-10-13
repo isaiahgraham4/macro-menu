@@ -752,6 +752,59 @@ import Foundation
         let reloadedOld = try JSONDecoder().decode(AppData.self, from: oldFormat)
         assert(reloadedOld.weights == nil && reloadedOld.isValid)
 
+        // Weight goals: how far off, how far along, and when at the current pace.
+        do {
+            let cal = Calendar(identifier: .gregorian)
+            let today = cal.startOfDay(for: Date())
+            func weighIns(from start: Double, perWeek: Double, weeks: Int) -> [WeightEntry] {
+                (0...(weeks * 7)).map { day in
+                    WeightEntry(date: cal.date(byAdding: .day, value: day - weeks * 7, to: today)!, kg: start + perWeek / 7 * Double(day))
+                }
+            }
+            let losing = WeightTrend.points(weighIns(from: 90, perWeek: -0.5, weeks: 4), calendar: cal)
+            let goal = WeightGoal(kg: 80, startKg: 90, set: today)
+            let status = WeightTrend.goalStatus(goal, points: losing, now: today, calendar: cal)!
+            assert(status.direction == .lose && status.pace == .towards && status.projected != nil)
+            assert(status.remaining > 7 && status.remaining < 9 && status.progress > 0.05 && status.progress < 0.3)
+            let weeks = cal.dateComponents([.day], from: today, to: status.projected!).day! / 7
+            assert((14...30).contains(weeks))   // about 8.6 kg to go; the trend lags a new history, so it reads a little under 0.5 kg a week
+            // Gaining towards a higher goal, and a flat or wrong-way trend gives no date.
+            let gaining = WeightTrend.points(weighIns(from: 60, perWeek: 0.4, weeks: 4), calendar: cal)
+            let gainStatus = WeightTrend.goalStatus(WeightGoal(kg: 66, startKg: 60, set: today), points: gaining, now: today, calendar: cal)!
+            assert(gainStatus.direction == .gain && gainStatus.pace == .towards && gainStatus.projected != nil)
+            let wrong = WeightTrend.goalStatus(WeightGoal(kg: 85, startKg: 90, set: today), points: losing, now: today, calendar: cal)!
+            assert(wrong.direction == .lose && wrong.pace == .towards)   // 85 is still below the trend
+            let away = WeightTrend.goalStatus(WeightGoal(kg: 95, startKg: 90, set: today), points: losing, now: today, calendar: cal)!
+            assert(away.direction == .gain && away.pace == .away && away.projected == nil)
+            let flat = WeightTrend.points(weighIns(from: 80, perWeek: 0, weeks: 4), calendar: cal)
+            assert(WeightTrend.goalStatus(WeightGoal(kg: 75, startKg: 80, set: today), points: flat, now: today, calendar: cal)!.pace == .flat)
+            // Reached, not enough data, and nothing logged.
+            let reached = WeightTrend.goalStatus(WeightGoal(kg: 79.95, startKg: 90, set: today), points: flat, now: today, calendar: cal)!
+            assert(reached.direction == .reached && reached.progress == 1 && reached.projected == nil)
+            let fewDays = WeightTrend.points(weighIns(from: 90, perWeek: -0.5, weeks: 0), calendar: cal)
+            assert(WeightTrend.goalStatus(goal, points: fewDays, now: today, calendar: cal)!.pace == .unknown)
+            assert(WeightTrend.goalStatus(goal, points: [], now: today, calendar: cal) == nil)
+            // A pace you choose, and what it asks of your day.
+            let aimed = WeightTrend.date(toCover: 5, kgPerWeek: 0.5, now: today, calendar: cal)!
+            assert(cal.dateComponents([.day], from: today, to: aimed).day == 70)
+            assert(WeightTrend.date(toCover: 5, kgPerWeek: 0, now: today, calendar: cal) == nil)
+            assert(WeightTrend.date(toCover: 50, kgPerWeek: 0.1, now: today, calendar: cal) == nil)   // beyond five years
+            assert(abs(WeightTrend.dailyCalorieDifference(kgPerWeek: 0.5) - 550) < 0.01)
+            // Saved data from before goals loads, a goal survives a round trip, and the newest goal wins a merge.
+            var data = AppData(); data.weightGoal = goal
+            let decoded = try JSONDecoder().decode(AppData.self, from: JSONEncoder().encode(data))
+            assert(decoded.weightGoal == goal && decoded.isValid)
+            var legacyJSON = try JSONSerialization.jsonObject(with: JSONEncoder().encode(AppData())) as! [String: Any]
+            legacyJSON["weightGoal"] = nil
+            let legacy = try JSONDecoder().decode(AppData.self, from: JSONSerialization.data(withJSONObject: legacyJSON))
+            assert(legacy.weightGoal == nil)
+            var older = AppData(); older.weightGoal = WeightGoal(kg: 70, startKg: 80, set: today.addingTimeInterval(-86400))
+            var newer = AppData(); newer.weightGoal = goal
+            assert(AppStore.merged(older, newer).weightGoal == goal && AppStore.merged(newer, older).weightGoal == goal)
+            var invalid = AppData(); invalid.weightGoal = WeightGoal(kg: 5, startKg: 80, set: today)
+            assert(!invalid.isValid)
+        }
+
         print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, delivery, iCloud health rules, deleting all data, the policies, everyday foods, customised orders, photo and Visual Intelligence matching, widget goal colours, Premium access rules, Siri logging and editing saved and logged meals and no prices (\(Date().timeIntervalSince(start).formatted())s).")
     }
 }

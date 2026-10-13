@@ -238,6 +238,8 @@ final class AppStore {
             for pin in pins where !merged.contains(where: { $0.id == pin.id }) { merged.append(pin) }
             state.pinned = Array(merged.prefix(pinLimit))
         }
+        // The goal set most recently wins.
+        if let goal = backup.weightGoal, goal.set > (state.weightGoal?.set ?? .distantPast) { state.weightGoal = goal }
         if state.tray.isEmpty { state.tray = backup.tray }
         if !backup.weightLog.isEmpty {
             var weights = state.weightLog

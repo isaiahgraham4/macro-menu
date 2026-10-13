@@ -115,7 +115,10 @@ final class HealthSync {
         let known = Set(store.data.weightLog.compactMap(\.healthID))
         let fresh = samples.filter { sample in
             sample.metadata?[Self.weightKey] == nil && !known.contains(sample.uuid) && !ignored.contains(sample.uuid.uuidString)
-        }.map { WeightEntry(date: $0.startDate, kg: $0.quantity.doubleValue(for: .gramUnit(with: .kilo)), healthID: $0.uuid) }
+        }.map {
+            // Scales and other apps often store pounds converted to kg (181.5 lb is 82.3293 kg); Leanr keeps weights to 10 g.
+            WeightEntry(date: $0.startDate, kg: $0.quantity.doubleValue(for: .gramUnit(with: .kilo)).hundredth, healthID: $0.uuid)
+        }
             .filter(\.isValid)
         guard !fresh.isEmpty else { return }
         store.change { $0.weights = $0.weightLog + fresh }
