@@ -1,0 +1,9 @@
+{
+  "id" : "7608e92f-a6b7-4b8b-85aa-d9d3e421d1ea",
+  "targets" : [
+    {
+      "id" : "c4b42904-a4a6-4d9c-be91-856f5e1e5ae9",
+      "name" : "MacroMenu"
+    }
+  ]
+}
