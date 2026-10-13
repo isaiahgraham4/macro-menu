@@ -7,6 +7,7 @@ import Foundation
     static let shared = WatchLink()
     private weak var store: AppStore?
     private var lastSent: WatchSnapshot?
+    private var lastComplication: WatchSnapshot?
 
     func start(_ store: AppStore) {
         guard WCSession.isSupported(), self.store == nil else { return }
@@ -21,6 +22,13 @@ import Foundation
         guard let store, WCSession.isSupported(), session.activationState == .activated, session.isPaired, session.isWatchAppInstalled else { return }
         let snapshot = store.watchSnapshot()
         guard snapshot != lastSent else { return }
+        // A Leanr complication on the watch face gets a priority update (about 50 a day), which wakes the watch app to
+        // redraw it; spent only when the calories, protein or water shown have changed.
+        if session.isComplicationEnabled, session.remainingComplicationUserInfoTransfers > 0,
+           WatchStorage.complicationsDiffer(lastComplication, snapshot) {
+            session.transferCurrentComplicationUserInfo(snapshot.context)
+            lastComplication = snapshot
+        }
         do { try session.updateApplicationContext(snapshot.context); lastSent = snapshot } catch {}
     }
 

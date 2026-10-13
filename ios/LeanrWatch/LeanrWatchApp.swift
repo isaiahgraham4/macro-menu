@@ -7,6 +7,7 @@ struct LeanrWatchApp: App {
         WindowGroup {
             WatchHome().environment(model)
         }
+        .backgroundTask(.watchConnectivity) { await model.finishTransfers() }
     }
 }
 

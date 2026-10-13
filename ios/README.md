@@ -75,6 +75,12 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   meals and pinned foods) and a glass of water in a tap. The iPhone sends a `WatchSnapshot` as the application context
   whenever the widgets refresh (`WatchLink`); the watch sends `WatchRequest`s back by message or queued user info, and
   shows the change straight away.
+- Watch complications (`LeanrWatchWidgets`, embedded in the watch app): Calories left (circular, corner, rectangular,
+  inline), Protein and Water (circular, corner, inline). The watch app keeps the latest snapshot in the App Group
+  (`WatchStorage`) and reloads them when a figure they show changes; each timeline has a second entry at midnight that
+  starts the day at nothing. With a Leanr complication on the face, the iPhone also sends a complication update
+  (`transferCurrentComplicationUserInfo`, about 50 a day), only when calories, protein or water change, so the face
+  updates without opening the app.
 - Apple Health (Settings): writes each logged meal as a food correlation with its
   nutrients, and weigh-ins; reads weight and active energy. Every sample carries
   its Leanr entry or weight ID, so edits, deletes and undo replace exactly those

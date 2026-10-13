@@ -1,5 +1,6 @@
 import Foundation
 import Observation
+import WidgetKit
 @preconcurrency import WatchConnectivity
 
 /// Today's numbers from Leanr on iPhone, and the way back to it. The last snapshot is kept on the watch so it shows
@@ -9,13 +10,10 @@ final class WatchModel: NSObject {
     private(set) var snapshot: WatchSnapshot?
     /// Set briefly after a tap, for the confirmation.
     var confirmation: String?
-    private static let storageKey = "watch.snapshot"
 
     override init() {
         super.init()
-        if let data = UserDefaults.standard.data(forKey: Self.storageKey) {
-            snapshot = try? JSONDecoder().decode(WatchSnapshot.self, from: data)
-        }
+        snapshot = WatchStorage.read()
         if WCSession.isSupported() {
             WCSession.default.delegate = self
             WCSession.default.activate()
@@ -38,9 +36,19 @@ final class WatchModel: NSObject {
         send(.water(millilitres))
     }
 
+    /// Keeps the snapshot where the complications can read it, and redraws them when what they show has changed.
     private func update(_ value: WatchSnapshot) {
+        let changed = WatchStorage.complicationsDiffer(snapshot, value)
         snapshot = value
-        if let data = try? JSONEncoder().encode(value) { UserDefaults.standard.set(data, forKey: Self.storageKey) }
+        WatchStorage.write(value)
+        if changed { WidgetCenter.shared.reloadAllTimelines() }
+    }
+
+    /// Lets the system wake the app for an update from the iPhone and finish taking it in before it sleeps again.
+    func finishTransfers() async {
+        for _ in 0..<20 where WCSession.default.hasContentPending {
+            try? await Task.sleep(for: .milliseconds(250))
+        }
     }
 
     /// Straight away when the iPhone is reachable, otherwise queued until it is.
@@ -64,6 +72,11 @@ extension WatchModel: WCSessionDelegate {
     }
     nonisolated func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String: Any]) {
         guard let value = WatchSnapshot(context: applicationContext) else { return }
+        Task { @MainActor in self.received(value) }
+    }
+    /// Complication updates, which the iPhone sends when one of Leanr's complications is on the watch face.
+    nonisolated func session(_ session: WCSession, didReceiveUserInfo userInfo: [String: Any] = [:]) {
+        guard let value = WatchSnapshot(context: userInfo) else { return }
         Task { @MainActor in self.received(value) }
     }
 }

@@ -1230,6 +1230,11 @@ import UniformTypeIdentifiers
             assert(snapshot.current(on: now) == snapshot && snapshot.addingWater(-1000).water == 0)
             assert(WatchRequest(message: WatchRequest.log("pin:bar").message) == .log("pin:bar"))
             assert(WatchRequest(message: WatchRequest.water(250).message) == .water(250))
+            // Complication updates are limited, so they're only spent when a figure on the watch face changes.
+            assert(WatchStorage.complicationsDiffer(nil, snapshot) && !WatchStorage.complicationsDiffer(snapshot, snapshot))
+            var optionsOnly = snapshot; optionsOnly.options = []
+            assert(!WatchStorage.complicationsDiffer(snapshot, optionsOnly) && WatchStorage.complicationsDiffer(snapshot, logged))
+            assert(WatchStorage.complicationsDiffer(snapshot, snapshot.addingWater(250)) && WatchStorage.complicationsDiffer(snapshot, fresh))
             assert(WatchRequest(message: ["water": 99999.0]) == nil && WatchRequest(message: ["log": ""]) == nil && WatchRequest(message: [:]) == nil)
         }
 
