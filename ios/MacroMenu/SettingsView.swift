@@ -101,7 +101,7 @@ struct SettingsView: View {
                 NavigationLink { TargetsView() } label: { Label("Targets & target sets", systemImage: "target") }
                 Button { estimating = true } label: { Label("Calculate my macros", systemImage: "function") }
                 NavigationLink { WaterSettings() } label: { Label("Water target", systemImage: "drop") }
-                NavigationLink { StepsSettings() } label: { Label("Steps goal", systemImage: "figure.walk") }
+                NavigationLink { StepsSettings() } label: { Label("Steps", systemImage: "figure.walk") }
                 Toggle(isOn: $suggestFoods) { Label("Suggest foods for what's left", systemImage: "lightbulb") }
                 NavigationLink { MacroColourSettings() } label: { Label("Target colours", systemImage: "paintpalette") }
                 NavigationLink { ReminderSettings() } label: { Label("Meal reminders", systemImage: "bell") }

@@ -42,11 +42,16 @@ struct MyFoodsView: View {
                     NavigationLink { FoodDetailView(food: food) } label: {
                         FoodRow(food: food, quickAdd: { store.logNow([Portion(food: food)], name: food.name) })
                     }
-                        .contextMenu { PinButton(food: food); YesterdayMenu { store.logNow([Portion(food: food)], name: food.name, mealTime: $0, yesterday: true) } }
+                        .contextMenu {
+                            Button("Edit", systemImage: "pencil") { if food.ingredients != nil { editingRecipe = food } else { editing = food } }
+                            PinButton(food: food); YesterdayMenu { store.logNow([Portion(food: food)], name: food.name, mealTime: $0, yesterday: true) } }
                         .swipeActions(edge: .leading) {
                             Button("Edit") { if food.ingredients != nil { editingRecipe = food } else { editing = food } }.tint(.blue)
                         }
-                        .swipeActions { Button("Delete", role: .destructive) { store.change(undo: "Deleted \(food.name)") { $0.foods.removeAll { $0.id == food.id } } } }
+                        .swipeActions {
+                            Button("Delete", role: .destructive) { store.change(undo: "Deleted \(food.name)") { $0.foods.removeAll { $0.id == food.id } } }
+                            Button("Edit") { if food.ingredients != nil { editingRecipe = food } else { editing = food } }.tint(.blue)
+                        }
                 }
             }
         }.navigationTitle("My foods").searchable(text: $search)

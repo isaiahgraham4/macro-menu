@@ -7,6 +7,7 @@ struct WidgetCalories: Codable, Equatable, Sendable {
     static let premiumKind = "LeanrAllTargets"
     static let macrosKind = "LeanrMacros"
     static let streakKind = "LeanrTrackingStreak"
+    static let stepsKind = "LeanrSteps"
     var target: Double?
     var dailyCalories: [String: Double]
     // Optional so snapshots written before colour syncing still decode.
@@ -19,6 +20,9 @@ struct WidgetCalories: Codable, Equatable, Sendable {
     var macroColours: [String: String]? = nil
     /// Usual meals and pinned foods for the Log again widget.
     var quickLogOptions: [WidgetQuickLog]? = nil
+    /// Steps by day for the last week, from Apple Health, and the daily goal, for the Steps widget.
+    var steps: [String: Double]? = nil
+    var stepGoal: Double? = nil
     var trackingDays: Set<String> { Set(trackedDays ?? Array(dailyCalories.filter { $0.value > 0 }.keys)) }
     func streak(on date: Date, calendar: Calendar = Calendar(identifier: .gregorian)) -> Int {
         TrackingStreak.count(days: trackingDays, on: date, calendar: calendar)
@@ -29,6 +33,7 @@ struct WidgetCalories: Codable, Equatable, Sendable {
         (target.map { $0.isFinite && $0 > 0 } ?? true) &&
         dailyCalories.values.allSatisfy { $0.isFinite && $0 >= 0 } &&
         (nutrientTargets ?? []).allSatisfy { $0.target.isFinite && $0.target > 0 } &&
+        (steps ?? [:]).values.allSatisfy { $0.isFinite && $0 >= 0 } && (stepGoal.map { $0.isFinite && $0 > 0 } ?? true) &&
         (dailyNutrients ?? [:]).values.allSatisfy { $0.values.allSatisfy { $0.isFinite && $0 >= 0 } }
     }
 
@@ -156,6 +161,10 @@ enum MealSlot {
 }
 
 extension WidgetCalories {
+    /// Steps on a day, nil when none are known.
+    func stepCount(on date: Date, timeZone: TimeZone = .current) -> Double? {
+        steps?[Self.dayKey(date, timeZone: timeZone)].flatMap { $0 > 0 ? $0 : nil }
+    }
     static let logAgainKind = "LeanrLogAgain"
     /// What the Log again widget shows at `date`: the usual meal for that meal time first, then pinned foods.
     func quickLogs(at date: Date) -> [WidgetQuickLog] {

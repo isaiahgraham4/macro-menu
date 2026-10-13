@@ -3,12 +3,21 @@ import SwiftUI
 struct FoodDetailView: View {
     @Environment(AppStore.self) private var store
     @Environment(\.dismiss) private var dismiss
-    var food: Food
+    private let initial: Food
+    /// One of your own foods or recipes shows its latest figures, so an edit appears here at once.
+    var food: Food { initial.chain == "mine" ? (store.data.foods.first { $0.id == initial.id } ?? initial) : initial }
     var pick: ((Portion) -> Void)?
     var pickTitle = "Use this portion"
     /// Where the log button goes by default: yesterday instead of today, and a meal other than the one the clock suggests.
     var logYesterday = false
     var logMeal: MealTime?
+    @State private var editing = false
+
+    init(food: Food, pick: ((Portion) -> Void)? = nil, pickTitle: String = "Use this portion", logYesterday: Bool = false, logMeal: MealTime? = nil) {
+        initial = food; self.pick = pick; self.pickTitle = pickTitle; self.logYesterday = logYesterday; self.logMeal = logMeal
+    }
+    /// True for a food or recipe you made yourself and can still change.
+    private var editable: Bool { food.chain == "mine" && store.data.foods.contains { $0.id == food.id } }
     @State private var quantity = 1.0
     @State private var useWeight = false
     @State private var weight = 100.0
@@ -132,6 +141,12 @@ struct FoodDetailView: View {
             }
         }.navigationTitle("Food details").navigationBarTitleDisplayMode(.inline)
             .toolbar {
+                if editable {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button { editing = true } label: { Text(food.ingredients != nil ? "Edit recipe" : "Edit") }
+                            .accessibilityLabel(food.ingredients != nil ? "Edit this recipe" : "Edit this food")
+                    }
+                }
                 ToolbarItem(placement: .topBarTrailing) {
                     // A custom order is pinned as it's set up now, as its own food.
                     let target = customized ? pinnable : food
@@ -169,6 +184,12 @@ struct FoodDetailView: View {
                                 .buttonStyle(.bordered).accessibilityLabel("More ways to add")
                         }.disabled(!portion.isValid)
                     }
+                }
+            }
+            .sheet(isPresented: $editing) {
+                NavigationStack {
+                    if food.ingredients != nil { RecipeEditor(food: food) }
+                    else { FoodEditor(food: food) { store.saveFood($0) } }
                 }
             }
             .sheet(isPresented: $editingAdjustment) {

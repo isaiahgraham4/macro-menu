@@ -37,7 +37,7 @@ struct StepsRow: View {
     private var detail: String {
         if !health.enabled { return "Connect Apple Health to see your steps" }
         if health.steps.isEmpty { return health.stepsLoaded ? "No steps found in Health yet" : "Loading…" }
-        return "\(Steps.text(count)) of \(Steps.text(goal))"
+        return "\(Steps.text(count)) of \(Steps.text(goal))" + (health.stepSourceName.map { " · \($0)" } ?? "")
     }
 }
 
@@ -60,6 +60,7 @@ struct StepsAccessButton: View {
 /// The daily step goal.
 struct StepsSettings: View {
     @Environment(AppStore.self) private var store
+    @Environment(HealthSync.self) private var health
     @State private var goal = Steps.defaultGoal
     @State private var loaded = false
 
@@ -72,11 +73,33 @@ struct StepsSettings: View {
                 NumberField(title: "Daily goal (steps)", value: $goal, places: 0)
                 if changed { Button("Save") { if store.setStepGoal(goal.rounded()) { store.notice = "Step goal saved" } }.disabled(!valid) }
             } footer: {
-                Text("Steps come from Apple Health, so they include your iPhone, a watch and any other source you've allowed. Leanr only reads them and doesn't copy them to iCloud.")
+                Text("Steps come from Apple Health. Leanr only reads them and doesn't copy them to iCloud.")
+            }
+            if health.isAvailable && health.enabled {
+                Section {
+                    Picker("Show steps from", selection: Binding(get: { health.stepSourceID }, set: { id in Task { await health.chooseStepSource(id) } })) {
+                        Text("All sources together").tag(String?.none)
+                        ForEach(health.stepSources) { source in
+                            Text(source.name).tag(Optional(source.id))
+                        }
+                    }.pickerStyle(.inline).labelsHidden()
+                } header: { Text("Source") } footer: {
+                    Text("Apple Health combines your iPhone, watch and other sources without counting a walk twice. If one source is more accurate for you, such as a Fitbit through Google Health, choose it to show only its steps. If you pick one and it records nothing on a day, that day shows nothing.")
+                }
+                if !health.stepSources.isEmpty {
+                    Section {
+                        ForEach(health.stepSources) { source in
+                            LabeledContent(source.name, value: health.stepSourceTotals[source.id].map { "\(Steps.text($0)) today" } ?? "–")
+                        }
+                    } header: { Text("Steps today by source") } footer: {
+                        Text("Compare these to see which source has been counting best.")
+                    }
+                }
             }
             if !valid { Section { Text("Use a goal from 1,000 to 100,000 steps.").foregroundStyle(.secondary) } }
         }
-        .navigationTitle("Steps goal")
+        .navigationTitle("Steps")
+        .task { await health.loadStepSources() }
         .onAppear {
             guard !loaded else { return }
             loaded = true; goal = Steps.goal(store.data)
@@ -117,7 +140,7 @@ struct StepsProgressSection: View {
                     StepsAccessButton()
                 }
             } header: { Text("Steps") } footer: {
-                Text("From Apple Health. Days with no steps recorded aren't counted in the average. The goal is \(Steps.text(goal)); change it in Settings.")
+                Text("From \(health.stepSourceName.map { "\($0), through Apple Health" } ?? "Apple Health"). Days with no steps recorded aren't counted in the average. The goal is \(Steps.text(goal)); the goal and the source are in Settings → Targets → Steps.")
             }
             .task { await health.refreshSteps() }
         }

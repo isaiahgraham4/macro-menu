@@ -23,6 +23,23 @@ final class HealthSync {
     private(set) var averageActiveEnergy: Double?
     /// Steps by day (day key) for the last 90 days. Kept in memory only: Health data isn't copied to iCloud or Leanr's backups.
     private(set) var steps: [String: Double] = [:]
+    /// An app or device that records steps in Health, such as the iPhone, a watch or Google Health.
+    struct StepSource: Identifiable, Hashable, Sendable {
+        var id: String
+        var name: String
+    }
+    /// The sources that have recorded steps, and today's steps from each, to help choose one.
+    private(set) var stepSources: [StepSource] = []
+    private(set) var stepSourceTotals: [String: Double] = [:]
+    /// The source steps are shown from, by bundle identifier, or nil for all sources together (Health removes double counting).
+    /// Kept on this device: sources differ between devices.
+    private(set) var stepSourceID: String? = UserDefaults.standard.string(forKey: HealthSync.stepSourceKey) {
+        didSet { UserDefaults.standard.set(stepSourceID, forKey: Self.stepSourceKey) }
+    }
+    @ObservationIgnored private var knownSources: [String: HKSource] = [:]
+    static let stepSourceKey = "health.stepSource"
+    /// The chosen source's name, for labels. Nil when showing all sources or the chosen source can't be found.
+    var stepSourceName: String? { stepSourceID.flatMap { id in stepSources.first { $0.id == id }?.name } }
     /// True once a step read has completed this launch, so the screens can tell "none yet" from "not loaded".
     private(set) var stepsLoaded = false
     weak var store: AppStore?
@@ -62,11 +79,15 @@ final class HealthSync {
             for (day, millilitres) in store.data.water ?? [:] where day >= start { await replaceWater(day: day, millilitres: millilitres) }
         }
         await refresh()
+        watchSteps()
         return true
     }
 
     func disconnect() {
         enabled = false; activeEnergyToday = nil; averageActiveEnergy = nil; steps = [:]; stepsLoaded = false
+        stepSources = []; stepSourceTotals = [:]; knownSources = [:]
+        store?.updateSteps([:])
+        if let stepObserver { health.stop(stepObserver); self.stepObserver = nil }
     }
 
     /// Mirrors a change in Leanr: removed or edited entries and weights come out of Health, new versions go in.
@@ -120,6 +141,7 @@ final class HealthSync {
         }
         await importWeights()
         await refreshSteps()
+        watchSteps()
     }
 
     /// Asks for permission to read steps. For people who connected Health before steps existed, this is the first time it's asked;
@@ -129,6 +151,7 @@ final class HealthSync {
         do { try await health.requestAuthorization(toShare: [], read: [Self.stepCount]) } catch { lastError = error.localizedDescription; return }
         enabled = true
         await refreshSteps()
+        watchSteps()
     }
 
     /// Reads each day's steps for the last 90 days. Health adds up what the iPhone, watch and other sources recorded without
@@ -137,8 +160,16 @@ final class HealthSync {
         guard enabled else { return }
         let calendar = Calendar.current, today = calendar.startOfDay(for: Date())
         guard let start = calendar.date(byAdding: .day, value: -89, to: today) else { return }
+        var predicate = HKQuery.predicateForSamples(withStart: start, end: nil)
+        if let id = stepSourceID {
+            if knownSources[id] == nil { await loadStepSources() }
+            // A chosen source that has gone (an app deleted) falls back to everything rather than showing nothing.
+            if let source = knownSources[id] {
+                predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate, HKQuery.predicateForObjects(from: [source])])
+            }
+        }
         let query = HKStatisticsCollectionQueryDescriptor(
-            predicate: .quantitySample(type: Self.stepCount, predicate: HKQuery.predicateForSamples(withStart: start, end: nil)),
+            predicate: .quantitySample(type: Self.stepCount, predicate: predicate),
             options: .cumulativeSum, anchorDate: start, intervalComponents: DateComponents(day: 1))
         // Until steps have been asked for, Health refuses the question; that reads as "no steps yet", with a button to allow them.
         guard let collection = try? await query.result(for: health) else { steps = [:]; stepsLoaded = true; return }
@@ -148,6 +179,49 @@ final class HealthSync {
         }
         steps = days
         stepsLoaded = true
+        store?.updateSteps(days)
+    }
+
+    /// Lists what has recorded steps (iPhone, watch, Google Health, Fitbit...) with each one's steps today.
+    func loadStepSources() async {
+        guard enabled else { return }
+        guard let found = try? await HKSourceQueryDescriptor(predicate: .quantitySample(type: Self.stepCount)).result(for: health) else { return }
+        knownSources = Dictionary(found.map { ($0.bundleIdentifier, $0) }) { first, _ in first }
+        stepSources = found.map { StepSource(id: $0.bundleIdentifier, name: $0.name) }
+            .sorted { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
+        let today = Calendar.current.startOfDay(for: Date())
+        var totals: [String: Double] = [:]
+        for source in found {
+            let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [
+                HKQuery.predicateForSamples(withStart: today, end: nil), HKQuery.predicateForObjects(from: [source])])
+            let query = HKStatisticsQueryDescriptor(predicate: .quantitySample(type: Self.stepCount, predicate: predicate), options: .cumulativeSum)
+            if let sum = try? await query.result(for: health)?.sumQuantity()?.doubleValue(for: .count()) { totals[source.bundleIdentifier] = sum.rounded() }
+        }
+        stepSourceTotals = totals
+    }
+
+    /// Shows steps from one source, or from all of them with nil, and reads them again.
+    func chooseStepSource(_ id: String?) async {
+        stepSourceID = id
+        await refreshSteps()
+    }
+
+    private var stepObserver: HKObserverQuery?
+
+    /// Asks Health to wake Leanr when new steps arrive, so the Steps widget keeps up without the app being open.
+    /// Safe to call again; does nothing until Health is connected.
+    func watchSteps() {
+        guard enabled, isAvailable, stepObserver == nil else { return }
+        let query = HKObserverQuery(sampleType: Self.stepCount, predicate: nil) { [weak self] _, completion, _ in
+            nonisolated(unsafe) let finish = completion
+            Task { @MainActor in
+                await self?.refreshSteps()
+                finish()
+            }
+        }
+        health.execute(query)
+        stepObserver = query
+        health.enableBackgroundDelivery(for: Self.stepCount, frequency: .hourly) { _, _ in }
     }
 
     private func importWeights() async {

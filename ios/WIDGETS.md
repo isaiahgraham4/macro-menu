@@ -19,3 +19,7 @@ The app atomically publishes only the active calorie target and daily calorie to
 If no snapshot is available, widgets prompt the user to open Leanr. If calories aren't tracked, they prompt for a target. Above-target totals display a positive amount labelled “Cal over target”. Tapping a widget opens today's log. Widget contents are marked privacy-sensitive for system redaction.
 
 Build the MacroMenu scheme to include the extension. Automatic signing must provision the App Group for both app IDs. `bash ios/Tests/run-checks.sh` checks target selection, portion totals, tray exclusion, missing goals, over-target values and daylight-saving midnight rollover.
+
+## Steps widget
+
+`LeanrStepsWidget` (kind `LeanrSteps`) shows today's steps from Apple Health against the goal set in Settings → Targets → Steps goal. Small has a ring, medium adds the last seven days, and the Lock Screen has circular, rectangular and inline versions. The widget extension never touches HealthKit: the app writes the last week of counts and the goal into the shared snapshot (`WidgetCalories.steps`, `stepGoal`) whenever Health reports new steps (an `HKObserverQuery` with background delivery, hourly at most) and whenever Leanr is open. Counts are shown as of that last refresh, and a device that was locked or off may be a little behind. Tapping the widget opens the Progress tab (`leanr://progress`). Disconnecting Apple Health clears the counts from the snapshot.

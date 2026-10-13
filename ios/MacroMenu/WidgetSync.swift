@@ -85,6 +85,7 @@ extension AppStore {
                     WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.macrosKind)
                     WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.streakKind)
                     WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.logAgainKind)
+                    WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.stepsKind)
                 }
                 return
             }
@@ -92,6 +93,8 @@ extension AppStore {
             snapshot.accent = AppAccent.resolved(UserDefaults.standard.string(forKey: AppAccent.storageKey) ?? AppAccent.standard.rawValue).rawValue
             snapshot.premiumUnlocked = Premium.isUnlocked
             snapshot.quickLogOptions = quickLogOptions()
+            snapshot.steps = widgetSteps.isEmpty ? nil : widgetSteps
+            snapshot.stepGoal = data.stepGoal ?? Steps.defaultGoal
             snapshot.macroColours = Premium.isUnlocked ? [
                 "p": UserDefaults.standard.string(forKey: MacroColours.proteinKey) ?? "blue",
                 "c": UserDefaults.standard.string(forKey: MacroColours.carbsKey) ?? "orange",
@@ -104,6 +107,7 @@ extension AppStore {
             WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.macrosKind)
             WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.streakKind)
             WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.logAgainKind)
+            WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.stepsKind)
         } catch {
             Logger(subsystem: "com.isaiahgraham.MacroMenu", category: "Widgets")
                 .error("Couldn't share calorie totals: \(error.localizedDescription)")

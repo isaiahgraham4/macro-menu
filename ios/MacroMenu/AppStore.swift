@@ -13,6 +13,8 @@ final class AppStore {
     /// The state before the last undoable change, offered briefly as "Undo".
     struct UndoStep: Identifiable { let id = UUID(); var label: String; var snapshot: AppData }
     private(set) var undo: UndoStep?
+    /// The last week of steps from Apple Health, kept in memory and shared with the Steps widget. Not part of `AppData`.
+    private(set) var widgetSteps: [String: Double] = [:]
     /// Called after local changes (not iCloud updates) so Apple Health can follow the log and weights.
     var logsChanged: ((_ old: AppData, _ new: AppData) -> Void)?
     /// Called after every local save, so iCloud sync knows there's something to upload.
@@ -106,6 +108,15 @@ final class AppStore {
         data = fresh; undo = nil; notice = nil
         refreshWidgets()
         return true
+    }
+    /// Takes the latest step counts from Apple Health, keeping the last seven days for the widget.
+    func updateSteps(_ steps: [String: Double], now: Date = Date()) {
+        let calendar = Calendar.current
+        let keep = Set((0..<7).compactMap { calendar.date(byAdding: .day, value: -$0, to: now) }.map(dayKey))
+        let recent = steps.filter { keep.contains($0.key) }
+        guard recent != widgetSteps else { return }
+        widgetSteps = recent
+        refreshWidgets()
     }
     func dismissUndo(_ id: UndoStep.ID) { if undo?.id == id { undo = nil } }
     /// Takes data synced from another device. Doesn't touch Apple Health or trigger another upload.

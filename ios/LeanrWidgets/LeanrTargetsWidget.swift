@@ -9,6 +9,7 @@ struct LeanrWidgetBundle: WidgetBundle {
         LeanrMacrosWidget()
         LeanrStreakWidget()
         LeanrLogAgainWidget()
+        LeanrStepsWidget()
     }
 }
 

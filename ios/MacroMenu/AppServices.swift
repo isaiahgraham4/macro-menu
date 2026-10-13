@@ -17,6 +17,8 @@ import UserNotifications
         guard !started else { return }
         started = true
         health.store = store; cloud.store = store
+        // Connected before? Steps arriving in the background keep the Steps widget current.
+        health.watchSteps()
         // Premium turning on or off changes the app colour, the widgets and which reminders are booked.
         if Premium.subscriptionsEnabled {
             Purchases.shared.onChange = { store.refreshWidgets(); rebookReminders() }

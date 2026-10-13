@@ -12,7 +12,7 @@ The app uses SwiftUI and requires no third-party packages or API keys.
 - Meal: fractional servings, gram/mL portions when a serving weight is known,
   restaurant adjustments, personal adjustments, saved meals, logging to a chosen
   day, text copying/sharing and shareable meal images.
-- My foods (Meal tab → My foods): foods per serving or per 100 g/mL, optional and custom nutrients,
+- My foods (Meal tab → My foods; Edit from a food's details, its swipe or its touch-and-hold menu): foods per serving or per 100 g/mL, optional and custom nutrients,
   recipes with ingredient portions and a serving yield, and saved custom orders.
   Swipe a saved food right to edit or left to delete.
 - Photo of your meal (Today → Photo of your meal): foods are named on the device, by Apple Intelligence where the iPhone
@@ -51,7 +51,9 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   25 g / 2,000 mg guide, with short nudges once two days are counted.
 - Steps (Today under Water, Progress, Settings → Targets → Steps goal): the day's steps from Apple Health against a goal
   (default 8,000), and a chart, average and days-at-goal over the Progress range. Read-only and held in memory
-  (`HealthSync.steps`), never in `AppData`, iCloud or backups; only the goal (`AppData.stepGoal`) is saved. Google's health
+  (`HealthSync.steps`), never in `AppData`, iCloud or backups; only the goal (`AppData.stepGoal`) is saved. The Steps widget
+  (`LeanrStepsWidget`: small, medium with the last 7 days, and Lock Screen sizes) reads the last week of counts from the
+  shared widget snapshot, which Leanr refreshes whenever Health reports new steps (HealthKit background delivery). Google's health
   data has no iPhone API, so only Apple Health is read. Apple Health itself combines the iPhone, a watch and anything
   else that writes steps to it.
 - Apple Health (Settings): writes each logged meal as a food correlation with its

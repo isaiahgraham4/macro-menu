@@ -75,6 +75,8 @@ struct ContentView: View {
         .onOpenURL { url in
             if url.scheme == "leanr", url.host == "today" {
                 settings = false; nav.todayStack = UUID(); nav.tab = .today
+            } else if url.scheme == "leanr", url.host == "progress" {
+                settings = false; nav.tab = .progress
             }
         }
         .font(.roboto())
