@@ -61,7 +61,7 @@ final class CloudSync {
         var upload: AppData?
         if let remote, remote.data.isValid, !Self.same(remote.modified, lastRemote) {
             // A fresh install has nothing worth merging (only default targets), so it just takes the iCloud copy.
-            let fresh = store.data.foods.isEmpty && store.data.logs.isEmpty && store.data.meals.isEmpty && store.data.weightLog.isEmpty
+            let fresh = store.data.foods.isEmpty && store.data.logs.isEmpty && store.data.meals.isEmpty && store.data.weightLog.isEmpty && store.data.measurementLog.isEmpty && store.data.water == nil
             if dirty && !fresh {
                 // Both sides changed: keep everything from both.
                 var merged = AppStore.merged(store.data, remote.data)

@@ -224,9 +224,10 @@ struct WeightView: View {
 struct BodySummary: View {
     @Environment(AppStore.self) private var store
     @Environment(HealthSync.self) private var health
+    @Environment(Navigator.self) private var nav
     var body: some View {
         let points = WeightTrend.points(store.data.weightLog)
-        NavigationLink { WeightView() } label: {
+        Button { nav.tab = .progress } label: {
             HStack(spacing: 14) {
                 Image(systemName: "scalemass.fill").font(.title2).foregroundStyle(.tint).frame(width: 32)
                 VStack(alignment: .leading, spacing: 3) {
@@ -256,7 +257,9 @@ struct BodySummary: View {
                     }
                     .accessibilityElement(children: .combine)
                 }
-            }.padding(.vertical, 4)
+                Image(systemName: "chevron.right").font(.caption.weight(.semibold)).foregroundStyle(.tertiary)
+            }.padding(.vertical, 4).contentShape(Rectangle())
         }
+        .buttonStyle(.plain)
     }
 }

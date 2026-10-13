@@ -92,10 +92,6 @@ struct TodayView: View {
                     Button("Edit") { editingTargets = true }.font(.roboto(.subheadline, weight: .medium)).textCase(nil)
                 }
             }
-            Section {
-                BodySummary()
-                NavigationLink { WeeklyReviewView() } label: { Label("Your week", systemImage: "chart.bar.xaxis") }
-            }
             Section("Log food") {
                 Picker("Log to", selection: $mealTime) {
                     ForEach(MealTime.allCases) { Text($0.title).tag($0) }
@@ -104,6 +100,9 @@ struct TodayView: View {
                 if MealPhoto.canOffer {
                     Button { photo = true } label: { Label("Photo of your meal", systemImage: "camera.viewfinder") }
                 }
+            }
+            Section {
+                BodySummary()
             }
             ForEach(MealTime.allCases) { category in
                 let meals = entries.filter { $0.mealTime == category }
@@ -167,6 +166,9 @@ struct TodayView: View {
                 } header: { Text("Unassigned") } footer: {
                     Text("Tap an earlier entry to assign it to a meal time.")
                 }
+            }
+            Section {
+                WaterRow(date: date)
             }
             Section {
                 TileRow {

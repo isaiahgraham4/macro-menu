@@ -12,7 +12,7 @@ The app uses SwiftUI and requires no third-party packages or API keys.
 - Meal: fractional servings, gram/mL portions when a serving weight is known,
   restaurant adjustments, personal adjustments, saved meals, logging to a chosen
   day, text copying/sharing and shareable meal images.
-- My foods: foods per serving or per 100 g/mL, optional and custom nutrients,
+- My foods (Meal tab → My foods): foods per serving or per 100 g/mL, optional and custom nutrients,
   recipes with ingredient portions and a serving yield, and saved custom orders.
   Swipe a saved food right to edit or left to delete.
 - Photo of your meal (Today → Photo of your meal): foods are named on the device, by Apple Intelligence where the iPhone
@@ -34,6 +34,21 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   trend change × 7,700 Cal/kg over four weeks; needs 10 logged days and two weeks
   of weigh-ins). The target calculator offers the trend weight and measured
   maintenance.
+- Progress tab (replaces My foods in the tab bar): weight trend and goal (opens the full weight page), measurements, progress
+  photos, and a 7/30/90-day breakdown: calories per day against target, averages, macro split, calories by meal, biggest
+  contributors, water and weight change (`ProgressBreakdown`), and a "Your week" section with the full review one tap away.
+- Water (Today, below the meals): tap-to-add glasses against a daily target (Settings → Targets → Water target), hold the plus for a bottle
+  or any amount. One total a day (`AppData.water`, millilitres), merged by taking the larger, and written to Apple Health
+  as one water sample per day when Health is connected.
+- Body measurements and progress photos (Weight → Body): waist, hips, chest, neck, upper arm and thigh in cm with change
+  since last time and since the first reading (`BodyMeasurements`, synced like the rest). Progress photos are JPEG files in
+  Application Support (`ProgressPhotoFiles`), never in `AppData`, so never in iCloud sync, backups or exports; "Delete all
+  my data" removes them.
+- Left today (Meal tab, a dropdown at the bottom; Settings turns it off): up to three one-meal suggestions for what's left of
+  today's calories and protein, from pinned, recently eaten, saved and your own foods, an order at the restaurant you log
+  most, then everyday foods (`Assistant.suggestions`).
+- Weekly review fibre and sodium: averages over days where every logged food lists the nutrient, against your target or the
+  25 g / 2,000 mg guide, with short nudges once two days are counted.
 - Apple Health (Settings): writes each logged meal as a food correlation with its
   nutrients, and weigh-ins; reads weight and active energy. Every sample carries
   its Leanr entry or weight ID, so edits, deletes and undo replace exactly those
@@ -125,7 +140,7 @@ swipe items out, then Save (`SavedMealEditor`, `AppStore.updateMeal`, with Undo)
 Logged meals on Today open the same way (tap one): rename, change the meal time or move it to another day, change
 servings, add foods or swipe them out, then Save (`LogEditor`, `AppStore.updateLog`, with Undo).
 
-My foods → Export all app data includes foods, recipes, saved meals, daily history,
+Settings → Export all app data includes foods, recipes, saved meals, daily history,
 targets and the current meal. Import merges by ID after confirmation and keeps a
 nonempty current meal. Native version-1 food backups and the web app's
 `app: macro-menu, v: 1` exports are supported. Web exports contain no daily history;

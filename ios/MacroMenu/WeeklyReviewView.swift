@@ -29,6 +29,13 @@ struct WeeklyReviewView: View {
                 Section {
                     StatGrid(review: review)
                 } footer: { Text("Averages count only the days you logged, so they aren't pulled down by days you skipped.") }
+                if !review.nudges.isEmpty {
+                    Section {
+                        ForEach(review.nudges, id: \.self) { Text($0).font(.roboto(.subheadline)) }
+                    } header: { Text("Fibre and sodium") } footer: {
+                        Text("Counts only days where every food you logged lists the nutrient (fibre on \(review.fibre.countedDays) of \(review.loggedDays) logged days, sodium on \(review.sodium.countedDays)). A guide isn't a diagnosis: if you have a medical reason to watch either, follow your doctor or dietitian.")
+                    }
+                }
                 if !review.topMeals.isEmpty {
                     Section("Most logged") {
                         ForEach(review.topMeals, id: \.name) { meal in
@@ -70,10 +77,18 @@ private struct StatGrid: View {
                  review.proteinTarget.map { "Target \($0.rounded().number) g" })
             tile("Protein hit", review.proteinTarget == nil ? "–" : "\(review.proteinDays) \(review.proteinDays == 1 ? "day" : "days")", "At or above target")
             tile("Calories on target", review.calorieTarget == nil ? "–" : "\(review.calorieDays) \(review.calorieDays == 1 ? "day" : "days")", "At or under target")
+            tile("Avg fibre", review.fibre.average.map { "\($0.rounded().number) g" } ?? "–", nutrientDetail(review.fibre, unit: "g"))
+            tile("Avg sodium", review.sodium.average.map { "\($0.rounded().number) mg" } ?? "–", nutrientDetail(review.sodium, unit: "mg"))
             tile("Weight trend", review.weightChange.map { "\(WeeklyReview.signed($0)) kg" } ?? "–",
                  review.trendWeight.map { "Now \($0.number) kg" } ?? "Weigh in to see it")
           }
         }.padding(.vertical, 4)
+    }
+    /// "Target 25 g · 4 of 6 days", or why there's no figure.
+    private func nutrientDetail(_ week: WeeklyReview.NutrientWeek, unit: String) -> String {
+        guard week.average != nil else { return "Not every food you logged lists it" }
+        let label = week.targetIsGuide ? "Guide" : "Target"
+        return "\(label) \(week.isMinimum ? "" : "≤ ")\(week.target.rounded().number) \(unit) · \(week.countedDays) of \(week.loggedDays) \(week.loggedDays == 1 ? "day" : "days")"
     }
     private func tile(_ title: String, _ value: String, _ detail: String?) -> some View {
         VStack(alignment: .leading, spacing: 4) {

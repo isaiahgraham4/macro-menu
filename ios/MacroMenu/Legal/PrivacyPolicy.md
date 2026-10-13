@@ -1,6 +1,6 @@
 # Leanr privacy policy
 
-Effective 11 October 2026
+Effective 13 October 2026
 
 Leanr is made by Isaiah Graham, an independent developer in Victoria, Australia ("I", "me"). This policy explains what happens to your information when you use Leanr. You can reach me at {{CONTACT}}.
 
@@ -12,24 +12,28 @@ Leanr is made by Isaiah Graham, an independent developer in Victoria, Australia 
 
 ## What Leanr keeps on your device
 
-Your foods, recipes, saved meals, food log, weigh-ins, targets, reminders and settings are saved on your iPhone, inside Leanr's own storage. Your target estimate uses your age, height, weight, sex and activity level. Those figures are only used for the calculation on your device.
+Your foods, recipes, saved meals, food log, weigh-ins, water, body measurements, progress photos, targets, reminders and settings are saved on your iPhone, inside Leanr's own storage. Your target estimate uses your age, height, weight, sex and activity level. Those figures are only used for the calculation on your device.
 
 ## iCloud
 
-iCloud sync is on unless you turn it off in Settings. It keeps a copy of your foods, log, targets and the weigh-ins you enter in Leanr's folder in your private iCloud Drive, so your other devices can use it. Weights read from Apple Health are never copied to iCloud. Apple stores that copy under your Apple Account and I can't see it.
+iCloud sync is on unless you turn it off in Settings. It keeps a copy of your foods, log, targets, water, body measurements and the weigh-ins you enter in Leanr's folder in your private iCloud Drive, so your other devices can use it. Weights read from Apple Health are never copied to iCloud, and neither are progress photos. Apple stores that copy under your Apple Account and I can't see it.
 
 ## Apple Health
 
 Leanr only uses Apple Health if you connect it in Settings, and you choose which types it may read or write. If you connect:
 
-- Leanr writes the food you log and the weights you enter.
+- Leanr writes the food you log, the water you log (one total for each day) and the weights you enter.
 - Leanr reads your weight and active energy to show your trend and estimate your target.
 
 Health information is never used for advertising or marketing, never sold, and never leaves your device except through Apple's own Health sync.
 
 ## Camera
 
-The camera is used to scan barcodes, read nutrition labels and recognise the foods in a photo of your meal. This happens on your device, using Apple Intelligence where your iPhone has it and Apple's built-in image recognition otherwise. Photos aren't saved or sent anywhere, and you can also choose a photo from your library instead; Leanr only sees the one you pick.
+The camera is used to scan barcodes, read nutrition labels, recognise the foods in a photo of your meal and take progress photos. Recognising food happens on your device, using Apple Intelligence where your iPhone has it and Apple's built-in image recognition otherwise. Photos of meals aren't saved or sent anywhere, and you can also choose a photo from your library instead; Leanr only sees the one you pick.
+
+## Progress photos
+
+If you add progress photos, they're kept as files inside Leanr's storage on this iPhone. They are never uploaded, never part of the iCloud copy, backups or exports Leanr makes, and never used for anything but showing them to you. Your iPhone's own backup may include them, like any app's files. Delete a photo in Leanr to remove it, or use Settings → Delete all my data to remove them all.
 
 ## Siri and Visual Intelligence
 
@@ -62,7 +66,7 @@ Leanr isn't designed for children under 13, and the target estimate is only for 
 ## Deleting your data
 
 - To delete one item, swipe it or tap it and choose Delete.
-- Settings → Delete all my data removes everything Leanr keeps on this device and its iCloud copy. It can also remove the food and weights Leanr saved to Apple Health.
+- Settings → Delete all my data removes everything Leanr keeps on this device and its iCloud copy. It can also remove the food, water and weights Leanr saved to Apple Health.
 - Deleting the app removes what's on the device.
 
 Because I don't hold any of your data, there's nothing for me to delete on my side. If you have a question, contact me and I'll answer within 30 days.

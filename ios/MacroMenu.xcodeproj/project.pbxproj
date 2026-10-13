@@ -286,7 +286,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Configuration/App.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = N6H3K58396;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -294,9 +294,9 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Leanr;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Leanr uses the camera to scan product barcodes, read nutrition labels and recognise the foods in a photo of your meal.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Leanr uses the camera to scan product barcodes, read nutrition labels, recognise the foods in a photo of your meal and take progress photos.";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Leanr reads your weight and active energy to show your weight trend and estimate your calorie target.";
-				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Leanr saves the food you log and the weights you enter to Apple Health.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Leanr saves the food and water you log and the weights you enter to Apple Health.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Leanr uses your location while you’re using the app to show the closest restaurants.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -327,7 +327,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Configuration/App.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = N6H3K58396;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -335,9 +335,9 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Leanr;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Leanr uses the camera to scan product barcodes, read nutrition labels and recognise the foods in a photo of your meal.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Leanr uses the camera to scan product barcodes, read nutrition labels, recognise the foods in a photo of your meal and take progress photos.";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Leanr reads your weight and active energy to show your weight trend and estimate your calorie target.";
-				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Leanr saves the food you log and the weights you enter to Apple Health.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Leanr saves the food and water you log and the weights you enter to Apple Health.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Leanr uses your location while you’re using the app to show the closest restaurants.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -366,7 +366,7 @@
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_ENTITLEMENTS = Configuration/Leanr.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = N6H3K58396;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Configuration/Widget-Info.plist";
@@ -392,7 +392,7 @@
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_ENTITLEMENTS = Configuration/Leanr.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = N6H3K58396;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Configuration/Widget-Info.plist";

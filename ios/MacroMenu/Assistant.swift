@@ -30,6 +30,121 @@ enum Assistant {
         return query
     }
 
+    /// Something to eat that fits what's left today.
+    struct Suggestion: Identifiable, Equatable, Sendable {
+        enum Source: Equatable, Sendable { case pinned, recent, myFood, savedMeal, everyday, restaurant(String) }
+        var id: String
+        var name: String
+        var items: [Portion]
+        var source: Source
+        var calories: Double
+        var protein: Double
+        /// "Pinned", "Lately", "At KFC"...
+        var sourceText: String {
+            switch source {
+            case .pinned: "Pinned"
+            case .recent: "Eaten lately"
+            case .myFood: "Your food"
+            case .savedMeal: "Your meal"
+            case .everyday: "Everyday food"
+            case .restaurant(let name): "At \(name)"
+            }
+        }
+    }
+
+    /// What's left to fill today, in words: "62 g protein · 630 Cal". Nil when there's nothing left to fill or no target to measure against.
+    static func leftText(_ data: AppData, goals: Goals, now: Date = Date()) -> String? {
+        let left = remaining(data, goals: goals, now: now)
+        var parts: [String] = []
+        if let protein = left.protein, protein > 0 { parts.append("\(protein.rounded().number) g protein") }
+        if let calories = left.calories, calories > 0 { parts.append("\(calories.rounded().number) Cal") }
+        return parts.isEmpty ? nil : parts.joined(separator: " · ")
+    }
+
+    /// The restaurant you've logged most in the last 30 days, if any of it was from a restaurant.
+    static func usualChain(logs: [String: [LogEntry]], now: Date = Date(), days: Int = 30, calendar: Calendar = .current) -> String? {
+        guard let start = calendar.date(byAdding: .day, value: -days, to: calendar.startOfDay(for: now)) else { return nil }
+        var counts: [String: Int] = [:]
+        for (day, entries) in logs where day >= dayKey(start) {
+            for item in entries.flatMap(\.items) where item.food.chain != "mine" && item.food.chain != Food.everyday {
+                counts[item.food.chain, default: 0] += 1
+            }
+        }
+        return counts.max { ($0.value, $1.key) < ($1.value, $0.key) }?.key
+    }
+
+    /// Up to `limit` things that fit what's left of today: foods you pinned, ate lately, saved or made yourself first, an order at the
+    /// restaurant you use most, then everyday foods to fill any gap. Ranked by how much of a meal's protein they cover per calorie.
+    /// Nothing when today's calories are used up or the protein target is met, since there's nothing to close.
+    static func suggestions(_ data: AppData, goals: Goals, pinned: [Food], everyday: [Food], restaurantFoods: [Food], chainNames: [String: String],
+                            now: Date = Date(), calendar: Calendar = .current, limit: Int = 3) -> [Suggestion] {
+        let left = remaining(data, goals: goals, now: now)
+        if let calories = left.calories, calories < 100 { return [] }
+        if let protein = left.protein, protein <= 0 { return [] }
+        // A suggestion is one meal, so it's held to your typical meal (a half more after 4 pm, when fewer meals are left to come),
+        // and counts protein only up to a typical meal's worth, so a huge platter doesn't outrank a sensible one.
+        let lastMeal = calendar.component(.hour, from: now) >= 16
+        let mealCap = lastMeal ? goals.mealCal * 1.5 : goals.mealCal
+        let budget = left.calories.map { min($0, mealCap) } ?? mealCap
+        let want = left.protein ?? goals.mealProtein
+        let useful = goals.mealProtein > 0 ? min(want, goals.mealProtein) : want
+        let floor = max(3, min(useful, 10))
+
+        func suggestion(_ name: String, _ items: [Portion], _ source: Suggestion.Source, id: String) -> Suggestion? {
+            let total = Nutrition(items)
+            guard !items.isEmpty, items.allSatisfy(\.isValid), total.cal >= 30, total.cal <= budget, total.p >= floor else { return nil }
+            return Suggestion(id: id, name: name, items: items, source: source, calories: total.cal, protein: total.p)
+        }
+        func ranked(_ list: [Suggestion]) -> [Suggestion] {
+            func score(_ item: Suggestion) -> Double { min(item.protein, useful) / item.calories }
+            return list.sorted { (score($0), min($0.protein, useful), $1.name) > (score($1), min($1.protein, useful), $0.name) }
+        }
+        var seen = Set<String>()
+        func fresh(_ suggestion: Suggestion?) -> Suggestion? {
+            guard let suggestion, seen.insert(suggestion.name.lowercased()).inserted else { return nil }
+            return suggestion
+        }
+
+        var usual: [Suggestion] = []
+        for food in pinned { if let item = fresh(suggestion(food.name, [Portion(food: food)], .pinned, id: "food:\(food.id)")) { usual.append(item) } }
+        for food in QuickLog.recentFoods(logs: data.logs, now: now, limit: 60, calendar: calendar) {
+            if let item = fresh(suggestion(food.name, [Portion(food: food)], .recent, id: "food:\(food.id)")) { usual.append(item) }
+        }
+        for food in data.foods {
+            if let item = fresh(suggestion(food.name, [Portion(food: food)], .myFood, id: "food:\(food.id)")) { usual.append(item) }
+        }
+        for meal in data.meals {
+            if let item = fresh(suggestion(meal.name, QuickLog.copies(meal.items), .savedMeal, id: "meal:\(meal.id)")) { usual.append(item) }
+        }
+        var chosen = Array(ranked(usual).prefix(limit))
+
+        // One order at the restaurant you use most, found the same way "What fits at KFC" finds it.
+        var restaurant: Suggestion?
+        if let chain = usualChain(logs: data.logs, now: now, calendar: calendar) {
+            var query = FindQuery(chains: [chain])
+            query.calories = budget; query.protein = useful; query.customise = false
+            let match = MealFinder.find(restaurantFoods, query: query).first { $0.total.p >= floor && $0.total.cal <= budget }
+            if let match {
+                let name = chainNames[chain] ?? chain
+                restaurant = suggestion(describe(match.items), match.items, .restaurant(name), id: "order:\(match.id)")
+            }
+        }
+
+        if chosen.count < limit {
+            let usualNames = Set(chosen.map { $0.name.lowercased() })
+            let staples = everyday.filter { food in
+                ["food", "breakfast"].contains(food.cat) && !food.name.lowercased().contains("raw") && !usualNames.contains(food.name.lowercased())
+            }
+            let fill = ranked(staples.compactMap { fresh(suggestion($0.name, [Portion(food: $0)], .everyday, id: "food:\($0.id)")) })
+            chosen += fill.prefix(limit - chosen.count - (restaurant == nil ? 0 : 1))
+        }
+        if let restaurant {
+            if chosen.count >= limit { chosen.removeLast() }
+            chosen.append(restaurant)
+        }
+        return Array(chosen.prefix(limit))
+    }
+
     /// A spoken and shown answer to "What fits at …?".
     /// What to offer for a spoken food name: a food named exactly that, on its own, so "banana" doesn't ask which of ten bananas.
     /// Several exact matches (the same burger at two chains) are all offered so Siri can ask which.

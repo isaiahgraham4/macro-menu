@@ -9,6 +9,7 @@ struct SettingsView: View {
     @State private var showQuiz = false
     @State private var showPremium = false
     @State private var estimating = false
+    @AppStorage(TodaySuggestions.storageKey) private var suggestFoods = true
     @AppStorage(AppAccent.storageKey) private var accentRaw = AppAccent.standard.rawValue
     @AppStorage(AppIconTheme.storageKey) private var iconRaw = AppIconTheme.black.rawValue
     private var current: AppAccent { AppAccent.resolved(accentRaw) }
@@ -99,7 +100,8 @@ struct SettingsView: View {
             Section("Targets") {
                 NavigationLink { TargetsView() } label: { Label("Targets & target sets", systemImage: "target") }
                 Button { estimating = true } label: { Label("Calculate my macros", systemImage: "function") }
-                NavigationLink { WeightView() } label: { Label("Weight log", systemImage: "scalemass") }
+                NavigationLink { WaterSettings() } label: { Label("Water target", systemImage: "drop") }
+                Toggle(isOn: $suggestFoods) { Label("Suggest foods for what's left", systemImage: "lightbulb") }
                 NavigationLink { MacroColourSettings() } label: { Label("Target colours", systemImage: "paintpalette") }
                 NavigationLink { ReminderSettings() } label: { Label("Meal reminders", systemImage: "bell") }
             }

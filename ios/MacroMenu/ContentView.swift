@@ -1,7 +1,7 @@
 import SwiftUI
 import AppIntents
 
-enum AppTab: Hashable { case today, find, map, meal, myFoods }
+enum AppTab: Hashable { case today, find, map, meal, progress }
 
 /// Which tab is showing, and requests to open Find filtered to one restaurant.
 @MainActor @Observable
@@ -47,7 +47,7 @@ struct ContentView: View {
             Tab("Find", systemImage: "magnifyingglass", value: .find) { screen(FindView()).id(nav.findStack) }
             Tab("Map", systemImage: "map", value: .map) { screen(NearbyView()) }
             Tab("Meal", systemImage: "fork.knife", value: .meal) { screen(MealView()) }.badge(store.data.tray.count)
-            Tab("My foods", systemImage: "bookmark", value: .myFoods) { screen(MyFoodsView()) }
+            Tab("Progress", systemImage: "chart.line.uptrend.xyaxis", value: .progress) { screen(ProgressTabView()) }
         }
         .tint(accent)
         .onChange(of: accentRaw) { store.refreshWidgets() }

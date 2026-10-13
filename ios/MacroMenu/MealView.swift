@@ -8,6 +8,8 @@ struct MealView: View {
     @State private var mealTime = MealTime.suggested()
     @State private var clear = false
     @State private var image: UIImage?
+    @State private var left = LeftTodayModel()
+    @AppStorage(TodaySuggestions.storageKey) private var suggestionsOn = true
     /// "Log again" cards widen with the text size.
     @ScaledMetric(relativeTo: .subheadline) private var cardWidth = 150.0
     var title: String { name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? suggestedName : name }
@@ -18,6 +20,16 @@ struct MealView: View {
     }
     var body: some View {
         LeanrList {
+            Section {
+                NavigationLink { MyFoodsView() } label: {
+                    HStack {
+                        Label("My foods", systemImage: "bookmark")
+                        Spacer()
+                        let count = store.data.foods.count
+                        if count > 0 { Text("\(count)").font(.roboto(.subheadline)).foregroundStyle(.secondary).monospacedDigit() }
+                    }
+                }
+            } footer: { Text("Your saved foods, recipes and custom orders.") }
             Section {
                 if store.data.tray.isEmpty { ContentUnavailableView("Build your meal", systemImage: "fork.knife", description: Text("Search the menu or add an order from Find.")) }
                 ForEach(store.data.tray) { item in
@@ -95,10 +107,12 @@ struct MealView: View {
                     }.onDelete { offsets in store.change(undo: "Deleted saved meal") { $0.meals.remove(atOffsets: offsets) } }
                 } header: { Text("Saved meals") } footer: { Text("Tap a saved meal to rename it or add and remove items.") }
             }
+            LeftTodaySection(model: left, mealTime: mealTime)
         }.navigationTitle("This meal")
             .toolbar { if !store.data.tray.isEmpty { Button("Clear", role: .destructive) { clear = true } } }
             .confirmationDialog("Clear this meal?", isPresented: $clear, titleVisibility: .visible) { Button("Clear meal", role: .destructive) { store.change(undo: "Cleared your meal") { $0.tray = [] } } }
             .sheet(isPresented: $picking) { NavigationStack { BrowseView(pick: { portion in store.add([portion]); picking = false }, pickTitle: "Add to meal", quickAddLabel: "Add").toolbar { Button("Done") { picking = false } } } }
+            .task(id: LeftTodayModel.key(store, enabled: suggestionsOn)) { await left.refresh(store, enabled: suggestionsOn) }
             .onChange(of: store.data.tray) { image = nil }
             .onChange(of: name) { image = nil }
     }

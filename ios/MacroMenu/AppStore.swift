@@ -198,6 +198,17 @@ final class AppStore {
         notice = "Logged to \(yesterday ? "yesterday’s " : "")\(mealTime.title.lowercased())"
         return true
     }
+    /// Adds water to a day (or takes some off with a negative amount). Returns false if it couldn't be saved.
+    @discardableResult func addWater(_ millilitres: Double, on date: Date = Date()) -> Bool {
+        let key = dayKey(date)
+        guard millilitres.isFinite, millilitres != 0, millilitres.magnitude <= Water.dayLimit else { return false }
+        return change { Water.adding(millilitres, on: key, to: &$0) }
+    }
+    /// Saves the daily water target and glass size, each only if it's within range.
+    @discardableResult func setWater(target: Double, glass: Double) -> Bool {
+        guard Water.targetRange.contains(target), Water.glassRange.contains(glass) else { return false }
+        return change { $0.waterTarget = target; $0.waterGlass = glass }
+    }
     func export() throws -> Data {
         let encoder = JSONEncoder(); encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
         return try encoder.encode(data)
@@ -240,6 +251,21 @@ final class AppStore {
         }
         // The goal set most recently wins.
         if let goal = backup.weightGoal, goal.set > (state.weightGoal?.set ?? .distantPast) { state.weightGoal = goal }
+        // Water totals only go up in a merge, so a day logged on two devices isn't lost; the target and glass fill a gap.
+        if let incoming = backup.water {
+            var water = state.water ?? [:]
+            for (day, millilitres) in incoming { water[day] = max(water[day] ?? 0, millilitres) }
+            state.water = water
+        }
+        if state.waterTarget == nil { state.waterTarget = backup.waterTarget }
+        if state.waterGlass == nil { state.waterGlass = backup.waterGlass }
+        if !backup.measurementLog.isEmpty {
+            var measurements = state.measurementLog
+            for entry in backup.measurementLog {
+                if let i = measurements.firstIndex(where: { $0.id == entry.id }) { measurements[i] = entry } else { measurements.append(entry) }
+            }
+            state.measurements = measurements
+        }
         if state.tray.isEmpty { state.tray = backup.tray }
         if !backup.weightLog.isEmpty {
             var weights = state.weightLog

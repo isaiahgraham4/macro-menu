@@ -1,4 +1,7 @@
 import Foundation
+import CoreGraphics
+import ImageIO
+import UniformTypeIdentifiers
 
 @main struct AppChecks {
     @MainActor static func main() throws {
@@ -805,6 +808,241 @@ import Foundation
             assert(!invalid.isValid)
         }
 
-        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, delivery, iCloud health rules, deleting all data, the policies, everyday foods, customised orders, photo and Visual Intelligence matching, widget goal colours, Premium access rules, Siri logging and editing saved and logged meals and no prices (\(Date().timeIntervalSince(start).formatted())s).")
+
+        // Water: per-day totals, never below nothing, a daily limit, merges that only go up, and old data still loading.
+        do {
+            var water = AppData()
+            Water.adding(250, on: "2026-10-13", to: &water)
+            Water.adding(500, on: "2026-10-13", to: &water)
+            assert(Water.total(water, on: "2026-10-13") == 750 && Water.target(water) == 2000 && Water.glass(water) == 250)
+            Water.adding(-1000, on: "2026-10-13", to: &water)
+            assert(water.water == nil && Water.total(water, on: "2026-10-13") == 0)
+            Water.adding(99_999, on: "2026-10-13", to: &water)
+            assert(Water.total(water, on: "2026-10-13") == Water.dayLimit && water.isValid)
+            Water.adding(10, on: "not-a-day", to: &water); Water.adding(.nan, on: "2026-10-14", to: &water)
+            assert(water.water?.count == 1)
+            assert(Water.text(750) == "750 mL" && Water.text(1250) == "1.25 L" && Water.text(2000) == "2 L")
+            assert(Water.progress(total: 500, target: 2000) == 0.25 && Water.progress(total: 3000, target: 2000) == 1 && Water.progress(total: 5, target: 0) == 0)
+            var bad = AppData(); bad.water = ["2026-10-13": -5]; assert(!bad.isValid)
+            bad.water = ["yesterday": 100]; assert(!bad.isValid)
+            bad = AppData(); bad.waterTarget = 50; assert(!bad.isValid)
+            bad = AppData(); bad.waterGlass = .infinity; assert(!bad.isValid)
+            let store = AppStore(url: root.appending(path: "water.json"), catalogURL: nil, legacyURL: nil, everydayURL: nil)
+            assert(store.addWater(250, on: day(1)) && store.addWater(250, on: day(1)) && Water.total(store.data, on: dayKey(day(1))) == 500)
+            assert(!store.addWater(0) && !store.addWater(.nan) && !store.addWater(50_000))
+            assert(store.setWater(target: 2500, glass: 300) && Water.target(store.data) == 2500 && Water.glass(store.data) == 300)
+            assert(!store.setWater(target: 10, glass: 300) && Water.target(store.data) == 2500)
+            // A merge keeps the larger total for a day, fills a missing target, and a copy from before water existed loads.
+            var mine = AppData(); mine.water = ["2026-10-13": 500, "2026-10-12": 1500]
+            var theirs = AppData(); theirs.water = ["2026-10-13": 750]; theirs.waterTarget = 3000
+            let combined = AppStore.merged(mine, theirs)
+            assert(combined.water == ["2026-10-13": 750, "2026-10-12": 1500] && combined.waterTarget == 3000)
+            assert(AppStore.merged(theirs, mine).water?["2026-10-13"] == 750)
+            let copy = try JSONDecoder().decode(AppData.self, from: JSONEncoder().encode(combined))
+            assert(copy.water == combined.water && copy.waterTarget == 3000 && copy.isValid)
+            var legacyJSON = try JSONSerialization.jsonObject(with: JSONEncoder().encode(AppData())) as! [String: Any]
+            for key in ["water", "waterTarget", "waterGlass", "measurements"] { legacyJSON[key] = nil }
+            let legacy = try JSONDecoder().decode(AppData.self, from: JSONSerialization.data(withJSONObject: legacyJSON))
+            assert(legacy.water == nil && legacy.measurementLog.isEmpty && legacy.isValid)
+            assert(Water.date(of: "2026-10-13") != nil && Water.date(of: "nope") == nil)
+        }
+
+        // Body measurements: one reading a day, changes against the last and first, sites in order, and sync merges by ID.
+        do {
+            let entries = [
+                BodyMeasurement(date: day(0), values: ["waist": 90, "hips": 100]),
+                BodyMeasurement(date: day(7), values: ["waist": 88.5]),
+                BodyMeasurement(date: day(14).addingTimeInterval(60), values: ["waist": 87.9]),
+                BodyMeasurement(date: day(14), values: ["waist": 91, "wrist": 17]),   // earlier the same day: the later one wins
+            ]
+            let waist = BodyMeasurements.readings(entries, site: "waist", calendar: calendar)
+            assert(waist.map(\.cm) == [90, 88.5, 87.9])
+            let change = BodyMeasurements.change(waist)!
+            assert(abs(change.sinceLast! + 0.6) < 0.0001 && abs(change.sinceFirst! + 2.1) < 0.0001 && change.latest.cm == 87.9)
+            assert(BodyMeasurements.change(BodyMeasurements.readings(entries, site: "hips", calendar: calendar))!.sinceLast == nil)
+            assert(BodyMeasurements.change([]) == nil)
+            assert(BodyMeasurements.sites(in: entries) == ["waist", "hips", "wrist"])
+            assert(BodyMeasurements.title("arm") == "Upper arm" && BodyMeasurements.title("wrist") == "Wrist")
+            assert(BodyMeasurements.signed(-3.54) == "−3.5 cm" && BodyMeasurements.signed(1) == "+1 cm" && BodyMeasurements.signed(0.01) == "no change")
+            assert(BodyMeasurement(date: day(0), values: ["waist": 90]).isValid && BodyMeasurement(date: day(0), values: ["future": 20]).isValid)
+            assert(!BodyMeasurement(date: day(0), values: [:]).isValid && !BodyMeasurement(date: day(0), values: ["waist": 2]).isValid)
+            var data = AppData(); data.measurements = entries
+            assert(data.isValid)
+            data.measurements?.append(BodyMeasurement(date: day(1), values: ["waist": .nan])); assert(!data.isValid)
+            var one = AppData(); one.measurements = [entries[0]]
+            var two = AppData(); var edited = entries[0]; edited.values["waist"] = 89; two.measurements = [edited, entries[1]]
+            let merged = AppStore.merged(one, two).measurementLog
+            assert(merged.count == 2 && merged.first { $0.id == entries[0].id }?.values["waist"] == 89)
+            let decoded = try JSONDecoder().decode(AppData.self, from: JSONEncoder().encode(data.measurements == nil ? AppData() : { var d = AppData(); d.measurements = entries; return d }()))
+            assert(decoded.measurementLog == entries && decoded.isValid)
+        }
+
+        // Progress photos: files on this device only, shrunk and upright, and deleted with everything else.
+        do {
+            func picture(_ width: Int, _ height: Int) -> Data {
+                let context = CGContext(data: nil, width: width, height: height, bitsPerComponent: 8, bytesPerRow: 0,
+                                        space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.noneSkipLast.rawValue)!
+                context.setFillColor(CGColor(red: 0.2, green: 0.5, blue: 0.8, alpha: 1)); context.fill(CGRect(x: 0, y: 0, width: width, height: height))
+                let output = NSMutableData()
+                let destination = CGImageDestinationCreateWithData(output, UTType.png.identifier as CFString, 1, nil)!
+                CGImageDestinationAddImage(destination, context.makeImage()!, nil); CGImageDestinationFinalize(destination)
+                return output as Data
+            }
+            func size(of data: Data) -> (Int, Int) {
+                let source = CGImageSourceCreateWithData(data as CFData, nil)!
+                let image = CGImageSourceCreateImageAtIndex(source, 0, nil)!
+                return (image.width, image.height)
+            }
+            let files = ProgressPhotoFiles(directory: root.appending(path: "photos"))
+            assert(files.load().isEmpty)
+            let big = ProgressPhotoFiles.prepared(picture(3200, 2400))!
+            assert(size(of: big) == (1600, 1200) && big.count < picture(3200, 2400).count)
+            assert(size(of: ProgressPhotoFiles.prepared(picture(800, 600))!).0 <= 1600)
+            assert(ProgressPhotoFiles.prepared(Data("not a picture".utf8)) == nil)
+            let first = try files.add(jpeg: big, date: day(0), note: "Start")
+            let second = try files.add(jpeg: big, date: day(14))
+            assert(files.load().map(\.id) == [second.id, first.id] && files.load().last?.note == "Start")
+            assert(files.thumbnail(first.id, longestSide: 200).map { max($0.width, $0.height) } == 200)
+            assert(files.data(first.id) == big)
+            var renamed = first; renamed.note = nil; renamed.date = day(3)
+            try files.update(renamed)
+            assert(files.load().map(\.id) == [second.id, first.id] && files.load().last?.note == nil && files.load().last?.date == day(3))
+            try files.remove(first.id)
+            assert(files.load().map(\.id) == [second.id] && files.data(first.id) == nil)
+            // A record whose picture is gone is dropped rather than shown empty.
+            try FileManager.default.removeItem(at: root.appending(path: "photos/\(second.id.uuidString).jpg"))
+            assert(files.load().isEmpty)
+            let third = try files.add(jpeg: big, date: day(1))
+            files.removeAll()
+            assert(files.load().isEmpty && files.data(third.id) == nil)
+            // Photos aren't part of the app data, so they can't reach backups, iCloud or exports.
+            let json = String(decoding: try JSONEncoder().encode(AppData()), as: UTF8.self)
+            assert(!json.lowercased().contains("photo"))
+        }
+
+        // Weekly review: fibre and sodium count only days where every food lists them, against a target or the guide.
+        do {
+            let oats = Food(id: "oats", name: "Oats", kj: 1200, cal: 300, p: 10, nut: ["fibre": 10, "sodium": 100])
+            let sausage = Food(id: "sausage", name: "Sausage roll", kj: 1500, cal: 360, p: 12, nut: ["fibre": 2, "sodium": 1500])
+            let plainToast = Food(id: "plain", name: "Plain toast", kj: 1000, cal: 240, p: 8)   // lists neither
+            var data = AppData()
+            data.logs[dayKey(day(0))] = [LogEntry(name: "Mix", items: [Portion(food: oats), Portion(food: sausage)], time: day(0))]               // 12 g, 1,600 mg
+            data.logs[dayKey(day(1))] = [LogEntry(name: "Mix", items: [Portion(food: oats, quantity: 2), Portion(food: sausage, quantity: 2)], time: day(1))]   // 24 g, 3,200 mg
+            data.logs[dayKey(day(2))] = [LogEntry(name: "Mix", items: [Portion(food: oats), Portion(food: plainToast)], time: day(2))]            // gaps: not counted
+            let review = WeeklyReview.make(data, goals: Goals(), ending: day(6), calendar: calendar)
+            assert(review.loggedDays == 3 && review.fibre.countedDays == 2 && review.sodium.countedDays == 2)
+            assert(review.fibre.average == 18 && review.sodium.average == 2400)
+            assert(review.fibre.targetIsGuide && review.fibre.target == 25 && review.fibre.isMinimum && review.fibre.daysMet == 0)
+            assert(review.sodium.targetIsGuide && review.sodium.target == 2000 && !review.sodium.isMinimum && review.sodium.daysMet == 1)
+            assert(!review.fibre.onTarget && !review.sodium.onTarget)
+            assert(review.nudges.count == 2 && review.nudges[0].contains("18 g") && review.nudges[0].contains("guide of 25 g"))
+            assert(review.nudges[1].contains("2,400 mg") && review.nudges[1].contains("over it on 1 of 2 days"))
+            // Your own targets replace the guide, and being close reads differently from being far off.
+            var goals = Goals(); goals.values["fibre"] = 20; goals.values["sodium"] = 3000
+            let own = WeeklyReview.make(data, goals: goals, ending: day(6), calendar: calendar)
+            assert(!own.fibre.targetIsGuide && own.fibre.target == 20 && own.fibre.isMinimum && own.fibre.daysMet == 1)
+            assert(own.nudges[0].contains("a little under your 20 g target") && own.sodium.onTarget && own.nudges[1].contains("within your 3,000 mg target"))
+            // One counted day, or none, says nothing.
+            var single = AppData(); single.logs[dayKey(day(0))] = data.logs[dayKey(day(0))]
+            assert(WeeklyReview.make(single, goals: Goals(), ending: day(6), calendar: calendar).nudges.isEmpty)
+            var gaps = AppData(); gaps.logs[dayKey(day(0))] = [LogEntry(name: "Toast", items: [Portion(food: plainToast)], time: day(0))]
+            let none = WeeklyReview.make(gaps, goals: Goals(), ending: day(6), calendar: calendar)
+            assert(none.fibre.average == nil && none.sodium.average == nil && none.nudges.isEmpty)
+        }
+
+        // What fits what's left: your own foods first, a restaurant you use, everyday foods to fill, and nothing when there's nothing to close.
+        do {
+            let shake = Food(id: "shake", name: "Protein shake", kj: 670, cal: 160, p: 30)
+            let yoghurt = Food(id: "yoghurt", name: "Greek yoghurt", kj: 500, cal: 120, p: 17)
+            let bar = Food(id: "bar", name: "Muesli bar", kj: 630, cal: 150, p: 3)
+            let feast = Food(id: "feast", name: "Burger feast", kj: 2900, cal: 700, p: 45)
+            let noonNow = calendar.date(bySettingHour: 12, minute: 0, second: 0, of: day(5))!
+            let eveningNow = calendar.date(bySettingHour: 18, minute: 0, second: 0, of: day(5))!
+            var data = AppData()
+            data.logs[dayKey(day(4))] = [LogEntry(name: "Snacks", items: [shake, yoghurt, bar, feast].map { Portion(food: $0) }, time: day(4), mealTime: .snacks)]
+            data.logs[dayKey(day(5))] = [LogEntry(name: "Toast", items: [Portion(food: toast)], time: day(5), mealTime: .breakfast)]
+            let names = ["kfc": "KFC"]
+            let found = Assistant.suggestions(data, goals: Goals(), pinned: [], everyday: everyday, restaurantFoods: [], chainNames: names, now: noonNow, calendar: calendar)
+            assert(found.count == 3)
+            // Protein per calorie decides it: the shake, then the yoghurt. The bar has too little protein; the feast doesn't fit a meal.
+            assert(found.map(\.name).prefix(2) == ["Protein shake", "Greek yoghurt"])
+            assert(!found.map(\.name).contains("Muesli bar") && !found.map(\.name).contains("Burger feast"))
+            // One meal's worth: no suggestion is bigger than a typical meal, however much is left in the day.
+            assert(found.allSatisfy { $0.calories <= Goals().mealCal })
+            assert(found[2].source == .everyday && found[2].calories <= 500 && !found[2].name.lowercased().contains("raw"))
+            assert(found.allSatisfy { $0.calories <= 500 && $0.protein >= 10 && !$0.items.isEmpty })
+            // After 4 pm fewer meals are left to come, so a meal can be half as big again: 700 Cal fits then, not at noon.
+            let late = Assistant.suggestions(data, goals: Goals(), pinned: [], everyday: [], restaurantFoods: [], chainNames: names, now: eveningNow, calendar: calendar)
+            assert(late.map(\.name).contains("Burger feast"))
+            // A pinned food is labelled as pinned and listed once.
+            let pinnedFirst = Assistant.suggestions(data, goals: Goals(), pinned: [yoghurt], everyday: [], restaurantFoods: [], chainNames: names, now: noonNow, calendar: calendar)
+            assert(pinnedFirst.filter { $0.name == "Greek yoghurt" }.count == 1 && pinnedFirst.first { $0.name == "Greek yoghurt" }?.source == .pinned)
+            // A saved meal is offered as the meal, with fresh item IDs.
+            var withMeal = data; let chickenSalad = Food(id: "salad", name: "Chicken salad", kj: 1250, cal: 300, p: 40)
+            withMeal.meals = [SavedMeal(name: "Chicken salad", items: [Portion(food: chickenSalad)])]
+            let mealFound = Assistant.suggestions(withMeal, goals: Goals(), pinned: [], everyday: [], restaurantFoods: [], chainNames: names, now: noonNow, calendar: calendar)
+            let offered = mealFound.first { $0.name == "Chicken salad" }
+            assert(offered?.source == .savedMeal && offered?.items.first?.id != withMeal.meals[0].items[0].id)
+            // The restaurant you've been logging most turns up as an order there.
+            let kfcFood = catalog.foods.first { $0.chain == "kfc" && $0.cat == "main" }!
+            var atKFC = data
+            atKFC.logs[dayKey(day(3))] = [LogEntry(name: kfcFood.name, items: [Portion(food: kfcFood)], time: day(3), mealTime: .dinner)]
+            assert(Assistant.usualChain(logs: atKFC.logs, now: noonNow, calendar: calendar) == "kfc")
+            assert(Assistant.usualChain(logs: data.logs, now: noonNow, calendar: calendar) == nil)
+            let restaurantFound = Assistant.suggestions(atKFC, goals: Goals(), pinned: [], everyday: everyday, restaurantFoods: catalog.foods, chainNames: names, now: noonNow, calendar: calendar)
+            assert(restaurantFound.count == 3 && restaurantFound.contains { $0.source == .restaurant("KFC") })
+            assert(restaurantFound.first { $0.source == .restaurant("KFC") }.map { $0.calories <= 500 && $0.protein >= 10 } == true)
+            // Nothing when the protein target is met or the calories are used up.
+            var proteinMet = data
+            proteinMet.logs[dayKey(day(5))] = [LogEntry(name: "Lots", items: [Portion(food: Food(id: "lots", name: "Lots", kj: 4000, cal: 800, p: 160))], time: day(5))]
+            assert(Assistant.suggestions(proteinMet, goals: Goals(), pinned: [], everyday: everyday, restaurantFoods: [], chainNames: names, now: noonNow, calendar: calendar).isEmpty)
+            var caloriesUsed = data
+            caloriesUsed.logs[dayKey(day(5))] = [LogEntry(name: "Big", items: [Portion(food: Food(id: "big", name: "Big", kj: 9200, cal: 2150, p: 20))], time: day(5))]
+            assert(Assistant.suggestions(caloriesUsed, goals: Goals(), pinned: [], everyday: everyday, restaurantFoods: [], chainNames: names, now: noonNow, calendar: calendar).isEmpty)
+            assert(Assistant.leftText(data, goals: Goals(), now: noonNow) == "142 g protein · 1,960 Cal")
+            assert(Assistant.leftText(proteinMet, goals: Goals(), now: noonNow) == "1,400 Cal")
+            var noTargets = Goals(); noTargets.values = [:]
+            assert(Assistant.leftText(data, goals: noTargets, now: noonNow) == nil)
+        }
+
+
+        // Progress breakdown: averages over logged days, a macro split, meal times, contributors, water and weight change.
+        do {
+            let oats = Food(id: "oats", name: "Oats", kj: 1200, cal: 400, p: 20, c: 60, f: 10, nut: ["fibre": 8, "sodium": 100])
+            let chicken = Food(id: "chicken", name: "Chicken wrap", kj: 2000, cal: 600, p: 40, c: 50, f: 20, nut: ["fibre": 4, "sodium": 1200])
+            let mystery = Food(id: "mystery", name: "Mystery bowl", kj: 1000, cal: 240, p: 10, c: nil, f: nil)
+            var data = AppData()
+            data.logs[dayKey(day(0))] = [LogEntry(name: "Oats", items: [Portion(food: oats)], time: day(0), mealTime: .breakfast),
+                                         LogEntry(name: "Wrap", items: [Portion(food: chicken)], time: day(0), mealTime: .lunch)]       // 1,000 Cal, 60 g
+            data.logs[dayKey(day(1))] = [LogEntry(name: "Wrap", items: [Portion(food: chicken, quantity: 2)], time: day(1), mealTime: .dinner)]   // 1,200 Cal, 80 g
+            data.logs[dayKey(day(3))] = [LogEntry(name: "Bowl", items: [Portion(food: mystery)], time: day(3))]                                   // 240 Cal, no carbs/fat
+            data.water = [dayKey(day(0)): 1000, dayKey(day(1)): 2000]
+            data.weights = [WeightEntry(date: day(-5), kg: 82), WeightEntry(date: day(2), kg: 81)]
+            let result = ProgressBreakdown.make(data, goals: Goals(), days: 7, ending: day(6), calendar: calendar)
+            assert(result.days == 7 && result.points.count == 7 && result.loggedDays == 3)
+            assert(result.points[0].calories == 1000 && result.points[2].calories == nil && result.points[3].calories == 240)
+            assert(abs(result.averageCalories! - 813.333) < 0.01 && result.calorieTarget == 2200 && result.calorieDays == 3 && result.proteinDays == 0)
+            // Carbs and fat skip the day with gaps; fibre and sodium too, since that food lists neither.
+            assert(result.carbs.countedDays == 2 && result.carbs.value == 105 && result.fat.value == 35)
+            assert(result.fibre.countedDays == 2 && result.fibre.value == 10 && result.sodium.value == 1850)
+            // 4 × 110 + ... : the split is of calories from the three macros, and says it's approximate.
+            let share = result.share!
+            assert(abs(share.protein + share.carbs + share.fat - 1) < 0.0001 && !result.shareComplete)
+            assert(result.mealTimes.map(\.mealTime) == [.breakfast, .lunch, .dinner, nil])
+            assert(abs(result.mealTimes[0].averageCalories - 400.0 / 3) < 0.01 && result.mealTimes.last?.title == "Unassigned")
+            assert(result.topFoods.first?.name == "Chicken wrap" && result.topFoods.first?.servings == 3 && result.topFoods.first?.calories == 1800)
+            assert(result.water.value == 1500 && result.water.countedDays == 2)
+            assert(result.startTrend == 82 && result.endTrend.map { abs($0 - (82 + 0.0)) > 0 } == true && result.weightChange! < 0)
+            // A longer range reaches further back; nothing logged gives empty averages, not zeros.
+            assert(ProgressBreakdown.make(data, goals: Goals(), days: 30, ending: day(6), calendar: calendar).points.count == 30)
+            let empty = ProgressBreakdown.make(AppData(), goals: Goals(), days: 30, ending: day(6), calendar: calendar)
+            assert(empty.loggedDays == 0 && empty.averageCalories == nil && empty.share == nil && empty.topFoods.isEmpty && empty.weightChange == nil)
+            // A day's own target is used for "on target", not today's.
+            var strict = data; var tight = Goals(); tight.values["cal"] = 900
+            strict.dayGoals[dayKey(day(0))] = tight
+            assert(ProgressBreakdown.make(strict, goals: Goals(), days: 7, ending: day(6), calendar: calendar).calorieDays == 2)
+        }
+
+        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, delivery, iCloud health rules, deleting all data, the policies, everyday foods, customised orders, photo and Visual Intelligence matching, widget goal colours, Premium access rules, Siri logging and editing saved and logged meals, water, measurements, progress photos, fibre and sodium nudges, the progress breakdown, what fits what's left and no prices (\(Date().timeIntervalSince(start).formatted())s).")
     }
 }

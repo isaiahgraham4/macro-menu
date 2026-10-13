@@ -1,7 +1,7 @@
 import Foundation
 import HealthKit
 
-/// Apple Health: writes logged nutrition and weights, reads weight and active energy.
+/// Apple Health: writes logged nutrition, water and weights, reads weight and active energy.
 /// Every sample Leanr writes carries the ID of its log entry or weight, so edits and deletes replace exactly those samples.
 @MainActor @Observable
 final class HealthSync {
@@ -9,6 +9,7 @@ final class HealthSync {
     private static let entryKey = "LeanrEntryID"
     private static let weightKey = "LeanrWeightID"
     private static let ignoredKey = "health.ignoredWeights"
+    private static let waterKey = "LeanrWaterDay"
 
     private let health = HKHealthStore()
     var isAvailable: Bool { HKHealthStore.isHealthDataAvailable() }
@@ -34,6 +35,7 @@ final class HealthSync {
         ("chol", .dietaryCholesterol, .gramUnit(with: .milli)), ("caffeine", .dietaryCaffeine, .gramUnit(with: .milli))]
     private static var nutritionTypes: [HKQuantityType] { nutrients.map { HKQuantityType($0.type) } }
     private static let bodyMass = HKQuantityType(.bodyMass)
+    private static let water = HKQuantityType(.dietaryWater)
     private static let activeEnergy = HKQuantityType(.activeEnergyBurned)
     private static let food = HKCorrelationType(.food)
 
@@ -41,7 +43,7 @@ final class HealthSync {
     func connect() async -> Bool {
         guard isAvailable else { return false }
         do {
-            try await health.requestAuthorization(toShare: Set(Self.nutritionTypes + [Self.bodyMass]),
+            try await health.requestAuthorization(toShare: Set(Self.nutritionTypes + [Self.bodyMass, Self.water]),
                                                   read: [Self.bodyMass, Self.activeEnergy])
         } catch { lastError = error.localizedDescription; return false }
         lastError = nil
@@ -52,6 +54,7 @@ final class HealthSync {
                 for entry in entries { await replace(entry, day: day) }
             }
             for weight in store.data.weightLog where weight.healthID == nil { await replace(weight) }
+            for (day, millilitres) in store.data.water ?? [:] where day >= start { await replaceWater(day: day, millilitres: millilitres) }
         }
         await refresh()
         return true
@@ -73,8 +76,16 @@ final class HealthSync {
             let ignored = Set(UserDefaults.standard.stringArray(forKey: Self.ignoredKey) ?? []).union(hidden.map(\.uuidString))
             UserDefaults.standard.set(Array(ignored), forKey: Self.ignoredKey)
         }
+        // Water is one sample a day, replaced whenever that day's total changes.
+        let waterBefore = old.water ?? [:], waterAfter = new.water ?? [:]
+        let waterDays = Set(waterBefore.keys).union(waterAfter.keys).filter { waterBefore[$0] != waterAfter[$0] }
         queue = Task { [previous = queue] in
             await previous?.value
+            if !waterDays.isEmpty {
+                // Asks only the first time (and for people who connected before water existed); afterwards it answers at once.
+                try? await health.requestAuthorization(toShare: [Self.water], read: [])
+                for day in waterDays { await replaceWater(day: day, millilitres: waterAfter[day] ?? 0) }
+            }
             for (id, entry) in after where before[id]?.entry != entry.entry { await replace(entry.entry, day: entry.day) }
             for id in before.keys where after[id] == nil { await deleteEntry(id) }
             for (id, weight) in afterWeights where beforeWeights[id] != weight { await replace(weight) }
@@ -155,11 +166,21 @@ final class HealthSync {
         try? await health.save(meal)
     }
 
+    /// One water sample for a day: its total, dated the start of that day. A day back at nothing has no sample.
+    private func replaceWater(day: String, millilitres: Double) async {
+        let predicate = HKQuery.predicateForObjects(withMetadataKey: Self.waterKey, allowedValues: [day])
+        _ = try? await health.deleteObjects(of: Self.water, predicate: predicate)
+        guard millilitres > 0, let start = Water.date(of: day) else { return }
+        let sample = HKQuantitySample(type: Self.water, quantity: HKQuantity(unit: .literUnit(with: .milli), doubleValue: millilitres),
+                                      start: start, end: start, metadata: [Self.waterKey: day])
+        try? await health.save(sample)
+    }
+
     /// Removes every food and weight Leanr saved to Health. Weights from other apps and devices aren't touched.
     func deleteEverythingSaved() async {
         guard isAvailable else { return }
         let mine = HKQuery.predicateForObjects(from: HKSource.default())
-        for type in Self.nutritionTypes + [Self.bodyMass] { _ = try? await health.deleteObjects(of: type, predicate: mine) }
+        for type in Self.nutritionTypes + [Self.bodyMass, Self.water] { _ = try? await health.deleteObjects(of: type, predicate: mine) }
         _ = try? await health.deleteObjects(of: Self.food, predicate: mine)
     }
 

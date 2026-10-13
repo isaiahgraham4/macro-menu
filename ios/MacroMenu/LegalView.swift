@@ -135,14 +135,14 @@ struct DeleteDataView: View {
     var body: some View {
         LeanrList {
             Section {
-                Text("This deletes your foods, recipes, saved meals, food log, weigh-ins, targets, reminders and settings from this iPhone, and Leanr's copy in your iCloud. It can't be undone.")
-                Text("Want a copy first? Export a backup from My foods.").foregroundStyle(.secondary)
+                Text("This deletes your foods, recipes, saved meals, food log, weigh-ins, measurements, water, progress photos, targets, reminders and settings from this iPhone, and Leanr's copy in your iCloud. It can't be undone.")
+                Text("Want a copy first? Export a backup first, in Settings.").foregroundStyle(.secondary)
             }
             if health.enabled {
                 Section {
                     Toggle("Also delete what Leanr saved to Apple Health", isOn: $includeHealth)
                 } footer: {
-                    Text("Removes the food and weights Leanr wrote to Health. Weights from your scale or other apps stay.")
+                    Text("Removes the food, water and weights Leanr wrote to Health. Weights from your scale or other apps stay.")
                 }
             }
             Section {
@@ -192,5 +192,6 @@ enum DataDeletion {
         defaults.set(true, forKey: "leanr.onboarding.completed")
         defaults.set(false, forKey: CloudSync.enabledKey)
         for url in [WidgetCalories.fileURL, QuickLogQueue.fileURL].compactMap({ $0 }) { try? FileManager.default.removeItem(at: url) }
+        ProgressPhotoFiles.standard.removeAll()
     }
 }
