@@ -23,6 +23,11 @@ struct WidgetCalories: Codable, Equatable, Sendable {
     /// Steps by day for the last week, from Apple Health, and the daily goal, for the Steps widget.
     var steps: [String: Double]? = nil
     var stepGoal: Double? = nil
+    /// Today's planned meals that aren't logged yet, in meal order, for the Planned widget ("plan:<entry ID>"), and the day they're for.
+    var planned: [WidgetQuickLog]? = nil
+    var plannedDay: String? = nil
+    /// The planned meals still to log on `date`; none once the day they were for has passed.
+    func plannedMeals(on date: Date) -> [WidgetQuickLog] { plannedDay == WidgetCalories.dayKey(date) ? planned ?? [] : [] }
     var trackingDays: Set<String> { Set(trackedDays ?? Array(dailyCalories.filter { $0.value > 0 }.keys)) }
     func streak(on date: Date, calendar: Calendar = Calendar(identifier: .gregorian)) -> Int {
         TrackingStreak.count(days: trackingDays, on: date, calendar: calendar)
@@ -166,6 +171,7 @@ extension WidgetCalories {
         steps?[Self.dayKey(date, timeZone: timeZone)].flatMap { $0 > 0 ? $0 : nil }
     }
     static let logAgainKind = "LeanrLogAgain"
+    static let plannedKind = "LeanrPlanned"
     /// What the Log again widget shows at `date`: the usual meal for that meal time first, then pinned foods.
     func quickLogs(at date: Date) -> [WidgetQuickLog] {
         let slot = MealSlot.at(date), options = quickLogOptions ?? []
@@ -195,13 +201,18 @@ enum QuickLogQueue {
 
     /// Shows a queued request on the widgets straight away: its calories in today's total and a tick on the option.
     static func showQueued(_ option: String, at date: Date) {
-        guard var snapshot = WidgetCalories.read(), let url = WidgetCalories.fileURL,
-              let index = snapshot.quickLogOptions?.firstIndex(where: { $0.id == option }),
-              let item = snapshot.quickLogOptions?[index] else { return }
+        guard var snapshot = WidgetCalories.read(), let url = WidgetCalories.fileURL else { return }
         let day = WidgetCalories.dayKey(date)
-        snapshot.dailyCalories[day, default: 0] += item.calories
+        // A planned meal leaves the Planned widget once it's logged.
+        if let item = snapshot.planned?.first(where: { $0.id == option }) {
+            snapshot.planned?.removeAll { $0.id == option }
+            snapshot.dailyCalories[day, default: 0] += item.calories
+        } else {
+            guard let index = snapshot.quickLogOptions?.firstIndex(where: { $0.id == option }), let item = snapshot.quickLogOptions?[index] else { return }
+            snapshot.dailyCalories[day, default: 0] += item.calories
+            snapshot.quickLogOptions?[index].lastLogged = day
+        }
         snapshot.trackedDays = Array(Set((snapshot.trackedDays ?? []) + [day])).sorted()
-        snapshot.quickLogOptions?[index].lastLogged = day
         try? JSONEncoder().encode(snapshot).write(to: url, options: [.atomic, .completeFileProtectionUntilFirstUserAuthentication])
     }
 }

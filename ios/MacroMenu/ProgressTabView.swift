@@ -40,6 +40,7 @@ struct ProgressTabView: View {
         let logged = breakdown.loggedDays > 0
         switch part {
         case .checkIn: Section { CheckInRow() }
+        case .insights: insightsSection(breakdown.days)
         case .weight: weightSection(breakdown)
         case .steps: StepsProgressSection(days: Dictionary(uniqueKeysWithValues: breakdown.points.map { ($0.key, $0.date) }))
         case .body: BodySection()
@@ -57,6 +58,21 @@ struct ProgressTabView: View {
         case .macros: if logged, let share = breakdown.share { macroSection(share, complete: breakdown.shareComplete) }
         case .meals: if logged && !breakdown.mealTimes.isEmpty { mealTimeSection(breakdown) }
         case .contributors: if logged && !breakdown.topFoods.isEmpty { contributorsSection(breakdown) }
+        }
+    }
+
+    // MARK: Insights
+
+    @ViewBuilder private func insightsSection(_ days: Int) -> some View {
+        let insights = Insights.make(store.data, goals: store.goals, days: days)
+        if !insights.isEmpty {
+            Section {
+                ForEach(insights) { insight in
+                    Label { Text(insight.text) } icon: { Image(systemName: insight.systemImage).foregroundStyle(.tint) }
+                }
+            } header: { Text("Insights") } footer: {
+                Text("Patterns from the days you logged in the last \(days) days. They change as you log more.")
+            }
         }
     }
 
@@ -262,7 +278,7 @@ struct ProgressTabView: View {
 
 /// The sections of the Progress tab, in the order and with the ones hidden that you chose.
 enum ProgressPart: String, CaseIterable, Identifiable {
-    case checkIn, weight, steps, body, week, calories, averages, macros, meals, contributors
+    case checkIn, insights, weight, steps, body, week, calories, averages, macros, meals, contributors
     var id: Self { self }
     static let orderKey = "progress.order"
     static let hiddenKey = "progress.hidden"
@@ -270,6 +286,7 @@ enum ProgressPart: String, CaseIterable, Identifiable {
     var title: String {
         switch self {
         case .checkIn: "Weekly check-in"
+        case .insights: "Insights"
         case .weight: "Weight"
         case .steps: "Steps"
         case .body: "Measurements and photos"
@@ -284,6 +301,7 @@ enum ProgressPart: String, CaseIterable, Identifiable {
     var systemImage: String {
         switch self {
         case .checkIn: "arrow.triangle.2.circlepath"
+        case .insights: "lightbulb"
         case .weight: "scalemass"
         case .steps: "figure.walk"
         case .body: "ruler"

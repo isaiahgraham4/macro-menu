@@ -80,6 +80,8 @@ struct FoodDetailView: View {
                     } footer: {
                         if removals.contains(where: { $0.est == true }) {
                             Text("Calories for each ingredient are from \(store.chainName(food.chain)). For parts it doesn't sell on their own, protein, carbs and fat are estimated from the ingredient type and other nutrients stay as listed.")
+                        } else if food.chain == "grilld" {
+                            Text("Worked out from Grill'd figures for burgers published with and without it.")
                         } else if ["hj", "kfc", "rr", "oporto"].contains(food.chain) {
                             Text("Worked out from \(owner) figures for the same item with and without it.")
                         } else {
@@ -124,6 +126,8 @@ struct FoodDetailView: View {
                 } footer: {
                     if additions.contains(where: { $0.est == true }) {
                         Text("Extras use \(owner) energy for that ingredient. For parts it doesn't sell on their own, protein, carbs and fat are estimated from the ingredient type.")
+                    } else if food.chain == "grilld" && (food.modifiers ?? []).contains(where: { $0.kind == "s" }) {
+                        Text("Bun and patty swaps and extras are the difference between burgers Grill'd publishes. Grill'd doesn't publish single ingredients, so use Remove something else for anything else.")
                     } else if ["hj", "kfc", "rr", "oporto"].contains(food.chain) && additions.contains(where: { !$0.key.hasPrefix("item:") }) {
                         Text("Extras are the difference between two \(store.chainName(food.chain)) items sold with and without them.")
                     } else if additions.contains(where: { $0.key.hasPrefix("item:") && $0.kind == "f" }) {

@@ -7,7 +7,7 @@ The app uses SwiftUI and requires no third-party packages or API keys.
 
 - Find: combinations of up to three items from one restaurant, ranked by fit,
   calories or protein; optional macro caps.
-- Best: search all 1,307 bundled menu foods from 12 restaurants, filter by restaurant/category and
+- Best: search all 1,443 bundled menu foods from 14 restaurants, filter by restaurant/category and
   compare nutrition and protein density. Source links are in the toolbar.
 - Meal: fractional servings, gram/mL portions when a serving weight is known,
   restaurant adjustments, personal adjustments, saved meals, logging to a chosen
@@ -149,7 +149,11 @@ The app uses SwiftUI and requires no third-party packages or API keys.
 Restaurant nutrition is a September 2026 snapshot, not live data. Zambrero (July 2026 sheet; burritos, bowls,
 nachos and tacos without sauce, sauces as extras) and Boost Juice (original and medium sizes; boosters aren't
 published) are included. Three Zambrero per-serve rows misprinted on the sheet are worked out from its per-100 g
-figures. Missing values remain unknown. A macro filter excludes items without the required figures. Totals mark
+figures. Schnitz (October 2026, from the menu's nutrition panels) is included where Schnitz publishes protein, carbs
+and fat; its plates, salads, desserts and dips with energy only are left out. Grill'd (October 2026) comes from the panels in
+Grill'd's ordering app (`Scripts/grilld-menu.py fetch` then `build`); each burger is on its default bun, with bun and patty
+swaps and a few extras that are exact differences between Grill'd's published burgers (`grilld-mods.json`). Grill'd lists no
+figures for single ingredients, so a single sauce can't be taken off. Missing values remain unknown. A macro filter excludes items without the required figures. Totals mark
 partial nutrient data.
 
 Prices are switched off for now because they vary too much between stores. `Scripts/menu-source.js` keeps them, and

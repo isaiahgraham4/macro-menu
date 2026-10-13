@@ -233,6 +233,16 @@ for (const [what, withoutId, withId, addTo, takeOff, kind, addName, removeName] 
 }
 console.log(`Added ${paired} extras and removals worked out from pairs of items sold with and without them.`);
 
+// Grill'd: bun and patty swaps and the extras that are differences between its published burgers (grilld-menu.py).
+let grilldAdded = 0;
+for (const [id, mods] of Object.entries(require('./grilld-mods.json').modifiers)) {
+  const food = byId[id];
+  if (!food) throw Error(`Missing ${id}`);
+  food.modifiers = [...(food.modifiers || []), ...mods];
+  grilldAdded += mods.length;
+}
+console.log(`Added ${grilldAdded} Grill'd swaps and extras.`);
+
 // KFC sells its fillets on their own, so a burger can take another one at that item's published nutrition.
 const SOLD_SEPARATELY = [
   ['kfc:zinger-fillet-piece', 'Add a Zinger Fillet',

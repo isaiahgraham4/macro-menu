@@ -50,6 +50,14 @@ extension AppStore {
         return options
     }
 
+    /// Today's planned meals still to log, breakfast first, for the Planned widget.
+    func plannedOptions(now: Date = Date()) -> [WidgetQuickLog] {
+        let planned = MealPlan.entries(data, on: dayKey(now))
+        let order = MealTime.allCases
+        return planned.sorted { (order.firstIndex(of: $0.mealTime ?? .snacks) ?? 9) < (order.firstIndex(of: $1.mealTime ?? .snacks) ?? 9) }
+            .map { WidgetQuickLog(id: "plan:\($0.id.uuidString)", name: $0.name, calories: Nutrition($0.items).cal, mealTime: ($0.mealTime ?? .snacks).rawValue) }
+    }
+
     /// Today for Apple Watch: calories, protein and water against their targets, and the Log again widget's options.
     func watchSnapshot(now: Date = Date()) -> WatchSnapshot {
         let key = dayKey(now), eaten = Nutrition((data.logs[key] ?? []).flatMap(\.items))
@@ -78,6 +86,11 @@ extension AppStore {
             guard !justLogged(usual.name) else { return false }
             return log(QuickLog.copies(usual.items), name: usual.name, date: date, mealTime: meal)
         }
+        // A planned meal for today: logged now, which takes it off the plan, so a second tap finds nothing.
+        if option.hasPrefix("plan:"), let id = UUID(uuidString: String(option.dropFirst(5))),
+           MealPlan.entries(data, on: dayKey(date)).contains(where: { $0.id == id }) {
+            return logPlanned([id], on: date)
+        }
         if option.hasPrefix("pin:"), let food = pinnedFoods.first(where: { "pin:\($0.id)" == option }) {
             guard !justLogged(food.name) else { return false }
             return log([Portion(food: food)], name: food.name, date: date, mealTime: .suggested(at: date))
@@ -104,6 +117,7 @@ extension AppStore {
                     WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.streakKind)
                     WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.logAgainKind)
                     WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.stepsKind)
+                    WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.plannedKind)
                 }
                 return
             }
@@ -111,6 +125,8 @@ extension AppStore {
             snapshot.accent = AppAccent.resolved(UserDefaults.standard.string(forKey: AppAccent.storageKey) ?? AppAccent.standard.rawValue).rawValue
             snapshot.premiumUnlocked = Premium.isUnlocked
             snapshot.quickLogOptions = quickLogOptions()
+            snapshot.planned = plannedOptions()
+            snapshot.plannedDay = dayKey(Date())
             snapshot.steps = widgetSteps.isEmpty ? nil : widgetSteps
             snapshot.stepGoal = data.stepGoal ?? Steps.defaultGoal
             snapshot.macroColours = Premium.isUnlocked ? [
@@ -126,6 +142,7 @@ extension AppStore {
             WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.streakKind)
             WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.logAgainKind)
             WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.stepsKind)
+            WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.plannedKind)
         } catch {
             Logger(subsystem: "com.isaiahgraham.MacroMenu", category: "Widgets")
                 .error("Couldn't share calorie totals: \(error.localizedDescription)")

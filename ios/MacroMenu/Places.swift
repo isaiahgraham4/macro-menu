@@ -38,6 +38,8 @@ struct ChainPlace: Sendable {
         "spud": ChainPlace(query: "Spudbar", match: ["spud"], appName: "Spudbar", appStoreID: 1398722121, appLink: nil),
         "zam": ChainPlace(query: "Zambrero", match: ["zambrero"], appName: "Zambrero", appStoreID: 1503449708, appLink: nil),
         "boost": ChainPlace(query: "Boost Juice", match: ["boost juice"], appName: "Boost Juice", appStoreID: 874205871, appLink: nil),
+        "grilld": ChainPlace(query: "Grill'd", match: ["grill'd", "grilld", "grill’d"], appName: "Grill'd", appStoreID: 1228060909, appLink: URL(string: "https://www.grilld.com.au/menu")),
+        "schnitz": ChainPlace(query: "Schnitz", match: ["schnitz"], appName: "Schnitz", appStoreID: 1530765524, appLink: URL(string: "https://order.schnitz.com.au/weborder")),
     ]
 }
 

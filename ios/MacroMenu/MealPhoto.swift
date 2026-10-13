@@ -170,6 +170,7 @@ enum MealPhoto {
         "gyg": "gyg", "guzman": "gyg", "guzmanygomez": "gyg", "guzman y gomez": "gyg",
         "nandos": "nandos", "dominos": "dominos", "dominospizza": "dominos", "redrooster": "rr", "red rooster": "rr",
         "subway": "sub", "oporto": "oporto", "zambrero": "zam", "boost": "boost", "boostjuice": "boost", "boost juice": "boost",
+        "schnitz": "schnitz", "grilld": "grilld",
     ]
 
     /// The restaurant a brand names, if it's one Leanr has: a known nickname first, then a close match to the chain's name.

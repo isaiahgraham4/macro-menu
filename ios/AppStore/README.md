@@ -98,8 +98,8 @@ status bar and a week of sample meals:
 
 **Description:**
 Leanr finds the order that fits. Tell it your calories and protein and it searches the published nutrition figures from
-McDonald's, KFC, Hungry Jack's, Subway, Guzman y Gomez, Nando's, Oporto, Red Rooster, Domino's, Spud Bar, Zambrero
-and Boost Juice for combinations from one restaurant.
+McDonald's, KFC, Hungry Jack's, Subway, Guzman y Gomez, Nando's, Oporto, Red Rooster, Domino's, Spud Bar, Zambrero,
+Boost Juice, Schnitz and Grill'd for combinations from one restaurant.
 
 - Log meals, scan barcodes and nutrition labels, and see what's left of your day at a glance.
 - Take ingredients off: no cheese, no sauce, no mayo, with the figures adjusted.

@@ -237,5 +237,5 @@ enum Assistant {
     static let nicknames: [String: String] = ["maccas": "mcd", "macca's": "mcd", "mcdonalds": "mcd", "hj": "hj", "hjs": "hj", "hungry jacks": "hj",
                                                "gyg": "gyg", "guzman": "gyg", "guzman y gomez": "gyg", "red rooster": "rr", "rooster": "rr",
                                                "dominos": "dominos", "subway": "sub", "kentucky": "kfc", "zambreros": "zam", "zambrero's": "zam",
-                                               "boost": "boost", "boost juice": "boost"]
+                                               "boost": "boost", "boost juice": "boost", "schnitz": "schnitz", "grilld": "grilld", "grill'd": "grilld", "grill’d": "grilld"]
 }

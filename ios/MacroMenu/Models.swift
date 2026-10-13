@@ -25,6 +25,9 @@ struct Modifier: Codable, Identifiable, Hashable, Sendable {
     var est: Bool?
     var group: String? {
         guard kind == "r" || kind == "s" else { return nil }
+        // Grill'd: one bun and one patty at a time.
+        if key.hasPrefix("s:bun-") { return "bun" }
+        if key.hasPrefix("s:patty-") { return "patty" }
         return ["rice", "beans", "cheese", "caesar-dressing", "fries", "sour-cream", "guacamole", "pico", "lettuce", "tomatillo", "corn-chips", "jalapeno"].first { id.contains($0) } ?? id
     }
 }

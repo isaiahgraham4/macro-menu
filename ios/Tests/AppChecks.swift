@@ -11,11 +11,33 @@ import UniformTypeIdentifiers
         defer { try? FileManager.default.removeItem(at: root) }
         let catalogURL = URL(fileURLWithPath: CommandLine.arguments[1])
         let catalog = try JSONDecoder().decode(MenuCatalog.self,from: Data(contentsOf: catalogURL))
-        assert(catalog.foods.count == 1307)
+        assert(catalog.foods.count == 1443)
         assert(Set(catalog.foods.map(\.chain)).isSubset(of: Set(catalog.chains.map(\.id))))
         // A juice bar has no mains, so its drinks are the order.
         let juice = MealFinder.find(catalog.foods, query: FindQuery(chains: ["boost"], calories: 700, protein: 25, maxItems: 1))
         assert(!juice.isEmpty && juice.allSatisfy { $0.chain == "boost" && $0.total.cal <= 700 } && juice[0].total.p >= 20)
+        // Grill'd: every burger on its default bun, with bun and patty swaps that are differences between Grill'd's own panels.
+        let grilld = catalog.foods.filter { $0.chain == "grilld" }
+        assert(grilld.count == 74 && grilld.allSatisfy { $0.c != nil && $0.f != nil })
+        let simply = grilld.first { $0.id == "grilld:simply-grill-d" }!
+        let noBun = simply.modifiers!.first { $0.name == "No Bun" }!
+        assert(simply.kj == 2530 && noBun.kj == -740 && noBun.kind == "s")
+        assert(simply.customised([noBun.key: 1]).kj == 1790 && simply.customised([noBun.key: 1]).name == "Simply Grill'd · No Bun")
+        assert(simply.modifiers!.contains { $0.name == "Swap to Chicken Breast" } && simply.modifiers!.contains { $0.name == "Add Bacon & Cheese" })
+        assert(grilld.first { $0.name == "Mighty Melbourne" }!.modifiers!.contains { $0.name == "No Egg & Beetroot" && $0.kj < 0 })
+        assert(grilld.first { $0.name == "Tenders - 3 Pack" }!.modifiers!.contains { $0.name == "Herbed Mayo Dip" })
+        assert(!(simply.modifiers ?? []).contains { $0.name.hasSuffix("Dip") })
+        // One bun and one patty at a time.
+        let bunGroups = Set(simply.modifiers!.filter { $0.key.hasPrefix("s:bun-") }.map(\.group))
+        let pattyGroups = Set(simply.modifiers!.filter { $0.key.hasPrefix("s:patty-") }.map(\.group))
+        assert(bunGroups == ["bun"] && pattyGroups == ["patty"])
+        assert(MealPhoto.chain(for: "Grill'd", chainNames: Dictionary(uniqueKeysWithValues: catalog.chains.map { ($0.id, $0.name) })) == "grilld")
+        // Schnitz: official panels only, so every item has protein, carbs and fat, and an order can be found there.
+        let schnitz = catalog.foods.filter { $0.chain == "schnitz" }
+        assert(schnitz.count == 62 && schnitz.allSatisfy { $0.c != nil && $0.f != nil && !$0.mismatch })
+        let schnitzOrder = MealFinder.find(catalog.foods, query: FindQuery(chains: ["schnitz"], calories: 900, protein: 45, maxItems: 2))
+        assert(!schnitzOrder.isEmpty && schnitzOrder.allSatisfy { $0.items.allSatisfy { $0.food.chain == "schnitz" } && $0.total.cal <= 900 })
+        assert(MealPhoto.chain(for: "Schnitz", chainNames: Dictionary(uniqueKeysWithValues: catalog.chains.map { ($0.id, $0.name) })) == "schnitz")
         let burrito = MealFinder.find(catalog.foods, query: FindQuery(chains: ["zam"], calories: 900, protein: 40, maxItems: 2))
         assert(!burrito.isEmpty && burrito.allSatisfy { $0.items[0].food.cat == "main" })
         assert(catalog.foods.allSatisfy(\.isValid))
@@ -1204,6 +1226,44 @@ import UniformTypeIdentifiers
             assert(merged.plans?[dayKey(tomorrow)]?.count == 1 && merged.checkInPace == -0.5 && merged.isValid)
         }
 
+        // Insights: patterns from the log, only when there's enough to go on.
+        do {
+            let monday = calendar.date(from: DateComponents(year: 2026, month: 6, day: 1))!
+            func on(_ n: Int, _ hour: Int) -> Date { calendar.date(byAdding: .hour, value: hour, to: calendar.date(byAdding: .day, value: n, to: monday)!)! }
+            let oats = Food(id: "oats", name: "Oats", kj: 1670, cal: 400, p: 40), plate = Food(id: "plate", name: "Chicken and rice", kj: 3350, cal: 800, p: 60)
+            let zinger = Food(id: "kfc:zinger", chain: "kfc", name: "Zinger Box", kj: 5440, cal: 1300, p: 40), pizza = Food(id: "pizza", name: "Pizza", kj: 5440, cal: 1300, p: 60)
+            var data = AppData()
+            for n in 0..<28 {
+                let weekend = calendar.isDateInWeekend(on(n, 0))
+                data.logs[dayKey(on(n, 0))] = weekend
+                    ? [LogEntry(name: "Zinger", items: [Portion(food: zinger)], time: on(n, 13), mealTime: .lunch),
+                       LogEntry(name: "Pizza", items: [Portion(food: pizza)], time: on(n, 19), mealTime: .dinner)]
+                    : [LogEntry(name: "Oats", items: [Portion(food: oats)], time: on(n, 8), mealTime: .breakfast),
+                       LogEntry(name: "Lunch", items: [Portion(food: plate)], time: on(n, 12), mealTime: .lunch),
+                       LogEntry(name: "Dinner", items: [Portion(food: plate)], time: on(n, 18), mealTime: .dinner)]
+            }
+            let found = Insights.make(data, goals: Goals(), days: 28, ending: on(27, 0), calendar: calendar)
+            assert(found.count == 4 && found[0].id == "breakfast")
+            assert(found[0].text == "Days you log breakfast, you hit your protein target 100% of the time, against 0% without.")
+            assert(found.contains { $0.id == "over-food" && $0.text.hasSuffix("is on 8 of the 8 days you went over your calories.") })
+            let all = Insights.make(data, goals: Goals(), days: 28, ending: on(27, 0), calendar: calendar, limit: 10)
+            assert(all.contains { $0.text == "Weekends average 600 Cal more than weekdays." })
+            assert(all.contains { $0.text == "Days with takeaway average 600 Cal more than days without." })
+            assert(all.contains { $0.id == "weekday" && $0.text.contains("biggest day, averaging 2,600 Cal") })
+            assert(!all.contains { $0.id == "late" || $0.id == "low-protein" })
+            // Late eating shows once a quarter of calories come after 8 pm.
+            var late = data
+            for n in 0..<28 where calendar.isDateInWeekend(on(n, 0)) { late.logs[dayKey(on(n, 0))]?[1].time = on(n, 21) }
+            for n in 0..<28 where !calendar.isDateInWeekend(on(n, 0)) { late.logs[dayKey(on(n, 0))]?[2].time = on(n, 21) }
+            assert(Insights.make(late, goals: Goals(), days: 28, ending: on(27, 0), calendar: calendar, limit: 10).contains { $0.text == "45% of your calories come after 8 pm." })
+            // Too little logged: nothing to say. Steady days: nothing either.
+            var few = AppData(); few.logs = Dictionary(uniqueKeysWithValues: data.logs.sorted { $0.key < $1.key }.prefix(4).map { ($0.key, $0.value) })
+            assert(Insights.make(few, goals: Goals(), days: 28, ending: on(27, 0), calendar: calendar).isEmpty)
+            var steady = AppData()
+            for n in 0..<28 { steady.logs[dayKey(on(n, 0))] = [LogEntry(name: "Lunch", items: [Portion(food: plate)], time: on(n, 12), mealTime: .lunch)] }
+            assert(Insights.make(steady, goals: Goals(), days: 28, ending: on(27, 0), calendar: calendar).isEmpty)
+        }
+
         // Apple Watch: today's totals and the Log again options, and the requests it sends back.
         do {
             let root2 = FileManager.default.temporaryDirectory.appending(path: UUID().uuidString)
@@ -1235,9 +1295,22 @@ import UniformTypeIdentifiers
             var optionsOnly = snapshot; optionsOnly.options = []
             assert(!WatchStorage.complicationsDiffer(snapshot, optionsOnly) && WatchStorage.complicationsDiffer(snapshot, logged))
             assert(WatchStorage.complicationsDiffer(snapshot, snapshot.addingWater(250)) && WatchStorage.complicationsDiffer(snapshot, fresh))
+            // The Planned widget: today's plan in meal order, logged by its option, and gone once logged.
+            let toast = Food(id: "toast", name: "Toast", kj: 630, cal: 150, p: 5)
+            watchStore.plan([Portion(food: bar)], name: "Bar for dinner", mealTime: .dinner, on: now)
+            watchStore.plan([Portion(food: toast)], name: "Toast", mealTime: .breakfast, on: now)
+            let plannedNow = watchStore.plannedOptions(now: now)
+            assert(plannedNow.map(\.name) == ["Toast", "Bar for dinner"] && plannedNow[0].calories == 150 && plannedNow[0].id.hasPrefix("plan:"))
+            var widgetSnapshot = watchStore.data.widgetCalories
+            widgetSnapshot.planned = plannedNow; widgetSnapshot.plannedDay = dayKey(now)
+            assert(widgetSnapshot.plannedMeals(on: now).count == 2 && widgetSnapshot.plannedMeals(on: tomorrow).isEmpty)
+            let before = watchStore.data.logs[dayKey(now)]?.count ?? 0
+            assert(watchStore.logAgain(plannedNow[0].id, at: now))
+            assert(watchStore.data.logs[dayKey(now)]?.count == before + 1 && watchStore.plannedOptions(now: now).map(\.name) == ["Bar for dinner"])
+            assert(!watchStore.logAgain(plannedNow[0].id, at: now) && !watchStore.logAgain("plan:not-an-id", at: now))
             assert(WatchRequest(message: ["water": 99999.0]) == nil && WatchRequest(message: ["log": ""]) == nil && WatchRequest(message: [:]) == nil)
         }
 
-        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, delivery, iCloud health rules, deleting all data, the policies, everyday foods, customised orders, photo and Visual Intelligence matching, widget goal colours, Premium access rules, Siri logging and editing saved and logged meals, water, measurements, progress photos, fibre and sodium nudges, steps, the progress breakdown, what fits what's left, meals in words, recipe ingredients, recipe pages, weekly check-ins, meal plans, Apple Watch and no prices (\(Date().timeIntervalSince(start).formatted())s).")
+        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, delivery, iCloud health rules, deleting all data, the policies, everyday foods, customised orders, photo and Visual Intelligence matching, widget goal colours, Premium access rules, Siri logging and editing saved and logged meals, water, measurements, progress photos, fibre and sodium nudges, steps, the progress breakdown, what fits what's left, meals in words, recipe ingredients, recipe pages, weekly check-ins, meal plans, Apple Watch, insights, the Planned widget and no prices (\(Date().timeIntervalSince(start).formatted())s).")
     }
 }
