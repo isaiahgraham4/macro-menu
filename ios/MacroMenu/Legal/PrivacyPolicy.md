@@ -1,6 +1,6 @@
 # Leanr privacy policy
 
-Effective 13 October 2026
+Effective 15 October 2026
 
 Leanr is made by Isaiah Graham, an independent developer in Victoria, Australia ("I", "me"). This policy explains what happens to your information when you use Leanr. You can reach me at {{CONTACT}}.
 
