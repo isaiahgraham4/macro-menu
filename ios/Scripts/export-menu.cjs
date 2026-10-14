@@ -280,6 +280,7 @@ for (const [id, info] of Object.entries(require('./diet.json').items)) {
   if (info.meat) diet.meat = info.meat;
   if (info.al) diet.al = info.al;
   if (info.may && info.may.length) diet.may = info.may;
+  if (info.unk && info.unk.length) diet.unk = info.unk;
   if (info.vg) diet.vg = info.vg;
   if (info.src && Object.keys(diet).length) diet.src = info.src;
   if (Object.keys(diet).length) { food.diet = diet; dietCount++; }

@@ -64,7 +64,7 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   Apple Intelligence (iOS 26+, on device) splits it into foods and amounts where available, otherwise `FoodPhrase.meal`
   does; each is matched like a photo's foods and amounts become servings from the food's serving weight. Typed restaurant
   items are ticked only when one restaurant has them or a brand was named.
-- Dietary needs (Find → Dietary needs): vegetarian, vegan, no beef, no pork, and nine allergens to avoid. Orders, Best
+- Dietary needs (Find → Dietary needs): vegetarian, vegan, no beef, no pork, and the 12 allergens on Australia's list (gluten, wheat, milk, egg, soy, sesame, peanuts, tree nuts, fish, shellfish, lupin, sulphites). An item whose restaurant doesn't say either way about an allergen, like Hungry Jack's and lupin, is left out. Orders, Best
   choices, search and the Left today and Plan ahead suggestions only offer items whose restaurant's own words show they
   fit; unknown items are left out (`DietFilter`, `Food.diet`). With needs set, the finder customises by taking things off
   only. Each item's page shows its meats, allergens and "may contain", and where that came from. The data is built by

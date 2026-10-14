@@ -133,7 +133,7 @@ def meats(text):
     return found, unsure
 
 
-ALLERGENS = {"gluten": r"gluten|wheat|barley|\brye\b|\boats?\b", "milk": r"\bmilk", "egg": r"\beggs?\b", "soy": r"\bsoy",
+ALLERGENS = {"gluten": r"gluten|wheat|barley|\brye\b|\boats?\b", "wheat": r"wheat|spelt", "milk": r"\bmilk", "egg": r"\beggs?\b", "soy": r"\bsoy",
              "sesame": r"sesame", "peanut": r"peanut", "treenut": r"tree ?nuts?|almond|cashew|hazelnut|walnut|pecan|pistachio|macadamia",
              "fish": r"\bfish\b", "shellfish": r"shellfish|crustacea|mollusc", "lupin": r"lupin", "sulphites": r"sulphite|sulfite"}
 
@@ -148,12 +148,16 @@ def norm(name):
     return re.sub(r"[^a-z0-9]", "", name)
 
 
-def entry(meat, src, al=None, may=None, vg=None):
+def entry(meat, src, al=None, may=None, vg=None, unk=None):
     out = {"meat": sorted(meat) if meat is not None else None, "src": src}
     if al is not None:
         out["al"] = sorted(set(al))
         if may:
             out["may"] = sorted(set(may) - set(al))
+        # Allergens the restaurant doesn't say either way for this item, like wheat when it only says "gluten".
+        unk = sorted(set(unk or []) - set(al) - set(may or []))
+        if unk:
+            out["unk"] = unk
     if vg:
         out["vg"] = vg
     elif meat is not None and not meat:
@@ -198,10 +202,12 @@ def build():
             panel = nandos["nutrition"].get(nandos_rows[fid], {})
             labels = panel.get("suitability", {})
             contains = panel.get("contains")
-            names = {"Wheat": "gluten", "Milk": "milk", "Egg": "egg", "Soy": "soy", "Sesame": "sesame", "Peanuts": "peanut",
-                     "Tree Nuts": "treenut", "Fish": "fish", "Shellfish": "shellfish", "Lupin": "lupin", "Sulphites": "sulphites"}
-            al = [names[k] for k, v in (contains or {}).items() if v >= 1 and k in names] if contains is not None else None
-            may = [names[k] for k, v in (contains or {}).items() if 0 < v < 1 and k in names]
+            # Nando's lists wheat and gluten apart, so "Gluten" alone is another cereal.
+            names = {"Wheat": ["gluten", "wheat"], "Gluten": ["gluten"], "Milk": ["milk"], "Egg": ["egg"], "Soy": ["soy"], "Sesame": ["sesame"],
+                     "Peanuts": ["peanut"], "Tree Nuts": ["treenut"], "Fish": ["fish"], "Shellfish": ["shellfish"], "Lupin": ["lupin"],
+                     "Sulphites": ["sulphites"]}
+            al = [a for k, v in (contains or {}).items() if v >= 1 for a in names.get(k, [])] if contains is not None else None
+            may = [a for k, v in (contains or {}).items() if 0 < v < 1 for a in names.get(k, [])]
             vg = "vegan" if labels.get("Vegan") else "vegetarian" if labels.get("Vegetarian") else None
             if vg:
                 info = entry(set(), "labels", al, may, vg)
@@ -220,8 +226,11 @@ def build():
                 found, unsure = meats(body)
                 attrs = set(product.get("attributes") or [])
                 vg = "vegan" if "VE" in attrs else "vegetarian" if "V" in attrs else None
+                # "Gluten (during burger prep)" doesn't say which cereal, so wheat isn't known either way.
+                said = " ".join(m.group(1) for m in (statement, may) if m)
+                unk = ["wheat"] if "gluten" in allergens_in(said) and not re.search(r"wheat|barley|\brye\b|\boats?\b|spelt", said, re.I) else []
                 info = entry(set() if vg else (found if not unsure else None), "ingredients",
-                             allergens_in(statement.group(1)) if statement else None, allergens_in(may.group(1)) if may else None, vg)
+                             allergens_in(statement.group(1)) if statement else None, allergens_in(may.group(1)) if may else None, vg, unk)
         elif chain == "mcd" and fid in mcd:
             parts = " , ".join(p[0] for p in mcd[fid][2])
             info = from_text(f"{name} , {parts}", "ingredients")
@@ -240,7 +249,9 @@ def build():
                 al = [a for k, v in raw.items() if v for a in {"gluten": ["gluten"], "eggs": ["egg"], "milk_and_milk_products": ["milk"], "soy": ["soy"],
                       "fish_and_crustacea": ["fish", "shellfish"], "peanuts": ["peanut"], "tree_nuts": ["treenut"], "sesame": ["sesame"],
                       "sulphites": ["sulphites"], "lupin": ["lupin"]}.get(k, [])] if raw else None
-                info = entry(None if unsure else found, "ingredients" if item["included"] else "description", al)
+                # Hungry Jack's guide has no lupin column, and its gluten doesn't say which cereal.
+                unk = ["lupin"] + (["wheat"] if raw.get("gluten") else [])
+                info = entry(None if unsure else found, "ingredients" if item["included"] else "description", al, unk=unk)
         elif chain in ("oporto", "rr", "dominos"):
             key = norm(name)
             text = lookups[chain].get(key) or lookups[chain].get(norm(re.sub(r"^(Single|Double|Triple|New Yorker) ", "", name)))

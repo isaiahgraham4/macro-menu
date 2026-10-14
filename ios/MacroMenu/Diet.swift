@@ -8,6 +8,8 @@ struct DietInfo: Codable, Hashable, Sendable {
     var al: [String]?
     /// Allergens it may contain.
     var may: [String]?
+    /// Allergens the restaurant doesn't say either way for this item, like wheat when it only says "gluten".
+    var unk: [String]?
     /// "vegan" or "vegetarian".
     var vg: String?
     /// Where the meat information came from: "ingredients", "description", "name" or "labels".
@@ -28,11 +30,11 @@ struct DietInfo: Codable, Hashable, Sendable {
 
 enum DietOption: String, CaseIterable, Identifiable, Sendable {
     case vegetarian, vegan, noBeef = "nobeef", noPork = "nopork"
-    case gluten, milk, egg, soy, sesame, peanut, treenut, fish, shellfish
+    case gluten, wheat, milk, egg, soy, sesame, peanut, treenut, fish, shellfish, lupin, sulphites
     var id: String { rawValue }
 
     static let meatOptions: [DietOption] = [.vegetarian, .vegan, .noBeef, .noPork]
-    static let allergenOptions: [DietOption] = [.gluten, .milk, .egg, .soy, .sesame, .peanut, .treenut, .fish, .shellfish]
+    static let allergenOptions: [DietOption] = [.gluten, .wheat, .milk, .egg, .soy, .sesame, .peanut, .treenut, .fish, .shellfish, .lupin, .sulphites]
     var isAllergen: Bool { DietOption.allergenOptions.contains(self) }
 
     var title: String {
@@ -42,6 +44,7 @@ enum DietOption: String, CaseIterable, Identifiable, Sendable {
         case .noBeef: "No beef"
         case .noPork: "No pork"
         case .gluten: "Gluten"
+        case .wheat: "Wheat"
         case .milk: "Milk"
         case .egg: "Eggs"
         case .soy: "Soy"
@@ -50,6 +53,8 @@ enum DietOption: String, CaseIterable, Identifiable, Sendable {
         case .treenut: "Tree nuts"
         case .fish: "Fish"
         case .shellfish: "Shellfish"
+        case .lupin: "Lupin"
+        case .sulphites: "Sulphites"
         }
     }
     /// Short words for a summary: "Vegetarian · No gluten".
@@ -66,10 +71,13 @@ enum DietOption: String, CaseIterable, Identifiable, Sendable {
     static let allergenWords: [String: String] = [
         "gluten": #"bread|wheat|pasta|spaghetti|noodle|flour|toast|cereal|\boats?\b|barley|\brye\b|beer|biscuit|cake|cracker|muffin|pizza|couscous|bagel|croissant|tortilla|wrap|weet|bran|crumpet|pastry|pie\b"#,
         "milk": #"\bmilk|cheese|yog|butter|cream|latte|cappuccino|flat white|whey|custard|ice cream|ricotta|feta|mozzarella|parmesan"#,
+        "wheat": #"bread|wheat|pasta|spaghetti|noodle|flour|toast|cereal|\boats?\b|biscuit|cake|cracker|muffin|pizza|couscous|bagel|croissant|tortilla|wrap|weet|bran|crumpet|pastry|pie\b|semolina|spelt"#,
         "egg": #"\beggs?\b|mayo|omelette|frittata"#, "soy": #"\bsoy|tofu|edamame|tempeh|miso"#, "sesame": #"sesame|tahini|hummus"#,
         "peanut": #"peanut"#, "treenut": #"almond|cashew|walnut|pecan|pistachio|hazelnut|macadamia|brazil nut|\bnuts?\b"#,
         "fish": #"\bfish|salmon|tuna|\bcod\b|sardine|anchov|barramundi|snapper|trout"#,
-        "shellfish": #"prawn|shrimp|crab|lobster|oyster|mussel|scallop|squid|calamari"#,
+        "shellfish": #"prawn|shrimp|crab|lobster|oyster|mussel|scallop|squid|calamari"#, "lupin": #"lupin"#,
+        // Sulphites keep dried fruit, wine, cordial and sausages.
+        "sulphites": #"\bwine|beer|cider|dried|sultana|raisin|prune|cordial|sausage|\bham\b|salami|vinegar|pickle"#,
     ]
 }
 
@@ -112,7 +120,8 @@ struct DietFilter: Equatable, Hashable, Sendable {
         if !avoid.isEmpty {
             // "May contain" counts too: someone avoiding an allergen can't take that chance.
             guard let al = info.al else { return false }
-            if !avoid.isDisjoint(with: al) || !avoid.isDisjoint(with: info.may ?? []) { return false }
+            // So does one it doesn't say either way about.
+            if !avoid.isDisjoint(with: al) || !avoid.isDisjoint(with: info.may ?? []) || !avoid.isDisjoint(with: info.unk ?? []) { return false }
         }
         return true
     }

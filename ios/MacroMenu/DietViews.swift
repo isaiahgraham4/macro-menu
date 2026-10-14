@@ -17,7 +17,7 @@ struct DietNeedsView: View {
             Section {
                 ForEach(DietOption.allergenOptions) { toggle($0, label: "No \($0.title.lowercased())") }
             } header: { Text("Allergens to avoid") } footer: {
-                Text("Items that \"may contain\" an allergen are left out too.")
+                Text("Items that \"may contain\" an allergen are left out too, and so are items whose restaurant doesn't say either way. Shellfish covers crustaceans and molluscs.")
             }
             Section {
                 let coverage = coverage
@@ -68,9 +68,12 @@ struct DietSection: View {
                     LabeledContent("Meat", value: "Not listed")
                 }
                 if let al = info.al {
-                    LabeledContent("Contains", value: al.isEmpty ? "None of the major allergens" : al.map(DietOption.allergenName).joined(separator: ", ").capitalizedFirst)
+                    LabeledContent("Contains", value: al.isEmpty ? ((info.unk ?? []).isEmpty ? "None of the major allergens" : "None listed") : al.map(DietOption.allergenName).joined(separator: ", ").capitalizedFirst)
                     if let may = info.may, !may.isEmpty {
                         LabeledContent("May contain", value: may.map(DietOption.allergenName).joined(separator: ", ").capitalizedFirst)
+                    }
+                    if let unk = info.unk, !unk.isEmpty {
+                        LabeledContent("Not stated", value: unk.map(DietOption.allergenName).joined(separator: ", ").capitalizedFirst)
                     }
                 } else {
                     LabeledContent("Allergens", value: "Not published")
@@ -200,7 +203,7 @@ enum AskLeanrModel {
         var noBeef: Bool
         @Guide(description: "They don't eat pork.")
         var noPork: Bool
-        @Guide(description: "Allergens they need to avoid, from: gluten, milk, egg, soy, sesame, peanut, treenut, fish, shellfish.", .maximumCount(9))
+        @Guide(description: "Allergens they need to avoid, from: gluten, wheat, milk, egg, soy, sesame, peanut, treenut, fish, shellfish, lupin, sulphites.", .maximumCount(12))
         var allergens: [String]
         @Guide(description: "They want as much protein as possible.")
         var mostProtein: Bool
@@ -241,7 +244,7 @@ enum AskLeanrModel {
         if asked.noBeef { needs.append(.noBeef) }
         if asked.noPork { needs.append(.noPork) }
         // Allergens only when the question talks about allergies or "free" foods, so none are imagined.
-        if lower.range(of: #"allerg|intoleran|free|coeliac|celiac|gluten|dairy|lactose|nut|egg|soy|sesame|fish|shellfish|seafood"#, options: .regularExpression) != nil {
+        if lower.range(of: #"allerg|intoleran|free|coeliac|celiac|gluten|wheat|dairy|lactose|nut|egg|soy|sesame|fish|shellfish|seafood|lupin|sulph|sulfite"#, options: .regularExpression) != nil {
             needs += asked.allergens.compactMap { DietOption(rawValue: $0.lowercased().replacingOccurrences(of: " ", with: "")) }.filter(\.isAllergen)
         }
         q.diet.options.formUnion(needs)

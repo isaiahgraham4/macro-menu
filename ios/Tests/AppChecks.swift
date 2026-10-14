@@ -71,6 +71,14 @@ import UniformTypeIdentifiers
         let glutenFree = DietFilter(options: [.gluten])
         assert(!glutenFree.allows(byID["grilld:simply-grill-d"]!) && !glutenFree.allows(byID["mcd:big-mac"]!))   // contains it; not published
         assert(glutenFree.allows(byID["nandos:1-2-peri-peri-chicken"]!) && byID["nandos:1-2-peri-peri-chicken"]!.diet?.al == [])
+        // Every allergen on Australia's list; an item whose restaurant doesn't say either way is left out.
+        assert(DietOption.allergenOptions.count == 12 && DietFilter(raw: "wheat,lupin,sulphites").options == [.wheat, .lupin, .sulphites])
+        let hjClean = catalog.foods.first { $0.chain == "hj" && $0.diet?.al == [] }!
+        assert(hjClean.diet?.unk == ["lupin"] && glutenFree.allows(hjClean) && !DietFilter(options: [.lupin]).allows(hjClean))
+        assert(DietFilter(options: [.lupin, .sulphites]).allows(byID["nandos:1-2-peri-peri-chicken"]!))
+        let hjGluten = catalog.foods.first { $0.chain == "hj" && ($0.diet?.al ?? []).contains("gluten") }!
+        assert(hjGluten.diet?.unk?.contains("wheat") == true && !DietFilter(options: [.wheat]).allows(hjGluten))
+        assert(!DietFilter(options: [.wheat]).allows(byID["grilld:simply-grill-d"]!) && DietInfo.guess("Sultanas").al == ["sulphites"])
         let mayContain = catalog.foods.first { ($0.diet?.may ?? []).contains("sesame") && !($0.diet?.al ?? []).contains("sesame") }!
         assert(!DietFilter(options: [.sesame]).allows(mayContain))
         assert(DietFilter(options: [.vegan, .gluten]).allows(Food(chain: "mine", name: "My chicken wrap", kj: 1000, cal: 239, p: 20)))

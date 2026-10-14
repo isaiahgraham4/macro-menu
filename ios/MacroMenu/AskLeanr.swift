@@ -90,7 +90,8 @@ enum AskLeanr {
             (#"gluten|coeliac|celiac"#, [.gluten]), (#"dairy|lactose|no milk|milk free|milk allergy"#, [.milk]),
             (#"no eggs?\b|egg free|eggs? allergy"#, [.egg]), (#"\bnut free|no nuts|nut allergy|tree nut"#, [.peanut, .treenut]),
             (#"peanut"#, [.peanut]), (#"\bsoy\b|soya"#, [.soy]), (#"sesame"#, [.sesame]),
-            (#"no fish|fish allergy|fish free"#, [.fish]), (#"shellfish|crustacean|no seafood|seafood allergy"#, [.shellfish]),
+            (#"no fish|fish allergy|fish free"#, [.fish]), (#"shellfish|crustacean|mollusc|no seafood|seafood allergy"#, [.shellfish]),
+            (#"wheat"#, [.wheat]), (#"lupin"#, [.lupin]), (#"sulph|sulfite|sulfur"#, [.sulphites]),
         ]
         for (pattern, options) in needs where lower.range(of: pattern, options: .regularExpression) != nil {
             query.diet.options.formUnion(options); said.insert(.diet)
