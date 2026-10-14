@@ -130,6 +130,8 @@ struct FoodDetailView: View {
                         Text("Extras use \(owner) energy for that ingredient. For parts it doesn't sell on their own, protein, carbs and fat are estimated from the ingredient type.")
                     } else if food.chain == "grilld" && (food.modifiers ?? []).contains(where: { $0.kind == "s" }) {
                         Text("Bun and patty swaps and extras are the difference between burgers Grill'd publishes. Grill'd doesn't publish single ingredients, so use Remove something else for anything else.")
+                    } else if food.chain == "nandos" && (food.modifiers ?? []).contains(where: { $0.kind == "s" }) {
+                        Text("Swaps are the difference between Nando's own figures for this item with each protein and style. Extras use Nando's figures for each one.")
                     } else if ["hj", "kfc", "rr", "oporto"].contains(food.chain) && additions.contains(where: { !$0.key.hasPrefix("item:") }) {
                         Text("Extras are the difference between two \(store.chainName(food.chain)) items sold with and without them.")
                     } else if additions.contains(where: { $0.key.hasPrefix("item:") && $0.kind == "f" }) {

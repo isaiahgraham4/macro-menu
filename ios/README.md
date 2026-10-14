@@ -154,7 +154,14 @@ and fat; its plates, salads, desserts and dips with energy only are left out. Gr
 Grill'd's ordering app (`Scripts/grilld-menu.py fetch` then `build`); each burger is on its default bun, with bun and patty
 swaps and a few extras that are exact differences between Grill'd's published burgers (`grilld-mods.json`). Grill'd lists no
 figures for single ingredients; the one estimate is taking off herbed mayo, sweet chilli mayo, chipotle mayo or tomato relish,
-worked out from Grill'd's figures for that sauce as a dip at an assumed 15 g (`SAUCE_GRAMS`), marked `est`. Missing values remain unknown. A macro filter excludes items without the required figures. Totals mark
+worked out from Grill'd's figures for that sauce as a dip at an assumed 15 g (`SAUCE_GRAMS`), marked `est`. Nando's (October
+2026) comes from Nando's online ordering data (`Scripts/nandos-menu.py fetch` then `build`), which has a panel for every item,
+option, protein and style: each burger, wrap and pita is on its default protein and style, with swaps that are the difference
+between its published panels and extras and removals at Nando's own figures (`nandos-mods.json`). Hungry Jack's and Oporto
+add-ons and removals come from their ordering menus (`Scripts/ordering-options.py fetch` then `build`, into `hj-mods.json` and
+`oporto-mods.json`): energy is the restaurant's, a sauce also sold as a dip takes the dip's make-up, anything else's protein,
+carbs and fat are estimated, and taking something off uses one serve of it, so removals are marked `est`. Red Rooster's
+ordering menu gives no figures for its add-ons, and KFC's and Domino's ordering sites block scripted requests. Missing values remain unknown. A macro filter excludes items without the required figures. Totals mark
 partial nutrient data.
 
 Prices are switched off for now because they vary too much between stores. `Scripts/menu-source.js` keeps them, and

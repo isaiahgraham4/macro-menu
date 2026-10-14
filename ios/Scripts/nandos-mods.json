@@ -1,0 +1,5135 @@
+{
+ "fetched": "2026-10-14",
+ "modifiers": {
+  "nandos:snack-loaded-chips": [
+   {
+    "key": "a:crispy-bacon",
+    "id": "add-crispy-bacon",
+    "kind": "a",
+    "name": "Add Crispy Bacon",
+    "kj": 337,
+    "p": 7.1,
+    "c": 0.2,
+    "f": 5.8,
+    "nut": {
+     "sat": 2.1,
+     "sugar": 0.2,
+     "sodium": 466
+    },
+    "price": 0
+   },
+   {
+    "key": "a:grated-parmesan",
+    "id": "extra-grated-parmesan",
+    "kind": "a",
+    "name": "Extra Grated Parmesan",
+    "kj": 77,
+    "p": 1.6,
+    "c": 0,
+    "f": 1.3,
+    "nut": {
+     "sat": 0.9,
+     "sugar": 0,
+     "sodium": 43
+    },
+    "price": 0
+   },
+   {
+    "key": "a:lemon-tahini-dressing",
+    "id": "extra-lemon-tahini-dressing",
+    "kind": "a",
+    "name": "Extra Lemon Tahini Dressing",
+    "kj": 276,
+    "p": 1.6,
+    "c": 2.3,
+    "f": 5.9,
+    "nut": {
+     "sat": 1,
+     "sugar": 0.6,
+     "sodium": 228.3
+    },
+    "price": 0
+   },
+   {
+    "key": "f:peri-peri-chicken-breast",
+    "id": "add-peri-peri-chicken-breast",
+    "kind": "f",
+    "name": "Add PERi-PERi Chicken Breast",
+    "kj": 525,
+    "p": 22.7,
+    "c": 0.5,
+    "f": 3.6,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 0.3,
+     "sodium": 535
+    },
+    "price": 0
+   },
+   {
+    "key": "r:chargrilled-veg",
+    "id": "no-chargrilled-veg",
+    "kind": "r",
+    "name": "No Chargrilled Veg",
+    "kj": -165,
+    "p": -2.2,
+    "c": -5.6,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -5.6,
+     "sodium": -5.9
+    },
+    "price": 0
+   },
+   {
+    "key": "r:grated-parmesan",
+    "id": "no-grated-parmesan",
+    "kind": "r",
+    "name": "No Grated Parmesan",
+    "kj": -77,
+    "p": -1.6,
+    "c": 0,
+    "f": -1.3,
+    "nut": {
+     "sat": -0.9,
+     "sugar": 0,
+     "sodium": -43
+    },
+    "price": 0
+   },
+   {
+    "key": "r:smoky-capsicum-relish",
+    "id": "no-smoky-capsicum-relish",
+    "kind": "r",
+    "name": "No Smoky Capsicum Relish",
+    "kj": -98,
+    "p": -0.2,
+    "c": -5.2,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -4.7,
+     "sodium": -24.8
+    },
+    "price": 0
+   },
+   {
+    "key": "r:lemon-tahini",
+    "id": "no-lemon-tahini",
+    "kind": "r",
+    "name": "No Lemon Tahini",
+    "kj": -277,
+    "p": -1.6,
+    "c": -2.3,
+    "f": -5.9,
+    "nut": {
+     "sat": -1,
+     "sugar": -0.6,
+     "sodium": -228.3
+    },
+    "price": 0
+   },
+   {
+    "key": "r:peri-salt",
+    "id": "no-peri-salt",
+    "kind": "r",
+    "name": "No Peri Salt",
+    "kj": -23,
+    "p": -0.2,
+    "c": -0.9,
+    "f": -0.1,
+    "nut": {
+     "sat": 0,
+     "sugar": -0.7,
+     "sodium": -480
+    },
+    "price": 0
+   }
+  ],
+  "nandos:perfect-pair": [
+   {
+    "key": "f:1-extra-bbq-rib",
+    "id": "1-extra-bbq-rib",
+    "kind": "f",
+    "name": "1 Extra BBQ Rib",
+    "kj": 316,
+    "p": 7.4,
+    "c": 1.4,
+    "f": 4.5,
+    "nut": {
+     "sat": 1,
+     "sugar": 1.3,
+     "sodium": 254
+    },
+    "price": 0
+   }
+  ],
+  "nandos:1-4-peri-peri-chicken": [
+   {
+    "key": "f:peri-peri-chicken-tenders-x2",
+    "id": "add-peri-peri-chicken-tenders-x2",
+    "kind": "f",
+    "name": "Add PERi-PERi Chicken Tenders x2",
+    "kj": 461,
+    "p": 19.8,
+    "c": 0.3,
+    "f": 3.3,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 0.1,
+     "sodium": 475
+    },
+    "price": 0
+   }
+  ],
+  "nandos:1-2-peri-peri-chicken": [
+   {
+    "key": "f:peri-peri-chicken-tenders-x2",
+    "id": "add-peri-peri-chicken-tenders-x2",
+    "kind": "f",
+    "name": "Add PERi-PERi Chicken Tenders x2",
+    "kj": 461,
+    "p": 19.8,
+    "c": 0.3,
+    "f": 3.3,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 0.1,
+     "sodium": 475
+    },
+    "price": 0
+   }
+  ],
+  "nandos:4-peri-peri-grilled-tenders": [
+   {
+    "key": "f:chicken-tender",
+    "id": "extra-chicken-tender",
+    "kind": "f",
+    "name": "Extra Chicken Tender",
+    "kj": 231,
+    "p": 9.9,
+    "c": 0.2,
+    "f": 1.6,
+    "nut": {
+     "sat": 0.3,
+     "sugar": 0,
+     "sodium": 237
+    },
+    "price": 0
+   }
+  ],
+  "nandos:mediterranean-salad": [
+   {
+    "key": "f:grilled-halloumi-cheese",
+    "id": "add-grilled-halloumi-cheese",
+    "kind": "f",
+    "name": "Add Grilled Halloumi Cheese",
+    "kj": 766,
+    "p": 10.6,
+    "c": 2.3,
+    "f": 14.8,
+    "nut": {
+     "sat": 9.1,
+     "sugar": 1.3,
+     "sodium": 638
+    },
+    "price": 0
+   },
+   {
+    "key": "a:fresh-avocado",
+    "id": "add-fresh-avocado",
+    "kind": "a",
+    "name": "Add Fresh Avocado",
+    "kj": 222,
+    "p": 0.5,
+    "c": 0.1,
+    "f": 5.7,
+    "nut": {
+     "sat": 1.2,
+     "sugar": 0.1,
+     "sodium": 1
+    },
+    "price": 0
+   },
+   {
+    "key": "a:crispy-bacon",
+    "id": "add-crispy-bacon",
+    "kind": "a",
+    "name": "Add Crispy Bacon",
+    "kj": 337,
+    "p": 7.1,
+    "c": 0.2,
+    "f": 5.8,
+    "nut": {
+     "sat": 2.1,
+     "sugar": 0.2,
+     "sodium": 466
+    },
+    "price": 0
+   },
+   {
+    "key": "a:whipped-feta",
+    "id": "add-whipped-feta",
+    "kind": "a",
+    "name": "Add Whipped Feta",
+    "kj": 592,
+    "p": 3.1,
+    "c": 1,
+    "f": 14,
+    "nut": {
+     "sat": 6.3,
+     "sugar": 0.8,
+     "sodium": 126.4
+    },
+    "price": 0
+   },
+   {
+    "key": "a:grilled-pineapple",
+    "id": "add-grilled-pineapple",
+    "kind": "a",
+    "name": "Add Grilled Pineapple",
+    "kj": 368,
+    "p": 0.3,
+    "c": 20.5,
+    "f": 0.1,
+    "nut": {
+     "sat": 0,
+     "sugar": 20,
+     "sodium": 11
+    },
+    "price": 0
+   },
+   {
+    "key": "a:peri-crackle",
+    "id": "extra-peri-crackle",
+    "kind": "a",
+    "name": "Extra PERi-Crackle",
+    "kj": 282,
+    "p": 0.9,
+    "c": 0.8,
+    "f": 6.7,
+    "nut": {
+     "sat": 0.6,
+     "sugar": 0.2,
+     "sodium": 75
+    },
+    "price": 0
+   },
+   {
+    "key": "a:roasted-broccoli",
+    "id": "extra-roasted-broccoli",
+    "kind": "a",
+    "name": "Extra Roasted Broccoli",
+    "kj": 152,
+    "p": 5.6,
+    "c": 0.5,
+    "f": 0.4,
+    "nut": {
+     "sat": 0,
+     "sugar": 0.5,
+     "sodium": 26
+    },
+    "price": 0
+   },
+   {
+    "key": "a:green-goddess-dressing",
+    "id": "extra-green-goddess-dressing",
+    "kind": "a",
+    "name": "Extra Green Goddess Dressing",
+    "kj": 127,
+    "p": 0.7,
+    "c": 0.9,
+    "f": 2.6,
+    "nut": {
+     "sat": 1.1,
+     "sugar": 0.8,
+     "sodium": 110
+    },
+    "price": 0
+   },
+   {
+    "key": "a:lemon-dijon-vinaigrette",
+    "id": "extra-lemon-dijon-vinaigrette",
+    "kind": "a",
+    "name": "Extra Lemon & Dijon Vinaigrette",
+    "kj": 444,
+    "p": 2.3,
+    "c": 0.7,
+    "f": 10.5,
+    "nut": {
+     "sat": 4.7,
+     "sugar": 0.6,
+     "sodium": 94.8
+    },
+    "price": 0
+   },
+   {
+    "key": "a:lemon-tahini-dressing",
+    "id": "extra-lemon-tahini-dressing",
+    "kind": "a",
+    "name": "Extra Lemon Tahini Dressing",
+    "kj": 276,
+    "p": 1.6,
+    "c": 2.3,
+    "f": 5.9,
+    "nut": {
+     "sat": 1,
+     "sugar": 0.6,
+     "sodium": 228.3
+    },
+    "price": 0
+   },
+   {
+    "key": "a:crispy-chickpeas",
+    "id": "extra-crispy-chickpeas",
+    "kind": "a",
+    "name": "Extra Crispy Chickpeas",
+    "kj": 60,
+    "p": 0.9,
+    "c": 1.7,
+    "f": 0.3,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "sodium": 36
+    },
+    "price": 0
+   },
+   {
+    "key": "a:grated-parmesan",
+    "id": "extra-grated-parmesan",
+    "kind": "a",
+    "name": "Extra Grated Parmesan",
+    "kj": 77,
+    "p": 1.6,
+    "c": 0,
+    "f": 1.3,
+    "nut": {
+     "sat": 0.9,
+     "sugar": 0,
+     "sodium": 43
+    },
+    "price": 0
+   },
+   {
+    "key": "a:sesame-parmesan-crisp",
+    "id": "extra-sesame-parmesan-crisp",
+    "kind": "a",
+    "name": "Extra Sesame Parmesan Crisp",
+    "kj": 211,
+    "p": 3.6,
+    "c": 0.4,
+    "f": 3.8,
+    "nut": {
+     "sat": 2.1,
+     "sugar": 0,
+     "sodium": 100.8
+    },
+    "price": 0
+   },
+   {
+    "key": "a:pickled-red-onion",
+    "id": "extra-pickled-red-onion",
+    "kind": "a",
+    "name": "Extra Pickled Red Onion",
+    "kj": 24,
+    "p": 0.3,
+    "c": 0.8,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0.8,
+     "sodium": 2
+    },
+    "price": 0
+   },
+   {
+    "key": "a:roasted-pumpkin",
+    "id": "extra-roasted-pumpkin",
+    "kind": "a",
+    "name": "Extra Roasted Pumpkin",
+    "kj": 134,
+    "p": 1.5,
+    "c": 5,
+    "f": 0.5,
+    "nut": {
+     "sat": 0,
+     "sugar": 3.8,
+     "sodium": 0.7
+    },
+    "price": 0
+   },
+   {
+    "key": "a:peri-peri-seeds",
+    "id": "extra-peri-peri-seeds",
+    "kind": "a",
+    "name": "Extra PERi-PERi Seeds",
+    "kj": 149,
+    "p": 1.8,
+    "c": 2.4,
+    "f": 2.1,
+    "nut": {
+     "sat": 0.4,
+     "sugar": 0.4,
+     "sodium": 146
+    },
+    "price": 0
+   },
+   {
+    "key": "r:whipped-fetta",
+    "id": "no-whipped-fetta",
+    "kind": "r",
+    "name": "No Whipped Fetta",
+    "kj": -592,
+    "p": -3.1,
+    "c": -1,
+    "f": -14,
+    "nut": {
+     "sat": -6.3,
+     "sugar": -0.8,
+     "sodium": -126.4
+    },
+    "price": 0
+   },
+   {
+    "key": "r:cherry-tomatoes",
+    "id": "no-cherry-tomatoes",
+    "kind": "r",
+    "name": "No Cherry Tomatoes",
+    "kj": -30,
+    "p": -0.2,
+    "c": -1.1,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -1.1,
+     "sodium": -4.8
+    },
+    "price": 0
+   },
+   {
+    "key": "r:olives",
+    "id": "no-olives",
+    "kind": "r",
+    "name": "No Olives",
+    "kj": -516,
+    "p": -0.6,
+    "c": -1,
+    "f": -12.9,
+    "nut": {
+     "sat": -1.2,
+     "sugar": -0.3,
+     "sodium": -232.3
+    },
+    "price": 0
+   },
+   {
+    "key": "r:pickled-red-onions",
+    "id": "no-pickled-red-onions",
+    "kind": "r",
+    "name": "No Pickled Red Onions",
+    "kj": -24,
+    "p": -0.3,
+    "c": -0.8,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -0.8,
+     "sodium": -2
+    },
+    "price": 0
+   },
+   {
+    "key": "r:cucumber",
+    "id": "no-cucumber",
+    "kind": "r",
+    "name": "No Cucumber",
+    "kj": -12,
+    "p": -0.1,
+    "c": -0.5,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -0.5,
+     "sodium": -4.8
+    },
+    "price": 0
+   },
+   {
+    "key": "r:lemon-dijon-vinaigrette",
+    "id": "no-lemon-dijon-vinaigrette",
+    "kind": "r",
+    "name": "No Lemon & Dijon Vinaigrette",
+    "kj": -182,
+    "p": -0.2,
+    "c": -2.7,
+    "f": -3.5,
+    "nut": {
+     "sat": -0.3,
+     "sugar": -2.6,
+     "sodium": -99.2
+    },
+    "price": 0
+   }
+  ],
+  "nandos:mediterranean-salad-with-chicken": [
+   {
+    "key": "s:patty-halloumi",
+    "id": "swap-to-halloumi",
+    "kind": "s",
+    "name": "Swap to Halloumi",
+    "kj": 420,
+    "p": -12.5,
+    "c": 3.1,
+    "f": 15.7,
+    "nut": {
+     "sat": 13.1,
+     "sugar": 1.9,
+     "sodium": 320
+    },
+    "price": 0
+   },
+   {
+    "key": "s:patty-veggie-patty",
+    "id": "swap-to-veggie-patty",
+    "kind": "s",
+    "name": "Swap to Veggie Patty",
+    "kj": 430,
+    "p": -19.5,
+    "c": 29.8,
+    "f": 3.8,
+    "nut": {
+     "sat": 0.1,
+     "sugar": 2.8,
+     "sodium": -120
+    },
+    "price": 0
+   },
+   {
+    "key": "s:patty-great-pretender",
+    "id": "swap-to-great-pretender",
+    "kind": "s",
+    "name": "Swap to Great Pretender",
+    "kj": 590,
+    "p": -12.2,
+    "c": 9.2,
+    "f": 16.6,
+    "nut": {
+     "sat": 2.6,
+     "sugar": 1.2,
+     "sodium": 50
+    },
+    "price": 0
+   },
+   {
+    "key": "f:peri-peri-chicken-tenders-x2",
+    "id": "add-peri-peri-chicken-tenders-x2",
+    "kind": "f",
+    "name": "Add PERi-PERi Chicken Tenders x2",
+    "kj": 461,
+    "p": 19.8,
+    "c": 0.3,
+    "f": 3.3,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 0.1,
+     "sodium": 475
+    },
+    "price": 0
+   },
+   {
+    "key": "f:grilled-halloumi-cheese",
+    "id": "add-grilled-halloumi-cheese",
+    "kind": "f",
+    "name": "Add Grilled Halloumi Cheese",
+    "kj": 766,
+    "p": 10.6,
+    "c": 2.3,
+    "f": 14.8,
+    "nut": {
+     "sat": 9.1,
+     "sugar": 1.3,
+     "sodium": 638
+    },
+    "price": 0
+   },
+   {
+    "key": "a:fresh-avocado",
+    "id": "add-fresh-avocado",
+    "kind": "a",
+    "name": "Add Fresh Avocado",
+    "kj": 222,
+    "p": 0.5,
+    "c": 0.1,
+    "f": 5.7,
+    "nut": {
+     "sat": 1.2,
+     "sugar": 0.1,
+     "sodium": 1
+    },
+    "price": 0
+   },
+   {
+    "key": "a:crispy-bacon",
+    "id": "add-crispy-bacon",
+    "kind": "a",
+    "name": "Add Crispy Bacon",
+    "kj": 337,
+    "p": 7.1,
+    "c": 0.2,
+    "f": 5.8,
+    "nut": {
+     "sat": 2.1,
+     "sugar": 0.2,
+     "sodium": 466
+    },
+    "price": 0
+   },
+   {
+    "key": "a:grilled-pineapple",
+    "id": "add-grilled-pineapple",
+    "kind": "a",
+    "name": "Add Grilled Pineapple",
+    "kj": 368,
+    "p": 0.3,
+    "c": 20.5,
+    "f": 0.1,
+    "nut": {
+     "sat": 0,
+     "sugar": 20,
+     "sodium": 11
+    },
+    "price": 0
+   },
+   {
+    "key": "a:whipped-feta",
+    "id": "add-whipped-feta",
+    "kind": "a",
+    "name": "Add Whipped Feta",
+    "kj": 592,
+    "p": 3.1,
+    "c": 1,
+    "f": 14,
+    "nut": {
+     "sat": 6.3,
+     "sugar": 0.8,
+     "sodium": 126.4
+    },
+    "price": 0
+   },
+   {
+    "key": "f:superfood-veggie-patty",
+    "id": "extra-superfood-veggie-patty",
+    "kind": "f",
+    "name": "Extra Superfood Veggie Patty",
+    "kj": 1081,
+    "p": 10.1,
+    "c": 30.1,
+    "f": 7.7,
+    "nut": {
+     "sat": 0.8,
+     "sugar": 2.9,
+     "sodium": 502
+    },
+    "price": 0
+   },
+   {
+    "key": "f:great-pretender-protein",
+    "id": "extra-great-pretender-protein",
+    "kind": "f",
+    "name": "Extra Great Pretender Protein",
+    "kj": 1244,
+    "p": 17.4,
+    "c": 9.5,
+    "f": 20.5,
+    "nut": {
+     "sat": 3.4,
+     "sugar": 1.3,
+     "sodium": 679
+    },
+    "price": 0
+   },
+   {
+    "key": "a:peri-crackle",
+    "id": "extra-peri-crackle",
+    "kind": "a",
+    "name": "Extra PERi-Crackle",
+    "kj": 282,
+    "p": 0.9,
+    "c": 0.8,
+    "f": 6.7,
+    "nut": {
+     "sat": 0.6,
+     "sugar": 0.2,
+     "sodium": 75
+    },
+    "price": 0
+   },
+   {
+    "key": "a:roasted-broccoli",
+    "id": "extra-roasted-broccoli",
+    "kind": "a",
+    "name": "Extra Roasted Broccoli",
+    "kj": 152,
+    "p": 5.6,
+    "c": 0.5,
+    "f": 0.4,
+    "nut": {
+     "sat": 0,
+     "sugar": 0.5,
+     "sodium": 26
+    },
+    "price": 0
+   },
+   {
+    "key": "a:green-goddess-dressing",
+    "id": "extra-green-goddess-dressing",
+    "kind": "a",
+    "name": "Extra Green Goddess Dressing",
+    "kj": 127,
+    "p": 0.7,
+    "c": 0.9,
+    "f": 2.6,
+    "nut": {
+     "sat": 1.1,
+     "sugar": 0.8,
+     "sodium": 110
+    },
+    "price": 0
+   },
+   {
+    "key": "a:lemon-dijon-vinaigrette",
+    "id": "extra-lemon-dijon-vinaigrette",
+    "kind": "a",
+    "name": "Extra Lemon & Dijon Vinaigrette",
+    "kj": 444,
+    "p": 2.3,
+    "c": 0.7,
+    "f": 10.5,
+    "nut": {
+     "sat": 4.7,
+     "sugar": 0.6,
+     "sodium": 94.8
+    },
+    "price": 0
+   },
+   {
+    "key": "a:lemon-tahini-dressing",
+    "id": "extra-lemon-tahini-dressing",
+    "kind": "a",
+    "name": "Extra Lemon Tahini Dressing",
+    "kj": 276,
+    "p": 1.6,
+    "c": 2.3,
+    "f": 5.9,
+    "nut": {
+     "sat": 1,
+     "sugar": 0.6,
+     "sodium": 228.3
+    },
+    "price": 0
+   },
+   {
+    "key": "a:crispy-chickpeas",
+    "id": "extra-crispy-chickpeas",
+    "kind": "a",
+    "name": "Extra Crispy Chickpeas",
+    "kj": 60,
+    "p": 0.9,
+    "c": 1.7,
+    "f": 0.3,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "sodium": 36
+    },
+    "price": 0
+   },
+   {
+    "key": "a:grated-parmesan",
+    "id": "extra-grated-parmesan",
+    "kind": "a",
+    "name": "Extra Grated Parmesan",
+    "kj": 77,
+    "p": 1.6,
+    "c": 0,
+    "f": 1.3,
+    "nut": {
+     "sat": 0.9,
+     "sugar": 0,
+     "sodium": 43
+    },
+    "price": 0
+   },
+   {
+    "key": "a:sesame-parmesan-crisp",
+    "id": "extra-sesame-parmesan-crisp",
+    "kind": "a",
+    "name": "Extra Sesame Parmesan Crisp",
+    "kj": 211,
+    "p": 3.6,
+    "c": 0.4,
+    "f": 3.8,
+    "nut": {
+     "sat": 2.1,
+     "sugar": 0,
+     "sodium": 100.8
+    },
+    "price": 0
+   },
+   {
+    "key": "a:pickled-red-onion",
+    "id": "extra-pickled-red-onion",
+    "kind": "a",
+    "name": "Extra Pickled Red Onion",
+    "kj": 24,
+    "p": 0.3,
+    "c": 0.8,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0.8,
+     "sodium": 2
+    },
+    "price": 0
+   },
+   {
+    "key": "a:roasted-pumpkin",
+    "id": "extra-roasted-pumpkin",
+    "kind": "a",
+    "name": "Extra Roasted Pumpkin",
+    "kj": 134,
+    "p": 1.5,
+    "c": 5,
+    "f": 0.5,
+    "nut": {
+     "sat": 0,
+     "sugar": 3.8,
+     "sodium": 0.7
+    },
+    "price": 0
+   },
+   {
+    "key": "a:peri-peri-seeds",
+    "id": "extra-peri-peri-seeds",
+    "kind": "a",
+    "name": "Extra PERi-PERi Seeds",
+    "kj": 149,
+    "p": 1.8,
+    "c": 2.4,
+    "f": 2.1,
+    "nut": {
+     "sat": 0.4,
+     "sugar": 0.4,
+     "sodium": 146
+    },
+    "price": 0
+   },
+   {
+    "key": "r:whipped-fetta",
+    "id": "no-whipped-fetta",
+    "kind": "r",
+    "name": "No Whipped Fetta",
+    "kj": -592,
+    "p": -3.1,
+    "c": -1,
+    "f": -14,
+    "nut": {
+     "sat": -6.3,
+     "sugar": -0.8,
+     "sodium": -126.4
+    },
+    "price": 0
+   },
+   {
+    "key": "r:cherry-tomatoes",
+    "id": "no-cherry-tomatoes",
+    "kind": "r",
+    "name": "No Cherry Tomatoes",
+    "kj": -30,
+    "p": -0.2,
+    "c": -1.1,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -1.1,
+     "sodium": -4.8
+    },
+    "price": 0
+   },
+   {
+    "key": "r:olives",
+    "id": "no-olives",
+    "kind": "r",
+    "name": "No Olives",
+    "kj": -516,
+    "p": -0.6,
+    "c": -1,
+    "f": -12.9,
+    "nut": {
+     "sat": -1.2,
+     "sugar": -0.3,
+     "sodium": -232.3
+    },
+    "price": 0
+   },
+   {
+    "key": "r:pickled-red-onions",
+    "id": "no-pickled-red-onions",
+    "kind": "r",
+    "name": "No Pickled Red Onions",
+    "kj": -24,
+    "p": -0.3,
+    "c": -0.8,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -0.8,
+     "sodium": -2
+    },
+    "price": 0
+   },
+   {
+    "key": "r:cucumber",
+    "id": "no-cucumber",
+    "kind": "r",
+    "name": "No Cucumber",
+    "kj": -12,
+    "p": -0.1,
+    "c": -0.5,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -0.5,
+     "sodium": -4.8
+    },
+    "price": 0
+   },
+   {
+    "key": "r:lemon-dijon-vinaigrette",
+    "id": "no-lemon-dijon-vinaigrette",
+    "kind": "r",
+    "name": "No Lemon & Dijon Vinaigrette",
+    "kj": -182,
+    "p": -0.2,
+    "c": -2.7,
+    "f": -3.5,
+    "nut": {
+     "sat": -0.3,
+     "sugar": -2.6,
+     "sodium": -99.2
+    },
+    "price": 0
+   }
+  ],
+  "nandos:peri-harvest-bowl": [
+   {
+    "key": "f:grilled-halloumi-cheese",
+    "id": "add-grilled-halloumi-cheese",
+    "kind": "f",
+    "name": "Add Grilled Halloumi Cheese",
+    "kj": 766,
+    "p": 10.6,
+    "c": 2.3,
+    "f": 14.8,
+    "nut": {
+     "sat": 9.1,
+     "sugar": 1.3,
+     "sodium": 638
+    },
+    "price": 0
+   },
+   {
+    "key": "a:fresh-avocado",
+    "id": "add-fresh-avocado",
+    "kind": "a",
+    "name": "Add Fresh Avocado",
+    "kj": 222,
+    "p": 0.5,
+    "c": 0.1,
+    "f": 5.7,
+    "nut": {
+     "sat": 1.2,
+     "sugar": 0.1,
+     "sodium": 1
+    },
+    "price": 0
+   },
+   {
+    "key": "a:crispy-bacon",
+    "id": "add-crispy-bacon",
+    "kind": "a",
+    "name": "Add Crispy Bacon",
+    "kj": 337,
+    "p": 7.1,
+    "c": 0.2,
+    "f": 5.8,
+    "nut": {
+     "sat": 2.1,
+     "sugar": 0.2,
+     "sodium": 466
+    },
+    "price": 0
+   },
+   {
+    "key": "a:grilled-pineapple",
+    "id": "add-grilled-pineapple",
+    "kind": "a",
+    "name": "Add Grilled Pineapple",
+    "kj": 368,
+    "p": 0.3,
+    "c": 20.5,
+    "f": 0.1,
+    "nut": {
+     "sat": 0,
+     "sugar": 20,
+     "sodium": 11
+    },
+    "price": 0
+   },
+   {
+    "key": "a:whipped-feta",
+    "id": "add-whipped-feta",
+    "kind": "a",
+    "name": "Add Whipped Feta",
+    "kj": 592,
+    "p": 3.1,
+    "c": 1,
+    "f": 14,
+    "nut": {
+     "sat": 6.3,
+     "sugar": 0.8,
+     "sodium": 126.4
+    },
+    "price": 0
+   },
+   {
+    "key": "a:peri-crackle",
+    "id": "extra-peri-crackle",
+    "kind": "a",
+    "name": "Extra PERi-Crackle",
+    "kj": 282,
+    "p": 0.9,
+    "c": 0.8,
+    "f": 6.7,
+    "nut": {
+     "sat": 0.6,
+     "sugar": 0.2,
+     "sodium": 75
+    },
+    "price": 0
+   },
+   {
+    "key": "a:roasted-broccoli",
+    "id": "extra-roasted-broccoli",
+    "kind": "a",
+    "name": "Extra Roasted Broccoli",
+    "kj": 152,
+    "p": 5.6,
+    "c": 0.5,
+    "f": 0.4,
+    "nut": {
+     "sat": 0,
+     "sugar": 0.5,
+     "sodium": 26
+    },
+    "price": 0
+   },
+   {
+    "key": "a:green-goddess-dressing",
+    "id": "extra-green-goddess-dressing",
+    "kind": "a",
+    "name": "Extra Green Goddess Dressing",
+    "kj": 127,
+    "p": 0.7,
+    "c": 0.9,
+    "f": 2.6,
+    "nut": {
+     "sat": 1.1,
+     "sugar": 0.8,
+     "sodium": 110
+    },
+    "price": 0
+   },
+   {
+    "key": "a:lemon-dijon-vinaigrette",
+    "id": "extra-lemon-dijon-vinaigrette",
+    "kind": "a",
+    "name": "Extra Lemon & Dijon Vinaigrette",
+    "kj": 444,
+    "p": 2.3,
+    "c": 0.7,
+    "f": 10.5,
+    "nut": {
+     "sat": 4.7,
+     "sugar": 0.6,
+     "sodium": 94.8
+    },
+    "price": 0
+   },
+   {
+    "key": "a:lemon-tahini-dressing",
+    "id": "extra-lemon-tahini-dressing",
+    "kind": "a",
+    "name": "Extra Lemon Tahini Dressing",
+    "kj": 276,
+    "p": 1.6,
+    "c": 2.3,
+    "f": 5.9,
+    "nut": {
+     "sat": 1,
+     "sugar": 0.6,
+     "sodium": 228.3
+    },
+    "price": 0
+   },
+   {
+    "key": "a:crispy-chickpeas",
+    "id": "extra-crispy-chickpeas",
+    "kind": "a",
+    "name": "Extra Crispy Chickpeas",
+    "kj": 60,
+    "p": 0.9,
+    "c": 1.7,
+    "f": 0.3,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "sodium": 36
+    },
+    "price": 0
+   },
+   {
+    "key": "a:grated-parmesan",
+    "id": "extra-grated-parmesan",
+    "kind": "a",
+    "name": "Extra Grated Parmesan",
+    "kj": 77,
+    "p": 1.6,
+    "c": 0,
+    "f": 1.3,
+    "nut": {
+     "sat": 0.9,
+     "sugar": 0,
+     "sodium": 43
+    },
+    "price": 0
+   },
+   {
+    "key": "a:sesame-parmesan-crisp",
+    "id": "extra-sesame-parmesan-crisp",
+    "kind": "a",
+    "name": "Extra Sesame Parmesan Crisp",
+    "kj": 211,
+    "p": 3.6,
+    "c": 0.4,
+    "f": 3.8,
+    "nut": {
+     "sat": 2.1,
+     "sugar": 0,
+     "sodium": 100.8
+    },
+    "price": 0
+   },
+   {
+    "key": "a:pickled-red-onion",
+    "id": "extra-pickled-red-onion",
+    "kind": "a",
+    "name": "Extra Pickled Red Onion",
+    "kj": 24,
+    "p": 0.3,
+    "c": 0.8,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0.8,
+     "sodium": 2
+    },
+    "price": 0
+   },
+   {
+    "key": "a:roasted-pumpkin",
+    "id": "extra-roasted-pumpkin",
+    "kind": "a",
+    "name": "Extra Roasted Pumpkin",
+    "kj": 134,
+    "p": 1.5,
+    "c": 5,
+    "f": 0.5,
+    "nut": {
+     "sat": 0,
+     "sugar": 3.8,
+     "sodium": 0.7
+    },
+    "price": 0
+   },
+   {
+    "key": "a:peri-peri-seeds",
+    "id": "extra-peri-peri-seeds",
+    "kind": "a",
+    "name": "Extra PERi-PERi Seeds",
+    "kj": 149,
+    "p": 1.8,
+    "c": 2.4,
+    "f": 2.1,
+    "nut": {
+     "sat": 0.4,
+     "sugar": 0.4,
+     "sodium": 146
+    },
+    "price": 0
+   },
+   {
+    "key": "r:kale",
+    "id": "no-kale",
+    "kind": "r",
+    "name": "No Kale",
+    "kj": -39,
+    "p": -0.9,
+    "c": -1,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -0.5,
+     "sodium": -7.6
+    },
+    "price": 0
+   },
+   {
+    "key": "r:freekeh-tomato-cucumber-lemon-vinaigrette",
+    "id": "no-freekeh-tomato-cucumber-lemon-vinaigrette",
+    "kind": "r",
+    "name": "No Freekeh, tomato, cucumber, lemon vinaigrette",
+    "kj": -433,
+    "p": -3.7,
+    "c": -9.8,
+    "f": -2,
+    "nut": {
+     "sat": -0.8,
+     "sugar": -2.5,
+     "sodium": -40.7
+    },
+    "price": 0
+   },
+   {
+    "key": "r:avocado",
+    "id": "no-avocado",
+    "kind": "r",
+    "name": "No Avocado",
+    "kj": -133,
+    "p": -0.3,
+    "c": -0.1,
+    "f": -3.4,
+    "nut": {
+     "sat": -0.7,
+     "sugar": -0.1,
+     "sodium": -1
+    },
+    "price": 0
+   },
+   {
+    "key": "r:roasted-pumpkin",
+    "id": "no-roasted-pumpkin",
+    "kind": "r",
+    "name": "No Roasted Pumpkin",
+    "kj": -165,
+    "p": -1.8,
+    "c": -6.2,
+    "f": -0.6,
+    "nut": {
+     "sat": 0,
+     "sugar": -4.6,
+     "sodium": -0.8
+    },
+    "price": 0
+   },
+   {
+    "key": "r:peri-peri-seeds",
+    "id": "no-peri-peri-seeds",
+    "kind": "r",
+    "name": "No PERi-PERi Seeds",
+    "kj": -149,
+    "p": -1.8,
+    "c": -2.4,
+    "f": -2.1,
+    "nut": {
+     "sat": -0.4,
+     "sugar": -0.4,
+     "sodium": -146
+    },
+    "price": 0
+   },
+   {
+    "key": "r:pickled-red-onions",
+    "id": "no-pickled-red-onions",
+    "kind": "r",
+    "name": "No Pickled Red Onions",
+    "kj": -24,
+    "p": -0.3,
+    "c": -0.8,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -0.8,
+     "sodium": -2
+    },
+    "price": 0
+   },
+   {
+    "key": "r:green-goddess-dressing",
+    "id": "no-green-goddess-dressing",
+    "kind": "r",
+    "name": "No Green Goddess Dressing",
+    "kj": -127,
+    "p": -0.7,
+    "c": -0.9,
+    "f": -2.6,
+    "nut": {
+     "sat": -1.1,
+     "sugar": -0.8,
+     "sodium": -110
+    },
+    "price": 0
+   }
+  ],
+  "nandos:peri-harvest-bowl-with-chicken": [
+   {
+    "key": "s:patty-halloumi",
+    "id": "swap-to-halloumi",
+    "kind": "s",
+    "name": "Swap to Halloumi",
+    "kj": 430,
+    "p": -12.5,
+    "c": 3.1,
+    "f": 15.7,
+    "nut": {
+     "sat": 13.1,
+     "sugar": 1.9,
+     "sodium": 310
+    },
+    "price": 0
+   },
+   {
+    "key": "s:patty-veggie-patty",
+    "id": "swap-to-veggie-patty",
+    "kind": "s",
+    "name": "Swap to Veggie Patty",
+    "kj": 430,
+    "p": -19.5,
+    "c": 29.8,
+    "f": 3.7,
+    "nut": {
+     "sat": 0.2,
+     "sugar": 2.8,
+     "sodium": -130
+    },
+    "price": 0
+   },
+   {
+    "key": "s:patty-great-pretender",
+    "id": "swap-to-great-pretender",
+    "kind": "s",
+    "name": "Swap to Great Pretender",
+    "kj": 590,
+    "p": -12.2,
+    "c": 9.2,
+    "f": 16.6,
+    "nut": {
+     "sat": 2.7,
+     "sugar": 1.2,
+     "sodium": 50
+    },
+    "price": 0
+   },
+   {
+    "key": "f:peri-peri-chicken-tenders-x2",
+    "id": "add-peri-peri-chicken-tenders-x2",
+    "kind": "f",
+    "name": "Add PERi-PERi Chicken Tenders x2",
+    "kj": 461,
+    "p": 19.8,
+    "c": 0.3,
+    "f": 3.3,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 0.1,
+     "sodium": 475
+    },
+    "price": 0
+   },
+   {
+    "key": "f:grilled-halloumi-cheese",
+    "id": "add-grilled-halloumi-cheese",
+    "kind": "f",
+    "name": "Add Grilled Halloumi Cheese",
+    "kj": 766,
+    "p": 10.6,
+    "c": 2.3,
+    "f": 14.8,
+    "nut": {
+     "sat": 9.1,
+     "sugar": 1.3,
+     "sodium": 638
+    },
+    "price": 0
+   },
+   {
+    "key": "a:fresh-avocado",
+    "id": "add-fresh-avocado",
+    "kind": "a",
+    "name": "Add Fresh Avocado",
+    "kj": 222,
+    "p": 0.5,
+    "c": 0.1,
+    "f": 5.7,
+    "nut": {
+     "sat": 1.2,
+     "sugar": 0.1,
+     "sodium": 1
+    },
+    "price": 0
+   },
+   {
+    "key": "a:crispy-bacon",
+    "id": "add-crispy-bacon",
+    "kind": "a",
+    "name": "Add Crispy Bacon",
+    "kj": 337,
+    "p": 7.1,
+    "c": 0.2,
+    "f": 5.8,
+    "nut": {
+     "sat": 2.1,
+     "sugar": 0.2,
+     "sodium": 466
+    },
+    "price": 0
+   },
+   {
+    "key": "a:grilled-pineapple",
+    "id": "add-grilled-pineapple",
+    "kind": "a",
+    "name": "Add Grilled Pineapple",
+    "kj": 368,
+    "p": 0.3,
+    "c": 20.5,
+    "f": 0.1,
+    "nut": {
+     "sat": 0,
+     "sugar": 20,
+     "sodium": 11
+    },
+    "price": 0
+   },
+   {
+    "key": "a:whipped-feta",
+    "id": "add-whipped-feta",
+    "kind": "a",
+    "name": "Add Whipped Feta",
+    "kj": 592,
+    "p": 3.1,
+    "c": 1,
+    "f": 14,
+    "nut": {
+     "sat": 6.3,
+     "sugar": 0.8,
+     "sodium": 126.4
+    },
+    "price": 0
+   },
+   {
+    "key": "f:superfood-veggie-patty",
+    "id": "extra-superfood-veggie-patty",
+    "kind": "f",
+    "name": "Extra Superfood Veggie Patty",
+    "kj": 1081,
+    "p": 10.1,
+    "c": 30.1,
+    "f": 7.7,
+    "nut": {
+     "sat": 0.8,
+     "sugar": 2.9,
+     "sodium": 502
+    },
+    "price": 0
+   },
+   {
+    "key": "f:great-pretender-protein",
+    "id": "extra-great-pretender-protein",
+    "kind": "f",
+    "name": "Extra Great Pretender Protein",
+    "kj": 1244,
+    "p": 17.4,
+    "c": 9.5,
+    "f": 20.5,
+    "nut": {
+     "sat": 3.4,
+     "sugar": 1.3,
+     "sodium": 679
+    },
+    "price": 0
+   },
+   {
+    "key": "a:peri-crackle",
+    "id": "extra-peri-crackle",
+    "kind": "a",
+    "name": "Extra PERi-Crackle",
+    "kj": 282,
+    "p": 0.9,
+    "c": 0.8,
+    "f": 6.7,
+    "nut": {
+     "sat": 0.6,
+     "sugar": 0.2,
+     "sodium": 75
+    },
+    "price": 0
+   },
+   {
+    "key": "a:roasted-broccoli",
+    "id": "extra-roasted-broccoli",
+    "kind": "a",
+    "name": "Extra Roasted Broccoli",
+    "kj": 152,
+    "p": 5.6,
+    "c": 0.5,
+    "f": 0.4,
+    "nut": {
+     "sat": 0,
+     "sugar": 0.5,
+     "sodium": 26
+    },
+    "price": 0
+   },
+   {
+    "key": "a:green-goddess-dressing",
+    "id": "extra-green-goddess-dressing",
+    "kind": "a",
+    "name": "Extra Green Goddess Dressing",
+    "kj": 127,
+    "p": 0.7,
+    "c": 0.9,
+    "f": 2.6,
+    "nut": {
+     "sat": 1.1,
+     "sugar": 0.8,
+     "sodium": 110
+    },
+    "price": 0
+   },
+   {
+    "key": "a:lemon-dijon-vinaigrette",
+    "id": "extra-lemon-dijon-vinaigrette",
+    "kind": "a",
+    "name": "Extra Lemon & Dijon Vinaigrette",
+    "kj": 444,
+    "p": 2.3,
+    "c": 0.7,
+    "f": 10.5,
+    "nut": {
+     "sat": 4.7,
+     "sugar": 0.6,
+     "sodium": 94.8
+    },
+    "price": 0
+   },
+   {
+    "key": "a:lemon-tahini-dressing",
+    "id": "extra-lemon-tahini-dressing",
+    "kind": "a",
+    "name": "Extra Lemon Tahini Dressing",
+    "kj": 276,
+    "p": 1.6,
+    "c": 2.3,
+    "f": 5.9,
+    "nut": {
+     "sat": 1,
+     "sugar": 0.6,
+     "sodium": 228.3
+    },
+    "price": 0
+   },
+   {
+    "key": "a:crispy-chickpeas",
+    "id": "extra-crispy-chickpeas",
+    "kind": "a",
+    "name": "Extra Crispy Chickpeas",
+    "kj": 60,
+    "p": 0.9,
+    "c": 1.7,
+    "f": 0.3,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "sodium": 36
+    },
+    "price": 0
+   },
+   {
+    "key": "a:grated-parmesan",
+    "id": "extra-grated-parmesan",
+    "kind": "a",
+    "name": "Extra Grated Parmesan",
+    "kj": 77,
+    "p": 1.6,
+    "c": 0,
+    "f": 1.3,
+    "nut": {
+     "sat": 0.9,
+     "sugar": 0,
+     "sodium": 43
+    },
+    "price": 0
+   },
+   {
+    "key": "a:sesame-parmesan-crisp",
+    "id": "extra-sesame-parmesan-crisp",
+    "kind": "a",
+    "name": "Extra Sesame Parmesan Crisp",
+    "kj": 211,
+    "p": 3.6,
+    "c": 0.4,
+    "f": 3.8,
+    "nut": {
+     "sat": 2.1,
+     "sugar": 0,
+     "sodium": 100.8
+    },
+    "price": 0
+   },
+   {
+    "key": "a:pickled-red-onion",
+    "id": "extra-pickled-red-onion",
+    "kind": "a",
+    "name": "Extra Pickled Red Onion",
+    "kj": 24,
+    "p": 0.3,
+    "c": 0.8,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0.8,
+     "sodium": 2
+    },
+    "price": 0
+   },
+   {
+    "key": "a:roasted-pumpkin",
+    "id": "extra-roasted-pumpkin",
+    "kind": "a",
+    "name": "Extra Roasted Pumpkin",
+    "kj": 134,
+    "p": 1.5,
+    "c": 5,
+    "f": 0.5,
+    "nut": {
+     "sat": 0,
+     "sugar": 3.8,
+     "sodium": 0.7
+    },
+    "price": 0
+   },
+   {
+    "key": "a:peri-peri-seeds",
+    "id": "extra-peri-peri-seeds",
+    "kind": "a",
+    "name": "Extra PERi-PERi Seeds",
+    "kj": 149,
+    "p": 1.8,
+    "c": 2.4,
+    "f": 2.1,
+    "nut": {
+     "sat": 0.4,
+     "sugar": 0.4,
+     "sodium": 146
+    },
+    "price": 0
+   },
+   {
+    "key": "r:kale",
+    "id": "no-kale",
+    "kind": "r",
+    "name": "No Kale",
+    "kj": -39,
+    "p": -0.9,
+    "c": -1,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -0.5,
+     "sodium": -7.6
+    },
+    "price": 0
+   },
+   {
+    "key": "r:freekeh-tomato-cucumber-lemon-vinaigrette",
+    "id": "no-freekeh-tomato-cucumber-lemon-vinaigrette",
+    "kind": "r",
+    "name": "No Freekeh, tomato, cucumber, lemon vinaigrette",
+    "kj": -433,
+    "p": -3.7,
+    "c": -9.8,
+    "f": -2,
+    "nut": {
+     "sat": -0.8,
+     "sugar": -2.5,
+     "sodium": -40.7
+    },
+    "price": 0
+   },
+   {
+    "key": "r:avocado",
+    "id": "no-avocado",
+    "kind": "r",
+    "name": "No Avocado",
+    "kj": -133,
+    "p": -0.3,
+    "c": -0.1,
+    "f": -3.4,
+    "nut": {
+     "sat": -0.7,
+     "sugar": -0.1,
+     "sodium": -1
+    },
+    "price": 0
+   },
+   {
+    "key": "r:roasted-pumpkin",
+    "id": "no-roasted-pumpkin",
+    "kind": "r",
+    "name": "No Roasted Pumpkin",
+    "kj": -165,
+    "p": -1.8,
+    "c": -6.2,
+    "f": -0.6,
+    "nut": {
+     "sat": 0,
+     "sugar": -4.6,
+     "sodium": -0.8
+    },
+    "price": 0
+   },
+   {
+    "key": "r:peri-peri-seeds",
+    "id": "no-peri-peri-seeds",
+    "kind": "r",
+    "name": "No PERi-PERi Seeds",
+    "kj": -149,
+    "p": -1.8,
+    "c": -2.4,
+    "f": -2.1,
+    "nut": {
+     "sat": -0.4,
+     "sugar": -0.4,
+     "sodium": -146
+    },
+    "price": 0
+   },
+   {
+    "key": "r:pickled-red-onions",
+    "id": "no-pickled-red-onions",
+    "kind": "r",
+    "name": "No Pickled Red Onions",
+    "kj": -24,
+    "p": -0.3,
+    "c": -0.8,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -0.8,
+     "sodium": -2
+    },
+    "price": 0
+   },
+   {
+    "key": "r:green-goddess-dressing",
+    "id": "no-green-goddess-dressing",
+    "kind": "r",
+    "name": "No Green Goddess Dressing",
+    "kj": -127,
+    "p": -0.7,
+    "c": -0.9,
+    "f": -2.6,
+    "nut": {
+     "sat": -1.1,
+     "sugar": -0.8,
+     "sodium": -110
+    },
+    "price": 0
+   }
+  ],
+  "nandos:avo-parmesan-crunch": [
+   {
+    "key": "f:grilled-halloumi-cheese",
+    "id": "add-grilled-halloumi-cheese",
+    "kind": "f",
+    "name": "Add Grilled Halloumi Cheese",
+    "kj": 766,
+    "p": 10.6,
+    "c": 2.3,
+    "f": 14.8,
+    "nut": {
+     "sat": 9.1,
+     "sugar": 1.3,
+     "sodium": 638
+    },
+    "price": 0
+   },
+   {
+    "key": "a:fresh-avocado",
+    "id": "add-fresh-avocado",
+    "kind": "a",
+    "name": "Add Fresh Avocado",
+    "kj": 222,
+    "p": 0.5,
+    "c": 0.1,
+    "f": 5.7,
+    "nut": {
+     "sat": 1.2,
+     "sugar": 0.1,
+     "sodium": 1
+    },
+    "price": 0
+   },
+   {
+    "key": "a:crispy-bacon",
+    "id": "add-crispy-bacon",
+    "kind": "a",
+    "name": "Add Crispy Bacon",
+    "kj": 337,
+    "p": 7.1,
+    "c": 0.2,
+    "f": 5.8,
+    "nut": {
+     "sat": 2.1,
+     "sugar": 0.2,
+     "sodium": 466
+    },
+    "price": 0
+   },
+   {
+    "key": "a:grilled-pineapple",
+    "id": "add-grilled-pineapple",
+    "kind": "a",
+    "name": "Add Grilled Pineapple",
+    "kj": 368,
+    "p": 0.3,
+    "c": 20.5,
+    "f": 0.1,
+    "nut": {
+     "sat": 0,
+     "sugar": 20,
+     "sodium": 11
+    },
+    "price": 0
+   },
+   {
+    "key": "a:whipped-feta",
+    "id": "add-whipped-feta",
+    "kind": "a",
+    "name": "Add Whipped Feta",
+    "kj": 592,
+    "p": 3.1,
+    "c": 1,
+    "f": 14,
+    "nut": {
+     "sat": 6.3,
+     "sugar": 0.8,
+     "sodium": 126.4
+    },
+    "price": 0
+   },
+   {
+    "key": "a:peri-crackle",
+    "id": "extra-peri-crackle",
+    "kind": "a",
+    "name": "Extra PERi-Crackle",
+    "kj": 282,
+    "p": 0.9,
+    "c": 0.8,
+    "f": 6.7,
+    "nut": {
+     "sat": 0.6,
+     "sugar": 0.2,
+     "sodium": 75
+    },
+    "price": 0
+   },
+   {
+    "key": "a:roasted-broccoli",
+    "id": "extra-roasted-broccoli",
+    "kind": "a",
+    "name": "Extra Roasted Broccoli",
+    "kj": 152,
+    "p": 5.6,
+    "c": 0.5,
+    "f": 0.4,
+    "nut": {
+     "sat": 0,
+     "sugar": 0.5,
+     "sodium": 26
+    },
+    "price": 0
+   },
+   {
+    "key": "a:green-goddess-dressing",
+    "id": "extra-green-goddess-dressing",
+    "kind": "a",
+    "name": "Extra Green Goddess Dressing",
+    "kj": 127,
+    "p": 0.7,
+    "c": 0.9,
+    "f": 2.6,
+    "nut": {
+     "sat": 1.1,
+     "sugar": 0.8,
+     "sodium": 110
+    },
+    "price": 0
+   },
+   {
+    "key": "a:lemon-dijon-vinaigrette",
+    "id": "extra-lemon-dijon-vinaigrette",
+    "kind": "a",
+    "name": "Extra Lemon & Dijon Vinaigrette",
+    "kj": 444,
+    "p": 2.3,
+    "c": 0.7,
+    "f": 10.5,
+    "nut": {
+     "sat": 4.7,
+     "sugar": 0.6,
+     "sodium": 94.8
+    },
+    "price": 0
+   },
+   {
+    "key": "a:lemon-tahini-dressing",
+    "id": "extra-lemon-tahini-dressing",
+    "kind": "a",
+    "name": "Extra Lemon Tahini Dressing",
+    "kj": 276,
+    "p": 1.6,
+    "c": 2.3,
+    "f": 5.9,
+    "nut": {
+     "sat": 1,
+     "sugar": 0.6,
+     "sodium": 228.3
+    },
+    "price": 0
+   },
+   {
+    "key": "a:crispy-chickpeas",
+    "id": "extra-crispy-chickpeas",
+    "kind": "a",
+    "name": "Extra Crispy Chickpeas",
+    "kj": 60,
+    "p": 0.9,
+    "c": 1.7,
+    "f": 0.3,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "sodium": 36
+    },
+    "price": 0
+   },
+   {
+    "key": "a:grated-parmesan",
+    "id": "extra-grated-parmesan",
+    "kind": "a",
+    "name": "Extra Grated Parmesan",
+    "kj": 77,
+    "p": 1.6,
+    "c": 0,
+    "f": 1.3,
+    "nut": {
+     "sat": 0.9,
+     "sugar": 0,
+     "sodium": 43
+    },
+    "price": 0
+   },
+   {
+    "key": "a:sesame-parmesan-crisp",
+    "id": "extra-sesame-parmesan-crisp",
+    "kind": "a",
+    "name": "Extra Sesame Parmesan Crisp",
+    "kj": 211,
+    "p": 3.6,
+    "c": 0.4,
+    "f": 3.8,
+    "nut": {
+     "sat": 2.1,
+     "sugar": 0,
+     "sodium": 100.8
+    },
+    "price": 0
+   },
+   {
+    "key": "a:pickled-red-onion",
+    "id": "extra-pickled-red-onion",
+    "kind": "a",
+    "name": "Extra Pickled Red Onion",
+    "kj": 24,
+    "p": 0.3,
+    "c": 0.8,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0.8,
+     "sodium": 2
+    },
+    "price": 0
+   },
+   {
+    "key": "a:roasted-pumpkin",
+    "id": "extra-roasted-pumpkin",
+    "kind": "a",
+    "name": "Extra Roasted Pumpkin",
+    "kj": 134,
+    "p": 1.5,
+    "c": 5,
+    "f": 0.5,
+    "nut": {
+     "sat": 0,
+     "sugar": 3.8,
+     "sodium": 0.7
+    },
+    "price": 0
+   },
+   {
+    "key": "a:peri-peri-seeds",
+    "id": "extra-peri-peri-seeds",
+    "kind": "a",
+    "name": "Extra PERi-PERi Seeds",
+    "kj": 149,
+    "p": 1.8,
+    "c": 2.4,
+    "f": 2.1,
+    "nut": {
+     "sat": 0.4,
+     "sugar": 0.4,
+     "sodium": 146
+    },
+    "price": 0
+   },
+   {
+    "key": "r:kale",
+    "id": "no-kale",
+    "kind": "r",
+    "name": "No Kale",
+    "kj": -39,
+    "p": -0.9,
+    "c": -1,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -0.5,
+     "sodium": -7.6
+    },
+    "price": 0
+   },
+   {
+    "key": "r:grated-parmesan",
+    "id": "no-grated-parmesan",
+    "kind": "r",
+    "name": "No Grated Parmesan",
+    "kj": -77,
+    "p": -1.6,
+    "c": 0,
+    "f": -1.3,
+    "nut": {
+     "sat": -0.9,
+     "sugar": 0,
+     "sodium": -43
+    },
+    "price": 0
+   },
+   {
+    "key": "r:parmesan-sesame-crisp",
+    "id": "no-parmesan-sesame-crisp",
+    "kind": "r",
+    "name": "No Parmesan Sesame Crisp",
+    "kj": -211,
+    "p": -3.6,
+    "c": -0.4,
+    "f": -3.8,
+    "nut": {
+     "sat": -2.1,
+     "sugar": 0,
+     "sodium": -101
+    },
+    "price": 0
+   },
+   {
+    "key": "r:avocado",
+    "id": "no-avocado",
+    "kind": "r",
+    "name": "No Avocado",
+    "kj": -133,
+    "p": -0.3,
+    "c": -0.1,
+    "f": -3.4,
+    "nut": {
+     "sat": -0.7,
+     "sugar": -0.1,
+     "sodium": -1
+    },
+    "price": 0
+   },
+   {
+    "key": "r:crispy-chickpeas",
+    "id": "no-crispy-chickpeas",
+    "kind": "r",
+    "name": "No Crispy Chickpeas",
+    "kj": -61,
+    "p": -0.9,
+    "c": -1.7,
+    "f": -0.3,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "sodium": -36
+    },
+    "price": 0
+   },
+   {
+    "key": "r:lemon-tahini",
+    "id": "no-lemon-tahini",
+    "kind": "r",
+    "name": "No Lemon Tahini",
+    "kj": -277,
+    "p": -1.6,
+    "c": -2.3,
+    "f": -5.9,
+    "nut": {
+     "sat": -1,
+     "sugar": -0.6,
+     "sodium": -228.3
+    },
+    "price": 0
+   }
+  ],
+  "nandos:avo-parmesan-crunch-with-chicken": [
+   {
+    "key": "s:patty-halloumi",
+    "id": "swap-to-halloumi",
+    "kind": "s",
+    "name": "Swap to Halloumi",
+    "kj": 430,
+    "p": -12.4,
+    "c": 3.1,
+    "f": 15.9,
+    "nut": {
+     "sat": 13.1,
+     "sugar": 1.9,
+     "sodium": 320
+    },
+    "price": 0
+   },
+   {
+    "key": "s:patty-veggie-patty",
+    "id": "swap-to-veggie-patty",
+    "kind": "s",
+    "name": "Swap to Veggie Patty",
+    "kj": 430,
+    "p": -19.5,
+    "c": 29.8,
+    "f": 4.0,
+    "nut": {
+     "sat": 0.2,
+     "sugar": 2.8,
+     "sodium": -130
+    },
+    "price": 0
+   },
+   {
+    "key": "s:patty-great-pretender",
+    "id": "swap-to-great-pretender",
+    "kind": "s",
+    "name": "Swap to Great Pretender",
+    "kj": 590,
+    "p": -12.2,
+    "c": 9.1,
+    "f": 16.8,
+    "nut": {
+     "sat": 2.7,
+     "sugar": 1.2,
+     "sodium": 50
+    },
+    "price": 0
+   },
+   {
+    "key": "f:peri-peri-chicken-tenders-x2",
+    "id": "add-peri-peri-chicken-tenders-x2",
+    "kind": "f",
+    "name": "Add PERi-PERi Chicken Tenders x2",
+    "kj": 461,
+    "p": 19.8,
+    "c": 0.3,
+    "f": 3.3,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 0.1,
+     "sodium": 475
+    },
+    "price": 0
+   },
+   {
+    "key": "f:grilled-halloumi-cheese",
+    "id": "add-grilled-halloumi-cheese",
+    "kind": "f",
+    "name": "Add Grilled Halloumi Cheese",
+    "kj": 766,
+    "p": 10.6,
+    "c": 2.3,
+    "f": 14.8,
+    "nut": {
+     "sat": 9.1,
+     "sugar": 1.3,
+     "sodium": 638
+    },
+    "price": 0
+   },
+   {
+    "key": "a:fresh-avocado",
+    "id": "add-fresh-avocado",
+    "kind": "a",
+    "name": "Add Fresh Avocado",
+    "kj": 222,
+    "p": 0.5,
+    "c": 0.1,
+    "f": 5.7,
+    "nut": {
+     "sat": 1.2,
+     "sugar": 0.1,
+     "sodium": 1
+    },
+    "price": 0
+   },
+   {
+    "key": "a:crispy-bacon",
+    "id": "add-crispy-bacon",
+    "kind": "a",
+    "name": "Add Crispy Bacon",
+    "kj": 337,
+    "p": 7.1,
+    "c": 0.2,
+    "f": 5.8,
+    "nut": {
+     "sat": 2.1,
+     "sugar": 0.2,
+     "sodium": 466
+    },
+    "price": 0
+   },
+   {
+    "key": "a:grilled-pineapple",
+    "id": "add-grilled-pineapple",
+    "kind": "a",
+    "name": "Add Grilled Pineapple",
+    "kj": 368,
+    "p": 0.3,
+    "c": 20.5,
+    "f": 0.1,
+    "nut": {
+     "sat": 0,
+     "sugar": 20,
+     "sodium": 11
+    },
+    "price": 0
+   },
+   {
+    "key": "a:whipped-feta",
+    "id": "add-whipped-feta",
+    "kind": "a",
+    "name": "Add Whipped Feta",
+    "kj": 592,
+    "p": 3.1,
+    "c": 1,
+    "f": 14,
+    "nut": {
+     "sat": 6.3,
+     "sugar": 0.8,
+     "sodium": 126.4
+    },
+    "price": 0
+   },
+   {
+    "key": "f:superfood-veggie-patty",
+    "id": "extra-superfood-veggie-patty",
+    "kind": "f",
+    "name": "Extra Superfood Veggie Patty",
+    "kj": 1081,
+    "p": 10.1,
+    "c": 30.1,
+    "f": 7.7,
+    "nut": {
+     "sat": 0.8,
+     "sugar": 2.9,
+     "sodium": 502
+    },
+    "price": 0
+   },
+   {
+    "key": "f:great-pretender-protein",
+    "id": "extra-great-pretender-protein",
+    "kind": "f",
+    "name": "Extra Great Pretender Protein",
+    "kj": 1244,
+    "p": 17.4,
+    "c": 9.5,
+    "f": 20.5,
+    "nut": {
+     "sat": 3.4,
+     "sugar": 1.3,
+     "sodium": 679
+    },
+    "price": 0
+   },
+   {
+    "key": "a:peri-crackle",
+    "id": "extra-peri-crackle",
+    "kind": "a",
+    "name": "Extra PERi-Crackle",
+    "kj": 282,
+    "p": 0.9,
+    "c": 0.8,
+    "f": 6.7,
+    "nut": {
+     "sat": 0.6,
+     "sugar": 0.2,
+     "sodium": 75
+    },
+    "price": 0
+   },
+   {
+    "key": "a:roasted-broccoli",
+    "id": "extra-roasted-broccoli",
+    "kind": "a",
+    "name": "Extra Roasted Broccoli",
+    "kj": 152,
+    "p": 5.6,
+    "c": 0.5,
+    "f": 0.4,
+    "nut": {
+     "sat": 0,
+     "sugar": 0.5,
+     "sodium": 26
+    },
+    "price": 0
+   },
+   {
+    "key": "a:green-goddess-dressing",
+    "id": "extra-green-goddess-dressing",
+    "kind": "a",
+    "name": "Extra Green Goddess Dressing",
+    "kj": 127,
+    "p": 0.7,
+    "c": 0.9,
+    "f": 2.6,
+    "nut": {
+     "sat": 1.1,
+     "sugar": 0.8,
+     "sodium": 110
+    },
+    "price": 0
+   },
+   {
+    "key": "a:lemon-dijon-vinaigrette",
+    "id": "extra-lemon-dijon-vinaigrette",
+    "kind": "a",
+    "name": "Extra Lemon & Dijon Vinaigrette",
+    "kj": 444,
+    "p": 2.3,
+    "c": 0.7,
+    "f": 10.5,
+    "nut": {
+     "sat": 4.7,
+     "sugar": 0.6,
+     "sodium": 94.8
+    },
+    "price": 0
+   },
+   {
+    "key": "a:lemon-tahini-dressing",
+    "id": "extra-lemon-tahini-dressing",
+    "kind": "a",
+    "name": "Extra Lemon Tahini Dressing",
+    "kj": 276,
+    "p": 1.6,
+    "c": 2.3,
+    "f": 5.9,
+    "nut": {
+     "sat": 1,
+     "sugar": 0.6,
+     "sodium": 228.3
+    },
+    "price": 0
+   },
+   {
+    "key": "a:crispy-chickpeas",
+    "id": "extra-crispy-chickpeas",
+    "kind": "a",
+    "name": "Extra Crispy Chickpeas",
+    "kj": 60,
+    "p": 0.9,
+    "c": 1.7,
+    "f": 0.3,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "sodium": 36
+    },
+    "price": 0
+   },
+   {
+    "key": "a:grated-parmesan",
+    "id": "extra-grated-parmesan",
+    "kind": "a",
+    "name": "Extra Grated Parmesan",
+    "kj": 77,
+    "p": 1.6,
+    "c": 0,
+    "f": 1.3,
+    "nut": {
+     "sat": 0.9,
+     "sugar": 0,
+     "sodium": 43
+    },
+    "price": 0
+   },
+   {
+    "key": "a:sesame-parmesan-crisp",
+    "id": "extra-sesame-parmesan-crisp",
+    "kind": "a",
+    "name": "Extra Sesame Parmesan Crisp",
+    "kj": 211,
+    "p": 3.6,
+    "c": 0.4,
+    "f": 3.8,
+    "nut": {
+     "sat": 2.1,
+     "sugar": 0,
+     "sodium": 100.8
+    },
+    "price": 0
+   },
+   {
+    "key": "a:pickled-red-onion",
+    "id": "extra-pickled-red-onion",
+    "kind": "a",
+    "name": "Extra Pickled Red Onion",
+    "kj": 24,
+    "p": 0.3,
+    "c": 0.8,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0.8,
+     "sodium": 2
+    },
+    "price": 0
+   },
+   {
+    "key": "a:roasted-pumpkin",
+    "id": "extra-roasted-pumpkin",
+    "kind": "a",
+    "name": "Extra Roasted Pumpkin",
+    "kj": 134,
+    "p": 1.5,
+    "c": 5,
+    "f": 0.5,
+    "nut": {
+     "sat": 0,
+     "sugar": 3.8,
+     "sodium": 0.7
+    },
+    "price": 0
+   },
+   {
+    "key": "a:peri-peri-seeds",
+    "id": "extra-peri-peri-seeds",
+    "kind": "a",
+    "name": "Extra PERi-PERi Seeds",
+    "kj": 149,
+    "p": 1.8,
+    "c": 2.4,
+    "f": 2.1,
+    "nut": {
+     "sat": 0.4,
+     "sugar": 0.4,
+     "sodium": 146
+    },
+    "price": 0
+   },
+   {
+    "key": "r:kale",
+    "id": "no-kale",
+    "kind": "r",
+    "name": "No Kale",
+    "kj": -39,
+    "p": -0.9,
+    "c": -1,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -0.5,
+     "sodium": -7.6
+    },
+    "price": 0
+   },
+   {
+    "key": "r:grated-parmesan",
+    "id": "no-grated-parmesan",
+    "kind": "r",
+    "name": "No Grated Parmesan",
+    "kj": -77,
+    "p": -1.6,
+    "c": 0,
+    "f": -1.3,
+    "nut": {
+     "sat": -0.9,
+     "sugar": 0,
+     "sodium": -43
+    },
+    "price": 0
+   },
+   {
+    "key": "r:parmesan-sesame-crisp",
+    "id": "no-parmesan-sesame-crisp",
+    "kind": "r",
+    "name": "No Parmesan Sesame Crisp",
+    "kj": -211,
+    "p": -3.6,
+    "c": -0.4,
+    "f": -3.8,
+    "nut": {
+     "sat": -2.1,
+     "sugar": 0,
+     "sodium": -101
+    },
+    "price": 0
+   },
+   {
+    "key": "r:avocado",
+    "id": "no-avocado",
+    "kind": "r",
+    "name": "No Avocado",
+    "kj": -133,
+    "p": -0.3,
+    "c": -0.1,
+    "f": -3.4,
+    "nut": {
+     "sat": -0.7,
+     "sugar": -0.1,
+     "sodium": -1
+    },
+    "price": 0
+   },
+   {
+    "key": "r:crispy-chickpeas",
+    "id": "no-crispy-chickpeas",
+    "kind": "r",
+    "name": "No Crispy Chickpeas",
+    "kj": -61,
+    "p": -0.9,
+    "c": -1.7,
+    "f": -0.3,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "sodium": -36
+    },
+    "price": 0
+   },
+   {
+    "key": "r:lemon-tahini",
+    "id": "no-lemon-tahini",
+    "kind": "r",
+    "name": "No Lemon Tahini",
+    "kj": -277,
+    "p": -1.6,
+    "c": -2.3,
+    "f": -5.9,
+    "nut": {
+     "sat": -1,
+     "sugar": -0.6,
+     "sodium": -228.3
+    },
+    "price": 0
+   }
+  ],
+  "nandos:paella-with-chicken": [
+   {
+    "key": "s:patty-halloumi",
+    "id": "swap-to-halloumi",
+    "kind": "s",
+    "name": "Swap to Halloumi",
+    "kj": 630,
+    "p": -4.0,
+    "c": 3.3,
+    "f": 17.1,
+    "nut": {
+     "sat": 13.3,
+     "sugar": 1.9,
+     "sodium": 530
+    },
+    "price": 0
+   },
+   {
+    "key": "s:patty-veggie-patty",
+    "id": "swap-to-veggie-patty",
+    "kind": "s",
+    "name": "Swap to Veggie Patty",
+    "kj": 590,
+    "p": -11.1,
+    "c": 29.8,
+    "f": 4.3,
+    "nut": {
+     "sat": 0.3,
+     "sugar": 2.8,
+     "sodium": 0
+    },
+    "price": 0
+   },
+   {
+    "key": "s:patty-great-pretender",
+    "id": "swap-to-great-pretender",
+    "kind": "s",
+    "name": "Swap to Great Pretender",
+    "kj": 670,
+    "p": -4.8,
+    "c": 8.0,
+    "f": 15.9,
+    "nut": {
+     "sat": 1.6,
+     "sugar": 1.0,
+     "sodium": 250
+    },
+    "price": 0
+   },
+   {
+    "key": "f:peri-peri-chicken-breast",
+    "id": "add-peri-peri-chicken-breast",
+    "kind": "f",
+    "name": "Add PERi-PERi Chicken Breast",
+    "kj": 525,
+    "p": 22.7,
+    "c": 0.5,
+    "f": 3.6,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 0.3,
+     "sodium": 535
+    },
+    "price": 0
+   },
+   {
+    "key": "f:superfood-veggie-patty",
+    "id": "extra-superfood-veggie-patty",
+    "kind": "f",
+    "name": "Extra Superfood Veggie Patty",
+    "kj": 1081,
+    "p": 10.1,
+    "c": 30.1,
+    "f": 7.7,
+    "nut": {
+     "sat": 0.8,
+     "sugar": 2.9,
+     "sodium": 502
+    },
+    "price": 0
+   },
+   {
+    "key": "f:great-pretender-protein",
+    "id": "extra-great-pretender-protein",
+    "kind": "f",
+    "name": "Extra Great Pretender Protein",
+    "kj": 1244,
+    "p": 17.4,
+    "c": 9.5,
+    "f": 20.5,
+    "nut": {
+     "sat": 3.4,
+     "sugar": 1.3,
+     "sodium": 679
+    },
+    "price": 0
+   },
+   {
+    "key": "f:grilled-halloumi-cheese",
+    "id": "add-grilled-halloumi-cheese",
+    "kind": "f",
+    "name": "Add Grilled Halloumi Cheese",
+    "kj": 766,
+    "p": 10.6,
+    "c": 2.3,
+    "f": 14.8,
+    "nut": {
+     "sat": 9.1,
+     "sugar": 1.3,
+     "sodium": 638
+    },
+    "price": 0
+   },
+   {
+    "key": "a:crispy-bacon",
+    "id": "add-crispy-bacon",
+    "kind": "a",
+    "name": "Add Crispy Bacon",
+    "kj": 337,
+    "p": 7.1,
+    "c": 0.2,
+    "f": 5.8,
+    "nut": {
+     "sat": 2.1,
+     "sugar": 0.2,
+     "sodium": 466
+    },
+    "price": 0
+   },
+   {
+    "key": "a:grilled-pineapple",
+    "id": "add-grilled-pineapple",
+    "kind": "a",
+    "name": "Add Grilled Pineapple",
+    "kj": 368,
+    "p": 0.3,
+    "c": 20.5,
+    "f": 0.1,
+    "nut": {
+     "sat": 0,
+     "sugar": 20,
+     "sodium": 11
+    },
+    "price": 0
+   }
+  ],
+  "nandos:smoky-churrasco-burger": [
+   {
+    "key": "s:bun-portuguese-roll",
+    "id": "swap-to-portuguese-roll",
+    "kind": "s",
+    "name": "Swap to Portuguese Roll",
+    "kj": -750,
+    "p": -0.5,
+    "c": -1.5,
+    "f": -19.2,
+    "nut": {
+     "sat": -9.3,
+     "sugar": 0.0,
+     "sodium": -290
+    },
+    "price": 0
+   },
+   {
+    "key": "s:bun-toasted-pita",
+    "id": "swap-to-toasted-pita",
+    "kind": "s",
+    "name": "Swap to Toasted Pita",
+    "kj": -670,
+    "p": -1.0,
+    "c": 3.5,
+    "f": -19.1,
+    "nut": {
+     "sat": -9.9,
+     "sugar": 2.8,
+     "sodium": -160
+    },
+    "price": 0
+   },
+   {
+    "key": "s:bun-wrap",
+    "id": "swap-to-wrap",
+    "kind": "s",
+    "name": "Swap to Wrap",
+    "kj": -450,
+    "p": -2.0,
+    "c": 1,
+    "f": -11.5,
+    "nut": {
+     "sat": -6.0,
+     "sugar": -0.1,
+     "sodium": -110
+    },
+    "price": 0
+   },
+   {
+    "key": "s:patty-veggie-patty",
+    "id": "swap-to-veggie-patty",
+    "kind": "s",
+    "name": "Swap to Veggie Patty",
+    "kj": 210,
+    "p": -20.9,
+    "c": 30,
+    "f": -1.6,
+    "nut": {
+     "sat": -1.7,
+     "sugar": 2.9,
+     "sodium": 230
+    },
+    "price": 0
+   },
+   {
+    "key": "s:patty-great-pretender",
+    "id": "swap-to-great-pretender",
+    "kind": "s",
+    "name": "Swap to Great Pretender",
+    "kj": 290,
+    "p": -14.5,
+    "c": 8.2,
+    "f": 10.1,
+    "nut": {
+     "sat": -0.4,
+     "sugar": 1.1,
+     "sodium": 480
+    },
+    "price": 0
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -17,
+    "p": -0.3,
+    "c": -0.4,
+    "f": -0.1,
+    "nut": {
+     "sat": 0,
+     "sugar": -0.4,
+     "sodium": -3.6
+    },
+    "price": 0
+   },
+   {
+    "key": "r:pickled-red-onions",
+    "id": "no-pickled-red-onions",
+    "kind": "r",
+    "name": "No Pickled Red Onions",
+    "kj": -24,
+    "p": -0.3,
+    "c": -0.8,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -0.8,
+     "sodium": -2
+    },
+    "price": 0
+   },
+   {
+    "key": "r:smoky-perinaise",
+    "id": "no-smoky-perinaise",
+    "kind": "r",
+    "name": "No Smoky PERinaise",
+    "kj": -360,
+    "p": -0.3,
+    "c": -4.3,
+    "f": -7.6,
+    "nut": {
+     "sat": -0.6,
+     "sugar": -3.0,
+     "sodium": -3030
+    },
+    "price": 0
+   },
+   {
+    "key": "a:cheddar-cheese",
+    "id": "add-cheddar-cheese",
+    "kind": "a",
+    "name": "Add Cheddar Cheese",
+    "kj": 264,
+    "p": 4,
+    "c": 0,
+    "f": 5.2,
+    "nut": {
+     "sat": 3.4,
+     "sugar": 0,
+     "sodium": 112
+    },
+    "price": 0
+   },
+   {
+    "key": "a:crispy-bacon",
+    "id": "add-crispy-bacon",
+    "kind": "a",
+    "name": "Add Crispy Bacon",
+    "kj": 337,
+    "p": 7.1,
+    "c": 0.2,
+    "f": 5.8,
+    "nut": {
+     "sat": 2.1,
+     "sugar": 0.2,
+     "sodium": 466
+    },
+    "price": 0
+   },
+   {
+    "key": "a:grilled-pineapple",
+    "id": "add-grilled-pineapple",
+    "kind": "a",
+    "name": "Add Grilled Pineapple",
+    "kj": 368,
+    "p": 0.3,
+    "c": 20.5,
+    "f": 0.1,
+    "nut": {
+     "sat": 0,
+     "sugar": 20,
+     "sodium": 11
+    },
+    "price": 0
+   },
+   {
+    "key": "a:fresh-avocado",
+    "id": "add-fresh-avocado",
+    "kind": "a",
+    "name": "Add Fresh Avocado",
+    "kj": 222,
+    "p": 0.5,
+    "c": 0.1,
+    "f": 5.7,
+    "nut": {
+     "sat": 1.2,
+     "sugar": 0.1,
+     "sodium": 1
+    },
+    "price": 0
+   },
+   {
+    "key": "f:grilled-halloumi-cheese",
+    "id": "add-grilled-halloumi-cheese",
+    "kind": "f",
+    "name": "Add Grilled Halloumi Cheese",
+    "kj": 766,
+    "p": 10.6,
+    "c": 2.3,
+    "f": 14.8,
+    "nut": {
+     "sat": 9.1,
+     "sugar": 1.3,
+     "sodium": 638
+    },
+    "price": 0
+   },
+   {
+    "key": "a:vegan-perinaise",
+    "id": "extra-vegan-perinaise",
+    "kind": "a",
+    "name": "Extra Vegan PERinaise",
+    "kj": 110,
+    "p": 0.1,
+    "c": 1.1,
+    "f": 2.4,
+    "nut": {
+     "sat": 0.2,
+     "sugar": 0.8,
+     "sodium": 74.1
+    },
+    "price": 0
+   },
+   {
+    "key": "a:whipped-feta",
+    "id": "add-whipped-feta",
+    "kind": "a",
+    "name": "Add Whipped Feta",
+    "kj": 592,
+    "p": 3.1,
+    "c": 1,
+    "f": 14,
+    "nut": {
+     "sat": 6.3,
+     "sugar": 0.8,
+     "sodium": 126.4
+    },
+    "price": 0
+   },
+   {
+    "key": "f:superfood-veggie-patty",
+    "id": "extra-superfood-veggie-patty",
+    "kind": "f",
+    "name": "Extra Superfood Veggie Patty",
+    "kj": 1081,
+    "p": 10.1,
+    "c": 30.1,
+    "f": 7.7,
+    "nut": {
+     "sat": 0.8,
+     "sugar": 2.9,
+     "sodium": 502
+    },
+    "price": 0
+   },
+   {
+    "key": "a:mayo",
+    "id": "extra-mayo",
+    "kind": "a",
+    "name": "Extra Mayo",
+    "kj": 386,
+    "p": 0.2,
+    "c": 1.2,
+    "f": 9.8,
+    "nut": {
+     "sat": 0.7,
+     "sugar": 1.1,
+     "sodium": 80
+    },
+    "price": 0
+   },
+   {
+    "key": "f:great-pretender-protein",
+    "id": "extra-great-pretender-protein",
+    "kind": "f",
+    "name": "Extra Great Pretender Protein",
+    "kj": 1244,
+    "p": 17.4,
+    "c": 9.5,
+    "f": 20.5,
+    "nut": {
+     "sat": 3.4,
+     "sugar": 1.3,
+     "sodium": 679
+    },
+    "price": 0
+   },
+   {
+    "key": "a:mild-perinaise",
+    "id": "extra-mild-perinaise",
+    "kind": "a",
+    "name": "Extra Mild PERinaise",
+    "kj": 90,
+    "p": 0.1,
+    "c": 1,
+    "f": 1.9,
+    "nut": {
+     "sat": 0.2,
+     "sugar": 0.8,
+     "sodium": 86
+    },
+    "price": 0
+   }
+  ],
+  "nandos:perinaise-classic": [
+   {
+    "key": "s:bun-toasted-pita",
+    "id": "swap-to-toasted-pita",
+    "kind": "s",
+    "name": "Swap to Toasted Pita",
+    "kj": 90,
+    "p": -0.2,
+    "c": 5.3,
+    "f": 0.1,
+    "nut": {
+     "sat": -0.5,
+     "sugar": 3.2,
+     "sodium": 130
+    },
+    "price": 0,
+    "est": true
+   },
+   {
+    "key": "s:bun-wrap",
+    "id": "swap-to-wrap",
+    "kind": "s",
+    "name": "Swap to Wrap",
+    "kj": 490,
+    "p": 5.8,
+    "c": 3.1,
+    "f": 9.0,
+    "nut": {
+     "sat": 3.6,
+     "sugar": 0.4,
+     "sodium": 370
+    },
+    "price": 0,
+    "est": true
+   },
+   {
+    "key": "s:patty-chicken-breast",
+    "id": "swap-to-chicken-breast",
+    "kind": "s",
+    "name": "Swap to Chicken Breast",
+    "kj": -390,
+    "p": -8.3,
+    "c": 0.1,
+    "f": -6.5,
+    "nut": {
+     "sat": -2.1,
+     "sugar": 0.0,
+     "sodium": 179
+    },
+    "price": 0
+   },
+   {
+    "key": "s:patty-veggie-patty",
+    "id": "swap-to-veggie-patty",
+    "kind": "s",
+    "name": "Swap to Veggie Patty",
+    "kj": 200,
+    "p": -20.9,
+    "c": 30.0,
+    "f": -1.6,
+    "nut": {
+     "sat": -1.7,
+     "sugar": 2.9,
+     "sodium": 229
+    },
+    "price": 0
+   },
+   {
+    "key": "s:patty-great-pretender",
+    "id": "swap-to-great-pretender",
+    "kind": "s",
+    "name": "Swap to Great Pretender",
+    "kj": 370,
+    "p": -13.6,
+    "c": 9.4,
+    "f": 11.3,
+    "nut": {
+     "sat": 0.8,
+     "sugar": 1.3,
+     "sodium": 409
+    },
+    "price": 0
+   },
+   {
+    "key": "r:mayo",
+    "id": "no-mayo",
+    "kind": "r",
+    "name": "No Mayo",
+    "kj": -146,
+    "p": -0.2,
+    "c": -2.5,
+    "f": -2.8,
+    "nut": {
+     "sat": -0.3,
+     "sugar": -1.8,
+     "sodium": -82.8
+    },
+    "price": 0
+   },
+   {
+    "key": "r:mild-perinaise",
+    "id": "no-mild-perinaise",
+    "kind": "r",
+    "name": "No Mild PERinaise",
+    "kj": -194,
+    "p": -0.2,
+    "c": -2,
+    "f": -4.2,
+    "nut": {
+     "sat": -0.3,
+     "sugar": -1.5,
+     "sodium": -174
+    },
+    "price": 0
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -17,
+    "p": -0.3,
+    "c": -0.4,
+    "f": -0.1,
+    "nut": {
+     "sat": 0,
+     "sugar": -0.4,
+     "sodium": -3.6
+    },
+    "price": 0
+   },
+   {
+    "key": "r:tomato",
+    "id": "no-tomato",
+    "kind": "r",
+    "name": "No Tomato",
+    "kj": -18,
+    "p": -0.3,
+    "c": -0.6,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -0.6,
+     "sodium": -2
+    },
+    "price": 0
+   },
+   {
+    "key": "a:cheddar-cheese",
+    "id": "add-cheddar-cheese",
+    "kind": "a",
+    "name": "Add Cheddar Cheese",
+    "kj": 264,
+    "p": 4,
+    "c": 0,
+    "f": 5.2,
+    "nut": {
+     "sat": 3.4,
+     "sugar": 0,
+     "sodium": 112
+    },
+    "price": 0
+   },
+   {
+    "key": "a:crispy-bacon",
+    "id": "add-crispy-bacon",
+    "kind": "a",
+    "name": "Add Crispy Bacon",
+    "kj": 337,
+    "p": 7.1,
+    "c": 0.2,
+    "f": 5.8,
+    "nut": {
+     "sat": 2.1,
+     "sugar": 0.2,
+     "sodium": 466
+    },
+    "price": 0
+   },
+   {
+    "key": "a:grilled-pineapple",
+    "id": "add-grilled-pineapple",
+    "kind": "a",
+    "name": "Add Grilled Pineapple",
+    "kj": 368,
+    "p": 0.3,
+    "c": 20.5,
+    "f": 0.1,
+    "nut": {
+     "sat": 0,
+     "sugar": 20,
+     "sodium": 11
+    },
+    "price": 0
+   },
+   {
+    "key": "f:peri-peri-chicken-breast",
+    "id": "add-peri-peri-chicken-breast",
+    "kind": "f",
+    "name": "Add PERi-PERi Chicken Breast",
+    "kj": 525,
+    "p": 22.7,
+    "c": 0.5,
+    "f": 3.6,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 0.3,
+     "sodium": 535
+    },
+    "price": 0
+   },
+   {
+    "key": "a:fresh-avocado",
+    "id": "add-fresh-avocado",
+    "kind": "a",
+    "name": "Add Fresh Avocado",
+    "kj": 222,
+    "p": 0.5,
+    "c": 0.1,
+    "f": 5.7,
+    "nut": {
+     "sat": 1.2,
+     "sugar": 0.1,
+     "sodium": 1
+    },
+    "price": 0
+   },
+   {
+    "key": "f:grilled-halloumi-cheese",
+    "id": "add-grilled-halloumi-cheese",
+    "kind": "f",
+    "name": "Add Grilled Halloumi Cheese",
+    "kj": 766,
+    "p": 10.6,
+    "c": 2.3,
+    "f": 14.8,
+    "nut": {
+     "sat": 9.1,
+     "sugar": 1.3,
+     "sodium": 638
+    },
+    "price": 0
+   },
+   {
+    "key": "f:peri-peri-chicken-tenders-x2",
+    "id": "add-peri-peri-chicken-tenders-x2",
+    "kind": "f",
+    "name": "Add PERi-PERi Chicken Tenders x2",
+    "kj": 461,
+    "p": 19.8,
+    "c": 0.3,
+    "f": 3.3,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 0.1,
+     "sodium": 475
+    },
+    "price": 0
+   },
+   {
+    "key": "a:vegan-perinaise",
+    "id": "extra-vegan-perinaise",
+    "kind": "a",
+    "name": "Extra Vegan PERinaise",
+    "kj": 110,
+    "p": 0.1,
+    "c": 1.1,
+    "f": 2.4,
+    "nut": {
+     "sat": 0.2,
+     "sugar": 0.8,
+     "sodium": 74.1
+    },
+    "price": 0
+   },
+   {
+    "key": "a:whipped-feta",
+    "id": "add-whipped-feta",
+    "kind": "a",
+    "name": "Add Whipped Feta",
+    "kj": 592,
+    "p": 3.1,
+    "c": 1,
+    "f": 14,
+    "nut": {
+     "sat": 6.3,
+     "sugar": 0.8,
+     "sodium": 126.4
+    },
+    "price": 0
+   },
+   {
+    "key": "f:superfood-veggie-patty",
+    "id": "extra-superfood-veggie-patty",
+    "kind": "f",
+    "name": "Extra Superfood Veggie Patty",
+    "kj": 1081,
+    "p": 10.1,
+    "c": 30.1,
+    "f": 7.7,
+    "nut": {
+     "sat": 0.8,
+     "sugar": 2.9,
+     "sodium": 502
+    },
+    "price": 0
+   },
+   {
+    "key": "a:mayo",
+    "id": "extra-mayo",
+    "kind": "a",
+    "name": "Extra Mayo",
+    "kj": 386,
+    "p": 0.2,
+    "c": 1.2,
+    "f": 9.8,
+    "nut": {
+     "sat": 0.7,
+     "sugar": 1.1,
+     "sodium": 80
+    },
+    "price": 0
+   },
+   {
+    "key": "f:great-pretender-protein",
+    "id": "extra-great-pretender-protein",
+    "kind": "f",
+    "name": "Extra Great Pretender Protein",
+    "kj": 1244,
+    "p": 17.4,
+    "c": 9.5,
+    "f": 20.5,
+    "nut": {
+     "sat": 3.4,
+     "sugar": 1.3,
+     "sodium": 679
+    },
+    "price": 0
+   },
+   {
+    "key": "a:mild-perinaise",
+    "id": "extra-mild-perinaise",
+    "kind": "a",
+    "name": "Extra Mild PERinaise",
+    "kj": 90,
+    "p": 0.1,
+    "c": 1,
+    "f": 1.9,
+    "nut": {
+     "sat": 0.2,
+     "sugar": 0.8,
+     "sodium": 86
+    },
+    "price": 0
+   }
+  ],
+  "nandos:supremo": [
+   {
+    "key": "s:bun-toasted-pita",
+    "id": "swap-to-toasted-pita",
+    "kind": "s",
+    "name": "Swap to Toasted Pita",
+    "kj": -230,
+    "p": 0.9,
+    "c": 2.3,
+    "f": -7.6,
+    "nut": {
+     "sat": -3.9,
+     "sugar": 2.9,
+     "sodium": -60
+    },
+    "price": 0
+   },
+   {
+    "key": "s:bun-portuguese-roll",
+    "id": "swap-to-portuguese-roll",
+    "kind": "s",
+    "name": "Swap to Portuguese Roll",
+    "kj": -320,
+    "p": 1.1,
+    "c": -3.0,
+    "f": -7.8,
+    "nut": {
+     "sat": -3.4,
+     "sugar": -0.3,
+     "sodium": -190
+    },
+    "price": 0
+   },
+   {
+    "key": "s:patty-chicken-breast",
+    "id": "swap-to-chicken-breast",
+    "kind": "s",
+    "name": "Swap to Chicken Breast",
+    "kj": -220,
+    "p": -1.4,
+    "c": 0.2,
+    "f": -5.3,
+    "nut": {
+     "sat": -1.9,
+     "sugar": 0.0,
+     "sodium": 350
+    },
+    "price": 0
+   },
+   {
+    "key": "s:patty-veggie-patty",
+    "id": "swap-to-veggie-patty",
+    "kind": "s",
+    "name": "Swap to Veggie Patty",
+    "kj": 210,
+    "p": -20.9,
+    "c": 30.0,
+    "f": -1.6,
+    "nut": {
+     "sat": -1.8,
+     "sugar": 2.8,
+     "sodium": 230
+    },
+    "price": 0
+   },
+   {
+    "key": "s:patty-great-pretender",
+    "id": "swap-to-great-pretender",
+    "kind": "s",
+    "name": "Swap to Great Pretender",
+    "kj": 370,
+    "p": -13.6,
+    "c": 9.4,
+    "f": 11.2,
+    "nut": {
+     "sat": 0.8,
+     "sugar": 1.3,
+     "sodium": 400
+    },
+    "price": 0
+   },
+   {
+    "key": "a:crispy-bacon",
+    "id": "add-crispy-bacon",
+    "kind": "a",
+    "name": "Add Crispy Bacon",
+    "kj": 337,
+    "p": 7.1,
+    "c": 0.2,
+    "f": 5.8,
+    "nut": {
+     "sat": 2.1,
+     "sugar": 0.2,
+     "sodium": 466
+    },
+    "price": 0
+   },
+   {
+    "key": "a:grilled-pineapple",
+    "id": "add-grilled-pineapple",
+    "kind": "a",
+    "name": "Add Grilled Pineapple",
+    "kj": 368,
+    "p": 0.3,
+    "c": 20.5,
+    "f": 0.1,
+    "nut": {
+     "sat": 0,
+     "sugar": 20,
+     "sodium": 11
+    },
+    "price": 0
+   },
+   {
+    "key": "a:fresh-avocado",
+    "id": "add-fresh-avocado",
+    "kind": "a",
+    "name": "Add Fresh Avocado",
+    "kj": 222,
+    "p": 0.5,
+    "c": 0.1,
+    "f": 5.7,
+    "nut": {
+     "sat": 1.2,
+     "sugar": 0.1,
+     "sodium": 1
+    },
+    "price": 0
+   },
+   {
+    "key": "f:peri-peri-chicken-tenders-x2",
+    "id": "add-peri-peri-chicken-tenders-x2",
+    "kind": "f",
+    "name": "Add PERi-PERi Chicken Tenders x2",
+    "kj": 461,
+    "p": 19.8,
+    "c": 0.3,
+    "f": 3.3,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 0.1,
+     "sodium": 475
+    },
+    "price": 0
+   },
+   {
+    "key": "f:grilled-halloumi-cheese",
+    "id": "add-grilled-halloumi-cheese",
+    "kind": "f",
+    "name": "Add Grilled Halloumi Cheese",
+    "kj": 766,
+    "p": 10.6,
+    "c": 2.3,
+    "f": 14.8,
+    "nut": {
+     "sat": 9.1,
+     "sugar": 1.3,
+     "sodium": 638
+    },
+    "price": 0
+   },
+   {
+    "key": "a:cheddar-cheese",
+    "id": "add-cheddar-cheese",
+    "kind": "a",
+    "name": "Add Cheddar Cheese",
+    "kj": 264,
+    "p": 4,
+    "c": 0,
+    "f": 5.2,
+    "nut": {
+     "sat": 3.4,
+     "sugar": 0,
+     "sodium": 112
+    },
+    "price": 0
+   },
+   {
+    "key": "f:peri-peri-chicken-breast",
+    "id": "add-peri-peri-chicken-breast",
+    "kind": "f",
+    "name": "Add PERi-PERi Chicken Breast",
+    "kj": 525,
+    "p": 22.7,
+    "c": 0.5,
+    "f": 3.6,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 0.3,
+     "sodium": 535
+    },
+    "price": 0
+   },
+   {
+    "key": "a:whipped-feta",
+    "id": "add-whipped-feta",
+    "kind": "a",
+    "name": "Add Whipped Feta",
+    "kj": 592,
+    "p": 3.1,
+    "c": 1,
+    "f": 14,
+    "nut": {
+     "sat": 6.3,
+     "sugar": 0.8,
+     "sodium": 126.4
+    },
+    "price": 0
+   },
+   {
+    "key": "a:vegan-perinaise",
+    "id": "extra-vegan-perinaise",
+    "kind": "a",
+    "name": "Extra Vegan PERinaise",
+    "kj": 110,
+    "p": 0.1,
+    "c": 1.1,
+    "f": 2.4,
+    "nut": {
+     "sat": 0.2,
+     "sugar": 0.8,
+     "sodium": 74.1
+    },
+    "price": 0
+   },
+   {
+    "key": "f:superfood-veggie-patty",
+    "id": "extra-superfood-veggie-patty",
+    "kind": "f",
+    "name": "Extra Superfood Veggie Patty",
+    "kj": 1081,
+    "p": 10.1,
+    "c": 30.1,
+    "f": 7.7,
+    "nut": {
+     "sat": 0.8,
+     "sugar": 2.9,
+     "sodium": 502
+    },
+    "price": 0
+   },
+   {
+    "key": "a:mayo",
+    "id": "extra-mayo",
+    "kind": "a",
+    "name": "Extra Mayo",
+    "kj": 386,
+    "p": 0.2,
+    "c": 1.2,
+    "f": 9.8,
+    "nut": {
+     "sat": 0.7,
+     "sugar": 1.1,
+     "sodium": 80
+    },
+    "price": 0
+   },
+   {
+    "key": "a:mild-perinaise",
+    "id": "extra-mild-perinaise",
+    "kind": "a",
+    "name": "Extra Mild PERinaise",
+    "kj": 90,
+    "p": 0.1,
+    "c": 1,
+    "f": 1.9,
+    "nut": {
+     "sat": 0.2,
+     "sugar": 0.8,
+     "sodium": 86
+    },
+    "price": 0
+   },
+   {
+    "key": "f:great-pretender-protein",
+    "id": "extra-great-pretender-protein",
+    "kind": "f",
+    "name": "Extra Great Pretender Protein",
+    "kj": 1244,
+    "p": 17.4,
+    "c": 9.5,
+    "f": 20.5,
+    "nut": {
+     "sat": 3.4,
+     "sugar": 1.3,
+     "sodium": 679
+    },
+    "price": 0
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -17,
+    "p": -0.3,
+    "c": -0.4,
+    "f": -0.1,
+    "nut": {
+     "sat": 0,
+     "sugar": -0.4,
+     "sodium": -3.6
+    },
+    "price": 0
+   },
+   {
+    "key": "r:tomato",
+    "id": "no-tomato",
+    "kind": "r",
+    "name": "No Tomato",
+    "kj": -18,
+    "p": -0.3,
+    "c": -0.6,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -0.6,
+     "sodium": -2
+    },
+    "price": 0
+   },
+   {
+    "key": "r:cheese",
+    "id": "no-cheese",
+    "kind": "r",
+    "name": "No Cheese",
+    "kj": -264,
+    "p": -4,
+    "c": 0,
+    "f": -5.2,
+    "nut": {
+     "sat": -3.4,
+     "sugar": 0,
+     "sodium": -112
+    },
+    "price": 0
+   },
+   {
+    "key": "r:smoky-capsicum-relish",
+    "id": "no-smoky-capsicum-relish",
+    "kind": "r",
+    "name": "No Smoky Capsicum Relish",
+    "kj": -98,
+    "p": -0.2,
+    "c": -5.2,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -4.7,
+     "sodium": -24.8
+    },
+    "price": 0
+   },
+   {
+    "key": "r:mayo",
+    "id": "no-mayo",
+    "kind": "r",
+    "name": "No Mayo",
+    "kj": -146,
+    "p": -0.2,
+    "c": -2.5,
+    "f": -2.8,
+    "nut": {
+     "sat": -0.3,
+     "sugar": -1.8,
+     "sodium": -82.8
+    },
+    "price": 0
+   }
+  ],
+  "nandos:the-halloumi": [
+   {
+    "key": "s:bun-toasted-pita",
+    "id": "swap-to-toasted-pita",
+    "kind": "s",
+    "name": "Swap to Toasted Pita",
+    "kj": -220,
+    "p": 0.9,
+    "c": 2.3,
+    "f": -7.6,
+    "nut": {
+     "sat": -3.9,
+     "sugar": 2.8,
+     "sodium": -50
+    },
+    "price": 0
+   },
+   {
+    "key": "s:bun-portuguese-roll",
+    "id": "swap-to-portuguese-roll",
+    "kind": "s",
+    "name": "Swap to Portuguese Roll",
+    "kj": -300,
+    "p": 1.4,
+    "c": -2.6,
+    "f": -7.7,
+    "nut": {
+     "sat": -3.3,
+     "sugar": 0.0,
+     "sodium": -180
+    },
+    "price": 0
+   },
+   {
+    "key": "s:patty-chicken-breast",
+    "id": "swap-to-chicken-breast",
+    "kind": "s",
+    "name": "Swap to Chicken Breast",
+    "kj": -270,
+    "p": -1.3,
+    "c": -0.7,
+    "f": -5.6,
+    "nut": {
+     "sat": -2.0,
+     "sugar": -1.4,
+     "sodium": 340
+    },
+    "price": 0
+   },
+   {
+    "key": "s:patty-veggie-patty",
+    "id": "swap-to-veggie-patty",
+    "kind": "s",
+    "name": "Swap to Veggie Patty",
+    "kj": 160,
+    "p": -20.9,
+    "c": 29.0,
+    "f": -1.9,
+    "nut": {
+     "sat": -1.9,
+     "sugar": 1.4,
+     "sodium": 210
+    },
+    "price": 0
+   },
+   {
+    "key": "s:patty-great-pretender",
+    "id": "swap-to-great-pretender",
+    "kind": "s",
+    "name": "Swap to Great Pretender",
+    "kj": 320,
+    "p": -13.5,
+    "c": 8.4,
+    "f": 11.0,
+    "nut": {
+     "sat": 0.6,
+     "sugar": -0.2,
+     "sodium": 390
+    },
+    "price": 0
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -17,
+    "p": -0.3,
+    "c": -0.4,
+    "f": -0.1,
+    "nut": {
+     "sat": 0,
+     "sugar": -0.4,
+     "sodium": -3.6
+    },
+    "price": 0
+   },
+   {
+    "key": "r:mayo",
+    "id": "no-mayo",
+    "kind": "r",
+    "name": "No Mayo",
+    "kj": -146,
+    "p": -0.2,
+    "c": -2.5,
+    "f": -2.8,
+    "nut": {
+     "sat": -0.3,
+     "sugar": -1.8,
+     "sodium": -82.8
+    },
+    "price": 0
+   },
+   {
+    "key": "r:caramelised-onion-relish",
+    "id": "no-caramelised-onion-relish",
+    "kind": "r",
+    "name": "No Caramelised Onion Relish",
+    "kj": -57,
+    "p": -0.2,
+    "c": -4.2,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -3.2,
+     "sodium": -45.3
+    },
+    "price": 0
+   },
+   {
+    "key": "r:halloumi",
+    "id": "no-halloumi",
+    "kind": "r",
+    "name": "No Halloumi",
+    "kj": -730,
+    "p": -11.9,
+    "c": -1,
+    "f": -13.8,
+    "nut": {
+     "sat": -8.3,
+     "sugar": -1,
+     "sodium": -1340
+    },
+    "price": 0
+   },
+   {
+    "key": "a:fresh-avocado",
+    "id": "add-fresh-avocado",
+    "kind": "a",
+    "name": "Add Fresh Avocado",
+    "kj": 222,
+    "p": 0.5,
+    "c": 0.1,
+    "f": 5.7,
+    "nut": {
+     "sat": 1.2,
+     "sugar": 0.1,
+     "sodium": 1
+    },
+    "price": 0
+   },
+   {
+    "key": "a:crispy-bacon",
+    "id": "add-crispy-bacon",
+    "kind": "a",
+    "name": "Add Crispy Bacon",
+    "kj": 337,
+    "p": 7.1,
+    "c": 0.2,
+    "f": 5.8,
+    "nut": {
+     "sat": 2.1,
+     "sugar": 0.2,
+     "sodium": 466
+    },
+    "price": 0
+   },
+   {
+    "key": "a:grilled-pineapple",
+    "id": "add-grilled-pineapple",
+    "kind": "a",
+    "name": "Add Grilled Pineapple",
+    "kj": 368,
+    "p": 0.3,
+    "c": 20.5,
+    "f": 0.1,
+    "nut": {
+     "sat": 0,
+     "sugar": 20,
+     "sodium": 11
+    },
+    "price": 0
+   },
+   {
+    "key": "f:grilled-halloumi-cheese",
+    "id": "add-grilled-halloumi-cheese",
+    "kind": "f",
+    "name": "Add Grilled Halloumi Cheese",
+    "kj": 766,
+    "p": 10.6,
+    "c": 2.3,
+    "f": 14.8,
+    "nut": {
+     "sat": 9.1,
+     "sugar": 1.3,
+     "sodium": 638
+    },
+    "price": 0
+   },
+   {
+    "key": "f:peri-peri-chicken-breast",
+    "id": "add-peri-peri-chicken-breast",
+    "kind": "f",
+    "name": "Add PERi-PERi Chicken Breast",
+    "kj": 525,
+    "p": 22.7,
+    "c": 0.5,
+    "f": 3.6,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 0.3,
+     "sodium": 535
+    },
+    "price": 0
+   },
+   {
+    "key": "a:cheddar-cheese",
+    "id": "add-cheddar-cheese",
+    "kind": "a",
+    "name": "Add Cheddar Cheese",
+    "kj": 264,
+    "p": 4,
+    "c": 0,
+    "f": 5.2,
+    "nut": {
+     "sat": 3.4,
+     "sugar": 0,
+     "sodium": 112
+    },
+    "price": 0
+   },
+   {
+    "key": "f:peri-peri-chicken-tenders-x2",
+    "id": "add-peri-peri-chicken-tenders-x2",
+    "kind": "f",
+    "name": "Add PERi-PERi Chicken Tenders x2",
+    "kj": 461,
+    "p": 19.8,
+    "c": 0.3,
+    "f": 3.3,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 0.1,
+     "sodium": 475
+    },
+    "price": 0
+   },
+   {
+    "key": "a:whipped-feta",
+    "id": "add-whipped-feta",
+    "kind": "a",
+    "name": "Add Whipped Feta",
+    "kj": 592,
+    "p": 3.1,
+    "c": 1,
+    "f": 14,
+    "nut": {
+     "sat": 6.3,
+     "sugar": 0.8,
+     "sodium": 126.4
+    },
+    "price": 0
+   },
+   {
+    "key": "f:great-pretender-protein",
+    "id": "extra-great-pretender-protein",
+    "kind": "f",
+    "name": "Extra Great Pretender Protein",
+    "kj": 1244,
+    "p": 17.4,
+    "c": 9.5,
+    "f": 20.5,
+    "nut": {
+     "sat": 3.4,
+     "sugar": 1.3,
+     "sodium": 679
+    },
+    "price": 0
+   },
+   {
+    "key": "a:vegan-perinaise",
+    "id": "extra-vegan-perinaise",
+    "kind": "a",
+    "name": "Extra Vegan PERinaise",
+    "kj": 110,
+    "p": 0.1,
+    "c": 1.1,
+    "f": 2.4,
+    "nut": {
+     "sat": 0.2,
+     "sugar": 0.8,
+     "sodium": 74.1
+    },
+    "price": 0
+   },
+   {
+    "key": "a:mild-perinaise",
+    "id": "extra-mild-perinaise",
+    "kind": "a",
+    "name": "Extra Mild PERinaise",
+    "kj": 90,
+    "p": 0.1,
+    "c": 1,
+    "f": 1.9,
+    "nut": {
+     "sat": 0.2,
+     "sugar": 0.8,
+     "sodium": 86
+    },
+    "price": 0
+   },
+   {
+    "key": "f:superfood-veggie-patty",
+    "id": "extra-superfood-veggie-patty",
+    "kind": "f",
+    "name": "Extra Superfood Veggie Patty",
+    "kj": 1081,
+    "p": 10.1,
+    "c": 30.1,
+    "f": 7.7,
+    "nut": {
+     "sat": 0.8,
+     "sugar": 2.9,
+     "sodium": 502
+    },
+    "price": 0
+   },
+   {
+    "key": "a:mayo",
+    "id": "extra-mayo",
+    "kind": "a",
+    "name": "Extra Mayo",
+    "kj": 386,
+    "p": 0.2,
+    "c": 1.2,
+    "f": 9.8,
+    "nut": {
+     "sat": 0.7,
+     "sugar": 1.1,
+     "sodium": 80
+    },
+    "price": 0
+   }
+  ],
+  "nandos:avo-goodness": [
+   {
+    "key": "s:bun-portuguese-roll",
+    "id": "swap-to-portuguese-roll",
+    "kind": "s",
+    "name": "Swap to Portuguese Roll",
+    "kj": -320,
+    "p": 1.1,
+    "c": -3.0,
+    "f": -7.7,
+    "nut": {
+     "sat": -3.4,
+     "sugar": -0.3,
+     "sodium": -188
+    },
+    "price": 0
+   },
+   {
+    "key": "s:bun-toasted-pita",
+    "id": "swap-to-toasted-pita",
+    "kind": "s",
+    "name": "Swap to Toasted Pita",
+    "kj": -230,
+    "p": 0.9,
+    "c": 2.3,
+    "f": -7.5,
+    "nut": {
+     "sat": -3.9,
+     "sugar": 2.9,
+     "sodium": -56
+    },
+    "price": 0
+   },
+   {
+    "key": "s:patty-chicken-breast",
+    "id": "swap-to-chicken-breast",
+    "kind": "s",
+    "name": "Swap to Chicken Breast",
+    "kj": -210,
+    "p": -1.4,
+    "c": 0.2,
+    "f": -5.3,
+    "nut": {
+     "sat": -1.9,
+     "sugar": 0.1,
+     "sodium": 360
+    },
+    "price": 0
+   },
+   {
+    "key": "s:patty-veggie-patty",
+    "id": "swap-to-veggie-patty",
+    "kind": "s",
+    "name": "Swap to Veggie Patty",
+    "kj": 210,
+    "p": -20.9,
+    "c": 30.0,
+    "f": -1.6,
+    "nut": {
+     "sat": -1.7,
+     "sugar": 2.9,
+     "sodium": 230
+    },
+    "price": 0
+   },
+   {
+    "key": "s:patty-great-pretender",
+    "id": "swap-to-great-pretender",
+    "kind": "s",
+    "name": "Swap to Great Pretender",
+    "kj": 370,
+    "p": -13.6,
+    "c": 9.3,
+    "f": 11.3,
+    "nut": {
+     "sat": 0.8,
+     "sugar": 1.3,
+     "sodium": 410
+    },
+    "price": 0
+   },
+   {
+    "key": "r:vegan-perinaise",
+    "id": "no-vegan-perinaise",
+    "kind": "r",
+    "name": "No Vegan PERinaise",
+    "kj": -219,
+    "p": -0.2,
+    "c": -2.2,
+    "f": -4.8,
+    "nut": {
+     "sat": -0.3,
+     "sugar": -1.6,
+     "sodium": -148.2
+    },
+    "price": 0
+   },
+   {
+    "key": "r:smoky-capsicum-relish",
+    "id": "no-smoky-capsicum-relish",
+    "kind": "r",
+    "name": "No Smoky Capsicum Relish",
+    "kj": -98,
+    "p": -0.2,
+    "c": -5.2,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -4.7,
+     "sodium": -24.8
+    },
+    "price": 0
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -17,
+    "p": -0.3,
+    "c": -0.4,
+    "f": -0.1,
+    "nut": {
+     "sat": 0,
+     "sugar": -0.4,
+     "sodium": -3.6
+    },
+    "price": 0
+   },
+   {
+    "key": "r:tomato",
+    "id": "no-tomato",
+    "kind": "r",
+    "name": "No Tomato",
+    "kj": -18,
+    "p": -0.3,
+    "c": -0.6,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -0.6,
+     "sodium": -2
+    },
+    "price": 0
+   },
+   {
+    "key": "r:avocado",
+    "id": "no-avocado",
+    "kind": "r",
+    "name": "No Avocado",
+    "kj": -133,
+    "p": -0.3,
+    "c": -0.1,
+    "f": -3.4,
+    "nut": {
+     "sat": -0.7,
+     "sugar": -0.1,
+     "sodium": -1
+    },
+    "price": 0
+   },
+   {
+    "key": "a:crispy-bacon",
+    "id": "add-crispy-bacon",
+    "kind": "a",
+    "name": "Add Crispy Bacon",
+    "kj": 337,
+    "p": 7.1,
+    "c": 0.2,
+    "f": 5.8,
+    "nut": {
+     "sat": 2.1,
+     "sugar": 0.2,
+     "sodium": 466
+    },
+    "price": 0
+   },
+   {
+    "key": "a:cheddar-cheese",
+    "id": "add-cheddar-cheese",
+    "kind": "a",
+    "name": "Add Cheddar Cheese",
+    "kj": 264,
+    "p": 4,
+    "c": 0,
+    "f": 5.2,
+    "nut": {
+     "sat": 3.4,
+     "sugar": 0,
+     "sodium": 112
+    },
+    "price": 0
+   },
+   {
+    "key": "a:grilled-pineapple",
+    "id": "add-grilled-pineapple",
+    "kind": "a",
+    "name": "Add Grilled Pineapple",
+    "kj": 368,
+    "p": 0.3,
+    "c": 20.5,
+    "f": 0.1,
+    "nut": {
+     "sat": 0,
+     "sugar": 20,
+     "sodium": 11
+    },
+    "price": 0
+   },
+   {
+    "key": "f:grilled-halloumi-cheese",
+    "id": "add-grilled-halloumi-cheese",
+    "kind": "f",
+    "name": "Add Grilled Halloumi Cheese",
+    "kj": 766,
+    "p": 10.6,
+    "c": 2.3,
+    "f": 14.8,
+    "nut": {
+     "sat": 9.1,
+     "sugar": 1.3,
+     "sodium": 638
+    },
+    "price": 0
+   },
+   {
+    "key": "a:whipped-feta",
+    "id": "add-whipped-feta",
+    "kind": "a",
+    "name": "Add Whipped Feta",
+    "kj": 592,
+    "p": 3.1,
+    "c": 1,
+    "f": 14,
+    "nut": {
+     "sat": 6.3,
+     "sugar": 0.8,
+     "sodium": 126.4
+    },
+    "price": 0
+   },
+   {
+    "key": "f:peri-peri-chicken-tenders-x2",
+    "id": "add-peri-peri-chicken-tenders-x2",
+    "kind": "f",
+    "name": "Add PERi-PERi Chicken Tenders x2",
+    "kj": 461,
+    "p": 19.8,
+    "c": 0.3,
+    "f": 3.3,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 0.1,
+     "sodium": 475
+    },
+    "price": 0
+   },
+   {
+    "key": "a:fresh-avocado",
+    "id": "add-fresh-avocado",
+    "kind": "a",
+    "name": "Add Fresh Avocado",
+    "kj": 222,
+    "p": 0.5,
+    "c": 0.1,
+    "f": 5.7,
+    "nut": {
+     "sat": 1.2,
+     "sugar": 0.1,
+     "sodium": 1
+    },
+    "price": 0
+   },
+   {
+    "key": "f:peri-peri-chicken-breast",
+    "id": "add-peri-peri-chicken-breast",
+    "kind": "f",
+    "name": "Add PERi-PERi Chicken Breast",
+    "kj": 525,
+    "p": 22.7,
+    "c": 0.5,
+    "f": 3.6,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 0.3,
+     "sodium": 535
+    },
+    "price": 0
+   },
+   {
+    "key": "a:vegan-perinaise",
+    "id": "extra-vegan-perinaise",
+    "kind": "a",
+    "name": "Extra Vegan PERinaise",
+    "kj": 110,
+    "p": 0.1,
+    "c": 1.1,
+    "f": 2.4,
+    "nut": {
+     "sat": 0.2,
+     "sugar": 0.8,
+     "sodium": 74.1
+    },
+    "price": 0
+   },
+   {
+    "key": "f:superfood-veggie-patty",
+    "id": "extra-superfood-veggie-patty",
+    "kind": "f",
+    "name": "Extra Superfood Veggie Patty",
+    "kj": 1081,
+    "p": 10.1,
+    "c": 30.1,
+    "f": 7.7,
+    "nut": {
+     "sat": 0.8,
+     "sugar": 2.9,
+     "sodium": 502
+    },
+    "price": 0
+   },
+   {
+    "key": "a:mayo",
+    "id": "extra-mayo",
+    "kind": "a",
+    "name": "Extra Mayo",
+    "kj": 386,
+    "p": 0.2,
+    "c": 1.2,
+    "f": 9.8,
+    "nut": {
+     "sat": 0.7,
+     "sugar": 1.1,
+     "sodium": 80
+    },
+    "price": 0
+   },
+   {
+    "key": "a:mild-perinaise",
+    "id": "extra-mild-perinaise",
+    "kind": "a",
+    "name": "Extra Mild PERinaise",
+    "kj": 90,
+    "p": 0.1,
+    "c": 1,
+    "f": 1.9,
+    "nut": {
+     "sat": 0.2,
+     "sugar": 0.8,
+     "sodium": 86
+    },
+    "price": 0
+   },
+   {
+    "key": "f:great-pretender-protein",
+    "id": "extra-great-pretender-protein",
+    "kind": "f",
+    "name": "Extra Great Pretender Protein",
+    "kj": 1244,
+    "p": 17.4,
+    "c": 9.5,
+    "f": 20.5,
+    "nut": {
+     "sat": 3.4,
+     "sugar": 1.3,
+     "sodium": 679
+    },
+    "price": 0
+   }
+  ],
+  "nandos:double-cheese-bacon": [
+   {
+    "key": "s:bun-toasted-pita",
+    "id": "swap-to-toasted-pita",
+    "kind": "s",
+    "name": "Swap to Toasted Pita",
+    "kj": 90,
+    "p": -0.1,
+    "c": 5.3,
+    "f": 0.2,
+    "nut": {
+     "sat": -0.5,
+     "sugar": 3.2,
+     "sodium": 130
+    },
+    "price": 0
+   },
+   {
+    "key": "s:bun-wrap",
+    "id": "swap-to-wrap",
+    "kind": "s",
+    "name": "Swap to Wrap",
+    "kj": 320,
+    "p": -1.1,
+    "c": 3.0,
+    "f": 7.8,
+    "nut": {
+     "sat": 3.4,
+     "sugar": 0.3,
+     "sodium": 190
+    },
+    "price": 0
+   },
+   {
+    "key": "s:patty-chicken-breast",
+    "id": "swap-to-chicken-breast",
+    "kind": "s",
+    "name": "Swap to Chicken Breast",
+    "kj": -380,
+    "p": -9.8,
+    "c": 0.2,
+    "f": -5.9,
+    "nut": {
+     "sat": -2.0,
+     "sugar": 0.1,
+     "sodium": 220
+    },
+    "price": 0
+   },
+   {
+    "key": "s:patty-veggie-patty",
+    "id": "swap-to-veggie-patty",
+    "kind": "s",
+    "name": "Swap to Veggie Patty",
+    "kj": 210,
+    "p": -20.9,
+    "c": 30.0,
+    "f": -1.6,
+    "nut": {
+     "sat": -1.7,
+     "sugar": 2.9,
+     "sodium": 230
+    },
+    "price": 0
+   },
+   {
+    "key": "s:patty-great-pretender",
+    "id": "swap-to-great-pretender",
+    "kind": "s",
+    "name": "Swap to Great Pretender",
+    "kj": 380,
+    "p": -13.6,
+    "c": 9.4,
+    "f": 11.3,
+    "nut": {
+     "sat": 0.8,
+     "sugar": 1.3,
+     "sodium": 400
+    },
+    "price": 0
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -17,
+    "p": -0.3,
+    "c": -0.4,
+    "f": -0.1,
+    "nut": {
+     "sat": 0,
+     "sugar": -0.4,
+     "sodium": -3.6
+    },
+    "price": 0
+   },
+   {
+    "key": "r:mayo",
+    "id": "no-mayo",
+    "kind": "r",
+    "name": "No Mayo",
+    "kj": -146,
+    "p": -0.2,
+    "c": -2.5,
+    "f": -2.8,
+    "nut": {
+     "sat": -0.3,
+     "sugar": -1.8,
+     "sodium": -82.8
+    },
+    "price": 0
+   },
+   {
+    "key": "r:caramelised-onion-relish",
+    "id": "no-caramelised-onion-relish",
+    "kind": "r",
+    "name": "No Caramelised Onion Relish",
+    "kj": -57,
+    "p": -0.2,
+    "c": -4.2,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -3.2,
+     "sodium": -45.3
+    },
+    "price": 0
+   },
+   {
+    "key": "r:bacon",
+    "id": "no-bacon",
+    "kind": "r",
+    "name": "No Bacon",
+    "kj": -96,
+    "p": -2,
+    "c": -0.1,
+    "f": -1.7,
+    "nut": {
+     "sat": -0.6,
+     "sugar": -0.1,
+     "sodium": -133
+    },
+    "price": 0
+   },
+   {
+    "key": "r:tomato",
+    "id": "no-tomato",
+    "kind": "r",
+    "name": "No Tomato",
+    "kj": -18,
+    "p": -0.3,
+    "c": -0.6,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -0.6,
+     "sodium": -2
+    },
+    "price": 0
+   },
+   {
+    "key": "r:cheese",
+    "id": "no-cheese",
+    "kind": "r",
+    "name": "No Cheese",
+    "kj": -264,
+    "p": -4,
+    "c": 0,
+    "f": -5.2,
+    "nut": {
+     "sat": -3.4,
+     "sugar": 0,
+     "sodium": -112
+    },
+    "price": 0
+   },
+   {
+    "key": "a:grilled-pineapple",
+    "id": "add-grilled-pineapple",
+    "kind": "a",
+    "name": "Add Grilled Pineapple",
+    "kj": 368,
+    "p": 0.3,
+    "c": 20.5,
+    "f": 0.1,
+    "nut": {
+     "sat": 0,
+     "sugar": 20,
+     "sodium": 11
+    },
+    "price": 0
+   },
+   {
+    "key": "a:fresh-avocado",
+    "id": "add-fresh-avocado",
+    "kind": "a",
+    "name": "Add Fresh Avocado",
+    "kj": 222,
+    "p": 0.5,
+    "c": 0.1,
+    "f": 5.7,
+    "nut": {
+     "sat": 1.2,
+     "sugar": 0.1,
+     "sodium": 1
+    },
+    "price": 0
+   },
+   {
+    "key": "f:grilled-halloumi-cheese",
+    "id": "add-grilled-halloumi-cheese",
+    "kind": "f",
+    "name": "Add Grilled Halloumi Cheese",
+    "kj": 766,
+    "p": 10.6,
+    "c": 2.3,
+    "f": 14.8,
+    "nut": {
+     "sat": 9.1,
+     "sugar": 1.3,
+     "sodium": 638
+    },
+    "price": 0
+   },
+   {
+    "key": "f:peri-peri-chicken-breast",
+    "id": "add-peri-peri-chicken-breast",
+    "kind": "f",
+    "name": "Add PERi-PERi Chicken Breast",
+    "kj": 525,
+    "p": 22.7,
+    "c": 0.5,
+    "f": 3.6,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 0.3,
+     "sodium": 535
+    },
+    "price": 0
+   },
+   {
+    "key": "a:cheddar-cheese",
+    "id": "add-cheddar-cheese",
+    "kind": "a",
+    "name": "Add Cheddar Cheese",
+    "kj": 264,
+    "p": 4,
+    "c": 0,
+    "f": 5.2,
+    "nut": {
+     "sat": 3.4,
+     "sugar": 0,
+     "sodium": 112
+    },
+    "price": 0
+   },
+   {
+    "key": "f:peri-peri-chicken-tenders-x2",
+    "id": "add-peri-peri-chicken-tenders-x2",
+    "kind": "f",
+    "name": "Add PERi-PERi Chicken Tenders x2",
+    "kj": 461,
+    "p": 19.8,
+    "c": 0.3,
+    "f": 3.3,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 0.1,
+     "sodium": 475
+    },
+    "price": 0
+   },
+   {
+    "key": "a:whipped-feta",
+    "id": "add-whipped-feta",
+    "kind": "a",
+    "name": "Add Whipped Feta",
+    "kj": 592,
+    "p": 3.1,
+    "c": 1,
+    "f": 14,
+    "nut": {
+     "sat": 6.3,
+     "sugar": 0.8,
+     "sodium": 126.4
+    },
+    "price": 0
+   },
+   {
+    "key": "a:vegan-perinaise",
+    "id": "extra-vegan-perinaise",
+    "kind": "a",
+    "name": "Extra Vegan PERinaise",
+    "kj": 110,
+    "p": 0.1,
+    "c": 1.1,
+    "f": 2.4,
+    "nut": {
+     "sat": 0.2,
+     "sugar": 0.8,
+     "sodium": 74.1
+    },
+    "price": 0
+   },
+   {
+    "key": "f:superfood-veggie-patty",
+    "id": "extra-superfood-veggie-patty",
+    "kind": "f",
+    "name": "Extra Superfood Veggie Patty",
+    "kj": 1081,
+    "p": 10.1,
+    "c": 30.1,
+    "f": 7.7,
+    "nut": {
+     "sat": 0.8,
+     "sugar": 2.9,
+     "sodium": 502
+    },
+    "price": 0
+   },
+   {
+    "key": "a:crispy-bacon",
+    "id": "add-crispy-bacon",
+    "kind": "a",
+    "name": "Add Crispy Bacon",
+    "kj": 337,
+    "p": 7.1,
+    "c": 0.2,
+    "f": 5.8,
+    "nut": {
+     "sat": 2.1,
+     "sugar": 0.2,
+     "sodium": 466
+    },
+    "price": 0
+   },
+   {
+    "key": "a:mild-perinaise",
+    "id": "extra-mild-perinaise",
+    "kind": "a",
+    "name": "Extra Mild PERinaise",
+    "kj": 90,
+    "p": 0.1,
+    "c": 1,
+    "f": 1.9,
+    "nut": {
+     "sat": 0.2,
+     "sugar": 0.8,
+     "sodium": 86
+    },
+    "price": 0
+   },
+   {
+    "key": "a:mayo",
+    "id": "extra-mayo",
+    "kind": "a",
+    "name": "Extra Mayo",
+    "kj": 386,
+    "p": 0.2,
+    "c": 1.2,
+    "f": 9.8,
+    "nut": {
+     "sat": 0.7,
+     "sugar": 1.1,
+     "sodium": 80
+    },
+    "price": 0
+   },
+   {
+    "key": "f:great-pretender-protein",
+    "id": "extra-great-pretender-protein",
+    "kind": "f",
+    "name": "Extra Great Pretender Protein",
+    "kj": 1244,
+    "p": 17.4,
+    "c": 9.5,
+    "f": 20.5,
+    "nut": {
+     "sat": 3.4,
+     "sugar": 1.3,
+     "sodium": 679
+    },
+    "price": 0
+   }
+  ],
+  "nandos:grande-loaded-chips": [
+   {
+    "key": "a:crispy-bacon",
+    "id": "add-crispy-bacon",
+    "kind": "a",
+    "name": "Add Crispy Bacon",
+    "kj": 337,
+    "p": 7.1,
+    "c": 0.2,
+    "f": 5.8,
+    "nut": {
+     "sat": 2.1,
+     "sugar": 0.2,
+     "sodium": 466
+    },
+    "price": 0
+   },
+   {
+    "key": "a:grated-parmesan",
+    "id": "extra-grated-parmesan",
+    "kind": "a",
+    "name": "Extra Grated Parmesan",
+    "kj": 77,
+    "p": 1.6,
+    "c": 0,
+    "f": 1.3,
+    "nut": {
+     "sat": 0.9,
+     "sugar": 0,
+     "sodium": 43
+    },
+    "price": 0
+   },
+   {
+    "key": "a:lemon-tahini-dressing",
+    "id": "extra-lemon-tahini-dressing",
+    "kind": "a",
+    "name": "Extra Lemon Tahini Dressing",
+    "kj": 276,
+    "p": 1.6,
+    "c": 2.3,
+    "f": 5.9,
+    "nut": {
+     "sat": 1,
+     "sugar": 0.6,
+     "sodium": 228.3
+    },
+    "price": 0
+   },
+   {
+    "key": "f:peri-peri-chicken-breast",
+    "id": "add-peri-peri-chicken-breast",
+    "kind": "f",
+    "name": "Add PERi-PERi Chicken Breast",
+    "kj": 525,
+    "p": 22.7,
+    "c": 0.5,
+    "f": 3.6,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 0.3,
+     "sodium": 535
+    },
+    "price": 0
+   },
+   {
+    "key": "r:chargrilled-veg",
+    "id": "no-chargrilled-veg",
+    "kind": "r",
+    "name": "No Chargrilled Veg",
+    "kj": -165,
+    "p": -2.2,
+    "c": -5.6,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -5.6,
+     "sodium": -5.9
+    },
+    "price": 0
+   },
+   {
+    "key": "r:grated-parmesan",
+    "id": "no-grated-parmesan",
+    "kind": "r",
+    "name": "No Grated Parmesan",
+    "kj": -77,
+    "p": -1.6,
+    "c": 0,
+    "f": -1.3,
+    "nut": {
+     "sat": -0.9,
+     "sugar": 0,
+     "sodium": -43
+    },
+    "price": 0
+   },
+   {
+    "key": "r:smoky-capsicum-relish",
+    "id": "no-smoky-capsicum-relish",
+    "kind": "r",
+    "name": "No Smoky Capsicum Relish",
+    "kj": -98,
+    "p": -0.2,
+    "c": -5.2,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -4.7,
+     "sodium": -24.8
+    },
+    "price": 0
+   },
+   {
+    "key": "r:lemon-tahini",
+    "id": "no-lemon-tahini",
+    "kind": "r",
+    "name": "No Lemon Tahini",
+    "kj": -277,
+    "p": -1.6,
+    "c": -2.3,
+    "f": -5.9,
+    "nut": {
+     "sat": -1,
+     "sugar": -0.6,
+     "sodium": -228.3
+    },
+    "price": 0
+   },
+   {
+    "key": "r:peri-salt",
+    "id": "no-peri-salt",
+    "kind": "r",
+    "name": "No Peri Salt",
+    "kj": -23,
+    "p": -0.2,
+    "c": -0.9,
+    "f": -0.1,
+    "nut": {
+     "sat": 0,
+     "sugar": -0.7,
+     "sodium": -480
+    },
+    "price": 0
+   }
+  ],
+  "nandos:roasted-broccoli-with-peri-crackle": [
+   {
+    "key": "r:peri-crackle",
+    "id": "no-peri-crackle",
+    "kind": "r",
+    "name": "No PERi-Crackle",
+    "kj": -282,
+    "p": -0.9,
+    "c": -0.8,
+    "f": -6.7,
+    "nut": {
+     "sat": -0.6,
+     "sugar": -0.2,
+     "sodium": -75
+    },
+    "price": 0
+   },
+   {
+    "key": "r:whipped-fetta",
+    "id": "no-whipped-fetta",
+    "kind": "r",
+    "name": "No Whipped Fetta",
+    "kj": -592,
+    "p": -3.1,
+    "c": -1,
+    "f": -14,
+    "nut": {
+     "sat": -6.3,
+     "sugar": -0.8,
+     "sodium": -126.4
+    },
+    "price": 0
+   }
+  ]
+ }
+}

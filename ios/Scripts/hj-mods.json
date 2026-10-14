@@ -1,0 +1,7228 @@
+{
+ "fetched": "2026-10-14",
+ "modifiers": {
+  "hj:whopper": [
+   {
+    "key": "a:extra-mayonnaise",
+    "id": "extra-extra-mayonnaise",
+    "kind": "a",
+    "name": "Extra Mayonnaise",
+    "kj": 210,
+    "p": 0.3,
+    "c": 1.3,
+    "f": 4.9,
+    "est": true
+   },
+   {
+    "key": "r:mayonnaise",
+    "id": "no-mayonnaise",
+    "kind": "r",
+    "name": "No Mayonnaise",
+    "kj": -210,
+    "p": -0.3,
+    "c": -1.3,
+    "f": -4.9,
+    "est": true
+   },
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-tomato",
+    "id": "extra-extra-tomato",
+    "kind": "a",
+    "name": "Extra Tomato",
+    "kj": 9,
+    "p": 0.1,
+    "c": 0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:tomato",
+    "id": "no-tomato",
+    "kind": "r",
+    "name": "No Tomato",
+    "kj": -9,
+    "p": -0.1,
+    "c": -0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-ketchup",
+    "id": "extra-extra-ketchup",
+    "kind": "a",
+    "name": "Extra Ketchup",
+    "kj": 31,
+    "p": 0.1,
+    "c": 1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": 1.5,
+     "sodium": 49.1
+    }
+   },
+   {
+    "key": "r:ketchup",
+    "id": "no-ketchup",
+    "kind": "r",
+    "name": "No Ketchup",
+    "kj": -31,
+    "p": -0.1,
+    "c": -1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": -1.5,
+     "sodium": -49.1
+    },
+    "est": true
+   },
+   {
+    "key": "a:extra-pickle",
+    "id": "extra-extra-pickle",
+    "kind": "a",
+    "name": "Extra Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:pickle",
+    "id": "no-pickle",
+    "kind": "r",
+    "name": "No Pickle",
+    "kj": -1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-onion",
+    "id": "extra-extra-onion",
+    "kind": "a",
+    "name": "Extra Onion",
+    "kj": 10,
+    "p": 0.0,
+    "c": 0.1,
+    "f": 0.2,
+    "nut": {
+     "sat": 0.1,
+     "sugar": 0.0,
+     "sodium": 2.7
+    }
+   },
+   {
+    "key": "r:onion",
+    "id": "no-onion",
+    "kind": "r",
+    "name": "No Onion",
+    "kj": -10,
+    "p": 0.0,
+    "c": -0.1,
+    "f": -0.2,
+    "nut": {
+     "sat": -0.1,
+     "sugar": 0.0,
+     "sodium": -2.7
+    },
+    "est": true
+   },
+   {
+    "key": "r:beef-patty",
+    "id": "no-beef-patty",
+    "kind": "r",
+    "name": "No Beef Patty",
+    "kj": -980,
+    "p": -22.3,
+    "c": -0.6,
+    "f": -15.9,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 137,
+    "p": 2.5,
+    "c": 0.1,
+    "f": 2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   },
+   {
+    "key": "a:add-smoky-bbq-sauce",
+    "id": "extra-add-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Add Smoky BBQ Sauce",
+    "kj": 152,
+    "p": 0.2,
+    "c": 8.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-mustard",
+    "id": "extra-add-mustard",
+    "kind": "a",
+    "name": "Add Mustard",
+    "kj": 14,
+    "p": 0.2,
+    "c": 0.4,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   }
+  ],
+  "hj:whopper-with-cheese": [
+   {
+    "key": "a:extra-mayonnaise",
+    "id": "extra-extra-mayonnaise",
+    "kind": "a",
+    "name": "Extra Mayonnaise",
+    "kj": 210,
+    "p": 0.3,
+    "c": 1.3,
+    "f": 4.9,
+    "est": true
+   },
+   {
+    "key": "r:mayonnaise",
+    "id": "no-mayonnaise",
+    "kind": "r",
+    "name": "No Mayonnaise",
+    "kj": -210,
+    "p": -0.3,
+    "c": -1.3,
+    "f": -4.9,
+    "est": true
+   },
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-tomato",
+    "id": "extra-extra-tomato",
+    "kind": "a",
+    "name": "Extra Tomato",
+    "kj": 9,
+    "p": 0.1,
+    "c": 0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:tomato",
+    "id": "no-tomato",
+    "kind": "r",
+    "name": "No Tomato",
+    "kj": -9,
+    "p": -0.1,
+    "c": -0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-onion",
+    "id": "extra-extra-onion",
+    "kind": "a",
+    "name": "Extra Onion",
+    "kj": 10,
+    "p": 0.0,
+    "c": 0.1,
+    "f": 0.2,
+    "nut": {
+     "sat": 0.1,
+     "sugar": 0.0,
+     "sodium": 2.7
+    }
+   },
+   {
+    "key": "r:onion",
+    "id": "no-onion",
+    "kind": "r",
+    "name": "No Onion",
+    "kj": -10,
+    "p": 0.0,
+    "c": -0.1,
+    "f": -0.2,
+    "nut": {
+     "sat": -0.1,
+     "sugar": 0.0,
+     "sodium": -2.7
+    },
+    "est": true
+   },
+   {
+    "key": "a:extra-ketchup",
+    "id": "extra-extra-ketchup",
+    "kind": "a",
+    "name": "Extra Ketchup",
+    "kj": 31,
+    "p": 0.1,
+    "c": 1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": 1.5,
+     "sodium": 49.1
+    }
+   },
+   {
+    "key": "r:ketchup",
+    "id": "no-ketchup",
+    "kind": "r",
+    "name": "No Ketchup",
+    "kj": -31,
+    "p": -0.1,
+    "c": -1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": -1.5,
+     "sodium": -49.1
+    },
+    "est": true
+   },
+   {
+    "key": "a:extra-pickle",
+    "id": "extra-extra-pickle",
+    "kind": "a",
+    "name": "Extra Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:pickle",
+    "id": "no-pickle",
+    "kind": "r",
+    "name": "No Pickle",
+    "kj": -1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:beef-patty",
+    "id": "no-beef-patty",
+    "kind": "r",
+    "name": "No Beef Patty",
+    "kj": -980,
+    "p": -22.3,
+    "c": -0.6,
+    "f": -15.9,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 137,
+    "p": 2.5,
+    "c": 0.1,
+    "f": 2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   },
+   {
+    "key": "a:add-smoky-bbq-sauce",
+    "id": "extra-add-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Add Smoky BBQ Sauce",
+    "kj": 152,
+    "p": 0.2,
+    "c": 8.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-mustard",
+    "id": "extra-add-mustard",
+    "kind": "a",
+    "name": "Add Mustard",
+    "kj": 14,
+    "p": 0.2,
+    "c": 0.4,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   }
+  ],
+  "hj:double-whopper": [
+   {
+    "key": "a:extra-mayonnaise",
+    "id": "extra-extra-mayonnaise",
+    "kind": "a",
+    "name": "Extra Mayonnaise",
+    "kj": 210,
+    "p": 0.3,
+    "c": 1.3,
+    "f": 4.9,
+    "est": true
+   },
+   {
+    "key": "r:mayonnaise",
+    "id": "no-mayonnaise",
+    "kind": "r",
+    "name": "No Mayonnaise",
+    "kj": -210,
+    "p": -0.3,
+    "c": -1.3,
+    "f": -4.9,
+    "est": true
+   },
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-tomato",
+    "id": "extra-extra-tomato",
+    "kind": "a",
+    "name": "Extra Tomato",
+    "kj": 9,
+    "p": 0.1,
+    "c": 0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:tomato",
+    "id": "no-tomato",
+    "kind": "r",
+    "name": "No Tomato",
+    "kj": -9,
+    "p": -0.1,
+    "c": -0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-ketchup",
+    "id": "extra-extra-ketchup",
+    "kind": "a",
+    "name": "Extra Ketchup",
+    "kj": 31,
+    "p": 0.1,
+    "c": 1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": 1.5,
+     "sodium": 49.1
+    }
+   },
+   {
+    "key": "r:ketchup",
+    "id": "no-ketchup",
+    "kind": "r",
+    "name": "No Ketchup",
+    "kj": -31,
+    "p": -0.1,
+    "c": -1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": -1.5,
+     "sodium": -49.1
+    },
+    "est": true
+   },
+   {
+    "key": "a:extra-pickle",
+    "id": "extra-extra-pickle",
+    "kind": "a",
+    "name": "Extra Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:pickle",
+    "id": "no-pickle",
+    "kind": "r",
+    "name": "No Pickle",
+    "kj": -1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-onion",
+    "id": "extra-extra-onion",
+    "kind": "a",
+    "name": "Extra Onion",
+    "kj": 10,
+    "p": 0.0,
+    "c": 0.1,
+    "f": 0.2,
+    "nut": {
+     "sat": 0.1,
+     "sugar": 0.0,
+     "sodium": 2.7
+    }
+   },
+   {
+    "key": "r:onion",
+    "id": "no-onion",
+    "kind": "r",
+    "name": "No Onion",
+    "kj": -10,
+    "p": 0.0,
+    "c": -0.1,
+    "f": -0.2,
+    "nut": {
+     "sat": -0.1,
+     "sugar": 0.0,
+     "sodium": -2.7
+    },
+    "est": true
+   },
+   {
+    "key": "r:beef-patty",
+    "id": "no-beef-patty",
+    "kind": "r",
+    "name": "No Beef Patty",
+    "kj": -980,
+    "p": -22.3,
+    "c": -0.6,
+    "f": -15.9,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 137,
+    "p": 2.5,
+    "c": 0.1,
+    "f": 2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   },
+   {
+    "key": "a:add-smoky-bbq-sauce",
+    "id": "extra-add-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Add Smoky BBQ Sauce",
+    "kj": 152,
+    "p": 0.2,
+    "c": 8.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-mustard",
+    "id": "extra-add-mustard",
+    "kind": "a",
+    "name": "Add Mustard",
+    "kj": 14,
+    "p": 0.2,
+    "c": 0.4,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   }
+  ],
+  "hj:whopper-junior": [
+   {
+    "key": "a:extra-ketchup",
+    "id": "extra-extra-ketchup",
+    "kind": "a",
+    "name": "Extra Ketchup",
+    "kj": 31,
+    "p": 0.1,
+    "c": 1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": 1.5,
+     "sodium": 49.1
+    }
+   },
+   {
+    "key": "r:ketchup",
+    "id": "no-ketchup",
+    "kind": "r",
+    "name": "No Ketchup",
+    "kj": -31,
+    "p": -0.1,
+    "c": -1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": -1.5,
+     "sodium": -49.1
+    },
+    "est": true
+   },
+   {
+    "key": "a:extra-mayonnaise",
+    "id": "extra-extra-mayonnaise",
+    "kind": "a",
+    "name": "Extra Mayonnaise",
+    "kj": 210,
+    "p": 0.3,
+    "c": 1.3,
+    "f": 4.9,
+    "est": true
+   },
+   {
+    "key": "r:mayonnaise",
+    "id": "no-mayonnaise",
+    "kind": "r",
+    "name": "No Mayonnaise",
+    "kj": -210,
+    "p": -0.3,
+    "c": -1.3,
+    "f": -4.9,
+    "est": true
+   },
+   {
+    "key": "r:beef-patty",
+    "id": "no-beef-patty",
+    "kind": "r",
+    "name": "No Beef Patty",
+    "kj": -422,
+    "p": -9.6,
+    "c": -0.3,
+    "f": -6.8,
+    "est": true
+   },
+   {
+    "key": "a:extra-tomato",
+    "id": "extra-extra-tomato",
+    "kind": "a",
+    "name": "Extra Tomato",
+    "kj": 9,
+    "p": 0.1,
+    "c": 0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:tomato",
+    "id": "no-tomato",
+    "kind": "r",
+    "name": "No Tomato",
+    "kj": -9,
+    "p": -0.1,
+    "c": -0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-pickle",
+    "id": "extra-extra-pickle",
+    "kind": "a",
+    "name": "Extra Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:pickle",
+    "id": "no-pickle",
+    "kind": "r",
+    "name": "No Pickle",
+    "kj": -1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-onion",
+    "id": "extra-extra-onion",
+    "kind": "a",
+    "name": "Extra Onion",
+    "kj": 10,
+    "p": 0.0,
+    "c": 0.1,
+    "f": 0.2,
+    "nut": {
+     "sat": 0.1,
+     "sugar": 0.0,
+     "sodium": 2.7
+    }
+   },
+   {
+    "key": "r:onion",
+    "id": "no-onion",
+    "kind": "r",
+    "name": "No Onion",
+    "kj": -10,
+    "p": 0.0,
+    "c": -0.1,
+    "f": -0.2,
+    "nut": {
+     "sat": -0.1,
+     "sugar": 0.0,
+     "sodium": -2.7
+    },
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 137,
+    "p": 2.5,
+    "c": 0.1,
+    "f": 2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   },
+   {
+    "key": "a:add-smoky-bbq-sauce",
+    "id": "extra-add-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Add Smoky BBQ Sauce",
+    "kj": 152,
+    "p": 0.2,
+    "c": 8.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   },
+   {
+    "key": "a:add-mustard",
+    "id": "extra-add-mustard",
+    "kind": "a",
+    "name": "Add Mustard",
+    "kj": 14,
+    "p": 0.2,
+    "c": 0.4,
+    "f": 0.1,
+    "est": true
+   }
+  ],
+  "hj:whopper-junior-with-cheese": [
+   {
+    "key": "a:extra-mayonnaise",
+    "id": "extra-extra-mayonnaise",
+    "kind": "a",
+    "name": "Extra Mayonnaise",
+    "kj": 210,
+    "p": 0.3,
+    "c": 1.3,
+    "f": 4.9,
+    "est": true
+   },
+   {
+    "key": "r:mayonnaise",
+    "id": "no-mayonnaise",
+    "kind": "r",
+    "name": "No Mayonnaise",
+    "kj": -210,
+    "p": -0.3,
+    "c": -1.3,
+    "f": -4.9,
+    "est": true
+   },
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-tomato",
+    "id": "extra-extra-tomato",
+    "kind": "a",
+    "name": "Extra Tomato",
+    "kj": 9,
+    "p": 0.1,
+    "c": 0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:tomato",
+    "id": "no-tomato",
+    "kind": "r",
+    "name": "No Tomato",
+    "kj": -9,
+    "p": -0.1,
+    "c": -0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-onion",
+    "id": "extra-extra-onion",
+    "kind": "a",
+    "name": "Extra Onion",
+    "kj": 10,
+    "p": 0.0,
+    "c": 0.1,
+    "f": 0.2,
+    "nut": {
+     "sat": 0.1,
+     "sugar": 0.0,
+     "sodium": 2.7
+    }
+   },
+   {
+    "key": "r:onion",
+    "id": "no-onion",
+    "kind": "r",
+    "name": "No Onion",
+    "kj": -10,
+    "p": 0.0,
+    "c": -0.1,
+    "f": -0.2,
+    "nut": {
+     "sat": -0.1,
+     "sugar": 0.0,
+     "sodium": -2.7
+    },
+    "est": true
+   },
+   {
+    "key": "a:extra-ketchup",
+    "id": "extra-extra-ketchup",
+    "kind": "a",
+    "name": "Extra Ketchup",
+    "kj": 31,
+    "p": 0.1,
+    "c": 1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": 1.5,
+     "sodium": 49.1
+    }
+   },
+   {
+    "key": "r:ketchup",
+    "id": "no-ketchup",
+    "kind": "r",
+    "name": "No Ketchup",
+    "kj": -31,
+    "p": -0.1,
+    "c": -1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": -1.5,
+     "sodium": -49.1
+    },
+    "est": true
+   },
+   {
+    "key": "a:extra-pickle",
+    "id": "extra-extra-pickle",
+    "kind": "a",
+    "name": "Extra Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:pickle",
+    "id": "no-pickle",
+    "kind": "r",
+    "name": "No Pickle",
+    "kj": -1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:beef-patty",
+    "id": "no-beef-patty",
+    "kind": "r",
+    "name": "No Beef Patty",
+    "kj": -422,
+    "p": -9.6,
+    "c": -0.3,
+    "f": -6.8,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 137,
+    "p": 2.5,
+    "c": 0.1,
+    "f": 2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   },
+   {
+    "key": "a:add-smoky-bbq-sauce",
+    "id": "extra-add-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Add Smoky BBQ Sauce",
+    "kj": 152,
+    "p": 0.2,
+    "c": 8.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   },
+   {
+    "key": "a:add-mustard",
+    "id": "extra-add-mustard",
+    "kind": "a",
+    "name": "Add Mustard",
+    "kj": 14,
+    "p": 0.2,
+    "c": 0.4,
+    "f": 0.1,
+    "est": true
+   }
+  ],
+  "hj:big-jack": [
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-onion",
+    "id": "extra-extra-onion",
+    "kind": "a",
+    "name": "Extra Onion",
+    "kj": 10,
+    "p": 0.0,
+    "c": 0.1,
+    "f": 0.2,
+    "nut": {
+     "sat": 0.1,
+     "sugar": 0.0,
+     "sodium": 2.7
+    }
+   },
+   {
+    "key": "r:onion",
+    "id": "no-onion",
+    "kind": "r",
+    "name": "No Onion",
+    "kj": -10,
+    "p": 0.0,
+    "c": -0.1,
+    "f": -0.2,
+    "nut": {
+     "sat": -0.1,
+     "sugar": 0.0,
+     "sodium": -2.7
+    },
+    "est": true
+   },
+   {
+    "key": "a:extra-pickle",
+    "id": "extra-extra-pickle",
+    "kind": "a",
+    "name": "Extra Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:pickle",
+    "id": "no-pickle",
+    "kind": "r",
+    "name": "No Pickle",
+    "kj": -1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:beef-patty",
+    "id": "no-beef-patty",
+    "kind": "r",
+    "name": "No Beef Patty",
+    "kj": -422,
+    "p": -9.6,
+    "c": -0.3,
+    "f": -6.8,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 137,
+    "p": 2.5,
+    "c": 0.1,
+    "f": 2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   },
+   {
+    "key": "a:add-smoky-bbq-sauce",
+    "id": "extra-add-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Add Smoky BBQ Sauce",
+    "kj": 152,
+    "p": 0.2,
+    "c": 8.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   },
+   {
+    "key": "a:add-mayo",
+    "id": "extra-add-mayo",
+    "kind": "a",
+    "name": "Add Mayo",
+    "kj": 419,
+    "p": 0.5,
+    "c": 2.5,
+    "f": 9.8,
+    "est": true
+   },
+   {
+    "key": "a:add-mustard",
+    "id": "extra-add-mustard",
+    "kind": "a",
+    "name": "Add Mustard",
+    "kj": 14,
+    "p": 0.2,
+    "c": 0.4,
+    "f": 0.1,
+    "est": true
+   }
+  ],
+  "hj:double-big-jack": [
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-onion",
+    "id": "extra-extra-onion",
+    "kind": "a",
+    "name": "Extra Onion",
+    "kj": 10,
+    "p": 0.0,
+    "c": 0.1,
+    "f": 0.2,
+    "nut": {
+     "sat": 0.1,
+     "sugar": 0.0,
+     "sodium": 2.7
+    }
+   },
+   {
+    "key": "r:onion",
+    "id": "no-onion",
+    "kind": "r",
+    "name": "No Onion",
+    "kj": -10,
+    "p": 0.0,
+    "c": -0.1,
+    "f": -0.2,
+    "nut": {
+     "sat": -0.1,
+     "sugar": 0.0,
+     "sodium": -2.7
+    },
+    "est": true
+   },
+   {
+    "key": "a:extra-pickle",
+    "id": "extra-extra-pickle",
+    "kind": "a",
+    "name": "Extra Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:pickle",
+    "id": "no-pickle",
+    "kind": "r",
+    "name": "No Pickle",
+    "kj": -1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:beef-patty",
+    "id": "no-beef-patty",
+    "kind": "r",
+    "name": "No Beef Patty",
+    "kj": -422,
+    "p": -9.6,
+    "c": -0.3,
+    "f": -6.8,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 137,
+    "p": 2.5,
+    "c": 0.1,
+    "f": 2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   },
+   {
+    "key": "a:add-smoky-bbq-sauce",
+    "id": "extra-add-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Add Smoky BBQ Sauce",
+    "kj": 152,
+    "p": 0.2,
+    "c": 8.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   },
+   {
+    "key": "a:add-mayo",
+    "id": "extra-add-mayo",
+    "kind": "a",
+    "name": "Add Mayo",
+    "kj": 419,
+    "p": 0.5,
+    "c": 2.5,
+    "f": 9.8,
+    "est": true
+   },
+   {
+    "key": "a:add-mustard",
+    "id": "extra-add-mustard",
+    "kind": "a",
+    "name": "Add Mustard",
+    "kj": 14,
+    "p": 0.2,
+    "c": 0.4,
+    "f": 0.1,
+    "est": true
+   }
+  ],
+  "hj:classic-jack-s-fried-chicken": [
+   {
+    "key": "a:extra-mayonnaise",
+    "id": "extra-extra-mayonnaise",
+    "kind": "a",
+    "name": "Extra Mayonnaise",
+    "kj": 210,
+    "p": 0.3,
+    "c": 1.3,
+    "f": 4.9,
+    "est": true
+   },
+   {
+    "key": "r:mayonnaise",
+    "id": "no-mayonnaise",
+    "kind": "r",
+    "name": "No Mayonnaise",
+    "kj": -210,
+    "p": -0.3,
+    "c": -1.3,
+    "f": -4.9,
+    "est": true
+   },
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 137,
+    "p": 2.5,
+    "c": 0.1,
+    "f": 2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-smoky-bbq-sauce",
+    "id": "extra-add-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Add Smoky BBQ Sauce",
+    "kj": 152,
+    "p": 0.2,
+    "c": 8.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-tomato",
+    "id": "extra-add-tomato",
+    "kind": "a",
+    "name": "Add Tomato",
+    "kj": 18,
+    "p": 0.1,
+    "c": 0.9,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   },
+   {
+    "key": "a:add-pickle",
+    "id": "extra-add-pickle",
+    "kind": "a",
+    "name": "Add Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   }
+  ],
+  "hj:spicy-jack-s-fried-chicken": [
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 137,
+    "p": 2.5,
+    "c": 0.1,
+    "f": 2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-smoky-bbq-sauce",
+    "id": "extra-add-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Add Smoky BBQ Sauce",
+    "kj": 152,
+    "p": 0.2,
+    "c": 8.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-tomato",
+    "id": "extra-add-tomato",
+    "kind": "a",
+    "name": "Add Tomato",
+    "kj": 18,
+    "p": 0.1,
+    "c": 0.9,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   },
+   {
+    "key": "a:add-pickle",
+    "id": "extra-add-pickle",
+    "kind": "a",
+    "name": "Add Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-mayo",
+    "id": "extra-add-mayo",
+    "kind": "a",
+    "name": "Add Mayo",
+    "kj": 419,
+    "p": 0.5,
+    "c": 2.5,
+    "f": 9.8,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   }
+  ],
+  "hj:grilled-chicken-burger": [
+   {
+    "key": "a:extra-ranch-sauce",
+    "id": "extra-extra-ranch-sauce",
+    "kind": "a",
+    "name": "Extra Ranch Sauce",
+    "kj": 67,
+    "p": 0.1,
+    "c": 0.4,
+    "f": 1.6,
+    "est": true
+   },
+   {
+    "key": "r:ranch-sauce",
+    "id": "no-ranch-sauce",
+    "kind": "r",
+    "name": "No Ranch Sauce",
+    "kj": -67,
+    "p": -0.1,
+    "c": -0.4,
+    "f": -1.6,
+    "est": true
+   },
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-tomato",
+    "id": "extra-extra-tomato",
+    "kind": "a",
+    "name": "Extra Tomato",
+    "kj": 9,
+    "p": 0.1,
+    "c": 0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:tomato",
+    "id": "no-tomato",
+    "kind": "r",
+    "name": "No Tomato",
+    "kj": -9,
+    "p": -0.1,
+    "c": -0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:grilled-chicken-patty",
+    "id": "no-grilled-chicken-patty",
+    "kind": "r",
+    "name": "No Grilled Chicken Patty",
+    "kj": -333,
+    "p": -7.6,
+    "c": -0.2,
+    "f": -5.4,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 137,
+    "p": 2.5,
+    "c": 0.1,
+    "f": 2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-smoky-bbq-sauce",
+    "id": "extra-add-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Add Smoky BBQ Sauce",
+    "kj": 152,
+    "p": 0.2,
+    "c": 8.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   },
+   {
+    "key": "a:add-pickle",
+    "id": "extra-add-pickle",
+    "kind": "a",
+    "name": "Add Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-mayo",
+    "id": "extra-add-mayo",
+    "kind": "a",
+    "name": "Add Mayo",
+    "kj": 419,
+    "p": 0.5,
+    "c": 2.5,
+    "f": 9.8,
+    "est": true
+   }
+  ],
+  "hj:spicy-grilled-chicken-burger": [
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-tomato",
+    "id": "extra-extra-tomato",
+    "kind": "a",
+    "name": "Extra Tomato",
+    "kj": 9,
+    "p": 0.1,
+    "c": 0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:tomato",
+    "id": "no-tomato",
+    "kind": "r",
+    "name": "No Tomato",
+    "kj": -9,
+    "p": -0.1,
+    "c": -0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:grilled-chicken-patty",
+    "id": "no-grilled-chicken-patty",
+    "kind": "r",
+    "name": "No Grilled Chicken Patty",
+    "kj": -333,
+    "p": -7.6,
+    "c": -0.2,
+    "f": -5.4,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 137,
+    "p": 2.5,
+    "c": 0.1,
+    "f": 2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-smoky-bbq-sauce",
+    "id": "extra-add-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Add Smoky BBQ Sauce",
+    "kj": 152,
+    "p": 0.2,
+    "c": 8.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   },
+   {
+    "key": "a:add-pickle",
+    "id": "extra-add-pickle",
+    "kind": "a",
+    "name": "Add Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-mayo",
+    "id": "extra-add-mayo",
+    "kind": "a",
+    "name": "Add Mayo",
+    "kj": 419,
+    "p": 0.5,
+    "c": 2.5,
+    "f": 9.8,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   }
+  ],
+  "hj:grilled-chicken-with-bacon-cheese": [
+   {
+    "key": "a:extra-ranch-sauce",
+    "id": "extra-extra-ranch-sauce",
+    "kind": "a",
+    "name": "Extra Ranch Sauce",
+    "kj": 67,
+    "p": 0.1,
+    "c": 0.4,
+    "f": 1.6,
+    "est": true
+   },
+   {
+    "key": "r:ranch-sauce",
+    "id": "no-ranch-sauce",
+    "kind": "r",
+    "name": "No Ranch Sauce",
+    "kj": -67,
+    "p": -0.1,
+    "c": -0.4,
+    "f": -1.6,
+    "est": true
+   },
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-tomato",
+    "id": "extra-extra-tomato",
+    "kind": "a",
+    "name": "Extra Tomato",
+    "kj": 9,
+    "p": 0.1,
+    "c": 0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:tomato",
+    "id": "no-tomato",
+    "kind": "r",
+    "name": "No Tomato",
+    "kj": -9,
+    "p": -0.1,
+    "c": -0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:bacon",
+    "id": "no-bacon",
+    "kind": "r",
+    "name": "No Bacon",
+    "kj": -137,
+    "p": -2.5,
+    "c": -0.1,
+    "f": -2.5,
+    "est": true
+   },
+   {
+    "key": "r:grilled-chicken-patty",
+    "id": "no-grilled-chicken-patty",
+    "kind": "r",
+    "name": "No Grilled Chicken Patty",
+    "kj": -333,
+    "p": -7.6,
+    "c": -0.2,
+    "f": -5.4,
+    "est": true
+   },
+   {
+    "key": "a:add-smoky-bbq-sauce",
+    "id": "extra-add-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Add Smoky BBQ Sauce",
+    "kj": 152,
+    "p": 0.2,
+    "c": 8.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   },
+   {
+    "key": "a:add-pickle",
+    "id": "extra-add-pickle",
+    "kind": "a",
+    "name": "Add Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-mayo",
+    "id": "extra-add-mayo",
+    "kind": "a",
+    "name": "Add Mayo",
+    "kj": 419,
+    "p": 0.5,
+    "c": 2.5,
+    "f": 9.8,
+    "est": true
+   }
+  ],
+  "hj:chicken-royale": [
+   {
+    "key": "a:extra-mayonnaise",
+    "id": "extra-extra-mayonnaise",
+    "kind": "a",
+    "name": "Extra Mayonnaise",
+    "kj": 210,
+    "p": 0.3,
+    "c": 1.3,
+    "f": 4.9,
+    "est": true
+   },
+   {
+    "key": "r:mayonnaise",
+    "id": "no-mayonnaise",
+    "kind": "r",
+    "name": "No Mayonnaise",
+    "kj": -210,
+    "p": -0.3,
+    "c": -1.3,
+    "f": -4.9,
+    "est": true
+   },
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:royale-chicken-patty",
+    "id": "no-royale-chicken-patty",
+    "kind": "r",
+    "name": "No Royale Chicken Patty",
+    "kj": -942,
+    "p": -21.4,
+    "c": -0.6,
+    "f": -15.3,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 137,
+    "p": 2.5,
+    "c": 0.1,
+    "f": 2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-smoky-bbq-sauce",
+    "id": "extra-add-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Add Smoky BBQ Sauce",
+    "kj": 152,
+    "p": 0.2,
+    "c": 8.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   },
+   {
+    "key": "a:add-pickle",
+    "id": "extra-add-pickle",
+    "kind": "a",
+    "name": "Add Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   }
+  ],
+  "hj:grill-masters-angus-bacon-cheese": [
+   {
+    "key": "a:extra-smoky-bbq-sauce",
+    "id": "extra-extra-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Extra Smoky BBQ Sauce",
+    "kj": 76,
+    "p": 0.1,
+    "c": 4.3,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "r:smoky-bbq-sauce",
+    "id": "no-smoky-bbq-sauce",
+    "kind": "r",
+    "name": "No Smoky BBQ Sauce",
+    "kj": -76,
+    "p": -0.1,
+    "c": -4.3,
+    "f": -0.1,
+    "est": true
+   },
+   {
+    "key": "r:bacon",
+    "id": "no-bacon",
+    "kind": "r",
+    "name": "No Bacon",
+    "kj": -137,
+    "p": -2.5,
+    "c": -0.1,
+    "f": -2.5,
+    "est": true
+   },
+   {
+    "key": "a:extra-mustard",
+    "id": "extra-extra-mustard",
+    "kind": "a",
+    "name": "Extra Mustard",
+    "kj": 7,
+    "p": 0.1,
+    "c": 0.2,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "r:mustard",
+    "id": "no-mustard",
+    "kind": "r",
+    "name": "No Mustard",
+    "kj": -7,
+    "p": -0.1,
+    "c": -0.2,
+    "f": -0.1,
+    "est": true
+   },
+   {
+    "key": "a:extra-pickle",
+    "id": "extra-extra-pickle",
+    "kind": "a",
+    "name": "Extra Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:pickle",
+    "id": "no-pickle",
+    "kind": "r",
+    "name": "No Pickle",
+    "kj": -1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:angus-beef-patty",
+    "id": "no-angus-beef-patty",
+    "kind": "r",
+    "name": "No Angus Beef Patty",
+    "kj": -1450,
+    "p": -32.9,
+    "c": -0.9,
+    "f": -23.5,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   },
+   {
+    "key": "a:add-mayo",
+    "id": "extra-add-mayo",
+    "kind": "a",
+    "name": "Add Mayo",
+    "kj": 419,
+    "p": 0.5,
+    "c": 2.5,
+    "f": 9.8,
+    "est": true
+   }
+  ],
+  "hj:smoky-bbq-tender-snack-wrap": [
+   {
+    "key": "a:extra-smoky-bbq-sauce",
+    "id": "extra-extra-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Extra Smoky BBQ Sauce",
+    "kj": 76,
+    "p": 0.1,
+    "c": 4.3,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "r:smoky-bbq-sauce",
+    "id": "no-smoky-bbq-sauce",
+    "kind": "r",
+    "name": "No Smoky BBQ Sauce",
+    "kj": -76,
+    "p": -0.1,
+    "c": -4.3,
+    "f": -0.1,
+    "est": true
+   },
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 137,
+    "p": 2.5,
+    "c": 0.1,
+    "f": 2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-pickle",
+    "id": "extra-add-pickle",
+    "kind": "a",
+    "name": "Add Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-tomato",
+    "id": "extra-add-tomato",
+    "kind": "a",
+    "name": "Add Tomato",
+    "kj": 18,
+    "p": 0.1,
+    "c": 0.9,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-onion",
+    "id": "extra-add-onion",
+    "kind": "a",
+    "name": "Add Onion",
+    "kj": 20,
+    "p": 0.0,
+    "c": 0.3,
+    "f": 0.4,
+    "nut": {
+     "sat": 0.2,
+     "sugar": 0.0,
+     "sodium": 5.5
+    }
+   },
+   {
+    "key": "a:add-mayo",
+    "id": "extra-add-mayo",
+    "kind": "a",
+    "name": "Add Mayo",
+    "kj": 419,
+    "p": 0.5,
+    "c": 2.5,
+    "f": 9.8,
+    "est": true
+   },
+   {
+    "key": "a:add-ketchup",
+    "id": "extra-add-ketchup",
+    "kind": "a",
+    "name": "Add Ketchup",
+    "kj": 62,
+    "p": 0.1,
+    "c": 3.3,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": 3.1,
+     "sodium": 98.1
+    }
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   }
+  ],
+  "hj:bbq-brekky-wrap": [
+   {
+    "key": "a:extra-smoky-bbq-sauce",
+    "id": "extra-extra-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Extra Smoky BBQ Sauce",
+    "kj": 76,
+    "p": 0.1,
+    "c": 4.3,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "r:smoky-bbq-sauce",
+    "id": "no-smoky-bbq-sauce",
+    "kind": "r",
+    "name": "No Smoky BBQ Sauce",
+    "kj": -76,
+    "p": -0.1,
+    "c": -4.3,
+    "f": -0.1,
+    "est": true
+   },
+   {
+    "key": "r:cage-free-egg",
+    "id": "no-cage-free-egg",
+    "kind": "r",
+    "name": "No Cage-Free Egg",
+    "kj": -353,
+    "p": -7.4,
+    "c": -0.4,
+    "f": -5.9,
+    "est": true
+   },
+   {
+    "key": "r:bacon",
+    "id": "no-bacon",
+    "kind": "r",
+    "name": "No Bacon",
+    "kj": -137,
+    "p": -2.5,
+    "c": -0.1,
+    "f": -2.5,
+    "est": true
+   },
+   {
+    "key": "f:add-sausage-patty-beef-pork",
+    "id": "extra-add-sausage-patty-beef-pork",
+    "kind": "f",
+    "name": "Add Sausage Patty (Beef & Pork)",
+    "kj": 491,
+    "p": 6.7,
+    "c": 0.6,
+    "f": 9.8,
+    "est": true
+   },
+   {
+    "key": "a:add-ketchup",
+    "id": "extra-add-ketchup",
+    "kind": "a",
+    "name": "Add Ketchup",
+    "kj": 62,
+    "p": 0.1,
+    "c": 3.3,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": 3.1,
+     "sodium": 98.1
+    }
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   },
+   {
+    "key": "a:add-lettuce",
+    "id": "extra-add-lettuce",
+    "kind": "a",
+    "name": "Add Lettuce",
+    "kj": 8,
+    "p": 0.1,
+    "c": 0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-tomato",
+    "id": "extra-add-tomato",
+    "kind": "a",
+    "name": "Add Tomato",
+    "kj": 18,
+    "p": 0.1,
+    "c": 0.9,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-onion",
+    "id": "extra-add-onion",
+    "kind": "a",
+    "name": "Add Onion",
+    "kj": 20,
+    "p": 0.0,
+    "c": 0.3,
+    "f": 0.4,
+    "nut": {
+     "sat": 0.2,
+     "sugar": 0.0,
+     "sodium": 5.5
+    }
+   }
+  ],
+  "hj:sausage-egg-turkish-brekky-roll": [
+   {
+    "key": "a:extra-smoky-bbq-sauce",
+    "id": "extra-extra-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Extra Smoky BBQ Sauce",
+    "kj": 76,
+    "p": 0.1,
+    "c": 4.3,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "r:smoky-bbq-sauce",
+    "id": "no-smoky-bbq-sauce",
+    "kind": "r",
+    "name": "No Smoky BBQ Sauce",
+    "kj": -76,
+    "p": -0.1,
+    "c": -4.3,
+    "f": -0.1,
+    "est": true
+   },
+   {
+    "key": "r:cage-free-egg",
+    "id": "no-cage-free-egg",
+    "kind": "r",
+    "name": "No Cage-Free Egg",
+    "kj": -353,
+    "p": -7.4,
+    "c": -0.4,
+    "f": -5.9,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 137,
+    "p": 2.5,
+    "c": 0.1,
+    "f": 2.5,
+    "est": true
+   },
+   {
+    "key": "f:add-sausage-patty-beef-pork",
+    "id": "extra-add-sausage-patty-beef-pork",
+    "kind": "f",
+    "name": "Add Sausage Patty (Beef & Pork)",
+    "kj": 491,
+    "p": 6.7,
+    "c": 0.6,
+    "f": 9.8,
+    "est": true
+   },
+   {
+    "key": "a:add-ketchup",
+    "id": "extra-add-ketchup",
+    "kind": "a",
+    "name": "Add Ketchup",
+    "kj": 62,
+    "p": 0.1,
+    "c": 3.3,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": 3.1,
+     "sodium": 98.1
+    }
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   },
+   {
+    "key": "a:add-lettuce",
+    "id": "extra-add-lettuce",
+    "kind": "a",
+    "name": "Add Lettuce",
+    "kj": 8,
+    "p": 0.1,
+    "c": 0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-tomato",
+    "id": "extra-add-tomato",
+    "kind": "a",
+    "name": "Add Tomato",
+    "kj": 18,
+    "p": 0.1,
+    "c": 0.9,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-onion",
+    "id": "extra-add-onion",
+    "kind": "a",
+    "name": "Add Onion",
+    "kj": 20,
+    "p": 0.0,
+    "c": 0.3,
+    "f": 0.4,
+    "nut": {
+     "sat": 0.2,
+     "sugar": 0.0,
+     "sodium": 5.5
+    }
+   }
+  ],
+  "hj:big-bbq-brekky-wrap": [
+   {
+    "key": "a:extra-smoky-bbq-sauce",
+    "id": "extra-extra-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Extra Smoky BBQ Sauce",
+    "kj": 76,
+    "p": 0.1,
+    "c": 4.3,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "r:smoky-bbq-sauce",
+    "id": "no-smoky-bbq-sauce",
+    "kind": "r",
+    "name": "No Smoky BBQ Sauce",
+    "kj": -76,
+    "p": -0.1,
+    "c": -4.3,
+    "f": -0.1,
+    "est": true
+   },
+   {
+    "key": "r:cage-free-egg",
+    "id": "no-cage-free-egg",
+    "kind": "r",
+    "name": "No Cage-Free Egg",
+    "kj": -353,
+    "p": -7.4,
+    "c": -0.4,
+    "f": -5.9,
+    "est": true
+   },
+   {
+    "key": "r:bacon",
+    "id": "no-bacon",
+    "kind": "r",
+    "name": "No Bacon",
+    "kj": -137,
+    "p": -2.5,
+    "c": -0.1,
+    "f": -2.5,
+    "est": true
+   },
+   {
+    "key": "f:add-sausage-patty-beef-pork",
+    "id": "extra-add-sausage-patty-beef-pork",
+    "kind": "f",
+    "name": "Add Sausage Patty (Beef & Pork)",
+    "kj": 491,
+    "p": 6.7,
+    "c": 0.6,
+    "f": 9.8,
+    "est": true
+   },
+   {
+    "key": "a:add-ketchup",
+    "id": "extra-add-ketchup",
+    "kind": "a",
+    "name": "Add Ketchup",
+    "kj": 62,
+    "p": 0.1,
+    "c": 3.3,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": 3.1,
+     "sodium": 98.1
+    }
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   },
+   {
+    "key": "a:add-lettuce",
+    "id": "extra-add-lettuce",
+    "kind": "a",
+    "name": "Add Lettuce",
+    "kj": 8,
+    "p": 0.1,
+    "c": 0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-tomato",
+    "id": "extra-add-tomato",
+    "kind": "a",
+    "name": "Add Tomato",
+    "kj": 18,
+    "p": 0.1,
+    "c": 0.9,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-onion",
+    "id": "extra-add-onion",
+    "kind": "a",
+    "name": "Add Onion",
+    "kj": 20,
+    "p": 0.0,
+    "c": 0.3,
+    "f": 0.4,
+    "nut": {
+     "sat": 0.2,
+     "sugar": 0.0,
+     "sodium": 5.5
+    }
+   }
+  ],
+  "hj:mega-bbq-brekky-wrap": [
+   {
+    "key": "a:extra-smoky-bbq-sauce",
+    "id": "extra-extra-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Extra Smoky BBQ Sauce",
+    "kj": 76,
+    "p": 0.1,
+    "c": 4.3,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "r:smoky-bbq-sauce",
+    "id": "no-smoky-bbq-sauce",
+    "kind": "r",
+    "name": "No Smoky BBQ Sauce",
+    "kj": -76,
+    "p": -0.1,
+    "c": -4.3,
+    "f": -0.1,
+    "est": true
+   },
+   {
+    "key": "r:bacon",
+    "id": "no-bacon",
+    "kind": "r",
+    "name": "No Bacon",
+    "kj": -137,
+    "p": -2.5,
+    "c": -0.1,
+    "f": -2.5,
+    "est": true
+   },
+   {
+    "key": "r:beef-patty",
+    "id": "no-beef-patty",
+    "kind": "r",
+    "name": "No Beef Patty",
+    "kj": -422,
+    "p": -9.6,
+    "c": -0.3,
+    "f": -6.8,
+    "est": true
+   },
+   {
+    "key": "r:cage-free-egg",
+    "id": "no-cage-free-egg",
+    "kind": "r",
+    "name": "No Cage-Free Egg",
+    "kj": -353,
+    "p": -7.4,
+    "c": -0.4,
+    "f": -5.9,
+    "est": true
+   },
+   {
+    "key": "f:add-sausage-patty-beef-pork",
+    "id": "extra-add-sausage-patty-beef-pork",
+    "kind": "f",
+    "name": "Add Sausage Patty (Beef & Pork)",
+    "kj": 491,
+    "p": 6.7,
+    "c": 0.6,
+    "f": 9.8,
+    "est": true
+   },
+   {
+    "key": "a:add-ketchup",
+    "id": "extra-add-ketchup",
+    "kind": "a",
+    "name": "Add Ketchup",
+    "kj": 62,
+    "p": 0.1,
+    "c": 3.3,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": 3.1,
+     "sodium": 98.1
+    }
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   },
+   {
+    "key": "a:add-lettuce",
+    "id": "extra-add-lettuce",
+    "kind": "a",
+    "name": "Add Lettuce",
+    "kj": 8,
+    "p": 0.1,
+    "c": 0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-tomato",
+    "id": "extra-add-tomato",
+    "kind": "a",
+    "name": "Add Tomato",
+    "kj": 18,
+    "p": 0.1,
+    "c": 0.9,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-onion",
+    "id": "extra-add-onion",
+    "kind": "a",
+    "name": "Add Onion",
+    "kj": 20,
+    "p": 0.0,
+    "c": 0.3,
+    "f": 0.4,
+    "nut": {
+     "sat": 0.2,
+     "sugar": 0.0,
+     "sodium": 5.5
+    }
+   }
+  ],
+  "hj:jack-s-brekky-roll": [
+   {
+    "key": "a:extra-smoky-bbq-sauce",
+    "id": "extra-extra-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Extra Smoky BBQ Sauce",
+    "kj": 76,
+    "p": 0.1,
+    "c": 4.3,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "r:smoky-bbq-sauce",
+    "id": "no-smoky-bbq-sauce",
+    "kind": "r",
+    "name": "No Smoky BBQ Sauce",
+    "kj": -76,
+    "p": -0.1,
+    "c": -4.3,
+    "f": -0.1,
+    "est": true
+   },
+   {
+    "key": "r:cage-free-egg",
+    "id": "no-cage-free-egg",
+    "kind": "r",
+    "name": "No Cage-Free Egg",
+    "kj": -353,
+    "p": -7.4,
+    "c": -0.4,
+    "f": -5.9,
+    "est": true
+   },
+   {
+    "key": "r:bacon",
+    "id": "no-bacon",
+    "kind": "r",
+    "name": "No Bacon",
+    "kj": -137,
+    "p": -2.5,
+    "c": -0.1,
+    "f": -2.5,
+    "est": true
+   },
+   {
+    "key": "f:add-sausage-patty-beef-pork",
+    "id": "extra-add-sausage-patty-beef-pork",
+    "kind": "f",
+    "name": "Add Sausage Patty (Beef & Pork)",
+    "kj": 491,
+    "p": 6.7,
+    "c": 0.6,
+    "f": 9.8,
+    "est": true
+   },
+   {
+    "key": "a:add-ketchup",
+    "id": "extra-add-ketchup",
+    "kind": "a",
+    "name": "Add Ketchup",
+    "kj": 62,
+    "p": 0.1,
+    "c": 3.3,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": 3.1,
+     "sodium": 98.1
+    }
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   },
+   {
+    "key": "a:add-lettuce",
+    "id": "extra-add-lettuce",
+    "kind": "a",
+    "name": "Add Lettuce",
+    "kj": 8,
+    "p": 0.1,
+    "c": 0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-tomato",
+    "id": "extra-add-tomato",
+    "kind": "a",
+    "name": "Add Tomato",
+    "kj": 18,
+    "p": 0.1,
+    "c": 0.9,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-onion",
+    "id": "extra-add-onion",
+    "kind": "a",
+    "name": "Add Onion",
+    "kj": 20,
+    "p": 0.0,
+    "c": 0.3,
+    "f": 0.4,
+    "nut": {
+     "sat": 0.2,
+     "sugar": 0.0,
+     "sodium": 5.5
+    }
+   }
+  ],
+  "hj:cheese-toastie": [
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 137,
+    "p": 2.5,
+    "c": 0.1,
+    "f": 2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-cage-free-egg",
+    "id": "extra-add-cage-free-egg",
+    "kind": "a",
+    "name": "Add Cage-free Egg",
+    "kj": 353,
+    "p": 7.4,
+    "c": 0.4,
+    "f": 5.9,
+    "est": true
+   }
+  ],
+  "hj:ham-cheese-toastie": [
+   {
+    "key": "r:premium-ham",
+    "id": "no-premium-ham",
+    "kind": "r",
+    "name": "No Premium Ham",
+    "kj": -36,
+    "p": -1.3,
+    "c": -0.2,
+    "f": -0.3,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 137,
+    "p": 2.5,
+    "c": 0.1,
+    "f": 2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-cage-free-egg",
+    "id": "extra-add-cage-free-egg",
+    "kind": "a",
+    "name": "Add Cage-free Egg",
+    "kj": 353,
+    "p": 7.4,
+    "c": 0.4,
+    "f": 5.9,
+    "est": true
+   }
+  ],
+  "hj:ham-cheese-tomato-toastie": [
+   {
+    "key": "r:premium-ham",
+    "id": "no-premium-ham",
+    "kind": "r",
+    "name": "No Premium Ham",
+    "kj": -36,
+    "p": -1.3,
+    "c": -0.2,
+    "f": -0.3,
+    "est": true
+   },
+   {
+    "key": "a:extra-tomato",
+    "id": "extra-extra-tomato",
+    "kind": "a",
+    "name": "Extra Tomato",
+    "kj": 9,
+    "p": 0.1,
+    "c": 0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:tomato",
+    "id": "no-tomato",
+    "kind": "r",
+    "name": "No Tomato",
+    "kj": -9,
+    "p": -0.1,
+    "c": -0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 137,
+    "p": 2.5,
+    "c": 0.1,
+    "f": 2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-cage-free-egg",
+    "id": "extra-add-cage-free-egg",
+    "kind": "a",
+    "name": "Add Cage-free Egg",
+    "kj": 353,
+    "p": 7.4,
+    "c": 0.4,
+    "f": 5.9,
+    "est": true
+   }
+  ],
+  "hj:big-jack-angus": [
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-pickle",
+    "id": "extra-extra-pickle",
+    "kind": "a",
+    "name": "Extra Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:pickle",
+    "id": "no-pickle",
+    "kind": "r",
+    "name": "No Pickle",
+    "kj": -1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-onion",
+    "id": "extra-extra-onion",
+    "kind": "a",
+    "name": "Extra Onion",
+    "kj": 10,
+    "p": 0.0,
+    "c": 0.1,
+    "f": 0.2,
+    "nut": {
+     "sat": 0.1,
+     "sugar": 0.0,
+     "sodium": 2.7
+    }
+   },
+   {
+    "key": "r:onion",
+    "id": "no-onion",
+    "kind": "r",
+    "name": "No Onion",
+    "kj": -10,
+    "p": 0.0,
+    "c": -0.1,
+    "f": -0.2,
+    "nut": {
+     "sat": -0.1,
+     "sugar": 0.0,
+     "sodium": -2.7
+    },
+    "est": true
+   },
+   {
+    "key": "r:angus-beef-patty",
+    "id": "no-angus-beef-patty",
+    "kind": "r",
+    "name": "No Angus Beef Patty",
+    "kj": -1450,
+    "p": -32.9,
+    "c": -0.9,
+    "f": -23.5,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 137,
+    "p": 2.5,
+    "c": 0.1,
+    "f": 2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   },
+   {
+    "key": "a:add-mayo",
+    "id": "extra-add-mayo",
+    "kind": "a",
+    "name": "Add Mayo",
+    "kj": 419,
+    "p": 0.5,
+    "c": 2.5,
+    "f": 9.8,
+    "est": true
+   }
+  ],
+  "hj:ultimate-double-whopper": [
+   {
+    "key": "a:extra-mayonnaise",
+    "id": "extra-extra-mayonnaise",
+    "kind": "a",
+    "name": "Extra Mayonnaise",
+    "kj": 210,
+    "p": 0.3,
+    "c": 1.3,
+    "f": 4.9,
+    "est": true
+   },
+   {
+    "key": "r:mayonnaise",
+    "id": "no-mayonnaise",
+    "kind": "r",
+    "name": "No Mayonnaise",
+    "kj": -210,
+    "p": -0.3,
+    "c": -1.3,
+    "f": -4.9,
+    "est": true
+   },
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-tomato",
+    "id": "extra-extra-tomato",
+    "kind": "a",
+    "name": "Extra Tomato",
+    "kj": 9,
+    "p": 0.1,
+    "c": 0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:tomato",
+    "id": "no-tomato",
+    "kind": "r",
+    "name": "No Tomato",
+    "kj": -9,
+    "p": -0.1,
+    "c": -0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-onion",
+    "id": "extra-extra-onion",
+    "kind": "a",
+    "name": "Extra Onion",
+    "kj": 10,
+    "p": 0.0,
+    "c": 0.1,
+    "f": 0.2,
+    "nut": {
+     "sat": 0.1,
+     "sugar": 0.0,
+     "sodium": 2.7
+    }
+   },
+   {
+    "key": "r:onion",
+    "id": "no-onion",
+    "kind": "r",
+    "name": "No Onion",
+    "kj": -10,
+    "p": 0.0,
+    "c": -0.1,
+    "f": -0.2,
+    "nut": {
+     "sat": -0.1,
+     "sugar": 0.0,
+     "sodium": -2.7
+    },
+    "est": true
+   },
+   {
+    "key": "a:extra-ketchup",
+    "id": "extra-extra-ketchup",
+    "kind": "a",
+    "name": "Extra Ketchup",
+    "kj": 31,
+    "p": 0.1,
+    "c": 1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": 1.5,
+     "sodium": 49.1
+    }
+   },
+   {
+    "key": "r:ketchup",
+    "id": "no-ketchup",
+    "kind": "r",
+    "name": "No Ketchup",
+    "kj": -31,
+    "p": -0.1,
+    "c": -1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": -1.5,
+     "sodium": -49.1
+    },
+    "est": true
+   },
+   {
+    "key": "a:extra-pickle",
+    "id": "extra-extra-pickle",
+    "kind": "a",
+    "name": "Extra Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:pickle",
+    "id": "no-pickle",
+    "kind": "r",
+    "name": "No Pickle",
+    "kj": -1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:bacon",
+    "id": "no-bacon",
+    "kind": "r",
+    "name": "No Bacon",
+    "kj": -137,
+    "p": -2.5,
+    "c": -0.1,
+    "f": -2.5,
+    "est": true
+   },
+   {
+    "key": "r:beef-patty",
+    "id": "no-beef-patty",
+    "kind": "r",
+    "name": "No Beef Patty",
+    "kj": -980,
+    "p": -22.3,
+    "c": -0.6,
+    "f": -15.9,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   },
+   {
+    "key": "a:add-smoky-bbq-sauce",
+    "id": "extra-add-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Add Smoky BBQ Sauce",
+    "kj": 152,
+    "p": 0.2,
+    "c": 8.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-mustard",
+    "id": "extra-add-mustard",
+    "kind": "a",
+    "name": "Add Mustard",
+    "kj": 14,
+    "p": 0.2,
+    "c": 0.4,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   }
+  ],
+  "hj:double-whopper-with-cheese": [
+   {
+    "key": "a:extra-mayonnaise",
+    "id": "extra-extra-mayonnaise",
+    "kind": "a",
+    "name": "Extra Mayonnaise",
+    "kj": 210,
+    "p": 0.3,
+    "c": 1.3,
+    "f": 4.9,
+    "est": true
+   },
+   {
+    "key": "r:mayonnaise",
+    "id": "no-mayonnaise",
+    "kind": "r",
+    "name": "No Mayonnaise",
+    "kj": -210,
+    "p": -0.3,
+    "c": -1.3,
+    "f": -4.9,
+    "est": true
+   },
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-tomato",
+    "id": "extra-extra-tomato",
+    "kind": "a",
+    "name": "Extra Tomato",
+    "kj": 9,
+    "p": 0.1,
+    "c": 0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:tomato",
+    "id": "no-tomato",
+    "kind": "r",
+    "name": "No Tomato",
+    "kj": -9,
+    "p": -0.1,
+    "c": -0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-onion",
+    "id": "extra-extra-onion",
+    "kind": "a",
+    "name": "Extra Onion",
+    "kj": 10,
+    "p": 0.0,
+    "c": 0.1,
+    "f": 0.2,
+    "nut": {
+     "sat": 0.1,
+     "sugar": 0.0,
+     "sodium": 2.7
+    }
+   },
+   {
+    "key": "r:onion",
+    "id": "no-onion",
+    "kind": "r",
+    "name": "No Onion",
+    "kj": -10,
+    "p": 0.0,
+    "c": -0.1,
+    "f": -0.2,
+    "nut": {
+     "sat": -0.1,
+     "sugar": 0.0,
+     "sodium": -2.7
+    },
+    "est": true
+   },
+   {
+    "key": "a:extra-ketchup",
+    "id": "extra-extra-ketchup",
+    "kind": "a",
+    "name": "Extra Ketchup",
+    "kj": 31,
+    "p": 0.1,
+    "c": 1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": 1.5,
+     "sodium": 49.1
+    }
+   },
+   {
+    "key": "r:ketchup",
+    "id": "no-ketchup",
+    "kind": "r",
+    "name": "No Ketchup",
+    "kj": -31,
+    "p": -0.1,
+    "c": -1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": -1.5,
+     "sodium": -49.1
+    },
+    "est": true
+   },
+   {
+    "key": "a:extra-pickle",
+    "id": "extra-extra-pickle",
+    "kind": "a",
+    "name": "Extra Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:pickle",
+    "id": "no-pickle",
+    "kind": "r",
+    "name": "No Pickle",
+    "kj": -1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:beef-patty",
+    "id": "no-beef-patty",
+    "kind": "r",
+    "name": "No Beef Patty",
+    "kj": -980,
+    "p": -22.3,
+    "c": -0.6,
+    "f": -15.9,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 137,
+    "p": 2.5,
+    "c": 0.1,
+    "f": 2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   },
+   {
+    "key": "a:add-smoky-bbq-sauce",
+    "id": "extra-add-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Add Smoky BBQ Sauce",
+    "kj": 152,
+    "p": 0.2,
+    "c": 8.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-mustard",
+    "id": "extra-add-mustard",
+    "kind": "a",
+    "name": "Add Mustard",
+    "kj": 14,
+    "p": 0.2,
+    "c": 0.4,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   }
+  ],
+  "hj:triple-whopper-with-cheese": [
+   {
+    "key": "a:extra-mayonnaise",
+    "id": "extra-extra-mayonnaise",
+    "kind": "a",
+    "name": "Extra Mayonnaise",
+    "kj": 210,
+    "p": 0.3,
+    "c": 1.3,
+    "f": 4.9,
+    "est": true
+   },
+   {
+    "key": "r:mayonnaise",
+    "id": "no-mayonnaise",
+    "kind": "r",
+    "name": "No Mayonnaise",
+    "kj": -210,
+    "p": -0.3,
+    "c": -1.3,
+    "f": -4.9,
+    "est": true
+   },
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-tomato",
+    "id": "extra-extra-tomato",
+    "kind": "a",
+    "name": "Extra Tomato",
+    "kj": 9,
+    "p": 0.1,
+    "c": 0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:tomato",
+    "id": "no-tomato",
+    "kind": "r",
+    "name": "No Tomato",
+    "kj": -9,
+    "p": -0.1,
+    "c": -0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-onion",
+    "id": "extra-extra-onion",
+    "kind": "a",
+    "name": "Extra Onion",
+    "kj": 10,
+    "p": 0.0,
+    "c": 0.1,
+    "f": 0.2,
+    "nut": {
+     "sat": 0.1,
+     "sugar": 0.0,
+     "sodium": 2.7
+    }
+   },
+   {
+    "key": "r:onion",
+    "id": "no-onion",
+    "kind": "r",
+    "name": "No Onion",
+    "kj": -10,
+    "p": 0.0,
+    "c": -0.1,
+    "f": -0.2,
+    "nut": {
+     "sat": -0.1,
+     "sugar": 0.0,
+     "sodium": -2.7
+    },
+    "est": true
+   },
+   {
+    "key": "a:extra-ketchup",
+    "id": "extra-extra-ketchup",
+    "kind": "a",
+    "name": "Extra Ketchup",
+    "kj": 31,
+    "p": 0.1,
+    "c": 1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": 1.5,
+     "sodium": 49.1
+    }
+   },
+   {
+    "key": "r:ketchup",
+    "id": "no-ketchup",
+    "kind": "r",
+    "name": "No Ketchup",
+    "kj": -31,
+    "p": -0.1,
+    "c": -1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": -1.5,
+     "sodium": -49.1
+    },
+    "est": true
+   },
+   {
+    "key": "a:extra-pickle",
+    "id": "extra-extra-pickle",
+    "kind": "a",
+    "name": "Extra Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:pickle",
+    "id": "no-pickle",
+    "kind": "r",
+    "name": "No Pickle",
+    "kj": -1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:beef-patty",
+    "id": "no-beef-patty",
+    "kind": "r",
+    "name": "No Beef Patty",
+    "kj": -980,
+    "p": -22.3,
+    "c": -0.6,
+    "f": -15.9,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 137,
+    "p": 2.5,
+    "c": 0.1,
+    "f": 2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   },
+   {
+    "key": "a:add-smoky-bbq-sauce",
+    "id": "extra-add-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Add Smoky BBQ Sauce",
+    "kj": 152,
+    "p": 0.2,
+    "c": 8.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-mustard",
+    "id": "extra-add-mustard",
+    "kind": "a",
+    "name": "Add Mustard",
+    "kj": 14,
+    "p": 0.2,
+    "c": 0.4,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   }
+  ],
+  "hj:angry-whopper": [
+   {
+    "key": "a:extra-mayonnaise",
+    "id": "extra-extra-mayonnaise",
+    "kind": "a",
+    "name": "Extra Mayonnaise",
+    "kj": 210,
+    "p": 0.3,
+    "c": 1.3,
+    "f": 4.9,
+    "est": true
+   },
+   {
+    "key": "r:mayonnaise",
+    "id": "no-mayonnaise",
+    "kind": "r",
+    "name": "No Mayonnaise",
+    "kj": -210,
+    "p": -0.3,
+    "c": -1.3,
+    "f": -4.9,
+    "est": true
+   },
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-tomato",
+    "id": "extra-extra-tomato",
+    "kind": "a",
+    "name": "Extra Tomato",
+    "kj": 9,
+    "p": 0.1,
+    "c": 0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:tomato",
+    "id": "no-tomato",
+    "kind": "r",
+    "name": "No Tomato",
+    "kj": -9,
+    "p": -0.1,
+    "c": -0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-jalapeno",
+    "id": "extra-extra-jalapeno",
+    "kind": "a",
+    "name": "Extra Jalapeno",
+    "kj": 21,
+    "p": 0.2,
+    "c": 1.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:jalapeno",
+    "id": "no-jalapeno",
+    "kind": "r",
+    "name": "No Jalapeno",
+    "kj": -21,
+    "p": -0.2,
+    "c": -1.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-ketchup",
+    "id": "extra-extra-ketchup",
+    "kind": "a",
+    "name": "Extra Ketchup",
+    "kj": 31,
+    "p": 0.1,
+    "c": 1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": 1.5,
+     "sodium": 49.1
+    }
+   },
+   {
+    "key": "r:ketchup",
+    "id": "no-ketchup",
+    "kind": "r",
+    "name": "No Ketchup",
+    "kj": -31,
+    "p": -0.1,
+    "c": -1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": -1.5,
+     "sodium": -49.1
+    },
+    "est": true
+   },
+   {
+    "key": "r:angry-onion",
+    "id": "no-angry-onion",
+    "kind": "r",
+    "name": "No Angry Onion",
+    "kj": -282,
+    "p": -0.7,
+    "c": -7.4,
+    "f": -3.9,
+    "est": true
+   },
+   {
+    "key": "r:beef-patty",
+    "id": "no-beef-patty",
+    "kind": "r",
+    "name": "No Beef Patty",
+    "kj": -980,
+    "p": -22.3,
+    "c": -0.6,
+    "f": -15.9,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 137,
+    "p": 2.5,
+    "c": 0.1,
+    "f": 2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-pickle",
+    "id": "extra-add-pickle",
+    "kind": "a",
+    "name": "Add Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-smoky-bbq-sauce",
+    "id": "extra-add-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Add Smoky BBQ Sauce",
+    "kj": 152,
+    "p": 0.2,
+    "c": 8.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   }
+  ],
+  "hj:bacon-deluxe": [
+   {
+    "key": "a:extra-mayonnaise",
+    "id": "extra-extra-mayonnaise",
+    "kind": "a",
+    "name": "Extra Mayonnaise",
+    "kj": 210,
+    "p": 0.3,
+    "c": 1.3,
+    "f": 4.9,
+    "est": true
+   },
+   {
+    "key": "r:mayonnaise",
+    "id": "no-mayonnaise",
+    "kind": "r",
+    "name": "No Mayonnaise",
+    "kj": -210,
+    "p": -0.3,
+    "c": -1.3,
+    "f": -4.9,
+    "est": true
+   },
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-tomato",
+    "id": "extra-extra-tomato",
+    "kind": "a",
+    "name": "Extra Tomato",
+    "kj": 9,
+    "p": 0.1,
+    "c": 0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:tomato",
+    "id": "no-tomato",
+    "kind": "r",
+    "name": "No Tomato",
+    "kj": -9,
+    "p": -0.1,
+    "c": -0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:bacon",
+    "id": "no-bacon",
+    "kind": "r",
+    "name": "No Bacon",
+    "kj": -137,
+    "p": -2.5,
+    "c": -0.1,
+    "f": -2.5,
+    "est": true
+   },
+   {
+    "key": "r:beef-patty",
+    "id": "no-beef-patty",
+    "kind": "r",
+    "name": "No Beef Patty",
+    "kj": -422,
+    "p": -9.6,
+    "c": -0.3,
+    "f": -6.8,
+    "est": true
+   },
+   {
+    "key": "a:add-smoky-bbq-sauce",
+    "id": "extra-add-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Add Smoky BBQ Sauce",
+    "kj": 152,
+    "p": 0.2,
+    "c": 8.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   },
+   {
+    "key": "a:add-ketchup",
+    "id": "extra-add-ketchup",
+    "kind": "a",
+    "name": "Add Ketchup",
+    "kj": 62,
+    "p": 0.1,
+    "c": 3.3,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": 3.1,
+     "sodium": 98.1
+    }
+   },
+   {
+    "key": "a:add-pickle",
+    "id": "extra-add-pickle",
+    "kind": "a",
+    "name": "Add Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-onion",
+    "id": "extra-add-onion",
+    "kind": "a",
+    "name": "Add Onion",
+    "kj": 20,
+    "p": 0.0,
+    "c": 0.3,
+    "f": 0.4,
+    "nut": {
+     "sat": 0.2,
+     "sugar": 0.0,
+     "sodium": 5.5
+    }
+   },
+   {
+    "key": "a:add-mustard",
+    "id": "extra-add-mustard",
+    "kind": "a",
+    "name": "Add Mustard",
+    "kj": 14,
+    "p": 0.2,
+    "c": 0.4,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   }
+  ],
+  "hj:hamburger": [
+   {
+    "key": "a:extra-mustard",
+    "id": "extra-extra-mustard",
+    "kind": "a",
+    "name": "Extra Mustard",
+    "kj": 7,
+    "p": 0.1,
+    "c": 0.2,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "r:mustard",
+    "id": "no-mustard",
+    "kind": "r",
+    "name": "No Mustard",
+    "kj": -7,
+    "p": -0.1,
+    "c": -0.2,
+    "f": -0.1,
+    "est": true
+   },
+   {
+    "key": "a:extra-ketchup",
+    "id": "extra-extra-ketchup",
+    "kind": "a",
+    "name": "Extra Ketchup",
+    "kj": 31,
+    "p": 0.1,
+    "c": 1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": 1.5,
+     "sodium": 49.1
+    }
+   },
+   {
+    "key": "r:ketchup",
+    "id": "no-ketchup",
+    "kind": "r",
+    "name": "No Ketchup",
+    "kj": -31,
+    "p": -0.1,
+    "c": -1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": -1.5,
+     "sodium": -49.1
+    },
+    "est": true
+   },
+   {
+    "key": "a:extra-pickle",
+    "id": "extra-extra-pickle",
+    "kind": "a",
+    "name": "Extra Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:pickle",
+    "id": "no-pickle",
+    "kind": "r",
+    "name": "No Pickle",
+    "kj": -1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:beef-patty",
+    "id": "no-beef-patty",
+    "kind": "r",
+    "name": "No Beef Patty",
+    "kj": -422,
+    "p": -9.6,
+    "c": -0.3,
+    "f": -6.8,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 137,
+    "p": 2.5,
+    "c": 0.1,
+    "f": 2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-onion",
+    "id": "extra-add-onion",
+    "kind": "a",
+    "name": "Add Onion",
+    "kj": 20,
+    "p": 0.0,
+    "c": 0.3,
+    "f": 0.4,
+    "nut": {
+     "sat": 0.2,
+     "sugar": 0.0,
+     "sodium": 5.5
+    }
+   },
+   {
+    "key": "a:add-smoky-bbq-sauce",
+    "id": "extra-add-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Add Smoky BBQ Sauce",
+    "kj": 152,
+    "p": 0.2,
+    "c": 8.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   }
+  ],
+  "hj:cheeseburger": [
+   {
+    "key": "a:extra-ketchup",
+    "id": "extra-extra-ketchup",
+    "kind": "a",
+    "name": "Extra Ketchup",
+    "kj": 31,
+    "p": 0.1,
+    "c": 1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": 1.5,
+     "sodium": 49.1
+    }
+   },
+   {
+    "key": "r:ketchup",
+    "id": "no-ketchup",
+    "kind": "r",
+    "name": "No Ketchup",
+    "kj": -31,
+    "p": -0.1,
+    "c": -1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": -1.5,
+     "sodium": -49.1
+    },
+    "est": true
+   },
+   {
+    "key": "a:extra-mustard",
+    "id": "extra-extra-mustard",
+    "kind": "a",
+    "name": "Extra Mustard",
+    "kj": 7,
+    "p": 0.1,
+    "c": 0.2,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "r:mustard",
+    "id": "no-mustard",
+    "kind": "r",
+    "name": "No Mustard",
+    "kj": -7,
+    "p": -0.1,
+    "c": -0.2,
+    "f": -0.1,
+    "est": true
+   },
+   {
+    "key": "a:extra-pickle",
+    "id": "extra-extra-pickle",
+    "kind": "a",
+    "name": "Extra Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:pickle",
+    "id": "no-pickle",
+    "kind": "r",
+    "name": "No Pickle",
+    "kj": -1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:beef-patty",
+    "id": "no-beef-patty",
+    "kind": "r",
+    "name": "No Beef Patty",
+    "kj": -422,
+    "p": -9.6,
+    "c": -0.3,
+    "f": -6.8,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 137,
+    "p": 2.5,
+    "c": 0.1,
+    "f": 2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-onion",
+    "id": "extra-add-onion",
+    "kind": "a",
+    "name": "Add Onion",
+    "kj": 20,
+    "p": 0.0,
+    "c": 0.3,
+    "f": 0.4,
+    "nut": {
+     "sat": 0.2,
+     "sugar": 0.0,
+     "sodium": 5.5
+    }
+   },
+   {
+    "key": "a:add-smoky-bbq-sauce",
+    "id": "extra-add-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Add Smoky BBQ Sauce",
+    "kj": 152,
+    "p": 0.2,
+    "c": 8.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   }
+  ],
+  "hj:bbq-cheeseburger": [
+   {
+    "key": "a:extra-mayonnaise",
+    "id": "extra-extra-mayonnaise",
+    "kind": "a",
+    "name": "Extra Mayonnaise",
+    "kj": 210,
+    "p": 0.3,
+    "c": 1.3,
+    "f": 4.9,
+    "est": true
+   },
+   {
+    "key": "r:mayonnaise",
+    "id": "no-mayonnaise",
+    "kind": "r",
+    "name": "No Mayonnaise",
+    "kj": -210,
+    "p": -0.3,
+    "c": -1.3,
+    "f": -4.9,
+    "est": true
+   },
+   {
+    "key": "a:extra-smoky-bbq-sauce",
+    "id": "extra-extra-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Extra Smoky BBQ Sauce",
+    "kj": 76,
+    "p": 0.1,
+    "c": 4.3,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "r:smoky-bbq-sauce",
+    "id": "no-smoky-bbq-sauce",
+    "kind": "r",
+    "name": "No Smoky BBQ Sauce",
+    "kj": -76,
+    "p": -0.1,
+    "c": -4.3,
+    "f": -0.1,
+    "est": true
+   },
+   {
+    "key": "r:beef-patty",
+    "id": "no-beef-patty",
+    "kind": "r",
+    "name": "No Beef Patty",
+    "kj": -422,
+    "p": -9.6,
+    "c": -0.3,
+    "f": -6.8,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 137,
+    "p": 2.5,
+    "c": 0.1,
+    "f": 2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-mustard",
+    "id": "extra-add-mustard",
+    "kind": "a",
+    "name": "Add Mustard",
+    "kj": 14,
+    "p": 0.2,
+    "c": 0.4,
+    "f": 0.1,
+    "est": true
+   }
+  ],
+  "hj:double-cheeseburger": [
+   {
+    "key": "a:extra-ketchup",
+    "id": "extra-extra-ketchup",
+    "kind": "a",
+    "name": "Extra Ketchup",
+    "kj": 31,
+    "p": 0.1,
+    "c": 1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": 1.5,
+     "sodium": 49.1
+    }
+   },
+   {
+    "key": "r:ketchup",
+    "id": "no-ketchup",
+    "kind": "r",
+    "name": "No Ketchup",
+    "kj": -31,
+    "p": -0.1,
+    "c": -1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": -1.5,
+     "sodium": -49.1
+    },
+    "est": true
+   },
+   {
+    "key": "a:extra-mustard",
+    "id": "extra-extra-mustard",
+    "kind": "a",
+    "name": "Extra Mustard",
+    "kj": 7,
+    "p": 0.1,
+    "c": 0.2,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "r:mustard",
+    "id": "no-mustard",
+    "kind": "r",
+    "name": "No Mustard",
+    "kj": -7,
+    "p": -0.1,
+    "c": -0.2,
+    "f": -0.1,
+    "est": true
+   },
+   {
+    "key": "a:extra-pickle",
+    "id": "extra-extra-pickle",
+    "kind": "a",
+    "name": "Extra Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:pickle",
+    "id": "no-pickle",
+    "kind": "r",
+    "name": "No Pickle",
+    "kj": -1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:beef-patty",
+    "id": "no-beef-patty",
+    "kind": "r",
+    "name": "No Beef Patty",
+    "kj": -422,
+    "p": -9.6,
+    "c": -0.3,
+    "f": -6.8,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 137,
+    "p": 2.5,
+    "c": 0.1,
+    "f": 2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-onion",
+    "id": "extra-add-onion",
+    "kind": "a",
+    "name": "Add Onion",
+    "kj": 20,
+    "p": 0.0,
+    "c": 0.3,
+    "f": 0.4,
+    "nut": {
+     "sat": 0.2,
+     "sugar": 0.0,
+     "sodium": 5.5
+    }
+   },
+   {
+    "key": "a:add-smoky-bbq-sauce",
+    "id": "extra-add-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Add Smoky BBQ Sauce",
+    "kj": 152,
+    "p": 0.2,
+    "c": 8.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   }
+  ],
+  "hj:triple-cheeseburger": [
+   {
+    "key": "a:extra-ketchup",
+    "id": "extra-extra-ketchup",
+    "kind": "a",
+    "name": "Extra Ketchup",
+    "kj": 31,
+    "p": 0.1,
+    "c": 1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": 1.5,
+     "sodium": 49.1
+    }
+   },
+   {
+    "key": "r:ketchup",
+    "id": "no-ketchup",
+    "kind": "r",
+    "name": "No Ketchup",
+    "kj": -31,
+    "p": -0.1,
+    "c": -1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": -1.5,
+     "sodium": -49.1
+    },
+    "est": true
+   },
+   {
+    "key": "a:extra-mustard",
+    "id": "extra-extra-mustard",
+    "kind": "a",
+    "name": "Extra Mustard",
+    "kj": 7,
+    "p": 0.1,
+    "c": 0.2,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "r:mustard",
+    "id": "no-mustard",
+    "kind": "r",
+    "name": "No Mustard",
+    "kj": -7,
+    "p": -0.1,
+    "c": -0.2,
+    "f": -0.1,
+    "est": true
+   },
+   {
+    "key": "a:extra-pickle",
+    "id": "extra-extra-pickle",
+    "kind": "a",
+    "name": "Extra Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:pickle",
+    "id": "no-pickle",
+    "kind": "r",
+    "name": "No Pickle",
+    "kj": -1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:beef-patty",
+    "id": "no-beef-patty",
+    "kind": "r",
+    "name": "No Beef Patty",
+    "kj": -422,
+    "p": -9.6,
+    "c": -0.3,
+    "f": -6.8,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 137,
+    "p": 2.5,
+    "c": 0.1,
+    "f": 2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-onion",
+    "id": "extra-add-onion",
+    "kind": "a",
+    "name": "Add Onion",
+    "kj": 20,
+    "p": 0.0,
+    "c": 0.3,
+    "f": 0.4,
+    "nut": {
+     "sat": 0.2,
+     "sugar": 0.0,
+     "sodium": 5.5
+    }
+   },
+   {
+    "key": "a:add-smoky-bbq-sauce",
+    "id": "extra-add-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Add Smoky BBQ Sauce",
+    "kj": 152,
+    "p": 0.2,
+    "c": 8.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   }
+  ],
+  "hj:grill-masters-bbq-smokehouse-angus": [
+   {
+    "key": "a:extra-mayonnaise",
+    "id": "extra-extra-mayonnaise",
+    "kind": "a",
+    "name": "Extra Mayonnaise",
+    "kj": 210,
+    "p": 0.3,
+    "c": 1.3,
+    "f": 4.9,
+    "est": true
+   },
+   {
+    "key": "r:mayonnaise",
+    "id": "no-mayonnaise",
+    "kind": "r",
+    "name": "No Mayonnaise",
+    "kj": -210,
+    "p": -0.3,
+    "c": -1.3,
+    "f": -4.9,
+    "est": true
+   },
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-tomato",
+    "id": "extra-extra-tomato",
+    "kind": "a",
+    "name": "Extra Tomato",
+    "kj": 9,
+    "p": 0.1,
+    "c": 0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:tomato",
+    "id": "no-tomato",
+    "kind": "r",
+    "name": "No Tomato",
+    "kj": -9,
+    "p": -0.1,
+    "c": -0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-mustard",
+    "id": "extra-extra-mustard",
+    "kind": "a",
+    "name": "Extra Mustard",
+    "kj": 7,
+    "p": 0.1,
+    "c": 0.2,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "r:mustard",
+    "id": "no-mustard",
+    "kind": "r",
+    "name": "No Mustard",
+    "kj": -7,
+    "p": -0.1,
+    "c": -0.2,
+    "f": -0.1,
+    "est": true
+   },
+   {
+    "key": "a:extra-smoky-bbq-sauce",
+    "id": "extra-extra-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Extra Smoky BBQ Sauce",
+    "kj": 152,
+    "p": 0.2,
+    "c": 8.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "r:smoky-bbq-sauce",
+    "id": "no-smoky-bbq-sauce",
+    "kind": "r",
+    "name": "No Smoky BBQ Sauce",
+    "kj": -152,
+    "p": -0.2,
+    "c": -8.6,
+    "f": -0.1,
+    "est": true
+   },
+   {
+    "key": "r:bacon",
+    "id": "no-bacon",
+    "kind": "r",
+    "name": "No Bacon",
+    "kj": -137,
+    "p": -2.5,
+    "c": -0.1,
+    "f": -2.5,
+    "est": true
+   },
+   {
+    "key": "r:angus-beef-patty",
+    "id": "no-angus-beef-patty",
+    "kind": "r",
+    "name": "No Angus Beef Patty",
+    "kj": -1450,
+    "p": -32.9,
+    "c": -0.9,
+    "f": -23.5,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   }
+  ],
+  "hj:grill-masters-double-bbq-smokehouse-angus": [
+   {
+    "key": "a:extra-mayonnaise",
+    "id": "extra-extra-mayonnaise",
+    "kind": "a",
+    "name": "Extra Mayonnaise",
+    "kj": 210,
+    "p": 0.3,
+    "c": 1.3,
+    "f": 4.9,
+    "est": true
+   },
+   {
+    "key": "r:mayonnaise",
+    "id": "no-mayonnaise",
+    "kind": "r",
+    "name": "No Mayonnaise",
+    "kj": -210,
+    "p": -0.3,
+    "c": -1.3,
+    "f": -4.9,
+    "est": true
+   },
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-tomato",
+    "id": "extra-extra-tomato",
+    "kind": "a",
+    "name": "Extra Tomato",
+    "kj": 9,
+    "p": 0.1,
+    "c": 0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:tomato",
+    "id": "no-tomato",
+    "kind": "r",
+    "name": "No Tomato",
+    "kj": -9,
+    "p": -0.1,
+    "c": -0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-mustard",
+    "id": "extra-extra-mustard",
+    "kind": "a",
+    "name": "Extra Mustard",
+    "kj": 7,
+    "p": 0.1,
+    "c": 0.2,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "r:mustard",
+    "id": "no-mustard",
+    "kind": "r",
+    "name": "No Mustard",
+    "kj": -7,
+    "p": -0.1,
+    "c": -0.2,
+    "f": -0.1,
+    "est": true
+   },
+   {
+    "key": "a:extra-smoky-bbq-sauce",
+    "id": "extra-extra-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Extra Smoky BBQ Sauce",
+    "kj": 152,
+    "p": 0.2,
+    "c": 8.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "r:smoky-bbq-sauce",
+    "id": "no-smoky-bbq-sauce",
+    "kind": "r",
+    "name": "No Smoky BBQ Sauce",
+    "kj": -152,
+    "p": -0.2,
+    "c": -8.6,
+    "f": -0.1,
+    "est": true
+   },
+   {
+    "key": "r:bacon",
+    "id": "no-bacon",
+    "kind": "r",
+    "name": "No Bacon",
+    "kj": -137,
+    "p": -2.5,
+    "c": -0.1,
+    "f": -2.5,
+    "est": true
+   },
+   {
+    "key": "r:angus-beef-patty",
+    "id": "no-angus-beef-patty",
+    "kind": "r",
+    "name": "No Angus Beef Patty",
+    "kj": -1450,
+    "p": -32.9,
+    "c": -0.9,
+    "f": -23.5,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   }
+  ],
+  "hj:grill-masters-smoky-chipotle-angus": [
+   {
+    "key": "a:extra-chipotle-sauce",
+    "id": "extra-extra-chipotle-sauce",
+    "kind": "a",
+    "name": "Extra Chipotle Sauce",
+    "kj": 316,
+    "p": 0.4,
+    "c": 1.9,
+    "f": 7.4,
+    "est": true
+   },
+   {
+    "key": "r:chipotle-sauce",
+    "id": "no-chipotle-sauce",
+    "kind": "r",
+    "name": "No Chipotle Sauce",
+    "kj": -316,
+    "p": -0.4,
+    "c": -1.9,
+    "f": -7.4,
+    "est": true
+   },
+   {
+    "key": "a:extra-jalapeno",
+    "id": "extra-extra-jalapeno",
+    "kind": "a",
+    "name": "Extra Jalapeno",
+    "kj": 21,
+    "p": 0.2,
+    "c": 1.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:jalapeno",
+    "id": "no-jalapeno",
+    "kind": "r",
+    "name": "No Jalapeno",
+    "kj": -21,
+    "p": -0.2,
+    "c": -1.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:bacon",
+    "id": "no-bacon",
+    "kind": "r",
+    "name": "No Bacon",
+    "kj": -137,
+    "p": -2.5,
+    "c": -0.1,
+    "f": -2.5,
+    "est": true
+   },
+   {
+    "key": "r:angus-beef-patty",
+    "id": "no-angus-beef-patty",
+    "kind": "r",
+    "name": "No Angus Beef Patty",
+    "kj": -1450,
+    "p": -32.9,
+    "c": -0.9,
+    "f": -23.5,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   },
+   {
+    "key": "a:add-mayo",
+    "id": "extra-add-mayo",
+    "kind": "a",
+    "name": "Add Mayo",
+    "kj": 419,
+    "p": 0.5,
+    "c": 2.5,
+    "f": 9.8,
+    "est": true
+   },
+   {
+    "key": "a:add-mustard",
+    "id": "extra-add-mustard",
+    "kind": "a",
+    "name": "Add Mustard",
+    "kj": 14,
+    "p": 0.2,
+    "c": 0.4,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   }
+  ],
+  "hj:grill-masters-double-smoky-chipotle-angus": [
+   {
+    "key": "a:extra-chipotle-sauce",
+    "id": "extra-extra-chipotle-sauce",
+    "kind": "a",
+    "name": "Extra Chipotle Sauce",
+    "kj": 316,
+    "p": 0.4,
+    "c": 1.9,
+    "f": 7.4,
+    "est": true
+   },
+   {
+    "key": "r:chipotle-sauce",
+    "id": "no-chipotle-sauce",
+    "kind": "r",
+    "name": "No Chipotle Sauce",
+    "kj": -316,
+    "p": -0.4,
+    "c": -1.9,
+    "f": -7.4,
+    "est": true
+   },
+   {
+    "key": "a:extra-jalapeno",
+    "id": "extra-extra-jalapeno",
+    "kind": "a",
+    "name": "Extra Jalapeno",
+    "kj": 21,
+    "p": 0.2,
+    "c": 1.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:jalapeno",
+    "id": "no-jalapeno",
+    "kind": "r",
+    "name": "No Jalapeno",
+    "kj": -21,
+    "p": -0.2,
+    "c": -1.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:bacon",
+    "id": "no-bacon",
+    "kind": "r",
+    "name": "No Bacon",
+    "kj": -137,
+    "p": -2.5,
+    "c": -0.1,
+    "f": -2.5,
+    "est": true
+   },
+   {
+    "key": "r:angus-beef-patty",
+    "id": "no-angus-beef-patty",
+    "kind": "r",
+    "name": "No Angus Beef Patty",
+    "kj": -1450,
+    "p": -32.9,
+    "c": -0.9,
+    "f": -23.5,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   },
+   {
+    "key": "a:add-mayo",
+    "id": "extra-add-mayo",
+    "kind": "a",
+    "name": "Add Mayo",
+    "kj": 419,
+    "p": 0.5,
+    "c": 2.5,
+    "f": 9.8,
+    "est": true
+   },
+   {
+    "key": "a:add-mustard",
+    "id": "extra-add-mustard",
+    "kind": "a",
+    "name": "Add Mustard",
+    "kj": 14,
+    "p": 0.2,
+    "c": 0.4,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   }
+  ],
+  "hj:grill-masters-chicago-angus": [
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-tomato",
+    "id": "extra-extra-tomato",
+    "kind": "a",
+    "name": "Extra Tomato",
+    "kj": 9,
+    "p": 0.1,
+    "c": 0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:tomato",
+    "id": "no-tomato",
+    "kind": "r",
+    "name": "No Tomato",
+    "kj": -9,
+    "p": -0.1,
+    "c": -0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:bacon",
+    "id": "no-bacon",
+    "kind": "r",
+    "name": "No Bacon",
+    "kj": -137,
+    "p": -2.5,
+    "c": -0.1,
+    "f": -2.5,
+    "est": true
+   },
+   {
+    "key": "r:angus-beef-patty",
+    "id": "no-angus-beef-patty",
+    "kind": "r",
+    "name": "No Angus Beef Patty",
+    "kj": -1450,
+    "p": -32.9,
+    "c": -0.9,
+    "f": -23.5,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   },
+   {
+    "key": "a:add-mayo",
+    "id": "extra-add-mayo",
+    "kind": "a",
+    "name": "Add Mayo",
+    "kj": 419,
+    "p": 0.5,
+    "c": 2.5,
+    "f": 9.8,
+    "est": true
+   },
+   {
+    "key": "a:add-mustard",
+    "id": "extra-add-mustard",
+    "kind": "a",
+    "name": "Add Mustard",
+    "kj": 14,
+    "p": 0.2,
+    "c": 0.4,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   }
+  ],
+  "hj:grill-masters-double-chicago-angus": [
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-tomato",
+    "id": "extra-extra-tomato",
+    "kind": "a",
+    "name": "Extra Tomato",
+    "kj": 9,
+    "p": 0.1,
+    "c": 0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:tomato",
+    "id": "no-tomato",
+    "kind": "r",
+    "name": "No Tomato",
+    "kj": -9,
+    "p": -0.1,
+    "c": -0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:bacon",
+    "id": "no-bacon",
+    "kind": "r",
+    "name": "No Bacon",
+    "kj": -137,
+    "p": -2.5,
+    "c": -0.1,
+    "f": -2.5,
+    "est": true
+   },
+   {
+    "key": "r:angus-beef-patty",
+    "id": "no-angus-beef-patty",
+    "kind": "r",
+    "name": "No Angus Beef Patty",
+    "kj": -1450,
+    "p": -32.9,
+    "c": -0.9,
+    "f": -23.5,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   },
+   {
+    "key": "a:add-mayo",
+    "id": "extra-add-mayo",
+    "kind": "a",
+    "name": "Add Mayo",
+    "kj": 419,
+    "p": 0.5,
+    "c": 2.5,
+    "f": 9.8,
+    "est": true
+   },
+   {
+    "key": "a:add-mustard",
+    "id": "extra-add-mustard",
+    "kind": "a",
+    "name": "Add Mustard",
+    "kj": 14,
+    "p": 0.2,
+    "c": 0.4,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   }
+  ],
+  "hj:grill-masters-double-angus-bacon-cheese": [
+   {
+    "key": "a:extra-smoky-bbq-sauce",
+    "id": "extra-extra-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Extra Smoky BBQ Sauce",
+    "kj": 76,
+    "p": 0.1,
+    "c": 4.3,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "r:smoky-bbq-sauce",
+    "id": "no-smoky-bbq-sauce",
+    "kind": "r",
+    "name": "No Smoky BBQ Sauce",
+    "kj": -76,
+    "p": -0.1,
+    "c": -4.3,
+    "f": -0.1,
+    "est": true
+   },
+   {
+    "key": "r:bacon",
+    "id": "no-bacon",
+    "kind": "r",
+    "name": "No Bacon",
+    "kj": -137,
+    "p": -2.5,
+    "c": -0.1,
+    "f": -2.5,
+    "est": true
+   },
+   {
+    "key": "a:extra-mustard",
+    "id": "extra-extra-mustard",
+    "kind": "a",
+    "name": "Extra Mustard",
+    "kj": 7,
+    "p": 0.1,
+    "c": 0.2,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "r:mustard",
+    "id": "no-mustard",
+    "kind": "r",
+    "name": "No Mustard",
+    "kj": -7,
+    "p": -0.1,
+    "c": -0.2,
+    "f": -0.1,
+    "est": true
+   },
+   {
+    "key": "a:extra-pickle",
+    "id": "extra-extra-pickle",
+    "kind": "a",
+    "name": "Extra Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:pickle",
+    "id": "no-pickle",
+    "kind": "r",
+    "name": "No Pickle",
+    "kj": -1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:angus-beef-patty",
+    "id": "no-angus-beef-patty",
+    "kind": "r",
+    "name": "No Angus Beef Patty",
+    "kj": -1450,
+    "p": -32.9,
+    "c": -0.9,
+    "f": -23.5,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   },
+   {
+    "key": "a:add-mayo",
+    "id": "extra-add-mayo",
+    "kind": "a",
+    "name": "Add Mayo",
+    "kj": 419,
+    "p": 0.5,
+    "c": 2.5,
+    "f": 9.8,
+    "est": true
+   }
+  ],
+  "hj:napoletana-jack-s-fried-chicken": [
+   {
+    "key": "a:extra-mayonnaise",
+    "id": "extra-extra-mayonnaise",
+    "kind": "a",
+    "name": "Extra Mayonnaise",
+    "kj": 210,
+    "p": 0.3,
+    "c": 1.3,
+    "f": 4.9,
+    "est": true
+   },
+   {
+    "key": "r:mayonnaise",
+    "id": "no-mayonnaise",
+    "kind": "r",
+    "name": "No Mayonnaise",
+    "kj": -210,
+    "p": -0.3,
+    "c": -1.3,
+    "f": -4.9,
+    "est": true
+   },
+   {
+    "key": "a:extra-tomato-herb-napoletana-sauce",
+    "id": "extra-extra-tomato-herb-napoletana-sauce",
+    "kind": "a",
+    "name": "Extra Tomato & Herb Napoletana Sauce",
+    "kj": 63,
+    "p": 0.1,
+    "c": 3.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "r:tomato-herb-napoletana-sauce",
+    "id": "no-tomato-herb-napoletana-sauce",
+    "kind": "r",
+    "name": "No Tomato & Herb Napoletana Sauce",
+    "kj": -63,
+    "p": -0.1,
+    "c": -3.6,
+    "f": -0.1,
+    "est": true
+   },
+   {
+    "key": "r:bacon",
+    "id": "no-bacon",
+    "kind": "r",
+    "name": "No Bacon",
+    "kj": -137,
+    "p": -2.5,
+    "c": -0.1,
+    "f": -2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-smoky-bbq-sauce",
+    "id": "extra-add-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Add Smoky BBQ Sauce",
+    "kj": 152,
+    "p": 0.2,
+    "c": 8.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-tomato",
+    "id": "extra-add-tomato",
+    "kind": "a",
+    "name": "Add Tomato",
+    "kj": 18,
+    "p": 0.1,
+    "c": 0.9,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-lettuce",
+    "id": "extra-add-lettuce",
+    "kind": "a",
+    "name": "Add Lettuce",
+    "kj": 8,
+    "p": 0.1,
+    "c": 0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   },
+   {
+    "key": "a:add-pickle",
+    "id": "extra-add-pickle",
+    "kind": "a",
+    "name": "Add Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   }
+  ],
+  "hj:napoletana-grilled-chicken": [
+   {
+    "key": "a:extra-mayonnaise",
+    "id": "extra-extra-mayonnaise",
+    "kind": "a",
+    "name": "Extra Mayonnaise",
+    "kj": 210,
+    "p": 0.3,
+    "c": 1.3,
+    "f": 4.9,
+    "est": true
+   },
+   {
+    "key": "r:mayonnaise",
+    "id": "no-mayonnaise",
+    "kind": "r",
+    "name": "No Mayonnaise",
+    "kj": -210,
+    "p": -0.3,
+    "c": -1.3,
+    "f": -4.9,
+    "est": true
+   },
+   {
+    "key": "a:extra-tomato-herb-napoletana-sauce",
+    "id": "extra-extra-tomato-herb-napoletana-sauce",
+    "kind": "a",
+    "name": "Extra Tomato & Herb Napoletana Sauce",
+    "kj": 63,
+    "p": 0.1,
+    "c": 3.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "r:tomato-herb-napoletana-sauce",
+    "id": "no-tomato-herb-napoletana-sauce",
+    "kind": "r",
+    "name": "No Tomato & Herb Napoletana Sauce",
+    "kj": -63,
+    "p": -0.1,
+    "c": -3.6,
+    "f": -0.1,
+    "est": true
+   },
+   {
+    "key": "r:grilled-chicken-patty",
+    "id": "no-grilled-chicken-patty",
+    "kind": "r",
+    "name": "No Grilled Chicken Patty",
+    "kj": -333,
+    "p": -7.6,
+    "c": -0.2,
+    "f": -5.4,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   }
+  ],
+  "hj:cheesy-bacon-classic-jack-s-fried-chicken": [
+   {
+    "key": "a:extra-mayonnaise",
+    "id": "extra-extra-mayonnaise",
+    "kind": "a",
+    "name": "Extra Mayonnaise",
+    "kj": 210,
+    "p": 0.3,
+    "c": 1.3,
+    "f": 4.9,
+    "est": true
+   },
+   {
+    "key": "r:mayonnaise",
+    "id": "no-mayonnaise",
+    "kind": "r",
+    "name": "No Mayonnaise",
+    "kj": -210,
+    "p": -0.3,
+    "c": -1.3,
+    "f": -4.9,
+    "est": true
+   },
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:bacon",
+    "id": "no-bacon",
+    "kind": "r",
+    "name": "No Bacon",
+    "kj": -137,
+    "p": -2.5,
+    "c": -0.1,
+    "f": -2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-smoky-bbq-sauce",
+    "id": "extra-add-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Add Smoky BBQ Sauce",
+    "kj": 152,
+    "p": 0.2,
+    "c": 8.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-tomato",
+    "id": "extra-add-tomato",
+    "kind": "a",
+    "name": "Add Tomato",
+    "kj": 18,
+    "p": 0.1,
+    "c": 0.9,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   },
+   {
+    "key": "a:add-pickle",
+    "id": "extra-add-pickle",
+    "kind": "a",
+    "name": "Add Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   }
+  ],
+  "hj:cheesy-bacon-spicy-jack-s-fried-chicken": [
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:bacon",
+    "id": "no-bacon",
+    "kind": "r",
+    "name": "No Bacon",
+    "kj": -137,
+    "p": -2.5,
+    "c": -0.1,
+    "f": -2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-smoky-bbq-sauce",
+    "id": "extra-add-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Add Smoky BBQ Sauce",
+    "kj": 152,
+    "p": 0.2,
+    "c": 8.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-tomato",
+    "id": "extra-add-tomato",
+    "kind": "a",
+    "name": "Add Tomato",
+    "kj": 18,
+    "p": 0.1,
+    "c": 0.9,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   },
+   {
+    "key": "a:add-pickle",
+    "id": "extra-add-pickle",
+    "kind": "a",
+    "name": "Add Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-mayo",
+    "id": "extra-add-mayo",
+    "kind": "a",
+    "name": "Add Mayo",
+    "kj": 419,
+    "p": 0.5,
+    "c": 2.5,
+    "f": 9.8,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   }
+  ],
+  "hj:veggie-whopper-with-cheese": [
+   {
+    "key": "a:extra-mayonnaise",
+    "id": "extra-extra-mayonnaise",
+    "kind": "a",
+    "name": "Extra Mayonnaise",
+    "kj": 210,
+    "p": 0.3,
+    "c": 1.3,
+    "f": 4.9,
+    "est": true
+   },
+   {
+    "key": "r:mayonnaise",
+    "id": "no-mayonnaise",
+    "kind": "r",
+    "name": "No Mayonnaise",
+    "kj": -210,
+    "p": -0.3,
+    "c": -1.3,
+    "f": -4.9,
+    "est": true
+   },
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-tomato",
+    "id": "extra-extra-tomato",
+    "kind": "a",
+    "name": "Extra Tomato",
+    "kj": 9,
+    "p": 0.1,
+    "c": 0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:tomato",
+    "id": "no-tomato",
+    "kind": "r",
+    "name": "No Tomato",
+    "kj": -9,
+    "p": -0.1,
+    "c": -0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-onion",
+    "id": "extra-extra-onion",
+    "kind": "a",
+    "name": "Extra Onion",
+    "kj": 10,
+    "p": 0.0,
+    "c": 0.1,
+    "f": 0.2,
+    "nut": {
+     "sat": 0.1,
+     "sugar": 0.0,
+     "sodium": 2.7
+    }
+   },
+   {
+    "key": "r:onion",
+    "id": "no-onion",
+    "kind": "r",
+    "name": "No Onion",
+    "kj": -10,
+    "p": 0.0,
+    "c": -0.1,
+    "f": -0.2,
+    "nut": {
+     "sat": -0.1,
+     "sugar": 0.0,
+     "sodium": -2.7
+    },
+    "est": true
+   },
+   {
+    "key": "a:extra-ketchup",
+    "id": "extra-extra-ketchup",
+    "kind": "a",
+    "name": "Extra Ketchup",
+    "kj": 31,
+    "p": 0.1,
+    "c": 1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": 1.5,
+     "sodium": 49.1
+    }
+   },
+   {
+    "key": "r:ketchup",
+    "id": "no-ketchup",
+    "kind": "r",
+    "name": "No Ketchup",
+    "kj": -31,
+    "p": -0.1,
+    "c": -1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": -1.5,
+     "sodium": -49.1
+    },
+    "est": true
+   },
+   {
+    "key": "r:veggie-patty",
+    "id": "no-veggie-patty",
+    "kind": "r",
+    "name": "No Veggie Patty",
+    "kj": -534,
+    "p": -11.2,
+    "c": -0.6,
+    "f": -8.9,
+    "est": true
+   },
+   {
+    "key": "a:add-smoky-bbq-sauce",
+    "id": "extra-add-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Add Smoky BBQ Sauce",
+    "kj": 152,
+    "p": 0.2,
+    "c": 8.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   },
+   {
+    "key": "a:add-jalapeno",
+    "id": "extra-add-jalapeno",
+    "kind": "a",
+    "name": "Add Jalapeno",
+    "kj": 41,
+    "p": 0.3,
+    "c": 2.0,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-pickle",
+    "id": "extra-add-pickle",
+    "kind": "a",
+    "name": "Add Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-mustard",
+    "id": "extra-add-mustard",
+    "kind": "a",
+    "name": "Add Mustard",
+    "kj": 14,
+    "p": 0.2,
+    "c": 0.4,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   }
+  ],
+  "hj:plant-based-whopper": [
+   {
+    "key": "a:extra-mayonnaise",
+    "id": "extra-extra-mayonnaise",
+    "kind": "a",
+    "name": "Extra Mayonnaise",
+    "kj": 210,
+    "p": 0.3,
+    "c": 1.3,
+    "f": 4.9,
+    "est": true
+   },
+   {
+    "key": "r:mayonnaise",
+    "id": "no-mayonnaise",
+    "kind": "r",
+    "name": "No Mayonnaise",
+    "kj": -210,
+    "p": -0.3,
+    "c": -1.3,
+    "f": -4.9,
+    "est": true
+   },
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-tomato",
+    "id": "extra-extra-tomato",
+    "kind": "a",
+    "name": "Extra Tomato",
+    "kj": 9,
+    "p": 0.1,
+    "c": 0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:tomato",
+    "id": "no-tomato",
+    "kind": "r",
+    "name": "No Tomato",
+    "kj": -9,
+    "p": -0.1,
+    "c": -0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-onion",
+    "id": "extra-extra-onion",
+    "kind": "a",
+    "name": "Extra Onion",
+    "kj": 10,
+    "p": 0.0,
+    "c": 0.1,
+    "f": 0.2,
+    "nut": {
+     "sat": 0.1,
+     "sugar": 0.0,
+     "sodium": 2.7
+    }
+   },
+   {
+    "key": "r:onion",
+    "id": "no-onion",
+    "kind": "r",
+    "name": "No Onion",
+    "kj": -10,
+    "p": 0.0,
+    "c": -0.1,
+    "f": -0.2,
+    "nut": {
+     "sat": -0.1,
+     "sugar": 0.0,
+     "sodium": -2.7
+    },
+    "est": true
+   },
+   {
+    "key": "a:extra-ketchup",
+    "id": "extra-extra-ketchup",
+    "kind": "a",
+    "name": "Extra Ketchup",
+    "kj": 31,
+    "p": 0.1,
+    "c": 1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": 1.5,
+     "sodium": 49.1
+    }
+   },
+   {
+    "key": "r:ketchup",
+    "id": "no-ketchup",
+    "kind": "r",
+    "name": "No Ketchup",
+    "kj": -31,
+    "p": -0.1,
+    "c": -1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": -1.5,
+     "sodium": -49.1
+    },
+    "est": true
+   },
+   {
+    "key": "a:extra-pickle",
+    "id": "extra-extra-pickle",
+    "kind": "a",
+    "name": "Extra Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:pickle",
+    "id": "no-pickle",
+    "kind": "r",
+    "name": "No Pickle",
+    "kj": -1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:plant-based-patty",
+    "id": "no-plant-based-patty",
+    "kind": "r",
+    "name": "No Plant-Based Patty",
+    "kj": -1020,
+    "p": -12.2,
+    "c": -21.3,
+    "f": -12.2,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 137,
+    "p": 2.5,
+    "c": 0.1,
+    "f": 2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-smoky-bbq-sauce",
+    "id": "extra-add-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Add Smoky BBQ Sauce",
+    "kj": 152,
+    "p": 0.2,
+    "c": 8.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   },
+   {
+    "key": "a:add-jalapeno",
+    "id": "extra-add-jalapeno",
+    "kind": "a",
+    "name": "Add Jalapeno",
+    "kj": 41,
+    "p": 0.3,
+    "c": 2.0,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-mustard",
+    "id": "extra-add-mustard",
+    "kind": "a",
+    "name": "Add Mustard",
+    "kj": 14,
+    "p": 0.2,
+    "c": 0.4,
+    "f": 0.1,
+    "est": true
+   }
+  ],
+  "hj:plant-based-whopper-with-cheese": [
+   {
+    "key": "a:extra-mayonnaise",
+    "id": "extra-extra-mayonnaise",
+    "kind": "a",
+    "name": "Extra Mayonnaise",
+    "kj": 210,
+    "p": 0.3,
+    "c": 1.3,
+    "f": 4.9,
+    "est": true
+   },
+   {
+    "key": "r:mayonnaise",
+    "id": "no-mayonnaise",
+    "kind": "r",
+    "name": "No Mayonnaise",
+    "kj": -210,
+    "p": -0.3,
+    "c": -1.3,
+    "f": -4.9,
+    "est": true
+   },
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-tomato",
+    "id": "extra-extra-tomato",
+    "kind": "a",
+    "name": "Extra Tomato",
+    "kj": 9,
+    "p": 0.1,
+    "c": 0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:tomato",
+    "id": "no-tomato",
+    "kind": "r",
+    "name": "No Tomato",
+    "kj": -9,
+    "p": -0.1,
+    "c": -0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-onion",
+    "id": "extra-extra-onion",
+    "kind": "a",
+    "name": "Extra Onion",
+    "kj": 10,
+    "p": 0.0,
+    "c": 0.1,
+    "f": 0.2,
+    "nut": {
+     "sat": 0.1,
+     "sugar": 0.0,
+     "sodium": 2.7
+    }
+   },
+   {
+    "key": "r:onion",
+    "id": "no-onion",
+    "kind": "r",
+    "name": "No Onion",
+    "kj": -10,
+    "p": 0.0,
+    "c": -0.1,
+    "f": -0.2,
+    "nut": {
+     "sat": -0.1,
+     "sugar": 0.0,
+     "sodium": -2.7
+    },
+    "est": true
+   },
+   {
+    "key": "a:extra-ketchup",
+    "id": "extra-extra-ketchup",
+    "kind": "a",
+    "name": "Extra Ketchup",
+    "kj": 31,
+    "p": 0.1,
+    "c": 1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": 1.5,
+     "sodium": 49.1
+    }
+   },
+   {
+    "key": "r:ketchup",
+    "id": "no-ketchup",
+    "kind": "r",
+    "name": "No Ketchup",
+    "kj": -31,
+    "p": -0.1,
+    "c": -1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": -1.5,
+     "sodium": -49.1
+    },
+    "est": true
+   },
+   {
+    "key": "a:extra-pickle",
+    "id": "extra-extra-pickle",
+    "kind": "a",
+    "name": "Extra Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:pickle",
+    "id": "no-pickle",
+    "kind": "r",
+    "name": "No Pickle",
+    "kj": -1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:plant-based-patty",
+    "id": "no-plant-based-patty",
+    "kind": "r",
+    "name": "No Plant-Based Patty",
+    "kj": -1020,
+    "p": -12.2,
+    "c": -21.3,
+    "f": -12.2,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 137,
+    "p": 2.5,
+    "c": 0.1,
+    "f": 2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-smoky-bbq-sauce",
+    "id": "extra-add-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Add Smoky BBQ Sauce",
+    "kj": 152,
+    "p": 0.2,
+    "c": 8.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   },
+   {
+    "key": "a:add-angry-onion",
+    "id": "extra-add-angry-onion",
+    "kind": "a",
+    "name": "Add Angry Onion",
+    "kj": 282,
+    "p": 0.7,
+    "c": 7.4,
+    "f": 3.9,
+    "est": true
+   },
+   {
+    "key": "a:add-jalapeno",
+    "id": "extra-add-jalapeno",
+    "kind": "a",
+    "name": "Add Jalapeno",
+    "kj": 41,
+    "p": 0.3,
+    "c": 2.0,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-mustard",
+    "id": "extra-add-mustard",
+    "kind": "a",
+    "name": "Add Mustard",
+    "kj": 14,
+    "p": 0.2,
+    "c": 0.4,
+    "f": 0.1,
+    "est": true
+   }
+  ],
+  "hj:plant-based-angry-whopper": [
+   {
+    "key": "a:extra-mayonnaise",
+    "id": "extra-extra-mayonnaise",
+    "kind": "a",
+    "name": "Extra Mayonnaise",
+    "kj": 210,
+    "p": 0.3,
+    "c": 1.3,
+    "f": 4.9,
+    "est": true
+   },
+   {
+    "key": "r:mayonnaise",
+    "id": "no-mayonnaise",
+    "kind": "r",
+    "name": "No Mayonnaise",
+    "kj": -210,
+    "p": -0.3,
+    "c": -1.3,
+    "f": -4.9,
+    "est": true
+   },
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:extra-tomato",
+    "id": "extra-extra-tomato",
+    "kind": "a",
+    "name": "Extra Tomato",
+    "kj": 9,
+    "p": 0.1,
+    "c": 0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:tomato",
+    "id": "no-tomato",
+    "kind": "r",
+    "name": "No Tomato",
+    "kj": -9,
+    "p": -0.1,
+    "c": -0.4,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:angry-onion",
+    "id": "no-angry-onion",
+    "kind": "r",
+    "name": "No Angry Onion",
+    "kj": -282,
+    "p": -0.7,
+    "c": -7.4,
+    "f": -3.9,
+    "est": true
+   },
+   {
+    "key": "a:extra-ketchup",
+    "id": "extra-extra-ketchup",
+    "kind": "a",
+    "name": "Extra Ketchup",
+    "kj": 31,
+    "p": 0.1,
+    "c": 1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": 1.5,
+     "sodium": 49.1
+    }
+   },
+   {
+    "key": "r:ketchup",
+    "id": "no-ketchup",
+    "kind": "r",
+    "name": "No Ketchup",
+    "kj": -31,
+    "p": -0.1,
+    "c": -1.7,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": -1.5,
+     "sodium": -49.1
+    },
+    "est": true
+   },
+   {
+    "key": "a:extra-jalapeno",
+    "id": "extra-extra-jalapeno",
+    "kind": "a",
+    "name": "Extra Jalapeno",
+    "kj": 21,
+    "p": 0.2,
+    "c": 1.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:jalapeno",
+    "id": "no-jalapeno",
+    "kind": "r",
+    "name": "No Jalapeno",
+    "kj": -21,
+    "p": -0.2,
+    "c": -1.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:plant-based-patty",
+    "id": "no-plant-based-patty",
+    "kind": "r",
+    "name": "No Plant-Based Patty",
+    "kj": -1020,
+    "p": -12.2,
+    "c": -21.3,
+    "f": -12.2,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 137,
+    "p": 2.5,
+    "c": 0.1,
+    "f": 2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-smoky-bbq-sauce",
+    "id": "extra-add-smoky-bbq-sauce",
+    "kind": "a",
+    "name": "Add Smoky BBQ Sauce",
+    "kj": 152,
+    "p": 0.2,
+    "c": 8.6,
+    "f": 0.1,
+    "est": true
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   },
+   {
+    "key": "a:add-mustard",
+    "id": "extra-add-mustard",
+    "kind": "a",
+    "name": "Add Mustard",
+    "kj": 14,
+    "p": 0.2,
+    "c": 0.4,
+    "f": 0.1,
+    "est": true
+   }
+  ],
+  "hj:creamy-pepper-tender-snack-wrap": [
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 137,
+    "p": 2.5,
+    "c": 0.1,
+    "f": 2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-pickle",
+    "id": "extra-add-pickle",
+    "kind": "a",
+    "name": "Add Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-tomato",
+    "id": "extra-add-tomato",
+    "kind": "a",
+    "name": "Add Tomato",
+    "kj": 18,
+    "p": 0.1,
+    "c": 0.9,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-onion",
+    "id": "extra-add-onion",
+    "kind": "a",
+    "name": "Add Onion",
+    "kj": 20,
+    "p": 0.0,
+    "c": 0.3,
+    "f": 0.4,
+    "nut": {
+     "sat": 0.2,
+     "sugar": 0.0,
+     "sodium": 5.5
+    }
+   },
+   {
+    "key": "a:add-mayo",
+    "id": "extra-add-mayo",
+    "kind": "a",
+    "name": "Add Mayo",
+    "kj": 419,
+    "p": 0.5,
+    "c": 2.5,
+    "f": 9.8,
+    "est": true
+   },
+   {
+    "key": "a:add-ketchup",
+    "id": "extra-add-ketchup",
+    "kind": "a",
+    "name": "Add Ketchup",
+    "kj": 62,
+    "p": 0.1,
+    "c": 3.3,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": 3.1,
+     "sodium": 98.1
+    }
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   }
+  ],
+  "hj:spicy-tender-snack-wrap": [
+   {
+    "key": "a:extra-lettuce",
+    "id": "extra-extra-lettuce",
+    "kind": "a",
+    "name": "Extra Lettuce",
+    "kj": 4,
+    "p": 0.0,
+    "c": 0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -4,
+    "p": 0.0,
+    "c": -0.2,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 137,
+    "p": 2.5,
+    "c": 0.1,
+    "f": 2.5,
+    "est": true
+   },
+   {
+    "key": "a:add-pickle",
+    "id": "extra-add-pickle",
+    "kind": "a",
+    "name": "Add Pickle",
+    "kj": 1,
+    "p": 0.0,
+    "c": 0.0,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-tomato",
+    "id": "extra-add-tomato",
+    "kind": "a",
+    "name": "Add Tomato",
+    "kj": 18,
+    "p": 0.1,
+    "c": 0.9,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-onion",
+    "id": "extra-add-onion",
+    "kind": "a",
+    "name": "Add Onion",
+    "kj": 20,
+    "p": 0.0,
+    "c": 0.3,
+    "f": 0.4,
+    "nut": {
+     "sat": 0.2,
+     "sugar": 0.0,
+     "sodium": 5.5
+    }
+   },
+   {
+    "key": "a:add-mayo",
+    "id": "extra-add-mayo",
+    "kind": "a",
+    "name": "Add Mayo",
+    "kj": 419,
+    "p": 0.5,
+    "c": 2.5,
+    "f": 9.8,
+    "est": true
+   },
+   {
+    "key": "a:add-ketchup",
+    "id": "extra-add-ketchup",
+    "kind": "a",
+    "name": "Add Ketchup",
+    "kj": 62,
+    "p": 0.1,
+    "c": 3.3,
+    "f": 0.0,
+    "nut": {
+     "sat": 0.0,
+     "sugar": 3.1,
+     "sodium": 98.1
+    }
+   },
+   {
+    "key": "a:add-ranch-sauce",
+    "id": "extra-add-ranch-sauce",
+    "kind": "a",
+    "name": "Add Ranch Sauce",
+    "kj": 133,
+    "p": 0.2,
+    "c": 0.8,
+    "f": 3.1,
+    "est": true
+   }
+  ]
+ }
+}

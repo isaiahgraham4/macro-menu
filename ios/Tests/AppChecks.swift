@@ -11,7 +11,7 @@ import UniformTypeIdentifiers
         defer { try? FileManager.default.removeItem(at: root) }
         let catalogURL = URL(fileURLWithPath: CommandLine.arguments[1])
         let catalog = try JSONDecoder().decode(MenuCatalog.self,from: Data(contentsOf: catalogURL))
-        assert(catalog.foods.count == 1443)
+        assert(catalog.foods.count == 1478)
         assert(Set(catalog.foods.map(\.chain)).isSubset(of: Set(catalog.chains.map(\.id))))
         // A juice bar has no mains, so its drinks are the order.
         let juice = MealFinder.find(catalog.foods, query: FindQuery(chains: ["boost"], calories: 700, protein: 25, maxItems: 1))
@@ -37,6 +37,27 @@ import UniformTypeIdentifiers
         let pattyGroups = Set(simply.modifiers!.filter { $0.key.hasPrefix("s:patty-") }.map(\.group))
         assert(bunGroups == ["bun"] && pattyGroups == ["patty"])
         assert(MealPhoto.chain(for: "Grill'd", chainNames: Dictionary(uniqueKeysWithValues: catalog.chains.map { ($0.id, $0.name) })) == "grilld")
+        // Nando's: every protein, style, extra and removal is a Nando's panel, so none are estimates.
+        let nandos = catalog.foods.filter { $0.chain == "nandos" }
+        assert(nandos.count == 55 && nandos.allSatisfy { $0.c != nil && $0.f != nil })
+        let classic = nandos.first { $0.name == "PERinaise Classic" }!
+        assert(classic.kj == 2300 && classic.serve.hasPrefix("Chicken Leg Fillets · Portuguese Roll"))
+        let toBreast = classic.modifiers!.first { $0.name == "Swap to Chicken Breast" }!
+        assert(toBreast.kind == "s" && toBreast.group == "patty" && toBreast.kj == -390 && toBreast.est != true)
+        assert(Set(classic.modifiers!.filter { $0.key.hasPrefix("s:bun-") }.map(\.group)) == ["bun"])
+        let noNandosMayo = classic.modifiers!.first { $0.name == "No Mayo" }!
+        assert(noNandosMayo.kj == -146 && noNandosMayo.p <= 0 && noNandosMayo.c! < 0 && noNandosMayo.f! < 0)
+        let nandosRemovals: [Modifier] = nandos.flatMap { $0.modifiers ?? [] }.filter { $0.kind == "r" }
+        assert(nandosRemovals.allSatisfy { (m: Modifier) -> Bool in m.kj < 0 && m.p <= 0 })
+        assert(nandos.first { $0.name == "Chips (Regular)" }!.modifiers!.contains { $0.name == "PERinaise Chip Dip" })
+        // Hungry Jack's and Oporto: ordering-app energy for add-ons; a sauce sold as a dip takes the dip's make-up.
+        let whopper = catalog.foods.first { $0.id == "hj:whopper" }!.modifiers!
+        assert(whopper.contains { $0.name == "No Mayonnaise" && $0.kj == -210 && $0.est == true })
+        assert(whopper.filter { $0.kind == "f" }.count == 1 && whopper.contains { $0.name == "Add Bacon" && $0.kj == 137 })
+        let bondi = catalog.foods.first { $0.id == "oporto:bondi-burger" }!.modifiers!
+        let prego = bondi.first { $0.name == "Add Prego" }!
+        assert(prego.kj == 330 && prego.est != true && prego.f == 6)
+        assert(bondi.contains { $0.name == "Add Bacon" && $0.est == true })
         // Schnitz: official panels only, so every item has protein, carbs and fat, and an order can be found there.
         let schnitz = catalog.foods.filter { $0.chain == "schnitz" }
         assert(schnitz.count == 62 && schnitz.allSatisfy { $0.c != nil && $0.f != nil && !$0.mismatch })

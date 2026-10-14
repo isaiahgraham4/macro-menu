@@ -233,15 +233,22 @@ for (const [what, withoutId, withId, addTo, takeOff, kind, addName, removeName] 
 }
 console.log(`Added ${paired} extras and removals worked out from pairs of items sold with and without them.`);
 
-// Grill'd: bun and patty swaps and the extras that are differences between its published burgers (grilld-menu.py).
-let grilldAdded = 0;
-for (const [id, mods] of Object.entries(require('./grilld-mods.json').modifiers)) {
-  const food = byId[id];
-  if (!food) throw Error(`Missing ${id}`);
-  food.modifiers = [...(food.modifiers || []), ...mods];
-  grilldAdded += mods.length;
+// Options built from a restaurant's own ordering app data: Grill'd's bun and patty swaps (grilld-menu.py), Nando's
+// protein and style swaps, extras and removals (nandos-menu.py), and Hungry Jack's and Oporto add-ons and removals
+// (ordering-options.py). An option for something the item can already add or take off (from a published pair) is left out.
+const core = name => { const n = name.toLowerCase().replace(/^(add|extra|no|make it an?)\s+/, '').replace(/\s+(slice|piece)s?$/, '').trim(); return /patty/.test(n) ? 'patty' : n; };
+for (const [file, chain] of [['./grilld-mods.json', "Grill'd"], ['./nandos-mods.json', "Nando's"], ['./hj-mods.json', "Hungry Jack's"], ['./oporto-mods.json', 'Oporto']]) {
+  let added = 0;
+  for (const [id, mods] of Object.entries(require(file).modifiers)) {
+    const food = byId[id];
+    if (!food) throw Error(`Missing ${id}`);
+    const have = new Set((food.modifiers || []).map(m => `${m.kind === 'r' ? 'r' : '+'}:${core(m.name)}`));
+    const fresh = mods.filter(m => !have.has(`${m.kind === 'r' ? 'r' : '+'}:${core(m.name)}`));
+    food.modifiers = [...(food.modifiers || []), ...fresh];
+    added += fresh.length;
+  }
+  console.log(`Added ${added} ${chain} options from its ordering app.`);
 }
-console.log(`Added ${grilldAdded} Grill'd swaps and extras.`);
 
 // KFC sells its fillets on their own, so a burger can take another one at that item's published nutrition.
 const SOLD_SEPARATELY = [

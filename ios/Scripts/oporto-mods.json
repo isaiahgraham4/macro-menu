@@ -1,0 +1,2550 @@
+{
+ "fetched": "2026-10-14",
+ "modifiers": {
+  "oporto:bondi-burger": [
+   {
+    "key": "a:add-original-chilli-sauce",
+    "id": "extra-add-original-chilli-sauce",
+    "kind": "a",
+    "name": "Add Original Chilli Sauce",
+    "kj": 430,
+    "p": 0.4,
+    "c": 0.8,
+    "f": 10.9,
+    "nut": {
+     "sat": 0.8,
+     "sugar": 0.8,
+     "sodium": 95.2
+    }
+   },
+   {
+    "key": "a:add-lemon-herb",
+    "id": "extra-add-lemon-herb",
+    "kind": "a",
+    "name": "Add Lemon & Herb",
+    "kj": 310,
+    "p": 0.2,
+    "c": 5.4,
+    "f": 5.8,
+    "nut": {
+     "sat": 0.4,
+     "sugar": 2.0,
+     "sodium": 245.0
+    }
+   },
+   {
+    "key": "a:add-mayo",
+    "id": "extra-add-mayo",
+    "kind": "a",
+    "name": "Add Mayo",
+    "kj": 610,
+    "p": 0.2,
+    "c": 0.4,
+    "f": 16.3,
+    "nut": {
+     "sat": 1.3,
+     "sugar": 0.3,
+     "sodium": 105.7
+    }
+   },
+   {
+    "key": "a:add-prego",
+    "id": "extra-add-prego",
+    "kind": "a",
+    "name": "Add Prego",
+    "kj": 330,
+    "p": 0.2,
+    "c": 6.3,
+    "f": 6.0,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 5.1,
+     "sodium": 175.0
+    }
+   },
+   {
+    "key": "a:add-extremo",
+    "id": "extra-add-extremo",
+    "kind": "a",
+    "name": "Add Extremo",
+    "kj": 520,
+    "p": 0.2,
+    "c": 1.7,
+    "f": 12.5,
+    "nut": {
+     "sat": 1.0,
+     "sugar": 0.7,
+     "sodium": 110.0
+    }
+   },
+   {
+    "key": "a:add-lettuce",
+    "id": "extra-add-lettuce",
+    "kind": "a",
+    "name": "Add Lettuce",
+    "kj": 10,
+    "p": 0.1,
+    "c": 0.5,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 160,
+    "p": 2.9,
+    "c": 0.1,
+    "f": 2.9,
+    "est": true
+   },
+   {
+    "key": "a:add-cheese",
+    "id": "extra-add-cheese",
+    "kind": "a",
+    "name": "Add Cheese",
+    "kj": 170,
+    "p": 2.6,
+    "c": 0.4,
+    "f": 3.2,
+    "est": true
+   },
+   {
+    "key": "a:add-tomato",
+    "id": "extra-add-tomato",
+    "kind": "a",
+    "name": "Add Tomato",
+    "kj": 30,
+    "p": 0.2,
+    "c": 1.5,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-avocado",
+    "id": "extra-add-avocado",
+    "kind": "a",
+    "name": "Add Avocado",
+    "kj": 190,
+    "p": 0.5,
+    "c": 0.7,
+    "f": 4.5,
+    "est": true
+   },
+   {
+    "key": "f:add-halloumi",
+    "id": "extra-add-halloumi",
+    "kind": "f",
+    "name": "Add Halloumi",
+    "kj": 720,
+    "p": 11.6,
+    "c": 1.3,
+    "f": 13.4,
+    "est": true
+   },
+   {
+    "key": "a:add-pineapple",
+    "id": "extra-add-pineapple",
+    "kind": "a",
+    "name": "Add Pineapple",
+    "kj": 140,
+    "p": 1.0,
+    "c": 6.9,
+    "f": 0.2,
+    "est": true
+   },
+   {
+    "key": "f:add-chicken-fillet",
+    "id": "extra-add-chicken-fillet",
+    "kind": "f",
+    "name": "Add Chicken Fillet",
+    "kj": 480,
+    "p": 20.1,
+    "c": 1.4,
+    "f": 3.2,
+    "est": true
+   },
+   {
+    "key": "r:chilli-sauce",
+    "id": "no-chilli-sauce",
+    "kind": "r",
+    "name": "No Chilli Sauce",
+    "kj": -430,
+    "p": -0.4,
+    "c": -0.8,
+    "f": -10.9,
+    "nut": {
+     "sat": -0.8,
+     "sugar": -0.8,
+     "sodium": -95.2
+    },
+    "est": true
+   },
+   {
+    "key": "r:mayo",
+    "id": "no-mayo",
+    "kind": "r",
+    "name": "No Mayo",
+    "kj": -610,
+    "p": -0.2,
+    "c": -0.4,
+    "f": -16.3,
+    "nut": {
+     "sat": -1.3,
+     "sugar": -0.3,
+     "sodium": -105.7
+    },
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -10,
+    "p": -0.1,
+    "c": -0.5,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:chicken-fillets",
+    "id": "no-chicken-fillets",
+    "kind": "r",
+    "name": "No Chicken Fillets",
+    "kj": -480,
+    "p": -20.1,
+    "c": -1.4,
+    "f": -3.2,
+    "est": true
+   }
+  ],
+  "oporto:otropo-burger": [
+   {
+    "key": "a:add-original-chilli-sauce",
+    "id": "extra-add-original-chilli-sauce",
+    "kind": "a",
+    "name": "Add Original Chilli Sauce",
+    "kj": 430,
+    "p": 0.4,
+    "c": 0.8,
+    "f": 10.9,
+    "nut": {
+     "sat": 0.8,
+     "sugar": 0.8,
+     "sodium": 95.2
+    }
+   },
+   {
+    "key": "a:add-lemon-herb",
+    "id": "extra-add-lemon-herb",
+    "kind": "a",
+    "name": "Add Lemon & Herb",
+    "kj": 310,
+    "p": 0.2,
+    "c": 5.4,
+    "f": 5.8,
+    "nut": {
+     "sat": 0.4,
+     "sugar": 2.0,
+     "sodium": 245.0
+    }
+   },
+   {
+    "key": "a:add-mayo",
+    "id": "extra-add-mayo",
+    "kind": "a",
+    "name": "Add Mayo",
+    "kj": 610,
+    "p": 0.2,
+    "c": 0.4,
+    "f": 16.3,
+    "nut": {
+     "sat": 1.3,
+     "sugar": 0.3,
+     "sodium": 105.7
+    }
+   },
+   {
+    "key": "a:add-prego",
+    "id": "extra-add-prego",
+    "kind": "a",
+    "name": "Add Prego",
+    "kj": 330,
+    "p": 0.2,
+    "c": 6.3,
+    "f": 6.0,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 5.1,
+     "sodium": 175.0
+    }
+   },
+   {
+    "key": "a:add-extremo",
+    "id": "extra-add-extremo",
+    "kind": "a",
+    "name": "Add Extremo",
+    "kj": 520,
+    "p": 0.2,
+    "c": 1.7,
+    "f": 12.5,
+    "nut": {
+     "sat": 1.0,
+     "sugar": 0.7,
+     "sodium": 110.0
+    }
+   },
+   {
+    "key": "a:add-lettuce",
+    "id": "extra-add-lettuce",
+    "kind": "a",
+    "name": "Add Lettuce",
+    "kj": 10,
+    "p": 0.1,
+    "c": 0.5,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 160,
+    "p": 2.9,
+    "c": 0.1,
+    "f": 2.9,
+    "est": true
+   },
+   {
+    "key": "a:add-cheese",
+    "id": "extra-add-cheese",
+    "kind": "a",
+    "name": "Add Cheese",
+    "kj": 170,
+    "p": 2.6,
+    "c": 0.4,
+    "f": 3.2,
+    "est": true
+   },
+   {
+    "key": "a:add-tomato",
+    "id": "extra-add-tomato",
+    "kind": "a",
+    "name": "Add Tomato",
+    "kj": 30,
+    "p": 0.2,
+    "c": 1.5,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-avocado",
+    "id": "extra-add-avocado",
+    "kind": "a",
+    "name": "Add Avocado",
+    "kj": 190,
+    "p": 0.5,
+    "c": 0.7,
+    "f": 4.5,
+    "est": true
+   },
+   {
+    "key": "f:add-halloumi",
+    "id": "extra-add-halloumi",
+    "kind": "f",
+    "name": "Add Halloumi",
+    "kj": 720,
+    "p": 11.6,
+    "c": 1.3,
+    "f": 13.4,
+    "est": true
+   },
+   {
+    "key": "a:add-pineapple",
+    "id": "extra-add-pineapple",
+    "kind": "a",
+    "name": "Add Pineapple",
+    "kj": 140,
+    "p": 1.0,
+    "c": 6.9,
+    "f": 0.2,
+    "est": true
+   },
+   {
+    "key": "f:add-chicken-fillet",
+    "id": "extra-add-chicken-fillet",
+    "kind": "f",
+    "name": "Add Chicken Fillet",
+    "kj": 480,
+    "p": 20.1,
+    "c": 1.4,
+    "f": 3.2,
+    "est": true
+   },
+   {
+    "key": "r:mayo",
+    "id": "no-mayo",
+    "kind": "r",
+    "name": "No Mayo",
+    "kj": -610,
+    "p": -0.2,
+    "c": -0.4,
+    "f": -16.3,
+    "nut": {
+     "sat": -1.3,
+     "sugar": -0.3,
+     "sodium": -105.7
+    },
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -10,
+    "p": -0.1,
+    "c": -0.5,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:bacon",
+    "id": "no-bacon",
+    "kind": "r",
+    "name": "No Bacon",
+    "kj": -160,
+    "p": -2.9,
+    "c": -0.1,
+    "f": -2.9,
+    "est": true
+   },
+   {
+    "key": "r:pineapple",
+    "id": "no-pineapple",
+    "kind": "r",
+    "name": "No Pineapple",
+    "kj": -140,
+    "p": -1.0,
+    "c": -6.9,
+    "f": -0.2,
+    "est": true
+   },
+   {
+    "key": "r:chicken-fillets",
+    "id": "no-chicken-fillets",
+    "kind": "r",
+    "name": "No Chicken Fillets",
+    "kj": -480,
+    "p": -20.1,
+    "c": -1.4,
+    "f": -3.2,
+    "est": true
+   }
+  ],
+  "oporto:oprego-burger": [
+   {
+    "key": "a:add-original-chilli-sauce",
+    "id": "extra-add-original-chilli-sauce",
+    "kind": "a",
+    "name": "Add Original Chilli Sauce",
+    "kj": 430,
+    "p": 0.4,
+    "c": 0.8,
+    "f": 10.9,
+    "nut": {
+     "sat": 0.8,
+     "sugar": 0.8,
+     "sodium": 95.2
+    }
+   },
+   {
+    "key": "a:add-lemon-herb",
+    "id": "extra-add-lemon-herb",
+    "kind": "a",
+    "name": "Add Lemon & Herb",
+    "kj": 310,
+    "p": 0.2,
+    "c": 5.4,
+    "f": 5.8,
+    "nut": {
+     "sat": 0.4,
+     "sugar": 2.0,
+     "sodium": 245.0
+    }
+   },
+   {
+    "key": "a:add-mayo",
+    "id": "extra-add-mayo",
+    "kind": "a",
+    "name": "Add Mayo",
+    "kj": 610,
+    "p": 0.2,
+    "c": 0.4,
+    "f": 16.3,
+    "nut": {
+     "sat": 1.3,
+     "sugar": 0.3,
+     "sodium": 105.7
+    }
+   },
+   {
+    "key": "a:add-prego",
+    "id": "extra-add-prego",
+    "kind": "a",
+    "name": "Add Prego",
+    "kj": 330,
+    "p": 0.2,
+    "c": 6.3,
+    "f": 6.0,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 5.1,
+     "sodium": 175.0
+    }
+   },
+   {
+    "key": "a:add-extremo",
+    "id": "extra-add-extremo",
+    "kind": "a",
+    "name": "Add Extremo",
+    "kj": 520,
+    "p": 0.2,
+    "c": 1.7,
+    "f": 12.5,
+    "nut": {
+     "sat": 1.0,
+     "sugar": 0.7,
+     "sodium": 110.0
+    }
+   },
+   {
+    "key": "a:add-lettuce",
+    "id": "extra-add-lettuce",
+    "kind": "a",
+    "name": "Add Lettuce",
+    "kj": 10,
+    "p": 0.1,
+    "c": 0.5,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 160,
+    "p": 2.9,
+    "c": 0.1,
+    "f": 2.9,
+    "est": true
+   },
+   {
+    "key": "a:add-cheese",
+    "id": "extra-add-cheese",
+    "kind": "a",
+    "name": "Add Cheese",
+    "kj": 170,
+    "p": 2.6,
+    "c": 0.4,
+    "f": 3.2,
+    "est": true
+   },
+   {
+    "key": "a:add-tomato",
+    "id": "extra-add-tomato",
+    "kind": "a",
+    "name": "Add Tomato",
+    "kj": 30,
+    "p": 0.2,
+    "c": 1.5,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-avocado",
+    "id": "extra-add-avocado",
+    "kind": "a",
+    "name": "Add Avocado",
+    "kj": 190,
+    "p": 0.5,
+    "c": 0.7,
+    "f": 4.5,
+    "est": true
+   },
+   {
+    "key": "f:add-halloumi",
+    "id": "extra-add-halloumi",
+    "kind": "f",
+    "name": "Add Halloumi",
+    "kj": 720,
+    "p": 11.6,
+    "c": 1.3,
+    "f": 13.4,
+    "est": true
+   },
+   {
+    "key": "a:add-pineapple",
+    "id": "extra-add-pineapple",
+    "kind": "a",
+    "name": "Add Pineapple",
+    "kj": 140,
+    "p": 1.0,
+    "c": 6.9,
+    "f": 0.2,
+    "est": true
+   },
+   {
+    "key": "f:add-chicken-fillet",
+    "id": "extra-add-chicken-fillet",
+    "kind": "f",
+    "name": "Add Chicken Fillet",
+    "kj": 480,
+    "p": 20.1,
+    "c": 1.4,
+    "f": 3.2,
+    "est": true
+   },
+   {
+    "key": "r:mayo",
+    "id": "no-mayo",
+    "kind": "r",
+    "name": "No Mayo",
+    "kj": -610,
+    "p": -0.2,
+    "c": -0.4,
+    "f": -16.3,
+    "nut": {
+     "sat": -1.3,
+     "sugar": -0.3,
+     "sodium": -105.7
+    },
+    "est": true
+   },
+   {
+    "key": "r:prego-sauce",
+    "id": "no-prego-sauce",
+    "kind": "r",
+    "name": "No Prego Sauce",
+    "kj": -330,
+    "p": -0.2,
+    "c": -6.3,
+    "f": -6.0,
+    "nut": {
+     "sat": -0.5,
+     "sugar": -5.1,
+     "sodium": -175.0
+    },
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -10,
+    "p": -0.1,
+    "c": -0.5,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:tomato",
+    "id": "no-tomato",
+    "kind": "r",
+    "name": "No Tomato",
+    "kj": -30,
+    "p": -0.2,
+    "c": -1.5,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:chicken-fillets",
+    "id": "no-chicken-fillets",
+    "kind": "r",
+    "name": "No Chicken Fillets",
+    "kj": -480,
+    "p": -20.1,
+    "c": -1.4,
+    "f": -3.2,
+    "est": true
+   }
+  ],
+  "oporto:halloumi-chicken-burger": [
+   {
+    "key": "a:add-original-chilli-sauce",
+    "id": "extra-add-original-chilli-sauce",
+    "kind": "a",
+    "name": "Add Original Chilli Sauce",
+    "kj": 430,
+    "p": 0.4,
+    "c": 0.8,
+    "f": 10.9,
+    "nut": {
+     "sat": 0.8,
+     "sugar": 0.8,
+     "sodium": 95.2
+    }
+   },
+   {
+    "key": "a:add-lemon-herb",
+    "id": "extra-add-lemon-herb",
+    "kind": "a",
+    "name": "Add Lemon & Herb",
+    "kj": 310,
+    "p": 0.2,
+    "c": 5.4,
+    "f": 5.8,
+    "nut": {
+     "sat": 0.4,
+     "sugar": 2.0,
+     "sodium": 245.0
+    }
+   },
+   {
+    "key": "a:add-mayo",
+    "id": "extra-add-mayo",
+    "kind": "a",
+    "name": "Add Mayo",
+    "kj": 610,
+    "p": 0.2,
+    "c": 0.4,
+    "f": 16.3,
+    "nut": {
+     "sat": 1.3,
+     "sugar": 0.3,
+     "sodium": 105.7
+    }
+   },
+   {
+    "key": "a:add-prego",
+    "id": "extra-add-prego",
+    "kind": "a",
+    "name": "Add Prego",
+    "kj": 330,
+    "p": 0.2,
+    "c": 6.3,
+    "f": 6.0,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 5.1,
+     "sodium": 175.0
+    }
+   },
+   {
+    "key": "a:add-extremo",
+    "id": "extra-add-extremo",
+    "kind": "a",
+    "name": "Add Extremo",
+    "kj": 520,
+    "p": 0.2,
+    "c": 1.7,
+    "f": 12.5,
+    "nut": {
+     "sat": 1.0,
+     "sugar": 0.7,
+     "sodium": 110.0
+    }
+   },
+   {
+    "key": "a:add-lettuce",
+    "id": "extra-add-lettuce",
+    "kind": "a",
+    "name": "Add Lettuce",
+    "kj": 10,
+    "p": 0.1,
+    "c": 0.5,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 160,
+    "p": 2.9,
+    "c": 0.1,
+    "f": 2.9,
+    "est": true
+   },
+   {
+    "key": "a:add-cheese",
+    "id": "extra-add-cheese",
+    "kind": "a",
+    "name": "Add Cheese",
+    "kj": 170,
+    "p": 2.6,
+    "c": 0.4,
+    "f": 3.2,
+    "est": true
+   },
+   {
+    "key": "a:add-tomato",
+    "id": "extra-add-tomato",
+    "kind": "a",
+    "name": "Add Tomato",
+    "kj": 30,
+    "p": 0.2,
+    "c": 1.5,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-avocado",
+    "id": "extra-add-avocado",
+    "kind": "a",
+    "name": "Add Avocado",
+    "kj": 190,
+    "p": 0.5,
+    "c": 0.7,
+    "f": 4.5,
+    "est": true
+   },
+   {
+    "key": "f:add-halloumi",
+    "id": "extra-add-halloumi",
+    "kind": "f",
+    "name": "Add Halloumi",
+    "kj": 720,
+    "p": 11.6,
+    "c": 1.3,
+    "f": 13.4,
+    "est": true
+   },
+   {
+    "key": "a:add-pineapple",
+    "id": "extra-add-pineapple",
+    "kind": "a",
+    "name": "Add Pineapple",
+    "kj": 140,
+    "p": 1.0,
+    "c": 6.9,
+    "f": 0.2,
+    "est": true
+   },
+   {
+    "key": "f:add-chicken-fillet",
+    "id": "extra-add-chicken-fillet",
+    "kind": "f",
+    "name": "Add Chicken Fillet",
+    "kj": 480,
+    "p": 20.1,
+    "c": 1.4,
+    "f": 3.2,
+    "est": true
+   },
+   {
+    "key": "r:mayo",
+    "id": "no-mayo",
+    "kind": "r",
+    "name": "No Mayo",
+    "kj": -610,
+    "p": -0.2,
+    "c": -0.4,
+    "f": -16.3,
+    "nut": {
+     "sat": -1.3,
+     "sugar": -0.3,
+     "sodium": -105.7
+    },
+    "est": true
+   },
+   {
+    "key": "r:tomato-capsicum-relish",
+    "id": "no-tomato-capsicum-relish",
+    "kind": "r",
+    "name": "No Tomato & Capsicum relish",
+    "kj": -30,
+    "p": 0.0,
+    "c": -1.7,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:halloumi",
+    "id": "no-halloumi",
+    "kind": "r",
+    "name": "No Halloumi",
+    "kj": -720,
+    "p": -11.6,
+    "c": -1.3,
+    "f": -13.4,
+    "est": true
+   },
+   {
+    "key": "r:chicken-fillets",
+    "id": "no-chicken-fillets",
+    "kind": "r",
+    "name": "No Chicken Fillets",
+    "kj": -480,
+    "p": -20.1,
+    "c": -1.4,
+    "f": -3.2,
+    "est": true
+   }
+  ],
+  "oporto:veggie-burger": [
+   {
+    "key": "a:add-original-chilli-sauce",
+    "id": "extra-add-original-chilli-sauce",
+    "kind": "a",
+    "name": "Add Original Chilli Sauce",
+    "kj": 430,
+    "p": 0.4,
+    "c": 0.8,
+    "f": 10.9,
+    "nut": {
+     "sat": 0.8,
+     "sugar": 0.8,
+     "sodium": 95.2
+    }
+   },
+   {
+    "key": "a:add-lemon-herb",
+    "id": "extra-add-lemon-herb",
+    "kind": "a",
+    "name": "Add Lemon & Herb",
+    "kj": 310,
+    "p": 0.2,
+    "c": 5.4,
+    "f": 5.8,
+    "nut": {
+     "sat": 0.4,
+     "sugar": 2.0,
+     "sodium": 245.0
+    }
+   },
+   {
+    "key": "a:add-mayo",
+    "id": "extra-add-mayo",
+    "kind": "a",
+    "name": "Add Mayo",
+    "kj": 610,
+    "p": 0.2,
+    "c": 0.4,
+    "f": 16.3,
+    "nut": {
+     "sat": 1.3,
+     "sugar": 0.3,
+     "sodium": 105.7
+    }
+   },
+   {
+    "key": "a:add-extremo",
+    "id": "extra-add-extremo",
+    "kind": "a",
+    "name": "Add Extremo",
+    "kj": 520,
+    "p": 0.2,
+    "c": 1.7,
+    "f": 12.5,
+    "nut": {
+     "sat": 1.0,
+     "sugar": 0.7,
+     "sodium": 110.0
+    }
+   },
+   {
+    "key": "a:add-lettuce",
+    "id": "extra-add-lettuce",
+    "kind": "a",
+    "name": "Add Lettuce",
+    "kj": 10,
+    "p": 0.1,
+    "c": 0.5,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-cheese",
+    "id": "extra-add-cheese",
+    "kind": "a",
+    "name": "Add Cheese",
+    "kj": 170,
+    "p": 2.6,
+    "c": 0.4,
+    "f": 3.2,
+    "est": true
+   },
+   {
+    "key": "a:add-tomato",
+    "id": "extra-add-tomato",
+    "kind": "a",
+    "name": "Add Tomato",
+    "kj": 30,
+    "p": 0.2,
+    "c": 1.5,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-avocado",
+    "id": "extra-add-avocado",
+    "kind": "a",
+    "name": "Add Avocado",
+    "kj": 190,
+    "p": 0.5,
+    "c": 0.7,
+    "f": 4.5,
+    "est": true
+   },
+   {
+    "key": "f:add-halloumi",
+    "id": "extra-add-halloumi",
+    "kind": "f",
+    "name": "Add Halloumi",
+    "kj": 720,
+    "p": 11.6,
+    "c": 1.3,
+    "f": 13.4,
+    "est": true
+   },
+   {
+    "key": "a:add-pineapple",
+    "id": "extra-add-pineapple",
+    "kind": "a",
+    "name": "Add Pineapple",
+    "kj": 140,
+    "p": 1.0,
+    "c": 6.9,
+    "f": 0.2,
+    "est": true
+   },
+   {
+    "key": "a:add-veggie-pattie",
+    "id": "extra-add-veggie-pattie",
+    "kind": "a",
+    "name": "Add Veggie Pattie",
+    "kj": 690,
+    "p": 14.4,
+    "c": 0.8,
+    "f": 11.5,
+    "est": true
+   },
+   {
+    "key": "r:lemon-herb-sauce",
+    "id": "no-lemon-herb-sauce",
+    "kind": "r",
+    "name": "No Lemon & Herb Sauce",
+    "kj": -310,
+    "p": -0.2,
+    "c": -5.4,
+    "f": -5.8,
+    "nut": {
+     "sat": -0.4,
+     "sugar": -2.0,
+     "sodium": -245.0
+    },
+    "est": true
+   },
+   {
+    "key": "r:mayo",
+    "id": "no-mayo",
+    "kind": "r",
+    "name": "No Mayo",
+    "kj": -610,
+    "p": -0.2,
+    "c": -0.4,
+    "f": -16.3,
+    "nut": {
+     "sat": -1.3,
+     "sugar": -0.3,
+     "sodium": -105.7
+    },
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -10,
+    "p": -0.1,
+    "c": -0.5,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:tomato",
+    "id": "no-tomato",
+    "kind": "r",
+    "name": "No Tomato",
+    "kj": -30,
+    "p": -0.2,
+    "c": -1.5,
+    "f": 0.0,
+    "est": true
+   }
+  ],
+  "oporto:o-burger": [
+   {
+    "key": "a:add-original-chilli-sauce",
+    "id": "extra-add-original-chilli-sauce",
+    "kind": "a",
+    "name": "Add Original Chilli Sauce",
+    "kj": 430,
+    "p": 0.4,
+    "c": 0.8,
+    "f": 10.9,
+    "nut": {
+     "sat": 0.8,
+     "sugar": 0.8,
+     "sodium": 95.2
+    }
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 160,
+    "p": 2.9,
+    "c": 0.1,
+    "f": 2.9,
+    "est": true
+   },
+   {
+    "key": "a:add-avocado",
+    "id": "extra-add-avocado",
+    "kind": "a",
+    "name": "Add Avocado",
+    "kj": 190,
+    "p": 0.5,
+    "c": 0.7,
+    "f": 4.5,
+    "est": true
+   },
+   {
+    "key": "f:add-halloumi",
+    "id": "extra-add-halloumi",
+    "kind": "f",
+    "name": "Add Halloumi",
+    "kj": 720,
+    "p": 11.6,
+    "c": 1.3,
+    "f": 13.4,
+    "est": true
+   },
+   {
+    "key": "a:add-pineapple",
+    "id": "extra-add-pineapple",
+    "kind": "a",
+    "name": "Add Pineapple",
+    "kj": 140,
+    "p": 1.0,
+    "c": 6.9,
+    "f": 0.2,
+    "est": true
+   },
+   {
+    "key": "f:add-chicken-fillet",
+    "id": "extra-add-chicken-fillet",
+    "kind": "f",
+    "name": "Add Chicken Fillet",
+    "kj": 480,
+    "p": 20.1,
+    "c": 1.4,
+    "f": 3.2,
+    "est": true
+   },
+   {
+    "key": "r:chicken-fillets",
+    "id": "no-chicken-fillets",
+    "kind": "r",
+    "name": "No Chicken Fillets",
+    "kj": -480,
+    "p": -20.1,
+    "c": -1.4,
+    "f": -3.2,
+    "est": true
+   }
+  ],
+  "oporto:chicken-cheese-burger": [
+   {
+    "key": "a:add-original-chilli-sauce",
+    "id": "extra-add-original-chilli-sauce",
+    "kind": "a",
+    "name": "Add Original Chilli Sauce",
+    "kj": 430,
+    "p": 0.4,
+    "c": 0.8,
+    "f": 10.9,
+    "nut": {
+     "sat": 0.8,
+     "sugar": 0.8,
+     "sodium": 95.2
+    }
+   },
+   {
+    "key": "a:add-lemon-herb",
+    "id": "extra-add-lemon-herb",
+    "kind": "a",
+    "name": "Add Lemon & Herb",
+    "kj": 310,
+    "p": 0.2,
+    "c": 5.4,
+    "f": 5.8,
+    "nut": {
+     "sat": 0.4,
+     "sugar": 2.0,
+     "sodium": 245.0
+    }
+   },
+   {
+    "key": "a:add-mayo",
+    "id": "extra-add-mayo",
+    "kind": "a",
+    "name": "Add Mayo",
+    "kj": 610,
+    "p": 0.2,
+    "c": 0.4,
+    "f": 16.3,
+    "nut": {
+     "sat": 1.3,
+     "sugar": 0.3,
+     "sodium": 105.7
+    }
+   },
+   {
+    "key": "a:add-prego",
+    "id": "extra-add-prego",
+    "kind": "a",
+    "name": "Add Prego",
+    "kj": 330,
+    "p": 0.2,
+    "c": 6.3,
+    "f": 6.0,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 5.1,
+     "sodium": 175.0
+    }
+   },
+   {
+    "key": "a:add-extremo",
+    "id": "extra-add-extremo",
+    "kind": "a",
+    "name": "Add Extremo",
+    "kj": 520,
+    "p": 0.2,
+    "c": 1.7,
+    "f": 12.5,
+    "nut": {
+     "sat": 1.0,
+     "sugar": 0.7,
+     "sodium": 110.0
+    }
+   },
+   {
+    "key": "a:add-lettuce",
+    "id": "extra-add-lettuce",
+    "kind": "a",
+    "name": "Add Lettuce",
+    "kj": 10,
+    "p": 0.1,
+    "c": 0.5,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 160,
+    "p": 2.9,
+    "c": 0.1,
+    "f": 2.9,
+    "est": true
+   },
+   {
+    "key": "a:add-cheese",
+    "id": "extra-add-cheese",
+    "kind": "a",
+    "name": "Add Cheese",
+    "kj": 170,
+    "p": 2.6,
+    "c": 0.4,
+    "f": 3.2,
+    "est": true
+   },
+   {
+    "key": "a:add-tomato",
+    "id": "extra-add-tomato",
+    "kind": "a",
+    "name": "Add Tomato",
+    "kj": 30,
+    "p": 0.2,
+    "c": 1.5,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-avocado",
+    "id": "extra-add-avocado",
+    "kind": "a",
+    "name": "Add Avocado",
+    "kj": 190,
+    "p": 0.5,
+    "c": 0.7,
+    "f": 4.5,
+    "est": true
+   },
+   {
+    "key": "f:add-halloumi",
+    "id": "extra-add-halloumi",
+    "kind": "f",
+    "name": "Add Halloumi",
+    "kj": 720,
+    "p": 11.6,
+    "c": 1.3,
+    "f": 13.4,
+    "est": true
+   },
+   {
+    "key": "a:add-pineapple",
+    "id": "extra-add-pineapple",
+    "kind": "a",
+    "name": "Add Pineapple",
+    "kj": 140,
+    "p": 1.0,
+    "c": 6.9,
+    "f": 0.2,
+    "est": true
+   },
+   {
+    "key": "f:add-chicken-fillet",
+    "id": "extra-add-chicken-fillet",
+    "kind": "f",
+    "name": "Add Chicken Fillet",
+    "kj": 480,
+    "p": 20.1,
+    "c": 1.4,
+    "f": 3.2,
+    "est": true
+   },
+   {
+    "key": "r:mayo",
+    "id": "no-mayo",
+    "kind": "r",
+    "name": "No Mayo",
+    "kj": -610,
+    "p": -0.2,
+    "c": -0.4,
+    "f": -16.3,
+    "nut": {
+     "sat": -1.3,
+     "sugar": -0.3,
+     "sodium": -105.7
+    },
+    "est": true
+   },
+   {
+    "key": "r:chicken-fillets",
+    "id": "no-chicken-fillets",
+    "kind": "r",
+    "name": "No Chicken Fillets",
+    "kj": -480,
+    "p": -20.1,
+    "c": -1.4,
+    "f": -3.2,
+    "est": true
+   }
+  ],
+  "oporto:chicken-rappa": [
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 160,
+    "p": 2.9,
+    "c": 0.1,
+    "f": 2.9,
+    "est": true
+   },
+   {
+    "key": "a:add-cheese",
+    "id": "extra-add-cheese",
+    "kind": "a",
+    "name": "Add Cheese",
+    "kj": 170,
+    "p": 2.6,
+    "c": 0.4,
+    "f": 3.2,
+    "est": true
+   },
+   {
+    "key": "a:add-avocado",
+    "id": "extra-add-avocado",
+    "kind": "a",
+    "name": "Add Avocado",
+    "kj": 190,
+    "p": 0.5,
+    "c": 0.7,
+    "f": 4.5,
+    "est": true
+   },
+   {
+    "key": "f:add-a-grilled-chicken-tender",
+    "id": "extra-add-a-grilled-chicken-tender",
+    "kind": "f",
+    "name": "Add A Grilled Chicken Tender",
+    "kj": 250,
+    "p": 10.5,
+    "c": 0.7,
+    "f": 1.7,
+    "est": true
+   },
+   {
+    "key": "r:chicken-tenders",
+    "id": "no-chicken-tenders",
+    "kind": "r",
+    "name": "No Chicken Tenders",
+    "kj": -250,
+    "p": -10.5,
+    "c": -0.7,
+    "f": -1.7,
+    "est": true
+   }
+  ],
+  "oporto:bondi-rappa": [
+   {
+    "key": "a:add-original-chilli-sauce",
+    "id": "extra-add-original-chilli-sauce",
+    "kind": "a",
+    "name": "Add Original Chilli Sauce",
+    "kj": 430,
+    "p": 0.4,
+    "c": 0.8,
+    "f": 10.9,
+    "nut": {
+     "sat": 0.8,
+     "sugar": 0.8,
+     "sodium": 95.2
+    }
+   },
+   {
+    "key": "a:add-lemon-herb",
+    "id": "extra-add-lemon-herb",
+    "kind": "a",
+    "name": "Add Lemon & Herb",
+    "kj": 310,
+    "p": 0.2,
+    "c": 5.4,
+    "f": 5.8,
+    "nut": {
+     "sat": 0.4,
+     "sugar": 2.0,
+     "sodium": 245.0
+    }
+   },
+   {
+    "key": "a:add-mayo",
+    "id": "extra-add-mayo",
+    "kind": "a",
+    "name": "Add Mayo",
+    "kj": 610,
+    "p": 0.2,
+    "c": 0.4,
+    "f": 16.3,
+    "nut": {
+     "sat": 1.3,
+     "sugar": 0.3,
+     "sodium": 105.7
+    }
+   },
+   {
+    "key": "a:add-prego",
+    "id": "extra-add-prego",
+    "kind": "a",
+    "name": "Add Prego",
+    "kj": 330,
+    "p": 0.2,
+    "c": 6.3,
+    "f": 6.0,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 5.1,
+     "sodium": 175.0
+    }
+   },
+   {
+    "key": "a:add-extremo",
+    "id": "extra-add-extremo",
+    "kind": "a",
+    "name": "Add Extremo",
+    "kj": 520,
+    "p": 0.2,
+    "c": 1.7,
+    "f": 12.5,
+    "nut": {
+     "sat": 1.0,
+     "sugar": 0.7,
+     "sodium": 110.0
+    }
+   },
+   {
+    "key": "a:add-lettuce",
+    "id": "extra-add-lettuce",
+    "kind": "a",
+    "name": "Add Lettuce",
+    "kj": 10,
+    "p": 0.1,
+    "c": 0.5,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 160,
+    "p": 2.9,
+    "c": 0.1,
+    "f": 2.9,
+    "est": true
+   },
+   {
+    "key": "a:add-cheese",
+    "id": "extra-add-cheese",
+    "kind": "a",
+    "name": "Add Cheese",
+    "kj": 170,
+    "p": 2.6,
+    "c": 0.4,
+    "f": 3.2,
+    "est": true
+   },
+   {
+    "key": "a:add-tomato",
+    "id": "extra-add-tomato",
+    "kind": "a",
+    "name": "Add Tomato",
+    "kj": 30,
+    "p": 0.2,
+    "c": 1.5,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-avocado",
+    "id": "extra-add-avocado",
+    "kind": "a",
+    "name": "Add Avocado",
+    "kj": 190,
+    "p": 0.5,
+    "c": 0.7,
+    "f": 4.5,
+    "est": true
+   },
+   {
+    "key": "f:add-chicken-fillet",
+    "id": "extra-add-chicken-fillet",
+    "kind": "f",
+    "name": "Add Chicken Fillet",
+    "kj": 480,
+    "p": 20.1,
+    "c": 1.4,
+    "f": 3.2,
+    "est": true
+   },
+   {
+    "key": "r:chilli-sauce",
+    "id": "no-chilli-sauce",
+    "kind": "r",
+    "name": "No Chilli Sauce",
+    "kj": -430,
+    "p": -0.4,
+    "c": -0.8,
+    "f": -10.9,
+    "nut": {
+     "sat": -0.8,
+     "sugar": -0.8,
+     "sodium": -95.2
+    },
+    "est": true
+   },
+   {
+    "key": "r:mayo",
+    "id": "no-mayo",
+    "kind": "r",
+    "name": "No Mayo",
+    "kj": -610,
+    "p": -0.2,
+    "c": -0.4,
+    "f": -16.3,
+    "nut": {
+     "sat": -1.3,
+     "sugar": -0.3,
+     "sodium": -105.7
+    },
+    "est": true
+   },
+   {
+    "key": "r:lettuce",
+    "id": "no-lettuce",
+    "kind": "r",
+    "name": "No Lettuce",
+    "kj": -10,
+    "p": -0.1,
+    "c": -0.5,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:chicken-fillets",
+    "id": "no-chicken-fillets",
+    "kind": "r",
+    "name": "No Chicken Fillets",
+    "kj": -480,
+    "p": -20.1,
+    "c": -1.4,
+    "f": -3.2,
+    "est": true
+   }
+  ],
+  "oporto:halloumi-chicken-rappa": [
+   {
+    "key": "a:add-original-chilli-sauce",
+    "id": "extra-add-original-chilli-sauce",
+    "kind": "a",
+    "name": "Add Original Chilli Sauce",
+    "kj": 430,
+    "p": 0.4,
+    "c": 0.8,
+    "f": 10.9,
+    "nut": {
+     "sat": 0.8,
+     "sugar": 0.8,
+     "sodium": 95.2
+    }
+   },
+   {
+    "key": "a:add-lemon-herb",
+    "id": "extra-add-lemon-herb",
+    "kind": "a",
+    "name": "Add Lemon & Herb",
+    "kj": 310,
+    "p": 0.2,
+    "c": 5.4,
+    "f": 5.8,
+    "nut": {
+     "sat": 0.4,
+     "sugar": 2.0,
+     "sodium": 245.0
+    }
+   },
+   {
+    "key": "a:add-mayo",
+    "id": "extra-add-mayo",
+    "kind": "a",
+    "name": "Add Mayo",
+    "kj": 610,
+    "p": 0.2,
+    "c": 0.4,
+    "f": 16.3,
+    "nut": {
+     "sat": 1.3,
+     "sugar": 0.3,
+     "sodium": 105.7
+    }
+   },
+   {
+    "key": "a:add-prego",
+    "id": "extra-add-prego",
+    "kind": "a",
+    "name": "Add Prego",
+    "kj": 330,
+    "p": 0.2,
+    "c": 6.3,
+    "f": 6.0,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 5.1,
+     "sodium": 175.0
+    }
+   },
+   {
+    "key": "a:add-extremo",
+    "id": "extra-add-extremo",
+    "kind": "a",
+    "name": "Add Extremo",
+    "kj": 520,
+    "p": 0.2,
+    "c": 1.7,
+    "f": 12.5,
+    "nut": {
+     "sat": 1.0,
+     "sugar": 0.7,
+     "sodium": 110.0
+    }
+   },
+   {
+    "key": "a:add-lettuce",
+    "id": "extra-add-lettuce",
+    "kind": "a",
+    "name": "Add Lettuce",
+    "kj": 10,
+    "p": 0.1,
+    "c": 0.5,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "f:add-halloumi",
+    "id": "extra-add-halloumi",
+    "kind": "f",
+    "name": "Add Halloumi",
+    "kj": 720,
+    "p": 11.6,
+    "c": 1.3,
+    "f": 13.4,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 160,
+    "p": 2.9,
+    "c": 0.1,
+    "f": 2.9,
+    "est": true
+   },
+   {
+    "key": "a:add-cheese",
+    "id": "extra-add-cheese",
+    "kind": "a",
+    "name": "Add Cheese",
+    "kj": 170,
+    "p": 2.6,
+    "c": 0.4,
+    "f": 3.2,
+    "est": true
+   },
+   {
+    "key": "a:add-tomato",
+    "id": "extra-add-tomato",
+    "kind": "a",
+    "name": "Add Tomato",
+    "kj": 30,
+    "p": 0.2,
+    "c": 1.5,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-avocado",
+    "id": "extra-add-avocado",
+    "kind": "a",
+    "name": "Add Avocado",
+    "kj": 190,
+    "p": 0.5,
+    "c": 0.7,
+    "f": 4.5,
+    "est": true
+   },
+   {
+    "key": "f:add-chicken-fillet",
+    "id": "extra-add-chicken-fillet",
+    "kind": "f",
+    "name": "Add Chicken Fillet",
+    "kj": 480,
+    "p": 20.1,
+    "c": 1.4,
+    "f": 3.2,
+    "est": true
+   },
+   {
+    "key": "r:mayo",
+    "id": "no-mayo",
+    "kind": "r",
+    "name": "No Mayo",
+    "kj": -610,
+    "p": -0.2,
+    "c": -0.4,
+    "f": -16.3,
+    "nut": {
+     "sat": -1.3,
+     "sugar": -0.3,
+     "sodium": -105.7
+    },
+    "est": true
+   },
+   {
+    "key": "r:tomato-capsicum-relish",
+    "id": "no-tomato-capsicum-relish",
+    "kind": "r",
+    "name": "No Tomato & Capsicum relish",
+    "kj": -30,
+    "p": 0.0,
+    "c": -1.7,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "r:chicken-fillets",
+    "id": "no-chicken-fillets",
+    "kind": "r",
+    "name": "No Chicken Fillets",
+    "kj": -480,
+    "p": -20.1,
+    "c": -1.4,
+    "f": -3.2,
+    "est": true
+   },
+   {
+    "key": "r:halloumi",
+    "id": "no-halloumi",
+    "kind": "r",
+    "name": "No Halloumi",
+    "kj": -720,
+    "p": -11.6,
+    "c": -1.3,
+    "f": -13.4,
+    "est": true
+   }
+  ],
+  "oporto:chicken-rappsnacker": [
+   {
+    "key": "a:add-veggie-pattie",
+    "id": "extra-add-veggie-pattie",
+    "kind": "a",
+    "name": "Add Veggie Pattie",
+    "kj": 690,
+    "p": 14.4,
+    "c": 0.8,
+    "f": 11.5,
+    "est": true
+   }
+  ],
+  "oporto:pulled-chicken-bowl": [
+   {
+    "key": "a:add-original-chilli-sauce",
+    "id": "extra-add-original-chilli-sauce",
+    "kind": "a",
+    "name": "Add Original Chilli Sauce",
+    "kj": 430,
+    "p": 0.4,
+    "c": 0.8,
+    "f": 10.9,
+    "nut": {
+     "sat": 0.8,
+     "sugar": 0.8,
+     "sodium": 95.2
+    }
+   },
+   {
+    "key": "a:add-mayo",
+    "id": "extra-add-mayo",
+    "kind": "a",
+    "name": "Add Mayo",
+    "kj": 610,
+    "p": 0.2,
+    "c": 0.4,
+    "f": 16.3,
+    "nut": {
+     "sat": 1.3,
+     "sugar": 0.3,
+     "sodium": 105.7
+    }
+   },
+   {
+    "key": "f:add-halloumi",
+    "id": "extra-add-halloumi",
+    "kind": "f",
+    "name": "Add Halloumi",
+    "kj": 720,
+    "p": 11.6,
+    "c": 1.3,
+    "f": 13.4,
+    "est": true
+   },
+   {
+    "key": "a:add-avocado",
+    "id": "extra-add-avocado",
+    "kind": "a",
+    "name": "Add Avocado",
+    "kj": 190,
+    "p": 0.5,
+    "c": 0.7,
+    "f": 4.5,
+    "est": true
+   },
+   {
+    "key": "r:avocado",
+    "id": "no-avocado",
+    "kind": "r",
+    "name": "No Avocado",
+    "kj": -190,
+    "p": -0.5,
+    "c": -0.7,
+    "f": -4.5,
+    "est": true
+   }
+  ],
+  "oporto:chicken-salad-bowl": [
+   {
+    "key": "a:add-original-chilli-sauce",
+    "id": "extra-add-original-chilli-sauce",
+    "kind": "a",
+    "name": "Add Original Chilli Sauce",
+    "kj": 430,
+    "p": 0.4,
+    "c": 0.8,
+    "f": 10.9,
+    "nut": {
+     "sat": 0.8,
+     "sugar": 0.8,
+     "sodium": 95.2
+    }
+   },
+   {
+    "key": "f:add-halloumi",
+    "id": "extra-add-halloumi",
+    "kind": "f",
+    "name": "Add Halloumi",
+    "kj": 720,
+    "p": 11.6,
+    "c": 1.3,
+    "f": 13.4,
+    "est": true
+   },
+   {
+    "key": "a:add-avocado",
+    "id": "extra-add-avocado",
+    "kind": "a",
+    "name": "Add Avocado",
+    "kj": 190,
+    "p": 0.5,
+    "c": 0.7,
+    "f": 4.5,
+    "est": true
+   },
+   {
+    "key": "f:add-a-grilled-chicken-tender",
+    "id": "extra-add-a-grilled-chicken-tender",
+    "kind": "f",
+    "name": "Add A Grilled Chicken Tender",
+    "kj": 250,
+    "p": 10.5,
+    "c": 0.7,
+    "f": 1.7,
+    "est": true
+   },
+   {
+    "key": "r:chicken-tenders",
+    "id": "no-chicken-tenders",
+    "kind": "r",
+    "name": "No Chicken Tenders",
+    "kj": -250,
+    "p": -10.5,
+    "c": -0.7,
+    "f": -1.7,
+    "est": true
+   }
+  ],
+  "oporto:breakfast-bowl": [
+   {
+    "key": "f:add-halloumi",
+    "id": "extra-add-halloumi",
+    "kind": "f",
+    "name": "Add Halloumi",
+    "kj": 720,
+    "p": 11.6,
+    "c": 1.3,
+    "f": 13.4,
+    "est": true
+   },
+   {
+    "key": "a:add-avocado",
+    "id": "extra-add-avocado",
+    "kind": "a",
+    "name": "Add Avocado",
+    "kj": 190,
+    "p": 0.5,
+    "c": 0.7,
+    "f": 4.5,
+    "est": true
+   },
+   {
+    "key": "a:add-egg",
+    "id": "extra-add-egg",
+    "kind": "a",
+    "name": "Add Egg",
+    "kj": 320,
+    "p": 6.7,
+    "c": 0.4,
+    "f": 5.4,
+    "est": true
+   },
+   {
+    "key": "r:avocado",
+    "id": "no-avocado",
+    "kind": "r",
+    "name": "No Avocado",
+    "kj": -190,
+    "p": -0.5,
+    "c": -0.7,
+    "f": -4.5,
+    "est": true
+   },
+   {
+    "key": "r:egg",
+    "id": "no-egg",
+    "kind": "r",
+    "name": "No Egg",
+    "kj": -320,
+    "p": -6.7,
+    "c": -0.4,
+    "f": -5.4,
+    "est": true
+   },
+   {
+    "key": "r:halloumi",
+    "id": "no-halloumi",
+    "kind": "r",
+    "name": "No Halloumi",
+    "kj": -720,
+    "p": -11.6,
+    "c": -1.3,
+    "f": -13.4,
+    "est": true
+   }
+  ],
+  "oporto:breakfast-deluxe-burger": [
+   {
+    "key": "a:add-original-chilli-sauce",
+    "id": "extra-add-original-chilli-sauce",
+    "kind": "a",
+    "name": "Add Original Chilli Sauce",
+    "kj": 430,
+    "p": 0.4,
+    "c": 0.8,
+    "f": 10.9,
+    "nut": {
+     "sat": 0.8,
+     "sugar": 0.8,
+     "sodium": 95.2
+    }
+   },
+   {
+    "key": "a:add-bbq-sauce",
+    "id": "extra-add-bbq-sauce",
+    "kind": "a",
+    "name": "Add BBQ Sauce",
+    "kj": 380,
+    "p": 0.5,
+    "c": 21.6,
+    "f": 0.3,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 160,
+    "p": 2.9,
+    "c": 0.1,
+    "f": 2.9,
+    "est": true
+   },
+   {
+    "key": "a:add-cheese",
+    "id": "extra-add-cheese",
+    "kind": "a",
+    "name": "Add Cheese",
+    "kj": 170,
+    "p": 2.6,
+    "c": 0.4,
+    "f": 3.2,
+    "est": true
+   },
+   {
+    "key": "a:add-avocado",
+    "id": "extra-add-avocado",
+    "kind": "a",
+    "name": "Add Avocado",
+    "kj": 190,
+    "p": 0.5,
+    "c": 0.7,
+    "f": 4.5,
+    "est": true
+   },
+   {
+    "key": "a:add-egg",
+    "id": "extra-add-egg",
+    "kind": "a",
+    "name": "Add Egg",
+    "kj": 320,
+    "p": 6.7,
+    "c": 0.4,
+    "f": 5.4,
+    "est": true
+   },
+   {
+    "key": "f:add-chicken-fillet",
+    "id": "extra-add-chicken-fillet",
+    "kind": "f",
+    "name": "Add Chicken Fillet",
+    "kj": 480,
+    "p": 20.1,
+    "c": 1.4,
+    "f": 3.2,
+    "est": true
+   },
+   {
+    "key": "r:bacon",
+    "id": "no-bacon",
+    "kind": "r",
+    "name": "No Bacon",
+    "kj": -160,
+    "p": -2.9,
+    "c": -0.1,
+    "f": -2.9,
+    "est": true
+   },
+   {
+    "key": "r:avocado",
+    "id": "no-avocado",
+    "kind": "r",
+    "name": "No Avocado",
+    "kj": -190,
+    "p": -0.5,
+    "c": -0.7,
+    "f": -4.5,
+    "est": true
+   },
+   {
+    "key": "r:egg",
+    "id": "no-egg",
+    "kind": "r",
+    "name": "No Egg",
+    "kj": -320,
+    "p": -6.7,
+    "c": -0.4,
+    "f": -5.4,
+    "est": true
+   },
+   {
+    "key": "r:chicken-fillets",
+    "id": "no-chicken-fillets",
+    "kind": "r",
+    "name": "No Chicken Fillets",
+    "kj": -480,
+    "p": -20.1,
+    "c": -1.4,
+    "f": -3.2,
+    "est": true
+   }
+  ],
+  "oporto:breakfast-rappa": [
+   {
+    "key": "a:add-original-chilli-sauce",
+    "id": "extra-add-original-chilli-sauce",
+    "kind": "a",
+    "name": "Add Original Chilli Sauce",
+    "kj": 430,
+    "p": 0.4,
+    "c": 0.8,
+    "f": 10.9,
+    "nut": {
+     "sat": 0.8,
+     "sugar": 0.8,
+     "sodium": 95.2
+    }
+   },
+   {
+    "key": "f:add-halloumi",
+    "id": "extra-add-halloumi",
+    "kind": "f",
+    "name": "Add Halloumi",
+    "kj": 720,
+    "p": 11.6,
+    "c": 1.3,
+    "f": 13.4,
+    "est": true
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 160,
+    "p": 2.9,
+    "c": 0.1,
+    "f": 2.9,
+    "est": true
+   },
+   {
+    "key": "a:add-cheese",
+    "id": "extra-add-cheese",
+    "kind": "a",
+    "name": "Add Cheese",
+    "kj": 170,
+    "p": 2.6,
+    "c": 0.4,
+    "f": 3.2,
+    "est": true
+   },
+   {
+    "key": "a:add-tomato",
+    "id": "extra-add-tomato",
+    "kind": "a",
+    "name": "Add Tomato",
+    "kj": 30,
+    "p": 0.2,
+    "c": 1.5,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-avocado",
+    "id": "extra-add-avocado",
+    "kind": "a",
+    "name": "Add Avocado",
+    "kj": 190,
+    "p": 0.5,
+    "c": 0.7,
+    "f": 4.5,
+    "est": true
+   },
+   {
+    "key": "a:add-egg",
+    "id": "extra-add-egg",
+    "kind": "a",
+    "name": "Add Egg",
+    "kj": 320,
+    "p": 6.7,
+    "c": 0.4,
+    "f": 5.4,
+    "est": true
+   },
+   {
+    "key": "f:add-a-grilled-chicken-tender",
+    "id": "extra-add-a-grilled-chicken-tender",
+    "kind": "f",
+    "name": "Add A Grilled Chicken Tender",
+    "kj": 250,
+    "p": 10.5,
+    "c": 0.7,
+    "f": 1.7,
+    "est": true
+   },
+   {
+    "key": "r:bacon",
+    "id": "no-bacon",
+    "kind": "r",
+    "name": "No Bacon",
+    "kj": -160,
+    "p": -2.9,
+    "c": -0.1,
+    "f": -2.9,
+    "est": true
+   },
+   {
+    "key": "r:avocado",
+    "id": "no-avocado",
+    "kind": "r",
+    "name": "No Avocado",
+    "kj": -190,
+    "p": -0.5,
+    "c": -0.7,
+    "f": -4.5,
+    "est": true
+   },
+   {
+    "key": "r:egg",
+    "id": "no-egg",
+    "kind": "r",
+    "name": "No Egg",
+    "kj": -320,
+    "p": -6.7,
+    "c": -0.4,
+    "f": -5.4,
+    "est": true
+   },
+   {
+    "key": "r:port-tomato-salad",
+    "id": "no-port-tomato-salad",
+    "kind": "r",
+    "name": "No Port Tomato Salad",
+    "kj": -30,
+    "p": -0.2,
+    "c": -1.5,
+    "f": 0.0,
+    "est": true
+   }
+  ],
+  "oporto:chicken-egg-burger": [
+   {
+    "key": "a:add-original-chilli-sauce",
+    "id": "extra-add-original-chilli-sauce",
+    "kind": "a",
+    "name": "Add Original Chilli Sauce",
+    "kj": 430,
+    "p": 0.4,
+    "c": 0.8,
+    "f": 10.9,
+    "nut": {
+     "sat": 0.8,
+     "sugar": 0.8,
+     "sodium": 95.2
+    }
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 160,
+    "p": 2.9,
+    "c": 0.1,
+    "f": 2.9,
+    "est": true
+   },
+   {
+    "key": "a:add-cheese",
+    "id": "extra-add-cheese",
+    "kind": "a",
+    "name": "Add Cheese",
+    "kj": 170,
+    "p": 2.6,
+    "c": 0.4,
+    "f": 3.2,
+    "est": true
+   },
+   {
+    "key": "a:add-avocado",
+    "id": "extra-add-avocado",
+    "kind": "a",
+    "name": "Add Avocado",
+    "kj": 190,
+    "p": 0.5,
+    "c": 0.7,
+    "f": 4.5,
+    "est": true
+   },
+   {
+    "key": "a:add-egg",
+    "id": "extra-add-egg",
+    "kind": "a",
+    "name": "Add Egg",
+    "kj": 320,
+    "p": 6.7,
+    "c": 0.4,
+    "f": 5.4,
+    "est": true
+   },
+   {
+    "key": "r:egg",
+    "id": "no-egg",
+    "kind": "r",
+    "name": "No Egg",
+    "kj": -320,
+    "p": -6.7,
+    "c": -0.4,
+    "f": -5.4,
+    "est": true
+   }
+  ],
+  "oporto:bacon-egg-burger": [
+   {
+    "key": "a:add-original-chilli-sauce",
+    "id": "extra-add-original-chilli-sauce",
+    "kind": "a",
+    "name": "Add Original Chilli Sauce",
+    "kj": 430,
+    "p": 0.4,
+    "c": 0.8,
+    "f": 10.9,
+    "nut": {
+     "sat": 0.8,
+     "sugar": 0.8,
+     "sodium": 95.2
+    }
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 160,
+    "p": 2.9,
+    "c": 0.1,
+    "f": 2.9,
+    "est": true
+   },
+   {
+    "key": "a:add-cheese",
+    "id": "extra-add-cheese",
+    "kind": "a",
+    "name": "Add Cheese",
+    "kj": 170,
+    "p": 2.6,
+    "c": 0.4,
+    "f": 3.2,
+    "est": true
+   },
+   {
+    "key": "a:add-avocado",
+    "id": "extra-add-avocado",
+    "kind": "a",
+    "name": "Add Avocado",
+    "kj": 190,
+    "p": 0.5,
+    "c": 0.7,
+    "f": 4.5,
+    "est": true
+   },
+   {
+    "key": "f:add-chicken-fillet",
+    "id": "extra-add-chicken-fillet",
+    "kind": "f",
+    "name": "Add Chicken Fillet",
+    "kj": 480,
+    "p": 20.1,
+    "c": 1.4,
+    "f": 3.2,
+    "est": true
+   },
+   {
+    "key": "r:bacon",
+    "id": "no-bacon",
+    "kind": "r",
+    "name": "No Bacon",
+    "kj": -160,
+    "p": -2.9,
+    "c": -0.1,
+    "f": -2.9,
+    "est": true
+   }
+  ],
+  "oporto:chicken-bacon-egg-burger": [
+   {
+    "key": "a:add-original-chilli-sauce",
+    "id": "extra-add-original-chilli-sauce",
+    "kind": "a",
+    "name": "Add Original Chilli Sauce",
+    "kj": 430,
+    "p": 0.4,
+    "c": 0.8,
+    "f": 10.9,
+    "nut": {
+     "sat": 0.8,
+     "sugar": 0.8,
+     "sodium": 95.2
+    }
+   },
+   {
+    "key": "a:add-bacon",
+    "id": "extra-add-bacon",
+    "kind": "a",
+    "name": "Add Bacon",
+    "kj": 160,
+    "p": 2.9,
+    "c": 0.1,
+    "f": 2.9,
+    "est": true
+   },
+   {
+    "key": "a:add-cheese",
+    "id": "extra-add-cheese",
+    "kind": "a",
+    "name": "Add Cheese",
+    "kj": 170,
+    "p": 2.6,
+    "c": 0.4,
+    "f": 3.2,
+    "est": true
+   },
+   {
+    "key": "a:add-tomato",
+    "id": "extra-add-tomato",
+    "kind": "a",
+    "name": "Add Tomato",
+    "kj": 30,
+    "p": 0.2,
+    "c": 1.5,
+    "f": 0.0,
+    "est": true
+   },
+   {
+    "key": "a:add-avocado",
+    "id": "extra-add-avocado",
+    "kind": "a",
+    "name": "Add Avocado",
+    "kj": 190,
+    "p": 0.5,
+    "c": 0.7,
+    "f": 4.5,
+    "est": true
+   },
+   {
+    "key": "a:add-egg",
+    "id": "extra-add-egg",
+    "kind": "a",
+    "name": "Add Egg",
+    "kj": 320,
+    "p": 6.7,
+    "c": 0.4,
+    "f": 5.4,
+    "est": true
+   },
+   {
+    "key": "f:add-chicken-fillet",
+    "id": "extra-add-chicken-fillet",
+    "kind": "f",
+    "name": "Add Chicken Fillet",
+    "kj": 480,
+    "p": 20.1,
+    "c": 1.4,
+    "f": 3.2,
+    "est": true
+   },
+   {
+    "key": "r:bacon",
+    "id": "no-bacon",
+    "kind": "r",
+    "name": "No Bacon",
+    "kj": -160,
+    "p": -2.9,
+    "c": -0.1,
+    "f": -2.9,
+    "est": true
+   },
+   {
+    "key": "r:egg",
+    "id": "no-egg",
+    "kind": "r",
+    "name": "No Egg",
+    "kj": -320,
+    "p": -6.7,
+    "c": -0.4,
+    "f": -5.4,
+    "est": true
+   },
+   {
+    "key": "r:chicken-fillets",
+    "id": "no-chicken-fillets",
+    "kind": "r",
+    "name": "No Chicken Fillets",
+    "kj": -480,
+    "p": -20.1,
+    "c": -1.4,
+    "f": -3.2,
+    "est": true
+   }
+  ]
+ }
+}
