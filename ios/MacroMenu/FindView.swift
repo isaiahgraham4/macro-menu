@@ -393,14 +393,14 @@ struct ProductDetailView: View {
                 }.padding(.vertical, 4)
                 if loading { ProgressView("Getting the full label…").font(.roboto(.caption)) }
             }
-            Section { NutritionView(total: Nutrition([Portion(food: food)])) }
             Section {
                 BarcodeQuickActions(food: food, per100: saved == nil && product.per100, inMyFoods: saved != nil,
                                     mode: .log { portion in
                                         if let pick { pick(portion); return true }
                                         return store.logNow([portion], name: portion.food.name, mealTime: meal, yesterday: logYesterday)
                                     },
-                                    actionTitle: pick != nil ? pickTitle : logYesterday ? "Log to yesterday’s \(meal.title.lowercased())" : "Log to \(meal.title)") {
+                                    actionTitle: pick != nil ? pickTitle : logYesterday ? "Log to yesterday’s \(meal.title.lowercased())" : "Log to \(meal.title)",
+                                    nutrition: .full) {
                     if pick == nil { dismiss() }
                 }
                 .id(food.serve + (saved?.id ?? ""))

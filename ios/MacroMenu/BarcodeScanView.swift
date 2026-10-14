@@ -52,9 +52,10 @@ struct BarcodeScanView: View {
                     Section {
                         Text(saved.food.name).font(.roboto(.headline))
                         Text("Nutrition per \(saved.food.serve)").foregroundStyle(.secondary)
-                        NutritionView(total: Nutrition([Portion(food: saved.food)]), details: quick == nil)
                         if let quick {
-                            BarcodeQuickActions(food: saved.food, per100: saved.food.serve.hasPrefix("100 "), inMyFoods: true, mode: quick) { dismiss() }
+                            BarcodeQuickActions(food: saved.food, per100: saved.food.serve.hasPrefix("100 "), inMyFoods: true, mode: quick, nutrition: .compact) { dismiss() }
+                        } else {
+                            NutritionView(total: Nutrition([Portion(food: saved.food)]), details: true)
                         }
                         if quick == nil || quick?.logs == true {
                             Button(quick == nil ? "Use this food" : "Change details first") {
@@ -74,10 +75,8 @@ struct BarcodeScanView: View {
                             .foregroundStyle(.secondary)
                         if let quick {
                             // Logging comes first, so it's reachable without scrolling; the full panel is a tap away.
-                            NutritionView(total: Nutrition([Portion(food: product.food)]), details: false)
-                            BarcodeQuickActions(food: product.food, per100: product.per100, inMyFoods: false, mode: quick) { dismiss() }
+                            BarcodeQuickActions(food: product.food, per100: product.per100, inMyFoods: false, mode: quick, nutrition: .summary) { dismiss() }
                             Button("Edit details first") { use(product) }.buttonStyle(.bordered)
-                            DisclosureGroup("Full nutrition") { NutritionView(total: Nutrition([Portion(food: product.food)])) }
                             Text("Check this matches your package before logging.").font(.roboto(.caption)).foregroundStyle(.secondary)
                         } else {
                             NutritionView(total: Nutrition([Portion(food: product.food)]))
@@ -248,6 +247,8 @@ struct BarcodeQuickActions: View {
     let mode: Mode
     /// The log button's words, e.g. "Log to Lunch" or "Add to meal".
     var actionTitle = "Log"
+    /// Shows the food's nutrition here, for the amount chosen below, rather than leaving the caller to show one serving's.
+    var nutrition: NutritionStyle?
     let done: () -> Void
     /// Remembered, so it stays how you left it.
     @AppStorage(FoodEditor.keepKey) private var keep = true
@@ -256,8 +257,17 @@ struct BarcodeQuickActions: View {
     @State private var weight: Double
     @State private var failed = false
 
-    init(food: Food, per100: Bool, inMyFoods: Bool, mode: Mode, actionTitle: String = "Log", done: @escaping () -> Void) {
-        self.food = food; self.inMyFoods = inMyFoods; self.mode = mode; self.actionTitle = actionTitle; self.done = done
+    enum NutritionStyle {
+        /// Calories and macros only.
+        case compact
+        /// Calories and macros, with the full panel a tap away.
+        case summary
+        /// The whole panel.
+        case full
+    }
+
+    init(food: Food, per100: Bool, inMyFoods: Bool, mode: Mode, actionTitle: String = "Log", nutrition: NutritionStyle? = nil, done: @escaping () -> Void) {
+        self.food = food; self.inMyFoods = inMyFoods; self.mode = mode; self.actionTitle = actionTitle; self.nutrition = nutrition; self.done = done
         // Per-100 figures are logged by weight, so the grams eaten can be typed straight in.
         _byWeight = State(initialValue: per100 && food.servingWeight != nil)
         _weight = State(initialValue: food.servingWeight?.0 ?? 100)
@@ -267,9 +277,20 @@ struct BarcodeQuickActions: View {
         return servings
     }
     private var valid: Bool { quantity.isFinite && quantity > 0 && quantity <= 10000 }
+    /// What's being logged, for the line above the totals.
+    private var amountText: String {
+        if byWeight, let serving = food.servingWeight { return "\(weight.number) \(serving.1)" }
+        return "\(servings.number) \(servings == 1 ? "serving" : "servings")"
+    }
+    private var total: Nutrition { Nutrition([Portion(food: food, quantity: valid ? quantity : 0)]) }
 
     var body: some View {
         Group {
+            if let nutrition {
+                // The totals follow the amount below, so what's shown is what will be logged.
+                if abs(quantity - 1) > 0.0001 { Text("Total for \(amountText)").font(.roboto(.subheadline, weight: .medium)).foregroundStyle(.secondary) }
+                NutritionView(total: total, details: nutrition == .full)
+            }
             switch mode {
             case .log(let logPortion):
                 if let serving = food.servingWeight {
@@ -288,7 +309,7 @@ struct BarcodeQuickActions: View {
                     }
                 }
                 Button { log(logPortion) } label: {
-                    Text("\(actionTitle) · \(Nutrition([Portion(food: food, quantity: valid ? quantity : 0)]).cal.rounded().number) Cal").frame(maxWidth: .infinity)
+                    Text("\(actionTitle) · \(total.cal.rounded().number) Cal").frame(maxWidth: .infinity)
                 }.buttonStyle(.borderedProminent).disabled(!valid)
                 .task(id: food.id) { useLastAmount() }
             case .save:
@@ -299,6 +320,9 @@ struct BarcodeQuickActions: View {
                         if let kept = store.saveToMyFoods(food) { store.notice = "Saved \(kept.name) to My foods"; done() } else { failed = true }
                     } label: { Text("Save to My foods").frame(maxWidth: .infinity) }.buttonStyle(.borderedProminent)
                 }
+            }
+            if nutrition == .summary {
+                DisclosureGroup("Full nutrition") { NutritionView(total: total) }
             }
         }
         .alert("Couldn’t save food", isPresented: $failed) { Button("OK", role: .cancel) {} } message: {
