@@ -270,6 +270,21 @@ for (const [itemId, name, addTo] of SOLD_SEPARATELY) {
   }
 }
 console.log(`Added ${separate} extras that are sold on their own.`);
+// Dietary info (diet-info.py): the meats in each item ([] when none), allergens where the restaurant publishes them, and its
+// vegetarian or vegan label. Items the restaurant's own words don't cover are left without, and the filters leave those out.
+let dietCount = 0;
+for (const [id, info] of Object.entries(require('./diet.json').items)) {
+  const food = byId[id];
+  if (!food) continue;
+  const diet = {};
+  if (info.meat) diet.meat = info.meat;
+  if (info.al) diet.al = info.al;
+  if (info.may && info.may.length) diet.may = info.may;
+  if (info.vg) diet.vg = info.vg;
+  if (info.src && Object.keys(diet).length) diet.src = info.src;
+  if (Object.keys(diet).length) { food.diet = diet; dietCount++; }
+}
+console.log(`Added dietary info to ${dietCount} items.`);
 // format: the app only accepts formats it understands. revision: a fingerprint of the menu.
 // published: when this revision was first exported; unchanged menus keep their date, so a re-export isn't "newer".
 // Prices are switched off for now: they vary too much between stores. menu-source.js keeps them for later;

@@ -64,6 +64,16 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   Apple Intelligence (iOS 26+, on device) splits it into foods and amounts where available, otherwise `FoodPhrase.meal`
   does; each is matched like a photo's foods and amounts become servings from the food's serving weight. Typed restaurant
   items are ticked only when one restaurant has them or a brand was named.
+- Dietary needs (Find → Dietary needs): vegetarian, vegan, no beef, no pork, and nine allergens to avoid. Orders, Best
+  choices, search and the Left today and Plan ahead suggestions only offer items whose restaurant's own words show they
+  fit; unknown items are left out (`DietFilter`, `Food.diet`). With needs set, the finder customises by taking things off
+  only. Each item's page shows its meats, allergens and "may contain", and where that came from. The data is built by
+  `Scripts/diet-info.py` from Grill'd's ingredient lists and allergen statements, Nando's and Hungry Jack's allergens,
+  McDonald's and Subway ingredients, Hungry Jack's, Oporto, Red Rooster and Domino's descriptions, and GYG, Zambrero and
+  KFC names; "may contain" counts as contains, and gelatine counts against no beef and no pork.
+- Ask Leanr (Find, at the top): a question in plain words ("vegetarian, 40 g protein under 600 Cal at Nando's") becomes an
+  order search. `AskLeanr.parse` reads numbers, restaurants, item counts and needs; with Apple Intelligence, `AskLeanrModel`
+  fills in what the rules miss, but only numbers that are in the question. What was understood is shown as chips.
 - Plan ahead (Today → Log food): set out meals for today and the next six days against the targets, with suggestions to
   fill the gap. Plans (`AppData.plans`, by day) count for nothing until logged; on the day they appear on Today under
   Planned, and a tick logs each one. Past days are pruned.
@@ -110,6 +120,8 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   otherwise "Probably too far to deliver" (`Delivery.swift`). Distance is from your location, or the place searched on the Map tab. It's an estimate:
   delivery apps don't let other apps check an address. Tapping it lists Uber Eats, DoorDash, Menulog and the chain's
   own app to confirm and order.
+- Water widget (Home Screen and Lock Screen): today's water against the target, with a button that adds one glass
+  ("water:<mL>" through `LogAgainIntent`, queued like Log again when Leanr can't run).
 - Log again widget (Home Screen and Lock Screen): the usual meal for this time of
   day, then pinned foods, each with a log button. `LogAgainIntent`
   (`Shared/LogAgain.swift`) is a Live Activity intent, so it runs in the app's

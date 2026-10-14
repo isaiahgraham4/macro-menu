@@ -5,7 +5,7 @@ import WidgetKit
 /// and synced just like logging in the app. If the system ever runs it in the widget instead, the request is queued for the app.
 struct LogAgainIntent: LiveActivityIntent {
     static let title: LocalizedStringResource = "Log Again"
-    static let description = IntentDescription("Logs a pinned food or your usual meal to today.")
+    static let description = IntentDescription("Logs a pinned food, your usual meal, a planned meal or a glass of water to today.")
     static let isDiscoverable = false
     static let authenticationPolicy: IntentAuthenticationPolicy = .requiresAuthentication
 

@@ -72,8 +72,9 @@ struct WhatFitsIntent: AppIntent {
     @MainActor func perform() async throws -> some IntentResult & ProvidesDialog {
         AppServices.start()
         let store = AppServices.store
-        let query = Assistant.budget(store.data, goals: store.goals, chain: restaurant.id)
-        let foods = store.foods
+        var budget = Assistant.budget(store.data, goals: store.goals, chain: restaurant.id)
+        budget?.diet = DietFilter.saved
+        let query = budget, foods = store.foods
         let matches = await Task.detached(priority: .userInitiated) { query.map { MealFinder.find(foods, query: $0) } ?? [] }.value
         let answer = Assistant.fitsAnswer(restaurant: restaurant.name, query: query, matches: matches,
                                           caloriesLeft: Assistant.remaining(store.data, goals: store.goals).calories)

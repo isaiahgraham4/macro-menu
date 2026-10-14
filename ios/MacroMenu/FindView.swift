@@ -9,10 +9,24 @@ struct FindView: View {
     @State private var searching = false
     @State private var initialized = false
     @State private var searchID = UUID()
+    @State private var question = ""
+    @State private var asking: String?
+    @AppStorage(DietFilter.storageKey) private var dietRaw = ""
     @Environment(\.dynamicTypeSize) private var typeSize
     var body: some View {
         LeanrList {
             Section {
+                // Ask Leanr: a question in plain words, answered by the order finder.
+                HStack(spacing: 10) {
+                    Image(systemName: "sparkles").foregroundStyle(.tint).accessibilityHidden(true)
+                    TextField("Ask Leanr: 40 g protein at Nando's", text: $question, axis: .vertical)
+                        .lineLimit(1...3).submitLabel(.search)
+                        .onSubmit { ask() }
+                    if !question.trimmingCharacters(in: .whitespaces).isEmpty {
+                        Button { ask() } label: { Image(systemName: "arrow.up.circle.fill").font(.title2) }
+                            .buttonStyle(.borderless).accessibilityLabel("Ask")
+                    }
+                }.padding(.vertical, 4)
                 NavigationLink {
                     BrowseView(startSearching: true)
                 } label: {
@@ -79,6 +93,11 @@ struct FindView: View {
                 }
                 Button { useRemaining() } label: { Label("Use what's left of today's targets", systemImage: "arrow.down.forward.circle") }
                     .font(.roboto(.subheadline))
+                NavigationLink { DietNeedsView() } label: {
+                    LabeledContent {
+                        Text(query.diet.isEmpty ? "None" : query.diet.summary).lineLimit(2).multilineTextAlignment(.trailing)
+                    } label: { Label("Dietary needs", systemImage: "leaf") }
+                }
             }
             Section {
                 ChipRow {
@@ -93,38 +112,16 @@ struct FindView: View {
             if searching || matches.isEmpty {
                 Section(searching ? "Finding combinations…" : "No suggestions") {
                     if searching { ProgressView().frame(maxWidth: .infinity) }
-                    else { ContentUnavailableView("No matching orders", systemImage: "magnifyingglass", description: Text("Try more calories or different restaurants.")) }
+                    else {
+                        ContentUnavailableView("No matching orders", systemImage: "magnifyingglass",
+                                               description: Text(query.diet.isEmpty ? "Try more calories or different restaurants."
+                                                                 : "Try more calories or different restaurants. Dietary needs leave out items whose restaurant doesn't say what's in them."))
+                    }
                 }
             } else {
                 ForEach(Array(matches.enumerated()), id: \.element.id) { index, match in
                     Section {
-                        VStack(alignment: .leading, spacing: 12) {
-                            HStack {
-                                Text(store.chainName(match.chain).uppercased()).font(.roboto(.caption, weight: .semibold)).foregroundStyle(.secondary)
-                                Spacer()
-                                let met = match.total.p >= query.protein
-                                Text(met ? "Protein target met" : "\((query.protein - match.total.p).number) g short")
-                                    .font(.roboto(.caption, weight: .medium)).foregroundStyle(met ? .green : .orange)
-                                    .padding(.horizontal, 8).padding(.vertical, 3)
-                                    .background((met ? Color.green : Color.orange).opacity(0.15), in: Capsule())
-                            }
-                            NavigationLink { OrderDetailView(match: match) } label: {
-                                Text(match.items.map { $0.food.name }.joined(separator: " + ")).font(.roboto(.headline))
-                            }
-                            if match.customised > 0 {
-                                Label("Ask for these changes when you order", systemImage: "slider.horizontal.3")
-                                    .font(.roboto(.caption)).foregroundStyle(.secondary)
-                            }
-                            NearestPlaceLine(chain: match.chain)
-                            NutritionView(total: match.total, details: false)
-                            HStack {
-                                let name = match.items.map(\.food.name).joined(separator: " + ")
-                                Button("Log it") { store.logNow(match.items, name: name) }.buttonStyle(.borderedProminent)
-                                    .contextMenu { YesterdayMenu { store.logNow(match.items, name: name, mealTime: $0, yesterday: true) } }
-                                Button("Add to meal") { store.add(match.items) }.buttonStyle(.bordered)
-                                ShareLink(item: mealText("Suggested order", match.items)) { Image(systemName: "square.and.arrow.up") }.buttonStyle(.bordered).accessibilityLabel("Share order")
-                            }
-                        }.padding(.vertical, 6)
+                        OrderMatchCard(match: match, protein: query.protein)
                     } header: {
                         if index == 0 { Text("\(matches.count) suggested orders") }
                     }
@@ -132,8 +129,10 @@ struct FindView: View {
             }
         }
         .navigationTitle("Find a meal")
+        .navigationDestination(item: $asking) { text in AskLeanrView(question: text) }
         .toolbar { NavigationLink { SourcesView() } label: { Image(systemName: "info.circle") }.accessibilityLabel("Menu sources") }
         .onAppear { if !initialized { query.calories = store.goals.mealCal; query.protein = store.goals.mealProtein; initialized = true } }
+        .onChange(of: dietRaw, initial: true) { query.diet = DietFilter(raw: dietRaw) }
         .onChange(of: nav.findChain, initial: true) { if let chain = nav.findChain { query.chains = [chain]; nav.findChain = nil } }
         .onChange(of: store.data.foods) { searchID = UUID() }
         .task(id: SearchKey(query: query, refresh: searchID)) { await search() }
@@ -143,6 +142,11 @@ struct FindView: View {
         }
     }
     private struct SearchKey: Equatable { var query: FindQuery; var refresh: UUID }
+    private func ask() {
+        let text = question.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !text.isEmpty else { return }
+        asking = text
+    }
     private func useRemaining() {
         let total = Nutrition((store.data.logs[dayKey(Date())] ?? []).flatMap(\.items))
         query.calories = max(0, (store.goals.values["cal"] ?? 2200) - total.cal)
@@ -157,6 +161,46 @@ struct FindView: View {
     }
 }
 
+/// One suggested order: where, what, whether it meets protein, and buttons to log or share it.
+struct OrderMatchCard: View {
+    @Environment(AppStore.self) private var store
+    let match: MealMatch
+    /// The protein target, for the "met" or "short" badge; nil hides it.
+    let protein: Double?
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
+                Text(store.chainName(match.chain).uppercased()).font(.roboto(.caption, weight: .semibold)).foregroundStyle(.secondary)
+                Spacer()
+                if let protein {
+                    let met = match.total.p >= protein
+                    Text(met ? "Protein target met" : "\((protein - match.total.p).number) g short")
+                        .font(.roboto(.caption, weight: .medium)).foregroundStyle(met ? .green : .orange)
+                        .padding(.horizontal, 8).padding(.vertical, 3)
+                        .background((met ? Color.green : Color.orange).opacity(0.15), in: Capsule())
+                }
+            }
+            NavigationLink { OrderDetailView(match: match) } label: {
+                Text(match.items.map { $0.food.name }.joined(separator: " + ")).font(.roboto(.headline))
+            }
+            if match.customised > 0 {
+                Label("Ask for these changes when you order", systemImage: "slider.horizontal.3")
+                    .font(.roboto(.caption)).foregroundStyle(.secondary)
+            }
+            NearestPlaceLine(chain: match.chain)
+            NutritionView(total: match.total, details: false)
+            HStack {
+                let name = match.items.map(\.food.name).joined(separator: " + ")
+                Button("Log it") { store.logNow(match.items, name: name) }.buttonStyle(.borderedProminent)
+                    .contextMenu { YesterdayMenu { store.logNow(match.items, name: name, mealTime: $0, yesterday: true) } }
+                Button("Add to meal") { store.add(match.items) }.buttonStyle(.bordered)
+                ShareLink(item: mealText("Suggested order", match.items)) { Image(systemName: "square.and.arrow.up") }.buttonStyle(.bordered).accessibilityLabel("Share order")
+            }
+        }.padding(.vertical, 6)
+    }
+}
+
 struct BrowseView: View {
     @Environment(AppStore.self) private var store
     @State private var search = ""
@@ -164,6 +208,7 @@ struct BrowseView: View {
     @State private var category = "all"
     @State private var sort = "density"
     @AppStorage(RecentSearches.storageKey) private var recent = ""
+    @AppStorage(DietFilter.storageKey) private var dietRaw = ""
     var pick: ((Portion) -> Void)?
     /// What choosing a food does, for the button on its details, e.g. "Log to Lunch".
     var pickTitle = "Use this portion"
@@ -183,22 +228,32 @@ struct BrowseView: View {
     @State private var yesterday = false
     @State private var meal = MealTime.suggested()
     @State private var rows: [Food] = []
+    /// Matches left out by the dietary needs, when none are left.
+    @State private var hidden = 0
     /// The request the rows were worked out for; nil until the first list is ready.
     @State private var shown: FoodSearch.Browse?
     private var request: FoodSearch.Browse { .init(search: search, chain: chain, category: category, sort: sort) }
     /// Also redo the list when your own foods change or the menu loads.
-    private struct Key: Equatable { var request: FoodSearch.Browse; var custom: [Food]; var catalog: String }
+    private struct Key: Equatable { var request: FoodSearch.Browse; var custom: [Food]; var catalog: String; var diet: String }
 
     private func update(_ request: FoodSearch.Browse) async {
         // Wait for a pause in typing so each keystroke doesn't start a new search.
         if let shown, shown.search != request.search, !request.search.isEmpty { try? await Task.sleep(for: .milliseconds(120)) }
         guard !Task.isCancelled else { return }
-        let foods = store.foods
+        // Dietary needs from Find leave out items that don't fit, or whose restaurant doesn't say.
+        let diet = DietFilter(raw: dietRaw)
+        let foods = diet.isEmpty ? store.foods : store.foods.filter(diet.allows)
         let names = Dictionary(store.catalog.chains.map { ($0.id, $0.name) }) { a, _ in a }.merging([Food.everyday: store.chainName(Food.everyday)]) { a, _ in a }
-        let work = Task.detached(priority: .userInitiated) { FoodSearch.browse(foods, chainNames: names, request: request) }
-        let result = await withTaskCancellationHandler { await work.value } onCancel: { work.cancel() }
+        let all = store.foods
+        let work = Task.detached(priority: .userInitiated) {
+            let found = FoodSearch.browse(foods, chainNames: names, request: request)
+            // When the needs leave nothing, say so, rather than suggest a spelling mistake.
+            let hidden = found.isEmpty && !diet.isEmpty && !request.search.isEmpty ? FoodSearch.browse(all, chainNames: names, request: request).count : 0
+            return (found, hidden)
+        }
+        let (result, hiddenCount) = await withTaskCancellationHandler { await work.value } onCancel: { work.cancel() }
         if !Task.isCancelled {
-            rows = result; shown = request
+            rows = result; shown = request; hidden = hiddenCount
             if submitted { submitted = false; if result.isEmpty { searchPackaged += 1 } }
         }
     }
@@ -256,7 +311,14 @@ struct BrowseView: View {
             }
             PackagedFoodsSection(search: search, trigger: searchPackaged, pick: pick, pickTitle: pickTitle, logYesterday: yesterday, logMeal: meal)
             Section {
-                if shown == request && rows.isEmpty { ContentUnavailableView("No menu matches", systemImage: "magnifyingglass", description: Text("Search packaged foods above, or check the spelling.")) }
+                if shown == request && rows.isEmpty {
+                    if hidden > 0 {
+                        ContentUnavailableView("Nothing that fits", systemImage: "leaf",
+                                               description: Text("\(hidden) match\(hidden == 1 ? "" : "es") left out by your dietary needs (\(DietFilter(raw: dietRaw).summary)). Change them in Find → Dietary needs."))
+                    } else {
+                        ContentUnavailableView("No menu matches", systemImage: "magnifyingglass", description: Text("Search packaged foods above, or check the spelling."))
+                    }
+                }
                 ForEach(rows) { food in
                     NavigationLink {
                         FoodDetailView(food: food, pick: pick, pickTitle: pickTitle, logYesterday: yesterday, logMeal: pick == nil ? meal : nil).onAppear { recent = RecentSearches.adding(shown?.search ?? search, to: recent) }
@@ -272,13 +334,19 @@ struct BrowseView: View {
                         Text("Name").tag("name")
                     }.pickerStyle(.menu).labelsHidden().textCase(nil).font(.roboto(.subheadline)).fixedSize()
                 }
+            } footer: {
+                if !dietRaw.isEmpty {
+                    NavigationLink { DietNeedsView() } label: {
+                        Text("Showing what fits: \(DietFilter(raw: dietRaw).summary). Change in Dietary needs.").font(.roboto(.caption))
+                    }
+                }
             }
         }.searchable(text: $search, isPresented: $searchShown, prompt: "Food, product or restaurant")
             .onAppear {
                 if search.isEmpty && !initialSearch.isEmpty { search = initialSearch }
                 if startSearching && search.isEmpty { searchShown = true }
             }
-            .task(id: Key(request: request, custom: store.data.foods, catalog: store.catalog.revision ?? String(store.catalog.foods.count))) { await update(request) }
+            .task(id: Key(request: request, custom: store.data.foods, catalog: store.catalog.revision ?? String(store.catalog.foods.count), diet: dietRaw)) { await update(request) }
             .searchSuggestions {
                 if search.isEmpty && !recent.isEmpty {
                     Section("Recent searches") {

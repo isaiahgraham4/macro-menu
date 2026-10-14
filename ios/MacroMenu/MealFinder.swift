@@ -11,6 +11,8 @@ struct FindQuery: Equatable, Sendable {
     var sort = "fit"
     /// Also try each item customised: sauce or cheese taken off, or another patty or fillet added.
     var customise = true
+    /// Dietary needs: only items the restaurant's words show fit are used.
+    var diet = DietFilter()
 }
 struct MealMatch: Identifiable, Sendable {
     var items: [Portion]
@@ -43,7 +45,8 @@ enum MealFinder {
     /// Ways to order a food so it fits better, each a customised copy of it.
     /// Lighter: taking off up to three of the parts that save the most energy (sauces, cheese, bacon), never the bun or the meat.
     /// More protein: the extra patty or fillet with the most protein for its energy, alone and with the lighter changes.
-    static func variants(of food: Food) -> [Food] {
+    /// With dietary needs set, only removals are used: what an extra patty or fillet adds isn't known for every need.
+    static func variants(of food: Food, additions: Bool = true) -> [Food] {
         let mods = food.modifiers ?? []
         guard !mods.isEmpty, food.cal > 0 else { return [] }
         // Removals worth making: they save at least 60 kJ and cost little protein. One per group (one kind of cheese, say).
@@ -51,8 +54,8 @@ enum MealFinder {
         let removals = mods.filter { $0.kind == "r" && -$0.kj >= 60 && -$0.p <= max(2, food.p * 0.15) && !isStructural($0.name) && !names(food, $0) }
             .sorted { $0.kj < $1.kj }
             .filter { groups.insert($0.group ?? $0.key).inserted }
-        let protein = mods.filter { $0.kind == "f" && $0.p >= 4 && $0.kj > 0 }
-            .max { $0.p / $0.kj < $1.p / $1.kj }
+        let protein = additions ? mods.filter { $0.kind == "f" && $0.p >= 4 && $0.kj > 0 }
+            .max { $0.p / $0.kj < $1.p / $1.kj } : nil
         var plans: [[String: Double]] = []
         for count in 1...min(3, max(1, removals.count)) where removals.count >= count {
             plans.append(Dictionary(uniqueKeysWithValues: removals.prefix(count).map { ($0.key, 1.0) }))
@@ -81,6 +84,7 @@ enum MealFinder {
     }
     static func find(_ foods: [Food], query q: FindQuery) -> [MealMatch] {
         guard q.calories > 0 else { return [] }
+        let foods = q.diet.isEmpty ? foods : foods.filter(q.diet.allows)
         var best: [String: [MealMatch]] = [:]
         func better(_ a: MealMatch, _ b: MealMatch) -> Bool {
             let x = a.total, y = b.total
@@ -125,7 +129,7 @@ enum MealFinder {
             if q.customise {
                 // Built from every main, including those over the limit as sold: taking the sauce off may bring one under it.
                 let all = foods.filter { $0.chain == chain && $0.cat != "swap" && $0.cal > 0 && (!anchors || $0.isAnchor) }
-                mains += all.flatMap { variants(of: $0) }.filter { $0.cal <= q.calories }
+                mains += all.flatMap { variants(of: $0, additions: q.diet.isEmpty) }.filter { $0.cal <= q.calories }
             }
             let sides = anchors ? eligible.filter { !$0.isAnchor && ($0.cal >= 50 || $0.cat == "drink") }.sorted { $0.cal < $1.cal } : []
             for main in mains {

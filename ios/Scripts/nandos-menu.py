@@ -17,7 +17,7 @@ Usage:
     python3 ios/Scripts/nandos-menu.py fetch   # downloads the menu into ios/Scripts/nandos-source.json (one request)
     python3 ios/Scripts/nandos-menu.py build   # writes the menu rows into menu-source.js and the options into nandos-mods.json
 """
-import json, re, sys, time, subprocess
+import json, os, re, sys, time, subprocess
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -25,11 +25,12 @@ SOURCE = HERE / "nandos-source.json"
 MODS = HERE / "nandos-mods.json"
 MENU_SOURCE = HERE / "menu-source.js"
 API = "https://api.nandos.com.au/public/graphql"
-STORE = "16"           # Nando's Elizabeth St, Melbourne; the menu and its nutrition are national
+STORE = os.environ.get("NANDOS_STORE", "150")  # Nando's Bourke Place, Melbourne. The menu and its nutrition are national, but
+# a store can have items or rolls off for the day, so check the rows' diff after fetching and try another store if items vanish.
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15"
 QUERY = """query getMenu($restaurantId: String!, $loadDetails: Boolean, $orderType: OrderType) {
   menu(input: {restaurantId: $restaurantId, loadDetails: $loadDetails, orderType: $orderType}) {
-    categories { name products { id name choices { name type minimumOptionLimit defaultSelectedOptions options { plu name } } } }
+    categories { name products { id name description choices { name type minimumOptionLimit defaultSelectedOptions options { plu name } } } }
     nutrition
   }
 }"""
@@ -46,6 +47,11 @@ def fetch():
     # Only the figures the build reads, per serve.
     nutrition = {plu: {NUTRIENTS[k]: v for k, v in entry["nutrition"].items() if k in NUTRIENTS}
                  for plu, entry in menu["nutrition"].items() if entry.get("nutrition")}
+    # Allergens (1 contains, 0.5 may contain) and Nando's vegetarian and vegan labels, for Leanr's dietary filters (diet-info.py).
+    for plu, entry in menu["nutrition"].items():
+        if plu in nutrition and entry.get("showAllergens"):
+            nutrition[plu]["contains"] = {k: v for k, v in entry.get("contains", {}).items() if v}
+            nutrition[plu]["suitability"] = {k: v for k, v in entry.get("suitability", {}).items() if v}
     categories = [{"name": c["name"], "products": [{**p, "plu": p["id"].split("-")[-1]} for p in c["products"]]} for c in menu["categories"]]
     for c in categories:
         for p in c["products"]:
@@ -106,7 +112,7 @@ def build():
         found = panels.get(":".join(p for p in plus if p))
         return found if found and found.get("kj") and found.get("p") is not None else None
 
-    rows, mods, seen = [], {}, set()
+    rows, mods, seen, panel_of = [], {}, set(), {}
     for category in source["categories"]:
         if category["name"] in SKIP_CATEGORIES:
             continue
@@ -137,6 +143,7 @@ def build():
             serve = " · ".join(parts + [f"{round(base['g'])} g"])
             cat = "extra" if name in DIPS else CATEGORY.get(category["name"], "main")
             rows.append([name, cat, base, serve])
+            panel_of[f"nandos:{slug(name)}"] = ":".join(p for p in (product["plu"], p_plu if protein else None, s_plu if protein else None) if p)
             options = []
 
             # Style swaps, on the default protein if that's published, otherwise on the first protein that has both.
@@ -175,7 +182,7 @@ def build():
                     found = panel(o["plu"])
                     if not found:
                         continue
-                    amounts = {k: abs(v) for k, v in found.items() if k != "g"}
+                    amounts = {k: abs(v) for k, v in found.items() if k not in ("g", "contains", "suitability")}
                     label = tidy(o["name"])
                     if "remove" in title:
                         if amounts["kj"] < 1:
@@ -191,7 +198,8 @@ def build():
             if options:
                 mods[f"nandos:{slug(name)}"] = options
 
-    MODS.write_text(json.dumps({"fetched": source["fetched"], "modifiers": mods}, indent=1, ensure_ascii=False) + "\n")
+    # rows: the panel each item is, so diet-info.py can read its allergens and labels.
+    MODS.write_text(json.dumps({"fetched": source["fetched"], "modifiers": mods, "rows": panel_of}, indent=1, ensure_ascii=False) + "\n")
 
     def js(row):
         name, cat, s, serve = row

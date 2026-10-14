@@ -41,8 +41,11 @@ def trim(product):
     """Only what the build reads: names, nutrition panels, bun choices and what can be taken off."""
     def item(x):
         return {"id": x["id"], "title": x["title"], "nutrition": {"tableRows": x["nutrition"]["tableRows"]}}
+    # The ingredient list as sold (the default bun's, when it has buns), for Leanr's dietary filters (diet-info.py).
+    texts = [x["nutrition"].get("ingredients") for x in [product] + [i for c in product.get("choices", []) for i in c["items"]]]
     return {**item(product), "choices": [{"title": c["title"], "items": [item(i) for i in c["items"]]} for c in product.get("choices", [])],
-            "subtractions": [{"title": s["title"]} for s in product.get("subtractions", [])]}
+            "subtractions": [{"title": s["title"]} for s in product.get("subtractions", [])],
+            "ingredients": next((t for t in texts if t), None), "attributes": product.get("attributes") or []}
 
 
 def fetch():
@@ -137,7 +140,7 @@ BUNS = {"Panini": "Panini bun", "Traditional": "Traditional bun", "Charcoal Bun"
 
 def build():
     source = json.loads(SOURCE.read_text())
-    rows, mods, burgers, others = [], {}, {}, {}
+    rows, mods, burgers, others, product_of = [], {}, {}, {}, {}
     for pid, entry in source["products"].items():
         category, product = entry["category"], entry["product"]
         title = product["title"]
@@ -160,6 +163,7 @@ def build():
             # A kids' pack weighs in its drink too, so only the bun is shown.
             weight = f" · {grams} g" if grams and "Mini Me" not in name else ""
             rows.append([name, cat, serve, f"{BUNS[default['title']]}{weight}"])
+            product_of[f"grilld:{slug(name)}"] = pid
             subs = [s["title"][3:] for s in product.get("subtractions", [])]
             by_bun = {item["title"]: panel(item)[0] for item in buns}
             burgers[name] = {"subs": subs, "buns": by_bun, "default": default["title"]}
@@ -176,6 +180,7 @@ def build():
                 continue
             serve, grams = found
             rows.append([clean_name(title), cat, serve, f"{grams} g" if grams else "1 serving"])
+            product_of[f"grilld:{slug(clean_name(title))}"] = pid
             if product.get("subtractions"):
                 others[clean_name(title)] = [s["title"][3:] for s in product["subtractions"]]
 
@@ -239,7 +244,8 @@ def build():
             options.append(option)
     mods = {k: v for k, v in mods.items() if v}
 
-    MODS.write_text(json.dumps({"fetched": source["fetched"], "modifiers": mods}, indent=1) + "\n")
+    # rows: the product each item is, so diet-info.py can read its ingredients and allergens. Sliders go by their patty's name.
+    MODS.write_text(json.dumps({"fetched": source["fetched"], "modifiers": mods, "rows": product_of}, indent=1) + "\n")
     def js(row):
         name, cat, s, serve = row
         nut = {k: r1(s[k]) for k in ("sat", "sugar", "fibre", "sodium") if s.get(k) is not None}

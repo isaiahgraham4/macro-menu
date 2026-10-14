@@ -11,6 +11,7 @@ struct LeanrWidgetBundle: WidgetBundle {
         LeanrLogAgainWidget()
         LeanrStepsWidget()
         LeanrPlannedWidget()
+        LeanrWaterWidget()
     }
 }
 

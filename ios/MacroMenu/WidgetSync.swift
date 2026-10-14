@@ -91,6 +91,9 @@ extension AppStore {
            MealPlan.entries(data, on: dayKey(date)).contains(where: { $0.id == id }) {
             return logPlanned([id], on: date)
         }
+        if let amount = WidgetCalories.waterAmount(option) {
+            return addWater(amount, on: date)
+        }
         if option.hasPrefix("pin:"), let food = pinnedFoods.first(where: { "pin:\($0.id)" == option }) {
             guard !justLogged(food.name) else { return false }
             return log([Portion(food: food)], name: food.name, date: date, mealTime: .suggested(at: date))
@@ -118,6 +121,7 @@ extension AppStore {
                     WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.logAgainKind)
                     WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.stepsKind)
                     WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.plannedKind)
+                    WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.waterKind)
                 }
                 return
             }
@@ -129,6 +133,10 @@ extension AppStore {
             snapshot.plannedDay = dayKey(Date())
             snapshot.steps = widgetSteps.isEmpty ? nil : widgetSteps
             snapshot.stepGoal = data.stepGoal ?? Steps.defaultGoal
+            let week = (0..<7).compactMap { Calendar.current.date(byAdding: .day, value: -$0, to: Date()) }.map(dayKey)
+            snapshot.water = Dictionary(uniqueKeysWithValues: week.compactMap { day in data.water?[day].map { (day, $0) } })
+            snapshot.waterTarget = Water.target(data)
+            snapshot.waterGlass = Water.glass(data)
             snapshot.macroColours = Premium.isUnlocked ? [
                 "p": UserDefaults.standard.string(forKey: MacroColours.proteinKey) ?? "blue",
                 "c": UserDefaults.standard.string(forKey: MacroColours.carbsKey) ?? "orange",
@@ -143,6 +151,7 @@ extension AppStore {
             WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.logAgainKind)
             WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.stepsKind)
             WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.plannedKind)
+            WidgetCenter.shared.reloadTimelines(ofKind: WidgetCalories.waterKind)
         } catch {
             Logger(subsystem: "com.isaiahgraham.MacroMenu", category: "Widgets")
                 .error("Couldn't share calorie totals: \(error.localizedDescription)")

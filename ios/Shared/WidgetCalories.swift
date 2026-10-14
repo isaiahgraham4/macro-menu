@@ -26,6 +26,11 @@ struct WidgetCalories: Codable, Equatable, Sendable {
     /// Today's planned meals that aren't logged yet, in meal order, for the Planned widget ("plan:<entry ID>"), and the day they're for.
     var planned: [WidgetQuickLog]? = nil
     var plannedDay: String? = nil
+    /// Water by day for the last week in mL, the daily target and one glass, for the Water widget.
+    var water: [String: Double]? = nil
+    var waterTarget: Double? = nil
+    var waterGlass: Double? = nil
+    func waterDrunk(on date: Date) -> Double { water?[WidgetCalories.dayKey(date)] ?? 0 }
     /// The planned meals still to log on `date`; none once the day they were for has passed.
     func plannedMeals(on date: Date) -> [WidgetQuickLog] { plannedDay == WidgetCalories.dayKey(date) ? planned ?? [] : [] }
     var trackingDays: Set<String> { Set(trackedDays ?? Array(dailyCalories.filter { $0.value > 0 }.keys)) }
@@ -39,6 +44,8 @@ struct WidgetCalories: Codable, Equatable, Sendable {
         dailyCalories.values.allSatisfy { $0.isFinite && $0 >= 0 } &&
         (nutrientTargets ?? []).allSatisfy { $0.target.isFinite && $0.target > 0 } &&
         (steps ?? [:]).values.allSatisfy { $0.isFinite && $0 >= 0 } && (stepGoal.map { $0.isFinite && $0 > 0 } ?? true) &&
+        (water ?? [:]).values.allSatisfy { $0.isFinite && $0 >= 0 } && (waterTarget.map { $0.isFinite && $0 > 0 } ?? true) &&
+        (waterGlass.map { $0.isFinite && $0 > 0 } ?? true) &&
         (dailyNutrients ?? [:]).values.allSatisfy { $0.values.allSatisfy { $0.isFinite && $0 >= 0 } }
     }
 
@@ -172,6 +179,13 @@ extension WidgetCalories {
     }
     static let logAgainKind = "LeanrLogAgain"
     static let plannedKind = "LeanrPlanned"
+    static let waterKind = "LeanrWater"
+    /// The Water widget's button: "water:250" adds 250 mL to the day it's tapped.
+    static func waterOption(_ millilitres: Double) -> String { "water:\(Int(millilitres.rounded()))" }
+    static func waterAmount(_ option: String) -> Double? {
+        guard option.hasPrefix("water:"), let amount = Double(option.dropFirst(6)), amount > 0, amount <= 2000 else { return nil }
+        return amount
+    }
     /// What the Log again widget shows at `date`: the usual meal for that meal time first, then pinned foods.
     func quickLogs(at date: Date) -> [WidgetQuickLog] {
         let slot = MealSlot.at(date), options = quickLogOptions ?? []
@@ -203,6 +217,14 @@ enum QuickLogQueue {
     static func showQueued(_ option: String, at date: Date) {
         guard var snapshot = WidgetCalories.read(), let url = WidgetCalories.fileURL else { return }
         let day = WidgetCalories.dayKey(date)
+        // Water: added to today's total straight away.
+        if let amount = WidgetCalories.waterAmount(option) {
+            var water = snapshot.water ?? [:]
+            water[day, default: 0] += amount
+            snapshot.water = water
+            try? JSONEncoder().encode(snapshot).write(to: url, options: [.atomic, .completeFileProtectionUntilFirstUserAuthentication])
+            return
+        }
         // A planned meal leaves the Planned widget once it's logged.
         if let item = snapshot.planned?.first(where: { $0.id == option }) {
             snapshot.planned?.removeAll { $0.id == option }

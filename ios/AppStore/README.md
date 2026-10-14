@@ -103,6 +103,8 @@ Boost Juice, Schnitz and Grill'd for combinations from one restaurant.
 
 - Log meals, scan barcodes and nutrition labels, and see what's left of your day at a glance.
 - Take ingredients off: no cheese, no sauce, no mayo, with the figures adjusted.
+- Ask in plain words: "40 g protein under 600 Cal at Nando's".
+- Vegetarian, no beef, no pork and allergen filters, using each restaurant's own ingredient and allergen information.
 - Weight trend that smooths out day-to-day swings, and a measured maintenance estimate from your own data.
 - Type or say what you ate, plan tomorrow's meals, and import recipes from a link.
 - A weekly check-in that adjusts your calorie target to the pace you want, from your own log and weight trend.

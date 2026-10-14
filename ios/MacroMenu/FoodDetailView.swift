@@ -139,6 +139,7 @@ struct FoodDetailView: View {
                     }
                 }
             }
+            DietSection(food: food)
             if pick == nil { NearestPlaceSection(chain: food.chain) }
             if let chain = store.chain(food.chain), chain.id != "mine" { FoodSourceSection(chain: chain) }
             if food.isEveryday { EverydaySourceSection(food: food) }
@@ -251,9 +252,9 @@ struct FoodSourceSection: View {
             if let how = chain.how { LabeledContent("From", value: how) }
             if let src = chain.src { Text(src).font(.roboto(.caption)).foregroundStyle(.secondary) }
             if let date = store.menuDate { LabeledContent("Menu snapshot", value: date.formatted(date: .abbreviated, time: .omitted)) }
-            if let raw = chain.url, let url = URL(string: raw) { Link("View \(chain.name)'s nutrition information", destination: url) }
+            if let raw = chain.url, let url = URL(string: raw) { Link("View \(chain.name.possessive) nutrition information", destination: url) }
         } header: { Text("Source") } footer: {
-            Text("Figures are \(chain.name)'s own published information, as at the snapshot date. Leanr isn't affiliated with \(chain.name). Spot something wrong? Let me know through \(AppInfo.contactText).")
+            Text("Figures are \(chain.name.possessive) own published information, as at the snapshot date. Leanr isn't affiliated with \(chain.name). Spot something wrong? Let me know through \(AppInfo.contactText).")
         }
     }
 }

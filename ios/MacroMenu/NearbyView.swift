@@ -379,7 +379,7 @@ struct OrderDetailView: View {
                 ForEach(match.items) { item in NavigationLink { FoodDetailView(food: item.food) } label: { FoodRow(food: item.food) } }
             } header: { Text("Items") } footer: {
                 if match.customised > 0 {
-                    Text("Ask for the changes listed after each item’s name when you order. They use \(store.chainName(match.chain))'s own figures for each part, so check the food's details for how each was worked out.")
+                    Text("Ask for the changes listed after each item’s name when you order. They use \(store.chainName(match.chain).possessive) own figures for each part, so check the food's details for how each was worked out.")
                 }
             }
         }.navigationTitle("Order").navigationBarTitleDisplayMode(.inline)

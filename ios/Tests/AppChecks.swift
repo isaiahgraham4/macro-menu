@@ -58,6 +58,41 @@ import UniformTypeIdentifiers
         let prego = bondi.first { $0.name == "Add Prego" }!
         assert(prego.kj == 330 && prego.est != true && prego.f == 6)
         assert(bondi.contains { $0.name == "Add Bacon" && $0.est == true })
+        // Dietary needs: only items whose restaurant's words show they fit; unknown items are left out.
+        let byID = Dictionary(catalog.foods.map { ($0.id, $0) }) { a, _ in a }
+        let vegetarian = DietFilter(options: [.vegetarian]), noPork = DietFilter(options: [.noPork]), noBeef = DietFilter(options: [.noBeef])
+        assert(byID["hj:whopper"]!.diet?.meat == ["beef"] && !vegetarian.allows(byID["hj:whopper"]!) && noPork.allows(byID["hj:whopper"]!))
+        assert(vegetarian.allows(byID["hj:plant-based-whopper"]!) && vegetarian.allows(byID["grilld:garden-goodness"]!))
+        assert(!noPork.allows(byID["dominos:hawaiian-1-slice-"]!) && !noBeef.allows(byID["dominos:pepperoni-1-slice-"]!))
+        // Names that don't say everything stay unknown: a Stacker, the B.M.T.'s "meats", seasoned chips.
+        for id in ["kfc:zinger-stacker-burger", "sub:6-italian-b-m-t-", "oporto:chips"] {
+            assert(byID[id]!.diet?.meat == nil && !vegetarian.allows(byID[id]!) && !noPork.allows(byID[id]!), id)
+        }
+        let glutenFree = DietFilter(options: [.gluten])
+        assert(!glutenFree.allows(byID["grilld:simply-grill-d"]!) && !glutenFree.allows(byID["mcd:big-mac"]!))   // contains it; not published
+        assert(glutenFree.allows(byID["nandos:1-2-peri-peri-chicken"]!) && byID["nandos:1-2-peri-peri-chicken"]!.diet?.al == [])
+        let mayContain = catalog.foods.first { ($0.diet?.may ?? []).contains("sesame") && !($0.diet?.al ?? []).contains("sesame") }!
+        assert(!DietFilter(options: [.sesame]).allows(mayContain))
+        assert(DietFilter(options: [.vegan, .gluten]).allows(Food(chain: "mine", name: "My chicken wrap", kj: 1000, cal: 239, p: 20)))
+        assert(DietInfo.guess("Chicken breast, cooked").meat == ["chicken"] && DietInfo.guess("Banana").isVegan)
+        // With needs set, the finder only orders items that fit, and customises by taking things off only.
+        var vegQuery = FindQuery(calories: 900, protein: 25, maxItems: 2, diet: vegetarian)
+        let vegOrders = MealFinder.find(catalog.foods, query: vegQuery)
+        assert(!vegOrders.isEmpty && vegOrders.allSatisfy { $0.items.allSatisfy { $0.food.diet?.meat == [] } })
+        vegQuery.diet = DietFilter(options: [.noPork, .noBeef]); vegQuery.chains = ["dominos"]
+        assert(MealFinder.find(catalog.foods, query: vegQuery).allSatisfy { $0.items.allSatisfy { !($0.food.diet?.meat ?? ["?"]).contains { $0 == "pork" || $0 == "beef" || $0 == "?" } } })
+        // Ask Leanr's rules.
+        let chainNames = Dictionary(catalog.chains.map { ($0.id, $0.name) }) { a, _ in a }
+        let asked = AskLeanr.parse("40 g protein under 600 Cal at Nando's", chainNames: chainNames, defaults: FindQuery())
+        assert(asked.query.protein == 40 && asked.query.calories == 600 && asked.query.chains == ["nandos"] && asked.query.diet.isEmpty)
+        let veggie = AskLeanr.parse("vegetarian, gluten free dinner from maccas or hungry jacks under 2500 kJ, one item", chainNames: chainNames, defaults: FindQuery())
+        assert(veggie.query.diet.options == [.vegetarian, .gluten] && veggie.query.chains == ["mcd", "hj"] && veggie.query.calories == 598 && veggie.query.maxItems == 1)
+        let halal = AskLeanr.parse("halal high protein lunch at KFC with a side", chainNames: chainNames, defaults: FindQuery(calories: 700, protein: 40))
+        assert(halal.query.diet.options == [.noPork] && halal.query.sort == "protein" && halal.query.chains == ["kfc"] && halal.query.maxItems == 2)
+        assert(halal.understood.last == "Halal isn't checked, only no pork" && halal.query.calories == 700)
+        let askedLeft = AskLeanr.parse("what's left today at grill'd, no beef, under 30g carbs", chainNames: chainNames, defaults: FindQuery())
+        assert(askedLeft.usesRemaining && askedLeft.query.chains == ["grilld"] && askedLeft.query.diet.options == [.noBeef] && askedLeft.query.carbs == 30)
+        assert(AskLeanr.parse("under 700 at guzman", chainNames: chainNames, defaults: FindQuery()).query.calories == 700)
         // Schnitz: official panels only, so every item has protein, carbs and fat, and an order can be found there.
         let schnitz = catalog.foods.filter { $0.chain == "schnitz" }
         assert(schnitz.count == 62 && schnitz.allSatisfy { $0.c != nil && $0.f != nil && !$0.mismatch })
@@ -1335,8 +1370,18 @@ import UniformTypeIdentifiers
             assert(watchStore.data.logs[dayKey(now)]?.count == before + 1 && watchStore.plannedOptions(now: now).map(\.name) == ["Bar for dinner"])
             assert(!watchStore.logAgain(plannedNow[0].id, at: now) && !watchStore.logAgain("plan:not-an-id", at: now))
             assert(WatchRequest(message: ["water": 99999.0]) == nil && WatchRequest(message: ["log": ""]) == nil && WatchRequest(message: [:]) == nil)
+            // The Water widget's button adds a glass to the day it's tapped; odd amounts are refused.
+            assert(WidgetCalories.waterOption(250) == "water:250" && WidgetCalories.waterAmount("water:250") == 250)
+            assert(WidgetCalories.waterAmount("water:0") == nil && WidgetCalories.waterAmount("water:5000") == nil && WidgetCalories.waterAmount("pin:x") == nil)
+            let waterBefore = Water.total(watchStore.data, on: dayKey(now))
+            assert(watchStore.logAgain("water:250", at: now) && Water.total(watchStore.data, on: dayKey(now)) == waterBefore + 250)
+            var waterSnapshot = watchStore.data.widgetCalories
+            waterSnapshot.water = [dayKey(now): 750]; waterSnapshot.waterTarget = 2000
+            assert(waterSnapshot.isValid && waterSnapshot.waterDrunk(on: now) == 750 && waterSnapshot.waterDrunk(on: tomorrow) == 0)
+            waterSnapshot.water = [dayKey(now): -1]
+            assert(!waterSnapshot.isValid)
         }
 
-        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, delivery, iCloud health rules, deleting all data, the policies, everyday foods, customised orders, photo and Visual Intelligence matching, widget goal colours, Premium access rules, Siri logging and editing saved and logged meals, water, measurements, progress photos, fibre and sodium nudges, steps, the progress breakdown, what fits what's left, meals in words, recipe ingredients, recipe pages, weekly check-ins, meal plans, Apple Watch, insights, the Planned widget and no prices (\(Date().timeIntervalSince(start).formatted())s).")
+        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, delivery, iCloud health rules, deleting all data, the policies, everyday foods, customised orders, photo and Visual Intelligence matching, widget goal colours, Premium access rules, Siri logging and editing saved and logged meals, water, measurements, progress photos, fibre and sodium nudges, steps, the progress breakdown, what fits what's left, meals in words, recipe ingredients, recipe pages, weekly check-ins, meal plans, Apple Watch, insights, the Planned and Water widgets, dietary needs, Ask Leanr and no prices (\(Date().timeIntervalSince(start).formatted())s).")
     }
 }

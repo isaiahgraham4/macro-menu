@@ -35,6 +35,10 @@ The camera is used to scan barcodes, read nutrition labels, recognise the foods 
 
 If you type or say what you ate, your iPhone reads the words to find each food, using Apple Intelligence where your iPhone has it and Leanr's own reading otherwise. Both happen on your device. The words aren't saved or sent anywhere; only the foods you choose to log are kept. Saying it uses your keyboard's dictation, which Apple's privacy policy covers.
 
+## Asking Leanr and dietary needs
+
+If you ask Leanr a question on Find, such as "40 g protein under 600 Cal at Nando's", your iPhone reads it to set up an order search, using Apple Intelligence where your iPhone has it and Leanr's own reading otherwise. Both happen on your device, and the question isn't saved or sent anywhere. The dietary needs you choose (such as vegetarian, no pork or an allergen to avoid) are kept only on this iPhone and are used only to leave out menu items that don't fit.
+
 ## Recipe links
 
 If you import a recipe from a link, Leanr loads that page straight from the website, as a browser would, and reads only the recipe's name, servings, ingredients and nutrition. Nothing about you or your data is sent with the request. Like any website, the site sees your device's IP address and that the page was requested, and its own privacy policy applies. The page itself isn't kept; only the recipe you save is.

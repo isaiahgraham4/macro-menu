@@ -49,6 +49,9 @@ final class AppStore {
     var foods: [Food] { catalog.foods + everyday + data.foods }
     /// Foods that make up an order: restaurant menus and your own foods, without everyday foods.
     var orderFoods: [Food] { catalog.foods + data.foods }
+    /// Menu items and everyday foods that fit the dietary needs set on Find, for suggestions.
+    var suggestibleRestaurantFoods: [Food] { let diet = DietFilter.saved; return diet.isEmpty ? catalog.foods : catalog.foods.filter(diet.allows) }
+    var suggestibleEveryday: [Food] { let diet = DietFilter.saved; return diet.isEmpty ? everyday : everyday.filter(diet.allows) }
     /// Switches to a newer restaurant menu. Logged meals keep the figures they were logged with.
     func useMenu(_ menu: MenuCatalog) { catalog = menu }
     var goals: Goals { data.goalSets.first { $0.id == data.activeGoal } ?? data.goalSets[0] }

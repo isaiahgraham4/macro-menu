@@ -48,7 +48,7 @@ import UserNotifications
     /// The Log again widget's button: logs the option now, then waits for Apple Health so it isn't cut off if Leanr goes back to sleep.
     static func logAgain(_ option: String) async {
         start()
-        if store.logAgain(option) { store.notice = "Logged from your widget" }
+        if store.logAgain(option) { store.notice = WidgetCalories.waterAmount(option) != nil ? "Added water from your widget" : "Logged from your widget" }
         await health.finishPending()
     }
 

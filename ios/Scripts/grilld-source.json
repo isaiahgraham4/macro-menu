@@ -1,5 +1,5 @@
 {
- "fetched": "2026-10-14",
+ "fetched": "2026-10-15",
  "store": 153,
  "products": {
   "1004082": {
@@ -267,30 +267,32 @@
     ],
     "subtractions": [
      {
-      "title": "No Crispy Bacon"
-     },
-     {
-      "title": "No Tasty Cheese"
+      "title": "No Avocado"
      },
      {
       "title": "No Cos Lettuce"
      },
      {
-      "title": "No Tomato"
+      "title": "No Crispy Bacon"
      },
      {
-      "title": "No Spanish Onion"
-     },
-     {
-      "title": "No Avocado"
+      "title": "No Herbed Mayo"
      },
      {
       "title": "No Relish"
      },
      {
-      "title": "No Herbed Mayo"
+      "title": "No Spanish Onion"
+     },
+     {
+      "title": "No Tasty Cheese"
+     },
+     {
+      "title": "No Tomato"
      }
-    ]
+    ],
+    "ingredients": "<p>Chicken Breast (Chicken Breast from RSPCA Approved Chickens), High Fibre Lo GI Panini Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Tomato, Cos Lettuce, Tomato Relish (Tomato (54%), Sugar, Water, Onion, Apple Cider Vinegar, Starch (from Maize), Salt, Spices, Mustard Seed, Garlic, Citric Acid), Avocado, Herbed Mayo (Canola Oil, Pasteurised Free Range Whole Egg, Liquid Sugar, Water, White Vinegar, Mustard, Salt, Herbs &amp; Spices, Corn Starch, Lemon Juice, Acidity Regulator (Citric)), Tasty Cheese (Pasteurised Milk, Salt, Starter Culture, Non-Animal Rennet), Bacon (Pork (85%), Water, Salt, Sugar, Mineral Salts (451, 450), Antioxidant (316), Preservative (250)), Spanish Onion.</p><p><strong>Contains Egg, Gluten (Wheat), Milk.</strong></p><p><strong>May contain Sesame.</strong></p><p><strong>Bun glycemic index: 50</strong></p>",
+    "attributes": []
    }
   },
   "1004083": {
@@ -558,7 +560,10 @@
     ],
     "subtractions": [
      {
-      "title": "No Tasty Cheese"
+      "title": "No Barbeque Sauce"
+     },
+     {
+      "title": "No Carrot"
      },
      {
       "title": "No Cos Lettuce"
@@ -567,15 +572,14 @@
       "title": "No Spanish Onion"
      },
      {
-      "title": "No Carrot"
-     },
-     {
       "title": "No Sweet Chilli Mayo"
      },
      {
-      "title": "No Barbeque Sauce"
+      "title": "No Tasty Cheese"
      }
-    ]
+    ],
+    "ingredients": "<p>Chicken Breast (Chicken Breast from RSPCA Approved Chickens), High Fibre Lo GI Panini Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Carrot, Cos Lettuce, Sweet Chilli Mayo (Canola Oil, Liquid Sugar, Pasteurised Free Range Whole Egg, White Vinegar, Water, Lemon Juice, Mustard, Chilli Puree, Salt, Corn Starch, Garlic Puree, Ginger Puree, Acidity Regulator (Citric)), Davidson Plum Barbeque Sauce (Sugar, Water, Invert Syrup (Cane Sugar, Water), Apple Cider Vinegar, Tomato Paste (Tomato Paste, Food Acid (330)), Tapioca Starch, Vinegar, Salt, Worcestershire Sauce, Davidson Plum (1%), Spices, Smoke Flavour, Mustard Powder, Garlic, Pepper, Natural Flavour), Tasty Cheese (Pasteurised Milk, Salt, Starter Culture, Non-Animal Rennet), Spanish Onion.</p><p><strong>Contains Egg, Gluten (Wheat), Milk.</strong></p><p><strong>May contain Sesame.</strong></p><p><strong>Bun glycemic index: 50</strong></p>",
+    "attributes": []
    }
   },
   "1004084": {
@@ -846,24 +850,26 @@
       "title": "No Cos Lettuce"
      },
      {
-      "title": "No Tomato"
-     },
-     {
-      "title": "No Spanish Onion"
-     },
-     {
-      "title": "No Relish"
+      "title": "No Dijon Mustard"
      },
      {
       "title": "No Free Range Egg"
      },
      {
-      "title": "No Dijon Mustard"
+      "title": "No Pickle"
      },
      {
-      "title": "No Pickle"
+      "title": "No Relish"
+     },
+     {
+      "title": "No Spanish Onion"
+     },
+     {
+      "title": "No Tomato"
      }
-    ]
+    ],
+    "ingredients": "<p>Beef Patty (Beef (92%), Relish (7%) (Tomato (54%), Sugar, Water, Onion, Apple Cider Vinegar, Starch (from Maize), Salt, Spices, Mustard Seed, Garlic, Citric Acid), Salt, Parsley), High Fibre Lo GI Panini Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Egg, Tomato, Dill Pickles (Cucumber, Vinegar, Filtered Water, Salt, Sugar, Dill), Cos Lettuce, Tomato Relish (Tomato (54%), Sugar, Water, Onion, Apple Cider Vinegar, Starch (from Maize), Salt, Spices, Mustard Seed, Garlic, Citric Acid), Dijon Mustard (Mustard Seeds (19%), Salt, Vinegar, Sugar, Acetic Acid, Spices, Mustard Oil, Water), Spanish Onion.</p><p><strong>Contains Egg, Gluten (Wheat).</strong></p><p><strong>May contain Sesame.</strong></p><p><strong>Bun glycemic index: 50</strong></p>",
+    "attributes": []
    }
   },
   "1004035": {
@@ -1069,32 +1075,37 @@
     ],
     "subtractions": [
      {
-      "title": "No Crispy Bacon"
-     },
-     {
-      "title": "No Cos Lettuce"
-     },
-     {
-      "title": "No Spanish Onion"
+      "title": "No Aged Cheddar"
      },
      {
       "title": "No Avocado"
      },
      {
-      "title": "No Carrot"
-     },
-     {
       "title": "No Barbeque Sauce"
      },
      {
-      "title": "No Aged Cheddar"
+      "title": "No Carrot"
+     },
+     {
+      "title": "No Cos Lettuce"
+     },
+     {
+      "title": "No Crispy Bacon"
      },
      {
       "title": "No OP Chipotle Mayo"
      },
      {
+      "title": "No Spanish Onion"
+     },
+     {
       "title": "No Chicken Breast"
      }
+    ],
+    "ingredients": "<p>Chicken Breast (Chicken Breast from RSPCA Approved Chickens), Charcoal Bun (Wheat Flour (Contains Thiamine, Folic Acid), Water, Culture (Rice Flour), Glaze (Water, Vegetable Protein, Sunflower Oil, Dextrose, Maltodextrin, Starch), Canola Oil, Yeast, Salt, Sesame Seed, Colour (110), Charcoal Powder, Improver (Rice Flour, Malt Flour (Wheat), Ascorbic Acid, Enzymes)), Carrot, Cos Lettuce, Aged Cheddar (Pasteurised Milk, Salt, Starter Culture, Non-Animal Rennet), Avocado, OP Chipotle Mayo (Canola Oil, Pasteurised Free Range Whole Egg, Chipotle Peppers in Adobo Sauce (Chipotle Pepper, Water, Tomato Paste, Salt, Sugar, Onion, Acetic Acid), Water, White Vinegar, Corn Starch, Salt, Liquid Sugar, Lemon Juice, Garlic Puree, Mustard, Smoked Paprika, Acidity Regulator (Citric Acid), Orange Gel Colour (Water, Glycerol (E422), Colours (E110, E104), Thickener (E415), Preservative (E211, E202))), Davidson Plum Barbeque Sauce (Sugar, Water, Invert Syrup (Cane Sugar, Water), Apple Cider Vinegar, Tomato Paste (Tomato Paste, Food Acid (330)), Tapioca Starch, Vinegar, Salt, Worcestershire Sauce, Davidson Plum (1%), Spices, Smoke Flavour, Mustard Powder, Garlic, Pepper, Natural Flavour), Bacon (Pork (85%), Water, Salt, Sugar, Mineral Salts (451, 450), Antioxidant (316), Preservative (250)), Spanish Onion.</p><p><strong>Contains Egg, Gluten (Wheat), Milk, Sesame.</strong></p>",
+    "attributes": [
+     "GFR",
+     "LC"
     ]
    }
   },
@@ -1337,32 +1348,36 @@
     ],
     "subtractions": [
      {
-      "title": "No Crispy Bacon"
-     },
-     {
-      "title": "No Cos Lettuce"
-     },
-     {
-      "title": "No Spanish Onion"
+      "title": "No Aged Cheddar"
      },
      {
       "title": "No Avocado"
      },
      {
-      "title": "No Carrot"
-     },
-     {
       "title": "No Barbeque Sauce"
      },
      {
-      "title": "No Aged Cheddar"
+      "title": "No Carrot"
+     },
+     {
+      "title": "No Cos Lettuce"
+     },
+     {
+      "title": "No Crispy Bacon"
      },
      {
       "title": "No OP Chipotle Mayo"
      },
      {
+      "title": "No Spanish Onion"
+     },
+     {
       "title": "No Chicken Breast"
      }
+    ],
+    "ingredients": null,
+    "attributes": [
+     "GFR"
     ]
    }
   },
@@ -1618,26 +1633,31 @@
     ],
     "subtractions": [
      {
-      "title": "No Crispy Bacon"
-     },
-     {
-      "title": "No Cos Lettuce"
-     },
-     {
-      "title": "No Spanish Onion"
+      "title": "No Aged Cheddar"
      },
      {
       "title": "No Carrot"
      },
      {
-      "title": "No Aged Cheddar"
+      "title": "No Cos Lettuce"
+     },
+     {
+      "title": "No Crispy Bacon"
      },
      {
       "title": "No OP Chipotle Mayo"
      },
      {
+      "title": "No Spanish Onion"
+     },
+     {
       "title": "No Wagyu Patty"
      }
+    ],
+    "ingredients": "<p>Wagyu&nbsp;Pattie&nbsp;(100%&nbsp;Wagyu),&nbsp;Charcoal&nbsp;Bun&nbsp;(Wheat&nbsp;Flour&nbsp;(Contains&nbsp;Thiamine,&nbsp;Folic&nbsp;Acid),&nbsp;Water,&nbsp;Culture&nbsp;(Rice&nbsp;Flour),&nbsp;Glaze&nbsp;(Water,&nbsp;Vegetable&nbsp;Protein,&nbsp;Sunflower&nbsp;Oil,&nbsp;Dextrose,&nbsp;Maltodextrin,&nbsp;Starch),&nbsp;Canola&nbsp;Oil,&nbsp;Yeast,&nbsp;Salt,&nbsp;Sesame&nbsp;Seed,&nbsp;Colour&nbsp;(110),&nbsp;Charcoal&nbsp;Powder,&nbsp;Improver&nbsp;(Rice&nbsp;Flour,&nbsp;Malt&nbsp;Flour&nbsp;(Wheat),&nbsp;Ascorbic&nbsp;Acid,&nbsp;Enzymes),&nbsp;Cos&nbsp;Lettuce,&nbsp;Carrot,&nbsp;Aged&nbsp;Cheddar&nbsp;(Whole&nbsp;Milk&nbsp;(97%),&nbsp;Salt,&nbsp;Starter&nbsp;Culture,&nbsp;Non-Animal&nbsp;Rennet),OP&nbsp;Chipotle&nbsp;Mayo&nbsp;(Canola&nbsp;Oil,&nbsp;Pasteurised&nbsp;Free&nbsp;Range&nbsp;Whole&nbsp;Egg,&nbsp;Chipotle&nbsp;Peppers&nbsp;In&nbsp;Adobo&nbsp;Sauce&nbsp;(Chipotle&nbsp;Pepper,&nbsp;Water,&nbsp;Tomato&nbsp;Paste,&nbsp;Salt,&nbsp;Sugar,&nbsp;Onion,&nbsp;Acetic&nbsp;Acid)&nbsp;(8%),&nbsp;Water,&nbsp;White&nbsp;Vinegar,&nbsp;Corn&nbsp;Starch,&nbsp;Salt,&nbsp;Liquid&nbsp;Sugar,&nbsp;Lemon&nbsp;Juice,&nbsp;Garlic&nbsp;Puree,&nbsp;Mustard,&nbsp;Smoked&nbsp;Paprika,&nbsp;Acidity&nbsp;Regulator&nbsp;(Citric&nbsp;Acid),&nbsp;Spice&nbsp;Extract,&nbsp;Colour&nbsp;Lutein),&nbsp;Bacon&nbsp;(Pork&nbsp;(85%),&nbsp;Water,&nbsp;Salt,&nbsp;Sugar,&nbsp;Mineral&nbsp;Salts&nbsp;(451,&nbsp;450),&nbsp;Pork&nbsp;Protein,&nbsp;Antioxidant&nbsp;(316),&nbsp;Preservative&nbsp;(250)),&nbsp;Spanish&nbsp;Onion.&nbsp;</p><p></p><p>Contains&nbsp;Wheat,&nbsp;Gluten,&nbsp;Egg,&nbsp;Milk,&nbsp;Sesame&nbsp;Seeds.</p>",
+    "attributes": [
+     "GFR",
+     "LC"
     ]
    }
   },
@@ -1929,26 +1949,31 @@
     ],
     "subtractions": [
      {
-      "title": "No Crispy Bacon"
-     },
-     {
-      "title": "No Cos Lettuce"
-     },
-     {
-      "title": "No Spanish Onion"
+      "title": "No Aged Cheddar"
      },
      {
       "title": "No Carrot"
      },
      {
-      "title": "No Aged Cheddar"
+      "title": "No Cos Lettuce"
+     },
+     {
+      "title": "No Crispy Bacon"
      },
      {
       "title": "No OP Chipotle Mayo"
      },
      {
+      "title": "No Spanish Onion"
+     },
+     {
       "title": "No Wagyu Patty"
      }
+    ],
+    "ingredients": "<p>Wagyu&nbsp;Pattie&nbsp;(100%&nbsp;Wagyu),&nbsp;Charcoal&nbsp;Bun&nbsp;(Wheat&nbsp;Flour&nbsp;(Contains&nbsp;Thiamine,&nbsp;Folic&nbsp;Acid),&nbsp;Water,&nbsp;Culture&nbsp;(Rice&nbsp;Flour),&nbsp;Glaze&nbsp;(Water,&nbsp;Vegetable&nbsp;Protein,&nbsp;Sunflower&nbsp;Oil,&nbsp;Dextrose,&nbsp;Maltodextrin,&nbsp;Starch),&nbsp;Canola&nbsp;Oil,&nbsp;Yeast,&nbsp;Salt,&nbsp;Sesame&nbsp;Seed,&nbsp;Colour&nbsp;(110),&nbsp;Charcoal&nbsp;Powder,&nbsp;Improver&nbsp;(Rice&nbsp;Flour,&nbsp;Malt&nbsp;Flour&nbsp;(Wheat),&nbsp;Ascorbic&nbsp;Acid,&nbsp;Enzymes),&nbsp;Cos&nbsp;Lettuce,&nbsp;Carrot,&nbsp;Aged&nbsp;Cheddar&nbsp;(Whole&nbsp;Milk&nbsp;(97%),&nbsp;Salt,&nbsp;Starter&nbsp;Culture,&nbsp;Non-Animal&nbsp;Rennet),OP&nbsp;Chipotle&nbsp;Mayo&nbsp;Canola&nbsp;Oil,&nbsp;Pasteurised&nbsp;Free&nbsp;Range&nbsp;Whole&nbsp;Egg,&nbsp;Chipotle&nbsp;Peppers&nbsp;In&nbsp;Adobo&nbsp;Sauce&nbsp;(Chipotle&nbsp;Pepper,&nbsp;Water,&nbsp;Tomato&nbsp;Paste,&nbsp;Salt,&nbsp;Sugar,&nbsp;Onion,&nbsp;Acetic&nbsp;Acid)&nbsp;(8%),&nbsp;Water,&nbsp;White&nbsp;Vinegar,&nbsp;Corn&nbsp;Starch,&nbsp;Salt,&nbsp;Liquid&nbsp;Sugar,&nbsp;Lemon&nbsp;Juice,&nbsp;Garlic&nbsp;Puree,&nbsp;Mustard,&nbsp;Smoked&nbsp;Paprika,&nbsp;Acidity&nbsp;Regulator&nbsp;(Citric&nbsp;Acid),&nbsp;Spice&nbsp;Extract,&nbsp;Colour&nbsp;Lutein),&nbsp;Bacon&nbsp;(Pork&nbsp;(85%),&nbsp;Water,&nbsp;Salt,&nbsp;Sugar,&nbsp;Mineral&nbsp;Salts&nbsp;(451,&nbsp;450),&nbsp;Pork&nbsp;Protein,&nbsp;Antioxidant&nbsp;(316),&nbsp;Preservative&nbsp;(250)),&nbsp;Spanish&nbsp;Onion.<span>Snack&nbsp;Chips</span><strong>&nbsp;(</strong><span>Potato&nbsp;(92%),</span><strong>&nbsp;</strong><span>Coating&nbsp;(Rice&nbsp;Flour,&nbsp;Maize&nbsp;Starch,&nbsp;Salt,&nbsp;Dextrose,&nbsp;Rice&nbsp;Starch,&nbsp;Thickeners&nbsp;(412,&nbsp;415),&nbsp;Mineral&nbsp;Salt&nbsp;(500)),&nbsp;Canola&nbsp;Oil,&nbsp;Blend&nbsp;Of&nbsp;Cottonseed&nbsp;Oil,&nbsp;High&nbsp;Oleic&nbsp;Canola&nbsp;&amp;&nbsp;High&nbsp;Oleic&nbsp;Sunflower&nbsp;Oil,&nbsp;Sea&nbsp;Salt,&nbsp;Mixed&nbsp;Herbs,&nbsp;OP&nbsp;Chipotle&nbsp;Mayo&nbsp;Chip&nbsp;Dip&nbsp;(Canola&nbsp;Oil,&nbsp;Pasteurised&nbsp;Free&nbsp;Range&nbsp;Whole&nbsp;Egg,&nbsp;Chipotle&nbsp;Peppers&nbsp;In&nbsp;Adobo&nbsp;Sauce&nbsp;(Chipotle&nbsp;Pepper,Water,&nbsp;Tomato&nbsp;Paste,&nbsp;Salt,&nbsp;Sugar,&nbsp;Onion,&nbsp;Acetic&nbsp;Acid)&nbsp;(8%),&nbsp;Water,&nbsp;White&nbsp;Vinegar,&nbsp;Corn&nbsp;Starch,&nbsp;Salt,&nbsp;Liquid&nbsp;Sugar,&nbsp;Lemon&nbsp;Juice,&nbsp;Garlic&nbsp;Puree,&nbsp;Mustard,&nbsp;Smoked&nbsp;Paprika,&nbsp;Acidity&nbsp;Regulator&nbsp;(Citric&nbsp;Acid),&nbsp;Spice&nbsp;Extract,&nbsp;Colour&nbsp;Lutein),&nbsp;&nbsp;&nbsp;&nbsp;</span></p>",
+    "attributes": [
+     "GFR",
+     "LC"
     ]
    }
   },
@@ -2282,20 +2307,26 @@
       "title": "No Cos Lettuce"
      },
      {
-      "title": "No Tomato"
-     },
-     {
-      "title": "No Spanish Onion"
+      "title": "No Herbed Mayo"
      },
      {
       "title": "No Relish"
      },
      {
-      "title": "No Herbed Mayo"
+      "title": "No Spanish Onion"
+     },
+     {
+      "title": "No Tomato"
      },
      {
       "title": "No Beef Patty"
      }
+    ],
+    "ingredients": "<p>Beef Patty (Beef (92%), Relish (7%) (Tomato (54%), Sugar, Water, Onion, Apple Cider Vinegar, Starch (from Maize), Salt, Spices, Mustard Seed, Garlic, Citric Acid), Salt, Parsley), High Fibre Lo GI Panini Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Tomato, Cos Lettuce, Tomato Relish (Tomato (54%), Sugar, Water, Onion, Apple Cider Vinegar, Starch (from Maize), Salt, Spices, Mustard Seed, Garlic, Citric Acid), Herbed Mayo (Canola Oil, Pasteurised Free Range Whole Egg, Liquid Sugar, Water, White Vinegar, Mustard, Salt, Herbs &amp; Spices, Corn Starch, Lemon Juice, Acidity Regulator (Citric)), Spanish Onion.</p><p><strong>Contains Egg, Gluten (Wheat).</strong></p><p><strong>May contain Sesame.</strong></p><p><strong>Bun glycemic index: 50</strong></p>",
+    "attributes": [
+     "DF",
+     "GFR",
+     "LC"
     ]
    }
   },
@@ -2626,29 +2657,34 @@
     ],
     "subtractions": [
      {
-      "title": "No Crispy Bacon"
-     },
-     {
-      "title": "No Tasty Cheese"
-     },
-     {
       "title": "No Cos Lettuce"
      },
      {
-      "title": "No Tomato"
-     },
-     {
-      "title": "No Spanish Onion"
-     },
-     {
-      "title": "No Relish"
+      "title": "No Crispy Bacon"
      },
      {
       "title": "No Herbed Mayo"
      },
      {
+      "title": "No Relish"
+     },
+     {
+      "title": "No Spanish Onion"
+     },
+     {
+      "title": "No Tasty Cheese"
+     },
+     {
+      "title": "No Tomato"
+     },
+     {
       "title": "No Beef Patty"
      }
+    ],
+    "ingredients": "<p>Beef Patty (Beef (92%), Relish (7%) (Tomato (54%), Sugar, Water, Onion, Apple Cider Vinegar, Starch (from Maize), Salt, Spices, Mustard Seed, Garlic, Citric Acid), Salt, Parsley), High Fibre Lo GI Panini Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Tomato, Cos Lettuce, Tomato Relish (Tomato (54%), Sugar, Water, Onion, Apple Cider Vinegar, Starch (from Maize), Salt, Spices, Mustard Seed, Garlic, Citric Acid), Herbed Mayo (Canola Oil, Pasteurised Free Range Whole Egg, Liquid Sugar, Water, White Vinegar, Mustard, Salt, Herbs &amp; Spices, Corn Starch, Lemon Juice, Acidity Regulator (Citric)), Tasty Cheese (Pasteurised Milk, Salt, Starter Culture, Non-Animal Rennet), Bacon (Pork (85%), Water, Salt, Sugar, Mineral Salts (451, 450), Antioxidant (316), Preservative (250)), Spanish Onion.</p><p><strong>Contains Egg, Gluten (Wheat), Milk.</strong></p><p><strong>May contain Sesame.</strong></p><p><strong>Bun glycemic index: 50</strong></p>",
+    "attributes": [
+     "GFR",
+     "LC"
     ]
    }
   },
@@ -2979,35 +3015,40 @@
     ],
     "subtractions": [
      {
-      "title": "No Crispy Bacon"
-     },
-     {
-      "title": "No Tasty Cheese"
+      "title": "No Beetroot"
      },
      {
       "title": "No Cos Lettuce"
      },
      {
-      "title": "No Tomato"
-     },
-     {
-      "title": "No Spanish Onion"
-     },
-     {
-      "title": "No Relish"
-     },
-     {
-      "title": "No Herbed Mayo"
+      "title": "No Crispy Bacon"
      },
      {
       "title": "No Free Range Egg"
      },
      {
-      "title": "No Beef Patty"
+      "title": "No Herbed Mayo"
      },
      {
-      "title": "No Beetroot"
+      "title": "No Relish"
+     },
+     {
+      "title": "No Spanish Onion"
+     },
+     {
+      "title": "No Tasty Cheese"
+     },
+     {
+      "title": "No Tomato"
+     },
+     {
+      "title": "No Beef Patty"
      }
+    ],
+    "ingredients": "<p>Beef Patty (Beef (92%), Relish (7%) (Tomato (54%), Sugar, Water, Onion, Apple Cider Vinegar, Starch (from Maize), Salt, Spices, Mustard Seed, Garlic, Citric Acid), Salt, Parsley), High Fibre Lo GI Panini Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Egg, Beetroot (Beetroot (86%), Vinegar, Brown Sugar), Tomato, Cos Lettuce, Tomato Relish (Tomato (54%), Sugar, Water, Onion, Apple Cider Vinegar, Starch (from Maize), Salt, Spices, Mustard Seed, Garlic, Citric Acid), Herbed Mayo (Canola Oil, Pasteurised Free Range Whole Egg, Liquid Sugar, Water, White Vinegar, Mustard, Salt, Herbs &amp; Spices, Corn Starch, Lemon Juice, Acidity Regulator (Citric)), Tasty Cheese (Pasteurised Milk, Salt, Starter Culture, Non-Animal Rennet), Bacon (Pork (85%), Water, Salt, Sugar, Mineral Salts (451, 450), Antioxidant (316), Preservative (250)), Spanish Onion.</p><p><strong>Contains Egg, Gluten (Wheat), Milk.</strong></p><p><strong>May contain Sesame.</strong></p><p><strong>Bun glycemic index: 50</strong></p>",
+    "attributes": [
+     "GFR",
+     "LC"
     ]
    }
   },
@@ -3338,32 +3379,38 @@
     ],
     "subtractions": [
      {
-      "title": "No Crispy Bacon"
+      "title": "No Avocado"
+     },
+     {
+      "title": "No Charred Pineapple"
      },
      {
       "title": "No Cos Lettuce"
      },
      {
-      "title": "No Tomato"
-     },
-     {
-      "title": "No Spanish Onion"
-     },
-     {
-      "title": "No Avocado"
-     },
-     {
-      "title": "No Relish"
+      "title": "No Crispy Bacon"
      },
      {
       "title": "No Herbed Mayo"
      },
      {
-      "title": "No Beef Patty"
+      "title": "No Relish"
      },
      {
-      "title": "No Charred Pineapple"
+      "title": "No Spanish Onion"
+     },
+     {
+      "title": "No Tomato"
+     },
+     {
+      "title": "No Beef Patty"
      }
+    ],
+    "ingredients": "<p>Beef Patty (Beef (92%), Relish (7%) (Tomato (54%), Sugar, Water, Onion, Apple Cider Vinegar, Starch (from Maize), Salt, Spices, Mustard Seed, Garlic, Citric Acid), Salt, Parsley), High Fibre Lo GI Panini Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Pineapple (Pineapple (59%), Water, Sugar), Tomato, Cos Lettuce, Tomato Relish (Tomato (54%), Sugar, Water, Onion, Apple Cider Vinegar, Starch (from Maize), Salt, Spices, Mustard Seed, Garlic, Citric Acid), Avocado, Herbed Mayo (Canola Oil, Pasteurised Free Range Whole Egg, Liquid Sugar, Water, White Vinegar, Mustard, Salt, Herbs &amp; Spices, Corn Starch, Lemon Juice, Acidity Regulator (Citric)), Bacon (Pork (85%), Water, Salt, Sugar, Mineral Salts (451, 450), Antioxidant (316), Preservative (250)), Spanish Onion.</p><p><strong>Contains Egg, Gluten (Wheat).</strong></p><p><strong>May contain Sesame.</strong></p><p><strong>Bun glycemic index: 50</strong></p>",
+    "attributes": [
+     "DF",
+     "GFR",
+     "LC"
     ]
    }
   },
@@ -3694,19 +3741,7 @@
     ],
     "subtractions": [
      {
-      "title": "No Tasty Cheese"
-     },
-     {
       "title": "No Cos Lettuce"
-     },
-     {
-      "title": "No Tomato"
-     },
-     {
-      "title": "No Spanish Onion"
-     },
-     {
-      "title": "No Relish"
      },
      {
       "title": "No Dijon Mustard"
@@ -3715,8 +3750,25 @@
       "title": "No Pickle"
      },
      {
+      "title": "No Relish"
+     },
+     {
+      "title": "No Spanish Onion"
+     },
+     {
+      "title": "No Tasty Cheese"
+     },
+     {
+      "title": "No Tomato"
+     },
+     {
       "title": "No Beef Patty"
      }
+    ],
+    "ingredients": "<p>Beef Patty (Beef (92%), Relish (7%) (Tomato (54%), Sugar, Water, Onion, Apple Cider Vinegar, Starch (from Maize), Salt, Spices, Mustard Seed, Garlic, Citric Acid), Salt, Parsley), High Fibre Lo GI Panini Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Tomato, Dill Pickles (Cucumber, Vinegar, Filtered Water, Salt, Sugar, Dill), Cos Lettuce, Tomato Relish (Tomato (54%), Sugar, Water, Onion, Apple Cider Vinegar, Starch (from Maize), Salt, Spices, Mustard Seed, Garlic, Citric Acid), Tasty Cheese (Pasteurised Milk, Salt, Starter Culture, Non-Animal Rennet), Dijon Mustard (Mustard Seeds (19%), Salt, Vinegar, Sugar, Acetic Acid, Spices, Mustard Oil, Water), Spanish Onion.</p><p><strong>Contains Gluten (Wheat), Milk.</strong></p><p><strong>May contain Sesame.</strong></p><p><strong>Bun glycemic index: 50</strong></p>",
+    "attributes": [
+     "GFR",
+     "LC"
     ]
    }
   },
@@ -4047,29 +4099,34 @@
     ],
     "subtractions": [
      {
-      "title": "No Tasty Cheese"
+      "title": "No Chilli Relish"
      },
      {
       "title": "No Cos Lettuce"
      },
      {
-      "title": "No Spanish Onion"
+      "title": "No Jalapenos"
      },
      {
       "title": "No Roasted Peppers"
      },
      {
-      "title": "No Beef Patty"
-     },
-     {
-      "title": "No Chilli Relish"
-     },
-     {
-      "title": "No Jalapenos"
-     },
-     {
       "title": "No Sour Cream"
+     },
+     {
+      "title": "No Spanish Onion"
+     },
+     {
+      "title": "No Tasty Cheese"
+     },
+     {
+      "title": "No Beef Patty"
      }
+    ],
+    "ingredients": "<p>Beef Patty (Beef (92%), Relish (7%) (Tomato (54%), Sugar, Water, Onion, Apple Cider Vinegar, Starch (from Maize), Salt, Spices, Mustard Seed, Garlic, Citric Acid), Salt, Parsley), High Fibre Lo GI Panini Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Roasted Peppers (Roasted Red Pepper (59%), Water, Sugar, Salt, Vinegar), Lite Sour Cream (Reduced Fat Cream (Milk), Halal Gelatine, Cultures (Milk)), Cos Lettuce, Chilli Relish (Tomato, Habanero Chilli (9%) (Habanero Chilli, Food Acid (260)), Red Cayenne Chilli (9%) (Red Cayenne Chilli, Food Acid (260)), Tomato Paste (Tomato Paste, Food Acid (330)), Vinegar, Sugar, Ginger, Canola Oil, Spices, Garlic, Tapioca Starch, Mustard Seed, Herbs, Salt), Tasty Cheese (Pasteurised Milk, Salt, Starter Culture, Non-Animal Rennet), Jalapenos (Jalapeno (54%), Water, Vinegar), Spanish Onion.</p><p><strong>Contains Gluten (Wheat), Milk.</strong></p><p><strong>May contain Sesame.</strong></p><p><strong>Bun glycemic index: 50</strong></p>",
+    "attributes": [
+     "GFR",
+     "LC"
     ]
    }
   },
@@ -4152,16 +4209,10 @@
     ],
     "subtractions": [
      {
-      "title": "No Tasty Cheese"
+      "title": "No Barbeque Sauce"
      },
      {
       "title": "No Cos Lettuce"
-     },
-     {
-      "title": "No Spanish Onion"
-     },
-     {
-      "title": "No Barbeque Sauce"
      },
      {
       "title": "No Dijon Mustard"
@@ -4170,8 +4221,19 @@
       "title": "No Pickle"
      },
      {
+      "title": "No Spanish Onion"
+     },
+     {
+      "title": "No Tasty Cheese"
+     },
+     {
       "title": "No Beef Patty"
      }
+    ],
+    "ingredients": "<p>Beef Patty (Beef (92%), Relish (7%) (Tomato (54%), Sugar, Water, Onion, Apple Cider Vinegar, Starch (from Maize), Salt, Spices, Mustard Seed, Garlic, Citric Acid), Salt, Parsley), SuperBun (Free Range Whole Egg, Almond Meal, Water, Coconut Cream, Tapioca Starch, Psyllium Husk, Honey, Iodized Salt, Acacia Gum), Dill Pickles (Cucumber, Vinegar, Filtered Water, Salt, Sugar, Dill), Cos Lettuce, Davidson Plum Barbeque Sauce (Sugar, Water, Invert Syrup (Cane Sugar, Water), Apple Cider Vinegar, Tomato Paste (Tomato Paste, Food Acid (330)), Tapioca Starch, Vinegar, Salt, Worcestershire Sauce, Davidson Plum (1%), Spices, Smoke Flavour, Mustard Powder, Garlic, Pepper, Natural Flavour), Tasty Cheese (Pasteurised Milk, Salt, Starter Culture, Non-Animal Rennet), Dijon Mustard (Mustard Seeds (19%), Salt, Vinegar, Sugar, Acetic Acid, Spices, Mustard Oil, Water), Spanish Onion.</p><p><strong>Contains Almond, Egg, Milk.</strong></p><p><strong>May contain Gluten (during burger prep), Sesame.</strong></p>",
+    "attributes": [
+     "GFR",
+     "LC"
     ]
    }
   },
@@ -4502,29 +4564,35 @@
     ],
     "subtractions": [
      {
-      "title": "No Cos Lettuce"
-     },
-     {
-      "title": "No Tomato"
-     },
-     {
-      "title": "No Spanish Onion"
-     },
-     {
-      "title": "No Relish"
+      "title": "No Beetroot"
      },
      {
       "title": "No Carrot"
      },
      {
+      "title": "No Cos Lettuce"
+     },
+     {
+      "title": "No Relish"
+     },
+     {
+      "title": "No Spanish Onion"
+     },
+     {
       "title": "No Sweet Chilli Mayo"
      },
      {
-      "title": "No Chicken Breast"
+      "title": "No Tomato"
      },
      {
-      "title": "No Beetroot"
+      "title": "No Chicken Breast"
      }
+    ],
+    "ingredients": "<p>Chicken Breast (Chicken Breast from RSPCA Approved Chickens), High Fibre Lo GI Panini Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Beetroot (Beetroot (86%), Vinegar, Brown Sugar), Tomato, Carrot, Cos Lettuce, Tomato Relish (Tomato (54%), Sugar, Water, Onion, Apple Cider Vinegar, Starch (from Maize), Salt, Spices, Mustard Seed, Garlic, Citric Acid), Sweet Chilli Mayo (Canola Oil, Liquid Sugar, Pasteurised Free Range Whole Egg, White Vinegar, Water, Lemon Juice, Mustard, Chilli Puree, Salt, Corn Starch, Garlic Puree, Ginger Puree, Acidity Regulator (Citric)), Spanish Onion.</p><p><strong>Contains Egg, Gluten (Wheat).</strong></p><p><strong>May contain Sesame.</strong></p><p><strong>Bun glycemic index: 50</strong></p>",
+    "attributes": [
+     "DF",
+     "GFR",
+     "LC"
     ]
    }
   },
@@ -4855,29 +4923,35 @@
     ],
     "subtractions": [
      {
-      "title": "No Cos Lettuce"
-     },
-     {
-      "title": "No Tomato"
-     },
-     {
-      "title": "No Spanish Onion"
-     },
-     {
-      "title": "No Herbed Mayo"
-     },
-     {
       "title": "No Carrot"
-     },
-     {
-      "title": "No Chicken Breast"
      },
      {
       "title": "No Coriander"
      },
      {
+      "title": "No Cos Lettuce"
+     },
+     {
+      "title": "No Herbed Mayo"
+     },
+     {
       "title": "No Satay Sauce"
+     },
+     {
+      "title": "No Spanish Onion"
+     },
+     {
+      "title": "No Tomato"
+     },
+     {
+      "title": "No Chicken Breast"
      }
+    ],
+    "ingredients": "<p>Chicken Breast (Chicken Breast from RSPCA Approved Chickens), High Fibre Lo GI Panini Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Tomato, Carrot, Cos Lettuce, Satay Sauce (Water, Peanut Butter (15%) (Peanuts, Salt), Sugar, Coconut Cream, Tapioca Starch, Peanuts, Balsamic Vinegar, Salt, Tomato Paste, Lemon Juice, Ginger, Vinegar, Citric Acid, Hot Chilli, Pepper, Natural Flavour), Herbed Mayo (Canola Oil, Pasteurised Free Range Whole Egg, Liquid Sugar, Water, White Vinegar, Mustard, Salt, Herbs &amp; Spices, Corn Starch, Lemon Juice, Acidity Regulator (Citric)), Spanish Onion, Coriander.</p><p><strong>Contains Egg, Gluten (Wheat), Peanut.</strong></p><p><strong>May contain Sesame.</strong></p><p><strong>Bun glycemic index: 50</strong></p>",
+    "attributes": [
+     "DF",
+     "GFR",
+     "LC"
     ]
    }
   },
@@ -5208,29 +5282,35 @@
     ],
     "subtractions": [
      {
-      "title": "No Crispy Bacon"
+      "title": "No Avocado"
      },
      {
       "title": "No Cos Lettuce"
      },
      {
-      "title": "No Tomato"
-     },
-     {
-      "title": "No Spanish Onion"
-     },
-     {
-      "title": "No Avocado"
-     },
-     {
-      "title": "No Relish"
+      "title": "No Crispy Bacon"
      },
      {
       "title": "No Herbed Mayo"
      },
      {
+      "title": "No Relish"
+     },
+     {
+      "title": "No Spanish Onion"
+     },
+     {
+      "title": "No Tomato"
+     },
+     {
       "title": "No Chicken Breast"
      }
+    ],
+    "ingredients": "<p>Chicken Breast (Chicken Breast from RSPCA Approved Chickens), High Fibre Lo GI Panini Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Tomato, Cos Lettuce, Tomato Relish (Tomato (54%), Sugar, Water, Onion, Apple Cider Vinegar, Starch (from Maize), Salt, Spices, Mustard Seed, Garlic, Citric Acid), Avocado, Herbed Mayo (Canola Oil, Pasteurised Free Range Whole Egg, Liquid Sugar, Water, White Vinegar, Mustard, Salt, Herbs &amp; Spices, Corn Starch, Lemon Juice, Acidity Regulator (Citric)), Bacon (Pork (85%), Water, Salt, Sugar, Mineral Salts (451, 450), Antioxidant (316), Preservative (250)), Spanish Onion.</p><p><strong>Contains Egg, Gluten (Wheat).</strong></p><p><strong>May contain Sesame.</strong></p><p><strong>Bun glycemic index: 50</strong></p>",
+    "attributes": [
+     "DF",
+     "GFR",
+     "LC"
     ]
    }
   },
@@ -5561,29 +5641,34 @@
     ],
     "subtractions": [
      {
-      "title": "No Tasty Cheese"
+      "title": "No Chilli Relish"
      },
      {
       "title": "No Cos Lettuce"
      },
      {
-      "title": "No Spanish Onion"
+      "title": "No Jalapenos"
      },
      {
       "title": "No Roasted Peppers"
      },
      {
-      "title": "No Chicken Breast"
-     },
-     {
-      "title": "No Chilli Relish"
-     },
-     {
-      "title": "No Jalapenos"
-     },
-     {
       "title": "No Sour Cream"
+     },
+     {
+      "title": "No Spanish Onion"
+     },
+     {
+      "title": "No Tasty Cheese"
+     },
+     {
+      "title": "No Chicken Breast"
      }
+    ],
+    "ingredients": "<p>Chicken Breast (Chicken Breast from RSPCA Approved Chickens), High Fibre Lo GI Panini Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Roasted Peppers (Roasted Red Pepper (59%), Water, Sugar, Salt, Vinegar), Lite Sour Cream (Reduced Fat Cream (Milk), Halal Gelatine, Cultures (Milk)), Cos Lettuce, Chilli Relish (Tomato, Habanero Chilli (9%) (Habanero Chilli, Food Acid (260)), Red Cayenne Chilli (9%) (Red Cayenne Chilli, Food Acid (260)), Tomato Paste (Tomato Paste, Food Acid (330)), Vinegar, Sugar, Ginger, Canola Oil, Spices, Garlic, Tapioca Starch, Mustard Seed, Herbs, Salt), Tasty Cheese (Pasteurised Milk, Salt, Starter Culture, Non-Animal Rennet), Jalapenos (Jalapeno (54%), Water, Vinegar), Spanish Onion.</p><p><strong>Contains Gluten (Wheat), Milk.</strong></p><p><strong>May contain Sesame.</strong></p><p><strong>Bun glycemic index: 50</strong></p>",
+    "attributes": [
+     "GFR",
+     "LC"
     ]
    }
   },
@@ -5914,26 +5999,31 @@
     ],
     "subtractions": [
      {
+      "title": "No Brie Cheese"
+     },
+     {
       "title": "No Cos Lettuce"
      },
      {
-      "title": "No Tomato"
-     },
-     {
-      "title": "No Spanish Onion"
+      "title": "No Cranberry Sauce"
      },
      {
       "title": "No Herbed Mayo"
      },
      {
+      "title": "No Spanish Onion"
+     },
+     {
+      "title": "No Tomato"
+     },
+     {
       "title": "No Chicken Breast"
-     },
-     {
-      "title": "No Brie Cheese"
-     },
-     {
-      "title": "No Cranberry Sauce"
      }
+    ],
+    "ingredients": "<p>Chicken Breast (Chicken Breast from RSPCA Approved Chickens), High Fibre Lo GI Panini Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Tomato, Cos Lettuce, Cranberry Sauce / Berry Glaze (Water, Cranberries (27%) (Cranberries, Sugar, Sunflower Oil), Sugar, Red Wine Vinegar, Tapioca Starch, Vinegar), Brie Cheese (Pasteurised Milk, Salt, Cultures, Non-Animal Rennet), Herbed Mayo (Canola Oil, Pasteurised Free Range Whole Egg, Liquid Sugar, Water, White Vinegar, Mustard, Salt, Herbs &amp; Spices, Corn Starch, Lemon Juice, Acidity Regulator (Citric)), Spanish Onion.</p><p><strong>Contains Egg, Gluten (Wheat), Milk.</strong></p><p><strong>May contain Sesame.</strong></p><p><strong>Bun glycemic index: 50</strong></p>",
+    "attributes": [
+     "GFR",
+     "LC"
     ]
    }
   },
@@ -6264,10 +6354,13 @@
     ],
     "subtractions": [
      {
-      "title": "No Crispy Bacon"
+      "title": "No Caesar Dressing"
      },
      {
       "title": "No Cos Lettuce"
+     },
+     {
+      "title": "No Crispy Bacon"
      },
      {
       "title": "No Free Range Egg"
@@ -6276,11 +6369,13 @@
       "title": "No Shaved Parmesan"
      },
      {
-      "title": "No Caesar Dressing"
-     },
-     {
       "title": "No Chicken Breast"
      }
+    ],
+    "ingredients": "<p>Chicken Breast (Chicken Breast from RSPCA Approved Chickens), High Fibre Lo GI Panini Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Egg, Cos Lettuce, Caesar Dressing (Canola Oil, Free Range Egg (Pasteurised), Water, Capers (3%), Vinegar, Anchovies (1.5%) (Fish), Parmesan Cheese (1.5%) (Milk), Tasty Cheese (Milk), Salt, Sugar, Mustard, Natural Flavour (Egg), Onion, Lemon Juice, Spices, Garlic, Citric Acid, Natural Colour), Bacon (Pork (85%), Water, Salt, Sugar, Mineral Salts (451, 450), Antioxidant (316), Preservative (250)), Parmesan Cheese (Pasteurised Milk, Salt, Starter Cultures, Enzyme (Non-Animal Rennet), Enzyme (Animal Lipase), Anticaking Agent (460), Preservative (200)).</p><p><strong>Contains Egg, Fish (Anchovies), Gluten (Wheat), Milk.</strong></p><p><strong>May contain Sesame.</strong></p><p><strong>Bun glycemic index: 50</strong></p>",
+    "attributes": [
+     "GFR",
+     "LC"
     ]
    }
   },
@@ -6363,29 +6458,35 @@
     ],
     "subtractions": [
      {
-      "title": "No Cos Lettuce"
-     },
-     {
-      "title": "No Tomato"
-     },
-     {
       "title": "No Avocado"
      },
      {
       "title": "No Carrot"
      },
      {
-      "title": "No Dijon Mustard"
+      "title": "No Cos Lettuce"
      },
      {
-      "title": "No Pickle"
+      "title": "No Dijon Mustard"
      },
      {
       "title": "No Egg Mayo"
      },
      {
+      "title": "No Pickle"
+     },
+     {
+      "title": "No Tomato"
+     },
+     {
       "title": "No Chicken Breast"
      }
+    ],
+    "ingredients": null,
+    "attributes": [
+     "DF",
+     "GFR",
+     "LC"
     ]
    }
   },
@@ -6716,16 +6817,16 @@
     ],
     "subtractions": [
      {
-      "title": "No Cos Lettuce"
-     },
-     {
       "title": "No Avocado"
      },
      {
-      "title": "No Herbed Mayo"
+      "title": "No Cos Lettuce"
      },
      {
       "title": "No Goats Cheese"
+     },
+     {
+      "title": "No Herbed Mayo"
      },
      {
       "title": "No Honey"
@@ -6733,6 +6834,11 @@
      {
       "title": "No HFC Breast"
      }
+    ],
+    "ingredients": "<p>HFC Patty (Brined Chicken (70%) [Chicken Breast (85%), Water, Tapioca Starch, Salt, Flavour, Yeast Extract], Batter [Water, Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Dehydrated Vegetables (Onion, Garlic), Potato Fibre, Yeast Extract, Mineral Salt (500), Canola Oil, Vegetable Gum (412)], Breader [Maize Flour, Rice Flour, Potato Starch, Tapioca Starch, Dextrose (Tapioca, Maize), Salt, Sugar, Dehydrated Vegetables (Onion, Garlic), Yeast Extract, Rice Bran], Dusting [Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Canola Oil, Dehydrated Vegetables (Garlic, Onion), Potato Fibre, Mineral Salt (500), Vegetable Gum (412)], Canola Oil), High Fibre Lo GI Panini Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Cos Lettuce, Meredith Goats Cheese (Pasteurised Goat's Milk, Canola Oil (GMO free), Extra Virgin Olive Oil, Salt, Peppercorns, Fresh Thyme, Garlic, Cultures and Non-Animal Rennet), Avocado, Herbed Mayo (Canola Oil, Pasteurised Free Range Whole Egg, Liquid Sugar, Water, White Vinegar, Mustard, Salt, Herbs &amp; Spices, Corn Starch, Lemon Juice, Acidity Regulator (Citric)), Honey.</p><p><strong>Contains Egg, Gluten (Wheat), Milk.</strong></p><p><strong>May contain Sesame.</strong></p><p><strong>Bun glycemic index: 50</strong></p>",
+    "attributes": [
+     "GFR",
+     "LC"
     ]
    }
   },
@@ -7063,29 +7169,34 @@
     ],
     "subtractions": [
      {
-      "title": "No Crispy Bacon"
-     },
-     {
-      "title": "No Cos Lettuce"
-     },
-     {
-      "title": "No Tomato"
-     },
-     {
-      "title": "No Spanish Onion"
-     },
-     {
       "title": "No Barbeque Sauce"
-     },
-     {
-      "title": "No Egg Mayo"
      },
      {
       "title": "No Charred Pineapple"
      },
      {
+      "title": "No Cos Lettuce"
+     },
+     {
+      "title": "No Crispy Bacon"
+     },
+     {
+      "title": "No Egg Mayo"
+     },
+     {
+      "title": "No Spanish Onion"
+     },
+     {
+      "title": "No Tomato"
+     },
+     {
       "title": "No HFC Breast"
      }
+    ],
+    "ingredients": "<p>HFC Patty (Brined Chicken (70%) [Chicken Breast (85%), Water, Tapioca Starch, Salt, Flavour, Yeast Extract], Batter [Water, Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Dehydrated Vegetables (Onion, Garlic), Potato Fibre, Yeast Extract, Mineral Salt (500), Canola Oil, Vegetable Gum (412)], Breader [Maize Flour, Rice Flour, Potato Starch, Tapioca Starch, Dextrose (Tapioca, Maize), Salt, Sugar, Dehydrated Vegetables (Onion, Garlic), Yeast Extract, Rice Bran], Dusting [Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Canola Oil, Dehydrated Vegetables (Garlic, Onion), Potato Fibre, Mineral Salt (500), Vegetable Gum (412)], Canola Oil), High Fibre Lo GI Panini Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Pineapple (Pineapple (59%), Water, Sugar), Tomato, Cos Lettuce, Egg Mayo (Canola Oil, Pasteurised Free Range Whole Egg, Water, White Vinegar, Liquid Sugar, Mustard, Salt, Natural Flavour, Lemon Juice, Acidity Regulator (Citric), Natural Colour (160a (iv)), Spice Extract), Davidson Plum Barbeque Sauce (Sugar, Water, Invert Syrup (Cane Sugar, Water), Apple Cider Vinegar, Tomato Paste (Tomato Paste, Food Acid (330)), Tapioca Starch, Vinegar, Salt, Worcestershire Sauce, Davidson Plum (1%), Spices, Smoke Flavour, Mustard Powder, Garlic, Pepper, Natural Flavour), Bacon (Pork (85%), Water, Salt, Sugar, Mineral Salts (451, 450), Antioxidant (316), Preservative (250)), Spanish Onion.</p><p><strong>Contains Egg, Gluten (Wheat).</strong></p><p><strong>May contain Sesame.</strong></p><p><strong>Bun glycemic index: 50</strong></p>",
+    "attributes": [
+     "DF",
+     "GFR"
     ]
    }
   },
@@ -7416,20 +7527,26 @@
     ],
     "subtractions": [
      {
-      "title": "No Cos Lettuce"
+      "title": "No Chipotle Mayo"
      },
      {
-      "title": "No Spanish Onion"
+      "title": "No Cos Lettuce"
      },
      {
       "title": "No Pickle"
      },
      {
-      "title": "No HFC Breast"
+      "title": "No Spanish Onion"
      },
      {
-      "title": "No Chipotle Mayo"
+      "title": "No HFC Breast"
      }
+    ],
+    "ingredients": "<p>HFC Patty (Brined Chicken (70%) [Chicken Breast (85%), Water, Tapioca Starch, Salt, Flavour, Yeast Extract], Batter [Water, Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Dehydrated Vegetables (Onion, Garlic), Potato Fibre, Yeast Extract, Mineral Salt (500), Canola Oil, Vegetable Gum (412)], Breader [Maize Flour, Rice Flour, Potato Starch, Tapioca Starch, Dextrose (Tapioca, Maize), Salt, Sugar, Dehydrated Vegetables (Onion, Garlic), Yeast Extract, Rice Bran], Dusting [Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Canola Oil, Dehydrated Vegetables (Garlic, Onion), Potato Fibre, Mineral Salt (500), Vegetable Gum (412)], Canola Oil), High Fibre Lo GI Panini Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Dill Pickles (Cucumber, Vinegar, Filtered Water, Salt, Sugar, Dill), Cos Lettuce, Chipotle Mayo (Canola Oil, Pasteurised Free Range Whole Egg, Chipotle Peppers in Adobo Sauce (Chipotle Pepper, Water, Tomato Paste, Salt, Sugar, Onion, Acetic Acid), Water, White Vinegar, Corn Starch, Salt, Liquid Sugar, Lemon Juice, Garlic Puree, Mustard, Smoked Paprika, Acidity Regulator (Citric Acid)), Spanish Onion.</p><p><strong>Contains Egg, Gluten (Wheat).</strong></p><p><strong>May contain Sesame.</strong></p><p><strong>Bun glycemic index: 50</strong></p>",
+    "attributes": [
+     "DF",
+     "GFR",
+     "LC"
     ]
    }
   },
@@ -7760,23 +7877,29 @@
     ],
     "subtractions": [
      {
-      "title": "No Crispy Bacon"
+      "title": "No Avocado"
      },
      {
       "title": "No Cos Lettuce"
      },
      {
-      "title": "No Tomato"
-     },
-     {
-      "title": "No Avocado"
+      "title": "No Crispy Bacon"
      },
      {
       "title": "No Herbed Mayo"
      },
      {
+      "title": "No Tomato"
+     },
+     {
       "title": "No HFC Breast"
      }
+    ],
+    "ingredients": "<p>HFC Patty (Brined Chicken (70%) [Chicken Breast (85%), Water, Tapioca Starch, Salt, Flavour, Yeast Extract], Batter [Water, Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Dehydrated Vegetables (Onion, Garlic), Potato Fibre, Yeast Extract, Mineral Salt (500), Canola Oil, Vegetable Gum (412)], Breader [Maize Flour, Rice Flour, Potato Starch, Tapioca Starch, Dextrose (Tapioca, Maize), Salt, Sugar, Dehydrated Vegetables (Onion, Garlic), Yeast Extract, Rice Bran], Dusting [Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Canola Oil, Dehydrated Vegetables (Garlic, Onion), Potato Fibre, Mineral Salt (500), Vegetable Gum (412)], Canola Oil), High Fibre Lo GI Panini Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Tomato, Cos Lettuce, Avocado, Herbed Mayo (Canola Oil, Pasteurised Free Range Whole Egg, Liquid Sugar, Water, White Vinegar, Mustard, Salt, Herbs &amp; Spices, Corn Starch, Lemon Juice, Acidity Regulator (Citric)), Bacon (Pork (85%), Water, Salt, Sugar, Mineral Salts (451, 450), Antioxidant (316), Preservative (250)).</p><p><strong>Contains Egg, Gluten (Wheat).</strong></p><p><strong>May contain Sesame.</strong></p><p><strong>Bun glycemic index: 50</strong></p>",
+    "attributes": [
+     "DF",
+     "GFR",
+     "LC"
     ]
    }
   },
@@ -8107,29 +8230,34 @@
     ],
     "subtractions": [
      {
-      "title": "No Crispy Bacon"
-     },
-     {
-      "title": "No Spanish Onion"
+      "title": "No Aged Cheddar"
      },
      {
       "title": "No Barbeque Sauce"
      },
      {
-      "title": "No Dijon Mustard"
+      "title": "No Crispy Bacon"
      },
      {
-      "title": "No Pickle"
+      "title": "No Dijon Mustard"
      },
      {
       "title": "No Egg Mayo"
      },
      {
-      "title": "No Aged Cheddar"
+      "title": "No Pickle"
+     },
+     {
+      "title": "No Spanish Onion"
      },
      {
       "title": "No Wagyu Patty"
      }
+    ],
+    "ingredients": "<p>Wagyu Patty (100% Wagyu Beef Patty), High Fibre Lo GI Panini Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Dill Pickles (Cucumber, Vinegar, Filtered Water, Salt, Sugar, Dill), Aged Cheddar (Pasteurised Milk, Salt, Starter Culture, Non-Animal Rennet), Egg Mayo (Canola Oil, Pasteurised Free Range Whole Egg, Water, White Vinegar, Liquid Sugar, Mustard, Salt, Natural Flavour, Lemon Juice, Acidity Regulator (Citric), Natural Colour (160a (iv)), Spice Extract), Davidson Plum Barbeque Sauce (Sugar, Water, Invert Syrup (Cane Sugar, Water), Apple Cider Vinegar, Tomato Paste (Tomato Paste, Food Acid (330)), Tapioca Starch, Vinegar, Salt, Worcestershire Sauce, Davidson Plum (1%), Spices, Smoke Flavour, Mustard Powder, Garlic, Pepper, Natural Flavour), Bacon (Pork (85%), Water, Salt, Sugar, Mineral Salts (451, 450), Antioxidant (316), Preservative (250)), Dijon Mustard (Mustard Seeds (19%), Salt, Vinegar, Sugar, Acetic Acid, Spices, Mustard Oil, Water), Spanish Onion.</p><p><strong>Contains Egg, Gluten (Wheat), Milk.</strong></p><p><strong>May contain Sesame.</strong></p><p><strong>Bun glycemic index: 50</strong></p>",
+    "attributes": [
+     "GFR",
+     "LC"
     ]
    }
   },
@@ -8460,26 +8588,31 @@
     ],
     "subtractions": [
      {
-      "title": "No Cos Lettuce"
-     },
-     {
-      "title": "No Tomato"
-     },
-     {
-      "title": "No Spanish Onion"
-     },
-     {
-      "title": "No Herbed Mayo"
-     },
-     {
-      "title": "No Wagyu Patty"
+      "title": "No Berry Glaze"
      },
      {
       "title": "No Brie Cheese"
      },
      {
-      "title": "No Berry Glaze"
+      "title": "No Cos Lettuce"
+     },
+     {
+      "title": "No Herbed Mayo"
+     },
+     {
+      "title": "No Spanish Onion"
+     },
+     {
+      "title": "No Tomato"
+     },
+     {
+      "title": "No Wagyu Patty"
      }
+    ],
+    "ingredients": "<p>Wagyu Patty (100% Wagyu Beef Patty), High Fibre Lo GI Panini Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Tomato, Cos Lettuce, Cranberry Sauce / Berry Glaze (Water, Cranberries (27%) (Cranberries, Sugar, Sunflower Oil), Sugar, Red Wine Vinegar, Tapioca Starch, Vinegar), Brie Cheese (Pasteurised Milk, Salt, Cultures, Non-Animal Rennet), Herbed Mayo (Canola Oil, Pasteurised Free Range Whole Egg, Liquid Sugar, Water, White Vinegar, Mustard, Salt, Herbs &amp; Spices, Corn Starch, Lemon Juice, Acidity Regulator (Citric)), Spanish Onion.</p><p><strong>Contains Egg, Gluten (Wheat), Milk.</strong></p><p><strong>May contain Sesame.</strong></p><p><strong>Bun glycemic index: 50</strong></p>",
+    "attributes": [
+     "GFR",
+     "LC"
     ]
    }
   },
@@ -8810,26 +8943,31 @@
     ],
     "subtractions": [
      {
-      "title": "No Spanish Onion"
+      "title": "No Aged Cheddar"
      },
      {
       "title": "No Dijon Mustard"
      },
      {
-      "title": "No Pickle"
-     },
-     {
       "title": "No Egg Mayo"
      },
      {
-      "title": "No Aged Cheddar"
+      "title": "No Pickle"
      },
      {
-      "title": "No Wagyu Patty"
+      "title": "No Spanish Onion"
      },
      {
       "title": "No Tomato Sauce"
+     },
+     {
+      "title": "No Wagyu Patty"
      }
+    ],
+    "ingredients": "<p>Wagyu Patty (100% Wagyu Beef Patty), High Fibre Lo GI Panini Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Dill Pickles (Cucumber, Vinegar, Filtered Water, Salt, Sugar, Dill), Aged Cheddar (Pasteurised Milk, Salt, Starter Culture, Non-Animal Rennet), Egg Mayo (Canola Oil, Pasteurised Free Range Whole Egg, Water, White Vinegar, Liquid Sugar, Mustard, Salt, Natural Flavour, Lemon Juice, Acidity Regulator (Citric), Natural Colour (160a (iv)), Spice Extract), Tomato Sauce (Water, Tomato Paste (28%) (Tomato Paste, Food Acid (330)), Sugar, Vinegar, Tapioca Starch, Salt, Natural Flavour), Dijon Mustard (Mustard Seeds (19%), Salt, Vinegar, Sugar, Acetic Acid, Spices, Mustard Oil, Water), Spanish Onion.</p><p><strong>Contains Egg, Gluten (Wheat), Milk.</strong></p><p><strong>May contain Sesame.</strong></p><p><strong>Bun glycemic index: 50</strong></p>",
+    "attributes": [
+     "GFR",
+     "LC"
     ]
    }
   },
@@ -9160,29 +9298,34 @@
     ],
     "subtractions": [
      {
-      "title": "No Tasty Cheese"
+      "title": "No Avocado"
      },
      {
       "title": "No Cos Lettuce"
      },
      {
-      "title": "No Tomato"
-     },
-     {
-      "title": "No Spanish Onion"
-     },
-     {
-      "title": "No Avocado"
+      "title": "No Herbed Mayo"
      },
      {
       "title": "No Relish"
      },
      {
-      "title": "No Herbed Mayo"
+      "title": "No Spanish Onion"
+     },
+     {
+      "title": "No Tasty Cheese"
+     },
+     {
+      "title": "No Tomato"
      },
      {
       "title": "No Lamb Patty"
      }
+    ],
+    "ingredients": "<p>Lamb Patty (Lamb (92%), Relish (7%) (Tomato (54%), Sugar, Water, Onion, Apple Cider Vinegar, Starch (from Maize), Salt, Spices, Mustard Seed, Garlic, Citric Acid), Salt, Parsley), High Fibre Lo GI Panini Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Tomato, Cos Lettuce, Tomato Relish (Tomato (54%), Sugar, Water, Onion, Apple Cider Vinegar, Starch (from Maize), Salt, Spices, Mustard Seed, Garlic, Citric Acid), Avocado, Herbed Mayo (Canola Oil, Pasteurised Free Range Whole Egg, Liquid Sugar, Water, White Vinegar, Mustard, Salt, Herbs &amp; Spices, Corn Starch, Lemon Juice, Acidity Regulator (Citric)), Tasty Cheese (Pasteurised Milk, Salt, Starter Culture, Non-Animal Rennet), Spanish Onion.</p><p><strong>Contains Egg, Gluten (Wheat), Milk.</strong></p><p><strong>May contain Sesame.</strong></p><p><strong>Bun glycemic index: 50</strong></p>",
+    "attributes": [
+     "GFR",
+     "LC"
     ]
    }
   },
@@ -9516,29 +9659,34 @@
       "title": "No Cos Lettuce"
      },
      {
-      "title": "No Tomato"
-     },
-     {
-      "title": "No Spanish Onion"
-     },
-     {
-      "title": "No Relish"
-     },
-     {
       "title": "No Egg Mayo"
-     },
-     {
-      "title": "No Roasted Peppers"
      },
      {
       "title": "No Goats Cheese"
      },
      {
-      "title": "No Lamb Patty"
+      "title": "No Mint"
      },
      {
-      "title": "No Mint"
+      "title": "No Relish"
+     },
+     {
+      "title": "No Roasted Peppers"
+     },
+     {
+      "title": "No Spanish Onion"
+     },
+     {
+      "title": "No Tomato"
+     },
+     {
+      "title": "No Lamb Patty"
      }
+    ],
+    "ingredients": "<p>Lamb Patty (Lamb (92%), Relish (7%) (Tomato (54%), Sugar, Water, Onion, Apple Cider Vinegar, Starch (from Maize), Salt, Spices, Mustard Seed, Garlic, Citric Acid), Salt, Parsley), High Fibre Lo GI Panini Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Roasted Peppers (Roasted Red Pepper (59%), Water, Sugar, Salt, Vinegar), Tomato, Cos Lettuce, Meredith Goats Cheese (Pasteurised Goat's Milk, Canola Oil (GMO free), Extra Virgin Olive Oil, Salt, Peppercorns, Fresh Thyme, Garlic, Cultures and Non-Animal Rennet), Tomato Relish (Tomato (54%), Sugar, Water, Onion, Apple Cider Vinegar, Starch (from Maize), Salt, Spices, Mustard Seed, Garlic, Citric Acid), Egg Mayo (Canola Oil, Pasteurised Free Range Whole Egg, Water, White Vinegar, Liquid Sugar, Mustard, Salt, Natural Flavour, Lemon Juice, Acidity Regulator (Citric), Natural Colour (160a (iv)), Spice Extract), Spanish Onion, Mint.</p><p><strong>Contains Egg, Gluten (Wheat), Milk.</strong></p><p><strong>May contain Sesame.</strong></p><p><strong>Bun glycemic index: 50</strong></p>",
+    "attributes": [
+     "GFR",
+     "LC"
     ]
    }
   },
@@ -9869,19 +10017,7 @@
     ],
     "subtractions": [
      {
-      "title": "No Tasty Cheese"
-     },
-     {
       "title": "No Cos Lettuce"
-     },
-     {
-      "title": "No Tomato"
-     },
-     {
-      "title": "No Spanish Onion"
-     },
-     {
-      "title": "No Relish"
      },
      {
       "title": "No Dijon Mustard"
@@ -9890,8 +10026,25 @@
       "title": "No Pickle"
      },
      {
+      "title": "No Relish"
+     },
+     {
+      "title": "No Spanish Onion"
+     },
+     {
+      "title": "No Tasty Cheese"
+     },
+     {
+      "title": "No Tomato"
+     },
+     {
       "title": "No Beyond Patty"
      }
+    ],
+    "ingredients": "<p>Beyond Patty (Water, Yellow Pea Protein, Avocado Oil, Natural Flavors, Brown Rice Protein, Red Lentil Protein, Potato Starch, Pea Starch, Apple Extract, Faba Bean Protein, Pomegranate Concentrate, Potassium Salt, Lemon Juice Concentrate, Vinegar, Spice, Vegetable Juice Colour (with Beet)), High Fibre Lo GI Panini Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Tomato, Dill Pickles (Cucumber, Vinegar, Filtered Water, Salt, Sugar, Dill), Cos Lettuce, Tomato Relish (Tomato (54%), Sugar, Water, Onion, Apple Cider Vinegar, Starch (from Maize), Salt, Spices, Mustard Seed, Garlic, Citric Acid), Tasty Cheese (Pasteurised Milk, Salt, Starter Culture, Non-Animal Rennet), Dijon Mustard (Mustard Seeds (19%), Salt, Vinegar, Sugar, Acetic Acid, Spices, Mustard Oil, Water), Spanish Onion.</p><p><strong>Contains Gluten (Wheat), Milk.</strong></p><p><strong>May contain Sesame.</strong></p><p><strong>Bun glycemic index: 50</strong></p>",
+    "attributes": [
+     "GFR",
+     "V"
     ]
    }
   },
@@ -10222,32 +10375,38 @@
     ],
     "subtractions": [
      {
-      "title": "No Tasty Cheese"
-     },
-     {
-      "title": "No Cos Lettuce"
-     },
-     {
-      "title": "No Tomato"
-     },
-     {
-      "title": "No Spanish Onion"
-     },
-     {
       "title": "No Avocado"
-     },
-     {
-      "title": "No Relish"
-     },
-     {
-      "title": "No Herbed Mayo"
      },
      {
       "title": "No Beetroot"
      },
      {
+      "title": "No Cos Lettuce"
+     },
+     {
+      "title": "No Herbed Mayo"
+     },
+     {
+      "title": "No Relish"
+     },
+     {
+      "title": "No Spanish Onion"
+     },
+     {
+      "title": "No Tasty Cheese"
+     },
+     {
+      "title": "No Tomato"
+     },
+     {
       "title": "No Beyond Patty"
      }
+    ],
+    "ingredients": "<p>Beyond Patty (Water, Yellow Pea Protein, Avocado Oil, Natural Flavors, Brown Rice Protein, Red Lentil Protein, Potato Starch, Pea Starch, Apple Extract, Faba Bean Protein, Pomegranate Concentrate, Potassium Salt, Lemon Juice Concentrate, Vinegar, Spice, Vegetable Juice Colour (with Beet)), High Fibre Lo GI Panini Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Beetroot (Beetroot (86%), Vinegar, Brown Sugar), Tomato, Cos Lettuce, Tomato Relish (Tomato (54%), Sugar, Water, Onion, Apple Cider Vinegar, Starch (from Maize), Salt, Spices, Mustard Seed, Garlic, Citric Acid), Avocado, Herbed Mayo (Canola Oil, Pasteurised Free Range Whole Egg, Liquid Sugar, Water, White Vinegar, Mustard, Salt, Herbs &amp; Spices, Corn Starch, Lemon Juice, Acidity Regulator (Citric)), Tasty Cheese (Pasteurised Milk, Salt, Starter Culture, Non-Animal Rennet), Spanish Onion.</p><p><strong>Contains Egg, Gluten (Wheat), Milk.</strong></p><p><strong>May contain Sesame.</strong></p><p><strong>Bun glycemic index: 50</strong></p>",
+    "attributes": [
+     "GFR",
+     "LC",
+     "V"
     ]
    }
   },
@@ -10578,32 +10737,37 @@
     ],
     "subtractions": [
      {
-      "title": "No Tasty Cheese"
-     },
-     {
-      "title": "No Cos Lettuce"
-     },
-     {
-      "title": "No Tomato"
-     },
-     {
-      "title": "No Spanish Onion"
-     },
-     {
       "title": "No Avocado"
-     },
-     {
-      "title": "No Relish"
-     },
-     {
-      "title": "No Herbed Mayo"
      },
      {
       "title": "No Beetroot"
      },
      {
+      "title": "No Cos Lettuce"
+     },
+     {
+      "title": "No Herbed Mayo"
+     },
+     {
+      "title": "No Relish"
+     },
+     {
+      "title": "No Spanish Onion"
+     },
+     {
+      "title": "No Tasty Cheese"
+     },
+     {
+      "title": "No Tomato"
+     },
+     {
       "title": "No Garden Patty"
      }
+    ],
+    "ingredients": "<p>Veggie Patty (Garden Goodness) (Vegetables (77%) (Carrot, Potato, Onion, Pumpkin, Peas, Cabbage, Cauliflower, Spinach), Faba Bean Flour, Canola Oil, Maize Starch, Salt, Spice, Vegetable Gum (Guar)), High Fibre Lo GI Panini Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Beetroot (Beetroot (86%), Vinegar, Brown Sugar), Tomato, Cos Lettuce, Tomato Relish (Tomato (54%), Sugar, Water, Onion, Apple Cider Vinegar, Starch (from Maize), Salt, Spices, Mustard Seed, Garlic, Citric Acid), Avocado, Herbed Mayo (Canola Oil, Pasteurised Free Range Whole Egg, Liquid Sugar, Water, White Vinegar, Mustard, Salt, Herbs &amp; Spices, Corn Starch, Lemon Juice, Acidity Regulator (Citric)), Tasty Cheese (Pasteurised Milk, Salt, Starter Culture, Non-Animal Rennet), Spanish Onion.</p><p><strong>Contains Egg, Gluten (Wheat), Milk.</strong></p><p><strong>May contain Sesame.</strong></p><p><strong>Bun glycemic index: 50</strong></p>",
+    "attributes": [
+     "GFR",
+     "V"
     ]
    }
   },
@@ -10925,19 +11089,19 @@
       "title": "No Cos Lettuce"
      },
      {
-      "title": "No Tomato"
+      "title": "No Dijon Mustard"
      },
      {
-      "title": "No Spanish Onion"
+      "title": "No Pickle"
      },
      {
       "title": "No Relish"
      },
      {
-      "title": "No Dijon Mustard"
+      "title": "No Spanish Onion"
      },
      {
-      "title": "No Pickle"
+      "title": "No Tomato"
      },
      {
       "title": "No Vegan Cheese"
@@ -10945,6 +11109,13 @@
      {
       "title": "No Beyond Patty"
      }
+    ],
+    "ingredients": "<p>Ingredients:<strong> Beyond Pattie</strong>(37%) (Water, Yellow Pea Protein*, Avocado Oil, Natural Flavors, Brown Rice Protein, Red Lentil Protein, Potato Starch, Pea Starch, Apple Extract, Faba Bean Protein, Pomegranate Concentrate, Potassium Salt, Lemon Juice Concentrate, Vinegar, Spice, Vegetable Juice Color (with Beet), <strong>Panini Bun </strong>(25%) <strong>Wheat </strong>flour (contains thiamin, folic acid), Water, Culture, Canola Oil, <strong>Oat </strong>fibre, <strong>Wheat </strong>fibre, <strong>Gluten, </strong>Fresh yeast, Iodised salt, Thickeners (412, 1413 (<strong>Wheat</strong>)), Improver (contains enzyme). <strong>Dill Pickles</strong> (8%) (Cucumber (50%), Vinegar, Water, Salt, Sugar, Dill), <strong>Cos Lettuce</strong>, <strong>Vegan Cheese </strong>(9%)<strong> (</strong>Water, Coconut Oil (24%), Modified Starch, Sea Salt, Vegan Flavourings, Coconut Sugar, Colour&nbsp;Natural beta Carotene, Paprika Extract, Sorbic Acid),, <strong>Dijon Mustard</strong> (Water, Mustard Seed (19%), Salt, Vinegar, Sugar, Food Acid (Acetic), Spices (Turmeric, Celery)), <strong>Spanish Onion.</strong>&nbsp;</p><p><strong>Contains Wheat, Gluten, May Contain Sesame Seeds.</strong>&nbsp;</p><p><br></p><p><strong>Glycemic Index Traditional Bun: 50</strong></p>",
+    "attributes": [
+     "DF",
+     "GFR",
+     "VE",
+     "V"
     ]
    }
   },
@@ -11263,32 +11434,40 @@
     ],
     "subtractions": [
      {
-      "title": "No Cos Lettuce"
-     },
-     {
-      "title": "No Tomato"
-     },
-     {
-      "title": "No Spanish Onion"
-     },
-     {
       "title": "No Avocado"
-     },
-     {
-      "title": "No Relish"
      },
      {
       "title": "No Beetroot"
      },
      {
+      "title": "No Cos Lettuce"
+     },
+     {
+      "title": "No Relish"
+     },
+     {
+      "title": "No Spanish Onion"
+     },
+     {
+      "title": "No Tomato"
+     },
+     {
       "title": "No Vegan Cheese"
      },
      {
-      "title": "No Beyond Patty"
+      "title": "No Vegan Mayo"
      },
      {
-      "title": "No Vegan Mayo"
+      "title": "No Beyond Patty"
      }
+    ],
+    "ingredients": "<p>Ingredients:<strong> Beyond Pattie </strong>(37%) (Water, Yellow Pea Protein*, Avocado Oil, Natural Flavors, Brown Rice Protein, Red Lentil Protein, Potato Starch, Pea Starch, Apple Extract, Faba Bean Protein, Pomegranate Concentrate, Potassium Salt, Lemon Juice Concentrate, Vinegar, Spice, Vegetable Juice Color (with Beet), <strong>Panini Bun </strong>(25%) (<strong>Wheat </strong>flour (contains thiamin, folic acid), Water, Culture, Canola Oil, <strong>Oat </strong>fibre, <strong>Wheat </strong>fibre, <strong>Gluten, </strong>Fresh yeast, Iodised salt, Thickeners (412, 1413 (<strong>Wheat</strong>)), Improver (contains enzyme).&nbsp;), Improver (contains enzyme), <strong>Sesame Seeds.</strong>),<strong> Beetroot (</strong>13%) (Beetroot (86%), Vinegar, Brown Sugar), <strong>Tomato</strong> (10%),<strong> Tomato Relish </strong>(7%) (Tomato (46%), Sugar, Water, Onion, Apple Cider Vinegar, Tapioca Starch, Salt, Tomato Paste (0.5%), Mustard Seed, Citric Acid, Spices), <strong>Cos Lettuce (6%), Vegan Cheese </strong>(9%)<strong> (</strong>Water, Coconut Oil (24%), Modified Starch, Sea Salt, Vegan Flavourings, Coconut Sugar, Colour&nbsp;Natural beta Carotene, Paprika Extract, Sorbic Acid),<strong> Avocado </strong>(4.5%),<strong> Vegan Mayonnaise (</strong>Canola Oil, Water, Liquid Sugar, White Vinegar, Vegetable Protein, Salt, Dijon Mustard, Corn Starch, Lemon Juice, Vegetable Gum (Xanthan, Guar), Natural Flavour, Spice Extract, Natural Antioxidant (307b), Garlic Powder)), <strong>Spanish Onion (2%).</strong>&nbsp;</p><p><strong>Contains Wheat, Gluten, May contain Sesame Seeds.</strong>&nbsp;</p><p><br></p><p><strong>Glycemic Index Traditional Bun: 50</strong></p>",
+    "attributes": [
+     "DF",
+     "GFR",
+     "LC",
+     "VE",
+     "V"
     ]
    }
   },
@@ -11607,32 +11786,39 @@
     ],
     "subtractions": [
      {
-      "title": "No Cos Lettuce"
-     },
-     {
-      "title": "No Tomato"
-     },
-     {
-      "title": "No Spanish Onion"
-     },
-     {
       "title": "No Avocado"
-     },
-     {
-      "title": "No Relish"
      },
      {
       "title": "No Beetroot"
      },
      {
-      "title": "No Garden Patty"
+      "title": "No Cos Lettuce"
+     },
+     {
+      "title": "No Relish"
+     },
+     {
+      "title": "No Spanish Onion"
+     },
+     {
+      "title": "No Tomato"
      },
      {
       "title": "No Vegan Cheese"
      },
      {
       "title": "No Vegan Mayo"
+     },
+     {
+      "title": "No Garden Patty"
      }
+    ],
+    "ingredients": "<p><strong>Garden Goodness Patty</strong> (28%) (Vegetables (77%) (Carrot, Potato, Onion, Pumpkin, Peas, Cabbage, Cauliflower, Spinach), Faba Bean Flour, Canola Oil, Potato Starch, Salt, Baking Powder (450, Sodium Bicarbonate), Spice, Vegetable Gum (Guar)), <strong>Panini Bun</strong> (24%) (Wheat Flour, Water, Canola Oil, Wheat Gluten, Salt, Yeast, Rice Flour, Malt Flour, Ascorbic Acid (Vitamin C), Wheat Enzyme), <strong>Beetroot</strong> (14%) (Beetroot (86%), Vinegar, Brown Sugar), <strong>Tomato</strong> (11%), <strong>Tomato Relish</strong> (7%) (Tomato (46%), Sugar, Water, Onion, Apple Cider Vinegar, Tapioca Starch, Salt, Tomato Paste (0.5%), Mustard Seed, Citric Acid, Spices), <strong>Cos Lettuce</strong> (6%), <strong>Vegan</strong> Cheese (Water, Coconut Oil (24%), Modified Starch, Sea Salt, Vegan Flavourings, Coconut Sugar, Colour Natural beta Carotene, Paprika Extract, Sorbic Acid),, <strong>Veganise</strong> (4.5%) (Canola Oil, Water, Invert Syrup (Cane Sugar, Water), Vinegar, Food Starch (Maize), Salt, Sugar, Mustard, Natural Flavour, Xanthan Gum, Citric Acid, Spices, Natural Colour), <strong>Spanish Onion</strong> (2%)</p><p><strong>Contains Wheat, Barley.</strong></p><p><strong>May Contain Sesame Seeds.</strong></p><p><br></p><p><strong><span>\ufeff</span>Glycemic Index Panini Bun: 50</strong></p>",
+    "attributes": [
+     "DF",
+     "GFR",
+     "VE",
+     "V"
     ]
    }
   },
@@ -11686,7 +11872,13 @@
       ]
      }
     ],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": null,
+    "attributes": [
+     "DF",
+     "GFR",
+     "LC"
+    ]
    }
   },
   "1000575": {
@@ -11739,7 +11931,13 @@
       ]
      }
     ],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": null,
+    "attributes": [
+     "DF",
+     "GFR",
+     "LC"
+    ]
    }
   },
   "1002947": {
@@ -11792,7 +11990,13 @@
       ]
      }
     ],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": null,
+    "attributes": [
+     "DF",
+     "GFR",
+     "LC"
+    ]
    }
   },
   "1000582": {
@@ -11845,7 +12049,13 @@
       ]
      }
     ],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": null,
+    "attributes": [
+     "DF",
+     "GFR",
+     "LC"
+    ]
    }
   },
   "1000576": {
@@ -11898,7 +12108,13 @@
       ]
      }
     ],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": null,
+    "attributes": [
+     "DF",
+     "GFR",
+     "LC"
+    ]
    }
   },
   "1001570": {
@@ -11951,7 +12167,11 @@
       ]
      }
     ],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": null,
+    "attributes": [
+     "GFR"
+    ]
    }
   },
   "1000579": {
@@ -12004,7 +12224,14 @@
       ]
      }
     ],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": null,
+    "attributes": [
+     "DF",
+     "GFR",
+     "LC",
+     "V"
+    ]
    }
   },
   "3200": {
@@ -12332,7 +12559,11 @@
       ]
      }
     ],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": "<p>HFC Tenders (Chicken Tenderloin (70%), Batter (Water, Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Dehydrated Vegetables, Potato Fibre, Mineral Salt (500), Canola Oil, Vegetable Gum (412)), Breader (Maize Flour, Rice Flour, Potato Starch, Tapioca Starch, Dextrose (Tapioca, Maize), Salt, Sugar, Dehydrated Vegetables, Yeast Extract, Rice Bran Extract, Canola Oil), Dusting (Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Dehydrated Vegetables, Potato Fibre, Mineral Salt (500), Canola Oil, Vegetable Gum (412)), Olive Oil), Lo GI Slider Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Chipotle Mayo (Canola Oil, Pasteurised Free Range Whole Egg, Chipotle Peppers in Adobo Sauce (Chipotle Pepper, Water, Tomato Paste, Salt, Sugar, Onion, Acetic Acid), Water, White Vinegar, Corn Starch, Salt, Liquid Sugar, Lemon Juice, Garlic Puree, Mustard, Smoked Paprika, Acidity Regulator (Citric Acid)), Cos Lettuce, Spanish Onion.</p><p><strong>Contains Egg, Gluten (Wheat).</strong></p><p><strong>May contain Sesame.</strong></p>",
+    "attributes": [
+     "NA"
+    ]
    }
   },
   "3201": {
@@ -12660,7 +12891,11 @@
       ]
      }
     ],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": "<p>Slider Beef Patty (Beef (92%), Relish (7%) (Tomato (54%), Sugar, Water, Onion, Apple Cider Vinegar, Starch (from Maize), Salt, Spices, Mustard Seed, Garlic, Citric Acid), Salt, Parsley), Lo GI Slider Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Dill Pickles (Cucumber, Vinegar, Filtered Water, Salt, Sugar, Dill), Tasty Cheese (Pasteurised Milk, Salt, Starter Culture, Non-Animal Rennet), Dijon Mustard (Mustard Seeds (19%), Salt, Vinegar, Sugar, Acetic Acid, Spices, Mustard Oil, Water), Tomato Sauce (Water, Tomato Paste (28%) (Tomato Paste, Food Acid (330)), Sugar, Vinegar, Tapioca Starch, Salt, Natural Flavour), Egg Mayo (Canola Oil, Pasteurised Free Range Whole Egg, Water, White Vinegar, Liquid Sugar, Mustard, Salt, Natural Flavour, Lemon Juice, Acidity Regulator (Citric), Natural Colour (160a (iv)), Spice Extract).</p><p><strong>Contains Egg, Gluten (Wheat), Milk.</strong></p><p><strong>May contain Sesame.</strong></p>",
+    "attributes": [
+     "NA"
+    ]
    }
   },
   "1003964": {
@@ -12729,19 +12964,16 @@
     "choices": [],
     "subtractions": [
      {
-      "title": "No Cos Lettuce"
-     },
-     {
-      "title": "No Spanish Onion"
-     },
-     {
-      "title": "No Seed Mix"
-     },
-     {
-      "title": "No Chicken Breast"
+      "title": "No Balsamic Vinaigrette"
      },
      {
       "title": "No Beetroot"
+     },
+     {
+      "title": "No Cos Lettuce"
+     },
+     {
+      "title": "No Cranberries"
      },
      {
       "title": "No Goats Cheese"
@@ -12753,11 +12985,19 @@
       "title": "No Mint"
      },
      {
-      "title": "No Balsamic Vinaigrette"
+      "title": "No Seed Mix"
      },
      {
-      "title": "No Cranberries"
+      "title": "No Spanish Onion"
+     },
+     {
+      "title": "No Chicken Breast"
      }
+    ],
+    "ingredients": "<p>Chicken Breast (Chicken Breast from RSPCA Approved Chickens), Cos Lettuce, Beetroot (Beetroot (86%), Vinegar, Brown Sugar), Meredith Goats Cheese (Pasteurised Goat's Milk, Canola Oil (GMO free), Extra Virgin Olive Oil, Salt, Peppercorns, Fresh Thyme, Garlic, Cultures and Non-Animal Rennet), Balsamic Vinaigrette (Canola Oil, Water, Balsamic Vinegar (14%) (Red Grape Vinegar, Concentrated White Grape Juice, Caramelised Sugar), Liquid Sugar, White Vinegar, Olive Oil (7%), Lemon Juice, Salt, Burnt Sugar, Herbs &amp; Spices, Yeast Extract, Garlic, Red Capsicum, Onion Powder, Vegetable Gum (Xanthan), Natural Antioxidant (307b)), Seed Mix (Roasted Broad Beans (Rapeseed Oil, Salt, Sugar), Gluten-Free Breadcrumb (Water, Corn Starch, Coconut Cream, Canola Oil, Tapioca Starch, Salt, Caster Sugar, Yeast, Guar Gum, Xanthan Gum, Psyllium Husk), Pumpkin Seeds, Olive Oil, Salt, Spices (Cumin, Smoked Paprika, Chilli)), Dried Cranberries (Sugar, Cranberries (30%), Sunflower Oil), Honey, Spanish Onion, Mint.</p><p><strong>Contains Milk.</strong></p>",
+    "attributes": [
+     "GFR",
+     "LC"
     ]
    }
   },
@@ -12827,35 +13067,41 @@
     "choices": [],
     "subtractions": [
      {
-      "title": "No Cos Lettuce"
-     },
-     {
-      "title": "No Tomato"
-     },
-     {
-      "title": "No Spanish Onion"
-     },
-     {
       "title": "No Avocado"
      },
      {
-      "title": "No Carrot"
-     },
-     {
-      "title": "No Seed Mix"
-     },
-     {
-      "title": "No Chicken Breast"
+      "title": "No Balsamic Vinaigrette"
      },
      {
       "title": "No Beetroot"
      },
      {
+      "title": "No Carrot"
+     },
+     {
+      "title": "No Cos Lettuce"
+     },
+     {
       "title": "No Mint"
      },
      {
-      "title": "No Balsamic Vinaigrette"
+      "title": "No Seed Mix"
+     },
+     {
+      "title": "No Spanish Onion"
+     },
+     {
+      "title": "No Tomato"
+     },
+     {
+      "title": "No Chicken Breast"
      }
+    ],
+    "ingredients": "<p>Chicken Breast (Chicken Breast from RSPCA Approved Chickens), Cos Lettuce, Beetroot (Beetroot (86%), Vinegar, Brown Sugar), Tomato, Carrot, Avocado, Seed Mix (Roasted Broad Beans (Rapeseed Oil, Salt, Sugar), Gluten-Free Breadcrumb (Water, Corn Starch, Coconut Cream, Canola Oil, Tapioca Starch, Salt, Caster Sugar, Yeast, Guar Gum, Xanthan Gum, Psyllium Husk), Pumpkin Seeds, Olive Oil, Salt, Spices (Cumin, Smoked Paprika, Chilli)), Balsamic Vinaigrette (Canola Oil, Water, Balsamic Vinegar (14%) (Red Grape Vinegar, Concentrated White Grape Juice, Caramelised Sugar), Liquid Sugar, White Vinegar, Olive Oil (7%), Lemon Juice, Salt, Burnt Sugar, Herbs &amp; Spices, Yeast Extract, Garlic, Red Capsicum, Onion Powder, Vegetable Gum (Xanthan), Natural Antioxidant (307b)), Spanish Onion, Mint.</p>",
+    "attributes": [
+     "DF",
+     "GFR",
+     "LC"
     ]
    }
   },
@@ -12925,26 +13171,30 @@
     "choices": [],
     "subtractions": [
      {
-      "title": "No Crispy Bacon"
+      "title": "No Caesar Dressing"
      },
      {
       "title": "No Cos Lettuce"
      },
      {
+      "title": "No Crispy Bacon"
+     },
+     {
       "title": "No Croutons"
+     },
+     {
+      "title": "No Egg"
      },
      {
       "title": "No Shaved Parmesan"
      },
      {
-      "title": "No Caesar Dressing"
-     },
-     {
       "title": "No Chicken Breast"
-     },
-     {
-      "title": "W/O Egg for Salad"
      }
+    ],
+    "ingredients": "<p>Chicken Breast (Chicken Breast from RSPCA Approved Chickens), Cos Lettuce, Egg, Caesar Dressing (Canola Oil, Free Range Egg (Pasteurised), Water, Capers (3%), Vinegar, Anchovies (1.5%) (Fish), Parmesan Cheese (1.5%) (Milk), Tasty Cheese (Milk), Salt, Sugar, Mustard, Natural Flavour (Egg), Onion, Lemon Juice, Spices, Garlic, Citric Acid, Natural Colour), Croutons (Wheat Flour (contains Thiamin, Folic Acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme), Extra Virgin Olive Oil, Herb Salt), Bacon (Pork (85%), Water, Salt, Sugar, Mineral Salts (451, 450), Antioxidant (316), Preservative (250)), Parmesan Cheese (Pasteurised Milk, Salt, Starter Cultures, Enzyme (Non-Animal Rennet), Enzyme (Animal Lipase), Anticaking Agent (460), Preservative (200)).</p><p><strong>Contains Egg, Fish (Anchovies), Gluten (Wheat), Milk.</strong></p><p><strong>May contain Sesame.</strong></p>",
+    "attributes": [
+     "LC"
     ]
    }
   },
@@ -13221,7 +13471,12 @@
       ]
      }
     ],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": "<p>HFC Tenders (Chicken Tenderloin (70%), Batter (Water, Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Dehydrated Vegetables, Potato Fibre, Mineral Salt (500), Canola Oil, Vegetable Gum (412)), Breader (Maize Flour, Rice Flour, Potato Starch, Tapioca Starch, Dextrose (Tapioca, Maize), Salt, Sugar, Dehydrated Vegetables, Yeast Extract, Rice Bran Extract, Canola Oil), Dusting (Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Dehydrated Vegetables, Potato Fibre, Mineral Salt (500), Canola Oil, Vegetable Gum (412)), Olive Oil), Extra Virgin Olive Oil, Sea Salt.</p>",
+    "attributes": [
+     "DF",
+     "GFR"
+    ]
    }
   },
   "1003938": {
@@ -13497,7 +13752,12 @@
       ]
      }
     ],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": "<p>HFC Tenders (Chicken Tenderloin (70%), Batter (Water, Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Dehydrated Vegetables, Potato Fibre, Mineral Salt (500), Canola Oil, Vegetable Gum (412)), Breader (Maize Flour, Rice Flour, Potato Starch, Tapioca Starch, Dextrose (Tapioca, Maize), Salt, Sugar, Dehydrated Vegetables, Yeast Extract, Rice Bran Extract, Canola Oil), Dusting (Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Dehydrated Vegetables, Potato Fibre, Mineral Salt (500), Canola Oil, Vegetable Gum (412)), Olive Oil), Extra Virgin Olive Oil, Sea Salt.</p>",
+    "attributes": [
+     "DF",
+     "GFR"
+    ]
    }
   },
   "1002844": {
@@ -13564,7 +13824,12 @@
      ]
     },
     "choices": [],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": "<p>HFC Bites (Chicken Tenderloin (76%), Batter (Water, Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Dehydrated Vegetables, Potato Fibre, Mineral Salt (500), Canola Oil, Vegetable Gum (412)), Breader (Maize Flour, Rice Flour, Potato Starch, Tapioca Starch, Dextrose (Tapioca, Maize), Salt, Sugar, Dehydrated Vegetables, Yeast Extract, Rice Bran Extract, Canola Oil), Dusting (Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Dehydrated Vegetables, Potato Fibre, Mineral Salt (500), Canola Oil, Vegetable Gum (412)), Olive Oil), Extra Virgin Olive Oil, Sea Salt.</p>",
+    "attributes": [
+     "DF",
+     "GFR"
+    ]
    }
   },
   "1002845": {
@@ -13631,7 +13896,12 @@
      ]
     },
     "choices": [],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": "<p>HFC Bites (Chicken Tenderloin (76%), Batter (Water, Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Dehydrated Vegetables, Potato Fibre, Mineral Salt (500), Canola Oil, Vegetable Gum (412)), Breader (Maize Flour, Rice Flour, Potato Starch, Tapioca Starch, Dextrose (Tapioca, Maize), Salt, Sugar, Dehydrated Vegetables, Yeast Extract, Rice Bran Extract, Canola Oil), Dusting (Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Dehydrated Vegetables, Potato Fibre, Mineral Salt (500), Canola Oil, Vegetable Gum (412)), Olive Oil), Extra Virgin Olive Oil, Sea Salt.</p>",
+    "attributes": [
+     "DF",
+     "GFR"
+    ]
    }
   },
   "1003055": {
@@ -13698,7 +13968,12 @@
      ]
     },
     "choices": [],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": "<p>HFC Bites (Chicken Tenderloin (76%), Batter (Water, Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Dehydrated Vegetables, Potato Fibre, Mineral Salt (500), Canola Oil, Vegetable Gum (412)), Breader (Maize Flour, Rice Flour, Potato Starch, Tapioca Starch, Dextrose (Tapioca, Maize), Salt, Sugar, Dehydrated Vegetables, Yeast Extract, Rice Bran Extract, Canola Oil), Dusting (Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Dehydrated Vegetables, Potato Fibre, Mineral Salt (500), Canola Oil, Vegetable Gum (412)), Olive Oil), Extra Virgin Olive Oil, Sea Salt.</p>",
+    "attributes": [
+     "DF",
+     "GFR"
+    ]
    }
   },
   "1000677": {
@@ -13967,7 +14242,14 @@
       ]
      }
     ],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": "<p>Famous Grill'd Chips (Potato (92%), Canola Oil, Batter (Rice Flour, Maize Starch, Salt, Dextrose, Rice Starch, Thickener (412, 415), Mineral Salt (500))), Zucchini Chips (Zucchini (74%), Gluten Free Crumbs (Rice Flour, Dextrose (Tapioca, Maize), Salt, Rice Bran), Batter (Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Dehydrated Vegetables, Potato Fibre, Mineral Salt (Sodium Bicarbonate), Canola Oil, Vegetable Gum (Guar Gum)), Water, Canola Oil), Sweet Potato Chips (Sweet Potato, Batter (Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Rice Starch, Thickener (415), Mineral Salt (500), Colours (100, 160c)), Canola Oil), Chip Cooking Oil, Herb Salt, Sea Salt.</p>",
+    "attributes": [
+     "DF",
+     "GFR",
+     "VE",
+     "V"
+    ]
    }
   },
   "2001": {
@@ -14034,7 +14316,14 @@
      ]
     },
     "choices": [],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": "<p>Famous Grill'd Chips (Potato (92%), Canola Oil, Batter (Rice Flour, Maize Starch, Salt, Dextrose, Rice Starch, Thickener (412, 415), Mineral Salt (500))), Chip Cooking Oil (Cottonseed Oil, Hi-Oleic Canola Oil and Hi-Oleic Sunflower Oil), Herb Salt (Sea Salt, Mixed Dry Herbs).</p>",
+    "attributes": [
+     "DF",
+     "GFR",
+     "VE",
+     "V"
+    ]
    }
   },
   "2000": {
@@ -14101,7 +14390,14 @@
      ]
     },
     "choices": [],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": "<p>Famous Grill'd Chips (Potato (92%), Canola Oil, Batter (Rice Flour, Maize Starch, Salt, Dextrose, Rice Starch, Thickener (412, 415), Mineral Salt (500))), Chip Cooking Oil (Cottonseed Oil, Hi-Oleic Canola Oil and Hi-Oleic Sunflower Oil), Herb Salt (Sea Salt, Mixed Dry Herbs).</p>",
+    "attributes": [
+     "DF",
+     "GFR",
+     "VE",
+     "V"
+    ]
    }
   },
   "3301": {
@@ -14168,7 +14464,14 @@
      ]
     },
     "choices": [],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": "<p>Sweet Potato Chips (Sweet Potato, Batter (Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Rice Starch, Thickener (415), Mineral Salt (500), Colours (100, 160c)), Canola Oil), Chip Cooking Oil, Sea Salt.</p>",
+    "attributes": [
+     "DF",
+     "GFR",
+     "VE",
+     "V"
+    ]
    }
   },
   "3302": {
@@ -14235,7 +14538,14 @@
      ]
     },
     "choices": [],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": "<p>Sweet Potato Chips (Sweet Potato, Batter (Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Rice Starch, Thickener (415), Mineral Salt (500), Colours (100, 160c)), Canola Oil), Chip Cooking Oil, Sea Salt.</p>",
+    "attributes": [
+     "DF",
+     "GFR",
+     "VE",
+     "V"
+    ]
    }
   },
   "1000893": {
@@ -14302,7 +14612,14 @@
      ]
     },
     "choices": [],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": "<p>Zucchini Chips (Zucchini (74%), Gluten Free Crumbs (Rice Flour, Dextrose (Tapioca, Maize), Salt, Rice Bran), Batter (Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Dehydrated Vegetables, Potato Fibre, Mineral Salt (Sodium Bicarbonate), Canola Oil, Vegetable Gum (Guar Gum)), Water, Canola Oil), Chip Cooking Oil, Sea Salt.</p>",
+    "attributes": [
+     "DF",
+     "GFR",
+     "VE",
+     "V"
+    ]
    }
   },
   "1000894": {
@@ -14369,7 +14686,14 @@
      ]
     },
     "choices": [],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": "<p>Zucchini Chips (Zucchini (74%), Gluten Free Crumbs (Rice Flour, Dextrose (Tapioca, Maize), Salt, Rice Bran), Batter (Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Dehydrated Vegetables, Potato Fibre, Mineral Salt (Sodium Bicarbonate), Canola Oil, Vegetable Gum (Guar Gum)), Water, Canola Oil), Chip Cooking Oil, Sea Salt.</p>",
+    "attributes": [
+     "DF",
+     "GFR",
+     "VE",
+     "V"
+    ]
    }
   },
   "1002848": {
@@ -14436,7 +14760,14 @@
      ]
     },
     "choices": [],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": "<p>Onion Rings (Onion (40%), Water, Rice Flour, Starches (Corn, Tapioca, Potato), Salt, Sugar, Potato Fibre, Garlic, Onion, Yellow Corn Flour, Spice (White Pepper), Raising Agent (E500ii), Thickener (E412), Canola Oil, Saltbush &amp; Black Pepper Seasoning), Chip Cooking Oil (Cottonseed Oil, Hi-Oleic Canola Oil and Hi-Oleic Sunflower Oil), Saltbush &amp; Black Pepper Seasoning (Sea Salt, Saltbush, Black Pepper).</p>",
+    "attributes": [
+     "DF",
+     "GFR",
+     "VE",
+     "V"
+    ]
    }
   },
   "1002857": {
@@ -14503,7 +14834,14 @@
      ]
     },
     "choices": [],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": "<p>Onion Rings (Onion (40%), Water, Rice Flour, Starches (Corn, Tapioca, Potato), Salt, Sugar, Potato Fibre, Garlic, Onion, Yellow Corn Flour, Spice (White Pepper), Raising Agent (E500ii), Thickener (E412), Canola Oil, Saltbush &amp; Black Pepper Seasoning), Chip Cooking Oil (Cottonseed Oil, Hi-Oleic Canola Oil and Hi-Oleic Sunflower Oil), Saltbush &amp; Black Pepper Seasoning (Sea Salt, Saltbush, Black Pepper).</p>",
+    "attributes": [
+     "DF",
+     "GFR",
+     "VE",
+     "V"
+    ]
    }
   },
   "2100": {
@@ -14564,7 +14902,13 @@
      ]
     },
     "choices": [],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": "<p>Canola oil, free range egg (13%), sugar, mustard, vinegar, herbs (1.5%), salt, natural flavour, lemon juice, citric acid, pectin, spices, natural colour.</p>\n<p><strong>Contains Egg</strong><br></p>",
+    "attributes": [
+     "DF",
+     "GFR",
+     "V"
+    ]
    }
   },
   "2101": {
@@ -14625,7 +14969,13 @@
      ]
     },
     "choices": [],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": "<p>Canola oil, free range egg (11%), sugar, water, vinegar, chilli (2.5%) (red cayenne chilli, hot chilli), salt, mustard, modified starch, natural flavour, lemon juice, garlic, ginger, citric acid, spices, natural colour.</p>\n<p><strong>Contains Egg</strong><br></p>",
+    "attributes": [
+     "DF",
+     "GFR",
+     "V"
+    ]
    }
   },
   "1000567": {
@@ -14686,7 +15036,13 @@
      ]
     },
     "choices": [],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": "<p>Canola oil, free range egg (12%), chipotle sauce (8%) (chipotle peppers, tomato puree, onion, vinegar, sugar, corn oil, salt, spices, garlic), vinegar, garlic, mustard, salt, sugar, natural flavour, lemon juice, spices, citric acid, natural colour.</p>\n<p><strong>Contains Egg</strong><br></p>",
+    "attributes": [
+     "DF",
+     "GFR",
+     "V"
+    ]
    }
   },
   "2102": {
@@ -14747,7 +15103,14 @@
      ]
     },
     "choices": [],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": "<p>Tomato (46%), sugar, water, onion, apple cider vinegar, modified starch, salt, tomato paste (0.5%), mustard seed, citric acid, spices</p>",
+    "attributes": [
+     "DF",
+     "GFR",
+     "VE",
+     "V"
+    ]
    }
   },
   "1003943": {
@@ -14808,7 +15171,14 @@
      ]
     },
     "choices": [],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": "<p>Ingredients:&nbsp;Canola&nbsp;Oil,&nbsp;Sugar,&nbsp;White&nbsp;Vinegar,&nbsp;Gherkin&nbsp;Puree&nbsp;(Gherkins,&nbsp;Acetic&nbsp;Acid),&nbsp;Dijon&nbsp;Mustard,&nbsp;Pasteurised&nbsp;Free&nbsp;Range&nbsp;Whole&nbsp;<strong>Egg,</strong>&nbsp;Tomato&nbsp;Paste,&nbsp;Water,&nbsp;Salt,&nbsp;Onions,&nbsp;Corn&nbsp;Starch,&nbsp;Herbs&nbsp;&amp;&nbsp;Spices,&nbsp;Garlic&nbsp;Powder,&nbsp;Yeast&nbsp;Extract,&nbsp;Acidity&nbsp;Regulator&nbsp;(Citric&nbsp;Acid),&nbsp;Onion&nbsp;Powder,&nbsp;Natural&nbsp;Antioxidant&nbsp;(307B),&nbsp;Vegetable&nbsp;Gum&nbsp;(Xanthan).</p><p></p><p><strong>Contains&nbsp;Egg.</strong></p>",
+    "attributes": [
+     "DF",
+     "GFR",
+     "LC",
+     "V"
+    ]
    }
   },
   "1003942": {
@@ -14869,7 +15239,15 @@
      ]
     },
     "choices": [],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": "<p>Ingredients:Water,&nbsp;Canola&nbsp;Oil,&nbsp;White&nbsp;Vinegar,&nbsp;Spices,&nbsp;Corn&nbsp;Starch,&nbsp;Dijon&nbsp;Mustard,&nbsp;Sugar,&nbsp;Salt,&nbsp;Vegetable&nbsp;Protein,&nbsp;Spice&nbsp;Extract,&nbsp;Vegetable&nbsp;Gum&nbsp;(Xanthan,&nbsp;Guar),&nbsp;Onion&nbsp;Powder,&nbsp;Acidity&nbsp;Regulator&nbsp;(Citric&nbsp;Acid),&nbsp;Natural&nbsp;Antioxidant&nbsp;(307B),&nbsp;Yeast&nbsp;Extract,&nbsp;Garlic&nbsp;Powder,&nbsp;Natural&nbsp;Flavours,&nbsp;Colour&nbsp;(Lutein).</p>",
+    "attributes": [
+     "DF",
+     "GFR",
+     "LC",
+     "VE",
+     "V"
+    ]
    }
   },
   "1003939": {
@@ -14930,7 +15308,15 @@
      ]
     },
     "choices": [],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": "<p>Ingredients:&nbsp;Canola&nbsp;Oil,&nbsp;Liquid&nbsp;Sugar,&nbsp;Water,&nbsp;White&nbsp;Vinegar,&nbsp;Apple&nbsp;Puree&nbsp;(Apple,&nbsp;Ascorbic&nbsp;Acid),&nbsp;Habanero&nbsp;Chilli&nbsp;Puree&nbsp;(4.5%),&nbsp;Dark&nbsp;Brown&nbsp;Sugar,&nbsp;Apple&nbsp;Cider&nbsp;Vinegar,&nbsp;Corn&nbsp;Starch,&nbsp;Salt,&nbsp;Spices,&nbsp;Garlic&nbsp;Powder,&nbsp;Vegetable&nbsp;Gum&nbsp;(Xanthan,&nbsp;Guar),&nbsp;Onion&nbsp;Powder,&nbsp;Natural&nbsp;Flavours,&nbsp;Acidity&nbsp;Regulator&nbsp;(Citric&nbsp;Acid).</p>",
+    "attributes": [
+     "DF",
+     "GFR",
+     "LC",
+     "VE",
+     "V"
+    ]
    }
   },
   "1003037": {
@@ -15004,7 +15390,9 @@
      {
       "title": "No Egg Mayo"
      }
-    ]
+    ],
+    "ingredients": "<p>HFC Bites (Chicken Tenderloin (76%), Batter (Water, Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Dehydrated Vegetables, Potato Fibre, Mineral Salt (500), Canola Oil, Vegetable Gum (412)), Breader (Maize Flour, Rice Flour, Potato Starch, Tapioca Starch, Dextrose (Tapioca, Maize), Salt, Sugar, Dehydrated Vegetables, Yeast Extract, Rice Bran Extract, Canola Oil), Dusting (Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Dehydrated Vegetables, Potato Fibre, Mineral Salt (500), Canola Oil, Vegetable Gum (412)), Olive Oil), Pita Pocket (Wheat Flour [(66%), Thiamine, Folic Acid], Water, Sugar, Yeast, Iodised Salt, Acidity Regulator (297), Preservative (282)), Cos Lettuce, Egg Mayo (Canola Oil, Pasteurised Free Range Whole Egg, Water, White Vinegar, Liquid Sugar, Mustard, Salt, Natural Flavour, Lemon Juice, Acidity Regulator (Citric), Natural Colour (160a (iv)), Spice Extract).</p><p><strong>Contains Egg, Gluten (Wheat).</strong></p><p><strong>May contain Milk, Sesame.</strong></p>",
+    "attributes": []
    }
   },
   "1003294": {
@@ -15073,14 +15461,18 @@
     "choices": [],
     "subtractions": [
      {
+      "title": "No Caesar Dressing"
+     },
+     {
       "title": "No Cos Lettuce"
      },
      {
       "title": "No Shaved Parmesan"
-     },
-     {
-      "title": "No Caesar Dressing"
      }
+    ],
+    "ingredients": "<p>HFC Bites (Chicken Tenderloin (76%), Batter (Water, Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Dehydrated Vegetables, Potato Fibre, Mineral Salt (500), Canola Oil, Vegetable Gum (412)), Breader (Maize Flour, Rice Flour, Potato Starch, Tapioca Starch, Dextrose (Tapioca, Maize), Salt, Sugar, Dehydrated Vegetables, Yeast Extract, Rice Bran Extract, Canola Oil), Dusting (Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Dehydrated Vegetables, Potato Fibre, Mineral Salt (500), Canola Oil, Vegetable Gum (412)), Olive Oil), Pita Pocket (Wheat Flour [(66%), Thiamine, Folic Acid], Water, Sugar, Yeast, Iodised Salt, Acidity Regulator (297), Preservative (282)), Cos Lettuce, Caesar Dressing (Canola Oil, Free Range Egg (Pasteurised), Water, Capers (3%), Vinegar, Anchovies (1.5%) (Fish), Parmesan Cheese (1.5%) (Milk), Tasty Cheese (Milk), Salt, Sugar, Mustard, Natural Flavour (Egg), Onion, Lemon Juice, Spices, Garlic, Citric Acid, Natural Colour), Parmesan Cheese (Pasteurised Milk, Salt, Starter Cultures, Enzyme (Non-Animal Rennet), Enzyme (Animal Lipase), Anticaking Agent (460), Preservative (200)).</p><p><strong>Contains Egg, Fish (Anchovies), Gluten (Wheat), Milk.</strong></p><p><strong>May contain Milk, Sesame.</strong></p>",
+    "attributes": [
+     "NA"
     ]
    }
   },
@@ -15150,14 +15542,18 @@
     "choices": [],
     "subtractions": [
      {
-      "title": "No Tasty Cheese"
+      "title": "No Dijon Mustard"
      },
      {
-      "title": "No Dijon Mustard"
+      "title": "No Tasty Cheese"
      },
      {
       "title": "No Tomato Sauce"
      }
+    ],
+    "ingredients": "<p>Slider Beef Patty (Beef (92%), Relish (7%) (Tomato (54%), Sugar, Water, Onion, Apple Cider Vinegar, Starch (from Maize), Salt, Spices, Mustard Seed, Garlic, Citric Acid), Salt, Parsley), Lo GI Slider Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Tasty Cheese (Pasteurised Milk, Salt, Starter Culture, Non-Animal Rennet), Tomato Sauce (Water, Tomato Paste (28%) (Tomato Paste, Food Acid (330)), Sugar, Vinegar, Tapioca Starch, Salt, Natural Flavour), Dijon Mustard (Mustard Seeds (19%), Salt, Vinegar, Sugar, Acetic Acid, Spices, Mustard Oil, Water).</p><p><strong>Contains Gluten (Wheat), Milk.</strong></p><p><strong>May contain Sesame.</strong></p>",
+    "attributes": [
+     "NA"
     ]
    }
   },
@@ -15356,6 +15752,10 @@
      {
       "title": "No Tomato Sauce"
      }
+    ],
+    "ingredients": "<p>Slider Beef Patty (Beef (92%), Relish (7%) (Tomato (54%), Sugar, Water, Onion, Apple Cider Vinegar, Starch (from Maize), Salt, Spices, Mustard Seed, Garlic, Citric Acid), Salt, Parsley), Lo GI Slider Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Tasty Cheese (Pasteurised Milk, Salt, Starter Culture, Non-Animal Rennet), Tomato Sauce (Water, Tomato Paste (28%) (Tomato Paste, Food Acid (330)), Sugar, Vinegar, Tapioca Starch, Salt, Natural Flavour).</p><p><strong>Contains Gluten (Wheat), Milk.</strong></p><p><strong>May contain Sesame.</strong></p>",
+    "attributes": [
+     "GFR"
     ]
    }
   },
@@ -15499,6 +15899,10 @@
      {
       "title": "No Tomato Sauce"
      }
+    ],
+    "ingredients": "<p><strong>Apple&nbsp;Juice</strong>&nbsp;(49%)&nbsp;(Reconstituted&nbsp;Apple&nbsp;Juice&nbsp;(99.9%),&nbsp;Acidity&nbsp;Regulator&nbsp;(330),&nbsp;Vitamin&nbsp;C,&nbsp;Flavour),&nbsp;<strong>Potato</strong>&nbsp;(92%),&nbsp;<strong>Coating</strong>&nbsp;(Rice&nbsp;Flour,&nbsp;Maize&nbsp;Starch,&nbsp;Salt,&nbsp;Dextrose,&nbsp;Rice&nbsp;Starch,&nbsp;Thickeners&nbsp;(412,&nbsp;415),&nbsp;Mineral&nbsp;Salt&nbsp;(500)),&nbsp;Canola&nbsp;Oil,&nbsp;<strong>Blend</strong>&nbsp;Of&nbsp;Cottonseed&nbsp;Oil,&nbsp;High&nbsp;Oleic&nbsp;Canola&nbsp;&amp;&nbsp;High&nbsp;Oleic&nbsp;Sunflower&nbsp;Oil,&nbsp;<strong>Sea&nbsp;Salt,&nbsp;Mixed&nbsp;Herbs&nbsp;Beef&nbsp;Patty</strong>&nbsp;(12%)&nbsp;(Beef&nbsp;meat&nbsp;(86%),&nbsp;Relish&nbsp;(13%)&nbsp;(Tomato&nbsp;(49%)&nbsp;(Tomato,&nbsp;Acidity&nbsp;Regulator&nbsp;(Citric&nbsp;Acid)),&nbsp;Sugar,&nbsp;Vinegar,&nbsp;Onion,&nbsp;Starch,&nbsp;Tomato&nbsp;Paste,&nbsp;Salt,&nbsp;Spices,&nbsp;Garlic),&nbsp;Salt,&nbsp;Parsley),&nbsp;<strong>Slider&nbsp;Bun</strong>(<strong>Wheat&nbsp;</strong>flour&nbsp;(contains&nbsp;thiamin,&nbsp;folic&nbsp;acid),&nbsp;Water,&nbsp;Culture,&nbsp;Canola&nbsp;Oil,&nbsp;<strong>Oat&nbsp;</strong>fibre,&nbsp;<strong>Wheat&nbsp;</strong>fibre,&nbsp;<strong>Gluten,&nbsp;</strong>Fresh&nbsp;yeast,&nbsp;Iodised&nbsp;salt,&nbsp;Thickeners&nbsp;(412,&nbsp;1413&nbsp;(<strong>Wheat</strong>)),&nbsp;Improver&nbsp;(contains&nbsp;enzyme),&nbsp;<strong>Tasty&nbsp;Cheese</strong>&nbsp;(Pasteurised&nbsp;Milk,&nbsp;Salt,&nbsp;Cultures,&nbsp;Enzyme&nbsp;(Non-Animal&nbsp;Rennet)).</p><p><strong>Contains&nbsp;Wheat,&nbsp;Milk.</strong></p><p><strong>May&nbsp;contain&nbsp;Sesame&nbsp;Seeds.</strong></p><p><br></p><p><strong>Glycemic Index Slider Bun:50</strong></p>",
+    "attributes": [
+     "GFR"
     ]
    }
   },
@@ -15697,6 +16101,10 @@
      {
       "title": "No Tomato Sauce"
      }
+    ],
+    "ingredients": "<p>Chicken Breast (Chicken Breast from RSPCA Approved Chickens), Lo GI Slider Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Tasty Cheese (Pasteurised Milk, Salt, Starter Culture, Non-Animal Rennet), Tomato Sauce (Water, Tomato Paste (28%) (Tomato Paste, Food Acid (330)), Sugar, Vinegar, Tapioca Starch, Salt, Natural Flavour).</p><p><strong>Contains Gluten (Wheat), Milk.</strong></p><p><strong>May contain Sesame.</strong></p>",
+    "attributes": [
+     "GFR"
     ]
    }
   },
@@ -15840,6 +16248,10 @@
      {
       "title": "No Tomato Sauce"
      }
+    ],
+    "ingredients": "<p><strong>Apple&nbsp;Juice</strong>&nbsp;(50%)&nbsp;(Reconstituted&nbsp;Apple&nbsp;Juice&nbsp;(99.9%),&nbsp;Acidity&nbsp;Regulator&nbsp;(330),&nbsp;Vitamin&nbsp;C,&nbsp;Flavour),&nbsp;<strong>Potato</strong>&nbsp;(92%),&nbsp;<strong>Coating</strong>&nbsp;(Rice&nbsp;Flour,&nbsp;Maize&nbsp;Starch,&nbsp;Salt,&nbsp;Dextrose,&nbsp;Rice&nbsp;Starch,&nbsp;Thickeners&nbsp;(412,&nbsp;415),&nbsp;Mineral&nbsp;Salt&nbsp;(500)),&nbsp;Canola&nbsp;Oil,&nbsp;<strong>Blend</strong>&nbsp;Of&nbsp;Cottonseed&nbsp;Oil,&nbsp;High&nbsp;Oleic&nbsp;Canola&nbsp;&amp;&nbsp;High&nbsp;Oleic&nbsp;Sunflower&nbsp;Oil,&nbsp;<strong>Sea&nbsp;Salt,&nbsp;Mixed&nbsp;Herbs</strong>&nbsp;<strong>Chicken&nbsp;Breast</strong>&nbsp;(12%),&nbsp;<strong>Slider&nbsp;Bun</strong>&nbsp;(<strong>Wheat&nbsp;</strong>flour&nbsp;(contains&nbsp;thiamin,&nbsp;folic&nbsp;acid),&nbsp;Water,&nbsp;Culture,&nbsp;Canola&nbsp;Oil,&nbsp;<strong>Oat&nbsp;</strong>fibre,&nbsp;<strong>Wheat&nbsp;</strong>fibre,&nbsp;<strong>Gluten,&nbsp;</strong>Fresh&nbsp;yeast,&nbsp;Iodised&nbsp;salt,&nbsp;Thickeners&nbsp;(412,&nbsp;1413&nbsp;(<strong>Wheat</strong>)),&nbsp;Improver&nbsp;(contains&nbsp;enzyme),<strong>Tomato&nbsp;Sauce</strong>&nbsp;(Water,&nbsp;Tomato&nbsp;Paste&nbsp;(28%)&nbsp;(Tomato&nbsp;Paste,&nbsp;Food&nbsp;Acid&nbsp;(Citric&nbsp;Acid)),&nbsp;Sugar,&nbsp;Vinegar,&nbsp;Tapioca&nbsp;Starch,&nbsp;Salt,&nbsp;Natural&nbsp;Flavour),&nbsp;<strong>Tasty&nbsp;Cheese</strong>&nbsp;(Pasteurised&nbsp;Milk,&nbsp;Salt,&nbsp;Cultures,&nbsp;Enzyme&nbsp;(Non-Animal&nbsp;Rennet)).</p><p><strong>Contains&nbsp;Wheat,&nbsp;Milk.</strong></p><p><strong>May&nbsp;contain&nbsp;Sesame&nbsp;Seeds.</strong></p><p><br></p><p><strong><span>\ufeff</span>Glycemic Index Slider Bun:50</strong></p>",
+    "attributes": [
+     "GFR"
     ]
    }
   },
@@ -16038,6 +16450,10 @@
      {
       "title": "No Tomato Sauce"
      }
+    ],
+    "ingredients": "<p>Veggie Patty (Garden Goodness) (Vegetables (77%) (Carrot, Potato, Onion, Pumpkin, Peas, Cabbage, Cauliflower, Spinach), Faba Bean Flour, Canola Oil, Maize Starch, Salt, Spice, Vegetable Gum (Guar)), Lo GI Slider Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Tasty Cheese (Pasteurised Milk, Salt, Starter Culture, Non-Animal Rennet), Tomato Sauce (Water, Tomato Paste (28%) (Tomato Paste, Food Acid (330)), Sugar, Vinegar, Tapioca Starch, Salt, Natural Flavour).</p><p><strong>Contains Gluten (Wheat), Milk.</strong></p><p><strong>May contain Sesame.</strong></p>",
+    "attributes": [
+     "V"
     ]
    }
   },
@@ -16181,6 +16597,10 @@
      {
       "title": "No Tomato Sauce"
      }
+    ],
+    "ingredients": "<p><strong>Apple Juice</strong>&nbsp;(50%) (Reconstituted Apple Juice (99.9%), Acidity Regulator (Citric Acid), Vitamin C, Flavour),&nbsp;<strong>Potato</strong> (92%), <strong>Coating</strong> (Rice Flour, Maize Starch, Salt, Dextrose, Rice Starch, Dehydrated Vegetables, Thickeners (412, 415), Mineral Salt (500)), Canola Oil, <strong>Blend</strong> Of Cottonseed Oil, High Oleic Canola &amp; High Oleic Sunflower Oil, <strong>Sea Salt, Mixed Herbs, </strong><strong>Garden Goodness Patty</strong>&nbsp;(11%) Vegetables (77%) (Carrot, potato, onion, pumpkin, peas, cabbage, cauliflower, spinach), faba bean</p><p>flour, canola oil, maize starch, salt, spice, vegetable gum (guar),&nbsp;<strong>Slider Bun</strong>&nbsp;(Wheat Flour, Water, Canola Oil, Wheat Gluten, Iodized Salt, Yeast, Malt Flour),&nbsp;<strong>Tomato Sauce</strong>&nbsp;(Water, Tomato Paste (28%) (Tomato Paste, Food Acid (Citric Acid)), Sugar, Vinegar, Tapioca Starch, Salt, Natural Flavour),&nbsp;<strong>Tasty Cheese</strong>&nbsp;(Pasteurised Milk, Salt, Cultures, Enzyme (Rennet)).</p><p><strong>Contains Wheat, Barley, Milk, Sesame Seeds.</strong></p><p><br></p><p><strong><span>\ufeff</span>Glycemic Index Slider Bun:50</strong></p>",
+    "attributes": [
+     "V"
     ]
    }
   },
@@ -16248,7 +16668,12 @@
      ]
     },
     "choices": [],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": "<p>Famous Grill'd Chips (Potato (92%), Canola Oil, Batter (Rice Flour, Maize Starch, Salt, Dextrose, Rice Starch, Thickener (412, 415), Mineral Salt (500))), HFC Bites (Chicken Tenderloin (76%), Batter (Water, Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Dehydrated Vegetables, Potato Fibre, Mineral Salt (500), Canola Oil, Vegetable Gum (412)), Breader (Maize Flour, Rice Flour, Potato Starch, Tapioca Starch, Dextrose (Tapioca, Maize), Salt, Sugar, Dehydrated Vegetables, Yeast Extract, Rice Bran Extract, Canola Oil), Dusting (Rice Flour, Maize Starch, Tapioca Starch, Potato Starch, Salt, Dehydrated Vegetables, Potato Fibre, Mineral Salt (500), Canola Oil, Vegetable Gum (412)), Olive Oil), Extra Virgin Olive Oil, Sea Salt, Chip Cooking Oil, Herb Salt.</p>",
+    "attributes": [
+     "DF",
+     "GFR"
+    ]
    }
   },
   "1002867": {
@@ -16309,7 +16734,12 @@
      ]
     },
     "choices": [],
-    "subtractions": []
+    "subtractions": [],
+    "ingredients": "<p><strong>Apple&nbsp;Juice</strong>&nbsp;(49%)&nbsp;(Reconstituted&nbsp;Apple&nbsp;Juice&nbsp;(99.9%),&nbsp;Acidity&nbsp;Regulator&nbsp;(Citric&nbsp;Acid),&nbsp;Vitamin&nbsp;C,&nbsp;Flavour),&nbsp;<strong>Healthy&nbsp;Fried&nbsp;Chicken</strong>&nbsp;(29%)&nbsp;(Chicken&nbsp;Tenderloin&nbsp;(76%),&nbsp;Batter&nbsp;(Water,&nbsp;Rice&nbsp;Flour,&nbsp;Maize&nbsp;Starch,&nbsp;Tapioca&nbsp;Starch,&nbsp;Potato&nbsp;Starch,&nbsp;Salt,&nbsp;Dehydrated&nbsp;Vegetables&nbsp;<span>(Onion,&nbsp;Garlic)</span>,&nbsp;Potato&nbsp;Fibre,&nbsp;Mineral&nbsp;Salt&nbsp;(Sodium&nbsp;Bicarbonate),&nbsp;Canola&nbsp;Oil,&nbsp;Vegetable&nbsp;Gum&nbsp;(Guar&nbsp;Gum)),&nbsp;Breader&nbsp;(Maize&nbsp;Flour,&nbsp;Rice&nbsp;Flour,&nbsp;Potato&nbsp;Starch,&nbsp;Tapioca&nbsp;Starch,&nbsp;Dextrose&nbsp;(Tapioca,&nbsp;Maize),&nbsp;Salt,&nbsp;Sugar,&nbsp;Dehydrated&nbsp;Vegetables,&nbsp;Yeast&nbsp;Extract,&nbsp;Rice&nbsp;Bran&nbsp;Extract,&nbsp;Canola&nbsp;Oil),&nbsp;Dusting&nbsp;(Rice&nbsp;Flour,&nbsp;Maize&nbsp;Starch,&nbsp;Tapioca&nbsp;Starch,&nbsp;Potato&nbsp;Starch,&nbsp;Salt,&nbsp;Dehydrated&nbsp;Vegetables,&nbsp;Potato&nbsp;Fibre,&nbsp;Mineral&nbsp;Salt&nbsp;(Sodium&nbsp;Bicarbonate),&nbsp;Canola&nbsp;Oil,&nbsp;Vegetable&nbsp;Gum&nbsp;(Guar&nbsp;Gum)),&nbsp;Canola&nbsp;Oil),&nbsp;<strong>Potato</strong>&nbsp;(92%),&nbsp;<strong>Coating</strong>&nbsp;(Rice&nbsp;Flour,&nbsp;Maize&nbsp;Starch,&nbsp;Salt,&nbsp;Dextrose,&nbsp;Rice&nbsp;Starch,&nbsp;Dehydrated&nbsp;Vegetables,&nbsp;Thickeners&nbsp;(412,&nbsp;415),&nbsp;Mineral&nbsp;Salt&nbsp;(500)),&nbsp;Canola&nbsp;Oil,&nbsp;<strong>Blend</strong>&nbsp;Of&nbsp;Cottonseed&nbsp;Oil,&nbsp;High&nbsp;Oleic&nbsp;Canola&nbsp;&amp;&nbsp;High&nbsp;Oleic&nbsp;Sunflower&nbsp;Oil,&nbsp;<strong>Sea&nbsp;Salt,&nbsp;Mixed&nbsp;Herbs.</strong></p>",
+    "attributes": [
+     "DF",
+     "GFR"
+    ]
    }
   },
   "1000801": {
@@ -16639,23 +17069,27 @@
     ],
     "subtractions": [
      {
-      "title": "No Tasty Cheese"
+      "title": "No Carrot"
      },
      {
       "title": "No Cos Lettuce"
      },
      {
-      "title": "No Carrot"
-     },
-     {
       "title": "No Egg Mayo"
      },
      {
-      "title": "No Beef Patty"
+      "title": "No Tasty Cheese"
      },
      {
       "title": "No Tomato Sauce"
+     },
+     {
+      "title": "No Beef Patty"
      }
+    ],
+    "ingredients": "<p>Beef Patty (Beef (92%), Relish (7%) (Tomato (54%), Sugar, Water, Onion, Apple Cider Vinegar, Starch (from Maize), Salt, Spices, Mustard Seed, Garlic, Citric Acid), Salt, Parsley), High Fibre Lo GI Panini Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Carrot, Cos Lettuce, Egg Mayo (Canola Oil, Pasteurised Free Range Whole Egg, Water, White Vinegar, Liquid Sugar, Mustard, Salt, Natural Flavour, Lemon Juice, Acidity Regulator (Citric), Natural Colour (160a (iv)), Spice Extract), Tomato Sauce (Water, Tomato Paste (28%) (Tomato Paste, Food Acid (330)), Sugar, Vinegar, Tapioca Starch, Salt, Natural Flavour), Tasty Cheese (Pasteurised Milk, Salt, Starter Culture, Non-Animal Rennet).</p><p><strong>Contains Egg, Gluten (Wheat), Milk.</strong></p><p><strong>May contain Sesame.</strong></p><p><strong>Bun glycemic index: 50</strong></p>",
+    "attributes": [
+     "GFR"
     ]
    }
   },
@@ -16986,23 +17420,27 @@
     ],
     "subtractions": [
      {
-      "title": "No Tasty Cheese"
+      "title": "No Carrot"
      },
      {
       "title": "No Cos Lettuce"
      },
      {
-      "title": "No Carrot"
-     },
-     {
       "title": "No Egg Mayo"
      },
      {
-      "title": "No Chicken Breast"
+      "title": "No Tasty Cheese"
      },
      {
       "title": "No Tomato Sauce"
+     },
+     {
+      "title": "No Chicken Breast"
      }
+    ],
+    "ingredients": "<p>Chicken Breast (Chicken Breast from RSPCA Approved Chickens), High Fibre Lo GI Panini Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Carrot, Cos Lettuce, Egg Mayo (Canola Oil, Pasteurised Free Range Whole Egg, Water, White Vinegar, Liquid Sugar, Mustard, Salt, Natural Flavour, Lemon Juice, Acidity Regulator (Citric), Natural Colour (160a (iv)), Spice Extract), Tomato Sauce (Water, Tomato Paste (28%) (Tomato Paste, Food Acid (330)), Sugar, Vinegar, Tapioca Starch, Salt, Natural Flavour), Tasty Cheese (Pasteurised Milk, Salt, Starter Culture, Non-Animal Rennet).</p><p><strong>Contains Egg, Gluten (Wheat), Milk.</strong></p><p><strong>May contain Sesame.</strong></p><p><strong>Bun glycemic index: 50</strong></p>",
+    "attributes": [
+     "GFR"
     ]
    }
   },
@@ -17333,16 +17771,16 @@
     ],
     "subtractions": [
      {
-      "title": "No Tasty Cheese"
+      "title": "No Carrot"
      },
      {
       "title": "No Cos Lettuce"
      },
      {
-      "title": "No Carrot"
+      "title": "No Egg Mayo"
      },
      {
-      "title": "No Egg Mayo"
+      "title": "No Tasty Cheese"
      },
      {
       "title": "No Tomato Sauce"
@@ -17350,6 +17788,11 @@
      {
       "title": "No Garden Patty"
      }
+    ],
+    "ingredients": "<p>Veggie Patty (Garden Goodness) (Vegetables (77%) (Carrot, Potato, Onion, Pumpkin, Peas, Cabbage, Cauliflower, Spinach), Faba Bean Flour, Canola Oil, Maize Starch, Salt, Spice, Vegetable Gum (Guar)), High Fibre Lo GI Panini Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Carrot, Cos Lettuce, Egg Mayo (Canola Oil, Pasteurised Free Range Whole Egg, Water, White Vinegar, Liquid Sugar, Mustard, Salt, Natural Flavour, Lemon Juice, Acidity Regulator (Citric), Natural Colour (160a (iv)), Spice Extract), Tomato Sauce (Water, Tomato Paste (28%) (Tomato Paste, Food Acid (330)), Sugar, Vinegar, Tapioca Starch, Salt, Natural Flavour), Tasty Cheese (Pasteurised Milk, Salt, Starter Culture, Non-Animal Rennet).</p><p><strong>Contains Egg, Gluten (Wheat), Milk.</strong></p><p><strong>May contain Sesame.</strong></p><p><strong>Bun glycemic index: 50</strong></p>",
+    "attributes": [
+     "GFR",
+     "V"
     ]
    }
   },
@@ -17683,11 +18126,16 @@
       "title": "No Tasty Cheese"
      },
      {
-      "title": "No Beef Patty"
+      "title": "No Tomato Sauce"
      },
      {
-      "title": "No Tomato Sauce"
+      "title": "No Beef Patty"
      }
+    ],
+    "ingredients": "<p>Beef Patty (Beef (92%), Relish (7%) (Tomato (54%), Sugar, Water, Onion, Apple Cider Vinegar, Starch (from Maize), Salt, Spices, Mustard Seed, Garlic, Citric Acid), Salt, Parsley), High Fibre Lo GI Panini Bun (Wheat Flour (contains thiamin, folic acid), Water, Canola Oil, Culture, Oat Fibre, Wheat Fibre (Gluten), Fresh Yeast, Iodised Salt, Thickeners (412, 1413 (Wheat)), Improver (contains enzyme)), Tomato Sauce (Water, Tomato Paste (28%) (Tomato Paste, Food Acid (330)), Sugar, Vinegar, Tapioca Starch, Salt, Natural Flavour), Tasty Cheese (Pasteurised Milk, Salt, Starter Culture, Non-Animal Rennet).</p><p><strong>Contains Gluten (Wheat), Milk.</strong></p><p><strong>May contain Sesame.</strong></p><p><strong>Bun glycemic index: 50</strong></p>",
+    "attributes": [
+     "GFR",
+     "LC"
     ]
    }
   }
