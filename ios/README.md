@@ -56,7 +56,7 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   shared widget snapshot, which Leanr refreshes whenever Health reports new steps (HealthKit background delivery). Google's health
   data has no iPhone API, so only Apple Health is read. Apple Health itself combines the iPhone, a watch and anything
   else that writes steps to it.
-- Weekly check-in (Today when it's due, and Progress): measured maintenance (as above) plus the chosen pace in kg a week
+- Weekly check-in (on Progress, first in the list by default): measured maintenance (as above) plus the chosen pace in kg a week
   gives a new calorie target, at most 300 Cal from the current one per check-in and never under 1,200 (`CheckIn`). Protein
   stays; carbs and fat are rescaled in the same proportions. Accepting or keeping the targets records the check-in
   (`AppData.checkIns`, last 52) and the next one is due a week later. The pace defaults from the weight goal.

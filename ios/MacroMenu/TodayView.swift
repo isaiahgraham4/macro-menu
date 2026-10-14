@@ -93,24 +93,23 @@ struct TodayView: View {
                     Button("Edit") { editingTargets = true }.font(.roboto(.subheadline, weight: .medium)).textCase(nil)
                 }
             }
-            if isToday && CheckIn.showOnToday(store) {
-                Section { CheckInRow() }
-            }
             Section("Log food") {
                 Picker("Log to", selection: $mealTime) {
                     ForEach(MealTime.allCases) { Text($0.title).tag($0) }
                 }
-                Button { barcode = true } label: { Label("Scan product barcode", systemImage: "barcode.viewfinder") }
-                if MealPhoto.canOffer {
-                    Button { photo = true } label: { Label("Photo of your meal", systemImage: "camera.viewfinder") }
+                // The three ways to add food sit side by side; at the largest text sizes they stack so no label breaks.
+                let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(spacing: 10)) : AnyLayout(HStackLayout(spacing: 10))
+                layout {
+                    LogMethodButton(title: "Scan", label: "Scan product barcode", systemImage: "barcode.viewfinder") { barcode = true }
+                    if MealPhoto.canOffer {
+                        LogMethodButton(title: "Photo", label: "Photo of your meal", systemImage: "camera.viewfinder") { photo = true }
+                    }
+                    LogMethodButton(title: "Describe", label: "Describe your meal", systemImage: "text.bubble") { describing = true }
                 }
-                Button { describing = true } label: { Label("Describe your meal", systemImage: "text.bubble") }
+                .listRowInsets(EdgeInsets(top: 10, leading: 16, bottom: 10, trailing: 16))
                 NavigationLink { PlanView() } label: { Label("Plan ahead", systemImage: "calendar.badge.plus") }
             }
             PlannedSection(date: date)
-            Section {
-                BodySummary()
-            }
             ForEach(MealTime.allCases) { category in
                 let meals = entries.filter { $0.mealTime == category }
                 Section {
@@ -575,5 +574,29 @@ struct TargetCalculator: View {
             }
         }.navigationTitle("Estimate targets").toolbar { Button("Cancel") { dismiss() } }
             .onAppear { if let last = points.last { weight = last.trend.tenth } }
+    }
+}
+
+/// One way to add food: an icon over a short word, filling its share of the row.
+private struct LogMethodButton: View {
+    let title: String
+    /// What VoiceOver says, which is fuller than the word on the button.
+    let label: String
+    let systemImage: String
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            VStack(spacing: 6) {
+                Image(systemName: systemImage).font(.title2).frame(height: 28)
+                Text(title).font(.roboto(.subheadline, weight: .medium)).lineLimit(1).minimumScaleFactor(0.8)
+            }
+            .frame(maxWidth: .infinity, minHeight: 64)
+            .background(.tint.opacity(0.14), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .contentShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+        }
+        .buttonStyle(.plain)
+        .foregroundStyle(.tint)
+        .accessibilityLabel(label)
     }
 }

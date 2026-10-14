@@ -167,9 +167,3 @@ struct CheckInRow: View {
     }
 }
 
-extension CheckIn {
-    /// Whether to put the check-in on Today: it's due and there's a suggestion to look at.
-    @MainActor static func showOnToday(_ store: AppStore) -> Bool {
-        isDue(store.data) && suggestion(store.data, goals: store.goals, pace: pace(store.data)) != nil
-    }
-}

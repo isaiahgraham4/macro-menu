@@ -4,6 +4,7 @@ import Charts
 /// Progress: weight, measurements and photos, and a breakdown of the last week, month or three months of logging.
 struct ProgressTabView: View {
     @Environment(AppStore.self) private var store
+    @Environment(HealthSync.self) private var health
     @AppStorage("progress.range") private var range = 30
     @AppStorage(MacroColours.proteinKey) private var proteinColour = "blue"
     @AppStorage(MacroColours.carbsKey) private var carbsColour = "orange"
@@ -138,6 +139,14 @@ struct ProgressTabView: View {
                             Text("Log your weight").font(.roboto(.headline))
                             Text("See your trend, set a goal and a projected date").font(.roboto(.caption)).foregroundStyle(.secondary)
                         }
+                    }
+                    Spacer()
+                    if let active = health.activeEnergyToday {
+                        VStack(alignment: .trailing, spacing: 3) {
+                            Text("\(active.rounded().number) Cal").font(.roboto(.headline)).monospacedDigit()
+                            Text("active today").font(.roboto(.caption)).foregroundStyle(.secondary)
+                        }
+                        .accessibilityElement(children: .combine)
                     }
                 }.padding(.vertical, 4)
             }
