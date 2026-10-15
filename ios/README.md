@@ -132,10 +132,15 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   button, 500 mL, or 750 mL when the glass is already 500.
 - Log again widget (Home Screen and Lock Screen): the usual meal for this time of
   day, then pinned foods, each with a log button. `LogAgainIntent`
-  (`Shared/LogAgain.swift`) is a Live Activity intent, so it runs in the app's
-  process and logs through the normal store (Health and iCloud included). If it
-  ever runs in the widget instead, the request is queued in the App Group and
-  logged when Leanr next starts. A repeat tap within 10 seconds is ignored.
+  (`Shared/LogAgain.swift`) runs inside the widget, so a tap shows at once: the
+  widget adds the meal, water or planned meal's calories and nutrients to the
+  snapshot (`QuickLogQueue.showQueued`), reloads only the widgets that changed
+  (`WidgetCalories.kindsChanged`, the tapped one first) and queues the request in
+  the App Group. Leanr logs it, with Health and iCloud, when it next starts, comes
+  to the front or is woken by Health (about hourly), and then rewrites the
+  snapshot. (Run as a Live Activity intent it launched Leanr in the background and
+  the system held the widget for several seconds.) A repeat tap within 10 seconds
+  is ignored.
 - Siri and Shortcuts: "Log my usual lunch in Leanr" logs the meal most often
   logged to that meal time in the last 30 days. "What fits at KFC in Leanr"
   runs the finder against what's left of today's targets (capped at your typical

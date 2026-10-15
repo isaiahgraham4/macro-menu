@@ -72,8 +72,8 @@ struct WaterWidgetView: View {
                 HStack(spacing: 8) {
                     VStack(alignment: .leading, spacing: 2) {
                         Label("Water", systemImage: "drop.fill").font(.caption2.weight(.semibold)).widgetAccentable()
-                        Text(amount(drunk)).font(.headline).minimumScaleFactor(0.7).lineLimit(1)
-                        Gauge(value: progress) { EmptyView() }.gaugeStyle(.accessoryLinearCapacity)
+                        Text(amount(drunk)).font(.headline).minimumScaleFactor(0.7).lineLimit(1).invalidatableContent()
+                        Gauge(value: progress) { EmptyView() }.gaugeStyle(.accessoryLinearCapacity).invalidatableContent()
                     }
                     Button(intent: LogAgainIntent(option: WidgetCalories.waterOption(glass))) {
                         Image(systemName: "plus.circle.fill").font(.title2)
@@ -85,9 +85,9 @@ struct WaterWidgetView: View {
                     VStack(alignment: .leading, spacing: 6) {
                         Label("Water", systemImage: "drop.fill").font(.roboto(.caption, weight: .semibold)).foregroundStyle(.cyan)
                         Spacer(minLength: 0)
-                        Text(amount(drunk)).font(.roboto(.title, weight: .bold)).minimumScaleFactor(0.7).lineLimit(1).monospacedDigit()
+                        Text(amount(drunk)).font(.roboto(.title, weight: .bold)).minimumScaleFactor(0.7).lineLimit(1).monospacedDigit().invalidatableContent()
                         Text(drunk >= target ? "Target reached" : "of \(amount(target))").font(.roboto(.caption)).foregroundStyle(.secondary)
-                        Gauge(value: progress) { EmptyView() }.gaugeStyle(.linearCapacity).tint(.cyan).accessibilityHidden(true)
+                        Gauge(value: progress) { EmptyView() }.gaugeStyle(.linearCapacity).tint(.cyan).accessibilityHidden(true).invalidatableContent()
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     VStack(spacing: 8) {
@@ -106,9 +106,9 @@ struct WaterWidgetView: View {
                 VStack(alignment: .leading, spacing: 6) {
                     Label("Water", systemImage: "drop.fill").font(.roboto(.caption, weight: .semibold)).foregroundStyle(.cyan)
                     Spacer(minLength: 0)
-                    Text(amount(drunk)).font(.roboto(.title2, weight: .bold)).minimumScaleFactor(0.7).lineLimit(1).monospacedDigit()
+                    Text(amount(drunk)).font(.roboto(.title2, weight: .bold)).minimumScaleFactor(0.7).lineLimit(1).monospacedDigit().invalidatableContent()
                     Text(drunk >= target ? "Target reached" : "of \(amount(target))").font(.roboto(.caption)).foregroundStyle(.secondary)
-                    Gauge(value: progress) { EmptyView() }.gaugeStyle(.linearCapacity).tint(.cyan).accessibilityHidden(true)
+                    Gauge(value: progress) { EmptyView() }.gaugeStyle(.linearCapacity).tint(.cyan).accessibilityHidden(true).invalidatableContent()
                     Spacer(minLength: 0)
                     Button(intent: LogAgainIntent(option: WidgetCalories.waterOption(glass))) {
                         Label("+ \(amount(glass))", systemImage: "drop.fill").labelStyle(.titleOnly)

@@ -90,7 +90,7 @@ struct LogAgainWidgetView: View {
             HStack(spacing: 6) {
                 VStack(alignment: .leading, spacing: 1) {
                     Text(logged(option) ? "Logged today" : "Log again").font(.roboto(.caption, weight: .semibold))
-                    Text(option.name).font(.roboto(.headline)).lineLimit(1).minimumScaleFactor(0.7)
+                    Text(option.name).font(.roboto(.headline)).lineLimit(1).minimumScaleFactor(0.7).invalidatableContent()
                     Text("\(calories(option)) Cal · \(detail(option))").font(.roboto(.caption)).lineLimit(1)
                 }
                 Spacer(minLength: 0)
@@ -105,7 +105,7 @@ struct LogAgainWidgetView: View {
         VStack(alignment: .leading, spacing: 4) {
             Label("Log again", systemImage: "arrow.uturn.backward").font(.roboto(.caption, weight: .semibold)).foregroundStyle(accent)
             Spacer(minLength: 0)
-            Text(option.name).font(.roboto(.headline)).lineLimit(2).minimumScaleFactor(0.8)
+            Text(option.name).font(.roboto(.headline)).lineLimit(2).minimumScaleFactor(0.8).invalidatableContent()
             Text("\(calories(option)) Cal · \(detail(option))").font(.roboto(.caption)).foregroundStyle(.secondary).lineLimit(1)
             Spacer(minLength: 0)
             logButton(option, title: true)
@@ -125,7 +125,7 @@ struct LogAgainWidgetView: View {
             ForEach(options.prefix(3)) { option in
                 HStack(spacing: 8) {
                     VStack(alignment: .leading, spacing: 1) {
-                        Text(option.name).font(.roboto(.subheadline, weight: .semibold)).lineLimit(1)
+                        Text(option.name).font(.roboto(.subheadline, weight: .semibold)).lineLimit(1).invalidatableContent()
                         Text("\(calories(option)) Cal · \(detail(option))").font(.roboto(.caption)).foregroundStyle(.secondary).lineLimit(1)
                     }
                     Spacer(minLength: 0)

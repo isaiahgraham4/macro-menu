@@ -151,6 +151,8 @@ struct WidgetQuickLog: Codable, Equatable, Identifiable, Sendable {
     var mealTime: String?
     /// The day it was last logged ("yyyy-MM-dd") when the snapshot was made, to show a tick once it's in today's log.
     var lastLogged: String?
+    /// Its protein, carbs, fat and other targeted nutrients, so a tap can be shown in those widgets straight away.
+    var nutrients: [String: Double]? = nil
     var isUsual: Bool { id.hasPrefix("usual:") }
 }
 
@@ -195,6 +197,30 @@ extension WidgetCalories {
     }
 }
 
+extension WidgetCalories {
+    static let allKinds = [waterKind, plannedKind, logAgainKind, stepsKind, kind, premiumKind, macrosKind, streakKind]
+
+    /// The widgets that a change from `old` to this affects, with the ones people tap first at the front: a tap on a widget shows its
+    /// result as soon as that widget reloads, so water or a planned meal doesn't wait behind the calorie widgets.
+    func kindsChanged(from old: WidgetCalories?) -> [String] {
+        guard let old else { return Self.allKinds }
+        // Colours and Premium change how every widget looks.
+        if accent != old.accent || premiumUnlocked != old.premiumUnlocked || macroColours != old.macroColours { return Self.allKinds }
+        var kinds: [String] = []
+        func add(_ new: [String]) { for k in new where !kinds.contains(k) { kinds.append(k) } }
+        if water != old.water || waterTarget != old.waterTarget || waterGlass != old.waterGlass { add([Self.waterKind]) }
+        if planned != old.planned || plannedDay != old.plannedDay { add([Self.plannedKind]) }
+        if quickLogOptions != old.quickLogOptions { add([Self.logAgainKind]) }
+        if steps != old.steps || stepGoal != old.stepGoal { add([Self.stepsKind]) }
+        if dailyCalories != old.dailyCalories || target != old.target || nutrientTargets != old.nutrientTargets
+            || dailyNutrients != old.dailyNutrients || dailyPartialNutrients != old.dailyPartialNutrients || trackedDays != old.trackedDays {
+            // Log again and Planned show calories left, too.
+            add([Self.logAgainKind, Self.plannedKind, Self.kind, Self.premiumKind, Self.macrosKind, Self.streakKind])
+        }
+        return kinds
+    }
+}
+
 /// Requests from the widget that Leanr couldn't log straight away. The app logs them, with their original time, next time it runs.
 enum QuickLogQueue {
     struct Request: Codable, Equatable, Sendable { var option: String; var date: Date }
@@ -213,28 +239,43 @@ enum QuickLogQueue {
     }
     static func add(_ option: String, at date: Date) { write(read() + [Request(option: option, date: date)]) }
 
-    /// Shows a queued request on the widgets straight away: its calories in today's total and a tick on the option.
-    static func showQueued(_ option: String, at date: Date) {
-        guard var snapshot = WidgetCalories.read(), let url = WidgetCalories.fileURL else { return }
+    /// Shows a queued request on the widgets straight away: its calories and nutrients in today's totals, a tick on the option,
+    /// a planned meal gone from the plan or the water added. Returns the widgets that changed, tapped-on one first, to reload.
+    @discardableResult static func showQueued(_ option: String, at date: Date) -> [String] {
+        guard let old = WidgetCalories.read(), let url = WidgetCalories.fileURL, let snapshot = old.applying(option, at: date) else { return [] }
+        try? JSONEncoder().encode(snapshot).write(to: url, options: [.atomic, .completeFileProtectionUntilFirstUserAuthentication])
+        return snapshot.kindsChanged(from: old)
+    }
+}
+
+extension WidgetCalories {
+    /// This snapshot with a widget tap shown in it, or nil when the option isn't one it knows (so there's nothing to show).
+    func applying(_ option: String, at date: Date) -> WidgetCalories? {
+        var snapshot = self
         let day = WidgetCalories.dayKey(date)
-        // Water: added to today's total straight away.
+        func addNutrients(_ item: WidgetQuickLog) {
+            for (key, value) in item.nutrients ?? [:] where value.isFinite && value > 0 {
+                snapshot.dailyNutrients?[day, default: [:]][key, default: 0] += value
+            }
+        }
         if let amount = WidgetCalories.waterAmount(option) {
             var water = snapshot.water ?? [:]
             water[day, default: 0] += amount
             snapshot.water = water
-            try? JSONEncoder().encode(snapshot).write(to: url, options: [.atomic, .completeFileProtectionUntilFirstUserAuthentication])
-            return
+            return snapshot
         }
         // A planned meal leaves the Planned widget once it's logged.
         if let item = snapshot.planned?.first(where: { $0.id == option }) {
             snapshot.planned?.removeAll { $0.id == option }
             snapshot.dailyCalories[day, default: 0] += item.calories
+            addNutrients(item)
         } else {
-            guard let index = snapshot.quickLogOptions?.firstIndex(where: { $0.id == option }), let item = snapshot.quickLogOptions?[index] else { return }
+            guard let index = snapshot.quickLogOptions?.firstIndex(where: { $0.id == option }), let item = snapshot.quickLogOptions?[index] else { return nil }
             snapshot.dailyCalories[day, default: 0] += item.calories
+            addNutrients(item)
             snapshot.quickLogOptions?[index].lastLogged = day
         }
         snapshot.trackedDays = Array(Set((snapshot.trackedDays ?? []) + [day])).sorted()
-        try? JSONEncoder().encode(snapshot).write(to: url, options: [.atomic, .completeFileProtectionUntilFirstUserAuthentication])
+        return snapshot
     }
 }

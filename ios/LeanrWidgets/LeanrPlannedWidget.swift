@@ -70,7 +70,7 @@ struct PlannedWidgetView: View {
             HStack(spacing: 6) {
                 VStack(alignment: .leading, spacing: 1) {
                     Text("Next · \(mealTitle(meal))").font(.roboto(.caption, weight: .semibold))
-                    Text(meal.name).font(.roboto(.headline)).lineLimit(1).minimumScaleFactor(0.7)
+                    Text(meal.name).font(.roboto(.headline)).lineLimit(1).minimumScaleFactor(0.7).invalidatableContent()
                     Text("\(calories(meal)) Cal\(meals.count > 1 ? " · \(meals.count - 1) more planned" : "")").font(.roboto(.caption)).lineLimit(1)
                 }
                 Spacer(minLength: 0)
@@ -85,7 +85,7 @@ struct PlannedWidgetView: View {
         VStack(alignment: .leading, spacing: 4) {
             Label("Next · \(mealTitle(meal))", systemImage: "calendar").font(.roboto(.caption, weight: .semibold)).foregroundStyle(accent)
             Spacer(minLength: 0)
-            Text(meal.name).font(.roboto(.headline)).lineLimit(2).minimumScaleFactor(0.8)
+            Text(meal.name).font(.roboto(.headline)).lineLimit(2).minimumScaleFactor(0.8).invalidatableContent()
             Text("\(calories(meal)) Cal\(meals.count > 1 ? " · \(meals.count - 1) more" : "")").font(.roboto(.caption)).foregroundStyle(.secondary).lineLimit(1)
             Spacer(minLength: 0)
             tick(meal, title: true)
@@ -105,7 +105,7 @@ struct PlannedWidgetView: View {
             ForEach(meals.prefix(3)) { meal in
                 HStack(spacing: 8) {
                     VStack(alignment: .leading, spacing: 1) {
-                        Text(meal.name).font(.roboto(.subheadline, weight: .semibold)).lineLimit(1)
+                        Text(meal.name).font(.roboto(.subheadline, weight: .semibold)).lineLimit(1).invalidatableContent()
                         Text("\(mealTitle(meal)) · \(calories(meal)) Cal").font(.roboto(.caption)).foregroundStyle(.secondary).lineLimit(1)
                     }
                     Spacer(minLength: 0)

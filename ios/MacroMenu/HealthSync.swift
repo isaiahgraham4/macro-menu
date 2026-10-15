@@ -227,6 +227,8 @@ final class HealthSync {
         let query = HKObserverQuery(sampleType: Self.stepCount, predicate: nil) { [weak self] _, completion, _ in
             nonisolated(unsafe) let finish = completion
             Task { @MainActor in
+                // Health wakes Leanr in the background about hourly: a good moment to log what the widgets queued.
+                AppServices.logQueued()
                 await self?.refreshSteps()
                 finish()
             }

@@ -82,6 +82,39 @@ import UniformTypeIdentifiers
         let wheatUnknown = catalog.foods.first { ($0.diet?.al ?? []).contains("gluten") && ($0.diet?.unk ?? []).contains("wheat") }!
         assert(!DietFilter(options: [.wheat]).allows(wheatUnknown))
         assert(!DietFilter(options: [.wheat]).allows(byID["grilld:simply-grill-d"]!) && DietInfo.guess("Sultanas").al == ["sulphites"])
+        // A tap on a widget reloads that widget first, and only the widgets it changes.
+        var widgetBefore = WidgetCalories(target: 2200, dailyCalories: ["2026-10-15": 400])
+        widgetBefore.water = ["2026-10-15": 250]; widgetBefore.planned = []; widgetBefore.plannedDay = "2026-10-15"
+        var widgetWater = widgetBefore; widgetWater.water = ["2026-10-15": 750]
+        assert(widgetWater.kindsChanged(from: widgetBefore) == [WidgetCalories.waterKind])
+        var widgetPlanned = widgetBefore
+        widgetPlanned.planned = []; widgetPlanned.dailyCalories["2026-10-15"] = 1000
+        assert(widgetPlanned.kindsChanged(from: widgetBefore).first == WidgetCalories.logAgainKind && !widgetPlanned.kindsChanged(from: widgetBefore).contains(WidgetCalories.waterKind))
+        var widgetPlannedOld = WidgetCalories(target: 2200, dailyCalories: ["2026-10-15": 400])
+        widgetPlannedOld.planned = [WidgetQuickLog(id: "plan:1", name: "Lunch", calories: 600, mealTime: "lunch")]; widgetPlannedOld.plannedDay = "2026-10-15"
+        var widgetPlannedLogged = widgetPlannedOld; widgetPlannedLogged.planned = []; widgetPlannedLogged.dailyCalories["2026-10-15"] = 1000
+        assert(widgetPlannedLogged.kindsChanged(from: widgetPlannedOld).first == WidgetCalories.plannedKind)
+        var widgetRecoloured = widgetBefore; widgetRecoloured.accent = "orange"
+        assert(widgetRecoloured.kindsChanged(from: widgetBefore).count == WidgetCalories.allKinds.count && widgetBefore.kindsChanged(from: nil).count == WidgetCalories.allKinds.count)
+        // A tap shows in the widgets at once: water, a planned meal leaving the plan, and a pinned food's tick, with its nutrients.
+        var tapped = WidgetCalories(target: 2200, dailyCalories: ["2026-10-15": 400])
+        tapped.dailyNutrients = ["2026-10-15": ["p": 30, "c": 40, "f": 10]]
+        tapped.water = ["2026-10-15": 250]; tapped.plannedDay = "2026-10-15"
+        tapped.planned = [WidgetQuickLog(id: "plan:a", name: "Lunch", calories: 600, mealTime: "lunch", nutrients: ["p": 40, "c": 50, "f": 20]),
+                          WidgetQuickLog(id: "plan:b", name: "Dinner", calories: 700, mealTime: "dinner")]
+        tapped.quickLogOptions = [WidgetQuickLog(id: "pin:x", name: "Shake", calories: 200, nutrients: ["p": 25, "c": 10, "f": 3])]
+        let tapDay = Date(timeIntervalSince1970: 1_792_000_000)
+        var tappedDay = tapped; let tapKey = WidgetCalories.dayKey(tapDay)
+        tappedDay.dailyCalories = [tapKey: 400]; tappedDay.dailyNutrients = [tapKey: ["p": 30, "c": 40, "f": 10]]; tappedDay.water = [tapKey: 250]
+        tappedDay.plannedDay = tapKey
+        let afterWaterTap = tappedDay.applying("water:500", at: tapDay)!
+        assert(afterWaterTap.water?[tapKey] == 750 && afterWaterTap.dailyCalories[tapKey] == 400 && afterWaterTap.kindsChanged(from: tappedDay) == [WidgetCalories.waterKind])
+        let afterPlanTap = tappedDay.applying("plan:a", at: tapDay)!
+        assert(afterPlanTap.planned?.map(\.id) == ["plan:b"] && afterPlanTap.dailyCalories[tapKey] == 1000
+               && afterPlanTap.dailyNutrients?[tapKey]?["p"] == 70 && afterPlanTap.kindsChanged(from: tappedDay).first == WidgetCalories.plannedKind)
+        let afterPinTap = tappedDay.applying("pin:x", at: tapDay)!
+        assert(afterPinTap.quickLogOptions?.first?.lastLogged == tapKey && afterPinTap.dailyNutrients?[tapKey]?["f"] == 13)
+        assert(tappedDay.applying("pin:unknown", at: tapDay) == nil && tappedDay.applying("water:0", at: tapDay) == nil)
         // Allergen guides: Domino's, Boost, Oporto, Red Rooster, Spud Bar, Schnitz, Zambrero and Guzman y Gomez too.
         for chain in ["dominos", "boost", "oporto", "rr", "spud", "schnitz", "zam", "gyg", "mcd", "kfc", "sub"] {
             assert(catalog.foods.contains { $0.chain == chain && $0.diet?.al != nil }, chain)
