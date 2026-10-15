@@ -14,13 +14,16 @@ them in a guide, a chart or a nutrition page, and this reads those, the same way
   Where a description leaves a choice open (which beans, which salsa), an allergen in only some of the choices is
   "may contain".
 
-McDonald's, KFC and Subway publish theirs in places this can't reach without getting past bot protection, so they're not here.
+- Subway: its allergen guide PDF (subs, wraps, salads, breakfast, sides, cookies, mini subs and breads), and its rice bowl guide.
+- McDonald's and KFC show theirs only inside their own pages. Those were read once in a normal browser (McDonald's own
+  itemDetails data that each item page loads, and each item's "More Info" panel in KFC's guide) and saved as
+  mcd-allergens.json and kfc-allergens.json, which `build` reads. KFC's combos, boxes and feasts have no allergen panel.
 
 Usage:
     python3 ios/Scripts/allergen-guides.py fetch   # downloads and reads the guides into allergen-source.json (about 12 requests)
     python3 ios/Scripts/allergen-guides.py build   # matches them to the exported menu, into allergen-items.json (diet-info.py reads it)
 """
-import html, json, re, subprocess, sys, tempfile, time
+import collections, html, json, re, subprocess, sys, tempfile, time
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -58,6 +61,12 @@ def link(page_url, pattern):
         if re.search(pattern, href, re.I):
             return href if href.startswith("http") else re.match(r"https?://[^/]+", page_url).group(0) + href
     raise SystemExit(f"No link matching {pattern} on {page_url}")
+
+
+def get_http1(url, binary=False):
+    """For sites whose servers drop HTTP/2 requests from curl."""
+    out = subprocess.run(["curl", "-sfL", "--http1.1", "-m", "120", url], capture_output=True, check=True).stdout
+    return out if binary else out.decode("utf-8", "replace")
 
 
 def pdf(url):
@@ -380,6 +389,101 @@ def gyg():
     return {"parts": parts, "builds": builds, "ingredients": ingredients}
 
 
+SUBWAY_COLUMNS = [("egg", "Egg"), ("fish", "Fish"), ("milk", "Milk"), ("sesame", "Sesame"), ("shellfish", "Crustaceans"), ("mollusc", "Mollusc"),
+                  ("soy", "Soy"), ("peanut", "Peanut"), ("almond", "Almond"), ("brazil", "Brazil"), ("cashew", "Cashew"), ("hazelnut", "Hazelnut"),
+                  ("macadamia", "Macadamia"), ("pecan", "Pecan"), ("pinenut", "Pine"), ("pistachio", "Pistachio"), ("walnut", "Walnut"),
+                  ("lupin", "Lupin"), ("wheat", "Wheat"), ("gluten", "Gluten"), ("sulphites", "Sulphites"), ("yeast", "Autolyzed"),
+                  ("nitrites", "Nitrites/Nitrates")]
+# The section headings in Subway's guide, in the order they appear; recipes repeat under Subs, Wraps and Salads.
+SUBWAY_SECTIONS = ["Mini Subs", "Breakfast", "Sides & Snacks", "Cookies", "Smoothies", "Bread", "Rice Bowls", "Bread & Rice Items", "Sauces & Dressings"]
+
+
+def subway_grid(doc):
+    """Subway's allergen guide: recipes down the page, an allergen in each column, ● contains and * may contain."""
+    out, section, seen = {}, "Subs", collections.Counter()
+    for page in doc:
+        words = page.get_text("words")
+        egg = [w for w in words if w[4] == "Egg" and w[1] < 250 and w[3] - w[1] > 12]   # the rotated heading
+        if not egg:
+            continue
+        head = min(egg, key=lambda w: w[1])
+        top, bottom_head = head[1], head[3]
+        cols, last = {}, -1
+        for key, word in SUBWAY_COLUMNS:
+            hit = sorted((w for w in words if w[4] == word and top - 130 <= w[1] and w[3] <= bottom_head + 6 and (w[0] + w[2]) / 2 > last), key=lambda w: w[0])
+            if hit:
+                cols[key] = (hit[0][0] + hit[0][2]) / 2
+                last = cols[key] + 2
+        first = min(cols.values())
+        body = [w for w in words if w[1] > bottom_head + 4 and w[2] < first - 3]
+        label_lines = lines(body)
+        marks = [((w[0] + w[2]) / 2, (w[1] + w[3]) / 2, "C" if w[4] in ("●", "\u25cf", "•") else "m") for w in words
+                 if w[4] in ("●", "*", "•", "\u25cf") and w[1] > bottom_head + 4 and w[0] >= first - 6]
+        depth, names = 0, []
+        for y, text in label_lines:
+            if depth > 0:
+                depth += text.count("(") - text.count(")")
+                continue
+            if text.startswith(("●", "**", "Please", "Seafood Origin", "1 ", "Page ")) or text.isdigit():
+                continue
+            if text.startswith("("):
+                depth += text.count("(") - text.count(")")
+                continue
+            heading = next((h for h in SUBWAY_SECTIONS if text == h or text.startswith(h + " ")), None)
+            if heading:
+                # The three mini subs sit under a heading of their own, above Breakfast.
+                if heading == "Breakfast":
+                    names = [(y_, "Mini Subs" if sec_ == section else sec_, t_) for y_, sec_, t_ in names]
+                section = heading
+                continue
+            if text.startswith("Wraps"):
+                section = "Wraps"; continue
+            if text.startswith("Salads"):
+                section = "Salads"; continue
+            if text.startswith("Subway 6"):
+                section = "Subs"; continue
+            # A heading's description, or a list's note, carries on in lower case.
+            if text[:1].islower():
+                continue
+            m = re.match(r"^(.*?)\s*\((?!no sauce|with )(.*)$", text)
+            if m and m.group(1):
+                # "Smashed Avo on Toast (on white bread)" has its description on the same line.
+                depth += text.count("(") - text.count(")")
+                text = m.group(1).strip()
+            names.append((y, section, text))
+        for i, (y, sec, text) in enumerate(names):
+            y1 = names[i + 1][0] - 2 if i + 1 < len(names) else y + 40
+            row = {}
+            for x, my, v in marks:
+                if y - 4 <= my < y1:
+                    key = min(cols, key=lambda k: abs(cols[k] - x))
+                    if abs(cols[key] - x) < 8:
+                        row[key] = v
+            name = re.sub(r"[®™]", "", text).strip()
+            out.setdefault((sec, name), row)
+    return out
+
+
+def subway():
+    page = get_http1("https://www.subway.com/en-au/menunutrition/nutrition")
+    def find(pattern):
+        m = re.search(r'href="([^"]*%s[^"]*\.pdf)"' % pattern, page, re.I)
+        if not m:
+            raise SystemExit(f"No Subway link matching {pattern}")
+        return html.unescape(m.group(1))
+    out = {}
+    for name, link_ in (("grid", find(r"Allergen(?:%20|\s)Web(?:%20|\s)Guide")), ("rice", find(r"Rice(?:%20|\s)Bowls"))):
+        import pymupdf
+        path = Path(tempfile.mkdtemp()) / "guide.pdf"
+        path.write_bytes(get_http1(link_, binary=True))
+        rows_ = subway_grid(pymupdf.open(path))
+        for (sec, item), row in rows_.items():
+            contains = [k for k, v in row.items() if v == "C" and k not in ("yeast", "nitrites")]
+            may = [k for k, v in row.items() if v == "m" and k not in ("yeast", "nitrites")]
+            out[f"{sec}|{item}"] = {"al": sorted(set(contains)), "may": sorted(set(may) - set(contains))}
+    return out
+
+
 def hungry_jacks():
     """Hungry Jack's nutritional guide reports: for every product, its ingredients, "Contains:" and "May be present:"."""
     page = get("https://www.hungryjacks.com.au/nutrition-info")
@@ -433,7 +537,7 @@ def fetch():
     out = {"fetched": time.strftime("%Y-%m-%d")}
     for chain, read in (("dominos", dominos), ("boost", boost), ("oporto", lambda: craveable(link("https://www.oporto.com.au/nutrition-and-allergen/", r"Allergen-Chart.*\.pdf"), "oporto")),
                         ("rr", lambda: craveable(link("https://www.redrooster.com.au/nutritions/", r"AllergenChart.*\.pdf"), "rr")),
-                        ("spud", spud), ("schnitz", schnitz), ("zam", zambrero), ("gyg", gyg), ("hj", hungry_jacks)):
+                        ("spud", spud), ("schnitz", schnitz), ("zam", zambrero), ("gyg", gyg), ("hj", hungry_jacks), ("sub", subway)):
         out[chain] = read()
         print(f"{chain}: {len(out[chain]) if 'parts' not in out[chain] else len(out[chain]['parts'])} rows")
     SOURCE.write_text(json.dumps(out, indent=1, ensure_ascii=False, default=sorted) + "\n")
@@ -855,10 +959,119 @@ def match_hj(name, guide):
     return combine([], [sizes]) if sizes else None
 
 
+SUBWAY_BREKKIE = {"Classic Ham & Egg": "Classic Ham & Egg Sub", "Steak & Egg Brekkie": "Steak & Egg Brekkie Sub",
+                  "Mexican-Style Brekkie": "Mexican-Style Brekkie Wrap", "Spinach & Egg Brekkie": "Spinach & Egg Wrap"}
+SUBWAY_PARTS = {"Extra Chicken Strips": "Chicken Strips", "Extra Rotisserie-Style Chicken": "Rotisserie-Style Chicken", "Extra Chicken Teriyaki": "Chicken Teriyaki",
+                "Extra Chicken Schnitzel": "Chicken Schnitzel", "Extra Smoky Bacon": "Bacon, Smoky", "Extra Leg Ham": "Leg Ham", "Poached Egg": "Poached Egg",
+                "Extra Meatballs": "Meatballs", "Extra Diced Steak": "Steak, Diced", "Extra Sliced Turkey": "Turkey, Sliced", "Extra Avocado": "Avocado",
+                "Extra Tuna & Mayo": "Tuna & Mayo (with Mayonnaise)", "Extra Cheddar Cheese": "Natural Cheddar Cheese", "Extra Mozzarella": "Mozzarella Cheese",
+                "Italian Herbs & Cheese Bread": "Italian Herbs and Cheese Bread", "Regular Flour": "Wrap, Flour", "Ghost Pepper Bread": "Ghost Pepper Bread"}
+
+
+def match_subway(name, guide):
+    by = {norm(k.split("|", 1)[1]) + "|" + k.split("|", 1)[0]: v for k, v in guide.items()}
+    def find(section, item):
+        return by.get(norm(item) + "|" + section)
+    bread = {"6\" White Bread": "White Bread", "6\" Wheat Bread": "Wheat Bread", "6\" Malted Rye Bread": "Malted Rye Bread",
+             "6\" Italian Herbs & Cheese Bread": "Italian Herbs and Cheese Bread", "6\" Ghost Pepper Bread": "Ghost Pepper Bread",
+             "Regular Flour Wrap": "Wrap, Flour"}
+    if name in bread:
+        return find("Bread", bread[name])
+    # "Steak & Egg Brekkie 6"", "Mexican-Style Brekkie Wrap" and "Spinach & Egg Brekkie Wrap" are the guide's breakfast rows.
+    m = re.match(r'^(.+?) (?:6"|Wrap)$', name)
+    if m and m.group(1).replace(" Brekkie", "") in {k.replace(" Brekkie", "") for k in SUBWAY_BREKKIE}:
+        base = next(k for k in SUBWAY_BREKKIE if k.replace(" Brekkie", "") == m.group(1).replace(" Brekkie", ""))
+        return find("Breakfast", SUBWAY_BREKKIE[base])
+    m = re.match(r'^(?:6"|Footlong) (.+)$', name)
+    if m:
+        item = "Turkey on Rye" if m.group(1) == "Turkey" else m.group(1)
+        return find("Subs", item)
+    m = re.match(r"^(.+?) (Wrap|Salad)(?: \((?:large|regular)\))?$", name)
+    if m:
+        item = "Turkey on Rye" if m.group(1) == "Turkey" else m.group(1)
+        return find("Wraps" if m.group(2) == "Wrap" else "Salads", item)
+    m = re.match(r"^(.+?) Rice Bowl \((?:regular|large)\)$", name)
+    if m:
+        return find("Rice Bowls", m.group(1))
+    m = re.match(r"^Mini Sub: (.+)$", name)
+    if m:
+        return find("Mini Subs", m.group(1).replace("Veggie Delite with Avo", "Veggie Delite with Avo"))
+    if name in SUBWAY_BREKKIE:
+        return find("Breakfast", SUBWAY_BREKKIE[name])
+    m = re.match(r"^Southern Style Chicken Bites \((no sauce|spicy mayo)\)$", name)
+    if m:
+        return find("Sides & Snacks", "Southern Style Chicken Bites (no sauce)" if m.group(1) == "no sauce" else "Southern Style Chicken Bites (with spicy mayo)")
+    if re.search(r"Cookie$", name):
+        return find("Cookies", name)
+    m = re.match(r"^(Mango|Mixed Berry Banana|Tropical) Smoothie$", name)
+    if m:
+        return find("Cookies", m.group(1))   # the smoothies list sits under the cookies on the page
+    if name in SUBWAY_PARTS:
+        part = SUBWAY_PARTS[name]
+        return find("Bread", part) or find("Sauces & Dressings", part)
+    for section in ("Sides & Snacks", "Bread"):
+        found = find(section, name)
+        if found:
+            return found
+    return None
+
+
+MCD_ALIAS = {
+    "Chicken McWings 3 pc": "chicken-mcwings", "Chicken McNuggets 3 pc": "3pc-chicken-mcnuggets", "Chicken McNuggets 6 pc": "6pc-chicken-mcnuggets",
+    "Chicken McNuggets 10 pc": "10pc-chicken-mcnuggets", "Chicken McNuggets 20 pc": "20pc-chicken-mcnuggets", "Chicken McNuggets 40 pc": "40pc-chicken-mcnuggets",
+    # The same food in another size has the same allergens.
+    "Fries (small)": "small-fries", "Fries (medium)": "small-fries", "Fries (large)": "small-fries",
+    "Flat White (medium, full cream)": "flat-white-medium", "Cappuccino (medium, full cream)": "cappuccino-large", "Cappuccino (large, full cream)": "cappuccino-large",
+    "Latte (medium, full cream)": "latte-medium", "Mocha (medium, full cream)": "mocha-medium", "Hot Chocolate (medium, full cream)": "hot-chocolate-medium",
+    "Vanilla Chai Latte (medium)": "chai-latte-medium", "Long Macchiato (small)": "macchiato", "Earl Grey Tea (medium)": "earl-grey-tea-small",
+    "Red Bull Dragonberry Energiser": "red-bull-dragonberry-energiser-medium", "Red Bull (250 ml can)": "red-bull-energy-drink-250ml",
+    "Lemon Drink (medium)": "lemon-flavour-drink-medium", "Lemon Lime & Bitters (medium)": "kirks-lemon-lime-bitters-medium",
+    "Vanilla Coke (medium)": "coca-cola-vanilla-medium", "Fanta Orange (medium)": "fanta-medium", "Raspberry Fanta (medium)": "fanta-raspberry-medium",
+    "Frozen Fanta Mango with Strawberry Popping Pearls (medium)": "frozen-fanta-mango-strawberry-popping-pearls-medium",
+    "Coca-Cola (large)": "coca-cola-medium", "Sprite (large)": "sprite-medium", "Fanta Orange (large)": "fanta-medium", "Frozen Coke (large)": "frozen-coke-medium",
+    "Frozen Fanta Orange (large)": "frozen-fanta-orange-medium", "Apple Juice (250 ml)": "pop-tops-apple-juice", "Calciyum Chocolate Milk (250 ml)": "calcium-chocolate",
+    "Dipping Sauce: Big Mac": "big-mac-special-sauce", "Dipping Sauce: Ranch": "ranch-sauce", "Dipping Sauce: Aioli": "aioli-sauce",
+    "Dipping Sauce: Sweet Mustard": "sweet-mustard-sauce", "Dipping Sauce: Spicy Buffalo": "spicy-buffalo-sauce", "Dipping Sauce: BBQ": "barbeque-sauce",
+    "Dipping Sauce: Sweet & Sour": "sweet-n-sour-sauce", "Dipping Sauce: Ketchup": "ketchup", "Dipping Sauce: McChicken": "mcchicken-sauce",
+    "Dipping Sauce: Tartare": "tartare-sauce", "Berry McPop": "berry-mcpops", "Biscoff McPop": "biscoff-mcpops", "Choc McPop": "choc-mcpops",
+}
+
+
+def match_mcd(food, source, ingredient_ids):
+    items = source["items"]
+    pid = ingredient_ids.get(food["id"])
+    found = items.get(str(pid)) if pid else None
+    if not found:
+        by_slug = {v["h"]: v for v in items.values()}
+        slug = re.sub(r"[^a-z0-9]+", "-", food["name"].lower()).strip("-")
+        found = by_slug.get(MCD_ALIAS.get(food["name"])) or by_slug.get(food["id"].split(":", 1)[1]) or by_slug.get(slug)
+    return {"al": found["al"], "may": found["may"]} if found else None
+
+
+def match_kfc(name, source):
+    import unicodedata
+    clean = lambda x: re.sub(r"[^a-z0-9]", "", unicodedata.normalize("NFKD", re.sub(r"[®™]", "", x)).encode("ascii", "ignore").decode().lower())
+    by = {clean(k): v for k, v in source["items"].items()}
+    name = re.sub(r"^Dipping Sauce: (.+)$", r"\1 Dip", name)
+    sized = re.match(r"^(.+) \((regular|large)\)$", name)
+    tries = [name, f"{sized.group(2)} {sized.group(1)}" if sized else name, f"{sized.group(1)} - {sized.group(2)}" if sized else name,
+             "new " + name, name.replace("Pieces of", "Pieces Of")]
+    for t in tries:
+        found = by.get(clean(t))
+        if found:
+            return {"al": found["al"], "may": found["may"]}
+    return None
+
+
 def build():
     source = json.loads(SOURCE.read_text())
     catalog = json.loads(CATALOG.read_text())["foods"]
     out, missed = {}, {}
+    # McDonald's and KFC only show their allergens inside their own pages, so those are read once in a browser and saved
+    # (mcd-allergens.json, kfc-allergens.json); the notes in each say how.
+    mcd_source = json.loads((HERE / "mcd-allergens.json").read_text()) if (HERE / "mcd-allergens.json").exists() else None
+    kfc_source = json.loads((HERE / "kfc-allergens.json").read_text()) if (HERE / "kfc-allergens.json").exists() else None
+    mcd_ids = {k: v[0] for k, v in json.loads((HERE / "mcd-ingredients.json").read_text())["items"].items()}
     for food in catalog:
         chain, name = food["chain"], food["name"]
         got = None
@@ -880,6 +1093,12 @@ def build():
             got = match_gyg(name, source["gyg"])
         elif chain == "hj":
             got = match_hj(name, source["hj"])
+        elif chain == "sub":
+            got = match_subway(name, source["sub"])
+        elif chain == "mcd" and mcd_source:
+            got = match_mcd(food, mcd_source, mcd_ids)
+        elif chain == "kfc" and kfc_source:
+            got = match_kfc(name, kfc_source)
         else:
             continue
         if got:

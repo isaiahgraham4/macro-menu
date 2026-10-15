@@ -12,7 +12,7 @@ Every item gets diet info only from the restaurant's own words, and only where t
 - Labels and allergens: Nando's, Hungry Jack's and Grill'd publish allergens per item, and Nando's and Grill'd label vegetarian
   and vegan items. "May contain" is kept apart from "contains".
 - Allergen guides (allergen-guides.py, run before this): Domino's, Boost Juice, Oporto, Red Rooster, Spud Bar, Schnitz, Zambrero,
-  Guzman y Gomez and Hungry Jack's. Spud Bar's and Hungry Jack's ingredient lists and Schnitz's descriptions also say what meat
+  Guzman y Gomez, Hungry Jack's, Subway, and McDonald's and KFC from their own pages. Spud Bar's and Hungry Jack's ingredient lists and Schnitz's descriptions also say what meat
   is in an item.
 
 Anything else stays unknown, and the filters leave unknown items out rather than guess.

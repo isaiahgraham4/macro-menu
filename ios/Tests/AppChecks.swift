@@ -83,7 +83,7 @@ import UniformTypeIdentifiers
         assert(!DietFilter(options: [.wheat]).allows(wheatUnknown))
         assert(!DietFilter(options: [.wheat]).allows(byID["grilld:simply-grill-d"]!) && DietInfo.guess("Sultanas").al == ["sulphites"])
         // Allergen guides: Domino's, Boost, Oporto, Red Rooster, Spud Bar, Schnitz, Zambrero and Guzman y Gomez too.
-        for chain in ["dominos", "boost", "oporto", "rr", "spud", "schnitz", "zam", "gyg"] {
+        for chain in ["dominos", "boost", "oporto", "rr", "spud", "schnitz", "zam", "gyg", "mcd", "kfc", "sub"] {
             assert(catalog.foods.contains { $0.chain == chain && $0.diet?.al != nil }, chain)
         }
         assert(byID["dominos:margherita-1-slice-"]!.diet?.al == ["gluten", "milk", "soy", "wheat"] && vegetarian.allows(byID["dominos:margherita-1-slice-"]!))

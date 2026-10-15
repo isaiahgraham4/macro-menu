@@ -10156,5 +10156,1428 @@
    ],
    "text": "Chicken Grilled (Chicken (94%), Water, Salt, Thickeners (1442, 407), Mineral Salts (451, 450), Dextrose, Sugar, Spice, Flavours, Hydrolysed Vegetable Protein (Corn), Spice Extract), Tortilla (Wheat Flour ((66%), Thiamine, Folic Acid), Water, Vegetable Shortening (Antioxidant (307b)), Sugar, Baking Powder (Mineral Salts (450, 500, 341)), Acidity Regulator (297), Mineral Salt (500), Preservative (282), Iodized Salt, Yeast), Lettuce (Iceberg Lettuce), Mayonnaise (Soybean Oil (<0.001% Tocopherol [Vitamin E]), Egg Yolks, Water, Distilled Vinegar, Corn Syrup, Salt, Sugar, Mustard Flour)"
   }
+ },
+ "sub": {
+  "Subs|BBQ Southern Style Chicken": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "Subs|Chicken & Bacon Ranch": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "Subs|Chicken Classic": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "Subs|Chicken Schnitzel": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "Subs|Chicken Strips": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "Subs|Chipotle Steak Melt": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
+  },
+  "Subs|Honey Mustard Leg Ham": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "Subs|Italian B.M.T.": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "Subs|Italian Meatball": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "Subs|Philly-Style Three-Cheese Steak": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame"
+   ]
+  },
+  "Subs|Pizza Melt": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "Subs|Rotisserie-Style Chicken": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "fish",
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "Subs|Seafood Sensation": {
+   "al": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "Subs|Smashed Falafel": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "Subs|Sweet Onion Chicken Teriyaki": {
+   "al": [
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sulphites"
+   ]
+  },
+  "Subs|Tuna Mayo": {
+   "al": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "Subs|Turkey on Rye": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "Subs|Veggie Delite with Avo": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "Subs|Veggie Patty": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "Wraps|BBQ Southern Style Chicken": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
+  },
+  "Wraps|Chicken & Bacon Ranch": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Wraps|Chicken Classic": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Wraps|Chicken Schnitzel": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Wraps|Chicken Strips": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Wraps|Chipotle Steak Melt": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Wraps|Honey Mustard Leg Ham": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "soy"
+   ]
+  },
+  "Wraps|Italian B.M.T.": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Wraps|Italian Meatball": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Wraps|Pizza Melt": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Wraps|Seafood Sensation": {
+   "al": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Wraps|Smashed Falafel": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Wraps|Sweet Onion Chicken Teriyaki": {
+   "al": [
+    "gluten",
+    "milk",
+    "sesame",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Wraps|Tuna Mayo": {
+   "al": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Wraps|Turkey on Rye": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Wraps|Veggie Delite with Avo": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Wraps|Veggie Patty": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Salads|BBQ Southern Style Chicken": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
+  },
+  "Salads|Chicken & Bacon Ranch": {
+   "al": [
+    "milk"
+   ],
+   "may": []
+  },
+  "Salads|Chicken Classic": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Salads|Chicken Schnitzel": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Salads|Chicken Strips": {
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": []
+  },
+  "Salads|Chipotle Steak Melt": {
+   "al": [
+    "egg",
+    "milk",
+    "soy",
+    "sulphites"
+   ],
+   "may": []
+  },
+  "Salads|Honey Mustard Leg Ham": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "soy"
+   ]
+  },
+  "Salads|Italian B.M.T.": {
+   "al": [
+    "egg",
+    "milk",
+    "soy"
+   ],
+   "may": []
+  },
+  "Salads|Italian Meatball": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Salads|Pizza Melt": {
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": []
+  },
+  "Salads|Seafood Sensation": {
+   "al": [
+    "egg",
+    "fish",
+    "milk"
+   ],
+   "may": []
+  },
+  "Salads|Smashed Falafel": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Salads|Sweet Onion Chicken Teriyaki": {
+   "al": [
+    "milk",
+    "sesame"
+   ],
+   "may": []
+  },
+  "Salads|Tuna Mayo": {
+   "al": [
+    "egg",
+    "fish",
+    "milk"
+   ],
+   "may": []
+  },
+  "Salads|Turkey on Rye": {
+   "al": [
+    "milk"
+   ],
+   "may": []
+  },
+  "Salads|Veggie Delite with Avo": {
+   "al": [
+    "milk"
+   ],
+   "may": []
+  },
+  "Salads|Veggie Patty": {
+   "al": [
+    "gluten",
+    "milk"
+   ],
+   "may": []
+  },
+  "Mini Subs|Turkey": {
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk",
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "Mini Subs|Leg Ham": {
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk",
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "Mini Subs|Veggie Delite with Avo": {
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk",
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "Breakfast|BLT with Egg & Cheese Sub": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "Breakfast|Classic Ham & Egg Sub": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "Breakfast|Steak & Egg Brekkie Sub": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
+  },
+  "Breakfast|Mexican-Style Brekkie Wrap": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Breakfast|Spinach & Egg Wrap": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Sides & Snacks|Smashed Avo on Toast": {
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk",
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "Sides & Snacks|Creamy Garlic Cheese Bread": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "Sides & Snacks|Chipotle Quesadilla": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Sides & Snacks|Creamy Garlic Herb Bread": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "Sides & Snacks|Ham, Cheese & Tomato Toastie": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "Sides & Snacks|Meatball Mozza Pot": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Sides & Snacks|Nachos": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Sides & Snacks|Nachos with Chicken Strips": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Sides & Snacks|Nachos with Diced Steak": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Sides & Snacks|Nachos with Rotisserie-Style Chicken": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "fish",
+    "sesame"
+   ]
+  },
+  "Sides & Snacks|Southern Style Chicken Bites (no sauce)": {
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk"
+   ]
+  },
+  "Sides & Snacks|Southern Style Chicken Bites (with spicy mayo)": {
+   "al": [
+    "egg",
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "milk"
+   ]
+  },
+  "Cookies|Chocolate Chip Cookie": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "almond",
+    "brazil",
+    "cashew",
+    "hazelnut",
+    "macadamia",
+    "peanut",
+    "pecan",
+    "pinenut",
+    "pistachio",
+    "walnut"
+   ]
+  },
+  "Cookies|Chocolate Chip Rainbow Cookie": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "almond",
+    "brazil",
+    "cashew",
+    "hazelnut",
+    "macadamia",
+    "peanut",
+    "pecan",
+    "pinenut",
+    "pistachio",
+    "walnut"
+   ]
+  },
+  "Cookies|Double Chocolate Chip Cookie": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "almond",
+    "brazil",
+    "cashew",
+    "hazelnut",
+    "macadamia",
+    "peanut",
+    "pecan",
+    "pinenut",
+    "pistachio",
+    "walnut"
+   ]
+  },
+  "Cookies|Raspberry Cheesecake Cookie": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "almond",
+    "brazil",
+    "cashew",
+    "hazelnut",
+    "macadamia",
+    "peanut",
+    "pecan",
+    "pinenut",
+    "pistachio",
+    "walnut"
+   ]
+  },
+  "Cookies|White Chip Macadamia Nut Cookie": {
+   "al": [
+    "egg",
+    "gluten",
+    "macadamia",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "almond",
+    "brazil",
+    "cashew",
+    "hazelnut",
+    "peanut",
+    "pecan",
+    "pinenut",
+    "pistachio",
+    "walnut"
+   ]
+  },
+  "Cookies|Mango": {
+   "al": [],
+   "may": []
+  },
+  "Cookies|Mixed Berry Banana": {
+   "al": [],
+   "may": []
+  },
+  "Cookies|Tropical": {
+   "al": [],
+   "may": []
+  },
+  "Bread|Italian Herbs and Cheese Bread": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "Bread|Malted Rye Bread": {
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk",
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "Bread|Wheat Bread": {
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk",
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "Bread|White Bread": {
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk",
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "Bread|Wrap, Flour": {
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Bread|Wrap, Gluten Free **": {
+   "al": [
+    "soy"
+   ],
+   "may": [
+    "egg"
+   ]
+  },
+  "Bread|Wrap, Multigrain Flour": {
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ]
+  },
+  "Bread|Meat, Poultry, Eggs, Seafood & Vegetarian Items": {
+   "al": [],
+   "may": []
+  },
+  "Bread|Bacon, Smoky": {
+   "al": [],
+   "may": []
+  },
+  "Bread|Buffalo Chicken": {
+   "al": [
+    "milk"
+   ],
+   "may": []
+  },
+  "Bread|Chicken Classic": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Bread|Chicken Pepperoni Meats": {
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "fish",
+    "gluten",
+    "sesame",
+    "wheat"
+   ]
+  },
+  "Bread|Chicken Schnitzel": {
+   "al": [
+    "egg",
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "milk"
+   ]
+  },
+  "Bread|Chicken Strips": {
+   "al": [],
+   "may": []
+  },
+  "Bread|Chicken Teriyaki": {
+   "al": [
+    "sesame"
+   ],
+   "may": []
+  },
+  "Bread|Deli Supreme Meats": {
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": []
+  },
+  "Bread|Italian B.M.T. Meats": {
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": []
+  },
+  "Bread|Leg Ham": {
+   "al": [],
+   "may": [
+    "milk",
+    "soy"
+   ]
+  },
+  "Bread|Meatballs": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Bread|Pepperoni": {
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": []
+  },
+  "Bread|Pizza Melt Meats": {
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": []
+  },
+  "Bread|Poached Egg": {
+   "al": [
+    "egg"
+   ],
+   "may": [
+    "gluten",
+    "wheat"
+   ]
+  },
+  "Bread|Rotisserie-Style Chicken": {
+   "al": [],
+   "may": [
+    "fish",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ]
+  },
+  "Bread|Salami": {
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": []
+  },
+  "Bread|Seafood Sensation (with Mayonnaise)": {
+   "al": [
+    "egg",
+    "fish"
+   ],
+   "may": []
+  },
+  "Bread|Smashed Falafel": {
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Bread|Southern Style Chicken Bites": {
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk"
+   ]
+  },
+  "Bread|Steak, Diced": {
+   "al": [
+    "soy",
+    "sulphites"
+   ],
+   "may": []
+  },
+  "Bread|Tuna & Mayo (with Mayonnaise)": {
+   "al": [
+    "egg",
+    "fish",
+    "soy"
+   ],
+   "may": []
+  },
+  "Bread|Turkey, Sliced": {
+   "al": [],
+   "may": []
+  },
+  "Bread|Veggie Patty": {
+   "al": [
+    "gluten",
+    "soy"
+   ],
+   "may": []
+  },
+  "Sauces & Dressings|Chipotle Southwest Sauce": {
+   "al": [
+    "egg",
+    "milk",
+    "soy"
+   ],
+   "may": []
+  },
+  "Sauces & Dressings|Garlic Aioli": {
+   "al": [
+    "milk"
+   ],
+   "may": []
+  },
+  "Sauces & Dressings|Habanero Hot Sauce": {
+   "al": [],
+   "may": []
+  },
+  "Sauces & Dressings|Honey Mustard": {
+   "al": [],
+   "may": []
+  },
+  "Sauces & Dressings|Marinara Sauce": {
+   "al": [],
+   "may": []
+  },
+  "Sauces & Dressings|Mayonnaise": {
+   "al": [
+    "egg"
+   ],
+   "may": []
+  },
+  "Sauces & Dressings|Mexican Salsa": {
+   "al": [],
+   "may": [
+    "soy"
+   ]
+  },
+  "Sauces & Dressings|Ranch Dressing": {
+   "al": [
+    "milk"
+   ],
+   "may": []
+  },
+  "Sauces & Dressings|Smoky BBQ Sauce": {
+   "al": [],
+   "may": [
+    "soy"
+   ]
+  },
+  "Sauces & Dressings|Spicy Mayonnaise": {
+   "al": [
+    "egg"
+   ],
+   "may": []
+  },
+  "Sauces & Dressings|Sweet Chilli Sauce": {
+   "al": [],
+   "may": []
+  },
+  "Sauces & Dressings|Sweet Onion Sauce": {
+   "al": [],
+   "may": []
+  },
+  "Sauces & Dressings|Thousand Island Dressing": {
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": []
+  },
+  "Sauces & Dressings|Tomato Sauce": {
+   "al": [],
+   "may": []
+  },
+  "Sauces & Dressings|Mozzarella Cheese": {
+   "al": [
+    "milk"
+   ],
+   "may": []
+  },
+  "Sauces & Dressings|Natural Cheddar Cheese": {
+   "al": [
+    "milk"
+   ],
+   "may": []
+  },
+  "Sauces & Dressings|Old English-Style Processed Cheese": {
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": []
+  },
+  "Sauces & Dressings|Philly-Style Three-Cheese": {
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": []
+  },
+  "Sauces & Dressings|Vegetables": {
+   "al": [],
+   "may": []
+  },
+  "Sauces & Dressings|Avocado": {
+   "al": [],
+   "may": []
+  },
+  "Sauces & Dressings|Beetroot": {
+   "al": [],
+   "may": []
+  },
+  "Sauces & Dressings|Jalapeno Pepper": {
+   "al": [],
+   "may": []
+  },
+  "Sauces & Dressings|Olive": {
+   "al": [],
+   "may": []
+  },
+  "Sauces & Dressings|Pickle": {
+   "al": [],
+   "may": []
+  },
+  "Sauces & Dressings|Pineapple": {
+   "al": [],
+   "may": []
+  },
+  "Sauces & Dressings|Toppings": {
+   "al": [],
+   "may": []
+  },
+  "Sauces & Dressings|Doritos Cheese Supreme Flavoured Corn Chips": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Sauces & Dressings|Seasonings": {
+   "al": [],
+   "may": []
+  },
+  "Sauces & Dressings|Pepper": {
+   "al": [],
+   "may": []
+  },
+  "Sauces & Dressings|Salt": {
+   "al": [],
+   "may": []
+  },
+  "Rice Bowls|Chicken Teriyaki": {
+   "al": [
+    "sesame"
+   ],
+   "may": []
+  },
+  "Rice Bowls|Green Goddess Falafel": {
+   "al": [
+    "gluten",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Rice Bowls|Green Goddess Chicken": {
+   "al": [
+    "sulphites"
+   ],
+   "may": [
+    "fish",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ]
+  },
+  "Rice Bowls|Japanese-Style Chicken": {
+   "al": [
+    "egg",
+    "gluten",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "Rice Bowls|Korean-Style BBQ Steak": {
+   "al": [
+    "soy",
+    "sulphites"
+   ],
+   "may": []
+  },
+  "Rice Bowls|*• Contains": {
+   "al": [],
+   "may": []
+  },
+  "Rice Bowls|May Contain": {
+   "al": [],
+   "may": []
+  },
+  "Rice Bowls|1Autolyzed yeast and hydrolyzed protein can": {
+   "al": [],
+   "may": []
+  },
+  "Rice Bowls|This list is compiled based on product information provided": {
+   "al": [],
+   "may": []
+  },
+  "Bread|Brown Rice, Cooked": {
+   "al": [],
+   "may": []
+  },
+  "Bread|Ghost Pepper Bread": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "Sauces & Dressings|Green Goddess Dressing": {
+   "al": [
+    "sulphites"
+   ],
+   "may": []
+  },
+  "Sauces & Dressings|Japanese-Style Toasted": {
+   "al": [
+    "egg",
+    "sesame",
+    "soy"
+   ],
+   "may": []
+  },
+  "Sauces & Dressings|Sesame Mayonnaise": {
+   "al": [],
+   "may": []
+  },
+  "Sauces & Dressings|Spicy Korean BBQ Sauce": {
+   "al": [
+    "soy"
+   ],
+   "may": []
+  },
+  "Sauces & Dressings|*• Contains": {
+   "al": [],
+   "may": []
+  },
+  "Sauces & Dressings|May Contain": {
+   "al": [],
+   "may": []
+  },
+  "Sauces & Dressings|1Autolyzed yeast and hydrolyzed protein can": {
+   "al": [],
+   "may": []
+  },
+  "Sauces & Dressings|This list is compiled based on product information provided": {
+   "al": [],
+   "may": []
+  }
  }
 }

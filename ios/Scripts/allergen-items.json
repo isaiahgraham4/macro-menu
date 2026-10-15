@@ -1,6 +1,2302 @@
 {
  "fetched": "2026-10-15",
  "items": {
+  "mcd:big-mac": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:double-big-mac": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:quarter-pounder": {
+   "al": [
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ],
+   "src": "guide"
+  },
+  "mcd:double-quarter-pounder": {
+   "al": [
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ],
+   "src": "guide"
+  },
+  "mcd:quarter-pounder-deluxe": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:quarter-pounder-bbq-bacon-crispy-onions": {
+   "al": [
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ],
+   "src": "guide"
+  },
+  "mcd:cheesy-quarter-pounder": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:big-arch": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:hamburger": {
+   "al": [
+    "gluten",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk"
+   ],
+   "src": "guide"
+  },
+  "mcd:cheeseburger": {
+   "al": [
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ],
+   "src": "guide"
+  },
+  "mcd:double-cheeseburger": {
+   "al": [
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ],
+   "src": "guide"
+  },
+  "mcd:triple-cheeseburger": {
+   "al": [
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ],
+   "src": "guide"
+  },
+  "mcd:mcchicken": {
+   "al": [
+    "egg",
+    "gluten",
+    "sesame",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "mcd:double-mcchicken": {
+   "al": [
+    "egg",
+    "gluten",
+    "sesame",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "mcd:mcspicy": {
+   "al": [
+    "egg",
+    "gluten",
+    "sesame",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "mcd:mccrispy": {
+   "al": [
+    "egg",
+    "gluten",
+    "sesame",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "mcd:mccrispy-deluxe": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:chicken-n-cheese": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:filet-o-fish": {
+   "al": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:double-filet-o-fish": {
+   "al": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:classic-chicken-mcwrap": {
+   "al": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "sesame",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "mcd:spicy-chicken-mcwrap": {
+   "al": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "sesame",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "mcd:crispy-chicken-snack-wrap": {
+   "al": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "sesame",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "mcd:nashville-mccrispy": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "mcd:nashville-mcspicy": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "wheat"
+   ],
+   "may": [
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "mcd:nashville-mcwrap": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "mcd:nashville-shaker-mcwings-3-pc": {
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "mcd:nashville-shaker-mcwings-5-pc": {
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "mcd:nashville-shaker-mcwings-10-pc": {
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "mcd:chicken-mcwings-3-pc": {
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "mcd:chicken-mcnuggets-3-pc": {
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "mcd:chicken-mcnuggets-6-pc": {
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "mcd:chicken-mcnuggets-10-pc": {
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "mcd:chicken-mcnuggets-20-pc": {
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "mcd:bacon-egg-mcmuffin": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "mcd:double-bacon-egg-mcmuffin": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "mcd:sausage-mcmuffin": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "mcd:sausage-egg-mcmuffin": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "mcd:double-sausage-egg-mcmuffin": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "mcd:mighty-mcmuffin": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "mcd:chicken-mcmuffin": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "mcd:chicken-bacon-mcmuffin": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "mcd:big-brekkie-burger": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:brekkie-mcwrap": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "mcd:mega-brekkie-mcwrap": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "mcd:hash-brown": {
+   "al": [],
+   "may": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "src": "guide"
+  },
+  "mcd:fries-small-": {
+   "al": [],
+   "may": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "src": "guide"
+  },
+  "mcd:fries-medium-": {
+   "al": [],
+   "may": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "src": "guide"
+  },
+  "mcd:fries-large-": {
+   "al": [],
+   "may": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "src": "guide"
+  },
+  "mcd:nashville-mcshaker-fries-small-": {
+   "al": [],
+   "may": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "src": "guide"
+  },
+  "mcd:hot-apple-pie": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:oreo-mcflurry": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "peanut"
+   ],
+   "src": "guide"
+  },
+  "mcd:soft-serve-cone": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:flat-white-medium-full-cream-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:cappuccino-medium-full-cream-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:iced-latte-medium-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:coca-cola-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:coca-cola-zero-sugar-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:early-birdie-sausage-egg-mcmuffin": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "mcd:early-birdie-bacon-egg-mcmuffin": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "mcd:early-birdie-brekkie-wrap": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "mcd:early-birdie-chicken-bacon-mcmuffin": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "mcd:deluxe-bacon-egg-mcmuffin": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "mcd:deluxe-sausage-egg-mcmuffin": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "mcd:deluxe-mighty-mcmuffin": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "mcd:deluxe-brekkie-mcwrap": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "mcd:double-sausage-mcmuffin": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "mcd:ham-cheese-pocket": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "mcd:hotcakes": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:cheesy-double-quarter-pounder": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:cheesy-mccrispy": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:double-quarter-pounder-deluxe": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:double-quarter-pounder-bbq-bacon": {
+   "al": [
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ],
+   "src": "guide"
+  },
+  "mcd:chicken-mcnuggets-40-pc": {
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "mcd:ham-cheese-toastie": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "mcd:ham-cheese-tomato-toastie": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "mcd:cheese-toastie": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "mcd:cheese-tomato-toastie": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "mcd:apple-slices": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:berry-mcpop": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:biscoff-mcpop": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:choc-mcpop": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:apple-crumble-muffin": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:double-choc-muffin": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:banana-bread": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "mcd:raisin-toast": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "mcd:mcdonaldland-cookies": {
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk",
+    "peanut",
+    "sesame",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:tim-tam-jatz-mcflurry": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "mcd:mini-m-m-s-mcflurry": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "peanut",
+    "treenut",
+    "wheat"
+   ],
+   "src": "guide"
+  },
+  "mcd:hot-fudge-sundae-regular-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:caramel-sundae-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:strawberry-sundae-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:plain-sundae-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:soft-serve-cone-with-cadbury-flake": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "peanut",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:chocolate-shake-large-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:vanilla-shake-large-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:strawberry-shake-large-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:coffee-frappe-large-": {
+   "al": [
+    "milk",
+    "sulphites"
+   ],
+   "may": [
+    "gluten",
+    "wheat"
+   ],
+   "src": "guide"
+  },
+  "mcd:salted-caramel-frappe-large-": {
+   "al": [
+    "milk",
+    "sulphites"
+   ],
+   "may": [
+    "gluten",
+    "wheat"
+   ],
+   "src": "guide"
+  },
+  "mcd:choc-frappe-large-": {
+   "al": [
+    "gluten",
+    "milk",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:choc-coconut-frappe-medium-": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:latte-medium-full-cream-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:cappuccino-large-full-cream-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:long-black-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:mocha-medium-full-cream-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:hot-chocolate-medium-full-cream-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:vanilla-chai-latte-medium-": {
+   "al": [
+    "gluten",
+    "milk",
+    "sulphites"
+   ],
+   "may": [
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:matcha-latte-medium-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:iced-long-black-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:iced-mocha-medium-full-cream-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:iced-chocolate-medium-full-cream-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:deluxe-caramel-iced-coffee-medium-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:deluxe-hazelnut-iced-coffee-medium-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:deluxe-vanilla-iced-coffee-medium-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:iced-golden-caramel-latte-medium-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:brown-sugar-shaken-espresso-oat-milk-medium-": {
+   "al": [
+    "gluten"
+   ],
+   "may": [
+    "milk",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:iced-matcha-latte-medium-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:iced-matcha-latte-with-cold-foam-medium-": {
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:iced-strawberry-matcha-latte-medium-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:iced-strawberry-matcha-latte-with-cold-foam-medium-": {
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:iced-vanilla-matcha-medium-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:iced-vanilla-matcha-with-cold-foam-medium-": {
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:strawberry-watermelon-refresher-medium-": {
+   "al": [],
+   "may": [
+    "gluten",
+    "wheat"
+   ],
+   "src": "guide"
+  },
+  "mcd:mango-popping-refresher-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:berry-blast-sprite-medium-": {
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:popping-green-apple-sprite-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:red-bull-dragonberry-energiser": {
+   "al": [],
+   "may": [
+    "gluten",
+    "wheat"
+   ],
+   "src": "guide"
+  },
+  "mcd:red-bull-250-ml-can-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:lemon-drink-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:lemon-lime-bitters-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:vanilla-coke-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:sprite-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:fanta-orange-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:raspberry-fanta-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:frozen-coke-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:frozen-coke-zero-sugar-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:frozen-fanta-orange-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:frozen-fanta-lemon-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:frozen-fanta-raspberry-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:frozen-fanta-blueberry-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:frozen-fanta-mango-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:frozen-fanta-mango-with-strawberry-popping-pearls-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:coca-cola-large-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:sprite-large-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:fanta-orange-large-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:frozen-coke-large-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:frozen-fanta-orange-large-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:espresso": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:long-macchiato-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:piccolo-latte": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:babyccino": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:english-breakfast-tea-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:earl-grey-tea-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:green-tea-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:peppermint-tea-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:orange-apple-juice-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:apple-juice-250-ml-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:calciyum-chocolate-milk-250-ml-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:dipping-sauce-big-mac": {
+   "al": [
+    "egg"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:dipping-sauce-ranch": {
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:dipping-sauce-aioli": {
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:dipping-sauce-sweet-mustard": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:dipping-sauce-spicy-buffalo": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:dipping-sauce-bbq": {
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:dipping-sauce-sweet-sour": {
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:dipping-sauce-ketchup": {
+   "al": [
+    "soy"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:dipping-sauce-mcchicken": {
+   "al": [
+    "egg"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:dipping-sauce-tartare": {
+   "al": [
+    "egg"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:zinger-protein-bowl": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "kfc:chris-big-bro-combo-regular-": {
+   "al": [
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ],
+   "src": "guide"
+  },
+  "kfc:original-crispy-burger": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:original-crispy-bacon-cheese-burger": {
+   "al": [
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ],
+   "src": "guide"
+  },
+  "kfc:original-crispy-bbq-bacon-stacker-burger": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:double-tender-burger": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:zinger-burger": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:zinger-bacon-cheese-burger": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:zinger-stacker-burger": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:zinger-crunch-burger": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:1-piece-of-chicken": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "kfc:original-crispy-fillet-piece": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "kfc:zinger-fillet-piece": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "kfc:3-original-tenders-dip-d": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:5-original-tenders-dip-d": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:6-pieces-wicked-boneless": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "kfc:3-wicked-wings": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "kfc:6-wicked-wings": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "kfc:snack-popcorn-chicken": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:regular-popcorn-chicken": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:maxi-popcorn-chicken": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:6-nuggets": {
+   "al": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:10-nuggets": {
+   "al": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:zinger-crunch-twister": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "kfc:original-crunch-twister": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "kfc:zinger-crunch-bowl": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "kfc:original-tenders-crunch-bowl": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "kfc:original-bbq-slider": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "kfc:original-supercharged-slider": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "kfc:chips-regular-": {
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "kfc:chips-large-": {
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "kfc:potato-gravy-regular-": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:potato-gravy-large-": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:coleslaw-regular-": {
+   "al": [
+    "egg"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:dinner-roll": {
+   "al": [
+    "gluten",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:pepsi-max-regular-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:3-pieces-wicked-boneless": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "kfc:6-pieces-of-chicken": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "kfc:10-wicked-wings": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "kfc:go-bucket-wicked-boneless": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "kfc:go-bucket-popcorn-chicken": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:go-bucket-1-original-tender": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "kfc:go-bucket-2-wicked-wings": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "kfc:go-bucket-3-nuggets": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "kfc:crunchy-jalape-o-slaw": {
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "sesame",
+    "wheat"
+   ],
+   "src": "guide"
+  },
+  "kfc:coleslaw-large-": {
+   "al": [
+    "egg"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:dipping-sauce-chimichurri-ranch": {
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:gravy-regular-": {
+   "al": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:double-chocolate-mousse": {
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "peanut",
+    "treenut",
+    "wheat"
+   ],
+   "src": "guide"
+  },
+  "kfc:pepsi-regular-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:7up-regular-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:mountain-dew-regular-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:solo-regular-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:sunkist-no-sugar-regular-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:pepsi-freeze": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:mountain-dew-freeze": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:raspberry-freeze": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
   "hj:whopper": {
    "al": [
     "egg",
@@ -1389,6 +3685,1851 @@
     "treenut"
    ],
    "text": "Ice Cream Drumstick (Water, Sugar, Wheat Flour, Vegetable Oil and or Cream (Milk), Glucose Syrup, Milk Solids, Cocoa Solids (1.3%), Vegetable Origin Emulsifiers [322 (Soy), 477, 471], Maltodextrin, Salt, Flavours, Vegetable Gums (412, 440), Modified Starch (1442), Mineral Salt (339), Preservative (202))",
+   "src": "guide"
+  },
+  "sub:6-chicken-strips": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:6-rotisserie-style-chicken": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "fish",
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:6-sweet-onion-chicken-teriyaki": {
+   "al": [
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:6-turkey-on-rye": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:6-honey-mustard-leg-ham": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:6-tuna-mayo": {
+   "al": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:6-chicken-bacon-ranch": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:6-chicken-schnitzel": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:6-chicken-classic": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:6-bbq-southern-style-chicken": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:6-chipotle-steak-melt": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "sub:6-philly-style-three-cheese-steak": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "sub:6-italian-b-m-t-": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:6-italian-meatball": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:6-pizza-melt": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:6-seafood-sensation": {
+   "al": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:6-smashed-falafel": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:6-veggie-delite-with-avo": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:footlong-chicken-strips": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:footlong-rotisserie-style-chicken": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "fish",
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:footlong-sweet-onion-chicken-teriyaki": {
+   "al": [
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:footlong-turkey-on-rye": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:chicken-strips-salad-regular-": {
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:chicken-bacon-ranch-salad-regular-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:sweet-onion-chicken-teriyaki-salad-regular-": {
+   "al": [
+    "milk",
+    "sesame"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:turkey-salad-regular-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:chicken-schnitzel-salad-regular-": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:chipotle-steak-melt-salad-regular-": {
+   "al": [
+    "egg",
+    "milk",
+    "soy",
+    "sulphites"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:tuna-mayo-salad-regular-": {
+   "al": [
+    "egg",
+    "fish",
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:honey-mustard-leg-ham-salad-regular-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "sub:chicken-strips-salad-large-": {
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:chicken-bacon-ranch-salad-large-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:sweet-onion-chicken-teriyaki-salad-large-": {
+   "al": [
+    "milk",
+    "sesame"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:turkey-salad-large-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:chicken-teriyaki-rice-bowl-regular-": {
+   "al": [
+    "sesame"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:chicken-teriyaki-rice-bowl-large-": {
+   "al": [
+    "sesame"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:green-goddess-chicken-rice-bowl-regular-": {
+   "al": [
+    "sulphites"
+   ],
+   "may": [
+    "fish",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "src": "guide"
+  },
+  "sub:green-goddess-chicken-rice-bowl-large-": {
+   "al": [
+    "sulphites"
+   ],
+   "may": [
+    "fish",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "src": "guide"
+  },
+  "sub:korean-style-bbq-steak-rice-bowl-regular-": {
+   "al": [
+    "soy",
+    "sulphites"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:korean-style-bbq-steak-rice-bowl-large-": {
+   "al": [
+    "soy",
+    "sulphites"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:japanese-style-chicken-rice-bowl-regular-": {
+   "al": [
+    "egg",
+    "gluten",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:japanese-style-chicken-rice-bowl-large-": {
+   "al": [
+    "egg",
+    "gluten",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:sweet-onion-chicken-teriyaki-wrap": {
+   "al": [
+    "gluten",
+    "milk",
+    "sesame",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:chicken-bacon-ranch-wrap": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:sweet-onion-chicken-teriyaki-wrap-large-": {
+   "al": [
+    "gluten",
+    "milk",
+    "sesame",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:chicken-bacon-ranch-wrap-large-": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:steak-egg-brekkie-6-": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "sub:nachos-with-rotisserie-style-chicken": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "fish",
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "sub:nachos-with-chicken-strips": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:extra-chicken-strips": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:extra-rotisserie-style-chicken": {
+   "al": [],
+   "may": [
+    "fish",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "src": "guide"
+  },
+  "sub:extra-chicken-teriyaki": {
+   "al": [
+    "sesame"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:extra-chicken-schnitzel": {
+   "al": [
+    "egg",
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "milk"
+   ],
+   "src": "guide"
+  },
+  "sub:extra-smoky-bacon": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:extra-leg-ham": {
+   "al": [],
+   "may": [
+    "milk",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "sub:poached-egg": {
+   "al": [
+    "egg"
+   ],
+   "may": [
+    "gluten",
+    "wheat"
+   ],
+   "src": "guide"
+  },
+  "sub:6-white-bread": {
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk",
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:6-wheat-bread": {
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk",
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:6-italian-herbs-cheese-bread": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:regular-flour-wrap": {
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:footlong-bbq-southern-style-chicken": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:footlong-chicken-bacon-ranch": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:footlong-chicken-classic": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:footlong-chicken-schnitzel": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:footlong-chipotle-steak-melt": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "sub:footlong-honey-mustard-leg-ham": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:footlong-italian-b-m-t-": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:footlong-italian-meatball": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:footlong-philly-style-three-cheese-steak": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "sub:footlong-pizza-melt": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:footlong-seafood-sensation": {
+   "al": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:footlong-smashed-falafel": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:footlong-tuna-mayo": {
+   "al": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:footlong-veggie-delite-with-avo": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:6-veggie-patty": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:footlong-veggie-patty": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:bbq-southern-style-chicken-wrap": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ],
+   "src": "guide"
+  },
+  "sub:chicken-classic-wrap": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:chicken-schnitzel-wrap": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:chicken-strips-wrap": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:chipotle-steak-melt-wrap": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:honey-mustard-leg-ham-wrap": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "sub:italian-b-m-t-wrap": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:italian-meatball-wrap": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:pizza-melt-wrap": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:seafood-sensation-wrap": {
+   "al": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:smashed-falafel-wrap": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:tuna-mayo-wrap": {
+   "al": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:turkey-wrap": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:veggie-delite-with-avo-wrap": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:veggie-patty-wrap": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:bbq-southern-style-chicken-wrap-large-": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ],
+   "src": "guide"
+  },
+  "sub:chicken-classic-wrap-large-": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:chicken-schnitzel-wrap-large-": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:chicken-strips-wrap-large-": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:chipotle-steak-melt-wrap-large-": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:honey-mustard-leg-ham-wrap-large-": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "sub:italian-b-m-t-wrap-large-": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:italian-meatball-wrap-large-": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:pizza-melt-wrap-large-": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:seafood-sensation-wrap-large-": {
+   "al": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:smashed-falafel-wrap-large-": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:tuna-mayo-wrap-large-": {
+   "al": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:turkey-wrap-large-": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:veggie-delite-with-avo-wrap-large-": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:veggie-patty-wrap-large-": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:bbq-southern-style-chicken-salad-regular-": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ],
+   "src": "guide"
+  },
+  "sub:chicken-classic-salad-regular-": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:italian-b-m-t-salad-regular-": {
+   "al": [
+    "egg",
+    "milk",
+    "soy"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:italian-meatball-salad-regular-": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:pizza-melt-salad-regular-": {
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:seafood-sensation-salad-regular-": {
+   "al": [
+    "egg",
+    "fish",
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:smashed-falafel-salad-regular-": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:veggie-delite-with-avo-salad-regular-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:veggie-patty-salad-regular-": {
+   "al": [
+    "gluten",
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:bbq-southern-style-chicken-salad-large-": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ],
+   "src": "guide"
+  },
+  "sub:chicken-classic-salad-large-": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:chicken-schnitzel-salad-large-": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:chipotle-steak-melt-salad-large-": {
+   "al": [
+    "egg",
+    "milk",
+    "soy",
+    "sulphites"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:honey-mustard-leg-ham-salad-large-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "sub:italian-b-m-t-salad-large-": {
+   "al": [
+    "egg",
+    "milk",
+    "soy"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:italian-meatball-salad-large-": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:pizza-melt-salad-large-": {
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:seafood-sensation-salad-large-": {
+   "al": [
+    "egg",
+    "fish",
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:smashed-falafel-salad-large-": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:tuna-mayo-salad-large-": {
+   "al": [
+    "egg",
+    "fish",
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:veggie-delite-with-avo-salad-large-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:veggie-patty-salad-large-": {
+   "al": [
+    "gluten",
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:mini-sub-turkey": {
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk",
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:mini-sub-leg-ham": {
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk",
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:mini-sub-veggie-delite-with-avo": {
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk",
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:classic-ham-egg-6-": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:mexican-style-brekkie-wrap": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:spinach-egg-brekkie-wrap": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:smashed-avo-on-toast": {
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk",
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:creamy-garlic-cheese-bread": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:chipotle-quesadilla": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:creamy-garlic-herb-bread": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:ham-cheese-tomato-toastie": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:meatball-mozza-pot": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:nachos": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:nachos-with-diced-steak": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:southern-style-chicken-bites-no-sauce-": {
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk"
+   ],
+   "src": "guide"
+  },
+  "sub:southern-style-chicken-bites-spicy-mayo-": {
+   "al": [
+    "egg",
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "milk"
+   ],
+   "src": "guide"
+  },
+  "sub:chocolate-chip-cookie": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "almond",
+    "brazil",
+    "cashew",
+    "hazelnut",
+    "macadamia",
+    "peanut",
+    "pecan",
+    "pinenut",
+    "pistachio",
+    "walnut"
+   ],
+   "src": "guide"
+  },
+  "sub:chocolate-chip-rainbow-cookie": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "almond",
+    "brazil",
+    "cashew",
+    "hazelnut",
+    "macadamia",
+    "peanut",
+    "pecan",
+    "pinenut",
+    "pistachio",
+    "walnut"
+   ],
+   "src": "guide"
+  },
+  "sub:double-chocolate-chip-cookie": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "almond",
+    "brazil",
+    "cashew",
+    "hazelnut",
+    "macadamia",
+    "peanut",
+    "pecan",
+    "pinenut",
+    "pistachio",
+    "walnut"
+   ],
+   "src": "guide"
+  },
+  "sub:raspberry-cheesecake-cookie": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "almond",
+    "brazil",
+    "cashew",
+    "hazelnut",
+    "macadamia",
+    "peanut",
+    "pecan",
+    "pinenut",
+    "pistachio",
+    "walnut"
+   ],
+   "src": "guide"
+  },
+  "sub:white-chip-macadamia-nut-cookie": {
+   "al": [
+    "egg",
+    "gluten",
+    "macadamia",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "almond",
+    "brazil",
+    "cashew",
+    "hazelnut",
+    "peanut",
+    "pecan",
+    "pinenut",
+    "pistachio",
+    "walnut"
+   ],
+   "src": "guide"
+  },
+  "sub:mango-smoothie": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:mixed-berry-banana-smoothie": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:tropical-smoothie": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:green-goddess-falafel-rice-bowl-regular-": {
+   "al": [
+    "gluten",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:green-goddess-falafel-rice-bowl-large-": {
+   "al": [
+    "gluten",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:6-malted-rye-bread": {
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk",
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:extra-meatballs": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:extra-diced-steak": {
+   "al": [
+    "soy",
+    "sulphites"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:extra-sliced-turkey": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:extra-avocado": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:6-ghost-pepper-bread": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "sub:extra-tuna-mayo": {
+   "al": [
+    "egg",
+    "fish",
+    "soy"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:extra-cheddar-cheese": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "sub:extra-mozzarella": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
    "src": "guide"
   },
   "gyg:grilled-chicken-burrito-bowl": {

@@ -1,0 +1,607 @@
+{
+ "source": "kfc.com.au Nutrition & Allergen Guide (each item's More Info panel, read in a browser; items whose panel lists no allergens table, like combos and boxes, are left out)",
+ "fetched": "2026-10-15",
+ "items": {
+  "NEW 3 ORIGINAL TENDERS™ DIP'D": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "NEW 5 ORIGINAL TENDERS™ DIP'D": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "CHIMICHURRI RANCH DIP": {
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": []
+  },
+  "CARAMEL BISCUIT BLISS CUP": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "peanut",
+    "sesame",
+    "treenut"
+   ]
+  },
+  "ORIGINAL CRISPY BURGER": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "ORIGINAL CRISPY BACON & CHEESE BURGER": {
+   "al": [
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
+  },
+  "ORIGINAL CRISPY BBQ BACON STACKER® BURGER": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "DOUBLE TENDER™ BURGER": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "ZINGER® BURGER": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "ZINGER® BACON & CHEESE BURGER": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "ZINGER STACKER® BURGER": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "ZINGER® CRUNCH BURGER": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "NEW 1 ORIGINAL TENDER": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "soy"
+   ]
+  },
+  "3 PIECES WICKED BONELESS": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "soy"
+   ]
+  },
+  "6 PIECES WICKED BONELESS": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "soy"
+   ]
+  },
+  "1 PIECE OF CHICKEN": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "soy"
+   ]
+  },
+  "6 PIECES OF CHICKEN": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "soy"
+   ]
+  },
+  "21 PIECES OF CHICKEN": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "soy"
+   ]
+  },
+  "ORIGINAL CRISPY FILLET PIECE": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "soy"
+   ]
+  },
+  "ZINGER® FILLET PIECE": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "soy"
+   ]
+  },
+  "SNACK POPCORN CHICKEN": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "REGULAR POPCORN CHICKEN": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "MAXI POPCORN CHICKEN": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "3 WICKED WINGS": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "soy"
+   ]
+  },
+  "6 WICKED WINGS": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "soy"
+   ]
+  },
+  "10 WICKED WINGS": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "soy"
+   ]
+  },
+  "6 NUGGETS": {
+   "al": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "10 NUGGETS": {
+   "al": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "REGULAR CHIPS": {
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk",
+    "soy"
+   ]
+  },
+  "ORIGINAL PEPPER MAYO SLIDER": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
+  },
+  "ORIGINAL BBQ SLIDER": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
+  },
+  "ORIGINAL SUPERCHARGED SLIDER": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
+  },
+  "DOUBLE CHOCOLATE MOUSSE": {
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "peanut",
+    "treenut",
+    "wheat"
+   ]
+  },
+  "PEPSI FREEZE": {
+   "al": [],
+   "may": []
+  },
+  "MOUNTAIN DEW FREEZE": {
+   "al": [],
+   "may": []
+  },
+  "RASPBERRY FREEZE": {
+   "al": [],
+   "may": []
+  },
+  "REGULAR PEPSI MAX": {
+   "al": [],
+   "may": []
+  },
+  "REGULAR PEPSI": {
+   "al": [],
+   "may": []
+  },
+  "REGULAR 7UP": {
+   "al": [],
+   "may": []
+  },
+  "REGULAR MOUNTAIN DEW": {
+   "al": [],
+   "may": []
+  },
+  "REGULAR SOLO": {
+   "al": [],
+   "may": []
+  },
+  "REGULAR SUNKIST NO SUGAR": {
+   "al": [],
+   "may": []
+  },
+  "SPARKLING WATER": {
+   "al": [],
+   "may": []
+  },
+  "ZINGER® PROTEIN BOWL": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "soy"
+   ]
+  },
+  "ZINGER® CRUNCH TWISTER": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
+  },
+  "ORIGINAL CRUNCH TWISTER": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
+  },
+  "ZINGER® CRUNCH BOWL": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "soy"
+   ]
+  },
+  "ORIGINAL TENDERS™ CRUNCH BOWL": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
+  },
+  "GO BUCKET® WICKED BONELESS": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "soy"
+   ]
+  },
+  "GO BUCKET® POPCORN CHICKEN": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "GO BUCKET® 1 ORIGINAL TENDER": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "soy"
+   ]
+  },
+  "GO BUCKET® 2 WICKED WINGS": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "soy"
+   ]
+  },
+  "GO BUCKET® 3 NUGGETS": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "soy"
+   ]
+  },
+  "LARGE CHIPS": {
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk",
+    "soy"
+   ]
+  },
+  "CRUNCHY JALAPENO SLAW": {
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "sesame",
+    "wheat"
+   ]
+  },
+  "LARGE POTATO & GRAVY": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sulphites",
+    "wheat"
+   ],
+   "may": []
+  },
+  "REGULAR POTATO & GRAVY": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sulphites",
+    "wheat"
+   ],
+   "may": []
+  },
+  "LARGE COLESLAW": {
+   "al": [
+    "egg"
+   ],
+   "may": []
+  },
+  "REGULAR COLESLAW": {
+   "al": [
+    "egg"
+   ],
+   "may": []
+  },
+  "REGULAR GRAVY": {
+   "al": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "may": []
+  },
+  "DINNER ROLL": {
+   "al": [
+    "gluten",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "CHRIS' BIG BRO COMBO - REGULAR": {
+   "al": [
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
+  }
+ }
+}

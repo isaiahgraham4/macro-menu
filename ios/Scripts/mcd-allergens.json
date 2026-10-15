@@ -1,0 +1,1729 @@
+{
+ "source": "mcdonalds.com/au item pages (the site's own itemDetails, read in a browser; ingredients and allergens of each component), 15 Oct 2026",
+ "fetched": "2026-10-15",
+ "items": {
+  "200000": {
+   "h": "pop-tops-apple-juice",
+   "al": [],
+   "may": []
+  },
+  "200001": {
+   "h": "raisin-toast-butter",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame"
+   ]
+  },
+  "200002": {
+   "h": "hotcakes-butter-and-syrup",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": []
+  },
+  "200003": {
+   "h": "whipped-butter",
+   "al": [
+    "milk"
+   ],
+   "may": []
+  },
+  "200007": {
+   "h": "hotcake-syrup",
+   "al": [],
+   "may": []
+  },
+  "200010": {
+   "h": "barbeque-sauce",
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "200014": {
+   "h": "sweet-n-sour-sauce",
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "200023": {
+   "h": "cheesy-toastie",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame"
+   ]
+  },
+  "200024": {
+   "h": "ham-cheese-toastie",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame"
+   ]
+  },
+  "200028": {
+   "h": "tartare-sauce",
+   "al": [
+    "egg"
+   ],
+   "may": []
+  },
+  "200030": {
+   "h": "big-mac-special-sauce",
+   "al": [
+    "egg"
+   ],
+   "may": []
+  },
+  "200052": {
+   "h": "calcium-chocolate",
+   "al": [
+    "milk"
+   ],
+   "may": []
+  },
+  "200056": {
+   "h": "oreo-cookie-mcflurry",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "peanut"
+   ]
+  },
+  "200057": {
+   "h": "mm-minis-mcflurry",
+   "al": [
+    "gluten",
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "peanut",
+    "treenut",
+    "wheat"
+   ]
+  },
+  "200058": {
+   "h": "caramel-sundae-small",
+   "al": [
+    "milk"
+   ],
+   "may": []
+  },
+  "200060": {
+   "h": "apple-slices",
+   "al": [],
+   "may": []
+  },
+  "200080": {
+   "h": "soft-serve-cone",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "200097": {
+   "h": "mcdonaldland-cookies",
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk",
+    "peanut",
+    "sesame",
+    "treenut"
+   ]
+  },
+  "200105": {
+   "h": "600ml-cool-ridge-water",
+   "al": [],
+   "may": []
+  },
+  "200106": {
+   "h": "pop-tops-water",
+   "al": [],
+   "may": []
+  },
+  "200109": {
+   "h": "banana-bread-butter",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "soy"
+   ]
+  },
+  "200115": {
+   "h": "chai-latte-medium",
+   "al": [
+    "gluten",
+    "milk",
+    "sulphites"
+   ],
+   "may": [
+    "soy",
+    "treenut"
+   ]
+  },
+  "200118": {
+   "h": "soft-serve-cone-cadbury-flake",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "peanut",
+    "treenut"
+   ]
+  },
+  "200140": {
+   "h": "hash-brown",
+   "al": [],
+   "may": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
+  },
+  "200150": {
+   "h": "mcchicken-sauce",
+   "al": [
+    "egg"
+   ],
+   "may": []
+  },
+  "200151": {
+   "h": "ketchup",
+   "al": [
+    "soy"
+   ],
+   "may": []
+  },
+  "200167": {
+   "h": "cafe-butter",
+   "al": [
+    "milk"
+   ],
+   "may": []
+  },
+  "200192": {
+   "h": "english-breakfast-tea-medium",
+   "al": [],
+   "may": []
+  },
+  "200197": {
+   "h": "apple-crumble-muffin",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "200200": {
+   "h": "double-choc-muffin",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "200202": {
+   "h": "biscoff-mcpops",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "treenut"
+   ]
+  },
+  "200203": {
+   "h": "choc-mcpops",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "treenut"
+   ]
+  },
+  "200206": {
+   "h": "berry-mcpops",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200213": {
+   "h": "iced-matcha-latte-medium",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200214": {
+   "h": "earl-grey-tea-small",
+   "al": [],
+   "may": []
+  },
+  "200215": {
+   "h": "matcha-latte-medium",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200284": {
+   "h": "ranch-sauce",
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": []
+  },
+  "200289": {
+   "h": "spicy-buffalo-sauce",
+   "al": [
+    "milk"
+   ],
+   "may": []
+  },
+  "200323": {
+   "h": "coca-cola-medium",
+   "al": [],
+   "may": []
+  },
+  "200327": {
+   "h": "fanta-medium",
+   "al": [],
+   "may": []
+  },
+  "200329": {
+   "h": "coca-cola-vanilla-medium",
+   "al": [],
+   "may": []
+  },
+  "200357": {
+   "h": "sweet-mustard-sauce",
+   "al": [],
+   "may": []
+  },
+  "200360": {
+   "h": "sparkling-water-medium",
+   "al": [],
+   "may": []
+  },
+  "200363": {
+   "h": "frozen-coke-medium",
+   "al": [],
+   "may": []
+  },
+  "200379": {
+   "h": "hot-fudge-sundae-small",
+   "al": [
+    "milk"
+   ],
+   "may": []
+  },
+  "200387": {
+   "h": "frozen-coke-zero-sugar-medium",
+   "al": [],
+   "may": []
+  },
+  "200398": {
+   "h": "cheeseburger",
+   "al": [
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
+  },
+  "200400": {
+   "h": "double-cheeseburger",
+   "al": [
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
+  },
+  "200402": {
+   "h": "hamburger",
+   "al": [
+    "gluten",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk"
+   ]
+  },
+  "200441": {
+   "h": "chicken-mcwings",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ]
+  },
+  "200443": {
+   "h": "3pc-chicken-mcnuggets",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ]
+  },
+  "200444": {
+   "h": "6pc-chicken-mcnuggets",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ]
+  },
+  "200445": {
+   "h": "10pc-chicken-mcnuggets",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ]
+  },
+  "200446": {
+   "h": "20pc-chicken-mcnuggets",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ]
+  },
+  "200447": {
+   "h": "40pc-chicken-mcnuggets",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ]
+  },
+  "200453": {
+   "h": "red-bull-energy-drink-250ml",
+   "al": [],
+   "may": []
+  },
+  "200458": {
+   "h": "cheese-tomato-toastie",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame"
+   ]
+  },
+  "200486": {
+   "h": "bacon-egg-mcmuffin",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
+  },
+  "200489": {
+   "h": "mighty-mcmuffin",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
+  },
+  "200490": {
+   "h": "double-sausage-mcmuffin",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame"
+   ]
+  },
+  "200509": {
+   "h": "chocolate-shake-large",
+   "al": [
+    "milk"
+   ],
+   "may": []
+  },
+  "200512": {
+   "h": "vanilla-shake-large",
+   "al": [
+    "milk"
+   ],
+   "may": []
+  },
+  "200514": {
+   "h": "strawberry-shake-large",
+   "al": [
+    "milk"
+   ],
+   "may": []
+  },
+  "200521": {
+   "h": "small-fries",
+   "al": [],
+   "may": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
+  },
+  "200529": {
+   "h": "frozen-fanta-raspberry-medium",
+   "al": [],
+   "may": []
+  },
+  "200534": {
+   "h": "big-mac",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "200536": {
+   "h": "strawberry-sundae-small",
+   "al": [
+    "milk"
+   ],
+   "may": []
+  },
+  "200544": {
+   "h": "frozen-fanta-blueberry-medium",
+   "al": [],
+   "may": []
+  },
+  "200548": {
+   "h": "iced-long-black-medium",
+   "al": [],
+   "may": []
+  },
+  "200554": {
+   "h": "coffee-frappe-large",
+   "al": [
+    "milk",
+    "sulphites"
+   ],
+   "may": [
+    "gluten",
+    "wheat"
+   ]
+  },
+  "200556": {
+   "h": "chocolate-frappe-large",
+   "al": [
+    "gluten",
+    "milk",
+    "sulphites",
+    "wheat"
+   ],
+   "may": []
+  },
+  "200561": {
+   "h": "macchiato",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200574": {
+   "h": "latte-medium",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200575": {
+   "h": "espresso",
+   "al": [],
+   "may": []
+  },
+  "200576": {
+   "h": "piccolo-latte",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200594": {
+   "h": "long-black-medium",
+   "al": [],
+   "may": []
+  },
+  "200599": {
+   "h": "sausage-egg-mcmuffin",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
+  },
+  "200600": {
+   "h": "frozen-fanta-orange-medium",
+   "al": [],
+   "may": []
+  },
+  "200605": {
+   "h": "ham-cheese-pocket",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
+  },
+  "200617": {
+   "h": "sausage-mcmuffin",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame"
+   ]
+  },
+  "200620": {
+   "h": "double-bacon-egg-mcmuffin",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
+  },
+  "200621": {
+   "h": "double-sausage-egg-mcmuffin",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
+  },
+  "200622": {
+   "h": "ham-cheese-tomato-toastie",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame"
+   ]
+  },
+  "200631": {
+   "h": "mcchicken",
+   "al": [
+    "egg",
+    "gluten",
+    "sesame",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ]
+  },
+  "200635": {
+   "h": "chicken-n-cheese",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "200636": {
+   "h": "filet-o-fish",
+   "al": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "200646": {
+   "h": "triple-cheeseburger",
+   "al": [
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
+  },
+  "200648": {
+   "h": "double-filet-o-fish",
+   "al": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "200661": {
+   "h": "hot-apple-pie",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "200665": {
+   "h": "iced-chai-latte-medium",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200670": {
+   "h": "brekkie-mcwrap",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
+  },
+  "200677": {
+   "h": "mcspicy",
+   "al": [
+    "egg",
+    "gluten",
+    "sesame",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ]
+  },
+  "200687": {
+   "h": "chicken-bacon-mcmuffin",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
+  },
+  "200698": {
+   "h": "mega-brekkie-mcwrap",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
+  },
+  "200705": {
+   "h": "quarter-pounder",
+   "al": [
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
+  },
+  "200708": {
+   "h": "double-quarter-pounder",
+   "al": [
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
+  },
+  "200709": {
+   "h": "big-brekkie-burger",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "200714": {
+   "h": "flat-white-medium",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200725": {
+   "h": "spicy-chicken-mcwrap",
+   "al": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "sesame",
+    "soy"
+   ]
+  },
+  "200733": {
+   "h": "iced-strawberry-matcha-latte-medium",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200734": {
+   "h": "chicken-mcmuffin",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
+  },
+  "200737": {
+   "h": "iced-golden-caramel-latte-medium",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200739": {
+   "h": "hot-chocolate-medium",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200741": {
+   "h": "aioli-sauce",
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": []
+  },
+  "200742": {
+   "h": "crispy-chicken-snack-wrap",
+   "al": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "sesame",
+    "soy"
+   ]
+  },
+  "200743": {
+   "h": "salted-caramel-frappe-large",
+   "al": [
+    "milk",
+    "sulphites"
+   ],
+   "may": [
+    "gluten",
+    "wheat"
+   ]
+  },
+  "200751": {
+   "h": "mccrispy-deluxe",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": []
+  },
+  "200757": {
+   "h": "classic-chicken-mcwrap",
+   "al": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "sesame",
+    "soy"
+   ]
+  },
+  "200759": {
+   "h": "mccrispy",
+   "al": [
+    "egg",
+    "gluten",
+    "sesame",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ]
+  },
+  "200776": {
+   "h": "cappuccino-large",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200779": {
+   "h": "mocha-medium",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200781": {
+   "h": "green-tea-medium",
+   "al": [],
+   "may": []
+  },
+  "200782": {
+   "h": "peppermint-tea-medium",
+   "al": [],
+   "may": []
+  },
+  "200784": {
+   "h": "big-arch",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "200785": {
+   "h": "iced-mocha-medium",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200787": {
+   "h": "babyccino",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200790": {
+   "h": "fanta-raspberry-medium",
+   "al": [],
+   "may": []
+  },
+  "200792": {
+   "h": "iced-chocolate-medium",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200795": {
+   "h": "coca-cola-zero-sugar-medium",
+   "al": [],
+   "may": []
+  },
+  "200797": {
+   "h": "sprite-medium",
+   "al": [],
+   "may": []
+  },
+  "200802": {
+   "h": "plain-sundae-small",
+   "al": [
+    "milk"
+   ],
+   "may": []
+  },
+  "200809": {
+   "h": "deluxe-vanilla-flavoured-iced-coffee-medium",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200812": {
+   "h": "deluxe-hazelnut-flavoured-iced-coffee-medium",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200815": {
+   "h": "deluxe-caramel-flavoured-iced-coffee-medium",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200818": {
+   "h": "frozen-fanta-lemon-medium",
+   "al": [],
+   "may": []
+  },
+  "200825": {
+   "h": "double-big-mac",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "200826": {
+   "h": "double-mcchicken",
+   "al": [
+    "egg",
+    "gluten",
+    "sesame",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ]
+  },
+  "200838": {
+   "h": "kirks-lemon-lime-bitters-medium",
+   "al": [],
+   "may": []
+  },
+  "200843": {
+   "h": "red-bull-dragonberry-energiser-medium",
+   "al": [],
+   "may": [
+    "gluten",
+    "wheat"
+   ]
+  },
+  "200861": {
+   "h": "orange-apple-juice-medium",
+   "al": [],
+   "may": []
+  },
+  "200863": {
+   "h": "double-quarter-pounder-bbq-bacon",
+   "al": [
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
+  },
+  "200864": {
+   "h": "quarter-pounder-bbq-bacon",
+   "al": [
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
+  },
+  "200865": {
+   "h": "double-quarter-pounder-deluxe",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "200866": {
+   "h": "quarter-pounder-deluxe",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "200869": {
+   "h": "cheesy-mccrispy",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": []
+  },
+  "200875": {
+   "h": "cheesy-quarter-pounder",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "200876": {
+   "h": "cheesy-double-quarter-pounder",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "200877": {
+   "h": "berry-blast-sprite-medium",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": []
+  },
+  "200880": {
+   "h": "lemon-flavour-drink-medium",
+   "al": [],
+   "may": []
+  },
+  "200883": {
+   "h": "strawberry-watermelon-refresher-medium",
+   "al": [],
+   "may": [
+    "gluten",
+    "wheat"
+   ]
+  },
+  "200886": {
+   "h": "popping-mango-refresher-medium",
+   "al": [],
+   "may": []
+  },
+  "200889": {
+   "h": "popping-green-apple-sprite-medium",
+   "al": [],
+   "may": []
+  },
+  "200891": {
+   "h": "choc-coconut-frappe-medium",
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": []
+  },
+  "200894": {
+   "h": "brown-sugar-shaken-espresso-with-oat-milk-medium",
+   "al": [
+    "gluten"
+   ],
+   "may": [
+    "milk",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200898": {
+   "h": "tim-tam-jatz-mcflurry",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame"
+   ]
+  },
+  "200900": {
+   "h": "deluxe-bacon-egg-mcmuffin",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
+  },
+  "200901": {
+   "h": "deluxe-sausage-egg-mcmuffin",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
+  },
+  "200902": {
+   "h": "deluxe-brekkie-mcwrap",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
+  },
+  "200903": {
+   "h": "deluxe-mighty-mcmuffin",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
+  },
+  "200905": {
+   "h": "iced-matcha-latte-with-cold-foam-medium",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ]
+  },
+  "200908": {
+   "h": "iced-strawberry-matcha-latte-with-cold-foam-medium",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ]
+  },
+  "200911": {
+   "h": "iced-vanilla-matcha-with-cold-foam-medium",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ]
+  },
+  "200914": {
+   "h": "iced-vanilla-matcha-medium",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200916": {
+   "h": "red-bull-zero-sugar-energy-drink-250ml",
+   "al": [],
+   "may": []
+  },
+  "200919": {
+   "h": "birdie-bacon-egg-mcmuffin",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
+  },
+  "200920": {
+   "h": "birdie-brekkie-mcwrap",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
+  },
+  "200921": {
+   "h": "birdie-chicken-bacon-mcmuffin",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
+  },
+  "200923": {
+   "h": "birdie-sausage-egg-mcmuffin",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
+  },
+  "200931": {
+   "h": "frozen-fanta-mango-medium",
+   "al": [],
+   "may": []
+  },
+  "200934": {
+   "h": "10pc-nashville-shaker-mcwings",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ]
+  },
+  "200935": {
+   "h": "5pc-nashville-shaker-mcwings",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ]
+  },
+  "200936": {
+   "h": "3pc-nashville-shaker-mcwings",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ]
+  },
+  "200940": {
+   "h": "nashville-mcwrap",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "soy"
+   ]
+  },
+  "200941": {
+   "h": "nashville-mccrispy",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "soy"
+   ]
+  },
+  "200942": {
+   "h": "nashville-mcspicy",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "wheat"
+   ],
+   "may": [
+    "soy"
+   ]
+  },
+  "200943": {
+   "h": "small-nashville-shaker-fries",
+   "al": [],
+   "may": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
+  },
+  "200947": {
+   "h": "affogato",
+   "al": [
+    "milk"
+   ],
+   "may": []
+  },
+  "200949": {
+   "h": "frozen-fanta-mango-strawberry-popping-pearls-medium",
+   "al": [],
+   "may": []
+  },
+  "200951": {
+   "h": "hazelnut-affogato",
+   "al": [
+    "milk"
+   ],
+   "may": []
+  },
+  "200956": {
+   "h": "iced-tiramisu-latte-medium",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ]
+  },
+  "200958": {
+   "h": "red-bull-strawberries-cream-energiser",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "wheat"
+   ]
+  },
+  "200959": {
+   "h": "red-bull-zero-strawberries-cream-energiser",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "wheat"
+   ]
+  },
+  "200965": {
+   "h": "nashville-shaker-seasoning",
+   "al": [],
+   "may": []
+  }
+ }
+}

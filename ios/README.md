@@ -71,10 +71,13 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   `Scripts/diet-info.py` from Grill'd's ingredient lists and allergen statements, Nando's and Hungry Jack's allergens,
   McDonald's and Subway ingredients, Hungry Jack's, Oporto, Red Rooster and Domino's descriptions, and GYG, Zambrero and
   KFC names, plus the restaurants' own allergen guides read by `Scripts/allergen-guides.py` (Domino's, Boost, Oporto, Red
-  Rooster, Spud Bar, Schnitz, Zambrero, GYG and Hungry Jack's; items built from parts, like a GYG burrito, use the
+  Rooster, Spud Bar, Schnitz, Zambrero, GYG, Hungry Jack's and Subway; items built from parts, like a GYG burrito, use the
   restaurant's own list of what's in them). "May contain" counts as contains, and gelatine counts against no beef and no
   pork. To refresh: `allergen-guides.py fetch`, `allergen-guides.py build`, `diet-info.py build`, then `export-menu.cjs`.
-  McDonald's, KFC and Subway publish allergens only behind bot protection, so they have none yet.
+  McDonald's and KFC show theirs only inside their own pages (the item pages' ingredient and allergen lists, and KFC's
+  guide panels), so those were read once in a normal browser and saved as `mcd-allergens.json` and `kfc-allergens.json`;
+  Subway's allergen guide PDF is read by the script. KFC's combos, boxes and feasts have no allergen panel, so they stay
+  unknown.
 - Ask Leanr (Find, at the top): a question in plain words ("vegetarian, 40 g protein under 600 Cal at Nando's") becomes an
   order search. `AskLeanr.parse` reads numbers, restaurants, item counts and needs; with Apple Intelligence, `AskLeanrModel`
   fills in what the rules miss, but only numbers that are in the question. What was understood is shown as chips.
