@@ -10,7 +10,7 @@ struct LeanrWaterWidget: Widget {
         }
         .configurationDisplayName("Water")
         .description("Today's water against your target. Tap + to add a glass.")
-        .supportedFamilies([.systemSmall, .accessoryCircular, .accessoryRectangular, .accessoryInline])
+        .supportedFamilies([.systemSmall, .systemMedium, .accessoryCircular, .accessoryRectangular, .accessoryInline])
     }
 }
 
@@ -49,6 +49,8 @@ struct WaterWidgetView: View {
         millilitres < 1000 ? "\(Int(millilitres.rounded())) mL" : (millilitres / 1000).formatted(.number.precision(.fractionLength(0...2))) + " L"
     }
     private var addLabel: String { "Add \(amount(glass)) of water" }
+    /// The second button on the wide widget: a bottle, or the next size up when a glass is already that big.
+    private var bottle: Double { glass == 500 ? 750 : 500 }
 
     var body: some View {
         Group {
@@ -77,6 +79,28 @@ struct WaterWidgetView: View {
                         Image(systemName: "plus.circle.fill").font(.title2)
                     }
                     .buttonStyle(.plain).accessibilityLabel(addLabel)
+                }
+            case .systemMedium:
+                HStack(spacing: 16) {
+                    VStack(alignment: .leading, spacing: 6) {
+                        Label("Water", systemImage: "drop.fill").font(.roboto(.caption, weight: .semibold)).foregroundStyle(.cyan)
+                        Spacer(minLength: 0)
+                        Text(amount(drunk)).font(.roboto(.title, weight: .bold)).minimumScaleFactor(0.7).lineLimit(1).monospacedDigit()
+                        Text(drunk >= target ? "Target reached" : "of \(amount(target))").font(.roboto(.caption)).foregroundStyle(.secondary)
+                        Gauge(value: progress) { EmptyView() }.gaugeStyle(.linearCapacity).tint(.cyan).accessibilityHidden(true)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    VStack(spacing: 8) {
+                        ForEach([glass, bottle], id: \.self) { size in
+                            Button(intent: LogAgainIntent(option: WidgetCalories.waterOption(size))) {
+                                Label("+ \(amount(size))", systemImage: "drop.fill").labelStyle(.titleOnly)
+                                    .font(.roboto(.subheadline, weight: .semibold)).frame(maxWidth: .infinity)
+                            }
+                            .tint(accent).buttonStyle(.borderedProminent).buttonBorderShape(.capsule)
+                            .accessibilityLabel("Add \(amount(size)) of water")
+                        }
+                    }
+                    .frame(width: 120)
                 }
             default:
                 VStack(alignment: .leading, spacing: 6) {
