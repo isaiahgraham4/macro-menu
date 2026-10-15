@@ -1228,11 +1228,10 @@
     "milk",
     "sesame",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "sulphites"
    ]
   },
   "hj:whopper-with-cheese": {
@@ -1246,11 +1245,10 @@
     "milk",
     "sesame",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "sulphites"
    ]
   },
   "hj:double-whopper": {
@@ -1261,14 +1259,14 @@
    "al": [
     "egg",
     "gluten",
-    "milk",
     "sesame",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "fish",
+    "milk",
+    "sulphites"
    ]
   },
   "hj:whopper-junior": {
@@ -1280,11 +1278,12 @@
     "egg",
     "gluten",
     "sesame",
-    "soy"
-   ],
-   "unk": [
-    "lupin",
+    "soy",
     "wheat"
+   ],
+   "may": [
+    "milk",
+    "sulphites"
    ]
   },
   "hj:whopper-junior-with-cheese": {
@@ -1297,11 +1296,11 @@
     "gluten",
     "milk",
     "sesame",
-    "soy"
-   ],
-   "unk": [
-    "lupin",
+    "soy",
     "wheat"
+   ],
+   "may": [
+    "sulphites"
    ]
   },
   "hj:big-jack": {
@@ -1315,11 +1314,10 @@
     "milk",
     "sesame",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "sulphites"
    ]
   },
   "hj:double-big-jack": {
@@ -1333,11 +1331,10 @@
     "milk",
     "sesame",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "sulphites"
    ]
   },
   "hj:classic-jack-s-fried-chicken": {
@@ -1349,13 +1346,12 @@
     "egg",
     "gluten",
     "milk",
-    "sesame",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
    ]
   },
   "hj:spicy-jack-s-fried-chicken": {
@@ -1367,13 +1363,12 @@
     "egg",
     "gluten",
     "milk",
-    "sesame",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
    ]
   },
   "hj:grilled-chicken-burger": {
@@ -1387,11 +1382,10 @@
     "milk",
     "sesame",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "sulphites"
    ]
   },
   "hj:spicy-grilled-chicken-burger": {
@@ -1402,14 +1396,13 @@
    "al": [
     "egg",
     "gluten",
-    "milk",
     "sesame",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "milk",
+    "sulphites"
    ]
   },
   "hj:grilled-chicken-with-bacon-cheese": {
@@ -1442,16 +1435,30 @@
     "milk",
     "sesame",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "sulphites"
    ]
   },
   "hj:grill-masters-angus-bacon-cheese": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "beef",
+    "fish",
+    "pork"
+   ],
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ]
   },
   "hj:3-nuggets": {
    "meat": [
@@ -1459,15 +1466,14 @@
    ],
    "src": "ingredients",
    "al": [
-    "egg",
     "gluten",
+    "wheat"
+   ],
+   "may": [
+    "egg",
     "milk",
     "soy",
     "sulphites"
-   ],
-   "unk": [
-    "lupin",
-    "wheat"
    ]
   },
   "hj:6-nuggets": {
@@ -1476,15 +1482,14 @@
    ],
    "src": "ingredients",
    "al": [
-    "egg",
     "gluten",
+    "wheat"
+   ],
+   "may": [
+    "egg",
     "milk",
     "soy",
     "sulphites"
-   ],
-   "unk": [
-    "lupin",
-    "wheat"
    ]
   },
   "hj:12-nuggets": {
@@ -1493,20 +1498,27 @@
    ],
    "src": "ingredients",
    "al": [
-    "egg",
     "gluten",
-    "milk",
-    "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
    ]
   },
   "hj:3-jack-s-fried-chicken-tenders": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "fish",
+    "milk",
+    "sesame",
+    "soy",
+    "sulphites"
+   ]
   },
   "hj:smoky-bbq-tender-snack-wrap": {
    "meat": [
@@ -1514,15 +1526,14 @@
    ],
    "src": "ingredients",
    "al": [
-    "egg",
     "gluten",
+    "wheat"
+   ],
+   "may": [
+    "egg",
     "milk",
     "soy",
     "sulphites"
-   ],
-   "unk": [
-    "lupin",
-    "wheat"
    ]
   },
   "hj:bbq-brekky-wrap": {
@@ -1542,38 +1553,69 @@
   },
   "hj:sausage-egg-turkish-brekky-roll": {
    "meat": null,
-   "src": null
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sulphites"
+   ]
   },
   "hj:thick-cut-chips": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "sulphites"
+   ],
+   "may": [
+    "gluten",
+    "wheat"
+   ]
   },
   "hj:battered-onion-rings": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "hj:hash-brown": {
    "meat": [],
    "src": "ingredients",
-   "al": [],
-   "unk": [
-    "lupin"
+   "al": [
+    "soy"
    ],
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "may": [
+    "gluten",
+    "sulphites",
+    "wheat"
+   ]
   },
   "hj:big-bbq-brekky-wrap": {
-   "meat": null,
-   "src": "ingredients",
+   "meat": [
+    "beef",
+    "fish",
+    "pork"
+   ],
+   "src": "description",
    "al": [
     "egg",
     "gluten",
     "milk",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "sulphites"
    ]
   },
   "hj:mega-bbq-brekky-wrap": {
@@ -1593,18 +1635,17 @@
   },
   "hj:jack-s-brekky-roll": {
    "meat": null,
-   "src": "ingredients",
+   "src": "description",
    "al": [
     "egg",
     "gluten",
     "milk",
-    "sesame",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
    ]
   },
   "hj:brekky-hunger-tamers": {
@@ -1612,12 +1653,28 @@
    "src": null
   },
   "hj:french-toast-fingers-4-": {
-   "meat": null,
-   "src": null
+   "meat": [],
+   "src": "description",
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "hj:french-toast-fingers-6-": {
-   "meat": null,
-   "src": null
+   "meat": [],
+   "src": "description",
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "hj:cheese-toastie": {
    "meat": [],
@@ -1625,14 +1682,13 @@
    "al": [
     "gluten",
     "milk",
-    "sesame",
-    "soy"
-   ],
-   "unk": [
-    "lupin",
+    "soy",
     "wheat"
    ],
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "may": [
+    "sesame"
+   ]
   },
   "hj:ham-cheese-toastie": {
    "meat": [
@@ -1642,13 +1698,12 @@
    "al": [
     "gluten",
     "milk",
-    "sesame",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
    ]
   },
   "hj:ham-cheese-tomato-toastie": {
@@ -1659,12 +1714,7 @@
    "al": [
     "gluten",
     "milk",
-    "sesame",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
    ]
   },
@@ -1679,11 +1729,10 @@
     "milk",
     "sesame",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "sulphites"
    ]
   },
   "hj:cowboy-whopper": {
@@ -1706,11 +1755,11 @@
     "milk",
     "sesame",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "fish",
+    "sulphites"
    ]
   },
   "hj:double-whopper-with-cheese": {
@@ -1724,11 +1773,11 @@
     "milk",
     "sesame",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "fish",
+    "sulphites"
    ]
   },
   "hj:triple-whopper-with-cheese": {
@@ -1741,11 +1790,11 @@
     "gluten",
     "milk",
     "sesame",
-    "soy"
-   ],
-   "unk": [
-    "lupin",
+    "soy",
     "wheat"
+   ],
+   "may": [
+    "sulphites"
    ]
   },
   "hj:angry-whopper": {
@@ -1758,11 +1807,11 @@
     "gluten",
     "milk",
     "sesame",
-    "soy"
-   ],
-   "unk": [
-    "lupin",
+    "soy",
     "wheat"
+   ],
+   "may": [
+    "sulphites"
    ]
   },
   "hj:bacon-deluxe": {
@@ -1777,11 +1826,10 @@
     "milk",
     "sesame",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "sulphites"
    ]
   },
   "hj:hamburger": {
@@ -1790,16 +1838,15 @@
    ],
    "src": "ingredients",
    "al": [
-    "egg",
     "gluten",
-    "milk",
     "sesame",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk",
+    "sulphites"
    ]
   },
   "hj:cheeseburger": {
@@ -1808,16 +1855,15 @@
    ],
    "src": "ingredients",
    "al": [
-    "egg",
     "gluten",
     "milk",
     "sesame",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "egg",
+    "sulphites"
    ]
   },
   "hj:bbq-cheeseburger": {
@@ -1831,11 +1877,10 @@
     "milk",
     "sesame",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "sulphites"
    ]
   },
   "hj:double-cheeseburger": {
@@ -1844,16 +1889,15 @@
    ],
    "src": "ingredients",
    "al": [
-    "egg",
     "gluten",
     "milk",
     "sesame",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "egg",
+    "sulphites"
    ]
   },
   "hj:triple-cheeseburger": {
@@ -1862,16 +1906,15 @@
    ],
    "src": "ingredients",
    "al": [
-    "egg",
     "gluten",
     "milk",
     "sesame",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "egg",
+    "sulphites"
    ]
   },
   "hj:grill-masters-bbq-smokehouse-angus": {
@@ -1884,13 +1927,12 @@
     "egg",
     "gluten",
     "milk",
-    "sesame",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
    ]
   },
   "hj:grill-masters-double-bbq-smokehouse-angus": {
@@ -1903,22 +1945,53 @@
     "egg",
     "gluten",
     "milk",
-    "sesame",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
    ]
   },
   "hj:grill-masters-spicy-chipotle-angus": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "beef",
+    "pork"
+   ],
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "fish",
+    "sesame",
+    "shellfish",
+    "sulphites"
+   ]
   },
   "hj:grill-masters-double-spicy-chipotle-angus": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "beef",
+    "pork"
+   ],
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "fish",
+    "sesame",
+    "shellfish",
+    "sulphites"
+   ]
   },
   "hj:grill-masters-smoky-chipotle-angus": {
    "meat": [
@@ -1928,17 +2001,15 @@
    "src": "ingredients",
    "al": [
     "egg",
-    "fish",
     "gluten",
     "milk",
-    "sesame",
-    "shellfish",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "fish",
+    "sesame",
+    "sulphites"
    ]
   },
   "hj:grill-masters-double-smoky-chipotle-angus": {
@@ -1949,26 +2020,54 @@
    "src": "ingredients",
    "al": [
     "egg",
-    "fish",
     "gluten",
     "milk",
-    "sesame",
-    "shellfish",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "fish",
+    "sesame",
+    "sulphites"
    ]
   },
   "hj:grill-masters-cowboy-angus": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "beef",
+    "fish",
+    "pork"
+   ],
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ]
   },
   "hj:grill-masters-double-cowboy-angus": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "beef",
+    "fish",
+    "pork"
+   ],
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ]
   },
   "hj:grill-masters-chicago-angus": {
    "meat": [
@@ -1978,17 +2077,15 @@
    "src": "ingredients",
    "al": [
     "egg",
-    "fish",
     "gluten",
     "milk",
-    "sesame",
-    "shellfish",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "fish",
+    "sesame",
+    "sulphites"
    ]
   },
   "hj:grill-masters-double-chicago-angus": {
@@ -1999,22 +2096,35 @@
    "src": "ingredients",
    "al": [
     "egg",
-    "fish",
     "gluten",
     "milk",
-    "sesame",
-    "shellfish",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "fish",
+    "sesame",
+    "sulphites"
    ]
   },
   "hj:grill-masters-double-angus-bacon-cheese": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "beef",
+    "fish",
+    "pork"
+   ],
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "sulphites"
+   ]
   },
   "hj:napoletana-jack-s-fried-chicken": {
    "meat": [
@@ -2026,13 +2136,12 @@
     "egg",
     "gluten",
     "milk",
-    "sesame",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
    ]
   },
   "hj:napoletana-grilled-chicken": {
@@ -2047,11 +2156,10 @@
     "milk",
     "sesame",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "sulphites"
    ]
   },
   "hj:cheesy-bacon-classic-jack-s-fried-chicken": {
@@ -2064,13 +2172,12 @@
     "egg",
     "gluten",
     "milk",
-    "sesame",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
    ]
   },
   "hj:cheesy-bacon-spicy-jack-s-fried-chicken": {
@@ -2083,13 +2190,12 @@
     "egg",
     "gluten",
     "milk",
-    "sesame",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
    ]
   },
   "hj:veggie-whopper-with-cheese": {
@@ -2101,13 +2207,12 @@
     "milk",
     "sesame",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
    ],
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "may": [
+    "sulphites"
+   ]
   },
   "hj:plant-based-whopper": {
    "meat": [],
@@ -2115,16 +2220,15 @@
    "al": [
     "egg",
     "gluten",
-    "milk",
     "sesame",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
    ],
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "may": [
+    "milk",
+    "sulphites"
+   ]
   },
   "hj:plant-based-whopper-with-cheese": {
    "meat": [],
@@ -2135,45 +2239,154 @@
     "milk",
     "sesame",
     "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
    ],
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "may": [
+    "sulphites"
+   ]
   },
   "hj:plant-based-angry-whopper": {
-   "meat": null,
-   "src": null
+   "meat": [],
+   "src": "description",
+   "vg": "vegetarian",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sulphites"
+   ]
   },
   "hj:5-jack-s-fried-chicken-tenders": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "fish",
+    "milk",
+    "sesame",
+    "soy",
+    "sulphites"
+   ]
   },
   "hj:3-korean-bbq-saucy-tenders": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
+   "al": [
+    "gluten",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk",
+    "sulphites"
+   ]
   },
   "hj:3-smoky-chipotle-saucy-tenders": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "fish",
+    "milk",
+    "sesame",
+    "soy",
+    "sulphites",
+    "treenut"
+   ]
   },
   "hj:3-peri-peri-saucy-tenders": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "fish",
+    "milk",
+    "sesame",
+    "soy",
+    "sulphites"
+   ]
   },
   "hj:5-korean-bbq-saucy-tenders": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
+   "al": [
+    "gluten",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk",
+    "sulphites"
+   ]
   },
   "hj:5-smoky-chipotle-saucy-tenders": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "fish",
+    "milk",
+    "sesame",
+    "soy",
+    "sulphites",
+    "treenut"
+   ]
   },
   "hj:5-peri-peri-saucy-tenders": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "fish",
+    "milk",
+    "sesame",
+    "soy",
+    "sulphites"
+   ]
   },
   "hj:18-nuggets": {
    "meat": null,
@@ -2186,17 +2399,15 @@
    "src": "ingredients",
    "al": [
     "egg",
-    "fish",
     "gluten",
     "milk",
+    "wheat"
+   ],
+   "may": [
+    "fish",
     "sesame",
-    "shellfish",
     "soy",
     "sulphites"
-   ],
-   "unk": [
-    "lupin",
-    "wheat"
    ]
   },
   "hj:spicy-tender-snack-wrap": {
@@ -2207,13 +2418,12 @@
    "al": [
     "egg",
     "gluten",
+    "wheat"
+   ],
+   "may": [
     "milk",
     "soy",
     "sulphites"
-   ],
-   "unk": [
-    "lupin",
-    "wheat"
    ]
   },
   "hj:3-nuggets-chips-carry-cup": {
@@ -2223,7 +2433,14 @@
   "hj:cappuccino": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy"
+   ]
   },
   "hj:flat-white": {
    "meat": [],
@@ -2253,7 +2470,14 @@
   "hj:chai-latte": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy"
+   ]
   },
   "hj:dirty-chai-latte": {
    "meat": [],
@@ -2283,7 +2507,14 @@
   "hj:iced-chai": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy"
+   ]
   },
   "hj:iced-dirty-chai": {
    "meat": [],
@@ -2293,42 +2524,85 @@
   "hj:chocolate-shake": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "sulphites",
+    "wheat"
+   ]
   },
   "hj:strawberry-shake": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ]
   },
   "hj:vanilla-shake": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   },
   "hj:caramel-shake": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "hj:biscoff-shake": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten"
+   ],
+   "may": [
+    "milk",
+    "soy",
+    "sulphites",
+    "treenut",
+    "wheat"
+   ]
   },
   "hj:pistachio-papi-shake": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "treenut",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "peanut",
+    "sesame",
+    "soy"
+   ]
   },
   "hj:coke": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": []
   },
   "hj:coke-no-sugar": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": []
   },
   "hj:vanilla-coke": {
    "meat": [],
@@ -2338,39 +2612,60 @@
   "hj:sprite": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": []
   },
   "hj:fanta-orange": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": []
   },
   "hj:fanta-raspberry": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": []
   },
   "hj:orange-fruit-drink": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "sulphites"
+   ]
   },
   "hj:keri-apple-juice": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": []
   },
   "hj:dirty-cola": {
    "meat": null,
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy"
+   ]
   },
   "hj:blue-lagoon": {
    "meat": null,
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "sulphites",
+    "treenut"
+   ]
   },
   "hj:strawberry-dream": {
    "meat": null,
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "sulphites",
+    "treenut"
+   ]
   },
   "hj:mango-breeze": {
    "meat": null,
@@ -2379,17 +2674,22 @@
   "hj:frozen-coke": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": []
   },
   "hj:frozen-coke-spider": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   },
   "hj:frozen-fanta-raspberry": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": []
   },
   "hj:frozen-fanta-sour-blueberry": {
    "meat": [],
@@ -2404,7 +2704,8 @@
   "hj:frozen-keri-orange-mango": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": []
   },
   "hj:oreo-storm": {
    "meat": [],
@@ -2412,17 +2713,23 @@
    "al": [
     "gluten",
     "milk",
-    "soy"
-   ],
-   "unk": [
-    "lupin",
+    "soy",
     "wheat"
    ],
    "vg": "vegetarian"
   },
   "hj:cadbury-flake-storm": {
-   "meat": null,
-   "src": null
+   "meat": [],
+   "src": "description",
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy",
+    "treenut"
+   ],
+   "may": [
+    "peanut"
+   ]
   },
   "hj:biscoff-storm": {
    "meat": [],
@@ -2430,10 +2737,7 @@
    "al": [
     "gluten",
     "milk",
-    "soy"
-   ],
-   "unk": [
-    "lupin",
+    "soy",
     "wheat"
    ],
    "vg": "vegetarian"
@@ -2442,32 +2746,30 @@
    "meat": [],
    "src": "ingredients",
    "al": [
-    "egg",
     "gluten",
     "milk",
-    "peanut",
-    "sesame",
-    "soy",
-    "treenut"
-   ],
-   "unk": [
-    "lupin",
+    "treenut",
     "wheat"
    ],
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "may": [
+    "egg",
+    "peanut",
+    "sesame",
+    "soy"
+   ]
   },
   "hj:chocolate-sundae": {
    "meat": [],
    "src": "ingredients",
    "al": [
     "milk",
-    "peanut",
     "sulphites"
    ],
-   "unk": [
-    "lupin"
-   ],
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "may": [
+    "peanut"
+   ]
   },
   "hj:caramel-sundae": {
    "meat": [],
@@ -2475,27 +2777,25 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
+    "sulphites",
     "wheat"
    ],
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "may": [
+    "soy"
+   ]
   },
   "hj:strawberry-sundae": {
    "meat": [],
    "src": "ingredients",
    "al": [
-    "gluten",
     "milk"
    ],
-   "unk": [
-    "lupin",
+   "vg": "vegetarian",
+   "may": [
+    "gluten",
     "wheat"
-   ],
-   "vg": "vegetarian"
+   ]
   },
   "hj:sticky-date-pudding": {
    "meat": [],
@@ -2504,10 +2804,8 @@
     "egg",
     "gluten",
     "milk",
-    "soy"
-   ],
-   "unk": [
-    "lupin",
+    "soy",
+    "sulphites",
     "wheat"
    ],
    "vg": "vegetarian"
@@ -2516,40 +2814,103 @@
    "meat": [],
    "src": "description",
    "al": [
-    "milk"
-   ],
-   "unk": [
-    "lupin"
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
    ],
    "vg": "vegetarian"
   },
   "hj:dipping-sauce-bbq-plum": {
-   "meat": null,
-   "src": null
+   "meat": [],
+   "src": "description",
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "fish",
+    "milk",
+    "sesame"
+   ]
   },
   "hj:dipping-sauce-creamy-garlic-aioli": {
-   "meat": null,
-   "src": null
+   "meat": [],
+   "src": "description",
+   "vg": "vegetarian",
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": [
+    "fish",
+    "gluten",
+    "sesame",
+    "soy",
+    "wheat"
+   ]
   },
   "hj:dipping-sauce-spicy": {
-   "meat": null,
-   "src": null
+   "meat": [],
+   "src": "description",
+   "vg": "vegetarian",
+   "al": [
+    "egg"
+   ],
+   "may": [
+    "fish",
+    "gluten",
+    "milk",
+    "sesame",
+    "wheat"
+   ]
   },
   "hj:dipping-sauce-sweet-n-sour": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "fish"
+   ],
+   "src": "description",
+   "al": [
+    "fish",
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk",
+    "sesame",
+    "soy"
+   ]
   },
   "hj:dipping-sauce-ketchup": {
-   "meat": null,
-   "src": null
+   "meat": [],
+   "src": "description",
+   "vg": "vegetarian",
+   "al": []
   },
   "hj:dipping-sauce-cheese-cup": {
-   "meat": null,
-   "src": null
+   "meat": [],
+   "src": "description",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "wheat"
+   ]
   },
   "hj:dipping-sauce-crispy-onion-cup": {
-   "meat": null,
-   "src": null
+   "meat": [],
+   "src": "description",
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "wheat"
+   ]
   },
   "hj:drumstick-mini-vanilla": {
    "meat": [
@@ -2559,13 +2920,12 @@
    "al": [
     "gluten",
     "milk",
-    "peanut",
     "soy",
-    "treenut"
-   ],
-   "unk": [
-    "lupin",
     "wheat"
+   ],
+   "may": [
+    "peanut",
+    "treenut"
    ]
   },
   "sub:6-chicken-strips": {
@@ -3360,121 +3720,322 @@
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:ground-beef-burrito-bowl": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:pulled-pork-burrito-bowl": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:saut-ed-vegetables-with-guacamole-burrito-bowl": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:pulled-shiitake-mushroom-burrito-bowl": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:shredded-beef-brisket-burrito-bowl": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:grilled-chicken-burrito": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:ground-beef-burrito": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:pulled-pork-burrito": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:saut-ed-vegetables-with-guacamole-burrito": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:pulled-shiitake-mushroom-burrito": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:shredded-beef-brisket-burrito": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:crispy-chicken-tenders-caesar-burrito": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ]
   },
   "gyg:grilled-chicken-caesar-burrito": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ]
   },
   "gyg:pulled-shiitake-mushroom-caesar-burrito": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
   },
   "gyg:grilled-chicken-cali-burrito": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sulphites"
+   ]
   },
   "gyg:ground-beef-cali-burrito": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sulphites"
+   ]
   },
   "gyg:pulled-pork-cali-burrito": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sulphites"
+   ]
   },
   "gyg:crispy-chicken-tenders-caesar-cali-burrito": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ]
   },
   "gyg:grilled-chicken-caesar-cali-burrito": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ]
   },
   "gyg:pulled-shiitake-mushroom-caesar-cali-burrito": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
   },
   "gyg:honey-habanero-tender-cali-burrito": {
    "meat": [
@@ -3486,306 +4047,794 @@
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:ground-beef-enchilada": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:pulled-pork-enchilada": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:saut-ed-vegetables-with-guacamole-enchilada": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:pulled-shiitake-mushroom-enchilada": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:shredded-beef-brisket-enchilada": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:saut-ed-vegetables-cali-burrito": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sulphites"
+   ]
   },
   "gyg:pulled-shiitake-mushroom-cali-burrito": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:shredded-beef-brisket-cali-burrito": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sulphites"
+   ]
   },
   "gyg:grilled-chicken-nachos": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:ground-beef-nachos": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:pulled-pork-nachos": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:saut-ed-vegetables-nachos": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:pulled-shiitake-mushroom-nachos": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:shredded-beef-brisket-nachos": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:grilled-chicken-nacho-fries": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "sulphites",
+    "wheat"
+   ]
   },
   "gyg:ground-beef-nacho-fries": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "sulphites",
+    "wheat"
+   ]
   },
   "gyg:pulled-pork-nacho-fries": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "sulphites",
+    "wheat"
+   ]
   },
   "gyg:saut-ed-vegetables-nacho-fries": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "sulphites",
+    "wheat"
+   ]
   },
   "gyg:pulled-shiitake-mushroom-nacho-fries": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:shredded-beef-brisket-nacho-fries": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "sulphites",
+    "wheat"
+   ]
   },
   "gyg:cheese-quesadilla": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:grilled-chicken-quesadilla": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:ground-beef-quesadilla": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:pulled-pork-quesadilla": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:pulled-shiitake-mushroom-quesadilla": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:saut-ed-vegetables-with-guacamole-quesadilla": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:shredded-beef-brisket-quesadilla": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:grilled-chicken-quesadilla-plus": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:ground-beef-quesadilla-plus": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:pulled-pork-quesadilla-plus": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:pulled-shiitake-mushroom-quesadilla-plus": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:saut-ed-vegetables-with-guacamole-quesadilla-plus": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:shredded-beef-brisket-quesadilla-plus": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:crispy-chicken-tenders-caesar-salad": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "sesame",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "gyg:grilled-chicken-caesar-salad": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "sesame",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "gyg:pulled-shiitake-mushroom-caesar-salad": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "egg",
+    "milk",
+    "soy",
+    "sulphites"
+   ],
+   "may": [
+    "gluten",
+    "sesame",
+    "wheat"
+   ]
   },
   "gyg:caesar-dressing": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": [
+    "sulphites",
+    "wheat",
+    "sesame",
+    "soy"
+   ]
   },
   "gyg:grilled-chicken-soft-taco-1-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:ground-beef-soft-taco-1-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:pulled-pork-soft-taco-1-": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:pulled-shiitake-mushroom-soft-taco-1-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:saut-ed-vegetables-with-guacamole-soft-taco-1-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:shredded-beef-brisket-soft-taco-1-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:grilled-chicken-hard-taco-1-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:ground-beef-hard-taco-1-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:pulled-pork-hard-taco-1-": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:pulled-shiitake-mushroom-hard-taco-1-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:saut-ed-vegetables-with-guacamole-hard-taco-1-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:shredded-beef-brisket-hard-taco-1-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:-3-taco-mild-ground-beef-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:-3-taco-spicy-ground-beef-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:crispy-chicken-tender-taco-chipotle-mayo-soft-shell": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "gyg:crispy-chicken-tender-taco-chipotle-mayo-hard-shell": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:crispy-chicken-tender-taco-honey-habanero-ranch-soft-shell": {
    "meat": [
@@ -3800,51 +4849,127 @@
    "src": "name"
   },
   "gyg:fries-with-chipotle-seasoning-large-": {
-   "meat": null,
-   "src": "name"
+   "meat": [],
+   "src": "labels",
+   "al": [],
+   "may": [
+    "sulphites",
+    "wheat",
+    "milk"
+   ],
+   "vg": "vegetarian"
   },
   "gyg:fries-with-chipotle-seasoning-medium-": {
-   "meat": null,
-   "src": "name"
+   "meat": [],
+   "src": "labels",
+   "al": [],
+   "may": [
+    "sulphites",
+    "wheat",
+    "milk"
+   ],
+   "vg": "vegetarian"
   },
   "gyg:fries-with-chipotle-seasoning-family-": {
-   "meat": null,
-   "src": "name"
+   "meat": [],
+   "src": "labels",
+   "al": [],
+   "may": [
+    "sulphites",
+    "wheat",
+    "milk"
+   ],
+   "vg": "vegetarian"
   },
   "gyg:queso-fries-plain-large-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "sulphites",
+    "wheat"
+   ]
   },
   "gyg:queso-fries-mild-large-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "sulphites",
+    "wheat"
+   ]
   },
   "gyg:queso-fries-spicy-large-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "sulphites",
+    "wheat"
+   ]
   },
   "gyg:dipping-sauce-sweet-chipotle-bbq": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:dipping-sauce-chipotle-mayo": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "egg"
+   ],
+   "may": [
+    "wheat",
+    "milk"
+   ]
   },
   "gyg:dipping-sauce-herb-mayo": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:dipping-sauce-jalape-o-ketchup": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "sulphites",
+    "wheat",
+    "egg",
+    "milk",
+    "sesame",
+    "soy"
+   ]
   },
   "gyg:dipping-sauce-honey-habanero-ranch": {
    "meat": [],
@@ -3855,19 +4980,44 @@
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [],
+   "may": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ]
   },
   "gyg:2-crispy-chicken-tenders-with-chipotle-mayo": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "egg"
+   ],
+   "may": [
+    "gluten",
+    "milk",
+    "wheat"
+   ]
   },
   "gyg:2-crispy-chicken-tenders-with-ketchup": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [],
+   "may": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "gyg:2-crispy-chicken-tenders-with-honey-habanero-ranch": {
    "meat": [
@@ -3879,19 +5029,44 @@
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [],
+   "may": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ]
   },
   "gyg:3-crispy-chicken-tenders-with-chipotle-mayo": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "egg"
+   ],
+   "may": [
+    "gluten",
+    "milk",
+    "wheat"
+   ]
   },
   "gyg:3-crispy-chicken-tenders-with-ketchup": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [],
+   "may": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "gyg:3-crispy-chicken-tenders-with-honey-habanero-ranch": {
    "meat": [
@@ -3903,25 +5078,60 @@
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [],
+   "may": [
+    "egg",
+    "gluten",
+    "milk",
+    "sulphites",
+    "wheat"
+   ]
   },
   "gyg:crispy-chicken-tenders-fries-with-bbq-sauce": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [],
+   "may": [
+    "egg",
+    "gluten",
+    "milk",
+    "sulphites",
+    "wheat"
+   ]
   },
   "gyg:crispy-chicken-tenders-fries-with-chipotle-mayo": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "egg"
+   ],
+   "may": [
+    "gluten",
+    "milk",
+    "sulphites",
+    "wheat"
+   ]
   },
   "gyg:crispy-chicken-tenders-fries-with-ketchup": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [],
+   "may": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "gyg:crispy-chicken-tenders-fries-with-honey-habanero-ranch": {
    "meat": [
@@ -3932,17 +5142,35 @@
   "gyg:extra-black-beans": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:brown-rice-bowl-portion-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:brown-rice-burrito-portion-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:extra-coriander": {
    "meat": [],
@@ -3952,82 +5180,175 @@
   "gyg:extra-crushed-corn-chips": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:extra-guacamole": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:extra-habanero-salsa": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:extra-lettuce-bowl-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:extra-lettuce-burrito-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:extra-grilled-chicken": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:extra-ground-beef": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:extra-pulled-pork": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:extra-pulled-shiitake-mushroom": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "sulphites",
+    "soy"
+   ],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:extra-saut-ed-vegetables": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:extra-saut-ed-vegetables-with-guacamole": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:extra-shredded-beef-brisket": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:extra-crispy-chicken-tenders-2-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:extra-pickled-jalape-os": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:extra-roasted-jalape-o-salsa": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:extra-seasoned-corn": {
    "meat": null,
@@ -4036,7 +5357,13 @@
   "gyg:extra-smokey-chipotle-salsa": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:extra-spanish-onions": {
    "meat": [],
@@ -4046,177 +5373,412 @@
   "gyg:spicy-sauce-add-to-any-item-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:extra-cos-lettuce": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:extra-queso-plain-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "wheat",
+    "egg"
+   ]
   },
   "gyg:extra-queso-mild-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "wheat",
+    "egg"
+   ]
   },
   "gyg:corn-chips": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:corn-chips-with-medium-guac": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ]
   },
   "gyg:corn-chips-with-medium-mild-queso": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:corn-chips-with-medium-pico-de-gallo": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ]
   },
   "gyg:corn-chips-with-medium-queso": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:corn-chips-with-medium-spicy-queso": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:corn-chips-with-medium-tomatillo-salsa": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ]
   },
   "gyg:corn-chips-with-large-guac": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ]
   },
   "gyg:corn-chips-with-large-mild-queso": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:corn-chips-with-large-pico-de-gallo": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ]
   },
   "gyg:corn-chips-with-large-queso": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:corn-chips-with-large-spicy-queso": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:corn-chips-with-large-tomatillo-salsa": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ]
   },
   "gyg:black-beans": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:brown-rice": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:small-guacamole": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:medium-guacamole": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:large-guacamole": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:medium-pico-de-gallo": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:large-pico-de-gallo": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:pinto-beans": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "gyg:small-queso-plain-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "wheat",
+    "egg"
+   ]
   },
   "gyg:small-queso-mild-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "wheat",
+    "egg"
+   ]
   },
   "gyg:small-queso-spicy-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "wheat",
+    "egg"
+   ]
   },
   "gyg:medium-queso-plain-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "wheat",
+    "egg"
+   ]
   },
   "gyg:medium-queso-mild-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "wheat",
+    "egg"
+   ]
   },
   "gyg:medium-queso-spicy-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "wheat",
+    "egg"
+   ]
   },
   "gyg:large-queso-plain-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "wheat",
+    "egg"
+   ]
   },
   "gyg:large-queso-mild-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "wheat",
+    "egg"
+   ]
   },
   "gyg:large-queso-spicy-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "wheat",
+    "egg"
+   ]
   },
   "gyg:sour-cream": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "wheat",
+    "egg"
+   ]
   },
   "gyg:street-corn": {
    "meat": [],
@@ -4226,57 +5788,149 @@
   "gyg:medium-tomatillo-salsa": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:large-tomatillo-salsa": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:white-rice": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:soft-serve-cone": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "wheat",
+    "soy"
+   ],
+   "may": [
+    "egg",
+    "milk"
+   ]
   },
   "gyg:churro-sundae-with-chocolate-sauce": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sulphites"
+   ]
   },
   "gyg:churro-sundae-with-dulce-de-leche": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "soy",
+    "sulphites"
+   ]
   },
   "gyg:large-sundae-with-chocolate-sauce": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:large-sundae-with-dulce-de-leche": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "soy",
+    "wheat"
+   ]
   },
   "gyg:large-sundae-with-no-topping": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "soy",
+    "wheat"
+   ]
   },
   "gyg:churros-with-chocolate-sauce": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sulphites"
+   ]
   },
   "gyg:churros-with-dulce-de-leche": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sulphites"
+   ]
   },
   "gyg:nacho-sundae-with-chocolate-sauce": {
    "meat": [],
@@ -4286,582 +5940,1525 @@
   "gyg:chocolate-sauce-portion": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "wheat",
+    "egg"
+   ]
   },
   "gyg:dulce-de-leche-portion": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "wheat",
+    "egg"
+   ]
   },
   "gyg:little-g-s-grilled-chicken-burrito": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:little-g-s-ground-beef-burrito": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:little-g-s-pulled-pork-burrito": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:little-g-s-pulled-shiitake-mushroom-burrito": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:little-g-s-saut-ed-vegetables-with-guacamole-burrito": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:little-g-s-shredded-beef-brisket-burrito": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:little-g-s-grilled-chicken-bowl": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:little-g-s-ground-beef-bowl": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:little-g-s-pulled-pork-bowl": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:little-g-s-pulled-shiitake-mushroom-bowl": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:little-g-s-saut-ed-vegetables-with-guacamole-bowl": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:little-g-s-shredded-beef-brisket-bowl": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:little-g-s-cheese-nachos": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:little-g-s-grilled-chicken-nachos": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:little-g-s-ground-beef-nachos": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:little-g-s-pulled-pork-nachos": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:little-g-s-pulled-shiitake-mushroom-nachos": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:little-g-s-saut-ed-vegetables-with-guacamole-nachos": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:little-g-s-shredded-beef-brisket-nachos": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:little-g-s-apple": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:little-g-s-fries-with-chipotle-seasoning": {
-   "meat": null,
-   "src": "name"
+   "meat": [],
+   "src": "labels",
+   "al": [],
+   "may": [
+    "sulphites",
+    "wheat",
+    "milk"
+   ],
+   "vg": "vegetarian"
   },
   "gyg:little-g-s-fries-with-plain-salt": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "sulphites",
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:brekkie-burrito-with-bacon": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sulphites"
+   ]
   },
   "gyg:brekkie-burrito-with-free-range-chicken-chorizo": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sulphites"
+   ]
   },
   "gyg:brekkie-burrito-with-saut-ed-vegetables-with-guacamole": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sulphites"
+   ]
   },
   "gyg:brekkie-burrito-with-pulled-shiitake-mushroom": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "gyg:big-brekkie-burrito-with-bacon": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sulphites"
+   ]
   },
   "gyg:big-brekkie-burrito-with-free-range-chicken-chorizo": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sulphites"
+   ]
   },
   "gyg:big-brekkie-burrito-with-saut-ed-vegetables-with-guacamole": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sulphites"
+   ]
   },
   "gyg:big-brekkie-burrito-with-pulled-shiitake-mushroom": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "gyg:brekkie-bowl-with-bacon": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:brekkie-bowl-with-free-range-chicken-chorizo": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:brekkie-bowl-with-saut-ed-vegetables-with-guacamole": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:brekkie-bowl-with-pulled-shiitake-mushroom": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "egg",
+    "milk",
+    "soy",
+    "sulphites"
+   ],
+   "may": [
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:toast-with-avocado": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk",
+    "sesame",
+    "soy"
+   ]
   },
   "gyg:toast-with-guacamole": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk",
+    "sesame",
+    "soy"
+   ]
   },
   "gyg:brekkie-quesadilla-plus-with-bacon": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:brekkie-quesadilla-plus-with-free-range-chicken-chorizo": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:brekkie-quesadilla-plus-with-saut-ed-vegetables-with-guacamole": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:brekkie-quesadilla-plus-with-pulled-shiitake-mushroom": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:brekkie-taco-with-bacon": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ]
   },
   "gyg:brekkie-taco-with-free-range-chicken-chorizo": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ]
   },
   "gyg:brekkie-taco-with-saut-ed-vegetables-with-guacamole": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ]
   },
   "gyg:brekkie-taco-with-pulled-shiitake-mushroom": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
   },
   "gyg:brekkie-quesadilla-with-bacon": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:brekkie-quesadilla-with-free-range-chicken-chorizo": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:brekkie-quesadilla-with-saut-ed-vegetables-with-guacamole": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:brekkie-quesadilla-with-pulled-shiitake-mushroom": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:brekkie-extra-bacon": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:brekkie-extra-free-range-chicken-chorizo": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "wheat",
+    "egg"
+   ]
   },
   "gyg:brekkie-extra-pulled-shiitake-mushroom": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "sulphites",
+    "soy"
+   ],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:brekkie-extra-saut-ed-vegetables-with-guacamole": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:brekkie-extra-free-range-scrambled-eggs": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": [
+    "wheat"
+   ]
   },
   "gyg:brekkie-extra-guacamole": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:brekkie-extra-hashbrown": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "sulphites",
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:brekkie-extra-pico-de-gallo": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:brekkie-extra-toast-1-slice-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk",
+    "sesame",
+    "soy"
+   ]
   },
   "gyg:grilled-chicken-mini-burrito": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:ground-beef-mini-burrito": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:pulled-pork-mini-burrito": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:saut-ed-vegetables-with-guacamole-mini-burrito": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:pulled-shiitake-mushroom-mini-burrito": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:shredded-beef-brisket-mini-burrito": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:grilled-chicken-mini-bowl": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:ground-beef-mini-bowl": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:pulled-pork-mini-bowl": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:saut-ed-vegetables-with-guacamole-mini-bowl": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:pulled-shiitake-mushroom-mini-bowl": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:shredded-beef-brisket-mini-bowl": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:crispy-chicken-tenders-mini-caesar-burrito": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ]
   },
   "gyg:grilled-chicken-mini-caesar-burrito": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ]
   },
   "gyg:pulled-shiitake-mushroom-mini-caesar-burrito": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
   },
   "gyg:crispy-chicken-tenders-mini-caesar-cali-burrito": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ]
   },
   "gyg:grilled-chicken-mini-caesar-cali-burrito": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ]
   },
   "gyg:pulled-shiitake-mushroom-mini-caesar-cali-burrito": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
   },
   "gyg:grilled-chicken-mini-cali-burrito": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sulphites"
+   ]
   },
   "gyg:ground-beef-mini-cali-burrito": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sulphites"
+   ]
   },
   "gyg:pulled-pork-mini-cali-burrito": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sulphites"
+   ]
   },
   "gyg:saut-ed-vegetables-mini-cali-burrito": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sulphites"
+   ]
   },
   "gyg:pulled-shiitake-mushroom-mini-cali-burrito": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:shredded-beef-brisket-mini-cali-burrito": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sulphites"
+   ]
   },
   "gyg:grilled-chicken-mini-enchilada": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:ground-beef-mini-enchilada": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:pulled-pork-mini-enchilada": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:saut-ed-vegetables-with-guacamole-mini-enchilada": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:pulled-shiitake-mushroom-mini-enchilada": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:shredded-beef-brisket-mini-enchilada": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "gyg:grilled-chicken-mini-nachos": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:ground-beef-mini-nachos": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:pulled-pork-mini-nachos": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:saut-ed-vegetables-mini-nachos": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:pulled-shiitake-mushroom-mini-nachos": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:shredded-beef-brisket-mini-nachos": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:grilled-chicken-mini-nacho-fries": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "sulphites",
+    "wheat"
+   ]
   },
   "gyg:ground-beef-mini-nacho-fries": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "sulphites",
+    "wheat"
+   ]
   },
   "gyg:pulled-pork-mini-nacho-fries": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "sulphites",
+    "wheat"
+   ]
   },
   "gyg:saut-ed-vegetables-mini-nacho-fries": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "sulphites",
+    "wheat"
+   ]
   },
   "gyg:pulled-shiitake-mushroom-mini-nacho-fries": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
   },
   "gyg:shredded-beef-brisket-mini-nacho-fries": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "sulphites",
+    "wheat"
+   ]
   },
   "gyg:crispy-chicken-tenders-mini-caesar-salad": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "sesame",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "gyg:grilled-chicken-mini-caesar-salad": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "sesame",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "gyg:pulled-shiitake-mushroom-mini-caesar-salad": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "egg",
+    "milk",
+    "soy",
+    "sulphites"
+   ],
+   "may": [
+    "gluten",
+    "sesame",
+    "wheat"
+   ]
   },
   "gyg:mini-caesar-dressing": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": [
+    "sulphites",
+    "wheat",
+    "sesame",
+    "soy"
+   ]
   },
   "gyg:mini-extra-crushed-corn-chips-mini-kids": {
    "meat": [],
@@ -4871,52 +7468,109 @@
   "gyg:mini-extra-guacamole": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:mini-extra-grilled-chicken": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:mini-extra-ground-beef": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:mini-extra-pulled-pork": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:mini-extra-pulled-shiitake-mushroom": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "sulphites",
+    "soy"
+   ],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:mini-extra-saut-ed-vegetables": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:mini-extra-saut-ed-vegetables-with-guacamole": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:mini-extra-shredded-beef-brisket": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:mini-extra-crispy-chicken-tender-1-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:mini-extra-seasoned-corn": {
    "meat": null,
@@ -4925,19 +7579,45 @@
   "gyg:mini-extra-spicy-sauce": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "wheat",
+    "egg",
+    "milk"
+   ]
   },
   "gyg:crispy-chicken-tender-cali-burrito": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sulphites"
+   ]
   },
   "gyg:crispy-chicken-tender-mini-cali-burrito": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sulphites"
+   ]
   },
   "nandos:snack-loaded-chips": {
    "meat": null,
@@ -5530,13 +8210,39 @@
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "soy"
+   ],
+   "may": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "sesame",
+    "shellfish",
+    "sulphites",
+    "wheat"
+   ]
   },
   "oporto:half-chicken": {
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "soy"
+   ],
+   "may": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "sesame",
+    "shellfish",
+    "sulphites",
+    "wheat"
+   ]
   },
   "oporto:whole-chicken": {
    "meat": [
@@ -5548,86 +8254,266 @@
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "fish",
+    "milk",
+    "sesame",
+    "shellfish",
+    "sulphites"
+   ]
   },
   "oporto:bondi-burger": {
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "fish",
+    "shellfish",
+    "sulphites"
+   ]
   },
   "oporto:otropo-burger": {
    "meat": [
     "chicken",
     "pork"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "fish",
+    "shellfish",
+    "sulphites"
+   ]
   },
   "oporto:oprego-burger": {
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "shellfish",
+    "sulphites"
+   ]
   },
   "oporto:halloumi-chicken-burger": {
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "fish",
+    "shellfish",
+    "sulphites"
+   ]
   },
   "oporto:veggie-burger": {
    "meat": [],
    "src": "description",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "fish",
+    "shellfish",
+    "sulphites"
+   ]
   },
   "oporto:chicken-blt-burger": {
    "meat": [
     "chicken",
     "pork"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "fish",
+    "shellfish",
+    "sulphites"
+   ]
   },
   "oporto:o-burger": {
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "fish",
+    "sulphites"
+   ]
   },
   "oporto:chicken-cheese-burger": {
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "fish",
+    "peanut",
+    "shellfish",
+    "sulphites"
+   ]
   },
   "oporto:chicken-rappa": {
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "fish",
+    "milk",
+    "sesame",
+    "shellfish",
+    "sulphites"
+   ]
   },
   "oporto:bondi-rappa": {
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "fish",
+    "sesame",
+    "shellfish",
+    "sulphites"
+   ]
   },
   "oporto:halloumi-chicken-rappa": {
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "fish",
+    "sesame",
+    "shellfish",
+    "sulphites"
+   ]
   },
   "oporto:chicken-rappsnacker": {
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "fish",
+    "milk",
+    "sesame",
+    "shellfish",
+    "sulphites"
+   ]
   },
   "oporto:pulled-chicken-bowl": {
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk",
+    "peanut",
+    "sesame"
+   ]
   },
   "oporto:chicken-salad-bowl": {
    "meat": [
@@ -5639,25 +8525,71 @@
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "fish",
+    "gluten",
+    "shellfish",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk"
+   ]
   },
   "oporto:spicy-chicken-bolas": {
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "egg",
+    "fish",
+    "gluten",
+    "shellfish",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ]
   },
   "oporto:crispy-wings": {
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "shellfish",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sulphites"
+   ]
   },
   "oporto:crispy-wings-with-o-sauce": {
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "shellfish",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sulphites"
+   ]
   },
   "oporto:bondi-bolas-box": {
    "meat": [
@@ -5669,13 +8601,35 @@
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "fish",
+    "milk",
+    "peanut",
+    "sesame",
+    "shellfish",
+    "soy",
+    "sulphites"
+   ]
   },
   "oporto:chilli-pulled-chicken-loaded-chips": {
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ]
   },
   "oporto:brekkie-roll": {
    "meat": null,
@@ -5685,87 +8639,252 @@
    "meat": [
     "pork"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "fish",
+    "sesame",
+    "shellfish",
+    "soy",
+    "sulphites"
+   ]
   },
   "oporto:breakfast-deluxe-burger": {
    "meat": [
     "chicken",
     "pork"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "fish",
+    "shellfish",
+    "sulphites"
+   ]
   },
   "oporto:breakfast-rappa": {
    "meat": [
     "pork"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "fish",
+    "sesame",
+    "shellfish",
+    "sulphites"
+   ]
   },
   "oporto:chicken-egg-burger": {
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "peanut"
+   ]
   },
   "oporto:bacon-egg-burger": {
    "meat": [
     "pork"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "peanut"
+   ]
   },
   "oporto:chicken-bacon-egg-burger": {
    "meat": [
     "chicken",
     "pork"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "peanut"
+   ]
   },
   "oporto:hash-brown": {
    "meat": [],
    "src": "description",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "oporto:chips": {
    "meat": null,
-   "src": "description"
+   "src": "description",
+   "al": [],
+   "may": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "oporto:grilled-corn": {
    "meat": [],
    "src": "description",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "egg",
+    "gluten",
+    "soy",
+    "wheat"
+   ]
   },
   "oporto:spicy-rice": {
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "peanut",
+    "sesame"
+   ]
   },
   "oporto:crunchy-slaw": {
    "meat": [],
    "src": "description",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "egg",
+    "milk"
+   ]
   },
   "oporto:chilli-cheese-chips": {
    "meat": [],
    "src": "description",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "fish",
+    "shellfish",
+    "wheat"
+   ]
   },
   "oporto:chocolate-mousse": {
    "meat": null,
-   "src": "description"
+   "src": "description",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "peanut",
+    "treenut",
+    "wheat"
+   ]
   },
   "oporto:churros": {
    "meat": [],
    "src": "description",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk"
+   ]
   },
   "oporto:cookies-white-chocolate-loaded-churros": {
    "meat": [],
    "src": "description",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ]
   },
   "oporto:porto-roll": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "fish",
+    "lupin",
+    "sesame",
+    "shellfish",
+    "sulphites"
+   ]
   },
   "oporto:portuguese-salad": {
    "meat": [],
@@ -5774,83 +8893,171 @@
   },
   "oporto:dipping-sauce-prego": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "egg",
+    "fish",
+    "gluten",
+    "soy",
+    "wheat"
+   ]
   },
   "oporto:dipping-sauce-garlic": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "egg",
+    "milk",
+    "soy"
+   ]
   },
   "oporto:dipping-sauce-original-chilli": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "soy"
+   ]
   },
   "oporto:dipping-sauce-lemon-herb": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": []
   },
   "oporto:dipping-sauce-extremo-picante": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": []
   },
   "oporto:dipping-sauce-mayo": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "egg"
+   ]
   },
   "spud:create-your-own-base-butter-": {
    "meat": null,
    "src": null
   },
   "spud:the-festival": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "pork"
+   ],
+   "src": "ingredients",
+   "al": [
+    "milk"
+   ]
   },
   "spud:the-classic": {
-   "meat": null,
-   "src": null
+   "meat": [],
+   "src": "ingredients",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   },
   "spud:the-baked-bean": {
-   "meat": null,
-   "src": null
+   "meat": [],
+   "src": "ingredients",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   },
   "spud:the-butter-chicken": {
    "meat": null,
-   "src": null
+   "src": "ingredients",
+   "al": [
+    "milk",
+    "sulphites",
+    "treenut"
+   ]
   },
   "spud:the-bolognese": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "beef",
+    "fish"
+   ],
+   "src": "ingredients",
+   "al": [
+    "milk",
+    "sulphites"
+   ]
   },
   "spud:the-chilli-bean-burrito": {
    "meat": null,
-   "src": null
+   "src": "ingredients",
+   "al": [
+    "milk",
+    "sulphites"
+   ]
   },
   "spud:the-chicken-parma": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken",
+    "pork"
+   ],
+   "src": "ingredients",
+   "al": [
+    "milk",
+    "soy"
+   ]
   },
   "spud:the-chicken-avo": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken"
+   ],
+   "src": "ingredients",
+   "al": [
+    "milk",
+    "soy"
+   ]
   },
   "spud:the-hawaiian": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "pork"
+   ],
+   "src": "ingredients",
+   "al": [
+    "milk"
+   ]
   },
   "spud:the-beef-burrito": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "beef"
+   ],
+   "src": "ingredients",
+   "al": [
+    "milk",
+    "sulphites"
+   ]
   },
   "spud:the-tuna-avo": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "fish"
+   ],
+   "src": "ingredients",
+   "al": [
+    "egg",
+    "milk"
+   ]
   },
   "spud:the-moroccan": {
    "meat": null,
-   "src": null
+   "src": "ingredients",
+   "al": [
+    "sulphites"
+   ]
   },
   "spud:the-lean-loaded": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken"
+   ],
+   "src": "ingredients",
+   "al": [
+    "milk",
+    "soy"
+   ]
   },
   "spud:the-mexican-chicken": {
    "meat": null,
@@ -6650,288 +9857,1066 @@
    ]
   },
   "schnitz:plain-simple-burger": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ]
   },
   "schnitz:plain-simple-wrap": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "soy"
+   ]
   },
   "schnitz:status-quo-burger": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ]
   },
   "schnitz:status-quo-wrap": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "soy"
+   ]
   },
   "schnitz:american-dream-burger": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ]
   },
   "schnitz:american-dream-wrap": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "soy"
+   ]
   },
   "schnitz:the-aussie-burger": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken",
+    "pork"
+   ],
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ]
   },
   "schnitz:the-aussie-wrap": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken",
+    "pork"
+   ],
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "soy"
+   ]
   },
   "schnitz:the-hawaiian-burger": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken",
+    "pork"
+   ],
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "schnitz:the-hawaiian-wrap": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken",
+    "pork"
+   ],
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "soy"
+   ]
   },
   "schnitz:garden-of-eden-burger": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "milk"
+   ]
   },
   "schnitz:garden-of-eden-wrap": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "sesame",
+    "soy"
+   ]
   },
   "schnitz:basic-instinct-burger": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "milk"
+   ]
   },
   "schnitz:basic-instinct-wrap": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "sesame",
+    "soy"
+   ]
   },
   "schnitz:omg-burger": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken",
+    "pork"
+   ],
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ]
   },
   "schnitz:omg-wrap": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken",
+    "pork"
+   ],
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "soy"
+   ]
   },
   "schnitz:the-swiss-burger": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "peanut",
+    "treenut"
+   ]
   },
   "schnitz:the-swiss-wrap": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "peanut",
+    "sesame",
+    "soy",
+    "treenut"
+   ]
   },
   "schnitz:royal-chip-butty-burger": {
    "meat": null,
-   "src": null
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "fish",
+    "lupin",
+    "peanut",
+    "shellfish",
+    "treenut"
+   ]
   },
   "schnitz:royal-chip-butty-wrap": {
    "meat": null,
-   "src": null
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "fish",
+    "lupin",
+    "peanut",
+    "sesame",
+    "shellfish",
+    "treenut"
+   ]
   },
   "schnitz:spice-of-life-burger": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "milk"
+   ]
   },
   "schnitz:spice-of-life-wrap": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "sesame",
+    "soy"
+   ]
   },
   "schnitz:3-pack-tenders": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "wheat",
+    "gluten",
+    "egg",
+    "milk"
+   ],
+   "may": [
+    "soy",
+    "sesame",
+    "shellfish"
+   ]
   },
   "schnitz:5-pack-tenders": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "wheat",
+    "gluten",
+    "egg",
+    "milk"
+   ],
+   "may": [
+    "soy",
+    "sesame",
+    "shellfish"
+   ]
   },
   "schnitz:10-pack-tenders": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "wheat",
+    "gluten",
+    "egg",
+    "milk"
+   ],
+   "may": [
+    "soy",
+    "sesame",
+    "shellfish"
+   ]
   },
   "schnitz:tender-box-2": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "wheat",
+    "gluten",
+    "egg",
+    "milk",
+    "sulphites"
+   ],
+   "may": [
+    "soy",
+    "peanut",
+    "treenut",
+    "sesame",
+    "shellfish",
+    "fish"
+   ]
   },
   "schnitz:tender-box-3": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "wheat",
+    "gluten",
+    "egg",
+    "milk",
+    "sulphites"
+   ],
+   "may": [
+    "soy",
+    "peanut",
+    "treenut",
+    "sesame",
+    "shellfish",
+    "fish"
+   ]
   },
   "schnitz:tender-box-5": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "wheat",
+    "gluten",
+    "egg",
+    "milk",
+    "sulphites"
+   ],
+   "may": [
+    "soy",
+    "peanut",
+    "treenut",
+    "sesame",
+    "shellfish",
+    "fish"
+   ]
   },
   "schnitz:original-tender": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "wheat",
+    "gluten",
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "soy",
+    "sesame",
+    "shellfish"
+   ]
   },
   "schnitz:spicy-tender": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "wheat",
+    "gluten",
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "soy",
+    "sesame",
+    "shellfish"
+   ]
   },
   "schnitz:mini-basic-instinct-slider": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "milk"
+   ]
   },
   "schnitz:mini-basic-instinct-wrap": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "sesame",
+    "soy"
+   ]
   },
   "schnitz:mini-american-dream-slider": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ]
   },
   "schnitz:mini-american-dream-wrap": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "soy"
+   ]
   },
   "schnitz:mini-chip-butty-slider": {
    "meat": null,
-   "src": null
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "fish",
+    "lupin",
+    "peanut",
+    "shellfish",
+    "treenut"
+   ]
   },
   "schnitz:mini-chip-butty-wrap": {
    "meat": null,
-   "src": null
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "fish",
+    "lupin",
+    "peanut",
+    "sesame",
+    "shellfish",
+    "treenut"
+   ]
   },
   "schnitz:mini-status-quo-slider": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ]
   },
   "schnitz:mini-status-quo-wrap": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "soy"
+   ]
   },
   "schnitz:nosh-box": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "wheat",
+    "gluten",
+    "egg",
+    "sulphites"
+   ],
+   "may": [
+    "milk",
+    "soy",
+    "peanut",
+    "treenut",
+    "sesame",
+    "shellfish",
+    "lupin",
+    "fish"
+   ]
   },
   "schnitz:schnuggets-6-pack": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "wheat",
+    "gluten",
+    "egg",
+    "sulphites"
+   ],
+   "may": [
+    "milk",
+    "soy",
+    "peanut",
+    "treenut",
+    "sesame",
+    "shellfish",
+    "lupin",
+    "fish"
+   ]
   },
   "schnitz:schnuggets-18-pack": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "wheat",
+    "gluten",
+    "egg",
+    "sulphites"
+   ],
+   "may": [
+    "milk",
+    "soy",
+    "peanut",
+    "treenut",
+    "sesame",
+    "shellfish",
+    "lupin",
+    "fish"
+   ]
   },
   "schnitz:teeny-weeny-pack-slider": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "fish",
+    "lupin",
+    "peanut",
+    "shellfish",
+    "treenut"
+   ]
   },
   "schnitz:teeny-weeny-pack-wrap": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "gluten",
+    "milk",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "fish",
+    "lupin",
+    "peanut",
+    "sesame",
+    "shellfish",
+    "soy",
+    "treenut"
+   ]
   },
   "schnitz:kiddy-schnugget-pack": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "wheat",
+    "gluten",
+    "egg",
+    "sulphites"
+   ],
+   "may": [
+    "milk",
+    "soy",
+    "peanut",
+    "treenut",
+    "sesame",
+    "shellfish",
+    "lupin",
+    "fish"
+   ]
   },
   "schnitz:small-original-chips": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": []
   },
   "schnitz:regular-original-chips": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": []
   },
   "schnitz:large-original-chips": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": []
   },
   "schnitz:family-original-chips": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": []
   },
   "schnitz:small-sweet-potato-chips": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [],
+   "may": [
+    "wheat",
+    "gluten",
+    "egg",
+    "milk",
+    "soy",
+    "peanut",
+    "treenut",
+    "sesame",
+    "fish"
+   ]
   },
   "schnitz:regular-sweet-potato-chips": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [],
+   "may": [
+    "wheat",
+    "gluten",
+    "egg",
+    "milk",
+    "soy",
+    "peanut",
+    "treenut",
+    "sesame",
+    "fish"
+   ]
   },
   "schnitz:large-sweet-potato-chips": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [],
+   "may": [
+    "wheat",
+    "gluten",
+    "egg",
+    "milk",
+    "soy",
+    "peanut",
+    "treenut",
+    "sesame",
+    "fish"
+   ]
   },
   "schnitz:family-sweet-potato-chips": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [],
+   "may": [
+    "wheat",
+    "gluten",
+    "egg",
+    "milk",
+    "soy",
+    "peanut",
+    "treenut",
+    "sesame",
+    "fish"
+   ]
   },
   "schnitz:chick-n-gravy-loaded-chips": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "wheat",
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites"
+   ],
+   "may": [
+    "egg",
+    "peanut",
+    "treenut",
+    "sesame",
+    "shellfish",
+    "lupin",
+    "fish"
+   ]
   },
   "schnitz:american-loaded-chips": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "wheat",
+    "gluten",
+    "milk",
+    "sulphites"
+   ],
+   "may": [
+    "egg",
+    "soy",
+    "peanut",
+    "treenut",
+    "sesame",
+    "shellfish",
+    "lupin",
+    "fish"
+   ]
   },
   "schnitz:veggie-volcano-loaded-chips": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "wheat",
+    "gluten",
+    "egg",
+    "sulphites"
+   ],
+   "may": [
+    "milk",
+    "soy",
+    "peanut",
+    "treenut",
+    "sesame",
+    "shellfish",
+    "lupin",
+    "fish"
+   ]
   },
   "schnitz:aioli": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "egg"
+   ]
   },
   "schnitz:bbq-relish": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": []
   },
   "schnitz:chipotle-chilli-mayonnaise": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "sulphites"
+   ]
   },
   "schnitz:honey-mustard-mayonnaise": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "egg"
+   ]
   },
   "schnitz:sweet-chilli-mayonnaise": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "egg"
+   ]
   },
   "schnitz:tomato-sauce": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": []
   },
   "schnitz:kettle-cooked-gravy": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "wheat",
+    "gluten",
+    "egg",
+    "shellfish",
+    "fish"
+   ]
   },
   "rr:quarter-chicken-roast-": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "lupin",
+    "milk",
+    "peanut",
+    "sesame",
+    "sulphites",
+    "treenut"
+   ]
   },
   "rr:half-chicken-roast-": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "lupin",
+    "milk",
+    "peanut",
+    "sesame",
+    "sulphites",
+    "treenut"
+   ]
   },
   "rr:whole-chicken-roast-": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "lupin",
+    "milk",
+    "peanut",
+    "sesame",
+    "sulphites",
+    "treenut"
+   ]
   },
   "rr:rooster-roll": {
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "lupin",
+    "peanut",
+    "sulphites",
+    "treenut"
+   ]
   },
   "rr:flayva-wrap": {
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "peanut",
+    "sesame",
+    "sulphites",
+    "treenut"
+   ]
   },
   "rr:rippa-roll": {
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "lupin",
+    "milk",
+    "peanut",
+    "sesame",
+    "sulphites",
+    "treenut"
+   ]
   },
   "rr:chilli-aioli-rippa-roll": {
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "lupin",
+    "peanut",
+    "sesame",
+    "sulphites",
+    "treenut"
+   ]
   },
   "rr:honey-bbq-rippa-roll": {
    "meat": null,
@@ -6941,7 +10926,21 @@
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "lupin",
+    "peanut",
+    "sesame",
+    "sulphites",
+    "treenut"
+   ]
   },
   "rr:bbq-bacon-burger": {
    "meat": null,
@@ -6951,7 +10950,21 @@
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "lupin",
+    "milk",
+    "peanut",
+    "sesame",
+    "sulphites",
+    "treenut"
+   ]
   },
   "rr:picklebird-burger": {
    "meat": null,
@@ -6961,19 +10974,45 @@
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "peanut",
+    "treenut"
+   ]
   },
   "rr:hot-honey-fried-chicken-1-piece-": {
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "sesame",
+    "wheat"
+   ],
+   "may": [
+    "peanut",
+    "treenut"
+   ]
   },
   "rr:reds-hot-fried-chicken-1-piece-": {
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "peanut",
+    "treenut"
+   ]
   },
   "rr:10-nuggets": {
    "meat": [
@@ -6983,59 +11022,191 @@
   },
   "rr:chips-regular-": {
    "meat": null,
-   "src": "description"
+   "src": "description",
+   "al": [],
+   "may": [
+    "egg",
+    "gluten",
+    "milk",
+    "peanut",
+    "sesame",
+    "soy",
+    "sulphites",
+    "treenut",
+    "wheat"
+   ]
   },
   "rr:mash-gravy": {
    "meat": null,
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites"
+   ],
+   "may": [
+    "peanut",
+    "treenut"
+   ]
   },
   "rr:garlic-bread": {
    "meat": [],
    "src": "description",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "peanut",
+    "sesame",
+    "treenut"
+   ]
   },
   "rr:sweet-potato": {
    "meat": null,
-   "src": "description"
+   "src": "description",
+   "al": [
+    "soy"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "milk",
+    "peanut",
+    "sesame",
+    "sulphites",
+    "treenut",
+    "wheat"
+   ]
   },
   "rr:crunchy-potato": {
    "meat": [],
    "src": "description",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "sulphites"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "lupin",
+    "milk",
+    "peanut",
+    "sesame",
+    "soy",
+    "treenut",
+    "wheat"
+   ]
   },
   "rr:crunchy-slaw": {
    "meat": [],
    "src": "description",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": [
+    "peanut",
+    "treenut"
+   ]
   },
   "rr:peas": {
    "meat": [],
    "src": "description",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "egg",
+    "gluten",
+    "lupin",
+    "milk",
+    "peanut",
+    "sesame",
+    "soy",
+    "sulphites",
+    "treenut",
+    "wheat"
+   ]
   },
   "rr:battered-corn-wheels": {
    "meat": [],
    "src": "description",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "egg",
+    "gluten",
+    "milk",
+    "peanut",
+    "sesame",
+    "soy",
+    "sulphites",
+    "treenut",
+    "wheat"
+   ]
   },
   "rr:pineapple-fritter": {
    "meat": [],
    "src": "description",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk",
+    "peanut",
+    "sesame",
+    "soy",
+    "sulphites",
+    "treenut"
+   ]
   },
   "rr:chocolate-mousse": {
    "meat": null,
-   "src": "description"
+   "src": "description",
+   "al": [
+    "milk",
+    "peanut",
+    "soy",
+    "treenut"
+   ]
   },
   "rr:strawberry-cheesecake": {
    "meat": null,
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "rr:10-cheesy-nuggets": {
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "peanut",
+    "sulphites",
+    "treenut"
+   ]
   },
   "rr:triple-flayva-wrap": {
    "meat": null,
@@ -7075,75 +11246,275 @@
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "peanut",
+    "sesame",
+    "sulphites",
+    "treenut"
+   ]
   },
   "rr:chips-large-": {
    "meat": null,
-   "src": "description"
+   "src": "description",
+   "al": [],
+   "may": [
+    "egg",
+    "gluten",
+    "milk",
+    "peanut",
+    "sesame",
+    "soy",
+    "sulphites",
+    "treenut",
+    "wheat"
+   ]
   },
   "rr:chips-family-": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [],
+   "may": [
+    "egg",
+    "gluten",
+    "milk",
+    "peanut",
+    "sesame",
+    "soy",
+    "sulphites",
+    "treenut",
+    "wheat"
+   ]
   },
   "rr:mash-gravy-large-": {
    "meat": null,
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites"
+   ],
+   "may": [
+    "peanut",
+    "treenut"
+   ]
   },
   "rr:crunchy-slaw-large-": {
    "meat": [],
    "src": "description",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": [
+    "peanut",
+    "treenut"
+   ]
   },
   "rr:peas-large-": {
    "meat": [],
    "src": "description",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "egg",
+    "gluten",
+    "lupin",
+    "milk",
+    "peanut",
+    "sesame",
+    "soy",
+    "sulphites",
+    "treenut",
+    "wheat"
+   ]
   },
   "rr:sweet-potato-large-": {
    "meat": null,
-   "src": "description"
+   "src": "description",
+   "al": [
+    "soy"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "milk",
+    "peanut",
+    "sesame",
+    "sulphites",
+    "treenut",
+    "wheat"
+   ]
   },
   "rr:crunchy-potato-large-": {
    "meat": [],
    "src": "description",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "sulphites"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "lupin",
+    "milk",
+    "peanut",
+    "sesame",
+    "soy",
+    "treenut",
+    "wheat"
+   ]
   },
   "rr:battered-corn-wheels-5-": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [],
+   "may": [
+    "egg",
+    "gluten",
+    "milk",
+    "peanut",
+    "sesame",
+    "soy",
+    "sulphites",
+    "treenut",
+    "wheat"
+   ]
   },
   "rr:gravy-regular-": {
    "meat": null,
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "peanut",
+    "treenut"
+   ]
   },
   "rr:gravy-large-": {
    "meat": null,
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "peanut",
+    "treenut"
+   ]
   },
   "rr:pineapple-fritters-4-": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk",
+    "peanut",
+    "sesame",
+    "soy",
+    "sulphites",
+    "treenut"
+   ]
   },
   "rr:vanilla-slice-bites": {
    "meat": [],
    "src": "description",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "peanut",
+    "sesame",
+    "soy",
+    "sulphites",
+    "treenut"
+   ]
   },
   "rr:vanilla-slice-bites-10-": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "peanut",
+    "sesame",
+    "soy",
+    "sulphites",
+    "treenut"
+   ]
   },
   "rr:dipping-sauce-herb-mayo": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "egg"
+   ],
+   "may": [
+    "gluten",
+    "milk",
+    "peanut",
+    "sesame",
+    "soy",
+    "treenut",
+    "wheat"
+   ]
   },
   "rr:dipping-sauce-hot-honey": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "sesame"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "milk",
+    "peanut",
+    "soy",
+    "treenut",
+    "wheat"
+   ]
   },
   "rr:dipping-sauce-chilli-aioli": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "peanut",
+    "sesame",
+    "soy",
+    "treenut",
+    "wheat"
+   ]
   },
   "rr:dipping-sauce-honey-roasted-bbq": {
    "meat": null,
@@ -7151,7 +11522,19 @@
   },
   "rr:dipping-sauce-reds-hot": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "soy"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "milk",
+    "peanut",
+    "sesame",
+    "treenut",
+    "wheat"
+   ]
   },
   "rr:dipping-sauce-bbq": {
    "meat": null,
@@ -7159,77 +11542,166 @@
   },
   "rr:dipping-sauce-whole-egg-mayo": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "egg",
+    "gluten",
+    "soy"
+   ],
+   "may": [
+    "peanut",
+    "sesame",
+    "treenut",
+    "wheat"
+   ]
   },
   "rr:dipping-sauce-sweet-sour": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:margherita-1-slice-": {
    "meat": [],
    "src": "description",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:simply-cheese-1-slice-": {
    "meat": [],
    "src": "description",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:pepperoni-1-slice-": {
    "meat": [
     "beef",
     "pork"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:ham-cheese-1-slice-": {
    "meat": [
     "pork"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:hawaiian-1-slice-": {
    "meat": [
     "pork"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:bbq-meatlovers-1-slice-": {
    "meat": null,
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:mega-meatlovers-1-slice-": {
    "meat": null,
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:supreme-1-slice-": {
    "meat": null,
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:chicken-supreme-1-slice-": {
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:butter-chicken-1-slice-": {
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:peri-peri-chicken-1-slice-": {
    "meat": [
     "chicken"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "dominos:bbq-chicken-bacon-1-slice-": {
    "meat": [
     "chicken",
     "pork"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:philly-cheesesteak-1-slice-": {
    "meat": null,
@@ -7237,26 +11709,63 @@
   },
   "dominos:steak-carnivore-1-slice-": {
    "meat": null,
-   "src": "description"
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "fish",
+    "shellfish"
+   ]
   },
   "dominos:double-beef-onion-1-slice-": {
    "meat": [
     "beef"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:the-lot-1-slice-": {
    "meat": null,
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:vegorama-1-slice-": {
    "meat": [],
    "src": "description",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:garlic-prawn-1-slice-": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "gluten",
+    "milk",
+    "shellfish",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:mega-topped-ham-cheese-1-slice-": {
    "meat": null,
@@ -7267,125 +11776,270 @@
     "beef",
     "pork"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:saucy-chicken-wings-no-sauce-5-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": []
   },
   "dominos:saucy-chicken-wings-hot-sauce-5-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ]
   },
   "dominos:saucy-chicken-wings-bbq-5-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": []
   },
   "dominos:saucy-chicken-wings-peri-peri-5-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "sulphites"
+   ]
   },
   "dominos:chicken-tenders-no-sauce-4-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "fish",
+    "sesame"
+   ]
   },
   "dominos:chicken-nuggets": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ]
   },
   "dominos:southern-fried-chicken-bites-20-": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "gluten",
+    "wheat"
+   ]
   },
   "dominos:garlic-bread": {
-   "meat": null,
-   "src": null
+   "meat": [],
+   "src": "labels",
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "vg": "vegan"
   },
   "dominos:cheesy-garlic-bread": {
-   "meat": null,
-   "src": null
+   "meat": [],
+   "src": "labels",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "vg": "vegetarian"
   },
   "dominos:crispy-chips": {
-   "meat": null,
-   "src": null
+   "meat": [],
+   "src": "labels",
+   "al": [],
+   "vg": "vegan"
   },
   "dominos:chocolate-lava-cake": {
-   "meat": null,
-   "src": null
+   "meat": [],
+   "src": "labels",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "peanut",
+    "treenut"
+   ],
+   "vg": "vegetarian"
   },
   "dominos:cheesy-garlic-with-cr-me-fraiche-1-slice-": {
-   "meat": null,
-   "src": null
+   "meat": [],
+   "src": "labels",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "vg": "vegetarian"
   },
   "dominos:bbq-sausage-onion-1-slice-": {
    "meat": null,
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:spicy-veg-supreme-1-slice-": {
    "meat": [],
    "src": "description",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:hot-honey-pepperoni-1-slice-": {
    "meat": [
     "beef",
     "pork"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:loaded-pepperoni-1-slice-": {
    "meat": [
     "beef",
     "pork"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:godfather-1-slice-": {
    "meat": null,
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:double-bacon-cheeseburger-1-slice-": {
    "meat": [
     "beef",
     "pork"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:spicy-peppy-paneer-1-slice-": {
    "meat": [],
    "src": "description",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:chicken-camembert-1-slice-": {
    "meat": [
     "chicken",
     "pork"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:surf-turf-1-slice-": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "shellfish",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "fish"
+   ]
   },
   "dominos:vegan-spicy-veg-supreme-1-slice-": {
    "meat": [],
-   "src": "description",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:vegan-margherita-1-slice-": {
    "meat": [],
-   "src": "description",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:mega-topped-hawaiian-1-slice-": {
    "meat": null,
@@ -7402,160 +12056,401 @@
   "dominos:new-yorker-the-big-cheese-1-slice-": {
    "meat": [],
    "src": "description",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:new-yorker-hot-honey-pepperoni-boss-1-slice-": {
    "meat": [
     "beef",
     "pork"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:new-yorker-little-italy-1-slice-": {
    "meat": null,
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:new-yorker-bacon-kingpin-1-slice-": {
    "meat": [
     "pork"
    ],
-   "src": "description"
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:saucy-chicken-wings-hot-honey-5-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": []
   },
   "dominos:saucy-chicken-wings-garlic-butter-5-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy"
+   ]
   },
   "dominos:saucy-chicken-wings-butter-chicken-5-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk"
+   ]
   },
   "dominos:chicken-tenders-hot-sauce-4-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "fish",
+    "sesame"
+   ]
   },
   "dominos:chicken-tenders-bbq-4-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "fish",
+    "sesame"
+   ]
   },
   "dominos:chicken-tenders-peri-peri-4-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "fish",
+    "sesame"
+   ]
   },
   "dominos:chicken-tenders-garlic-butter-4-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "fish",
+    "sesame"
+   ]
   },
   "dominos:chicken-tenders-butter-chicken-4-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "fish",
+    "sesame"
+   ]
   },
   "dominos:chicken-tenders-hot-honey-4-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "fish",
+    "sesame"
+   ]
   },
   "dominos:saucy-chicken-nuggets-bbq-6-": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ]
   },
   "dominos:saucy-chicken-nuggets-peri-peri-6-": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "gluten",
+    "milk",
+    "sulphites",
+    "wheat"
+   ]
   },
   "dominos:saucy-chicken-nuggets-garlic-butter-6-": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:saucy-chicken-nuggets-butter-chicken-6-": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ]
   },
   "dominos:cheese-garlic-scrolls-4-": {
-   "meat": null,
-   "src": null
+   "meat": [],
+   "src": "labels",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "vg": "vegetarian"
   },
   "dominos:vegan-cheesy-garlic-bread": {
    "meat": [],
-   "src": "description",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
   },
   "dominos:pepperoni-stuffed-cheesy-bread": {
    "meat": null,
-   "src": null
+   "src": null,
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "dominos:triple-cheese-bites-5-": {
-   "meat": null,
-   "src": null
+   "meat": [],
+   "src": "labels",
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "fish",
+    "shellfish",
+    "soy",
+    "sulphites"
+   ],
+   "vg": "vegetarian"
   },
   "dominos:onion-rings-regular-": {
    "meat": null,
    "src": null
   },
   "dominos:mozzarella-cheese-twist-1-of-4-": {
-   "meat": null,
-   "src": null
+   "meat": [],
+   "src": "labels",
+   "al": [
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "vg": "vegetarian"
   },
   "dominos:dipping-sauce-creamy-garlic-aioli": {
-   "meat": null,
-   "src": null
+   "meat": [],
+   "src": "labels",
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "vg": "vegetarian"
   },
   "dominos:dipping-sauce-sweet-sour": {
    "meat": null,
    "src": null
   },
   "dominos:dipping-sauce-spicy-sriracha-mayo": {
-   "meat": null,
-   "src": null
+   "meat": [],
+   "src": "labels",
+   "al": [
+    "egg"
+   ],
+   "vg": "vegetarian"
   },
   "dominos:dipping-sauce-marinara": {
-   "meat": null,
-   "src": null
+   "meat": [],
+   "src": "labels",
+   "al": [],
+   "may": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "vg": "vegetarian"
   },
   "dominos:hot-choc-fudge-brownies": {
-   "meat": null,
-   "src": null
+   "meat": [],
+   "src": "labels",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "peanut",
+    "treenut"
+   ],
+   "vg": "vegetarian"
   },
   "dominos:brownies-with-nutella": {
    "meat": [],
    "src": "description",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "treenut",
+    "wheat"
+   ],
+   "may": [
+    "peanut"
+   ]
   },
   "dominos:mini-dutch-pancakes-12-": {
-   "meat": null,
-   "src": null
+   "meat": [],
+   "src": "labels",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "vg": "vegetarian"
   },
   "dominos:salted-caramel-chocolate-mousse": {
-   "meat": null,
-   "src": null
+   "meat": [],
+   "src": "labels",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "peanut",
+    "treenut",
+    "wheat"
+   ],
+   "vg": "vegetarian"
   },
   "dominos:churros-with-choc-dipping-sauce-4-": {
-   "meat": null,
-   "src": null
+   "meat": [],
+   "src": "labels",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "vg": "vegetarian"
   },
   "dominos:churros-with-nutella-2-serves-": {
-   "meat": null,
-   "src": null
+   "meat": [],
+   "src": "labels",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "treenut",
+    "wheat"
+   ],
+   "vg": "vegetarian"
   },
   "dominos:pistachio-papi-lava-cake": {
    "meat": null,
@@ -7564,947 +12459,1977 @@
   "dominos:choc-lava-cake-with-nutella": {
    "meat": [],
    "src": "description",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "treenut",
+    "wheat"
+   ],
+   "may": [
+    "peanut"
+   ]
   },
   "dominos:chocolate-thickshake-with-cream": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "dominos:white-chocolate-thickshake-with-cream": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "dominos:salted-caramel-thickshake-with-cream": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
   },
   "zam:classic-burrito-barbacoa-beef-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:classic-burrito-grilled-chicken-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:classic-burrito-pork-": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:classic-burrito-lamb-": {
    "meat": [
     "lamb"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:classic-burrito-classic-beef-mince-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:classic-burrito-pulled-mushroom-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:classic-burrito-vegetarian-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:classic-bowl-barbacoa-beef-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:classic-bowl-grilled-chicken-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:classic-bowl-pork-": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:classic-bowl-lamb-": {
    "meat": [
     "lamb"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:classic-bowl-classic-beef-mince-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:classic-bowl-pulled-mushroom-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:classic-bowl-vegetarian-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:classic-small-burrito-barbacoa-beef-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:classic-small-burrito-grilled-chicken-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:classic-small-burrito-pork-": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:classic-small-burrito-lamb-": {
    "meat": [
     "lamb"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:classic-small-burrito-classic-beef-mince-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:classic-small-burrito-pulled-mushroom-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:classic-small-burrito-vegetarian-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:classic-small-bowl-barbacoa-beef-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:classic-small-bowl-grilled-chicken-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:classic-small-bowl-pork-": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:classic-small-bowl-lamb-": {
    "meat": [
     "lamb"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:classic-small-bowl-classic-beef-mince-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:classic-small-bowl-pulled-mushroom-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:classic-small-bowl-vegetarian-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:classic-big-burrito-barbacoa-beef-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:classic-big-burrito-grilled-chicken-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:classic-big-burrito-pork-": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:classic-big-burrito-lamb-": {
    "meat": [
     "lamb"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:classic-big-burrito-classic-beef-mince-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:classic-big-burrito-pulled-mushroom-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:classic-big-bowl-barbacoa-beef-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:classic-big-bowl-grilled-chicken-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:classic-big-bowl-pork-": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:classic-big-bowl-lamb-": {
    "meat": [
     "lamb"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:classic-big-bowl-classic-beef-mince-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:classic-big-bowl-pulled-mushroom-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:nachos-barbacoa-beef-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:nachos-grilled-chicken-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:nachos-pork-": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:nachos-lamb-": {
    "meat": [
     "lamb"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:nachos-classic-beef-mince-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:nachos-pulled-mushroom-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:nachos-vegetarian-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:small-nachos-barbacoa-beef-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:small-nachos-grilled-chicken-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:small-nachos-pork-": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:small-nachos-lamb-": {
    "meat": [
     "lamb"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:small-nachos-classic-beef-mince-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:small-nachos-pulled-mushroom-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:small-nachos-vegetarian-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:big-nachos-barbacoa-beef-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:big-nachos-grilled-chicken-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:big-nachos-pork-": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:big-nachos-lamb-": {
    "meat": [
     "lamb"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:big-nachos-classic-beef-mince-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:big-nachos-pulled-mushroom-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:toasted-burrito-barbacoa-beef-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:toasted-burrito-grilled-chicken-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:toasted-burrito-pork-": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:toasted-burrito-lamb-": {
    "meat": [
     "lamb"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:toasted-burrito-classic-beef-mince-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:toasted-burrito-pulled-mushroom-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:toasted-burrito-vegetarian-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:small-toasted-burrito-barbacoa-beef-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:small-toasted-burrito-grilled-chicken-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:small-toasted-burrito-pork-": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:small-toasted-burrito-lamb-": {
    "meat": [
     "lamb"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:small-toasted-burrito-classic-beef-mince-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:small-toasted-burrito-pulled-mushroom-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:small-toasted-burrito-vegetarian-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:big-toasted-burrito-barbacoa-beef-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:big-toasted-burrito-grilled-chicken-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:big-toasted-burrito-pork-": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:big-toasted-burrito-lamb-": {
    "meat": [
     "lamb"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:big-toasted-burrito-classic-beef-mince-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:big-toasted-burrito-pulled-mushroom-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:quesadilla-barbacoa-beef-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:quesadilla-grilled-chicken-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:quesadilla-pork-": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:quesadilla-lamb-": {
    "meat": [
     "lamb"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:quesadilla-classic-beef-mince-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:quesadilla-pulled-mushroom-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:quesadilla-vegetarian-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "soy"
+   ]
   },
   "zam:signature-burrito-barbacoa-beef-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:signature-burrito-grilled-chicken-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:signature-burrito-pork-": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:signature-burrito-lamb-": {
    "meat": [
     "lamb"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:signature-burrito-classic-beef-mince-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:signature-burrito-pulled-mushroom-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:signature-burrito-vegetarian-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:small-signature-burrito-barbacoa-beef-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:small-signature-burrito-grilled-chicken-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:small-signature-burrito-pork-": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:small-signature-burrito-lamb-": {
    "meat": [
     "lamb"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:small-signature-burrito-classic-beef-mince-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:small-signature-burrito-pulled-mushroom-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:small-signature-burrito-vegetarian-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:big-signature-burrito-barbacoa-beef-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:big-signature-burrito-grilled-chicken-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:big-signature-burrito-pork-": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:big-signature-burrito-lamb-": {
    "meat": [
     "lamb"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:big-signature-burrito-classic-beef-mince-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:big-signature-burrito-pulled-mushroom-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:signature-bowl-barbacoa-beef-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:signature-bowl-grilled-chicken-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:signature-bowl-pork-": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:signature-bowl-lamb-": {
    "meat": [
     "lamb"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:signature-bowl-classic-beef-mince-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:signature-bowl-pulled-mushroom-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:signature-bowl-vegetarian-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:small-signature-bowl-barbacoa-beef-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:small-signature-bowl-grilled-chicken-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:small-signature-bowl-pork-": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:small-signature-bowl-lamb-": {
    "meat": [
     "lamb"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:small-signature-bowl-classic-beef-mince-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:small-signature-bowl-pulled-mushroom-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:small-signature-bowl-vegetarian-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:big-signature-bowl-barbacoa-beef-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:big-signature-bowl-grilled-chicken-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:big-signature-bowl-pork-": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:big-signature-bowl-lamb-": {
    "meat": [
     "lamb"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:big-signature-bowl-classic-beef-mince-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:big-signature-bowl-pulled-mushroom-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "zam:small-cali-burrito-barbacoa-beef-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:small-cali-burrito-grilled-chicken-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:small-cali-burrito-pork-": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:small-cali-burrito-lamb-": {
    "meat": [
     "lamb"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:small-cali-burrito-classic-beef-mince-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:small-cali-burrito-pulled-mushroom-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:small-cali-burrito-vegetarian-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:cali-burrito-barbacoa-beef-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:cali-burrito-grilled-chicken-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:cali-burrito-pork-": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:cali-burrito-lamb-": {
    "meat": [
     "lamb"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:cali-burrito-classic-beef-mince-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:cali-burrito-pulled-mushroom-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:cali-burrito-vegetarian-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:big-cali-burrito-barbacoa-beef-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:big-cali-burrito-grilled-chicken-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:big-cali-burrito-pork-": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:big-cali-burrito-lamb-": {
    "meat": [
     "lamb"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:big-cali-burrito-classic-beef-mince-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:big-cali-burrito-pulled-mushroom-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:soft-taco-barbacoa-beef-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "zam:soft-taco-grilled-chicken-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "zam:soft-taco-pork-": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "zam:soft-taco-lamb-": {
    "meat": [
     "lamb"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "zam:soft-taco-classic-beef-mince-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "zam:soft-taco-pulled-mushroom-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:soft-taco-vegetarian-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "zam:dos-capas-barbacoa-beef-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "zam:dos-capas-grilled-chicken-": {
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "zam:dos-capas-pork-": {
    "meat": [
     "pork"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "zam:dos-capas-lamb-": {
    "meat": [
     "lamb"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "zam:dos-capas-classic-beef-mince-": {
    "meat": [
     "beef"
    ],
-   "src": "name"
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "zam:dos-capas-pulled-mushroom-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
   },
   "zam:dos-capas-vegetarian-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "soy"
+   ]
   },
   "zam:fat-taco-barbacoa-beef-": {
    "meat": [
@@ -8549,440 +14474,677 @@
   "zam:sauce-basilo": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "egg",
+    "pinenut"
+   ]
   },
   "zam:sauce-chipotle": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "egg"
+   ]
   },
   "zam:sauce-garlic": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "egg"
+   ]
   },
   "zam:sauce-red-chilli": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "zam:sauce-secret-bbq": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": [
+    "barley",
+    "gluten"
+   ]
   },
   "zam:sauce-trezigo": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": [
+    "sulphites"
+   ]
   },
   "zam:sauce-verde": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": [
+    "sulphites"
+   ]
   },
   "zam:add-guacamole": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "zam:add-pickled-red-onions": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": [
+    "sulphites"
+   ]
   },
   "zam:add-sesame-crunch-mix": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": [
+    "sesame",
+    "sulphites"
+   ]
   },
   "zam:corn-chips-zam-spice": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "sulphites"
+   ],
+   "may": [
+    "milk"
+   ]
   },
   "zam:corn-chips-guacamole": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "milk"
+   ]
   },
   "zam:chips-with-seasoning-regular-": {
-   "meat": null,
-   "src": "name"
+   "meat": [],
+   "src": "labels",
+   "al": [],
+   "vg": "vegan"
   },
   "zam:chips-with-seasoning-big-": {
-   "meat": null,
-   "src": "name"
+   "meat": [],
+   "src": "labels",
+   "al": [],
+   "vg": "vegan"
   },
   "boost:banana-buzz-original-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   },
   "boost:blue-honolulu-original-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   },
   "boost:green-tea-mango-mantra-original-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   },
   "boost:lychee-crush-original-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "boost:mango-co-original-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "boost:mango-magic-original-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   },
   "boost:mango-tango-crush-original-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "boost:palm-peach-crush-original-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "boost:passion-mango-original-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   },
   "boost:tropical-crush-original-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "boost:watermelon-crush-original-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "boost:all-berry-bang-original-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   },
   "boost:berry-crush-original-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "boost:berry-peachy-original-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "boost:pink-lemonade-original-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "boost:pink-paradise-original-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   },
   "boost:strawberry-squeeze-original-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   },
   "boost:bananas-for-choc-original-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": [
+    "soy"
+   ]
   },
   "boost:coffee-dream-original-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   },
   "boost:cookies-cr-me-original-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "boost:king-william-chocolate-original-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   },
   "boost:raspberry-ripe-original-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   },
   "boost:energiser-original-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "boost:ginger-zing-original-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "boost:immunity-original-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "boost:mint-condition-original-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "boost:melon-moment-original-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "boost:two-five-original-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   },
   "boost:choc-muscle-hustle-original-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy"
+   ]
   },
   "boost:energy-lift-original-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   },
   "boost:gym-junkie-original-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy"
+   ]
   },
   "boost:power-plant-protein-original-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "boost:protein-supreme-original-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "boost:wondermelon-original-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy"
+   ]
   },
   "boost:brekkie-to-go-go-original-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "sulphites"
+   ]
   },
   "boost:strawbrekkie-original-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy"
+   ]
   },
   "boost:mornin-mocha-original-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy"
+   ]
   },
   "boost:banana-buzz-medium-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   },
   "boost:blue-honolulu-medium-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   },
   "boost:green-tea-mango-mantra-medium-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   },
   "boost:lychee-crush-medium-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "boost:mango-co-medium-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "boost:mango-magic-medium-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   },
   "boost:mango-tango-crush-medium-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "boost:palm-peach-crush-medium-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "boost:passion-mango-medium-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   },
   "boost:tropical-crush-medium-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "boost:watermelon-crush-medium-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "boost:all-berry-bang-medium-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   },
   "boost:berry-crush-medium-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "boost:berry-peachy-medium-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "boost:pink-lemonade-medium-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "boost:pink-paradise-medium-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   },
   "boost:strawberry-squeeze-medium-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   },
   "boost:bananas-for-choc-medium-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": [
+    "soy"
+   ]
   },
   "boost:coffee-dream-medium-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   },
   "boost:cookies-cr-me-medium-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
   },
   "boost:king-william-chocolate-medium-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   },
   "boost:raspberry-ripe-medium-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   },
   "boost:energiser-medium-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "boost:ginger-zing-medium-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "boost:immunity-medium-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "boost:mint-condition-medium-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "boost:melon-moment-medium-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "boost:two-five-medium-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   },
   "boost:choc-muscle-hustle-medium-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy"
+   ]
   },
   "boost:energy-lift-medium-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   },
   "boost:gym-junkie-medium-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy"
+   ]
   },
   "boost:power-plant-protein-medium-": {
    "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
+   "src": "labels",
+   "vg": "vegan",
+   "al": []
   },
   "boost:protein-supreme-medium-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites"
+   ]
   },
   "boost:wondermelon-medium-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy"
+   ]
   },
   "boost:brekkie-to-go-go-medium-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "sulphites"
+   ]
   },
   "boost:strawbrekkie-medium-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy"
+   ]
   },
   "boost:mornin-mocha-medium-": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian"
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy"
+   ]
   }
  }
 }

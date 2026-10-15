@@ -64,13 +64,17 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   Apple Intelligence (iOS 26+, on device) splits it into foods and amounts where available, otherwise `FoodPhrase.meal`
   does; each is matched like a photo's foods and amounts become servings from the food's serving weight. Typed restaurant
   items are ticked only when one restaurant has them or a brand was named.
-- Dietary needs (Find → Dietary needs): vegetarian, vegan, no beef, no pork, and the 12 allergens on Australia's list (gluten, wheat, milk, egg, soy, sesame, peanuts, tree nuts, fish, shellfish, lupin, sulphites). An item whose restaurant doesn't say either way about an allergen, like Hungry Jack's and lupin, is left out. Orders, Best
+- Dietary needs (Find → Dietary needs): vegetarian, vegan, no beef, no pork, and the 12 allergens on Australia's list (gluten, wheat, milk, egg, soy, sesame, peanuts, tree nuts, fish, shellfish, lupin, sulphites). An item whose restaurant doesn't say either way about an allergen, like Hungry Jack's café drinks it doesn't list, is left out. Orders, Best
   choices, search and the Left today and Plan ahead suggestions only offer items whose restaurant's own words show they
   fit; unknown items are left out (`DietFilter`, `Food.diet`). With needs set, the finder customises by taking things off
   only. Each item's page shows its meats, allergens and "may contain", and where that came from. The data is built by
   `Scripts/diet-info.py` from Grill'd's ingredient lists and allergen statements, Nando's and Hungry Jack's allergens,
   McDonald's and Subway ingredients, Hungry Jack's, Oporto, Red Rooster and Domino's descriptions, and GYG, Zambrero and
-  KFC names; "may contain" counts as contains, and gelatine counts against no beef and no pork.
+  KFC names, plus the restaurants' own allergen guides read by `Scripts/allergen-guides.py` (Domino's, Boost, Oporto, Red
+  Rooster, Spud Bar, Schnitz, Zambrero, GYG and Hungry Jack's; items built from parts, like a GYG burrito, use the
+  restaurant's own list of what's in them). "May contain" counts as contains, and gelatine counts against no beef and no
+  pork. To refresh: `allergen-guides.py fetch`, `allergen-guides.py build`, `diet-info.py build`, then `export-menu.cjs`.
+  McDonald's, KFC and Subway publish allergens only behind bot protection, so they have none yet.
 - Ask Leanr (Find, at the top): a question in plain words ("vegetarian, 40 g protein under 600 Cal at Nando's") becomes an
   order search. `AskLeanr.parse` reads numbers, restaurants, item counts and needs; with Apple Intelligence, `AskLeanrModel`
   fills in what the rules miss, but only numbers that are in the question. What was understood is shown as chips.

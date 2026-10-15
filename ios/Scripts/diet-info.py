@@ -11,6 +11,9 @@ Every item gets diet info only from the restaurant's own words, and only where t
   (bacon is named). Names that don't say what's inside (a Stacker, a combo, anything with gravy) stay unknown.
 - Labels and allergens: Nando's, Hungry Jack's and Grill'd publish allergens per item, and Nando's and Grill'd label vegetarian
   and vegan items. "May contain" is kept apart from "contains".
+- Allergen guides (allergen-guides.py, run before this): Domino's, Boost Juice, Oporto, Red Rooster, Spud Bar, Schnitz, Zambrero,
+  Guzman y Gomez and Hungry Jack's. Spud Bar's and Hungry Jack's ingredient lists and Schnitz's descriptions also say what meat
+  is in an item.
 
 Anything else stays unknown, and the filters leave unknown items out rather than guess.
 
@@ -24,6 +27,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 SOURCE = HERE / "diet-source.json"
 OUT = HERE / "diet.json"
+GUIDES = HERE / "allergen-items.json"
 CATALOG = HERE.parent / "MacroMenu" / "MenuData.json"
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15"
 CRAVEABLE_KEY = "REDACTED-CRAVEABLE-KEY"   # the key Oporto's and Red Rooster's own websites send
@@ -180,6 +184,7 @@ def build():
     mcd = json.loads((HERE / "mcd-ingredients.json").read_text())["items"]
     subway = json.loads((HERE / "subway-ingredients.json").read_text())
     lookups = {chain: {norm(name): value for name, value in source[chain].items()} for chain in ("hj", "oporto", "rr", "dominos")}
+    guides = json.loads(GUIDES.read_text())["items"] if GUIDES.exists() else {}
     out = {}
 
     def subway_parts(name):
@@ -273,6 +278,10 @@ def build():
                     info = entry(found, "name")
         elif chain == "boost":
             info = entry(set(), "name")
+        guide = guides.get(fid)
+        if guide and (info is None or info["meat"] is None) and guide.get("text"):
+            # Spud Bar's full ingredient lists and Schnitz's descriptions say what's in the item.
+            info = from_text(f"{name} , {guide['text']}", "ingredients" if chain == "spud" else "description")
         if info is None:
             info = {"meat": None, "src": None}
         elif info["meat"] == [] and info.get("vg") == "vegetarian" and (info["src"] in ("name", "description") or chain == "mcd"):
@@ -289,6 +298,17 @@ def build():
             hidden = re.search(r"season|stock|gravy|broth", text, re.I)
             if food["cat"] in ("main", "breakfast") and not complete or food["cat"] == "sweet" and re.search(GELATINE_RISK, text, re.I) or hidden:
                 info = {"meat": None, "src": info["src"]}
+        if guide and ("al" not in info or chain == "hj"):
+            # The restaurant's allergen guide (allergen-guides.py). Hungry Jack's reports also say what may be present, and
+            # cover lupin, which its ordering menu leaves out.
+            info.pop("unk", None); info.pop("may", None)
+            info["al"] = guide["al"]
+            if guide["may"]:
+                info["may"] = guide["may"]
+            if guide.get("unk"):
+                info["unk"] = guide["unk"]
+            if guide.get("vg") and info["meat"] is None or guide.get("vg") == "vegan" and info["meat"] == []:
+                info.update(meat=[], vg=guide["vg"], src="labels")
         out[fid] = info
 
     OUT.write_text(json.dumps({"fetched": source["fetched"], "items": out}, indent=1, ensure_ascii=False) + "\n")

@@ -73,12 +73,21 @@ import UniformTypeIdentifiers
         assert(glutenFree.allows(byID["nandos:1-2-peri-peri-chicken"]!) && byID["nandos:1-2-peri-peri-chicken"]!.diet?.al == [])
         // Every allergen on Australia's list; an item whose restaurant doesn't say either way is left out.
         assert(DietOption.allergenOptions.count == 12 && DietFilter(raw: "wheat,lupin,sulphites").options == [.wheat, .lupin, .sulphites])
-        let hjClean = catalog.foods.first { $0.chain == "hj" && $0.diet?.al == [] }!
-        assert(hjClean.diet?.unk == ["lupin"] && glutenFree.allows(hjClean) && !DietFilter(options: [.lupin]).allows(hjClean))
+        // Hungry Jack's ordering menu has no lupin and says "gluten" without the cereal; its allergen reports cover both.
+        let hjMenuOnly = catalog.foods.first { $0.chain == "hj" && ($0.diet?.unk ?? []).contains("lupin") }!
+        assert(!DietFilter(options: [.lupin]).allows(hjMenuOnly))
+        let coke = catalog.foods.first { $0.chain == "hj" && $0.name == "Coke" }!
+        assert(coke.diet?.al == [] && coke.diet?.unk == nil && DietFilter(options: [.lupin, .wheat]).allows(coke))
         assert(DietFilter(options: [.lupin, .sulphites]).allows(byID["nandos:1-2-peri-peri-chicken"]!))
-        let hjGluten = catalog.foods.first { $0.chain == "hj" && ($0.diet?.al ?? []).contains("gluten") }!
-        assert(hjGluten.diet?.unk?.contains("wheat") == true && !DietFilter(options: [.wheat]).allows(hjGluten))
+        let wheatUnknown = catalog.foods.first { ($0.diet?.al ?? []).contains("gluten") && ($0.diet?.unk ?? []).contains("wheat") }!
+        assert(!DietFilter(options: [.wheat]).allows(wheatUnknown))
         assert(!DietFilter(options: [.wheat]).allows(byID["grilld:simply-grill-d"]!) && DietInfo.guess("Sultanas").al == ["sulphites"])
+        // Allergen guides: Domino's, Boost, Oporto, Red Rooster, Spud Bar, Schnitz, Zambrero and Guzman y Gomez too.
+        for chain in ["dominos", "boost", "oporto", "rr", "spud", "schnitz", "zam", "gyg"] {
+            assert(catalog.foods.contains { $0.chain == chain && $0.diet?.al != nil }, chain)
+        }
+        assert(byID["dominos:margherita-1-slice-"]!.diet?.al == ["gluten", "milk", "soy", "wheat"] && vegetarian.allows(byID["dominos:margherita-1-slice-"]!))
+        assert(!glutenFree.allows(byID["gyg:grilled-chicken-burrito-bowl"]!))   // GYG: everything may contain gluten
         let mayContain = catalog.foods.first { ($0.diet?.may ?? []).contains("sesame") && !($0.diet?.al ?? []).contains("sesame") }!
         assert(!DietFilter(options: [.sesame]).allows(mayContain))
         assert(DietFilter(options: [.vegan, .gluten]).allows(Food(chain: "mine", name: "My chicken wrap", kj: 1000, cal: 239, p: 20)))

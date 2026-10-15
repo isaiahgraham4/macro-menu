@@ -79,7 +79,8 @@ struct DietSection: View {
                     LabeledContent("Allergens", value: "Not published")
                 }
             } header: { Text("Dietary") } footer: {
-                Text(sourceText(info) + " Kitchens are shared, so check with the restaurant about an allergy.")
+                Text(sourceText(info) + (info.al != nil ? " Allergens are from \(store.chainName(food.chain).possessive) own allergen information." : "")
+                     + " Kitchens are shared, so check with the restaurant about an allergy.")
             }
         }
     }
