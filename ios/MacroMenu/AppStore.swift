@@ -15,6 +15,8 @@ final class AppStore {
     private(set) var undo: UndoStep?
     /// The last week of steps from Apple Health, kept in memory and shared with the Steps widget. Not part of `AppData`.
     private(set) var widgetSteps: [String: Double] = [:]
+    /// The same for calories burnt, shared with the Calories burnt widget and Apple Watch.
+    private(set) var widgetEnergy: [String: Double] = [:]
     /// Called after local changes (not iCloud updates) so Apple Health can follow the log and weights.
     var logsChanged: ((_ old: AppData, _ new: AppData) -> Void)?
     /// Called after every local save, so iCloud sync knows there's something to upload.
@@ -121,6 +123,15 @@ final class AppStore {
         let recent = steps.filter { keep.contains($0.key) }
         guard recent != widgetSteps else { return }
         widgetSteps = recent
+        refreshWidgets()
+    }
+    /// Takes the latest active energy from Apple Health, keeping the last seven days for the widget and Apple Watch.
+    func updateActiveEnergy(_ energy: [String: Double], now: Date = Date()) {
+        let calendar = Calendar.current
+        let keep = Set((0..<7).compactMap { calendar.date(byAdding: .day, value: -$0, to: now) }.map(dayKey))
+        let recent = energy.filter { keep.contains($0.key) }
+        guard recent != widgetEnergy else { return }
+        widgetEnergy = recent
         refreshWidgets()
     }
     func dismissUndo(_ id: UndoStep.ID) { if undo?.id == id { undo = nil } }

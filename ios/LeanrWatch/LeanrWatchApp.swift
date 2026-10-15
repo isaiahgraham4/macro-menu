@@ -35,7 +35,7 @@ struct WatchHome: View {
     }
 }
 
-/// Calories left in a ring, with protein and water underneath.
+/// Calories left in a ring, with protein, water and calories burnt underneath.
 struct TodayPage: View {
     let today: WatchSnapshot
 
@@ -65,6 +65,7 @@ struct TodayPage: View {
             HStack {
                 figure("Protein", "\(today.protein.rounded().formatted())\(today.proteinTarget.map { "/\($0.rounded().formatted())" } ?? "") g")
                 figure("Water", Self.water(today.water))
+                if let energy = today.energy { figure("Burnt", "\(energy.rounded().formatted()) Cal") }
             }
         }
         .navigationTitle("Today")

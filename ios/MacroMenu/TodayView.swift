@@ -17,6 +17,10 @@ struct TodayView: View {
     @State private var showingCalendar = false
     @State private var now = Date()
     @State private var mealTime = MealTime.suggested()
+    @State private var tip: FeatureTip?
+    @State private var planning = false
+    @Environment(HealthSync.self) private var health
+    @Environment(Navigator.self) private var nav
     @Environment(\.dynamicTypeSize) private var typeSize
     private let timer = Timer.publish(every: 30, on: .main, in: .common).autoconnect()
     var key: String { dayKey(date) }
@@ -39,8 +43,31 @@ struct TodayView: View {
             Text("\(value.number) Cal").font(.roboto(.headline, weight: .bold)).monospacedDigit()
         }.frame(maxWidth: .infinity, alignment: .leading)
     }
+    /// Does what a feature tip's button offers, then retires the tip.
+    private func act(on action: FeatureTip.Action, tip shown: FeatureTip) {
+        close(shown)
+        switch action {
+        case .describe: describing = true
+        case .scan: barcode = true
+        case .photo: photo = true
+        case .plan: planning = true
+        case .settings: nav.requestedSheet = .settings
+        case .reminders: nav.requestedSheet = .reminders
+        case .find: nav.tab = .find
+        case .progress: nav.tab = .progress
+        }
+    }
+    private func close(_ shown: FeatureTip) {
+        FeatureTips.finish(shown)
+        withAnimation { tip = nil }
+    }
     var body: some View {
         LeanrList {
+            if let tip {
+                Section {
+                    FeatureTipCard(tip: tip, act: { act(on: $0, tip: tip) }, dismiss: { close(tip) })
+                }
+            }
             Section {
                 let previous = Button { shift(-1) } label: { Image(systemName: "chevron.left").frame(width: 44, height: 44).contentShape(Rectangle()) }.accessibilityLabel("Previous day")
                 let next = Button { shift(1) } label: { Image(systemName: "chevron.right").frame(width: 44, height: 44).contentShape(Rectangle()) }.disabled(isToday).accessibilityLabel("Next day")
@@ -177,6 +204,7 @@ struct TodayView: View {
             Section {
                 WaterRow(date: date)
                 StepsRow(date: date)
+                ActiveEnergyRow(date: date)
             }
             Section {
                 TileRow {
@@ -204,6 +232,11 @@ struct TodayView: View {
                     store.log([Portion(food: $0)], name: $0.name, date: date, mealTime: mealTime)
                 }
             } }
+            .onChange(of: barcode) { if barcode { FeatureTips.markUsed(.scan) } }
+            .onChange(of: photo) { if photo { FeatureTips.markUsed(.photo) } }
+            .onChange(of: describing) { if describing { FeatureTips.markUsed(.describe) } }
+            .navigationDestination(isPresented: $planning) { PlanView() }
+            .task { tip = await FeatureTips.current(store: store, health: health) }
             .sheet(isPresented: $barcode) {
                 BarcodeFoodFlow(savePortion: { store.log([$0], name: $0.food.name, date: date, mealTime: mealTime) }) {
                     store.log([Portion(food: $0)], name: $0.name, date: date, mealTime: mealTime)

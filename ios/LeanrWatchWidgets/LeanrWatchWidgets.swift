@@ -7,6 +7,7 @@ struct LeanrWatchWidgets: WidgetBundle {
         CaloriesComplication()
         ProteinComplication()
         WaterComplication()
+        BurntComplication()
     }
 }
 
@@ -186,6 +187,47 @@ struct WaterComplicationView: View {
             }
             .gaugeStyle(.accessoryCircularCapacity).tint(.cyan).widgetAccentable()
             .accessibilityLabel("\(drunk) water")
+        }
+    }
+}
+
+// MARK: Calories burnt
+
+struct BurntComplication: Widget {
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: WatchStorage.burntKind, provider: WatchProvider()) { entry in
+            BurntComplicationView(entry: entry).containerBackground(for: .widget) {}
+        }
+        .configurationDisplayName("Calories burnt")
+        .description("Today's active calories from Apple Health.")
+        .supportedFamilies([.accessoryCircular, .accessoryCorner, .accessoryInline])
+    }
+}
+
+struct BurntComplicationView: View {
+    @Environment(\.widgetFamily) private var family
+    let entry: WatchEntry
+
+    private var burnt: Double? { entry.today?.energy }
+    private var valueText: String { burnt.map(number) ?? "—" }
+
+    var body: some View {
+        switch family {
+        case .accessoryInline:
+            Text(burnt.map { "\(number($0)) Cal burnt" } ?? "Leanr")
+        case .accessoryCorner:
+            Image(systemName: "flame.fill").font(.title3).foregroundStyle(.orange).widgetAccentable()
+                .widgetLabel { Text("\(valueText) Cal") }
+        default:
+            // No target to measure against, so the ring is a full flame with the number inside.
+            ZStack {
+                AccessoryWidgetBackground()
+                VStack(spacing: 0) {
+                    Image(systemName: "flame.fill").font(.caption2).foregroundStyle(.orange).widgetAccentable()
+                    Text(valueText).font(.system(.body, design: .rounded, weight: .bold)).minimumScaleFactor(0.5).lineLimit(1)
+                }.padding(2)
+            }
+            .accessibilityLabel(burnt.map { "\(number($0)) calories burnt" } ?? "No calories burnt recorded")
         }
     }
 }

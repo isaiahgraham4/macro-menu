@@ -87,6 +87,14 @@ import UniformTypeIdentifiers
         widgetBefore.water = ["2026-10-15": 250]; widgetBefore.planned = []; widgetBefore.plannedDay = "2026-10-15"
         var widgetWater = widgetBefore; widgetWater.water = ["2026-10-15": 750]
         assert(widgetWater.kindsChanged(from: widgetBefore) == [WidgetCalories.waterKind])
+        // Calories burnt reload only their own widget, and today is set against the other days that have any.
+        var widgetBurnt = widgetBefore; widgetBurnt.activeEnergy = ["2026-10-15": 412, "2026-10-14": 500, "2026-10-13": 300, "2026-10-12": 0]
+        assert(widgetBurnt.kindsChanged(from: widgetBefore) == [WidgetCalories.burntKind] && widgetBurnt.isValid)
+        let burntNoon = Calendar.current.date(from: DateComponents(year: 2026, month: 10, day: 15, hour: 12))!
+        assert(widgetBurnt.energyBurnt(on: burntNoon) == 412 && widgetBurnt.energyAverage(excluding: burntNoon) == 400)
+        assert(widgetBefore.energyBurnt(on: burntNoon) == nil && widgetBefore.energyAverage(excluding: burntNoon) == nil)
+        var widgetBadBurnt = widgetBefore; widgetBadBurnt.activeEnergy = ["2026-10-15": -5]
+        assert(!widgetBadBurnt.isValid)
         var widgetPlanned = widgetBefore
         widgetPlanned.planned = []; widgetPlanned.dailyCalories["2026-10-15"] = 1000
         assert(widgetPlanned.kindsChanged(from: widgetBefore).first == WidgetCalories.logAgainKind && !widgetPlanned.kindsChanged(from: widgetBefore).contains(WidgetCalories.waterKind))
@@ -516,6 +524,100 @@ import UniformTypeIdentifiers
         assert(!planned.contains { $0.id == "reminder.lunch.\(dayKey(day(5)))" })
         assert(planned.contains { $0.id == "reminder.dinner.\(dayKey(day(5)))" && calendar.component(.hour, from: $0.date) == 19 })
         assert(planned.count == 1 + 13 * 3 && planned.allSatisfy { $0.date > reminderNow })
+
+        // Water reminders: spaced through the day, none once the day's target is reached, none in the past.
+        let waterSchedule = MealReminders.WaterSchedule(from: 9 * 60, until: 19 * 60, everyHours: 2)
+        assert(MealReminders.waterTimes(waterSchedule) == [540, 660, 780, 900, 1020, 1140])
+        assert(MealReminders.waterTimes(.init(from: 20 * 60, until: 9 * 60, everyHours: 3)) == [20 * 60], "an end before the start still gives the start")
+        let waterToday = dayKey(day(5)), waterNow = calendar.date(bySettingHour: 12, minute: 0, second: 0, of: day(5))!
+        let waterOpen = MealReminders.waterPlan(waterSchedule, water: [:], target: 2000, now: waterNow, calendar: calendar)
+        assert(waterOpen.filter { $0.id.contains(waterToday) }.map(\.slot) == [2, 3, 4, 5] && waterOpen.allSatisfy { $0.date > waterNow })
+        assert(waterOpen.count == 4 + 13 * 6)
+        let waterDone = MealReminders.waterPlan(waterSchedule, water: [waterToday: 2000], target: 2000, now: waterNow, calendar: calendar)
+        assert(!waterDone.contains { $0.id.contains(waterToday) } && waterDone.count == 13 * 6, "a reached target drops only that day's reminders")
+        assert(MealReminders.waterPlan(waterSchedule, water: [waterToday: 1500], target: 2000, now: waterNow, calendar: calendar).contains { $0.id.contains(waterToday) })
+        let waterWords = (0..<6).map { MealReminders.waterMessage(on: day(0), slot: $0, calendar: calendar).title }
+        assert(Set(waterWords).count == 6, "neighbouring water reminders differ")
+        assert(MealReminders.waterMessage(on: day(0), slot: 0, calendar: calendar).title != MealReminders.waterMessage(on: day(1), slot: 0, calendar: calendar).title)
+        // Meal and water reminders share iOS's 64-notification limit: the soonest are kept, and room is left for the weekly review.
+        let bookedAll = MealReminders.bookings(meals: planned, water: waterOpen, calendar: calendar)
+        assert(bookedAll.count == 64 && zip(bookedAll, bookedAll.dropFirst()).allSatisfy { $0.date <= $1.date } && bookedAll.first!.date > waterNow)
+        assert(MealReminders.bookings(meals: planned, water: waterOpen, reserved: 1, calendar: calendar).count == 63)
+        assert(MealReminders.bookings(meals: [], water: [], calendar: calendar).isEmpty)
+        assert(bookedAll.contains { $0.thread == "water-reminders" } && bookedAll.contains { $0.thread == "meal-reminders" })
+        let waterInputs = MealReminders.inputs(siriData, goals: siriGoals, now: noon, calendar: calendar)
+        var waterLogged = siriData; waterLogged.water = [dayKey(noon): 500]
+        assert(MealReminders.inputs(waterLogged, goals: siriGoals, now: noon, calendar: calendar) != waterInputs, "logging water rebooks")
+
+        // Feature tips: paced, one at a time, never for what's in use, and an existing tester isn't made to wait.
+        do {
+            var tipCalendar = Calendar(identifier: .gregorian); tipCalendar.timeZone = TimeZone(identifier: "UTC")!
+            let tipDay0 = tipCalendar.date(from: DateComponents(year: 2026, month: 10, day: 1, hour: 10))!
+            func tipDay(_ n: Int) -> Date { tipCalendar.date(byAdding: .day, value: n, to: tipDay0)! }
+            let all = Set(FeatureTip.allCases)
+            func decide(_ state: FeatureTipState, day: Int, used: Set<FeatureTip> = [], logged: Int = 0, available: Set<FeatureTip>? = nil) -> FeatureTips.Decision {
+                FeatureTips.decide(available: available ?? all, used: used, loggedDays: logged, state: state, now: tipDay(day), calendar: tipCalendar)
+            }
+            assert(decide(FeatureTipState(), day: 0).show == nil, "nothing before the first launch is noted")
+            // A new person waits a day, then gets the first tip, which stays up rather than being replaced.
+            var newcomer = FeatureTipState(firstSeen: tipDay(0))
+            assert(decide(newcomer, day: 0).show == nil)
+            let first = decide(newcomer, day: 1)
+            assert(first.show == .describe && first.begins)
+            newcomer = FeatureTips.apply(first, to: newcomer, now: tipDay(1))
+            let carried = decide(newcomer, day: 2)
+            assert(carried.show == .describe && !carried.begins)
+            // Used, it finishes; the next waits out the quiet time, then arrives.
+            let usedIt = decide(newcomer, day: 2, used: [.describe])
+            assert(usedIt.finishing == [.describe] && usedIt.show == nil)
+            newcomer = FeatureTips.apply(usedIt, to: newcomer, now: tipDay(2))
+            assert(decide(newcomer, day: 3, used: [.describe]).show == nil)
+            assert(decide(newcomer, day: 4, used: [.describe]).show == .scan)
+            // Ignored for three days, a tip is retired and not offered again.
+            let ignored = decide(newcomer.applyingShown(.scan, at: 4, tipDay), day: 7)
+            assert(ignored.finishing == [.scan] && ignored.show == nil)
+            // Dismissing finishes it and starts the quiet time.
+            let dismissed = FeatureTips.finish(.scan, in: newcomer.applyingShown(.scan, at: 4, tipDay), now: tipDay(4))
+            assert(decide(dismissed, day: 5).show == nil && decide(dismissed, day: 6).show == .water && !dismissed.finished.isEmpty)
+            // An existing tester is shown one straight away, and tips for what they use or can't use are skipped.
+            let tester = FeatureTipState(firstSeen: tipDay(0), existingUser: true)
+            assert(decide(tester, day: 0, used: [.describe, .scan, .water]).show == .health)
+            assert(decide(tester, day: 0, used: [.describe, .scan, .water], available: all.subtracting([.health])).show == .reminders)
+            assert(decide(tester, day: 0, used: all).show == nil)
+            // Tips that need some history wait for it.
+            let lateOnly = all.subtracting([.describe, .scan, .water, .health, .reminders, .photo, .askLeanr, .widgets])
+            assert(decide(tester, day: 0, logged: 0, available: lateOnly).show == nil)
+            assert(decide(tester, day: 0, logged: 3, available: lateOnly).show == .plan && decide(tester, day: 0, logged: 7, available: lateOnly).show == .plan)
+            assert(decide(tester, day: 0, logged: 6, available: Set([.checkIn])).show == nil && decide(tester, day: 0, logged: 7, available: Set([.checkIn])).show == .checkIn)
+            // Saved state survives a round trip, and the first launch is only noted once.
+            let tipDefaults = UserDefaults(suiteName: "tips.checks")!; tipDefaults.removePersistentDomain(forName: "tips.checks")
+            FeatureTips.noteLaunch(onboardingCompleted: true, now: tipDay(0), defaults: tipDefaults)
+            FeatureTips.noteLaunch(onboardingCompleted: false, now: tipDay(5), defaults: tipDefaults)
+            assert(FeatureTips.load(tipDefaults).firstSeen == tipDay(0) && FeatureTips.load(tipDefaults).existingUser)
+            FeatureTips.save(dismissed, tipDefaults)
+            assert(FeatureTips.load(tipDefaults) == dismissed)
+            FeatureTips.markUsed(.askLeanr, tipDefaults); FeatureTips.markUsed(.askLeanr, tipDefaults)
+            assert(FeatureTips.marked(tipDefaults) == [.askLeanr])
+            tipDefaults.removePersistentDomain(forName: "tips.checks")
+            assert(FeatureTip.allCases.allSatisfy { !$0.title.isEmpty && !$0.detail.isEmpty && !$0.symbol.isEmpty })
+        }
+
+        // Calories burnt: days with nothing recorded aren't counted, and the recent average needs three days.
+        let burnt = [dayKey(day(4)): 300.0, dayKey(day(3)): 500.0, dayKey(day(2)): 0, dayKey(day(5)): 900]
+        let burntSummary = ActiveEnergy.summary(burnt, days: (0...5).map { dayKey(day($0)) })
+        assert(burntSummary.countedDays == 3 && burntSummary.average == 1700.0 / 3 && burntSummary.best == 900 && burntSummary.total == 1700)
+        assert(ActiveEnergy.summary([:], days: [dayKey(day(0))]).average == nil && ActiveEnergy.text(412.4) == "412" && ActiveEnergy.text(1250.6) == "1,251")
+        assert(ActiveEnergy.recentAverage(burnt, before: day(6), calendar: calendar) == 1700.0 / 3, "today is left out, the fortnight before it is averaged")
+        assert(ActiveEnergy.recentAverage(burnt, before: day(5), calendar: calendar) == nil, "two days isn't enough")
+        assert(ActiveEnergy.recentAverage([dayKey(day(6)): 700, dayKey(day(4)): 300, dayKey(day(3)): 500, dayKey(day(2)): 100], before: day(6), calendar: calendar) == 300)
+
+        // The reminders prompt: only after a few days away, only when nothing is on, and not again for a month.
+        let promptNow = Date(), away = promptNow.addingTimeInterval(-4 * 24 * 3600), recent = promptNow.addingTimeInterval(-3600)
+        func prompt(last: Date? = away, asked: Date? = nil, on: Bool = false, denied: Bool = false, choose: Bool = true) -> Bool {
+            ReminderPrompt.shouldShow(now: promptNow, lastActive: last, lastAsked: asked, anyReminderOn: on, notificationsDenied: denied, canChoose: choose)
+        }
+        assert(prompt() && !prompt(last: nil) && !prompt(last: recent) && !prompt(on: true) && !prompt(denied: true) && !prompt(choose: false))
+        assert(!prompt(asked: promptNow.addingTimeInterval(-5 * 24 * 3600)) && prompt(asked: promptNow.addingTimeInterval(-31 * 24 * 3600)))
 
         // The late-night reminder checks the whole day: any entry at all cancels it, while a logged meal cancels only its own.
         let night = [(meal: MealTime.dinner, minutes: 19 * 60), (meal: MealTime.snacks, minutes: 21 * 60 + 30)]
@@ -1399,6 +1501,12 @@ import UniformTypeIdentifiers
             let fresh = snapshot.current(on: tomorrow)
             assert(fresh.calories == 0 && fresh.water == 0 && fresh.options.allSatisfy { !$0.loggedToday } && fresh.calorieTarget == 2200)
             assert(snapshot.current(on: now) == snapshot && snapshot.addingWater(-1000).water == 0)
+            // Calories burnt reach the watch for the complication, and only from today.
+            assert(snapshot.energy == nil)
+            watchStore.updateActiveEnergy([dayKey(now): 412.4, dayKey(tomorrow): 99], now: now)
+            let burntSnapshot = watchStore.watchSnapshot(now: now)
+            assert(burntSnapshot.energy == 412.4 && WatchSnapshot(context: burntSnapshot.context) == burntSnapshot)
+            assert(burntSnapshot.current(on: tomorrow).energy == nil && WatchStorage.complicationsDiffer(snapshot, burntSnapshot))
             assert(WatchRequest(message: WatchRequest.log("pin:bar").message) == .log("pin:bar"))
             assert(WatchRequest(message: WatchRequest.water(250).message) == .water(250))
             // Complication updates are limited, so they're only spent when a figure on the watch face changes.
@@ -1433,5 +1541,13 @@ import UniformTypeIdentifiers
         }
 
         print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, delivery, iCloud health rules, deleting all data, the policies, everyday foods, customised orders, photo and Visual Intelligence matching, widget goal colours, Premium access rules, Siri logging and editing saved and logged meals, water, measurements, progress photos, fibre and sodium nudges, steps, the progress breakdown, what fits what's left, meals in words, recipe ingredients, recipe pages, weekly check-ins, meal plans, Apple Watch, insights, the Planned and Water widgets, dietary needs, Ask Leanr and no prices (\(Date().timeIntervalSince(start).formatted())s).")
+    }
+}
+
+
+private extension FeatureTipState {
+    /// This state with a tip having been put up `day` days after day 0.
+    func applyingShown(_ tip: FeatureTip, at day: Int, _ date: (Int) -> Date) -> FeatureTipState {
+        var copy = self; copy.shownAt[tip.rawValue] = date(day); return copy
     }
 }

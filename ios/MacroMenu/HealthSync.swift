@@ -18,9 +18,26 @@ final class HealthSync {
     }
     /// Why the last connection attempt failed, to show the person.
     private(set) var lastError: String?
-    private(set) var activeEnergyToday: Double?
+    /// Active energy (calories burnt) by day (day key) for the last 90 days. Kept in memory only, like steps.
+    private(set) var activeEnergy: [String: Double] = [:]
+    /// Today's active energy, or nil when none is recorded.
+    var activeEnergyToday: Double? { activeEnergy[dayKey(Date())].flatMap { $0 > 0 ? $0 : nil } }
     /// Average daily active energy over the last two weeks, counting days with any recorded.
-    private(set) var averageActiveEnergy: Double?
+    var averageActiveEnergy: Double? { ActiveEnergy.recentAverage(activeEnergy, before: Date()) }
+    /// The sources that have recorded active energy, and today's from each, to help choose one.
+    private(set) var energySources: [StepSource] = []
+    private(set) var energySourceTotals: [String: Double] = [:]
+    /// The source calories burnt are shown from, by bundle identifier, or nil for all sources together.
+    /// Kept on this device: sources differ between devices.
+    private(set) var energySourceID: String? = UserDefaults.standard.string(forKey: HealthSync.energySourceKey) {
+        didSet { UserDefaults.standard.set(energySourceID, forKey: Self.energySourceKey) }
+    }
+    @ObservationIgnored private var knownEnergySources: [String: HKSource] = [:]
+    static let energySourceKey = "health.energySource"
+    /// The chosen source's name, for labels. Nil when showing all sources or the chosen source can't be found.
+    var energySourceName: String? { energySourceID.flatMap { id in energySources.first { $0.id == id }?.name } }
+    /// True once an active energy read has completed this launch.
+    private(set) var energyLoaded = false
     /// Steps by day (day key) for the last 90 days. Kept in memory only: Health data isn't copied to iCloud or Leanr's backups.
     private(set) var steps: [String: Double] = [:]
     /// An app or device that records steps in Health, such as the iPhone, a watch or Google Health.
@@ -58,7 +75,7 @@ final class HealthSync {
     private static let bodyMass = HKQuantityType(.bodyMass)
     private static let water = HKQuantityType(.dietaryWater)
     private static let stepCount = HKQuantityType(.stepCount)
-    private static let activeEnergy = HKQuantityType(.activeEnergyBurned)
+    private static let activeEnergyType = HKQuantityType(.activeEnergyBurned)
     private static let food = HKCorrelationType(.food)
 
     /// Asks for access, then copies the last week's log to Health and reads weights and activity.
@@ -66,7 +83,7 @@ final class HealthSync {
         guard isAvailable else { return false }
         do {
             try await health.requestAuthorization(toShare: Set(Self.nutritionTypes + [Self.bodyMass, Self.water]),
-                                                  read: [Self.bodyMass, Self.activeEnergy, Self.stepCount])
+                                                  read: [Self.bodyMass, Self.activeEnergyType, Self.stepCount])
         } catch { lastError = error.localizedDescription; return false }
         lastError = nil
         enabled = true
@@ -84,8 +101,10 @@ final class HealthSync {
     }
 
     func disconnect() {
-        enabled = false; activeEnergyToday = nil; averageActiveEnergy = nil; steps = [:]; stepsLoaded = false
+        enabled = false; activeEnergy = [:]; energyLoaded = false; steps = [:]; stepsLoaded = false
+        store?.updateActiveEnergy([:])
         stepSources = []; stepSourceTotals = [:]; knownSources = [:]
+        energySources = []; energySourceTotals = [:]; knownEnergySources = [:]
         store?.updateSteps([:])
         if let stepObserver { health.stop(stepObserver); self.stepObserver = nil }
     }
@@ -122,23 +141,10 @@ final class HealthSync {
     /// Waits for Health updates already under way, so Siri can finish before the app is suspended.
     func finishPending() async { await queue?.value }
 
-    /// Reads today's and recent active energy, and imports weights recorded in Health by other apps and devices.
+    /// Reads active energy and steps, and imports weights recorded in Health by other apps and devices.
     func refresh() async {
         guard enabled else { return }
-        let calendar = Calendar.current, today = calendar.startOfDay(for: Date())
-        let todayQuery = HKStatisticsQueryDescriptor(
-            predicate: .quantitySample(type: Self.activeEnergy, predicate: HKQuery.predicateForSamples(withStart: today, end: nil)),
-            options: .cumulativeSum)
-        activeEnergyToday = try? await todayQuery.result(for: health)?.sumQuantity()?.doubleValue(for: .kilocalorie())
-        if let start = calendar.date(byAdding: .day, value: -14, to: today) {
-            let recent = HKStatisticsCollectionQueryDescriptor(
-                predicate: .quantitySample(type: Self.activeEnergy, predicate: HKQuery.predicateForSamples(withStart: start, end: today)),
-                options: .cumulativeSum, anchorDate: start, intervalComponents: DateComponents(day: 1))
-            if let collection = try? await recent.result(for: health) {
-                let days = collection.statistics().compactMap { $0.sumQuantity()?.doubleValue(for: .kilocalorie()) }.filter { $0 > 0 }
-                averageActiveEnergy = days.count >= 3 ? days.reduce(0, +) / Double(days.count) : nil
-            }
-        }
+        await refreshActiveEnergy()
         await importWeights()
         await refreshSteps()
         watchSteps()
@@ -172,23 +178,14 @@ final class HealthSync {
             return
         }
         #endif
-        var predicate = HKQuery.predicateForSamples(withStart: start, end: nil)
+        var source: HKSource?
         if let id = stepSourceID {
             if knownSources[id] == nil { await loadStepSources() }
             // A chosen source that has gone (an app deleted) falls back to everything rather than showing nothing.
-            if let source = knownSources[id] {
-                predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate, HKQuery.predicateForObjects(from: [source])])
-            }
+            source = knownSources[id]
         }
-        let query = HKStatisticsCollectionQueryDescriptor(
-            predicate: .quantitySample(type: Self.stepCount, predicate: predicate),
-            options: .cumulativeSum, anchorDate: start, intervalComponents: DateComponents(day: 1))
         // Until steps have been asked for, Health refuses the question; that reads as "no steps yet", with a button to allow them.
-        guard let collection = try? await query.result(for: health) else { steps = [:]; stepsLoaded = true; return }
-        var days: [String: Double] = [:]
-        for statistics in collection.statistics() {
-            if let sum = statistics.sumQuantity()?.doubleValue(for: .count()), sum > 0 { days[dayKey(statistics.startDate)] = sum.rounded() }
-        }
+        guard let days = await dailySums(Self.stepCount, unit: .count(), from: start, source: source) else { steps = [:]; stepsLoaded = true; return }
         steps = days
         stepsLoaded = true
         store?.updateSteps(days)
@@ -196,26 +193,97 @@ final class HealthSync {
 
     /// Lists what has recorded steps (iPhone, watch, Google Health, Fitbit...) with each one's steps today.
     func loadStepSources() async {
-        guard enabled else { return }
-        guard let found = try? await HKSourceQueryDescriptor(predicate: .quantitySample(type: Self.stepCount)).result(for: health) else { return }
+        guard enabled, let found = await recordingSources(Self.stepCount) else { return }
         knownSources = Dictionary(found.map { ($0.bundleIdentifier, $0) }) { first, _ in first }
         stepSources = found.map { StepSource(id: $0.bundleIdentifier, name: $0.name) }
             .sorted { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
-        let today = Calendar.current.startOfDay(for: Date())
-        var totals: [String: Double] = [:]
-        for source in found {
-            let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [
-                HKQuery.predicateForSamples(withStart: today, end: nil), HKQuery.predicateForObjects(from: [source])])
-            let query = HKStatisticsQueryDescriptor(predicate: .quantitySample(type: Self.stepCount, predicate: predicate), options: .cumulativeSum)
-            if let sum = try? await query.result(for: health)?.sumQuantity()?.doubleValue(for: .count()) { totals[source.bundleIdentifier] = sum.rounded() }
-        }
-        stepSourceTotals = totals
+        stepSourceTotals = await todayTotals(Self.stepCount, unit: .count(), sources: found)
     }
 
     /// Shows steps from one source, or from all of them with nil, and reads them again.
     func chooseStepSource(_ id: String?) async {
         stepSourceID = id
         await refreshSteps()
+    }
+
+    /// Reads each day's active energy for the last 90 days, from the chosen source or from all of them together.
+    func refreshActiveEnergy() async {
+        guard enabled else { return }
+        let calendar = Calendar.current, today = calendar.startOfDay(for: Date())
+        guard let start = calendar.date(byAdding: .day, value: -89, to: today) else { return }
+        #if DEBUG
+        // `-demoSteps` also fills in a believable 90 days of calories burnt, because the simulator has no Health data.
+        if CommandLine.arguments.contains("-demoSteps") {
+            var demo: [String: Double] = [:]
+            for offset in 0..<90 {
+                guard let day = calendar.date(byAdding: .day, value: -offset, to: today), offset % 13 != 5 else { continue }
+                demo[dayKey(day)] = Double(260 + (offset * 6151) % 640)
+            }
+            activeEnergy = demo; energyLoaded = true; store?.updateActiveEnergy(demo)
+            return
+        }
+        #endif
+        var source: HKSource?
+        if let id = energySourceID {
+            if knownEnergySources[id] == nil { await loadEnergySources() }
+            source = knownEnergySources[id]
+        }
+        guard let days = await dailySums(Self.activeEnergyType, unit: .kilocalorie(), from: start, source: source) else {
+            activeEnergy = [:]; energyLoaded = true; store?.updateActiveEnergy([:]); return
+        }
+        activeEnergy = days
+        energyLoaded = true
+        store?.updateActiveEnergy(days)
+    }
+
+    /// Lists what has recorded active energy (Apple Watch, iPhone, Fitbit...) with each one's total today.
+    func loadEnergySources() async {
+        guard enabled, let found = await recordingSources(Self.activeEnergyType) else { return }
+        knownEnergySources = Dictionary(found.map { ($0.bundleIdentifier, $0) }) { first, _ in first }
+        energySources = found.map { StepSource(id: $0.bundleIdentifier, name: $0.name) }
+            .sorted { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
+        energySourceTotals = await todayTotals(Self.activeEnergyType, unit: .kilocalorie(), sources: found)
+    }
+
+    /// Shows calories burnt from one source, or from all of them with nil, and reads them again.
+    func chooseEnergySource(_ id: String?) async {
+        energySourceID = id
+        await refreshActiveEnergy()
+    }
+
+    /// Each day's total of a quantity since `start`, from one source or all together. Days with nothing are left out.
+    /// Nil when Health refuses the question, which is what an unanswered permission looks like.
+    private func dailySums(_ type: HKQuantityType, unit: HKUnit, from start: Date, source: HKSource?) async -> [String: Double]? {
+        var predicate = HKQuery.predicateForSamples(withStart: start, end: nil)
+        if let source { predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate, HKQuery.predicateForObjects(from: [source])]) }
+        let query = HKStatisticsCollectionQueryDescriptor(
+            predicate: .quantitySample(type: type, predicate: predicate),
+            options: .cumulativeSum, anchorDate: start, intervalComponents: DateComponents(day: 1))
+        guard let collection = try? await query.result(for: health) else { return nil }
+        var days: [String: Double] = [:]
+        for statistics in collection.statistics() {
+            if let sum = statistics.sumQuantity()?.doubleValue(for: unit), sum > 0 { days[dayKey(statistics.startDate)] = sum.rounded() }
+        }
+        return days
+    }
+
+    /// The apps and devices that have recorded a quantity.
+    private func recordingSources(_ type: HKQuantityType) async -> [HKSource]? {
+        guard let found = try? await HKSourceQueryDescriptor(predicate: .quantitySample(type: type)).result(for: health) else { return nil }
+        return Array(found)
+    }
+
+    /// Today's total from each source, by bundle identifier.
+    private func todayTotals(_ type: HKQuantityType, unit: HKUnit, sources: [HKSource]) async -> [String: Double] {
+        let today = Calendar.current.startOfDay(for: Date())
+        var totals: [String: Double] = [:]
+        for source in sources {
+            let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [
+                HKQuery.predicateForSamples(withStart: today, end: nil), HKQuery.predicateForObjects(from: [source])])
+            let query = HKStatisticsQueryDescriptor(predicate: .quantitySample(type: type, predicate: predicate), options: .cumulativeSum)
+            if let sum = try? await query.result(for: health)?.sumQuantity()?.doubleValue(for: unit) { totals[source.bundleIdentifier] = sum.rounded() }
+        }
+        return totals
     }
 
     private var stepObserver: HKObserverQuery?

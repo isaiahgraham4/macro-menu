@@ -44,6 +44,7 @@ struct ProgressTabView: View {
         case .insights: insightsSection(breakdown.days)
         case .weight: weightSection(breakdown)
         case .steps: StepsProgressSection(days: Dictionary(uniqueKeysWithValues: breakdown.points.map { ($0.key, $0.date) }))
+        case .activeEnergy: ActiveEnergyProgressSection(days: Dictionary(uniqueKeysWithValues: breakdown.points.map { ($0.key, $0.date) }))
         case .body: BodySection()
         case .week: weekSection
         case .calories:
@@ -287,7 +288,7 @@ struct ProgressTabView: View {
 
 /// The sections of the Progress tab, in the order and with the ones hidden that you chose.
 enum ProgressPart: String, CaseIterable, Identifiable {
-    case checkIn, insights, weight, steps, body, week, calories, averages, macros, meals, contributors
+    case checkIn, insights, weight, steps, activeEnergy, body, week, calories, averages, macros, meals, contributors
     var id: Self { self }
     static let orderKey = "progress.order"
     static let hiddenKey = "progress.hidden"
@@ -298,6 +299,7 @@ enum ProgressPart: String, CaseIterable, Identifiable {
         case .insights: "Insights"
         case .weight: "Weight"
         case .steps: "Steps"
+        case .activeEnergy: "Calories burnt"
         case .body: "Measurements and photos"
         case .week: "Your week"
         case .calories: "Calories per day"
@@ -313,6 +315,7 @@ enum ProgressPart: String, CaseIterable, Identifiable {
         case .insights: "lightbulb"
         case .weight: "scalemass"
         case .steps: "figure.walk"
+        case .activeEnergy: "flame"
         case .body: "ruler"
         case .week: "calendar"
         case .calories: "chart.bar"

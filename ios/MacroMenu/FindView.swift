@@ -129,7 +129,7 @@ struct FindView: View {
             }
         }
         .navigationTitle("Find a meal")
-        .navigationDestination(item: $asking) { text in AskLeanrView(question: text) }
+        .navigationDestination(item: $asking) { text in AskLeanrView(question: text).onAppear { FeatureTips.markUsed(.askLeanr) } }
         .toolbar { NavigationLink { SourcesView() } label: { Image(systemName: "info.circle") }.accessibilityLabel("Menu sources") }
         .onAppear { if !initialized { query.calories = store.goals.mealCal; query.protein = store.goals.mealProtein; initialized = true } }
         .onChange(of: dietRaw, initial: true) { query.diet = DietFilter(raw: dietRaw) }

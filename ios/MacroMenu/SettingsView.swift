@@ -10,6 +10,7 @@ struct SettingsView: View {
     @State private var showPremium = false
     @State private var estimating = false
     @AppStorage(TodaySuggestions.storageKey) private var suggestFoods = true
+    @AppStorage(FeatureTips.enabledKey) private var featureTips = true
     @AppStorage(AppAccent.storageKey) private var accentRaw = AppAccent.standard.rawValue
     @AppStorage(AppIconTheme.storageKey) private var iconRaw = AppIconTheme.black.rawValue
     private var current: AppAccent { AppAccent.resolved(accentRaw) }
@@ -102,9 +103,11 @@ struct SettingsView: View {
                 Button { estimating = true } label: { Label("Calculate my macros", systemImage: "function") }
                 NavigationLink { WaterSettings() } label: { Label("Water target", systemImage: "drop") }
                 NavigationLink { StepsSettings() } label: { Label("Steps", systemImage: "figure.walk") }
+                NavigationLink { ActiveEnergySettings() } label: { Label("Calories burnt", systemImage: "flame") }
                 Toggle(isOn: $suggestFoods) { Label("Suggest foods for what's left", systemImage: "lightbulb") }
+                Toggle(isOn: $featureTips) { Label("Show tips for features I haven't tried", systemImage: "sparkles") }
                 NavigationLink { MacroColourSettings() } label: { Label("Target colours", systemImage: "paintpalette") }
-                NavigationLink { ReminderSettings() } label: { Label("Meal reminders", systemImage: "bell") }
+                NavigationLink { ReminderSettings() } label: { Label("Reminders", systemImage: "bell") }
             }
             Section {
                 if health.isAvailable {
@@ -227,16 +230,16 @@ struct ReminderSettings: View {
     var body: some View {
         LeanrList {
             let _ = revision
-            if !Premium.isUnlocked { Section { PremiumPromptRow(message: "Choosing your meal reminders comes with Even Leanr.") } }
+            if !Premium.isUnlocked { Section { PremiumPromptRow(message: "Choosing your meal and water reminders comes with Even Leanr.") } }
             Group {
-                if !MealReminders.meals.allSatisfy(MealReminders.isOn) {
+                if !MealReminders.allOn {
                     Section {
                         Button {
                             Task {
                                 if await MealReminders.enableAll() { reload() } else { denied = true }
                             }
                         } label: { Label("Turn on all reminders", systemImage: "bell.badge") }
-                    } footer: { Text("Breakfast, lunch, dinner and late night at their usual times. Change any of them below.") }
+                    } footer: { Text("Breakfast, lunch, dinner, late night and water at their usual times. Change any of them below.") }
                 }
                 ForEach(MealReminders.meals) { meal in
                     Section {
@@ -263,6 +266,30 @@ struct ReminderSettings: View {
                 } footer: {
                     if !Premium.isUnlocked { Label("Choosing which meals remind you, and when, comes with Even Leanr.", systemImage: "lock.fill") }
                 }
+                Section {
+                    Toggle("Water", isOn: Binding(get: { MealReminders.waterOn }, set: { on in
+                        if on {
+                            Task {
+                                if await MealReminders.requestPermission() { save(MealReminders.waterOnKey, true) } else { denied = true }
+                            }
+                        } else { save(MealReminders.waterOnKey, false) }
+                    }))
+                    if MealReminders.waterOn {
+                        let schedule = MealReminders.waterSchedule
+                        DatePicker("From", selection: Binding(get: { time(schedule.from) }, set: { date in
+                            let minutes = minutesOfDay(date)
+                            save(MealReminders.waterFromKey, minutes)
+                            // The end never sits before the start.
+                            if schedule.until < minutes { UserDefaults.standard.set(min(minutes + 60, 23 * 60 + 59), forKey: MealReminders.waterUntilKey) }
+                        }), displayedComponents: .hourAndMinute)
+                        DatePicker("Until", selection: Binding(get: { time(schedule.until) }, set: { date in
+                            save(MealReminders.waterUntilKey, max(minutesOfDay(date), schedule.from))
+                        }), displayedComponents: .hourAndMinute)
+                        Picker("Every", selection: Binding(get: { schedule.everyHours }, set: { save(MealReminders.waterEveryKey, $0) })) {
+                            ForEach(MealReminders.WaterSchedule.hourChoices, id: \.self) { Text($0 == 1 ? "Hour" : "\($0) hours").tag($0) }
+                        }
+                    }
+                } footer: { Text("Spaced through the day. Once you've reached your water target, the rest of that day's water reminders are dropped.") }
             }.disabled(!Premium.isUnlocked)
             Section {
                 Toggle("Weekly review", isOn: Binding(get: { MealReminders.weeklyOn }, set: { on in
@@ -272,14 +299,18 @@ struct ReminderSettings: View {
                 }))
             } footer: { Text("Sundays at 6 pm: days logged, average calories, protein days and your weight trend.") }
         }
-        .navigationTitle("Meal reminders")
+        .navigationTitle("Reminders")
         .alert("Notifications are off for Leanr", isPresented: $denied) {
             Button("Open Settings") { if let url = URL(string: UIApplication.openNotificationSettingsURLString) { openURL(url) } }
             Button("Cancel", role: .cancel) {}
-        } message: { Text("Turn on notifications for Leanr in the Settings app to get meal reminders.") }
+        } message: { Text("Turn on notifications for Leanr in the Settings app to get reminders.") }
     }
     private func time(_ minutes: Int) -> Date {
         Calendar.current.date(bySettingHour: minutes / 60, minute: minutes % 60, second: 0, of: Date()) ?? Date()
+    }
+    private func minutesOfDay(_ date: Date) -> Int {
+        let parts = Calendar.current.dateComponents([.hour, .minute], from: date)
+        return (parts.hour ?? 0) * 60 + (parts.minute ?? 0)
     }
     private func save(_ key: String, _ value: Any) {
         UserDefaults.standard.set(value, forKey: key)

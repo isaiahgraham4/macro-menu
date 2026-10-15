@@ -23,3 +23,9 @@ Build the MacroMenu scheme to include the extension. Automatic signing must prov
 ## Steps widget
 
 `LeanrStepsWidget` (kind `LeanrSteps`) shows today's steps from Apple Health against the goal set in Settings → Targets → Steps goal. Small has a ring, medium adds the last seven days, and the Lock Screen has circular, rectangular and inline versions. The widget extension never touches HealthKit: the app writes the last week of counts and the goal into the shared snapshot (`WidgetCalories.steps`, `stepGoal`) whenever Health reports new steps (an `HKObserverQuery` with background delivery, hourly at most) and whenever Leanr is open. Counts are shown as of that last refresh, and a device that was locked or off may be a little behind. Tapping the widget opens the Progress tab (`leanr://progress`). Disconnecting Apple Health clears the counts from the snapshot.
+
+## Calories burnt widget
+
+`LeanrCaloriesBurntWidget` (kind `LeanrCaloriesBurnt`) shows today's active calories from Apple Health. There's no goal for it, so the ring and the gauge set today against the average of the other days in the last week that have anything recorded, and the caption says that average. Small has a ring, medium adds the last seven days, and the Lock Screen has circular, rectangular and inline versions. As with steps, the extension never touches HealthKit: the app writes the last week into the shared snapshot (`WidgetCalories.activeEnergy`) whenever Leanr refreshes calories burnt, and the figure follows the source chosen in Settings → Targets → Calories burnt. Tapping the widget opens the Progress tab. Disconnecting Apple Health clears it.
+
+On Apple Watch, `BurntComplication` (kind `LeanrWatchBurnt`: circular, corner and inline) shows the same day's figure, which the iPhone sends in the watch snapshot (`WatchSnapshot.energy`) and the Today page lists as "Burnt".

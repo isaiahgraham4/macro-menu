@@ -1,4 +1,5 @@
 import SwiftUI
+import UserNotifications
 import AppIntents
 
 enum AppTab: Hashable { case today, find, map, meal, progress }
@@ -12,6 +13,9 @@ final class Navigator {
     /// Changing this rebuilds the Find tab, returning it to its main screen.
     private(set) var findStack = UUID()
     var todayStack = UUID()
+    /// A sheet a feature tip asks ContentView to open.
+    var requestedSheet: RequestedSheet?
+    enum RequestedSheet { case settings, reminders }
     /// Set when the weekly review notification is tapped.
     var showWeeklyReview = false
     /// A food or search opened from Siri or Visual Intelligence, shown over the current tab.
@@ -34,6 +38,7 @@ struct ContentView: View {
     @State private var health = AppServices.health
     @State private var cloud = AppServices.cloud
     @State private var settings = false
+    @State private var reminderPrompt = false
     @AppStorage("leanr.onboarding.completed") private var onboardingCompleted = false
     @AppStorage(MacroColours.proteinKey) private var proteinColour = "blue"
     @AppStorage(MacroColours.carbsKey) private var carbsColour = "orange"
@@ -55,7 +60,9 @@ struct ContentView: View {
         .onChange(of: carbsColour) { store.refreshWidgets() }
         .onChange(of: fatColour) { store.refreshWidgets() }
         .onChange(of: scenePhase) {
+            if scenePhase != .active { UserDefaults.standard.set(Date(), forKey: ReminderPrompt.lastActiveKey) }
             if scenePhase == .active {
+                checkReminderPrompt()
                 AppServices.logQueued()
                 // Siri recognises the foods you've pinned or logged recently by name.
                 LeanrShortcuts.updateAppShortcutParameters()
@@ -68,9 +75,20 @@ struct ContentView: View {
             }
         }
         .task {
+            FeatureTips.noteLaunch(onboardingCompleted: onboardingCompleted)
+            // A cold launch doesn't report a scene phase change, so the first visit after days away is checked here.
+            checkReminderPrompt()
             await cloud.sync()
             AppServices.rebookReminders()
             await health.refresh()
+        }
+        .onChange(of: nav.requestedSheet) {
+            switch nav.requestedSheet {
+            case .settings: settings = true
+            case .reminders: reminderPrompt = true
+            case nil: break
+            }
+            nav.requestedSheet = nil
         }
         .onOpenURL { url in
             if url.scheme == "leanr", url.host == "today" {
@@ -102,6 +120,9 @@ struct ContentView: View {
                 .toolbar { ToolbarItem(placement: .confirmationAction) { Button("Done") { nav.opened = nil } } }
             }.tint(accent).font(.roboto()).environment(store).environment(location).environment(nav)
                 .environment(health).environment(cloud).preferredColorScheme(appearance.colorScheme)
+        }
+        .sheet(isPresented: $reminderPrompt) {
+            ReminderPromptView().environment(store).tint(accent).font(.roboto()).preferredColorScheme(appearance.colorScheme)
         }
         .sheet(isPresented: $nav.showWeeklyReview) {
             NavigationStack {
@@ -138,6 +159,28 @@ struct ContentView: View {
         } message: { Text(store.errorMessage ?? "") }
     }
     /// A tab's root screen with Settings at the top right.
+    /// Offers reminders to someone coming back after a few days away with none set up. The last visit is stamped when Leanr
+    /// goes to the background, and again here, so a first launch has no earlier visit and never asks straight away.
+    private func checkReminderPrompt() {
+        let defaults = UserDefaults.standard
+        var last = defaults.object(forKey: ReminderPrompt.lastActiveKey) as? Date
+        defaults.set(Date(), forKey: ReminderPrompt.lastActiveKey)
+        #if DEBUG
+        // `-demoAway` behaves as if Leanr was last opened five days ago, to try the reminders prompt.
+        if CommandLine.arguments.contains("-demoAway") { last = Date().addingTimeInterval(-5 * 24 * 3600) }
+        #endif
+        guard onboardingCompleted, !reminderPrompt, !settings, nav.opened == nil, !nav.showWeeklyReview else { return }
+        var asked = defaults.object(forKey: ReminderPrompt.askedKey) as? Date
+        #if DEBUG
+        if CommandLine.arguments.contains("-demoAway") { asked = nil }
+        #endif
+        Task {
+            let status = await UNUserNotificationCenter.current().notificationSettings().authorizationStatus
+            if ReminderPrompt.shouldShow(now: Date(), lastActive: last, lastAsked: asked, anyReminderOn: MealReminders.anyOn,
+                                         notificationsDenied: status == .denied, canChoose: Premium.isUnlocked) { reminderPrompt = true }
+        }
+    }
+
     private func screen(_ root: some View) -> some View {
         NavigationStack {
             root.toolbar {

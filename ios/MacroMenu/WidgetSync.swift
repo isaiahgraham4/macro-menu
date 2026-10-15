@@ -83,7 +83,8 @@ extension AppStore {
             return WatchSnapshot.Option(id: option.id, name: option.name, calories: option.calories, protein: protein, loggedToday: option.lastLogged == key)
         }
         return WatchSnapshot(day: key, calories: eaten.cal, calorieTarget: target.values["cal"], protein: eaten.p, proteinTarget: target.values["p"],
-                             water: Water.total(data, on: key), waterTarget: Water.target(data), glass: Water.glass(data), options: options)
+                             water: Water.total(data, on: key), waterTarget: Water.target(data), glass: Water.glass(data), options: options,
+                             energy: widgetEnergy[key].flatMap { $0 > 0 ? $0 : nil })
     }
 
     /// Logs one of the widget's options: a usual meal to its own meal time, or a serving of a pinned food to the meal time it is at `date`.
@@ -138,6 +139,7 @@ extension AppStore {
             snapshot.planned = plannedOptions(nutrients: nutrientKeys)
             snapshot.plannedDay = dayKey(Date())
             snapshot.steps = widgetSteps.isEmpty ? nil : widgetSteps
+            snapshot.activeEnergy = widgetEnergy.isEmpty ? nil : widgetEnergy
             snapshot.stepGoal = data.stepGoal ?? Steps.defaultGoal
             let week = (0..<7).compactMap { Calendar.current.date(byAdding: .day, value: -$0, to: Date()) }.map(dayKey)
             snapshot.water = Dictionary(uniqueKeysWithValues: week.compactMap { day in data.water?[day].map { (day, $0) } })

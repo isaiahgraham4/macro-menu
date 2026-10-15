@@ -10,6 +10,7 @@ struct LeanrWidgetBundle: WidgetBundle {
         LeanrStreakWidget()
         LeanrLogAgainWidget()
         LeanrStepsWidget()
+        LeanrCaloriesBurntWidget()
         LeanrPlannedWidget()
         LeanrWaterWidget()
     }

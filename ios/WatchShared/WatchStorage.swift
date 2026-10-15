@@ -8,6 +8,7 @@ enum WatchStorage {
     static let caloriesKind = "LeanrWatchCalories"
     static let proteinKind = "LeanrWatchProtein"
     static let waterKind = "LeanrWatchWater"
+    static let burntKind = "LeanrWatchBurnt"
 
     private static var defaults: UserDefaults { UserDefaults(suiteName: groupID) ?? .standard }
 
@@ -26,6 +27,6 @@ enum WatchStorage {
     static func complicationsDiffer(_ a: WatchSnapshot?, _ b: WatchSnapshot) -> Bool {
         guard let a else { return true }
         return a.day != b.day || a.calories.rounded() != b.calories.rounded() || a.protein.rounded() != b.protein.rounded()
-            || a.water != b.water || a.calorieTarget != b.calorieTarget || a.proteinTarget != b.proteinTarget || a.waterTarget != b.waterTarget
+            || a.water != b.water || a.energy?.rounded() != b.energy?.rounded() || a.calorieTarget != b.calorieTarget || a.proteinTarget != b.proteinTarget || a.waterTarget != b.waterTarget
     }
 }

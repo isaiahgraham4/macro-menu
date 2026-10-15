@@ -55,7 +55,12 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   (`LeanrStepsWidget`: small, medium with the last 7 days, and Lock Screen sizes) reads the last week of counts from the
   shared widget snapshot, which Leanr refreshes whenever Health reports new steps (HealthKit background delivery). Google's health
   data has no iPhone API, so only Apple Health is read. Apple Health itself combines the iPhone, a watch and anything
-  else that writes steps to it.
+  else that writes steps to it. Settings → Targets → Steps lists the sources that have recorded steps with today's count from
+  each, and can show one source only (`HealthSync.stepSourceID`, kept on the device).
+- Calories burnt (Today under Steps, Progress, Settings → Targets → Calories burnt): the day's active energy from Apple Health,
+  a chart with the average, best day and total over the Progress range, and the same source picker as steps
+  (`HealthSync.energySourceID`). Active energy only, not resting energy. Read-only and held in memory (`HealthSync.activeEnergy`,
+  `ActiveEnergy`), never in `AppData`, iCloud or backups. The maintenance estimate's fortnight average uses the chosen source.
 - Weekly check-in (on Progress, first in the list by default): measured maintenance (as above) plus the chosen pace in kg a week
   gives a new calorie target, at most 300 Cal from the current one per check-in and never under 1,200 (`CheckIn`). Protein
   stays; carbs and fat are rescaled in the same proportions. Accepting or keeping the targets records the check-in
@@ -150,16 +155,32 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   had in Leanr" reads the total back. In Shortcuts, Millilitres sets an exact amount.
   Siri hears "Leanr" as the word "leaner", so `Configuration/App-Info.plist` lists "Leaner" and "Lean R" under
   `INAlternativeAppNames`; every phrase works with either spelling.
-- Meal reminders (Settings → Targets): breakfast, lunch, dinner and a late-night
+- Reminders (Settings → Targets): breakfast, lunch, dinner and a late-night
   one, each ticked on and timed separately (or "Turn on all reminders"). A meal
   reminder only goes out if nothing is logged to that meal; the late-night one
   (the Snacks slot, 9:30 pm by default) only if nothing at all was logged that day.
   Six messages per reminder rotate by day (`MealReminders.message`), in a fixed order so
-  rebooking doesn't change tomorrow's wording. Choosing reminders is a Premium
-  feature (`Premium.isUnlocked`, always true while `Premium.subscriptionsEnabled` is false; locked clears the booked meal reminders and keeps
-  the weekly review). Notifications are booked two weeks ahead and
+  rebooking doesn't change tomorrow's wording. Water reminders (`MealReminders.waterPlan`) are
+  spaced through the day (from 9 am until 8 pm every 2 hours by default, set in Settings) and none are booked for a day whose water
+  target is already reached; logging water rebooks the rest of today. iOS keeps only 64 pending notifications, so
+  meal and water reminders are merged soonest first and cut to fit (`MealReminders.bookings`, leaving one for the weekly review);
+  they are topped up every time Leanr opens. Choosing reminders is a Premium
+  feature (`Premium.isUnlocked`, always true while `Premium.subscriptionsEnabled` is false; locked clears the booked meal and water
+  reminders and keeps the weekly review). Notifications are booked two weeks ahead and
   rebooked when the log changes. The optional Sunday 6 pm weekly review
   notification carries that week's summary.
+- Reminders prompt (`ReminderPromptView`): a sheet offered when Leanr is opened after three days or more away with no meal or water
+  reminder on, notifications not turned off, and not asked in the last 30 days (`ReminderPrompt.shouldShow`). It lists breakfast,
+  lunch, dinner, late night and water; "Turn on reminders" asks for notification permission only then. A first launch
+  never asks straight away. Premium only, because choosing reminders is. `-demoAway` (debug builds) behaves as if
+  Leanr was last opened five days ago.
+- Feature tips (`FeatureTips`, a card at the top of Today): points out features a person hasn't used (Describe, Scan, Water,
+  Apple Health, Reminders, Plan ahead, Photo, Ask Leanr, widgets, weekly check-in, measurements and photos), one at a time. A
+  new person gets their first tip a day after first launch; someone already onboarded when this shipped sees one straight
+  away. A tip stays up three days if ignored, then retires for good; dismissing it or using the feature finishes it, and the next
+  waits two days. "Used" comes from the data where it can (water, plans, Health connected, reminders on, measurements,
+  check-ins, installed widgets via `WidgetCenter`) and from a mark when the screen is opened otherwise (Describe, Scan,
+  Photo, Ask Leanr). Premium-only tips aren't offered without Premium. Settings → Targets has a switch to turn tips off. `-demoTips` (debug builds) shows the first tip every time.
 - Your week (Today): days logged, averages over logged days, protein and calorie
   days, weight-trend change and most-logged meals, with a shareable card.
 - CSV export (Settings → Your data): every logged food, or daily totals with that

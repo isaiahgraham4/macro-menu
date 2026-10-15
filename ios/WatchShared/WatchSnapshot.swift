@@ -26,6 +26,8 @@ struct WatchSnapshot: Codable, Equatable, Sendable {
     var options: [Option]
     /// The app colour, by name (see `AppAccent`).
     var accent: String?
+    /// Active calories burnt today, from Apple Health on the iPhone. Nil when none are known; absent from older snapshots.
+    var energy: Double? = nil
 
     static let contextKey = "snapshot"
 
@@ -37,10 +39,10 @@ struct WatchSnapshot: Codable, Equatable, Sendable {
     }
 
     init(day: String, calories: Double, calorieTarget: Double?, protein: Double, proteinTarget: Double?,
-         water: Double, waterTarget: Double, glass: Double, options: [Option], accent: String? = nil) {
+         water: Double, waterTarget: Double, glass: Double, options: [Option], accent: String? = nil, energy: Double? = nil) {
         self.day = day; self.calories = calories; self.calorieTarget = calorieTarget; self.protein = protein
         self.proteinTarget = proteinTarget; self.water = water; self.waterTarget = waterTarget; self.glass = glass
-        self.options = options; self.accent = accent
+        self.options = options; self.accent = accent; self.energy = energy
     }
 
     init?(context: [String: Any]) {
@@ -52,7 +54,7 @@ struct WatchSnapshot: Codable, Equatable, Sendable {
     func current(on date: Date = Date()) -> WatchSnapshot {
         guard day != Self.key(date) else { return self }
         var fresh = self
-        fresh.day = Self.key(date); fresh.calories = 0; fresh.protein = 0; fresh.water = 0
+        fresh.day = Self.key(date); fresh.calories = 0; fresh.protein = 0; fresh.water = 0; fresh.energy = nil
         fresh.options = options.map { var option = $0; option.loggedToday = false; return option }
         return fresh
     }

@@ -8,6 +8,7 @@ struct WidgetCalories: Codable, Equatable, Sendable {
     static let macrosKind = "LeanrMacros"
     static let streakKind = "LeanrTrackingStreak"
     static let stepsKind = "LeanrSteps"
+    static let burntKind = "LeanrCaloriesBurnt"
     var target: Double?
     var dailyCalories: [String: Double]
     // Optional so snapshots written before colour syncing still decode.
@@ -23,6 +24,8 @@ struct WidgetCalories: Codable, Equatable, Sendable {
     /// Steps by day for the last week, from Apple Health, and the daily goal, for the Steps widget.
     var steps: [String: Double]? = nil
     var stepGoal: Double? = nil
+    /// Active energy (calories burnt) by day for the last week, from Apple Health, for the Calories burnt widget.
+    var activeEnergy: [String: Double]? = nil
     /// Today's planned meals that aren't logged yet, in meal order, for the Planned widget ("plan:<entry ID>"), and the day they're for.
     var planned: [WidgetQuickLog]? = nil
     var plannedDay: String? = nil
@@ -44,6 +47,7 @@ struct WidgetCalories: Codable, Equatable, Sendable {
         dailyCalories.values.allSatisfy { $0.isFinite && $0 >= 0 } &&
         (nutrientTargets ?? []).allSatisfy { $0.target.isFinite && $0.target > 0 } &&
         (steps ?? [:]).values.allSatisfy { $0.isFinite && $0 >= 0 } && (stepGoal.map { $0.isFinite && $0 > 0 } ?? true) &&
+        (activeEnergy ?? [:]).values.allSatisfy { $0.isFinite && $0 >= 0 } &&
         (water ?? [:]).values.allSatisfy { $0.isFinite && $0 >= 0 } && (waterTarget.map { $0.isFinite && $0 > 0 } ?? true) &&
         (waterGlass.map { $0.isFinite && $0 > 0 } ?? true) &&
         (dailyNutrients ?? [:]).values.allSatisfy { $0.values.allSatisfy { $0.isFinite && $0 >= 0 } }
@@ -175,6 +179,18 @@ enum MealSlot {
 }
 
 extension WidgetCalories {
+    /// Calories burnt (active energy) on a day, nil when none are known.
+    func energyBurnt(on date: Date, timeZone: TimeZone = .current) -> Double? {
+        activeEnergy?[Self.dayKey(date, timeZone: timeZone)].flatMap { $0 > 0 ? $0 : nil }
+    }
+
+    /// The average over the other days in the snapshot that have any recorded, to put today in context. Nil with none.
+    func energyAverage(excluding date: Date, timeZone: TimeZone = .current) -> Double? {
+        let today = Self.dayKey(date, timeZone: timeZone)
+        let others = (activeEnergy ?? [:]).filter { $0.key != today && $0.value > 0 }.map(\.value)
+        return others.isEmpty ? nil : others.reduce(0, +) / Double(others.count)
+    }
+
     /// Steps on a day, nil when none are known.
     func stepCount(on date: Date, timeZone: TimeZone = .current) -> Double? {
         steps?[Self.dayKey(date, timeZone: timeZone)].flatMap { $0 > 0 ? $0 : nil }
@@ -198,7 +214,7 @@ extension WidgetCalories {
 }
 
 extension WidgetCalories {
-    static let allKinds = [waterKind, plannedKind, logAgainKind, stepsKind, kind, premiumKind, macrosKind, streakKind]
+    static let allKinds = [waterKind, plannedKind, logAgainKind, stepsKind, burntKind, kind, premiumKind, macrosKind, streakKind]
 
     /// The widgets that a change from `old` to this affects, with the ones people tap first at the front: a tap on a widget shows its
     /// result as soon as that widget reloads, so water or a planned meal doesn't wait behind the calorie widgets.
@@ -212,6 +228,7 @@ extension WidgetCalories {
         if planned != old.planned || plannedDay != old.plannedDay { add([Self.plannedKind]) }
         if quickLogOptions != old.quickLogOptions { add([Self.logAgainKind]) }
         if steps != old.steps || stepGoal != old.stepGoal { add([Self.stepsKind]) }
+        if activeEnergy != old.activeEnergy { add([Self.burntKind]) }
         if dailyCalories != old.dailyCalories || target != old.target || nutrientTargets != old.nutrientTargets
             || dailyNutrients != old.dailyNutrients || dailyPartialNutrients != old.dailyPartialNutrients || trackedDays != old.trackedDays {
             // Log again and Planned show calories left, too.

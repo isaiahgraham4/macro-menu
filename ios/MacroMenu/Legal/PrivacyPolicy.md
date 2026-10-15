@@ -23,7 +23,7 @@ iCloud sync is on unless you turn it off in Settings. It keeps a copy of your fo
 Leanr only uses Apple Health if you connect it in Settings, and you choose which types it may read or write. If you connect:
 
 - Leanr writes the food you log, the water you log (one total for each day) and the weights you enter.
-- Leanr reads your weight, active energy and steps to show your trend and your steps, and to estimate your target. Step counts are held in memory while you use Leanr, and the last week's counts are shared with Leanr's Steps widget through a file on this iPhone. They are never saved in Leanr's data, its iCloud copy or its exports.
+- Leanr reads your weight, active energy (your calories burnt) and steps to show your trend, your steps and your calories burnt, and to estimate your target. Step counts and calories burnt are held in memory while you use Leanr, and the last week's figures are shared with Leanr's Steps and Calories burnt widgets through a file on this iPhone. If you choose one source for steps or calories burnt, Leanr remembers which one on this iPhone. These figures are never saved in Leanr's data, its iCloud copy or its exports.
 
 Health information is never used for advertising or marketing, never sold, and never leaves your device except through Apple's own Health sync.
 
@@ -45,7 +45,7 @@ If you import a recipe from a link, Leanr loads that page straight from the webs
 
 ## Apple Watch
 
-If you install Leanr on Apple Watch, your iPhone sends it today's calories, protein and water against your targets, and the meals and foods you can log from the watch. They go directly between your iPhone and your paired watch through Apple's own connection, never through a server, and the watch keeps only the latest copy. Anything you log on the watch is sent back to your iPhone and saved there like anything else you log.
+If you install Leanr on Apple Watch, your iPhone sends it today's calories, protein and water against your targets, today's calories burnt if Apple Health is connected, and the meals and foods you can log from the watch. They go directly between your iPhone and your paired watch through Apple's own connection, never through a server, and the watch keeps only the latest copy. Anything you log on the watch is sent back to your iPhone and saved there like anything else you log.
 
 ## Progress photos
 

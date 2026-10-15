@@ -108,9 +108,9 @@ Boost Juice, Schnitz and Grill'd for combinations from one restaurant.
 - Weight trend that smooths out day-to-day swings, and a measured maintenance estimate from your own data.
 - Type or say what you ate, plan tomorrow's meals, and import recipes from a link.
 - A weekly check-in that adjusts your calorie target to the pace you want, from your own log and weight trend.
-- Apple Watch: calories left, and your usual meals, pinned foods and water in a tap.
+- Apple Watch: calories left, calories burnt, and your usual meals, pinned foods and water in a tap.
 - Siri: "Log my usual lunch in Leanr", "What fits at KFC in Leanr" or "Log a glass of water in Leanr".
-- Meal reminders, a Sunday weekly review, widgets, Apple Health and iCloud sync.
+- Meal and water reminders, a Sunday weekly review, widgets, Apple Health and iCloud sync.
 - CSV export of your food log and daily totals.
 
 Nutrition figures are the chains' own published data; where a chain doesn't publish a figure, Leanr leaves it blank
