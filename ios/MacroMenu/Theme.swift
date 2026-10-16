@@ -17,13 +17,16 @@ enum AppAppearance: String, CaseIterable, Identifiable {
 }
 
 enum AppIconTheme: String, CaseIterable, Identifiable {
-    case black, cream, forest, midnight, plum, sage, terracotta
+    /// The icon that follows the person's own appearance: white in light mode, black in dark mode.
+    /// The raw value stays "black" so a choice saved by an earlier version still matches.
+    case standard = "black"
+    case cream, forest, midnight, plum, sage, terracotta
 
     static let storageKey = "appIcon"
     var id: Self { self }
-    var name: String { rawValue.capitalized }
+    var name: String { self == .standard ? "Default" : rawValue.capitalized }
     var previewAsset: String { "IconPreview\(name)" }
-    var alternateName: String? { self == .black ? nil : "AppIcon\(name)" }
+    var alternateName: String? { self == .standard ? nil : "AppIcon\(name)" }
 }
 
 /// Shared surfaces keep the background consistent in tabs, details and sheets.

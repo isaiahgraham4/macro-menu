@@ -12,9 +12,9 @@ struct SettingsView: View {
     @AppStorage(TodaySuggestions.storageKey) private var suggestFoods = true
     @AppStorage(FeatureTips.enabledKey) private var featureTips = true
     @AppStorage(AppAccent.storageKey) private var accentRaw = AppAccent.standard.rawValue
-    @AppStorage(AppIconTheme.storageKey) private var iconRaw = AppIconTheme.black.rawValue
+    @AppStorage(AppIconTheme.storageKey) private var iconRaw = AppIconTheme.standard.rawValue
     private var current: AppAccent { AppAccent.resolved(accentRaw) }
-    private var currentIcon: AppIconTheme { AppIconTheme(rawValue: iconRaw) ?? .black }
+    private var currentIcon: AppIconTheme { AppIconTheme(rawValue: iconRaw) ?? .standard }
     @Environment(AppStore.self) private var store
     var version: String { Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "" }
     /// When the restaurant menu in use was published.
@@ -71,7 +71,7 @@ struct SettingsView: View {
             Section {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 3), spacing: 14) {
                     ForEach(AppIconTheme.allCases) { icon in
-                        let locked = !Premium.isUnlocked && icon != .black
+                        let locked = !Premium.isUnlocked && icon != .standard
                         Button { if locked { showPremium = true } else { selectIcon(icon) } } label: {
                             VStack(spacing: 6) {
                                 Image(icon.previewAsset)
