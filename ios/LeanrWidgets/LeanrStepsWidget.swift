@@ -17,6 +17,7 @@ struct StepsWidgetView: View {
     let entry: CaloriesEntry
 
     private var goal: Double { entry.calories?.stepGoal ?? 8000 }
+    private var accent: Color { (entry.calories?.selectedAccent ?? .standard).color }
     private var count: Double? { entry.calories?.stepCount(on: entry.date) }
     private var progress: Double { goal > 0 ? min(1, (count ?? 0) / goal) : 0 }
     private func text(_ value: Double) -> String { value.formatted(.number.precision(.fractionLength(0))) }
@@ -60,7 +61,7 @@ struct StepsWidgetView: View {
                         HStack(alignment: .bottom, spacing: 6) {
                             ForEach(Array(week.enumerated()), id: \.offset) { _, item in
                                 VStack(spacing: 4) {
-                                    Capsule().fill(item.steps >= goal ? Color.green : Color.green.opacity(0.45))
+                                    Capsule().fill(item.steps >= goal ? accent : accent.opacity(0.45))
                                         .frame(height: max(4, 56 * min(1, item.steps / max(goal, 1))))
                                     Text(item.day.formatted(.dateTime.weekday(.narrow))).font(.roboto(size: 10)).foregroundStyle(.secondary)
                                 }.frame(maxWidth: .infinity)
@@ -85,10 +86,10 @@ struct StepsWidgetView: View {
 
     private var ring: some View {
         ZStack {
-            Circle().stroke(Color.green.opacity(0.2), lineWidth: 10)
-            Circle().trim(from: 0, to: progress).stroke(Color.green, style: StrokeStyle(lineWidth: 10, lineCap: .round)).rotationEffect(.degrees(-90))
+            Circle().stroke(accent.opacity(0.2), lineWidth: 10)
+            Circle().trim(from: 0, to: progress).stroke(accent, style: StrokeStyle(lineWidth: 10, lineCap: .round)).rotationEffect(.degrees(-90))
             VStack(spacing: 0) {
-                Image(systemName: "figure.walk").font(.caption).foregroundStyle(.green)
+                Image(systemName: "figure.walk").font(.caption).foregroundStyle(accent)
                 Text(valueText).font(.roboto(.title3, weight: .bold)).minimumScaleFactor(0.5).lineLimit(1)
                 Text("of \(text(goal))").font(.roboto(size: 10)).foregroundStyle(.secondary)
             }.padding(10)

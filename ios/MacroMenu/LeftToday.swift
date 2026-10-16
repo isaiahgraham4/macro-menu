@@ -22,11 +22,11 @@ final class LeftTodayModel {
 
     func refresh(_ store: AppStore, enabled: Bool) async {
         guard enabled else { suggestions = []; return }
-        let data = store.data, goals = store.goals, pinned = store.pinnedFoods, everyday = store.suggestibleEveryday, restaurants = store.suggestibleRestaurantFoods
+        let data = store.data, goals = store.goals, pinned = store.pinnedFoods, everyday = store.suggestibleEveryday, restaurants = store.suggestibleRestaurantFoods, diet = DietFilter.saved
         let names = Dictionary(store.catalog.chains.map { ($0.id, $0.name) }) { a, _ in a }
         let now = Date()
         suggestions = await Task.detached(priority: .userInitiated) {
-            Assistant.suggestions(data, goals: goals, pinned: pinned, everyday: everyday, restaurantFoods: restaurants, chainNames: names, now: now)
+            Assistant.suggestions(data, goals: goals, pinned: pinned, everyday: everyday, restaurantFoods: restaurants, chainNames: names, diet: diet, now: now)
         }.value
     }
 }

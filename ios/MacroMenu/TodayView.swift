@@ -485,7 +485,7 @@ struct TargetsView: View {
                         Button("Edit") { editing = goal }.buttonStyle(.borderless)
                     }.swipeActions {
                         if store.data.goalSets.count > 1 {
-                            Button("Delete", role: .destructive) { store.change(undo: "Deleted \(goal.name)") { $0.goalSets.removeAll { $0.id == goal.id } } }
+                            Button("Delete", role: .destructive) { store.deleteGoals(goal) }
                         }
                     }
                 }
@@ -526,10 +526,7 @@ struct GoalEditor: View {
                 ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") {
-                        if store.change({ state in
-                            if let i = state.goalSets.firstIndex(where: { $0.id == goal.id }) { state.goalSets[i] = goal } else { state.goalSets.append(goal) }
-                            if state.activeGoal == goal.id || state.activeGoal == nil { state.dayGoals[dayKey(Date())] = goal }
-                        }) { dismiss() }
+                        if store.saveGoals(goal) { dismiss() }
                     }.disabled(!goal.isValid)
                 }
             }

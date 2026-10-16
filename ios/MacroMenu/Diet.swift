@@ -19,12 +19,15 @@ struct DietInfo: Codable, Hashable, Sendable {
     var isVegan: Bool { vg == "vegan" }
 
     /// For everyday foods, which are single foods named plainly ("Chicken breast, cooked", "Greek yoghurt"), from the name.
+    /// A name with no allergen word only counts as allergen-free when it's a plain single food ("Banana", "Brown rice, cooked");
+    /// anything else ("Falafel", "Chicken tenders") has unknown allergens, so it's left out when one is avoided.
     static func guess(_ name: String) -> DietInfo {
         let lower = name.lowercased()
         let meat = DietOption.meatWords.filter { lower.range(of: $0.value, options: .regularExpression) != nil }.map(\.key).sorted()
         let al = DietOption.allergenWords.filter { lower.range(of: $0.value, options: .regularExpression) != nil }.map(\.key).sorted()
+        let plain = lower.range(of: DietOption.plainFoods, options: .regularExpression) != nil
         let animal = lower.range(of: #"honey|\bmilk|cheese|yog|butter|cream|egg|whey"#, options: .regularExpression) != nil
-        return DietInfo(meat: meat, al: al, vg: meat.isEmpty ? (animal ? "vegetarian" : "vegan") : nil, src: "name")
+        return DietInfo(meat: meat, al: al.isEmpty && !plain ? nil : al, vg: meat.isEmpty ? (animal ? "vegetarian" : "vegan") : nil, src: "name")
     }
 }
 
@@ -64,18 +67,21 @@ enum DietOption: String, CaseIterable, Identifiable, Sendable {
     static func allergenName(_ key: String) -> String { DietOption(rawValue: key)?.title.lowercased() ?? key }
 
     static let meatWords: [String: String] = [
-        "beef": #"\bbeef|steak|\bmince|veal|brisket"#, "pork": #"\bpork|bacon|\bham\b|salami|prosciutto|chorizo|pepperoni"#,
-        "chicken": #"chicken|turkey|\bduck"#, "lamb": #"\blamb\b|mutton"#, "fish": #"\bfish|salmon|tuna|\bcod\b|sardine|anchov|barramundi|snapper|trout"#,
-        "seafood": #"prawn|shrimp|crab|lobster|oyster|mussel|scallop|squid|calamari"#, "gelatine": #"gelatin|jelly"#,
+        "beef": #"\bbeef|steak|\bmince|veal|brisket|hamburger|cheeseburger|meatball"#, "pork": #"\bpork|bacon|\bham\b|salami|prosciutto|chorizo|pepperoni|bratwurst|italian sausage"#,
+        "chicken": #"chicken|turkey|\bduck"#, "lamb": #"\blamb\b|mutton"#, "fish": DietOption.fishWords,
+        "seafood": DietOption.shellfishWords, "gelatine": #"gelatin|jelly"#, "other": #"\bmeat\b|sausage|wonton|egg rolls?\b"#,
     ]
+    static let fishWords = #"fish|salmon|tuna|\bcod\b|sardine|anchov|barramundi|snapper|trout|tilapia|mackerel|sea bass|flounder|\bsole\b"#
+    static let shellfishWords = #"prawn|shrimp|crab|lobster|oyster|mussel|scallop|squid|calamari|octopus"#
+    /// Plain single foods with no allergens, named only with how they're prepared: "Banana", "Chicken breast, cooked".
+    static let plainFoods = #"^(banana|apple|orange|mandarin|pear|strawberries|blueberries|raspberries|blackberries|grapes|watermelon|rockmelon|honeydew melon|pineapple|mango|avocado|kiwifruit|peach|plum|cherries|lemon|lime|apricot|nectarine|papaya|passionfruit|grapefruit|figs|pomegranate|lychees|broccoli|carrot|spinach|cos lettuce|iceberg lettuce|green leaf lettuce|tomato|cucumber|onion|red capsicum|green capsicum|mushrooms|corn|sweet corn|peas|green beans|cauliflower|zucchini|cabbage|red cabbage|pumpkin|butternut pumpkin|asparagus|kale|celery|beetroot|eggplant|garlic|ginger|red chilli|potato|sweet potato|bok choy|brussels sprouts|snow peas|bean sprouts|leek|spring onion|rocket|radish|silverbeet|parsnip|white rice|brown rice|wild rice|quinoa|chicken breast|chicken thigh|chicken drumstick|chicken mince|turkey breast|turkey mince|beef mince|sirloin steak|eye fillet|pork tenderloin|pork chop|pork mince|pork belly|lamb loin|lamb mince|black beans|kidney beans|chickpeas|lentils|red lentils|cannellini beans|pinto beans|navy beans|lima beans|olive oil|canola oil|coconut oil|avocado oil|sugar|brown sugar|maple syrup|black coffee|espresso|black tea|green tea|coconut water)(, (raw|cooked|boiled|baked|roasted|fresh|canned|lean|uncooked|\d+% fat))*$"#
     static let allergenWords: [String: String] = [
         "gluten": #"bread|wheat|pasta|spaghetti|noodle|flour|toast|cereal|\boats?\b|barley|\brye\b|beer|biscuit|cake|cracker|muffin|pizza|couscous|bagel|croissant|tortilla|wrap|weet|bran|crumpet|pastry|pie\b"#,
         "milk": #"\bmilk|cheese|yog|butter|cream|latte|cappuccino|flat white|whey|custard|ice cream|ricotta|feta|mozzarella|parmesan"#,
         "wheat": #"bread|wheat|pasta|spaghetti|noodle|flour|toast|cereal|\boats?\b|biscuit|cake|cracker|muffin|pizza|couscous|bagel|croissant|tortilla|wrap|weet|bran|crumpet|pastry|pie\b|semolina|spelt"#,
         "egg": #"\beggs?\b|mayo|omelette|frittata"#, "soy": #"\bsoy|tofu|edamame|tempeh|miso"#, "sesame": #"sesame|tahini|hummus"#,
         "peanut": #"peanut"#, "treenut": #"almond|cashew|walnut|pecan|pistachio|hazelnut|macadamia|brazil nut|\bnuts?\b"#,
-        "fish": #"\bfish|salmon|tuna|\bcod\b|sardine|anchov|barramundi|snapper|trout"#,
-        "shellfish": #"prawn|shrimp|crab|lobster|oyster|mussel|scallop|squid|calamari"#, "lupin": #"lupin"#,
+        "fish": fishWords, "shellfish": shellfishWords, "lupin": #"lupin"#,
         // Sulphites keep dried fruit, wine, cordial and sausages.
         "sulphites": #"\bwine|beer|cider|dried|sultana|raisin|prune|cordial|sausage|\bham\b|salami|vinegar|pickle"#,
     ]

@@ -133,6 +133,13 @@ import UniformTypeIdentifiers
         assert(!DietFilter(options: [.sesame]).allows(mayContain))
         assert(DietFilter(options: [.vegan, .gluten]).allows(Food(chain: "mine", name: "My chicken wrap", kj: 1000, cal: 239, p: 20)))
         assert(DietInfo.guess("Chicken breast, cooked").meat == ["chicken"] && DietInfo.guess("Banana").isVegan)
+        // An everyday name with no allergen word is only allergen-free when it's a plain single food.
+        assert(DietInfo.guess("Banana").al == [] && DietInfo.guess("Sirloin steak, lean, raw").al == [] && DietInfo.guess("Brown rice, cooked").al == [])
+        assert(DietInfo.guess("Hash browns").al == nil && DietInfo.guess("Chicken tenders, takeaway").al == nil && DietInfo.guess("Pesto").al == nil)
+        let falafel = Food(chain: Food.everyday, name: "Falafel", kj: 950, cal: 227, p: 6)
+        assert(!glutenFree.allows(falafel) && glutenFree.allows(Food(chain: Food.everyday, name: "Banana", kj: 438, cal: 105, p: 1.3)))
+        assert(DietInfo.guess("Tilapia, cooked").al == ["fish"] && DietInfo.guess("Octopus, cooked").meat == ["seafood"])
+        assert(!DietInfo.guess("Hamburger, single patty").isVegetarian && !DietInfo.guess("Bratwurst, cooked").isVegetarian && !DietInfo.guess("Spaghetti with meat sauce").isVegetarian)
         // With needs set, the finder only orders items that fit, and customises by taking things off only.
         var vegQuery = FindQuery(calories: 900, protein: 25, maxItems: 2, diet: vegetarian)
         let vegOrders = MealFinder.find(catalog.foods, query: vegQuery)
@@ -310,6 +317,16 @@ import UniformTypeIdentifiers
         let second = AppStore(url: root.appending(path: "second.json"),catalogURL: catalogURL,legacyURL: nil)
         assert(second.merge(backup)); assert(second.merge(backup))
         assert(second.data.foods.count == 2 && second.data.logs[dayKey(yesterday)]?.count == 1)
+        // Adding a target set leaves today's targets alone; deleting the set in use moves today to the one left.
+        let goalStore = AppStore(url: root.appending(path: "goal-sets.json"), catalogURL: nil, legacyURL: nil)
+        let everyDay = goalStore.goals
+        assert(goalStore.data.activeGoal == nil && goalStore.saveGoals(everyDay))
+        assert(goalStore.data.dayGoals[dayKey(Date())]?.id == everyDay.id, "editing the set in use updates today")
+        var training = everyDay; training.id = UUID(); training.name = "Training"; training.values["cal"] = 2800
+        assert(goalStore.saveGoals(training) && goalStore.data.goalSets.count == 2)
+        assert(goalStore.data.dayGoals[dayKey(Date())]?.id == everyDay.id && goalStore.goals.id == everyDay.id, "a new set isn't today's")
+        assert(goalStore.deleteGoals(everyDay) && goalStore.data.activeGoal == training.id && goalStore.goals.id == training.id)
+        assert(goalStore.data.dayGoals[dayKey(Date())]?.id == training.id && !goalStore.deleteGoals(training))
         let reloaded = AppStore(url: root.appending(path: "second.json"),catalogURL: catalogURL,legacyURL: nil)
         assert(reloaded.data.tray.count == 2 && reloaded.data.foods.count == 2)
         var bad = oats; bad.cal = -1
@@ -757,6 +774,10 @@ import UniformTypeIdentifiers
         let queuedAt = calendar.date(byAdding: .day, value: -1, to: calendar.date(bySettingHour: 12, minute: 30, second: 0, of: now)!)!
         assert(pinStore.applyQueuedQuickLogs([.init(option: "pin:kfc:zinger-burger", date: queuedAt), .init(option: "pin:gone", date: queuedAt)]) == 1)
         assert(pinStore.data.logs[dayKey(queuedAt)]?.last?.mealTime == .lunch, "a queued log keeps its own time")
+        let queuedTwice = queuedAt.addingTimeInterval(3600)
+        assert(pinStore.applyQueuedQuickLogs([.init(option: "pin:kfc:zinger-burger", date: queuedTwice), .init(option: "pin:kfc:zinger-burger", date: queuedTwice.addingTimeInterval(3))]) == 1,
+               "a queued double tap logs once")
+        assert(pinStore.data.logs[dayKey(queuedAt)]?.last?.time == queuedTwice, "a queued log is stamped with its tap")
         assert(["breakfast", "lunch", "dinner", "snacks"].allSatisfy { MealTime(rawValue: $0) != nil })
         for food in pinStore.foods.filter({ $0.chain == "kfc" }).prefix(AppStore.pinLimit) where !pinStore.isPinned(food) { pinStore.togglePin(food) }
         assert(pinStore.data.pinned?.count == AppStore.pinLimit)
@@ -1239,6 +1260,15 @@ import UniformTypeIdentifiers
             let mealFound = Assistant.suggestions(withMeal, goals: Goals(), pinned: [], everyday: [], restaurantFoods: [], chainNames: names, now: noonNow, calendar: calendar)
             let offered = mealFound.first { $0.name == "Chicken salad" }
             assert(offered?.source == .savedMeal && offered?.items.first?.id != withMeal.meals[0].items[0].id)
+            // Dietary needs apply to pinned, recent and saved things too, not only to everyday and restaurant foods.
+            let chickenItem = catalog.foods.first { $0.diet?.meat?.contains("chicken") == true && $0.cal >= 150 && $0.cal <= 450 && $0.p >= 15 }!
+            var dietData = data; dietData.meals = [SavedMeal(name: "Chicken meal", items: [Portion(food: chickenItem)])]
+            dietData.logs[dayKey(day(3))] = [LogEntry(name: "Recent", items: [Portion(food: chickenItem)], time: day(3), mealTime: .lunch)]
+            let unfiltered = Assistant.suggestions(dietData, goals: Goals(), pinned: [chickenItem], everyday: [], restaurantFoods: [], chainNames: names, now: noonNow, calendar: calendar, limit: 20)
+            assert(unfiltered.contains { $0.items.contains { $0.food.id == chickenItem.id } })
+            let vegOnly = Assistant.suggestions(dietData, goals: Goals(), pinned: [chickenItem], everyday: [], restaurantFoods: [], chainNames: names,
+                                                diet: DietFilter(options: [.vegetarian]), now: noonNow, calendar: calendar, limit: 20)
+            assert(!vegOnly.contains { $0.items.contains { $0.food.id == chickenItem.id } } && vegOnly.contains { $0.name == "Protein shake" }, "your own foods still fit")
             // The restaurant you've been logging most turns up as an order there.
             let kfcFood = catalog.foods.first { $0.chain == "kfc" && $0.cat == "main" }!
             var atKFC = data
@@ -1372,6 +1402,9 @@ import UniformTypeIdentifiers
             assert(RecipeImport.link(in: "Look at this https://www.taste.com.au/recipes/pie/abc great")?.host() == "www.taste.com.au")
             assert(RecipeImport.link(in: "recipetineats.com/lasagna")?.scheme == "https" && RecipeImport.link(in: "pie") == nil)
             assert(RecipeImport.link(in: "http://example.com/pie")?.absoluteString == "https://example.com/pie" && RecipeImport.link(in: "ftp://example.com/pie") == nil)
+            assert(RecipeImport.link(in: "Great recipe. https://www.recipetineats.com/lasagna")?.host() == "www.recipetineats.com")
+            assert(RecipeImport.link(in: "From taste.com.au: https://www.taste.com.au/recipes/pie/abc")?.path() == "/recipes/pie/abc")
+            assert(RecipeImport.link(in: "Great recipe.") == nil)
         }
 
         // Weekly check-in: maintenance from four weeks of logging and a falling trend, then a target for the pace asked for.
@@ -1523,6 +1556,13 @@ import UniformTypeIdentifiers
             var widgetSnapshot = watchStore.data.widgetCalories
             widgetSnapshot.planned = plannedNow; widgetSnapshot.plannedDay = dayKey(now)
             assert(widgetSnapshot.plannedMeals(on: now).count == 2 && widgetSnapshot.plannedMeals(on: tomorrow).isEmpty)
+            // Tomorrow's plan rides along, so the widget isn't empty after midnight.
+            watchStore.plan([Portion(food: toast)], name: "Toast tomorrow", mealTime: .breakfast, on: tomorrow)
+            widgetSnapshot.plannedNext = watchStore.plannedOptions(now: tomorrow); widgetSnapshot.plannedNextDay = dayKey(tomorrow)
+            assert(widgetSnapshot.plannedMeals(on: tomorrow).map(\.name) == ["Toast tomorrow"] && widgetSnapshot.plannedMeals(on: now).count == 2)
+            let tomorrowTap = widgetSnapshot.plannedNext![0].id
+            assert(widgetSnapshot.applying(tomorrowTap, at: tomorrow)?.plannedMeals(on: tomorrow).isEmpty == true)
+            assert(widgetSnapshot.kindsChanged(from: { var old = widgetSnapshot; old.plannedNext = nil; return old }()) == [WidgetCalories.plannedKind])
             let before = watchStore.data.logs[dayKey(now)]?.count ?? 0
             assert(watchStore.logAgain(plannedNow[0].id, at: now))
             assert(watchStore.data.logs[dayKey(now)]?.count == before + 1 && watchStore.plannedOptions(now: now).map(\.name) == ["Bar for dinner"])

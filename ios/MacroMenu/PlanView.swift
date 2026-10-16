@@ -131,13 +131,13 @@ struct PlanView: View {
     /// Ideas that fit what the plan leaves, worked out as if the plan were eaten, at midday so each is one meal's worth.
     private func refreshIdeas() async {
         guard !entries.isEmpty else { ideas = []; return }
-        let data = MealPlan.asLogged(store.data, day: key), goals = goals, pinned = store.pinnedFoods, everyday = store.suggestibleEveryday, restaurants = store.suggestibleRestaurantFoods
+        let data = MealPlan.asLogged(store.data, day: key), goals = goals, pinned = store.pinnedFoods, everyday = store.suggestibleEveryday, restaurants = store.suggestibleRestaurantFoods, diet = DietFilter.saved
         let names = Dictionary(store.catalog.chains.map { ($0.id, $0.name) }) { a, _ in a }
         let noon = Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: date) ?? date
         let planned = Set(entries.map { $0.name.lowercased() })
         ideas = await Task.detached(priority: .userInitiated) {
             // Ask for a few extra, since anything already in the plan is left out.
-            Assistant.suggestions(data, goals: goals, pinned: pinned, everyday: everyday, restaurantFoods: restaurants, chainNames: names, now: noon, limit: 6)
+            Assistant.suggestions(data, goals: goals, pinned: pinned, everyday: everyday, restaurantFoods: restaurants, chainNames: names, diet: diet, now: noon, limit: 6)
                 .filter { !planned.contains($0.name.lowercased()) }.prefix(3).map { $0 }
         }.value
     }

@@ -32,18 +32,33 @@ enum RecipeImport {
         }
     }
 
-    /// A web address from pasted text: the first http or https link in it.
+    /// A web address from pasted text: the first http or https link in it, or else the first bare address ("taste.com.au/...").
     static func link(in text: String) -> URL? {
         let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        // A real link wins over something earlier that only looks like an address, like "recipe." ending a sentence.
+        if let detector = try? NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue) {
+            for match in detector.matches(in: trimmed, range: NSRange(trimmed.startIndex..., in: trimmed)) {
+                guard let range = Range(match.range, in: trimmed), trimmed[range].lowercased().hasPrefix("http"),
+                      let url = match.url.flatMap({ secure($0.absoluteString) }) else { continue }
+                return url
+            }
+        }
         let candidates = [trimmed] + trimmed.split(whereSeparator: \.isWhitespace).map(String.init)
         for candidate in candidates {
             var value = candidate
             if !value.lowercased().hasPrefix("http"), value.contains("."), !value.contains(" ") { value = "https://" + value }
-            // Leanr only connects over HTTPS, and nearly every recipe site has it.
-            if value.lowercased().hasPrefix("http://") { value = "https://" + value.dropFirst(7) }
-            if let url = URL(string: value), url.scheme?.lowercased() == "https", let host = url.host(), host.contains(".") { return url }
+            if let url = secure(value) { return url }
         }
         return nil
+    }
+
+    /// The address over HTTPS, if it has a real host ("recipe." isn't one).
+    private static func secure(_ address: String) -> URL? {
+        var value = address
+        // Leanr only connects over HTTPS, and nearly every recipe site has it.
+        if value.lowercased().hasPrefix("http://") { value = "https://" + value.dropFirst(7) }
+        guard let url = URL(string: value), url.scheme?.lowercased() == "https", let host = url.host(), host.contains("."), !host.hasSuffix(".") else { return nil }
+        return url
     }
 
     static let largestPage = 5_000_000

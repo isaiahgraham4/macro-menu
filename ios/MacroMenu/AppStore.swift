@@ -66,6 +66,25 @@ final class AppStore {
             state.dayGoals[dayKey(Date())] = state.goalSets[index]
         }
     }
+    /// Saves a new or edited target set. Today's snapshot follows it only when it's the set in use.
+    @discardableResult func saveGoals(_ goal: Goals) -> Bool {
+        let activeID = goals.id
+        return change { state in
+            if let i = state.goalSets.firstIndex(where: { $0.id == goal.id }) { state.goalSets[i] = goal } else { state.goalSets.append(goal) }
+            if goal.id == activeID { state.dayGoals[dayKey(Date())] = goal }
+        }
+    }
+    /// Deletes a target set (never the last one). Deleting the set in use switches today to the first one left.
+    @discardableResult func deleteGoals(_ goal: Goals) -> Bool {
+        guard data.goalSets.count > 1 else { return false }
+        let wasActive = goal.id == goals.id
+        return change(undo: "Deleted \(goal.name)") { state in
+            state.goalSets.removeAll { $0.id == goal.id }
+            guard wasActive else { return }
+            state.activeGoal = state.goalSets[0].id
+            state.dayGoals[dayKey(Date())] = state.goalSets[0]
+        }
+    }
     func chain(_ id: String) -> Chain? { catalog.chains.first { $0.id == id } }
     /// When the restaurant menu in use was published.
     var menuDate: Date? {
@@ -209,10 +228,11 @@ final class AppStore {
             }
         }) { notice = "Added to your meal" }
     }
-    @discardableResult func log(_ items: [Portion], name: String, date: Date, clearTray: Bool = false, mealTime: MealTime? = nil) -> Bool {
+    /// `time` stamps the entry with when it was asked for (a queued widget tap) rather than now.
+    @discardableResult func log(_ items: [Portion], name: String, date: Date, clearTray: Bool = false, mealTime: MealTime? = nil, time: Date? = nil) -> Bool {
         let key = dayKey(date), currentGoals = goals
         return change(undo: "Logged \(name)") {
-            $0.logs[key, default: []].append(LogEntry(name: name, items: items, mealTime: mealTime))
+            $0.logs[key, default: []].append(LogEntry(name: name, items: items, time: time ?? Date(), mealTime: mealTime))
             if $0.dayGoals[key] == nil { $0.dayGoals[key] = currentGoals }
             if clearTray { $0.tray = [] }
         }

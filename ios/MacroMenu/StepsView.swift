@@ -5,8 +5,10 @@ import Charts
 struct StepsRow: View {
     @Environment(AppStore.self) private var store
     @Environment(HealthSync.self) private var health
+    @AppStorage(AppAccent.storageKey) private var accentRaw = AppAccent.standard.rawValue
     /// The day being looked at on Today.
     let date: Date
+    private var accent: Color { AppAccent.resolved(accentRaw).color }
 
     private var count: Double { health.steps[dayKey(date)] ?? 0 }
     private var goal: Double { Steps.goal(store.data) }
@@ -15,7 +17,7 @@ struct StepsRow: View {
         if health.isAvailable {
             VStack(alignment: .leading, spacing: 10) {
                 HStack(spacing: 14) {
-                    Image(systemName: "figure.walk").font(.title2).foregroundStyle(.green).frame(width: 32)
+                    Image(systemName: "figure.walk").font(.title2).foregroundStyle(accent).frame(width: 32)
                     VStack(alignment: .leading, spacing: 3) {
                         Text("Steps").font(.roboto(.headline))
                         Text(detail).font(.roboto(.caption)).foregroundStyle(.secondary).monospacedDigit()
@@ -23,7 +25,7 @@ struct StepsRow: View {
                     Spacer(minLength: 0)
                 }
                 if health.enabled && !health.steps.isEmpty {
-                    ProgressView(value: Steps.progress(count, goal: goal)).tint(.green)
+                    ProgressView(value: Steps.progress(count, goal: goal)).tint(accent)
                         .accessibilityLabel("Steps").accessibilityValue("\(Steps.text(count)) of \(Steps.text(goal))")
                 } else {
                     StepsAccessButton()
@@ -112,9 +114,11 @@ struct StepsSettings: View {
 struct StepsProgressSection: View {
     @Environment(AppStore.self) private var store
     @Environment(HealthSync.self) private var health
+    @AppStorage(AppAccent.storageKey) private var accentRaw = AppAccent.standard.rawValue
     /// The days in the range, by day key.
     let days: [String: Date]
     @State private var selected: Date?
+    private var accent: Color { AppAccent.resolved(accentRaw).color }
 
     var body: some View {
         if health.isAvailable {
@@ -165,7 +169,7 @@ struct StepsProgressSection: View {
             ForEach(keys, id: \.self) { key in
                 if let date = days[key], let steps = health.steps[key], steps > 0 {
                     BarMark(x: .value("Day", date, unit: .day), y: .value("Steps", steps))
-                        .foregroundStyle(steps >= goal ? AnyShapeStyle(.green) : AnyShapeStyle(.green.opacity(0.45)))
+                        .foregroundStyle(steps >= goal ? accent : accent.opacity(0.45))
                         .opacity(selected == nil || dayKey(selected!) == key ? 1 : 0.5)
                 }
             }
@@ -173,7 +177,7 @@ struct StepsProgressSection: View {
                 .annotation(position: .top, alignment: .trailing) {
                     Text("Goal \(Steps.text(goal))").font(.roboto(size: 10)).foregroundStyle(.secondary)
                 }
-            RuleMark(y: .value("Average", average)).foregroundStyle(.green).lineStyle(StrokeStyle(lineWidth: 1.5))
+            RuleMark(y: .value("Average", average)).foregroundStyle(accent).lineStyle(StrokeStyle(lineWidth: 1.5))
         }
         .chartXSelection(value: $selected)
         .chartYAxis { AxisMarks(position: .leading) { _ in AxisGridLine(); AxisValueLabel() } }

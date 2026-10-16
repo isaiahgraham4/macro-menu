@@ -19,7 +19,7 @@ struct PlannedProvider: TimelineProvider {
     func getSnapshot(in context: Context, completion: @escaping (CaloriesEntry) -> Void) {
         completion(context.isPreview ? Self.example : CaloriesEntry(date: Date(), calories: WidgetCalories.read()))
     }
-    /// Now, and midnight, when today's plan is over.
+    /// Now, and midnight, when tomorrow's plan takes over.
     func getTimeline(in context: Context, completion: @escaping (Timeline<CaloriesEntry>) -> Void) {
         let now = Date(), snapshot = WidgetCalories.read()
         let midnight = Calendar.current.date(byAdding: .day, value: 1, to: Calendar.current.startOfDay(for: now)) ?? now

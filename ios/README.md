@@ -78,7 +78,9 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   KFC names, plus the restaurants' own allergen guides read by `Scripts/allergen-guides.py` (Domino's, Boost, Oporto, Red
   Rooster, Spud Bar, Schnitz, Zambrero, GYG, Hungry Jack's and Subway; items built from parts, like a GYG burrito, use the
   restaurant's own list of what's in them). "May contain" counts as contains, and gelatine counts against no beef and no
-  pork. To refresh: `allergen-guides.py fetch`, `allergen-guides.py build`, `diet-info.py build`, then `export-menu.cjs`.
+  pork. Everyday foods are judged from their names (`DietInfo.guess`): a name with no allergen word counts as
+  allergen-free only when it's a plain single food (`DietOption.plainFoods`), so "Falafel" is left out when an allergen
+  is avoided. Pinned, recent and saved foods and saved meals follow the same needs in suggestions. To refresh: `allergen-guides.py fetch`, `allergen-guides.py build`, `diet-info.py build`, then `export-menu.cjs`.
   McDonald's and KFC show theirs only inside their own pages (the item pages' ingredient and allergen lists, and KFC's
   guide panels), so those were read once in a normal browser and saved as `mcd-allergens.json` and `kfc-allergens.json`;
   Subway's allergen guide PDF is read by the script. KFC's combos, boxes and feasts have no allergen panel, so they stay
@@ -88,7 +90,8 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   fills in what the rules miss, but only numbers that are in the question. What was understood is shown as chips.
 - Plan ahead (Today → Log food): set out meals for today and the next six days against the targets, with suggestions to
   fill the gap. Plans (`AppData.plans`, by day) count for nothing until logged; on the day they appear on Today under
-  Planned, and a tick logs each one. Past days are pruned.
+  Planned, and a tick logs each one. Past days are pruned. The Planned widget's snapshot holds tomorrow's plan too, so it
+  isn't empty after midnight.
 - Import a recipe (My foods): paste a link; the page's schema.org Recipe is read (`RecipeImport`). Save it with the site's
   per-serving nutrition, or match the ingredient lines (`FoodPhrase.ingredient`, raw foods first) and open the recipe
   editor filled in.
@@ -110,7 +113,10 @@ The app uses SwiftUI and requires no third-party packages or API keys.
 - iCloud (Settings): a copy of the app data in the iCloud Drive app container.
   Newest copy wins; if both sides changed since the last sync they're merged by ID
   (a deletion on the other device can come back then). The current meal and
-  display settings stay on each device.
+  display settings stay on each device. A device that has never synced and has
+  nothing saved never uploads, and an iCloud copy that hasn't downloaded yet is
+  retried later rather than treated as missing, so a new install can't replace
+  the real copy with defaults.
 - Undo: logging and deletes show a five-second Undo banner.
 - Search: forgiving matching (one typo in 4–6 letter words, two in longer ones,
   first letter must match) with exact matches first; recent searches.
@@ -141,7 +147,7 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   widget adds the meal, water or planned meal's calories and nutrients to the
   snapshot (`QuickLogQueue.showQueued`), reloads only the widgets that changed
   (`WidgetCalories.kindsChanged`, the tapped one first) and queues the request in
-  the App Group. Leanr logs it, with Health and iCloud, when it next starts, comes
+  the App Group, with the time of the tap. Leanr logs it, with Health and iCloud, when it next starts, comes
   to the front or is woken by Health (about hourly), and then rewrites the
   snapshot. (Run as a Live Activity intent it launched Leanr in the background and
   the system held the widget for several seconds.) A repeat tap within 10 seconds

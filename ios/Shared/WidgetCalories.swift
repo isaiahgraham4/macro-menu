@@ -29,13 +29,20 @@ struct WidgetCalories: Codable, Equatable, Sendable {
     /// Today's planned meals that aren't logged yet, in meal order, for the Planned widget ("plan:<entry ID>"), and the day they're for.
     var planned: [WidgetQuickLog]? = nil
     var plannedDay: String? = nil
+    /// The next day's plan, so the widget has it at midnight before Leanr next runs.
+    var plannedNext: [WidgetQuickLog]? = nil
+    var plannedNextDay: String? = nil
     /// Water by day for the last week in mL, the daily target and one glass, for the Water widget.
     var water: [String: Double]? = nil
     var waterTarget: Double? = nil
     var waterGlass: Double? = nil
     func waterDrunk(on date: Date) -> Double { water?[WidgetCalories.dayKey(date)] ?? 0 }
     /// The planned meals still to log on `date`; none once the day they were for has passed.
-    func plannedMeals(on date: Date) -> [WidgetQuickLog] { plannedDay == WidgetCalories.dayKey(date) ? planned ?? [] : [] }
+    func plannedMeals(on date: Date) -> [WidgetQuickLog] {
+        let day = WidgetCalories.dayKey(date)
+        if plannedDay == day { return planned ?? [] }
+        return plannedNextDay == day ? plannedNext ?? [] : []
+    }
     var trackingDays: Set<String> { Set(trackedDays ?? Array(dailyCalories.filter { $0.value > 0 }.keys)) }
     func streak(on date: Date, calendar: Calendar = Calendar(identifier: .gregorian)) -> Int {
         TrackingStreak.count(days: trackingDays, on: date, calendar: calendar)
@@ -225,7 +232,7 @@ extension WidgetCalories {
         var kinds: [String] = []
         func add(_ new: [String]) { for k in new where !kinds.contains(k) { kinds.append(k) } }
         if water != old.water || waterTarget != old.waterTarget || waterGlass != old.waterGlass { add([Self.waterKind]) }
-        if planned != old.planned || plannedDay != old.plannedDay { add([Self.plannedKind]) }
+        if planned != old.planned || plannedDay != old.plannedDay || plannedNext != old.plannedNext || plannedNextDay != old.plannedNextDay { add([Self.plannedKind]) }
         if quickLogOptions != old.quickLogOptions { add([Self.logAgainKind]) }
         if steps != old.steps || stepGoal != old.stepGoal { add([Self.stepsKind]) }
         if activeEnergy != old.activeEnergy { add([Self.burntKind]) }
@@ -282,8 +289,9 @@ extension WidgetCalories {
             return snapshot
         }
         // A planned meal leaves the Planned widget once it's logged.
-        if let item = snapshot.planned?.first(where: { $0.id == option }) {
+        if let item = snapshot.plannedMeals(on: date).first(where: { $0.id == option }) {
             snapshot.planned?.removeAll { $0.id == option }
+            snapshot.plannedNext?.removeAll { $0.id == option }
             snapshot.dailyCalories[day, default: 0] += item.calories
             addNutrients(item)
         } else {

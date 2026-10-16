@@ -57,7 +57,7 @@ extension AppStore {
         return options
     }
 
-    /// Today's planned meals still to log, breakfast first, for the Planned widget.
+    /// The planned meals still to log on `now`'s day, breakfast first, for the Planned widget.
     func plannedOptions(now: Date = Date(), nutrients keys: [String] = []) -> [WidgetQuickLog] {
         let planned = MealPlan.entries(data, on: dayKey(now))
         let order = MealTime.allCases
@@ -89,6 +89,7 @@ extension AppStore {
 
     /// Logs one of the widget's options: a usual meal to its own meal time, or a serving of a pinned food to the meal time it is at `date`.
     /// The same thing logged in the last 10 seconds is taken as a double tap, since the widget can take a moment to show its tick.
+    /// Each entry keeps the time of its tap, so queued taps are compared with each other rather than with when they were logged.
     @discardableResult func logAgain(_ option: String, at date: Date = Date()) -> Bool {
         func justLogged(_ name: String) -> Bool {
             (data.logs[dayKey(date)] ?? []).contains { $0.name == name && abs($0.time.timeIntervalSince(date)) < 10 }
@@ -96,7 +97,7 @@ extension AppStore {
         if option.hasPrefix("usual:"), let meal = MealTime(rawValue: String(option.dropFirst(6))),
            let usual = Assistant.usual(meal, logs: data.logs, now: date) {
             guard !justLogged(usual.name) else { return false }
-            return log(QuickLog.copies(usual.items), name: usual.name, date: date, mealTime: meal)
+            return log(QuickLog.copies(usual.items), name: usual.name, date: date, mealTime: meal, time: date)
         }
         // A planned meal for today: logged now, which takes it off the plan, so a second tap finds nothing.
         if option.hasPrefix("plan:"), let id = UUID(uuidString: String(option.dropFirst(5))),
@@ -108,7 +109,7 @@ extension AppStore {
         }
         if option.hasPrefix("pin:"), let food = pinnedFoods.first(where: { "pin:\($0.id)" == option }) {
             guard !justLogged(food.name) else { return false }
-            return log([Portion(food: food)], name: food.name, date: date, mealTime: .suggested(at: date))
+            return log([Portion(food: food)], name: food.name, date: date, mealTime: .suggested(at: date), time: date)
         }
         return false
     }
@@ -138,6 +139,11 @@ extension AppStore {
             snapshot.quickLogOptions = quickLogOptions(nutrients: nutrientKeys)
             snapshot.planned = plannedOptions(nutrients: nutrientKeys)
             snapshot.plannedDay = dayKey(Date())
+            // Tomorrow's too, for the widget's midnight entry.
+            if let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: Date()) {
+                snapshot.plannedNext = plannedOptions(now: tomorrow, nutrients: nutrientKeys)
+                snapshot.plannedNextDay = dayKey(tomorrow)
+            }
             snapshot.steps = widgetSteps.isEmpty ? nil : widgetSteps
             snapshot.activeEnergy = widgetEnergy.isEmpty ? nil : widgetEnergy
             snapshot.stepGoal = data.stepGoal ?? Steps.defaultGoal

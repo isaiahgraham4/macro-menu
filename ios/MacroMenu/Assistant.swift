@@ -76,8 +76,9 @@ enum Assistant {
     /// Up to `limit` things that fit what's left of today: foods you pinned, ate lately, saved or made yourself first, an order at the
     /// restaurant you use most, then everyday foods to fill any gap. Ranked by how much of a meal's protein they cover per calorie.
     /// Nothing when today's calories are used up or the protein target is met, since there's nothing to close.
+    /// `diet` leaves out pinned, recent and saved things that don't fit (pass `everyday` and `restaurantFoods` already filtered).
     static func suggestions(_ data: AppData, goals: Goals, pinned: [Food], everyday: [Food], restaurantFoods: [Food], chainNames: [String: String],
-                            now: Date = Date(), calendar: Calendar = .current, limit: Int = 3) -> [Suggestion] {
+                            diet: DietFilter = DietFilter(), now: Date = Date(), calendar: Calendar = .current, limit: Int = 3) -> [Suggestion] {
         let left = remaining(data, goals: goals, now: now)
         if let calories = left.calories, calories < 100 { return [] }
         if let protein = left.protein, protein <= 0 { return [] }
@@ -92,7 +93,7 @@ enum Assistant {
 
         func suggestion(_ name: String, _ items: [Portion], _ source: Suggestion.Source, id: String) -> Suggestion? {
             let total = Nutrition(items)
-            guard !items.isEmpty, items.allSatisfy(\.isValid), total.cal >= 30, total.cal <= budget, total.p >= floor else { return nil }
+            guard !items.isEmpty, diet.isEmpty || items.allSatisfy({ diet.allows($0.food) }), items.allSatisfy(\.isValid), total.cal >= 30, total.cal <= budget, total.p >= floor else { return nil }
             return Suggestion(id: id, name: name, items: items, source: source, calories: total.cal, protein: total.p)
         }
         func ranked(_ list: [Suggestion]) -> [Suggestion] {

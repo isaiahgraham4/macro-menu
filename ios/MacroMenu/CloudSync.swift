@@ -23,6 +23,8 @@ final class CloudSync {
     private(set) var syncing = false
     weak var store: AppStore?
     private var pending: Task<Void, Never>?
+    /// A change saved while a sync was running, so another sync follows it.
+    private var changedWhileSyncing = false
 
     init() {
         UserDefaults.standard.register(defaults: [Self.enabledKey: true, Self.dirtyKey: true])
@@ -32,8 +34,8 @@ final class CloudSync {
 
     /// Something changed on this device; upload it shortly.
     func markDirty() {
-        guard !syncing else { return }
         UserDefaults.standard.set(true, forKey: Self.dirtyKey)
+        guard !syncing else { changedWhileSyncing = true; return }
         schedule(after: 2)
     }
 
@@ -48,7 +50,12 @@ final class CloudSync {
 
     func sync() async {
         guard enabled, !syncing, let store, store.loadError == nil else { return }
-        syncing = true; defer { syncing = false }
+        syncing = true; changedWhileSyncing = false
+        defer {
+            syncing = false
+            // The upload may have cleared the flag after that change was saved.
+            if changedWhileSyncing { changedWhileSyncing = false; UserDefaults.standard.set(true, forKey: Self.dirtyKey); schedule(after: 2) }
+        }
         guard let file = await Self.fileURL() else {
             problem = "Sign in to iCloud and turn on iCloud Drive in the Settings app to sync."; return
         }
@@ -56,12 +63,16 @@ final class CloudSync {
         let dirty = defaults.bool(forKey: Self.dirtyKey)
         let lastRemote = defaults.object(forKey: Self.remoteKey) as? Date
         let remote: Snapshot?
-        do { remote = try await Self.read(file) } catch { problem = "Couldn’t read your iCloud copy. \(error.localizedDescription)"; return }
+        do { remote = try await Self.read(file) }
+        catch is NotDownloaded {
+            // The iCloud copy is there but not on this device yet. Uploading now could replace it, so try again later.
+            problem = "Waiting for your iCloud copy to download."; schedule(after: 30); return
+        } catch { problem = "Couldn’t read your iCloud copy. \(error.localizedDescription)"; return }
 
+        // A fresh install has nothing worth merging (only default targets), so it just takes the iCloud copy.
+        let fresh = store.data.foods.isEmpty && store.data.logs.isEmpty && store.data.meals.isEmpty && store.data.weightLog.isEmpty && store.data.measurementLog.isEmpty && store.data.water == nil && store.data.plans == nil && store.data.checkIns == nil
         var upload: AppData?
         if let remote, remote.data.isValid, !Self.same(remote.modified, lastRemote) {
-            // A fresh install has nothing worth merging (only default targets), so it just takes the iCloud copy.
-            let fresh = store.data.foods.isEmpty && store.data.logs.isEmpty && store.data.meals.isEmpty && store.data.weightLog.isEmpty && store.data.measurementLog.isEmpty && store.data.water == nil && store.data.plans == nil && store.data.checkIns == nil
             if dirty && !fresh {
                 // Both sides changed: keep everything from both.
                 var merged = AppStore.merged(store.data, remote.data)
@@ -76,7 +87,9 @@ final class CloudSync {
                 lastSynced = remote.modified; problem = nil
                 return
             }
-        } else if dirty || remote == nil {
+        } else if (dirty || remote == nil) && !(fresh && lastRemote == nil) {
+            // Never synced and nothing saved yet: iCloud may not have listed the other devices' copy yet,
+            // and uploading the defaults would replace it.
             upload = store.data
         }
         guard let upload else { problem = nil; return }
@@ -125,6 +138,10 @@ final class CloudSync {
         }.value
     }
 
+    /// The iCloud copy exists but couldn't be read yet (usually still downloading).
+    private struct NotDownloaded: Error {}
+
+    /// Nil only when there's no iCloud copy at all.
     private static func read(_ url: URL) async throws -> Snapshot? {
         try await Task.detached {
             guard FileManager.default.fileExists(atPath: url.path) || FileManager.default.isUbiquitousItem(at: url) else { return nil }
@@ -133,7 +150,7 @@ final class CloudSync {
             var result: Result<Snapshot?, Error> = .success(nil)
             NSFileCoordinator().coordinate(readingItemAt: url, options: [], error: &coordinationError) { url in
                 result = Result {
-                    guard let bytes = try? Data(contentsOf: url) else { return nil }
+                    guard let bytes = try? Data(contentsOf: url) else { throw NotDownloaded() }
                     let decoder = JSONDecoder(); decoder.dateDecodingStrategy = .iso8601
                     return try decoder.decode(Snapshot.self, from: bytes)
                 }
