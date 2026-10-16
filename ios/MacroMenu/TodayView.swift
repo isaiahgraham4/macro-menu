@@ -8,6 +8,7 @@ struct TodayView: View {
     @AppStorage(MacroColours.carbsKey) private var carbsColour = "orange"
     @AppStorage(MacroColours.fatKey) private var fatColour = "red"
     @State private var quick = false
+    @State private var quickAdd = false
     @State private var barcode = false
     @State private var choosing = false
     @State private var photo = false
@@ -132,6 +133,7 @@ struct TodayView: View {
                         LogMethodButton(title: "Photo", label: "Photo of your meal", systemImage: "camera.viewfinder") { photo = true }
                     }
                     LogMethodButton(title: "Describe", label: "Describe your meal", systemImage: "text.bubble") { describing = true }
+                    LogMethodButton(title: "Quick add", label: "Quick add calories and macros", systemImage: "plusminus") { quickAdd = true }
                 }
                 .listRowInsets(EdgeInsets(top: 10, leading: 16, bottom: 10, trailing: 16))
                 NavigationLink { PlanView() } label: { Label("Plan ahead", systemImage: "calendar.badge.plus") }
@@ -181,14 +183,15 @@ struct TodayView: View {
                             Button("Scan barcode") { mealTime = category; barcode = true }
                             if MealPhoto.canOffer { Button("Photo of your meal") { mealTime = category; photo = true } }
                             Button("Describe your meal") { mealTime = category; describing = true }
-                            Button("Quick log / scan label") { mealTime = category; quick = true }
+                            Button("Quick add calories and macros") { mealTime = category; quickAdd = true }
+                            Button("Enter a food / scan label") { mealTime = category; quick = true }
                             Button("Choose menu item") { mealTime = category; choosing = true }
                         } label: { Image(systemName: "plus.circle").font(.title3).padding(4) } primaryAction: {
                             // A tap goes straight to the menu; holding shows the other ways to add.
                             mealTime = category; choosing = true
                         }
                             .accessibilityLabel("Add to \(category.title)")
-                            .accessibilityHint("Opens the menu. Hold for pinned foods, barcode, photo, describing it and quick log.")
+                            .accessibilityHint("Opens the menu. Hold for pinned foods, barcode, photo, describing it and quick add.")
                     }
                 }
                 // Empty meals sit close together as a short list of headers.
@@ -209,7 +212,7 @@ struct TodayView: View {
             Section {
                 TileRow {
                     Button { choosing = true } label: { TileLabel(title: "Log a menu item", systemImage: "fork.knife") }
-                    Button { quick = true } label: { TileLabel(title: "Quick log", systemImage: "square.and.pencil") }
+                    Button { quick = true } label: { TileLabel(title: "Enter a food", systemImage: "square.and.pencil") }
                     if !entries.isEmpty {
                         ShareLink(item: mealText("\(date.formatted(date: .complete,time: .omitted))", entries.flatMap(\.items))) { TileLabel(title: "Share day", systemImage: "square.and.arrow.up") }
                     }
@@ -227,6 +230,15 @@ struct TodayView: View {
                 NavigationStack { TrackingCalendarView(selectedDate: $date) }
             }
             .navigationDestination(isPresented: $editingTargets) { TargetsView() }
+            .sheet(isPresented: $quickAdd) {
+                NavigationStack {
+                    QuickAddView(mealTime: mealTime) { portion, time in
+                        guard store.log([portion], name: portion.food.name, date: date, mealTime: time) else { return false }
+                        store.notice = "Logged to \(time.title.lowercased())"
+                        return true
+                    }
+                }.presentationDetents([.medium, .large])
+            }
             .sheet(isPresented: $quick) { NavigationStack {
                 FoodEditor(food: nil, savePortion: { store.log([$0], name: $0.food.name, date: date, mealTime: mealTime) }) {
                     store.log([Portion(food: $0)], name: $0.name, date: date, mealTime: mealTime)
