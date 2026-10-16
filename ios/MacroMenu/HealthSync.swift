@@ -206,6 +206,15 @@ final class HealthSync {
         await refreshSteps()
     }
 
+    /// Asks for permission to read active energy. For people who connected Health before calories burnt existed, this is the
+    /// first time it's asked; afterwards it answers at once. Health doesn't say whether reading was allowed, only whether it was asked.
+    func requestEnergyAccess() async {
+        guard isAvailable else { return }
+        do { try await health.requestAuthorization(toShare: [], read: [Self.activeEnergyType]) } catch { lastError = error.localizedDescription; return }
+        enabled = true
+        await refreshActiveEnergy()
+    }
+
     /// Reads each day's active energy for the last 90 days, from the chosen source or from all of them together.
     func refreshActiveEnergy() async {
         guard enabled else { return }
@@ -223,6 +232,10 @@ final class HealthSync {
             return
         }
         #endif
+        // Connected before calories burnt existed: Health has never been asked, so it would refuse the read. Ask once now.
+        if (try? await health.statusForAuthorizationRequest(toShare: [], read: [Self.activeEnergyType])) == .shouldRequest {
+            try? await health.requestAuthorization(toShare: [], read: [Self.activeEnergyType])
+        }
         var source: HKSource?
         if let id = energySourceID {
             if knownEnergySources[id] == nil { await loadEnergySources() }

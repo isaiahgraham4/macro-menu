@@ -22,6 +22,7 @@ struct ActiveEnergyRow: View {
             .padding(.vertical, 4)
             .accessibilityElement(children: .combine)
             .task { await health.refreshActiveEnergy() }
+            if health.energyLoaded && health.activeEnergy.isEmpty { EnergyAccessButton() }
         }
     }
 
@@ -32,6 +33,18 @@ struct ActiveEnergyRow: View {
     }
 }
 
+/// Allows reading calories burnt when Health was connected before they existed, or points to where to change an earlier answer.
+struct EnergyAccessButton: View {
+    @Environment(HealthSync.self) private var health
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Button { Task { await health.requestEnergyAccess() } } label: { Label("Allow Leanr to read calories burnt", systemImage: "flame") }
+            Text("If you've already answered, change it in the Health app → your profile → Apps → Leanr.")
+                .font(.roboto(.caption)).foregroundStyle(.secondary)
+        }
+    }
+}
+
 /// Where calories burnt come from: all sources together, or one app or device.
 struct ActiveEnergySettings: View {
     @Environment(HealthSync.self) private var health
@@ -39,6 +52,7 @@ struct ActiveEnergySettings: View {
     var body: some View {
         LeanrList {
             if health.isAvailable && health.enabled {
+                if health.energyLoaded && health.activeEnergy.isEmpty { Section { EnergyAccessButton() } }
                 Section {
                     Picker("Show calories burnt from", selection: Binding(get: { health.energySourceID }, set: { id in Task { await health.chooseEnergySource(id) } })) {
                         Text("All sources together").tag(String?.none)

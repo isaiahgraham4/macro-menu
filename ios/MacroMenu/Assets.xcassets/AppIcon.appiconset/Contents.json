@@ -1,6 +1,18 @@
 {
   "images" : [
     {
+      "filename" : "Leanr-Light-1024.png",
+      "idiom" : "universal",
+      "platform" : "ios",
+      "size" : "1024x1024"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
       "filename" : "Leanr-Black-1024.png",
       "idiom" : "universal",
       "platform" : "ios",
