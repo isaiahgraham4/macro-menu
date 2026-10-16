@@ -11,6 +11,9 @@ struct FindView: View {
     @State private var searchID = UUID()
     @State private var question = ""
     @State private var asking: String?
+    @State private var searchingFoods = false
+    @State private var browsing = false
+    @State private var moreOpen = false
     @AppStorage(DietFilter.storageKey) private var dietRaw = ""
     @Environment(\.dynamicTypeSize) private var typeSize
     var body: some View {
@@ -27,44 +30,17 @@ struct FindView: View {
                             .buttonStyle(.borderless).accessibilityLabel("Ask")
                     }
                 }.padding(.vertical, 4)
-                NavigationLink {
-                    BrowseView(startSearching: true)
-                } label: {
-                    HStack(spacing: 12) {
-                        Image(systemName: "magnifyingglass")
-                            .font(.title3)
-                            .foregroundStyle(.tint)
-                            .frame(width: 34, height: 34)
-                            .background(.tint.opacity(0.12), in: RoundedRectangle(cornerRadius: 10))
-                        VStack(alignment: .leading, spacing: 3) {
-                            Text("Search foods").font(.roboto(.headline))
-                            Text("Macros for menu items, everyday foods and packaged products").font(.roboto(.caption)).foregroundStyle(.secondary)
-                        }
-                        Spacer()
-                    }
-                }
-                NavigationLink {
-                    BrowseView()
-                } label: {
-                    HStack(spacing: 12) {
-                        Image(systemName: "chart.bar.xaxis")
-                            .font(.title3)
-                            .foregroundStyle(.tint)
-                            .frame(width: 34, height: 34)
-                            .background(.tint.opacity(0.12), in: RoundedRectangle(cornerRadius: 10))
-                        VStack(alignment: .leading, spacing: 3) {
-                            Text("Best choices").font(.roboto(.headline))
-                            Text("Browse foods ranked by protein or calories").font(.roboto(.caption)).foregroundStyle(.secondary)
-                        }
-                        Spacer()
-                    }
+            }
+            // Two short tiles instead of two tall rows, so the order finder starts higher up the screen.
+            Section {
+                TileRow {
+                    Button { searchingFoods = true } label: { TileLabel(title: "Search foods", systemImage: "magnifyingglass") }
+                        .accessibilityHint("Macros for menu items, everyday foods and packaged products")
+                    Button { browsing = true } label: { TileLabel(title: "Best choices", systemImage: "chart.bar.xaxis") }
+                        .accessibilityHint("Browse foods ranked by protein or calories")
                 }
             }
             Section {
-                VStack(alignment: .leading, spacing: 6) {
-                    Text("An order that fits").font(.roboto(.title3, weight: .bold))
-                    Text("Choose your calories and protein. Find combinations from one restaurant.").foregroundStyle(.secondary)
-                }.padding(.top, 6)
                 // Pairs sit side by side, and stack at the largest text sizes so numbers and labels stay whole.
                 let big = typeSize.isAccessibilitySize
                 let pair = big ? AnyLayout(VStackLayout(spacing: 10)) : AnyLayout(HStackLayout(spacing: 10))
@@ -80,23 +56,30 @@ struct FindView: View {
                         Text("Closest fit").tag("fit"); Text("Lowest calories").tag("lean"); Text("Most protein").tag("protein")
                     }
                 }.pickerStyle(.menu).labelsHidden()
-                Toggle(isOn: $query.customise) {
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text("Customise items to fit")
-                        Text("Take off sauce or cheese, or add another patty or fillet").font(.roboto(.caption)).foregroundStyle(.secondary)
+                DisclosureGroup(isExpanded: $moreOpen) {
+                    Toggle(isOn: $query.customise) {
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("Customise items to fit")
+                            Text("Take off sauce or cheese, or add another patty or fillet").font(.roboto(.caption)).foregroundStyle(.secondary)
+                        }
                     }
-                }
-                DisclosureGroup("Macro limits") {
                     OptionalNumberField(title: "Carbs up to (g)", value: $query.carbs)
                     OptionalNumberField(title: "Fat up to (g)", value: $query.fat)
                     Text("Macro limits leave out items with missing values.").font(.roboto(.caption)).foregroundStyle(.secondary)
+                    NavigationLink { DietNeedsView() } label: {
+                        LabeledContent {
+                            Text(query.diet.isEmpty ? "None" : query.diet.summary).lineLimit(2).multilineTextAlignment(.trailing)
+                        } label: { Label("Dietary needs", systemImage: "leaf") }
+                    }
+                } label: {
+                    LabeledContent("More options", value: moreSummary)
                 }
-                Button { useRemaining() } label: { Label("Use what's left of today's targets", systemImage: "arrow.down.forward.circle") }
-                    .font(.roboto(.subheadline))
-                NavigationLink { DietNeedsView() } label: {
-                    LabeledContent {
-                        Text(query.diet.isEmpty ? "None" : query.diet.summary).lineLimit(2).multilineTextAlignment(.trailing)
-                    } label: { Label("Dietary needs", systemImage: "leaf") }
+            } header: {
+                HStack {
+                    Text("An order that fits")
+                    Spacer()
+                    Button { useRemaining() } label: { Label("Use what's left today", systemImage: "arrow.down.forward.circle") }
+                        .font(.roboto(.subheadline, weight: .medium)).textCase(nil)
                 }
             }
             Section {
@@ -129,6 +112,8 @@ struct FindView: View {
             }
         }
         .navigationTitle("Find a meal")
+        .navigationDestination(isPresented: $searchingFoods) { BrowseView(startSearching: true) }
+        .navigationDestination(isPresented: $browsing) { BrowseView() }
         .navigationDestination(item: $asking) { text in AskLeanrView(question: text).onAppear { FeatureTips.markUsed(.askLeanr) } }
         .toolbar { NavigationLink { SourcesView() } label: { Image(systemName: "info.circle") }.accessibilityLabel("Menu sources") }
         .onAppear { if !initialized { query.calories = store.goals.mealCal; query.protein = store.goals.mealProtein; initialized = true } }
@@ -147,6 +132,15 @@ struct FindView: View {
         guard !text.isEmpty else { return }
         asking = text
     }
+    /// What is set inside "More options", so a closed section still tells you when a filter is on.
+    private var moreSummary: String {
+        var parts: [String] = []
+        if !query.customise { parts.append("No customising") }
+        if query.carbs != nil || query.fat != nil { parts.append("Macro limits") }
+        if !query.diet.isEmpty { parts.append("Dietary needs") }
+        return parts.isEmpty ? "Customising" : parts.joined(separator: ", ")
+    }
+
     private func useRemaining() {
         let total = Nutrition((store.data.logs[dayKey(Date())] ?? []).flatMap(\.items))
         query.calories = max(0, (store.goals.values["cal"] ?? 2200) - total.cal)

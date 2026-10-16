@@ -11,7 +11,7 @@ import UniformTypeIdentifiers
         defer { try? FileManager.default.removeItem(at: root) }
         let catalogURL = URL(fileURLWithPath: CommandLine.arguments[1])
         let catalog = try JSONDecoder().decode(MenuCatalog.self,from: Data(contentsOf: catalogURL))
-        assert(catalog.foods.count == 1478)
+        assert(catalog.foods.count == 1489)
         assert(Set(catalog.foods.map(\.chain)).isSubset(of: Set(catalog.chains.map(\.id))))
         // A juice bar has no mains, so its drinks are the order.
         let juice = MealFinder.find(catalog.foods, query: FindQuery(chains: ["boost"], calories: 700, protein: 25, maxItems: 1))

@@ -29,9 +29,17 @@ struct MealView: View {
                         if count > 0 { Text("\(count)").font(.roboto(.subheadline)).foregroundStyle(.secondary).monospacedDigit() }
                     }
                 }
-            } footer: { Text("Your saved foods, recipes and custom orders.") }
+            }
             Section {
-                if store.data.tray.isEmpty { ContentUnavailableView("Build your meal", systemImage: "fork.knife", description: Text("Search the menu or add an order from Find.")) }
+                // A short prompt rather than a full-height empty state, so the log shortcuts below stay on screen.
+                if store.data.tray.isEmpty {
+                    Label {
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("Build your meal").font(.roboto(.headline))
+                            Text("Add foods here, or send an order from Find.").font(.roboto(.caption)).foregroundStyle(.secondary)
+                        }
+                    } icon: { Image(systemName: "fork.knife").foregroundStyle(.secondary) }
+                }
                 ForEach(store.data.tray) { item in
                     VStack(alignment: .leading, spacing: 8) {
                       HStack(spacing: 12) {
@@ -105,7 +113,7 @@ struct MealView: View {
                                 .accessibilityLabel("Add \(meal.name) to your meal")
                         }.padding(.vertical, 2)
                     }.onDelete { offsets in store.change(undo: "Deleted saved meal") { $0.meals.remove(atOffsets: offsets) } }
-                } header: { Text("Saved meals") } footer: { Text("Tap a saved meal to rename it or add and remove items.") }
+                } header: { Text("Saved meals") }
             }
             LeftTodaySection(model: left, mealTime: mealTime)
         }.navigationTitle("This meal")

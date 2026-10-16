@@ -38,7 +38,7 @@ struct NearbyView: View {
             }
             .mapControls { MapUserLocationButton() }
             // A shorter map at the largest text sizes leaves room for the restaurant list.
-            .frame(height: typeSize.isAccessibilitySize ? 200 : 300)
+            .frame(height: typeSize.isAccessibilitySize ? 200 : 250)
             LeanrList {
                 if let area {
                     Section {
@@ -190,28 +190,63 @@ struct NearbyRow: View {
     @Environment(\.dynamicTypeSize) private var typeSize
     var body: some View {
         let big = typeSize.isAccessibilitySize
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: big ? 8 : 6) {
             HStack(alignment: .firstTextBaseline) {
                 Text(showChain ? store.chainName(place.chain) : (place.item.name ?? store.chainName(place.chain))).font(.roboto(.headline))
                 Spacer()
                 Text(place.distanceText).font(.roboto(.subheadline)).foregroundStyle(.secondary).monospacedDigit()
             }
             if !place.address.isEmpty { Text(place.address).font(.roboto(.caption)).foregroundStyle(.secondary) }
-            PlaceHoursView(place: place)
-            DeliveryLine(place: place)
-            // Side by side normally; stacked full width at the largest sizes, where they'd shrink to "…".
-            (big ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8)) : AnyLayout(HStackLayout())) {
-                Button { place.directions() } label: { IconText("Directions", systemImage: "arrow.triangle.turn.up.right.diamond").frame(maxWidth: big ? .infinity : nil, alignment: .leading) }
-                if let app = ChainPlace.all[place.chain] {
-                    Button { Task { await location.openApp(app) } } label: { IconText(app.launchTitle, systemImage: "arrow.up.forward.app").frame(maxWidth: big ? .infinity : nil, alignment: .leading) }
+            if big {
+                PlaceHoursView(place: place)
+                DeliveryLine(place: place)
+                // Stacked full width at the largest sizes, where they'd shrink to "…".
+                VStack(alignment: .leading, spacing: 8) {
+                    directions(iconOnly: false)
+                    appButton(iconOnly: false)
+                }.buttonStyle(.bordered).font(.roboto(.subheadline))
+                if let showOptions { optionsButton(showOptions) }
+            } else {
+                // Hours and delivery share a line, and the actions share the next one, so each restaurant takes about half the height.
+                HStack(spacing: 14) {
+                    PlaceHoursView(place: place, compact: true).fixedSize()
+                    DeliveryLine(place: place, compact: true)
+                    Spacer(minLength: 0)
                 }
-            }.buttonStyle(.bordered).font(.roboto(.subheadline)).lineLimit(big ? nil : 1).minimumScaleFactor(big ? 1 : 0.8)
-            if let showOptions {
-                Button(action: showOptions) {
-                    IconText("Show \(store.chainName(place.chain)) options", systemImage: "list.bullet").frame(maxWidth: .infinity)
-                }.buttonStyle(.borderedProminent).font(.roboto(.subheadline, weight: .semibold))
+                HStack(spacing: 8) {
+                    if let showOptions {
+                        optionsButton(showOptions)
+                        directions(iconOnly: true)
+                        appButton(iconOnly: true)
+                    } else {
+                        directions(iconOnly: false)
+                        appButton(iconOnly: false)
+                    }
+                }.buttonStyle(.bordered).font(.roboto(.subheadline))
             }
         }.padding(.vertical, 4)
+    }
+
+    private func optionsButton(_ action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            IconText("Show \(store.chainName(place.chain)) options", systemImage: "list.bullet").frame(maxWidth: .infinity).lineLimit(1).minimumScaleFactor(0.8)
+        }.buttonStyle(.borderedProminent).font(.roboto(.subheadline, weight: .semibold))
+    }
+
+    private func directions(iconOnly: Bool) -> some View {
+        Button { place.directions() } label: {
+            if iconOnly { Image(systemName: "arrow.triangle.turn.up.right.diamond").frame(minWidth: 24, minHeight: 22) }
+            else { IconText("Directions", systemImage: "arrow.triangle.turn.up.right.diamond").frame(maxWidth: .infinity, alignment: .leading) }
+        }.accessibilityLabel("Directions to \(store.chainName(place.chain))")
+    }
+
+    @ViewBuilder private func appButton(iconOnly: Bool) -> some View {
+        if let app = ChainPlace.all[place.chain] {
+            Button { Task { await location.openApp(app) } } label: {
+                if iconOnly { Image(systemName: "arrow.up.forward.app").frame(minWidth: 24, minHeight: 22) }
+                else { IconText(app.launchTitle, systemImage: "arrow.up.forward.app").frame(maxWidth: .infinity, alignment: .leading) }
+            }.accessibilityLabel(app.launchTitle)
+        }
     }
 }
 

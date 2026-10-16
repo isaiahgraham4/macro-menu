@@ -6,6 +6,7 @@ struct ProgressTabView: View {
     @Environment(AppStore.self) private var store
     @Environment(HealthSync.self) private var health
     @AppStorage("progress.range") private var range = 30
+    @AppStorage(ProgressPage.storageKey) private var pageRaw = ProgressPage.overview.rawValue
     @AppStorage(MacroColours.proteinKey) private var proteinColour = "blue"
     @AppStorage(MacroColours.carbsKey) private var carbsColour = "orange"
     @AppStorage(MacroColours.fatKey) private var fatColour = "red"
@@ -17,16 +18,23 @@ struct ProgressTabView: View {
         ProgressBreakdown.make(store.data, goals: store.goals, days: ProgressBreakdown.ranges.contains(range) ? range : 30)
     }
     private var trend: [WeightTrend.Point] { WeightTrend.points(store.data.weightLog) }
+    private var page: ProgressPage { ProgressPage(rawValue: pageRaw) ?? .overview }
 
     var body: some View {
         let breakdown = breakdown
         LeanrList {
             Section {
-                Picker("Range", selection: $range) {
-                    Text("7 days").tag(7); Text("30 days").tag(30); Text("90 days").tag(90)
+                Picker("Show", selection: $pageRaw) {
+                    ForEach(ProgressPage.allCases) { Text($0.title).tag($0.rawValue) }
                 }.pickerStyle(.segmented)
+                // The range changes the graphs, so Overview (check-in, insights and this week) leaves it out.
+                if page != .overview {
+                    Picker("Range", selection: $range) {
+                        Text("7 days").tag(7); Text("30 days").tag(30); Text("90 days").tag(90)
+                    }.pickerStyle(.segmented)
+                }
             }
-            ForEach(ProgressPart.shown(order: orderText, hidden: hiddenText)) { part in
+            ForEach(ProgressPart.shown(order: orderText, hidden: hiddenText).filter { $0.page == page }) { part in
                 section(part, breakdown)
             }
         }
@@ -72,9 +80,7 @@ struct ProgressTabView: View {
                 ForEach(insights) { insight in
                     Label { Text(insight.text) } icon: { Image(systemName: insight.systemImage).foregroundStyle(.tint) }
                 }
-            } header: { Text("Insights") } footer: {
-                Text("Patterns from the days you logged in the last \(days) days. They change as you log more.")
-            }
+            } header: { Text("Insights · last \(days) days") }
         }
     }
 
@@ -286,6 +292,20 @@ struct ProgressTabView: View {
     }
 }
 
+/// Progress is split into three pages so each one fits on a screen or two, instead of one long scroll.
+enum ProgressPage: String, CaseIterable, Identifiable {
+    case overview, body, eating
+    var id: Self { self }
+    static let storageKey = "progress.page"
+    var title: String {
+        switch self {
+        case .overview: "Overview"
+        case .body: "Body"
+        case .eating: "Eating"
+        }
+    }
+}
+
 /// The sections of the Progress tab, in the order and with the ones hidden that you chose.
 enum ProgressPart: String, CaseIterable, Identifiable {
     case checkIn, insights, weight, steps, activeEnergy, body, week, calories, averages, macros, meals, contributors
@@ -307,6 +327,14 @@ enum ProgressPart: String, CaseIterable, Identifiable {
         case .macros: "Where the calories come from"
         case .meals: "By meal"
         case .contributors: "Biggest contributors"
+        }
+    }
+    /// The page the section sits on.
+    var page: ProgressPage {
+        switch self {
+        case .checkIn, .insights, .week: .overview
+        case .weight, .body, .steps, .activeEnergy: .body
+        case .calories, .averages, .macros, .meals, .contributors: .eating
         }
     }
     var systemImage: String {
