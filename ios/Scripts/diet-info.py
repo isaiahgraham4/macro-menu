@@ -9,6 +9,9 @@ Every item gets diet info only from the restaurant's own words, and only where t
 - Descriptions: the item descriptions in Hungry Jack's, Oporto's and Red Rooster's ordering menus and on Domino's product pages.
 - Names: Guzman y Gomez and Zambrero name every item by its filling, and KFC's are all chicken unless the name says otherwise
   (bacon is named). Names that don't say what's inside (a Stacker, a combo, anything with gravy) stay unknown.
+- KFC's ordering catalogue (kfc-descriptions.json, read once in a normal browser): each item's description and its Recipe list
+  of what comes on it, so a combo that lists its parts ("Burger & 1 Regular Pepsi Max") is known. Every KFC main is chicken,
+  with bacon named; chips (their seasoning), gravy and a drink that isn't named keep an item unknown.
 - Labels and allergens: Nando's, Hungry Jack's and Grill'd publish allergens per item, and Nando's and Grill'd label vegetarian
   and vegan items. "May contain" is kept apart from "contains".
 - Allergen guides (allergen-guides.py, run before this): Domino's, Boost Juice, Oporto, Red Rooster, Spud Bar, Schnitz, Zambrero,
@@ -185,6 +188,7 @@ def build():
     subway = json.loads((HERE / "subway-ingredients.json").read_text())
     lookups = {chain: {norm(name): value for name, value in source[chain].items()} for chain in ("hj", "oporto", "rr", "dominos")}
     guides = json.loads(GUIDES.read_text())["items"] if GUIDES.exists() else {}
+    kfc_said = json.loads((HERE / "kfc-descriptions.json").read_text())["items"] if (HERE / "kfc-descriptions.json").exists() else {}
     out = {}
 
     def subway_parts(name):
@@ -270,6 +274,15 @@ def build():
                 info = from_text(name, "name")
         elif chain in ("gyg", "zam"):
             info = from_text(name, "name")
+        elif chain == "kfc" and name in kfc_said:
+            said = kfc_said[name]
+            # "Chicken breast meat" names the meat, so it doesn't count as some meat that can't be placed.
+            text = re.sub(r"breast meat", "breast", f"{name} , {said['text']} , {', '.join(said.get('recipe', []))}")
+            found, unsure = meats(text)
+            # The chips' seasoning, gravy or a drink that isn't named could hold anything.
+            hidden = re.search(r"(?<!corn )\bchips\b|gravy|season|\bstock\b|\bdrink\b", text, re.I)
+            if not unsure and not hidden:
+                info = entry(found | {"chicken"} if food["cat"] == "main" else found, "description")
         elif chain == "kfc":
             # Everything named for its chicken, with bacon named; combos, packs and Stackers don't say all that's in them.
             if not re.search(r"stacker|combo|pack|box|bucket|feast|meal|bowl|gravy", name, re.I):

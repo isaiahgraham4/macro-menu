@@ -64,8 +64,8 @@ import UniformTypeIdentifiers
         assert(byID["hj:whopper"]!.diet?.meat == ["beef"] && !vegetarian.allows(byID["hj:whopper"]!) && noPork.allows(byID["hj:whopper"]!))
         assert(vegetarian.allows(byID["hj:plant-based-whopper"]!) && vegetarian.allows(byID["grilld:garden-goodness"]!))
         assert(!noPork.allows(byID["dominos:hawaiian-1-slice-"]!) && !noBeef.allows(byID["dominos:pepperoni-1-slice-"]!))
-        // Names that don't say everything stay unknown: a Stacker, the B.M.T.'s "meats", seasoned chips.
-        for id in ["kfc:zinger-stacker-burger", "sub:6-italian-b-m-t-", "oporto:chips"] {
+        // Items whose words don't say everything stay unknown: a combo with chips and any drink, the B.M.T.'s "meats", seasoned chips.
+        for id in ["kfc:zinger-protein-bowl-combo-regular-", "sub:6-italian-b-m-t-", "oporto:chips"] {
             assert(byID[id]!.diet?.meat == nil && !vegetarian.allows(byID[id]!) && !noPork.allows(byID[id]!), id)
         }
         let glutenFree = DietFilter(options: [.gluten])
@@ -82,6 +82,11 @@ import UniformTypeIdentifiers
         let wheatUnknown = catalog.foods.first { ($0.diet?.al ?? []).contains("gluten") && ($0.diet?.unk ?? []).contains("wheat") }!
         assert(!DietFilter(options: [.wheat]).allows(wheatUnknown))
         assert(!DietFilter(options: [.wheat]).allows(byID["grilld:simply-grill-d"]!) && DietInfo.guess("Sultanas").al == ["sulphites"])
+        // KFC's own descriptions: a combo that lists its parts is known, every main is chicken, and chips or gravy keep an item unknown.
+        let noRedMeat = DietFilter(options: [.noBeef, .noPork])
+        assert(byID["kfc:chris-big-bro-combo-regular-"]!.diet?.meat == ["chicken"] && noRedMeat.allows(byID["kfc:chris-big-bro-combo-regular-"]!))
+        assert(noRedMeat.allows(byID["kfc:original-crispy-burger"]!) && byID["kfc:original-crispy-bacon-cheese-burger"]!.diet?.meat == ["chicken", "pork"])
+        assert(byID["kfc:go-bucket-3-nuggets"]!.diet?.meat == nil && byID["kfc:chips-regular-"]!.diet?.meat == nil && vegetarian.allows(byID["kfc:coleslaw-regular-"]!))
         // A tap on a widget reloads that widget first, and only the widgets it changes.
         var widgetBefore = WidgetCalories(target: 2200, dailyCalories: ["2026-10-15": 400])
         widgetBefore.water = ["2026-10-15": 250]; widgetBefore.planned = []; widgetBefore.plannedDay = "2026-10-15"

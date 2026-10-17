@@ -84,7 +84,10 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   McDonald's and KFC show theirs only inside their own pages (the item pages' ingredient and allergen lists, and KFC's
   guide panels), so those were read once in a normal browser and saved as `mcd-allergens.json` and `kfc-allergens.json`;
   Subway's allergen guide PDF is read by the script. KFC's combos, boxes and feasts have no allergen panel, so they stay
-  unknown.
+  unknown. What meat KFC items have comes from KFC's ordering catalogue, also read once in a browser and saved as
+  `kfc-descriptions.json` (each item's description and its Recipe list): every main is chicken, with bacon named, and a
+  combo that lists its parts ("Burger & 1 Regular Pepsi Max") is known; chips (their seasoning), gravy and an unnamed
+  drink keep an item unknown.
 - Ask Leanr (Find, at the top): a question in plain words ("vegetarian, 40 g protein under 600 Cal at Nando's") becomes an
   order search. `AskLeanr.parse` reads numbers, restaurants, item counts and needs; with Apple Intelligence, `AskLeanrModel`
   fills in what the rules miss, but only numbers that are in the question. What was understood is shown as chips.

@@ -2022,8 +2022,10 @@
    ]
   },
   "kfc:zinger-protein-bowl": {
-   "meat": null,
-   "src": null,
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
    "al": [
     "egg",
     "gluten",
@@ -2036,16 +2038,20 @@
    ]
   },
   "kfc:zinger-protein-pack-regular-": {
-   "meat": null,
-   "src": null
+   "meat": [
+    "chicken"
+   ],
+   "src": "description"
   },
   "kfc:zinger-protein-bowl-combo-regular-": {
    "meat": null,
    "src": null
   },
   "kfc:chris-big-bro-combo-regular-": {
-   "meat": null,
-   "src": null,
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
    "al": [
     "gluten",
     "milk",
@@ -2058,8 +2064,10 @@
    ]
   },
   "kfc:original-crispy-burger": {
-   "meat": null,
-   "src": null,
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
    "al": [
     "egg",
     "gluten",
@@ -2071,9 +2079,10 @@
   },
   "kfc:original-crispy-bacon-cheese-burger": {
    "meat": [
+    "chicken",
     "pork"
    ],
-   "src": "name",
+   "src": "description",
    "al": [
     "gluten",
     "milk",
@@ -2086,8 +2095,11 @@
    ]
   },
   "kfc:original-crispy-bbq-bacon-stacker-burger": {
-   "meat": null,
-   "src": null,
+   "meat": [
+    "chicken",
+    "pork"
+   ],
+   "src": "description",
    "al": [
     "egg",
     "gluten",
@@ -2098,8 +2110,10 @@
    ]
   },
   "kfc:double-tender-burger": {
-   "meat": null,
-   "src": null,
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
    "al": [
     "egg",
     "gluten",
@@ -2113,7 +2127,7 @@
    "meat": [
     "chicken"
    ],
-   "src": "name",
+   "src": "description",
    "al": [
     "egg",
     "gluten",
@@ -2128,7 +2142,7 @@
     "chicken",
     "pork"
    ],
-   "src": "name",
+   "src": "description",
    "al": [
     "egg",
     "gluten",
@@ -2139,8 +2153,10 @@
    ]
   },
   "kfc:zinger-stacker-burger": {
-   "meat": null,
-   "src": null,
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
    "al": [
     "egg",
     "gluten",
@@ -2154,7 +2170,7 @@
    "meat": [
     "chicken"
    ],
-   "src": "name",
+   "src": "description",
    "al": [
     "egg",
     "gluten",
@@ -2168,7 +2184,7 @@
    "meat": [
     "chicken"
    ],
-   "src": "name",
+   "src": "description",
    "al": [
     "egg",
     "gluten",
@@ -2183,11 +2199,13 @@
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "description"
   },
   "kfc:original-crispy-fillet-piece": {
-   "meat": null,
-   "src": null,
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
    "al": [
     "gluten",
     "milk",
@@ -2202,7 +2220,7 @@
    "meat": [
     "chicken"
    ],
-   "src": "name",
+   "src": "description",
    "al": [
     "gluten",
     "milk",
@@ -2217,7 +2235,7 @@
    "meat": [
     "chicken"
    ],
-   "src": "name",
+   "src": "description",
    "al": [
     "egg",
     "gluten",
@@ -2231,7 +2249,7 @@
    "meat": [
     "chicken"
    ],
-   "src": "name",
+   "src": "description",
    "al": [
     "egg",
     "gluten",
@@ -2242,8 +2260,10 @@
    ]
   },
   "kfc:6-pieces-wicked-boneless": {
-   "meat": null,
-   "src": null,
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
    "al": [
     "gluten",
     "milk",
@@ -2258,7 +2278,7 @@
    "meat": [
     "chicken"
    ],
-   "src": "name",
+   "src": "description",
    "al": [
     "gluten",
     "milk",
@@ -2273,7 +2293,7 @@
    "meat": [
     "chicken"
    ],
-   "src": "name",
+   "src": "description",
    "al": [
     "gluten",
     "milk",
@@ -2288,7 +2308,7 @@
    "meat": [
     "chicken"
    ],
-   "src": "name",
+   "src": "description",
    "al": [
     "egg",
     "gluten",
@@ -2301,7 +2321,7 @@
    "meat": [
     "chicken"
    ],
-   "src": "name",
+   "src": "description",
    "al": [
     "egg",
     "gluten",
@@ -2314,7 +2334,7 @@
    "meat": [
     "chicken"
    ],
-   "src": "name",
+   "src": "description",
    "al": [
     "egg",
     "gluten",
@@ -2327,13 +2347,13 @@
    "meat": [
     "chicken"
    ],
-   "src": "name"
+   "src": "description"
   },
   "kfc:6-nuggets": {
    "meat": [
     "chicken"
    ],
-   "src": "name",
+   "src": "description",
    "al": [
     "egg",
     "fish",
@@ -2347,7 +2367,7 @@
    "meat": [
     "chicken"
    ],
-   "src": "name",
+   "src": "description",
    "al": [
     "egg",
     "fish",
@@ -2361,7 +2381,7 @@
    "meat": [
     "chicken"
    ],
-   "src": "name",
+   "src": "description",
    "al": [
     "egg",
     "gluten",
@@ -2374,8 +2394,10 @@
    ]
   },
   "kfc:original-crunch-twister": {
-   "meat": null,
-   "src": null,
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
    "al": [
     "egg",
     "gluten",
@@ -2388,8 +2410,10 @@
    ]
   },
   "kfc:zinger-crunch-bowl": {
-   "meat": null,
-   "src": null,
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
    "al": [
     "egg",
     "gluten",
@@ -2402,8 +2426,10 @@
    ]
   },
   "kfc:original-tenders-crunch-bowl": {
-   "meat": null,
-   "src": null,
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
    "al": [
     "egg",
     "gluten",
@@ -2416,8 +2442,10 @@
    ]
   },
   "kfc:original-bbq-slider": {
-   "meat": null,
-   "src": null,
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
    "al": [
     "egg",
     "gluten",
@@ -2430,8 +2458,10 @@
    ]
   },
   "kfc:original-supercharged-slider": {
-   "meat": null,
-   "src": null,
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
    "al": [
     "egg",
     "gluten",
@@ -2492,15 +2522,17 @@
    ]
   },
   "kfc:coleslaw-regular-": {
-   "meat": null,
-   "src": null,
+   "meat": [],
+   "src": "description",
+   "vg": "vegetarian",
    "al": [
     "egg"
    ]
   },
   "kfc:dinner-roll": {
-   "meat": null,
-   "src": null,
+   "meat": [],
+   "src": "description",
+   "vg": "vegetarian",
    "al": [
     "gluten",
     "sesame",
@@ -2515,8 +2547,10 @@
    "al": []
   },
   "kfc:3-pieces-wicked-boneless": {
-   "meat": null,
-   "src": null,
+   "meat": [
+    "chicken"
+   ],
+   "src": "description",
    "al": [
     "gluten",
     "milk",
@@ -2531,7 +2565,7 @@
    "meat": [
     "chicken"
    ],
-   "src": "name",
+   "src": "description",
    "al": [
     "egg",
     "gluten",
@@ -2546,7 +2580,7 @@
    "meat": [
     "chicken"
    ],
-   "src": "name",
+   "src": "description",
    "al": [
     "gluten",
     "milk",
@@ -2621,8 +2655,9 @@
    ]
   },
   "kfc:crunchy-jalape-o-slaw": {
-   "meat": null,
-   "src": null,
+   "meat": [],
+   "src": "description",
+   "vg": "vegetarian",
    "al": [
     "egg",
     "milk"
@@ -2634,15 +2669,17 @@
    ]
   },
   "kfc:coleslaw-large-": {
-   "meat": null,
-   "src": null,
+   "meat": [],
+   "src": "description",
+   "vg": "vegetarian",
    "al": [
     "egg"
    ]
   },
   "kfc:dipping-sauce-chimichurri-ranch": {
-   "meat": null,
-   "src": null,
+   "meat": [],
+   "src": "description",
+   "vg": "vegetarian",
    "al": [
     "egg",
     "milk"
@@ -2659,7 +2696,7 @@
   },
   "kfc:double-chocolate-mousse": {
    "meat": null,
-   "src": null,
+   "src": "description",
    "al": [
     "milk",
     "soy"
@@ -2730,6 +2767,61 @@
    "vg": "vegetarian"
   },
   "kfc:solo-energy": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "kfc:watermelon-boba-refresher": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "kfc:lychee-boba-refresher": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "kfc:sparkling-raspberry-lemonade": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "kfc:sparkling-peach-pop-lemonade": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "kfc:chocolate-krunch-shake": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "kfc:caramel-krunch-shake": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "kfc:strawberry-krunch-shake": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "kfc:fairy-bread-krunch-shake": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "kfc:pepsi-frozen-spider": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "kfc:mountain-dew-frozen-spider": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "kfc:raspberry-frozen-spider": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian"
