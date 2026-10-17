@@ -89,7 +89,8 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   order search. `AskLeanr.parse` reads numbers, restaurants, item counts and needs; with Apple Intelligence, `AskLeanrModel`
   fills in what the rules miss, but only numbers that are in the question. What was understood is shown as chips.
 - Plan ahead (Today → Log food): set out meals for today and the next six days against the targets, with suggestions to
-  fill the gap. Plans (`AppData.plans`, by day) count for nothing until logged; on the day they appear on Today under
+  fill the gap. Each meal takes a food from search, a scanned barcode (the same scan screen as Today, its button saying
+  "Plan for …"), a description, a saved meal or your usual. Plans (`AppData.plans`, by day) count for nothing until logged; on the day they appear on Today under
   Planned, and a tick logs each one. Past days are pruned. The Planned widget's snapshot holds tomorrow's plan too, so it
   isn't empty after midnight.
 - Import a recipe (My foods): paste a link; the page's schema.org Recipe is read (`RecipeImport`). Save it with the site's

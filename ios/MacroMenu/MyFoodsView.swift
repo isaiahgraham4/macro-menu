@@ -128,6 +128,8 @@ struct FoodEditor: View {
     @State private var draft: Food
     let save: (Food) -> Bool
     let savePortion: ((Portion) -> Bool)?
+    /// The confirm button's words when handing back a portion, e.g. "Plan" from Plan ahead.
+    let logTitle: String
     @State private var servings = 1.0
     /// Logging by weight: how many grams or mL were eaten, instead of a number of servings.
     @State private var byWeight = false
@@ -156,13 +158,13 @@ struct FoodEditor: View {
     /// When logging, also keep the food in My foods. On for barcode products (remembered, shared with the scan screen), off for one-offs.
     @State private var keepInMyFoods: Bool
     static let keepKey = "barcode.saveToMyFoods"
-    init(food: Food?, scannedProduct: BarcodeProduct? = nil, barcode: String? = nil, savePortion: ((Portion) -> Bool)? = nil, save: @escaping (Food) -> Bool) {
+    init(food: Food?, scannedProduct: BarcodeProduct? = nil, barcode: String? = nil, savePortion: ((Portion) -> Bool)? = nil, logTitle: String = "Log food", save: @escaping (Food) -> Bool) {
         var initial = scannedProduct?.food ?? food ?? Food(name: "", kj: 0, cal: 0, p: 0, c: nil, f: nil)
         if let barcode { initial.barcode = barcode }
         _draft = State(initialValue: initial); _energy = State(initialValue: initial.cal); self.save = save
         _per100 = State(initialValue: scannedProduct?.per100 ?? false)
         _servingUnit = State(initialValue: scannedProduct?.unit ?? "g")
-        self.savePortion = savePortion
+        self.savePortion = savePortion; self.logTitle = logTitle
         // Per-100 figures with no pack serving: log by weight, so the grams eaten can be typed straight in.
         _byWeight = State(initialValue: scannedProduct?.per100 == true && savePortion != nil)
         _keepInMyFoods = State(initialValue: initial.barcode != nil && (UserDefaults.standard.object(forKey: Self.keepKey) as? Bool ?? true))
@@ -352,7 +354,7 @@ struct FoodEditor: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button(savePortion == nil ? "Save" : "Log food") {
+                    Button(savePortion == nil ? "Save" : logTitle) {
                         let succeeded: Bool
                         if let savePortion {
                             var item = result

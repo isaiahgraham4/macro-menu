@@ -6,6 +6,7 @@ struct PlanView: View {
     @State private var date: Date = Calendar.current.date(byAdding: .day, value: 1, to: Calendar.current.startOfDay(for: Date())) ?? Date()
     @State private var choosing: MealTime?
     @State private var describing: MealTime?
+    @State private var scanning: MealTime?
     @State private var clearing = false
     @State private var ideas: [Assistant.Suggestion] = []
 
@@ -78,6 +79,11 @@ struct PlanView: View {
                 }, pickTitle: "Plan for \(meal.title)", quickAddLabel: "Plan").toolbar { Button("Done") { choosing = nil } }
             }
         }
+        .sheet(item: $scanning) { meal in
+            BarcodeFoodFlow(savePortion: { store.plan([$0], name: $0.food.name, mealTime: meal, on: date) }, actionTitle: "Plan for \(meal.title)") {
+                store.plan([Portion(food: $0)], name: $0.name, mealTime: meal, on: date)
+            }
+        }
         .sheet(item: $describing) { meal in
             NavigationStack {
                 MealTextView(mealTime: meal, log: { portions, name in store.plan(portions, name: name, mealTime: meal, on: date) }, verb: "Plan")
@@ -105,6 +111,7 @@ struct PlanView: View {
             }
             Menu {
                 Button("Choose a food", systemImage: "magnifyingglass") { choosing = meal }
+                Button("Scan a barcode", systemImage: "barcode.viewfinder") { scanning = meal }
                 Button("Describe it", systemImage: "text.bubble") { describing = meal }
                 if !store.data.meals.isEmpty {
                     Section("Saved meals") {

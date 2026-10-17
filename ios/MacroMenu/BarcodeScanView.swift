@@ -6,6 +6,8 @@ import AVFoundation
 /// Present the scanner immediately; open the editor only after choosing a product or manual entry.
 struct BarcodeFoodFlow: View {
     var savePortion: ((Portion) -> Bool)? = nil
+    /// The words on the log buttons, e.g. "Plan" from Plan ahead.
+    var actionTitle = "Log"
     let save: (Food) -> Bool
     @State private var product: BarcodeProduct?
     @State private var barcode: String?
@@ -13,11 +15,11 @@ struct BarcodeFoodFlow: View {
 
     var body: some View {
         if editing {
-            NavigationStack { FoodEditor(food: nil, scannedProduct: product, barcode: barcode, savePortion: savePortion, save: save) }
+            NavigationStack { FoodEditor(food: nil, scannedProduct: product, barcode: barcode, savePortion: savePortion, logTitle: actionTitle == "Log" ? "Log food" : actionTitle, save: save) }
         } else {
             // Logging (from Today) or saving (from My foods) can happen right on the scan screen; the editor is there for changes.
             BarcodeScanView(dismissAfterUse: false, manualEntry: { barcode = $0; editing = true },
-                            quick: savePortion.map { .log($0) } ?? .save) {
+                            quick: savePortion.map { .log($0) } ?? .save, actionTitle: actionTitle) {
                 product = $0; editing = true
             }
         }
@@ -33,6 +35,7 @@ struct BarcodeScanView: View {
     var manualEntry: ((String?) -> Void)? = nil
     /// What the scan screen can do in one tap, without opening the editor. Nil when the scan just fills in a food being edited.
     var quick: BarcodeQuickActions.Mode? = nil
+    var actionTitle = "Log"
     let use: (BarcodeProduct) -> Void
     @State private var digits = ""
     @State private var pending: String?
@@ -53,7 +56,7 @@ struct BarcodeScanView: View {
                         Text(saved.food.name).font(.roboto(.headline))
                         Text("Nutrition per \(saved.food.serve)").foregroundStyle(.secondary)
                         if let quick {
-                            BarcodeQuickActions(food: saved.food, per100: saved.food.serve.hasPrefix("100 "), inMyFoods: true, mode: quick, nutrition: .compact) { dismiss() }
+                            BarcodeQuickActions(food: saved.food, per100: saved.food.serve.hasPrefix("100 "), inMyFoods: true, mode: quick, actionTitle: actionTitle, nutrition: .compact) { dismiss() }
                         } else {
                             NutritionView(total: Nutrition([Portion(food: saved.food)]), details: true)
                         }
@@ -75,7 +78,7 @@ struct BarcodeScanView: View {
                             .foregroundStyle(.secondary)
                         if let quick {
                             // Logging comes first, so it's reachable without scrolling; the full panel is a tap away.
-                            BarcodeQuickActions(food: product.food, per100: product.per100, inMyFoods: false, mode: quick, nutrition: .summary) { dismiss() }
+                            BarcodeQuickActions(food: product.food, per100: product.per100, inMyFoods: false, mode: quick, actionTitle: actionTitle, nutrition: .summary) { dismiss() }
                             Button("Edit details first") { use(product) }.buttonStyle(.bordered)
                             Text("Check this matches your package before logging.").font(.roboto(.caption)).foregroundStyle(.secondary)
                         } else {
