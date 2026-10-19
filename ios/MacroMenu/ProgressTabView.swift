@@ -123,7 +123,7 @@ struct ProgressTabView: View {
     // MARK: Weight
 
     @ViewBuilder private func weightSection(_ breakdown: ProgressBreakdown) -> some View {
-        let shown = trend.filter { $0.date >= breakdown.start }
+        let shown = Array(trend.suffix(5))
         Section {
             NavigationLink { WeightView() } label: {
                 HStack(spacing: 14) {
@@ -161,24 +161,9 @@ struct ProgressTabView: View {
                 }.padding(.vertical, 4)
             }
             if shown.count >= 2 {
-                Chart {
-                    ForEach(shown, id: \.date) { point in
-                        PointMark(x: .value("Day", point.date), y: .value("Scale", point.kg)).foregroundStyle(.secondary).symbolSize(14)
-                        LineMark(x: .value("Day", point.date), y: .value("Trend", point.trend))
-                            .foregroundStyle(.tint).lineStyle(StrokeStyle(lineWidth: 3)).interpolationMethod(.monotone)
-                    }
-                }
-                .chartYScale(domain: weightDomain(shown))
-                .frame(height: 150)
-                .accessibilityLabel("Weight trend over \(breakdown.days) days")
+                WeighInChart(points: shown).frame(height: 150)
             }
         } header: { Text("Weight") }
-    }
-
-    private func weightDomain(_ points: [WeightTrend.Point]) -> ClosedRange<Double> {
-        let values = points.flatMap { [$0.kg, $0.trend] }
-        guard let low = values.min(), let high = values.max() else { return 0...1 }
-        return (low - 1).rounded(.down)...(high + 1).rounded(.up)
     }
 
     // MARK: Breakdown

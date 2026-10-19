@@ -6,15 +6,12 @@ struct WeightView: View {
     @Environment(HealthSync.self) private var health
     @State private var kg = 0.0
     @State private var date = Date()
-    @State private var range = 90
     @State private var estimating = false
     @State private var goalKG: Double?
     @State private var pace = 0.5
     private var points: [WeightTrend.Point] { WeightTrend.points(store.data.weightLog) }
-    private var shown: [WeightTrend.Point] {
-        let start = Calendar.current.date(byAdding: .day, value: -range, to: Date()) ?? .distantPast
-        return points.filter { $0.date >= start }
-    }
+    /// The last five weigh-ins, oldest first.
+    private var shown: [WeightTrend.Point] { Array(points.suffix(5)) }
     private var weekly: Double? { WeightTrend.weeklyChange(points) }
     private var maintenance: WeightTrend.Maintenance? { WeightTrend.maintenance(logs: store.data.logs, points: points) }
 
@@ -38,27 +35,14 @@ struct WeightView: View {
                     LabeledContent("Last weigh-in") {
                         Text("\(last.kg.kgText) kg · \(dayText(last.date))").monospacedDigit()
                     }
-                    Picker("Range", selection: $range) {
-                        Text("30 days").tag(30); Text("90 days").tag(90); Text("1 year").tag(365)
-                    }.pickerStyle(.segmented)
-                    Chart {
-                        ForEach(shown, id: \.date) { point in
-                            PointMark(x: .value("Day", point.date), y: .value("Scale", point.kg))
-                                .foregroundStyle(.secondary).symbolSize(18)
-                            LineMark(x: .value("Day", point.date), y: .value("Trend", point.trend))
-                                .foregroundStyle(.tint).lineStyle(StrokeStyle(lineWidth: 3)).interpolationMethod(.monotone)
-                        }
-                    }
-                    .chartYScale(domain: yDomain)
-                    .frame(height: 200)
-                    .accessibilityLabel("Weight chart: trend \(last.trend.number) kg")
+                    WeighInChart(points: shown).frame(height: 200)
                 } else {
                     ContentUnavailableView("No weigh-ins yet", systemImage: "scalemass",
                                            description: Text("Log your weight below. A few weigh-ins a week is enough to see your trend."))
                 }
             } footer: {
                 if let last = points.last {
-                    Text("Dots are scale readings; the line is your trend, which smooths out day-to-day swings from water and food."
+                    Text("Your last five weigh-ins, joined in order. The trend figure above smooths out day-to-day swings from water and food."
                          + (WeightTrend.gapText(last).map { " " + $0 } ?? ""))
                 }
             }
@@ -221,11 +205,6 @@ struct WeightView: View {
         if store.change(undo: "Set goal weight to \(goal.kg.kgText) kg", { $0.weightGoal = goal }) { goalKG = goal.kg }
     }
 
-    private var yDomain: ClosedRange<Double> {
-        let values = shown.flatMap { [$0.kg, $0.trend] }
-        guard let low = values.min(), let high = values.max() else { return 0...1 }
-        return (low - 1).rounded(.down)...(high + 1).rounded(.up)
-    }
     private func signed(_ value: Double) -> String { (value > 0 ? "+" : value < 0 ? "−" : "") + abs(value).number }
     private func save() {
         let entry = WeightEntry(date: date, kg: kg.hundredth)
@@ -233,3 +212,30 @@ struct WeightView: View {
     }
 }
 
+/// The last few weigh-ins as dots joined in order, each spaced evenly and labelled with its weight and day.
+struct WeighInChart: View {
+    var points: [WeightTrend.Point]
+
+    var body: some View {
+        Chart {
+            ForEach(points, id: \.date) { point in
+                LineMark(x: .value("Day", Self.label(point.date)), y: .value("Weight", point.kg))
+                    .foregroundStyle(.tint).lineStyle(StrokeStyle(lineWidth: 2)).interpolationMethod(.linear)
+                PointMark(x: .value("Day", Self.label(point.date)), y: .value("Weight", point.kg))
+                    .foregroundStyle(.tint).symbolSize(60)
+                    .annotation(position: .top, spacing: 4) {
+                        Text(point.kg.kgText).font(.roboto(.caption2)).foregroundStyle(.secondary).monospacedDigit()
+                    }
+            }
+        }
+        .chartYScale(domain: domain)
+        .accessibilityLabel("Last \(points.count) weigh-ins" + (points.last.map { ", most recent \($0.kg.kgText) kg" } ?? ""))
+    }
+
+    private var domain: ClosedRange<Double> {
+        let values = points.map(\.kg)
+        guard let low = values.min(), let high = values.max() else { return 0...1 }
+        return (low - 1).rounded(.down)...(high + 1).rounded(.up)
+    }
+    private static func label(_ date: Date) -> String { date.formatted(.dateTime.day().month(.abbreviated)) }
+}

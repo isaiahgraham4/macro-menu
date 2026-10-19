@@ -9,11 +9,18 @@ struct PlanView: View {
     @State private var scanning: MealTime?
     @State private var clearing = false
     @State private var ideas: [Assistant.Suggestion] = []
+    @AppStorage(MacroColours.proteinKey) private var proteinColour = "blue"
+    @AppStorage(MacroColours.carbsKey) private var carbsColour = "orange"
+    @AppStorage(MacroColours.fatKey) private var fatColour = "red"
 
     private var key: String { dayKey(date) }
     private var entries: [LogEntry] { MealPlan.entries(store.data, on: key) }
     private var goals: Goals { store.goals }
-    private var total: Nutrition { Nutrition(entries.flatMap(\.items)) }
+    /// What's already logged for the day, so planning today counts it.
+    private var eaten: Nutrition { Nutrition((store.data.logs[key] ?? []).flatMap(\.items)) }
+    private var planned: Nutrition { Nutrition(entries.flatMap(\.items)) }
+    /// Logged food plus the plan: where the day ends up if you eat it all.
+    private var total: Nutrition { Nutrition((store.data.logs[key] ?? []).flatMap(\.items) + entries.flatMap(\.items)) }
     /// The first meal with nothing in it yet, where a suggestion goes.
     private var openMeal: MealTime { MealTime.allCases.first { meal in !entries.contains { $0.mealTime == meal } } ?? .snacks }
 
@@ -27,17 +34,23 @@ struct PlanView: View {
             Section {
                 VStack(spacing: 12) {
                     if let cal = goals.values["cal"] {
-                        TargetBar(label: "Calories", value: total.cal.rounded(), target: cal, unit: "Cal", minimum: false, style: AnyShapeStyle(.tint))
+                        EatenPlannedBar(label: "Calories", eaten: eaten.cal, planned: planned.cal, target: cal, unit: "Cal", minimum: false, colour: .accentColor)
                     }
-                    if let protein = goals.values["p"] {
-                        TargetBar(label: "Protein", value: total.p.rounded(), target: protein, unit: "g", minimum: true, style: AnyShapeStyle(MacroColours.colour("p", choices: [:])))
+                    ForEach(Self.macros, id: \.key) { macro in
+                        if let target = goals.values[macro.key] {
+                            EatenPlannedBar(label: macro.label, eaten: eaten.value(macro.key), planned: planned.value(macro.key), target: target, unit: "g",
+                                            minimum: goals.minimums.contains(macro.key), colour: colour(macro.key))
+                        } else {
+                            // No target set: still show the day's running total.
+                            HStack {
+                                Text(macro.label).font(.roboto(.caption, weight: .medium)).foregroundStyle(.secondary)
+                                Spacer()
+                                Text("\(total.value(macro.key).rounded().number) g").font(.roboto(.caption)).monospacedDigit()
+                            }
+                        }
                     }
                 }.padding(.vertical, 6)
-            } header: { Text("Planned so far") } footer: {
-                if let left = goals.values["cal"].map({ $0 - total.cal }), left > 0, !entries.isEmpty {
-                    Text("\(left.rounded().number) Cal left to plan\(goals.values["p"].map { $0 - total.p > 0 ? ", including \(($0 - total.p).rounded().number) g protein" : "" } ?? "").")
-                }
-            }
+            } header: { Text(eaten.cal > 0 ? "Eaten and planned" : "Planned so far") } footer: { Text(leftText) }
             ForEach(MealTime.allCases) { meal in mealSection(meal) }
             if !ideas.isEmpty {
                 Section {
@@ -97,6 +110,30 @@ struct PlanView: View {
                 }
             }
         }
+    }
+
+    private static let macros: [(key: String, label: String)] = [("p", "Protein"), ("c", "Carbs"), ("f", "Fat")]
+
+    private func colour(_ key: String) -> Color {
+        MacroColours.colour(key, choices: Premium.isUnlocked ? ["p": proteinColour, "c": carbsColour, "f": fatColour] : [:])
+    }
+
+    /// What the day leaves after the plan, counting anything already logged.
+    private var leftText: String {
+        guard !entries.isEmpty else { return "" }
+        var parts: [String] = []
+        if let cal = goals.values["cal"] {
+            let left = cal - total.cal
+            parts.append(left >= 0 ? "\(left.rounded().number) Cal" : "\(abs(left).rounded().number) Cal over")
+        }
+        for macro in Self.macros {
+            guard let target = goals.values[macro.key] else { continue }
+            let left = target - total.value(macro.key)
+            parts.append(left >= 0 ? "\(left.rounded().number) g \(macro.label.lowercased())" : "\(abs(left).rounded().number) g \(macro.label.lowercased()) over")
+        }
+        guard !parts.isEmpty else { return "" }
+        let logged = eaten.cal > 0 ? "Counts the \(eaten.cal.rounded().number) Cal you've logged plus \(planned.cal.rounded().number) Cal planned. " : ""
+        return logged + "After this plan: " + parts.joined(separator: ", ") + "."
     }
 
     private func mealSection(_ meal: MealTime) -> some View {
@@ -188,5 +225,42 @@ struct PlannedSection: View {
                 }
             } header: { Text("Planned") } footer: { Text("Tick a meal when you've eaten it to log it.") }
         }
+    }
+}
+
+/// A target bar split in two: what's eaten in the full colour, then what's planned in a lighter shade of it.
+private struct EatenPlannedBar: View {
+    var label: String
+    var eaten: Double
+    var planned: Double
+    var target: Double
+    var unit: String
+    var minimum: Bool
+    var colour: Color
+
+    var body: some View {
+        let total = (eaten + planned).rounded()
+        let over = !minimum && total > target
+        let figures = Text("\(total.number) / \(target.number) \(unit)").font(.roboto(.caption)).monospacedDigit()
+            .foregroundStyle(over ? AnyShapeStyle(.orange) : AnyShapeStyle(.primary))
+        let name = Text(label).font(.roboto(.caption, weight: .medium)).foregroundStyle(.secondary)
+        VStack(alignment: .leading, spacing: 5) {
+            ViewThatFits(in: .horizontal) {
+                HStack(alignment: .firstTextBaseline) { name.fixedSize(); Spacer(minLength: 4); figures.fixedSize() }
+                VStack(alignment: .leading, spacing: 2) { name; figures }
+            }
+            GeometryReader { geo in
+                let scale = geo.size.width / max(target, 0.001)
+                let eatenWidth = min(max(eaten * scale, 0), geo.size.width)
+                let plannedWidth = min(max(planned * scale, 0), geo.size.width - eatenWidth)
+                ZStack(alignment: .leading) {
+                    Capsule().fill(.quaternary)
+                    Capsule().fill(colour.opacity(0.4)).frame(width: eatenWidth + plannedWidth)
+                    Capsule().fill(colour).frame(width: eatenWidth)
+                }
+            }.frame(height: 6)
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(label): \(eaten.rounded().number) eaten and \(planned.rounded().number) planned, of \(target.number) \(unit)")
     }
 }
