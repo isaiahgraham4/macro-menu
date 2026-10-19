@@ -427,9 +427,15 @@ import UniformTypeIdentifiers
         let flat = WeightTrend.points((0..<10).map { WeightEntry(date: day($0), kg: 80) }, calendar: calendar)
         assert(flat.count == 10 && flat.allSatisfy { abs($0.trend - 80) < 0.0001 })
         let jump = WeightTrend.points([WeightEntry(date: day(0), kg: 80), WeightEntry(date: day(1), kg: 82)], calendar: calendar)
-        assert(abs(jump[1].trend - 80.2) < 0.0001)
+        assert(abs(jump[1].trend - 80.4) < 0.0001, "each day moves the trend a fifth of the way")
+        // A gap is filled along a line between the two readings (80⅔, 81⅓, then 82), not as three days at 82.
         let gap = WeightTrend.points([WeightEntry(date: day(0), kg: 80), WeightEntry(date: day(3), kg: 82)], calendar: calendar)
-        assert(abs(gap[1].trend - (80 + 2 * (1 - pow(0.9, 3)))) < 0.0001)
+        assert(abs(gap[1].trend - 80.69867) < 0.0001)
+        // Steady at 110.5, then a 109.3: the trend reads about 110.3, and catches up within a week of staying there.
+        let drop = WeightTrend.points((0..<14).map { WeightEntry(date: day($0), kg: 110.5) } + (14..<21).map { WeightEntry(date: day($0), kg: 109.3) }, calendar: calendar)
+        assert(abs(drop[14].trend - 110.26) < 0.0001 && abs(drop[20].trend - 109.3) < 0.3)
+        assert(WeightTrend.daysToCatchUp(from: 110.4, to: 109.3) == 8 && WeightTrend.daysToCatchUp(from: 80.1, to: 80) == 0)
+        assert(WeightTrend.gapText(drop[14])?.hasPrefix("Your trend is 1 kg above your last weigh-in") == true && WeightTrend.gapText(flat[9]) == nil)
         let sameDay = WeightTrend.points([WeightEntry(date: day(0), kg: 80), WeightEntry(date: day(0).addingTimeInterval(3600), kg: 81)], calendar: calendar)
         assert(sameDay.count == 1 && sameDay[0].kg == 81)
         assert(WeightTrend.points([WeightEntry(date: day(0), kg: 5)], calendar: calendar).isEmpty)
@@ -700,7 +706,7 @@ import UniformTypeIdentifiers
         let review = WeeklyReview.make(week, goals: Goals(), ending: day(6), calendar: calendar)
         assert(review.loggedDays == 3 && review.averageCalories == 720 && abs(review.averageProtein! - 148.0 / 3) < 0.001)
         assert(review.calorieTarget == 2200 && review.proteinTarget == 150 && review.proteinDays == 0 && review.calorieDays == 3)
-        assert(abs(review.weightChange! + (1 - pow(0.9, 8))) < 0.0001 && review.topMeals == [WeeklyReview.Meal(name: "Wrap", count: 4)])
+        assert(abs(review.weightChange! + 0.58389) < 0.0001 && review.topMeals == [WeeklyReview.Meal(name: "Wrap", count: 4)])
         assert(review.totalCalories == 2160 && review.totalCalorieTarget == 6600)
         assert(review.summary == "Logged 3 of 7 days · 2,160 Cal in total · avg 720 · protein target hit 0 days · trend −0.6 kg.")
         // Recently logged foods: newest first, each once, and nothing from before the window.

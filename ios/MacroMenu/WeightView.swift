@@ -35,6 +35,9 @@ struct WeightView: View {
                             }
                         }
                     }
+                    LabeledContent("Last weigh-in") {
+                        Text("\(last.kg.kgText) kg · \(dayText(last.date))").monospacedDigit()
+                    }
                     Picker("Range", selection: $range) {
                         Text("30 days").tag(30); Text("90 days").tag(90); Text("1 year").tag(365)
                     }.pickerStyle(.segmented)
@@ -54,7 +57,10 @@ struct WeightView: View {
                                            description: Text("Log your weight below. A few weigh-ins a week is enough to see your trend."))
                 }
             } footer: {
-                if !points.isEmpty { Text("Dots are scale readings; the line is your trend, which smooths out day-to-day swings from water and food.") }
+                if let last = points.last {
+                    Text("Dots are scale readings; the line is your trend, which smooths out day-to-day swings from water and food."
+                         + (WeightTrend.gapText(last).map { " " + $0 } ?? ""))
+                }
             }
 
             goalSection
@@ -127,6 +133,13 @@ struct WeightView: View {
 
     private func dateText(_ date: Date) -> String { date.formatted(.dateTime.day().month(.abbreviated).year()) }
 
+    /// "today", "yesterday" or "14 Oct".
+    private func dayText(_ date: Date) -> String {
+        if Calendar.current.isDateInToday(date) { return "today" }
+        if Calendar.current.isDateInYesterday(date) { return "yesterday" }
+        return date.formatted(.dateTime.day().month(.abbreviated))
+    }
+
     private func weeksText(until date: Date) -> String {
         let days = max(0, Calendar.current.dateComponents([.day], from: Calendar.current.startOfDay(for: Date()), to: Calendar.current.startOfDay(for: date)).day ?? 0)
         if days < 14 { return days == 1 ? "1 day" : "\(days) days" }
@@ -142,7 +155,7 @@ struct WeightView: View {
                 Button(goal == nil ? "Set goal" : "Update goal") { setGoal() }
             }
             if let goal, let status = goalStatus {
-                LabeledContent("Now (trend)", value: "\(status.current.number) kg")
+                LabeledContent("Trend weight", value: "\(status.current.number) kg")
                 switch status.direction {
                 case .reached:
                     Label("You're at your goal weight", systemImage: "checkmark.seal.fill").foregroundStyle(.tint)

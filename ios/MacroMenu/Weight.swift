@@ -29,8 +29,13 @@ enum WeightTrend {
     /// Kilocalories in a kilogram of body weight change, the usual rule of thumb.
     static let caloriesPerKG = 7700.0
 
-    /// One point per day with a weigh-in (the day's last), smoothed so each day moves the trend 10% of the way to the scale.
-    /// Gaps between weigh-ins move it further, as if the missing days had been weighed at the same value.
+    /// How far each day moves the trend towards that day's weight: enough to follow a real change within about a week,
+    /// little enough that one salty or dehydrated day doesn't swing it.
+    static let dailyWeight = 0.2
+
+    /// One point per day with a weigh-in (the day's last), smoothed so each day moves the trend a fifth of the way to the scale.
+    /// Days between weigh-ins are filled in along a straight line from one reading to the next, so after a gap the trend
+    /// moves towards where your weight was heading rather than jumping as if every missing day had weighed the new amount.
     static func points(_ entries: [WeightEntry], calendar: Calendar = .current) -> [Point] {
         let byDay = Dictionary(grouping: entries.filter(\.isValid)) { calendar.startOfDay(for: $0.date) }
         var result: [Point] = []
@@ -38,10 +43,30 @@ enum WeightTrend {
             let kg = byDay[day]!.max { $0.date < $1.date }!.kg
             guard let last = result.last else { result.append(Point(date: day, kg: kg, trend: kg)); continue }
             let gap = max(1, calendar.dateComponents([.day], from: last.date, to: day).day ?? 1)
-            let weight = 1 - pow(0.9, Double(gap))
-            result.append(Point(date: day, kg: kg, trend: last.trend + weight * (kg - last.trend)))
+            var trend = last.trend
+            for step in 1...gap {
+                let scale = last.kg + (kg - last.kg) * Double(step) / Double(gap)
+                trend += dailyWeight * (scale - trend)
+            }
+            result.append(Point(date: day, kg: kg, trend: trend))
         }
         return result
+    }
+
+    /// Days of staying at `kg` before a trend at `trend` comes within `within` kg of it.
+    static func daysToCatchUp(from trend: Double, to kg: Double, within: Double = 0.2) -> Int {
+        let gap = abs(kg - trend)
+        guard gap > within else { return 0 }
+        return Int((log(within / gap) / log(1 - dailyWeight)).rounded(.up))
+    }
+
+    /// Why the trend isn't the last weigh-in, when they're 0.1 kg or more apart.
+    static func gapText(_ point: Point) -> String? {
+        let gap = point.trend - point.kg
+        guard abs(gap) >= 0.1 else { return nil }
+        let days = daysToCatchUp(from: point.trend, to: point.kg)
+        return "Your trend is \(abs(gap).number) kg \(gap > 0 ? "above" : "below") your last weigh-in, because each day moves it only a fifth "
+            + "of the way to the scale, so one reading doesn't swing it. If you stay around \(point.kg.kgText) kg, it catches up in about \(days) \(days == 1 ? "day" : "days")."
     }
 
     /// Trend change per week over the last `days` days, once weigh-ins span at least a week.

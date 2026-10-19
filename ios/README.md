@@ -29,8 +29,11 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   Mifflin–St Jeor target calculator.
 - Meal: "Log again" logs yesterday's meal for the chosen meal time, or one of your
   most-logged meals, in one tap, without touching the meal you're building.
-- Weight: weigh-ins, a smoothed trend (each day moves the trend 10% of the way to
-  the scale), weekly change, and measured maintenance (average logged intake less
+- Weight: weigh-ins, a smoothed trend (each day moves the trend 20% of the way to
+  the scale, so it follows a real change within about a week; days between
+  weigh-ins are filled along a line from one reading to the next,
+  `WeightTrend.points`), the last weigh-in beside it with a line saying why they
+  differ and how soon the trend catches up, weekly change, and measured maintenance (average logged intake less
   trend change × 7,700 Cal/kg over four weeks; needs 10 logged days and two weeks
   of weigh-ins). The target calculator offers the trend weight and measured
   maintenance.

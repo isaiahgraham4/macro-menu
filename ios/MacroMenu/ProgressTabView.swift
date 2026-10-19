@@ -130,7 +130,10 @@ struct ProgressTabView: View {
                     Image(systemName: "scalemass.fill").font(.title2).foregroundStyle(.tint).frame(width: 32)
                     VStack(alignment: .leading, spacing: 3) {
                         if let last = trend.last {
-                            Text("\(last.trend.number) kg").font(.roboto(.headline)).monospacedDigit()
+                            Text("\(last.trend.number) kg trend").font(.roboto(.headline)).monospacedDigit()
+                            if abs(last.trend - last.kg) >= 0.1 {
+                                Text("Last weigh-in \(last.kg.kgText) kg").font(.roboto(.caption)).foregroundStyle(.secondary).monospacedDigit()
+                            }
                             if let change = breakdown.weightChange {
                                 Text("\(WeeklyReview.signed(change)) kg over \(breakdown.days) days")
                                     .font(.roboto(.caption)).foregroundStyle(.secondary)
