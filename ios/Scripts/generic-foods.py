@@ -6,6 +6,11 @@ Download "SR Legacy, CSV" from https://fdc.nal.usda.gov/download-datasets and un
 
     python3 ios/Scripts/generic-foods.py path/to/FoodData_Central_sr_legacy_food_csv_2018-04
 
+Mixed dishes SR Legacy doesn't have (curries, dumplings, kebabs, casseroles) come from USDA's survey foods
+(FNDDS), also in FoodData Central and also public domain. Download "Survey (FNDDS), CSV" and pass its folder too:
+
+    python3 ios/Scripts/generic-foods.py path/to/sr_legacy_folder path/to/survey_food_folder
+
 Each food below names one USDA entry exactly, so the build fails rather than guessing if an entry
 is missing or ambiguous. Figures are scaled from USDA's per-100 g values to the serving shown.
 
@@ -507,6 +512,23 @@ FOODS = [
     ("Greek yoghurt, vanilla, low fat", "Yogurt, Greek, vanilla, lowfat", None, "breakfast"),
 ]
 
+# Mixed dishes from USDA's survey foods (FNDDS), so a photo of a curry, dumplings, a kebab or a casserole finds one.
+# (name in the app, FNDDS description, FNDDS portion description, category, the serving's words in the app)
+SURVEY_FOODS = [
+    ("Chicken curry", "Chicken curry", "1 cup", "food", "1 cup"),
+    ("Beef curry", "Beef curry", "1 cup", "food", "1 cup"),
+    ("Vegetable curry", "Vegetable curry", "1 cup", "food", "1 cup"),
+    ("Lentil curry", "Lentil curry", "1 cup", "food", "1 cup"),
+    ("Dumplings, steamed", "Wonton, dumpling or pot sticker, steamed", "1 item, any size", "food", "1 dumpling"),
+    ("Dumplings, fried", "Wonton, dumpling or pot sticker, fried", "1 item, any size", "food", "1 dumpling"),
+    ("Lamb kebab with vegetables", "Lamb shish kabob with vegetables, excluding potatoes", "1 shishkabob", "food", "1 skewer"),
+    ("Chicken kebab with vegetables", "Chicken or turkey shish kabob with vegetables, excluding potatoes", "1 shishkabob", "food", "1 skewer"),
+    ("Kebab wrap (gyro)", "Gyro sandwich", "1 sandwich, any size", "food", "1 wrap"),
+    ("Tuna noodle casserole", "Tuna noodle casserole with cream or white sauce", "1 cup", "food", "1 cup"),
+    ("Green bean casserole", "Green bean casserole", "1 cup", "food", "1 cup"),
+    ("Garden salad, no dressing", "Lettuce, salad with assorted vegetables including tomatoes and/or carrots, no dressing", "1 cup", "food", "1 cup"),
+]
+
 # What's in each food, by name, for dietary needs: (meats, allergens, may contain, "vegan" or "vegetarian").
 # Worked out from what the food is (its USDA entry), not from words in its name. None means not sure, and dietary needs
 # then leave the food out: allergens for composite and takeaway foods, whose recipes vary (a battered fish fillet, a
@@ -854,6 +876,19 @@ DIET = {
     "Spring roll (vegetable)": (None, None, [], None),
     "Bean and cheese burrito, frozen": (None, None, [], None),
     "Cheeseburger, single patty": (["beef"], None, [], None),
+    # Survey dishes: recipes vary, so allergens are unknown, and so are meats where the dish could use any (or stock).
+    "Chicken curry": (["chicken"], None, [], None),
+    "Beef curry": (["beef"], None, [], None),
+    "Vegetable curry": (None, None, [], None),
+    "Lentil curry": (None, None, [], None),
+    "Dumplings, steamed": (None, None, [], None),
+    "Dumplings, fried": (None, None, [], None),
+    "Lamb kebab with vegetables": (["lamb"], None, [], None),
+    "Chicken kebab with vegetables": (["chicken"], None, [], None),
+    "Kebab wrap (gyro)": (None, None, [], None),
+    "Tuna noodle casserole": (["fish"], None, [], None),
+    "Green bean casserole": (None, None, [], None),
+    "Garden salad, no dressing": PLANT,
     "Hamburger, single patty": (["beef"], None, [], None),
     "Double cheeseburger": (["beef"], None, [], None),
     "Large hamburger": (["beef"], None, [], None),
@@ -1033,7 +1068,67 @@ def number(value):
     return float(value) if value not in ("", None) else None
 
 
-def main(folder):
+def entry(fdc, name, category, per100, grams, serve):
+    """One food in the app's format, scaled from USDA's per-100 g figures to `grams`."""
+    scale = grams / 100
+
+    def scaled(key):
+        value = per100.get(key)
+        return None if value is None else round(value * scale, 1)
+
+    cal = round(per100[ENERGY_KCAL] * scale, 1)
+    kj = round(per100[ENERGY_KJ] * scale, 1) if ENERGY_KJ in per100 else round(cal * 4.184, 1)
+    food = {
+        "id": f"usda-{fdc}", "chain": "generic", "name": name, "cat": category,
+        "kj": kj, "cal": cal, "p": scaled(PROTEIN), "c": scaled(CARBS), "f": scaled(FAT), "serve": serve,
+    }
+    extras = {key: scaled(nid) for key, nid in EXTRAS.items() if scaled(nid) is not None}
+    if extras:
+        food["nut"] = extras
+    food["diet"] = diet(name)
+    return food
+
+
+def survey(folder):
+    """The SURVEY_FOODS dishes from the FNDDS folder. Its portions are named in `portion_description` ("1 cup")."""
+    wanted = {description for _, description, _, _, _ in SURVEY_FOODS}
+    by_description = {}
+    for food in rows(folder, "food.csv"):
+        if food["description"] in wanted:
+            by_description.setdefault(food["description"], []).append(food["fdc_id"])
+    problems = [f"{name}: {len(by_description.get(d, []))} survey matches for {d!r}"
+                for name, d, _, _, _ in SURVEY_FOODS if len(by_description.get(d, [])) != 1]
+    if problems:
+        sys.exit("\n".join(problems))
+    ids = {by_description[d][0] for _, d, _, _, _ in SURVEY_FOODS}
+    # This export keys nutrients by USDA's older numbers (208 for energy); nutrient.csv maps them to the ids used above.
+    # Only whole numbers: "205.2" (carbs by summation) must not stand in for 205 (carbs by difference).
+    by_number = {row["nutrient_nbr"].removesuffix(".0"): row["id"] for row in rows(folder, "nutrient.csv")
+                 if row["nutrient_nbr"] and "." not in row["nutrient_nbr"].removesuffix(".0")}
+    nutrients, portions = {}, {}
+    for row in rows(folder, "food_nutrient.csv"):
+        if row["fdc_id"] in ids:
+            nutrient = by_number.get(row["nutrient_id"], row["nutrient_id"])
+            nutrients.setdefault(row["fdc_id"], {})[nutrient] = float(row["amount"])
+    for row in rows(folder, "food_portion.csv"):
+        if row["fdc_id"] in ids:
+            portions.setdefault(row["fdc_id"], []).append(row)
+    foods = []
+    for name, description, portion, category, label in SURVEY_FOODS:
+        fdc = by_description[description][0]
+        per100 = nutrients.get(fdc, {})
+        match = [p for p in portions.get(fdc, []) if p["portion_description"].strip() == portion]
+        if ENERGY_KCAL not in per100 or PROTEIN not in per100 or len(match) != 1:
+            problems.append(f"{name}: missing energy, protein or the portion {portion!r}")
+            continue
+        grams = float(match[0]["gram_weight"])
+        foods.append(entry(fdc, name, category, per100, grams, f"{label} ({grams:g} g)"))
+    if problems:
+        sys.exit("\n".join(problems))
+    return foods
+
+
+def main(folder, survey_folder):
     by_description = {}
     for food in rows(folder, "food.csv"):
         key = food["description"].removesuffix(SUFFIX)
@@ -1082,35 +1177,21 @@ def main(folder):
             count = f"{amount:g}" if amount != 0.5 else "½"
             label = re.sub(r"\s*\(.*?\)", "", serving).replace(" without refuse", "").strip().replace("tablespoon", "tbsp")
             serve = f"{count} {label} ({grams:g} g)"
-        scale = grams / 100
-
-        def scaled(key):
-            value = per100.get(key)
-            return None if value is None else round(value * scale, 1)
-
-        cal = round(kcal * scale, 1)
-        kj = round(per100[ENERGY_KJ] * scale, 1) if ENERGY_KJ in per100 else round(cal * 4.184, 1)
-        food = {
-            "id": f"usda-{fdc}", "chain": "generic", "name": name, "cat": category,
-            "kj": kj, "cal": cal, "p": scaled(PROTEIN), "c": scaled(CARBS), "f": scaled(FAT), "serve": serve,
-        }
-        extras = {key: scaled(nid) for key, nid in EXTRAS.items() if scaled(nid) is not None}
-        if extras:
-            food["nut"] = extras
-        food["diet"] = diet(name)
-        foods.append(food)
+        foods.append(entry(fdc, name, category, per100, grams, serve))
     if problems:
         sys.exit("\n".join(problems))
+    foods += survey(survey_folder)
     names = [f["name"] for f in foods]
     assert len(set(names)) == len(names), "duplicate names"
     write(foods)
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        sys.exit(__doc__)
-    if sys.argv[1] == "--diet":
+    if sys.argv[1:] == ["--diet"]:
         apply_diet()
+    elif len(sys.argv) == 3:
+        check_diet([name for name, _, _, _ in FOODS] + [name for name, _, _, _, _ in SURVEY_FOODS])
+        main(Path(sys.argv[1]), Path(sys.argv[2]))
     else:
-        check_diet([name for name, _, _, _ in FOODS])
-        main(Path(sys.argv[1]))
+        # Both folders are needed, so a rebuild can't quietly drop the survey dishes.
+        sys.exit(__doc__)

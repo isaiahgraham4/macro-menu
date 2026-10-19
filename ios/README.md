@@ -281,20 +281,33 @@ each item's published total and skipped (with a warning) if they drift over 3%.
 
 ## Refresh everyday foods
 
-Everyday foods (bananas, chicken breast, rice and about 460 others) come from USDA
-FoodData Central's SR Legacy data, which is public domain. Download "SR Legacy, CSV"
-from https://fdc.nal.usda.gov/download-datasets, unzip it, then run:
+Everyday foods (bananas, chicken breast, rice and about 475 others) come from USDA
+FoodData Central's SR Legacy data, plus a few mixed dishes SR Legacy lacks (curries, dumplings,
+kebabs, casseroles) from its survey foods (FNDDS). Both are public domain. Download "SR Legacy, CSV"
+and "Survey (FNDDS), CSV" from https://fdc.nal.usda.gov/download-datasets, unzip them, then run:
 
 ```sh
-python3 ios/Scripts/generic-foods.py path/to/FoodData_Central_sr_legacy_food_csv_2018-04
+python3 ios/Scripts/generic-foods.py path/to/FoodData_Central_sr_legacy_food_csv_2018-04 path/to/FoodData_Central_survey_food_csv_2024-10-31
 ```
 
 The script names each food's USDA entry and serving exactly, fails rather than guessing
 if one is missing, and writes `ios/MacroMenu/GenericFoods.json`. To add a food, add a
-line to `FOODS` in the script and its meats and allergens to `DIET` (the build fails without
-them). `python3 ios/Scripts/generic-foods.py --diet` applies `DIET` to the current file
+line to `FOODS` (or `SURVEY_FOODS`) in the script and its meats and allergens to `DIET` (the build
+fails without them). `python3 ios/Scripts/generic-foods.py --diet` applies `DIET` to the current file
 without the USDA download. These foods appear in search and Best choices under
-"Everyday foods", but never in "An order that fits" or Smarter swaps.
+"Everyday foods", and in Left today and Plan ahead suggestions, but never in "An order that fits"
+or Smarter swaps.
+
+About 5,300 more foods as people eat them (`ios/MacroMenu/SurveyFoods.json`) come from the
+whole FNDDS set, so search and meal photos find almost anything:
+
+```sh
+python3 ios/Scripts/survey-foods.py path/to/FoodData_Central_survey_food_csv_2024-10-31
+```
+
+It skips anything already in `GenericFoods.json`, baby foods and formula, and picks a natural
+serving (a drumstick, a slice, a mug) before a cup or spoon. These are never suggested, and their
+meats and allergens are unknown, so any dietary need leaves them out.
 
 Title font: Bebas Neue (SIL Open Font License, `ios/Licenses/BebasNeue-OFL.txt`).
 Fonts whose licences don't allow redistribution live in `ios/LocalFonts/`, which

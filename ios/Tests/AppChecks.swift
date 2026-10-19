@@ -963,17 +963,30 @@ import UniformTypeIdentifiers
         assert(agreed.foods.count == 1 && agreed.foods[0].count == 2 && agreed.foods[0].agreed)
         let unsure = MealPhoto.merge(named: [item("rice")], classified: [(food: item("banana"), score: 0.2)])
         assert(unsure.foods.count == 2 && unsure.foods.allSatisfy(\.agreed))
+        // A bowl read as "soup" by the classifier alone is listed but not ticked; Apple Intelligence agreeing ticks it.
+        let soupOnly = MealPhoto.merge(named: [], classified: [(food: item("soup"), score: 0.7)])
+        assert(soupOnly.foods.count == 1 && !soupOnly.foods[0].agreed && soupOnly.foods[0].reason != nil)
+        assert(MealPhoto.merge(named: [item("soup")], classified: [(food: item("soup"), score: 0.7)]).foods[0].agreed)
         assert(MealPhoto.merge(named: [], classified: plate).engine == .imageRecognition && MealPhoto.merge(named: [item("rice")], classified: []).engine == .appleIntelligence)
         assert(ticked("strawberry") != nil && ticked("rice") != nil)
         var untrusted = item("strawberry"); untrusted.agreed = false
         assert(MealPhoto.preselected(from: MealPhoto.matches(for: untrusted, in: everydayStore.foods, chainNames: photoNames), for: untrusted, chainNames: photoNames) == nil)
+        // Survey foods widen search and photo matching, but are never suggested and dietary needs leave them out.
+        let surveyURL = everydayURL.deletingLastPathComponent().appending(path: "SurveyFoods.json")
+        let surveyStore = AppStore(url: root.appending(path: "survey.json"), catalogURL: catalogURL, legacyURL: nil, everydayURL: everydayURL, surveyURL: surveyURL)
+        assert(surveyStore.survey.count > 5000 && surveyStore.suggestibleEveryday.count == surveyStore.everyday.count)
+        assert(Set(surveyStore.survey.map(\.id)).isDisjoint(with: surveyStore.everyday.map(\.id)) && surveyStore.foods.count == everydayStore.foods.count + surveyStore.survey.count)
+        assert(surveyStore.survey.allSatisfy { !DietFilter(raw: "vegetarian").allows($0) })
+        // Leanr's own everyday foods rank ahead of survey foods: "salad" is a plain garden salad, not a bean salad.
+        assert(MealPhoto.matches(for: item("salad"), in: surveyStore.foods, chainNames: photoNames).first?.name == "Garden salad, no dressing")
+        assert(MealPhoto.matches(for: item("tofu"), in: surveyStore.foods, chainNames: photoNames).first?.isSurvey == false)
         // Nearly every label looks up a food that exists, so a recognised "banana" can't turn up empty-handed.
         let unmatched = VisionFoodLabels.names.filter { _, words in
             MealPhoto.matches(for: SeenFood(name: words[0], alternatives: Array(words.dropFirst()), brand: nil, count: 1),
-                              in: everydayStore.foods, chainNames: photoNames).isEmpty
+                              in: surveyStore.foods, chainNames: photoNames).isEmpty
         }.keys.sorted()
         // These dishes have no everyday food yet: the row says so and offers a search.
-        assert(Set(unmatched).isSubset(of: ["casserole", "curry", "dumpling", "gyoza", "kebab"]))
+        assert(unmatched.isEmpty)
         // Only everyday foods, or the restaurant a visible brand names, are ticked by default.
         func ticked(_ name: String, _ others: [String] = [], brand: String? = nil) -> Food? {
             let item = SeenFood(name: name, alternatives: others, brand: brand, count: 1)

@@ -7,6 +7,9 @@ final class AppStore {
     private(set) var catalog = MenuCatalog(chains: [], foods: [])
     /// Everyday foods (bananas, chicken breast, rice...), bundled with the app.
     private(set) var everyday: [Food] = []
+    /// Thousands more foods as people eat them, from USDA's survey foods (`Scripts/survey-foods.py`). Searchable and
+    /// matched from photos, but never suggested, and their meats and allergens are unknown, so dietary needs leave them out.
+    private(set) var survey: [Food] = []
     private(set) var loadError: String?
     var errorMessage: String?
     var notice: String?
@@ -27,10 +30,14 @@ final class AppStore {
     var widgetsRefreshed: (() -> Void)?
     private let url: URL
     init(url: URL = URL.applicationSupportDirectory.appending(path: "MacroMenu/app-state.json"), catalogURL: URL? = Bundle.main.url(forResource: "MenuData", withExtension: "json"), legacyURL: URL? = URL.applicationSupportDirectory.appending(path: "MacroMenu/foods.json"),
-         everydayURL: URL? = Bundle.main.url(forResource: "GenericFoods", withExtension: "json")) {
+         everydayURL: URL? = Bundle.main.url(forResource: "GenericFoods", withExtension: "json"),
+         surveyURL: URL? = Bundle.main.url(forResource: "SurveyFoods", withExtension: "json")) {
         self.url = url
         if let everydayURL, let foods = try? JSONDecoder().decode([Food].self, from: Data(contentsOf: everydayURL)) {
             everyday = foods.filter { $0.isValid && $0.isEveryday }
+        }
+        if let surveyURL, let foods = try? JSONDecoder().decode([Food].self, from: Data(contentsOf: surveyURL)) {
+            survey = foods.filter { $0.isValid && $0.isEveryday }
         }
         if let catalogURL {
             do { catalog = try JSONDecoder().decode(MenuCatalog.self, from: Data(contentsOf: catalogURL)) }
@@ -48,7 +55,8 @@ final class AppStore {
         } catch { loadError = "Saved data could not be read. The original file has been preserved. \(error.localizedDescription)" }
         refreshWidgets()
     }
-    var foods: [Food] { catalog.foods + everyday + data.foods }
+    /// Search, photos and the food lists see every food; suggestions keep to the curated everyday foods.
+    var foods: [Food] { catalog.foods + everyday + survey + data.foods }
     /// Foods that make up an order: restaurant menus and your own foods, without everyday foods.
     var orderFoods: [Food] { catalog.foods + data.foods }
     /// Menu items and everyday foods that fit the dietary needs set on Find, for suggestions.

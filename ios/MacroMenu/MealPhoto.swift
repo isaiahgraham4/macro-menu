@@ -15,6 +15,8 @@ struct SeenFood: Equatable, Sendable {
     var agreed = true
     /// How big each one looks next to a normal serving. Only Apple Intelligence judges this; the classifier says regular.
     var size = PortionSize.regular
+    /// Why it isn't ticked, when that's something other than the two readings disagreeing.
+    var reason: String?
 }
 
 /// A rough portion size for an everyday food in a photo, as a share of one serving.
@@ -73,7 +75,7 @@ enum MealPhoto {
     /// only the model saw is added, unticked if the classifier was confident of something else.
     static func merge(named: [SeenFood], classified: [(food: SeenFood, score: Double)]) -> Recognition {
         if classified.isEmpty { return Recognition(foods: named, engine: .appleIntelligence) }
-        if named.isEmpty { return Recognition(foods: classified.map(\.food), engine: .imageRecognition) }
+        if named.isEmpty { return Recognition(foods: classified.map(\.food).map { doubted($0, confirmedBy: []) }, engine: .imageRecognition) }
         let sure = classified.contains { $0.score >= sureScore }
         var foods = classified.map(\.food)
         for item in named {
@@ -87,7 +89,19 @@ enum MealPhoto {
                 foods.append(extra)
             }
         }
-        return Recognition(foods: foods, engine: .both)
+        return Recognition(foods: foods.map { doubted($0, confirmedBy: named) }, engine: .both)
+    }
+
+    /// Labels the classifier gives to things that only look alike: a bowl of rice, tofu and salad reads as "soup".
+    /// They're listed but not ticked unless Apple Intelligence saw the same.
+    static let lookalikes: Set<String> = ["soup"]
+
+    static func doubted(_ food: SeenFood, confirmedBy named: [SeenFood]) -> SeenFood {
+        guard lookalikes.contains(food.name.lowercased()), !named.contains(where: { same($0, food) }) else { return food }
+        var doubted = food
+        doubted.agreed = false
+        doubted.reason = "Bowls of food often look like soup in photos, so it isn't ticked. Choose it if it was soup."
+        return doubted
     }
 
     /// Whether two engines mean the same food: one name inside the other ("burger", "hamburger"), or a shared whole word.
@@ -158,13 +172,14 @@ enum MealPhoto {
     }
 
     /// The version most people mean when a photo just says "rice" or "bread".
-    private static let usual: Set<String> = ["White rice, cooked", "White bread", "Pasta, cooked", "Milk, full cream"]
+    private static let usual: Set<String> = ["White rice, cooked", "White bread", "Pasta, cooked", "Milk, full cream", "Garden salad, no dressing"]
 
     /// Matches in the order a person would expect: the food named exactly that, then foods whose main name ends with it
-    /// ("White rice, cooked" for "rice"), then those that start with it; cooked before raw or dry; plainer names first.
+    /// ("White rice, cooked" for "rice"), then those that start with it; Leanr's own everyday foods before USDA's survey
+    /// foods; cooked before raw or dry; plainer names first.
     /// Each source (a restaurant, or everyday foods) stays together, in the order the sources were found.
     static func ordered(_ foods: [Food], for words: [String]) -> [Food] {
-        func key(_ food: Food) -> (Int, Int, Int, Int, Int) {
+        func key(_ food: Food) -> (Int, Int, Int, Int, Int, Int) {
             let all = FoodSearch.tokens(food.name).map(stem)
             let main = FoodSearch.tokens(String(food.name.prefix { $0 != "," })).map(stem)
             let words = words.map(stem)
@@ -172,7 +187,7 @@ enum MealPhoto {
             let uncooked = all.contains { ["raw", "dry", "uncooked", "powder", "canned"].contains($0) } ? 1 : 0
             // "Rice, cooked" and "Egg" are the ingredient; "Spanish rice" and "Egg noodles" are dishes made with it.
             let dish = food.name.contains(",") || all.count == 1 ? 0 : 1
-            return (bucket, uncooked, dish, usual.contains(food.name) ? 0 : 1, main.count)
+            return (bucket, food.isSurvey ? 1 : 0, uncooked, dish, usual.contains(food.name) ? 0 : 1, main.count)
         }
         var sources: [String] = []
         for food in foods where !sources.contains(food.chain) { sources.append(food.chain) }

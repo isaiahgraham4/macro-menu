@@ -22,6 +22,8 @@ struct MealPhotoView: View {
         var size: PortionSize
         /// Why a match was ticked for you, when it wasn't the usual first match.
         var note: String?
+        /// Came from what you wrote about the photo, not from the photo itself.
+        var fromNote = false
         var food: Food? { matches.first { $0.id == chosen } }
         /// Servings for the chosen food: the count, scaled by the portion size where sizes apply.
         func servings(for food: Food?) -> Double {
@@ -39,6 +41,8 @@ struct MealPhotoView: View {
     @State private var failed = false
     @State private var engine = MealPhoto.Engine.appleIntelligence
     @State private var scanningBarcode = false
+    @State private var noteText = ""
+    @State private var readingNote = false
 
     private var portions: [Portion] { rows.compactMap { row in row.food.map { Portion(food: $0, quantity: row.quantity) } } }
 
@@ -51,6 +55,20 @@ struct MealPhotoView: View {
                     if phase == .looking { ProgressView("Looking at your photo…").frame(maxWidth: .infinity) }
                     if case .failed(let message) = phase { Text(message).foregroundStyle(.secondary) }
                     if phase != .looking { Button("Use a different photo", systemImage: "arrow.counterclockwise") { reset() } }
+                }
+                // What you write is trusted over what the photo looks like: photos can't see tofu, or tell a bowl from soup.
+                Section {
+                    HStack(spacing: 10) {
+                        TextField("What's in it? e.g. tofu, rice and salad", text: $noteText)
+                            .submitLabel(.done).onSubmit { applyNote() }
+                        if !noteText.trimmingCharacters(in: .whitespaces).isEmpty {
+                            Button { applyNote() } label: { Image(systemName: "arrow.up.circle.fill").font(.title2) }
+                                .buttonStyle(.borderless).disabled(readingNote || phase == .looking)
+                                .accessibilityLabel("Use what you wrote")
+                        }
+                    }
+                } footer: {
+                    Text(readingNote ? "Reading what you wrote…" : "Optional. Name the foods and Leanr ticks those instead of its guesses.")
                 }
             } else {
                 Section {
@@ -79,9 +97,9 @@ struct MealPhotoView: View {
                             Text("Not in Leanr yet.").foregroundStyle(.secondary)
                         } else {
                             if row.chosen == nil {
-                                Text(row.seen.agreed
+                                Text(row.seen.reason ?? (row.seen.agreed
                                      ? "No everyday food matched. These restaurant items have similar names. Pick one only if that's what you had."
-                                     : "Only one of the two readings saw this, so it isn't ticked. Choose it if it's on the plate.")
+                                     : "Only one of the two readings saw this, so it isn't ticked. Choose it if it's on the plate."))
                                     .font(.roboto(.caption)).foregroundStyle(.secondary)
                             }
                             if let note = row.note, row.chosen != nil {
@@ -182,7 +200,47 @@ struct MealPhotoView: View {
 
     private struct SearchTarget: Identifiable { let id: Row.ID }
 
-    private func reset() { image = nil; pickerItem = nil; rows = []; phase = .choosing }
+    private func reset() { image = nil; pickerItem = nil; rows = []; noteText = ""; phase = .choosing }
+
+    /// Reads what you wrote the way "Describe your meal" does, and lists those foods first, ticked. Photo foods your words
+    /// cover give way to them; the rest stay listed but unticked.
+    private func applyNote() {
+        let words = noteText.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !words.isEmpty, !readingNote, phase != .looking else { return }
+        readingNote = true
+        let foods = store.foods, names = store.chainNames, nearby = nearbyChain
+        let known = Set(foods.map { " " + FoodSearch.tokens($0.name).filter { !["and", "with", "n"].contains($0) }.joined(separator: " ") + " " })
+        Task {
+            var phrases = await MealWords.read(words)
+            if phrases.isEmpty {
+                phrases = FoodPhrase.meal(words) { candidate in
+                    let wanted = " " + FoodSearch.tokens(candidate).filter { !["and", "with", "n"].contains($0) }.joined(separator: " ") + " "
+                    return known.contains { $0.contains(wanted) }
+                }
+            }
+            let found = await Task.detached(priority: .userInitiated) {
+                phrases.map { phrase in (phrase, MealPhoto.matches(for: phrase.seen, in: foods, chainNames: names, nearby: nearby)) }
+            }.value
+            let noted = found.map { phrase, matches in
+                let pick = FoodPhrase.preselected(from: matches, for: phrase, chainNames: names)
+                var row = Row(seen: phrase.seen, matches: matches, chosen: pick?.id,
+                              quantity: pick.map { phrase.servings(of: $0).servings } ?? Double(phrase.seen.count), size: .regular, note: nil)
+                row.fromNote = true
+                return row
+            }
+            var kept: [Row] = []
+            for var row in rows where !row.fromNote {
+                if noted.contains(where: { MealPhoto.same($0.seen, row.seen) }) { continue }
+                row.chosen = nil; row.note = nil
+                row.seen.agreed = false
+                row.seen.reason = "Not in what you wrote, so it isn't ticked."
+                kept.append(row)
+            }
+            rows = noted + kept
+            phase = .done
+            readingNote = false
+        }
+    }
 
     private func look(at picked: UIImage) {
         image = picked; rows = []; phase = .looking

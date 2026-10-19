@@ -58,6 +58,8 @@ struct Food: Codable, Identifiable, Hashable, Sendable {
     /// Everyday foods such as bananas and chicken breast, from USDA FoodData Central. Searchable everywhere, but not a restaurant.
     static let everyday = "generic"
     var isEveryday: Bool { chain == Food.everyday }
+    /// One of the thousands of USDA survey foods (`SurveyFoods.json`): searchable, but ranked after Leanr's own and never suggested.
+    var isSurvey: Bool { isEveryday && diet?.src == "usda" }
     /// The USDA page for an everyday food.
     var everydaySource: URL? {
         guard isEveryday, id.hasPrefix("usda-") else { return nil }
