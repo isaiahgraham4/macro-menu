@@ -133,6 +133,13 @@ struct SettingsView: View {
             } header: { Text("iCloud") } footer: {
                 Text("Keeps your foods, logs, targets and weigh-ins the same on every device signed in to your Apple Account. Your current meal and settings like colours stay on each device.")
             }
+            Section {
+                NavigationLink { PhotoReadingSettings() } label: {
+                    LabeledContent {
+                        Text(CloudVision.isOn ? CloudVision.provider.title : "On this iPhone")
+                    } label: { Label("Photo reading", systemImage: "camera.viewfinder") }
+                }
+            } header: { Text("Meal photos") }
             BackupSection()
             Section("About") {
                 LabeledContent("App", value: "Leanr")

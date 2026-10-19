@@ -1,6 +1,6 @@
 # Leanr privacy policy
 
-Effective 15 October 2026
+Effective 19 October 2026
 
 Leanr is made by Isaiah Graham, an independent developer in Victoria, Australia ("I", "me"). This policy explains what happens to your information when you use Leanr. You can reach me at {{CONTACT}}.
 
@@ -9,6 +9,7 @@ Leanr is made by Isaiah Graham, an independent developer in Victoria, Australia 
 - Leanr has no account, no ads, no analytics and no tracking. It doesn't use cookies.
 - Everything you enter stays on your device and, if you choose, in your own iCloud and Apple Health. I never receive it.
 - A few features ask other services for information. They are told only what they need: a barcode number, the words you search for packaged foods, your position for an Apple Maps search, or the address of a recipe page you ask Leanr to load.
+- Meal photos are read on your device, unless you turn on "Use my own AI key". Then each meal photo goes straight from your iPhone to the AI service you picked, with your own key. I never receive it.
 
 ## What Leanr keeps on your device
 
@@ -30,6 +31,8 @@ Health information is never used for advertising or marketing, never sold, and n
 ## Camera
 
 The camera is used to scan barcodes, read nutrition labels, recognise the foods in a photo of your meal and take progress photos. Recognising food happens on your device, using Apple Intelligence where your iPhone has it and Apple's built-in image recognition otherwise. Photos of meals aren't saved or sent anywhere, and you can also choose a photo from your library instead; Leanr only sees the one you pick.
+
+If you turn on Settings → Meal photos → "Use my own AI key", each meal photo you take or pick is sent directly from your iPhone to the AI service you chose (Google Gemini, OpenAI or Anthropic Claude), using the API key you entered, so it can name the foods and guess the amounts. Nothing else is sent with it: not your log, targets, health data or anything about you. It never passes through me or any server of mine. That service handles the photo under its own terms and privacy policy, and bills your account for its use. Your key is kept in this iPhone's Keychain, never in your Leanr data, iCloud or backups. Turn the setting off, or remove the key, to stop sending photos; Settings → Delete all my data also removes the key.
 
 ## Describing a meal
 
@@ -94,6 +97,7 @@ Leanr doesn't sell or share your personal data, and it uses no analytics, advert
 - **Apple** (United States and elsewhere): Maps, iCloud, Health, Siri and Visual Intelligence, which are part of your device and your Apple Account and are covered by Apple's privacy policy.
 - **Open Food Facts** (France): receives only a product's barcode number or the words you search for packaged foods. Neither is linked to you.
 - **Recipe websites you choose**: when you import a recipe from a link, that website receives the request for the page and nothing else.
+- **The AI service you choose, only if you turn on "Use my own AI key"** (Google in the United States, OpenAI in the United States or Anthropic in the United States): receives each meal photo you take or pick, sent with your own key, and nothing else. Its own terms and privacy policy apply.
 - **GitHub** (United States): hosts the restaurant menu file. A few times a day Leanr asks it whether the menu has changed and, if it has, downloads the new one. The request contains nothing about you or your data. As with any website, GitHub sees your device's IP address and handles it under GitHub's privacy statement.
 
 Any service that receives data from Leanr must protect it at least as well as this policy does. If that ever changes, this policy will be updated before the app sends anything new.

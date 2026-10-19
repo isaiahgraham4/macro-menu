@@ -16,9 +16,15 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   recipes with ingredient portions and a serving yield, and saved custom orders.
   Swipe a saved food right to edit or left to delete.
 - Photo of your meal (Today → Photo of your meal): foods are named on the device, by Apple Intelligence where the iPhone
-  has it, otherwise by Apple's Vision image classifier over the photo and its four quarters (`MealVision`,
-  `VisionFoodLabels`: label chains collapse to one food, a dish hides its parts, labels map to everyday-food names). Each
-  food is matched to Leanr's own data; only everyday foods, or a restaurant the photo's brand names, are ticked for you.
+  has it, otherwise by Apple's Vision image classifier over each item Vision cuts out (or the four quarters when it can't
+  split them) (`MealVision`, `VisionFoodLabels`: label chains collapse to one food, a dish hides its parts, labels map to
+  everyday-food names). Each food is matched to Leanr's own data; only everyday foods, a restaurant the photo's brand names,
+  the restaurant you're within 150 m of, or what you logged for that food last time (`PhotoMemory`) are ticked for you. An
+  optional note ("tofu, rice and salad") is read like Describe and trusted over the photo.
+- Bring your own AI key (Settings → Meal photos, off by default, `CloudVision`): Google Gemini, OpenAI or Anthropic Claude
+  reads meal photos with the person's own key, which is checked before it's saved and kept in the Keychain only. The photo
+  goes straight from the iPhone to that provider (no Leanr server, nothing on Leanr's bill); it names foods, sizes and a
+  weight guess, never nutrition. If the provider fails, the on-device readers take over and the screen says why.
 - Photo labels: Apple Vision reads text on-device. Select the numeric column and
   tap Fill recognised numbers for review. Only explicitly labelled numeric rows
   are suggested; review units, serving basis and all values before saving.
