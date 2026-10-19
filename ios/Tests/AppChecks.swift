@@ -987,6 +987,26 @@ import UniformTypeIdentifiers
         assert(ticked("Big Mac", brand: "McDonald's")?.name == "Big Mac" && ticked("Big Mac", brand: "McDonald's")?.isEveryday == false)
         assert(ticked("fries")?.isEveryday != false)
         assert(seen("Big Mac", brand: "McDonald's").first == "Big Mac" && seen("fries", brand: "macca's").first?.contains("Fries") == true)
+        // At a McDonald's, a Big Mac with no logo in the photo is ranked and ticked as McDonald's; a banana stays everyday.
+        let photoBigMac = item("Big Mac")
+        let atMaccas = MealPhoto.matches(for: photoBigMac, in: everydayStore.foods, chainNames: photoNames, nearby: "mcd")
+        assert(MealPhoto.preselected(from: atMaccas, for: photoBigMac, chainNames: photoNames, nearby: "mcd")?.chain == "mcd")
+        let photoBanana = item("banana")
+        let bananaPick = MealPhoto.preselected(from: MealPhoto.matches(for: photoBanana, in: everydayStore.foods, chainNames: photoNames, nearby: "mcd"),
+                                               for: photoBanana, chainNames: photoNames, nearby: "mcd")
+        assert(bananaPick?.isEveryday == true)
+        // Portion sizes scale everyday and your own foods; a restaurant item is already one size.
+        let maccasItem = everydayStore.foods.first { $0.chain == "mcd" }!
+        assert(PortionSize.applies(to: bananaPick!) && !PortionSize.applies(to: maccasItem) && PortionSize.large.factor > PortionSize.small.factor)
+        // Photo corrections are remembered per item seen, under the singular or plural name, and the oldest go past the limit.
+        let fries = SeenFood(name: "Fries", brand: nil, count: 2)
+        let remembered = PhotoMemory.remembering([(seen: fries, food: maccasItem, quantity: 3)], in: [:])
+        assert(PhotoMemory.choice(for: item("fry"), in: remembered)?.foodID == maccasItem.id && PhotoMemory.choice(for: fries, in: remembered)?.perItem == 1.5)
+        assert(PhotoMemory.choice(for: item("chips"), in: remembered) == nil)
+        var manyChoices: [String: PhotoMemory.Choice] = [:]
+        for n in 0..<PhotoMemory.limit { manyChoices["food \(n)"] = PhotoMemory.Choice(foodID: "x", perItem: 1, used: Date(timeIntervalSince1970: Double(n + 10))) }
+        let trimmedChoices = PhotoMemory.remembering([(seen: fries, food: maccasItem, quantity: 3)], in: manyChoices)
+        assert(trimmedChoices.count == PhotoMemory.limit && trimmedChoices["food 0"] == nil && trimmedChoices["fry"] != nil)
         let visual = Assistant.visualMatches(labels: ["Food", "Fruit", "Banana"], foods: everydayStore.foods, chainNames: photoNames)
         assert(visual.first?.name == "Banana" && Set(visual.map(\.id)).count == visual.count && visual.count <= 10)
         assert(Assistant.visualSearchText(["Food", "Banana"]) == "Banana" && Assistant.visualSearchText(["Food"]) == "Food")

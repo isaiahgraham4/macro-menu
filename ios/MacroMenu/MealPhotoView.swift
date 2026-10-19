@@ -5,6 +5,7 @@ import PhotosUI
 struct MealPhotoView: View {
     @Environment(AppStore.self) private var store
     @Environment(\.dismiss) private var dismiss
+    @Environment(LocationStore.self) private var location
     let mealTime: MealTime
     /// Logs the chosen portions under one name; false if it couldn't be saved.
     let log: (_ portions: [Portion], _ name: String) -> Bool
@@ -17,7 +18,15 @@ struct MealPhotoView: View {
         /// The match to log, or nil to leave it out.
         var chosen: String?
         var quantity: Double
+        /// For everyday and your own foods: how big each one was. Changing it sets the servings.
+        var size: PortionSize
+        /// Why a match was ticked for you, when it wasn't the usual first match.
+        var note: String?
         var food: Food? { matches.first { $0.id == chosen } }
+        /// Servings for the chosen food: the count, scaled by the portion size where sizes apply.
+        func servings(for food: Food?) -> Double {
+            Double(seen.count) * (food.map(PortionSize.applies) == true ? size.factor : 1)
+        }
     }
 
     private enum Phase: Equatable { case choosing, looking, done, failed(String) }
@@ -29,6 +38,7 @@ struct MealPhotoView: View {
     @State private var searching: Row.ID?
     @State private var failed = false
     @State private var engine = MealPhoto.Engine.appleIntelligence
+    @State private var scanningBarcode = false
 
     private var portions: [Portion] { rows.compactMap { row in row.food.map { Portion(food: $0, quantity: row.quantity) } } }
 
@@ -74,16 +84,26 @@ struct MealPhotoView: View {
                                      : "Only one of the two readings saw this, so it isn't ticked. Choose it if it's on the plate.")
                                     .font(.roboto(.caption)).foregroundStyle(.secondary)
                             }
-                            Picker("Log as", selection: $row.chosen) {
+                            if let note = row.note, row.chosen != nil {
+                                Label(note, systemImage: "checkmark.circle").font(.roboto(.caption)).foregroundStyle(.secondary)
+                            }
+                            // Picking here resets the amount; a food picked from search keeps the amount chosen there.
+                            Picker("Log as", selection: Binding(get: { row.chosen }, set: { row.chosen = $0; row.quantity = row.servings(for: row.food); row.note = nil })) {
                                 ForEach(row.matches) { food in
                                     Text(food.name).tag(Optional(food.id))
                                 }
                                 Text("Don't log this").tag(String?.none)
                             }
                             if let food = row.food {
+                                if PortionSize.applies(to: food) {
+                                    Picker("Portion", selection: Binding(get: { row.size }, set: { row.size = $0; row.quantity = row.servings(for: row.food) })) {
+                                        ForEach(PortionSize.allCases) { Text($0.title).tag($0) }
+                                    }
+                                    .pickerStyle(.segmented)
+                                    .accessibilityLabel("Portion size of \(food.name)")
+                                }
                                 NumberField(title: "Servings", value: $row.quantity, places: 2, spokenTitle: "Servings of \(food.name)")
-                                Text("\(store.chainName(food.chain)) · \(food.serve.isEmpty ? "1 serving" : food.serve) each · \(Nutrition([Portion(food: food, quantity: row.quantity)]).cal.rounded().number) Cal")
-                                    .font(.roboto(.caption)).foregroundStyle(.secondary)
+                                Text(detail(food, quantity: row.quantity)).font(.roboto(.caption)).foregroundStyle(.secondary)
                             }
                         }
                         Button("Search for it instead", systemImage: "magnifyingglass") { searching = row.id }
@@ -99,7 +119,10 @@ struct MealPhotoView: View {
             if phase == .done && !portions.isEmpty {
                 BottomActionBar {
                     Button {
-                        if log(portions, portions.map(\.food.name).joined(separator: " + ")) { dismiss() } else { failed = true }
+                        if log(portions, portions.map(\.food.name).joined(separator: " + ")) {
+                            remember()
+                            dismiss()
+                        } else { failed = true }
                     } label: {
                         Text("Log \(portions.count) to \(mealTime.title) · \(Nutrition(portions).cal.rounded().number) Cal").frame(maxWidth: .infinity)
                     }.disabled(!portions.allSatisfy(\.isValid))
@@ -114,7 +137,28 @@ struct MealPhotoView: View {
             }
         }
         .fullScreenCover(isPresented: $camera) {
-            CameraPicker { taken in camera = false; if let taken { look(at: taken) } }.ignoresSafeArea()
+            if FoodCamera.isSupported {
+                FoodCamera(photo: { taken in camera = false; if let taken { look(at: taken) } },
+                           barcode: { camera = false; scanningBarcode = true })
+            } else {
+                CameraPicker { taken in camera = false; if let taken { look(at: taken) } }.ignoresSafeArea()
+            }
+        }
+        // A packet in shot: the product scanner finds its exact figures, then logs it like any other way in.
+        .sheet(isPresented: $scanningBarcode) {
+            BarcodeFoodFlow(savePortion: { portion in
+                guard log([portion], portion.food.name) else { return false }
+                dismiss(); return true
+            }) { food in
+                guard log([Portion(food: food)], food.name) else { return false }
+                dismiss(); return true
+            }
+        }
+        // Where you are, if location is already allowed (it's never asked for here), so a nearby restaurant's items go first.
+        .task {
+            guard location.isAuthorized else { return }
+            location.request()
+            await location.load(store.catalog.chains.map(\.id).filter { ChainPlace.all[$0] != nil })
         }
         .sheet(item: Binding(get: { searching.map(SearchTarget.init) }, set: { searching = $0?.id })) { target in
             NavigationStack {
@@ -124,6 +168,7 @@ struct MealPhotoView: View {
                         rows[index].matches.insert(portion.food, at: 0)
                         rows[index].chosen = portion.food.id
                         rows[index].quantity = portion.quantity
+                        rows[index].note = nil
                     }
                     searching = nil
                 }, pickTitle: "Use this", initialSearch: rows.first { $0.id == target.id }?.seen.name ?? "")
@@ -144,29 +189,66 @@ struct MealPhotoView: View {
         guard let cgImage = picked.normalisedCGImage else { phase = .failed("That photo couldn't be read."); return }
         let foods = store.foods
         let names = Dictionary(store.catalog.chains.map { ($0.id, $0.name) }) { a, _ in a }.merging([Food.everyday: store.chainName(Food.everyday)]) { a, _ in a }
+        let nearby = nearbyChain
+        let choices = PhotoMemory.load()
         Task {
             do {
                 let recognised = try await MealPhoto.recognise(cgImage)
                 let found = await Task.detached(priority: .userInitiated) {
-                    recognised.foods.map { item in (item, MealPhoto.matches(for: item, in: foods, chainNames: names)) }
+                    recognised.foods.map { item in (item, MealPhoto.matches(for: item, in: foods, chainNames: names, nearby: nearby)) }
                 }.value
                 engine = recognised.engine
-                rows = found.map { item, matches in
-                    Row(seen: item, matches: matches, chosen: MealPhoto.preselected(from: matches, for: item, chainNames: names)?.id, quantity: Double(item.count))
-                }
+                rows = found.map { item, matches in row(for: item, matches: matches, foods: foods, names: names, nearby: nearby, choices: choices) }
                 phase = .done
             } catch {
                 phase = .failed("Couldn't look at this photo. Try another, or search for the food instead.")
             }
         }
     }
+
+    /// One row, ticked with what you logged last time for this food if there is one, otherwise the usual pick.
+    private func row(for item: SeenFood, matches: [Food], foods: [Food], names: [String: String], nearby: String?, choices: [String: PhotoMemory.Choice]) -> Row {
+        if let remembered = PhotoMemory.choice(for: item, in: choices), item.agreed,
+           let food = matches.first(where: { $0.id == remembered.foodID }) ?? foods.first(where: { $0.id == remembered.foodID }) {
+            let list = [food] + matches.filter { $0.id != food.id }.prefix(3)
+            return Row(seen: item, matches: list, chosen: food.id, quantity: remembered.perItem * Double(item.count), size: .regular,
+                       note: "Ticked as what you logged for this last time")
+        }
+        let pick = MealPhoto.preselected(from: matches, for: item, chainNames: names, nearby: nearby)
+        var row = Row(seen: item, matches: matches, chosen: pick?.id, quantity: 0, size: item.size, note: nil)
+        row.quantity = row.servings(for: pick)
+        if let pick, let nearby, pick.chain == nearby, MealPhoto.chain(for: item.brand, chainNames: names) == nil {
+            row.note = "Ticked because you're at \(store.chainName(nearby))"
+        }
+        return row
+    }
+
+    /// The restaurant you're at: one of Leanr's chains within about 150 m, from the places already found near you.
+    private var nearbyChain: String? {
+        guard location.isAuthorized else { return nil }
+        return location.places.values.compactMap(\.first).filter { $0.distance <= 150 }.min { $0.distance < $1.distance }?.chain
+    }
+
+    /// What each logged photo food was, so the same food in a later photo is ticked straight away.
+    private func remember() {
+        let logged = rows.compactMap { row in row.food.map { (seen: row.seen, food: $0, quantity: row.quantity) } }
+        PhotoMemory.save(PhotoMemory.remembering(logged, in: PhotoMemory.load()))
+    }
+
+    /// Where it's from, the serving, roughly how much that is by weight when the serving says, and the calories.
+    private func detail(_ food: Food, quantity: Double) -> String {
+        var parts = ["\(store.chainName(food.chain)) · \(food.serve.isEmpty ? "1 serving" : food.serve) each"]
+        if let weight = food.servingWeight, quantity != 1 { parts.append("about \((weight.0 * quantity).rounded().number) \(weight.1)") }
+        parts.append("\(Nutrition([Portion(food: food, quantity: quantity)]).cal.rounded().number) Cal")
+        return parts.joined(separator: " · ")
+    }
 }
 
 private extension UIImage {
-    /// The photo upright, as the model expects, scaled down so recognising stays quick.
+    /// The photo upright, as the model expects, scaled down so recognising stays quick but each cut-out keeps its detail.
     var normalisedCGImage: CGImage? {
         let longest = max(size.width, size.height)
-        let scale = longest > 1024 ? 1024 / longest : 1
+        let scale = longest > 1600 ? 1600 / longest : 1
         let target = CGSize(width: (size.width * scale).rounded(), height: (size.height * scale).rounded())
         let format = UIGraphicsImageRendererFormat.default(); format.scale = 1
         return UIGraphicsImageRenderer(size: target, format: format).image { _ in draw(in: CGRect(origin: .zero, size: target)) }.cgImage

@@ -13,6 +13,24 @@ struct SeenFood: Equatable, Sendable {
     /// False when only one of the two engines saw it and the other was sure of something else: it's listed, but the user
     /// has to tick it.
     var agreed = true
+    /// How big each one looks next to a normal serving. Only Apple Intelligence judges this; the classifier says regular.
+    var size = PortionSize.regular
+}
+
+/// A rough portion size for an everyday food in a photo, as a share of one serving.
+enum PortionSize: String, CaseIterable, Identifiable, Sendable {
+    case small, regular, large
+    var id: Self { self }
+    var title: String { rawValue.capitalized }
+    var factor: Double {
+        switch self {
+        case .small: 0.6
+        case .regular: 1
+        case .large: 1.5
+        }
+    }
+    /// Portion sizes apply to everyday and your own foods. A restaurant's item is already one size (its menu lists the others).
+    static func applies(to food: Food) -> Bool { food.isEveryday || food.chain == "mine" }
 }
 
 /// Names the foods in a photo of a meal, then finds them in Leanr. Apple Intelligence does it where the device has it,
@@ -62,6 +80,7 @@ enum MealPhoto {
             if let index = foods.firstIndex(where: { same($0, item) }) {
                 foods[index].count = max(foods[index].count, item.count)
                 if foods[index].brand == nil { foods[index].brand = item.brand }
+                foods[index].size = item.size
             } else {
                 var extra = item
                 extra.agreed = !sure
@@ -108,6 +127,8 @@ enum MealPhoto {
             var brand: String
             @Guide(description: "How many of it there are", .range(1...12))
             var count: Int
+            @Guide(description: "How big each one looks next to one normal serving for one person: small, regular or large", .anyOf(["small", "regular", "large"]))
+            var size: String
             @Guide(description: "Up to three other names a nutrition database might list it under, most specific first, such as \"chicken drumstick\" and \"chicken thigh\" for a chicken leg, or \"cheeseburger\" and \"hamburger\" for a burger.", .maximumCount(3))
             var otherNames: [String]
         }
@@ -131,7 +152,8 @@ enum MealPhoto {
             guard item.isFoodOrDrink, !name.isEmpty else { return nil }
             let brand = item.brand.trimmingCharacters(in: .whitespacesAndNewlines)
             let others = item.otherNames.map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }.filter { !$0.isEmpty && $0.lowercased() != name.lowercased() }
-            return SeenFood(name: name, alternatives: Array(others.prefix(3)), brand: brand.isEmpty ? nil : brand, count: min(max(item.count, 1), 12))
+            return SeenFood(name: name, alternatives: Array(others.prefix(3)), brand: brand.isEmpty ? nil : brand, count: min(max(item.count, 1), 12),
+                            size: PortionSize(rawValue: item.size.lowercased()) ?? .regular)
         }
     }
 
@@ -184,20 +206,36 @@ enum MealPhoto {
         }?.key
     }
 
-    /// The match to tick by default. A restaurant's item is only ticked when the photo showed that restaurant's brand;
-    /// a burger or chips named in a photo says nothing about where it came from, so those are listed but left for the
-    /// user to choose. With no brand, the first everyday food is ticked.
-    static func preselected(from matches: [Food], for seen: SeenFood, chainNames: [String: String]) -> Food? {
+    /// The match to tick by default. A restaurant's item is only ticked when the photo showed that restaurant's brand, or
+    /// when you're at one of its restaurants (`nearby`); a burger or chips named in a photo says nothing about where it came
+    /// from, so otherwise those are listed but left for the user to choose. With neither, the first everyday food is ticked.
+    static func preselected(from matches: [Food], for seen: SeenFood, chainNames: [String: String], nearby: String? = nil) -> Food? {
         guard seen.agreed else { return nil }
         if let chain = chain(for: seen.brand, chainNames: chainNames), let hit = matches.first(where: { $0.chain == chain }) { return hit }
+        // At a restaurant, its item is ticked unless an everyday food is plainly the thing seen (a banana is still a banana).
+        if let nearby, let hit = matches.first(where: { $0.chain == nearby }), !matches.contains(where: { $0.isEveryday && plainly($0, is: seen) }) { return hit }
         return matches.first(where: \.isEveryday)
+    }
+
+    /// Whether a food is plainly the thing seen: its name before any comma is the same words ("Banana, raw" for "banana").
+    static func plainly(_ food: Food, is seen: SeenFood) -> Bool {
+        let main = FoodSearch.tokens(String(food.name.prefix { $0 != "," })).map(stem)
+        return ([seen.name] + seen.alternatives).contains { FoodSearch.tokens($0).map(stem) == main }
     }
 
     /// Leanr foods that match what was seen, closest first. Every word must start a word of the food's name (no typo matching,
     /// so "chair" never finds "Chai"). With a brand, its restaurant comes first; without one, everyday foods (plain rice before a rice bowl).
     /// The other names are tried when the first finds nothing.
-    static func matches(for seen: SeenFood, in foods: [Food], chainNames: [String: String], limit: Int = 4) -> [Food] {
-        let chain = chain(for: seen.brand, chainNames: chainNames)
+    /// `nearby` is a restaurant you're at: when the photo shows no brand, its two closest items go first, ahead of the usual matches.
+    static func matches(for seen: SeenFood, in foods: [Food], chainNames: [String: String], limit: Int = 4, nearby: String? = nil) -> [Food] {
+        let brand = chain(for: seen.brand, chainNames: chainNames)
+        let usual = lookUp(seen, in: foods, chainNames: chainNames, chain: brand, limit: limit)
+        guard brand == nil, let nearby, chainNames[nearby] != nil else { return usual }
+        let local = lookUp(seen, in: foods, chainNames: chainNames, chain: nearby, limit: limit).filter { $0.chain == nearby }.prefix(2)
+        return Array((local + usual.filter { food in !local.contains { $0.id == food.id } }).prefix(limit))
+    }
+
+    private static func lookUp(_ seen: SeenFood, in foods: [Food], chainNames: [String: String], chain: String?, limit: Int) -> [Food] {
         for search in [seen.name] + seen.alternatives {
             let query = FoodSearch.Query(search)
             guard !query.isEmpty else { continue }
