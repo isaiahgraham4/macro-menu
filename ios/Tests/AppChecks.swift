@@ -963,18 +963,6 @@ import UniformTypeIdentifiers
         assert(agreed.foods.count == 1 && agreed.foods[0].count == 2 && agreed.foods[0].agreed)
         let unsure = MealPhoto.merge(named: [item("rice")], classified: [(food: item("banana"), score: 0.2)])
         assert(unsure.foods.count == 2 && unsure.foods.allSatisfy(\.agreed))
-        // Bring your own key: each provider's reply is read the same way, a code fence is tolerated, and a refusal throws.
-        let fenced = "```json\n{\"foods\": [{\"name\": \"firm tofu\", \"otherNames\": [\"tofu\", \"firm tofu\"], \"brand\": \"\", \"count\": 40, \"size\": \"large\", \"grams\": 150}]}\n```"
-        let cloudFoods = try CloudVision.parse(fenced)
-        assert(cloudFoods.count == 1 && cloudFoods[0].name == "firm tofu" && cloudFoods[0].alternatives == ["tofu"] && cloudFoods[0].brand == nil
-            && cloudFoods[0].count == 12 && cloudFoods[0].size == .large && cloudFoods[0].grams == 150)
-        assert((try? CloudVision.parse("no json here")) == nil && (try? CloudVision.parse("{\"foods\": []}"))?.isEmpty == true)
-        let claudeReply: [String: Any] = ["stop_reason": "end_turn", "content": [["type": "thinking", "thinking": ""], ["type": "text", "text": "{\"foods\": []}"]]]
-        assert((try? CloudVision.reply(.anthropic, claudeReply)) == "{\"foods\": []}")
-        assert((try? CloudVision.reply(.anthropic, ["stop_reason": "refusal", "content": []])) == nil)
-        assert((try? CloudVision.reply(.gemini, ["candidates": [["content": ["parts": [["text": "{}"]]]]]])) == "{}")
-        assert((try? CloudVision.reply(.openai, ["choices": [["message": ["content": "{}"]]]])) == "{}")
-        assert((try? CloudVision.reply(.openai, ["choices": [["message": ["refusal": "no", "content": NSNull()]]]])) == nil)
         // A bowl read as "soup" by the classifier alone is listed but not ticked; Apple Intelligence agreeing ticks it.
         let soupOnly = MealPhoto.merge(named: [], classified: [(food: item("soup"), score: 0.7)])
         assert(soupOnly.foods.count == 1 && !soupOnly.foods[0].agreed && soupOnly.foods[0].reason != nil)

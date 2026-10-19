@@ -40,7 +40,6 @@ struct MealPhotoView: View {
     @State private var searching: Row.ID?
     @State private var failed = false
     @State private var engine = MealPhoto.Engine.appleIntelligence
-    @State private var cloudProblem: String?
     @State private var scanningBarcode = false
     @State private var noteText = ""
     @State private var readingNote = false
@@ -78,9 +77,7 @@ struct MealPhotoView: View {
                     }
                     PhotosPicker(selection: $pickerItem, matching: .images) { Label("Choose from Photos", systemImage: "photo.on.rectangle") }
                 } footer: {
-                    Text(CloudVision.isOn
-                         ? "\(CloudVision.provider.title) names the foods using your key: the photo goes straight to them, never to Leanr. The figures are Leanr's own, so check each match and how much you had."
-                         : "Your iPhone names the foods in the photo. Nothing is saved or sent anywhere. The figures are Leanr's own, so check each match and how much you had.")
+                    Text("Your iPhone names the foods in the photo. Nothing is saved or sent anywhere. The figures are Leanr's own, so check each match and how much you had.")
                 }
             }
             if phase == .done {
@@ -88,7 +85,10 @@ struct MealPhotoView: View {
                     Section { Text("No food found in this photo. Try one taken from above, with the food filling the frame, or search for it instead.").foregroundStyle(.secondary) }
                 } else {
                     Section {
-                        Text(engineText).font(.roboto(.caption)).foregroundStyle(.secondary)
+                        Text(engine == .appleIntelligence
+                             ? "Named by Apple Intelligence on your iPhone. Check each match and how much you had."
+                             : "Named by your iPhone's built-in image recognition\(engine == .both ? " and Apple Intelligence" : ""). It can't count, so each food is one serving: check the amounts.")
+                            .font(.roboto(.caption)).foregroundStyle(.secondary)
                     }
                 }
                 ForEach($rows) { $row in
@@ -256,7 +256,6 @@ struct MealPhotoView: View {
                     recognised.foods.map { item in (item, MealPhoto.matches(for: item, in: foods, chainNames: names, nearby: nearby)) }
                 }.value
                 engine = recognised.engine
-                cloudProblem = recognised.cloudProblem
                 rows = found.map { item, matches in row(for: item, matches: matches, foods: foods, names: names, nearby: nearby, choices: choices) }
                 phase = .done
             } catch {
@@ -276,25 +275,10 @@ struct MealPhotoView: View {
         let pick = MealPhoto.preselected(from: matches, for: item, chainNames: names, nearby: nearby)
         var row = Row(seen: item, matches: matches, chosen: pick?.id, quantity: 0, size: item.size, note: nil)
         row.quantity = row.servings(for: pick)
-        // A weight guess (from the person's own AI service) beats the size words, where the serving's weight is known.
-        if let grams = item.grams, let pick, PortionSize.applies(to: pick), let weight = pick.servingWeight, ["g", "ml"].contains(weight.1), weight.0 > 0 {
-            row.quantity = max(0.25, FoodPhrase.rounded(grams * Double(item.count) / weight.0))
-        }
         if let pick, let nearby, pick.chain == nearby, MealPhoto.chain(for: item.brand, chainNames: names) == nil {
             row.note = "Ticked because you're at \(store.chainName(nearby))"
         }
         return row
-    }
-
-    /// Who named the foods, and how far to trust the amounts.
-    private var engineText: String {
-        let fallback = cloudProblem.map { "\(CloudVision.provider.title) couldn't read it (\($0)), so your iPhone did. " } ?? ""
-        switch engine {
-        case .cloud: return "Named by \(CloudVision.provider.title) with your key, which also guessed the amounts. Check each match and how much you had."
-        case .appleIntelligence: return fallback + "Named by Apple Intelligence on your iPhone. Check each match and how much you had."
-        case .imageRecognition, .both:
-            return fallback + "Named by your iPhone's built-in image recognition\(engine == .both ? " and Apple Intelligence" : ""). It can't count, so each food is one serving: check the amounts."
-        }
     }
 
     /// The restaurant you're at: one of Leanr's chains within about 150 m, from the places already found near you.

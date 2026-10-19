@@ -17,8 +17,6 @@ struct SeenFood: Equatable, Sendable {
     var size = PortionSize.regular
     /// Why it isn't ticked, when that's something other than the two readings disagreeing.
     var reason: String?
-    /// Roughly what one weighs, when a reader that can judge it (the person's own AI service) said.
-    var grams: Double?
 }
 
 /// A rough portion size for an everyday food in a photo, as a share of one serving.
@@ -41,13 +39,11 @@ enum PortionSize: String, CaseIterable, Identifiable, Sendable {
 /// and Apple's built-in image classifier (`MealVision`) everywhere else, or when the first finds nothing. All on the device.
 enum MealPhoto {
     /// Which engine named the foods, so the screen can say how much to trust the amounts.
-    enum Engine: Sendable { case appleIntelligence, imageRecognition, both, cloud }
+    enum Engine: Sendable { case appleIntelligence, imageRecognition, both }
 
     struct Recognition: Sendable {
         var foods: [SeenFood]
         var engine: Engine
-        /// Why the person's own AI service wasn't used for this photo, when it's on but failed.
-        var cloudProblem: String?
     }
 
     /// Whether this device can use Apple Intelligence's photo reading: iOS 27, Apple Intelligence on, and a model that reads images.
@@ -63,22 +59,6 @@ enum MealPhoto {
     /// The foods in the photo. Apple's image classifier always looks (it says how sure it is), and Apple Intelligence
     /// does too where the iPhone has it; each fills in what the other misses.
     static func recognise(_ image: CGImage) async throws -> Recognition {
-        // With the person's own AI key on, their provider reads it; if it can't, the readers on the phone do.
-        var problem: String?
-        if CloudVision.isOn {
-            do {
-                let foods = try await CloudVision.foods(in: image)
-                return Recognition(foods: foods, engine: .cloud)
-            } catch {
-                problem = error.localizedDescription
-            }
-        }
-        var local = try await recogniseOnDevice(image)
-        local.cloudProblem = problem
-        return local
-    }
-
-    private static func recogniseOnDevice(_ image: CGImage) async throws -> Recognition {
         // The classifier can fail (the iOS simulator has no neural engine); then the model's answer stands alone.
         async let classified = try? await MealVision.scoredFoods(in: image)
         var named: [SeenFood] = []
