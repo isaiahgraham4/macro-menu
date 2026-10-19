@@ -871,6 +871,38 @@ import UniformTypeIdentifiers
         assert(everyday.first { $0.name == "Beer" }?.mismatch == false)
         assert(breast.everydaySource?.absoluteString == "https://fdc.nal.usda.gov/food-details/171477/nutrients")
         assert(everydayStore.chainName(Food.everyday) == "Everyday foods")
+        // Everyday foods carry their own diet data, curated from what each food is rather than guessed from its name.
+        assert(everyday.allSatisfy { $0.diet?.src == "curated" && ($0.diet?.vg != nil) == ($0.diet?.meat == []) }, "every everyday food has diet data")
+        assert(everyday.allSatisfy { $0.diet?.vg != "vegan" || Set(($0.diet?.al ?? []) + ($0.diet?.may ?? [])).isDisjoint(with: ["milk", "egg"]) })
+        let everydayNamed = Dictionary(everyday.map { ($0.name, $0) }) { a, _ in a }
+        func fits(_ name: String, _ options: Set<DietOption>) -> Bool { DietFilter(options: options).allows(everydayNamed[name]!) }
+        // A word in the name no longer stands for the whole list: a battered fish fillet isn't just fish, a parmigiana has crumbs and cheese.
+        assert(DietInfo.guess("Battered fish fillet").al == ["fish"] && everydayNamed["Battered fish fillet"]!.diet?.al == nil)
+        assert(!fits("Battered fish fillet", [.gluten]) && !fits("Chicken parmigiana (no pasta)", [.milk]) && !fits("Chicken parmigiana (no pasta)", [.gluten]))
+        assert(everydayNamed["Omelette"]!.diet?.al == ["egg", "milk"] && !fits("Omelette", [.milk]) && fits("Omelette", [.vegetarian, .gluten]))
+        assert(fits("Banana", [.vegan, .gluten, .peanut]) && fits("Chicken breast, cooked", [.noPork, .gluten, .milk]) && fits("Sweet potato, baked", [.gluten]))
+        assert(!fits("Peanut butter", [.treenut]) && !fits("White bread", [.sesame]) && !fits("Bacon, cooked", [.noPork]) && !fits("Marshmallows", [.noBeef]))
+        assert(!fits("Red wine", [.vegetarian]) && !fits("Beer", [.gluten]) && fits("Cheddar cheese", [.vegetarian, .gluten]) && !fits("Cheddar cheese", [.vegan]))
+        assert(!fits("Hamburger, single patty", [.sesame]) && !fits("Beef sausage, cooked", [.noPork]) && fits("Italian dressing", [.vegetarian]))
+        // The food's own data comes before the name: a banana marked with gluten is left out.
+        var markedBanana = everydayNamed["Banana"]!; markedBanana.diet = DietInfo(meat: [], al: ["gluten"], vg: "vegan", src: "curated")
+        assert(!DietFilter(options: [.gluten]).allows(markedBanana))
+        // A copy saved in a log before foods carried diet data finds it again by ID.
+        assert(DietInfo.everyday(from: everydayURL).count == everyday.count && DietInfo.everyday(from: everydayURL)[everydayNamed["Omelette"]!.id]?.al == ["egg", "milk"])
+        // Where a name names an allergen or meat, the curated data has it too or leaves it unknown, apart from names where the word means something else.
+        var nameOnly: [String] = []
+        for food in everyday {
+            let guessed = DietInfo.guess(food.name), info = food.diet!
+            let missedAllergen = info.al.map { !Set(guessed.al ?? []).isSubset(of: Set($0 + (info.may ?? []))) } ?? false
+            let missedMeat = info.meat.map { !Set(guessed.meat ?? []).isSubset(of: Set($0)) } ?? false
+            if missedAllergen || missedMeat { nameOnly.append(food.name) }
+        }
+        // "weet" in sweet, "mince" and "steak" that aren't beef, "meat" that's chicken, plant milks and butters, and root beer.
+        assert(nameOnly == ["Sweet potato, raw", "Sweet potato, baked", "Chicken mince, raw", "Turkey mince, raw", "Lamb mince, raw", "Soy milk",
+                            "Almond milk, unsweetened", "Peanut butter", "Almond butter", "Applesauce, unsweetened", "Sweet corn, raw",
+                            "Butternut pumpkin, baked", "Roast chicken, meat and skin", "Roast chicken, breast meat only", "Chicken, dark meat, roasted",
+                            "Pork mince, cooked", "Tuna steak, cooked", "Butter beans", "Turkey, roasted, meat and skin", "Coconut milk, canned",
+                            "Root beer", "Rice milk"], "\(nameOnly)")
         assert(everydayStore.foods.contains { $0.id == banana.id } && !everydayStore.orderFoods.contains { $0.isEveryday })
         let searched = FoodSearch.browse(everydayStore.foods, chainNames: [Food.everyday: "Everyday foods"], request: .init(search: "chicken breast", chain: Food.everyday))
         assert(Set(searched.map(\.name)) == ["Chicken breast, raw", "Chicken breast, cooked", "Chicken breast, skin on, roasted", "Roast chicken, breast meat only"])

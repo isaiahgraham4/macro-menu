@@ -72,15 +72,19 @@ The app uses SwiftUI and requires no third-party packages or API keys.
 - Dietary needs (Find → Dietary needs): vegetarian, vegan, no beef, no pork, and the 12 allergens on Australia's list (gluten, wheat, milk, egg, soy, sesame, peanuts, tree nuts, fish, shellfish, lupin, sulphites). An item whose restaurant doesn't say either way about an allergen, like Hungry Jack's café drinks it doesn't list, is left out. Orders, Best
   choices, search and the Left today and Plan ahead suggestions only offer items whose restaurant's own words show they
   fit; unknown items are left out (`DietFilter`, `Food.diet`). With needs set, the finder customises by taking things off
-  only. Each item's page shows its meats, allergens and "may contain", and where that came from. The data is built by
+  only. Each restaurant item's page shows its meats, allergens and "may contain", and where that came from. The data is built by
   `Scripts/diet-info.py` from Grill'd's ingredient lists and allergen statements, Nando's and Hungry Jack's allergens,
   McDonald's and Subway ingredients, Hungry Jack's, Oporto, Red Rooster and Domino's descriptions, and GYG, Zambrero and
   KFC names, plus the restaurants' own allergen guides read by `Scripts/allergen-guides.py` (Domino's, Boost, Oporto, Red
   Rooster, Spud Bar, Schnitz, Zambrero, GYG, Hungry Jack's and Subway; items built from parts, like a GYG burrito, use the
   restaurant's own list of what's in them). "May contain" counts as contains, and gelatine counts against no beef and no
-  pork. Everyday foods are judged from their names (`DietInfo.guess`): a name with no allergen word counts as
-  allergen-free only when it's a plain single food (`DietOption.plainFoods`), so "Falafel" is left out when an allergen
-  is avoided. Pinned, recent and saved foods and saved meals follow the same needs in suggestions. To refresh: `allergen-guides.py fetch`, `allergen-guides.py build`, `diet-info.py build`, then `export-menu.cjs`.
+  pork. Everyday foods carry their own meats and allergens (`diet` in `GenericFoods.json`, curated in `DIET` in
+  `Scripts/generic-foods.py` from what each food is, not from words in its name): composite and takeaway foods, whose
+  recipes vary ("Battered fish fillet", "Chicken parmigiana"), have unknown allergens, so they're left out when one is
+  avoided, and foods that may hold stock, lard, casings or gelatine are left out when meat is. Their "may contain" covers
+  cross-contact and what some brands add, like soy and sesame in bread or sulphites in vinegar. A copy saved in a log or
+  meal before foods carried this finds it again by ID (`DietInfo.everyday`); only a food missing from the file falls
+  back to its name (`DietInfo.guess`, which trusts a name with no allergen word only for a plain single food). Pinned, recent and saved foods and saved meals follow the same needs in suggestions. To refresh: `allergen-guides.py fetch`, `allergen-guides.py build`, `diet-info.py build`, then `export-menu.cjs`.
   McDonald's and KFC show theirs only inside their own pages (the item pages' ingredient and allergen lists, and KFC's
   guide panels), so those were read once in a normal browser and saved as `mcd-allergens.json` and `kfc-allergens.json`;
   Subway's allergen guide PDF is read by the script. KFC's combos, boxes and feasts have no allergen panel, so they stay
@@ -274,7 +278,7 @@ each item's published total and skipped (with a warning) if they drift over 3%.
 
 ## Refresh everyday foods
 
-Everyday foods (bananas, chicken breast, rice and about 335 others) come from USDA
+Everyday foods (bananas, chicken breast, rice and about 460 others) come from USDA
 FoodData Central's SR Legacy data, which is public domain. Download "SR Legacy, CSV"
 from https://fdc.nal.usda.gov/download-datasets, unzip it, then run:
 
@@ -284,7 +288,9 @@ python3 ios/Scripts/generic-foods.py path/to/FoodData_Central_sr_legacy_food_csv
 
 The script names each food's USDA entry and serving exactly, fails rather than guessing
 if one is missing, and writes `ios/MacroMenu/GenericFoods.json`. To add a food, add a
-line to `FOODS` in the script. These foods appear in search and Best choices under
+line to `FOODS` in the script and its meats and allergens to `DIET` (the build fails without
+them). `python3 ios/Scripts/generic-foods.py --diet` applies `DIET` to the current file
+without the USDA download. These foods appear in search and Best choices under
 "Everyday foods", but never in "An order that fits" or Smarter swaps.
 
 Title font: Bebas Neue (SIL Open Font License, `ios/Licenses/BebasNeue-OFL.txt`).

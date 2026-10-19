@@ -12,13 +12,20 @@ struct DietInfo: Codable, Hashable, Sendable {
     var unk: [String]?
     /// "vegan" or "vegetarian".
     var vg: String?
-    /// Where the meat information came from: "ingredients", "description", "name" or "labels".
+    /// Where the meat information came from: "ingredients", "description", "name" or "labels", or "curated" for everyday foods.
     var src: String?
 
     var isVegetarian: Bool { meat?.isEmpty == true }
     var isVegan: Bool { vg == "vegan" }
 
-    /// For everyday foods, which are single foods named plainly ("Chicken breast, cooked", "Greek yoghurt"), from the name.
+    /// Everyday foods' own diet data by ID, from `GenericFoods.json`, for copies saved in logs and meals before foods carried it.
+    static let everyday: [String: DietInfo] = everyday(from: Bundle.main.url(forResource: "GenericFoods", withExtension: "json"))
+    static func everyday(from url: URL?) -> [String: DietInfo] {
+        guard let url, let data = try? Data(contentsOf: url), let foods = try? JSONDecoder().decode([Food].self, from: data) else { return [:] }
+        return Dictionary(foods.compactMap { food in food.diet.map { (food.id, $0) } }) { a, _ in a }
+    }
+
+    /// The fallback for an everyday food without its own diet data (each one in `GenericFoods.json` has it), from the name.
     /// A name with no allergen word only counts as allergen-free when it's a plain single food ("Banana", "Brown rice, cooked");
     /// anything else ("Falafel", "Chicken tenders") has unknown allergens, so it's left out when one is avoided.
     static func guess(_ name: String) -> DietInfo {
@@ -113,7 +120,7 @@ struct DietFilter: Equatable, Hashable, Sendable {
     /// Whether an item fits. Your own foods always do: you know what's in them.
     func allows(_ food: Food) -> Bool {
         guard !isEmpty, food.chain != "mine" else { return true }
-        guard let info = food.isEveryday ? DietInfo.guess(food.name) : food.diet else { return false }
+        guard let info = food.isEveryday ? food.diet ?? DietInfo.everyday[food.id] ?? DietInfo.guess(food.name) : food.diet else { return false }
         if options.contains(where: { !$0.isAllergen }) {
             guard let meat = info.meat else { return false }
             if options.contains(.vegetarian) && !meat.isEmpty { return false }

@@ -52,7 +52,7 @@ struct Food: Codable, Identifiable, Hashable, Sendable {
     var note: String?
     /// The product barcode, so scanning it again finds this food.
     var barcode: String?
-    /// For restaurant items: the meats and allergens in it, where the restaurant's own words say (see `DietInfo`).
+    /// The meats and allergens in it: for restaurant items, where the restaurant's own words say; for everyday foods, curated in `Scripts/generic-foods.py` (see `DietInfo`).
     var diet: DietInfo?
     var isAnchor: Bool { chain == "mine" || cat == "main" || cat == "breakfast" }
     /// Everyday foods such as bananas and chicken breast, from USDA FoodData Central. Searchable everywhere, but not a restaurant.
