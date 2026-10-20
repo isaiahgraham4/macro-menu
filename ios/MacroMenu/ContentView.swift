@@ -13,6 +13,8 @@ final class Navigator {
     /// Changing this rebuilds the Find tab, returning it to its main screen.
     private(set) var findStack = UUID()
     var todayStack = UUID()
+    /// Set by the Scan control: Today opens the barcode scanner, after closing whatever sheet is up.
+    var scanRequested = false
     /// A sheet a feature tip asks ContentView to open.
     var requestedSheet: RequestedSheet?
     enum RequestedSheet { case settings, reminders }
@@ -82,6 +84,10 @@ struct ContentView: View {
             AppServices.rebookReminders()
             await health.refresh()
         }
+        .onChange(of: nav.scanRequested) {
+            // The scanner opens over Today, so anything already covering it is closed first.
+            if nav.scanRequested { settings = false; reminderPrompt = false; nav.showWeeklyReview = false }
+        }
         .onChange(of: nav.requestedSheet) {
             switch nav.requestedSheet {
             case .settings: settings = true
@@ -95,6 +101,8 @@ struct ContentView: View {
                 settings = false; nav.todayStack = UUID(); nav.tab = .today
             } else if url.scheme == "leanr", url.host == "progress" {
                 settings = false; nav.tab = .progress
+            } else if url.scheme == "leanr", url.host == "scan" {
+                nav.opened = nil; nav.tab = .today; nav.scanRequested = true
             }
         }
         .font(.roboto())

@@ -13,6 +13,7 @@ struct LeanrWidgetBundle: WidgetBundle {
         LeanrCaloriesBurntWidget()
         LeanrPlannedWidget()
         LeanrWaterWidget()
+        LeanrScanControl()
     }
 }
 

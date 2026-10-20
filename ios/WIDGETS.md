@@ -29,3 +29,11 @@ Build the MacroMenu scheme to include the extension. Automatic signing must prov
 `LeanrCaloriesBurntWidget` (kind `LeanrCaloriesBurnt`) shows today's active calories from Apple Health. There's no goal for it, so the ring and the gauge set today against the average of the other days in the last week that have anything recorded, and the caption says that average. Small has a ring, medium adds the last seven days, and the Lock Screen has circular, rectangular and inline versions. As with steps, the extension never touches HealthKit: the app writes the last week into the shared snapshot (`WidgetCalories.activeEnergy`) whenever Leanr refreshes calories burnt, and the figure follows the source chosen in Settings → Targets → Calories burnt. Tapping the widget opens the Progress tab. Disconnecting Apple Health clears it.
 
 On Apple Watch, `BurntComplication` (kind `LeanrWatchBurnt`: circular, corner and inline) shows the same day's figure, which the iPhone sends in the watch snapshot (`WatchSnapshot.energy`) and the Today page lists as "Burnt".
+
+## Scan control
+
+`LeanrScanControl` (kind `com.isaiahgraham.MacroMenu.scan`) is a Control, so it can replace the torch or camera at the bottom
+of the Lock Screen, sit in Control Centre or go on the Action button. Tapping it runs `ScanBarcodeIntent`
+(`Shared/ScanBarcodeIntent.swift`, `openAppWhenRun`), which opens Leanr on Today and shows the barcode scanner, logging to
+today at the current meal time. Leanr closes any sheet that's up first, and the request waits until the scanner is on screen,
+so it also works from a cold start. `leanr://scan` does the same.

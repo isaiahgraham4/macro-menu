@@ -245,6 +245,14 @@ struct TodayView: View {
                 }
             } }
             .onChange(of: barcode) { if barcode { FeatureTips.markUsed(.scan) } }
+            .task(id: nav.scanRequested) {
+                // From the Scan control: log to today, at the meal time it is now. A short wait lets launch, or a sheet that
+                // was up, settle first, or the scanner wouldn't open. The request stays until the scanner is showing.
+                guard nav.scanRequested else { return }
+                date = Date(); mealTime = MealTime.suggested()
+                try? await Task.sleep(for: .milliseconds(500))
+                if !Task.isCancelled { barcode = true }
+            }
             .onChange(of: photo) { if photo { FeatureTips.markUsed(.photo) } }
             .onChange(of: describing) { if describing { FeatureTips.markUsed(.describe) } }
             .navigationDestination(isPresented: $planning) { PlanView() }
@@ -253,6 +261,7 @@ struct TodayView: View {
                 BarcodeFoodFlow(savePortion: { store.log([$0], name: $0.food.name, date: date, mealTime: mealTime) }) {
                     store.log([Portion(food: $0)], name: $0.name, date: date, mealTime: mealTime)
                 }
+                .onAppear { nav.scanRequested = false }
             }
             .sheet(isPresented: $photo) {
                 NavigationStack {
