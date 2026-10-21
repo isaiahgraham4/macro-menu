@@ -326,9 +326,14 @@ struct MealTimeDetailView: View {
     let mealTime: MealTime
     let date: Date
     @State private var editing: LogEntry?
+    @State private var savingRecipe = false
 
     private var entries: [LogEntry] {
         (store.data.logs[dayKey(date)] ?? []).filter { $0.mealTime == mealTime }
+    }
+    /// The one meal's name, or "Dinner 21 Oct" for several, to change before saving.
+    private var recipeName: String {
+        entries.count == 1 ? entries[0].name : "\(mealTime.title) \(date.formatted(.dateTime.day().month(.abbreviated)))"
     }
 
     var body: some View {
@@ -364,8 +369,20 @@ struct MealTimeDetailView: View {
                     }
                 }
             }
+            if !entries.isEmpty {
+                Section {
+                    Button { savingRecipe = true } label: { Label("Save as a recipe", systemImage: "carrot") }
+                } footer: {
+                    Text("Puts everything in \(mealTime.title.lowercased()) into one recipe in My foods, so you can log it again in one go and change the amounts each time.")
+                }
+            }
         }
         .navigationTitle(mealTime.title)
+        .sheet(isPresented: $savingRecipe) {
+            NavigationStack {
+                RecipeEditor(food: .recipeDraft(name: recipeName, from: entries.flatMap(\.items)), imported: true) { store.notice = "Saved to My foods" }
+            }
+        }
         .navigationBarTitleDisplayMode(.inline)
         .sheet(item: $editing) { entry in
             NavigationStack { LogEditor(entry: entry, day: dayKey(date)) }
@@ -426,7 +443,24 @@ struct LogEditor: View {
             } header: { Text("Foods") } footer: { Text("Swipe a food to take it out.") }
             ForEach(entry.items) { item in
                 if let ingredients = item.ingredientPortions {
-                    Section("In \(item.food.name)") { IngredientRows(ingredients: ingredients) }
+                    Section {
+                        ForEach(ingredients) { ingredient in
+                            let weight = ingredient.food.servingWeight
+                            VStack(alignment: .leading, spacing: 6) {
+                                Text(ingredient.food.name).font(.roboto(.headline))
+                                Text("\((ingredient.food.cal * ingredient.quantity).rounded().number) Cal · \((ingredient.food.p * ingredient.quantity).number) g protein")
+                                    .font(.roboto(.caption)).foregroundStyle(.secondary)
+                                NumberField(title: weight.map { $0.1 == "g" ? "Grams" : "mL" } ?? "Servings",
+                                            value: amount(of: ingredient.id, in: item.id), places: weight == nil ? 2 : 1,
+                                            spokenTitle: "Amount of \(ingredient.food.name)")
+                            }
+                            .padding(.vertical, 2)
+                        }
+                        .onDelete { removeIngredients(at: $0, from: item.id) }
+                        .deleteDisabled(ingredients.count == 1)
+                    } header: { Text("In \(item.food.name)") } footer: {
+                        Text("Change an amount or swipe one out for this meal only. Your saved recipe stays as it is.")
+                    }
                 }
             }
             if !entry.items.isEmpty {
@@ -468,6 +502,35 @@ struct LogEditor: View {
                 if store.change(undo: "Deleted \(original.name)", { $0.logs[day]?.removeAll { $0.id == original.id } }) { dismiss() }
             }
         }
+    }
+
+    /// How much of a recipe's ingredient is in this logged portion, in grams or mL when it's weighed, otherwise servings.
+    /// Setting it changes the recipe for this meal only and works its figures out again.
+    private func amount(of ingredientID: Portion.ID, in itemID: Portion.ID) -> Binding<Double> {
+        Binding(get: {
+            guard let item = entry.items.first(where: { $0.id == itemID }),
+                  let ingredient = item.ingredientPortions?.first(where: { $0.id == ingredientID }) else { return 0 }
+            return (ingredient.food.servingWeight?.0 ?? 1) * ingredient.quantity
+        }, set: { value in
+            guard let i = entry.items.firstIndex(where: { $0.id == itemID }), value.isFinite, value > 0,
+                  var ingredients = entry.items[i].food.ingredients,
+                  let j = ingredients.firstIndex(where: { $0.id == ingredientID }) else { return }
+            let item = entry.items[i]
+            let unit = ingredients[j].food.servingWeight?.0 ?? 1
+            // Only an actual change: tapping into the field mustn't rework the figures and turn on Save.
+            if let shown = item.ingredientPortions?[j], abs(shown.quantity * unit - value) < 0.0001 { return }
+            // Back from this portion to the whole recipe, which the saved figures are worked out from.
+            let inPortion = value / unit
+            ingredients[j].quantity = inPortion * (item.food.recipeYield ?? 1) / max(item.quantity, 0.001)
+            entry.items[i].food = item.food.withIngredients(ingredients)
+        })
+    }
+
+    private func removeIngredients(at offsets: IndexSet, from itemID: Portion.ID) {
+        guard let i = entry.items.firstIndex(where: { $0.id == itemID }), var ingredients = entry.items[i].food.ingredients else { return }
+        ingredients.remove(atOffsets: offsets)
+        guard !ingredients.isEmpty else { return }
+        entry.items[i].food = entry.items[i].food.withIngredients(ingredients)
     }
 
     private func save() {

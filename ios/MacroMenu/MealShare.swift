@@ -16,6 +16,22 @@ extension Portion {
     }
 }
 
+extension Food {
+    /// This recipe made with different ingredients, its figures worked out again from them. Everything else, the ID included, stays.
+    func withIngredients(_ ingredients: [Portion]) -> Food {
+        let fresh = Nutrition(ingredients).food(name: name, servings: max(recipeYield ?? 1, 0.001), ingredients: ingredients)
+        var value = self
+        value.kj = fresh.kj; value.cal = fresh.cal; value.p = fresh.p; value.c = fresh.c; value.f = fresh.f
+        value.nut = fresh.nut; value.price = fresh.price; value.pf = fresh.pf; value.ingredients = ingredients
+        return value
+    }
+
+    /// A new recipe made of these foods, one serving, with any recipe among them broken into its ingredients.
+    static func recipeDraft(name: String, from items: [Portion]) -> Food {
+        Food(name: name, kj: 0, cal: 0, p: 0, ingredients: QuickLog.copies(mealLines(items)), recipeYield: 1)
+    }
+}
+
 /// What a meal is made of, for listing: a recipe's ingredients in place of the recipe, anything else as it is.
 func mealLines(_ items: [Portion]) -> [Portion] {
     items.flatMap { $0.ingredientPortions ?? [$0] }
