@@ -12,6 +12,7 @@ struct FoodDetailView: View {
     var logYesterday = false
     var logMeal: MealTime?
     @State private var editing = false
+    @State private var sharingImage = false
 
     init(food: Food, pick: ((Portion) -> Void)? = nil, pickTitle: String = "Use this portion", logYesterday: Bool = false, logMeal: MealTime? = nil) {
         initial = food; self.pick = pick; self.pickTitle = pickTitle; self.logYesterday = logYesterday; self.logMeal = logMeal
@@ -50,6 +51,13 @@ struct FoodDetailView: View {
                 if food.mismatch { Label("Published energy doesn’t match the listed macros.", systemImage: "exclamationmark.triangle").font(.roboto(.caption)).foregroundStyle(.orange) }
             }
             Section("Nutrition for your portion") { NutritionView(total: Nutrition([portion])) }
+            if let ingredients = portion.ingredientPortions {
+                Section {
+                    IngredientRows(ingredients: ingredients)
+                } header: { Text("Ingredients in your portion") } footer: {
+                    if let servings = food.recipeYield, servings != 1 { Text("The whole recipe makes \(servings.number) servings.") }
+                }
+            }
             Section("Portion") {
                 if let serving = food.servingWeight {
                     Picker("Measure in", selection: $useWeight) {
@@ -165,7 +173,10 @@ struct FoodDetailView: View {
                     }.accessibilityLabel(pinned ? "Unpin" : "Pin to top")
                 }
                 ToolbarItem(placement: .topBarTrailing) {
-                    ShareLink(item: mealText(adjusted.name, [portion])) { Image(systemName: "square.and.arrow.up") }.accessibilityLabel("Share nutrition")
+                    Menu {
+                        Button("Share as image", systemImage: "photo") { sharingImage = true }
+                        ShareLink("Share as text", item: mealText(adjusted.name, [portion]))
+                    } label: { Image(systemName: "square.and.arrow.up") }.accessibilityLabel("Share")
                 }
             }
             .safeAreaInset(edge: .bottom) {
@@ -200,6 +211,9 @@ struct FoodDetailView: View {
                     if food.ingredients != nil { RecipeEditor(food: food) }
                     else { FoodEditor(food: food) { store.saveFood($0) } }
                 }
+            }
+            .sheet(isPresented: $sharingImage) {
+                NavigationStack { MealSharePreview(name: adjusted.name, items: [portion]) }
             }
             .sheet(isPresented: $editingAdjustment) {
                 NavigationStack { FoodEditor(food: nil) { value in ownAdjustment = value; editingAdjustment = false; return true } }

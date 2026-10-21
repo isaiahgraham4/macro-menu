@@ -382,6 +382,7 @@ struct LogEditor: View {
     @State private var date: Date
     @State private var picking = false
     @State private var confirmingDelete = false
+    @State private var sharingImage = false
     private let original: LogEntry
     let day: String
 
@@ -393,6 +394,11 @@ struct LogEditor: View {
 
     private var newDay: String { dayKey(date) }
     private var changed: Bool { entry != original || newDay != day }
+    /// "Dinner · 21 Oct" on the share card.
+    private var shareSubtitle: String {
+        let when = date.formatted(.dateTime.day().month(.abbreviated))
+        return entry.mealTime.map { "\($0.title) · \(when)" } ?? when
+    }
 
     var body: some View {
         LeanrForm {
@@ -418,8 +424,16 @@ struct LogEditor: View {
                 .onDelete { entry.items.remove(atOffsets: $0) }
                 Button { picking = true } label: { Label("Add food", systemImage: "plus.circle.fill") }
             } header: { Text("Foods") } footer: { Text("Swipe a food to take it out.") }
+            ForEach(entry.items) { item in
+                if let ingredients = item.ingredientPortions {
+                    Section("In \(item.food.name)") { IngredientRows(ingredients: ingredients) }
+                }
+            }
             if !entry.items.isEmpty {
                 Section("Totals") { NutritionView(total: Nutrition(entry.items)) }
+                Section {
+                    Button { sharingImage = true } label: { Label("Share as image", systemImage: "photo") }
+                } footer: { Text("A story-sized card with the macros\(entry.items.contains { $0.ingredientPortions != nil } ? " and ingredients" : ""), for Instagram, TikTok or Photos.") }
             }
             Section {
                 Button(role: .destructive) { confirmingDelete = true } label: {
@@ -445,6 +459,9 @@ struct LogEditor: View {
                 }, pickTitle: "Add to \(entry.name)", quickAddLabel: "Add")
                 .toolbar { Button("Done") { picking = false } }
             }
+        }
+        .sheet(isPresented: $sharingImage) {
+            NavigationStack { MealSharePreview(name: entry.name, items: entry.items, subtitle: shareSubtitle) }
         }
         .confirmationDialog("Delete \(original.name) from your log?", isPresented: $confirmingDelete, titleVisibility: .visible) {
             Button("Delete from log", role: .destructive) {

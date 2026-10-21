@@ -161,17 +161,3 @@ struct SourcesView: View {
         }.navigationTitle("Menu sources")
     }
 }
-struct MealShareCard: View {
-    @AppStorage(AppAccent.storageKey) private var accentRaw = AppAccent.standard.rawValue
-    var name: String
-    var items: [Portion]
-    var body: some View {
-        VStack(alignment: .leading, spacing: 20) {
-            Label("LEANR", systemImage: "leaf.fill").font(.roboto(.caption, weight: .bold)).foregroundStyle(AppAccent.resolved(accentRaw).color)
-            Text(name).font(.display())
-            ForEach(items) { item in Text("\(item.quantity.number) × \(item.food.name)").font(.roboto(.body)) }
-            Divider(); NutritionView(total: Nutrition(items))
-            Text("Australian menu snapshot · Nutrition may vary").font(.roboto(.caption)).foregroundStyle(.secondary)
-        }.padding(28).frame(width: 390).background(.white).foregroundStyle(.black).environment(\.colorScheme, .light)
-    }
-}
