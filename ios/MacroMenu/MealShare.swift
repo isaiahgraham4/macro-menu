@@ -1,4 +1,5 @@
 import SwiftUI
+import UniformTypeIdentifiers
 
 extension Portion {
     /// "150 g" when the food is weighed, otherwise "2 × 1 wrap" (or just "1 wrap" for one).
@@ -138,6 +139,18 @@ struct MealShareCard: View {
     }
 }
 
+/// A rendered card shared as its own full-size PNG. Sharing a SwiftUI `Image` hands over a re-encoded copy, which looks softer once copied or posted.
+struct ShareImage: Transferable {
+    var image: UIImage
+
+    static var transferRepresentation: some TransferRepresentation {
+        DataRepresentation(exportedContentType: .png) { value in
+            guard let data = value.image.pngData() else { throw CocoaError(.fileWriteUnknown) }
+            return data
+        }
+    }
+}
+
 /// Shows the story card before sharing it, so you see what you're posting.
 struct MealSharePreview: View {
     @Environment(\.dismiss) private var dismiss
@@ -152,7 +165,7 @@ struct MealSharePreview: View {
                 Image(uiImage: image).resizable().scaledToFit()
                     .clipShape(RoundedRectangle(cornerRadius: 18))
                     .accessibilityLabel("Share image of \(name)")
-                ShareLink(item: Image(uiImage: image), preview: SharePreview(name, image: Image(uiImage: image))) {
+                ShareLink(item: ShareImage(image: image), preview: SharePreview(name, image: Image(uiImage: image))) {
                     Label("Share image", systemImage: "square.and.arrow.up").frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.borderedProminent).controlSize(.large)

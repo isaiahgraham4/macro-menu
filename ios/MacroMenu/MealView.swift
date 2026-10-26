@@ -93,7 +93,7 @@ struct MealView: View {
                         } label: { TileLabel(title: "Make image", systemImage: "photo") }
                     }
                     if let image {
-                        ShareLink(item: Image(uiImage: image), preview: SharePreview(title, image: Image(uiImage: image))) { Label("Share meal image", systemImage: "photo.on.rectangle") }
+                        ShareLink(item: ShareImage(image: image), preview: SharePreview(title, image: Image(uiImage: image))) { Label("Share meal image", systemImage: "photo.on.rectangle") }
                     }
                 }
             }
