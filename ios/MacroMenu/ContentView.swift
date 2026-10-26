@@ -147,7 +147,7 @@ struct ContentView: View {
         .overlay(alignment: .top) {
             if let step = store.undo {
                 HStack(spacing: 14) {
-                    Text(store.notice ?? step.label).font(.roboto(.subheadline, weight: .semibold)).lineLimit(1)
+                    Text(store.notice ?? step.label).font(.roboto(.subheadline, weight: .semibold)).lineLimit(2)
                     Button("Undo") { store.undoLast() }.font(.roboto(.subheadline, weight: .bold))
                 }
                 .padding(.leading, 20).padding(.trailing, 16).padding(.vertical, 12)

@@ -41,7 +41,7 @@ struct TodayView: View {
     private func ringStat(_ title: String, _ value: Double) -> some View {
         VStack(alignment: .leading, spacing: 2) {
             Text(title).font(.roboto(.caption)).foregroundStyle(.secondary)
-            Text("\(value.number) Cal").font(.roboto(.headline, weight: .bold)).monospacedDigit()
+            Text("\(value.number) Cal").font(.roboto(.headline, weight: .bold)).monospacedDigit().lineLimit(1).minimumScaleFactor(0.8)
         }.frame(maxWidth: .infinity, alignment: .leading)
     }
     /// Does what a feature tip's button offers, then retires the tip.
@@ -94,8 +94,8 @@ struct TodayView: View {
                         VStack(spacing: 14) {
                             if let cal = goals.values["cal"] {
                                 // Eaten and target beside the ring, so the ring's "left" figure has its working.
-                                // Side by side normally; stacked at the largest sizes so "2,200 Cal" stays on one line.
-                                let statLayout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 10)) : AnyLayout(HStackLayout(spacing: 16))
+                                // Side by side normally; stacked at larger sizes so "2,200 Cal" stays on one line.
+                                let statLayout = typeSize >= .xxLarge ? AnyLayout(VStackLayout(alignment: .leading, spacing: 10)) : AnyLayout(HStackLayout(spacing: 16))
                                 statLayout { ringStat("Eaten", total.cal); ringStat("Target", cal) }
                                     .accessibilityElement(children: .combine)
                             } else if macroKeys.isEmpty {
@@ -126,7 +126,8 @@ struct TodayView: View {
                     ForEach(MealTime.allCases) { Text($0.title).tag($0) }
                 }
                 // The three ways to add food sit side by side; at the largest text sizes they stack so no label breaks.
-                let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(spacing: 10)) : AnyLayout(HStackLayout(spacing: 10))
+                let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(spacing: 10))
+                    : typeSize >= .xLarge ? AnyLayout(TwoColumnLayout(spacing: 10)) : AnyLayout(HStackLayout(spacing: 10))
                 layout {
                     LogMethodButton(title: "Scan", label: "Scan product barcode", systemImage: "barcode.viewfinder") { barcode = true }
                     if MealPhoto.canOffer {
@@ -293,12 +294,14 @@ struct TodayView: View {
     }
     private func logRow(_ entry: LogEntry) -> some View {
         Button { editing = entry } label: {
-            HStack(alignment: .firstTextBaseline) {
+            // The time sits beside the name; at the largest text sizes it drops below so the name keeps the full width.
+            let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 4)) : AnyLayout(HStackLayout(alignment: .firstTextBaseline))
+            layout {
                 VStack(alignment: .leading, spacing: 4) {
                     Text(entry.name).font(.roboto(.headline)).foregroundStyle(.primary)
                     Text(Nutrition(entry.items).text).font(.roboto(.caption)).foregroundStyle(.secondary)
                 }
-                Spacer()
+                if !typeSize.isAccessibilitySize { Spacer() }
                 Text(entry.time.formatted(date: .omitted, time: .shortened)).font(.roboto(.caption)).foregroundStyle(.secondary)
             }.padding(.vertical, 2)
         }
@@ -715,12 +718,27 @@ private struct LogMethodButton: View {
     let label: String
     let systemImage: String
     let action: () -> Void
+    @Environment(\.dynamicTypeSize) private var typeSize
+    /// Grows with the text size so a larger icon doesn't spill out of its button.
+    @ScaledMetric(relativeTo: .title2) private var iconSize = 28.0
 
     var body: some View {
         Button(action: action) {
-            VStack(spacing: 6) {
-                Image(systemName: systemImage).font(.title2).frame(height: 28)
-                Text(title).font(.roboto(.subheadline, weight: .medium)).lineLimit(1).minimumScaleFactor(0.8)
+            Group {
+                if typeSize.isAccessibilitySize {
+                    // Stacked full-width at the largest sizes: icon beside its label.
+                    HStack(spacing: 12) {
+                        Image(systemName: systemImage).font(.title2).frame(width: iconSize)
+                        Text(title).font(.roboto(.subheadline, weight: .medium)).frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                    .padding(.horizontal, 16).padding(.vertical, 12)
+                } else {
+                    VStack(spacing: 6) {
+                        Image(systemName: systemImage).font(.title2).frame(height: iconSize)
+                        Text(title).font(.roboto(.subheadline, weight: .medium)).lineLimit(1).minimumScaleFactor(0.8)
+                    }
+                    .padding(.vertical, 8)
+                }
             }
             .frame(maxWidth: .infinity, minHeight: 64)
             .background(.tint.opacity(0.14), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
@@ -729,5 +747,39 @@ private struct LogMethodButton: View {
         .buttonStyle(.plain)
         .foregroundStyle(.tint)
         .accessibilityLabel(label)
+    }
+}
+
+/// Lays views out two to a row, each the same width, so four buttons make a 2 x 2 grid at larger text sizes.
+private struct TwoColumnLayout: Layout {
+    var spacing: CGFloat
+
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+        let width = proposal.width ?? 300
+        let cell = (width - spacing) / 2
+        let rows = (subviews.count + 1) / 2
+        var height = 0.0
+        for row in 0..<rows {
+            let heights = (0..<2).compactMap { column -> CGFloat? in
+                let index = row * 2 + column
+                return index < subviews.count ? subviews[index].sizeThatFits(ProposedViewSize(width: cell, height: nil)).height : nil
+            }
+            height += (heights.max() ?? 0) + (row > 0 ? spacing : 0)
+        }
+        return CGSize(width: width, height: height)
+    }
+
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+        let cell = (bounds.width - spacing) / 2
+        var y = bounds.minY
+        for row in 0..<((subviews.count + 1) / 2) {
+            let indices = (0..<2).map { row * 2 + $0 }.filter { $0 < subviews.count }
+            let rowHeight = indices.map { subviews[$0].sizeThatFits(ProposedViewSize(width: cell, height: nil)).height }.max() ?? 0
+            for (column, index) in indices.enumerated() {
+                subviews[index].place(at: CGPoint(x: bounds.minX + CGFloat(column) * (cell + spacing), y: y), anchor: .topLeading,
+                                      proposal: ProposedViewSize(width: cell, height: rowHeight))
+            }
+            y += rowHeight + spacing
+        }
     }
 }

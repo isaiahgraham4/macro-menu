@@ -22,9 +22,17 @@ struct FindView: View {
                 // Ask Leanr: a question in plain words, answered by the order finder.
                 HStack(spacing: 10) {
                     Image(systemName: "sparkles").foregroundStyle(.tint).accessibilityHidden(true)
-                    TextField("Ask Leanr: 40 g protein at Nando's", text: $question, axis: .vertical)
-                        .lineLimit(1...3).submitLabel(.search)
-                        .onSubmit { ask() }
+                    // The example sits behind the field as ordinary text, so it wraps at larger sizes instead of being cut off.
+                    ZStack(alignment: .leading) {
+                        if question.isEmpty {
+                            Text("Ask Leanr: 40 g protein at Nando's").foregroundStyle(.tertiary)
+                                .accessibilityHidden(true).allowsHitTesting(false)
+                        }
+                        TextField("", text: $question, axis: .vertical)
+                            .lineLimit(1...3).submitLabel(.search)
+                            .accessibilityLabel("Ask Leanr")
+                            .onSubmit { ask() }
+                    }
                     if !question.trimmingCharacters(in: .whitespaces).isEmpty {
                         Button { ask() } label: { Image(systemName: "arrow.up.circle.fill").font(.title2) }
                             .buttonStyle(.borderless).accessibilityLabel("Ask")

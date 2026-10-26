@@ -271,7 +271,7 @@ struct NearestPlaceLine: View {
         if location.isAuthorized, let place = location.nearest(chain) {
             VStack(alignment: .leading, spacing: 4) {
                 Label {
-                    Text("\(place.item.name ?? store.chainName(chain)) · \(place.distanceText)").lineLimit(1)
+                    Text("\(place.item.name ?? store.chainName(chain)) · \(place.distanceText)").lineLimit(2)
                 } icon: { Image(systemName: "location.fill") }
                 .font(.roboto(.caption)).foregroundStyle(.secondary)
                 PlaceHoursView(place: place, compact: true)

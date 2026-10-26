@@ -69,7 +69,6 @@ struct MealShareCard: View {
     var subtitle: String?
 
     static let size = CGSize(width: 360, height: 640)
-    private static let maxLines = 9
 
     private var total: Nutrition { Nutrition(items) }
     private var lines: [Portion] { mealLines(items) }
@@ -79,6 +78,21 @@ struct MealShareCard: View {
     }
 
     var body: some View {
+        // The card is a fixed 9:16, so it tries fewer ingredient rows until the name, macros and rows all fit above the footer.
+        ViewThatFits(in: .vertical) {
+            card(rows: 9); card(rows: 7); card(rows: 6); card(rows: 5); card(rows: 4); card(rows: 3); card(rows: 2); card(rows: 1)
+        }
+        .padding(.horizontal, 28).padding(.vertical, 36)
+        .frame(width: Self.size.width, height: Self.size.height, alignment: .topLeading)
+        .background(Color(red: 0.07, green: 0.07, blue: 0.08))
+        .foregroundStyle(.white)
+        .environment(\.colorScheme, .dark)
+        // A picture, not a screen: the same size whatever text size the sharer uses.
+        .dynamicTypeSize(.large)
+    }
+
+    /// The card's contents, listing up to `rows` ingredient lines (the last of them "and N more" when there are too many).
+    private func card(rows: Int) -> some View {
         VStack(alignment: .leading, spacing: 0) {
             Label("LEANR", systemImage: "leaf.fill").font(.roboto(.caption, weight: .bold))
                 .foregroundStyle(AppAccent.resolved(accentRaw).color)
@@ -100,27 +114,23 @@ struct MealShareCard: View {
             if !lines.isEmpty {
                 Text(isRecipe ? "INGREDIENTS" : "IN THIS MEAL").font(.roboto(.caption, weight: .bold)).foregroundStyle(.white.opacity(0.6))
                     .padding(.top, 26).padding(.bottom, 8)
+                let shown = lines.count > rows ? max(rows - 1, 0) : rows
                 VStack(alignment: .leading, spacing: 7) {
-                    ForEach(lines.prefix(lines.count > Self.maxLines ? Self.maxLines - 1 : Self.maxLines)) { line in
+                    ForEach(lines.prefix(shown)) { line in
                         HStack(alignment: .firstTextBaseline) {
-                            Text(line.food.name).font(.roboto(.subheadline)).lineLimit(1)
+                            Text(line.food.name).font(.roboto(.subheadline)).lineLimit(2)
                             Spacer(minLength: 8)
                             Text(line.amountText).font(.roboto(.subheadline)).foregroundStyle(.white.opacity(0.6)).monospacedDigit().lineLimit(1)
                         }
                     }
-                    if lines.count > Self.maxLines {
-                        Text("and \(lines.count - Self.maxLines + 1) more").font(.roboto(.subheadline)).foregroundStyle(.white.opacity(0.6))
+                    if lines.count > shown {
+                        Text("and \(lines.count - shown) more").font(.roboto(.subheadline)).foregroundStyle(.white.opacity(0.6))
                     }
                 }
             }
             Spacer(minLength: 12)
             Text("Tracked with Leanr · Nutrition may vary").font(.roboto(.caption2)).foregroundStyle(.white.opacity(0.45))
         }
-        .padding(.horizontal, 28).padding(.vertical, 36)
-        .frame(width: Self.size.width, height: Self.size.height, alignment: .topLeading)
-        .background(Color(red: 0.07, green: 0.07, blue: 0.08))
-        .foregroundStyle(.white)
-        .environment(\.colorScheme, .dark)
     }
 
     private func macro(_ label: String, _ value: Double, missing: Bool, key: String) -> some View {
