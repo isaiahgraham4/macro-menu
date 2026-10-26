@@ -136,7 +136,7 @@ struct DeleteDataView: View {
         LeanrList {
             Section {
                 Text("This deletes your foods, recipes, saved meals, food log, meal plans, check-ins, weigh-ins, measurements, water, progress photos, targets, reminders and settings from this iPhone, and Leanr's copy in your iCloud. It can't be undone.")
-                Text("Want a copy first? Export a backup first, in Settings.").foregroundStyle(.secondary)
+                Text("Want a copy first? Export a backup in Settings.").foregroundStyle(.secondary)
             }
             if health.enabled {
                 Section {

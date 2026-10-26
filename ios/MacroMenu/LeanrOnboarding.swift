@@ -182,8 +182,8 @@ struct LeanrOnboarding: View {
                         }
                     }.accessibilityLabel("Question \(round + 1) of \(meals.count)")
                     VStack(alignment: .leading, spacing: 8) {
-                        Text("A little food for thought.").font(.display())
-                        Text("How many calories do you think are in this?").foregroundStyle(.secondary)
+                        Text("Guess the calories").font(.display())
+                        Text("How many do you think are in this?").foregroundStyle(.secondary)
                     }
                     VStack(spacing: 16) {
                         HStack {
@@ -207,7 +207,7 @@ struct LeanrOnboarding: View {
                         VStack(alignment: .leading, spacing: 12) {
                             Text("\(meal.cal.number) calories").font(.roboto(.largeTitle, weight: .bold)).monospacedDigit().contentTransition(.numericText())
                             Text(abs(guess - meal.cal) <= 50 ? "Close guess! You were within 50 calories." : "Your guess: \(Int(guess)) Cal · about \(Int(abs(guess - meal.cal).rounded())) Cal away.")
-                            Text("No need to guess with Leanr. See calories and protein, compare your options, and build a meal that works for you.").foregroundStyle(.secondary)
+                            Text("Leanr shows the calories and protein for each item, so you can compare options and build a meal around them.").foregroundStyle(.secondary)
                             Text("\(meal.p.number) g protein · Bundled \(store.chainName(meal.chain)) Australia menu data. Servings and recipes may vary.").font(.roboto(.caption)).foregroundStyle(.secondary)
                         }.accessibilityElement(children: .combine).accessibilityAddTraits(.updatesFrequently)
                         .transition(.opacity)
@@ -232,13 +232,13 @@ struct LeanrOnboarding: View {
                 } else {
                     VStack(alignment: .leading, spacing: 24) {
                         if !answeredMeals.isEmpty {
-                            Text(calorieGap > 0 ? "The calories you didn’t count." : "Your guesses, added up.")
+                            Text(calorieGap > 0 ? "You guessed low." : calorieGap < 0 ? "You guessed high." : "Spot on.")
                                 .font(.display())
                             VStack(alignment: .leading, spacing: 16) {
                                 Text("\(abs(calorieGap).number) Cal")
                                     .font(.roboto(.largeTitle, weight: .bold)).monospacedDigit()
                                     .contentTransition(.numericText())
-                                Text(calorieGap > 0 ? "more than you guessed" : calorieGap < 0 ? "less than you guessed" : "difference — spot on!")
+                                Text(calorieGap > 0 ? "more than you guessed" : calorieGap < 0 ? "less than you guessed" : "difference from the menu total")
                                     .font(.roboto(.headline))
                                 Divider()
                                 LabeledContent("Your guesses", value: "\(guessedTotal.number) Cal")
@@ -251,19 +251,19 @@ struct LeanrOnboarding: View {
                             .background { CuttingBoard() }
                             if calorieGap > 0 {
                                 Text("If you ate these items and logged your guesses, you’d count \(calorieGap.number) fewer calories than the menu lists. If those guesses brought you to your target, that gap would put you \(calorieGap.number) calories above it across those meals.")
-                                Text("Small guessing gaps can add up and make it harder to stay on track. Leanr helps you see what’s in your meals, so you can plan toward your goals with more confidence.")
+                                Text("Small guessing gaps add up. Leanr shows what’s in each meal so you can plan around the real numbers.")
                                     .foregroundStyle(.secondary)
                             } else {
-                                Text(calorieGap < 0 ? "Your combined guesses were above the menu total. Checking the numbers helps you plan without counting more calories than your meals contain." : "You matched the combined menu total. Leanr keeps the numbers handy so you don’t have to rely on a guess next time.")
+                                Text(calorieGap < 0 ? "Your combined guesses were above the menu total, so you’d have counted more calories than the meals contain. Checking the numbers avoids that." : "You matched the combined menu total. Leanr keeps the numbers handy so you don’t need to guess.")
                                     .foregroundStyle(.secondary)
                             }
                         } else {
-                            Text("Your favourites.\nA little more informed.").font(.display())
+                            Text("Know what’s in\nyour favourites.").font(.display())
                         }
                         Label("Compare restaurant meals", systemImage: "magnifyingglass")
                         Label("Build a meal around your targets", systemImage: "fork.knife")
                         Label("Keep track of your day", systemImage: "calendar")
-                        Text("Start with the foods you enjoy. Leanr brings the numbers into focus.").foregroundStyle(.secondary)
+                        Text("Start with the foods you enjoy.").foregroundStyle(.secondary)
                         Button { withAnimation(motion) { targetPrompt = true } } label: { Text("Continue").frame(maxWidth: .infinity).padding(.vertical, 8) }
                             .buttonStyle(.borderedProminent).controlSize(.large)
                     }.padding(.vertical, 24)

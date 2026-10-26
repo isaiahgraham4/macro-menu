@@ -23,7 +23,7 @@ struct LeanrTargetsWidget: Widget {
             TargetsWidgetView(entry: entry)
         }
         .configurationDisplayName("All targets")
-        .description("Calories and all the nutrient targets you track, together in one place.")
+        .description("Calories and every nutrient target you track.")
         .supportedFamilies([.systemLarge])
     }
 }

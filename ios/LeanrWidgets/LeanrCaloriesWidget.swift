@@ -113,7 +113,7 @@ struct CaloriesWidgetView: View {
                         .font(.roboto(.caption2)).foregroundStyle(.secondary).lineLimit(1).minimumScaleFactor(0.7)
                 } else {
                     Text(entry.prompt).font(.roboto(.headline))
-                    Text("Your daily balance, at a glance.").font(.roboto(.caption)).foregroundStyle(.secondary)
+                    Text("Calories left today.").font(.roboto(.caption)).foregroundStyle(.secondary)
                     Spacer(minLength: 0)
                 }
             }.frame(maxWidth: .infinity, alignment: .leading)

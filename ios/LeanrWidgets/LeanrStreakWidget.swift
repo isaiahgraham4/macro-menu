@@ -7,7 +7,7 @@ struct LeanrStreakWidget: Widget {
             StreakWidgetView(entry: entry)
         }
         .configurationDisplayName("Tracking streak")
-        .description("Celebrate consecutive days of logging food. Every tracked day counts.")
+        .description("Counts the days in a row you’ve logged food.")
         .supportedFamilies([.systemSmall, .systemMedium, .accessoryCircular, .accessoryRectangular])
     }
 }
@@ -36,7 +36,7 @@ struct StreakWidgetView: View {
                     Text(entry.calories == nil ? "Open Leanr to sync" : tracked ? "Tracked today" : "Log today to \(count > 0 ? "keep it going" : "start")")
                         .font(.roboto(.caption)).foregroundStyle(.secondary)
                     if family == .systemMedium {
-                        Text("Consistency counts. Every logged day helps.").font(.roboto(.caption)).foregroundStyle(.secondary)
+                        Text("Any day with food logged counts.").font(.roboto(.caption)).foregroundStyle(.secondary)
                     }
                 }.frame(maxWidth: .infinity, alignment: .leading)
             }
