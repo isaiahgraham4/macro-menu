@@ -24,6 +24,7 @@ Usage:
     python3 ios/Scripts/diet-info.py fetch   # the descriptions and Hungry Jack's allergens into diet-source.json (about 50 requests)
     python3 ios/Scripts/diet-info.py build   # writes diet.json from the sources and the exported menu (run export-menu.cjs after)
 """
+import os
 import html, json, re, subprocess, sys, time
 from pathlib import Path
 
@@ -33,8 +34,10 @@ OUT = HERE / "diet.json"
 GUIDES = HERE / "allergen-items.json"
 CATALOG = HERE.parent / "MacroMenu" / "MenuData.json"
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15"
-CRAVEABLE_KEY = "REDACTED-CRAVEABLE-KEY"   # the key Oporto's and Red Rooster's own websites send
-HJ_KEY = "REDACTED-HJ-KEY"         # the key Hungry Jack's ordering website sends
+# The keys the restaurants' own ordering websites send. They aren't kept in this repository: copy each from the
+# x-api-key header in your browser's network tab on that site, and export it before running this script.
+CRAVEABLE_KEY = os.environ.get("CRAVEABLE_API_KEY", "")   # Oporto's and Red Rooster's websites
+HJ_KEY = os.environ.get("HJ_API_KEY", "")                 # Hungry Jack's ordering website
 
 
 def get(url, headers=None, raw=False):

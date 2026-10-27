@@ -15,6 +15,7 @@ Usage:
     python3 ios/Scripts/ordering-options.py fetch   # downloads both menus into ordering-options-source.json
     python3 ios/Scripts/ordering-options.py build   # writes hj-mods.json and oporto-mods.json
 """
+import os
 import json, re, sys, time, subprocess
 from pathlib import Path
 
@@ -22,11 +23,13 @@ HERE = Path(__file__).resolve().parent
 SOURCE = HERE / "ordering-options-source.json"
 CATALOG = HERE.parent / "MacroMenu" / "MenuData.json"
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15"
-# The keys the ordering websites themselves send; both are in each site's public page code.
+# The keys the ordering websites themselves send. They aren't kept in this repository: copy each from the x-api-key
+# header in your browser's network tab on that site and export it before running this script
+# (HJ_API_KEY for Hungry Jack's, CRAVEABLE_API_KEY for Oporto).
 HJ = {"url": "https://web-api.hungryjacks.com.au/api/v1/menu/5390",   # Elizabeth Street, Melbourne
-      "headers": {"x-api-key": "REDACTED-HJ-KEY", "origin": "https://order.hungryjacks.com.au"}}
+      "headers": {"x-api-key": os.environ.get("HJ_API_KEY", ""), "origin": "https://order.hungryjacks.com.au"}}
 OPORTO = {"url": "https://api.oporto.com.au/mobile-services/content/menu/melbourne-central",
-          "headers": {"x-api-key": "REDACTED-CRAVEABLE-KEY", "x-brand-code": "opo"}}
+          "headers": {"x-api-key": os.environ.get("CRAVEABLE_API_KEY", ""), "x-brand-code": "opo"}}
 
 
 def get(url, headers=None):
