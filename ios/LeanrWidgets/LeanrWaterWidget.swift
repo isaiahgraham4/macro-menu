@@ -9,7 +9,7 @@ struct LeanrWaterWidget: Widget {
             WaterWidgetView(entry: entry)
         }
         .configurationDisplayName("Water")
-        .description("Today's water against your target. Tap + to add a glass.")
+        .description("Today's water against your target. Tap + to add 100 or 250 mL.")
         .supportedFamilies([.systemSmall, .systemMedium, .accessoryCircular, .accessoryRectangular, .accessoryInline])
     }
 }
@@ -41,7 +41,9 @@ struct WaterWidgetView: View {
 
     private var drunk: Double { entry.calories?.waterDrunk(on: entry.date) ?? 0 }
     private var target: Double { entry.calories?.waterTarget ?? 2000 }
-    private var glass: Double { entry.calories?.waterGlass ?? 250 }
+    /// The two amounts the widget logs: a small sip and a glass. The single-button families use the glass.
+    private let sip: Double = 100
+    private let glass: Double = 250
     private var progress: Double { target > 0 ? min(1, drunk / target) : 0 }
     private var accent: Color { (entry.calories?.selectedAccent ?? .standard).color }
 
@@ -49,8 +51,6 @@ struct WaterWidgetView: View {
         millilitres < 1000 ? "\(Int(millilitres.rounded())) mL" : (millilitres / 1000).formatted(.number.precision(.fractionLength(0...2))) + " L"
     }
     private var addLabel: String { "Add \(amount(glass)) of water" }
-    /// The second button on the wide widget: a bottle, or the next size up when a glass is already that big.
-    private var bottle: Double { glass == 500 ? 750 : 500 }
 
     var body: some View {
         Group {
@@ -91,7 +91,7 @@ struct WaterWidgetView: View {
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     VStack(spacing: 8) {
-                        ForEach([glass, bottle], id: \.self) { size in
+                        ForEach([sip, glass], id: \.self) { size in
                             Button(intent: LogAgainIntent(option: WidgetCalories.waterOption(size))) {
                                 Label("+ \(amount(size))", systemImage: "drop.fill").labelStyle(.titleOnly)
                                     .font(.roboto(.subheadline, weight: .semibold)).frame(maxWidth: .infinity)
