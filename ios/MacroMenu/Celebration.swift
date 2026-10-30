@@ -298,7 +298,7 @@ private struct LaunchAnimation: View {
         ZStack {
             LeanrBackground()
             HStack(spacing: 10) {
-                Image(systemName: "leaf.fill").font(.system(size: 40)).foregroundStyle(.tint)
+                Image(systemName: "leaf.fill").font(.system(size: 40)).foregroundStyle(AppAccent.emerald)
                     .scaleEffect(leaf || reduceMotion ? 1 : 0.3)
                     .rotationEffect(.degrees(leaf || reduceMotion ? 0 : -50))
                     .opacity(leaf || reduceMotion ? 1 : 0)
