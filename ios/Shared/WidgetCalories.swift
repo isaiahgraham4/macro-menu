@@ -32,10 +32,9 @@ struct WidgetCalories: Codable, Equatable, Sendable {
     /// The next day's plan, so the widget has it at midnight before Leanr next runs.
     var plannedNext: [WidgetQuickLog]? = nil
     var plannedNextDay: String? = nil
-    /// Water by day for the last week in mL, the daily target and one glass, for the Water widget.
+    /// Water by day for the last week in mL and the daily target, for the Water widget.
     var water: [String: Double]? = nil
     var waterTarget: Double? = nil
-    var waterGlass: Double? = nil
     func waterDrunk(on date: Date) -> Double { water?[WidgetCalories.dayKey(date)] ?? 0 }
     /// The planned meals still to log on `date`; none once the day they were for has passed.
     func plannedMeals(on date: Date) -> [WidgetQuickLog] {
@@ -56,7 +55,6 @@ struct WidgetCalories: Codable, Equatable, Sendable {
         (steps ?? [:]).values.allSatisfy { $0.isFinite && $0 >= 0 } && (stepGoal.map { $0.isFinite && $0 > 0 } ?? true) &&
         (activeEnergy ?? [:]).values.allSatisfy { $0.isFinite && $0 >= 0 } &&
         (water ?? [:]).values.allSatisfy { $0.isFinite && $0 >= 0 } && (waterTarget.map { $0.isFinite && $0 > 0 } ?? true) &&
-        (waterGlass.map { $0.isFinite && $0 > 0 } ?? true) &&
         (dailyNutrients ?? [:]).values.allSatisfy { $0.values.allSatisfy { $0.isFinite && $0 >= 0 } }
     }
 
@@ -231,7 +229,7 @@ extension WidgetCalories {
         if accent != old.accent || premiumUnlocked != old.premiumUnlocked || macroColours != old.macroColours { return Self.allKinds }
         var kinds: [String] = []
         func add(_ new: [String]) { for k in new where !kinds.contains(k) { kinds.append(k) } }
-        if water != old.water || waterTarget != old.waterTarget || waterGlass != old.waterGlass { add([Self.waterKind]) }
+        if water != old.water || waterTarget != old.waterTarget { add([Self.waterKind]) }
         if planned != old.planned || plannedDay != old.plannedDay || plannedNext != old.plannedNext || plannedNextDay != old.plannedNextDay { add([Self.plannedKind]) }
         if quickLogOptions != old.quickLogOptions { add([Self.logAgainKind]) }
         if steps != old.steps || stepGoal != old.stepGoal { add([Self.stepsKind]) }

@@ -150,7 +150,6 @@ extension AppStore {
             let week = (0..<7).compactMap { Calendar.current.date(byAdding: .day, value: -$0, to: Date()) }.map(dayKey)
             snapshot.water = Dictionary(uniqueKeysWithValues: week.compactMap { day in data.water?[day].map { (day, $0) } })
             snapshot.waterTarget = Water.target(data)
-            snapshot.waterGlass = Water.glass(data)
             snapshot.macroColours = Premium.isUnlocked ? [
                 "p": UserDefaults.standard.string(forKey: MacroColours.proteinKey) ?? "blue",
                 "c": UserDefaults.standard.string(forKey: MacroColours.carbsKey) ?? "orange",

@@ -2,14 +2,14 @@ import SwiftUI
 import WidgetKit
 import AppIntents
 
-/// Today's water on the Home Screen and Lock Screen, with a button that adds a glass.
+/// Today's water on the Home Screen and Lock Screen, with buttons that add a set amount.
 struct LeanrWaterWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: WidgetCalories.waterKind, provider: WaterProvider()) { entry in
             WaterWidgetView(entry: entry)
         }
         .configurationDisplayName("Water")
-        .description("Today's water against your target. Tap + to add 100 or 250 mL.")
+        .description("Today's water against your target. Tap + to add water.")
         .supportedFamilies([.systemSmall, .systemMedium, .accessoryCircular, .accessoryRectangular, .accessoryInline])
     }
 }
@@ -30,7 +30,6 @@ struct WaterProvider: TimelineProvider {
         var snapshot = WidgetCalories(target: 2200, dailyCalories: [:])
         snapshot.water = [WidgetCalories.dayKey(now): 1250]
         snapshot.waterTarget = 2000
-        snapshot.waterGlass = 250
         return CaloriesEntry(date: now, calories: snapshot)
     }
 }
@@ -41,7 +40,8 @@ struct WaterWidgetView: View {
 
     private var drunk: Double { entry.calories?.waterDrunk(on: entry.date) ?? 0 }
     private var target: Double { entry.calories?.waterTarget ?? 2000 }
-    /// The two amounts the widget logs: a small sip and a glass. The single-button families use the glass.
+    /// The two amounts the widget logs: a sip and a glass. The single-button families add the glass. Both are fixed,
+    /// so they don't follow the glass size in Settings.
     private let sip: Double = 100
     private let glass: Double = 250
     private var progress: Double { target > 0 ? min(1, drunk / target) : 0 }

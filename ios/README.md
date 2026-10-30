@@ -151,9 +151,9 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   otherwise "Probably too far to deliver" (`Delivery.swift`). Distance is from your location, or the place searched on the Map tab. It's an estimate:
   delivery apps don't let other apps check an address. Tapping it lists Uber Eats, DoorDash, Menulog and the chain's
   own app to confirm and order.
-- Water widget (Home Screen small and wide, and Lock Screen): today's water against the target, with a button that adds one glass
-  ("water:<mL>" through `LogAgainIntent`, queued like Log again when Leanr can't run). The wide one also has a bottle
-  button, 500 mL, or 750 mL when the glass is already 500.
+- Water widget (Home Screen small and wide, and Lock Screen): today's water against the target, with a button that adds 250 mL
+  ("water:<mL>" through `LogAgainIntent`, queued like Log again when Leanr can't run). The wide one has two buttons,
+  100 mL and 250 mL. These amounts are fixed and don't follow the glass size in Settings.
 - Log again widget (Home Screen and Lock Screen): the usual meal for this time of
   day, then pinned foods, each with a log button. `LogAgainIntent`
   (`Shared/LogAgain.swift`) runs inside the widget, so a tap shows at once: the
