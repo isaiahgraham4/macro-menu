@@ -152,63 +152,65 @@ struct TileLabel: View {
     }
 }
 
-/// A row that keeps clear of the fold on a partly open iPhone Duo. `content` gets the fold's left and right
-/// edges in the row's coordinates, or nil when no fold crosses the row.
+/// A row that keeps clear of the fold on a partly open iPhone Duo. `content` gets the fold, or nil when none crosses the row.
 struct FoldRow<Content: View>: View {
-    private let content: (ClosedRange<CGFloat>?) -> Content
-    @State private var fold: ClosedRange<CGFloat>?
-    init(@ViewBuilder content: @escaping (ClosedRange<CGFloat>?) -> Content) { self.content = content }
+    private let content: (RowFold?) -> Content
+    @State private var fold: RowFold?
+    init(@ViewBuilder content: @escaping (RowFold?) -> Content) { self.content = content }
     var body: some View {
         content(fold).background {
             GeometryReader { geometry in
-                Color.clear.onChange(of: geometry.verticalFold, initial: true) { _, new in fold = new }
+                Color.clear.onChange(of: geometry.rowFold, initial: true) { _, new in fold = new }
             }
         }
     }
 }
 
 private extension GeometryProxy {
-    /// A fold running top to bottom through this view, with room to use on both sides of it.
-    var verticalFold: ClosedRange<CGFloat>? {
+    var rowFold: RowFold? {
         guard #available(iOS 27.1, *) else { return nil }
-        let regions = reservedRegions(kind: .division).filter { $0.isActive && $0.frame.height >= size.height - 1 && $0.frame.width < size.width }
-        guard let frame = regions.first?.frame, frame.minX >= 120, frame.maxX <= size.width - 120 else { return nil }
-        return frame.minX...frame.maxX
+        // A fold running across the row is narrower than it; one running along the row spans its whole width.
+        let frame = reservedRegions(kind: .division).first { $0.isActive && $0.frame.width < size.width }?.frame
+        return frame.flatMap { RowFold(left: $0.minX, right: $0.maxX, rowWidth: size.width) }
     }
 }
 
 /// Equal columns parted around a fold, with half the views on each side.
 struct FoldPartedLayout: Layout {
-    var fold: ClosedRange<CGFloat>
+    var fold: RowFold
     var spacing: CGFloat
 
-    private func columns(width: CGFloat, count: Int) -> [(x: CGFloat, width: CGFloat)] {
-        let left = (count + 1) / 2
-        func side(from start: CGFloat, to end: CGFloat, count: Int) -> [(x: CGFloat, width: CGFloat)] {
-            let cell = (end - start - spacing * CGFloat(max(count - 1, 0))) / CGFloat(max(count, 1))
-            return (0..<count).map { (start + CGFloat($0) * (cell + spacing), cell) }
-        }
-        return side(from: 0, to: fold.lowerBound, count: left) + side(from: fold.upperBound, to: width, count: count - left)
-    }
-
     func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
-        let width = proposal.width ?? fold.upperBound + fold.lowerBound
-        let cells = columns(width: width, count: subviews.count)
+        let width = fold.width(proposed: proposal.width)
+        let cells = fold.columns(width: width, count: subviews.count, spacing: spacing)
         let height = zip(subviews, cells).map { $0.sizeThatFits(ProposedViewSize(width: $1.width, height: nil)).height }.max() ?? 0
         return CGSize(width: width, height: height)
     }
 
     func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
-        for (subview, cell) in zip(subviews, columns(width: bounds.width, count: subviews.count)) {
+        for (subview, cell) in zip(subviews, fold.columns(width: bounds.width, count: subviews.count, spacing: spacing)) {
             subview.place(at: CGPoint(x: bounds.minX + cell.x, y: bounds.minY), proposal: ProposedViewSize(width: cell.width, height: bounds.height))
         }
     }
 }
 
+extension AnyLayout {
+    /// Views side by side, parted around the fold when one crosses the row.
+    static func columns(spacing: CGFloat, fold: RowFold?) -> AnyLayout {
+        fold.map { AnyLayout(FoldPartedLayout(fold: $0, spacing: spacing)) } ?? AnyLayout(HStackLayout(spacing: spacing))
+    }
+}
+
 extension View {
-    /// Narrows a three-part segmented control so the label in its middle part stays left of the fold.
-    func middleLabelClear(of fold: ClosedRange<CGFloat>?) -> some View {
-        frame(width: fold.map { 2 * ($0.lowerBound - 48) }).frame(maxWidth: fold == nil ? nil : .infinity, alignment: .leading)
+    /// Narrows a three-part segmented control so the label in its middle part misses the fold.
+    func middleLabelClear(of fold: RowFold?) -> some View {
+        let fit = fold?.middleLabelFit
+        return frame(width: fit?.width).frame(maxWidth: fit == nil ? nil : .infinity, alignment: fit?.leading == false ? .trailing : .leading)
+    }
+
+    /// Keeps a view to the left of the fold, using the room there.
+    func leftOfFold(_ fold: RowFold?) -> some View {
+        frame(width: fold.map { $0.left - 8 }).frame(maxWidth: fold == nil ? nil : .infinity, alignment: .leading)
     }
 }
 
@@ -219,13 +221,12 @@ struct TileRow<Content: View>: View {
     var body: some View {
         FoldRow { fold in
             // Tiles share a row normally and stack at the largest text sizes.
-            let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(spacing: 10))
-                : fold.map { AnyLayout(FoldPartedLayout(fold: $0, spacing: 10)) } ?? AnyLayout(HStackLayout(spacing: 10))
+            let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(spacing: 10)) : AnyLayout.columns(spacing: 10, fold: fold)
             layout { content }
         }
-            .buttonStyle(.plain)
-            .listRowInsets(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
-            .listRowBackground(Color.clear)
+        .buttonStyle(.plain)
+        .listRowInsets(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
+        .listRowBackground(Color.clear)
     }
 }
 
@@ -233,11 +234,14 @@ struct TileRow<Content: View>: View {
 struct BottomActionBar<Content: View>: View {
     @ViewBuilder var content: Content
     var body: some View {
-        content
-            .font(.roboto(.headline))
-            .frame(maxWidth: .infinity)
-            .buttonStyle(.borderedProminent)
-            .controlSize(.large)
-            .padding(.horizontal, 20).padding(.vertical, 10)
+        FoldRow { fold in
+            content
+                .font(.roboto(.headline))
+                .frame(maxWidth: .infinity)
+                .buttonStyle(.borderedProminent)
+                .controlSize(.large)
+                .leftOfFold(fold)
+        }
+        .padding(.horizontal, 20).padding(.vertical, 10)
     }
 }

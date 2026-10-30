@@ -1656,7 +1656,45 @@ import UniformTypeIdentifiers
             assert(!waterSnapshot.isValid)
         }
 
+        rowFoldChecks()
+
         print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, delivery, iCloud health rules, deleting all data, the policies, everyday foods, customised orders, photo and Visual Intelligence matching, widget goal colours, Premium access rules, Siri logging and editing saved and logged meals, water, measurements, progress photos, fibre and sodium nudges, steps, the progress breakdown, what fits what's left, meals in words, recipe ingredients, recipe pages, weekly check-ins, meal plans, Apple Watch, insights, the Planned and Water widgets, dietary needs, Ask Leanr and no prices (\(Date().timeIntervalSince(start).formatted())s).")
+    }
+}
+
+
+/// The fold on a partly open iPhone Duo: the numbers are the inner screen's 40 pt fold in a row 805 pt wide.
+private func rowFoldChecks() {
+    // A fold that misses the row, or leaves too little room on one side, is left alone.
+    assert(RowFold(left: 100, right: 140, rowWidth: 805) == nil)
+    assert(RowFold(left: 900, right: 940, rowWidth: 805) == nil)
+    assert(RowFold(left: 415, right: 455, rowWidth: 600) == nil)
+    guard let fold = RowFold(left: 415, right: 455, rowWidth: 805) else { return assertionFailure() }
+
+    // Four views split evenly and meet the fold's edges; an odd count keeps the extra one on the left.
+    let four = fold.columns(width: 805, count: 4, spacing: 10)
+    assert(four.count == 4 && abs(four[1].x + four[1].width - 415) < 0.01 && four[2].x == 455 && abs(four[3].x + four[3].width - 805) < 0.01)
+    let three = fold.columns(width: 805, count: 3, spacing: 10)
+    assert(three.count == 3 && three[2].x == 455 && three[1].x < 415)
+    assert(fold.columns(width: 805, count: 1, spacing: 10).count == 1)
+    assert(fold.columns(width: 805, count: 0, spacing: 10).isEmpty)
+
+    // Zero and unbounded proposals still give real, non-negative sizes.
+    for proposed in [nil, 0, CGFloat.infinity] as [CGFloat?] {
+        let width = fold.width(proposed: proposed)
+        assert(width.isFinite && width >= 455)
+        assert(fold.columns(width: width, count: 4, spacing: 10).allSatisfy { $0.x.isFinite && $0.width.isFinite && $0.width >= 0 })
+    }
+    assert(fold.columns(width: 0, count: 4, spacing: 10).allSatisfy { $0.x.isFinite && $0.width >= 0 })
+    assert(fold.columns(width: .infinity, count: 4, spacing: 10).allSatisfy { $0.x.isFinite && $0.width.isFinite })
+
+    // A middle label near the fold moves away from it, and the control never outgrows the row.
+    assert(fold.middleLabelFit?.leading == true && fold.middleLabelFit?.width == 734)
+    let mirrored = RowFold(left: 339, right: 379, rowWidth: 805)
+    assert(mirrored?.middleLabelFit?.leading == false && mirrored?.middleLabelFit?.width == 756)
+    assert(RowFold(left: 415, right: 455, rowWidth: 650)?.middleLabelFit == nil)
+    for left in stride(from: CGFloat(180), through: 585, by: 5) {
+        if let fit = RowFold(left: left, right: left + 40, rowWidth: 805)?.middleLabelFit { assert(fit.width > 0 && fit.width <= 805) }
     }
 }
 

@@ -52,8 +52,7 @@ struct FindView: View {
                 // Pairs sit side by side, and stack at the largest text sizes so numbers and labels stay whole.
                 let big = typeSize.isAccessibilitySize
                 FoldRow { fold in
-                    let pair = big ? AnyLayout(VStackLayout(spacing: 10))
-                        : fold.map { AnyLayout(FoldPartedLayout(fold: $0, spacing: 10)) } ?? AnyLayout(HStackLayout(spacing: 10))
+                    let pair = big ? AnyLayout(VStackLayout(spacing: 10)) : AnyLayout.columns(spacing: 10, fold: fold)
                     pair {
                         StatField(title: "Calories up to", unit: "Cal", value: $query.calories)
                         StatField(title: "Protein target", unit: "g", value: $query.protein)

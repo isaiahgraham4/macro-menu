@@ -73,22 +73,15 @@ struct TodayView: View {
                 let previous = Button { shift(-1) } label: { Image(systemName: "chevron.left").frame(width: 44, height: 44).contentShape(Rectangle()) }.accessibilityLabel("Previous day")
                 let next = Button { shift(1) } label: { Image(systemName: "chevron.right").frame(width: 44, height: 44).contentShape(Rectangle()) }.disabled(isToday).accessibilityLabel("Next day")
                 let picker = DatePicker("Day", selection: $date, in: ...Date(), displayedComponents: .date).labelsHidden().controlSize(.small)
-                Group {
+                FoldRow { fold in
                     if typeSize.isAccessibilitySize {
                         // At the largest text sizes the date needs the whole row, so the arrows go underneath.
-                        VStack(spacing: 4) { picker; HStack { previous; Spacer(); next } }
+                        VStack(spacing: 4) { picker.leftOfFold(fold); HStack { previous; Spacer(); next } }
                     } else {
-                        FoldRow { fold in
-                            if let fold {
-                                // On a partly open iPhone Duo the date moves left of the fold.
-                                HStack(spacing: 8) {
-                                    HStack(spacing: 8) { previous; Spacer(); picker }.frame(width: fold.lowerBound - 8)
-                                    Spacer()
-                                    next
-                                }
-                            } else {
-                                HStack(spacing: 8) { previous; Spacer(); picker; Spacer(); next }
-                            }
+                        // The date sits in the middle of the row, or against the fold on a partly open iPhone Duo.
+                        ZStack {
+                            HStack { previous; Spacer(); next }
+                            picker.frame(maxWidth: fold == nil ? nil : .infinity, alignment: .trailing).leftOfFold(fold)
                         }
                     }
                 }
@@ -139,8 +132,8 @@ struct TodayView: View {
                 // The three ways to add food sit side by side; at the largest text sizes they stack so no label breaks.
                 FoldRow { fold in
                     let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(spacing: 10))
-                        : typeSize >= .xLarge ? AnyLayout(TwoColumnLayout(spacing: 10))
-                        : fold.map { AnyLayout(FoldPartedLayout(fold: $0, spacing: 10)) } ?? AnyLayout(HStackLayout(spacing: 10))
+                        : typeSize >= .xLarge ? AnyLayout(TwoColumnLayout(spacing: 10, fold: fold))
+                        : AnyLayout.columns(spacing: 10, fold: fold)
                     layout {
                         LogMethodButton(title: "Scan", label: "Scan product barcode", systemImage: "barcode.viewfinder") { barcode = true }
                         if MealPhoto.canOffer {
@@ -765,18 +758,26 @@ private struct LogMethodButton: View {
 }
 
 /// Lays views out two to a row, each the same width, so four buttons make a 2 x 2 grid at larger text sizes.
+/// Across a fold on a partly open iPhone Duo, the columns meet its two edges.
 private struct TwoColumnLayout: Layout {
     var spacing: CGFloat
+    var fold: RowFold? = nil
+
+    private func cells(width: CGFloat) -> [(x: CGFloat, width: CGFloat)] {
+        if let fold { return fold.columns(width: width, count: 2, spacing: spacing) }
+        let cell = (width - spacing) / 2
+        return [(0, cell), (cell + spacing, cell)]
+    }
 
     func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
         let width = proposal.width ?? 300
-        let cell = (width - spacing) / 2
+        let cells = cells(width: width)
         let rows = (subviews.count + 1) / 2
         var height = 0.0
         for row in 0..<rows {
             let heights = (0..<2).compactMap { column -> CGFloat? in
                 let index = row * 2 + column
-                return index < subviews.count ? subviews[index].sizeThatFits(ProposedViewSize(width: cell, height: nil)).height : nil
+                return index < subviews.count ? subviews[index].sizeThatFits(ProposedViewSize(width: cells[column].width, height: nil)).height : nil
             }
             height += (heights.max() ?? 0) + (row > 0 ? spacing : 0)
         }
@@ -784,14 +785,14 @@ private struct TwoColumnLayout: Layout {
     }
 
     func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
-        let cell = (bounds.width - spacing) / 2
+        let cells = cells(width: bounds.width)
         var y = bounds.minY
         for row in 0..<((subviews.count + 1) / 2) {
             let indices = (0..<2).map { row * 2 + $0 }.filter { $0 < subviews.count }
-            let rowHeight = indices.map { subviews[$0].sizeThatFits(ProposedViewSize(width: cell, height: nil)).height }.max() ?? 0
+            let rowHeight = indices.enumerated().map { subviews[$1].sizeThatFits(ProposedViewSize(width: cells[$0].width, height: nil)).height }.max() ?? 0
             for (column, index) in indices.enumerated() {
-                subviews[index].place(at: CGPoint(x: bounds.minX + CGFloat(column) * (cell + spacing), y: y), anchor: .topLeading,
-                                      proposal: ProposedViewSize(width: cell, height: rowHeight))
+                subviews[index].place(at: CGPoint(x: bounds.minX + cells[column].x, y: y), anchor: .topLeading,
+                                      proposal: ProposedViewSize(width: cells[column].width, height: rowHeight))
             }
             y += rowHeight + spacing
         }
