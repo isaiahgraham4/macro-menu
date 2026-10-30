@@ -24,14 +24,18 @@ struct ProgressTabView: View {
         let breakdown = breakdown
         LeanrList {
             Section {
-                Picker("Show", selection: $pageRaw) {
-                    ForEach(ProgressPage.allCases) { Text($0.title).tag($0.rawValue) }
-                }.pickerStyle(.segmented)
+                FoldRow { fold in
+                    Picker("Show", selection: $pageRaw) {
+                        ForEach(ProgressPage.allCases) { Text($0.title).tag($0.rawValue) }
+                    }.pickerStyle(.segmented).middleLabelClear(of: fold)
+                }
                 // The range changes the graphs, so Overview (check-in, insights and this week) leaves it out.
                 if page != .overview {
-                    Picker("Range", selection: $range) {
-                        Text("7 days").tag(7); Text("30 days").tag(30); Text("90 days").tag(90)
-                    }.pickerStyle(.segmented)
+                    FoldRow { fold in
+                        Picker("Range", selection: $range) {
+                            Text("7 days").tag(7); Text("30 days").tag(30); Text("90 days").tag(90)
+                        }.pickerStyle(.segmented).middleLabelClear(of: fold)
+                    }
                 }
             }
             ForEach(ProgressPart.shown(order: orderText, hidden: hiddenText).filter { $0.page == page }) { part in

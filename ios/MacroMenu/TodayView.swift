@@ -78,7 +78,18 @@ struct TodayView: View {
                         // At the largest text sizes the date needs the whole row, so the arrows go underneath.
                         VStack(spacing: 4) { picker; HStack { previous; Spacer(); next } }
                     } else {
-                        HStack(spacing: 8) { previous; Spacer(); picker; Spacer(); next }
+                        FoldRow { fold in
+                            if let fold {
+                                // On a partly open iPhone Duo the date moves left of the fold.
+                                HStack(spacing: 8) {
+                                    HStack(spacing: 8) { previous; Spacer(); picker }.frame(width: fold.lowerBound - 8)
+                                    Spacer()
+                                    next
+                                }
+                            } else {
+                                HStack(spacing: 8) { previous; Spacer(); picker; Spacer(); next }
+                            }
+                        }
                     }
                 }
                 .buttonStyle(.borderless)
@@ -126,15 +137,18 @@ struct TodayView: View {
                     ForEach(MealTime.allCases) { Text($0.title).tag($0) }
                 }
                 // The three ways to add food sit side by side; at the largest text sizes they stack so no label breaks.
-                let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(spacing: 10))
-                    : typeSize >= .xLarge ? AnyLayout(TwoColumnLayout(spacing: 10)) : AnyLayout(HStackLayout(spacing: 10))
-                layout {
-                    LogMethodButton(title: "Scan", label: "Scan product barcode", systemImage: "barcode.viewfinder") { barcode = true }
-                    if MealPhoto.canOffer {
-                        LogMethodButton(title: "Photo", label: "Photo of your meal", systemImage: "camera.viewfinder") { photo = true }
+                FoldRow { fold in
+                    let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(spacing: 10))
+                        : typeSize >= .xLarge ? AnyLayout(TwoColumnLayout(spacing: 10))
+                        : fold.map { AnyLayout(FoldPartedLayout(fold: $0, spacing: 10)) } ?? AnyLayout(HStackLayout(spacing: 10))
+                    layout {
+                        LogMethodButton(title: "Scan", label: "Scan product barcode", systemImage: "barcode.viewfinder") { barcode = true }
+                        if MealPhoto.canOffer {
+                            LogMethodButton(title: "Photo", label: "Photo of your meal", systemImage: "camera.viewfinder") { photo = true }
+                        }
+                        LogMethodButton(title: "Describe", label: "Describe your meal", systemImage: "text.bubble") { describing = true }
+                        LogMethodButton(title: "Quick add", label: "Quick add calories and macros", systemImage: "plusminus") { quickAdd = true }
                     }
-                    LogMethodButton(title: "Describe", label: "Describe your meal", systemImage: "text.bubble") { describing = true }
-                    LogMethodButton(title: "Quick add", label: "Quick add calories and macros", systemImage: "plusminus") { quickAdd = true }
                 }
                 .listRowInsets(EdgeInsets(top: 10, leading: 16, bottom: 10, trailing: 16))
                 NavigationLink { PlanView() } label: { Label("Plan ahead", systemImage: "calendar.badge.plus") }
