@@ -423,6 +423,94 @@
    ],
    "src": "guide"
   },
+  "mcd:spicy-chicken-mcnuggets-6-pc": {
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "mcd:spicy-chicken-mcnuggets-10-pc": {
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "mcd:spicy-chicken-mcnuggets-20-pc": {
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "mcd:spicy-chicken-mcnuggets-40-pc": {
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "mcd:half-half-chicken-mcnuggets-6-pc": {
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "mcd:half-half-chicken-mcnuggets-10-pc": {
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "mcd:half-half-chicken-mcnuggets-20-pc": {
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "mcd:half-half-chicken-mcnuggets-40-pc": {
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ],
+   "src": "guide"
+  },
   "mcd:bacon-egg-mcmuffin": {
    "al": [
     "egg",
@@ -616,6 +704,11 @@
     "soy",
     "wheat"
    ],
+   "src": "guide"
+  },
+  "mcd:nashville-shaker-seasoning": {
+   "al": [],
+   "may": [],
    "src": "guide"
   },
   "mcd:hot-apple-pie": {
@@ -1125,6 +1218,20 @@
    ],
    "src": "guide"
   },
+  "mcd:affogato": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:hazelnut-affogato": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
   "mcd:chocolate-shake-large-": {
    "al": [
     "milk"
@@ -1331,6 +1438,17 @@
    ],
    "src": "guide"
   },
+  "mcd:iced-tiramisu-latte-medium-": {
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ],
+   "src": "guide"
+  },
   "mcd:brown-sugar-shaken-espresso-oat-milk-medium-": {
    "al": [
     "gluten"
@@ -1445,6 +1563,33 @@
   "mcd:red-bull-250-ml-can-": {
    "al": [],
    "may": [],
+   "src": "guide"
+  },
+  "mcd:red-bull-zero-sugar-250-ml-can-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:red-bull-strawberries-cream-energiser": {
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "wheat"
+   ],
+   "src": "guide"
+  },
+  "mcd:red-bull-zero-strawberries-cream-energiser": {
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "wheat"
+   ],
    "src": "guide"
   },
   "mcd:lemon-drink-medium-": {
@@ -2045,6 +2190,55 @@
    ],
    "src": "guide"
   },
+  "kfc:original-pepper-mayo-slider": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "kfc:1-original-tender": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "kfc:6-piece-dip-crunch-tenders-with-doritos-cheese-supreme": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "kfc:6-piece-dip-crunch-tenders-with-biscoff-cookie-crumb": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
   "kfc:chips-regular-": {
    "al": [
     "gluten",
@@ -2257,6 +2451,21 @@
    ],
    "src": "guide"
   },
+  "kfc:caramel-biscuit-bliss-cup": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "peanut",
+    "sesame",
+    "treenut"
+   ],
+   "src": "guide"
+  },
   "kfc:pepsi-regular-": {
    "al": [],
    "may": [],
@@ -2294,6 +2503,54 @@
   },
   "kfc:raspberry-freeze": {
    "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:cappuccino-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "kfc:latte-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:flat-white-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:hot-chocolate-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "kfc:mocha-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "soy"
+   ],
+   "src": "guide"
+  },
+  "kfc:dare-charged-strong-latte": {
+   "al": [
+    "milk"
+   ],
    "may": [],
    "src": "guide"
   },

@@ -1053,7 +1053,7 @@ def match_kfc(name, source):
     clean = lambda x: re.sub(r"[^a-z0-9]", "", unicodedata.normalize("NFKD", re.sub(r"[®™]", "", x)).encode("ascii", "ignore").decode().lower())
     by = {clean(k): v for k, v in source["items"].items()}
     name = re.sub(r"^Dipping Sauce: (.+)$", r"\1 Dip", name)
-    sized = re.match(r"^(.+) \((regular|large)\)$", name)
+    sized = re.match(r"^(.+) \((small|regular|large)\)$", name)
     tries = [name, f"{sized.group(2)} {sized.group(1)}" if sized else name, f"{sized.group(1)} - {sized.group(2)}" if sized else name,
              "new " + name, name.replace("Pieces of", "Pieces Of")]
     for t in tries:

@@ -1,5 +1,5 @@
 {
- "source": "mcdonalds.com/au item pages (the site's own itemDetails, read in a browser; ingredients and allergens of each component), 15 Oct 2026",
+ "source": "mcdonalds.com/au item pages (the site's own itemDetails, read in a browser; ingredients and allergens of each component), 15 Oct 2026; new items read 31 Oct 2026",
  "fetched": "2026-10-15",
  "items": {
   "200000": {
@@ -1524,7 +1524,7 @@
    ]
   },
   "200916": {
-   "h": "red-bull-zero-sugar-energy-drink-250ml",
+   "h": "red-bull-zero-sugar-250-ml-can",
    "al": [],
    "may": []
   },
@@ -1724,6 +1724,94 @@
    "h": "nashville-shaker-seasoning",
    "al": [],
    "may": []
+  },
+  "200970": {
+   "h": "spicy-chicken-mcnuggets-6-pc",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ]
+  },
+  "200971": {
+   "h": "spicy-chicken-mcnuggets-10-pc",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ]
+  },
+  "200972": {
+   "h": "spicy-chicken-mcnuggets-20-pc",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ]
+  },
+  "200973": {
+   "h": "spicy-chicken-mcnuggets-40-pc",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ]
+  },
+  "200974": {
+   "h": "half-half-chicken-mcnuggets-6-pc",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ]
+  },
+  "200975": {
+   "h": "half-half-chicken-mcnuggets-10-pc",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ]
+  },
+  "200976": {
+   "h": "half-half-chicken-mcnuggets-20-pc",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ]
+  },
+  "200977": {
+   "h": "half-half-chicken-mcnuggets-40-pc",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ]
   }
  }
 }

@@ -13,7 +13,7 @@ if (!data.foods.length || new Set(data.foods.map(f=>f.id)).size !== data.foods.l
 // Energy is official; protein, carbs and fat are estimated from the ingredient type, so they're marked est.
 const ingredients = require('./mcd-ingredients.json').items;
 // Not removable: trace items, and the base liquid of a drink.
-const SKIP = /^(WATER|ICE|COFFEE EXTRACT|SPRAY OIL|SEASONING|FULL CREAM MILK|OAT MILK|SPRITE|LEMONADE CONCENTRATE|MATCHA POWDER)$/;
+const SKIP = /^(WATER|ICE|COFFEE EXTRACT|SPRAY OIL|SEASONING|FULL CREAM MILK|OAT MILK|PROTEIN MILK|SPRITE|LEMONADE CONCENTRATE|MATCHA POWDER)$/;
 // [pattern, protein, carbs, fat] as shares of the ingredient's energy. First match wins.
 const SPLITS = [
   [/FUDGE|DRIZZLE|FLAKE|M&M|OREO|TIM TAM|BISCOTTI|CHOCOLATE POWDER|MATCHA/, 0.05, 0.60, 0.35],

@@ -519,6 +519,118 @@
     "soy"
    ]
   },
+  "mcd:spicy-chicken-mcnuggets-6-pc": {
+   "meat": [
+    "chicken"
+   ],
+   "src": "name",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ]
+  },
+  "mcd:spicy-chicken-mcnuggets-10-pc": {
+   "meat": [
+    "chicken"
+   ],
+   "src": "name",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ]
+  },
+  "mcd:spicy-chicken-mcnuggets-20-pc": {
+   "meat": [
+    "chicken"
+   ],
+   "src": "name",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ]
+  },
+  "mcd:spicy-chicken-mcnuggets-40-pc": {
+   "meat": [
+    "chicken"
+   ],
+   "src": "name",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ]
+  },
+  "mcd:half-half-chicken-mcnuggets-6-pc": {
+   "meat": [
+    "chicken"
+   ],
+   "src": "name",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ]
+  },
+  "mcd:half-half-chicken-mcnuggets-10-pc": {
+   "meat": [
+    "chicken"
+   ],
+   "src": "name",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ]
+  },
+  "mcd:half-half-chicken-mcnuggets-20-pc": {
+   "meat": [
+    "chicken"
+   ],
+   "src": "name",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ]
+  },
+  "mcd:half-half-chicken-mcnuggets-40-pc": {
+   "meat": [
+    "chicken"
+   ],
+   "src": "name",
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ]
+  },
   "mcd:bacon-egg-mcmuffin": {
    "meat": [
     "pork"
@@ -742,6 +854,11 @@
     "soy",
     "wheat"
    ]
+  },
+  "mcd:nashville-shaker-seasoning": {
+   "meat": null,
+   "src": null,
+   "al": []
   },
   "mcd:hot-apple-pie": {
    "meat": null,
@@ -1332,6 +1449,20 @@
     "treenut"
    ]
   },
+  "mcd:affogato": {
+   "meat": null,
+   "src": null,
+   "al": [
+    "milk"
+   ]
+  },
+  "mcd:hazelnut-affogato": {
+   "meat": null,
+   "src": null,
+   "al": [
+    "milk"
+   ]
+  },
   "mcd:chocolate-shake-large-": {
    "meat": [],
    "src": "name",
@@ -1583,6 +1714,19 @@
     "treenut"
    ]
   },
+  "mcd:iced-tiramisu-latte-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ]
+  },
   "mcd:brown-sugar-shaken-espresso-oat-milk-medium-": {
    "meat": [],
    "src": "name",
@@ -1725,6 +1869,38 @@
    "src": "name",
    "vg": "vegetarian",
    "al": []
+  },
+  "mcd:red-bull-zero-sugar-250-ml-can-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "mcd:red-bull-strawberries-cream-energiser": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "wheat"
+   ]
+  },
+  "mcd:red-bull-zero-strawberries-cream-energiser": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "wheat"
+   ]
   },
   "mcd:lemon-drink-medium-": {
    "meat": [],
@@ -2473,6 +2649,86 @@
     "sesame"
    ]
   },
+  "kfc:original-pepper-mayo-slider": {
+   "meat": null,
+   "src": null,
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
+  },
+  "kfc:1-original-tender": {
+   "meat": null,
+   "src": null,
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "soy"
+   ]
+  },
+  "kfc:3-piece-dip-crunch-tenders-with-doritos-cheese-supreme": {
+   "meat": [
+    "chicken"
+   ],
+   "src": "name"
+  },
+  "kfc:3-piece-dip-crunch-tenders-with-garlic-crunch": {
+   "meat": [
+    "chicken"
+   ],
+   "src": "name"
+  },
+  "kfc:3-piece-dip-crunch-tenders-with-biscoff-cookie-crumb": {
+   "meat": [
+    "chicken"
+   ],
+   "src": "name"
+  },
+  "kfc:6-piece-dip-crunch-tenders-with-doritos-cheese-supreme": {
+   "meat": [
+    "chicken"
+   ],
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
+  },
+  "kfc:6-piece-dip-crunch-tenders-with-garlic-crunch": {
+   "meat": [
+    "chicken"
+   ],
+   "src": "name"
+  },
+  "kfc:6-piece-dip-crunch-tenders-with-biscoff-cookie-crumb": {
+   "meat": [
+    "chicken"
+   ],
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
+  },
   "kfc:chips-regular-": {
    "meat": null,
    "src": null,
@@ -2685,6 +2941,10 @@
     "milk"
    ]
   },
+  "kfc:dipping-sauce-creamy-garlic": {
+   "meat": null,
+   "src": null
+  },
   "kfc:gravy-regular-": {
    "meat": null,
    "src": null,
@@ -2706,6 +2966,22 @@
     "peanut",
     "treenut",
     "wheat"
+   ]
+  },
+  "kfc:caramel-biscuit-bliss-cup": {
+   "meat": null,
+   "src": null,
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "peanut",
+    "sesame",
+    "treenut"
    ]
   },
   "kfc:pepsi-regular-": {
@@ -2757,6 +3033,11 @@
    "al": []
   },
   "kfc:apple-juice": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "kfc:orange-juice": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian"
@@ -2825,6 +3106,73 @@
    "meat": [],
    "src": "name",
    "vg": "vegetarian"
+  },
+  "kfc:cappuccino-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "soy"
+   ]
+  },
+  "kfc:latte-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
+  },
+  "kfc:flat-white-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
+  },
+  "kfc:hot-chocolate-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "soy"
+   ]
+  },
+  "kfc:mocha-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "soy"
+   ]
+  },
+  "kfc:long-black-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "kfc:espresso": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "kfc:dare-charged-strong-latte": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   },
   "hj:whopper": {
    "meat": [

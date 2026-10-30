@@ -1,5 +1,5 @@
 {
- "source": "kfc.com.au Nutrition & Allergen Guide (each item's More Info panel, read in a browser; items whose panel lists no allergens table, like combos and boxes, are left out)",
+ "source": "kfc.com.au Nutrition & Allergen Guide (each item's More Info panel, read in a browser; items whose panel lists no allergens table, like combos and boxes, are left out); new items read 31 Oct 2026",
  "fetched": "2026-10-15",
  "items": {
   "NEW 3 ORIGINAL TENDERS™ DIP'D": {
@@ -602,6 +602,70 @@
    "may": [
     "egg"
    ]
+  },
+  "6 PIECE DIP & CRUNCH TENDERS WITH DORITOS® CHEESE SUPREME": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame"
+   ]
+  },
+  "6 PIECE DIP & CRUNCH TENDERS WITH BISCOFF® COOKIE CRUMB": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "SMALL CAPPUCCINO": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "soy"
+   ]
+  },
+  "SMALL LATTE": {
+   "al": [
+    "milk"
+   ],
+   "may": []
+  },
+  "SMALL FLAT WHITE": {
+   "al": [
+    "milk"
+   ],
+   "may": []
+  },
+  "SMALL HOT CHOCOLATE": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "soy"
+   ]
+  },
+  "SMALL MOCHA": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "soy"
+   ]
+  },
+  "DARE CHARGED STRONG LATTE": {
+   "al": [
+    "milk"
+   ],
+   "may": []
   }
  }
 }
