@@ -208,6 +208,9 @@ enum MealPhoto {
         "nandos": "nandos", "dominos": "dominos", "dominospizza": "dominos", "redrooster": "rr", "red rooster": "rr",
         "subway": "sub", "oporto": "oporto", "zambrero": "zam", "boost": "boost", "boostjuice": "boost", "boost juice": "boost",
         "schnitz": "schnitz", "grilld": "grilld",
+        "bettys": "betty", "bettys burgers": "betty", "betty's burgers": "betty", "fiveguys": "fiveguys", "five guys": "fiveguys", "crust": "crust", "crust pizza": "crust",
+        "donutking": "donutking", "donut king": "donutking", "michels": "michels", "michel's": "michels", "michels patisserie": "michels",
+        "brumbys": "brumbys", "brumby's": "brumbys", "soulorigin": "soul", "soul origin": "soul", "rolld": "rolld", "roll'd": "rolld", "thisbowl": "thisbowl", "fishbowl": "thisbowl",
     ]
 
     /// The restaurant a brand names, if it's one Leanr has: a known nickname first, then a close match to the chain's name.

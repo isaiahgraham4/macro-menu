@@ -1,0 +1,12341 @@
+{
+"fetched": "2026-10-31",
+"items": {
+"betty:bare-betty": {
+"meat": [
+"beef"
+],
+"src": "name"
+},
+"betty:betty-s-classic": {
+"meat": [
+"beef"
+],
+"src": "name"
+},
+"betty:betty-s-classic-double-stacked-beef": {
+"meat": [
+"beef"
+],
+"src": "name"
+},
+"betty:betty-s-classic-plant": {
+"meat": [],
+"src": "name"
+},
+"betty:betty-s-classic-vegan": {
+"meat": [],
+"src": "name",
+"vg": "vegan"
+},
+"betty:betty-s-deluxe": {
+"meat": [
+"beef"
+],
+"src": "name"
+},
+"betty:betty-s-double": {
+"meat": [
+"beef"
+],
+"src": "name"
+},
+"betty:calamari": {
+"meat": [
+"seafood"
+],
+"src": "name"
+},
+"betty:cheeseburger": {
+"meat": [
+"beef"
+],
+"src": "name"
+},
+"betty:chicken-avo-bacon-bowl": {
+"meat": [
+"chicken",
+"pork"
+],
+"src": "name"
+},
+"betty:chocolate-deluxe": {
+"meat": [],
+"src": "name"
+},
+"betty:coke-large-": {
+"meat": [],
+"src": "name"
+},
+"betty:coke-no-sugar-large-": {
+"meat": [],
+"src": "name"
+},
+"betty:coke-no-sugar-small-": {
+"meat": [],
+"src": "name"
+},
+"betty:coke-small-": {
+"meat": [],
+"src": "name"
+},
+"betty:crispy-5-pc-chicken-strips": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"betty:crispy-chicken": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"betty:crispy-chicken-strips-burger": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"betty:crispy-chicken-supreme": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"betty:fanta-large-": {
+"meat": [],
+"src": "name"
+},
+"betty:fanta-small-": {
+"meat": [],
+"src": "name"
+},
+"betty:grilled-chicken": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"betty:grilled-chicken-bare": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"betty:grilled-chicken-supreme": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"betty:kids-beef-bundle-with-drink-": {
+"meat": [
+"beef"
+],
+"src": "name"
+},
+"betty:kids-beef-burger": {
+"meat": [
+"beef"
+],
+"src": "name"
+},
+"betty:kids-chicken-bundle-with-drink-": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"betty:kids-chicken-burger": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"betty:noosa-classic-surf": {
+"meat": [
+"beef"
+],
+"src": "name"
+},
+"betty:salmon-bowl": {
+"meat": [
+"fish"
+],
+"src": "name"
+},
+"betty:spicy-chicken": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"betty:spicy-grilled-chicken": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"betty:spicy-vegan-sauce": {
+"meat": [],
+"src": "name",
+"vg": "vegan"
+},
+"betty:sprite-large-": {
+"meat": [],
+"src": "name"
+},
+"betty:sprite-small-": {
+"meat": [],
+"src": "name"
+},
+"betty:vanilla-cookie-butter": {
+"meat": [],
+"src": "name"
+},
+"betty:vanilla-pavlova": {
+"meat": [],
+"src": "name"
+},
+"betty:vegan-garlic-mayo": {
+"meat": [],
+"src": "name",
+"vg": "vegan"
+},
+"betty:vege-patty-super-bowl": {
+"meat": [],
+"src": "name"
+},
+"brumbys:almond-croissant": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"treenut",
+"wheat"
+],
+"may": [
+"brazil",
+"cashew",
+"hazelnut",
+"macadamia",
+"peanut",
+"pecan",
+"pinenut",
+"pistachio",
+"sesame",
+"walnut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:ancient-grain-sourdough-vienna-malt-loaf": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:ancient-grain-sourdough-white-vienna-open-top-": {
+"al": [
+"gluten",
+"sesame",
+"soy",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:anzac-biscuit": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:apple-custard-glen": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:apple-custard-tart-no-bake-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:apple-glen": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:apple-slice": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"lupin",
+"peanut",
+"sesame",
+"soy",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:apple-tea-ring": {
+"al": [
+"gluten",
+"soy",
+"treenut",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:apple-turnover": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:apple-turnover-ap-with-cream": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"sulphites",
+"wheat"
+],
+"may": [
+"peanut",
+"sesame",
+"soy",
+"treenut"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"brumbys:apple-turnover-with-cream": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"brumbys:apricot-ball": {
+"al": [
+"milk",
+"sulphites"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:authentic-sourdough-rye-loaf": {
+"al": [
+"gluten",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:authentic-sourdough-rye-vienna": {
+"al": [
+"gluten",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:authentic-sourdough-turmeric-lentil-loaf-cobb-": {
+"al": [
+"gluten",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:authentic-sourdough-white-loaf": {
+"al": [
+"gluten",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:babychino": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:bacon-cheese-sausage-roll": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"sesame"
+],
+"meat": [
+"beef",
+"pork"
+],
+"src": "ingredients"
+},
+"brumbys:baguette-white-": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:banana-bread": {
+"al": [
+"egg",
+"gluten",
+"treenut",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:bbq-pulled-pork-slaw-on-brioche": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"sesame",
+"soy",
+"wheat"
+],
+"may": [
+"peanut"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"brumbys:beef-cheese-bacon-pie": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"beef",
+"pork"
+],
+"src": "ingredients"
+},
+"brumbys:beef-curry-pie": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"brumbys:beef-mushroom-pie": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"brumbys:beef-pastie": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"sesame"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"brumbys:beef-pie": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"brumbys:beesting-cake": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"treenut",
+"wheat"
+],
+"may": [
+"egg",
+"hazelnut"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"brumbys:bigger-than-texas-roll-white-": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:blueberry-custard-glen": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:blueberry-muffin": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"peanut",
+"sesame",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:blueberry-white-choc-scone": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"peanut",
+"sesame",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:boston-bun": {
+"al": [
+"gluten",
+"soy",
+"sulphites",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:brownie": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:bruffin-bbq-bacon-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"sesame",
+"soy",
+"wheat"
+],
+"may": [
+"peanut"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"brumbys:brumby-s-christmas-cake": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"treenut",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:brumby-s-gluten-free-traditional-beef-pie": {
+"al": [
+"egg",
+"milk",
+"soy"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"brumbys:brumby-s-sausage-roll": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"peanut",
+"sesame",
+"treenut"
+],
+"meat": [
+"beef",
+"pork"
+],
+"src": "ingredients"
+},
+"brumbys:butter-chicken-pie": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"meat": [
+"chicken"
+],
+"src": "ingredients"
+},
+"brumbys:caffe-latte-large-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:caffe-latte-regular-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:caffe-latte-small-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:cappuccino-large-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:cappuccino-regular-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:cappuccino-small-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:caramel-slice": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"lupin",
+"peanut",
+"sesame",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:caramel-tart": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"brumbys:carnival-cookie": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:carrot-cake-slice": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"treenut",
+"wheat"
+],
+"may": [
+"peanut",
+"sesame"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:chai-latte-large-": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:chai-latte-regular-": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:chai-latte-small-": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:cheese-bacon-tear-n-share-loaf": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"brumbys:cheese-bacon-twist": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"brumbys:cheese-roll": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:cheese-spinach-sausage-roll": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"sesame",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:chicken-avo-hollandaise-bruffin": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"sesame",
+"soy",
+"wheat"
+],
+"meat": [
+"chicken"
+],
+"src": "ingredients"
+},
+"brumbys:chicken-caesar-baguette": {
+"al": [
+"fish",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"peanut",
+"sesame"
+],
+"meat": [
+"chicken",
+"pork",
+"fish"
+],
+"src": "ingredients"
+},
+"brumbys:chicken-leek-camembert-pie": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"chicken"
+],
+"src": "ingredients"
+},
+"brumbys:chicken-salad-roll-white-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"peanut",
+"sesame"
+],
+"meat": [
+"chicken"
+],
+"src": "ingredients"
+},
+"brumbys:chicken-salad-roll-wholemeal-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"peanut",
+"sesame"
+],
+"meat": [
+"chicken"
+],
+"src": "ingredients"
+},
+"brumbys:chicken-salad-sandwich-white-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"peanut",
+"sesame"
+],
+"meat": [
+"chicken"
+],
+"src": "ingredients"
+},
+"brumbys:chicken-semi-dried-tomato-pesto-wrap": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"treenut",
+"wheat"
+],
+"meat": [
+"chicken"
+],
+"src": "ingredients"
+},
+"brumbys:choc-chip-shortbread": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:choc-hazelnut-choc-chip-gourmet-cookie": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"treenut",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:chocolate-brownie-slice": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"treenut",
+"wheat"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"brumbys:chocolate-croissant": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"hazelnut",
+"macadamia",
+"peanut",
+"sesame",
+"treenut",
+"walnut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:chocolate-hazelnut-balls": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"treenut",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:chocolate-mud-cake-family-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"brumbys:choppa-loaf-australian": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"brumbys:choppa-loaf-supreme": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"brumbys:christmas-pudding-large-per-serve-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:cinnamon-bun": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"peanut",
+"sesame",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:cinnamon-bun-made-with-biscoff-spread": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"peanut",
+"sesame",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:cinnamon-donut": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"peanut",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:cinnamon-log": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:cinnamon-scroll": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"treenut",
+"wheat"
+],
+"may": [
+"egg",
+"peanut",
+"sesame"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:classic-garlic-twist": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:coffee-scroll": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:cream-bun": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"brumbys:croissant-plain": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"hazelnut",
+"peanut",
+"pecan",
+"sesame",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:cupcake-iced-monkey-face-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:custard-tart-no-bake-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:damper-loaf": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:danish-apple-custard": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"hazelnut",
+"macadamia",
+"peanut",
+"sesame",
+"soy",
+"treenut",
+"walnut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:danish-blueberry-custard": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"hazelnut",
+"macadamia",
+"peanut",
+"sesame",
+"soy",
+"treenut",
+"walnut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:dark-rye-open-top-loaf": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:date-loaf": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:date-loaf-mini-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:date-scone": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:double-bacon-egg-brioche-roll": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"sesame",
+"soy",
+"wheat"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"brumbys:double-chocolate-muffin": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"peanut",
+"sesame",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:eclair-with-bavarian-cream": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"lupin",
+"peanut",
+"sesame",
+"treenut"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"brumbys:eclair-with-whipped-cream": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"lupin",
+"peanut",
+"sesame",
+"treenut"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"brumbys:espresso": {
+"al": [],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:espresso-macchiato": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:finger-bun": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:five-fruit-sourdough-five-fruit-loaf-vienna": {
+"al": [
+"gluten",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:flat-white-large-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:flat-white-regular-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:flat-white-small-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:french-stick-white-": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:fruit-apple-scroll": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:fruit-bun": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:fruit-loaf-open-top": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:fruit-mince-tart": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"brumbys:greek-wrap": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"treenut",
+"wheat"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"brumbys:ham-cheese-croissant": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"hazelnut",
+"peanut",
+"pecan",
+"sesame",
+"treenut"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"brumbys:ham-cheese-danish": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"sesame",
+"wheat"
+],
+"may": [
+"hazelnut",
+"macadamia",
+"peanut",
+"soy",
+"treenut",
+"walnut"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"brumbys:ham-salad-roll-white-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"peanut"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"brumbys:ham-salad-sandwich-white-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"peanut"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"brumbys:hedgehog-slice": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:high-fibre-low-gi-loaf": {
+"al": [
+"gluten",
+"wheat"
+],
+"may": [
+"egg",
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:high-fibre-low-gi-roll": {
+"al": [
+"gluten",
+"wheat"
+],
+"may": [
+"egg",
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:hot-chocolate-large-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:hot-chocolate-regular-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:hot-chocolate-small-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:iced-chai-large-": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:iced-chocolate-donut": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"peanut",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:iced-chocolate-large-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:iced-latte-large-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:iced-long-black-large-": {
+"al": [],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:iced-mocha-large-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:italian-herbs-parmesan-baguette": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:italian-herbs-parmesan-loaf": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:jam-ball": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:jam-drop": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"egg",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:jam-scroll": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:kythera": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:lamington": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:lemon-meringue-tart": {
+"al": [
+"egg",
+"gluten",
+"soy",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:long-black-large-": {
+"al": [],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:long-black-regular-": {
+"al": [],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:long-black-small-": {
+"al": [],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:long-john-donut": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"brumbys:macadamia-shortbread-bite": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"treenut",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:married-high-tin-white-": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:matt-s-egg-bacon-brekky-danish": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"hazelnut",
+"macadamia",
+"peanut",
+"sesame",
+"soy",
+"treenut",
+"walnut"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"brumbys:mega-grain-roll": {
+"al": [
+"gluten",
+"sesame",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:mega-protein-loaf": {
+"al": [
+"gluten",
+"sesame",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:melting-moment": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"egg",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:meringue-kisses": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"treenut",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:meringue-worms": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:mini-beesting-bun": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"treenut",
+"wheat"
+],
+"may": [
+"egg",
+"hazelnut"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"brumbys:mini-cheese-bacon-roll": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"brumbys:mini-cinnamon-bun": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"peanut",
+"sesame",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:mini-cinnamon-bun-made-with-biscoff-spread": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"peanut",
+"sesame",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:mini-pizza-basil-pesto-cherry-tomato-cheese-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"treenut",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:mini-pizza-meat-lovers-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"brumbys:mini-pizza-supremo-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"brumbys:mocha-large-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:mocha-regular-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:mocha-small-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:multigrain-cafe-loaf": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:multigrain-mini-sandwich-loaf": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:multigrain-open-top-loaf": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:multigrain-round-roll": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:multigrain-sandwich-loaf": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:mushy-peas-pie-topper": {
+"al": [],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:pane-de-casa": {
+"al": [
+"gluten",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:party-pie": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"brumbys:party-sausage-roll": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk",
+"sesame"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"brumbys:pasta-dura-loaf-white-": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:pasta-dura-roll-white-": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:pastrami-on-rye": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"peanut"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"brumbys:pavlova-donut": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"may": [
+"peanut",
+"treenut"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"brumbys:pesto-cheese-turkish-loaf": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"treenut",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:pipe-loaf-white-": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:pizza-roll-australia": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"brumbys:pizza-rope": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"peanut",
+"sesame",
+"soy",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:plait-loaf": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:potato-top-pie": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"may": [
+"egg",
+"sesame"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"brumbys:pumpkin-bread": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:quiche-lorraine": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"lupin",
+"peanut",
+"sesame",
+"treenut"
+],
+"meat": [
+"pork",
+"gelatine"
+],
+"src": "ingredients"
+},
+"brumbys:quinoa-linseed-low-fodmap-loaf": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:quinoa-linseed-low-fodmap-roll": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:raspberry-white-choc-balls": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"may": [
+"peanut",
+"sesame",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:raspberry-white-choc-custard-glen": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"peanut",
+"sesame",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:red-velvet-cake-family-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"peanut",
+"sesame",
+"treenut"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"brumbys:roasted-pecan-caramel-tart": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"treenut",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:roasted-pumpkin-spinach-fetta-caramelised-onion-mini-pizza": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:rosemary-garlic-sea-salt-vienna": {
+"al": [
+"gluten",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:rum-ball": {
+"al": [
+"gluten",
+"milk",
+"sulphites",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:salted-caramel-white-choc-gourmet-cookie": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"peanut",
+"sesame",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:sausage-roll": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk",
+"sesame"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"brumbys:savoury-roll-cheese-bacon": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"brumbys:savoury-scroll-cheddarmite": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:savoury-scroll-mini-cheddarmite": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:scone-plain-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:scotch-loaf": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:scotch-roll": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:slow-cooked-king-island-beef-pepper-pie": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"brumbys:slow-cooked-king-island-beef-pie": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"brumbys:smoky-bbq-meat-lovers-pie": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"beef",
+"pork"
+],
+"src": "ingredients"
+},
+"brumbys:sourdough-farmhouse-loaf": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:sourdough-round-roll": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:sourdough-wholemeal-loaf": {
+"al": [
+"gluten",
+"sesame",
+"wheat"
+],
+"may": [
+"egg",
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:spinach-feta-damper-loaf": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:spinach-feta-damper-roll": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:spinach-feta-danish": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"sesame",
+"wheat"
+],
+"may": [
+"hazelnut",
+"macadamia",
+"peanut",
+"soy",
+"treenut",
+"walnut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:spinach-feta-quiche": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"lupin",
+"peanut",
+"sesame",
+"treenut"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"brumbys:spinach-feta-twist": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:sultana-scone": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:sunflower-honey-loaf": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:supreme-pizza-roll": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"brumbys:swiss-seed-roll": {
+"al": [
+"gluten",
+"sesame",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:tiger-cubs": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:tiger-loaf": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:tomato-sauce-portions": {
+"al": [],
+"may": [
+"peanut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:traditional-shortbread": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:turkish-bread-loaf": {
+"al": [
+"gluten",
+"sesame",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:vanilla-slice": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"brumbys:vanilla-slice-donut": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"brumbys:vegetable-pastie": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"may": [
+"egg",
+"sesame",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:vegetarian-pizza-roll": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:victorian-sponge-cake-family-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"brumbys:vienna-loaf": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:white-cafe-loaf": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:white-cobb-loaf": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:white-cobb-loaf-mini-": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:white-devonshire-tin-loaf": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:white-dinner-roll": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:white-french-loaf": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:white-hamburger-roll": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:white-knot-roll": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:white-long-roll": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:white-mini-sandwich-loaf": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:white-round-roll": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:white-sandwich-loaf": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:white-shell-roll": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:wholemeal-cafe-loaf": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:wholemeal-cobb": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:wholemeal-grain-cafe-loaf": {
+"al": [
+"gluten",
+"sesame",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:wholemeal-grain-mini-sandwich-loaf": {
+"al": [
+"gluten",
+"sesame",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:wholemeal-grain-round-roll": {
+"al": [
+"gluten",
+"sesame",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:wholemeal-grain-sandwich-loaf": {
+"al": [
+"gluten",
+"sesame",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:wholemeal-mini-sandwich-loaf": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:wholemeal-round-roll": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:wholemeal-sandwich-loaf": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:wholemeal-vienna-loaf": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"brumbys:wildberry-custard-glen": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [],
+"src": "ingredients"
+},
+"crust:1889-margherita-large-": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"crust:apple-pie-bites": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"crust:australian-large-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"crust:bbq-chicken-large-": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"peanut"
+],
+"meat": [
+"chicken"
+],
+"src": "ingredients"
+},
+"crust:biscoff-cronut": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"egg",
+"hazelnut",
+"milk",
+"pecan",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"crust:bolognese": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"egg",
+"soy"
+],
+"meat": [
+"beef",
+"pork"
+],
+"src": "ingredients"
+},
+"crust:caesar-salad": {
+"al": [
+"egg",
+"fish",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"sesame"
+],
+"meat": [
+"pork",
+"fish"
+],
+"src": "ingredients"
+},
+"crust:capricciosa-large-": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"crust:carbonara": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"egg",
+"soy"
+],
+"meat": [
+"pork",
+"gelatine"
+],
+"src": "ingredients"
+},
+"crust:cheesy-garlic-bread": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"sesame"
+],
+"meat": [],
+"src": "ingredients"
+},
+"crust:cheesy-garlic-sticks": {
+"al": [
+"gluten",
+"milk",
+"sesame",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"crust:chicken-bacon-loaded-fries": {
+"al": [
+"egg",
+"milk",
+"soy"
+],
+"may": [
+"gluten"
+],
+"meat": [
+"chicken",
+"pork"
+],
+"src": "ingredients"
+},
+"crust:chicken-bites": {
+"al": [
+"gluten",
+"sesame",
+"soy",
+"wheat"
+],
+"meat": [
+"chicken"
+],
+"src": "ingredients"
+},
+"crust:chicken-pesto-calzone": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"meat": [
+"chicken"
+],
+"src": "ingredients"
+},
+"crust:choc-hazelnut-scrolls": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"treenut",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"crust:chocolate-brownie-bites": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"peanut",
+"sesame",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"crust:chocolate-mousse": {
+"al": [
+"milk",
+"soy"
+],
+"may": [
+"almond",
+"gluten",
+"hazelnut",
+"peanut",
+"treenut",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"crust:classic-cronut": {
+"al": [
+"gluten",
+"wheat"
+],
+"may": [
+"almond",
+"egg",
+"hazelnut",
+"milk",
+"pecan",
+"soy",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"crust:classic-margherita-large-": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"crust:classic-pepperoni-large-": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"soy"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"crust:crust-supreme-large-": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"soy"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"crust:fiery-peri-peri-chicken-large-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"peanut",
+"sesame",
+"soy",
+"treenut"
+],
+"meat": [
+"chicken"
+],
+"src": "ingredients"
+},
+"crust:garden-salad": {
+"al": [],
+"may": [
+"milk",
+"soy",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"crust:garlic-bread": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"sesame"
+],
+"meat": [],
+"src": "ingredients"
+},
+"crust:garlic-prawn-large-": {
+"al": [
+"gluten",
+"milk",
+"shellfish",
+"wheat"
+],
+"meat": [
+"seafood"
+],
+"src": "ingredients"
+},
+"crust:greek-lamb": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"soy"
+],
+"meat": [
+"lamb"
+],
+"src": "ingredients"
+},
+"crust:hawaiian-large-": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"crust:hazelnut-cronut": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"treenut",
+"wheat"
+],
+"may": [
+"almond",
+"egg",
+"pecan"
+],
+"meat": [],
+"src": "ingredients"
+},
+"crust:herb-garlic-squares": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"crust:kids-cheese-pizza-with-juice-": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"crust:kids-chicken-pineapple-pizza-with-juice-": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"peanut"
+],
+"meat": [
+"chicken"
+],
+"src": "ingredients"
+},
+"crust:kids-ham-cheese-pizza-with-juice-": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"crust:kids-ham-pineapple-pizza-with-juice-": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"crust:lotus-biscoff-scrolls": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"crust:meat-deluxe-large-": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"peanut",
+"soy"
+],
+"meat": [
+"chicken",
+"beef",
+"pork"
+],
+"src": "ingredients"
+},
+"crust:mediterranean-lamb-large-": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"egg",
+"soy"
+],
+"meat": [
+"lamb"
+],
+"src": "ingredients"
+},
+"crust:moroccan-lamb-large-": {
+"al": [
+"gluten",
+"milk",
+"sesame",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"lamb"
+],
+"src": "ingredients"
+},
+"crust:oven-baked-chips": {
+"al": [],
+"may": [
+"gluten",
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"crust:paneer-masala-large-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"peanut",
+"soy",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"crust:peking-duck-large-": {
+"al": [
+"gluten",
+"milk",
+"sesame",
+"soy",
+"wheat"
+],
+"may": [
+"fish",
+"peanut",
+"shellfish"
+],
+"meat": [
+"other"
+],
+"src": "ingredients"
+},
+"crust:pepperoni-hot-honey-calzone": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"soy"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"crust:pepperoni-large-": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"soy"
+],
+"meat": [
+"beef",
+"pork"
+],
+"src": "ingredients"
+},
+"crust:pepperoni-pesto-caprese": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"soy"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"crust:peri-peri-beef-brisket-large-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"sesame",
+"soy",
+"wheat"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"crust:peri-peri-chicken-large-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"meat": [
+"chicken"
+],
+"src": "ingredients"
+},
+"crust:peri-peri-chicken-loaded-fries": {
+"al": [
+"egg",
+"milk",
+"soy"
+],
+"may": [
+"gluten"
+],
+"meat": [
+"chicken"
+],
+"src": "ingredients"
+},
+"crust:peri-peri-chicken-loaded-garlic-bread": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"sesame"
+],
+"meat": [
+"chicken"
+],
+"src": "ingredients"
+},
+"crust:peri-peri-chicken-piadina": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"meat": [
+"chicken"
+],
+"src": "ingredients"
+},
+"crust:peri-peri-not-chicken-large-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"sesame",
+"wheat"
+],
+"may": [
+"soy"
+],
+"meat": [
+"chicken"
+],
+"src": "ingredients"
+},
+"crust:pesto-chicken-club-large-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"meat": [
+"chicken",
+"pork"
+],
+"src": "ingredients"
+},
+"crust:portuguese-peri-peri-prawn-large-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"shellfish",
+"wheat"
+],
+"may": [
+"peanut",
+"sesame",
+"soy",
+"treenut"
+],
+"meat": [
+"seafood"
+],
+"src": "ingredients"
+},
+"crust:prosciutto-rocket-large-": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"crust:pulled-pork-and-slaw-large-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"peanut",
+"soy"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"crust:quattro-salumi-large-": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"soy"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"crust:roast-chicken-bacon-large-": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"peanut"
+],
+"meat": [
+"chicken",
+"pork"
+],
+"src": "ingredients"
+},
+"crust:rocket-parmesan": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"crust:smokey-bbq-wings": {
+"al": [],
+"may": [
+"peanut"
+],
+"meat": [
+"chicken"
+],
+"src": "ingredients"
+},
+"crust:spicy-korean-wings": {
+"al": [
+"fish",
+"gluten",
+"sesame",
+"soy",
+"wheat"
+],
+"may": [
+"milk",
+"peanut",
+"shellfish"
+],
+"meat": [
+"chicken",
+"fish"
+],
+"src": "ingredients"
+},
+"crust:spinach-fetta-large-": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"crust:szechuan-chilli-prawn-large-": {
+"al": [
+"gluten",
+"milk",
+"shellfish",
+"wheat"
+],
+"meat": [
+"seafood"
+],
+"src": "ingredients"
+},
+"crust:szechuan-spicy-chicken-large-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"sesame",
+"soy",
+"wheat"
+],
+"meat": [
+"chicken"
+],
+"src": "ingredients"
+},
+"crust:truffle-beef-rossini-large-": {
+"al": [
+"egg",
+"fish",
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"soy"
+],
+"meat": [
+"beef",
+"fish"
+],
+"src": "ingredients"
+},
+"crust:upper-crust": {
+"al": [
+"fish",
+"gluten",
+"milk",
+"sesame",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"peanut",
+"shellfish"
+],
+"meat": [
+"beef",
+"fish"
+],
+"src": "ingredients"
+},
+"crust:vegan-peri-peri-not-chicken-large-": {
+"al": [
+"gluten",
+"sesame",
+"soy",
+"wheat"
+],
+"meat": [],
+"src": "ingredients",
+"vg": "vegan"
+},
+"crust:vegan-supreme-large-": {
+"al": [
+"gluten",
+"soy",
+"sulphites",
+"wheat"
+],
+"meat": [],
+"src": "ingredients",
+"vg": "vegan"
+},
+"crust:vegetarian-supreme-large-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"crust:vietnamese-chilli-chicken-large-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"sesame",
+"soy",
+"wheat"
+],
+"may": [
+"fish",
+"peanut",
+"shellfish"
+],
+"meat": [
+"chicken"
+],
+"src": "ingredients"
+},
+"donutking:aussie-hot-dog": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"peanut",
+"sesame"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"donutking:baby-blue-buddy": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:baby-pink-buddy": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:babycino": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:beef-curry-pie": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"donutking:beef-mushroom-pie": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"donutking:beef-pastie": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"sesame"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"donutking:beef-pie": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"donutking:bloodshot-made-with-tabasco-sauce": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"peanut",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:blue-bird-donut": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [
+"beef",
+"gelatine"
+],
+"src": "ingredients"
+},
+"donutking:blue-cookie-monster-donut": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"peanut"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"donutking:blue-sour-strap-donut": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"donutking:cappuccino-large-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:cappuccino-regular-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:cappuccino-small-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:caramel-bear-donut": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"donutking:chai-latte-large-": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:chai-latte-regular-": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:chai-latte-small-": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:chase-paw-patrol-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"peanut",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:cheese-bacon-pie": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"beef",
+"pork"
+],
+"src": "ingredients"
+},
+"donutking:cheese-bacon-roll": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"sesame"
+],
+"meat": [
+"beef",
+"pork"
+],
+"src": "ingredients"
+},
+"donutking:choc-banana-donut": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [
+"beef",
+"gelatine"
+],
+"src": "ingredients"
+},
+"donutking:choc-caramel-sea-salt-donut": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:choc-donut-buddy": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:choc-hazelnut-cronut": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"treenut",
+"wheat"
+],
+"may": [
+"almond",
+"egg",
+"pecan"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:choc-honeycomb-mixer": {
+"al": [
+"milk",
+"soy"
+],
+"may": [
+"gluten",
+"peanut",
+"treenut",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:choc-jam-ball": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:choc-jam-ball-new-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"hazelnut",
+"peanut",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:choc-m-m-donut": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"peanut",
+"treenut"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"donutking:choc-mini-marshmallow-donut": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [
+"beef",
+"gelatine"
+],
+"src": "ingredients"
+},
+"donutking:choc-smiley-face-donut": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [
+"beef",
+"gelatine"
+],
+"src": "ingredients"
+},
+"donutking:chocolate-bear-donut": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"donutking:chocolate-mummy": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:chocolate-sundae": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:chocolate-sweetheart-ring": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:christmas-tree": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"peanut",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:cinnamon-donut": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"donutking:cinnamon-donut-vegetable-oil-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:cinnamon-scroll": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:cinnamon-sugar-cronut": {
+"al": [
+"gluten",
+"wheat"
+],
+"may": [
+"almond",
+"egg",
+"hazelnut",
+"milk",
+"pecan",
+"soy",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:classic-single-cone": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:cookies-cream-crunch-donut": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"peanut",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:crocodile-donut": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"peanut",
+"pistachio",
+"treenut"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"donutking:cursed-cat": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"hazelnut",
+"peanut",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:custard-ball": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"hazelnut",
+"peanut",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:custard-ball-caramel-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:custard-ball-chocolate-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:dinosaur-chocolate-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:dinosaur-strawberry-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:eclair-caramel-with-custard-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:eclair-chocolate-with-custard-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:eclair-chocolate-with-jam-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:eclair-dusted-with-custard-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:eclair-dusted-with-jam-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:eclair-strawberry-with-jam-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:english-breakfast-tea-large-": {
+"al": [],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:english-breakfast-tea-regular-": {
+"al": [],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:english-breakfast-tea-small-": {
+"al": [],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:espresso-macchiato": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:espresso-scroll": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:flat-white-large-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:flat-white-regular-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:flat-white-small-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:frappe-caramel-crunch-": {
+"al": [
+"milk",
+"soy"
+],
+"may": [
+"gluten",
+"peanut",
+"treenut",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:frappe-cheeky-chocolate-": {
+"al": [
+"milk",
+"soy"
+],
+"may": [
+"almond",
+"hazelnut",
+"peanut",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:frappe-chocolate-mocha-": {
+"al": [
+"milk",
+"soy"
+],
+"may": [
+"almond",
+"hazelnut",
+"peanut",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:frappe-coffee-": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:frappe-cookies-n-cream-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"peanut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:frappe-strawberry-fusion-": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"donutking:frosted-cronut": {
+"al": [
+"gluten",
+"wheat"
+],
+"may": [
+"almond",
+"egg",
+"hazelnut",
+"milk",
+"pecan",
+"soy",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:game-day-blue-iced-ring-donut": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:game-day-maroon-iced-ring-donut": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:gingerbread-buddy": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:hazelnut-ball-prepared-with-nutella": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"treenut",
+"wheat"
+],
+"may": [
+"peanut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:hot-chocolate-large-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:hot-chocolate-regular-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:hot-chocolate-small-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:hot-glazed-donut": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"donutking:hot-glazed-donut-topping-chocolate-flake-": {
+"al": [
+"milk",
+"soy"
+],
+"may": [
+"almond",
+"hazelnut",
+"peanut",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:hot-glazed-donut-topping-crushed-cookies-": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"milk",
+"peanut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:i-dough-ring-donut": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:iced-cake-donut-caramel-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"donutking:iced-cake-donut-chocolate-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"donutking:iced-cake-donut-pineapple-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"donutking:iced-cake-donut-strawberry-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"donutking:iced-chocolate": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:iced-coffee": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:iced-mocha": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:iced-ring-donut-baby-blue-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:iced-ring-donut-baby-pink-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:iced-ring-donut-caramel-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:iced-ring-donut-chocolate-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"peanut",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:iced-ring-donut-pineapple-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:iced-ring-donut-strawberry-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:iced-ring-donut-vanilla-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:iced-ring-donut-vanilla-glaze-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:jam-ball": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"hazelnut",
+"peanut",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:latte-large-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:latte-regular-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:latte-small-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:long-black-large-": {
+"al": [],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:long-black-regular-": {
+"al": [],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:long-black-small-": {
+"al": [],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:malteser-mixer": {
+"al": [
+"gluten",
+"milk",
+"soy"
+],
+"may": [
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:marshall-paw-patrol-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"peanut",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:merrymisu": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"peanut",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:midnight-monster": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"hazelnut",
+"peanut",
+"treenut"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"donutking:milkshake-banana-large-": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:milkshake-banana-regular-": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:milkshake-caramel-large-": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:milkshake-caramel-regular-": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:milkshake-chocolate-large-": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:milkshake-chocolate-regular-": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:milkshake-coffee-large-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:milkshake-coffee-regular-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:milkshake-lime-large-": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:milkshake-lime-regular-": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:milkshake-strawberry-large-": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:milkshake-strawberry-regular-": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:milkshake-vanilla-large-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:milkshake-vanilla-regular-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:mini-cini-bucket-10-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"donutking:mini-iced-cini-bucket-12-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"donutking:mini-jam-ball": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:mini-m-m-mixer": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"peanut",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:mocha-large-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:mocha-regular-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:mocha-small-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:mother-s-day-ring-donut": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:new-yorker-hot-dog": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"peanut",
+"sesame"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"donutking:outback-meat-deluxe-hot-dog": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"peanut",
+"sesame"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"donutking:over-ice-chai": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:over-ice-chocolate": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:over-ice-latte": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:over-ice-long-black": {
+"al": [],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:over-ice-mocha": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:party-pie": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"donutking:party-sausage-roll": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk",
+"sesame"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"donutking:pink-m-m-donut": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"peanut",
+"treenut"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"donutking:pink-marshmallow-flower-donut": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [
+"beef",
+"gelatine"
+],
+"src": "ingredients"
+},
+"donutking:pink-mini-marshmallow-donut": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [
+"beef",
+"gelatine"
+],
+"src": "ingredients"
+},
+"donutking:pink-piggy-donut": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [
+"beef",
+"gelatine"
+],
+"src": "ingredients"
+},
+"donutking:pink-rainbow-donut": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [
+"beef",
+"gelatine"
+],
+"src": "ingredients"
+},
+"donutking:pink-sour-strap-donut": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"donutking:pink-sour-worm-donut": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [
+"beef",
+"gelatine"
+],
+"src": "ingredients"
+},
+"donutking:pink-strawberry-cream-donut": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [
+"beef",
+"gelatine"
+],
+"src": "ingredients"
+},
+"donutking:pistachio-ring": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"treenut",
+"wheat"
+],
+"may": [
+"almond",
+"brazil",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"peanut",
+"pecan",
+"pinenut",
+"sesame",
+"walnut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:potato-top-pie": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"may": [
+"egg",
+"sesame"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"donutking:quakeshake-cherry-explosion-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"peanut",
+"treenut"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"donutking:quakeshake-choc-volcano-": {
+"al": [
+"milk",
+"soy"
+],
+"may": [
+"almond",
+"hazelnut",
+"peanut",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:quakeshake-honeycomb-lava-": {
+"al": [
+"milk",
+"soy"
+],
+"may": [
+"gluten",
+"peanut",
+"treenut",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:quakeshake-made-with-biscoff-spread": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:quakeshake-mint-lime-shockwave-": {
+"al": [
+"milk",
+"soy"
+],
+"may": [
+"gluten",
+"peanut",
+"treenut",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:raisin-toast-2-slices-with-butter-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"sesame"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:regular-hot-dog": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"peanut",
+"sesame"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"donutking:reindeer": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"donutking:rhubarb-paw-patrol-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:rubble-paw-patrol-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"peanut",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:salted-caramel-popcorn-donut": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"peanut",
+"soy",
+"wheat"
+],
+"may": [
+"hazelnut",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:santa-buddy-chocolate": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:santa-buddy-strawberry": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:sausage-roll": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk",
+"sesame"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"donutking:skye-paw-patrol-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"peanut",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:spiced-cookie-crumble-made-with-biscoff-spread": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:spinach-cheese-roll": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"sesame",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:st-paddy-s-green-iced-ring-donut": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:st-paddy-s-white-iced-ring-donut": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:strawberries-cream-donut": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"hazelnut",
+"peanut",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:strawberry-donut-buddy": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:strawberry-mummy": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:strawberry-quakeshake-made-with-biscoff-spread": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:strawberry-rose-donut": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"peanut",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:strawberry-sundae": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:strawberry-sweetheart-ring": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:sweet-talker": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"peanut",
+"pistachio",
+"sesame",
+"treenut"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"donutking:thickshake-banana-large-": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:thickshake-banana-regular-": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:thickshake-caramel-large-": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:thickshake-caramel-regular-": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:thickshake-chocolate-large-": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:thickshake-chocolate-regular-": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:thickshake-coffee-large-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:thickshake-coffee-regular-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:thickshake-lime-large-": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:thickshake-lime-regular-": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:thickshake-strawberry-large-": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:thickshake-strawberry-regular-": {
+"al": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:thickshake-vanilla-large-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:thickshake-vanilla-regular-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:toasted-sandwich-cheese-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"sesame"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:toasted-sandwich-cheese-and-tomato-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"sesame"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:toasted-sandwich-chicken-and-cheese-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"sesame"
+],
+"meat": [
+"chicken"
+],
+"src": "ingredients"
+},
+"donutking:toasted-sandwich-chicken-cheese-and-avocado-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"sesame"
+],
+"meat": [
+"chicken"
+],
+"src": "ingredients"
+},
+"donutking:toasted-sandwich-ham-and-cheese-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"sesame"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"donutking:toasted-sandwich-ham-cheese-and-tomato-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"sesame"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"donutking:twinkle-star-strawberry": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"donutking:twix-mixer": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:vanilla-buddy": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:vanilla-custard-almond-donut": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"treenut",
+"wheat"
+],
+"may": [
+"hazelnut",
+"peanut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:vegetable-pastie": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"may": [
+"egg",
+"sesame",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:wafer-decals-dk-occasions-thanks-happy-b-day-congrats-": {
+"al": [],
+"meat": [],
+"src": "ingredients"
+},
+"donutking:warm-cinnamon-donut-sundae": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"donutking:wicked-web-orange-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"donutking:wicked-web-purple-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pistachio",
+"treenut"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"fiveguys:bacon-burger": {
+"meat": [
+"beef",
+"pork"
+],
+"src": "name"
+},
+"fiveguys:bacon-cheese-dog": {
+"meat": [
+"beef",
+"pork"
+],
+"src": "name"
+},
+"fiveguys:bacon-cheeseburger": {
+"meat": [
+"beef",
+"pork"
+],
+"src": "name"
+},
+"fiveguys:bacon-dog": {
+"meat": [
+"beef",
+"pork"
+],
+"src": "name"
+},
+"fiveguys:cheese-dog": {
+"meat": [
+"beef"
+],
+"src": "name"
+},
+"fiveguys:cheeseburger": {
+"meat": [
+"beef"
+],
+"src": "name"
+},
+"fiveguys:hamburger": {
+"meat": [
+"beef"
+],
+"src": "name"
+},
+"fiveguys:hot-dog": {
+"meat": [
+"beef"
+],
+"src": "name"
+},
+"fiveguys:large-fries": {
+"meat": [],
+"src": "name"
+},
+"fiveguys:little-bacon-burger": {
+"meat": [
+"beef",
+"pork"
+],
+"src": "name"
+},
+"fiveguys:little-bacon-cheeseburger": {
+"meat": [
+"beef",
+"pork"
+],
+"src": "name"
+},
+"fiveguys:little-cheeseburger": {
+"meat": [
+"beef"
+],
+"src": "name"
+},
+"fiveguys:little-fries": {
+"meat": [],
+"src": "name"
+},
+"fiveguys:little-hamburger": {
+"meat": [
+"beef"
+],
+"src": "name"
+},
+"fiveguys:regular-fries": {
+"meat": [],
+"src": "name"
+},
+"michels:apple-cinnamon-muffin": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"macadamia",
+"pecan",
+"pistachio",
+"sesame",
+"treenut",
+"walnut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:babycino": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:bacon-cheese-roll": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"sesame"
+],
+"meat": [
+"beef",
+"pork"
+],
+"src": "ingredients"
+},
+"michels:bacon-egg-pesto-turkish-melt": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"sesame",
+"treenut",
+"wheat"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"michels:bacon-egg-sandwich": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"sesame"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"michels:bacon-egg-toastie": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"sesame"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"michels:bacon-lettuce-tomato-sandwich": {
+"al": [
+"egg",
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"sesame"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"michels:baked-lemon-lime-cheesecake-slice": {
+"al": [
+"egg",
+"milk",
+"soy",
+"treenut"
+],
+"may": [
+"hazelnut",
+"macadamia",
+"pecan",
+"pistachio",
+"walnut"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"michels:banana-bread": {
+"al": [
+"egg",
+"gluten",
+"wheat"
+],
+"may": [
+"almond",
+"hazelnut",
+"macadamia",
+"pecan",
+"pistachio",
+"soy",
+"treenut",
+"walnut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:banana-honey-smoothie-large-": {
+"al": [
+"milk"
+],
+"may": [
+"egg",
+"peanut",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:banana-honey-smoothie-regular-": {
+"al": [
+"milk"
+],
+"may": [
+"egg",
+"peanut",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:bbq-chicken-cheese-open-melt": {
+"al": [
+"gluten",
+"milk",
+"sesame",
+"soy",
+"wheat"
+],
+"may": [
+"peanut"
+],
+"meat": [
+"chicken"
+],
+"src": "ingredients"
+},
+"michels:beef-curry-pie": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"michels:beef-mushroom-pie": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"michels:beef-pastie": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"sesame"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"michels:beef-pie": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"michels:belgian-chocolate-brownie": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"may": [
+"peanut",
+"sesame",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:breakfast-wrap": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"peanut",
+"soy"
+],
+"meat": [
+"pork",
+"gelatine"
+],
+"src": "ingredients"
+},
+"michels:butter-chicken-gourmet-pie": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"meat": [
+"chicken"
+],
+"src": "ingredients"
+},
+"michels:cafe-latte-large-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:cafe-latte-regular-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:cafe-latte-small-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:cappuccino-large-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:cappuccino-regular-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:cappuccino-small-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:caramel-sin-gateaux-slice": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"hazelnut",
+"macadamia",
+"peanut",
+"pecan",
+"pistachio",
+"treenut",
+"walnut"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"michels:carrot-cake-slice": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"treenut",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"hazelnut",
+"macadamia",
+"pecan",
+"pistachio",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:cheese-bacon-pie": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"beef",
+"pork"
+],
+"src": "ingredients"
+},
+"michels:cheese-spinach-roll": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"sesame",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:chicken-caesar-wrap": {
+"al": [
+"egg",
+"fish",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"peanut"
+],
+"meat": [
+"chicken",
+"pork",
+"fish"
+],
+"src": "ingredients"
+},
+"michels:chicken-cheese-avo-open-melt": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"sesame",
+"soy",
+"wheat"
+],
+"meat": [
+"chicken"
+],
+"src": "ingredients"
+},
+"michels:chicken-cheese-avocado-turkish-melt": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"sesame",
+"soy",
+"wheat"
+],
+"meat": [
+"chicken"
+],
+"src": "ingredients"
+},
+"michels:chicken-leek-camembert-pie": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"chicken"
+],
+"src": "ingredients"
+},
+"michels:chicken-salad-sandwich": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"treenut",
+"wheat"
+],
+"may": [
+"sesame"
+],
+"meat": [
+"chicken"
+],
+"src": "ingredients"
+},
+"michels:chicken-salad-wrap": {
+"al": [
+"egg",
+"gluten",
+"soy",
+"wheat"
+],
+"meat": [
+"chicken"
+],
+"src": "ingredients"
+},
+"michels:chipotle-chicken-bacon-avocado-turkish-melt": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"sesame",
+"soy",
+"wheat"
+],
+"meat": [
+"chicken",
+"pork"
+],
+"src": "ingredients"
+},
+"michels:choc-delux-luxe-iced-coffee-large-": {
+"al": [
+"milk"
+],
+"may": [
+"egg",
+"peanut",
+"soy",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:choc-delux-luxe-iced-coffee-regular-": {
+"al": [
+"milk"
+],
+"may": [
+"egg",
+"peanut",
+"soy",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:chocolate-mud-cake": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"peanut",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:chunky-choc-cheesecake-slice": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"hazelnut",
+"macadamia",
+"peanut",
+"pecan",
+"pistachio",
+"treenut",
+"walnut"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"michels:citrus-tart": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"may": [
+"almond",
+"brazil",
+"cashew",
+"hazelnut",
+"macadamia",
+"peanut",
+"pecan",
+"pinenut",
+"pistachio",
+"sesame",
+"treenut",
+"walnut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:cocktail-sausage-roll": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk",
+"sesame"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"michels:creme-brulee-luxe-iced-coffee-large-": {
+"al": [
+"milk"
+],
+"may": [
+"egg",
+"peanut",
+"soy",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:creme-brulee-luxe-iced-coffee-regular-": {
+"al": [
+"milk"
+],
+"may": [
+"egg",
+"peanut",
+"soy",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:croissant-plain": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"egg",
+"hazelnut",
+"lupin",
+"sesame",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:double-choc-chip-muffin": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"macadamia",
+"pecan",
+"pistachio",
+"sesame",
+"treenut",
+"walnut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:egg-lettuce-sandwich": {
+"al": [
+"egg",
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"sesame"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:espresso": {
+"al": [],
+"meat": [],
+"src": "ingredients"
+},
+"michels:flat-white-large-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:flat-white-regular-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:flat-white-small-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:frappe-berry-cheesecake-large-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:frappe-berry-cheesecake-regular-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:french-vanilla-luxe-iced-coffee-large-": {
+"al": [
+"milk"
+],
+"may": [
+"egg",
+"peanut",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:french-vanilla-luxe-iced-coffee-regular-": {
+"al": [
+"milk"
+],
+"may": [
+"egg",
+"peanut",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:ham-cheese-croissant": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"egg",
+"hazelnut",
+"lupin",
+"sesame",
+"treenut"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"michels:ham-cheese-toastie": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"sesame"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"michels:ham-cheese-tomato-croissant": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"egg",
+"hazelnut",
+"lupin",
+"sesame",
+"treenut"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"michels:ham-cheese-tomato-toastie": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"sesame"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"michels:ham-cheese-tomato-turkish-melt": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"sesame",
+"wheat"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"michels:ham-salad-wrap": {
+"al": [
+"egg",
+"gluten",
+"wheat"
+],
+"may": [
+"soy"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"michels:hawaiian-open-melt": {
+"al": [
+"gluten",
+"milk",
+"sesame",
+"wheat"
+],
+"may": [
+"peanut"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"michels:hot-chocolate-large-": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"soy"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"michels:hot-chocolate-regular-": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"soy"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"michels:hot-chocolate-small-": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"soy"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"michels:iced-chocolate-large-": {
+"al": [
+"milk"
+],
+"may": [
+"egg",
+"peanut",
+"soy",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:iced-chocolate-regular-": {
+"al": [
+"milk"
+],
+"may": [
+"egg",
+"peanut",
+"soy",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:iced-coffee-large-": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"egg",
+"peanut",
+"soy",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:iced-coffee-regular-": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"egg",
+"peanut",
+"soy",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:iced-mocha-large-": {
+"al": [
+"milk"
+],
+"may": [
+"egg",
+"peanut",
+"soy",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:iced-mocha-regular-": {
+"al": [
+"milk"
+],
+"may": [
+"egg",
+"peanut",
+"soy",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:king-island-beef-pie": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"michels:lemon-pistachio-cake-slice": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"treenut",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"hazelnut",
+"macadamia",
+"pecan",
+"walnut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:long-black-large-": {
+"al": [],
+"meat": [],
+"src": "ingredients"
+},
+"michels:long-black-regular-": {
+"al": [],
+"meat": [],
+"src": "ingredients"
+},
+"michels:long-black-small-": {
+"al": [],
+"meat": [],
+"src": "ingredients"
+},
+"michels:mango-coconut-smoothie-large-": {
+"al": [
+"milk"
+],
+"may": [
+"egg",
+"gluten",
+"peanut",
+"soy",
+"treenut",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:mango-coconut-smoothie-regular-": {
+"al": [
+"milk"
+],
+"may": [
+"egg",
+"gluten",
+"peanut",
+"soy",
+"treenut",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:marble-mud-cake": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"peanut",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:mississippi-mud-cake-slice": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"hazelnut",
+"macadamia",
+"peanut",
+"pecan",
+"pistachio",
+"treenut",
+"walnut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:mixed-berry-muffin": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"macadamia",
+"pecan",
+"pistachio",
+"sesame",
+"treenut",
+"walnut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:mocha-large-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:mocha-regular-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:mocha-small-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:new-york-flourless-cheesecake": {
+"al": [
+"egg",
+"milk",
+"soy",
+"sulphites"
+],
+"may": [
+"almond",
+"brazil",
+"cashew",
+"gluten",
+"hazelnut",
+"macadamia",
+"peanut",
+"pecan",
+"pinenut",
+"pistachio",
+"sesame",
+"treenut",
+"walnut",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:orange-poppyseed-muffin": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"macadamia",
+"pecan",
+"pistachio",
+"sesame",
+"treenut",
+"walnut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:party-pie": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"michels:passionfruit-cheesecake-slice": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"hazelnut",
+"macadamia",
+"pecan",
+"pistachio",
+"treenut",
+"walnut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:quiche-lorraine": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"sesame",
+"soy"
+],
+"meat": [
+"pork"
+],
+"src": "ingredients"
+},
+"michels:raisin-toast-2-slices": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"sesame"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:raspberry-new-york-cheesecake-slice": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"may": [
+"almond",
+"hazelnut",
+"macadamia",
+"pecan",
+"pistachio",
+"treenut",
+"walnut"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"michels:ristretto": {
+"al": [],
+"meat": [],
+"src": "ingredients"
+},
+"michels:rocky-road-slice": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"may": [
+"egg",
+"peanut",
+"treenut"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"michels:rudolph-cookie": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:salad-sandwich": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"treenut",
+"wheat"
+],
+"may": [
+"sesame"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:sausage-roll": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"egg",
+"milk",
+"sesame"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"michels:slow-cooked-pepper-beef-pie": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"michels:smashed-avo-feta-on-turkish": {
+"al": [
+"gluten",
+"milk",
+"sesame",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:southern-pulled-beef-turkish-melt": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"sesame",
+"soy",
+"wheat"
+],
+"may": [
+"peanut"
+],
+"meat": [
+"beef"
+],
+"src": "ingredients"
+},
+"michels:spinach-cheese-quiche": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"sesame",
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:strawberry-passionfruit-smoothie-large-": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"egg",
+"peanut",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:strawberry-passionfruit-smoothie-regular-": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"egg",
+"peanut",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:tea-large-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:tea-regular-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:tea-small-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:turkey-cranberry-brie-turkish-melt": {
+"al": [
+"gluten",
+"milk",
+"sesame",
+"wheat"
+],
+"may": [
+"peanut"
+],
+"meat": [
+"other"
+],
+"src": "ingredients"
+},
+"michels:unicorn-cookie": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:vanilla-slice": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"egg",
+"hazelnut",
+"macadamia",
+"peanut",
+"pecan",
+"pistachio",
+"treenut",
+"walnut"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"michels:vegetable-pastie": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"may": [
+"egg",
+"sesame",
+"treenut"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:vienna-white-large-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"michels:vienna-white-regular-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"michels:vienna-white-small-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [
+"gelatine"
+],
+"src": "ingredients"
+},
+"michels:white-caramel-mocha-large-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:white-caramel-mocha-regular-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:white-caramel-mocha-small-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:white-hot-chocolate-large-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:white-hot-chocolate-regular-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:white-hot-chocolate-small-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:white-mocha-large-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:white-mocha-regular-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"michels:white-mocha-small-": {
+"al": [
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "ingredients"
+},
+"rolld:bbq-chicken-b-n": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"rolld:bbq-chicken-banh-mi": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"rolld:bbq-chicken-bao": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"rolld:bbq-chicken-c-m-rice": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"rolld:bbq-chicken-fresh-roll": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"rolld:chicken-curry-ph-bowl": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"rolld:chicken-curry-ph-cup": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"rolld:crab-crackers": {
+"meat": [
+"seafood"
+],
+"src": "name"
+},
+"rolld:crispy-chicken-banh-mi": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"rolld:crispy-chicken-bao": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"rolld:crispy-chicken-fresh-roll": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"rolld:crispy-chicken-wings": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"rolld:crispy-chicken-wings-c-m-rice": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"rolld:crispy-flathead-avocado-fresh-roll": {
+"meat": [
+"fish"
+],
+"src": "name"
+},
+"rolld:crispy-flathead-b-n": {
+"meat": [
+"fish"
+],
+"src": "name"
+},
+"rolld:crispy-flathead-banh-mi": {
+"meat": [
+"fish"
+],
+"src": "name"
+},
+"rolld:crispy-flathead-c-m-rice": {
+"meat": [
+"fish"
+],
+"src": "name"
+},
+"rolld:crispy-prawn-bao": {
+"meat": [
+"seafood"
+],
+"src": "name"
+},
+"rolld:crispy-prawns": {
+"meat": [
+"seafood"
+],
+"src": "name"
+},
+"rolld:garlic-prawn-fresh-roll": {
+"meat": [
+"seafood"
+],
+"src": "name"
+},
+"rolld:lemongrass-beef-b-n": {
+"meat": [
+"beef"
+],
+"src": "name"
+},
+"rolld:lemongrass-beef-banh-mi": {
+"meat": [
+"beef"
+],
+"src": "name"
+},
+"rolld:lemongrass-beef-bao": {
+"meat": [
+"beef"
+],
+"src": "name"
+},
+"rolld:lemongrass-beef-c-m-rice": {
+"meat": [
+"beef"
+],
+"src": "name"
+},
+"rolld:lemongrass-beef-fresh-roll": {
+"meat": [
+"beef"
+],
+"src": "name"
+},
+"rolld:lemongrass-beef-g-i-salad": {
+"meat": [
+"beef"
+],
+"src": "name"
+},
+"rolld:lemongrass-chilli-chicken-c-m-rice": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"rolld:low-carb-crispy-flathead-fresh-roll": {
+"meat": [
+"fish"
+],
+"src": "name"
+},
+"rolld:low-carb-poached-chicken-fresh-roll": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"rolld:low-carb-tofu-fresh-roll": {
+"meat": [],
+"src": "name"
+},
+"rolld:mixed-beef-chicken-ph-bowl": {
+"meat": [
+"chicken",
+"beef"
+],
+"src": "name"
+},
+"rolld:mixed-beef-chicken-ph-cup": {
+"meat": [
+"chicken",
+"beef"
+],
+"src": "name"
+},
+"rolld:mushroom-tofu-ph-bowl": {
+"meat": [],
+"src": "name"
+},
+"rolld:mushroom-tofu-ph-cup": {
+"meat": [],
+"src": "name"
+},
+"rolld:poached-chicken-breast-avocado-fresh-roll": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"rolld:poached-chicken-breast-g-i-salad": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"rolld:poached-chicken-ph-bowl": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"rolld:poached-chicken-ph-cup": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"rolld:pork-prawn-fresh-roll": {
+"meat": [
+"pork",
+"seafood"
+],
+"src": "name"
+},
+"rolld:pork-prawn-g-i-salad": {
+"meat": [
+"pork",
+"seafood"
+],
+"src": "name"
+},
+"rolld:prawn-g-i-salad": {
+"meat": [
+"seafood"
+],
+"src": "name"
+},
+"rolld:roast-duck-bao": {
+"meat": [
+"other"
+],
+"src": "name"
+},
+"rolld:roast-duck-fresh-roll": {
+"meat": [
+"other"
+],
+"src": "name"
+},
+"rolld:roast-pork-crackling-b-n": {
+"meat": [
+"pork"
+],
+"src": "name"
+},
+"rolld:roast-pork-crackling-banh-mi": {
+"meat": [
+"pork"
+],
+"src": "name"
+},
+"rolld:roast-pork-crackling-bao": {
+"meat": [
+"pork"
+],
+"src": "name"
+},
+"rolld:roast-pork-crackling-c-m-rice": {
+"meat": [
+"pork"
+],
+"src": "name"
+},
+"rolld:sliced-rare-beef-ph-bowl": {
+"meat": [
+"beef"
+],
+"src": "name"
+},
+"rolld:sliced-rare-beef-ph-cup": {
+"meat": [
+"beef"
+],
+"src": "name"
+},
+"rolld:soft-shell-crab-fresh-roll": {
+"meat": [
+"seafood"
+],
+"src": "name"
+},
+"rolld:spicy-beef-bbh-bowl": {
+"meat": [
+"beef"
+],
+"src": "name"
+},
+"rolld:spicy-beef-bbh-cup": {
+"meat": [
+"beef"
+],
+"src": "name"
+},
+"rolld:tofu-banh-mi": {
+"meat": [],
+"src": "name"
+},
+"rolld:tofu-bao": {
+"meat": [],
+"src": "name"
+},
+"rolld:tofu-fresh-roll": {
+"meat": [],
+"src": "name"
+},
+"rolld:tofu-g-i-salad": {
+"meat": [],
+"src": "name"
+},
+"rolld:tofu-vegetable-spring-rolls-b-n": {
+"meat": [],
+"src": "name"
+},
+"rolld:tofu-vegetable-spring-rolls-c-m-rice": {
+"meat": [],
+"src": "name"
+},
+"rolld:vegetable-spring-rolls": {
+"meat": [],
+"src": "name"
+},
+"soul:almond-croissant-brasserie-": {
+"al": [
+"almond",
+"egg",
+"gluten",
+"milk",
+"soy",
+"treenut",
+"wheat"
+],
+"may": [
+"pecan",
+"pistachio",
+"sesame",
+"sulphites",
+"walnut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:almond-croissant-fnt-bakery-": {
+"al": [
+"almond",
+"egg",
+"gluten",
+"milk",
+"soy",
+"treenut",
+"wheat"
+],
+"may": [
+"brazil",
+"cashew",
+"hazelnut",
+"lupin",
+"macadamia",
+"peanut",
+"pecan",
+"pinenut",
+"pistachio",
+"sesame",
+"walnut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:apple-crumble-danish": {
+"al": [
+"almond",
+"egg",
+"gluten",
+"hazelnut",
+"milk",
+"soy",
+"treenut",
+"wheat"
+],
+"may": [
+"brazil",
+"cashew",
+"macadamia",
+"pecan",
+"pinenut",
+"pistachio",
+"sesame",
+"walnut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:apricot-danish": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"hazelnut",
+"macadamia",
+"pecan",
+"pinenut",
+"pistachio",
+"sesame",
+"sulphites",
+"treenut",
+"walnut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:avocado-cheese-tomato-on-soy-linseed": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"egg",
+"hazelnut",
+"macadamia",
+"pecan",
+"pistachio",
+"sesame",
+"treenut",
+"walnut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:avocado-cheese-tomato-on-wholemeal": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"almond",
+"egg",
+"hazelnut",
+"macadamia",
+"pecan",
+"pistachio",
+"sesame",
+"soy",
+"treenut",
+"walnut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:bacon-egg-roll": {
+"al": [
+"egg",
+"gluten",
+"sulphites",
+"wheat"
+],
+"meat": [
+"pork"
+],
+"src": "labels"
+},
+"soul:bacon-egg-roll-halal-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"may": [
+"almond",
+"brazil",
+"cashew",
+"hazelnut",
+"macadamia",
+"peanut",
+"pecan",
+"pinenut",
+"pistachio",
+"sesame",
+"treenut",
+"walnut"
+],
+"meat": [
+"pork"
+],
+"src": "labels"
+},
+"soul:bacon-egg-wrap": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"sulphites",
+"wheat"
+],
+"may": [
+"soy"
+],
+"meat": [
+"pork"
+],
+"src": "labels"
+},
+"soul:bacon-egg-wrap-halal-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"may": [
+"almond",
+"brazil",
+"cashew",
+"hazelnut",
+"macadamia",
+"peanut",
+"pecan",
+"pinenut",
+"pistachio",
+"sesame",
+"treenut",
+"walnut"
+],
+"meat": [
+"pork"
+],
+"src": "labels"
+},
+"soul:balsamic": {
+"al": [
+"sulphites"
+],
+"may": [
+"peanut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegan"
+},
+"soul:banana-bread": {
+"al": [
+"egg",
+"milk"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:bbq-steak-so-bun": {
+"al": [
+"cashew",
+"egg",
+"gluten",
+"soy",
+"treenut",
+"wheat"
+],
+"src": "labels"
+},
+"soul:beef-noodle-salad-large-": {
+"al": [
+"gluten",
+"wheat"
+],
+"meat": [
+"beef"
+],
+"src": "labels"
+},
+"soul:beef-noodle-salad-regular-": {
+"al": [
+"gluten",
+"wheat"
+],
+"meat": [
+"beef"
+],
+"src": "labels"
+},
+"soul:beef-noodle-salad-small-": {
+"al": [
+"gluten",
+"wheat"
+],
+"meat": [
+"beef"
+],
+"src": "labels"
+},
+"soul:beetroot-salad-large-": {
+"al": [
+"milk",
+"treenut",
+"walnut"
+],
+"may": [
+"gluten",
+"peanut",
+"sesame"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:beetroot-salad-regular-": {
+"al": [
+"milk",
+"treenut",
+"walnut"
+],
+"may": [
+"gluten",
+"peanut",
+"sesame"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:beetroot-salad-small-": {
+"al": [
+"milk",
+"treenut",
+"walnut"
+],
+"may": [
+"gluten",
+"peanut",
+"sesame"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:black-cold-brew-12oz-": {
+"al": [],
+"meat": [],
+"src": "labels",
+"vg": "vegan"
+},
+"soul:black-cold-brew-16oz-": {
+"al": [],
+"meat": [],
+"src": "labels",
+"vg": "vegan"
+},
+"soul:blt-schnitzel-baguette": {
+"al": [
+"gluten",
+"soy",
+"sulphites",
+"wheat"
+],
+"may": [
+"almond",
+"egg",
+"hazelnut",
+"lupin",
+"milk",
+"sesame",
+"treenut"
+],
+"src": "labels"
+},
+"soul:blt-schnitzel-baguette-halal-": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"may": [
+"almond",
+"brazil",
+"cashew",
+"egg",
+"hazelnut",
+"lupin",
+"macadamia",
+"peanut",
+"pecan",
+"pinenut",
+"pistachio",
+"sesame",
+"treenut",
+"walnut"
+],
+"src": "labels"
+},
+"soul:blueberry-matcha-regular-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:blueberry-matcha-small-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:bocconcini-salad-large-": {
+"al": [
+"cashew",
+"milk",
+"treenut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:bocconcini-salad-regular-": {
+"al": [
+"cashew",
+"milk",
+"treenut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:bocconcini-salad-small-": {
+"al": [
+"cashew",
+"milk",
+"treenut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:buffalo-schnitzel-slaw-salad-large-": {
+"al": [
+"gluten",
+"sulphites",
+"wheat"
+],
+"src": "labels"
+},
+"soul:buffalo-schnitzel-slaw-salad-regular-": {
+"al": [
+"gluten",
+"sulphites",
+"wheat"
+],
+"src": "labels"
+},
+"soul:buffalo-schnitzel-slaw-salad-small-": {
+"al": [
+"gluten",
+"sulphites",
+"wheat"
+],
+"src": "labels"
+},
+"soul:cappuccino-large-": {
+"al": [
+"milk"
+],
+"src": "labels"
+},
+"soul:cappuccino-regular-": {
+"al": [
+"milk"
+],
+"src": "labels"
+},
+"soul:carrot-cake": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"sulphites",
+"wheat"
+],
+"may": [
+"almond",
+"hazelnut",
+"macadamia",
+"pecan",
+"pistachio",
+"sesame",
+"soy",
+"treenut",
+"walnut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:chai-latte-large-": {
+"al": [
+"milk",
+"soy"
+],
+"src": "labels"
+},
+"soul:chai-latte-regular-": {
+"al": [
+"milk",
+"soy"
+],
+"src": "labels"
+},
+"soul:chai-latte-small-": {
+"al": [
+"milk",
+"soy"
+],
+"src": "labels"
+},
+"soul:cheese-tomato-croissant": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"brazil",
+"cashew",
+"hazelnut",
+"macadamia",
+"pecan",
+"pinenut",
+"pistachio",
+"sesame",
+"treenut",
+"walnut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:cheese-tomato-on-soy-linseed": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"egg",
+"hazelnut",
+"macadamia",
+"pecan",
+"pistachio",
+"sesame",
+"treenut",
+"walnut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:cheese-tomato-on-wholemeal": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"almond",
+"egg",
+"hazelnut",
+"macadamia",
+"pecan",
+"pistachio",
+"sesame",
+"soy",
+"treenut",
+"walnut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:cherry-danish": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"pecan",
+"pistachio",
+"sesame",
+"sulphites",
+"treenut",
+"walnut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:chicken-avocado-panini": {
+"al": [
+"gluten",
+"milk",
+"sulphites",
+"wheat"
+],
+"may": [
+"soy"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:chicken-avocado-salad-large-": {
+"al": [
+"gluten",
+"milk",
+"sulphites",
+"wheat"
+],
+"may": [
+"soy"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:chicken-avocado-salad-regular-": {
+"al": [
+"gluten",
+"milk",
+"sulphites",
+"wheat"
+],
+"may": [
+"soy"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:chicken-avocado-salad-small-": {
+"al": [
+"gluten",
+"milk",
+"sulphites",
+"wheat"
+],
+"may": [
+"soy"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:chicken-avocado-wrap": {
+"al": [
+"gluten",
+"milk",
+"sulphites",
+"wheat"
+],
+"may": [
+"soy"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:chicken-caesar-salad-halal-large-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"may": [
+"almond",
+"brazil",
+"cashew",
+"hazelnut",
+"macadamia",
+"peanut",
+"pecan",
+"pinenut",
+"pistachio",
+"sesame",
+"treenut",
+"walnut"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:chicken-caesar-salad-halal-regular-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"may": [
+"almond",
+"brazil",
+"cashew",
+"hazelnut",
+"macadamia",
+"peanut",
+"pecan",
+"pinenut",
+"pistachio",
+"sesame",
+"treenut",
+"walnut"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:chicken-caesar-salad-halal-small-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"may": [
+"almond",
+"brazil",
+"cashew",
+"hazelnut",
+"macadamia",
+"peanut",
+"pecan",
+"pinenut",
+"pistachio",
+"sesame",
+"treenut",
+"walnut"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:chicken-caesar-salad-large-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:chicken-caesar-salad-regular-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:chicken-chorizo-salad-halal-large-": {
+"al": [
+"milk"
+],
+"meat": [
+"chicken",
+"pork"
+],
+"src": "labels"
+},
+"soul:chicken-chorizo-salad-halal-regular-": {
+"al": [
+"milk"
+],
+"meat": [
+"chicken",
+"pork"
+],
+"src": "labels"
+},
+"soul:chicken-chorizo-salad-halal-small-": {
+"al": [
+"milk"
+],
+"meat": [
+"chicken",
+"pork"
+],
+"src": "labels"
+},
+"soul:chicken-chorizo-salad-large-": {
+"al": [
+"milk"
+],
+"meat": [
+"chicken",
+"pork"
+],
+"src": "labels"
+},
+"soul:chicken-chorizo-salad-regular-": {
+"al": [
+"milk"
+],
+"meat": [
+"chicken",
+"pork"
+],
+"src": "labels"
+},
+"soul:chicken-chorizo-salad-small-": {
+"al": [
+"milk"
+],
+"meat": [
+"chicken",
+"pork"
+],
+"src": "labels"
+},
+"soul:chicken-corn-soup-large-": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"soul:chicken-corn-soup-medium-": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"soul:chicken-corn-soup-sipper-": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"soul:chicken-pesto-pasta-salad-large-": {
+"al": [
+"cashew",
+"gluten",
+"milk",
+"sulphites",
+"treenut",
+"wheat"
+],
+"may": [
+"egg",
+"peanut",
+"soy"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:chicken-pesto-pasta-salad-regular-": {
+"al": [
+"cashew",
+"gluten",
+"milk",
+"sulphites",
+"treenut",
+"wheat"
+],
+"may": [
+"egg",
+"peanut",
+"soy"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:chicken-pesto-pasta-salad-small-": {
+"al": [
+"cashew",
+"gluten",
+"milk",
+"sulphites",
+"treenut",
+"wheat"
+],
+"may": [
+"egg",
+"peanut",
+"soy"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:chicken-schnitzel-baguette": {
+"al": [
+"egg",
+"gluten",
+"wheat"
+],
+"may": [
+"milk",
+"soy"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:chicken-schnitzel-panini": {
+"al": [
+"egg",
+"gluten",
+"wheat"
+],
+"may": [
+"milk",
+"soy"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:chicken-schnitzel-salad-large-": {
+"al": [
+"egg",
+"gluten",
+"wheat"
+],
+"may": [
+"milk",
+"soy"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:chicken-schnitzel-salad-regular-": {
+"al": [
+"egg",
+"gluten",
+"wheat"
+],
+"may": [
+"milk",
+"soy"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:chicken-schnitzel-salad-small-": {
+"al": [
+"egg",
+"gluten",
+"wheat"
+],
+"may": [
+"milk",
+"soy"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:chicken-schnitzel-wrap": {
+"al": [
+"egg",
+"gluten",
+"wheat"
+],
+"may": [
+"milk",
+"soy"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:chilli-mayo": {
+"al": [
+"egg"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:choc-chip-cookie": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"may": [
+"almond",
+"brazil",
+"cashew",
+"hazelnut",
+"lupin",
+"macadamia",
+"peanut",
+"pecan",
+"pinenut",
+"pistachio",
+"sesame",
+"treenut",
+"walnut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:chocolate-coconut-banana-bread": {
+"al": [
+"egg",
+"milk",
+"soy",
+"sulphites"
+],
+"may": [
+"almond",
+"brazil",
+"cashew",
+"hazelnut",
+"macadamia",
+"pecan",
+"pinenut",
+"pistachio",
+"sesame",
+"treenut",
+"walnut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:chocolate-croissant": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"brazil",
+"cashew",
+"egg",
+"hazelnut",
+"macadamia",
+"pecan",
+"pinenut",
+"pistachio",
+"sesame",
+"treenut",
+"walnut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:chocolate-protein-ball": {
+"al": [
+"almond",
+"gluten",
+"milk",
+"sulphites",
+"treenut",
+"wheat"
+],
+"may": [
+"brazil",
+"cashew",
+"egg",
+"hazelnut",
+"lupin",
+"macadamia",
+"peanut",
+"pecan",
+"pinenut",
+"pistachio",
+"sesame",
+"soy",
+"walnut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:chorizo-egg-roll": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"meat": [
+"pork"
+],
+"src": "labels"
+},
+"soul:chorizo-egg-roll-halal-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"meat": [
+"pork"
+],
+"src": "labels"
+},
+"soul:chorizo-egg-wrap": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"soy"
+],
+"meat": [
+"pork"
+],
+"src": "labels"
+},
+"soul:chorizo-egg-wrap-halal-": {
+"meat": [
+"pork"
+],
+"src": "name"
+},
+"soul:chorizo-halal-panini": {
+"meat": [
+"pork"
+],
+"src": "name"
+},
+"soul:chorizo-panini": {
+"meat": [
+"pork"
+],
+"src": "name"
+},
+"soul:classic-beef-so-bun": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"fish",
+"shellfish",
+"sulphites"
+],
+"meat": [
+"beef"
+],
+"src": "labels"
+},
+"soul:crumbed-chicken-pasta-salad-large-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"sulphites",
+"wheat"
+],
+"may": [
+"peanut",
+"soy"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:crumbed-chicken-pasta-salad-regular-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"sulphites",
+"wheat"
+],
+"may": [
+"peanut",
+"soy"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:crumbed-chicken-pasta-salad-small-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"sulphites",
+"wheat"
+],
+"may": [
+"peanut",
+"soy"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:crunchy-chicken-cheese-so-bun": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:dirty-chai-large-": {
+"al": [
+"milk",
+"soy"
+],
+"src": "labels"
+},
+"soul:dirty-chai-regular-": {
+"al": [
+"milk",
+"soy"
+],
+"src": "labels"
+},
+"soul:dirty-chai-small-": {
+"al": [
+"milk",
+"soy"
+],
+"src": "labels"
+},
+"soul:double-choc-iced-blend-12oz-": {
+"al": [
+"milk",
+"soy"
+],
+"src": "labels"
+},
+"soul:double-choc-iced-blend-16oz-": {
+"al": [
+"milk",
+"soy"
+],
+"src": "labels"
+},
+"soul:espresso": {
+"al": [],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:falafel-salad-large-": {
+"al": [
+"gluten",
+"sesame",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"milk",
+"pinenut",
+"soy",
+"treenut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:falafel-salad-regular-": {
+"al": [
+"gluten",
+"sesame",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"milk",
+"pinenut",
+"soy",
+"treenut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:falafel-salad-small-": {
+"al": [
+"gluten",
+"sesame",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"milk",
+"pinenut",
+"soy",
+"treenut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:falafel-wrap": {
+"al": [
+"gluten",
+"sesame",
+"wheat"
+],
+"may": [
+"almond",
+"cashew",
+"milk",
+"pinenut",
+"soy",
+"treenut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:flat-white-large-": {
+"al": [
+"milk"
+],
+"src": "labels"
+},
+"soul:flat-white-regular-": {
+"al": [
+"milk"
+],
+"src": "labels"
+},
+"soul:flat-white-small-": {
+"al": [
+"milk"
+],
+"src": "labels"
+},
+"soul:fruit-salad": {
+"al": [],
+"meat": [],
+"src": "labels",
+"vg": "vegan"
+},
+"soul:gourmet-brekkie-bun": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"sulphites",
+"wheat"
+],
+"may": [
+"almond",
+"hazelnut",
+"macadamia",
+"pistachio",
+"sesame",
+"soy",
+"treenut",
+"walnut"
+],
+"src": "labels"
+},
+"soul:gourmet-brekkie-bun-halal-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"may": [
+"almond",
+"brazil",
+"cashew",
+"hazelnut",
+"macadamia",
+"peanut",
+"pecan",
+"pinenut",
+"pistachio",
+"sesame",
+"treenut",
+"walnut"
+],
+"src": "labels"
+},
+"soul:gourmet-brekkie-wrap": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"sulphites",
+"wheat"
+],
+"may": [
+"soy"
+],
+"src": "labels"
+},
+"soul:gourmet-brekkie-wrap-halal-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"may": [
+"almond",
+"brazil",
+"cashew",
+"hazelnut",
+"macadamia",
+"peanut",
+"pecan",
+"pinenut",
+"pistachio",
+"sesame",
+"treenut",
+"walnut"
+],
+"src": "labels"
+},
+"soul:green-goddess-salad-large-": {
+"al": [
+"gluten",
+"wheat"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegan"
+},
+"soul:green-goddess-salad-regular-": {
+"al": [
+"gluten",
+"wheat"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegan"
+},
+"soul:green-goddess-salad-small-": {
+"al": [
+"gluten",
+"wheat"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegan"
+},
+"soul:grilled-chicken-baguette": {
+"al": [
+"egg",
+"gluten",
+"wheat"
+],
+"may": [
+"milk",
+"soy"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:grilled-chicken-noodle-salad-large-": {
+"al": [
+"gluten",
+"sesame",
+"soy",
+"wheat"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:grilled-chicken-noodle-salad-regular-": {
+"al": [
+"gluten",
+"sesame",
+"soy",
+"wheat"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:grilled-chicken-noodle-salad-small-": {
+"al": [
+"gluten",
+"sesame",
+"soy",
+"wheat"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:grilled-chicken-panini": {
+"al": [
+"egg",
+"gluten",
+"wheat"
+],
+"may": [
+"milk",
+"soy"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:grilled-chicken-steamed-veg-salad-large-": {
+"al": [],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:grilled-chicken-steamed-veg-salad-regular-": {
+"al": [],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:grilled-chicken-steamed-veg-salad-small-": {
+"al": [],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:grilled-chicken-wrap": {
+"al": [
+"egg",
+"gluten",
+"wheat"
+],
+"may": [
+"milk",
+"soy"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:habanero-hot-sauce": {
+"al": [],
+"meat": [],
+"src": "labels",
+"vg": "vegan"
+},
+"soul:haloumi-salad-large-": {
+"al": [
+"gluten",
+"milk",
+"sulphites",
+"wheat"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:haloumi-salad-regular-": {
+"al": [
+"gluten",
+"milk",
+"sulphites",
+"wheat"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:haloumi-salad-small-": {
+"al": [
+"gluten",
+"milk",
+"sulphites",
+"wheat"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:haloumi-veggie-brekkie-wrap": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"soy"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:ham-cheese-croissant": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"almond",
+"brazil",
+"cashew",
+"hazelnut",
+"macadamia",
+"pecan",
+"pinenut",
+"pistachio",
+"sesame",
+"soy",
+"treenut",
+"walnut"
+],
+"meat": [
+"pork"
+],
+"src": "labels"
+},
+"soul:ham-cheese-tomato-on-soy-linseed": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"egg",
+"hazelnut",
+"macadamia",
+"pecan",
+"pistachio",
+"sesame",
+"treenut",
+"walnut"
+],
+"meat": [
+"pork"
+],
+"src": "labels"
+},
+"soul:ham-cheese-tomato-on-wholemeal": {
+"al": [
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"almond",
+"egg",
+"hazelnut",
+"macadamia",
+"pecan",
+"pistachio",
+"sesame",
+"soy",
+"treenut",
+"walnut"
+],
+"meat": [
+"pork"
+],
+"src": "labels"
+},
+"soul:hearty-chicken-soup-large-": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"soul:hearty-chicken-soup-medium-": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"soul:hearty-chicken-soup-sipper-": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"soul:hot-chocolate-large-": {
+"al": [
+"milk"
+],
+"src": "labels"
+},
+"soul:hot-chocolate-regular-": {
+"al": [
+"milk"
+],
+"src": "labels"
+},
+"soul:hot-chocolate-small-": {
+"al": [
+"milk"
+],
+"src": "labels"
+},
+"soul:iced-matcha-12oz-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:iced-matcha-16oz-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:iced-matcha-regular-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:iced-matcha-small-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:latte-large-": {
+"al": [
+"milk"
+],
+"src": "labels"
+},
+"soul:latte-over-ice-12oz-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:latte-over-ice-16oz-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:latte-regular-": {
+"al": [
+"milk"
+],
+"src": "labels"
+},
+"soul:latte-small-": {
+"al": [
+"milk"
+],
+"src": "labels"
+},
+"soul:lemon-olive-oil": {
+"al": [
+"sulphites"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegan"
+},
+"soul:lime-mayo": {
+"al": [
+"egg",
+"sulphites"
+],
+"may": [
+"gluten",
+"peanut",
+"sesame",
+"wheat"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:long-black-large-": {
+"al": [],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:long-black-over-ice-12oz-": {
+"al": [],
+"meat": [],
+"src": "labels",
+"vg": "vegan"
+},
+"soul:long-black-over-ice-16oz-": {
+"al": [],
+"meat": [],
+"src": "labels",
+"vg": "vegan"
+},
+"soul:long-black-regular-": {
+"al": [],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:long-black-small-": {
+"al": [],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:macchiato": {
+"al": [
+"milk"
+],
+"src": "labels"
+},
+"soul:mango-fruit-blend-regular-": {
+"al": [],
+"may": [
+"milk"
+],
+"src": "labels"
+},
+"soul:mango-fruit-blend-small-": {
+"al": [],
+"may": [
+"milk"
+],
+"src": "labels"
+},
+"soul:mango-passion-fruit-blend-regular-": {
+"al": [],
+"may": [
+"milk"
+],
+"src": "labels"
+},
+"soul:mango-passion-fruit-blend-small-": {
+"al": [],
+"may": [
+"milk"
+],
+"src": "labels"
+},
+"soul:marinated-beef-salad-large-": {
+"al": [],
+"meat": [
+"beef"
+],
+"src": "labels"
+},
+"soul:marinated-beef-salad-regular-": {
+"al": [],
+"meat": [
+"beef"
+],
+"src": "labels"
+},
+"soul:marinated-beef-salad-small-": {
+"al": [],
+"meat": [
+"beef"
+],
+"src": "labels"
+},
+"soul:matcha-latte-large-": {
+"al": [
+"milk"
+],
+"may": [
+"sesame"
+],
+"src": "labels"
+},
+"soul:matcha-latte-regular-": {
+"al": [
+"milk"
+],
+"may": [
+"sesame"
+],
+"src": "labels"
+},
+"soul:matcha-latte-small-": {
+"al": [
+"milk"
+],
+"may": [
+"sesame"
+],
+"src": "labels"
+},
+"soul:matcha-over-ice-12oz-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:matcha-over-ice-16oz-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:matcha-over-ice-regular-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:matcha-over-ice-small-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:mini-chocolate-croissant": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"may": [
+"almond",
+"brazil",
+"cashew",
+"hazelnut",
+"lupin",
+"macadamia",
+"peanut",
+"pecan",
+"pinenut",
+"pistachio",
+"sesame",
+"treenut",
+"walnut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:mini-croissant": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"may": [
+"almond",
+"brazil",
+"cashew",
+"hazelnut",
+"lupin",
+"macadamia",
+"peanut",
+"pecan",
+"pinenut",
+"pistachio",
+"sesame",
+"treenut",
+"walnut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:mocha-large-": {
+"al": [
+"milk"
+],
+"src": "labels"
+},
+"soul:mocha-regular-": {
+"al": [
+"milk"
+],
+"src": "labels"
+},
+"soul:mocha-small-": {
+"al": [
+"milk"
+],
+"src": "labels"
+},
+"soul:pain-au-raisin": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"brazil",
+"cashew",
+"hazelnut",
+"macadamia",
+"pecan",
+"pinenut",
+"pistachio",
+"sesame",
+"treenut",
+"walnut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:passionfruit-fruit-blend-regular-": {
+"al": [],
+"may": [
+"milk"
+],
+"src": "labels"
+},
+"soul:passionfruit-fruit-blend-small-": {
+"al": [],
+"may": [
+"milk"
+],
+"src": "labels"
+},
+"soul:pesto-veggie-baguette": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"egg",
+"hazelnut",
+"lupin",
+"sesame",
+"treenut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:piccolo": {
+"al": [
+"milk"
+],
+"src": "labels"
+},
+"soul:plant-based-schnitzel-wrap": {
+"al": [
+"gluten",
+"soy",
+"wheat"
+],
+"may": [
+"milk"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:pomegranate-quinoa-salad-large-": {
+"al": [
+"gluten",
+"sulphites",
+"wheat"
+],
+"may": [
+"almond",
+"brazil",
+"cashew",
+"hazelnut",
+"macadamia",
+"pecan",
+"pinenut",
+"pistachio",
+"sesame",
+"treenut",
+"walnut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:pomegranate-quinoa-salad-regular-": {
+"al": [
+"gluten",
+"sulphites",
+"wheat"
+],
+"may": [
+"almond",
+"brazil",
+"cashew",
+"hazelnut",
+"macadamia",
+"pecan",
+"pinenut",
+"pistachio",
+"sesame",
+"treenut",
+"walnut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:pomegranate-quinoa-salad-small-": {
+"al": [
+"gluten",
+"sulphites",
+"wheat"
+],
+"may": [
+"almond",
+"brazil",
+"cashew",
+"hazelnut",
+"macadamia",
+"pecan",
+"pinenut",
+"pistachio",
+"sesame",
+"treenut",
+"walnut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:rhubarb-danish": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"pistachio",
+"soy",
+"treenut",
+"wheat"
+],
+"may": [
+"almond",
+"brazil",
+"cashew",
+"hazelnut",
+"macadamia",
+"pecan",
+"pinenut",
+"sesame",
+"walnut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:salami-classico-panini": {
+"meat": [
+"pork"
+],
+"src": "name"
+},
+"soul:salami-classico-panini-halal-": {
+"meat": [
+"pork"
+],
+"src": "name"
+},
+"soul:salted-caramel-almond-protein-ball": {
+"al": [
+"almond",
+"gluten",
+"milk",
+"sesame",
+"soy",
+"sulphites",
+"treenut",
+"wheat"
+],
+"may": [
+"brazil",
+"cashew",
+"egg",
+"hazelnut",
+"lupin",
+"macadamia",
+"peanut",
+"pecan",
+"pinenut",
+"pistachio",
+"walnut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:schnitty-brekkie-bun": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"may": [
+"almond",
+"hazelnut",
+"macadamia",
+"pecan",
+"pistachio",
+"sesame",
+"soy",
+"treenut",
+"walnut"
+],
+"src": "labels"
+},
+"soul:soy-sesame": {
+"al": [
+"gluten",
+"sesame",
+"soy",
+"wheat"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegan"
+},
+"soul:spicy-crunchy-chicken-so-bun": {
+"al": [
+"cashew",
+"egg",
+"gluten",
+"soy",
+"treenut",
+"wheat"
+],
+"may": [
+"milk"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:spinach-mushroom-egg-wrap": {
+"al": [
+"egg",
+"gluten",
+"wheat"
+],
+"may": [
+"milk",
+"soy"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:strawberry-matcha-regular-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:strawberry-matcha-small-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:summer-chicken-mango-salad-large-": {
+"al": [
+"sulphites"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:summer-chicken-mango-salad-regular-": {
+"al": [
+"sulphites"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:summer-chicken-mango-salad-small-": {
+"al": [
+"sulphites"
+],
+"meat": [
+"chicken"
+],
+"src": "labels"
+},
+"soul:sweet-chilli-schnitty-salad-large-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"src": "labels"
+},
+"soul:sweet-chilli-schnitty-salad-regular-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"src": "labels"
+},
+"soul:sweet-chilli-schnitty-salad-small-": {
+"al": [
+"egg",
+"gluten",
+"milk",
+"wheat"
+],
+"src": "labels"
+},
+"soul:tuscan-veg-pasta-salad-large-": {
+"al": [
+"cashew",
+"gluten",
+"milk",
+"sulphites",
+"treenut",
+"wheat"
+],
+"may": [
+"egg",
+"peanut",
+"soy"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:tuscan-veg-pasta-salad-regular-": {
+"al": [
+"cashew",
+"gluten",
+"milk",
+"sulphites",
+"treenut",
+"wheat"
+],
+"may": [
+"egg",
+"peanut",
+"soy"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:tuscan-veg-pasta-salad-small-": {
+"al": [
+"cashew",
+"gluten",
+"milk",
+"sulphites",
+"treenut",
+"wheat"
+],
+"may": [
+"egg",
+"peanut",
+"soy"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:vegan-aioli": {
+"al": [],
+"meat": [],
+"src": "labels",
+"vg": "vegan"
+},
+"soul:vegan-tonkatsu": {
+"al": [
+"gluten",
+"soy",
+"sulphites",
+"wheat"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegan"
+},
+"soul:white-chocolate-pistachio-protein-ball": {
+"al": [
+"almond",
+"gluten",
+"milk",
+"pistachio",
+"sesame",
+"soy",
+"sulphites",
+"treenut",
+"wheat"
+],
+"may": [
+"brazil",
+"cashew",
+"egg",
+"hazelnut",
+"lupin",
+"macadamia",
+"peanut",
+"pecan",
+"pinenut",
+"walnut"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:white-cold-brew-12oz-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:white-cold-brew-16oz-": {
+"al": [
+"milk"
+],
+"meat": [],
+"src": "labels",
+"vg": "vegetarian"
+},
+"soul:white-hot-chocolate-large-": {
+"al": [
+"milk",
+"soy"
+],
+"src": "labels"
+},
+"soul:white-hot-chocolate-mocha-large-": {
+"al": [
+"milk",
+"soy"
+],
+"src": "labels"
+},
+"soul:white-hot-chocolate-mocha-regular-": {
+"al": [
+"milk",
+"soy"
+],
+"src": "labels"
+},
+"soul:white-hot-chocolate-mocha-small-": {
+"al": [
+"milk",
+"soy"
+],
+"src": "labels"
+},
+"soul:white-hot-chocolate-regular-": {
+"al": [
+"milk",
+"soy"
+],
+"src": "labels"
+},
+"soul:white-hot-chocolate-small-": {
+"al": [
+"milk",
+"soy"
+],
+"src": "labels"
+},
+"thisbowl:add-beef-brisket": {
+"al": [
+"soy"
+],
+"meat": [
+"beef"
+],
+"src": "name"
+},
+"thisbowl:add-chilli-jam": {
+"al": [
+"soy",
+"sulphites"
+],
+"src": "labels"
+},
+"thisbowl:add-coconut-chicken": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"thisbowl:add-crispy-shallots": {
+"al": [],
+"src": "labels"
+},
+"thisbowl:add-japanese-chilli-flakes": {
+"al": [
+"sesame"
+],
+"may": [
+"shellfish"
+],
+"src": "labels"
+},
+"thisbowl:add-miso-glazed-eggplant": {
+"al": [
+"soy"
+],
+"src": "labels"
+},
+"thisbowl:add-miso-glazed-salmon-fillet": {
+"meat": [
+"fish"
+],
+"src": "name"
+},
+"thisbowl:add-pickled-daikon": {
+"al": [],
+"src": "labels"
+},
+"thisbowl:add-poached-chicken": {
+"al": [],
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"thisbowl:add-roasted-tofu": {
+"al": [
+"soy"
+],
+"may": [
+"gluten",
+"peanut",
+"sesame",
+"wheat"
+],
+"src": "labels"
+},
+"thisbowl:add-salmon-sashimi": {
+"al": [
+"fish"
+],
+"meat": [
+"fish"
+],
+"src": "name"
+},
+"thisbowl:add-seaweed-salad": {
+"al": [
+"sesame"
+],
+"src": "labels"
+},
+"thisbowl:beef-brisket-box": {
+"al": [
+"almond",
+"cashew",
+"egg",
+"sesame",
+"soy",
+"treenut"
+],
+"may": [
+"peanut"
+],
+"meat": [
+"beef"
+],
+"src": "name"
+},
+"thisbowl:beef-brisket-large-": {
+"al": [
+"soy"
+],
+"meat": [
+"beef"
+],
+"src": "name"
+},
+"thisbowl:beef-brisket-regular-": {
+"al": [
+"soy"
+],
+"meat": [
+"beef"
+],
+"src": "name"
+},
+"thisbowl:blue-lemonade": {
+"al": [],
+"src": "labels"
+},
+"thisbowl:braised-beef-large-": {
+"al": [
+"almond",
+"cashew",
+"egg",
+"sesame",
+"soy",
+"treenut"
+],
+"may": [
+"peanut"
+],
+"meat": [
+"beef"
+],
+"src": "name"
+},
+"thisbowl:braised-beef-regular-": {
+"al": [
+"almond",
+"cashew",
+"egg",
+"sesame",
+"soy",
+"treenut"
+],
+"may": [
+"peanut"
+],
+"meat": [
+"beef"
+],
+"src": "name"
+},
+"thisbowl:brown-rice": {
+"al": [
+"sesame",
+"soy"
+],
+"src": "labels"
+},
+"thisbowl:brown-rice-large-": {
+"al": [
+"sesame",
+"soy"
+],
+"src": "labels"
+},
+"thisbowl:cabbage": {
+"al": [
+"sesame",
+"soy"
+],
+"src": "labels"
+},
+"thisbowl:cabbage-large-": {
+"al": [
+"sesame",
+"soy"
+],
+"src": "labels"
+},
+"thisbowl:chicken-o-g-large-": {
+"al": [
+"egg",
+"sesame",
+"soy"
+],
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"thisbowl:chicken-o-g-regular-": {
+"al": [
+"egg",
+"sesame",
+"soy"
+],
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"thisbowl:chilli-chicken-large-": {
+"al": [
+"almond",
+"cashew",
+"egg",
+"sesame",
+"soy",
+"treenut"
+],
+"may": [
+"peanut"
+],
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"thisbowl:chilli-chicken-regular-": {
+"al": [
+"almond",
+"cashew",
+"egg",
+"sesame",
+"soy",
+"treenut"
+],
+"may": [
+"peanut"
+],
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"thisbowl:coconut-chicken-box": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"thisbowl:coconut-chicken-large-": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"thisbowl:coconut-chicken-regular-": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"thisbowl:crispy-chicken-large-": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"thisbowl:crispy-chicken-regular-": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"thisbowl:glass-noodles": {
+"al": [
+"sesame",
+"soy"
+],
+"src": "labels"
+},
+"thisbowl:glass-noodles-large-": {
+"al": [
+"sesame",
+"soy"
+],
+"src": "labels"
+},
+"thisbowl:hibiscus-pineapple": {
+"al": [],
+"src": "labels"
+},
+"thisbowl:house-shoyu": {
+"al": [
+"soy"
+],
+"src": "labels"
+},
+"thisbowl:kids-aburi-salmon-box": {
+"meat": [
+"fish"
+],
+"src": "name"
+},
+"thisbowl:kids-poached-chicken-box": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"thisbowl:kids-salmon-sashimi-box": {
+"meat": [
+"fish"
+],
+"src": "name"
+},
+"thisbowl:lemon-chicken-box": {
+"al": [
+"almond",
+"cashew",
+"egg",
+"sesame",
+"soy",
+"sulphites",
+"treenut"
+],
+"may": [
+"peanut"
+],
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"thisbowl:lemon-olive-oil": {
+"al": [
+"sulphites"
+],
+"src": "labels"
+},
+"thisbowl:lime-tahini": {
+"al": [
+"sesame",
+"soy",
+"sulphites"
+],
+"src": "labels"
+},
+"thisbowl:mango-pineapple-ginger": {
+"al": [],
+"src": "labels"
+},
+"thisbowl:miso-bone-broth": {
+"al": [
+"fish",
+"soy"
+],
+"src": "labels"
+},
+"thisbowl:miso-eggplant-with-chicken-large-": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"thisbowl:miso-eggplant-with-chicken-regular-": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"thisbowl:miso-salmon-box": {
+"meat": [
+"fish"
+],
+"src": "name"
+},
+"thisbowl:miso-salmon-large-": {
+"al": [
+"fish",
+"soy"
+],
+"meat": [
+"fish"
+],
+"src": "name"
+},
+"thisbowl:miso-salmon-regular-": {
+"al": [
+"fish",
+"soy"
+],
+"meat": [
+"fish"
+],
+"src": "name"
+},
+"thisbowl:nori-caesar-large-": {
+"al": [
+"almond",
+"cashew",
+"egg",
+"sesame",
+"soy",
+"treenut"
+],
+"may": [
+"peanut"
+],
+"src": "labels"
+},
+"thisbowl:nori-caesar-regular-": {
+"al": [
+"almond",
+"cashew",
+"egg",
+"sesame",
+"soy",
+"treenut"
+],
+"may": [
+"peanut"
+],
+"src": "labels"
+},
+"thisbowl:passionfruit-yuzu": {
+"al": [],
+"src": "labels"
+},
+"thisbowl:red-hot-chilli": {
+"al": [
+"sesame",
+"soy"
+],
+"src": "labels"
+},
+"thisbowl:roasted-sesame": {
+"al": [
+"egg",
+"sesame",
+"soy"
+],
+"src": "labels"
+},
+"thisbowl:salmon-o-g-large-": {
+"al": [
+"egg",
+"fish",
+"sesame",
+"soy"
+],
+"meat": [
+"fish"
+],
+"src": "name"
+},
+"thisbowl:salmon-o-g-regular-": {
+"al": [
+"egg",
+"fish",
+"sesame",
+"soy"
+],
+"meat": [
+"fish"
+],
+"src": "name"
+},
+"thisbowl:spicy-salmon-large-": {
+"al": [
+"egg",
+"fish",
+"sesame",
+"soy"
+],
+"may": [
+"shellfish"
+],
+"meat": [
+"fish"
+],
+"src": "name"
+},
+"thisbowl:spicy-salmon-regular-": {
+"al": [
+"egg",
+"fish",
+"sesame",
+"soy"
+],
+"may": [
+"shellfish"
+],
+"meat": [
+"fish"
+],
+"src": "name"
+},
+"thisbowl:spicy-sesame": {
+"al": [
+"egg",
+"sesame",
+"soy"
+],
+"src": "labels"
+},
+"thisbowl:spring-chicken-large-": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"thisbowl:spring-chicken-regular-": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"thisbowl:sushi-rice": {
+"al": [
+"sesame",
+"soy"
+],
+"src": "labels"
+},
+"thisbowl:sushi-rice-large-": {
+"al": [
+"sesame",
+"soy"
+],
+"src": "labels"
+},
+"thisbowl:tamari-ponzu": {
+"al": [
+"soy"
+],
+"src": "labels"
+},
+"thisbowl:yuzu-days-chicken-large-": {
+"meat": [
+"chicken"
+],
+"src": "name"
+},
+"thisbowl:yuzu-days-chicken-regular-": {
+"meat": [
+"chicken"
+],
+"src": "name"
+}
+}
+}

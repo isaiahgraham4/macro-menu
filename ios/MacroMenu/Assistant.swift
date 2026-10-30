@@ -238,5 +238,8 @@ enum Assistant {
     static let nicknames: [String: String] = ["maccas": "mcd", "macca's": "mcd", "mcdonalds": "mcd", "hj": "hj", "hjs": "hj", "hungry jacks": "hj",
                                                "gyg": "gyg", "guzman": "gyg", "guzman y gomez": "gyg", "red rooster": "rr", "rooster": "rr",
                                                "dominos": "dominos", "subway": "sub", "kentucky": "kfc", "zambreros": "zam", "zambrero's": "zam",
-                                               "boost": "boost", "boost juice": "boost", "schnitz": "schnitz", "grilld": "grilld", "grill'd": "grilld", "grill’d": "grilld"]
+                                               "boost": "boost", "boost juice": "boost", "schnitz": "schnitz", "grilld": "grilld", "grill'd": "grilld", "grill’d": "grilld",
+                                               "bettys": "betty", "betty's": "betty", "betty’s": "betty", "five guys": "fiveguys", "crust": "crust", "donut king": "donutking",
+                                               "michels": "michels", "michel's": "michels", "michel’s": "michels", "brumbys": "brumbys", "brumby's": "brumbys", "brumby’s": "brumbys",
+                                               "soul origin": "soul", "rolld": "rolld", "roll'd": "rolld", "roll’d": "rolld", "fishbowl": "thisbowl", "this bowl": "thisbowl"]
 }

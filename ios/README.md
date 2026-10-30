@@ -7,7 +7,7 @@ The app uses SwiftUI and requires no third-party packages or API keys.
 
 - Find: combinations of up to three items from one restaurant, ranked by fit,
   calories or protein; optional macro caps.
-- Best: search all 1,443 bundled menu foods from 14 restaurants, filter by restaurant/category and
+- Best: search all 2,680 bundled menu foods from 23 restaurants, filter by restaurant/category and
   compare nutrition and protein density. Source links are in the toolbar.
 - Meal: fractional servings, gram/mL portions when a serving weight is known,
   restaurant adjustments, personal adjustments, saved meals, logging to a chosen
@@ -228,6 +228,16 @@ add-ons and removals come from their ordering menus (`Scripts/ordering-options.p
 carbs and fat are estimated, and taking something off uses one serve of it, so removals are marked `est`. Red Rooster's
 ordering menu gives no figures for its add-ons, and KFC's and Domino's ordering sites block scripted requests. Missing values remain unknown. A macro filter excludes items without the required figures. Totals mark
 partial nutrient data.
+
+Nine more restaurants joined on 31 October 2026, all from their own published figures. Crust, Donut King, Michel's Patisserie and
+Brumby's share one nutrition site, which gives each item's panel, allergens and ingredient statement; its response depends on the site
+asking, so read it from each brand's nutrition page in a browser. Crust pizzas are whole Large pizzas, with XL, Cheese Crust, Gluten Free
+and High Protein bases as swaps from their published panels (`more-chains-mods.json`). Betty's Burgers, Soul Origin and Roll'd come from
+their PDF sheets and THISBOWL (formerly Fishbowl) from its web table. Five Guys publishes parts, not burgers, so burgers, dogs and shakes
+add its figures up, before toppings. Allergens and meats for these chains are in `more-chains-diet.json`; Betty's, Five Guys and Roll'd
+publish allergens in a form not read here, so only their meats are filled in and the allergen filters leave them out. Rows whose printed
+energy is more than a third away from their own macros were left out as misprints (nine Roll'd rows, three Betty's rows). Gloria Jean's
+shares that nutrition site but its page wasn't loading, and Mad Mex only publishes ingredients, not menu items.
 
 Prices are switched off for now because they vary too much between stores. `Scripts/menu-source.js` keeps them, and
 `SHOW_PRICES` in `Scripts/export-menu.cjs` leaves them out of `MenuData.json`. The price fields stay in the data model

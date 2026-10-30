@@ -44,6 +44,15 @@ Isaiah Graham
 | Spud Bar | In-store menu board (photo) and official website | | |
 | Zambrero | Official nutrition information sheet | | |
 | Boost Juice | Official allergen and nutrition information | | |
+| Betty's Burgers | Official nutrition information sheet | | |
+| Five Guys | Official nutrition guide, parts added up | | |
+| Crust Pizza | Official nutrition and allergen information | | |
+| Donut King | Official nutrition and allergen information | | |
+| Michel's Patisserie | Official nutrition and allergen information | | |
+| Brumby's Bakery | Official nutrition and allergen information | | |
+| Soul Origin | Official nutritional information and allergens | | |
+| Roll'd | Official nutritional information | | |
+| THISBOWL | Official nutritional overview | | |
 
 ## Prices
 

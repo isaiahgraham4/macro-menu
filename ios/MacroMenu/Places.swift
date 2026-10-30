@@ -24,7 +24,7 @@ struct ChainPlace: Sendable {
         return match.contains { name.contains($0) }
     }
 
-    /// Keyed by chain id in MenuData.json. App Store ids are from the AU store (checked 26 Sep 2026; Zambrero and Boost Juice 30 Sep 2026).
+    /// Keyed by chain id in MenuData.json. App Store ids are from the AU store (checked 26 Sep 2026; Zambrero and Boost Juice 30 Sep 2026; the last nine 31 Oct 2026).
     static let all: [String: ChainPlace] = [
         "mcd": ChainPlace(query: "McDonald's", match: ["mcdonald"], appName: "MyMacca's", appStoreID: 1105300599, appLink: URL(string: "https://mcdonaldsau.smart.link/")),
         "kfc": ChainPlace(query: "KFC", match: ["kfc"], appName: "KFC", appStoreID: 725748250, appLink: URL(string: "https://www.kfc.com.au/")),
@@ -40,6 +40,15 @@ struct ChainPlace: Sendable {
         "boost": ChainPlace(query: "Boost Juice", match: ["boost juice"], appName: "Boost Juice", appStoreID: 874205871, appLink: nil),
         "grilld": ChainPlace(query: "Grill'd", match: ["grill'd", "grilld", "grill’d"], appName: "Grill'd", appStoreID: 1228060909, appLink: URL(string: "https://www.grilld.com.au/menu")),
         "schnitz": ChainPlace(query: "Schnitz", match: ["schnitz"], appName: "Schnitz", appStoreID: 1530765524, appLink: URL(string: "https://order.schnitz.com.au/weborder")),
+        "betty": ChainPlace(query: "Betty's Burgers", match: ["betty's", "bettys", "betty’s"], appName: "Betty's Burgers", appStoreID: 1499423312, appLink: nil),
+        "fiveguys": ChainPlace(query: "Five Guys", match: ["five guys"], appName: "Five Guys", appStoreID: 683336616, appLink: nil),
+        "crust": ChainPlace(query: "Crust Pizza", match: ["crust"], appName: "Crust", appStoreID: 479097479, appLink: nil),
+        "donutking": ChainPlace(query: "Donut King", match: ["donut king"], appName: "Donut King", appStoreID: 1502521898, appLink: nil),
+        "michels": ChainPlace(query: "Michel's Patisserie", match: ["michel's", "michels", "michel’s"], appName: "Michel's Loyalty", appStoreID: 1502522026, appLink: nil),
+        "brumbys": ChainPlace(query: "Brumby's Bakery", match: ["brumby"], appName: "Brumby's Rewards", appStoreID: 1531861019, appLink: nil),
+        "soul": ChainPlace(query: "Soul Origin", match: ["soul origin"], appName: "Soul Origin", appStoreID: 1536086153, appLink: nil),
+        "rolld": ChainPlace(query: "Roll'd", match: ["roll'd", "rolld", "roll’d"], appName: "Roll'd", appStoreID: 1411683955, appLink: nil),
+        "thisbowl": ChainPlace(query: "THISBOWL", match: ["thisbowl", "this bowl", "fishbowl"], appName: "THISBOWL", appStoreID: 6465208456, appLink: nil),
     ]
 }
 

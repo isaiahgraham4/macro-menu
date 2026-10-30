@@ -237,7 +237,7 @@ console.log(`Added ${paired} extras and removals worked out from pairs of items 
 // protein and style swaps, extras and removals (nandos-menu.py), and Hungry Jack's and Oporto add-ons and removals
 // (ordering-options.py). An option for something the item can already add or take off (from a published pair) is left out.
 const core = name => { const n = name.toLowerCase().replace(/^(add|extra|no|make it an?)\s+/, '').replace(/\s+(slice|piece)s?$/, '').trim(); return /patty/.test(n) ? 'patty' : n; };
-for (const [file, chain] of [['./grilld-mods.json', "Grill'd"], ['./nandos-mods.json', "Nando's"], ['./hj-mods.json', "Hungry Jack's"], ['./oporto-mods.json', 'Oporto']]) {
+for (const [file, chain] of [['./grilld-mods.json', "Grill'd"], ['./nandos-mods.json', "Nando's"], ['./hj-mods.json', "Hungry Jack's"], ['./oporto-mods.json', 'Oporto'], ['./more-chains-mods.json', 'Crust Pizza']]) {
   let added = 0;
   for (const [id, mods] of Object.entries(require(file).modifiers)) {
     const food = byId[id];
@@ -273,7 +273,7 @@ console.log(`Added ${separate} extras that are sold on their own.`);
 // Dietary info (diet-info.py): the meats in each item ([] when none), allergens where the restaurant publishes them, and its
 // vegetarian or vegan label. Items the restaurant's own words don't cover are left without, and the filters leave those out.
 let dietCount = 0;
-for (const [id, info] of Object.entries(require('./diet.json').items)) {
+for (const [id, info] of Object.entries({...require('./diet.json').items, ...require('./more-chains-diet.json').items})) {
   const food = byId[id];
   if (!food) continue;
   const diet = {};
