@@ -56,6 +56,8 @@ struct ContentView: View {
             Tab("Meal", systemImage: "fork.knife", value: .meal) { screen(MealView()) }.badge(store.data.tray.count)
             Tab("Progress", systemImage: "chart.line.uptrend.xyaxis", value: .progress) { screen(ProgressTabView()) }
         }
+        // A tab bar on iPhone; on iPad the same tabs also open as a sidebar.
+        .tabViewStyle(.sidebarAdaptable)
         .tint(accent)
         .onChange(of: accentRaw) { store.refreshWidgets() }
         .onChange(of: proteinColour) { store.refreshWidgets() }
