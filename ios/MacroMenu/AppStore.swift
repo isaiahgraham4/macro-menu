@@ -29,14 +29,13 @@ final class AppStore {
     }
     /// Set once the launch animation has gone, so a card isn't shown underneath it.
     var launchSettled = false
-    /// Shows last week's card on the first open of a new week, when enough of it was logged.
-    func offerWeeklyReview() {
+    /// Shows last week's card on the first open of a new week, and the year's in December, when enough was logged.
+    func offerReviews() {
         guard launchSettled else { return }
-        var moment: Moment?
         var updated = data
-        guard let offered = updated.offerWeek() else { return }
-        moment = offered
-        if change({ $0 = updated }), let moment { moments.append(moment) }
+        let offered = [updated.offerYear(), updated.offerWeek()].compactMap { $0 }
+        guard !offered.isEmpty, change({ $0 = updated }) else { return }
+        moments += offered
     }
     /// The state before the last undoable change, offered briefly as "Undo".
     struct UndoStep: Identifiable { let id = UUID(); var label: String; var snapshot: AppData }

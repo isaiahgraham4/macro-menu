@@ -24,7 +24,7 @@ A calorie tracker built around eating out, rather than a generic food diary with
 
 - Used on an iPhone, often standing in or near a restaurant, or deciding where to go. Quick one-handed decisions matter more than long sessions.
 - Tabs, in order: Today, Find, Map, Meal, My foods. Settings sits in a gear sheet opened from the top right of every tab; Map shows nearby stores.
-- Companion surfaces: Home Screen widgets (calories left, macros, targets, streak), Apple Health (writes meals and weigh-ins; reads weight and active energy), iCloud sync between devices, and onboarding (`LeanrOnboarding`).
+- Companion surfaces: Home Screen widgets (calories left, macros, targets, streak), an optional Lock Screen and Dynamic Island Live Activity, Apple Health (writes meals and weigh-ins; reads weight and active energy), iCloud sync between devices, and onboarding (`LeanrOnboarding`).
 - Hand-offs out of the app: each chain's AU app via verified universal links, or its App Store page (see `ios/APP-LINKS.md`); Maps for the nearest store.
 - Adding foods not on a menu: product barcode lookup (Open Food Facts), on-device nutrition-label photo reading (Apple Vision), or manual entry per serving or per 100 g/mL.
 

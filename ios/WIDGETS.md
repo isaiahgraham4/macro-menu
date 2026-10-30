@@ -37,3 +37,7 @@ of the Lock Screen, sit in Control Centre or go on the Action button. Tapping it
 (`Shared/ScanBarcodeIntent.swift`, `openAppWhenRun`), which opens Leanr on Today and shows the barcode scanner, logging to
 today at the current meal time. Leanr closes any sheet that's up first, and the request waits until the scanner is on screen,
 so it also works from a cold start. `leanr://scan` does the same.
+
+## Lock Screen calories
+
+A Live Activity (`LeanrDayActivity`, drawn from `LeanrDayAttributes`) shows calories left and protein on the Lock Screen and in the Dynamic Island. It's off until turned on in Settings. Leanr updates it on every change and starts it again when opened, because iOS ends one after about 8 hours and only a running app can start one.

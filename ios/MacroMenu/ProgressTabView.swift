@@ -13,6 +13,17 @@ struct ProgressTabView: View {
     @AppStorage(ProgressPart.orderKey) private var orderText = ""
     @AppStorage(ProgressPart.hiddenKey) private var hiddenText = ""
     @State private var arranging = false
+    @State private var yearReview: YearReview?
+
+    /// The year whose review is open now, when enough of it was logged.
+    private var reviewYear: Int? {
+        var year = YearReview.showing(on: Date())
+        #if DEBUG
+        // `-demoYear` opens this year's review early, to try it outside December and January.
+        if CommandLine.arguments.contains("-demoYear") { year = Calendar.current.component(.year, from: Date()) }
+        #endif
+        return year
+    }
 
     private var breakdown: ProgressBreakdown {
         ProgressBreakdown.make(store.data, goals: store.goals, days: ProgressBreakdown.ranges.contains(range) ? range : 30)
@@ -47,6 +58,7 @@ struct ProgressTabView: View {
             Button { arranging = true } label: { Label("Arrange sections", systemImage: "arrow.up.arrow.down") }
         }
         .sheet(isPresented: $arranging) { NavigationStack { ProgressArrangeView(orderText: $orderText, hiddenText: $hiddenText) } }
+        .sheet(item: $yearReview) { review in NavigationStack { YearReviewView(review: review) } }
     }
 
     @ViewBuilder private func section(_ part: ProgressPart, _ breakdown: ProgressBreakdown) -> some View {
@@ -59,6 +71,7 @@ struct ProgressTabView: View {
         case .activeEnergy: ActiveEnergyProgressSection(days: Dictionary(uniqueKeysWithValues: breakdown.points.map { ($0.key, $0.date) }))
         case .body: BodySection()
         case .week: weekSection
+        case .achievements: achievementsSection
         case .calories:
             if logged {
                 caloriesSection(breakdown)
@@ -91,6 +104,28 @@ struct ProgressTabView: View {
     // MARK: Your week
 
     /// This week at a glance, whatever range is chosen. The full review has earlier weeks and a card to share.
+    @ViewBuilder private var achievementsSection: some View {
+        let shelf = store.data.achievements(), earned = shelf.filter(\.earned).count
+        Section {
+            NavigationLink { AchievementsView() } label: {
+                HStack(spacing: 14) {
+                    Image(systemName: "rosette").font(.title2).foregroundStyle(.tint).frame(width: 32)
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text(earned == 1 ? "1 achievement" : "\(earned) achievements").font(.roboto(.headline))
+                        if let next = shelf.first(where: { !$0.earned }) {
+                            Text("Next: \(next.moment.copy.title)").font(.roboto(.caption)).foregroundStyle(.secondary)
+                        }
+                    }
+                }
+            }
+            if let year = reviewYear {
+                Button {
+                    yearReview = YearReview.make(store.data, year: year, restaurants: Set(store.catalog.chains.map(\.id)))
+                } label: { Label("Your \(String(year)) in Leanr", systemImage: "sparkles") }
+            }
+        }
+    }
+
     @ViewBuilder private var weekSection: some View {
         let review = WeeklyReview.make(store.data, goals: store.goals)
         Section {
@@ -300,7 +335,7 @@ enum ProgressPage: String, CaseIterable, Identifiable {
 
 /// The sections of the Progress tab, in the order and with the ones hidden that you chose.
 enum ProgressPart: String, CaseIterable, Identifiable {
-    case checkIn, insights, weight, steps, activeEnergy, body, week, calories, averages, macros, meals, contributors
+    case checkIn, insights, weight, steps, activeEnergy, body, week, achievements, calories, averages, macros, meals, contributors
     var id: Self { self }
     static let orderKey = "progress.order"
     static let hiddenKey = "progress.hidden"
@@ -314,6 +349,7 @@ enum ProgressPart: String, CaseIterable, Identifiable {
         case .activeEnergy: "Calories burnt"
         case .body: "Measurements and photos"
         case .week: "Your week"
+        case .achievements: "Achievements"
         case .calories: "Calories per day"
         case .averages: "Daily averages"
         case .macros: "Where the calories come from"
@@ -324,7 +360,7 @@ enum ProgressPart: String, CaseIterable, Identifiable {
     /// The page the section sits on.
     var page: ProgressPage {
         switch self {
-        case .checkIn, .insights, .week: .overview
+        case .checkIn, .insights, .week, .achievements: .overview
         case .weight, .body, .steps, .activeEnergy: .body
         case .calories, .averages, .macros, .meals, .contributors: .eating
         }
@@ -338,6 +374,7 @@ enum ProgressPart: String, CaseIterable, Identifiable {
         case .activeEnergy: "flame"
         case .body: "ruler"
         case .week: "calendar"
+        case .achievements: "rosette"
         case .calories: "chart.bar"
         case .averages: "equal.circle"
         case .macros: "chart.pie"

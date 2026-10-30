@@ -22,6 +22,40 @@ struct NearbyView: View {
     @State private var searchTask: Task<Void, Never>?
     @State private var searchID = UUID()
     @State private var searchingFor = ""
+    /// The best order at each nearby restaurant for what's left today, once worked out.
+    @State private var fits: [String: MealMatch] = [:]
+    /// What `fits` was worked out for; while it's behind `fitsNeeded` the rows show a placeholder.
+    @State private var fitsDoneFor: FitsRequest?
+    @State private var ordering: MealMatch?
+    private struct FitsRequest: Equatable { var chains: [String]; var calories: Double?; var protein: Double?; var lateInDay: Bool; var diet: DietFilter; var foods: Int }
+    private var fitsNeeded: FitsRequest {
+        let left = Assistant.remaining(store.data, goals: store.goals)
+        return FitsRequest(chains: nearest.map(\.chain), calories: left.calories, protein: left.protein,
+                           lateInDay: Calendar.current.component(.hour, from: Date()) >= 16, diet: DietFilter.saved, foods: store.orderFoods.count)
+    }
+    /// Today's calories are used up, so there's nothing to suggest anywhere.
+    private var nothingLeft: Bool { Assistant.remaining(store.data, goals: store.goals).calories.map { $0 < 100 } ?? false }
+    private func fit(at chain: String) -> NearbyRow.Fit {
+        if nothingLeft { return .hidden }
+        if fitsDoneFor != fitsNeeded { return .finding }
+        return fits[chain].map(NearbyRow.Fit.order) ?? .nothing
+    }
+    /// One finder run per restaurant, off the main thread, plain menu items only: the order to say at the counter.
+    private func findFits() async {
+        let request = fitsNeeded
+        let queries = request.chains.compactMap { chain -> FindQuery? in
+            var query = Assistant.budget(store.data, goals: store.goals, chain: chain)
+            query?.diet = request.diet; query?.customise = false
+            return query
+        }
+        let foods = store.orderFoods
+        let found = await Task.detached(priority: .userInitiated) {
+            queries.compactMap { MealFinder.find(foods, query: $0).first }
+        }.value
+        guard !Task.isCancelled else { return }
+        fits = Dictionary(found.map { ($0.chain, $0) }) { first, _ in first }
+        fitsDoneFor = request
+    }
     var chains: [String] { store.catalog.chains.map(\.id).filter { ChainPlace.all[$0] != nil } }
     var places: [String: [NearbyPlace]] { area == nil ? location.places : areaPlaces }
     var nearest: [NearbyPlace] { chains.compactMap { places[$0]?.first }.sorted { $0.distance < $1.distance } }
@@ -58,11 +92,22 @@ struct NearbyView: View {
                 if showingList {
                     Section(searchingNow ? "Searching nearby…" : "Closest of each restaurant") {
                         if searchingNow && nearest.isEmpty { ForEach(0..<3, id: \.self) { _ in RowSkeleton().skeleton("Searching nearby") } }
-                        ForEach(nearest) { place in NearbyRow(place: place, showChain: true) { nav.showOptions(at: place.chain) } }
+                        ForEach(nearest) { place in
+                            NearbyRow(place: place, showChain: true, fit: fit(at: place.chain), open: { ordering = $0 }) { nav.showOptions(at: place.chain) }
+                        }
+                        if nothingLeft && !nearest.isEmpty {
+                            Text("Today's calories are used up, so there's no order to suggest.").font(.roboto(.caption)).foregroundStyle(.secondary)
+                        }
                         let missing = chains.filter { places[$0]?.isEmpty == true }.map { store.chainName($0) }
                         if !missing.isEmpty { Text("None within 15 km: \(missing.joined(separator: ", ")).").font(.roboto(.caption)).foregroundStyle(.secondary) }
                     }
                 }
+            }
+        }
+        .task(id: fitsNeeded) { await findFits() }
+        .sheet(item: $ordering) { match in
+            NavigationStack {
+                OrderDetailView(match: match).toolbar { ToolbarItem(placement: .confirmationAction) { Button("Done") { ordering = nil } } }
             }
         }
         .navigationTitle("Map").navigationBarTitleDisplayMode(.inline)
@@ -185,6 +230,10 @@ struct NearbyRow: View {
     @Environment(AppStore.self) private var store
     var place: NearbyPlace
     var showChain = false
+    enum Fit { case hidden, finding, nothing, order(MealMatch) }
+    /// The best order here for what's left today.
+    var fit = Fit.hidden
+    var open: ((MealMatch) -> Void)?
     /// Shows this restaurant's options on Find; the button is hidden when nil.
     var showOptions: (() -> Void)?
     @Environment(\.dynamicTypeSize) private var typeSize
@@ -197,6 +246,7 @@ struct NearbyRow: View {
                 Text(place.distanceText).font(.roboto(.subheadline)).foregroundStyle(.secondary).monospacedDigit()
             }
             if !place.address.isEmpty { Text(place.address).font(.roboto(.caption)).foregroundStyle(.secondary) }
+            fitLine
             if big {
                 PlaceHoursView(place: place)
                 DeliveryLine(place: place)
@@ -225,6 +275,38 @@ struct NearbyRow: View {
                 }.buttonStyle(.bordered).font(.roboto(.subheadline))
             }
         }.padding(.vertical, 4)
+    }
+
+    @ViewBuilder private var fitLine: some View {
+        switch fit {
+        case .hidden: EmptyView()
+        case .finding:
+            VStack(alignment: .leading, spacing: 2) {
+                Text("An order that fits what's left").font(.roboto(.subheadline, weight: .medium))
+                Text("000 Cal · 00 g protein").font(.roboto(.caption))
+            }.skeleton("Finding what fits")
+        case .nothing:
+            Text("Nothing here fits what's left today.").font(.roboto(.caption)).foregroundStyle(.secondary)
+        case .order(let match):
+            Button { open?(match) } label: {
+                HStack(spacing: 8) {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(match.items.map(\.food.name).joined(separator: " + ")).font(.roboto(.subheadline, weight: .medium))
+                            .foregroundStyle(.primary).multilineTextAlignment(.leading).lineLimit(typeSize.isAccessibilitySize ? nil : 2)
+                        Text("\(match.total.cal.rounded().number) Cal · \(match.total.p.rounded().number) g protein")
+                            .font(.roboto(.caption)).foregroundStyle(.secondary).monospacedDigit()
+                    }
+                    // Takes the lines it needs at the largest text sizes rather than being cut short.
+                    .fixedSize(horizontal: false, vertical: true)
+                    Spacer(minLength: 0)
+                    Image(systemName: "chevron.right").font(.caption.weight(.semibold)).foregroundStyle(.tertiary)
+                }
+                .padding(10).background(.tint.opacity(0.1), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                .contentShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel("Fits what's left: \(match.items.map(\.food.name).joined(separator: " and ")), \(match.total.cal.rounded().number) calories, \(match.total.p.rounded().number) grams of protein")
+        }
     }
 
     private func optionsButton(_ action: @escaping () -> Void) -> some View {

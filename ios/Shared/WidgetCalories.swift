@@ -46,6 +46,10 @@ struct WidgetCalories: Codable, Equatable, Sendable {
     func streak(on date: Date, calendar: Calendar = Calendar(identifier: .gregorian)) -> Int {
         TrackingStreak.count(days: trackingDays, on: date, calendar: calendar)
     }
+    /// Days missed that the streak up to `date` has carried.
+    func protectedDays(on date: Date, calendar: Calendar = Calendar(identifier: .gregorian)) -> Set<String> {
+        TrackingStreak.walk(days: trackingDays, on: date, calendar: calendar).missed
+    }
     var selectedAccent: AppAccent { accent.flatMap(AppAccent.init(rawValue:)) ?? .standard }
 
     var isValid: Bool {
@@ -95,20 +99,60 @@ struct WidgetCalories: Codable, Equatable, Sendable {
 }
 
 enum TrackingStreak {
-    /// Today remains available to log; yesterday's streak stays active until tonight.
-    static func count(days: Set<String>, on date: Date, calendar: Calendar = Calendar(identifier: .gregorian)) -> Int {
+    /// One missed day doesn't end a streak, as long as this many logged days sit between missed ones: about one a week.
+    static let loggedDaysBetweenMisses = 6
+
+    /// The logged days in the streak running up to `date`, and the missed days it has carried. Today remains available to
+    /// log, so it never counts against the streak.
+    static func walk(days: Set<String>, on date: Date, calendar: Calendar = Calendar(identifier: .gregorian)) -> (count: Int, missed: Set<String>) {
+        func key(_ day: Date) -> String { WidgetCalories.dayKey(day, timeZone: calendar.timeZone) }
+        func before(_ day: Date) -> Date? { calendar.date(byAdding: .day, value: -1, to: day) }
         var cursor = calendar.startOfDay(for: date)
-        if !days.contains(WidgetCalories.dayKey(cursor, timeZone: calendar.timeZone)) {
-            guard let yesterday = calendar.date(byAdding: .day, value: -1, to: cursor) else { return 0 }
+        if !days.contains(key(cursor)) {
+            guard let yesterday = before(cursor) else { return (0, []) }
             cursor = yesterday
         }
-        var count = 0
-        while days.contains(WidgetCalories.dayKey(cursor, timeZone: calendar.timeZone)) {
-            count += 1
-            guard let previous = calendar.date(byAdding: .day, value: -1, to: cursor) else { break }
+        var count = 0, missed = Set<String>(), sinceMiss = loggedDaysBetweenMisses
+        while true {
+            if days.contains(key(cursor)) {
+                count += 1; sinceMiss += 1
+            } else {
+                guard sinceMiss >= loggedDaysBetweenMisses, let earlier = before(cursor), days.contains(key(earlier)) else { break }
+                missed.insert(key(cursor)); sinceMiss = 0
+            }
+            guard let previous = before(cursor) else { break }
             cursor = previous
         }
-        return count
+        return (count, missed)
+    }
+
+    static func count(days: Set<String>, on date: Date, calendar: Calendar = Calendar(identifier: .gregorian)) -> Int {
+        walk(days: days, on: date, calendar: calendar).count
+    }
+
+    /// The longest streak in these days (day keys), by the same rules.
+    static func best(days: Set<String>) -> Int {
+        var best = 0, run = 0, sinceMiss = loggedDaysBetweenMisses, last: Int?
+        for day in days.compactMap(dayNumber).sorted() {
+            let gap = last.map { day - $0 } ?? 1
+            if gap == 1 {
+                run += 1; sinceMiss += 1
+            } else if gap == 2, sinceMiss >= loggedDaysBetweenMisses {
+                run += 1; sinceMiss = 1
+            } else {
+                run = 1; sinceMiss = loggedDaysBetweenMisses
+            }
+            best = max(best, run); last = day
+        }
+        return best
+    }
+
+    /// A day key as a count of days, so whole years can be compared without a calendar.
+    private static func dayNumber(_ key: String) -> Int? {
+        let parts = key.split(separator: "-").compactMap { Int($0) }
+        guard parts.count == 3 else { return nil }
+        let year = parts[1] <= 2 ? parts[0] - 1 : parts[0], month = (parts[1] + 9) % 12
+        return 365 * year + year / 4 - year / 100 + year / 400 + (153 * month + 2) / 5 + parts[2]
     }
 }
 

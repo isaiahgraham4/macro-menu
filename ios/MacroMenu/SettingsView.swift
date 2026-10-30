@@ -10,6 +10,7 @@ struct SettingsView: View {
     @State private var showPremium = false
     @State private var estimating = false
     @AppStorage(TodaySuggestions.storageKey) private var suggestFoods = true
+    @AppStorage(LiveDay.storageKey) private var liveDay = false
     @AppStorage(FeatureTips.enabledKey) private var featureTips = true
     @AppStorage(AppAccent.storageKey) private var accentRaw = AppAccent.standard.rawValue
     @AppStorage(AppIconTheme.storageKey) private var iconRaw = AppIconTheme.standard.rawValue
@@ -108,6 +109,12 @@ struct SettingsView: View {
                 Toggle(isOn: $featureTips) { Label("Show tips for features I haven't tried", systemImage: "sparkles") }
                 NavigationLink { MacroColourSettings() } label: { Label("Target colours", systemImage: "paintpalette") }
                 NavigationLink { ReminderSettings() } label: { Label("Reminders", systemImage: "bell") }
+            }
+            Section {
+                Toggle(isOn: $liveDay) { Label("Calories on the Lock Screen", systemImage: "lock.iphone") }
+                    .onChange(of: liveDay) { LiveDay.refresh(store) }
+            } footer: {
+                Text("Shows the calories you have left on the Lock Screen and in the Dynamic Island. iOS ends it after about 8 hours, and it comes back when you next open Leanr.")
             }
             Section {
                 if health.isAvailable {

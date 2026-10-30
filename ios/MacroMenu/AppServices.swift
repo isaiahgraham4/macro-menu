@@ -30,7 +30,7 @@ import UserNotifications
         // Meals, targets and weigh-ins from another device change what's reminded, too.
         store.synced = { rebookReminders() }
         // Apple Watch shows today's totals and logs with a tap, so it hears about every change.
-        store.widgetsRefreshed = { WatchLink.shared.send() }
+        store.widgetsRefreshed = { WatchLink.shared.send(); LiveDay.refresh(store) }
         WatchLink.shared.start(store)
         rebookReminders()
         logQueued()

@@ -14,6 +14,7 @@ struct LeanrWidgetBundle: WidgetBundle {
         LeanrPlannedWidget()
         LeanrWaterWidget()
         LeanrScanControl()
+        LeanrDayActivity()
     }
 }
 

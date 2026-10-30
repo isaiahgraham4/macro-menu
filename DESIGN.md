@@ -272,6 +272,8 @@ Motion lives in `Motion.swift` and `Celebration.swift`. It marks things the pers
 
 - **Counting figures:** a logged amount counts to its new value through `CountingNumber` in 0.7 seconds, with its ring and bars moving alongside and the calories rising off the ring. Today waits for a sheet to close first, so the count happens in view. Other figures roll with `.rolling(_:)` in 0.2 seconds.
 - **Moment card:** a target hit, every target hit, a logging milestone, the step goal, a weigh-in or last week's summary on a small cutting board that rises from the bottom, leaves after 3 seconds and goes on a tap. Moments queue in `AppStore.moments`, and `AppData.celebrated` stops one being earned twice. Last week's card opens the weekly review when tapped.
+- **Achievements:** a shelf in Progress lists what's been earned and the next of each kind, worked out from the log so that it covers milestones from before it existed. Streaks, meals and the goal weight are on it; daily targets aren't, because they reset each day.
+- **Year in review:** in December and January, four story cards at most (`YearReview`): meals logged, the favourite, the longest streak, and weight only when it moved towards the goal.
 - **Goal reached:** the only full-screen celebration, the first time a weigh-in takes the trend to the goal weight.
 - **Milestone share card:** a milestone card's share button, the goal screen and the Weight screen make a 9:16 story image (`MilestoneShareCard`), dark like the meal share card: the milestone, its figure, a line about it and the date.
 - **Haptics:** a light tap when food is logged, the success tap with a moment, and the error tap with a refusal (`AppStore.refuse`) or a failed save.

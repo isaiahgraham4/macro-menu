@@ -218,13 +218,25 @@ import UniformTypeIdentifiers
         let dates = WidgetCalories.timelineDates(from: beforeDST, calendar: melbourne)
         assert(dates.count == 8 && dates[0] == beforeDST)
         assert(dates[1].timeIntervalSince(melbourne.startOfDay(for: beforeDST)) == 23 * 3600)
-        // Streaks cross DST and month boundaries, preserve yesterday until today ends,
+        // Streaks cross DST and month boundaries, preserve yesterday until today ends, carry one missed day a week,
         // and depend on logging rather than calorie targets.
         let streakDays: Set<String> = ["2026-09-30", "2026-10-01", "2026-10-02", "2026-10-03"]
         assert(TrackingStreak.count(days: streakDays, on: beforeDST, calendar: melbourne) == 4)
         assert(TrackingStreak.count(days: streakDays.union(["2026-10-04"]), on: beforeDST, calendar: melbourne) == 5)
-        assert(TrackingStreak.count(days: streakDays.subtracting(["2026-10-02"]), on: beforeDST, calendar: melbourne) == 1)
-        assert(TrackingStreak.count(days: streakDays, on: dates[1], calendar: melbourne) == 0)
+        assert(TrackingStreak.count(days: streakDays.subtracting(["2026-10-02"]), on: beforeDST, calendar: melbourne) == 3)
+        assert(TrackingStreak.walk(days: streakDays.subtracting(["2026-10-02"]), on: beforeDST, calendar: melbourne).missed == ["2026-10-02"])
+        assert(TrackingStreak.count(days: streakDays, on: dates[1], calendar: melbourne) == 4)
+        assert(TrackingStreak.count(days: streakDays, on: dates[2], calendar: melbourne) == 0)
+        // Two missed days together end it, and so does a second miss inside the same week.
+        assert(TrackingStreak.count(days: ["2026-10-03", "2026-09-30"], on: beforeDST, calendar: melbourne) == 1)
+        assert(TrackingStreak.count(days: ["2026-10-03", "2026-10-01", "2026-09-29"], on: beforeDST, calendar: melbourne) == 2)
+        // Six logged days between two misses is enough; five isn't.
+        let sixBetween: Set<String> = ["2026-10-03", "2026-10-01", "2026-09-30", "2026-09-29", "2026-09-28", "2026-09-27", "2026-09-26", "2026-09-24"]
+        assert(TrackingStreak.count(days: sixBetween, on: beforeDST, calendar: melbourne) == 8)
+        assert(TrackingStreak.count(days: sixBetween.subtracting(["2026-09-26"]).union(["2026-09-25"]), on: beforeDST, calendar: melbourne) == 6)
+        assert(TrackingStreak.best(days: ["2026-10-03", "2026-10-01", "2026-09-30", "2026-09-20"]) == 3)
+        assert(TrackingStreak.best(days: ["2025-12-30", "2025-12-31", "2026-01-01", "2026-03-01"]) == 3)
+        assert(TrackingStreak.best(days: ["2026-02-27", "2026-02-28", "2026-03-01"]) == 3)
         assert(TrackingStreak.count(days: ["2026-10-05"], on: beforeDST, calendar: melbourne) == 0)
         var trackedState = AppData()
         trackedState.logs["2026-10-03"] = [LogEntry(name: "Meal", items: [Portion(food: original, quantity: 10)])]
@@ -1158,6 +1170,32 @@ import UniformTypeIdentifiers
             var allHit = allGoals; allHit.logs[dayKey(today)] = [LogEntry(name: "F", items: [Portion(food: full)], time: today)]
             let allEarned = allHit.earnMoments(comparedTo: allGoals, now: today)
             assert(allEarned.contains(.allTargets(3)) && !allEarned.contains { if case .targets = $0 { true } else { false } })
+            // A missed day is marked as saved on the next log, once the streak is worth saving.
+            var gapped = AppData()
+            for back in 2...5 { gapped = logging(gapped, today.addingTimeInterval(Double(-back) * 86400)) }
+            var resumed = logging(gapped, today)
+            assert(resumed.earnMoments(comparedTo: gapped, now: today).contains(.streakSaved(5)))
+            // The shelf counts what was reached before it existed, and shows the next of each kind.
+            let shelf = thirdAgain.achievements(now: today)
+            assert(shelf.contains { $0.moment == .streak(3) && $0.earned } && shelf.contains { $0.moment == .streak(7) && !$0.earned && $0.left == "4 days to go" })
+            assert(shelf.contains { $0.moment == .meals(1) && $0.earned } && shelf.contains { $0.moment == .meals(10) && !$0.earned })
+            assert(!shelf.contains { $0.moment == .streak(14) })
+            // The year's review: restaurants only for the favourite, the weight only towards the goal, December and January only.
+            var yearData = AppData()
+            let chicken = Food(chain: "kfc", name: "Chicken", kj: 0, cal: 400, p: 160)
+            yearData.logs = ["2026-03-01": [LogEntry(name: "Chicken", items: [Portion(food: chicken)]), LogEntry(name: "Chicken", items: [Portion(food: chicken)])],
+                             "2026-03-02": [LogEntry(name: "Test", items: [Portion(food: food)]), LogEntry(name: "Quick add", items: [Portion(food: food)])],
+                             "2025-03-02": [LogEntry(name: "Old", items: [Portion(food: food)])]]
+            yearData.weightGoal = WeightGoal(kg: 80, startKg: 90, set: today)
+            yearData.weights = [WeightEntry(date: Water.date(of: "2026-02-01")!, kg: 90), WeightEntry(date: Water.date(of: "2026-06-01")!, kg: 85)]
+            let year = YearReview.make(yearData, year: 2026, restaurants: ["kfc"])
+            assert(year.meals == 4 && year.days == 2 && year.topMeal?.name == "Chicken" && year.topMeal?.count == 2 && year.topChain?.id == "kfc" && year.bestStreak == 2)
+            assert(year.proteinDays == 2 && year.weight?.losing == true && (year.weight?.moved ?? 0) > 0)
+            yearData.weightGoal = WeightGoal(kg: 95, startKg: 90, set: today)
+            assert(YearReview.make(yearData, year: 2026).weight == nil)
+            func dated(_ year: Int, _ month: Int) -> Date { cal.date(from: DateComponents(year: year, month: month, day: 15))! }
+            assert(YearReview.showing(on: dated(2026, 12), calendar: cal) == 2026 && YearReview.showing(on: dated(2027, 1), calendar: cal) == 2026)
+            assert(YearReview.showing(on: dated(2026, 11), calendar: cal) == nil)
             // Steps count only when the goal is passed while Leanr is running.
             assert(Moment.stepsReached(before: ["d": 7000], after: ["d": 8100], goal: 8000, day: "d") == .steps(8100, goal: 8000))
             assert(Moment.stepsReached(before: [:], after: ["d": 8100], goal: 8000, day: "d") == nil)

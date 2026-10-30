@@ -68,7 +68,7 @@ struct ContentView: View {
             if scenePhase != .active { UserDefaults.standard.set(Date(), forKey: ReminderPrompt.lastActiveKey) }
             if scenePhase == .active {
                 checkReminderPrompt()
-                if onboardingCompleted { store.offerWeeklyReview() }
+                if onboardingCompleted { store.offerReviews() }
                 AppServices.logQueued()
                 // Siri recognises the foods you've pinned or logged recently by name.
                 LeanrShortcuts.updateAppShortcutParameters()
@@ -82,9 +82,11 @@ struct ContentView: View {
         }
         .task {
             // After the launch animation, so last week's card isn't shown underneath it.
+            // A cold launch reports no scene phase change, so the Lock Screen calories are brought back here.
+            LiveDay.refresh(store)
             try? await Task.sleep(for: .seconds(2.5))
             store.launchSettled = true
-            if onboardingCompleted { store.offerWeeklyReview() }
+            if onboardingCompleted { store.offerReviews() }
         }
         .task {
             FeatureTips.noteLaunch(onboardingCompleted: onboardingCompleted)

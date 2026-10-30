@@ -8,6 +8,7 @@ struct MomentsOverlay: ViewModifier {
     @State private var showing: Moment?
     /// The moment whose share image is open; its card waits until the sheet closes.
     @State private var sharing: Moment?
+    @State private var yearReview: YearReview?
     /// One followed another, so there's no need to wait as long.
     @State private var following = false
     private static let wait = Duration.seconds(1.1)
@@ -24,7 +25,7 @@ struct MomentsOverlay: ViewModifier {
                     if case .goalReached(let goal) = showing {
                         GoalReachedView(goal: goal, done: finish, share: { sharing = showing }).transition(.opacity)
                     } else {
-                        MomentCard(moment: showing, dismiss: finish, open: { finish(); openWeeklyReview() }, share: { sharing = showing })
+                        MomentCard(moment: showing, dismiss: finish, open: { open(showing) }, share: { sharing = showing })
                             .transition(.move(edge: .bottom).combined(with: .opacity))
                     }
                 }
@@ -37,6 +38,7 @@ struct MomentsOverlay: ViewModifier {
             .sheet(item: $sharing, onDismiss: { if showing?.fillsScreen != true { finish() } }) { moment in
                 NavigationStack { MomentSharePreview(moment: moment) }
             }
+            .sheet(item: $yearReview) { review in NavigationStack { YearReviewView(review: review).environment(store) } }
             .task(id: store.moments.first) {
                 guard let next = store.moments.first else { return }
                 try? await Task.sleep(for: following ? Self.gap : Self.wait)
@@ -53,11 +55,20 @@ struct MomentsOverlay: ViewModifier {
                 guard CommandLine.arguments.contains("-demoMoments") else { return }
                 try? await Task.sleep(for: .seconds(2))
                 store.moments = [.targets([Moment.Hit(name: "Protein", value: 152, target: 150, unit: "g")]), .allTargets(4), .streak(7),
-                                 .meals(100), .steps(10240, goal: 8000), .week(logged: 5, onTarget: 4, protein: 3),
+                                 .streakSaved(12), .meals(100), .steps(10240, goal: 8000), .week(logged: 5, onTarget: 4, protein: 3), .year(2026),
                                  .weighIn(moved: 4.2, losing: true, progress: 0.6, remaining: 2.8, goal: 75),
                                  .goalReached(WeightGoal(kg: 75, startKg: 82, set: Date()))]
             }
             #endif
+    }
+
+    private func open(_ moment: Moment) {
+        finish()
+        if case .year(let year) = moment {
+            yearReview = YearReview.make(store.data, year: year, restaurants: Set(store.catalog.chains.map(\.id)))
+        } else {
+            openWeeklyReview()
+        }
     }
 
     private func finish() {

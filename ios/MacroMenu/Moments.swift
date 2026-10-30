@@ -12,6 +12,8 @@ enum Moment: Hashable, Sendable {
     /// Every tracked target on target in one day; `Int` is how many.
     case allTargets(Int)
     case streak(Int)
+    /// A missed day that didn't end the streak, now that logging has picked up again.
+    case streakSaved(Int)
     case meals(Int)
     case steps(Double, goal: Double)
     /// How far the trend has moved towards a goal weight since it was set.
@@ -19,6 +21,8 @@ enum Moment: Hashable, Sendable {
     case goalReached(WeightGoal)
     /// Last week, on the first open of a new one.
     case week(logged: Int, onTarget: Int, protein: Int)
+    /// The year's review, once it's ready in December.
+    case year(Int)
 }
 
 extension Moment: Identifiable {
@@ -47,7 +51,9 @@ extension Moment {
         case .allTargets(let count):
             Copy(icon: "checkmark.seal.fill", title: "Every target hit", detail: "All \(count) for the day. That's the whole job.", shareable: true)
         case .streak(let days):
-            Copy(icon: "flame.fill", title: "\(days) days in a row", detail: "You've logged every day. Keep it going.", shareable: true)
+            Copy(icon: "flame.fill", title: "\(days) days in a row", detail: "Logging is becoming a habit. Keep it going.", shareable: true)
+        case .streakSaved(let days):
+            Copy(icon: "shield.fill", title: "Streak saved", detail: "One missed day didn't end your \(days) days.", shareable: false)
         case .meals(let count):
             Copy(icon: "fork.knife", title: count == 1 ? "First meal logged" : "\(count.formatted()) meals logged",
                  detail: count == 1 ? "That's the hard part done." : "It all adds up.", shareable: count > 1)
@@ -63,9 +69,17 @@ extension Moment {
         case .week(let logged, let onTarget, let protein):
             Copy(icon: "calendar", title: "\(logged) of 7 days logged",
                  detail: "On or under calories \(onTarget) \(onTarget == 1 ? "day" : "days"), protein hit \(protein). Tap for your review.", shareable: true)
+        case .year(let year):
+            Copy(icon: "sparkles", title: "Your \(String(year)) is ready", detail: "Tap to see your year in Leanr.", shareable: false)
         }
     }
-    var opensReview: Bool { if case .week = self { true } else { false } }
+    /// Tapping the card opens a review rather than closing it.
+    var opensReview: Bool {
+        switch self {
+        case .week, .year: true
+        default: false
+        }
+    }
 }
 
 extension Moment {
@@ -112,6 +126,12 @@ extension AppData {
         let before = old.mealsLogged, after = mealsLogged
         if after > before, after - before <= Moment.mostNewEntries {
             let streak = widgetCalories.streak(on: now), streakBefore = old.widgetCalories.streak(on: now)
+            // The first log today after a missed day is what shows the streak survived it.
+            let yesterday = Calendar(identifier: .gregorian).date(byAdding: .day, value: -1, to: now).map { dayKey($0) } ?? ""
+            if (old.logs[today] ?? []).isEmpty, widgetCalories.protectedDays(on: now).contains(yesterday), streak >= Moment.streaks[0],
+               marked.insert(todayMark + "Saved").inserted {
+                earned.append(.streakSaved(streak))
+            }
             if let days = Moment.streaks.last(where: { streakBefore < $0 && streak >= $0 }), marked.insert("streak:\(days)").inserted {
                 earned.append(.streak(days))
             }
@@ -136,6 +156,16 @@ extension AppData {
         guard review.loggedDays >= Moment.fewestWeekDays else { return nil }
         celebrated = (celebrated ?? []).union([mark])
         return .week(logged: review.loggedDays, onTarget: review.calorieDays, protein: review.proteinDays)
+    }
+
+    /// This year's review card, the first open once it's ready, with enough of the year logged. Nil otherwise or once shown.
+    mutating func offerYear(now: Date = Date(), calendar: Calendar = .current) -> Moment? {
+        guard let year = YearReview.showing(on: now, calendar: calendar) else { return nil }
+        let mark = "year:\(year)"
+        guard !(celebrated ?? []).contains(mark),
+              YearReview.make(self, year: year).days >= YearReview.fewestDays else { return nil }
+        celebrated = (celebrated ?? []).union([mark])
+        return .year(year)
     }
 
     /// The keys of the daily targets that are tracked: the macros, and anything else with an at-least target.
@@ -180,5 +210,44 @@ extension AppData {
         let moved = ((goal.startKg - status.current) * (losing ? 1 : -1)).tenth
         guard moved > 0 else { return nil }
         return .weighIn(moved: moved, losing: losing, progress: status.progress, remaining: status.remaining, goal: goal.kg)
+    }
+}
+
+/// A milestone on the achievements shelf: earned, or the next one to reach.
+struct Achievement: Identifiable, Equatable, Sendable {
+    enum Group: String, CaseIterable, Sendable {
+        case streaks = "Streaks", meals = "Meals logged", weight = "Weight"
+    }
+    var group: Group
+    var moment: Moment
+    var earned: Bool
+    /// How far there is to go, for one not earned yet.
+    var left: String?
+    var progress: Double?
+    var id: Moment { moment }
+}
+
+extension AppData {
+    /// Everything earned so far and the next of each kind, worked out from what's logged so that it covers milestones
+    /// reached before the shelf existed.
+    func achievements(now: Date = Date()) -> [Achievement] {
+        let snapshot = widgetCalories
+        let best = TrackingStreak.best(days: snapshot.trackingDays), current = snapshot.streak(on: now), meals = mealsLogged
+        func ladder(_ group: Achievement.Group, _ steps: [Int], reached: Int, towards: Int, unit: String, moment: (Int) -> Moment) -> [Achievement] {
+            var shelf = steps.filter { reached >= $0 }.map { Achievement(group: group, moment: moment($0), earned: true) }
+            if let next = steps.first(where: { reached < $0 && towards < $0 }) {
+                shelf.append(Achievement(group: group, moment: moment(next), earned: false, left: "\((next - towards).formatted()) \(unit) to go",
+                                         progress: Double(towards) / Double(next)))
+            }
+            return shelf
+        }
+        var all = ladder(.streaks, Moment.streaks, reached: best, towards: current, unit: "days", moment: Moment.streak)
+            + ladder(.meals, Moment.mealCounts, reached: meals, towards: meals, unit: "meals", moment: Moment.meals)
+        if let goal = weightGoal, let status = WeightTrend.goalStatus(goal, points: WeightTrend.points(weightLog)) {
+            let reached = goal.reached != nil || status.direction == .reached
+            all.append(Achievement(group: .weight, moment: .goalReached(goal), earned: reached,
+                                   left: reached ? nil : "\(status.remaining.number) kg to go", progress: reached ? nil : status.progress))
+        }
+        return all
     }
 }

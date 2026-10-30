@@ -27,7 +27,7 @@ struct TrackingCalendarView: View {
                 Section {
                     Label("\(streak) day\(streak == 1 ? "" : "s") in a row", systemImage: "flame.fill")
                         .font(.roboto(.title2, weight: .bold)).foregroundStyle(.tint)
-                    Text("Every day you log food counts. Staying within your target isn’t required.")
+                    Text("Every day you log food counts, and staying within your target isn’t required. One missed day a week won’t end your streak.")
                         .font(.roboto(.subheadline)).foregroundStyle(.secondary)
                     if !snapshot.trackingDays.contains(dayKey(context.date)) {
                         Text(streak > 0 ? "Log today to continue your streak." : "Log food today to start your streak.")
@@ -53,10 +53,11 @@ struct TrackingCalendarView: View {
                                 .accessibilityLabel(calendar.standaloneWeekdaySymbols[(index + calendar.firstWeekday - 1) % 7])
                         }
                         ForEach((0..<offset).map { "blank-\($0)" }, id: \.self) { _ in Color.clear.frame(height: 44) }
-                        ForEach(days, id: \.self) { day in dayCell(day, now: context.date, snapshot: snapshot) }
+                        let carried = snapshot.protectedDays(on: context.date)
+                        ForEach(days, id: \.self) { day in dayCell(day, now: context.date, snapshot: snapshot, carried: carried) }
                     }
                 } footer: {
-                    Text("Rings show calories eaten against that day’s target. A dot means food was logged. Tap a day to view its meals.")
+                    Text("Rings show calories eaten against that day’s target. A dot means food was logged, and a shield means a missed day that didn’t end your streak. Tap a day to view its meals.")
                 }
             }
         }
@@ -70,7 +71,7 @@ struct TrackingCalendarView: View {
         if let next = calendar.date(byAdding: .month, value: amount, to: start) { month = next }
     }
 
-    private func dayCell(_ day: Date, now: Date, snapshot: WidgetCalories) -> some View {
+    private func dayCell(_ day: Date, now: Date, snapshot: WidgetCalories, carried: Set<String>) -> some View {
         let key = dayKey(day)
         let logged = snapshot.trackingDays.contains(key)
         let eaten = snapshot.dailyCalories[key] ?? 0
@@ -93,10 +94,14 @@ struct TrackingCalendarView: View {
                         .font(.roboto(size: 12, weight: calendar.isDateInToday(day) ? .bold : .regular)).monospacedDigit()
                         .foregroundStyle(.primary)
                 }.frame(height: 32).padding(.horizontal, 2)
-                Circle().fill(logged ? AnyShapeStyle(.tint) : AnyShapeStyle(.clear)).frame(width: 4, height: 4)
+                if carried.contains(key) {
+                    Image(systemName: "shield.fill").font(.system(size: 7)).foregroundStyle(.tint).frame(height: 4)
+                } else {
+                    Circle().fill(logged ? AnyShapeStyle(.tint) : AnyShapeStyle(.clear)).frame(width: 4, height: 4)
+                }
             }.frame(maxWidth: .infinity, minHeight: 44).opacity(future ? 0.3 : 1)
                 .contentShape(Rectangle())
         }.buttonStyle(.plain).disabled(future)
-        .accessibilityLabel("\(day.formatted(date: .complete, time: .omitted)), \(logged ? "tracked" : "not tracked"), \(eaten.number) calories\(target.map { " of \($0.number)" } ?? "")")
+        .accessibilityLabel("\(day.formatted(date: .complete, time: .omitted)), \(logged ? "tracked" : carried.contains(key) ? "missed, streak protected" : "not tracked"), \(eaten.number) calories\(target.map { " of \($0.number)" } ?? "")")
     }
 }
