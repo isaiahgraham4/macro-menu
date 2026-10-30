@@ -18,7 +18,12 @@ struct ProgressPhotoFiles: Sendable {
 
     private var indexURL: URL { directory.appending(path: "index.json") }
     private func fileURL(_ id: UUID) -> URL { directory.appending(path: "\(id.uuidString).jpg") }
+    // Protected on the phone. The checks run the same code on a Mac, where there is no file protection to ask for.
+    #if os(iOS)
     private static let options: Data.WritingOptions = [.atomic, .completeFileProtection]
+    #else
+    private static let options: Data.WritingOptions = [.atomic]
+    #endif
 
     /// Newest first. A record whose picture has gone is left out.
     func load() -> [ProgressPhoto] {
