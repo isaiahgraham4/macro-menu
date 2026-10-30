@@ -134,6 +134,10 @@ import UniformTypeIdentifiers
         }
         assert(byID["dominos:margherita-1-slice-"]!.diet?.al == ["gluten", "milk", "soy", "wheat"] && vegetarian.allows(byID["dominos:margherita-1-slice-"]!))
         assert(!glutenFree.allows(byID["gyg:grilled-chicken-burrito-bowl"]!))   // GYG: everything may contain gluten
+        // GYG's nachos are built on corn chips, so their removals aren't the Nacho Fries list.
+        let nachoRemovals = byID["gyg:grilled-chicken-nachos"]!.modifiers!.filter { $0.kind == "r" }
+        assert(nachoRemovals.contains { $0.name == "No Corn Chips" && $0.est == true })
+        assert(!nachoRemovals.contains { $0.name == "No Fries" || $0.name == "No Sour Cream" })
         let mayContain = catalog.foods.first { ($0.diet?.may ?? []).contains("sesame") && !($0.diet?.al ?? []).contains("sesame") }!
         assert(!DietFilter(options: [.sesame]).allows(mayContain))
         assert(DietFilter(options: [.vegan, .gluten]).allows(Food(chain: "mine", name: "My chicken wrap", kj: 1000, cal: 239, p: 20)))
