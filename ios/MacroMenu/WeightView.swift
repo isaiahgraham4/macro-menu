@@ -22,13 +22,13 @@ struct WeightView: View {
                     HStack(alignment: .firstTextBaseline) {
                         VStack(alignment: .leading, spacing: 2) {
                             Text("Trend").font(.roboto(.caption)).foregroundStyle(.secondary)
-                            Text("\(last.trend.number) kg").font(.roboto(.title, weight: .bold)).monospacedDigit()
+                            Text("\(last.trend.number) kg").font(.roboto(.title, weight: .bold)).monospacedDigit().rolling(last.trend)
                         }
                         Spacer()
                         if let weekly {
                             VStack(alignment: .trailing, spacing: 2) {
                                 Text("Per week").font(.roboto(.caption)).foregroundStyle(.secondary)
-                                Text(signed(weekly) + " kg").font(.roboto(.title3, weight: .semibold)).monospacedDigit()
+                                Text(signed(weekly) + " kg").font(.roboto(.title3, weight: .semibold)).monospacedDigit().rolling(weekly)
                             }
                         }
                     }
@@ -208,7 +208,7 @@ struct WeightView: View {
     private func signed(_ value: Double) -> String { (value > 0 ? "+" : value < 0 ? "−" : "") + abs(value).number }
     private func save() {
         let entry = WeightEntry(date: date, kg: kg.hundredth)
-        if store.change(undo: "Logged \(entry.kg.kgText) kg", { $0.weights = $0.weightLog + [entry] }) { date = Date() }
+        if store.logWeight(entry) { date = Date() }
     }
 }
 

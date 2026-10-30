@@ -141,6 +141,34 @@ struct Portion: Codable, Identifiable, Hashable, Sendable {
     var food: Food
     var quantity: Double = 1
     var isValid: Bool { food.isValid && quantity.isFinite && quantity > 0 && quantity <= 10000 }
+
+    /// For a recipe, its ingredients scaled to this portion: half a serving of a recipe that makes two is a quarter of each.
+    /// Nil for anything that isn't a recipe.
+    var ingredientPortions: [Portion]? {
+        guard let ingredients = food.ingredients, !ingredients.isEmpty else { return nil }
+        let share = quantity / max(food.recipeYield ?? 1, 0.001)
+        return ingredients.map { var scaled = $0; scaled.quantity = $0.quantity * share; return scaled }
+    }
+}
+
+/// What a meal is made of, for listing: a recipe's ingredients in place of the recipe, anything else as it is.
+func mealLines(_ items: [Portion]) -> [Portion] {
+    items.flatMap { $0.ingredientPortions.map(mealLines) ?? [$0] }
+}
+
+/// A list of foods with any recipe in it swapped for its ingredients, and a food that then appears twice made into one line.
+func recipesBrokenUp(_ items: [Portion]) -> [Portion] {
+    guard items.contains(where: { $0.ingredientPortions != nil }) else { return items }
+    var lines: [Portion] = []
+    for line in QuickLog.copies(mealLines(items)) {
+        if let i = lines.firstIndex(where: { $0.food == line.food }) { lines[i].quantity += line.quantity } else { lines.append(line) }
+    }
+    return lines
+}
+
+/// Foods put together in one meal, listing every ingredient rather than a recipe they started from. A recipe on its own stays a recipe.
+func combined(_ items: [Portion]) -> [Portion] {
+    items.count > 1 ? recipesBrokenUp(items) : items
 }
 
 struct Nutrition: Sendable {
@@ -245,6 +273,8 @@ struct AppData: Codable, Sendable {
     /// Foods pinned to the top of the "+" menu and the Log again widget. Copies, so a pin still works if the item leaves the menu.
     /// Optional so saved data and backups from before pinning still load.
     var pinned: [Food]? = nil
+    /// Milestones already marked, and targets marked today (see `Moment`). Optional so saved data and backups from before them still load.
+    var celebrated: Set<String>? = nil
     var isValid: Bool {
         guard version == 2, !goalSets.isEmpty else { return false }
         let contents = foods.allSatisfy(\.isValid) && meals.allSatisfy(\.isValid) && tray.allSatisfy(\.isValid) && (pinned ?? []).allSatisfy(\.isValid)

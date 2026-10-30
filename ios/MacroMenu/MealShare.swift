@@ -7,14 +7,6 @@ extension Portion {
         if let (grams, unit) = food.servingWeight { return "\((grams * quantity).rounded().number) \(unit)" }
         return quantity == 1 ? food.serve : "\(quantity.number) × \(food.serve)"
     }
-
-    /// For a recipe, its ingredients scaled to this portion: half a serving of a recipe that makes two is a quarter of each.
-    /// Nil for anything that isn't a recipe.
-    var ingredientPortions: [Portion]? {
-        guard let ingredients = food.ingredients, !ingredients.isEmpty else { return nil }
-        let share = quantity / max(food.recipeYield ?? 1, 0.001)
-        return ingredients.map { var scaled = $0; scaled.quantity = $0.quantity * share; return scaled }
-    }
 }
 
 extension Food {
@@ -31,11 +23,6 @@ extension Food {
     static func recipeDraft(name: String, from items: [Portion]) -> Food {
         Food(name: name, kj: 0, cal: 0, p: 0, ingredients: QuickLog.copies(mealLines(items)), recipeYield: 1)
     }
-}
-
-/// What a meal is made of, for listing: a recipe's ingredients in place of the recipe, anything else as it is.
-func mealLines(_ items: [Portion]) -> [Portion] {
-    items.flatMap { $0.ingredientPortions ?? [$0] }
 }
 
 /// A recipe's ingredients as rows: what it is, how much, and its calories and protein.

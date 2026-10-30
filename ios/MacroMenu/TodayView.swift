@@ -27,6 +27,13 @@ struct TodayView: View {
     var key: String { dayKey(date) }
     var entries: [LogEntry] { store.data.logs[key] ?? [] }
     var total: Nutrition { Nutrition(entries.flatMap(\.items)) }
+    /// The total the figures show. It waits while a sheet is up, so a new meal rolls in once the sheet has gone, where you can see it.
+    @State private var held: Nutrition?
+    private var shown: Nutrition { held ?? total }
+    private var covered: Bool { quick || quickAdd || barcode || choosing || photo || describing || editing != nil }
+    /// The calories just added, while they rise off the ring.
+    @State private var gained: (id: UUID, calories: Double)?
+    private struct DayFigure: Equatable { var day: String; var calories: Double }
     var goals: Goals { key == dayKey(now) ? store.goals : store.data.dayGoals[key] ?? store.goals }
     var isToday: Bool { key == dayKey(now) }
     /// Targets other than calories, split into the three macros and everything else.
@@ -41,7 +48,8 @@ struct TodayView: View {
     private func ringStat(_ title: String, _ value: Double) -> some View {
         VStack(alignment: .leading, spacing: 2) {
             Text(title).font(.roboto(.caption)).foregroundStyle(.secondary)
-            Text("\(value.number) Cal").font(.roboto(.headline, weight: .bold)).monospacedDigit().lineLimit(1).minimumScaleFactor(0.8)
+            CountingNumber(value) { "\($0.number) Cal" }.font(.roboto(.headline, weight: .bold)).lineLimit(1).minimumScaleFactor(0.8)
+                .figureChange(value, animation: .counting)
         }.frame(maxWidth: .infinity, alignment: .leading)
     }
     /// Does what a feature tip's button offers, then retires the tip.
@@ -94,16 +102,21 @@ struct TodayView: View {
                     // The ring sits above the bars at the largest text sizes, so neither gets squeezed.
                     let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(spacing: 20)) : AnyLayout(HStackLayout(spacing: 20))
                     layout {
-                        if let cal = goals.values["cal"] { CalorieRing(eaten: total.cal, target: cal) }
+                        if let cal = goals.values["cal"] {
+                            CalorieRing(eaten: shown.cal, target: cal).overlay(alignment: .top) {
+                                if let gained { GainedFigure(amount: gained.calories).id(gained.id) }
+                            }
+                        }
                         VStack(spacing: 14) {
                             if let cal = goals.values["cal"] {
                                 // Eaten and target beside the ring, so the ring's "left" figure has its working.
                                 // Side by side normally; stacked at larger sizes so "2,200 Cal" stays on one line.
                                 let statLayout = typeSize >= .xxLarge ? AnyLayout(VStackLayout(alignment: .leading, spacing: 10)) : AnyLayout(HStackLayout(spacing: 16))
-                                statLayout { ringStat("Eaten", total.cal); ringStat("Target", cal) }
+                                statLayout { ringStat("Eaten", shown.cal); ringStat("Target", cal) }
                                     .accessibilityElement(children: .combine)
                             } else if macroKeys.isEmpty {
-                                Text("\(total.cal.number) Cal eaten").font(.roboto(.title3, weight: .bold)).frame(maxWidth: .infinity, alignment: .leading)
+                                CountingNumber(shown.cal) { "\($0.number) Cal eaten" }.font(.roboto(.title3, weight: .bold))
+                                    .figureChange(shown.cal, animation: .counting).frame(maxWidth: .infinity, alignment: .leading)
                             }
                             ForEach(macroKeys, id: \.self) { key in bar(key) }
                         }
@@ -157,9 +170,10 @@ struct TodayView: View {
                             MealTimeDetailView(mealTime: category, date: date)
                         } label: {
                             // An empty meal is just its header, not a cell repeating "nothing yet".
-                            let status = meals.isEmpty
+                            let calories = Nutrition(meals.flatMap(\.items)).cal
+                            let status = (meals.isEmpty
                                 ? Text("Nothing yet").foregroundStyle(.secondary)
-                                : Text("\(Nutrition(meals.flatMap(\.items)).cal.number) Cals").monospacedDigit()
+                                : Text("\(calories.number) Cals").monospacedDigit()).rolling(calories)
                             HStack {
                                 if typeSize.isAccessibilitySize {
                                     // At the largest sizes the status goes under the name, so neither breaks mid-word.
@@ -252,6 +266,14 @@ struct TodayView: View {
                     store.log([Portion(food: $0)], name: $0.name, date: date, mealTime: mealTime)
                 }
             } }
+            .task(id: covered) {
+                if covered { held = total; return }
+                try? await Task.sleep(for: .milliseconds(400))
+                if !Task.isCancelled { held = nil }
+            }
+            .onChange(of: DayFigure(day: key, calories: shown.cal)) { old, new in
+                if old.day == new.day, new.calories > old.calories { gained = (UUID(), new.calories - old.calories) }
+            }
             .onChange(of: barcode) { if barcode { FeatureTips.markUsed(.scan) } }
             .task(id: nav.scanRequested) {
                 // From the Scan control: log to today, at the meal time it is now. A short wait lets launch, or a sheet that
@@ -327,7 +349,7 @@ struct TodayView: View {
         let n = nutrientNames.first { $0.key == key }!
         let choices = Premium.isUnlocked ? ["p": proteinColour, "c": carbsColour, "f": fatColour] : [:]
         let style = ["p", "c", "f"].contains(key) ? AnyShapeStyle(MacroColours.colour(key, choices: choices)) : nutrientStyle(key)
-        return TargetBar(label: n.label, value: total.value(key), target: goals.values[key] ?? 0, unit: n.unit, minimum: goals.minimums.contains(key), style: style)
+        return TargetBar(label: n.label, value: shown.value(key), target: goals.values[key] ?? 0, unit: n.unit, minimum: goals.minimums.contains(key), style: style)
     }
 }
 
@@ -499,6 +521,7 @@ struct LogEditor: View {
                     var fresh = portion; fresh.id = UUID()
                     if let i = entry.items.firstIndex(where: { $0.food == fresh.food }) { entry.items[i].quantity += fresh.quantity }
                     else { entry.items.append(fresh) }
+                    entry.items = combined(entry.items)
                     picking = false
                 }, pickTitle: "Add to \(entry.name)", quickAddLabel: "Add")
                 .toolbar { Button("Done") { picking = false } }
@@ -718,6 +741,20 @@ struct TargetCalculator: View {
     }
 }
 
+/// The calories just logged, rising off the ring and fading.
+private struct GainedFigure: View {
+    let amount: Double
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @State private var risen = false
+
+    var body: some View {
+        Text("+\(amount.number)").font(.roboto(.headline, weight: .bold)).monospacedDigit().foregroundStyle(.tint)
+            .offset(y: risen ? -30 : 6).opacity(risen || reduceMotion ? 0 : 1)
+            .allowsHitTesting(false).accessibilityHidden(true)
+            .onAppear { withAnimation(.easeOut(duration: 1.1)) { risen = true } }
+    }
+}
+
 /// One way to add food: an icon over a short word, filling its share of the row.
 private struct LogMethodButton: View {
     let title: String
@@ -751,7 +788,7 @@ private struct LogMethodButton: View {
             .background(.tint.opacity(0.14), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
             .contentShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
         }
-        .buttonStyle(.plain)
+        .buttonStyle(PressStyle())
         .foregroundStyle(.tint)
         .accessibilityLabel(label)
     }

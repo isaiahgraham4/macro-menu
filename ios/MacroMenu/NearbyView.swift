@@ -51,13 +51,13 @@ struct NearbyView: View {
                 }
                 if noMatch { Section { Text("Couldn't find “\(query)”. Try a suburb or full address.").foregroundStyle(.secondary) } }
                 if areaLoading && area == nil {
-                    Section {
-                        ProgressView("Finding \(searchingFor)…").frame(maxWidth: .infinity)
+                    Section("Finding \(searchingFor)…") {
+                        ForEach(0..<3, id: \.self) { _ in RowSkeleton().skeleton("Finding \(searchingFor)") }
                     }
                 }
                 if showingList {
                     Section(searchingNow ? "Searching nearby…" : "Closest of each restaurant") {
-                        if searchingNow && nearest.isEmpty { ProgressView().frame(maxWidth: .infinity) }
+                        if searchingNow && nearest.isEmpty { ForEach(0..<3, id: \.self) { _ in RowSkeleton().skeleton("Searching nearby") } }
                         ForEach(nearest) { place in NearbyRow(place: place, showChain: true) { nav.showOptions(at: place.chain) } }
                         let missing = chains.filter { places[$0]?.isEmpty == true }.map { store.chainName($0) }
                         if !missing.isEmpty { Text("None within 15 km: \(missing.joined(separator: ", ")).").font(.roboto(.caption)).foregroundStyle(.secondary) }
@@ -376,7 +376,7 @@ struct NearestPlaceSection: View {
             if location.isAuthorized, location.location != nil {
                 Section("Nearest \(name)") {
                     if let nearest = location.nearest(chain) { NearbyRow(place: nearest) }
-                    else if location.places[chain] == nil { ProgressView().frame(maxWidth: .infinity) }
+                    else if location.places[chain] == nil { RowSkeleton().skeleton("Finding the nearest \(name)") }
                     else {
                         Text("No \(name) found within 15 km.").foregroundStyle(.secondary)
                         Button { Task { await location.openApp(app) } } label: { Label(app.launchTitle, systemImage: "arrow.up.forward.app") }

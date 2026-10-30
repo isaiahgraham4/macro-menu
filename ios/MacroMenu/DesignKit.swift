@@ -30,11 +30,12 @@ struct CalorieRing: View {
                 .stroke(over ? AnyShapeStyle(.orange) : AnyShapeStyle(.tint), style: StrokeStyle(lineWidth: 12, lineCap: .round))
                 .rotationEffect(.degrees(-90))
             VStack(spacing: 0) {
-                Text(abs(target - eaten).number).font(.roboto(.title2, weight: .bold)).monospacedDigit().minimumScaleFactor(0.6)
+                CountingNumber(abs(target - eaten)) { $0.number }.font(.roboto(.title2, weight: .bold)).minimumScaleFactor(0.6)
                 Text(over ? "Cal over" : "Cal left").font(.roboto(.caption)).foregroundStyle(.secondary).minimumScaleFactor(0.7)
             }.padding(14).lineLimit(1)
         }
         .frame(width: min(size, 260), height: min(size, 260))
+        .figureChange([eaten, target], animation: .counting)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("\(eaten.number) of \(target.number) calories")
     }
@@ -50,7 +51,7 @@ struct TargetBar: View {
     var style: AnyShapeStyle
     var body: some View {
         let over = !minimum && value > target
-        let figures = Text("\(value.number) / \(target.number) \(unit)").font(.roboto(.caption)).monospacedDigit()
+        let figures = CountingNumber(value) { "\($0.number) / \(target.number) \(unit)" }.font(.roboto(.caption))
             .foregroundStyle(over ? AnyShapeStyle(.orange) : AnyShapeStyle(.primary))
         let name = Text(label).font(.roboto(.caption, weight: .medium)).foregroundStyle(.secondary)
         VStack(alignment: .leading, spacing: 5) {
@@ -67,6 +68,7 @@ struct TargetBar: View {
                 }
             }.frame(height: 6)
         }
+        .figureChange([value, target], animation: .counting)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("\(label): \(value.number) of \(target.number) \(unit)")
     }
@@ -84,7 +86,7 @@ struct Chip: View {
                 .background(selected ? AnyShapeStyle(.tint) : AnyShapeStyle(Color(.secondarySystemGroupedBackground)), in: Capsule())
                 .foregroundStyle(selected ? AnyShapeStyle(.white) : AnyShapeStyle(.primary))
         }
-        .buttonStyle(.plain)
+        .buttonStyle(PressStyle())
         .accessibilityAddTraits(selected ? .isSelected : [])
     }
 }
@@ -224,7 +226,7 @@ struct TileRow<Content: View>: View {
             let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(spacing: 10)) : AnyLayout.columns(spacing: 10, fold: fold)
             layout { content }
         }
-        .buttonStyle(.plain)
+        .buttonStyle(PressStyle())
         .listRowInsets(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
         .listRowBackground(Color.clear)
     }

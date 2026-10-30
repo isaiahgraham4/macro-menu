@@ -21,7 +21,7 @@ struct WaterRow: View {
                     Image(systemName: "drop.fill").font(.title2).foregroundStyle(.cyan).frame(width: 32)
                     VStack(alignment: .leading, spacing: 3) {
                         Text("Water").font(.roboto(.headline))
-                        Text("\(Water.text(total)) of \(Water.text(target))").font(.roboto(.caption)).foregroundStyle(.secondary).monospacedDigit()
+                        Text("\(Water.text(total)) of \(Water.text(target))").font(.roboto(.caption)).foregroundStyle(.secondary).monospacedDigit().rolling(total)
                     }
                 }
                 Spacer(minLength: 0)
@@ -44,7 +44,7 @@ struct WaterRow: View {
                     .accessibilityHint("Hold for other amounts.")
                 }.buttonStyle(.borderless)
             }
-            ProgressView(value: Water.progress(total: total, target: target)).tint(.cyan)
+            ProgressView(value: Water.progress(total: total, target: target)).tint(.cyan).figureChange(total)
                 .accessibilityLabel("Water today").accessibilityValue("\(Water.text(total)) of \(Water.text(target))")
             if total >= target && target > 0 {
                 Text("Target reached.").font(.roboto(.caption)).foregroundStyle(.secondary)

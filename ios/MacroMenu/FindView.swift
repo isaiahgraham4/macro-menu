@@ -102,14 +102,19 @@ struct FindView: View {
                     }
                 }
             } header: { Text("Restaurants") }
-            if searching || matches.isEmpty {
-                Section(searching ? "Finding combinations…" : "No suggestions") {
-                    if searching { ProgressView().frame(maxWidth: .infinity) }
-                    else {
-                        ContentUnavailableView("No matching orders", systemImage: "magnifyingglass",
-                                               description: Text(query.diet.isEmpty ? "Try more calories or different restaurants."
-                                                                 : "Try more calories or different restaurants. Dietary needs leave out items whose restaurant doesn't say what's in them."))
+            if searching {
+                ForEach(0..<3, id: \.self) { index in
+                    Section {
+                        OrderCardSkeleton().skeleton("Finding orders")
+                    } header: {
+                        if index == 0 { Text("Finding combinations…") }
                     }
+                }
+            } else if matches.isEmpty {
+                Section("No suggestions") {
+                    ContentUnavailableView("No matching orders", systemImage: "magnifyingglass",
+                                           description: Text(query.diet.isEmpty ? "Try more calories or different restaurants."
+                                                             : "Try more calories or different restaurants. Dietary needs leave out items whose restaurant doesn't say what's in them."))
                 }
             } else {
                 ForEach(Array(matches.enumerated()), id: \.element.id) { index, match in
@@ -407,7 +412,7 @@ struct PackagedFoodsSection: View {
                             }
                         }
                     } else {
-                        ProgressView("Searching Open Food Facts…").frame(maxWidth: .infinity)
+                        ForEach(0..<3, id: \.self) { _ in RowSkeleton().skeleton("Searching Open Food Facts") }
                     }
                 } else {
                     Button { start(terms) } label: { Label("Search packaged foods for “\(search.trimmingCharacters(in: .whitespaces))”", systemImage: "barcode") }

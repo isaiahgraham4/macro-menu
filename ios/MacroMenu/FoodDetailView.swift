@@ -53,7 +53,7 @@ struct FoodDetailView: View {
             Section("Nutrition for your portion") { NutritionView(total: Nutrition([portion])) }
             if let ingredients = portion.ingredientPortions {
                 Section {
-                    IngredientRows(ingredients: ingredients)
+                    IngredientRows(ingredients: recipesBrokenUp(ingredients))
                 } header: { Text("Ingredients in your portion") } footer: {
                     if let servings = food.recipeYield, servings != 1 { Text("The whole recipe makes \(servings.number) servings.") }
                 }

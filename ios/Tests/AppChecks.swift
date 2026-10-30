@@ -1114,6 +1114,57 @@ import UniformTypeIdentifiers
             let flat = WeightTrend.points(weighIns(from: 80, perWeek: 0, weeks: 4), calendar: cal)
             assert(WeightTrend.goalStatus(WeightGoal(kg: 75, startKg: 80, set: today), points: flat, now: today, calendar: cal)!.pace == .flat)
             // Reached, not enough data, and nothing logged.
+            // Reaching a goal is only marked when a new weigh-in does it, and only once.
+            var before = AppData(); before.weights = [WeightEntry(date: today.addingTimeInterval(-86400), kg: 80.5)]
+            before.weightGoal = WeightGoal(kg: 80, startKg: 90, set: today)
+            var after = before; after.weights = (0..<30).map { WeightEntry(date: today.addingTimeInterval(Double(-$0) * 86400), kg: 80) }
+            var marked = after
+            assert(marked.markGoalReached(comparedTo: before) && marked.weightGoal?.reached != nil)
+            var again = marked; again.weights = (again.weights ?? []) + [WeightEntry(date: today, kg: 80)]
+            assert(!again.markGoalReached(comparedTo: marked))
+            var unchanged = after
+            assert(!unchanged.markGoalReached(comparedTo: after))
+            var awayFromGoal = before; awayFromGoal.weightGoal?.kg = 70
+            guard case .weighIn(let moved, let losing, _, _, _)? = awayFromGoal.weighInMoment else { fatalError("no weigh-in moment") }
+            assert(moved == 9.5 && losing)
+            var putOnWeight = before; putOnWeight.weightGoal = WeightGoal(kg: 90, startKg: 75, set: today)
+            if case .weighIn(_, let losing, _, _, _)? = putOnWeight.weighInMoment { assert(!losing) } else { fatalError("no gain moment") }
+            var noProgress = before; noProgress.weightGoal = WeightGoal(kg: 75, startKg: 80, set: today)
+            assert(noProgress.weighInMoment == nil)
+
+            // Targets are marked as a log brings them on target, once a day; milestones once ever.
+            let food = Food(name: "Test", kj: 0, cal: 500, p: 80, c: 60, f: 10)
+            let logging = { (data: AppData, day: Date) -> AppData in
+                var next = data; next.logs[dayKey(day), default: []].append(LogEntry(name: "T", items: [Portion(food: food)], time: day)); return next
+            }
+            let first = logging(AppData(), today)
+            var earned = first
+            assert(earned.earnMoments(comparedTo: AppData(), now: today) == [.meals(1)])
+            var second = logging(earned, today)
+            let hits = second.earnMoments(comparedTo: earned, now: today)
+            guard case .targets(let list)? = hits.first, list.map(\.name) == ["Protein"] else { fatalError("protein target not marked") }
+            second.logs[dayKey(today)]?.removeLast(); let without = second
+            var relogged = logging(without, today)
+            assert(relogged.earnMoments(comparedTo: without, now: today).isEmpty)
+            var streaking = AppData()
+            for back in 1..<3 { streaking = logging(streaking, today.addingTimeInterval(Double(-back) * 86400)) }
+            var third = logging(streaking, today)
+            assert(third.earnMoments(comparedTo: streaking, now: today).contains(.streak(3)))
+            var thirdAgain = logging(third, today)
+            assert(!thirdAgain.earnMoments(comparedTo: third, now: today).contains(.streak(3)))
+            // A recipe put with other foods gives way to its ingredients, scaled to the portion; alone it stays a recipe.
+            let rice = Food(name: "Rice", kj: 0, cal: 200, p: 4), beef = Food(name: "Beef", kj: 0, cal: 300, p: 30), egg = Food(name: "Egg", kj: 0, cal: 70, p: 6)
+            let bowl = Food(name: "Bowl", kj: 0, cal: 500, p: 34, ingredients: [Portion(food: rice, quantity: 2), Portion(food: beef)], recipeYield: 2)
+            let doubled = Food(name: "Big bowl", kj: 0, cal: 500, p: 34, ingredients: [Portion(food: bowl, quantity: 2)], recipeYield: 1)
+            assert(combined([Portion(food: bowl)]).map(\.food.name) == ["Bowl"])
+            let lines = combined([Portion(food: bowl), Portion(food: egg), Portion(food: rice)])
+            assert(lines.map(\.food.name) == ["Rice", "Beef", "Egg"] && lines[0].quantity == 2 && lines[1].quantity == 0.5)
+            assert(Set(lines.map(\.id)).count == 3)
+            assert(recipesBrokenUp([Portion(food: doubled)]).map(\.quantity) == [2, 1])
+
+            var alreadyThere = after; alreadyThere.weightGoal = WeightGoal(kg: 80, startKg: 80, set: today)
+            var alreadyBefore = before; alreadyBefore.weightGoal = alreadyThere.weightGoal
+            assert(!alreadyThere.markGoalReached(comparedTo: alreadyBefore))
             let reached = WeightTrend.goalStatus(WeightGoal(kg: 79.95, startKg: 90, set: today), points: flat, now: today, calendar: cal)!
             assert(reached.direction == .reached && reached.progress == 1 && reached.projected == nil)
             let fewDays = WeightTrend.points(weighIns(from: 90, perWeek: -0.5, weeks: 0), calendar: cal)

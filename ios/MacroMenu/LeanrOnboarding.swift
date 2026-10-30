@@ -42,6 +42,7 @@ struct LeanrBackground: View {
                 if contrast != .increased {
                     RadialGradient(colors: [AppAccent.resolved(accentRaw).color.opacity(dark ? 0.12 : 0.09), .clear],
                                    center: .topTrailing, startRadius: 0, endRadius: geometry.size.width * 0.95)
+                    WorktopLight(tint: AppAccent.resolved(accentRaw).color.opacity(dark ? 0.08 : 0.14))
                     Canvas { context, size in
                         let ink = dark ? Color.white : Color.brown
                         // Widely spaced, gently bent lines suggest timber without competing with copy.

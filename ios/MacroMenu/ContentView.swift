@@ -58,6 +58,7 @@ struct ContentView: View {
         }
         // A tab bar on iPhone; on iPad the same tabs also open as a sidebar.
         .tabViewStyle(.sidebarAdaptable)
+        .modifier(MomentsOverlay(store: store))
         .tint(accent)
         .onChange(of: accentRaw) { store.refreshWidgets() }
         .onChange(of: proteinColour) { store.refreshWidgets() }
@@ -167,6 +168,7 @@ struct ContentView: View {
         .alert("Couldn’t complete that", isPresented: Binding(get: { store.errorMessage != nil }, set: { if !$0 { store.errorMessage = nil } })) {
             Button("OK") { store.errorMessage = nil }
         } message: { Text(store.errorMessage ?? "") }
+        .modifier(LaunchOverlay(showing: onboardingCompleted))
     }
     /// A tab's root screen with Settings at the top right.
     /// Offers reminders to someone coming back after a few days away with none set up. The last visit is stamped when Leanr

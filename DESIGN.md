@@ -266,6 +266,18 @@ A floating `.regularMaterial` capsule at the top: a semibold message and a bold 
 ### Meal Share Card
 A fixed 390pt, always-light white card with 28pt padding: a small accent "LEANR" label with the leaf glyph (matching the widgets), a Display meal name, item lines, a divider, the nutrition summary and a caption disclaimer.
 
+## Motion
+
+Motion lives in `Motion.swift` and `Celebration.swift`. It marks things the person did, and it never decorates. With Reduce Motion on, numbers change straight away, the worktop holds still and there's no confetti.
+
+- **Counting figures:** a logged amount counts to its new value through `CountingNumber` in 0.7 seconds, with its ring and bars moving alongside and the calories rising off the ring. Today waits for a sheet to close first, so the count happens in view. Other figures roll with `.rolling(_:)` in 0.2 seconds.
+- **Moment card:** a target hit, a logging milestone or a weigh-in on a small cutting board that rises from the bottom, leaves after 3 seconds and goes on a tap. Moments queue in `AppStore.moments`, and `AppData.celebrated` stops one being earned twice.
+- **Goal reached:** the only full-screen celebration, the first time a weigh-in takes the trend to the goal weight.
+- **Confetti:** the accent with the worktop's timber and paper colours, never macro colours.
+- **Launch:** the leaf and name on a cold start only. `LaunchBackground` keeps the system launch screen on the worktop colour.
+- **Worktop light:** soft patches of the accent drifting across `LeanrBackground`, 30 times a second. It stops in the background and holds still in Low Power Mode. Like the texture, it's removed with Increase Contrast.
+- **Skeletons:** rows the shape of what's coming replace spinners when the layout is known. A spinner stays where Leanr is reading something you gave it, such as a photo.
+
 ## Do's and Don'ts
 
 ### Do:

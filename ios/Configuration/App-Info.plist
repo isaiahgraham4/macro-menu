@@ -16,4 +16,8 @@
             <key>INAlternativeAppNamePronunciationHint</key><string>lean are</string>
         </dict>
     </array>
+    <!-- The worktop's colour, so opening Leanr doesn't flash white before the first screen. -->
+    <key>UILaunchScreen</key><dict>
+        <key>UIColorName</key><string>LaunchBackground</string>
+    </dict>
 </dict></plist>

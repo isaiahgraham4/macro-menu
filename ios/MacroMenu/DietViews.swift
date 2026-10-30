@@ -133,7 +133,9 @@ struct AskLeanrView: View {
                 Text(usedModel ? "Read with Apple Intelligence on this iPhone. The orders come from Leanr's menus." : "The orders come from Leanr's menus and the restaurants' published figures.")
             }
             if searching {
-                Section { ProgressView("Finding orders…").frame(maxWidth: .infinity) }
+                ForEach(0..<3, id: \.self) { _ in
+                    Section { OrderCardSkeleton().skeleton("Finding orders") }
+                }
             } else if matches.isEmpty {
                 Section {
                     ContentUnavailableView("No orders fit", systemImage: "magnifyingglass",

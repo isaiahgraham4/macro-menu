@@ -630,8 +630,8 @@ struct RecipeEditor: View {
                 ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } }
                 ToolbarItem(placement: .confirmationAction) { Button("Save") { if store.saveFood(recipe) { store.notice = "Saved \(recipe.name)"; dismiss(); saved?() } }.disabled(!recipe.isValid || ingredients.isEmpty || servings <= 0) }
             }
-            .onAppear { if let food, ingredients.isEmpty { name = food.name; servings = food.recipeYield ?? 1; ingredients = food.ingredients ?? [] } }
-            .sheet(isPresented: $picking) { NavigationStack { BrowseView(pick: { portion in ingredients.append(portion); picking = false }, pickTitle: "Add to recipe", quickAddLabel: "Add").toolbar { Button("Done") { picking = false } } } }
+            .onAppear { if let food, ingredients.isEmpty { name = food.name; servings = food.recipeYield ?? 1; ingredients = recipesBrokenUp(food.ingredients ?? []) } }
+            .sheet(isPresented: $picking) { NavigationStack { BrowseView(pick: { portion in ingredients = recipesBrokenUp(ingredients + [portion]); picking = false }, pickTitle: "Add to recipe", quickAddLabel: "Add").toolbar { Button("Done") { picking = false } } } }
             .sheet(isPresented: $own) { NavigationStack { FoodEditor(food: nil) { ingredients.append(Portion(food: $0)); own = false; return true } } }
     }
 }

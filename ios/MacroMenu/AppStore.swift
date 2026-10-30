@@ -13,6 +13,10 @@ final class AppStore {
     private(set) var loadError: String?
     var errorMessage: String?
     var notice: String?
+    /// What's waiting to be shown over the app, first in line first.
+    var moments: [Moment] = []
+    /// Goes up with every meal logged, for the tap that confirms it.
+    var mealsLoggedPulse = 0
     /// The state before the last undoable change, offered briefly as "Undo".
     struct UndoStep: Identifiable { let id = UUID(); var label: String; var snapshot: AppData }
     private(set) var undo: UndoStep?
@@ -113,10 +117,12 @@ final class AppStore {
     /// Saves a change. With `undo`, the banner offers to reverse it; any other change clears that offer.
     @discardableResult func change(undo label: String? = nil, _ action: (inout AppData) -> Void) -> Bool {
         var updated = data; action(&updated)
+        let earned = updated.earnMoments(comparedTo: data)
         let old = data
         do { try write(updated) } catch { errorMessage = "Couldn’t save: \(error.localizedDescription)"; return false }
         data = updated
         undo = label.map { UndoStep(label: $0, snapshot: old) }
+        moments += earned
         refreshWidgets()
         logsChanged?(old, updated)
         saved?()
@@ -126,7 +132,7 @@ final class AppStore {
         guard let step = undo else { return }
         let old = data
         do { try write(step.snapshot) } catch { errorMessage = "Couldn’t undo: \(error.localizedDescription)"; return }
-        data = step.snapshot; undo = nil; notice = nil
+        data = step.snapshot; undo = nil; notice = nil; moments = []
         refreshWidgets()
         logsChanged?(old, data)
         saved?()
@@ -234,16 +240,25 @@ final class AppStore {
                 if let i = state.tray.firstIndex(where: { $0.food == item.food }) { state.tray[i].quantity += item.quantity }
                 else { var fresh = item; fresh.id = UUID(); state.tray.append(fresh) }
             }
+            state.tray = combined(state.tray)
         }) { notice = "Added to your meal" }
     }
     /// `time` stamps the entry with when it was asked for (a queued widget tap) rather than now.
     @discardableResult func log(_ items: [Portion], name: String, date: Date, clearTray: Bool = false, mealTime: MealTime? = nil, time: Date? = nil) -> Bool {
         let key = dayKey(date), currentGoals = goals
-        return change(undo: "Logged \(name)") {
-            $0.logs[key, default: []].append(LogEntry(name: name, items: items, time: time ?? Date(), mealTime: mealTime))
+        let logged = change(undo: "Logged \(name)") {
+            $0.logs[key, default: []].append(LogEntry(name: name, items: combined(items), time: time ?? Date(), mealTime: mealTime))
             if $0.dayGoals[key] == nil { $0.dayGoals[key] = currentGoals }
             if clearTray { $0.tray = [] }
         }
+        if logged { mealsLoggedPulse += 1 }
+        return logged
+    }
+    /// Saves a weigh-in, and shows how far it's come towards the goal weight unless reaching the goal is already being marked.
+    @discardableResult func logWeight(_ entry: WeightEntry) -> Bool {
+        guard change(undo: "Logged \(entry.kg.kgText) kg", { $0.weights = $0.weightLog + [entry] }) else { return false }
+        if !moments.contains(where: { if case .goalReached = $0 { true } else { false } }), let moment = data.weighInMoment { moments.append(moment) }
+        return true
     }
     /// Logs straight to today, under the meal time that fits the clock unless one is given.
     /// With `yesterday`, it goes to the day before instead, for a meal that was forgotten.

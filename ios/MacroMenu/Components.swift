@@ -50,7 +50,7 @@ struct NutritionView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
             HStack(alignment: .firstTextBaseline) {
-                Text(total.cal.number).font(.roboto(.largeTitle, weight: .bold))
+                Text(total.cal.number).font(.roboto(.largeTitle, weight: .bold)).monospacedDigit().rolling(total.cal)
                 Text("Cal").foregroundStyle(.secondary)
             }
             HStack(spacing: 0) {
@@ -65,7 +65,7 @@ struct NutritionView: View {
                     colour("c").frame(width: max(0, geo.size.width * total.c * 4 / energy - 2))
                     colour("f")
                 }.clipShape(Capsule())
-            }.frame(height: 6).accessibilityHidden(true)
+            }.frame(height: 6).figureChange(total.cal).accessibilityHidden(true)
             if total.missingCarbs || total.missingFat { Text("+ Partial total: some items don’t publish all macros.").font(.roboto(.caption)).foregroundStyle(.secondary) }
             if details {
                 Text("\(total.kj.number) kJ").font(.roboto(.caption)).foregroundStyle(.secondary)
@@ -83,7 +83,7 @@ struct NutritionView: View {
     private func macro(_ name: String, _ value: Double, _ partial: Bool, _ color: Color) -> some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(name).font(.roboto(.caption)).foregroundStyle(.secondary)
-            Text("\(value.number)\(partial ? "+" : "") g").font(.roboto(.headline)).foregroundStyle(color)
+            Text("\(value.number)\(partial ? "+" : "") g").font(.roboto(.headline)).foregroundStyle(color).monospacedDigit().rolling(value)
         }.frame(maxWidth: .infinity, alignment: .leading)
     }
 }

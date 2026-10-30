@@ -15,7 +15,22 @@ struct WeightGoal: Codable, Hashable, Sendable {
     /// Your trend weight when the goal was set.
     var startKg: Double
     var set: Date
+    /// When a weigh-in first took the trend here, so reaching it is only celebrated once.
+    var reached: Date?
     var isValid: Bool { (20...400).contains(kg) && (20...400).contains(startKg) }
+}
+
+extension AppData {
+    /// Marks the goal weight as reached when new weigh-ins are what took the trend there. True the first time only,
+    /// and not for a goal set at the weight you're already at.
+    mutating func markGoalReached(comparedTo old: AppData) -> Bool {
+        guard weightLog != old.weightLog, let goal = weightGoal, goal.reached == nil,
+              abs(goal.startKg - goal.kg) > WeightTrend.reachedWithin,
+              WeightTrend.goalStatus(goal, points: WeightTrend.points(weightLog))?.direction == .reached,
+              WeightTrend.goalStatus(goal, points: WeightTrend.points(old.weightLog))?.direction != .reached else { return false }
+        weightGoal?.reached = Date()
+        return true
+    }
 }
 
 /// A smoothed weight trend that looks past day-to-day water swings, and what it says about maintenance calories.
