@@ -18369,6 +18369,601 @@
     "milk",
     "soy"
    ]
+  },
+  "kfc:21-pieces-of-chicken": {
+   "meat": [
+    "chicken"
+   ],
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "soy"
+   ]
+  },
+  "hj:cheese-lovers-whopper": {
+   "meat": [
+    "beef"
+   ],
+   "src": "ingredients",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "fish",
+    "sulphites"
+   ]
+  },
+  "hj:double-cheese-lovers-whopper": {
+   "meat": [
+    "beef"
+   ],
+   "src": "ingredients",
+   "al": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "sesame",
+    "shellfish",
+    "soy",
+    "sulphites"
+   ],
+   "unk": [
+    "lupin",
+    "wheat"
+   ]
+  },
+  "hj:angry-veggie-whopper-cheese": {
+   "meat": null,
+   "src": null
+  },
+  "hj:cheesy-cheeseburger": {
+   "meat": [
+    "beef"
+   ],
+   "src": "ingredients",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "sulphites"
+   ],
+   "unk": [
+    "lupin",
+    "wheat"
+   ]
+  },
+  "hj:eggs-benny-brekky-roll": {
+   "meat": null,
+   "src": null
+  },
+  "hj:eggs-benny-brekky-wrap": {
+   "meat": null,
+   "src": null
+  },
+  "sub:6-korean-style-bbq-steak": {
+   "meat": null,
+   "src": null
+  },
+  "sub:footlong-korean-style-bbq-steak": {
+   "meat": null,
+   "src": null
+  },
+  "sub:korean-style-bbq-steak-wrap": {
+   "meat": null,
+   "src": null
+  },
+  "sub:korean-style-bbq-steak-wrap-large-": {
+   "meat": null,
+   "src": null
+  },
+  "sub:korean-style-bbq-steak-salad-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "sub:korean-style-bbq-steak-salad-large-": {
+   "meat": null,
+   "src": null
+  },
+  "sub:6-peri-peri-style-chicken": {
+   "meat": null,
+   "src": null
+  },
+  "sub:footlong-peri-peri-style-chicken": {
+   "meat": null,
+   "src": null
+  },
+  "sub:peri-peri-style-chicken-wrap": {
+   "meat": null,
+   "src": null
+  },
+  "sub:peri-peri-style-chicken-wrap-large-": {
+   "meat": null,
+   "src": null
+  },
+  "sub:peri-peri-style-chicken-salad-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "sub:peri-peri-style-chicken-salad-large-": {
+   "meat": null,
+   "src": null
+  },
+  "sub:flamin-hot-nachos": {
+   "meat": null,
+   "src": null
+  },
+  "sub:flamin-hot-nachos-with-chicken-strips": {
+   "meat": null,
+   "src": null
+  },
+  "sub:flamin-hot-nachos-with-rotisserie-style-chicken": {
+   "meat": null,
+   "src": null
+  },
+  "sub:flamin-hot-nachos-with-diced-steak": {
+   "meat": null,
+   "src": null
+  },
+  "gyg:bbq-beef-rib-burrito-bowl": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
+  },
+  "gyg:bbq-beef-rib-burrito": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
+  },
+  "gyg:bbq-beef-rib-caesar-burrito": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "gyg:bbq-beef-rib-caesar-cali-burrito": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "gyg:bbq-beef-rib-enchilada": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
+  },
+  "gyg:bbq-beef-rib-cali-burrito": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sulphites"
+   ]
+  },
+  "gyg:bbq-beef-rib-nachos": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
+  },
+  "gyg:bbq-beef-rib-nacho-fries": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "sulphites",
+    "wheat"
+   ]
+  },
+  "gyg:bbq-beef-rib-quesadilla": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
+  },
+  "gyg:bbq-beef-rib-quesadilla-plus": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
+  },
+  "gyg:bbq-beef-rib-caesar-salad": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "sesame",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
+  },
+  "gyg:bbq-beef-rib-soft-taco-1-": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
+  },
+  "gyg:bbq-beef-rib-hard-taco-1-": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
+  },
+  "gyg:extra-bbq-beef-rib": {
+   "meat": null,
+   "src": "name"
+  },
+  "gyg:little-g-s-bbq-beef-rib-burrito": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
+  },
+  "gyg:little-g-s-bbq-beef-rib-bowl": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
+  },
+  "gyg:little-g-s-bbq-beef-rib-nachos": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
+  },
+  "gyg:bbq-beef-rib-mini-burrito": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
+  },
+  "gyg:bbq-beef-rib-mini-bowl": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
+  },
+  "gyg:bbq-beef-rib-mini-caesar-burrito": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "gyg:bbq-beef-rib-mini-caesar-cali-burrito": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "gyg:bbq-beef-rib-mini-cali-burrito": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sulphites"
+   ]
+  },
+  "gyg:bbq-beef-rib-mini-enchilada": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
+  },
+  "gyg:bbq-beef-rib-mini-nachos": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
+  },
+  "gyg:bbq-beef-rib-mini-nacho-fries": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "sulphites",
+    "wheat"
+   ]
+  },
+  "gyg:bbq-beef-rib-mini-caesar-salad": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "sesame",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
+  },
+  "gyg:mini-extra-bbq-beef-rib": {
+   "meat": null,
+   "src": "name"
+  },
+  "nandos:paella-grande": {
+   "meat": [
+    "chicken"
+   ],
+   "src": "name"
+  },
+  "oporto:o-sauce-rappsnacker": {
+   "meat": [
+    "chicken"
+   ],
+   "src": "description"
+  },
+  "oporto:o-sauce-prego-pulled-chicken-loaded-chips": {
+   "meat": [
+    "chicken"
+   ],
+   "src": "description"
+  },
+  "oporto:fresh-pulled-chicken-roll": {
+   "meat": null,
+   "src": null
+  },
+  "oporto:bola-de-berlim": {
+   "meat": [],
+   "src": "description",
+   "vg": "vegetarian",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "soy",
+    "treenut"
+   ]
+  },
+  "rr:reds-burger-fillet-": {
+   "meat": null,
+   "src": null
+  },
+  "rr:spicy-burger-fillet-": {
+   "meat": null,
+   "src": null
+  },
+  "rr:chicken-blt-burger": {
+   "meat": [
+    "chicken",
+    "pork"
+   ],
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "lupin",
+    "peanut",
+    "sesame",
+    "soy",
+    "sulphites",
+    "treenut"
+   ]
+  },
+  "rr:chicken-blt-burger-fillet-": {
+   "meat": null,
+   "src": null
+  },
+  "rr:cheesy-bacon-burger": {
+   "meat": [
+    "chicken",
+    "pork"
+   ],
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "lupin",
+    "peanut",
+    "sesame",
+    "sulphites",
+    "treenut"
+   ]
+  },
+  "rr:cheesy-bacon-burger-fillet-": {
+   "meat": null,
+   "src": null
+  },
+  "rr:tender-1-piece-": {
+   "meat": null,
+   "src": null
+  },
+  "boost:lychee-charm-original-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
   }
  }
 }

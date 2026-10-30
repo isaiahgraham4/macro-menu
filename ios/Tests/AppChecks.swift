@@ -11,7 +11,7 @@ import UniformTypeIdentifiers
         defer { try? FileManager.default.removeItem(at: root) }
         let catalogURL = URL(fileURLWithPath: CommandLine.arguments[1])
         let catalog = try JSONDecoder().decode(MenuCatalog.self,from: Data(contentsOf: catalogURL))
-        assert(catalog.foods.count == 2680)
+        assert(catalog.foods.count == 2743)
         assert(Set(catalog.foods.map(\.chain)).isSubset(of: Set(catalog.chains.map(\.id))))
         // A juice bar has no mains, so its drinks are the order.
         let juice = MealFinder.find(catalog.foods, query: FindQuery(chains: ["boost"], calories: 700, protein: 25, maxItems: 1))
@@ -39,7 +39,7 @@ import UniformTypeIdentifiers
         assert(MealPhoto.chain(for: "Grill'd", chainNames: Dictionary(uniqueKeysWithValues: catalog.chains.map { ($0.id, $0.name) })) == "grilld")
         // Nando's: every protein, style, extra and removal is a Nando's panel, so none are estimates.
         let nandos = catalog.foods.filter { $0.chain == "nandos" }
-        assert(nandos.count == 55 && nandos.allSatisfy { $0.c != nil && $0.f != nil })
+        assert(nandos.count == 56 && nandos.allSatisfy { $0.c != nil && $0.f != nil })
         let classic = nandos.first { $0.name == "PERinaise Classic" }!
         assert(classic.kj == 2300 && classic.serve.hasPrefix("Chicken Leg Fillets · Portuguese Roll"))
         let toBreast = classic.modifiers!.first { $0.name == "Swap to Chicken Breast" }!

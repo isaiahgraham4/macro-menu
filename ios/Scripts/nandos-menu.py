@@ -67,6 +67,8 @@ def fetch():
 SKIP_CATEGORIES = {"Drinks", "Nando's sauces", "Do Good, Feel Good", "Secret Menu", "Kids'", "Work Lunch under $15"}
 CATEGORY = {"Sides": "side", "Desserts": "sweet"}
 DIPS = {"PERinaise Chip Dip", "Mayo Chip Dip"}
+# Items whose panels are filed under another product's number.
+PANELS = {"9007": "1001049"}
 # Earlier names in Leanr, kept so foods people have pinned or saved keep their IDs.
 NAMES = {"4 PERi-PERi Tenders": "4 PERi-PERi Grilled Tenders", "4 BBQ Ribs": "BBQ Chicken Ribs (4)",
          "Mediterranean Salad with Protein": "Mediterranean Salad with Chicken", "Paella": "Paella with Chicken",
@@ -129,7 +131,7 @@ def build():
                 continue
             default = lambda c: c and (c["defaultSelectedOptions"] or [c["options"][0]["plu"]])[0]
             p_plu, s_plu = default(protein), default(style)
-            base = panel(product["plu"], p_plu, s_plu) if protein else panel(product["plu"])
+            base = panel(PANELS.get(product["plu"], product["plu"]), p_plu, s_plu) if protein else panel(product["plu"])
             if not base:
                 continue
             seen.add(product["plu"])
