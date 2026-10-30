@@ -87,6 +87,8 @@ struct LeanrOnboarding: View {
     @State private var round = 0
     @State private var guess = 600.0
     @State private var revealed = false
+    /// The revealed figure counts up from the guess once it's on screen.
+    @State private var countingUp = false
     @State private var finished = false
     @State private var guesses: [String: Double] = [:]
     @State private var targetPrompt = false
@@ -206,7 +208,10 @@ struct LeanrOnboarding: View {
 
                     if revealed {
                         VStack(alignment: .leading, spacing: 12) {
-                            Text("\(meal.cal.number) calories").font(.roboto(.largeTitle, weight: .bold)).monospacedDigit().contentTransition(.numericText())
+                            CountingNumber(countingUp || reduceMotion ? meal.cal : guess) { "\($0.number) calories" }
+                                .font(.roboto(.largeTitle, weight: .bold))
+                                .animation(.easeOut(duration: 1), value: countingUp)
+                                .onAppear { countingUp = true }
                             Text(abs(guess - meal.cal) <= 50 ? "Close guess! You were within 50 calories." : "Your guess: \(Int(guess)) Cal · about \(Int(abs(guess - meal.cal).rounded())) Cal away.")
                             Text("Leanr shows the calories and protein for each item, so you can compare options and build a meal around them.").foregroundStyle(.secondary)
                             Text("\(meal.p.number) g protein · Bundled \(store.chainName(meal.chain)) Australia menu data. Servings and recipes may vary.").font(.roboto(.caption)).foregroundStyle(.secondary)
@@ -223,7 +228,7 @@ struct LeanrOnboarding: View {
                     Button {
                         withAnimation(motion) {
                             if !revealed { guesses[meal.id] = guess; revealed = true }
-                            else if round + 1 < meals.count { round += 1; revealed = false; guess = 600 }
+                            else if round + 1 < meals.count { round += 1; revealed = false; countingUp = false; guess = 600 }
                             else { finished = true }
                         }
                     } label: {
@@ -236,9 +241,10 @@ struct LeanrOnboarding: View {
                             Text(calorieGap > 0 ? "You guessed low." : calorieGap < 0 ? "You guessed high." : "Spot on.")
                                 .font(.display())
                             VStack(alignment: .leading, spacing: 16) {
-                                Text("\(abs(calorieGap).number) Cal")
-                                    .font(.roboto(.largeTitle, weight: .bold)).monospacedDigit()
-                                    .contentTransition(.numericText())
+                                CountingNumber(countingUp || reduceMotion ? abs(calorieGap) : 0) { "\($0.number) Cal" }
+                                    .font(.roboto(.largeTitle, weight: .bold))
+                                    .animation(.easeOut(duration: 1.2), value: countingUp)
+                                    .onAppear { countingUp = false; Task { @MainActor in countingUp = true } }
                                 Text(calorieGap > 0 ? "more than you guessed" : calorieGap < 0 ? "less than you guessed" : "difference from the menu total")
                                     .font(.roboto(.headline))
                                 Divider()

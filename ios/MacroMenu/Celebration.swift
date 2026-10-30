@@ -4,7 +4,10 @@ import SwiftUI
 /// can finish counting first. The goal weight fills the screen; everything else is a card that leaves by itself.
 struct MomentsOverlay: ViewModifier {
     let store: AppStore
+    let openWeeklyReview: () -> Void
     @State private var showing: Moment?
+    /// The moment whose share image is open; its card waits until the sheet closes.
+    @State private var sharing: Moment?
     /// One followed another, so there's no need to wait as long.
     @State private var following = false
     private static let wait = Duration.seconds(1.1)
@@ -19,9 +22,9 @@ struct MomentsOverlay: ViewModifier {
             .overlay(alignment: .bottom) {
                 if let showing {
                     if case .goalReached(let goal) = showing {
-                        GoalReachedView(goal: goal, done: finish).transition(.opacity)
+                        GoalReachedView(goal: goal, done: finish, share: { sharing = showing }).transition(.opacity)
                     } else {
-                        MomentCard(moment: showing, dismiss: finish)
+                        MomentCard(moment: showing, dismiss: finish, open: { finish(); openWeeklyReview() }, share: { sharing = showing })
                             .transition(.move(edge: .bottom).combined(with: .opacity))
                     }
                 }
@@ -29,6 +32,11 @@ struct MomentsOverlay: ViewModifier {
             .animation(.spring(duration: 0.4, bounce: 0.2), value: showing)
             .sensoryFeedback(.impact(weight: .light), trigger: store.mealsLoggedPulse)
             .sensoryFeedback(.success, trigger: showing) { _, new in new != nil }
+            .sensoryFeedback(.error, trigger: store.refusedPulse)
+            .sensoryFeedback(.error, trigger: store.errorMessage) { _, new in new != nil }
+            .sheet(item: $sharing, onDismiss: { if showing?.fillsScreen != true { finish() } }) { moment in
+                NavigationStack { MomentSharePreview(moment: moment) }
+            }
             .task(id: store.moments.first) {
                 guard let next = store.moments.first else { return }
                 try? await Task.sleep(for: following ? Self.gap : Self.wait)
@@ -36,7 +44,7 @@ struct MomentsOverlay: ViewModifier {
                 showing = next
                 if case .goalReached = next { return }
                 try? await Task.sleep(for: Self.cardTime)
-                if !Task.isCancelled { finish() }
+                if !Task.isCancelled && sharing == nil { finish() }
             }
             .onChange(of: store.moments.isEmpty) { if store.moments.isEmpty { showing = nil; following = false } }
             #if DEBUG
@@ -44,7 +52,8 @@ struct MomentsOverlay: ViewModifier {
             .task {
                 guard CommandLine.arguments.contains("-demoMoments") else { return }
                 try? await Task.sleep(for: .seconds(2))
-                store.moments = [.targets([Moment.Hit(name: "Protein", value: 152, target: 150, unit: "g")]), .streak(7), .meals(100),
+                store.moments = [.targets([Moment.Hit(name: "Protein", value: 152, target: 150, unit: "g")]), .allTargets(4), .streak(7),
+                                 .meals(100), .steps(10240, goal: 8000), .week(logged: 5, onTarget: 4, protein: 3),
                                  .weighIn(moved: 4.2, losing: true, progress: 0.6, remaining: 2.8, goal: 75),
                                  .goalReached(WeightGoal(kg: 75, startKg: 82, set: Date()))]
             }
@@ -85,51 +94,30 @@ private let boardInk = Color(red: 0.23, green: 0.17, blue: 0.10)
 private struct MomentCard: View {
     let moment: Moment
     let dismiss: () -> Void
+    /// Opens what the card is about, for the weekly review.
+    let open: () -> Void
+    let share: () -> Void
     @AppStorage(AppAccent.storageKey) private var accentRaw = AppAccent.standard.rawValue
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.dynamicTypeSize) private var typeSize
     @State private var appeared = false
     private var accent: Color { AppAccent.resolved(accentRaw).color }
-
-    private var icon: String {
-        switch moment {
-        case .targets: "target"
-        case .streak: "flame.fill"
-        case .meals: "fork.knife"
-        case .weighIn: "scalemass.fill"
-        case .goalReached: "party.popper.fill"
-        }
-    }
-    private var title: String {
-        switch moment {
-        case .targets(let hits):
-            hits.count == 1 ? "\(hits[0].name) target hit" : "\(hits.count) targets hit"
-        case .streak(let days): "\(days) days in a row"
-        case .meals(let count): count == 1 ? "First meal logged" : "\(count.formatted()) meals logged"
-        case .weighIn(_, let losing, _, _, _): losing ? "You've lost" : "You've gained"
-        case .goalReached: "Goal reached"
-        }
-    }
-    private var detail: String {
-        switch moment {
-        case .targets(let hits):
-            hits.count == 1 ? "\(hits[0].value.number) of \(hits[0].target.number) \(hits[0].unit)" : hits.map(\.name).formatted()
-        case .streak: "You've logged every day. Keep it going."
-        case .meals(let count): count == 1 ? "That's the hard part done." : "It all adds up."
-        case .weighIn(_, _, _, let remaining, let goal): "\(remaining.number) kg to go until \(goal.number) kg"
-        case .goalReached: ""
-        }
-    }
+    private var copy: Moment.Copy { moment.copy }
+    private var title: String { copy.title }
+    private var detail: String { copy.detail }
 
     var body: some View {
         FoldRow { fold in
             VStack(alignment: .leading, spacing: 12) {
-                HStack(spacing: 14) {
-                    Image(systemName: icon).font(.title).foregroundStyle(accent)
+                // The icon sits beside the words, or above them at the largest text sizes where there's no room beside.
+                let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 10)) : AnyLayout(HStackLayout(spacing: 14))
+                layout {
+                    Image(systemName: copy.icon).font(.title).foregroundStyle(accent)
                         .symbolEffect(.bounce, value: appeared).frame(width: 40).accessibilityHidden(true)
                     VStack(alignment: .leading, spacing: 2) {
-                        if case .weighIn(let moved, _, _, _, _) = moment {
+                        if let figure = copy.figure {
                             Text(title).font(.roboto(.subheadline, weight: .medium))
-                            CountingNumber(appeared ? moved : 0, step: 0.1) { "\($0.number) kg" }
+                            CountingNumber(appeared ? figure.value : 0, step: figure.step) { "\($0.number) \(figure.unit)" }
                                 .font(.roboto(.title, weight: .bold))
                                 .animation(reduceMotion ? nil : .easeOut(duration: 1), value: appeared)
                         } else {
@@ -137,9 +125,17 @@ private struct MomentCard: View {
                         }
                         Text(detail).font(.roboto(.subheadline))
                     }
-                    Spacer(minLength: 0)
+                    // Takes the lines it needs, so a long title wraps at the largest text sizes rather than being cut short.
+                    .fixedSize(horizontal: false, vertical: true)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    if copy.shareable {
+                        Button(action: share) {
+                            Image(systemName: "square.and.arrow.up").font(.title3).frame(width: 44, height: 44).contentShape(Rectangle())
+                        }
+                        .buttonStyle(.borderless).tint(accent).accessibilityLabel("Share as an image")
+                    }
                 }
-                if case .weighIn(_, _, let progress, _, _) = moment {
+                if let progress = copy.progress {
                     GeometryReader { geometry in
                         ZStack(alignment: .leading) {
                             Capsule().fill(boardInk.opacity(0.14))
@@ -156,10 +152,9 @@ private struct MomentCard: View {
             .background { CuttingBoard() }
             .frame(maxWidth: 420)
             .contentShape(Rectangle())
-            .onTapGesture(perform: dismiss)
-            .accessibilityElement(children: .combine)
-            .accessibilityAddTraits(.isButton)
-            .accessibilityHint("Dismisses")
+            .onTapGesture(perform: moment.opensReview ? open : dismiss)
+            .accessibilityElement(children: .contain)
+            .accessibilityAction(named: moment.opensReview ? "Open the review" : "Dismiss", moment.opensReview ? open : dismiss)
             .padding(.horizontal, 16)
             .leftOfFold(fold).frame(maxWidth: .infinity)
         }
@@ -175,6 +170,7 @@ private struct MomentCard: View {
 private struct GoalReachedView: View {
     let goal: WeightGoal
     let done: () -> Void
+    let share: () -> Void
     @AppStorage(AppAccent.storageKey) private var accentRaw = AppAccent.standard.rawValue
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.colorScheme) private var scheme
@@ -203,8 +199,10 @@ private struct GoalReachedView: View {
                     .padding(32).frame(maxWidth: .infinity)
                     .background { CuttingBoard() }
                     .accessibilityElement(children: .combine)
-                    Button(action: done) { Text("Done").frame(maxWidth: .infinity).padding(.vertical, 8) }
+                    Button(action: share) { Label("Share as an image", systemImage: "square.and.arrow.up").frame(maxWidth: .infinity).padding(.vertical, 8) }
                         .buttonStyle(.borderedProminent).controlSize(.large)
+                    Button(action: done) { Text("Done").frame(maxWidth: .infinity).padding(.vertical, 8) }
+                        .buttonStyle(.bordered).controlSize(.large)
                 }
                 .frame(maxWidth: 420).padding(.horizontal, 24)
                 .scaleEffect(appeared || reduceMotion ? 1 : 0.9)

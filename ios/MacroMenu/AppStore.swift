@@ -17,6 +17,27 @@ final class AppStore {
     var moments: [Moment] = []
     /// Goes up with every meal logged, for the tap that confirms it.
     var mealsLoggedPulse = 0
+    /// Goes up with every refusal, for the tap that goes with it.
+    var refusedPulse = 0
+    /// The day the step goal was last marked, so a count that wavers around the goal only marks it once.
+    private var stepsMarkedDay: String?
+
+    /// A notice that says no: shown like any other, with the error tap.
+    func refuse(_ message: String) {
+        notice = message
+        refusedPulse += 1
+    }
+    /// Set once the launch animation has gone, so a card isn't shown underneath it.
+    var launchSettled = false
+    /// Shows last week's card on the first open of a new week, when enough of it was logged.
+    func offerWeeklyReview() {
+        guard launchSettled else { return }
+        var moment: Moment?
+        var updated = data
+        guard let offered = updated.offerWeek() else { return }
+        moment = offered
+        if change({ $0 = updated }), let moment { moments.append(moment) }
+    }
     /// The state before the last undoable change, offered briefly as "Undo".
     struct UndoStep: Identifiable { let id = UUID(); var label: String; var snapshot: AppData }
     private(set) var undo: UndoStep?
@@ -155,6 +176,11 @@ final class AppStore {
         let keep = Set((0..<7).compactMap { calendar.date(byAdding: .day, value: -$0, to: now) }.map(dayKey))
         let recent = steps.filter { keep.contains($0.key) }
         guard recent != widgetSteps else { return }
+        let today = dayKey(now)
+        if stepsMarkedDay != today, let moment = Moment.stepsReached(before: widgetSteps, after: recent, goal: Steps.goal(data), day: today) {
+            stepsMarkedDay = today
+            moments.append(moment)
+        }
         widgetSteps = recent
         refreshWidgets()
     }
@@ -207,7 +233,7 @@ final class AppStore {
         if isPinned(food) {
             if change({ $0.pinned?.removeAll { $0.id == food.id } }) { notice = "Unpinned \(food.name)" }
         } else if (data.pinned ?? []).count >= Self.pinLimit {
-            notice = "You can pin up to \(Self.pinLimit) foods. Unpin one first."
+            refuse("You can pin up to \(Self.pinLimit) foods. Unpin one first.")
         } else {
             var copy = food; copy.modifiers = nil
             if change({ $0.pinned = ($0.pinned ?? []) + [copy] }) { notice = "Pinned \(food.name)" }

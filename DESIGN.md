@@ -271,8 +271,10 @@ A fixed 390pt, always-light white card with 28pt padding: a small accent "LEANR"
 Motion lives in `Motion.swift` and `Celebration.swift`. It marks things the person did, and it never decorates. With Reduce Motion on, numbers change straight away, the worktop holds still and there's no confetti.
 
 - **Counting figures:** a logged amount counts to its new value through `CountingNumber` in 0.7 seconds, with its ring and bars moving alongside and the calories rising off the ring. Today waits for a sheet to close first, so the count happens in view. Other figures roll with `.rolling(_:)` in 0.2 seconds.
-- **Moment card:** a target hit, a logging milestone or a weigh-in on a small cutting board that rises from the bottom, leaves after 3 seconds and goes on a tap. Moments queue in `AppStore.moments`, and `AppData.celebrated` stops one being earned twice.
+- **Moment card:** a target hit, every target hit, a logging milestone, the step goal, a weigh-in or last week's summary on a small cutting board that rises from the bottom, leaves after 3 seconds and goes on a tap. Moments queue in `AppStore.moments`, and `AppData.celebrated` stops one being earned twice. Last week's card opens the weekly review when tapped.
 - **Goal reached:** the only full-screen celebration, the first time a weigh-in takes the trend to the goal weight.
+- **Milestone share card:** a milestone card's share button, the goal screen and the Weight screen make a 9:16 story image (`MilestoneShareCard`), dark like the meal share card: the milestone, its figure, a line about it and the date.
+- **Haptics:** a light tap when food is logged, the success tap with a moment, and the error tap with a refusal (`AppStore.refuse`) or a failed save.
 - **Confetti:** the accent with the worktop's timber and paper colours, never macro colours.
 - **Launch:** the leaf and name on a cold start only. `LaunchBackground` keeps the system launch screen on the worktop colour.
 - **Worktop light:** soft patches of the accent drifting across `LeanrBackground`, 30 times a second. It stops in the background and holds still in Low Power Mode. Like the texture, it's removed with Increase Contrast.

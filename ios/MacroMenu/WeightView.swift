@@ -8,6 +8,7 @@ struct WeightView: View {
     @State private var date = Date()
     @State private var estimating = false
     @State private var goalKG: Double?
+    @State private var sharingProgress = false
     @State private var pace = 0.5
     private var points: [WeightTrend.Point] { WeightTrend.points(store.data.weightLog) }
     /// The last five weigh-ins, oldest first.
@@ -99,6 +100,9 @@ struct WeightView: View {
         .navigationTitle("Weight")
         .onAppear { if goalKG == nil, let goal = store.data.weightGoal { goalKG = goal.kg } }
         .onAppear { if kg == 0 { kg = (store.data.weightLog.max { $0.date < $1.date }?.kg ?? 0).hundredth } }
+        .sheet(isPresented: $sharingProgress) {
+            if let moment = store.data.weighInMoment { NavigationStack { MomentSharePreview(moment: moment) } }
+        }
         .task { await health.refresh() }
         .sheet(isPresented: $estimating) {
             NavigationStack {
@@ -150,6 +154,9 @@ struct WeightView: View {
                     }.tint(.accentColor)
                 }
                 projection(status)
+                if store.data.weighInMoment != nil {
+                    Button { sharingProgress = true } label: { Label("Share your progress", systemImage: "square.and.arrow.up") }
+                }
             } else if goal != nil {
                 Text("Log a weigh-in to see how far off you are.").foregroundStyle(.secondary)
             }

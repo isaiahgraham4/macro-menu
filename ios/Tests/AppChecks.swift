@@ -1152,6 +1152,24 @@ import UniformTypeIdentifiers
             assert(third.earnMoments(comparedTo: streaking, now: today).contains(.streak(3)))
             var thirdAgain = logging(third, today)
             assert(!thirdAgain.earnMoments(comparedTo: third, now: today).contains(.streak(3)))
+            // The last target of the day gets the "every target" card instead; the goal must have two to hit.
+            let full = Food(name: "Full", kj: 0, cal: 500, p: 160, c: 250, f: 70)
+            var allGoals = AppData(); allGoals.goalSets = [Goals(values: ["cal": 2200, "p": 150, "c": 250, "f": 70])]
+            var allHit = allGoals; allHit.logs[dayKey(today)] = [LogEntry(name: "F", items: [Portion(food: full)], time: today)]
+            let allEarned = allHit.earnMoments(comparedTo: allGoals, now: today)
+            assert(allEarned.contains(.allTargets(3)) && !allEarned.contains { if case .targets = $0 { true } else { false } })
+            // Steps count only when the goal is passed while Leanr is running.
+            assert(Moment.stepsReached(before: ["d": 7000], after: ["d": 8100], goal: 8000, day: "d") == .steps(8100, goal: 8000))
+            assert(Moment.stepsReached(before: [:], after: ["d": 8100], goal: 8000, day: "d") == nil)
+            assert(Moment.stepsReached(before: ["d": 8050], after: ["d": 8100], goal: 8000, day: "d") == nil)
+            // Last week's card: once per week, and only with enough logged days.
+            var week = AppData()
+            for back in 1...4 { week = logging(week, today.addingTimeInterval(Double(-back) * 86400)) }
+            var weekOnce = week
+            guard case .week(let logged, _, _)? = weekOnce.offerWeek(now: today, calendar: cal) else { fatalError("no week card") }
+            assert(logged == 4 && weekOnce.offerWeek(now: today, calendar: cal) == nil)
+            var thin = logging(logging(AppData(), today.addingTimeInterval(-86400)), today.addingTimeInterval(-2 * 86400))
+            assert(thin.offerWeek(now: today, calendar: cal) == nil)
             // A recipe put with other foods gives way to its ingredients, scaled to the portion; alone it stays a recipe.
             let rice = Food(name: "Rice", kj: 0, cal: 200, p: 4), beef = Food(name: "Beef", kj: 0, cal: 300, p: 30), egg = Food(name: "Egg", kj: 0, cal: 70, p: 6)
             let bowl = Food(name: "Bowl", kj: 0, cal: 500, p: 34, ingredients: [Portion(food: rice, quantity: 2), Portion(food: beef)], recipeYield: 2)

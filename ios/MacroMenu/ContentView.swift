@@ -58,7 +58,7 @@ struct ContentView: View {
         }
         // A tab bar on iPhone; on iPad the same tabs also open as a sidebar.
         .tabViewStyle(.sidebarAdaptable)
-        .modifier(MomentsOverlay(store: store))
+        .modifier(MomentsOverlay(store: store, openWeeklyReview: { nav.showWeeklyReview = true }))
         .tint(accent)
         .onChange(of: accentRaw) { store.refreshWidgets() }
         .onChange(of: proteinColour) { store.refreshWidgets() }
@@ -68,6 +68,7 @@ struct ContentView: View {
             if scenePhase != .active { UserDefaults.standard.set(Date(), forKey: ReminderPrompt.lastActiveKey) }
             if scenePhase == .active {
                 checkReminderPrompt()
+                if onboardingCompleted { store.offerWeeklyReview() }
                 AppServices.logQueued()
                 // Siri recognises the foods you've pinned or logged recently by name.
                 LeanrShortcuts.updateAppShortcutParameters()
@@ -78,6 +79,12 @@ struct ContentView: View {
                 Task { await health.refresh() }
                 Task { await AppServices.checkMenu() }
             }
+        }
+        .task {
+            // After the launch animation, so last week's card isn't shown underneath it.
+            try? await Task.sleep(for: .seconds(2.5))
+            store.launchSettled = true
+            if onboardingCompleted { store.offerWeeklyReview() }
         }
         .task {
             FeatureTips.noteLaunch(onboardingCompleted: onboardingCompleted)

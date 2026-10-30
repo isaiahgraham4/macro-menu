@@ -57,7 +57,7 @@ struct WaterRow: View {
                 if let amount = Double(customText.trimmingCharacters(in: .whitespaces)), amount > 0, amount <= 5000 {
                     store.addWater(amount, on: date)
                 } else {
-                    store.notice = "Enter an amount from 1 to 5,000 mL"
+                    store.refuse("Enter an amount from 1 to 5,000 mL")
                 }
             }
             Button("Cancel", role: .cancel) {}
