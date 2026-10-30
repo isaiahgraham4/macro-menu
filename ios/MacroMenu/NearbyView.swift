@@ -422,7 +422,7 @@ struct OrderDetailView: View {
         .toolbar { ToolbarItem(placement: .principal) { Text("Order").font(.display(.title)).accessibilityAddTraits(.isHeader) } }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    ShareLink(item: mealText("Suggested order", match.items)) { Image(systemName: "square.and.arrow.up") }.accessibilityLabel("Share order")
+                    ShareLink(item: mealText("Suggested order", match.items)) { Label("Share order", systemImage: "square.and.arrow.up") }
                 }
             }
             .safeAreaInset(edge: .bottom) {

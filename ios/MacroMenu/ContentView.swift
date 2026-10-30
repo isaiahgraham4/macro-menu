@@ -195,7 +195,7 @@ struct ContentView: View {
         NavigationStack {
             root.toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button { settings = true } label: { Image(systemName: "gearshape") }.accessibilityLabel("Settings")
+                    Button("Settings", systemImage: "gearshape") { settings = true }
                 }
             }
         }

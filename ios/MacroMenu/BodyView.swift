@@ -269,10 +269,9 @@ struct ProgressPhotosView: View {
         .toolbar {
             ToolbarItemGroup(placement: .topBarTrailing) {
                 if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                    Button { camera = true } label: { Image(systemName: "camera") }.accessibilityLabel("Take a photo")
+                    Button("Take a photo", systemImage: "camera") { camera = true }
                 }
-                PhotosPicker(selection: $pickerItem, matching: .images) { Image(systemName: "photo.on.rectangle") }
-                    .accessibilityLabel("Choose from Photos")
+                PhotosPicker(selection: $pickerItem, matching: .images) { Label("Choose from Photos", systemImage: "photo.on.rectangle") }
             }
         }
         .onChange(of: pickerItem) {

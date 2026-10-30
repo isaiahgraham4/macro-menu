@@ -168,15 +168,15 @@ struct FoodDetailView: View {
                     // A custom order is pinned as it's set up now, as its own food.
                     let target = customized ? pinnable : food
                     let pinned = store.isPinned(target)
-                    Button { store.togglePin(target); if customized { pinnedCustom = pinned ? nil : target } } label: {
-                        Image(systemName: pinned ? "pin.fill" : "pin")
-                    }.accessibilityLabel(pinned ? "Unpin" : "Pin to top")
+                    Button(pinned ? "Unpin" : "Pin to top", systemImage: pinned ? "pin.fill" : "pin") {
+                        store.togglePin(target); if customized { pinnedCustom = pinned ? nil : target }
+                    }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Menu {
                         Button("Share as image", systemImage: "photo") { sharingImage = true }
                         ShareLink("Share as text", item: mealText(adjusted.name, [portion]))
-                    } label: { Image(systemName: "square.and.arrow.up") }.accessibilityLabel("Share")
+                    } label: { Label("Share", systemImage: "square.and.arrow.up") }
                 }
             }
             .safeAreaInset(edge: .bottom) {
