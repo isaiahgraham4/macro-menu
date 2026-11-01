@@ -432,11 +432,15 @@ struct LogEditor: View {
     @State private var picking = false
     @State private var confirmingDelete = false
     @State private var sharingImage = false
-    private let original: LogEntry
+    @State private var original: LogEntry
     let day: String
 
     init(entry: LogEntry, day: String) {
-        original = entry; self.day = day
+        // A recipe made from another recipe lists that recipe's ingredients, so each one can be changed here.
+        var entry = entry
+        entry.items = entry.items.map { var item = $0; item.food = item.food.brokenIntoIngredients; return item }
+        self.day = day
+        _original = State(initialValue: entry)
         _entry = State(initialValue: entry)
         _date = State(initialValue: Self.date(of: day) ?? entry.time)
     }

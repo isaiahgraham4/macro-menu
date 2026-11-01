@@ -1221,6 +1221,18 @@ import UniformTypeIdentifiers
             assert(lines.map(\.food.name) == ["Rice", "Beef", "Egg"] && lines[0].quantity == 2 && lines[1].quantity == 0.5)
             assert(Set(lines.map(\.id)).count == 3)
             assert(recipesBrokenUp([Portion(food: doubled)]).map(\.quantity) == [2, 1])
+            // A logged recipe made from another recipe opens with that recipe's ingredients, scaled, and the same figures.
+            let pizza = Food(name: "Pizza", kj: 0, cal: 800, p: 64, ingredients: [Portion(food: bowl, quantity: 2), Portion(food: egg)], recipeYield: 2)
+            let opened = pizza.brokenIntoIngredients
+            assert(opened.ingredients?.map(\.food.name) == ["Rice", "Beef", "Egg"] && opened.ingredients?.map(\.quantity) == [2, 1, 1])
+            assert(opened.cal == pizza.cal && opened.id == pizza.id && Portion(food: opened).ingredientPortions?.map(\.quantity) == [1, 0.5, 0.5])
+            assert(bowl.brokenIntoIngredients == bowl && egg.brokenIntoIngredients == egg)
+            // A planned meal lists a recipe's ingredients like any other meal, and a recipe on its own stays one.
+            var planned = AppData()
+            MealPlan.add([Portion(food: pizza), Portion(food: rice)], name: "Dinner", mealTime: .dinner, on: "2026-11-01", to: &planned)
+            MealPlan.add([Portion(food: bowl)], name: "Bowl", mealTime: .lunch, on: "2026-11-01", to: &planned)
+            let plannedLines = planned.plans?["2026-11-01"]?.map { $0.items.map(\.food.name) }
+            assert(plannedLines?.first == ["Rice", "Beef", "Egg"] && plannedLines?.last == ["Bowl"])
 
             var alreadyThere = after; alreadyThere.weightGoal = WeightGoal(kg: 80, startKg: 80, set: today)
             var alreadyBefore = before; alreadyBefore.weightGoal = alreadyThere.weightGoal

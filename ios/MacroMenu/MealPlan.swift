@@ -23,7 +23,7 @@ enum MealPlan {
     static func add(_ items: [Portion], name: String, mealTime: MealTime, on day: String, to data: inout AppData) {
         guard Water.isDayKey(day), !items.isEmpty else { return }
         var plans = data.plans ?? [:]
-        plans[day, default: []].append(LogEntry(name: name, items: QuickLog.copies(items), mealTime: mealTime))
+        plans[day, default: []].append(LogEntry(name: name, items: QuickLog.copies(combined(items)), mealTime: mealTime))
         data.plans = plans
     }
 

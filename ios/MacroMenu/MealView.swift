@@ -195,9 +195,15 @@ struct SavedMealEditor: View {
     @State private var draft: SavedMeal
     @State private var picking = false
     @State private var confirmingDelete = false
-    private let original: SavedMeal
+    @State private var original: SavedMeal
 
-    init(meal: SavedMeal) { original = meal; _draft = State(initialValue: meal) }
+    init(meal: SavedMeal) {
+        // A meal saved with a recipe beside other foods lists its ingredients, as a meal built today does.
+        var meal = meal
+        meal.items = combined(meal.items)
+        _original = State(initialValue: meal)
+        _draft = State(initialValue: meal)
+    }
 
     private var trimmedName: String { draft.name.trimmingCharacters(in: .whitespacesAndNewlines) }
     private var changed: Bool { draft != original }
@@ -254,6 +260,7 @@ struct SavedMealEditor: View {
                     var fresh = portion; fresh.id = UUID()
                     if let i = draft.items.firstIndex(where: { $0.food == fresh.food }) { draft.items[i].quantity += fresh.quantity }
                     else { draft.items.append(fresh) }
+                    draft.items = combined(draft.items)
                     picking = false
                 }, pickTitle: "Add to \(trimmedName.isEmpty ? "meal" : trimmedName)", quickAddLabel: "Add")
                 .toolbar { Button("Done") { picking = false } }

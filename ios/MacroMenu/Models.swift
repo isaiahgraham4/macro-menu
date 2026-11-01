@@ -171,6 +171,16 @@ func combined(_ items: [Portion]) -> [Portion] {
     items.count > 1 ? recipesBrokenUp(items) : items
 }
 
+extension Food {
+    /// This recipe with any recipe among its ingredients swapped for that recipe's own. Its figures stay as they are.
+    var brokenIntoIngredients: Food {
+        guard let ingredients else { return self }
+        var value = self
+        value.ingredients = recipesBrokenUp(ingredients)
+        return value
+    }
+}
+
 struct Nutrition: Sendable {
     var cal = 0.0, kj = 0.0, p = 0.0, c = 0.0, f = 0.0, price = 0.0
     var missingCarbs = false, missingFat = false, missingPrice = false, fromPrice = false
