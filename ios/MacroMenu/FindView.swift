@@ -49,6 +49,11 @@ struct FindView: View {
                 }
             }
             Section {
+                Picker("Where from", selection: $query.supermarket) {
+                    Text("Takeaway").tag(false); Text("Supermarket").tag(true)
+                }.pickerStyle(.segmented)
+                    .onChange(of: query.supermarket) { query.chains = [] }
+                    .listRowSeparator(.hidden)
                 // Pairs sit side by side, and stack at the largest text sizes so numbers and labels stay whole.
                 let big = typeSize.isAccessibilitySize
                 FoldRow { fold in
@@ -67,10 +72,12 @@ struct FindView: View {
                     }
                 }.pickerStyle(.menu).labelsHidden()
                 DisclosureGroup(isExpanded: $moreOpen) {
-                    Toggle(isOn: $query.customise) {
-                        VStack(alignment: .leading, spacing: 2) {
-                            Text("Customise items to fit")
-                            Text("Take off sauce or cheese, or add another patty or fillet").font(.roboto(.caption)).foregroundStyle(.secondary)
+                    if !query.supermarket {
+                        Toggle(isOn: $query.customise) {
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text("Customise items to fit")
+                                Text("Take off sauce or cheese, or add another patty or fillet").font(.roboto(.caption)).foregroundStyle(.secondary)
+                            }
                         }
                     }
                     OptionalNumberField(title: "Carbs up to (g)", value: $query.carbs)
@@ -86,7 +93,7 @@ struct FindView: View {
                 }
             } header: {
                 HStack {
-                    Text("An order that fits")
+                    Text(query.supermarket ? "Ready meals and snacks that fit" : "An order that fits")
                     Spacer()
                     Button { useRemaining() } label: { Label("Use what's left today", systemImage: "arrow.down.forward.circle") }
                         .font(.roboto(.subheadline, weight: .medium)).textCase(nil)
@@ -95,13 +102,13 @@ struct FindView: View {
             Section {
                 ChipRow {
                     Chip(title: "All", selected: query.chains.isEmpty) { query.chains = [] }
-                    ForEach(store.catalog.chains) { chain in
+                    ForEach(query.supermarket ? store.supermarketChains : store.catalog.chains) { chain in
                         Chip(title: chain.name, selected: query.chains.contains(chain.id)) {
                             if query.chains.contains(chain.id) { query.chains.remove(chain.id) } else { query.chains.insert(chain.id) }
                         }
                     }
                 }
-            } header: { Text("Restaurants") }
+            } header: { Text(query.supermarket ? "Supermarkets" : "Restaurants") }
             if searching {
                 ForEach(0..<3, id: \.self) { index in
                     Section {
@@ -113,8 +120,7 @@ struct FindView: View {
             } else if matches.isEmpty {
                 Section("No suggestions") {
                     ContentUnavailableView("No matching orders", systemImage: "magnifyingglass",
-                                           description: Text(query.diet.isEmpty ? "Try more calories or different restaurants."
-                                                             : "Try more calories or different restaurants. Dietary needs leave out items whose restaurant doesn't say what's in them."))
+                                           description: Text(emptyMessage))
                 }
             } else {
                 ForEach(Array(matches.enumerated()), id: \.element.id) { index, match in
@@ -133,7 +139,7 @@ struct FindView: View {
         .toolbar { NavigationLink { SourcesView() } label: { Image(systemName: "info.circle") }.accessibilityLabel("Menu sources") }
         .onAppear { if !initialized { query.calories = store.goals.mealCal; query.protein = store.goals.mealProtein; initialized = true } }
         .onChange(of: dietRaw, initial: true) { query.diet = DietFilter(raw: dietRaw) }
-        .onChange(of: nav.findChain, initial: true) { if let chain = nav.findChain { query.chains = [chain]; nav.findChain = nil } }
+        .onChange(of: nav.findChain, initial: true) { if let chain = nav.findChain { query.supermarket = false; query.chains = [chain]; nav.findChain = nil } }
         .onChange(of: store.data.foods) { searchID = UUID() }
         .task(id: SearchKey(query: query, refresh: searchID)) { await search() }
         // The closest restaurant of each chain, once location is allowed (it's never asked for here).
@@ -147,13 +153,20 @@ struct FindView: View {
         guard !text.isEmpty else { return }
         asking = text
     }
+    private var emptyMessage: String {
+        if query.supermarket {
+            return query.diet.isEmpty ? "Try more calories or a lower protein target." : "Supermarket products aren't checked against dietary needs, so turn those off in More options to see them."
+        }
+        return query.diet.isEmpty ? "Try more calories or different restaurants."
+            : "Try more calories or different restaurants. Dietary needs leave out items whose restaurant doesn't say what's in them."
+    }
     /// What is set inside "More options", so a closed section still tells you when a filter is on.
     private var moreSummary: String {
         var parts: [String] = []
-        if !query.customise { parts.append("No customising") }
+        if !query.customise && !query.supermarket { parts.append("No customising") }
         if query.carbs != nil || query.fat != nil { parts.append("Macro limits") }
         if !query.diet.isEmpty { parts.append("Dietary needs") }
-        return parts.isEmpty ? "Customising" : parts.joined(separator: ", ")
+        return parts.isEmpty ? (query.supermarket ? "None" : "Customising") : parts.joined(separator: ", ")
     }
 
     private func useRemaining() {
@@ -163,10 +176,13 @@ struct FindView: View {
     }
     private func search() async {
         searching = true
-        let foods = store.orderFoods, request = query
+        let request = query, foods = store.orderFoods(for: request)
         let work = Task.detached(priority: .userInitiated) { MealFinder.find(foods, query: request) }
         let result = await withTaskCancellationHandler { await work.value } onCancel: { work.cancel() }
-        if !Task.isCancelled { matches = result; searching = false }
+        if !Task.isCancelled {
+            matches = result; searching = false
+            if location.isAuthorized, request.supermarket { await location.load(Array(Set(result.map(\.chain)))) }
+        }
     }
 }
 
@@ -232,7 +248,7 @@ struct BrowseView: View {
     @State private var searchPackaged = 0
     /// The Search key was pressed before the menu results were ready; decide once they are.
     @State private var submitted = false
-    static let categories = [("all", "All items"), ("main", "Mains"), ("breakfast", "Breakfast"), ("side", "Sides"), ("drink", "Drinks"), ("sweet", "Desserts"), ("extra", "Extras")]
+    static let categories = [("all", "All items"), ("main", "Mains"), ("breakfast", "Breakfast"), ("side", "Sides"), ("snack", "Snacks"), ("drink", "Drinks"), ("sweet", "Desserts"), ("extra", "Extras")]
     /// Where the "+" on a row logs to, when nothing else is choosing the food.
     @State private var yesterday = false
     @State private var meal = MealTime.suggested()
@@ -251,9 +267,9 @@ struct BrowseView: View {
         guard !Task.isCancelled else { return }
         // Dietary needs from Find leave out items that don't fit, or whose restaurant doesn't say.
         let diet = DietFilter(raw: dietRaw)
-        let foods = diet.isEmpty ? store.foods : store.foods.filter(diet.allows)
-        let names = Dictionary(store.catalog.chains.map { ($0.id, $0.name) }) { a, _ in a }.merging([Food.everyday: store.chainName(Food.everyday)]) { a, _ in a }
-        let all = store.foods
+        let all = store.searchFoods
+        let foods = diet.isEmpty ? all : all.filter(diet.allows)
+        let names = store.searchChainNames
         let work = Task.detached(priority: .userInitiated) {
             let found = FoodSearch.browse(foods, chainNames: names, request: request)
             // When the needs leave nothing, say so, rather than suggest a spelling mistake.
@@ -284,7 +300,7 @@ struct BrowseView: View {
                 ChipRow {
                     Chip(title: "All", selected: chain == "all") { chain = "all" }
                     Chip(title: "Everyday foods", selected: chain == Food.everyday) { chain = chain == Food.everyday ? "all" : Food.everyday }
-                    ForEach(store.catalog.chains) { item in Chip(title: item.name, selected: chain == item.id) { chain = chain == item.id ? "all" : item.id } }
+                    ForEach(store.supermarketChains + store.catalog.chains) { item in Chip(title: item.name, selected: chain == item.id) { chain = chain == item.id ? "all" : item.id } }
                 }
                 ChipRow {
                     ForEach(BrowseView.categories, id: \.0) { tag, label in Chip(title: label, selected: category == tag) { category = tag } }

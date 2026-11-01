@@ -158,6 +158,12 @@ struct SourcesView: View {
                     if let raw = chain.url, let url = URL(string: raw) { Link("View source", destination: url) }
                 }
             }
+            ForEach(store.supermarketChains) { chain in
+                Section(chain.name) {
+                    Text(chain.src ?? "").font(.roboto(.subheadline))
+                    if let raw = chain.url, let url = URL(string: raw) { Link("View source", destination: url) }
+                }
+            }
         }.navigationTitle("Menu sources")
     }
 }

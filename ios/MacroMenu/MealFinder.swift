@@ -13,6 +13,10 @@ struct FindQuery: Equatable, Sendable {
     var customise = true
     /// Dietary needs: only items the restaurant's words show fit are used.
     var diet = DietFilter()
+    /// Coles and Woolworths products instead of restaurant menus; `chains` then picks between the two.
+    var supermarket = false
+    /// Also true when a question named a supermarket.
+    var usesSupermarkets: Bool { supermarket || !chains.isDisjoint(with: Food.supermarkets) }
 }
 struct MealMatch: Identifiable, Sendable {
     var items: [Portion]
@@ -82,6 +86,16 @@ enum MealFinder {
         }
         return !(extra.chain == "sub" && extra.name.hasPrefix("Extra ") && main.name.contains("Nachos"))
     }
+    /// A supermarket has thousands of products, far too many to try in every combination, so only the likeliest of each kind go in:
+    /// the most protein for their calories, plus whatever the chosen ranking wants first.
+    static func shortlist(_ foods: [Food], limit: Int, sort: String) -> [Food] {
+        guard foods.count > limit else { return foods }
+        let dense = foods.sorted { $0.p / max($0.cal, 1) > $1.p / max($1.cal, 1) }
+        let first = sort == "protein" ? foods.sorted { $0.p > $1.p } : sort == "lean" ? foods.sorted { $0.cal < $1.cal } : dense
+        var seen = Set<String>()
+        return (first.prefix(limit / 2) + dense).filter { seen.insert($0.id).inserted }.prefix(limit).map { $0 }
+    }
+
     static func find(_ foods: [Food], query q: FindQuery) -> [MealMatch] {
         guard q.calories > 0 else { return [] }
         let foods = q.diet.isEmpty ? foods : foods.filter(q.diet.allows)
@@ -126,12 +140,22 @@ enum MealFinder {
             // A chain with no mains (a juice bar) builds orders around its drinks instead.
             let anchors = foods.contains { $0.chain == chain && $0.isAnchor }
             var mains = anchors ? eligible.filter(\.isAnchor) : eligible
+            let supermarket = Food.supermarkets.contains(chain)
+            if supermarket { mains = shortlist(mains, limit: 100, sort: q.sort) }
             if q.customise {
                 // Built from every main, including those over the limit as sold: taking the sauce off may bring one under it.
                 let all = foods.filter { $0.chain == chain && $0.cat != "swap" && $0.cal > 0 && (!anchors || $0.isAnchor) }
                 mains += all.flatMap { variants(of: $0, additions: q.diet.isEmpty) }.filter { $0.cal <= q.calories }
             }
-            let sides = anchors ? eligible.filter { !$0.isAnchor && ($0.cal >= 50 || $0.cat == "drink") }.sorted { $0.cal < $1.cal } : []
+            var sides = anchors ? eligible.filter { !$0.isAnchor && ($0.cal >= 50 || $0.cat == "drink") }.sorted { $0.cal < $1.cal } : []
+            if supermarket {
+                sides = shortlist(sides, limit: 24, sort: q.sort).sorted { $0.cal < $1.cal }
+                // A snack can be all you're after, alone or as a pair, when there's no room for a meal.
+                for snack in shortlist(eligible.filter { $0.cat == "snack" }, limit: 60, sort: q.sort) {
+                    consider([snack])
+                    if q.maxItems > 1 { consider([snack, snack]) }
+                }
+            }
             for main in mains {
                 if Task.isCancelled { return [] }
                 // Customised items are tried alone, doubled and with one side; three-item orders stay as sold, which keeps the search quick.

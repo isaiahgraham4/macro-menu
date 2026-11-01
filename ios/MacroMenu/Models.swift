@@ -65,6 +65,14 @@ struct Food: Codable, Identifiable, Hashable, Sendable {
         guard isEveryday, id.hasPrefix("usda-") else { return nil }
         return URL(string: "https://fdc.nal.usda.gov/food-details/\(id.dropFirst(5))/nutrients")
     }
+    /// Ready meals and snacks from `SupermarketFoods.json`. Searchable and part of Find's supermarket mode, but not a restaurant.
+    static let supermarkets: Set<String> = ["coles", "woolworths"]
+    var isSupermarket: Bool { Food.supermarkets.contains(chain) }
+    /// The Open Food Facts page for a supermarket product; its ID ends in the barcode.
+    var productSource: URL? {
+        guard isSupermarket, let code = id.split(separator: ":").last else { return nil }
+        return URL(string: "https://world.openfoodfacts.org/product/\(code)")
+    }
     var isValid: Bool {
         !id.isEmpty && !name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty &&
         [kj, cal, p, c, f, price].compactMap { $0 }.allSatisfy { $0.isFinite && $0 >= 0 } &&

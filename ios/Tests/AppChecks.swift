@@ -4,6 +4,49 @@ import ImageIO
 import UniformTypeIdentifiers
 
 @main struct AppChecks {
+    /// Coles and Woolworths: their own file, found by the order finder and search, and kept out of the restaurant lists.
+    @MainActor static func supermarketChecks(_ catalogURL: URL) throws {
+        let url = catalogURL.deletingLastPathComponent().appending(path: "SupermarketFoods.json")
+        let shops = try JSONDecoder().decode(MenuCatalog.self, from: Data(contentsOf: url))
+        assert(Set(shops.chains.map(\.id)) == Food.supermarkets && shops.foods.count > 500)
+        assert(shops.foods.allSatisfy { $0.isValid && $0.isSupermarket && ["main", "snack"].contains($0.cat) && !$0.mismatch })
+        assert(Set(shops.foods.map(\.id)).count == shops.foods.count)
+        assert(shops.foods.allSatisfy { $0.diet == nil && $0.productSource != nil })   // unknown stays unknown
+        for chain in Food.supermarkets {
+            assert(shops.foods.contains { $0.chain == chain && $0.cat == "main" } && shops.foods.contains { $0.chain == chain && $0.cat == "snack" })
+        }
+        let started = ContinuousClock.now
+        let meals = MealFinder.find(shops.foods, query: FindQuery(chains: ["woolworths"], calories: 600, protein: 30, supermarket: true))
+        assert(ContinuousClock.now - started < .seconds(4))
+        assert(!meals.isEmpty && meals.allSatisfy { $0.chain == "woolworths" && $0.total.cal <= 600 })
+        // Too few calories for a meal still finds a snack.
+        let snacks = MealFinder.find(shops.foods, query: FindQuery(calories: 200, protein: 15, maxItems: 1, supermarket: true))
+        assert(snacks.allSatisfy { $0.items.count == 1 } && snacks.contains { $0.items[0].food.cat == "snack" })
+        // Neither shop says what's in a product here, so dietary needs leave them out rather than guess.
+        var strict = FindQuery(calories: 600, protein: 30, supermarket: true)
+        strict.diet = DietFilter(options: [.peanut])
+        assert(MealFinder.find(shops.foods, query: strict).isEmpty)
+        // "Woolies" and "supermarket" in a question.
+        let names = ["woolworths": "Woolworths", "coles": "Coles", "kfc": "KFC"]
+        let asked = AskLeanr.parse("40 g protein at woolies", chainNames: names, defaults: FindQuery())
+        assert(asked.query.chains == ["woolworths"] && asked.query.usesSupermarkets)
+        let general = AskLeanr.parse("ready meal under 500 calories", chainNames: names, defaults: FindQuery())
+        assert(general.query.chains.isEmpty && general.query.usesSupermarkets && general.understood.contains("Coles and Woolworths"))
+        assert(!AskLeanr.parse("40 g protein at KFC", chainNames: names, defaults: FindQuery()).query.usesSupermarkets)
+        // The store shows them to search and supermarket mode only.
+        let root = FileManager.default.temporaryDirectory.appending(path: UUID().uuidString)
+        let store = AppStore(url: root.appending(path: "state.json"), catalogURL: catalogURL, legacyURL: nil, supermarketURL: url)
+        assert(store.supermarket.count == shops.foods.count && store.chainName("coles") == "Coles")
+        assert(!store.foods.contains(where: \.isSupermarket) && !store.orderFoods.contains(where: \.isSupermarket))
+        assert(store.searchFoods.contains(where: \.isSupermarket) && store.searchChainNames["woolworths"] == "Woolworths")
+        assert(store.orderFoods(for: FindQuery(supermarket: true)).allSatisfy(\.isSupermarket))
+        assert(store.orderFoods(for: FindQuery(chains: ["coles", "kfc"])).contains { $0.chain == "kfc" })
+        assert(!store.orderFoods(for: FindQuery()).contains(where: \.isSupermarket))
+        assert(!store.catalog.chains.contains { Food.supermarkets.contains($0.id) })
+        let search = FoodSearch.browse(store.searchFoods, chainNames: store.searchChainNames, request: .init(search: "coles chicken", category: "main"))
+        assert(!search.isEmpty && search.allSatisfy { $0.chain == "coles" || $0.name.lowercased().contains("coles") })
+    }
+
     @MainActor static func main() throws {
         try barcodeChecks()
         let root = FileManager.default.temporaryDirectory.appending(path: UUID().uuidString)
@@ -13,6 +56,7 @@ import UniformTypeIdentifiers
         let catalog = try JSONDecoder().decode(MenuCatalog.self,from: Data(contentsOf: catalogURL))
         assert(catalog.foods.count == 2743)
         assert(Set(catalog.foods.map(\.chain)).isSubset(of: Set(catalog.chains.map(\.id))))
+        try supermarketChecks(catalogURL)
         // A juice bar has no mains, so its drinks are the order.
         let juice = MealFinder.find(catalog.foods, query: FindQuery(chains: ["boost"], calories: 700, protein: 25, maxItems: 1))
         assert(!juice.isEmpty && juice.allSatisfy { $0.chain == "boost" && $0.total.cal <= 700 } && juice[0].total.p >= 20)
@@ -558,7 +602,7 @@ import UniformTypeIdentifiers
         assert(answer == "At KFC, for up to 500 Cal with 40 g protein:\n• Chicken wrap: 480 Cal, 35 g protein")
         assert(Assistant.fitsAnswer(restaurant: "KFC", query: lunchBudget, matches: [], caloriesLeft: 1720) == "Nothing at KFC fits in 500 Cal.")
         // Siri's restaurant names match the menu.
-        for id in Set(Assistant.nicknames.values) { assert(catalog.chains.contains { $0.id == id }, "unknown chain \(id)") }
+        for id in Set(Assistant.nicknames.values) { assert(catalog.chains.contains { $0.id == id } || Food.supermarkets.contains(id), "unknown chain \(id)") }
 
         // Meal reminders: two weeks ahead, none for meals already logged, none in the past.
         let reminderNow = calendar.date(bySettingHour: 12, minute: 0, second: 0, of: day(5))!

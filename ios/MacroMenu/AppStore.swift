@@ -10,6 +10,10 @@ final class AppStore {
     /// Thousands more foods as people eat them, from USDA's survey foods (`Scripts/survey-foods.py`). Searchable and
     /// matched from photos, but never suggested, and their meats and allergens are unknown, so dietary needs leave them out.
     private(set) var survey: [Food] = []
+    /// Coles and Woolworths ready meals and snacks (`Scripts/supermarket-foods.py`). Kept apart from the restaurant menus, so search
+    /// and Find's supermarket mode see them but the Map, roulette, suggestions and restaurant lists don't.
+    private(set) var supermarket: [Food] = []
+    private(set) var supermarketChains: [Chain] = []
     private(set) var loadError: String?
     var errorMessage: String?
     var notice: String?
@@ -55,13 +59,18 @@ final class AppStore {
     private let url: URL
     init(url: URL = URL.applicationSupportDirectory.appending(path: "MacroMenu/app-state.json"), catalogURL: URL? = Bundle.main.url(forResource: "MenuData", withExtension: "json"), legacyURL: URL? = URL.applicationSupportDirectory.appending(path: "MacroMenu/foods.json"),
          everydayURL: URL? = Bundle.main.url(forResource: "GenericFoods", withExtension: "json"),
-         surveyURL: URL? = Bundle.main.url(forResource: "SurveyFoods", withExtension: "json")) {
+         surveyURL: URL? = Bundle.main.url(forResource: "SurveyFoods", withExtension: "json"),
+         supermarketURL: URL? = Bundle.main.url(forResource: "SupermarketFoods", withExtension: "json")) {
         self.url = url
         if let everydayURL, let foods = try? JSONDecoder().decode([Food].self, from: Data(contentsOf: everydayURL)) {
             everyday = foods.filter { $0.isValid && $0.isEveryday }
         }
         if let surveyURL, let foods = try? JSONDecoder().decode([Food].self, from: Data(contentsOf: surveyURL)) {
             survey = foods.filter { $0.isValid && $0.isEveryday }
+        }
+        if let supermarketURL, let shops = try? JSONDecoder().decode(MenuCatalog.self, from: Data(contentsOf: supermarketURL)) {
+            supermarket = shops.foods.filter { $0.isValid && $0.isSupermarket }
+            supermarketChains = shops.chains
         }
         if let catalogURL {
             do { catalog = try JSONDecoder().decode(MenuCatalog.self, from: Data(contentsOf: catalogURL)) }
@@ -81,8 +90,15 @@ final class AppStore {
     }
     /// Search, photos and the food lists see every food; suggestions keep to the curated everyday foods.
     var foods: [Food] { catalog.foods + everyday + survey + data.foods }
+    /// Foods the search lists show: all of the above and the supermarket shelves, which stay out of photo and text matching.
+    var searchFoods: [Food] { foods + supermarket }
     /// Foods that make up an order: restaurant menus and your own foods, without everyday foods.
     var orderFoods: [Food] { catalog.foods + data.foods }
+    /// The foods one order search needs. A question can name a supermarket and a restaurant together.
+    func orderFoods(for query: FindQuery) -> [Food] {
+        guard query.usesSupermarkets else { return orderFoods }
+        return query.chains.isEmpty ? supermarket : supermarket + orderFoods
+    }
     /// Menu items and everyday foods that fit the dietary needs set on Find, for suggestions.
     var suggestibleRestaurantFoods: [Food] { let diet = DietFilter.saved; return diet.isEmpty ? catalog.foods : catalog.foods.filter(diet.allows) }
     var suggestibleEveryday: [Food] { let diet = DietFilter.saved; return diet.isEmpty ? everyday : everyday.filter(diet.allows) }
@@ -126,7 +142,11 @@ final class AppStore {
     }
     func chainName(_ id: String) -> String {
         if id == Food.everyday { return "Everyday foods" }
-        return catalog.chains.first { $0.id == id }?.name ?? "My foods"
+        return (catalog.chains + supermarketChains).first { $0.id == id }?.name ?? "My foods"
+    }
+    /// Restaurants, supermarkets and everyday foods by ID, for search and questions.
+    var searchChainNames: [String: String] {
+        Dictionary((catalog.chains + supermarketChains).map { ($0.id, $0.name) }) { a, _ in a }.merging([Food.everyday: chainName(Food.everyday)]) { a, _ in a }
     }
     private func write(_ updated: AppData) throws {
         guard loadError == nil, updated.isValid else { throw CocoaError(.fileReadCorruptFile) }

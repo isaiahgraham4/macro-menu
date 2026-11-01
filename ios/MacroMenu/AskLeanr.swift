@@ -81,7 +81,8 @@ enum AskLeanr {
         for (nickname, id) in Assistant.nicknames where chainNames[id] != nil {
             if lower.range(of: #"\b"# + NSRegularExpression.escapedPattern(for: nickname) + #"\b"#, options: .regularExpression) != nil { query.chains.insert(id) }
         }
-        if !query.chains.isEmpty { said.insert(.chains) }
+        if lower.contains("supermarket") || lower.contains("ready meal") { query.supermarket = true }
+        if !query.chains.isEmpty || query.supermarket { said.insert(.chains) }
 
         // Dietary needs, added to any already set.
         let needs: [(String, [DietOption])] = [
@@ -117,6 +118,7 @@ enum AskLeanr {
         if let fat = q.fat { parts.append("Fat up to \(fat.number) g") }
         if request.said.contains(.items) { parts.append(q.maxItems == 1 ? "One item" : "Up to \(q.maxItems) items") }
         parts += q.chains.compactMap { chainNames[$0] }.sorted()
+        if q.supermarket && q.chains.isEmpty { parts.append("Coles and Woolworths") }
         if !q.diet.isEmpty { parts.append(q.diet.summary) }
         return parts
     }

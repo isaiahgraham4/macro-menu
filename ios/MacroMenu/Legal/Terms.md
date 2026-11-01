@@ -13,9 +13,9 @@ Takeawise gives general nutrition information to help you choose and log food. I
 - Restaurant figures come from each chain's own published nutrition information on the date shown in Settings → Menu sources. Chains change recipes, and figures vary between stores and serves. Takeawise downloads updated menus without an app update, and the date shown is the menu in use.
 - Custom orders (with ingredients taken off) and recipes are estimates.
 - Everyday foods (such as bananas and chicken breast) are average figures from the U.S. Department of Agriculture's FoodData Central. Brands, varieties and cooking change them.
-- Scanned and searched packaged products come from Open Food Facts, which is edited by volunteers. Check them against the package.
-- When you log from a photo, your iPhone only names the foods, and it can't count them or read portions. The figures are Leanr's own, but the match and the amount are up to you, so check both before logging.
-- Leanr isn't an allergen guide. Always check allergens with the restaurant.
+- Scanned and searched packaged products, and the Coles and Woolworths products in Find, come from Open Food Facts, which is edited by volunteers. Check them against the package.
+- When you log from a photo, your iPhone only names the foods, and it can't count them or read portions. The figures are Takeawise's own, but the match and the amount are up to you, so check both before logging.
+- Takeawise isn't an allergen guide. Always check allergens with the restaurant.
 
 ## Opening hours, distances and delivery
 
@@ -23,7 +23,7 @@ Opening hours are shown in Apple Maps' place card and come from Apple. "Delivery
 
 ## Restaurants and trademarks
 
-Restaurant names and brands belong to their owners. Leanr isn't affiliated with, endorsed by or sponsored by any restaurant or delivery service.
+Restaurant, supermarket and product names and brands belong to their owners. Takeawise isn't affiliated with, endorsed by or sponsored by any restaurant, supermarket or delivery service.
 
 ## Cost
 

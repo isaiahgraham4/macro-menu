@@ -95,7 +95,7 @@ enum Insights {
 
     /// Days with something from a restaurant against days without, once there are three of each and 200 Cal between them.
     private static func takeaway(_ days: [Day]) -> Insight? {
-        func fromRestaurant(_ day: Day) -> Bool { day.entries.flatMap(\.items).contains { $0.food.chain != "mine" && !$0.food.isEveryday } }
+        func fromRestaurant(_ day: Day) -> Bool { day.entries.flatMap(\.items).contains { $0.food.chain != "mine" && !$0.food.isEveryday && !$0.food.isSupermarket } }
         let with = days.filter(fromRestaurant).map(\.calories), without = days.filter { !fromRestaurant($0) }.map(\.calories)
         guard with.count >= 3, without.count >= 3, let a = average(with), let b = average(without), abs(a - b) >= 200 else { return nil }
         return Insight(id: "takeaway", systemImage: "takeoutbag.and.cup.and.straw",

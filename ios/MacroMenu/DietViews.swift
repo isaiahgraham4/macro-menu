@@ -59,7 +59,8 @@ struct DietSection: View {
     let food: Food
 
     var body: some View {
-        if food.chain != "mine", let info = food.isEveryday ? nil : food.diet ?? DietInfo() {
+        // Supermarket products have no dietary section: the source's allergen fields are volunteer-entered, so dietary needs leave them out.
+        if food.chain != "mine", !food.isSupermarket, let info = food.isEveryday ? nil : food.diet ?? DietInfo() {
             Section {
                 if let meat = info.meat {
                     let words = meat.map { $0 == "other" ? "other meat" : $0 }
@@ -158,7 +159,7 @@ struct AskLeanrView: View {
     private func answer(_ text: String) async {
         guard !text.trimmingCharacters(in: .whitespaces).isEmpty else { return }
         searching = true
-        let names = Dictionary(store.catalog.chains.map { ($0.id, $0.name) }) { a, _ in a }
+        let names = store.searchChainNames
         let defaults = FindQuery(calories: store.goals.mealCal, protein: store.goals.mealProtein, diet: DietFilter.saved)
         var parsed = AskLeanr.parse(text, chainNames: names, defaults: defaults)
         usedModel = false
@@ -172,7 +173,7 @@ struct AskLeanrView: View {
             parsed.understood[0] = "What's left today: \(parsed.query.calories.rounded().number) Cal"
         }
         request = parsed
-        let foods = store.orderFoods, query = parsed.query
+        let query = parsed.query, foods = store.orderFoods(for: query)
         let result = await Task.detached(priority: .userInitiated) { MealFinder.find(foods, query: query) }.value
         guard !Task.isCancelled else { return }
         matches = result; searching = false

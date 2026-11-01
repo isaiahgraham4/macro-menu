@@ -151,6 +151,7 @@ struct FoodDetailView: View {
             if pick == nil { NearestPlaceSection(chain: food.chain) }
             if let chain = store.chain(food.chain), chain.id != "mine" { FoodSourceSection(chain: chain) }
             if food.isEveryday { EverydaySourceSection(food: food) }
+            if food.isSupermarket { SupermarketSourceSection(food: food) }
             if customized {
                 Section {
                     Button { saveCustom() } label: { Label("Save custom order to My foods", systemImage: "bookmark") }.disabled(!adjusted.isValid)
@@ -253,6 +254,19 @@ struct EverydaySourceSection: View {
             if let url = food.everydaySource { Link("View this food at FoodData Central", destination: url) }
         } header: { Text("Source") } footer: {
             Text("Average figures for this kind of food from the U.S. Department of Agriculture (public domain). Brands, varieties and cooking change them, so use the label when there is one.")
+        }
+    }
+}
+
+/// Where a supermarket product's figures come from. They're read off the pack by volunteers, not published by the supermarket.
+struct SupermarketSourceSection: View {
+    let food: Food
+    var body: some View {
+        Section {
+            LabeledContent("From", value: "Open Food Facts")
+            if let url = food.productSource { Link("View this product at Open Food Facts", destination: url) }
+        } header: { Text("Source") } footer: {
+            Text("Label figures entered by Open Food Facts volunteers, available under the Open Database License (ODbL). Recipes change and stores vary, so check the pack. Takeawise isn't affiliated with Coles or Woolworths.")
         }
     }
 }

@@ -77,7 +77,7 @@ struct AcknowledgementsView: View {
     var body: some View {
         LeanrList {
             Section {
-                Text("Leanr isn't affiliated with, endorsed by or sponsored by any restaurant or delivery service. Restaurant names and brands belong to their owners and are used only to identify their food.")
+                Text("Takeawise isn't affiliated with, endorsed by or sponsored by any restaurant, supermarket or delivery service. Restaurant, supermarket and product names and brands belong to their owners and are used only to identify their food.")
             } header: { Text("Restaurants") }
             Section {
                 credit("Restaurant nutrition", "Each chain's published nutrition information. See Settings → Menu sources.")

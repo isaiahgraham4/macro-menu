@@ -66,7 +66,7 @@ enum Assistant {
         guard let start = calendar.date(byAdding: .day, value: -days, to: calendar.startOfDay(for: now)) else { return nil }
         var counts: [String: Int] = [:]
         for (day, entries) in logs where day >= dayKey(start) {
-            for item in entries.flatMap(\.items) where item.food.chain != "mine" && item.food.chain != Food.everyday {
+            for item in entries.flatMap(\.items) where item.food.chain != "mine" && item.food.chain != Food.everyday && !item.food.isSupermarket {
                 counts[item.food.chain, default: 0] += 1
             }
         }
@@ -241,5 +241,5 @@ enum Assistant {
                                                "boost": "boost", "boost juice": "boost", "schnitz": "schnitz", "grilld": "grilld", "grill'd": "grilld", "grill’d": "grilld",
                                                "bettys": "betty", "betty's": "betty", "betty’s": "betty", "five guys": "fiveguys", "crust": "crust", "donut king": "donutking",
                                                "michels": "michels", "michel's": "michels", "michel’s": "michels", "brumbys": "brumbys", "brumby's": "brumbys", "brumby’s": "brumbys",
-                                               "soul origin": "soul", "rolld": "rolld", "roll'd": "rolld", "roll’d": "rolld", "fishbowl": "thisbowl", "this bowl": "thisbowl"]
+                                               "soul origin": "soul", "rolld": "rolld", "roll'd": "rolld", "roll’d": "rolld", "fishbowl": "thisbowl", "this bowl": "thisbowl", "woolies": "woolworths", "woolis": "woolworths"]
 }

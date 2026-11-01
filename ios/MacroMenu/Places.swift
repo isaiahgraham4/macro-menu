@@ -24,7 +24,7 @@ struct ChainPlace: Sendable {
         return match.contains { name.contains($0) }
     }
 
-    /// Keyed by chain id in MenuData.json. App Store ids are from the AU store (checked 26 Sep 2026; Zambrero and Boost Juice 30 Sep 2026; the last nine 31 Oct 2026).
+    /// Keyed by chain id in MenuData.json. App Store ids are from the AU store (checked 26 Sep 2026; Zambrero and Boost Juice 30 Sep 2026; the last nine 31 Oct 2026; Coles and Woolworths 2 Nov 2026).
     static let all: [String: ChainPlace] = [
         "mcd": ChainPlace(query: "McDonald's", match: ["mcdonald"], appName: "MyMacca's", appStoreID: 1105300599, appLink: URL(string: "https://mcdonaldsau.smart.link/")),
         "kfc": ChainPlace(query: "KFC", match: ["kfc"], appName: "KFC", appStoreID: 725748250, appLink: URL(string: "https://www.kfc.com.au/")),
@@ -49,6 +49,8 @@ struct ChainPlace: Sendable {
         "soul": ChainPlace(query: "Soul Origin", match: ["soul origin"], appName: "Soul Origin", appStoreID: 1536086153, appLink: nil),
         "rolld": ChainPlace(query: "Roll'd", match: ["roll'd", "rolld", "roll’d"], appName: "Roll'd", appStoreID: 1411683955, appLink: nil),
         "thisbowl": ChainPlace(query: "THISBOWL", match: ["thisbowl", "this bowl", "fishbowl"], appName: "THISBOWL", appStoreID: 6465208456, appLink: nil),
+        "coles": ChainPlace(query: "Coles Supermarket", match: ["coles"], appName: "Coles", appStoreID: 529118855, appLink: nil),
+        "woolworths": ChainPlace(query: "Woolworths", match: ["woolworths"], appName: "Woolworths", appStoreID: 975089690, appLink: nil),
     ]
 }
 

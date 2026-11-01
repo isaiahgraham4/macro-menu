@@ -31,6 +31,7 @@ A calorie tracker built around eating out, rather than a generic food diary with
 ## Capabilities and Constraints
 
 - **Menu data:** 1,026 bundled items across McDonald's, KFC, Hungry Jack's, Subway, GYG, Nando's, Oporto, Red Rooster, Domino's and Spud Bar. It is a September 2026 snapshot of each chain's official AU figures, not live data. Refresh with `node ios/Scripts/export-menu.cjs` from the web source.
+- **Supermarket data:** Coles and Woolworths ready meals and snacks are a bundled snapshot of Open Food Facts (ODbL), built by `ios/Scripts/supermarket-foods.py`, because neither retailer's site terms allow collecting from it. These are volunteers' pack readings, not official figures, so the app labels them as such and they stay out of dietary filters, the Map, roulette and suggestions. Unlike the restaurant figures, this data is crowd-sourced; the derived file stays public under the ODbL.
 - **Unknown stays unknown:** missing nutrients or prices are never filled with zeroes. Filters exclude items lacking the required figure, and totals mark partial data. Estimated values (e.g. McDonald's ingredient-removal macros) are flagged `est`.
 - **Prices:** Melbourne CBD pick-up prices only. McDonald's and Hungry Jack's have none (app-only pricing); KFC is partial.
 - **Ingredient removals:** McDonald's, GYG, Subway, and Hungry Jack's cheese only. KFC publishes no ingredient nutrition.
