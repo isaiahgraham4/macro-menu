@@ -55,10 +55,11 @@ final class WatchModel: NSObject {
     private func send(_ request: WatchRequest) {
         let session = WCSession.default
         guard WCSession.isSupported(), session.activationState == .activated else { return }
+        let id = UUID().uuidString
         if session.isReachable {
-            session.sendMessage(request.message, replyHandler: nil) { _ in WCSession.default.transferUserInfo(request.message) }
+            session.sendMessage(request.message(id: id), replyHandler: nil) { _ in WCSession.default.transferUserInfo(request.message(id: id)) }
         } else {
-            session.transferUserInfo(request.message)
+            session.transferUserInfo(request.message(id: id))
         }
     }
 

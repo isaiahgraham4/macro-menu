@@ -62,7 +62,7 @@ struct MealPhotoView: View {
                         TextField("What's in it? e.g. tofu, rice and salad", text: $noteText)
                             .submitLabel(.done).onSubmit { applyNote() }
                         if !noteText.trimmingCharacters(in: .whitespaces).isEmpty {
-                            Button { applyNote() } label: { Image(systemName: "arrow.up.circle.fill").font(.title2) }
+                            Button { applyNote() } label: { Image(systemName: "arrow.up.circle.fill").font(.title2).contentShape(Rectangle().inset(by: -8)) }
                                 .buttonStyle(.borderless).disabled(readingNote || phase == .looking)
                                 .accessibilityLabel("Use what you wrote")
                         }

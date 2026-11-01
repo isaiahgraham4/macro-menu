@@ -34,7 +34,7 @@ struct FindView: View {
                             .onSubmit { ask() }
                     }
                     if !question.trimmingCharacters(in: .whitespaces).isEmpty {
-                        Button { ask() } label: { Image(systemName: "arrow.up.circle.fill").font(.title2) }
+                        Button { ask() } label: { Image(systemName: "arrow.up.circle.fill").font(.title2).contentShape(Rectangle().inset(by: -8)) }
                             .buttonStyle(.borderless).accessibilityLabel("Ask")
                     }
                 }.padding(.vertical, 4)
@@ -191,7 +191,7 @@ struct OrderMatchCard: View {
                 }
             }
             NavigationLink { OrderDetailView(match: match) } label: {
-                Text(match.items.map { $0.food.name }.joined(separator: " + ")).font(.roboto(.headline))
+                Text(match.items.map { $0.food.name }.joined(separator: " + ")).font(.roboto(.headline)).balanced()
             }
             if match.customised > 0 {
                 Label("Ask for these changes when you order", systemImage: "slider.horizontal.3")
@@ -464,7 +464,7 @@ struct ProductDetailView: View {
         LeanrForm {
             Section {
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(food.name).font(.display(.title2))
+                    Text(food.name).font(.display(.title2)).balanced()
                     Text(saved != nil ? "In My foods · \(food.serve)" : product.per100 ? "Nutrition per 100 \(product.unit)" : "Nutrition per \(food.serve)")
                         .foregroundStyle(.secondary)
                 }.padding(.vertical, 4)

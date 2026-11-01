@@ -94,9 +94,25 @@ enum WatchRequest: Equatable, Sendable {
         }
     }
 
+    /// The message for one tap. Its id stays the same if it has to go a second way, so the iPhone acts on it once.
+    func message(id: String) -> [String: Any] { message.merging(["id": id]) { _, new in new } }
+
     init?(message: [String: Any]) {
         if let option = message["log"] as? String, !option.isEmpty { self = .log(option) }
         else if let millilitres = message["water"] as? Double, millilitres.isFinite, millilitres != 0, abs(millilitres) <= 5000 { self = .water(millilitres) }
         else { return nil }
+    }
+}
+
+/// The requests the iPhone has acted on lately, so one that arrives twice isn't logged twice.
+struct WatchRequestLog: Equatable, Sendable {
+    private(set) var ids: [String] = []
+
+    /// True the first time an id is seen. A request with no id came from an older watch app, so it always counts.
+    mutating func isNew(_ id: String?) -> Bool {
+        guard let id else { return true }
+        guard !ids.contains(id) else { return false }
+        ids = Array((ids + [id]).suffix(100))
+        return true
     }
 }

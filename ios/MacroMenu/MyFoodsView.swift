@@ -251,10 +251,10 @@ struct FoodEditor: View {
                     Label { TextField("Barcode number", text: Binding(get: { draft.barcode ?? "" }, set: { draft.barcode = $0.isEmpty ? nil : $0 }))
                         .keyboardType(.numberPad).monospacedDigit() } icon: { Image(systemName: "barcode") }
                     if draft.barcode != nil {
-                        Button { draft.barcode = nil } label: { Image(systemName: "xmark.circle.fill").foregroundStyle(.secondary) }
+                        Button { draft.barcode = nil } label: { Image(systemName: "xmark.circle.fill").foregroundStyle(.secondary).frame(width: 44, height: 44).contentShape(Rectangle()) }
                             .buttonStyle(.plain).accessibilityLabel("Remove barcode")
                     }
-                    Button { capturingBarcode = true } label: { Image(systemName: "camera.viewfinder") }
+                    Button { capturingBarcode = true } label: { Image(systemName: "camera.viewfinder").frame(width: 44, height: 44).contentShape(Rectangle()) }
                         .buttonStyle(.borderless).accessibilityLabel("Scan barcode")
                 }
                 if barcodeInvalid {

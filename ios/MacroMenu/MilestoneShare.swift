@@ -79,9 +79,9 @@ struct MomentSharePreview: View {
                 }
                 .buttonStyle(.borderedProminent).controlSize(.large)
                 Text("Post it to an Instagram or TikTok story, or save it to Photos from the share sheet.")
-                    .font(.roboto(.caption)).foregroundStyle(.secondary).multilineTextAlignment(.center)
+                    .font(.roboto(.caption)).foregroundStyle(.secondary).multilineTextAlignment(.center).balanced()
             } else {
-                ProgressView()
+                ShareCardSkeleton()
             }
         }
         .padding()

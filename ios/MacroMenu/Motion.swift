@@ -5,10 +5,11 @@ import Combine
 // and the light on the worktop. All of them hold still with Reduce Motion on.
 
 extension Animation {
+    // Springs, so a change that lands mid-way carries on from where it is rather than restarting.
     /// How fast a small change settles: long enough to see, short enough never to feel slow.
-    static let figure = Animation.easeOut(duration: 0.2)
+    static let figure = Animation.smooth(duration: 0.2)
     /// How long a logged amount takes to count up, with its ring and bars alongside.
-    static let counting = Animation.easeOut(duration: 0.7)
+    static let counting = Animation.smooth(duration: 0.7)
 }
 
 /// A number that really counts to its new value, passing through the numbers on the way.
@@ -31,6 +32,15 @@ struct CountingNumber: View, Animatable {
 
     var body: some View {
         Text(text(abs(value - end) < step / 2 ? end : (value / step).rounded() * step)).monospacedDigit()
+    }
+}
+
+/// The shape of a share image while it's being made.
+struct ShareCardSkeleton: View {
+    var body: some View {
+        RoundedRectangle(cornerRadius: 18).fill(.fill.tertiary)
+            .aspectRatio(MealShareCard.size, contentMode: .fit)
+            .skeleton("Making your image")
     }
 }
 

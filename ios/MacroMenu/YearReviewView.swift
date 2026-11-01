@@ -33,7 +33,7 @@ struct YearReviewView: View {
     var body: some View {
         VStack(spacing: 16) {
             if images.isEmpty {
-                ProgressView().frame(maxHeight: .infinity)
+                ShareCardSkeleton().padding(.bottom, 36).frame(maxHeight: .infinity)
             } else {
                 TabView(selection: $page) {
                     ForEach(images.indices, id: \.self) { index in

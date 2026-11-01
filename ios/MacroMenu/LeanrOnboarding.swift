@@ -125,7 +125,7 @@ struct LeanrOnboarding: View {
     private func setupCard(icon: String, title: String, text: String, action: String, perform: @escaping () -> Void) -> some View {
         VStack(alignment: .leading, spacing: 22) {
             Image(systemName: icon).font(.system(size: 48)).foregroundStyle(.tint)
-            Text(title).font(.display())
+            Text(title).font(.display()).balanced()
             Text(text).foregroundStyle(.secondary)
             Button(action: perform) {
                 Text(action).frame(maxWidth: .infinity).padding(.vertical, 8)
@@ -196,7 +196,7 @@ struct LeanrOnboarding: View {
                         }
                         Image(systemName: "takeoutbag.and.cup.and.straw.fill")
                             .font(.system(size: 60)).padding(.vertical, 8)
-                        Text(meal.name).font(.display(.title2)).multilineTextAlignment(.center)
+                        Text(meal.name).font(.display(.title2)).multilineTextAlignment(.center).balanced()
                         Text(meal.chain == "kfc" ? "10 wings · no sides or drink" : "Burger only · no sides or drink")
                             .font(.roboto(.caption)).multilineTextAlignment(.center)
                         if !meal.serve.isEmpty { Text(meal.serve).font(.roboto(.caption)).multilineTextAlignment(.center) }

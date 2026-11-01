@@ -1729,6 +1729,10 @@ import UniformTypeIdentifiers
             assert(burntSnapshot.current(on: tomorrow).energy == nil && WatchStorage.complicationsDiffer(snapshot, burntSnapshot))
             assert(WatchRequest(message: WatchRequest.log("pin:bar").message) == .log("pin:bar"))
             assert(WatchRequest(message: WatchRequest.water(250).message) == .water(250))
+            // One tap sent two ways, as when a message fails and falls back to the queue, only counts once.
+            assert(WatchRequest(message: WatchRequest.water(250).message(id: "a")) == .water(250))
+            var handled = WatchRequestLog()
+            assert(handled.isNew("a") && !handled.isNew("a") && handled.isNew("b") && handled.isNew(nil) && handled.isNew(nil))
             // Complication updates are limited, so they're only spent when a figure on the watch face changes.
             assert(WatchStorage.complicationsDiffer(nil, snapshot) && !WatchStorage.complicationsDiffer(snapshot, snapshot))
             var optionsOnly = snapshot; optionsOnly.options = []

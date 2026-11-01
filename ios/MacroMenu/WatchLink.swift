@@ -32,8 +32,13 @@ import Foundation
         do { try session.updateApplicationContext(snapshot.context); lastSent = snapshot } catch {}
     }
 
-    private func handle(_ request: WatchRequest) {
+    private static let handledKey = "leanr.watch.handled"
+
+    private func handle(_ request: WatchRequest, id: String?) {
         guard let store else { return }
+        var handled = WatchRequestLog(ids: UserDefaults.standard.stringArray(forKey: Self.handledKey) ?? [])
+        guard handled.isNew(id) else { return }
+        UserDefaults.standard.set(handled.ids, forKey: Self.handledKey)
         switch request {
         case .log(let option):
             if store.logAgain(option) { store.notice = "Logged from Apple Watch" }
@@ -61,10 +66,12 @@ extension WatchLink: WCSessionDelegate {
     }
     nonisolated func session(_ session: WCSession, didReceiveMessage message: [String: Any]) {
         guard let request = WatchRequest(message: message) else { return }
-        Task { @MainActor in self.handle(request) }
+        let id = message["id"] as? String
+        Task { @MainActor in self.handle(request, id: id) }
     }
     nonisolated func session(_ session: WCSession, didReceiveUserInfo userInfo: [String: Any] = [:]) {
         guard let request = WatchRequest(message: userInfo) else { return }
-        Task { @MainActor in self.handle(request) }
+        let id = userInfo["id"] as? String
+        Task { @MainActor in self.handle(request, id: id) }
     }
 }

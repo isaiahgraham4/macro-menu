@@ -247,3 +247,32 @@ struct BottomActionBar<Content: View>: View {
         .padding(.horizontal, 20).padding(.vertical, 10)
     }
 }
+
+/// Wraps text to the same number of lines at the narrowest width that holds them, so a headline never leaves one word alone.
+private struct Balanced: Layout {
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+        guard let text = subviews.first else { return .zero }
+        return text.sizeThatFits(ProposedViewSize(width: width(for: text, in: proposal), height: nil))
+    }
+
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+        guard let text = subviews.first else { return }
+        text.place(at: bounds.origin, proposal: ProposedViewSize(width: width(for: text, in: proposal), height: nil))
+    }
+
+    private func width(for text: LayoutSubview, in proposal: ProposedViewSize) -> CGFloat? {
+        guard let width = proposal.width, width.isFinite, width > 0 else { return proposal.width }
+        let height = text.sizeThatFits(ProposedViewSize(width: width, height: nil)).height
+        var narrow = width / 2, wide = width
+        while wide - narrow > 1 {
+            let middle = (narrow + wide) / 2
+            if text.sizeThatFits(ProposedViewSize(width: middle, height: nil)).height > height { narrow = middle } else { wide = middle }
+        }
+        return wide
+    }
+}
+
+extension View {
+    /// For headlines and centred lines of copy that can wrap.
+    func balanced() -> some View { Balanced { self } }
+}

@@ -14,6 +14,28 @@ struct MacroMenuApp: App {
                     Task { @MainActor in field.selectAll(nil) }
                 }
         }
+        .commands { LeanrCommands() }
+    }
+}
+
+/// Shortcuts for an iPad or any attached keyboard. Holding ⌘ lists them, so they teach themselves.
+private struct LeanrCommands: Commands {
+    @AppStorage("leanr.onboarding.completed") private var onboardingCompleted = false
+    private var nav: Navigator { AppServices.nav }
+    var body: some Commands {
+        CommandMenu("Go") {
+            Group {
+                Button("Today") { nav.tab = .today }.keyboardShortcut("1")
+                Button("Find") { nav.tab = .find }.keyboardShortcut("2")
+                Button("Map") { nav.tab = .map }.keyboardShortcut("3")
+                Button("Meal") { nav.tab = .meal }.keyboardShortcut("4")
+                Button("Progress") { nav.tab = .progress }.keyboardShortcut("5")
+                Divider()
+                Button("Scan a Barcode") { nav.opened = nil; nav.tab = .today; nav.scanRequested = true }.keyboardShortcut("b")
+                Button("Settings") { nav.requestedSheet = .settings }.keyboardShortcut(",")
+            }
+            .disabled(!onboardingCompleted)
+        }
     }
 }
 

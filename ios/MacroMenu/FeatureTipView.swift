@@ -29,7 +29,7 @@ struct FeatureTipCard: View {
             .buttonStyle(.plain)
             Button(action: dismiss) {
                 Image(systemName: "xmark").font(.footnote.weight(.semibold)).foregroundStyle(.secondary)
-                    .frame(width: 32, height: 32).contentShape(Rectangle())
+                    .frame(width: 44, height: 44).contentShape(Rectangle())
             }
             .buttonStyle(.plain)
             .accessibilityLabel("Dismiss tip")

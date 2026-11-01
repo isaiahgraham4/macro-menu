@@ -442,7 +442,7 @@ struct LocationStatusRows: View {
                 Button("Try again") { location.request() }
             }
         } else if location.location == nil {
-            Section { ProgressView("Finding your location…").frame(maxWidth: .infinity) }.onAppear { location.request() }
+            Section { ForEach(0..<3, id: \.self) { _ in RowSkeleton().skeleton("Finding your location") } }.onAppear { location.request() }
         }
     }
 }
@@ -486,7 +486,7 @@ struct OrderDetailView: View {
         LeanrForm {
             Section {
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(match.items.map { $0.food.name }.joined(separator: " + ")).font(.display(.title2))
+                    Text(match.items.map { $0.food.name }.joined(separator: " + ")).font(.display(.title2)).balanced()
                     Text(store.chainName(match.chain)).foregroundStyle(.secondary)
                 }.padding(.vertical, 4)
             }

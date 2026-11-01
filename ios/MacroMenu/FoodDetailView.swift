@@ -44,7 +44,7 @@ struct FoodDetailView: View {
         LeanrForm {
             Section {
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(food.name).font(.display(.title2))
+                    Text(food.name).font(.display(.title2)).balanced()
                     Text(food.serve.isEmpty ? store.chainName(food.chain) : "\(store.chainName(food.chain)) · \(food.serve)").foregroundStyle(.secondary)
                 }.padding(.vertical, 4)
                 if let note = food.note { Text(note).font(.roboto(.caption)) }

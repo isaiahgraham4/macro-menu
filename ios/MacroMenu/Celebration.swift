@@ -132,7 +132,7 @@ private struct MomentCard: View {
                                 .font(.roboto(.title, weight: .bold))
                                 .animation(reduceMotion ? nil : .easeOut(duration: 1), value: appeared)
                         } else {
-                            Text(title).font(.display(.title3))
+                            Text(title).font(.display(.title3)).balanced()
                         }
                         Text(detail).font(.roboto(.subheadline))
                     }
@@ -203,7 +203,7 @@ private struct GoalReachedView: View {
                             .font(.roboto(.largeTitle, weight: .bold))
                             .animation(reduceMotion ? nil : .easeOut(duration: 1.2), value: appeared)
                         Text("\(goal.kg < goal.startKg ? "lost" : "gained") since you started at \(goal.startKg.number) kg. You're at \(goal.kg.number) kg.")
-                            .font(.roboto(.headline))
+                            .font(.roboto(.headline)).balanced()
                     }
                     .multilineTextAlignment(.center)
                     .foregroundStyle(boardInk)

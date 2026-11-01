@@ -225,6 +225,7 @@ struct ProgressPhotosView: View {
     @State private var camera = false
     @State private var viewing: ProgressPhoto?
     @State private var comparing = false
+    @Namespace private var photoZoom
     private let columns = [GridItem(.adaptive(minimum: 100), spacing: 8)]
 
     var body: some View {
@@ -247,6 +248,7 @@ struct ProgressPhotosView: View {
                                     }
                                     .frame(minHeight: 120).frame(maxWidth: .infinity).aspectRatio(0.75, contentMode: .fit).clipped()
                                     .clipShape(RoundedRectangle(cornerRadius: 10))
+                                    .matchedTransitionSource(id: photo.id, in: photoZoom)
                                     Text(photo.date.formatted(.dateTime.day().month(.abbreviated).year())).font(.roboto(.caption)).foregroundStyle(.secondary)
                                 }
                             }
@@ -288,7 +290,10 @@ struct ProgressPhotosView: View {
                 if let data = taken?.jpegData(compressionQuality: 0.9) { library.add(data) }
             }.ignoresSafeArea()
         }
-        .sheet(item: $viewing) { photo in NavigationStack { ProgressPhotoDetail(library: library, photo: photo) } }
+        .sheet(item: $viewing) { photo in
+            NavigationStack { ProgressPhotoDetail(library: library, photo: photo) }
+                .navigationTransition(.zoom(sourceID: photo.id, in: photoZoom))
+        }
         .sheet(isPresented: $comparing) { NavigationStack { ProgressPhotoCompare(library: library) } }
         .alert("Progress photos", isPresented: Binding(get: { library.problem != nil }, set: { if !$0 { library.problem = nil } })) {
             Button("OK", role: .cancel) {}

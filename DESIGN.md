@@ -197,6 +197,8 @@ Every size scales with Dynamic Type (`relativeTo:` the matching text style). Wid
 
 **The Steady Numbers Rule.** Any number that updates in place (calories, grams, targets, totals) uses `.monospacedDigit()`, so the figures don't jitter as they change.
 
+**The Balanced Headline Rule.** Display headlines and centred lines of copy that can wrap use `.balanced()`, so no line is left with one word.
+
 ## Layout
 
 The app is built from SwiftUI `List` and `Form` screens inside a five-tab `TabView`: Today, Find, Map, Meal and My foods. Each tab has its own `NavigationStack`, and Settings is a gear button at the top right. Content uses the standard grouped-list insets.
@@ -281,6 +283,8 @@ Motion lives in `Motion.swift` and `Celebration.swift`. It marks things the pers
 - **Launch:** the leaf and name on a cold start only. `LaunchBackground` keeps the system launch screen on the worktop colour.
 - **Worktop light:** soft patches of the accent drifting across `LeanrBackground`, 30 times a second. It stops in the background and holds still in Low Power Mode. Like the texture, it's removed with Increase Contrast.
 - **Skeletons:** rows the shape of what's coming replace spinners when the layout is known. A spinner stays where Leanr is reading something you gave it, such as a photo.
+- **Springs:** `.figure` and `.counting` are springs, so a change that lands mid-way carries on from where it is rather than restarting.
+- **Zoom:** a progress photo opens out of its thumbnail and swipes back into it.
 
 ## Do's and Don'ts
 
