@@ -13,7 +13,7 @@ struct StoryCard: View {
     var body: some View {
         let accent = AppAccent.resolved(accentRaw).color
         VStack(alignment: .leading, spacing: 0) {
-            Label("LEANR", systemImage: "leaf.fill").font(.roboto(.caption, weight: .bold)).foregroundStyle(accent)
+            Label("TAKEAWISE", systemImage: "leaf.fill").font(.roboto(.caption, weight: .bold)).foregroundStyle(accent)
             Spacer(minLength: 24)
             Image(systemName: icon).font(.system(size: 44)).foregroundStyle(accent).padding(.bottom, 22)
             Text(title).font(.custom(AppFonts.display, size: figure == nil ? 64 : 40)).lineLimit(3).minimumScaleFactor(0.5)
@@ -32,7 +32,7 @@ struct StoryCard: View {
             }
             Spacer(minLength: 24)
             Text(footnote).font(.roboto(.subheadline)).foregroundStyle(.white.opacity(0.6))
-            Text("Tracked with Leanr").font(.roboto(.caption2)).foregroundStyle(.white.opacity(0.45)).padding(.top, 6)
+            Text("Tracked with Takeawise").font(.roboto(.caption2)).foregroundStyle(.white.opacity(0.45)).padding(.top, 6)
         }
         .padding(.horizontal, 32).padding(.vertical, 40)
         .frame(width: MealShareCard.size.width, height: MealShareCard.size.height, alignment: .topLeading)

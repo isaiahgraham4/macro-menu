@@ -45,7 +45,7 @@ struct WeeklyReviewView: View {
                 }
                 if let image {
                     Section {
-                        ShareLink(item: ShareImage(image: image), preview: SharePreview("My week in Leanr", image: Image(uiImage: image))) {
+                        ShareLink(item: ShareImage(image: image), preview: SharePreview("My week in Takeawise", image: Image(uiImage: image))) {
                             Label("Share this week", systemImage: "square.and.arrow.up")
                         }
                     }
@@ -108,7 +108,7 @@ struct WeeklyReviewCard: View {
     var review: WeeklyReview
     var body: some View {
         VStack(alignment: .leading, spacing: 18) {
-            Label("LEANR", systemImage: "leaf.fill").font(.roboto(.caption, weight: .bold)).foregroundStyle(AppAccent.resolved(accentRaw).color)
+            Label("TAKEAWISE", systemImage: "leaf.fill").font(.roboto(.caption, weight: .bold)).foregroundStyle(AppAccent.resolved(accentRaw).color)
             VStack(alignment: .leading, spacing: 2) {
                 Text("My week").font(.display())
                 Text(Self.range(review)).font(.roboto(.subheadline)).foregroundStyle(.secondary)
