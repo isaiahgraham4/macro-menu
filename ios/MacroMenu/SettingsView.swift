@@ -28,7 +28,7 @@ struct SettingsView: View {
                 Section {
                     Button { showPremium = true } label: {
                         HStack {
-                            Label("Even Leanr", systemImage: Premium.isUnlocked ? "checkmark.seal.fill" : "sparkles")
+                            Label("Takeawise Plus", systemImage: Premium.isUnlocked ? "checkmark.seal.fill" : "sparkles")
                             Spacer()
                             Text(Premium.isUnlocked ? PremiumAccess.statusText(Purchases.shared.entitlement) : "See what's included")
                                 .font(.roboto(.subheadline)).foregroundStyle(Color(.secondaryLabel))   // not tint-washed: the button tints .secondary
@@ -59,7 +59,7 @@ struct SettingsView: View {
                                 .background { Circle().strokeBorder(accent.color, lineWidth: 2).padding(-5).opacity(accent == current ? 1 : 0) }
                         }
                         .buttonStyle(.plain)
-                        .accessibilityLabel(locked ? "\(accent.name), needs Even Leanr" : accent.name)
+                        .accessibilityLabel(locked ? "\(accent.name), needs Takeawise Plus" : accent.name)
                         .accessibilityAddTraits(accent == current ? .isSelected : [])
                     }
                 }.padding(.vertical, 8)
@@ -67,7 +67,7 @@ struct SettingsView: View {
                 Text("App colour")
             } footer: {
                 if Premium.isUnlocked { Text("\(current.name) · Changes buttons, tabs, links and progress bars.") }
-                else { Label("More colours come with Even Leanr.", systemImage: "lock.fill") }
+                else { Label("More colours come with Takeawise Plus.", systemImage: "lock.fill") }
             }
             Section {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 3), spacing: 14) {
@@ -90,14 +90,14 @@ struct SettingsView: View {
                             }
                         }
                         .buttonStyle(.plain)
-                        .accessibilityLabel(locked ? "\(icon.name) app icon, needs Even Leanr" : "\(icon.name) app icon")
+                        .accessibilityLabel(locked ? "\(icon.name) app icon, needs Takeawise Plus" : "\(icon.name) app icon")
                         .accessibilityAddTraits(icon == currentIcon ? .isSelected : [])
                     }
                 }.padding(.vertical, 8)
             } header: {
                 Text("App icon")
             } footer: {
-                Text(Premium.isUnlocked ? "\(currentIcon.name)" : "\(currentIcon.name) · More icon packs come with Even Leanr.")
+                Text(Premium.isUnlocked ? "\(currentIcon.name)" : "\(currentIcon.name) · More icon packs come with Takeawise Plus.")
             }
             Section("Targets") {
                 NavigationLink { TargetsView() } label: { Label("Targets & target sets", systemImage: "target") }
@@ -114,7 +114,7 @@ struct SettingsView: View {
                 Toggle(isOn: $liveDay) { Label("Calories on the Lock Screen", systemImage: "lock.iphone") }
                     .onChange(of: liveDay) { LiveDay.refresh(store) }
             } footer: {
-                Text("Shows the calories you have left on the Lock Screen and in the Dynamic Island. iOS ends it after about 8 hours, and it comes back when you next open Leanr.")
+                Text("Shows the calories you have left on the Lock Screen and in the Dynamic Island. iOS ends it after about 8 hours, and it comes back when you next open Takeawise.")
             }
             Section {
                 if health.isAvailable {
@@ -125,7 +125,7 @@ struct SettingsView: View {
                     Text("Apple Health isn’t available on this device.").foregroundStyle(.secondary)
                 }
             } header: { Text("Apple Health") } footer: {
-                Text("Saves the food and water you log and your weigh-ins to Health, and reads your weight, active energy and steps. To choose exactly what Leanr can read or write, open the Health app → your profile → Apps → Leanr.")
+                Text("Saves the food and water you log and your weigh-ins to Health, and reads your weight, active energy and steps. To choose exactly what Takeawise can read or write, open the Health app → your profile → Apps → Takeawise.")
             }
             Section {
                 Toggle(isOn: Binding(get: { cloud.enabled }, set: { cloud.enabled = $0 })) { Label("Sync with iCloud", systemImage: "icloud") }
@@ -142,7 +142,7 @@ struct SettingsView: View {
             }
             BackupSection()
             Section("About") {
-                LabeledContent("App", value: "Leanr")
+                LabeledContent("App", value: "Takeawise")
                 LabeledContent("Developer", value: AppInfo.developer)
                 if let email = AppInfo.contactEmail, let url = URL(string: "mailto:\(email)") {
                     Link(destination: url) { LabeledContent("Contact", value: email) }
@@ -186,7 +186,7 @@ struct MacroColourSettings: View {
     @AppStorage(MacroColours.fatKey) private var fat = "red"
     var body: some View {
         LeanrList {
-            if !Premium.isUnlocked { Section { PremiumPromptRow(message: "Separate macro colours come with Even Leanr.") } }
+            if !Premium.isUnlocked { Section { PremiumPromptRow(message: "Separate macro colours come with Takeawise Plus.") } }
             Group {
                 swatches("Protein", key: "p", selection: $protein)
                 swatches("Carbs", key: "c", selection: $carbs)
@@ -194,7 +194,7 @@ struct MacroColourSettings: View {
                 Section {
                     Button("Reset to default colours") { protein = "blue"; carbs = "orange"; fat = "red" }
                 } footer: {
-                    Text("Choose separate colours for your macros in Leanr and its widgets.")
+                    Text("Choose separate colours for your macros in Takeawise and its widgets.")
                 }
             }.disabled(!Premium.isUnlocked)
         }.navigationTitle("Target colours")
@@ -237,7 +237,7 @@ struct ReminderSettings: View {
     var body: some View {
         LeanrList {
             let _ = revision
-            if !Premium.isUnlocked { Section { PremiumPromptRow(message: "Choosing your meal and water reminders comes with Even Leanr.") } }
+            if !Premium.isUnlocked { Section { PremiumPromptRow(message: "Choosing your meal and water reminders comes with Takeawise Plus.") } }
             Group {
                 if !MealReminders.allOn {
                     Section {
@@ -268,10 +268,10 @@ struct ReminderSettings: View {
                     }
                 }
                 Section {
-                    Text("Leanr only reminds you if nothing has been logged to that meal by then. Log it and today's reminder is cancelled. The wording changes from day to day.")
+                    Text("Takeawise only reminds you if nothing has been logged to that meal by then. Log it and today's reminder is cancelled. The wording changes from day to day.")
                         .font(.roboto(.subheadline)).foregroundStyle(.secondary)
                 } footer: {
-                    if !Premium.isUnlocked { Label("Choosing which meals remind you, and when, comes with Even Leanr.", systemImage: "lock.fill") }
+                    if !Premium.isUnlocked { Label("Choosing which meals remind you, and when, comes with Takeawise Plus.", systemImage: "lock.fill") }
                 }
                 Section {
                     Toggle("Water", isOn: Binding(get: { MealReminders.waterOn }, set: { on in
@@ -312,15 +312,15 @@ struct ReminderSettings: View {
             } footer: {
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Sundays at \(time(weeklyMinutes).formatted(date: .omitted, time: .shortened)): days logged, average calories, protein days and your weight trend.")
-                    if !Premium.isUnlocked { Label("Choosing the time comes with Even Leanr.", systemImage: "lock.fill") }
+                    if !Premium.isUnlocked { Label("Choosing the time comes with Takeawise Plus.", systemImage: "lock.fill") }
                 }
             }
         }
         .navigationTitle("Reminders")
-        .alert("Notifications are off for Leanr", isPresented: $denied) {
+        .alert("Notifications are off for Takeawise", isPresented: $denied) {
             Button("Open Settings") { if let url = URL(string: UIApplication.openNotificationSettingsURLString) { openURL(url) } }
             Button("Cancel", role: .cancel) {}
-        } message: { Text("Turn on notifications for Leanr in the Settings app to get reminders.") }
+        } message: { Text("Turn on notifications for Takeawise in the Settings app to get reminders.") }
     }
     private var weeklyMinutes: Int { MealReminders.weeklyMinutes(unlocked: Premium.isUnlocked) }
     private func time(_ minutes: Int) -> Date {

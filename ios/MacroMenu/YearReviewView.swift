@@ -4,7 +4,7 @@ extension YearReview {
     /// The review as story cards, one for each thing there is to say.
     @MainActor func cards(chainName: (String) -> String) -> [StoryCard] {
         let name = String(year), footnote = name
-        var cards = [StoryCard(icon: "calendar", title: "\(name) in Leanr", figure: (meals.formatted(), "meals logged"),
+        var cards = [StoryCard(icon: "calendar", title: "\(name) in Takeawise", figure: (meals.formatted(), "meals logged"),
                                detail: "Across \(days.formatted()) \(days == 1 ? "day" : "days").", footnote: footnote)]
         if let topMeal {
             let chain = topChain.map { " \(chainName($0.id)) was your most logged restaurant." } ?? ""
@@ -44,7 +44,7 @@ struct YearReviewView: View {
                 }
                 .tabViewStyle(.page(indexDisplayMode: .always)).indexViewStyle(.page(backgroundDisplayMode: .always))
                 ShareLink(item: ShareImage(image: images[min(page, images.count - 1)]),
-                          preview: SharePreview("My \(String(review.year)) in Leanr", image: Image(uiImage: images[min(page, images.count - 1)]))) {
+                          preview: SharePreview("My \(String(review.year)) in Takeawise", image: Image(uiImage: images[min(page, images.count - 1)]))) {
                     Label("Share this card", systemImage: "square.and.arrow.up").frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.borderedProminent).controlSize(.large)

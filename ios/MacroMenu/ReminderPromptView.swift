@@ -28,7 +28,7 @@ struct ReminderPromptView: View {
                         Image(systemName: "bell.badge").font(.system(size: 34)).foregroundStyle(.tint)
                         Text("Want a nudge to keep logging?")
                             .font(.roboto(.title2, weight: .bold))
-                        Text("Leanr can remind you about meals and water. Reminders only go out if you haven't already logged, and you can change or stop them any time in Settings.")
+                        Text("Takeawise can remind you about meals and water. Reminders only go out if you haven't already logged, and you can change or stop them any time in Settings.")
                             .font(.roboto(.subheadline)).foregroundStyle(.secondary)
                     }.padding(.vertical, 6)
                 }
@@ -68,13 +68,13 @@ struct ReminderPromptView: View {
             }
             .navigationTitle("Reminders")
             .navigationBarTitleDisplayMode(.inline)
-            .alert("Notifications are off for Leanr", isPresented: $denied) {
+            .alert("Notifications are off for Takeawise", isPresented: $denied) {
                 Button("Open Settings") {
                     if let url = URL(string: UIApplication.openNotificationSettingsURLString) { openURL(url) }
                     dismiss()
                 }
                 Button("Not now", role: .cancel) { dismiss() }
-            } message: { Text("Turn on notifications for Leanr in the Settings app to get reminders.") }
+            } message: { Text("Turn on notifications for Takeawise in the Settings app to get reminders.") }
         }
         .interactiveDismissDisabled(working)
         .onDisappear {

@@ -4,9 +4,9 @@ Everything for a first TestFlight build is ready except the upload itself, which
 
 ## Upload a build
 
-1. In App Store Connect, create the app if it isn't there yet: **Apps → + → New App**, platform iOS, name **Leanr**,
+1. In App Store Connect, create the app if it isn't there yet: **Apps → + → New App**, platform iOS, name **Takeawise**,
    bundle ID `com.isaiahgraham.MacroMenu`, SKU of your choice.
-2. In Xcode, open **Window → Organizer → Archives**, pick the latest **Leanr** archive and press **Distribute App →
+2. In Xcode, open **Window → Organizer → Archives**, pick the latest **Takeawise** archive and press **Distribute App →
    App Store Connect → Upload**. Or make a fresh one with **Product → Archive**.
 3. When the build finishes processing, add testers under **TestFlight**. Internal testers need no review.
 
@@ -26,8 +26,8 @@ Before each new upload, raise the build number (`CURRENT_PROJECT_VERSION`) in th
 - App Privacy answers in App Store Connect: **Data Not Collected**. Location is only used on the device and by Apple Maps,
   which Apple doesn't count as collection by the developer. Food logs, weights and targets stay on the device, in the
   user's iCloud and (if connected) in Apple Health. Barcode lookups send only the barcode number, and packaged-food searches only the search words, to Open Food Facts.
-- Weights read from Apple Health never go to iCloud (App Review Guideline 5.1.3). Weights entered in Leanr do.
-- Photo of your meal and Visual Intelligence results run on the device and use Leanr's own data; nothing is sent, so the
+- Weights read from Apple Health never go to iCloud (App Review Guideline 5.1.3). Weights entered in Takeawise do.
+- Photo of your meal and Visual Intelligence results run on the device and use Takeawise's own data; nothing is sent, so the
   privacy answers don't change. Naming the foods uses Apple Intelligence's on-device model (iOS 27, where the iPhone has it)
   and otherwise Apple's built-in Vision image classifier (`MealVision.swift`, `VisionFoodLabels.swift`), which works on
   every supported iPhone. Restaurant items are never ticked from a photo unless the photo shows that restaurant's brand.
@@ -39,7 +39,7 @@ Before each new upload, raise the build number (`CURRENT_PROJECT_VERSION`) in th
 - Describe your meal reads the words on the device (Apple Intelligence's on-device model on iOS 26+ where available,
   otherwise `FoodPhrase`), and the Apple Watch app gets today's totals and quick-log options straight from the iPhone over
   WatchConnectivity. Neither sends anything off the device, so the privacy answers don't change.
-- Settings → Delete all my data erases the device data and the iCloud copy, can remove what Leanr saved to Health, and
+- Settings → Delete all my data erases the device data and the iCloud copy, can remove what Takeawise saved to Health, and
   turns iCloud sync off.
 - Age rating: answer the questionnaire honestly (no objectionable content). The terms ask for 13+ and the target
   estimate is 18+.
@@ -48,14 +48,14 @@ Before each new upload, raise the build number (`CURRENT_PROJECT_VERSION`) in th
   Settings → Acknowledgements, with the Open Food Facts credit (ODbL) and the USDA FoodData Central credit (public
   domain; `MacroMenu/GenericFoods.json` is built by `Scripts/generic-foods.py`).
 
-## Even Leanr (subscriptions): currently switched off
+## Takeawise Plus (subscriptions): currently switched off
 
 **Subscriptions are off for now.** `Premium.subscriptionsEnabled` in `MacroMenu/Theme.swift` is `false`: every feature is unlocked
-for everyone, the Even Leanr row and screen are hidden and StoreKit is never contacted. The legal text that describes the
+for everyone, the Takeawise Plus row and screen are hidden and StoreKit is never contacted. The legal text that describes the
 subscription is held in `AppStore/even-leanr-legal.md` and must go back into Terms.md and PrivacyPolicy.md (and the hosted
 privacy gist) when the switch is turned on.
 
-The subscription is called **Even Leanr** everywhere users see it. In code it's still "Premium" (`Premium.isUnlocked`,
+The subscription is called **Takeawise Plus** everywhere users see it. In code it's still "Premium" (`Premium.isUnlocked`,
 `PremiumView`) and the product IDs keep `premium`; users never see those, and product IDs can't be renamed once created.
 
 `MacroMenu/Purchases.swift` reads StoreKit 2 entitlements; `MacroMenu/PremiumView.swift` is Apple's subscription view with
@@ -64,7 +64,7 @@ colours, app icons, macro colours, the Calories & macros and All targets widgets
 
 Before the first release, in App Store Connect → the app → Monetization → Subscriptions:
 
-1. Create a subscription group named "Even Leanr".
+1. Create a subscription group named "Takeawise Plus".
 2. Add two auto-renewable subscriptions with these exact product IDs (they're hard-coded in `PremiumAccess.swift`):
    `com.isaiahgraham.MacroMenu.premium.yearly` (1 year) and `com.isaiahgraham.MacroMenu.premium.monthly` (1 month).
 3. Set the prices: monthly A$5.99, yearly A$49.99 (App Store Connect only offers Apple's price points, and A$49.99 is the
@@ -97,7 +97,7 @@ status bar and a week of sample meals:
 **Subtitle:** Fast food that fits your macros
 
 **Description:**
-Leanr finds the order that fits. Tell it your calories and protein and it searches the published nutrition figures from
+Takeawise finds the order that fits. Tell it your calories and protein and it searches the published nutrition figures from
 McDonald's, KFC, Hungry Jack's, Subway, Guzman y Gomez, Nando's, Oporto, Red Rooster, Domino's, Spud Bar, Zambrero,
 Boost Juice, Schnitz and Grill'd for combinations from one restaurant.
 
@@ -109,12 +109,12 @@ Boost Juice, Schnitz and Grill'd for combinations from one restaurant.
 - Type or say what you ate, plan tomorrow's meals, and import recipes from a link.
 - A weekly check-in that adjusts your calorie target to the pace you want, from your own log and weight trend.
 - Apple Watch: calories left, calories burnt, and your usual meals, pinned foods and water in a tap.
-- Siri: "Log my usual lunch in Leanr", "What fits at KFC in Leanr" or "Log a glass of water in Leanr".
+- Siri: "Log my usual lunch in Takeawise", "What fits at KFC in Takeawise" or "Log a glass of water in Takeawise".
 - Meal and water reminders, a Sunday weekly review, widgets, Apple Health and iCloud sync.
 - CSV export of your food log and daily totals.
 
-Nutrition figures are the chains' own published data; where a chain doesn't publish a figure, Leanr leaves it blank
-rather than guessing. Custom orders and recipes are estimates. Leanr isn't medical advice and isn't affiliated with
+Nutrition figures are the chains' own published data; where a chain doesn't publish a figure, Takeawise leaves it blank
+rather than guessing. Custom orders and recipes are estimates. Takeawise isn't medical advice and isn't affiliated with
 any restaurant.
 
 **Keywords:** macros,calories,protein,fast food,drive thru,meal finder,nutrition,diet,tracker,weight

@@ -53,7 +53,7 @@ struct FoodMatchSections: View {
         ForEach($rows) { $row in
             Section {
                 if row.matches.isEmpty {
-                    Text("Not in Leanr yet. Search for something close, or leave it out.").foregroundStyle(.secondary)
+                    Text("Not in Takeawise yet. Search for something close, or leave it out.").foregroundStyle(.secondary)
                 } else {
                     if row.chosen == nil, let note = row.unchosenNote {
                         Text(note).font(.roboto(.caption)).foregroundStyle(.secondary)
@@ -68,7 +68,7 @@ struct FoodMatchSections: View {
                         Text("\(store.chainName(food.chain)) · \(food.serve.isEmpty ? "1 serving" : food.serve) each · \(Nutrition([Portion(food: food, quantity: row.quantity)]).cal.rounded().number) Cal")
                             .font(.roboto(.caption)).foregroundStyle(.secondary)
                         if !row.sure {
-                            Text("Check the amount: Leanr couldn't turn \"\(row.phrase?.original ?? row.title)\" into servings of this food.")
+                            Text("Check the amount: Takeawise couldn't turn \"\(row.phrase?.original ?? row.title)\" into servings of this food.")
                                 .font(.roboto(.caption)).foregroundStyle(.orange)
                         }
                     }

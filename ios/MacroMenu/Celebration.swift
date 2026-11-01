@@ -303,7 +303,7 @@ private struct LaunchAnimation: View {
     @State private var leaf = false
     @State private var word = false
     @State private var leaving = false
-    private static let letters = Array("LEANR").map(String.init)
+    private static let letters = Array("TAKEAWISE").map(String.init)
 
     var body: some View {
         ZStack {

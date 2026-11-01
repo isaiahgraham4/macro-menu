@@ -503,13 +503,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Configuration/App-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Leanr;
+				INFOPLIST_KEY_CFBundleDisplayName = Takeawise;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Leanr uses the camera to scan product barcodes, read nutrition labels, recognise the foods in a photo of your meal and take progress photos.";
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "Leanr reads your weight, active energy and steps to show your weight trend, your steps and an estimate of your calorie target.";
-				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Leanr saves the food and water you log and the weights you enter to Apple Health.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Leanr uses your location while you’re using the app to show the closest restaurants.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Takeawise uses the camera to scan product barcodes, read nutrition labels and menus, recognise the foods in a photo of your meal and take progress photos.";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Takeawise reads your weight, active energy and steps to show your weight trend, your steps and an estimate of your calorie target.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Takeawise saves the food and water you log and the weights you enter to Apple Health.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Takeawise uses your location while you’re using the app to show the closest restaurants.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -543,13 +543,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Configuration/App-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Leanr;
+				INFOPLIST_KEY_CFBundleDisplayName = Takeawise;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Leanr uses the camera to scan product barcodes, read nutrition labels, recognise the foods in a photo of your meal and take progress photos.";
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "Leanr reads your weight, active energy and steps to show your weight trend, your steps and an estimate of your calorie target.";
-				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Leanr saves the food and water you log and the weights you enter to Apple Health.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Leanr uses your location while you’re using the app to show the closest restaurants.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Takeawise uses the camera to scan product barcodes, read nutrition labels and menus, recognise the foods in a photo of your meal and take progress photos.";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Takeawise reads your weight, active energy and steps to show your weight trend, your steps and an estimate of your calorie target.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Takeawise saves the food and water you log and the weights you enter to Apple Health.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Takeawise uses your location while you’re using the app to show the closest restaurants.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -580,7 +580,7 @@
 				CURRENT_PROJECT_VERSION = 69;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Configuration/Widget-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Leanr Widgets";
+				INFOPLIST_KEY_CFBundleDisplayName = "Takeawise Widgets";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -605,7 +605,7 @@
 				CURRENT_PROJECT_VERSION = 69;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Configuration/Widget-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Leanr Widgets";
+				INFOPLIST_KEY_CFBundleDisplayName = "Takeawise Widgets";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -631,7 +631,7 @@
 				CURRENT_PROJECT_VERSION = 69;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Leanr;
+				INFOPLIST_KEY_CFBundleDisplayName = Takeawise;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.isaiahgraham.MacroMenu;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
@@ -662,7 +662,7 @@
 				CURRENT_PROJECT_VERSION = 69;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Leanr;
+				INFOPLIST_KEY_CFBundleDisplayName = Takeawise;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.isaiahgraham.MacroMenu;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
@@ -692,7 +692,7 @@
 				CURRENT_PROJECT_VERSION = 69;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Configuration/WatchWidget-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Leanr;
+				INFOPLIST_KEY_CFBundleDisplayName = Takeawise;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -719,7 +719,7 @@
 				CURRENT_PROJECT_VERSION = 69;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Configuration/WatchWidget-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Leanr;
+				INFOPLIST_KEY_CFBundleDisplayName = Takeawise;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

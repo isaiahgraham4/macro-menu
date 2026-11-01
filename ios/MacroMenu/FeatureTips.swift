@@ -19,7 +19,7 @@ enum FeatureTip: String, CaseIterable, Identifiable, Sendable {
         case .reminders: "Get a nudge to log"
         case .plan: "Plan your meals ahead"
         case .photo: "Log a meal from a photo"
-        case .askLeanr: "Ask Leanr"
+        case .askLeanr: "Ask Takeawise"
         case .widgets: "Add a widget"
         case .checkIn: "Try the weekly check-in"
         case .body: "Track measurements and photos"
@@ -28,13 +28,13 @@ enum FeatureTip: String, CaseIterable, Identifiable, Sendable {
 
     var detail: String {
         switch self {
-        case .describe: "Type or say a meal in your own words and Leanr works out the numbers."
+        case .describe: "Type or say a meal in your own words and Takeawise works out the numbers."
         case .scan: "Scan a packaged food's barcode to log it in a tap."
         case .water: "Tap the plus on the Water row each time you have a glass."
         case .health: "See your steps and calories burnt next to what you eat."
         case .reminders: "Meal and water reminders that skip anything you've already logged."
         case .plan: "Plan tomorrow's meals now and tick them off with one tap."
-        case .photo: "Take a photo of your plate and Leanr suggests the foods in it."
+        case .photo: "Take a photo of your plate and Takeawise suggests the foods in it."
         case .askLeanr: "Ask for something like \"high protein, no dairy\" and get matching meals."
         case .widgets: "Calories left, water and steps on your Home or Lock Screen."
         case .checkIn: "Once a week, get a suggestion on whether to adjust your target."

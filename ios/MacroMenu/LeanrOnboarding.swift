@@ -138,7 +138,7 @@ struct LeanrOnboarding: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 26) {
                 HStack {
-                    Label("Leanr", systemImage: "leaf.fill").font(.display(.title2))
+                    Label("Takeawise", systemImage: "leaf.fill").font(.display(.title2))
                     Spacer()
                     Button("Skip") {
                         if targetPrompt { complete() } else { targetPrompt = true }
@@ -152,7 +152,7 @@ struct LeanrOnboarding: View {
                     }.accessibilityLabel("Setup step \(setupStep + 1) of 3")
                     if setupStep == 1 {
                         setupCard(icon: "location.fill", title: "Find food near you",
-                                  text: "See the closest restaurants on the map and how far away each order is. Leanr only uses your location while it’s open, to find nearby restaurants with Apple Maps.",
+                                  text: "See the closest restaurants on the map and how far away each order is. Takeawise only uses your location while it’s open, to find nearby restaurants with Apple Maps.",
                                   action: "Allow location") {
                             location.request(); advance()
                         }
@@ -213,7 +213,7 @@ struct LeanrOnboarding: View {
                                 .animation(.easeOut(duration: 1), value: countingUp)
                                 .onAppear { countingUp = true }
                             Text(abs(guess - meal.cal) <= 50 ? "Close guess! You were within 50 calories." : "Your guess: \(Int(guess)) Cal · about \(Int(abs(guess - meal.cal).rounded())) Cal away.")
-                            Text("Leanr shows the calories and protein for each item, so you can compare options and build a meal around them.").foregroundStyle(.secondary)
+                            Text("Takeawise shows the calories and protein for each item, so you can compare options and build a meal around them.").foregroundStyle(.secondary)
                             Text("\(meal.p.number) g protein · Bundled \(store.chainName(meal.chain)) Australia menu data. Servings and recipes may vary.").font(.roboto(.caption)).foregroundStyle(.secondary)
                         }.accessibilityElement(children: .combine).accessibilityAddTraits(.updatesFrequently)
                         .transition(.opacity)
@@ -258,10 +258,10 @@ struct LeanrOnboarding: View {
                             .background { CuttingBoard() }
                             if calorieGap > 0 {
                                 Text("If you ate these items and logged your guesses, you’d count \(calorieGap.number) fewer calories than the menu lists. If those guesses brought you to your target, that gap would put you \(calorieGap.number) calories above it across those meals.")
-                                Text("Small guessing gaps add up. Leanr shows what’s in each meal so you can plan around the real numbers.")
+                                Text("Small guessing gaps add up. Takeawise shows what’s in each meal so you can plan around the real numbers.")
                                     .foregroundStyle(.secondary)
                             } else {
-                                Text(calorieGap < 0 ? "Your combined guesses were above the menu total, so you’d have counted more calories than the meals contain. Checking the numbers avoids that." : "You matched the combined menu total. Leanr keeps the numbers handy so you don’t need to guess.")
+                                Text(calorieGap < 0 ? "Your combined guesses were above the menu total, so you’d have counted more calories than the meals contain. Checking the numbers avoids that." : "You matched the combined menu total. Takeawise keeps the numbers handy so you don’t need to guess.")
                                     .foregroundStyle(.secondary)
                             }
                         } else {

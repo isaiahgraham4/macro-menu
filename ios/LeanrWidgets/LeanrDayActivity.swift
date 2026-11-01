@@ -76,7 +76,7 @@ private struct DayActivityLockScreen: View {
                     Text(state.figure).font(.roboto(.title2, weight: .bold)).monospacedDigit()
                     Text(state.caption).font(.roboto(.subheadline)).foregroundStyle(.secondary)
                     Spacer(minLength: 0)
-                    Label("Leanr", systemImage: "leaf.fill").labelStyle(.iconOnly).font(.caption).foregroundStyle(state.color)
+                    Label("Takeawise", systemImage: "leaf.fill").labelStyle(.iconOnly).font(.caption).foregroundStyle(state.color)
                 }
                 DayProtein(state: state)
             }

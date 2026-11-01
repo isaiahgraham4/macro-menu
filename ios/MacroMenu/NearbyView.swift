@@ -428,7 +428,7 @@ struct LocationStatusRows: View {
     var body: some View {
         if location.isDenied {
             Section {
-                Text("Location access is off, so Leanr can't find \(what).").foregroundStyle(.secondary)
+                Text("Location access is off, so Takeawise can't find \(what).").foregroundStyle(.secondary)
                 Button("Open Settings") { if let url = URL(string: UIApplication.openSettingsURLString) { openURL(url) } }
             }
         } else if !location.isAuthorized {

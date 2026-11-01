@@ -24,7 +24,7 @@ struct PremiumView: View {
             Group {
                 if purchases.isUnlocked { subscribed } else { store }
             }
-            .navigationTitle("Even Leanr").navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("Takeawise Plus").navigationBarTitleDisplayMode(.inline)
             // Apple's subscription view brings its own close button; the subscribed screen needs ours.
             .toolbar { if purchases.isUnlocked { ToolbarItem(placement: .cancellationAction) { Button("Done") { dismiss() } } } }
         }
@@ -33,7 +33,7 @@ struct PremiumView: View {
     private var store: some View {
         SubscriptionStoreView(productIDs: PremiumAccess.productIDs) {
             VStack(alignment: .leading, spacing: 14) {
-                Text("Even Leanr").font(.display(.largeTitle))
+                Text("Takeawise Plus").font(.display(.largeTitle))
                 ForEach(PremiumFeatures.all, id: \.title) { feature in
                     HStack(alignment: .top, spacing: 12) {
                         Image(systemName: feature.symbol).font(.title3).foregroundStyle(.tint).frame(width: 28)
@@ -61,7 +61,7 @@ struct PremiumView: View {
     private var subscribed: some View {
         LeanrList {
             Section {
-                Label("You have Even Leanr", systemImage: "checkmark.seal.fill").font(.roboto(.headline)).foregroundStyle(.tint)
+                Label("You have Takeawise Plus", systemImage: "checkmark.seal.fill").font(.roboto(.headline)).foregroundStyle(.tint)
                 Text(PremiumAccess.statusText(purchases.entitlement)).foregroundStyle(.secondary)
             }
             Section("Included") {
@@ -77,7 +77,7 @@ struct PremiumView: View {
             Section {
                 Button("Manage subscription", systemImage: "gearshape") { managing = true }
             } footer: {
-                Text("Change plan, cancel or see receipts in your Apple Account. Cancelling keeps Even Leanr until the end of the period you've paid for.")
+                Text("Change plan, cancel or see receipts in your Apple Account. Cancelling keeps Takeawise Plus until the end of the period you've paid for.")
             }
         }
         .manageSubscriptionsSheet(isPresented: $managing)
@@ -86,7 +86,7 @@ struct PremiumView: View {
 
 /// A row that tells a locked user what Premium adds and opens the Premium screen. Shows nothing once they have it.
 struct PremiumPromptRow: View {
-    var message = "Part of Even Leanr."
+    var message = "Part of Takeawise Plus."
     @State private var showing = false
     var body: some View {
         if !Premium.isUnlocked {
@@ -94,7 +94,7 @@ struct PremiumPromptRow: View {
                 HStack {
                     Label(message, systemImage: "lock.fill")
                     Spacer()
-                    Text("See Even Leanr").font(.roboto(.subheadline, weight: .semibold)).foregroundStyle(.tint)
+                    Text("See Takeawise Plus").font(.roboto(.subheadline, weight: .semibold)).foregroundStyle(.tint)
                 }
             }
             .sheet(isPresented: $showing) { PremiumView() }

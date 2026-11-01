@@ -59,7 +59,7 @@ struct CaloriesComplication: Widget {
             CaloriesComplicationView(entry: entry).containerBackground(for: .widget) {}
         }
         .configurationDisplayName("Calories left")
-        .description("What's left of today's calories, from Leanr on your iPhone.")
+        .description("What's left of today's calories, from Takeawise on your iPhone.")
         .supportedFamilies([.accessoryCircular, .accessoryCorner, .accessoryRectangular, .accessoryInline])
     }
 }
@@ -77,7 +77,7 @@ struct CaloriesComplicationView: View {
     var body: some View {
         switch family {
         case .accessoryInline:
-            Text(today == nil ? "Leanr" : "\(value) Cal \(label)")
+            Text(today == nil ? "Takeawise" : "\(value) Cal \(label)")
         case .accessoryCorner:
             Image(systemName: "fork.knife").font(.title3).widgetAccentable()
                 .widgetLabel {
@@ -86,8 +86,8 @@ struct CaloriesComplicationView: View {
                 }
         case .accessoryRectangular:
             VStack(alignment: .leading, spacing: 2) {
-                Text("Leanr").font(.caption2.weight(.semibold)).foregroundStyle(.secondary).widgetAccentable()
-                Text(today == nil ? "Open Leanr on iPhone" : "\(value) Cal \(label)").font(.headline).minimumScaleFactor(0.7).lineLimit(1)
+                Text("Takeawise").font(.caption2.weight(.semibold)).foregroundStyle(.secondary).widgetAccentable()
+                Text(today == nil ? "Open Takeawise on iPhone" : "\(value) Cal \(label)").font(.headline).minimumScaleFactor(0.7).lineLimit(1)
                 if let today, let target = today.proteinTarget {
                     let to = target - today.protein
                     Text(to > 0 ? "\(number(to)) g protein to go" : "Protein target reached").font(.caption2).foregroundStyle(.secondary)
@@ -101,7 +101,7 @@ struct CaloriesComplicationView: View {
                 Text(value).minimumScaleFactor(0.5)
             }
             .gaugeStyle(.accessoryCircularCapacity).widgetAccentable()
-            .accessibilityLabel(today == nil ? "Leanr" : "\(value) calories \(label)")
+            .accessibilityLabel(today == nil ? "Takeawise" : "\(value) calories \(label)")
         }
     }
 }
@@ -129,7 +129,7 @@ struct ProteinComplicationView: View {
     var body: some View {
         switch family {
         case .accessoryInline:
-            Text(entry.today.map { "\(eaten)\($0.proteinTarget.map { " of \(number($0))" } ?? "") g protein" } ?? "Leanr")
+            Text(entry.today.map { "\(eaten)\($0.proteinTarget.map { " of \(number($0))" } ?? "") g protein" } ?? "Takeawise")
         case .accessoryCorner:
             Text("P").font(.title3.weight(.bold)).widgetAccentable()
                 .widgetLabel {
@@ -171,7 +171,7 @@ struct WaterComplicationView: View {
     var body: some View {
         switch family {
         case .accessoryInline:
-            Text(entry.today.map { "\(drunk)\($0.water < 1000 ? " mL" : "") water" } ?? "Leanr")
+            Text(entry.today.map { "\(drunk)\($0.water < 1000 ? " mL" : "") water" } ?? "Takeawise")
         case .accessoryCorner:
             Image(systemName: "drop.fill").font(.title3).foregroundStyle(.cyan).widgetAccentable()
                 .widgetLabel {
@@ -214,7 +214,7 @@ struct BurntComplicationView: View {
     var body: some View {
         switch family {
         case .accessoryInline:
-            Text(burnt.map { "\(number($0)) Cal burnt" } ?? "Leanr")
+            Text(burnt.map { "\(number($0)) Cal burnt" } ?? "Takeawise")
         case .accessoryCorner:
             Image(systemName: "flame.fill").font(.title3).foregroundStyle(.orange).widgetAccentable()
                 .widgetLabel { Text("\(valueText) Cal") }

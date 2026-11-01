@@ -20,9 +20,9 @@ struct MacrosWidgetView: View {
     var body: some View {
         Group {
             if entry.calories == nil {
-                Text("Open Leanr to sync your targets").font(.roboto(.subheadline))
+                Text("Open Takeawise to sync your targets").font(.roboto(.subheadline))
             } else if entry.calories?.premiumUnlocked != true {
-                Label("Open Leanr to unlock this widget", systemImage: "lock.fill").font(.roboto(.subheadline))
+                Label("Open Takeawise to unlock this widget", systemImage: "lock.fill").font(.roboto(.subheadline))
             } else {
                 GeometryReader { geometry in
                     let diameter = min(geometry.size.height, geometry.size.width * 0.37)
@@ -63,7 +63,7 @@ struct MacrosWidgetView: View {
             }.padding(14)
         }.padding(5)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(entry.remaining == nil ? "Set a calorie target in Leanr" : "\(entry.value) \(entry.caption)")
+        .accessibilityLabel(entry.remaining == nil ? "Set a calorie target in Takeawise" : "\(entry.value) \(entry.caption)")
     }
 
     private func macro(_ id: String, name: String, colour: Color) -> some View {

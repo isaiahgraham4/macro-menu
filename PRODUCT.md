@@ -6,7 +6,7 @@
 
 ios
 
-The native iOS app, **Leanr** (`ios/MacroMenu.xcodeproj`, SwiftUI, iOS 18+, bundle id `com.isaiahgraham.MacroMenu`), is the primary product and the surface future design work serves. The **Macro Menu** web app (`index.html`, built into `docs/` by `build.py`, served on GitHub Pages and as a Claude artifact) is a secondary companion surface and the source of the bundled menu data.
+The native iOS app, **Takeawise** (`ios/MacroMenu.xcodeproj`, SwiftUI, iOS 18+, bundle id `com.isaiahgraham.MacroMenu`), is the primary product and the surface future design work serves. The **Macro Menu** web app (`index.html`, built into `docs/` by `build.py`, served on GitHub Pages and as a Claude artifact) is a secondary companion surface and the source of the bundled menu data.
 
 ## Users
 
@@ -14,7 +14,7 @@ General calorie trackers in Australia who often eat fast food. They are logging 
 
 ## Product Purpose
 
-Leanr answers "what can I order here that fits my day?" and then tracks the day. It ranks whole orders from Australian fast-food menus against the user's remaining calories, protein and budget, and logs meals, foods and weight against personal targets. Success is a user who can eat out without blowing their targets and who keeps logging because doing so is fast.
+Takeawise answers "what can I order here that fits my day?" and then tracks the day. It ranks whole orders from Australian fast-food menus against the user's remaining calories, protein and budget, and logs meals, foods and weight against personal targets. Success is a user who can eat out without blowing their targets and who keeps logging because doing so is fast.
 
 ## Positioning
 
@@ -42,7 +42,7 @@ A calorie tracker built around eating out, rather than a generic food diary with
 
 ## Brand Commitments
 
-- The iOS app's name is **Leanr**. The web app keeps the name **Macro Menu**, and its localStorage key stays `drivethru-macros.v1` so saved data survives.
+- The iOS app's name is **Takeawise**. The web app keeps the name **Macro Menu**, and its localStorage key stays `drivethru-macros.v1` so saved data survives.
 - The data sources are part of the brand's honesty: each chain's official published figures, with sources linked in the app.
 
 ## Evidence on Hand

@@ -70,7 +70,7 @@ extension Moment {
             Copy(icon: "calendar", title: "\(logged) of 7 days logged",
                  detail: "On or under calories \(onTarget) \(onTarget == 1 ? "day" : "days"), protein hit \(protein). Tap for your review.", shareable: true)
         case .year(let year):
-            Copy(icon: "sparkles", title: "Your \(String(year)) is ready", detail: "Tap to see your year in Leanr.", shareable: false)
+            Copy(icon: "sparkles", title: "Your \(String(year)) is ready", detail: "Tap to see your year in Takeawise.", shareable: false)
         }
     }
     /// Tapping the card opens a review rather than closing it.

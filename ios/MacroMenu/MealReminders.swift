@@ -51,7 +51,7 @@ import UserNotifications
             ("Start the day on the board", "Log your breakfast and get your day going."),
             ("Had breakfast yet?", "Log it now so you don't forget later."),
             ("Breakfast check-in", "Nothing's logged for breakfast. Tap to add it."),
-            ("Fuel up, then log it", "Your breakfast isn't in Leanr yet."),
+            ("Fuel up, then log it", "Your breakfast isn't in Takeawise yet."),
             ("Skipping breakfast?", "No problem. If you ate something, tap to log it.")],
         .lunch: [
             ("Lunch o'clock", "Nothing logged for lunch yet. Tap to add it."),
@@ -63,7 +63,7 @@ import UserNotifications
         .dinner: [
             ("Dinner time", "Nothing logged for dinner yet. Tap to add it."),
             ("What's for dinner?", "Log it as you go and keep your day on track."),
-            ("Dinner check-in", "Your dinner isn't in Leanr yet."),
+            ("Dinner check-in", "Your dinner isn't in Takeawise yet."),
             ("Evening! Had dinner?", "Add it now while you remember what was on the plate."),
             ("Nearly end of day", "Log your dinner to keep your numbers right."),
             ("Dinner's not logged", "It takes a few seconds. Tap to add it.")],
@@ -140,7 +140,7 @@ import UserNotifications
         ("Water break", "A quick glass now keeps the day on track."),
         ("Sip, sip", "When did you last have water? Tap to log it."),
         ("Stay topped up", "Have a glass and log it in a tap."),
-        ("Drink up", "A glass of water, then log it in Leanr."),
+        ("Drink up", "A glass of water, then log it in Takeawise."),
         ("Hydration check", "Water time. It takes a second to log.")]
 
     /// The wording for one water reminder. Consecutive days differ, and so do neighbouring reminders on the same day.
@@ -254,7 +254,7 @@ import UserNotifications
             }
             if let weekly {
                 let content = UNMutableNotificationContent()
-                content.title = "Your week in Leanr"
+                content.title = "Your week in Takeawise"
                 content.body = weekly.text
                 content.sound = .default
                 let parts = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: weekly.date)

@@ -9,7 +9,7 @@ struct LeanrLogAgainWidget: Widget {
             LogAgainWidgetView(entry: entry)
         }
         .configurationDisplayName("Log again")
-        .description("Log your usual meal or a pinned food with one tap, without opening Leanr.")
+        .description("Log your usual meal or a pinned food with one tap, without opening Takeawise.")
         .supportedFamilies([.systemSmall, .systemMedium, .accessoryCircular, .accessoryRectangular])
     }
 }
@@ -156,7 +156,7 @@ struct LogAgainWidgetView: View {
                     .background { AccessoryWidgetBackground() }.clipShape(Circle())
             } else {
                 Label("Log again", systemImage: "arrow.uturn.backward").font(.roboto(.caption, weight: .semibold)).foregroundStyle(accent)
-                Text(entry.calories == nil ? "Open Leanr to sync" : "Pin a food or log a few meals in Leanr to see them here.")
+                Text(entry.calories == nil ? "Open Takeawise to sync" : "Pin a food or log a few meals in Takeawise to see them here.")
                     .font(.roboto(.caption)).foregroundStyle(.secondary)
             }
         }

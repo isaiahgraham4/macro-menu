@@ -27,7 +27,7 @@ enum RecipeImport {
             switch self {
             case .notALink: "That isn't a web link. Copy the recipe page's address from Safari and paste it here."
             case .couldNotLoad: "The page couldn't be loaded. Check you're online and the link opens in Safari."
-            case .noRecipe: "No recipe was found on that page. Leanr reads the recipe details most recipe sites include, and this page doesn't have them."
+            case .noRecipe: "No recipe was found on that page. Takeawise reads the recipe details most recipe sites include, and this page doesn't have them."
             }
         }
     }

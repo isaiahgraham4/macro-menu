@@ -23,7 +23,7 @@ struct StepsWidgetView: View {
     private func text(_ value: Double) -> String { value.formatted(.number.precision(.fractionLength(0))) }
     private var valueText: String { count.map(text) ?? "—" }
     private var caption: String {
-        if entry.calories == nil { return "Open Leanr to sync" }
+        if entry.calories == nil { return "Open Takeawise to sync" }
         guard let count else { return "No steps yet today" }
         return count >= goal ? "Goal reached" : "\(text(goal - count)) to go"
     }
@@ -39,7 +39,7 @@ struct StepsWidgetView: View {
         Group {
             switch family {
             case .accessoryInline:
-                Text(count == nil ? "Leanr · \(caption)" : "Leanr · \(valueText) steps")
+                Text(count == nil ? "Takeawise · \(caption)" : "Takeawise · \(valueText) steps")
             case .accessoryCircular:
                 Gauge(value: progress) {
                     Image(systemName: "figure.walk")
@@ -79,7 +79,7 @@ struct StepsWidgetView: View {
         .privacySensitive().widgetURL(URL(string: "leanr://progress"))
         .containerBackground(for: .widget) { Color(.systemBackground) }
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(entry.calories == nil ? "Open Leanr to sync your steps"
+        .accessibilityLabel(entry.calories == nil ? "Open Takeawise to sync your steps"
                             : count == nil ? "No steps yet today. Goal \(text(goal))"
                             : "\(valueText) steps of \(text(goal)). \(caption)")
     }

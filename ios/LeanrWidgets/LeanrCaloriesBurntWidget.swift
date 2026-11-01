@@ -26,7 +26,7 @@ struct CaloriesBurntWidgetView: View {
     private func text(_ value: Double) -> String { value.formatted(.number.precision(.fractionLength(0))) }
     private var valueText: String { burnt.map(text) ?? "—" }
     private var caption: String {
-        if entry.calories == nil { return "Open Leanr to sync" }
+        if entry.calories == nil { return "Open Takeawise to sync" }
         guard burnt != nil else { return "None recorded yet" }
         return average.map { "Average \(text($0)) Cal" } ?? "Active today"
     }
@@ -42,7 +42,7 @@ struct CaloriesBurntWidgetView: View {
         Group {
             switch family {
             case .accessoryInline:
-                Text(burnt == nil ? "Leanr · \(caption)" : "Leanr · \(valueText) Cal burnt")
+                Text(burnt == nil ? "Takeawise · \(caption)" : "Takeawise · \(valueText) Cal burnt")
             case .accessoryCircular:
                 Gauge(value: progress) {
                     Image(systemName: "flame")
@@ -83,7 +83,7 @@ struct CaloriesBurntWidgetView: View {
         .privacySensitive().widgetURL(URL(string: "leanr://progress"))
         .containerBackground(for: .widget) { Color(.systemBackground) }
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(entry.calories == nil ? "Open Leanr to sync your calories burnt"
+        .accessibilityLabel(entry.calories == nil ? "Open Takeawise to sync your calories burnt"
                             : burnt == nil ? "No active calories recorded yet today"
                             : "\(valueText) calories burnt today. \(caption)")
     }

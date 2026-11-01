@@ -74,7 +74,7 @@ struct CheckInView: View {
             if let fat = suggestion.values["f"] { change("Fat", from: current["f"], to: fat, unit: "g") }
         } header: { Text("New daily targets") } footer: {
             if suggestion.limitedByFloor {
-                Text("Leanr won't suggest less than \(CheckIn.lowest.number) Cal a day. Choose a slower pace, or talk to a health professional about going lower.")
+                Text("Takeawise won't suggest less than \(CheckIn.lowest.number) Cal a day. Choose a slower pace, or talk to a health professional about going lower.")
             } else if suggestion.limitedByStep {
                 Text("Your pace needs a bigger change than this, so it's taken \(CheckIn.largestStep.number) Cal at a time. Next week's check-in goes further if it's still needed.")
             } else {

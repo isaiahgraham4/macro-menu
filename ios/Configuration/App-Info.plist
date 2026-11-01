@@ -5,19 +5,19 @@
         <key>CFBundleURLName</key><string>com.isaiahgraham.MacroMenu</string>
         <key>CFBundleURLSchemes</key><array><string>leanr</string></array>
     </dict></array>
-    <!-- Siri hears "Leanr" as the word "leaner", so these let phrases like "Log water in Leanr" work when it's said that way. -->
+    <!-- Siri can hear "Takeawise" as separate words, so these let phrases like "Log water in Takeawise" work when it's said that way. -->
     <key>INAlternativeAppNames</key><array>
         <dict>
-            <key>INAlternativeAppName</key><string>Leaner</string>
-            <key>INAlternativeAppNamePronunciationHint</key><string>lee ner</string>
+            <key>INAlternativeAppName</key><string>Take a Wise</string>
+            <key>INAlternativeAppNamePronunciationHint</key><string>take a wize</string>
         </dict>
         <dict>
-            <key>INAlternativeAppName</key><string>Lean R</string>
-            <key>INAlternativeAppNamePronunciationHint</key><string>lean are</string>
+            <key>INAlternativeAppName</key><string>Take Away Wise</string>
+            <key>INAlternativeAppNamePronunciationHint</key><string>take away wize</string>
         </dict>
     </array>
     <key>NSSupportsLiveActivities</key><true/>
-    <!-- The worktop's colour, so opening Leanr doesn't flash white before the first screen. -->
+    <!-- The worktop's colour, so opening Takeawise doesn't flash white before the first screen. -->
     <key>UILaunchScreen</key><dict>
         <key>UIColorName</key><string>LaunchBackground</string>
     </dict>

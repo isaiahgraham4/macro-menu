@@ -80,15 +80,15 @@ struct BackupSection: View {
     var body: some View {
         Section {
             Button {
-                do { export = (FoodDocument(data: try store.export()), .json, "Leanr-\(dayKey(Date()))") }
+                do { export = (FoodDocument(data: try store.export()), .json, "Takeawise-\(dayKey(Date()))") }
                 catch { message = error.localizedDescription }
             } label: { Label("Export all app data", systemImage: "square.and.arrow.up") }
             Button { importing = true } label: { Label("Import backup", systemImage: "square.and.arrow.down") }
             Button {
-                export = (csvFile(LogExport.items(store.data, chainName: store.chainName)), .commaSeparatedText, "Leanr food log \(dayKey(Date()))")
+                export = (csvFile(LogExport.items(store.data, chainName: store.chainName)), .commaSeparatedText, "Takeawise food log \(dayKey(Date()))")
             } label: { Label("Export food log (CSV)", systemImage: "tablecells") }
             Button {
-                export = (csvFile(LogExport.days(store.data)), .commaSeparatedText, "Leanr daily totals \(dayKey(Date()))")
+                export = (csvFile(LogExport.days(store.data)), .commaSeparatedText, "Takeawise daily totals \(dayKey(Date()))")
             } label: { Label("Export daily totals (CSV)", systemImage: "calendar") }
         } header: {
             Text("Your data")
@@ -263,7 +263,7 @@ struct FoodEditor: View {
                     Text("\(other.name) already has this barcode. Scanning it will open that food.").font(.roboto(.caption)).foregroundStyle(.orange)
                 }
             } header: { Text("Barcode") } footer: {
-                Text("Add the barcode when scanning doesn't find this product. Next time you scan it, Leanr opens this food.")
+                Text("Add the barcode when scanning doesn't find this product. Next time you scan it, Takeawise opens this food.")
             }
             Section("Find a packaged food") {
                 Button { barcodeLookup = true } label: { Label("Scan product barcode", systemImage: "barcode.viewfinder") }
@@ -285,7 +285,7 @@ struct FoodEditor: View {
                     .disabled(scanning)
                 Button { openScanner(directPhoto: true) } label: { Label("Take photo", systemImage: "camera.fill") }
                     .disabled(scanning || !UIImagePickerController.isSourceTypeAvailable(.camera))
-                Text("When calories aren’t listed, Leanr converts kilojoules to calories automatically (kJ ÷ 4.184).")
+                Text("When calories aren’t listed, Takeawise converts kilojoules to calories automatically (kJ ÷ 4.184).")
                     .font(.roboto(.caption)).foregroundStyle(.secondary)
                 if scanning { ProgressView("Reading label…") }
                 if let scanError { Text(scanError).foregroundStyle(.red).font(.roboto(.caption)) }
@@ -390,7 +390,7 @@ struct FoodEditor: View {
             .alert("Camera access is off", isPresented: $cameraDenied) {
                 Button("Open Settings") { if let url = URL(string: UIApplication.openSettingsURLString) { UIApplication.shared.open(url) } }
                 Button("Cancel", role: .cancel) {}
-            } message: { Text("Allow camera access for Leanr in Settings to scan a nutrition label.") }
+            } message: { Text("Allow camera access for Takeawise in Settings to scan a nutrition label.") }
             .fullScreenCover(isPresented: $takingPhoto) {
                 NutritionPhotoCamera { image in
                     takingPhoto = false

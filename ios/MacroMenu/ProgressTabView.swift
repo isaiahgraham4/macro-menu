@@ -121,7 +121,7 @@ struct ProgressTabView: View {
             if let year = reviewYear {
                 Button {
                     yearReview = YearReview.make(store.data, year: year, restaurants: Set(store.catalog.chains.map(\.id)))
-                } label: { Label("Your \(String(year)) in Leanr", systemImage: "sparkles") }
+                } label: { Label("Your \(String(year)) in Takeawise", systemImage: "sparkles") }
             }
         }
     }

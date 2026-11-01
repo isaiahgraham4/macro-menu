@@ -1,5 +1,5 @@
 ---
-name: Leanr
+name: Takeawise
 description: A warm order counter for eating out on target. Native iOS, warmed up with a worktop surface, Bebas titles and big honest numbers.
 colors:
   emerald: "#01714C"
@@ -121,17 +121,17 @@ components:
     height: "6px"
 ---
 
-# Design System: Leanr
+# Design System: Takeawise
 
-This file governs the native iOS app, Leanr (`ios/`), which is the primary product. The Macro Menu web app (`index.html`) keeps its own incumbent styling and is not governed by this file. Values here come from `Shared/AppAccent.swift`, `MacroMenu/Theme.swift`, `Shared/AppFonts.swift`, `DesignKit.swift`, `Components.swift`, `LeanrOnboarding.swift` and the asset catalog. Colour hex values for iOS system colours are their light-mode values; SwiftUI resolves the dark variants.
+This file governs the native iOS app, Takeawise (`ios/`), which is the primary product. The Macro Menu web app (`index.html`) keeps its own incumbent styling and is not governed by this file. Values here come from `Shared/AppAccent.swift`, `MacroMenu/Theme.swift`, `Shared/AppFonts.swift`, `DesignKit.swift`, `Components.swift`, `LeanrOnboarding.swift` and the asset catalog. Colour hex values for iOS system colours are their light-mode values; SwiftUI resolves the dark variants.
 
 ## Overview
 
 **Creative North Star: "The Order Counter"**
 
-Leanr is the counter you stand at when you order: you read the menu, weigh it against what's left in your day, and pick. The screens have that decisiveness. Bebas Neue headlines read like a menu board, and big Roboto numbers answer the question before any label does. The first thing on each screen is a choice or a number, never decoration.
+Takeawise is the counter you stand at when you order: you read the menu, weigh it against what's left in your day, and pick. The screens have that decisiveness. Bebas Neue headlines read like a menu board, and big Roboto numbers answer the question before any label does. The first thing on each screen is a choice or a number, never decoration.
 
-The counter sits in a warm kitchen, not a gym. Every screen rests on the worktop: a cream-to-wheat gradient with faint timber grain, off-canvas plate rings, paper flecks and a soft accent glow in the top corner. That surface is what makes Leanr feel homely rather than clinical. Controls on top of it are stock iOS, warmed up with Leanr's fonts and accent rather than restyled. Native behaviour, gestures and Dynamic Type stay intact.
+The counter sits in a warm kitchen, not a gym. Every screen rests on the worktop: a cream-to-wheat gradient with faint timber grain, off-canvas plate rings, paper flecks and a soft accent glow in the top corner. That surface is what makes Takeawise feel homely rather than clinical. Controls on top of it are stock iOS, warmed up with Takeawise's fonts and accent rather than restyled. Native behaviour, gestures and Dynamic Type stay intact.
 
 Density is moderate: grouped lists, a few signature summaries (the calorie ring, target bars, stat tiles), and one prominent action per screen, pinned above the tab bar.
 
@@ -211,7 +211,7 @@ Spacing steps are 2, 4, 8, 12, 16, 20 and 24pt, with 5, 6, 10 and 14 used inside
 
 ## Elevation & Depth
 
-Leanr is flat. Depth comes from layering, not shadows. Controls sit in grouped cells (`secondarySystemGroupedBackground`) or on translucent `.fill.tertiary` tiles, which float over the textured worktop. Toasts use `.regularMaterial` blur. The single shadow in the app is a 3pt lift that keeps a lock glyph legible on a colour swatch.
+Takeawise is flat. Depth comes from layering, not shadows. Controls sit in grouped cells (`secondarySystemGroupedBackground`) or on translucent `.fill.tertiary` tiles, which float over the textured worktop. Toasts use `.regularMaterial` blur. The single shadow in the app is a 3pt lift that keeps a lock glyph legible on a colour swatch.
 
 ### Named Rules
 **The Flat Counter Rule.** No drop shadows on cards, tiles, buttons or sheets. To separate something, change the fill or use material, never add a shadow.
@@ -230,7 +230,7 @@ The shapes are soft and familiar: capsules for anything you tap or read at a gla
 
 ## Components
 
-The feel is native iOS, warmed up. Use stock controls and the Leanr tint, and create custom pieces only where a number needs to be the hero.
+The feel is native iOS, warmed up. Use stock controls and the Takeawise tint, and create custom pieces only where a number needs to be the hero.
 
 ### Buttons
 - **Primary:** `.borderedProminent` with `.controlSize(.large)`, filled with the accent. There is one per screen, usually in a `BottomActionBar` with a headline label.
@@ -282,7 +282,7 @@ Motion lives in `Motion.swift` and `Celebration.swift`. It marks things the pers
 - **Confetti:** the accent with the worktop's timber and paper colours, never macro colours.
 - **Launch:** the leaf and name on a cold start only. `LaunchBackground` keeps the system launch screen on the worktop colour.
 - **Worktop light:** soft patches of the accent drifting across `LeanrBackground`, 30 times a second. It stops in the background and holds still in Low Power Mode. Like the texture, it's removed with Increase Contrast.
-- **Skeletons:** rows the shape of what's coming replace spinners when the layout is known. A spinner stays where Leanr is reading something you gave it, such as a photo.
+- **Skeletons:** rows the shape of what's coming replace spinners when the layout is known. A spinner stays where Takeawise is reading something you gave it, such as a photo.
 - **Springs:** `.figure` and `.counting` are springs, so a change that lands mid-way carries on from where it is rather than restarting.
 - **Zoom:** a progress photo opens out of its thumbnail and swipes back into it.
 

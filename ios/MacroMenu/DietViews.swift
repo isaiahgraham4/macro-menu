@@ -27,7 +27,7 @@ struct DietNeedsView: View {
                     }.font(.roboto(.subheadline))
                 }
             } header: { Text("What each restaurant says") } footer: {
-                Text("Leanr only offers an item when the restaurant's own ingredient lists, descriptions, labels or allergen guides show it fits. Items they don't cover are left out rather than guessed. Kitchens are shared, so always tell the restaurant about an allergy. Your own foods are never filtered.")
+                Text("Takeawise only offers an item when the restaurant's own ingredient lists, descriptions, labels or allergen guides show it fits. Items they don't cover are left out rather than guessed. Kitchens are shared, so always tell the restaurant about an allergy. Your own foods are never filtered.")
             }
             if !filter.isEmpty {
                 Section { Button("Clear all", role: .destructive) { raw = "" } }
@@ -116,7 +116,7 @@ struct AskLeanrView: View {
             Section {
                 HStack(spacing: 10) {
                     Image(systemName: "sparkles").foregroundStyle(.tint).accessibilityHidden(true)
-                    TextField("Ask Leanr", text: $question, axis: .vertical).lineLimit(1...3).submitLabel(.search)
+                    TextField("Ask Takeawise", text: $question, axis: .vertical).lineLimit(1...3).submitLabel(.search)
                         .onSubmit { asked = question }
                 }
                 if let request {
@@ -130,7 +130,7 @@ struct AskLeanrView: View {
                     }.accessibilityElement(children: .combine).accessibilityLabel("Understood: " + request.understood.joined(separator: ", "))
                 }
             } footer: {
-                Text(usedModel ? "Read with Apple Intelligence on this iPhone. The orders come from Leanr's menus." : "The orders come from Leanr's menus and the restaurants' published figures.")
+                Text(usedModel ? "Read with Apple Intelligence on this iPhone. The orders come from Takeawise's menus." : "The orders come from Takeawise's menus and the restaurants' published figures.")
             }
             if searching {
                 ForEach(0..<3, id: \.self) { _ in
@@ -150,7 +150,7 @@ struct AskLeanrView: View {
                 }
             }
         }
-        .navigationTitle("Ask Leanr").navigationBarTitleDisplayMode(.inline)
+        .navigationTitle("Ask Takeawise").navigationBarTitleDisplayMode(.inline)
         .onAppear { if asked.isEmpty { asked = question } }
         .task(id: asked) { await answer(asked) }
     }

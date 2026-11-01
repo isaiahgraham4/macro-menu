@@ -18,7 +18,7 @@ The app uses SwiftUI and requires no third-party packages or API keys.
 - Photo of your meal (Today → Photo of your meal): foods are named on the device, by Apple Intelligence where the iPhone
   has it, otherwise by Apple's Vision image classifier over each item Vision cuts out (or the four quarters when it can't
   split them) (`MealVision`, `VisionFoodLabels`: label chains collapse to one food, a dish hides its parts, labels map to
-  everyday-food names). Each food is matched to Leanr's own data; only everyday foods, a restaurant the photo's brand names,
+  everyday-food names). Each food is matched to Takeawise's own data; only everyday foods, a restaurant the photo's brand names,
   the restaurant you're within 150 m of, or what you logged for that food last time (`PhotoMemory`) are ticked for you. An
   optional note ("tofu, rice and salad") is read like Describe and trusted over the photo.
 - Photo labels: Apple Vision reads text on-device. Select the numeric column and
@@ -58,7 +58,7 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   (default 8,000), and a chart, average and days-at-goal over the Progress range. Read-only and held in memory
   (`HealthSync.steps`), never in `AppData`, iCloud or backups; only the goal (`AppData.stepGoal`) is saved. The Steps widget
   (`LeanrStepsWidget`: small, medium with the last 7 days, and Lock Screen sizes) reads the last week of counts from the
-  shared widget snapshot, which Leanr refreshes whenever Health reports new steps (HealthKit background delivery). Google's health
+  shared widget snapshot, which Takeawise refreshes whenever Health reports new steps (HealthKit background delivery). Google's health
   data has no iPhone API, so only Apple Health is read. Apple Health itself combines the iPhone, a watch and anything
   else that writes steps to it. Settings → Targets → Steps lists the sources that have recorded steps with today's count from
   each, and can show one source only (`HealthSync.stepSourceID`, kept on the device).
@@ -97,7 +97,7 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   `kfc-descriptions.json` (each item's description and its Recipe list): every main is chicken, with bacon named, and a
   combo that lists its parts ("Burger & 1 Regular Pepsi Max") is known; chips (their seasoning), gravy and an unnamed
   drink keep an item unknown.
-- Ask Leanr (Find, at the top): a question in plain words ("vegetarian, 40 g protein under 600 Cal at Nando's") becomes an
+- Ask Takeawise (Find, at the top): a question in plain words ("vegetarian, 40 g protein under 600 Cal at Nando's") becomes an
   order search. `AskLeanr.parse` reads numbers, restaurants, item counts and needs; with Apple Intelligence, `AskLeanrModel`
   fills in what the rules miss, but only numbers that are in the question. What was understood is shown as chips.
 - Plan ahead (Today → Log food): set out meals for today and the next six days against the targets, with suggestions to
@@ -116,13 +116,13 @@ The app uses SwiftUI and requires no third-party packages or API keys.
 - Watch complications (`LeanrWatchWidgets`, embedded in the watch app): Calories left (circular, corner, rectangular,
   inline), Protein and Water (circular, corner, inline). The watch app keeps the latest snapshot in the App Group
   (`WatchStorage`) and reloads them when a figure they show changes; each timeline has a second entry at midnight that
-  starts the day at nothing. With a Leanr complication on the face, the iPhone also sends a complication update
+  starts the day at nothing. With a Takeawise complication on the face, the iPhone also sends a complication update
   (`transferCurrentComplicationUserInfo`, about 50 a day), only when calories, protein or water change, so the face
   updates without opening the app.
 - Apple Health (Settings): writes each logged meal as a food correlation with its
   nutrients, and weigh-ins; reads weight and active energy. Every sample carries
-  its Leanr entry or weight ID, so edits, deletes and undo replace exactly those
-  samples. Weights deleted in Leanr that came from Health stay hidden.
+  its Takeawise entry or weight ID, so edits, deletes and undo replace exactly those
+  samples. Weights deleted in Takeawise that came from Health stay hidden.
 - iCloud (Settings): a copy of the app data in the iCloud Drive app container.
   Newest copy wins; if both sides changed since the last sync they're merged by ID
   (a deletion on the other device can come back then). The current meal and
@@ -144,7 +144,7 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   `AppData.pinned` with a copy of the food, shown with current menu figures.
 - Opening hours (Map tab and the nearest restaurant on orders): an "Opening hours" button opens Apple Maps' place card,
   which shows the hours and whether it's open now; map pins show Apple's callout too. Apple doesn't let apps read hours
-  themselves. Leanr's own hours lookups (OpenStreetMap's public Overpass server) and the "Open now only" filter were
+  themselves. Takeawise's own hours lookups (OpenStreetMap's public Overpass server) and the "Open now only" filter were
   removed on 6 Oct 2026: Overpass asks public apps not to rely on its free servers, and App Review Guideline 5.1.2
   requires permission before location-derived data goes to a third party.
 - Delivery (under the hours button on the same rows): "Delivery likely" within 5 km, "Delivery may reach you" up to 8 km,
@@ -152,7 +152,7 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   delivery apps don't let other apps check an address. Tapping it lists Uber Eats, DoorDash, Menulog and the chain's
   own app to confirm and order.
 - Water widget (Home Screen small and wide, and Lock Screen): today's water against the target, with a button that adds 250 mL
-  ("water:<mL>" through `LogAgainIntent`, queued like Log again when Leanr can't run). The wide one has two buttons,
+  ("water:<mL>" through `LogAgainIntent`, queued like Log again when Takeawise can't run). The wide one has two buttons,
   100 mL and 250 mL. These amounts are fixed and don't follow the glass size in Settings.
 - Log again widget (Home Screen and Lock Screen): the usual meal for this time of
   day, then pinned foods, each with a log button. `LogAgainIntent`
@@ -160,19 +160,19 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   widget adds the meal, water or planned meal's calories and nutrients to the
   snapshot (`QuickLogQueue.showQueued`), reloads only the widgets that changed
   (`WidgetCalories.kindsChanged`, the tapped one first) and queues the request in
-  the App Group, with the time of the tap. Leanr logs it, with Health and iCloud, when it next starts, comes
+  the App Group, with the time of the tap. Takeawise logs it, with Health and iCloud, when it next starts, comes
   to the front or is woken by Health (about hourly), and then rewrites the
-  snapshot. (Run as a Live Activity intent it launched Leanr in the background and
+  snapshot. (Run as a Live Activity intent it launched Takeawise in the background and
   the system held the widget for several seconds.) A repeat tap within 10 seconds
   is ignored.
-- Siri and Shortcuts: "Log my usual lunch in Leanr" logs the meal most often
-  logged to that meal time in the last 30 days. "What fits at KFC in Leanr"
+- Siri and Shortcuts: "Log my usual lunch in Takeawise" logs the meal most often
+  logged to that meal time in the last 30 days. "What fits at KFC in Takeawise"
   runs the finder against what's left of today's targets (capped at your typical
   meal before 4 pm). The logic is in `Assistant.swift`, the intents in
-  `LeanrIntents.swift`; both use the shared store in `AppServices.swift`. "Log a glass of water in Leanr" (or
-  "Log water in Leanr", a bottle or a litre) adds to today's water through `LogWaterIntent`, and "How much water have I
-  had in Leanr" reads the total back. In Shortcuts, Millilitres sets an exact amount.
-  Siri hears "Leanr" as the word "leaner", so `Configuration/App-Info.plist` lists "Leaner" and "Lean R" under
+  `LeanrIntents.swift`; both use the shared store in `AppServices.swift`. "Log a glass of water in Takeawise" (or
+  "Log water in Takeawise", a bottle or a litre) adds to today's water through `LogWaterIntent`, and "How much water have I
+  had in Takeawise" reads the total back. In Shortcuts, Millilitres sets an exact amount.
+  Siri hears "Takeawise" as the word "leaner", so `Configuration/App-Info.plist` lists "Leaner" and "Lean R" under
   `INAlternativeAppNames`; every phrase works with either spelling.
 - Reminders (Settings → Targets): breakfast, lunch, dinner and a late-night
   one, each ticked on and timed separately (or "Turn on all reminders"). A meal
@@ -183,23 +183,23 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   spaced through the day (from 9 am until 8 pm every 2 hours by default, set in Settings) and none are booked for a day whose water
   target is already reached; logging water rebooks the rest of today. iOS keeps only 64 pending notifications, so
   meal and water reminders are merged soonest first and cut to fit (`MealReminders.bookings`, leaving one for the weekly review);
-  they are topped up every time Leanr opens. Choosing reminders is a Premium
+  they are topped up every time Takeawise opens. Choosing reminders is a Premium
   feature (`Premium.isUnlocked`, always true while `Premium.subscriptionsEnabled` is false; locked clears the booked meal and water
   reminders and keeps the weekly review). Notifications are booked two weeks ahead and
-  rebooked when the log changes. The optional weekly review, Sundays at 10 pm or a time chosen with Even Leanr,
+  rebooked when the log changes. The optional weekly review, Sundays at 10 pm or a time chosen with Takeawise Plus,
   notification carries that week's summary.
-- Reminders prompt (`ReminderPromptView`): a sheet offered when Leanr is opened after three days or more away with no meal or water
+- Reminders prompt (`ReminderPromptView`): a sheet offered when Takeawise is opened after three days or more away with no meal or water
   reminder on, notifications not turned off, and not asked in the last 30 days (`ReminderPrompt.shouldShow`). It lists breakfast,
   lunch, dinner, late night and water; "Turn on reminders" asks for notification permission only then. A first launch
   never asks straight away. Premium only, because choosing reminders is. `-demoAway` (debug builds) behaves as if
-  Leanr was last opened five days ago.
+  Takeawise was last opened five days ago.
 - Feature tips (`FeatureTips`, a card at the top of Today): points out features a person hasn't used (Describe, Scan, Water,
-  Apple Health, Reminders, Plan ahead, Photo, Ask Leanr, widgets, weekly check-in, measurements and photos), one at a time. A
+  Apple Health, Reminders, Plan ahead, Photo, Ask Takeawise, widgets, weekly check-in, measurements and photos), one at a time. A
   new person gets their first tip a day after first launch; someone already onboarded when this shipped sees one straight
   away. A tip stays up three days if ignored, then retires for good; dismissing it or using the feature finishes it, and the next
   waits two days. "Used" comes from the data where it can (water, plans, Health connected, reminders on, measurements,
   check-ins, installed widgets via `WidgetCenter`) and from a mark when the screen is opened otherwise (Describe, Scan,
-  Photo, Ask Leanr). Premium-only tips aren't offered without Premium. Settings → Targets has a switch to turn tips off. `-demoTips` (debug builds) shows the first tip every time.
+  Photo, Ask Takeawise). Premium-only tips aren't offered without Premium. Settings → Targets has a switch to turn tips off. `-demoTips` (debug builds) shows the first tip every time.
 - Your week (Today): days logged, averages over logged days, protein and calorie
   days, weight-trend change and most-logged meals, with a shareable card.
 - CSV export (Settings → Your data): every logged food, or daily totals with that

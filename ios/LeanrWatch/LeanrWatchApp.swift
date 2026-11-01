@@ -26,7 +26,7 @@ struct WatchHome: View {
         } else {
             VStack(spacing: 8) {
                 Image(systemName: "iphone").font(.title2).foregroundStyle(.tint)
-                Text("Open Leanr on your iPhone").font(.headline).multilineTextAlignment(.center)
+                Text("Open Takeawise on your iPhone").font(.headline).multilineTextAlignment(.center)
                 Text("Today's calories and your usual meals appear here once it has synced.")
                     .font(.footnote).foregroundStyle(.secondary).multilineTextAlignment(.center)
             }

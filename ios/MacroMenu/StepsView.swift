@@ -51,8 +51,8 @@ struct StepsAccessButton: View {
             Button { Task { _ = await health.connect() } } label: { Label("Connect Apple Health", systemImage: "heart") }
         } else if health.stepsLoaded && health.steps.isEmpty {
             VStack(alignment: .leading, spacing: 6) {
-                Button { Task { await health.requestStepAccess() } } label: { Label("Allow Leanr to read steps", systemImage: "figure.walk") }
-                Text("If you've already answered, change it in the Health app → your profile → Apps → Leanr.")
+                Button { Task { await health.requestStepAccess() } } label: { Label("Allow Takeawise to read steps", systemImage: "figure.walk") }
+                Text("If you've already answered, change it in the Health app → your profile → Apps → Takeawise.")
                     .font(.roboto(.caption)).foregroundStyle(.secondary)
             }
         }
@@ -75,7 +75,7 @@ struct StepsSettings: View {
                 NumberField(title: "Daily goal (steps)", value: $goal, places: 0)
                 if changed { Button("Save") { if store.setStepGoal(goal.rounded()) { store.notice = "Step goal saved" } }.disabled(!valid) }
             } footer: {
-                Text("Steps come from Apple Health. Leanr only reads them and doesn't copy them to iCloud.")
+                Text("Steps come from Apple Health. Takeawise only reads them and doesn't copy them to iCloud.")
             }
             if health.isAvailable && health.enabled {
                 Section {

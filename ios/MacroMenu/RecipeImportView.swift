@@ -32,7 +32,7 @@ struct RecipeImportView: View {
                 }
                 if let failure { Text(failure.message).foregroundStyle(.secondary) }
             } footer: {
-                Text("Copy the address from Safari or a recipe app. Leanr loads the page straight from that website and reads only its recipe details. Nothing else about you is sent.")
+                Text("Copy the address from Safari or a recipe app. Takeawise loads the page straight from that website and reads only its recipe details. Nothing else about you is sent.")
             }
             if let recipe {
                 Section {
@@ -48,7 +48,7 @@ struct RecipeImportView: View {
                         } label: { Text("Save with these figures").frame(maxWidth: .infinity) }
                             .buttonStyle(.borderedProminent)
                     } header: { Text("Per serving, from \(recipe.host ?? "the page")") } footer: {
-                        Text("The site's own figures for one serving. Or match the ingredients below to build it from Leanr's foods, which you can change later.")
+                        Text("The site's own figures for one serving. Or match the ingredients below to build it from Takeawise's foods, which you can change later.")
                     }
                 }
                 if rows.isEmpty {

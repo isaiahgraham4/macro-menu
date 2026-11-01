@@ -268,7 +268,7 @@ struct FoodSourceSection: View {
             if let date = store.menuDate { LabeledContent("Menu snapshot", value: date.formatted(date: .abbreviated, time: .omitted)) }
             if let raw = chain.url, let url = URL(string: raw) { Link("View \(chain.name.possessive) nutrition information", destination: url) }
         } header: { Text("Source") } footer: {
-            Text("Figures are \(chain.name.possessive) own published information, as at the snapshot date. Leanr isn't affiliated with \(chain.name). Spot something wrong? Let me know through \(AppInfo.contactText).")
+            Text("Figures are \(chain.name.possessive) own published information, as at the snapshot date. Takeawise isn't affiliated with \(chain.name). Spot something wrong? Let me know through \(AppInfo.contactText).")
         }
     }
 }

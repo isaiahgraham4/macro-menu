@@ -4,7 +4,7 @@ import AppIntents
 /// torch or camera), in Control Centre or on the Action button. It always runs in Leanr, which the system opens first.
 struct ScanBarcodeIntent: AppIntent {
     static let title: LocalizedStringResource = "Scan a Barcode"
-    static let description = IntentDescription("Opens Leanr's barcode scanner to log a packaged food.")
+    static let description = IntentDescription("Opens Takeawise's barcode scanner to log a packaged food.")
     static let openAppWhenRun = true
 
     init() {}

@@ -1,6 +1,6 @@
 # Restaurant data: sources and permission requests
 
-Leanr's restaurant figures are facts (energy, protein, carbs, fat, serve size) re-entered from each chain's own
+Takeawise's restaurant figures are facts (energy, protein, carbs, fat, serve size) re-entered from each chain's own
 published nutrition information. No descriptions, photos or logos are copied. Each chain's source, collection method
 and the menu snapshot date are in `Scripts/menu-source.js` (`src`, `how`, `url`) and show on every food's page under
 Source. Items a chain publishes no figures for are left out; third-party databases such as CalorieKing aren't used.
@@ -14,14 +14,14 @@ Subject: Permission to show [Chain]'s published nutrition information in a free 
 
 Hi [Chain] team,
 
-I'm Isaiah Graham, an independent developer in Victoria. I make Leanr, a free iPhone app that helps people find and log
+I'm Isaiah Graham, an independent developer in Victoria. I make Takeawise, a free iPhone app that helps people find and log
 fast-food orders that fit their calorie and protein targets.
 
-Leanr shows the energy, protein, carbohydrate, fat and serve size that [Chain] publishes in its nutrition information,
+Takeawise shows the energy, protein, carbohydrate, fat and serve size that [Chain] publishes in its nutrition information,
 unchanged and credited to [Chain] with a link to your nutrition page. It doesn't use your logos, photos or menu
-descriptions, and it says clearly that Leanr isn't affiliated with [Chain].
+descriptions, and it says clearly that Takeawise isn't affiliated with [Chain].
 
-Could you confirm you're happy for Leanr to show these figures? If you'd prefer a different source (for example a
+Could you confirm you're happy for Takeawise to show these figures? If you'd prefer a different source (for example a
 nutrition file you update), or would like anything changed or removed, I'll act on it straight away.
 
 Thanks,

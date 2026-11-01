@@ -65,7 +65,7 @@ struct WeightView: View {
                 }
             } else if points.count >= 2 {
                 Section {
-                    Text("Log your food on most days and weigh in over two weeks, and Leanr will estimate the calories that hold your weight steady.")
+                    Text("Log your food on most days and weigh in over two weeks, and Takeawise will estimate the calories that hold your weight steady.")
                         .font(.roboto(.subheadline)).foregroundStyle(.secondary)
                 }
             }

@@ -1,65 +1,65 @@
-# Leanr privacy policy
+# Takeawise privacy policy
 
 Effective 15 October 2026
 
-Leanr is made by Isaiah Graham, an independent developer in Victoria, Australia ("I", "me"). This policy explains what happens to your information when you use Leanr. You can reach me at {{CONTACT}}.
+Takeawise is made by Isaiah Graham, an independent developer in Victoria, Australia ("I", "me"). This policy explains what happens to your information when you use Takeawise. You can reach me at {{CONTACT}}.
 
 ## The short version
 
-- Leanr has no account, no ads, no analytics and no tracking. It doesn't use cookies.
+- Takeawise has no account, no ads, no analytics and no tracking. It doesn't use cookies.
 - Everything you enter stays on your device and, if you choose, in your own iCloud and Apple Health. I never receive it.
-- A few features ask other services for information. They are told only what they need: a barcode number, the words you search for packaged foods, your position for an Apple Maps search, or the address of a recipe page you ask Leanr to load.
+- A few features ask other services for information. They are told only what they need: a barcode number, the words you search for packaged foods, your position for an Apple Maps search, or the address of a recipe page you ask Takeawise to load.
 
-## What Leanr keeps on your device
+## What Takeawise keeps on your device
 
-Your foods, recipes, saved meals, food log, meal plans, weekly check-ins, weigh-ins, water, body measurements, progress photos, targets, reminders and settings are saved on your iPhone, inside Leanr's own storage. Your target estimate uses your age, height, weight, sex and activity level. Those figures are only used for the calculation on your device.
+Your foods, recipes, saved meals, food log, meal plans, weekly check-ins, weigh-ins, water, body measurements, progress photos, targets, reminders and settings are saved on your iPhone, inside Takeawise's own storage. Your target estimate uses your age, height, weight, sex and activity level. Those figures are only used for the calculation on your device.
 
 ## iCloud
 
-iCloud sync is on unless you turn it off in Settings. It keeps a copy of your foods, log, meal plans, check-ins, targets, water, body measurements and the weigh-ins you enter in Leanr's folder in your private iCloud Drive, so your other devices can use it. Weights read from Apple Health are never copied to iCloud, and neither are progress photos. Apple stores that copy under your Apple Account and I can't see it.
+iCloud sync is on unless you turn it off in Settings. It keeps a copy of your foods, log, meal plans, check-ins, targets, water, body measurements and the weigh-ins you enter in Takeawise's folder in your private iCloud Drive, so your other devices can use it. Weights read from Apple Health are never copied to iCloud, and neither are progress photos. Apple stores that copy under your Apple Account and I can't see it.
 
 ## Apple Health
 
-Leanr only uses Apple Health if you connect it in Settings, and you choose which types it may read or write. If you connect:
+Takeawise only uses Apple Health if you connect it in Settings, and you choose which types it may read or write. If you connect:
 
-- Leanr writes the food you log, the water you log (one total for each day) and the weights you enter.
-- Leanr reads your weight, active energy (your calories burnt) and steps to show your trend, your steps and your calories burnt, and to estimate your target. Step counts and calories burnt are held in memory while you use Leanr, and the last week's figures are shared with Leanr's Steps and Calories burnt widgets through a file on this iPhone. If you choose one source for steps or calories burnt, Leanr remembers which one on this iPhone. These figures are never saved in Leanr's data, its iCloud copy or its exports.
+- Takeawise writes the food you log, the water you log (one total for each day) and the weights you enter.
+- Takeawise reads your weight, active energy (your calories burnt) and steps to show your trend, your steps and your calories burnt, and to estimate your target. Step counts and calories burnt are held in memory while you use Takeawise, and the last week's figures are shared with Takeawise's Steps and Calories burnt widgets through a file on this iPhone. If you choose one source for steps or calories burnt, Takeawise remembers which one on this iPhone. These figures are never saved in Takeawise's data, its iCloud copy or its exports.
 
 Health information is never used for advertising or marketing, never sold, and never leaves your device except through Apple's own Health sync.
 
 ## Camera
 
-The camera is used to scan barcodes, read nutrition labels, recognise the foods in a photo of your meal and take progress photos. Recognising food happens on your device, using Apple Intelligence where your iPhone has it and Apple's built-in image recognition otherwise. Photos of meals aren't saved or sent anywhere, and you can also choose a photo from your library instead; Leanr only sees the one you pick.
+The camera is used to scan barcodes, read nutrition labels and restaurant menus, recognise the foods in a photo of your meal and take progress photos. Recognising food happens on your device, using Apple Intelligence where your iPhone has it and Apple's built-in image recognition otherwise. Photos of meals aren't saved or sent anywhere, and you can also choose a photo from your library instead; Takeawise only sees the one you pick.
 
 ## Describing a meal
 
-If you type or say what you ate, your iPhone reads the words to find each food, using Apple Intelligence where your iPhone has it and Leanr's own reading otherwise. Both happen on your device. The words aren't saved or sent anywhere; only the foods you choose to log are kept. Saying it uses your keyboard's dictation, which Apple's privacy policy covers.
+If you type or say what you ate, your iPhone reads the words to find each food, using Apple Intelligence where your iPhone has it and Takeawise's own reading otherwise. Both happen on your device. The words aren't saved or sent anywhere; only the foods you choose to log are kept. Saying it uses your keyboard's dictation, which Apple's privacy policy covers.
 
-## Asking Leanr and dietary needs
+## Asking Takeawise and dietary needs
 
-If you ask Leanr a question on Find, such as "40 g protein under 600 Cal at Nando's", your iPhone reads it to set up an order search, using Apple Intelligence where your iPhone has it and Leanr's own reading otherwise. Both happen on your device, and the question isn't saved or sent anywhere. The dietary needs you choose (such as vegetarian, no pork or an allergen to avoid) are kept only on this iPhone and are used only to leave out menu items that don't fit.
+If you ask Takeawise a question on Find, such as "40 g protein under 600 Cal at Nando's", your iPhone reads it to set up an order search, using Apple Intelligence where your iPhone has it and Takeawise's own reading otherwise. Both happen on your device, and the question isn't saved or sent anywhere. The dietary needs you choose (such as vegetarian, no pork or an allergen to avoid) are kept only on this iPhone and are used only to leave out menu items that don't fit.
 
 ## Recipe links
 
-If you import a recipe from a link, Leanr loads that page straight from the website, as a browser would, and reads only the recipe's name, servings, ingredients and nutrition. Nothing about you or your data is sent with the request. Like any website, the site sees your device's IP address and that the page was requested, and its own privacy policy applies. The page itself isn't kept; only the recipe you save is.
+If you import a recipe from a link, Takeawise loads that page straight from the website, as a browser would, and reads only the recipe's name, servings, ingredients and nutrition. Nothing about you or your data is sent with the request. Like any website, the site sees your device's IP address and that the page was requested, and its own privacy policy applies. The page itself isn't kept; only the recipe you save is.
 
 ## Apple Watch
 
-If you install Leanr on Apple Watch, your iPhone sends it today's calories, protein and water against your targets, today's calories burnt if Apple Health is connected, and the meals and foods you can log from the watch. They go directly between your iPhone and your paired watch through Apple's own connection, never through a server, and the watch keeps only the latest copy. Anything you log on the watch is sent back to your iPhone and saved there like anything else you log.
+If you install Takeawise on Apple Watch, your iPhone sends it today's calories, protein and water against your targets, today's calories burnt if Apple Health is connected, and the meals and foods you can log from the watch. They go directly between your iPhone and your paired watch through Apple's own connection, never through a server, and the watch keeps only the latest copy. Anything you log on the watch is sent back to your iPhone and saved there like anything else you log.
 
 ## Progress photos
 
-If you add progress photos, they're kept as files inside Leanr's storage on this iPhone. They are never uploaded, never part of the iCloud copy, backups or exports Leanr makes, and never used for anything but showing them to you. Your iPhone's own backup may include them, like any app's files. Delete a photo in Leanr to remove it, or use Settings → Delete all my data to remove them all.
+If you add progress photos, they're kept as files inside Takeawise's storage on this iPhone. They are never uploaded, never part of the iCloud copy, backups or exports Takeawise makes, and never used for anything but showing them to you. Your iPhone's own backup may include them, like any app's files. Delete a photo in Takeawise to remove it, or use Settings → Delete all my data to remove them all.
 
 ## Siri and Visual Intelligence
 
-You can ask Siri to look up a food or log a meal in Leanr. If you use Visual Intelligence (pointing your camera at food, or a screenshot), Apple's system tells Leanr what it sees on your device so Leanr can show matching foods from its own lists. Leanr doesn't keep what it's given, and doesn't send it anywhere. Apple's privacy policy covers Siri and Visual Intelligence themselves.
+You can ask Siri to look up a food or log a meal in Takeawise. If you use Visual Intelligence (pointing your camera at food, or a screenshot), Apple's system tells Takeawise what it sees on your device so Takeawise can show matching foods from its own lists. Takeawise doesn't keep what it's given, and doesn't send it anywhere. Apple's privacy policy covers Siri and Visual Intelligence themselves.
 
 ## Location
 
-If you allow it, Leanr uses your location only while you're using the app, to find nearby restaurants. Apple Maps receives your position to search for them, and opening hours are shown in Apple Maps' own place card. Apple's privacy policy applies to both.
+If you allow it, Takeawise uses your location only while you're using the app, to find nearby restaurants. Apple Maps receives your position to search for them, and opening hours are shown in Apple Maps' own place card. Apple's privacy policy applies to both.
 
-You can turn location off at any time in the Settings app. Leanr works without it, and you can search for a suburb or address instead.
+You can turn location off at any time in the Settings app. Takeawise works without it, and you can search for a suburb or address instead.
 
 ## Product lookups
 
@@ -73,34 +73,34 @@ Buttons such as "Open MyMacca's", the delivery apps and "View source" open other
 
 ## Notifications
 
-Reminders are scheduled on your device and only check your log on your device. Turn each one off in Settings, or turn off all of Leanr's notifications in the Settings app.
+Reminders are scheduled on your device and only check your log on your device. Turn each one off in Settings, or turn off all of Takeawise's notifications in the Settings app.
 
 ## Children
 
-Leanr isn't designed for children under 13, and the target estimate is only for adults 18 and over. Leanr doesn't collect personal information from anyone. If you're under 18, use Leanr with a parent's or doctor's guidance.
+Takeawise isn't designed for children under 13, and the target estimate is only for adults 18 and over. Takeawise doesn't collect personal information from anyone. If you're under 18, use Takeawise with a parent's or doctor's guidance.
 
 ## Deleting your data
 
 - To delete one item, swipe it or tap it and choose Delete.
-- Settings → Delete all my data removes everything Leanr keeps on this device and its iCloud copy. It can also remove the food, water and weights Leanr saved to Apple Health.
+- Settings → Delete all my data removes everything Takeawise keeps on this device and its iCloud copy. It can also remove the food, water and weights Takeawise saved to Apple Health.
 - Deleting the app removes what's on the device.
 
 Because I don't hold any of your data, there's nothing for me to delete on my side. If you have a question, contact me and I'll answer within 30 days.
 
 ## Other services
 
-Leanr doesn't sell or share your personal data, and it uses no analytics, advertising or tracking services. The only outside services it contacts are:
+Takeawise doesn't sell or share your personal data, and it uses no analytics, advertising or tracking services. The only outside services it contacts are:
 
 - **Apple** (United States and elsewhere): Maps, iCloud, Health, Siri and Visual Intelligence, which are part of your device and your Apple Account and are covered by Apple's privacy policy.
 - **Open Food Facts** (France): receives only a product's barcode number or the words you search for packaged foods. Neither is linked to you.
 - **Recipe websites you choose**: when you import a recipe from a link, that website receives the request for the page and nothing else.
-- **GitHub** (United States): hosts the restaurant menu file. A few times a day Leanr asks it whether the menu has changed and, if it has, downloads the new one. The request contains nothing about you or your data. As with any website, GitHub sees your device's IP address and handles it under GitHub's privacy statement.
+- **GitHub** (United States): hosts the restaurant menu file. A few times a day Takeawise asks it whether the menu has changed and, if it has, downloads the new one. The request contains nothing about you or your data. As with any website, GitHub sees your device's IP address and handles it under GitHub's privacy statement.
 
-Any service that receives data from Leanr must protect it at least as well as this policy does. If that ever changes, this policy will be updated before the app sends anything new.
+Any service that receives data from Takeawise must protect it at least as well as this policy does. If that ever changes, this policy will be updated before the app sends anything new.
 
 ## Security
 
-Your data is protected by your device's encryption and your Apple Account. Leanr only connects to other services over HTTPS.
+Your data is protected by your device's encryption and your Apple Account. Takeawise only connects to other services over HTTPS.
 
 ## Changes
 

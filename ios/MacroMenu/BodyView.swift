@@ -264,7 +264,7 @@ struct ProgressPhotosView: View {
             Section {
                 Label("Stay on this iPhone", systemImage: "lock.fill").foregroundStyle(.secondary)
             } footer: {
-                Text("Leanr doesn't upload these. They aren't part of iCloud sync, backups or exports, and \"Delete all my data\" removes them. Your iPhone's own backup may include them, like any app's files.")
+                Text("Takeawise doesn't upload these. They aren't part of iCloud sync, backups or exports, and \"Delete all my data\" removes them. Your iPhone's own backup may include them, like any app's files.")
             }
         }
         .navigationTitle("Progress photos")

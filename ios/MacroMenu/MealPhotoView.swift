@@ -68,7 +68,7 @@ struct MealPhotoView: View {
                         }
                     }
                 } footer: {
-                    Text(readingNote ? "Reading what you wrote…" : "Optional. Name the foods and Leanr ticks those instead of its guesses.")
+                    Text(readingNote ? "Reading what you wrote…" : "Optional. Name the foods and Takeawise ticks those instead of its guesses.")
                 }
             } else {
                 Section {
@@ -77,7 +77,7 @@ struct MealPhotoView: View {
                     }
                     PhotosPicker(selection: $pickerItem, matching: .images) { Label("Choose from Photos", systemImage: "photo.on.rectangle") }
                 } footer: {
-                    Text("Your iPhone names the foods in the photo. Nothing is saved or sent anywhere. The figures are Leanr's own, so check each match and how much you had.")
+                    Text("Your iPhone names the foods in the photo. Nothing is saved or sent anywhere. The figures are Takeawise's own, so check each match and how much you had.")
                 }
             }
             if phase == .done {
@@ -94,7 +94,7 @@ struct MealPhotoView: View {
                 ForEach($rows) { $row in
                     Section {
                         if row.matches.isEmpty {
-                            Text("Not in Leanr yet.").foregroundStyle(.secondary)
+                            Text("Not in Takeawise yet.").foregroundStyle(.secondary)
                         } else {
                             if row.chosen == nil {
                                 Text(row.seen.reason ?? (row.seen.agreed

@@ -61,7 +61,7 @@ enum BarcodeLookup {
         var components = URLComponents(string: "https://world.openfoodfacts.org/api/v2/product/\(code).json")!
         components.queryItems = [URLQueryItem(name: "fields", value: "product_name,product_name_en,brands,serving_size,serving_quantity_unit,product_quantity_unit,nutriments")]
         var request = URLRequest(url: components.url!, timeoutInterval: 20)
-        request.setValue("Leanr/1.0 (iOS; com.isaiahgraham.MacroMenu)", forHTTPHeaderField: "User-Agent")
+        request.setValue("Takeawise/1.0 (iOS; com.isaiahgraham.MacroMenu)", forHTTPHeaderField: "User-Agent")
         // Only the barcode goes out: no cookies are kept or sent.
         request.httpShouldHandleCookies = false
         let (data, response) = try await URLSession.shared.data(for: request)
@@ -167,7 +167,7 @@ enum ProductSearch {
 
     private static func fetch(_ url: URL) async throws -> [ProductHit] {
         var request = URLRequest(url: url, timeoutInterval: 20)
-        request.setValue("Leanr/1.0 (iOS; com.isaiahgraham.MacroMenu)", forHTTPHeaderField: "User-Agent")
+        request.setValue("Takeawise/1.0 (iOS; com.isaiahgraham.MacroMenu)", forHTTPHeaderField: "User-Agent")
         // Only the search words go out: no cookies are kept or sent.
         request.httpShouldHandleCookies = false
         let (data, response) = try await URLSession.shared.data(for: request)

@@ -69,13 +69,13 @@ struct TargetsWidgetView: View {
                     VStack(spacing: 12) {
                         Image(systemName: "lock.fill").font(.title).foregroundStyle(accent)
                         Text("All targets").font(.display(.title2))
-                        Text("Open Leanr to unlock this widget.").font(.roboto(.subheadline)).foregroundStyle(.secondary)
+                        Text("Open Takeawise to unlock this widget.").font(.roboto(.subheadline)).foregroundStyle(.secondary)
                     }.frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             } else {
                 VStack(spacing: 10) {
-                    Label("Leanr", systemImage: "leaf.fill").font(.roboto(.headline))
-                    Text("Open Leanr to sync your targets").multilineTextAlignment(.center)
+                    Label("Takeawise", systemImage: "leaf.fill").font(.roboto(.headline))
+                    Text("Open Takeawise to sync your targets").multilineTextAlignment(.center)
                 }.frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
@@ -87,7 +87,7 @@ struct TargetsWidgetView: View {
     private var dashboard: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
-                Label("Leanr", systemImage: "leaf.fill").font(.roboto(.headline)).foregroundStyle(accent)
+                Label("Takeawise", systemImage: "leaf.fill").font(.roboto(.headline)).foregroundStyle(accent)
                 Spacer()
             }
             HStack(alignment: .firstTextBaseline, spacing: 4) {
@@ -98,7 +98,7 @@ struct TargetsWidgetView: View {
             ProgressView(value: entry.progress).tint(accent)
                 .accessibilityLabel("Calories: \(entry.eatenValue) of \(entry.targetValue)")
             if targets.isEmpty {
-                Text("Add nutrient targets in Leanr to see them here.").font(.roboto(.subheadline)).foregroundStyle(.secondary)
+                Text("Add nutrient targets in Takeawise to see them here.").font(.roboto(.subheadline)).foregroundStyle(.secondary)
                 Spacer(minLength: 0)
             } else {
                 GeometryReader { geometry in

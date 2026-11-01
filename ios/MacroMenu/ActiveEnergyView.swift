@@ -38,8 +38,8 @@ struct EnergyAccessButton: View {
     @Environment(HealthSync.self) private var health
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
-            Button { Task { await health.requestEnergyAccess() } } label: { Label("Allow Leanr to read calories burnt", systemImage: "flame") }
-            Text("If you've already answered, change it in the Health app → your profile → Apps → Leanr.")
+            Button { Task { await health.requestEnergyAccess() } } label: { Label("Allow Takeawise to read calories burnt", systemImage: "flame") }
+            Text("If you've already answered, change it in the Health app → your profile → Apps → Takeawise.")
                 .font(.roboto(.caption)).foregroundStyle(.secondary)
         }
     }
@@ -76,7 +76,7 @@ struct ActiveEnergySettings: View {
                 Section {
                     Button { Task { _ = await health.connect() } } label: { Label("Connect Apple Health", systemImage: "heart") }
                         .disabled(!health.isAvailable)
-                } footer: { Text("Calories burnt come from Apple Health. Leanr only reads them and doesn't copy them to iCloud.") }
+                } footer: { Text("Calories burnt come from Apple Health. Takeawise only reads them and doesn't copy them to iCloud.") }
             }
             Section {
                 Text("These are active calories, the energy you burn moving around and exercising. They don't include the calories your body uses at rest.")

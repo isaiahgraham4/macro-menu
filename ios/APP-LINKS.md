@@ -1,6 +1,6 @@
 # Restaurant app links
 
-Leanr calls `UIApplication.open` with `universalLinksOnly: true`. It opens the App Store only when iOS reports that the installed app cannot handle the link. No installed-app inventory or guessed URL schemes are used.
+Takeawise calls `UIApplication.open` with `universalLinksOnly: true`. It opens the App Store only when iOS reports that the installed app cannot handle the link. No installed-app inventory or guessed URL schemes are used.
 
 Additional associations checked against Apple's AASA CDN on 27 September 2026:
 

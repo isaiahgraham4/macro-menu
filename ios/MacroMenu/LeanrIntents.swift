@@ -50,7 +50,7 @@ struct LogUsualMealIntent: AppIntent {
             return .result(dialog: "You haven't logged \(mealTime.title.lowercased()) in the last month, so there's no usual \(mealTime.title.lowercased()) yet.")
         }
         guard store.log(QuickLog.copies(usual.items), name: usual.name, date: Date(), mealTime: mealTime) else {
-            return .result(dialog: "Leanr couldn't save that. Open the app to check your data.")
+            return .result(dialog: "Takeawise couldn't save that. Open the app to check your data.")
         }
         await AppServices.health.finishPending()
         let total = Nutrition(usual.items)
@@ -136,7 +136,7 @@ struct OpenFoodIntent: OpenIntent {
 /// "Log banana in Leanr": logs a food to today, as one serving unless told otherwise.
 struct LogFoodIntent: AppIntent {
     static let title: LocalizedStringResource = "Log a Food"
-    static let description = IntentDescription("Logs a food from Leanr's menus, everyday foods or your own foods to today.")
+    static let description = IntentDescription("Logs a food from Takeawise's menus, everyday foods or your own foods to today.")
     static let authenticationPolicy: IntentAuthenticationPolicy = .requiresAuthentication
 
     @Parameter(title: "Food", requestValueDialog: "Which food?") var food: FoodEntity
@@ -154,14 +154,14 @@ struct LogFoodIntent: AppIntent {
     @MainActor func perform() async throws -> some IntentResult & ProvidesDialog {
         AppServices.start()
         let store = AppServices.store, mealTime = meal?.mealTime ?? MealTime.suggested()
-        guard let item = FoodEntity.food(food.id) else { return .result(dialog: "Leanr couldn't find that food.") }
+        guard let item = FoodEntity.food(food.id) else { return .result(dialog: "Takeawise couldn't find that food.") }
         guard let quantity = Assistant.servings(servings, grams: grams, of: item) else {
             return .result(dialog: grams != nil && item.servingWeight == nil
-                           ? "\(item.name) isn't weighed in grams in Leanr, so tell me how many servings instead."
+                           ? "\(item.name) isn't weighed in grams in Takeawise, so tell me how many servings instead."
                            : "That amount doesn't look right, so I haven't logged anything.")
         }
         guard store.log([Portion(food: item, quantity: quantity)], name: item.name, date: Date(), mealTime: mealTime) else {
-            return .result(dialog: "Leanr couldn't save that. Open the app to check your data.")
+            return .result(dialog: "Takeawise couldn't save that. Open the app to check your data.")
         }
         await AppServices.health.finishPending()
         let left = Assistant.remaining(store.data, goals: store.goals).calories
@@ -172,11 +172,11 @@ struct LogFoodIntent: AppIntent {
 /// "Look up a food in Leanr": its calories and macros, from Leanr's own figures.
 struct FoodMacrosIntent: AppIntent {
     static let title: LocalizedStringResource = "Look Up a Food"
-    static let description = IntentDescription("Says the calories, protein, carbs and fat in a food from Leanr's menus, everyday foods or your own.")
+    static let description = IntentDescription("Says the calories, protein, carbs and fat in a food from Takeawise's menus, everyday foods or your own.")
     @Parameter(title: "Food", requestValueDialog: "Which food?") var food: FoodEntity
     @MainActor func perform() async throws -> some IntentResult & ProvidesDialog {
         AppServices.start()
-        guard let item = FoodEntity.food(food.id) else { return .result(dialog: "Leanr couldn't find that food.") }
+        guard let item = FoodEntity.food(food.id) else { return .result(dialog: "Takeawise couldn't find that food.") }
         return .result(dialog: "\(Assistant.macrosAnswer(item, place: AppServices.store.chainName(item.chain)))")
     }
 }
@@ -219,7 +219,7 @@ enum WaterSizeOption: String, AppEnum {
 /// "Log a glass of water in Leanr": adds water to today, a glass by default (the size you set in Settings).
 struct LogWaterIntent: AppIntent {
     static let title: LocalizedStringResource = "Log Water"
-    static let description = IntentDescription("Adds water to today in Leanr: a glass, a 500 mL bottle, a litre or an amount in millilitres.")
+    static let description = IntentDescription("Adds water to today in Takeawise: a glass, a 500 mL bottle, a litre or an amount in millilitres.")
     static let authenticationPolicy: IntentAuthenticationPolicy = .requiresAuthentication
 
     @Parameter(title: "Amount", default: .glass) var size: WaterSizeOption
@@ -234,7 +234,7 @@ struct LogWaterIntent: AppIntent {
         let store = AppServices.store
         let amount = millilitres.map(Double.init) ?? Water.millilitres(size.size, glass: Water.glass(store.data))
         guard amount > 0, amount <= Water.singleLimit, store.addWater(amount) else {
-            return .result(dialog: "Leanr couldn't save that. Open the app to check your data.")
+            return .result(dialog: "Takeawise couldn't save that. Open the app to check your data.")
         }
         await AppServices.health.finishPending()
         let total = Water.total(store.data, on: dayKey(Date()))

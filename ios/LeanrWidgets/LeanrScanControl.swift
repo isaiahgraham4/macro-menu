@@ -13,6 +13,6 @@ struct LeanrScanControl: ControlWidget {
             }
         }
         .displayName("Scan a barcode")
-        .description("Opens Leanr's barcode scanner to log a packaged food.")
+        .description("Opens Takeawise's barcode scanner to log a packaged food.")
     }
 }

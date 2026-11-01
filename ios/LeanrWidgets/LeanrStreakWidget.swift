@@ -33,7 +33,7 @@ struct StreakWidgetView: View {
                     Text(entry.calories == nil ? "—" : "\(count) day\(count == 1 ? "" : "s")")
                         .font(family == .accessoryRectangular ? .roboto(.headline) : .roboto(.largeTitle, weight: .bold))
                         .lineLimit(1).minimumScaleFactor(0.5)
-                    Text(entry.calories == nil ? "Open Leanr to sync" : tracked ? "Tracked today" : "Log today to \(count > 0 ? "keep it going" : "start")")
+                    Text(entry.calories == nil ? "Open Takeawise to sync" : tracked ? "Tracked today" : "Log today to \(count > 0 ? "keep it going" : "start")")
                         .font(.roboto(.caption)).foregroundStyle(.secondary)
                     if family == .systemMedium {
                         Text("Any day with food logged counts.").font(.roboto(.caption)).foregroundStyle(.secondary)
@@ -44,6 +44,6 @@ struct StreakWidgetView: View {
         .privacySensitive().widgetURL(URL(string: "leanr://today"))
         .containerBackground(for: .widget) { Color(.systemBackground) }
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(entry.calories == nil ? "Open Leanr to sync your tracking streak" : "\(count) day tracking streak. \(tracked ? "Tracked today" : "Log today to continue")")
+        .accessibilityLabel(entry.calories == nil ? "Open Takeawise to sync your tracking streak" : "\(count) day tracking streak. \(tracked ? "Tracked today" : "Log today to continue")")
     }
 }
