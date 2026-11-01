@@ -304,7 +304,17 @@ struct ReminderSettings: View {
                         Task { if await MealReminders.requestPermission() { save(MealReminders.weeklyKey, true) } else { denied = true } }
                     } else { save(MealReminders.weeklyKey, false) }
                 }))
-            } footer: { Text("Sundays at 6 pm: days logged, average calories, protein days and your weight trend.") }
+                if MealReminders.weeklyOn {
+                    DatePicker("Sundays at", selection: Binding(get: { time(weeklyMinutes) }, set: { save(MealReminders.weeklyTimeKey, minutesOfDay($0)) }),
+                               displayedComponents: .hourAndMinute)
+                        .disabled(!Premium.isUnlocked)
+                }
+            } footer: {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Sundays at \(time(weeklyMinutes).formatted(date: .omitted, time: .shortened)): days logged, average calories, protein days and your weight trend.")
+                    if !Premium.isUnlocked { Label("Choosing the time comes with Even Leanr.", systemImage: "lock.fill") }
+                }
+            }
         }
         .navigationTitle("Reminders")
         .alert("Notifications are off for Leanr", isPresented: $denied) {
@@ -312,6 +322,7 @@ struct ReminderSettings: View {
             Button("Cancel", role: .cancel) {}
         } message: { Text("Turn on notifications for Leanr in the Settings app to get reminders.") }
     }
+    private var weeklyMinutes: Int { MealReminders.weeklyMinutes(unlocked: Premium.isUnlocked) }
     private func time(_ minutes: Int) -> Date {
         Calendar.current.date(bySettingHour: minutes / 60, minute: minutes % 60, second: 0, of: Date()) ?? Date()
     }

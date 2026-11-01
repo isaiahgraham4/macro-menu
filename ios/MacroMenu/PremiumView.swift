@@ -8,7 +8,7 @@ enum PremiumFeatures {
         ("app.badge", "App icons", "More icon packs for your Home Screen."),
         ("chart.bar.fill", "Macro colours", "Pick separate colours for protein, carbs and fat, in the app and widgets."),
         ("square.grid.2x2", "Two more widgets", "Calories & macros, and All targets."),
-        ("bell.badge", "Meal and water reminders", "Choose which meals remind you, and when, and get nudged to drink water."),
+        ("bell.badge", "Meal and water reminders", "Choose which meals remind you, and when, pick when your weekly review arrives, and get nudged to drink water."),
     ]
 }
 

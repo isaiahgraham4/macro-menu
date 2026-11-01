@@ -186,7 +186,7 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   they are topped up every time Leanr opens. Choosing reminders is a Premium
   feature (`Premium.isUnlocked`, always true while `Premium.subscriptionsEnabled` is false; locked clears the booked meal and water
   reminders and keeps the weekly review). Notifications are booked two weeks ahead and
-  rebooked when the log changes. The optional Sunday 6 pm weekly review
+  rebooked when the log changes. The optional weekly review, Sundays at 10 pm or a time chosen with Even Leanr,
   notification carries that week's summary.
 - Reminders prompt (`ReminderPromptView`): a sheet offered when Leanr is opened after three days or more away with no meal or water
   reminder on, notifications not turned off, and not asked in the last 30 days (`ReminderPrompt.shouldShow`). It lists breakfast,

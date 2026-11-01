@@ -15,10 +15,19 @@ import UserNotifications
 
     static let weeklyKey = "reminder.weekly.on"
     static var weeklyOn: Bool { UserDefaults.standard.bool(forKey: weeklyKey) }
+    nonisolated static let weeklyTimeKey = "reminder.weekly.minutes"
+    /// 10 pm, in minutes after midnight.
+    nonisolated static let defaultWeeklyMinutes = 22 * 60
 
-    /// The next Sunday at 6 pm, when the weekly review goes out.
-    nonisolated static func nextReview(after now: Date, calendar: Calendar = .current) -> Date? {
-        calendar.nextDate(after: now, matching: DateComponents(hour: 18, minute: 0, weekday: 1), matchingPolicy: .nextTime)
+    /// When on Sunday the weekly review goes out. Choosing the time comes with Premium; without it, it's always the default.
+    nonisolated static func weeklyMinutes(unlocked: Bool) -> Int {
+        guard unlocked else { return defaultWeeklyMinutes }
+        return UserDefaults.standard.object(forKey: weeklyTimeKey) as? Int ?? defaultWeeklyMinutes
+    }
+
+    /// The next Sunday at that time.
+    nonisolated static func nextReview(after now: Date, minutes: Int = defaultWeeklyMinutes, calendar: Calendar = .current) -> Date? {
+        calendar.nextDate(after: now, matching: DateComponents(hour: minutes / 60, minute: minutes % 60, weekday: 1), matchingPolicy: .nextTime)
     }
 
     static func enabledKey(_ meal: MealTime) -> String { "reminder.\(meal.rawValue).on" }
@@ -221,7 +230,7 @@ import UserNotifications
         let upcoming = plan(settings, logs: data.logs)
         let watering = logReminders && waterOn ? waterPlan(waterSchedule, water: data.water ?? [:], target: Water.target(data)) : []
         var weekly: (id: String, date: Date, text: String)?
-        if weeklyOn, let date = nextReview(after: Date()) {
+        if weeklyOn, let date = nextReview(after: Date(), minutes: weeklyMinutes(unlocked: logReminders)) {
             let review = WeeklyReview.make(data, goals: goals, ending: date)
             if review.loggedDays > 0 { weekly = ("reminder.weekly.\(dayKey(date))", date, review.summary) }
         }

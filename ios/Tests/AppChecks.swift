@@ -731,9 +731,15 @@ import UniformTypeIdentifiers
         assert(QuickLog.recentFoods(logs: week.logs, now: day(60), days: 30, calendar: calendar).isEmpty)
         assert(WeeklyReview.make(AppData(), goals: Goals(), ending: day(6), calendar: calendar).summary == "Nothing logged this week yet.")
         let wednesday = calendar.date(bySettingHour: 12, minute: 0, second: 0, of: day(2))!
-        assert(MealReminders.nextReview(after: wednesday, calendar: calendar) == calendar.date(bySettingHour: 18, minute: 0, second: 0, of: day(6)))
-        let sundayNight = calendar.date(bySettingHour: 19, minute: 0, second: 0, of: day(6))!
-        assert(MealReminders.nextReview(after: sundayNight, calendar: calendar) == calendar.date(bySettingHour: 18, minute: 0, second: 0, of: day(13)))
+        assert(MealReminders.nextReview(after: wednesday, calendar: calendar) == calendar.date(bySettingHour: 22, minute: 0, second: 0, of: day(6)))
+        let sundayNight = calendar.date(bySettingHour: 23, minute: 0, second: 0, of: day(6))!
+        assert(MealReminders.nextReview(after: sundayNight, calendar: calendar) == calendar.date(bySettingHour: 22, minute: 0, second: 0, of: day(13)))
+        // A chosen time counts with Premium; without it, the review stays at 10 pm.
+        assert(MealReminders.nextReview(after: wednesday, minutes: 7 * 60 + 30, calendar: calendar) == calendar.date(bySettingHour: 7, minute: 30, second: 0, of: day(6)))
+        UserDefaults.standard.set(7 * 60 + 30, forKey: MealReminders.weeklyTimeKey)
+        assert(MealReminders.weeklyMinutes(unlocked: true) == 450 && MealReminders.weeklyMinutes(unlocked: false) == 1320)
+        UserDefaults.standard.removeObject(forKey: MealReminders.weeklyTimeKey)
+        assert(MealReminders.weeklyMinutes(unlocked: true) == 1320)
 
         // Menu updates: only a newer menu in a known format, with every item valid, replaces the one in use.
         assert(catalog.format == MenuUpdates.format && catalog.published != nil && catalog.revision != nil)
