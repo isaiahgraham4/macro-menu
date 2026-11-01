@@ -55,10 +55,10 @@ struct FindView: View {
                 }
             }
             Section {
-                Picker("Where from", selection: $query.supermarket) {
+                // Set here rather than on a change of value, so a restaurant opened from elsewhere keeps its choice.
+                Picker("Where from", selection: Binding(get: { query.supermarket }, set: { query.supermarket = $0; query.chains = [] })) {
                     Text("Takeaway").tag(false); Text("Supermarket").tag(true)
                 }.pickerStyle(.segmented)
-                    .onChange(of: query.supermarket) { query.chains = [] }
                     .listRowSeparator(.hidden)
                 // Pairs sit side by side, and stack at the largest text sizes so numbers and labels stay whole.
                 let big = typeSize.isAccessibilitySize

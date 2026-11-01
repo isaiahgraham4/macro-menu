@@ -18,6 +18,11 @@ enum MenuScanChecks {
         precondition(MenuParser.clean("Margherita (V)") == "Margherita")
         precondition(MenuParser.clean("Pad Thai GF, DF") == "Pad Thai")
         precondition(MenuParser.clean("12. Mixed veg") == "Mixed veg")
+        precondition(MenuParser.clean("ROAST VEG") == "ROAST VEG" && MenuParser.clean("CHICKEN & VEG") == "CHICKEN & VEG")
+        precondition(MenuParser.clean("Mushroom Risotto (VEG)") == "Mushroom Risotto" && MenuParser.clean("Pad Thai GF, VEG") == "Pad Thai")
+        // Vision can place text cut off by the page edge a little outside it.
+        let cutOff = (0..<8).map { line("Dish \($0)", x: $0 % 2 == 0 ? -0.03 : 0.55, y: Double($0) * 0.1, width: 0.3) }
+        precondition(MenuParser.columns(cutOff).flatMap { $0 }.count == cutOff.count)
 
         // Two columns, prices printed apart, headings, descriptions, and the small print left out
         let menu = MenuParser.read([

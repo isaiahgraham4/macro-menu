@@ -76,7 +76,8 @@ enum AskLeanr {
         for (id, name) in chainNames where id != "mine" && id != Food.everyday {
             let plain = name.lowercased().replacingOccurrences(of: "’", with: "'").replacingOccurrences(of: "-", with: " ")
             let variants = [plain, plain.replacingOccurrences(of: "'", with: ""), plain.replacingOccurrences(of: " ", with: "")]
-            if variants.contains(where: { lower.contains(" \($0)") || lower.contains(" \($0)'s") }) { query.chains.insert(id) }
+            // Whole words, so "coleslaw" isn't Coles.
+            if variants.contains(where: { lower.range(of: #"\s"# + NSRegularExpression.escapedPattern(for: $0) + #"(?:'s)?\b"#, options: .regularExpression) != nil }) { query.chains.insert(id) }
         }
         for (nickname, id) in Assistant.nicknames where chainNames[id] != nil {
             if lower.range(of: #"\b"# + NSRegularExpression.escapedPattern(for: nickname) + #"\b"#, options: .regularExpression) != nil { query.chains.insert(id) }

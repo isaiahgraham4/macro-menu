@@ -258,8 +258,9 @@ struct MenuScanView: View {
         for row in unsure {
             let parts = await MenuModel.ingredients(of: row.dish)
             guard !Task.isCancelled else { return }
+            // Only a row left as it was: a food picked or something turned off in the meantime stands.
             if let better = estimator.estimate(suggested: parts, section: row.dish.section),
-               let index = rows.firstIndex(where: { $0.id == row.id && $0.dish == row.dish }) {
+               let index = rows.firstIndex(where: { $0.id == row.id && $0.dish == row.dish && $0.estimate == row.estimate }) {
                 rows[index].estimate = better
             }
         }

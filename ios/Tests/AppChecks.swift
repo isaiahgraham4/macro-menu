@@ -33,6 +33,9 @@ import UniformTypeIdentifiers
         let general = AskLeanr.parse("ready meal under 500 calories", chainNames: names, defaults: FindQuery())
         assert(general.query.chains.isEmpty && general.query.usesSupermarkets && general.understood.contains("Coles and Woolworths"))
         assert(!AskLeanr.parse("40 g protein at KFC", chainNames: names, defaults: FindQuery()).query.usesSupermarkets)
+        assert(AskLeanr.parse("coleslaw at KFC under 300 calories", chainNames: names, defaults: FindQuery()).query.chains == ["kfc"])
+        assert(AskLeanr.parse("40 g protein at KFC's", chainNames: names, defaults: FindQuery()).query.chains == ["kfc"])
+        assert(AskLeanr.parse("coles chicken", chainNames: names, defaults: FindQuery()).query.chains == ["coles"])
         // The store shows them to search and supermarket mode only.
         let root = FileManager.default.temporaryDirectory.appending(path: UUID().uuidString)
         let store = AppStore(url: root.appending(path: "state.json"), catalogURL: catalogURL, legacyURL: nil, supermarketURL: url)

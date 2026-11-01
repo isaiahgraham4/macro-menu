@@ -104,7 +104,7 @@ enum MenuParser {
             if start <= end { for index in start...end { cover[index] += 1 } }
         }
         let allowed = max(1, lines.count / 12)
-        let low = Int((lines.map(\.x).min() ?? 0) * Double(steps)), high = Int((lines.map(\.x).max() ?? 1) * Double(steps))
+        let low = max(0, Int((lines.map(\.x).min() ?? 0) * Double(steps))), high = Int((lines.map(\.x).max() ?? 1) * Double(steps))
         var best: (start: Int, length: Int)?
         var index = low + 1
         while index <= min(steps - 1, high) {
@@ -276,8 +276,9 @@ enum MenuParser {
             .trimmingCharacters(in: .whitespaces)
         words = words.replacingOccurrences(of: #"^(?:[•*\-–—]\s*|\d{1,3}[.)]\s+)"#, with: "", options: .regularExpression)
         // "Margherita (v)", "Pad Thai GF, DF": letters in capitals or brackets, one after another.
-        let letters = #"(?:GFO?|DFO?|VGN?|VEG|VO|VE|NF|GFA|DFA|NGCI|V|N)"#
-        while let range = words.range(of: #"(?:[\s,/|]+"# + letters + #"|\s*[\(\[](?i:"# + letters + #")(?:[\s,/]+(?i:"# + letters + #"))*[\)\]])[\s,/|]*$"#, options: .regularExpression) {
+        // VEG needs a bracket or a comma, since "ROAST VEG" is a dish.
+        let letters = #"(?:GFO?|DFO?|VGN?|VO|VE|NF|GFA|DFA|NGCI|V|N)"#, marked = #"(?:GFO?|DFO?|VGN?|VEG|VO|VE|NF|GFA|DFA|NGCI|V|N)"#
+        while let range = words.range(of: #"(?:[\s,/|]+"# + letters + #"|\s*[,/|][\s,/|]*VEG|\s*[\(\[](?i:"# + marked + #")(?:[\s,/]+(?i:"# + marked + #"))*[\)\]])[\s,/|]*$"#, options: .regularExpression) {
             words = String(words[..<range.lowerBound])
         }
         // A comma at the end stays: it says the description carries on to the next line.
