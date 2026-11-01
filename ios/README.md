@@ -21,6 +21,14 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   everyday-food names). Each food is matched to Takeawise's own data; only everyday foods, a restaurant the photo's brand names,
   the restaurant you're within 150 m of, or what you logged for that food last time (`PhotoMemory`) are ticked for you. An
   optional note ("tofu, rice and salad") is read like Describe and trusted over the photo.
+- Scan a menu (Today → Log food → Scan a menu): photograph any restaurant's menu, up to 6 pages with the document camera or
+  Photos. `MenuReader` reads the text with Apple Vision on the iPhone and `MenuParser` finds columns, headings, dishes,
+  descriptions and prices. `MenuEstimator` then tries, in order: the restaurant's own item when the menu's name is a chain Takeawise
+  has; a dish in `MenuCookbook` (typical AU restaurant serves, built from foods the checks confirm exist); the ingredients the menu
+  lists; a food with the dish's exact name; the menu's heading. Nothing to go on means no figure, not a made-up one. Where the iPhone
+  has Apple Intelligence, `MenuModel` suggests ingredients and grams for up to 12 unplaced dishes, and Takeawise still does the sum.
+  Tap a dish to change the serve size, turn ingredients off, fix a misread name or search instead. Logged dishes are one food marked
+  "1 dish, estimated". Nothing is saved or sent, and allergens aren't checked. Checks are in `Tests/MenuScanChecks.swift`.
 - Photo labels: Apple Vision reads text on-device. Select the numeric column and
   tap Fill recognised numbers for review. Only explicitly labelled numeric rows
   are suggested; review units, serving basis and all values before saving.

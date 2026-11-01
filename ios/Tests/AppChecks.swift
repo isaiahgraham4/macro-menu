@@ -943,6 +943,10 @@ import UniformTypeIdentifiers
         assert(everyday.first { $0.name == "Beer" }?.mismatch == false)
         assert(breast.everydaySource?.absoluteString == "https://fdc.nal.usda.gov/food-details/171477/nutrients")
         assert(everydayStore.chainName(Food.everyday) == "Everyday foods")
+        // The menu scanner reads and adds up from the same foods the app has, surveys included.
+        let menuStore = AppStore(url: root.appending(path: "menu.json"), catalogURL: catalogURL, legacyURL: nil, everydayURL: everydayURL,
+                                 surveyURL: everydayURL.deletingLastPathComponent().appending(path: "SurveyFoods.json"))
+        MenuScanChecks.run(foods: menuStore.foods, chainNames: Dictionary(menuStore.catalog.chains.map { ($0.id, $0.name) }) { a, _ in a })
         // Everyday foods carry their own diet data, curated from what each food is rather than guessed from its name.
         assert(everyday.allSatisfy { $0.diet?.src == "curated" && ($0.diet?.vg != nil) == ($0.diet?.meat == []) }, "every everyday food has diet data")
         assert(everyday.allSatisfy { $0.diet?.vg != "vegan" || Set(($0.diet?.al ?? []) + ($0.diet?.may ?? [])).isDisjoint(with: ["milk", "egg"]) })
