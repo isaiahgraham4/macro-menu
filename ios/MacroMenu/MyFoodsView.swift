@@ -37,6 +37,7 @@ struct MyFoodsView: View {
             Section {
                 Button { barcode = true } label: { Label("Scan product barcode", systemImage: "barcode.viewfinder") }
                 Button { importing = true } label: { Label("Import a recipe from a link", systemImage: "link") }
+                NavigationLink { CopycatKitchenView() } label: { Label("Copycat Kitchen", systemImage: "frying.pan") }
             }
             Section("Saved foods & recipes") {
                 if rows.isEmpty { ContentUnavailableView("Your own menu", systemImage: "bookmark", description: Text("Save foods, recipes and custom orders. They appear throughout the app.")) }

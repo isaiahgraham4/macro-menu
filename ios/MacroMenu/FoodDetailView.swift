@@ -147,6 +147,16 @@ struct FoodDetailView: View {
                     }
                 }
             }
+            if pick == nil, let copycat = CopycatBook.bundled.comparisons(menu: [food]).first {
+                Section {
+                    NavigationLink { CopycatRecipeView(item: copycat) } label: {
+                        VStack(alignment: .leading, spacing: 2) {
+                            Label("Make it at home", systemImage: "frying.pan")
+                            Text("\(copycat.recipe.name) · \(copycat.home.cal.rounded().number) Cal for \(copycat.recipe.serving)").font(.roboto(.caption)).foregroundStyle(.secondary).monospacedDigit()
+                        }
+                    }
+                }
+            }
             DietSection(food: food)
             if pick == nil { NearestPlaceSection(chain: food.chain) }
             if let chain = store.chain(food.chain), chain.id != "mine" { FoodSourceSection(chain: chain) }
