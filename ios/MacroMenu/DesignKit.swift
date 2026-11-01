@@ -148,7 +148,7 @@ struct TileLabel: View {
                 .padding(.horizontal, 4).padding(.vertical, 10)
             }
         }
-        .frame(maxWidth: .infinity, minHeight: 78)
+        .frame(maxWidth: .infinity, minHeight: 78, maxHeight: .infinity)
         .background(Color(.secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 16))
         .contentShape(RoundedRectangle(cornerRadius: 16))
     }
@@ -224,7 +224,8 @@ struct TileRow<Content: View>: View {
         FoldRow { fold in
             // Tiles share a row normally and stack at the largest text sizes.
             let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(spacing: 10)) : AnyLayout.columns(spacing: 10, fold: fold)
-            layout { content }
+            // Fixed to the tallest tile, so a two-line label doesn't leave its neighbours shorter.
+            layout { content }.fixedSize(horizontal: false, vertical: true)
         }
         .buttonStyle(PressStyle())
         .listRowInsets(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))

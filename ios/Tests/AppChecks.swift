@@ -84,6 +84,52 @@ import UniformTypeIdentifiers
         // A juice bar has no mains, so its drinks are the order.
         let juice = MealFinder.find(catalog.foods, query: FindQuery(chains: ["boost"], calories: 700, protein: 25, maxItems: 1))
         assert(!juice.isEmpty && juice.allSatisfy { $0.chain == "boost" && $0.total.cal <= 700 } && juice[0].total.p >= 20)
+        // Takeaway roulette: every order on the wheel is a real dinner inside the limits.
+        var tonight = FindQuery(calories: 750, protein: 40, carbs: 90, customise: false)
+        let wheel = Roulette.slices(catalog.foods, query: tonight)
+        assert(wheel.count >= 8 && Set(wheel.map(\.chain)).isDisjoint(with: Roulette.notDinner.union(["mine"])))
+        for order in wheel.flatMap(\.orders) {
+            assert(order.total.cal <= 750 && order.total.cal >= 375 && order.total.p >= 40 && order.total.c <= 90 && !order.total.missingCarbs)
+            assert(order.items.allSatisfy { ["main", "side"].contains($0.food.cat) && !MealFinder.isVariant($0.food) })
+            assert(order.items.count <= 2 && order.items.allSatisfy { !$0.food.name.contains("Kids") && !$0.food.name.contains("Hash Brown") })
+            assert(order.items[0].food.id != order.items.last!.food.id || order.items.count == 1 || order.items[0].food.cal <= Roulette.largestDoubled)
+        }
+        tonight.calories = 0
+        assert(Roulette.slices(catalog.foods, query: tonight).isEmpty)
+        // A spin gives every restaurant the same chance, and doesn't land on the last one twice.
+        var dice = SystemRandomNumberGenerator()
+        var landed: [String: Int] = [:]
+        var previous: MealMatch?
+        for _ in 0..<2000 {
+            let pick = Roulette.spin(wheel, after: previous, using: &dice)!
+            assert(pick.order.chain == wheel[pick.slice].chain && pick.order.chain != previous?.chain)
+            landed[pick.order.chain, default: 0] += 1
+            previous = pick.order
+        }
+        assert(landed.count == wheel.count && landed.values.allSatisfy { $0 > 2000 / wheel.count / 2 })
+        assert(Roulette.spin([], after: nil, using: &dice) == nil)
+        let lone = [Roulette.Slice(chain: wheel[0].chain, orders: [wheel[0].orders[0]])]
+        assert(Roulette.spin(lone, after: wheel[0].orders[0], using: &dice)?.order.id == wheel[0].orders[0].id)
+        // The wheel stops with the chosen slice under the pointer, always going forwards.
+        for count in [1, 2, 7, 18] {
+            for slice in 0..<count {
+                for offset in [-0.35, 0, 0.35] {
+                    let start = Double(slice * 47 + count)
+                    let stop = Roulette.landing(from: start, slice: slice, count: count, turns: 6, offset: offset)
+                    assert(stop >= start + 6 * 360 && stop < start + 7 * 360 && Roulette.slice(at: stop, count: count) == slice)
+                }
+            }
+        }
+        // Limits come from what's left today, capped at one and a half typical meals, with carbs and fat only when they're daily limits.
+        var dinnerDay = AppData()
+        dinnerDay.goalSets[0].values = ["cal": 2000, "p": 150, "c": 200, "f": 60, "fibre": 30]
+        let dinnerTime = Date(timeIntervalSince1970: 1_780_000_000)
+        let spent = Food(id: "spent", chain: "mine", name: "Lunch", cat: "main", kj: 5230, cal: 1250, p: 120, c: 150, f: 45)
+        dinnerDay.logs[dayKey(dinnerTime)] = [LogEntry(name: "Lunch", items: [Portion(food: spent)], time: dinnerTime)]
+        let limits = Roulette.limits(dinnerDay, goals: dinnerDay.goalSets[0], now: dinnerTime)!
+        assert(limits.calories == 750 && limits.protein == 30 && limits.carbs == 50 && limits.fat == 15 && !limits.customise)
+        dinnerDay.logs[dayKey(dinnerTime)]![0].items[0].food.cal = 1950
+        assert(Roulette.limits(dinnerDay, goals: dinnerDay.goalSets[0], now: dinnerTime) == nil)
         // Grill'd: every burger on its default bun, with bun and patty swaps that are differences between Grill'd's own panels.
         let grilld = catalog.foods.filter { $0.chain == "grilld" }
         assert(grilld.count == 74 && grilld.allSatisfy { $0.c != nil && $0.f != nil })

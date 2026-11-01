@@ -108,6 +108,11 @@ The app uses SwiftUI and requires no third-party packages or API keys.
 - Ask Takeawise (Find, at the top): a question in plain words ("vegetarian, 40 g protein under 600 Cal at Nando's") becomes an
   order search. `AskLeanr.parse` reads numbers, restaurants, item counts and needs; with Apple Intelligence, `AskLeanrModel`
   fills in what the rules miss, but only numbers that are in the question. What was understood is shown as chips.
+- Takeaway roulette (Find, third tile): a wheel with a slice for each restaurant that has a dinner within tonight's limits.
+  `Roulette.limits` starts from what's left today, up to one and a half typical meals, with carbs and fat when they're daily
+  limits. An order is a main, a main and a real side, or two of something small, as sold. Drinks, desserts, extras, sauces,
+  breakfast and kids' items don't count, and nor do Boost, Brumby's, Donut King, Michel's or Soul Origin. Each restaurant gets
+  the same chance, and `Roulette.spin` won't land on the last one twice running. Log it goes to Dinner.
 - Plan ahead (Today → Log food): set out meals for today and the next six days against the targets, with suggestions to
   fill the gap. Each meal takes a food from search, a scanned barcode (the same scan screen as Today, its button saying
   "Plan for …"), a description, a saved meal or your usual. Plans (`AppData.plans`, by day) count for nothing until logged; on the day they appear on Today under

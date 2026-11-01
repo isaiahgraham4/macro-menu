@@ -265,6 +265,9 @@ Stat Hero calories with a trailing price, then three macro columns (caption name
 ### Undo Toast
 A floating `.regularMaterial` capsule at the top: a semibold message and a bold "Undo" button. It lasts 5 seconds; plain notices last 2 seconds and dismiss on tap.
 
+### Roulette Wheel (signature)
+A flat wheel up to 340pt across, one slice per restaurant, in Bebas fixed to the wheel's size because the words can't grow with Dynamic Type. Slices take turns between the accent and Cutting Board; a wheel with an odd number ends on paper. Macro colours stay off it. The ink pointer sits at 12 o'clock, and the whole wheel reads as one accessibility element, with the result announced when it lands.
+
 ### Meal Share Card
 A fixed 390pt, always-light white card with 28pt padding: a small accent "LEANR" label with the leaf glyph (matching the widgets), a Display meal name, item lines, a divider, the nutrition summary and a caption disclaimer.
 
@@ -279,6 +282,7 @@ Motion lives in `Motion.swift` and `Celebration.swift`. It marks things the pers
 - **Goal reached:** the only full-screen celebration, the first time a weigh-in takes the trend to the goal weight.
 - **Milestone share card:** a milestone card's share button, the goal screen and the Weight screen make a 9:16 story image (`MilestoneShareCard`), dark like the meal share card: the milestone, its figure, a line about it and the date.
 - **Haptics:** a light tap when food is logged, the success tap with a moment, and the error tap with a refusal (`AppStore.refuse`) or a failed save.
+- **Takeaway roulette:** the wheel on Find turns for 4 seconds, with a selection tap for each slice passing the pointer and the success tap when the order appears. It holds for 0.7 seconds so you see the slice, then the list moves to the order. With Reduce Motion on, it goes straight to the slice.
 - **Confetti:** the accent with the worktop's timber and paper colours, never macro colours.
 - **Launch:** the leaf and name on a cold start only. `LaunchBackground` keeps the system launch screen on the worktop colour.
 - **Worktop light:** soft patches of the accent drifting across `LeanrBackground`, 30 times a second. It stops in the background and holds still in Low Power Mode. Like the texture, it's removed with Increase Contrast.

@@ -54,4 +54,9 @@ extension Font {
     static func display(_ style: Font.TextStyle = .largeTitle) -> Font {
         .custom(AppFonts.display, size: AppFonts.size(style) * AppFonts.displayScale, relativeTo: style)
     }
+
+    /// Bebas Neue at a fixed point size, for words drawn into a shape that can't grow with Dynamic Type.
+    static func display(size: CGFloat) -> Font {
+        .custom(AppFonts.display, fixedSize: size)
+    }
 }

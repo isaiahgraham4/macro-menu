@@ -13,6 +13,8 @@ struct FindView: View {
     @State private var asking: String?
     @State private var searchingFoods = false
     @State private var browsing = false
+    @State private var spinning = false
+    @State private var cooking = false
     @State private var moreOpen = false
     @AppStorage(DietFilter.storageKey) private var dietRaw = ""
     @Environment(\.dynamicTypeSize) private var typeSize
@@ -39,13 +41,17 @@ struct FindView: View {
                     }
                 }.padding(.vertical, 4)
             }
-            // Two short tiles instead of two tall rows, so the order finder starts higher up the screen.
+            // Short tiles instead of tall rows, so the order finder starts higher up the screen.
             Section {
                 TileRow {
                     Button { searchingFoods = true } label: { TileLabel(title: "Search foods", systemImage: "magnifyingglass") }
                         .accessibilityHint("Macros for menu items, everyday foods and packaged products")
                     Button { browsing = true } label: { TileLabel(title: "Best choices", systemImage: "chart.bar.xaxis") }
                         .accessibilityHint("Browse foods ranked by protein or calories")
+                    Button { spinning = true } label: { TileLabel(title: "Takeaway roulette", systemImage: "dice") }
+                        .accessibilityHint("Spin a wheel for a dinner that fits what's left today")
+                    Button { cooking = true } label: { TileLabel(title: "Copycat Kitchen", systemImage: "frying.pan") }
+                        .accessibilityHint("Home versions of takeaway favourites, compared to the real thing")
                 }
             }
             Section {
@@ -135,6 +141,8 @@ struct FindView: View {
         .navigationTitle("Find a meal")
         .navigationDestination(isPresented: $searchingFoods) { BrowseView(startSearching: true) }
         .navigationDestination(isPresented: $browsing) { BrowseView() }
+        .navigationDestination(isPresented: $spinning) { RouletteView() }
+        .navigationDestination(isPresented: $cooking) { CopycatKitchenView() }
         .navigationDestination(item: $asking) { text in AskLeanrView(question: text).onAppear { FeatureTips.markUsed(.askLeanr) } }
         .toolbar { NavigationLink { SourcesView() } label: { Image(systemName: "info.circle") }.accessibilityLabel("Menu sources") }
         .onAppear { if !initialized { query.calories = store.goals.mealCal; query.protein = store.goals.mealProtein; initialized = true } }
@@ -192,6 +200,8 @@ struct OrderMatchCard: View {
     let match: MealMatch
     /// The protein target, for the "met" or "short" badge; nil hides it.
     let protein: Double?
+    /// The meal "Log it" goes to; nil goes by the clock.
+    var mealTime: MealTime?
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -217,7 +227,7 @@ struct OrderMatchCard: View {
             NutritionView(total: match.total, details: false)
             HStack {
                 let name = match.items.map(\.food.name).joined(separator: " + ")
-                Button("Log it") { store.logNow(match.items, name: name) }.buttonStyle(.borderedProminent)
+                Button("Log it") { store.logNow(match.items, name: name, mealTime: mealTime ?? .suggested()) }.buttonStyle(.borderedProminent)
                     .contextMenu { YesterdayMenu { store.logNow(match.items, name: name, mealTime: $0, yesterday: true) } }
                 Button("Add to meal") { store.add(match.items) }.buttonStyle(.bordered)
                 ShareLink(item: mealText("Suggested order", match.items)) { Image(systemName: "square.and.arrow.up") }.buttonStyle(.bordered).accessibilityLabel("Share order")

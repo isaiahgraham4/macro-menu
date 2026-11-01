@@ -41,7 +41,7 @@ A calorie tracker built around eating out, rather than a generic food diary with
 - **Storage and privacy:** data lives on-device (`app-state.json`), with optional iCloud and Apple Health. No accounts, no third-party SDKs, no API keys. Barcode lookups send only the barcode number, and label photos are processed on-device.
 - **Monetisation:** free today. A free + Premium tier is planned soon. `Premium.isUnlocked` is currently a stub returning true; Premium is expected to gate custom app colours and the all-targets widget. Premium pricing, the full list of Premium features and the purchase flow are undecided.
 - **Font licensing:** Big Noodle Titling's EULA bars redistribution, so it stays in the gitignored `ios/LocalFonts/` and must not ship in a public build without Sentinel Type's written consent.
-- **Terminology:** "Find" builds orders against targets; "Best choices" (inside Find) searches and compares all menu foods; "Map" finds nearby stores; "Meal" is the current meal being built; "My foods" holds the user's own foods, recipes and saved custom orders.
+- **Terminology:** "Find" builds orders against targets; "Best choices" (inside Find) searches and compares all menu foods; "Takeaway roulette" (inside Find) picks one dinner that fits; "Map" finds nearby stores; "Meal" is the current meal being built; "My foods" holds the user's own foods, recipes and saved custom orders.
 
 ## Brand Commitments
 

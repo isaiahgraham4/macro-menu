@@ -99,7 +99,7 @@ private func confettiColours(accent: Color, dark: Bool) -> [Color] {
     [accent, Color(red: 0.89, green: 0.77, blue: 0.59), Color(red: 0.64, green: 0.52, blue: 0.37),
      dark ? Color(red: 0.97, green: 0.95, blue: 0.89) : accent.opacity(0.6)]
 }
-private let boardInk = Color(red: 0.23, green: 0.17, blue: 0.10)
+let boardInk = Color(red: 0.23, green: 0.17, blue: 0.10)
 
 /// A target, milestone or weigh-in on a small cutting board that rises from the bottom of the screen.
 private struct MomentCard: View {
