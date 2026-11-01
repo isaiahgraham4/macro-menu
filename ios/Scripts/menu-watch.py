@@ -179,7 +179,8 @@ def read_lists():
 
 def read_guides(browser_guides, state):
     """{chain: {url: lines}} for the chains' guides, with the new text of any guide that has changed."""
-    guides, new, failed = {}, {}, {}
+    # Starts from what's kept, so a chain that can't be read this week doesn't lose its guides.
+    guides, new, failed = dict(state.get("guides", {})), {}, {}
     urls = dict(browser_guides)
     for chain, find in GUIDES.items():
         try:
