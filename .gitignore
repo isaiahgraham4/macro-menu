@@ -7,3 +7,5 @@ DerivedData/
 # Fonts whose licences don't allow redistribution stay local.
 ios/LocalFonts/
 ios/MacroMenu/Fonts/big_noodle_titling.ttf
+# The weekly menu check keeps its own state and reports locally.
+ios/Scripts/menu-watch/
