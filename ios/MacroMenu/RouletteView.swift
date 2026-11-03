@@ -16,6 +16,8 @@ struct RouletteView: View {
     @State private var winner: MealMatch?
     /// The order last landed on, which stays after `winner` clears, so a new spin can go elsewhere.
     @State private var last: MealMatch?
+    /// On screen, so a shake on a screen pushed over this one doesn't spin a wheel no one can see.
+    @State private var visible = false
 
     /// How long the wheel turns, and how many whole turns it makes on the way.
     private static let spinTime = 4.0
@@ -76,6 +78,9 @@ struct RouletteView: View {
         .onChange(of: query) { winner = nil }
         .onChange(of: chosenRaw) { winner = nil }
         .task(id: key) { await refresh() }
+        .onAppear { visible = true }
+        .onDisappear { visible = false }
+        .onReceive(NotificationCenter.default.publisher(for: .deviceShaken)) { _ in if visible { spin() } }
         .task(id: location.location?.timestamp) {
             if location.isAuthorized { await location.load(chains.map(\.id)) }
         }
@@ -97,6 +102,9 @@ struct RouletteView: View {
                 .contentShape(Rectangle()).onTapGesture(perform: spin)
                 .listRowBackground(Color.clear).listRowSeparator(.hidden)
                 .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
+                Label("Shake your phone to spin, or tap the wheel", systemImage: "iphone.gen3.radiowaves.left.and.right")
+                    .font(.roboto(.subheadline)).foregroundStyle(.secondary)
+                    .frame(maxWidth: .infinity).listRowBackground(Color.clear).listRowSeparator(.hidden)
             }
         }
     }
@@ -306,5 +314,18 @@ private struct Pointer: Shape {
         path.addLine(to: CGPoint(x: rect.midX, y: rect.maxY))
         path.closeSubpath()
         return path
+    }
+}
+
+extension Notification.Name {
+    /// Posted when the phone is shaken. Takeaway roulette spins on it.
+    static let deviceShaken = Notification.Name("deviceShaken")
+}
+
+extension UIWindow {
+    /// A shake reaches the window when nothing nearer uses it, such as a text field undoing typing.
+    open override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake { NotificationCenter.default.post(name: .deviceShaken, object: nil) }
+        super.motionEnded(motion, with: event)
     }
 }
