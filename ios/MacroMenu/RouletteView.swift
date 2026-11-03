@@ -53,8 +53,8 @@ struct RouletteView: View {
                         OrderMatchCard(match: winner, protein: query.protein, mealTime: .dinner).id("winner")
                     }
                 }
-                limitsSection.disabled(spinning)
                 restaurantsSection.disabled(spinning)
+                limitsSection.disabled(spinning)
             }
             .onChange(of: winner?.id) { _, new in
                 guard new != nil else { return }
@@ -125,13 +125,23 @@ struct RouletteView: View {
 
     private var restaurantsSection: some View {
         Section {
-            ChipRow {
+            // Every restaurant in view at once, so choosing a few takes a tap each and no scrolling.
+            FlowLayout(spacing: 8) {
                 Chip(title: "All", selected: chosen.isEmpty) { chosenRaw = "" }
                 ForEach(chains) { chain in
                     Chip(title: chain.name, selected: chosen.contains(chain.id)) { toggle(chain.id) }
                 }
             }
-        } header: { Text("Restaurants") } footer: {
+            .padding(.vertical, 4)
+            .listRowBackground(Color.clear).listRowSeparator(.hidden)
+            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+        } header: {
+            HStack(alignment: .firstTextBaseline) {
+                Text("Restaurants")
+                Spacer()
+                if !chosen.isEmpty { Text("\(chosen.count) of \(chains.count) on the wheel").textCase(nil).monospacedDigit() }
+            }
+        } footer: {
             VStack(alignment: .leading, spacing: 4) {
                 if chosen.isEmpty {
                     Text(location.isAuthorized ? "Every restaurant within 15 km is on the wheel. Choose some to spin between just those."
