@@ -10,6 +10,15 @@ enum Roulette {
     static let smallestSide = 100.0
     /// A full burger twice is two dinners; two of something small is one.
     static let largestDoubled = 300.0
+    /// The restaurants chosen for the wheel, joined with commas. Empty is every restaurant.
+    static let storageKey = "roulette.chains"
+
+    /// The restaurants on the wheel: the ones chosen, or every one when none are. Places out of reach stay off
+    /// unless they're chosen, since choosing one says you'll go there. Chosen IDs no longer on the menu don't count.
+    static func onWheel(_ all: [String], chosen: Set<String>, outOfReach: Set<String>) -> Set<String> {
+        let picked = chosen.intersection(all)
+        return picked.isEmpty ? Set(all).subtracting(outOfReach) : picked
+    }
 
     /// One restaurant on the wheel.
     struct Slice: Identifiable, Sendable {

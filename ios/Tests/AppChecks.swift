@@ -111,6 +111,14 @@ import UniformTypeIdentifiers
         }
         assert(landed.count == wheel.count && landed.values.allSatisfy { $0 > 2000 / wheel.count / 2 })
         assert(Roulette.spin([], after: nil, using: &dice) == nil)
+        // Choosing restaurants: none chosen is every one in reach; a chosen one is on even when far; a chain gone from the menu doesn't count.
+        let everyChain = ["kfc", "mcd", "nandos"]
+        assert(Roulette.onWheel(everyChain, chosen: [], outOfReach: ["nandos"]) == ["kfc", "mcd"])
+        assert(Roulette.onWheel(everyChain, chosen: ["nandos"], outOfReach: ["nandos"]) == ["nandos"])
+        assert(Roulette.onWheel(everyChain, chosen: ["gone"], outOfReach: []) == Set(everyChain))
+        var justTwo = FindQuery(calories: 750, protein: 40, carbs: 90, customise: false)
+        justTwo.chains = Roulette.onWheel(wheel.map(\.chain), chosen: [wheel[0].chain, wheel[1].chain], outOfReach: [])
+        assert(Set(Roulette.slices(catalog.foods, query: justTwo).map(\.chain)) == [wheel[0].chain, wheel[1].chain])
         let lone = [Roulette.Slice(chain: wheel[0].chain, orders: [wheel[0].orders[0]])]
         assert(Roulette.spin(lone, after: wheel[0].orders[0], using: &dice)?.order.id == wheel[0].orders[0].id)
         // The wheel stops with the chosen slice under the pointer, always going forwards.

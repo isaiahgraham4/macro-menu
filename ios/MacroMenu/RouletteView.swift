@@ -8,8 +8,8 @@ struct RouletteView: View {
     @AppStorage(DietFilter.storageKey) private var dietRaw = ""
     @State private var query = FindQuery()
     @State private var slices: [Roulette.Slice] = []
-    /// Restaurants tapped off the wheel.
-    @State private var leftOut = Set<String>()
+    /// Restaurants chosen for the wheel, kept between visits. None chosen is every restaurant.
+    @AppStorage(Roulette.storageKey) private var chosenRaw = ""
     @State private var ready = false
     @State private var angle = 0.0
     @State private var spinning = false
@@ -28,12 +28,21 @@ struct RouletteView: View {
     /// Restaurants Maps found none of within 15 km. Empty until location is allowed.
     private var outOfReach: [String] { chains.map(\.id).filter { location.places[$0]?.isEmpty == true } }
     private var loggedToday: Int { store.data.logs[dayKey(Date())]?.count ?? 0 }
+    /// Chosen restaurants still on the menu.
+    private var chosen: Set<String> { Set(chosenRaw.split(separator: ",").map(String.init)).intersection(chains.map(\.id)) }
+    private var onWheel: Set<String> { Roulette.onWheel(chains.map(\.id), chosen: chosen, outOfReach: Set(outOfReach)) }
+    /// Chosen restaurants with no dinner that fits, said under the chips so a missing slice isn't a mystery.
+    private var noneFit: [String] {
+        guard ready, !spinning else { return [] }
+        let landed = Set(slices.map(\.chain))
+        return chains.filter { chosen.contains($0.id) && !landed.contains($0.id) }.map(\.name)
+    }
 
     /// What the wheel is worked out from. It holds still while spinning and while it's pointing at a winner.
     private struct Key: Equatable {
-        var query: FindQuery, leftOut: Set<String>, outOfReach: [String], foods: Int, held: Bool
+        var query: FindQuery, onWheel: Set<String>, foods: Int, held: Bool
     }
-    private var key: Key { Key(query: query, leftOut: leftOut, outOfReach: outOfReach, foods: store.catalog.foods.count, held: spinning || winner != nil) }
+    private var key: Key { Key(query: query, onWheel: onWheel, foods: store.catalog.foods.count, held: spinning || winner != nil) }
 
     var body: some View {
         ScrollViewReader { scroller in
@@ -65,7 +74,7 @@ struct RouletteView: View {
         .onChange(of: loggedToday, initial: true) { startFromToday() }
         .onChange(of: dietRaw) { query.diet = DietFilter(raw: dietRaw) }
         .onChange(of: query) { winner = nil }
-        .onChange(of: leftOut) { winner = nil }
+        .onChange(of: chosenRaw) { winner = nil }
         .task(id: key) { await refresh() }
         .task(id: location.location?.timestamp) {
             if location.isAuthorized { await location.load(chains.map(\.id)) }
@@ -117,15 +126,30 @@ struct RouletteView: View {
     private var restaurantsSection: some View {
         Section {
             ChipRow {
+                Chip(title: "All", selected: chosen.isEmpty) { chosenRaw = "" }
                 ForEach(chains) { chain in
-                    Chip(title: chain.name, selected: !leftOut.contains(chain.id)) {
-                        if leftOut.contains(chain.id) { leftOut.remove(chain.id) } else { leftOut.insert(chain.id) }
-                    }
+                    Chip(title: chain.name, selected: chosen.contains(chain.id)) { toggle(chain.id) }
                 }
             }
         } header: { Text("Restaurants") } footer: {
-            Text(location.isAuthorized ? "Tap one to take it off the wheel. Places more than 15 km away stay off." : "Tap one to take it off the wheel.")
+            VStack(alignment: .leading, spacing: 4) {
+                if chosen.isEmpty {
+                    Text(location.isAuthorized ? "Every restaurant within 15 km is on the wheel. Choose some to spin between just those."
+                         : "Every restaurant is on the wheel. Choose some to spin between just those.")
+                } else {
+                    Text("Only the restaurants you choose are on the wheel, and they stay chosen next time.")
+                }
+                if !noneFit.isEmpty {
+                    Text("Nothing at \(noneFit.formatted(.list(type: .or))) fits these limits.")
+                }
+            }
         }
+    }
+
+    private func toggle(_ chain: String) {
+        var picked = chosen
+        if picked.contains(chain) { picked.remove(chain) } else { picked.insert(chain) }
+        chosenRaw = picked.sorted().joined(separator: ",")
     }
 
     /// The limits in words, above the wheel.
@@ -144,8 +168,12 @@ struct RouletteView: View {
 
     private func refresh() async {
         guard !key.held else { return }
-        let foods = store.catalog.foods, request = query, off = leftOut.union(outOfReach)
-        let work = Task.detached(priority: .userInitiated) { Roulette.slices(foods, query: request).filter { !off.contains($0.chain) } }
+        // Empty chains in a query means every restaurant, so a wheel with none on it is settled here.
+        guard !key.onWheel.isEmpty else { slices = []; ready = true; return }
+        var request = query
+        request.chains = key.onWheel
+        let foods = store.catalog.foods
+        let work = Task.detached(priority: .userInitiated) { Roulette.slices(foods, query: request) }
         let result = await withTaskCancellationHandler { await work.value } onCancel: { work.cancel() }
         guard !Task.isCancelled else { return }
         slices = result; ready = true
