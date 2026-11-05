@@ -314,10 +314,12 @@ final class AppStore {
         return true
     }
     /// Adds water to a day (or takes some off with a negative amount). Returns false if it couldn't be saved.
-    @discardableResult func addWater(_ millilitres: Double, on date: Date = Date()) -> Bool {
+    /// With `undoable`, the toast offers Undo ("Added 500 mL of water").
+    @discardableResult func addWater(_ millilitres: Double, on date: Date = Date(), undoable: Bool = false) -> Bool {
         let key = dayKey(date)
         guard millilitres.isFinite, millilitres != 0, millilitres.magnitude <= Water.dayLimit else { return false }
-        return change { Water.adding(millilitres, on: key, to: &$0) }
+        let label = undoable ? (millilitres > 0 ? "Added \(Water.text(millilitres)) of water" : "Took off \(Water.text(-millilitres)) of water") : nil
+        return change(undo: label) { Water.adding(millilitres, on: key, to: &$0) }
     }
     /// Saves the daily water target and glass size, each only if it's within range.
     @discardableResult func setWater(target: Double, glass: Double) -> Bool {

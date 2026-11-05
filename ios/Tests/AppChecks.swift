@@ -1412,6 +1412,7 @@ import UniformTypeIdentifiers
             Water.adding(10, on: "not-a-day", to: &water); Water.adding(.nan, on: "2026-10-14", to: &water)
             assert(water.water?.count == 1)
             assert(Water.text(750) == "750 mL" && Water.text(1250) == "1.25 L" && Water.text(2000) == "2 L")
+            assert(Water.quickAmounts(glass: 250) == [250, 500, 750, 1000] && Water.quickAmounts(glass: 500, recent: 330) == [500, 750, 330, 1000] && Water.quickAmounts(glass: 250, recent: 600) == [250, 500, 750, 600])
             assert(Water.progress(total: 500, target: 2000) == 0.25 && Water.progress(total: 3000, target: 2000) == 1 && Water.progress(total: 5, target: 0) == 0)
             var bad = AppData(); bad.water = ["2026-10-13": -5]; assert(!bad.isValid)
             bad.water = ["yesterday": 100]; assert(!bad.isValid)

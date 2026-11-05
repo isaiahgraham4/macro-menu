@@ -52,6 +52,19 @@ enum Water {
     /// The quick amounts offered besides a glass.
     static let bottleSizes: [Double] = [500, 750]
 
+    /// The four amounts shown as chips on Today: the glass, the usual bottles, then the last other amount added, or a litre
+    /// until there is one. Each appears once.
+    static func quickAmounts(glass: Double, recent: Double? = nil) -> [Double] {
+        var amounts = [glass]
+        for size in bottleSizes where !amounts.contains(size) { amounts.append(size) }
+        for size in [recent, 1000].compactMap({ $0 }) where size > 0 && !amounts.contains(size) && amounts.count < 4 { amounts.append(size) }
+        return amounts
+    }
+
+    /// The custom amount picker moves in steps of this many millilitres.
+    static let pickerStep = 50.0
+    static let pickerRange = 50.0...2000.0
+
     /// What a spoken size means: a glass is whatever glass size is set, a bottle is 500 mL and a litre is a litre.
     enum Size: String, Sendable { case glass, bottle, litre }
     static func millilitres(_ size: Size, glass: Double) -> Double {
