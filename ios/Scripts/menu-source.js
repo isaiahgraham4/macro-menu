@@ -1165,7 +1165,11 @@ const MENU = {
     ["Beef Dynamic", "main", 2650, 28.7, 31.6, 35.9, "Panini bun · 255 g", {"sat": 10.4, "sugar": 6.9, "fibre": 8.2, "sodium": 1020}],
     ["Chicken Dynamic", "main", 2070, 42.3, 30.9, 20.9, "Panini bun · 255 g", {"sat": 3.1, "sugar": 6.2, "fibre": 9.3, "sodium": 622}],
     ["Veggie Dynamic", "main", 2070, 12.8, 47.7, 25.9, "Panini bun · 260 g", {"sat": 2.8, "sugar": 9.6, "fibre": 12.7, "sodium": 1040}],
-    ["Dynamic Beef Cheeseburger", "main", 2170, 28.1, 28, 24.6, "Panini bun · 190 g", {"sat": 9.6, "sugar": 4.8, "fibre": 7, "sodium": 931}]
+    ["Dynamic Beef Cheeseburger", "main", 2170, 28.1, 28, 24.6, "Panini bun · 190 g", {"sat": 9.6, "sugar": 4.8, "fibre": 7, "sodium": 931}],
+    ["The Classic Wrap", "main", 2170, 24.2, 38.9, 28.6, "1 wrap · 270 g", {"sat": 4.2, "sugar": 3.6, "fibre": 5, "sodium": 881}],
+    ["Bacon Club Wrap", "main", 2950, 49.8, 41.5, 36.3, "1 wrap · 336 g", {"sat": 8.6, "sugar": 4.6, "fibre": 9.8, "sodium": 916}],
+    ["Cali Green Goddess Wrap", "main", 2050, 42.5, 39.6, 17.3, "1 wrap · 333 g", {"sat": 4.2, "sugar": 6.8, "fibre": 9.5, "sodium": 519}],
+    ["Golden Caesar Wrap", "main", 2750, 34.7, 48.9, 34.1, "1 wrap · 313 g", {"sat": 8.2, "sugar": 4, "fibre": 7.3, "sodium": 891}]
   ],
   schnitz:[
     ["Plain & Simple Burger", "main", 3120, 49.4, 61.9, 32.4, "1 serving", {"sat": 7.4, "sugar": 6.6, "sodium": 1090}],

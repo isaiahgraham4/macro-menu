@@ -2832,6 +2832,21 @@
     "soy"
    ]
   },
+  "kfc:21-pieces-of-chicken": {
+   "meat": [
+    "chicken"
+   ],
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "soy"
+   ]
+  },
   "kfc:10-wicked-wings": {
    "meat": [
     "chicken"
@@ -3207,6 +3222,74 @@
    "may": [
     "sulphites"
    ]
+  },
+  "hj:cheese-lovers-whopper": {
+   "meat": [
+    "beef"
+   ],
+   "src": "ingredients",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "fish",
+    "sulphites"
+   ]
+  },
+  "hj:double-cheese-lovers-whopper": {
+   "meat": [
+    "beef"
+   ],
+   "src": "ingredients",
+   "al": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "sesame",
+    "shellfish",
+    "soy",
+    "sulphites"
+   ],
+   "unk": [
+    "lupin",
+    "wheat"
+   ]
+  },
+  "hj:angry-veggie-whopper-cheese": {
+   "meat": null,
+   "src": null
+  },
+  "hj:cheesy-cheeseburger": {
+   "meat": [
+    "beef"
+   ],
+   "src": "ingredients",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "sulphites"
+   ],
+   "unk": [
+    "lupin",
+    "wheat"
+   ]
+  },
+  "hj:eggs-benny-brekky-roll": {
+   "meat": null,
+   "src": null
+  },
+  "hj:eggs-benny-brekky-wrap": {
+   "meat": null,
+   "src": null
   },
   "hj:double-whopper": {
    "meat": [
@@ -5241,6 +5324,54 @@
     "sulphites"
    ]
   },
+  "sub:6-korean-style-bbq-steak": {
+   "meat": null,
+   "src": null
+  },
+  "sub:footlong-korean-style-bbq-steak": {
+   "meat": null,
+   "src": null
+  },
+  "sub:korean-style-bbq-steak-wrap": {
+   "meat": null,
+   "src": null
+  },
+  "sub:korean-style-bbq-steak-wrap-large-": {
+   "meat": null,
+   "src": null
+  },
+  "sub:korean-style-bbq-steak-salad-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "sub:korean-style-bbq-steak-salad-large-": {
+   "meat": null,
+   "src": null
+  },
+  "sub:6-peri-peri-style-chicken": {
+   "meat": null,
+   "src": null
+  },
+  "sub:footlong-peri-peri-style-chicken": {
+   "meat": null,
+   "src": null
+  },
+  "sub:peri-peri-style-chicken-wrap": {
+   "meat": null,
+   "src": null
+  },
+  "sub:peri-peri-style-chicken-wrap-large-": {
+   "meat": null,
+   "src": null
+  },
+  "sub:peri-peri-style-chicken-salad-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "sub:peri-peri-style-chicken-salad-large-": {
+   "meat": null,
+   "src": null
+  },
   "sub:footlong-turkey-on-rye": {
    "meat": [
     "other"
@@ -6680,6 +6811,22 @@
     "wheat"
    ]
   },
+  "sub:flamin-hot-nachos": {
+   "meat": null,
+   "src": null
+  },
+  "sub:flamin-hot-nachos-with-chicken-strips": {
+   "meat": null,
+   "src": null
+  },
+  "sub:flamin-hot-nachos-with-rotisserie-style-chicken": {
+   "meat": null,
+   "src": null
+  },
+  "sub:flamin-hot-nachos-with-diced-steak": {
+   "meat": null,
+   "src": null
+  },
   "sub:southern-style-chicken-bites-no-sauce-": {
    "meat": null,
    "src": null,
@@ -7024,6 +7171,18 @@
     "wheat"
    ]
   },
+  "gyg:bbq-beef-rib-burrito-bowl": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
+  },
   "gyg:grilled-chicken-burrito": {
    "meat": [
     "chicken"
@@ -7113,6 +7272,19 @@
     "egg"
    ]
   },
+  "gyg:bbq-beef-rib-burrito": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
+  },
   "gyg:crispy-chicken-tenders-caesar-burrito": {
    "meat": [
     "chicken"
@@ -7134,6 +7306,21 @@
    "meat": [
     "chicken"
    ],
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "gyg:bbq-beef-rib-caesar-burrito": {
+   "meat": null,
    "src": "name",
    "al": [
     "egg",
@@ -7232,6 +7419,21 @@
    "meat": [
     "chicken"
    ],
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "gyg:bbq-beef-rib-caesar-cali-burrito": {
+   "meat": null,
    "src": "name",
    "al": [
     "egg",
@@ -7356,6 +7558,19 @@
     "egg"
    ]
   },
+  "gyg:bbq-beef-rib-enchilada": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
+  },
   "gyg:saut-ed-vegetables-cali-burrito": {
    "meat": [],
    "src": "name",
@@ -7390,6 +7605,20 @@
    "meat": [
     "beef"
    ],
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sulphites"
+   ]
+  },
+  "gyg:bbq-beef-rib-cali-burrito": {
+   "meat": null,
    "src": "name",
    "al": [
     "gluten",
@@ -7486,6 +7715,18 @@
     "wheat"
    ]
   },
+  "gyg:bbq-beef-rib-nachos": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
+  },
   "gyg:grilled-chicken-nacho-fries": {
    "meat": [
     "chicken"
@@ -7564,6 +7805,19 @@
    "meat": [
     "beef"
    ],
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "sulphites",
+    "wheat"
+   ]
+  },
+  "gyg:bbq-beef-rib-nacho-fries": {
+   "meat": null,
    "src": "name",
    "al": [
     "milk"
@@ -7678,6 +7932,19 @@
     "egg"
    ]
   },
+  "gyg:bbq-beef-rib-quesadilla": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
+  },
   "gyg:grilled-chicken-quesadilla-plus": {
    "meat": [
     "chicken"
@@ -7767,6 +8034,19 @@
     "egg"
    ]
   },
+  "gyg:bbq-beef-rib-quesadilla-plus": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
+  },
   "gyg:crispy-chicken-tenders-caesar-salad": {
    "meat": [
     "chicken"
@@ -7788,6 +8068,21 @@
    "meat": [
     "chicken"
    ],
+   "src": "name",
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "sesame",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
+  },
+  "gyg:bbq-beef-rib-caesar-salad": {
+   "meat": null,
    "src": "name",
    "al": [
     "egg",
@@ -7921,6 +8216,19 @@
     "egg"
    ]
   },
+  "gyg:bbq-beef-rib-soft-taco-1-": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
+  },
   "gyg:grilled-chicken-hard-taco-1-": {
    "meat": [
     "chicken"
@@ -7995,6 +8303,18 @@
    "meat": [
     "beef"
    ],
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
+  },
+  "gyg:bbq-beef-rib-hard-taco-1-": {
+   "meat": null,
    "src": "name",
    "al": [
     "milk"
@@ -8539,6 +8859,10 @@
     "egg",
     "milk"
    ]
+  },
+  "gyg:extra-bbq-beef-rib": {
+   "meat": null,
+   "src": "name"
   },
   "gyg:extra-crispy-chicken-tenders-2-": {
    "meat": [
@@ -9275,6 +9599,19 @@
     "egg"
    ]
   },
+  "gyg:little-g-s-bbq-beef-rib-burrito": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
+  },
   "gyg:little-g-s-grilled-chicken-bowl": {
    "meat": [
     "chicken"
@@ -9349,6 +9686,18 @@
    "meat": [
     "beef"
    ],
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
+  },
+  "gyg:little-g-s-bbq-beef-rib-bowl": {
+   "meat": null,
    "src": "name",
    "al": [
     "milk"
@@ -9446,6 +9795,18 @@
    "meat": [
     "beef"
    ],
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
+  },
+  "gyg:little-g-s-bbq-beef-rib-nachos": {
+   "meat": null,
    "src": "name",
    "al": [
     "milk"
@@ -10079,6 +10440,19 @@
     "egg"
    ]
   },
+  "gyg:bbq-beef-rib-mini-burrito": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
+  },
   "gyg:grilled-chicken-mini-bowl": {
    "meat": [
     "chicken"
@@ -10163,6 +10537,18 @@
     "wheat"
    ]
   },
+  "gyg:bbq-beef-rib-mini-bowl": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
+  },
   "gyg:crispy-chicken-tenders-mini-caesar-burrito": {
    "meat": [
     "chicken"
@@ -10184,6 +10570,21 @@
    "meat": [
     "chicken"
    ],
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "gyg:bbq-beef-rib-mini-caesar-burrito": {
+   "meat": null,
    "src": "name",
    "al": [
     "egg",
@@ -10234,6 +10635,21 @@
    "meat": [
     "chicken"
    ],
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ]
+  },
+  "gyg:bbq-beef-rib-mini-caesar-cali-burrito": {
+   "meat": null,
    "src": "name",
    "al": [
     "egg",
@@ -10357,6 +10773,20 @@
     "sulphites"
    ]
   },
+  "gyg:bbq-beef-rib-mini-cali-burrito": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sulphites"
+   ]
+  },
   "gyg:grilled-chicken-mini-enchilada": {
    "meat": [
     "chicken"
@@ -10446,6 +10876,19 @@
     "egg"
    ]
   },
+  "gyg:bbq-beef-rib-mini-enchilada": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
+  },
   "gyg:grilled-chicken-mini-nachos": {
    "meat": [
     "chicken"
@@ -10520,6 +10963,18 @@
    "meat": [
     "beef"
    ],
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
+  },
+  "gyg:bbq-beef-rib-mini-nachos": {
+   "meat": null,
    "src": "name",
    "al": [
     "milk"
@@ -10619,6 +11074,19 @@
     "wheat"
    ]
   },
+  "gyg:bbq-beef-rib-mini-nacho-fries": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "sulphites",
+    "wheat"
+   ]
+  },
   "gyg:crispy-chicken-tenders-mini-caesar-salad": {
    "meat": [
     "chicken"
@@ -10640,6 +11108,21 @@
    "meat": [
     "chicken"
    ],
+   "src": "name",
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "sesame",
+    "soy",
+    "sulphites",
+    "wheat"
+   ]
+  },
+  "gyg:bbq-beef-rib-mini-caesar-salad": {
+   "meat": null,
    "src": "name",
    "al": [
     "egg",
@@ -10783,6 +11266,10 @@
     "egg",
     "milk"
    ]
+  },
+  "gyg:mini-extra-bbq-beef-rib": {
+   "meat": null,
+   "src": "name"
   },
   "gyg:mini-extra-crispy-chicken-tender-1-": {
    "meat": [
@@ -10966,6 +11453,12 @@
    ],
    "src": "name",
    "al": []
+  },
+  "nandos:paella-grande": {
+   "meat": [
+    "chicken"
+   ],
+   "src": "name"
   },
   "nandos:mediterranean-salad": {
    "meat": [],
@@ -11720,6 +12213,38 @@
     "sesame",
     "shellfish",
     "sulphites"
+   ]
+  },
+  "oporto:o-sauce-rappsnacker": {
+   "meat": [
+    "chicken"
+   ],
+   "src": "description"
+  },
+  "oporto:o-sauce-prego-pulled-chicken-loaded-chips": {
+   "meat": [
+    "chicken"
+   ],
+   "src": "description"
+  },
+  "oporto:fresh-pulled-chicken-roll": {
+   "meat": null,
+   "src": null
+  },
+  "oporto:bola-de-berlim": {
+   "meat": [],
+   "src": "description",
+   "vg": "vegetarian",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "soy",
+    "treenut"
    ]
   },
   "oporto:pulled-chicken-bowl": {
@@ -13080,6 +13605,50 @@
     "sesame"
    ]
   },
+  "grilld:the-classic-wrap": {
+   "meat": [
+    "chicken"
+   ],
+   "src": "ingredients",
+   "al": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
+  },
+  "grilld:bacon-club-wrap": {
+   "meat": [
+    "chicken",
+    "pork"
+   ],
+   "src": "ingredients"
+  },
+  "grilld:cali-green-goddess-wrap": {
+   "meat": [
+    "chicken"
+   ],
+   "src": "ingredients",
+   "al": [
+    "egg",
+    "gluten",
+    "wheat"
+   ]
+  },
+  "grilld:golden-caesar-wrap": {
+   "meat": [
+    "chicken",
+    "fish",
+    "pork"
+   ],
+   "src": "ingredients",
+   "al": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "wheat"
+   ]
+  },
   "schnitz:plain-simple-burger": {
    "meat": [
     "chicken"
@@ -14189,6 +14758,68 @@
     "sulphites",
     "treenut"
    ]
+  },
+  "rr:reds-burger-fillet-": {
+   "meat": null,
+   "src": null
+  },
+  "rr:spicy-burger-fillet-": {
+   "meat": null,
+   "src": null
+  },
+  "rr:chicken-blt-burger": {
+   "meat": [
+    "chicken",
+    "pork"
+   ],
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "lupin",
+    "peanut",
+    "sesame",
+    "soy",
+    "sulphites",
+    "treenut"
+   ]
+  },
+  "rr:chicken-blt-burger-fillet-": {
+   "meat": null,
+   "src": null
+  },
+  "rr:cheesy-bacon-burger": {
+   "meat": [
+    "chicken",
+    "pork"
+   ],
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "lupin",
+    "peanut",
+    "sesame",
+    "sulphites",
+    "treenut"
+   ]
+  },
+  "rr:cheesy-bacon-burger-fillet-": {
+   "meat": null,
+   "src": null
+  },
+  "rr:tender-1-piece-": {
+   "meat": null,
+   "src": null
   },
   "rr:picklebird-burger": {
    "meat": null,
@@ -17836,6 +18467,14 @@
    "vg": "vegan",
    "al": []
   },
+  "boost:lychee-charm-original-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
+  },
   "boost:mango-co-original-": {
    "meat": [],
    "src": "labels",
@@ -18370,600 +19009,4917 @@
     "soy"
    ]
   },
-  "kfc:21-pieces-of-chicken": {
-   "meat": [
-    "chicken"
-   ],
-   "src": "name",
-   "al": [
-    "egg",
-    "gluten",
-    "milk",
-    "wheat"
-   ],
-   "may": [
-    "soy"
-   ]
-  },
-  "hj:cheese-lovers-whopper": {
-   "meat": [
-    "beef"
-   ],
-   "src": "ingredients",
-   "al": [
-    "egg",
-    "gluten",
-    "milk",
-    "sesame",
-    "soy",
-    "wheat"
-   ],
-   "may": [
-    "fish",
-    "sulphites"
-   ]
-  },
-  "hj:double-cheese-lovers-whopper": {
-   "meat": [
-    "beef"
-   ],
-   "src": "ingredients",
-   "al": [
-    "egg",
-    "fish",
-    "gluten",
-    "milk",
-    "sesame",
-    "shellfish",
-    "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
-    "wheat"
-   ]
-  },
-  "hj:angry-veggie-whopper-cheese": {
+  "betty:bare-betty": {
    "meat": null,
    "src": null
   },
-  "hj:cheesy-cheeseburger": {
-   "meat": [
-    "beef"
-   ],
-   "src": "ingredients",
-   "al": [
-    "egg",
-    "gluten",
-    "milk",
-    "sesame",
-    "soy",
-    "sulphites"
-   ],
-   "unk": [
-    "lupin",
-    "wheat"
-   ]
-  },
-  "hj:eggs-benny-brekky-roll": {
+  "betty:betty-s-classic": {
    "meat": null,
    "src": null
   },
-  "hj:eggs-benny-brekky-wrap": {
+  "betty:betty-s-classic-double-stacked-beef": {
    "meat": null,
    "src": null
   },
-  "sub:6-korean-style-bbq-steak": {
+  "betty:betty-s-classic-plant": {
    "meat": null,
    "src": null
   },
-  "sub:footlong-korean-style-bbq-steak": {
+  "betty:betty-s-classic-vegan": {
    "meat": null,
    "src": null
   },
-  "sub:korean-style-bbq-steak-wrap": {
+  "betty:betty-s-deluxe": {
    "meat": null,
    "src": null
   },
-  "sub:korean-style-bbq-steak-wrap-large-": {
+  "betty:betty-s-double": {
    "meat": null,
    "src": null
   },
-  "sub:korean-style-bbq-steak-salad-regular-": {
+  "betty:crispy-chicken": {
    "meat": null,
    "src": null
   },
-  "sub:korean-style-bbq-steak-salad-large-": {
+  "betty:crispy-chicken-supreme": {
    "meat": null,
    "src": null
   },
-  "sub:6-peri-peri-style-chicken": {
+  "betty:grilled-chicken": {
    "meat": null,
    "src": null
   },
-  "sub:footlong-peri-peri-style-chicken": {
+  "betty:grilled-chicken-supreme": {
    "meat": null,
    "src": null
   },
-  "sub:peri-peri-style-chicken-wrap": {
+  "betty:grilled-chicken-bare": {
    "meat": null,
    "src": null
   },
-  "sub:peri-peri-style-chicken-wrap-large-": {
+  "betty:cheeseburger": {
    "meat": null,
    "src": null
   },
-  "sub:peri-peri-style-chicken-salad-regular-": {
+  "betty:crispy-chicken-strips-burger": {
    "meat": null,
    "src": null
   },
-  "sub:peri-peri-style-chicken-salad-large-": {
+  "betty:noosa-classic-surf": {
    "meat": null,
    "src": null
   },
-  "sub:flamin-hot-nachos": {
+  "betty:shroom-burger": {
    "meat": null,
    "src": null
   },
-  "sub:flamin-hot-nachos-with-chicken-strips": {
+  "betty:spicy-chicken": {
    "meat": null,
    "src": null
   },
-  "sub:flamin-hot-nachos-with-rotisserie-style-chicken": {
+  "betty:spicy-grilled-chicken": {
    "meat": null,
    "src": null
   },
-  "sub:flamin-hot-nachos-with-diced-steak": {
+  "betty:calamari": {
    "meat": null,
    "src": null
   },
-  "gyg:bbq-beef-rib-burrito-bowl": {
-   "meat": null,
-   "src": "name",
-   "al": [
-    "milk"
-   ],
-   "may": [
-    "egg",
-    "gluten",
-    "wheat"
-   ]
-  },
-  "gyg:bbq-beef-rib-burrito": {
-   "meat": null,
-   "src": "name",
-   "al": [
-    "gluten",
-    "milk",
-    "soy",
-    "wheat"
-   ],
-   "may": [
-    "egg"
-   ]
-  },
-  "gyg:bbq-beef-rib-caesar-burrito": {
-   "meat": null,
-   "src": "name",
-   "al": [
-    "egg",
-    "gluten",
-    "milk",
-    "soy",
-    "wheat"
-   ],
-   "may": [
-    "sesame",
-    "sulphites"
-   ]
-  },
-  "gyg:bbq-beef-rib-caesar-cali-burrito": {
-   "meat": null,
-   "src": "name",
-   "al": [
-    "egg",
-    "gluten",
-    "milk",
-    "soy",
-    "wheat"
-   ],
-   "may": [
-    "sesame",
-    "sulphites"
-   ]
-  },
-  "gyg:bbq-beef-rib-enchilada": {
-   "meat": null,
-   "src": "name",
-   "al": [
-    "gluten",
-    "milk",
-    "soy",
-    "wheat"
-   ],
-   "may": [
-    "egg"
-   ]
-  },
-  "gyg:bbq-beef-rib-cali-burrito": {
-   "meat": null,
-   "src": "name",
-   "al": [
-    "gluten",
-    "milk",
-    "soy",
-    "wheat"
-   ],
-   "may": [
-    "egg",
-    "sulphites"
-   ]
-  },
-  "gyg:bbq-beef-rib-nachos": {
-   "meat": null,
-   "src": "name",
-   "al": [
-    "milk"
-   ],
-   "may": [
-    "egg",
-    "gluten",
-    "wheat"
-   ]
-  },
-  "gyg:bbq-beef-rib-nacho-fries": {
-   "meat": null,
-   "src": "name",
-   "al": [
-    "milk"
-   ],
-   "may": [
-    "egg",
-    "gluten",
-    "sulphites",
-    "wheat"
-   ]
-  },
-  "gyg:bbq-beef-rib-quesadilla": {
-   "meat": null,
-   "src": "name",
-   "al": [
-    "gluten",
-    "milk",
-    "soy",
-    "wheat"
-   ],
-   "may": [
-    "egg"
-   ]
-  },
-  "gyg:bbq-beef-rib-quesadilla-plus": {
-   "meat": null,
-   "src": "name",
-   "al": [
-    "gluten",
-    "milk",
-    "soy",
-    "wheat"
-   ],
-   "may": [
-    "egg"
-   ]
-  },
-  "gyg:bbq-beef-rib-caesar-salad": {
-   "meat": null,
-   "src": "name",
-   "al": [
-    "egg",
-    "milk"
-   ],
-   "may": [
-    "gluten",
-    "sesame",
-    "soy",
-    "sulphites",
-    "wheat"
-   ]
-  },
-  "gyg:bbq-beef-rib-soft-taco-1-": {
-   "meat": null,
-   "src": "name",
-   "al": [
-    "gluten",
-    "milk",
-    "soy",
-    "wheat"
-   ],
-   "may": [
-    "egg"
-   ]
-  },
-  "gyg:bbq-beef-rib-hard-taco-1-": {
-   "meat": null,
-   "src": "name",
-   "al": [
-    "milk"
-   ],
-   "may": [
-    "egg",
-    "gluten",
-    "wheat"
-   ]
-  },
-  "gyg:extra-bbq-beef-rib": {
-   "meat": null,
-   "src": "name"
-  },
-  "gyg:little-g-s-bbq-beef-rib-burrito": {
-   "meat": null,
-   "src": "name",
-   "al": [
-    "gluten",
-    "milk",
-    "soy",
-    "wheat"
-   ],
-   "may": [
-    "egg"
-   ]
-  },
-  "gyg:little-g-s-bbq-beef-rib-bowl": {
-   "meat": null,
-   "src": "name",
-   "al": [
-    "milk"
-   ],
-   "may": [
-    "egg",
-    "gluten",
-    "wheat"
-   ]
-  },
-  "gyg:little-g-s-bbq-beef-rib-nachos": {
-   "meat": null,
-   "src": "name",
-   "al": [
-    "milk"
-   ],
-   "may": [
-    "egg",
-    "gluten",
-    "wheat"
-   ]
-  },
-  "gyg:bbq-beef-rib-mini-burrito": {
-   "meat": null,
-   "src": "name",
-   "al": [
-    "gluten",
-    "milk",
-    "soy",
-    "wheat"
-   ],
-   "may": [
-    "egg"
-   ]
-  },
-  "gyg:bbq-beef-rib-mini-bowl": {
-   "meat": null,
-   "src": "name",
-   "al": [
-    "milk"
-   ],
-   "may": [
-    "egg",
-    "gluten",
-    "wheat"
-   ]
-  },
-  "gyg:bbq-beef-rib-mini-caesar-burrito": {
-   "meat": null,
-   "src": "name",
-   "al": [
-    "egg",
-    "gluten",
-    "milk",
-    "soy",
-    "wheat"
-   ],
-   "may": [
-    "sesame",
-    "sulphites"
-   ]
-  },
-  "gyg:bbq-beef-rib-mini-caesar-cali-burrito": {
-   "meat": null,
-   "src": "name",
-   "al": [
-    "egg",
-    "gluten",
-    "milk",
-    "soy",
-    "wheat"
-   ],
-   "may": [
-    "sesame",
-    "sulphites"
-   ]
-  },
-  "gyg:bbq-beef-rib-mini-cali-burrito": {
-   "meat": null,
-   "src": "name",
-   "al": [
-    "gluten",
-    "milk",
-    "soy",
-    "wheat"
-   ],
-   "may": [
-    "egg",
-    "sulphites"
-   ]
-  },
-  "gyg:bbq-beef-rib-mini-enchilada": {
-   "meat": null,
-   "src": "name",
-   "al": [
-    "gluten",
-    "milk",
-    "soy",
-    "wheat"
-   ],
-   "may": [
-    "egg"
-   ]
-  },
-  "gyg:bbq-beef-rib-mini-nachos": {
-   "meat": null,
-   "src": "name",
-   "al": [
-    "milk"
-   ],
-   "may": [
-    "egg",
-    "gluten",
-    "wheat"
-   ]
-  },
-  "gyg:bbq-beef-rib-mini-nacho-fries": {
-   "meat": null,
-   "src": "name",
-   "al": [
-    "milk"
-   ],
-   "may": [
-    "egg",
-    "gluten",
-    "sulphites",
-    "wheat"
-   ]
-  },
-  "gyg:bbq-beef-rib-mini-caesar-salad": {
-   "meat": null,
-   "src": "name",
-   "al": [
-    "egg",
-    "milk"
-   ],
-   "may": [
-    "gluten",
-    "sesame",
-    "soy",
-    "sulphites",
-    "wheat"
-   ]
-  },
-  "gyg:mini-extra-bbq-beef-rib": {
-   "meat": null,
-   "src": "name"
-  },
-  "nandos:paella-grande": {
-   "meat": [
-    "chicken"
-   ],
-   "src": "name"
-  },
-  "oporto:o-sauce-rappsnacker": {
-   "meat": [
-    "chicken"
-   ],
-   "src": "description"
-  },
-  "oporto:o-sauce-prego-pulled-chicken-loaded-chips": {
-   "meat": [
-    "chicken"
-   ],
-   "src": "description"
-  },
-  "oporto:fresh-pulled-chicken-roll": {
+  "betty:fries": {
    "meat": null,
    "src": null
   },
-  "oporto:bola-de-berlim": {
-   "meat": [],
-   "src": "description",
-   "vg": "vegetarian",
-   "al": [
-    "egg",
-    "gluten",
-    "milk",
-    "wheat"
-   ],
-   "may": [
-    "sesame",
-    "soy",
-    "treenut"
-   ]
-  },
-  "rr:reds-burger-fillet-": {
+  "betty:snack-fries": {
    "meat": null,
    "src": null
   },
-  "rr:spicy-burger-fillet-": {
+  "betty:sweet-potato-fries": {
    "meat": null,
    "src": null
   },
-  "rr:chicken-blt-burger": {
-   "meat": [
-    "chicken",
-    "pork"
-   ],
-   "src": "description",
-   "al": [
-    "egg",
-    "gluten",
-    "milk",
-    "wheat"
-   ],
-   "may": [
-    "lupin",
-    "peanut",
-    "sesame",
-    "soy",
-    "sulphites",
-    "treenut"
-   ]
-  },
-  "rr:chicken-blt-burger-fillet-": {
+  "betty:frickles": {
    "meat": null,
    "src": null
   },
-  "rr:cheesy-bacon-burger": {
-   "meat": [
-    "chicken",
-    "pork"
-   ],
-   "src": "description",
-   "al": [
-    "egg",
-    "gluten",
-    "milk",
-    "soy",
-    "wheat"
-   ],
-   "may": [
-    "lupin",
-    "peanut",
-    "sesame",
-    "sulphites",
-    "treenut"
-   ]
-  },
-  "rr:cheesy-bacon-burger-fillet-": {
+  "betty:onion-rings": {
    "meat": null,
    "src": null
   },
-  "rr:tender-1-piece-": {
+  "betty:snack-wrap": {
    "meat": null,
    "src": null
   },
-  "boost:lychee-charm-original-": {
+  "betty:crispy-5-pc-chicken-strips": {
+   "meat": null,
+   "src": null
+  },
+  "betty:chicken-avo-bacon-bowl": {
+   "meat": null,
+   "src": null
+  },
+  "betty:salmon-bowl": {
+   "meat": null,
+   "src": null
+  },
+  "betty:vege-patty-super-bowl": {
+   "meat": null,
+   "src": null
+  },
+  "betty:hi-protein-bowl": {
+   "meat": null,
+   "src": null
+  },
+  "betty:bbq-sauce": {
+   "meat": null,
+   "src": null
+  },
+  "betty:betty-s-special-sauce": {
+   "meat": null,
+   "src": null
+  },
+  "betty:french-mustard": {
+   "meat": null,
+   "src": null
+  },
+  "betty:spicy-vegan-sauce": {
+   "meat": null,
+   "src": null
+  },
+  "betty:sriracha-mayo": {
+   "meat": null,
+   "src": null
+  },
+  "betty:tomato-sauce": {
+   "meat": null,
+   "src": null
+  },
+  "betty:vegan-garlic-mayo": {
+   "meat": null,
+   "src": null
+  },
+  "betty:kids-beef-burger": {
+   "meat": null,
+   "src": null
+  },
+  "betty:kids-chicken-burger": {
+   "meat": null,
+   "src": null
+  },
+  "betty:kids-chicken-bundle-with-drink-": {
+   "meat": null,
+   "src": null
+  },
+  "betty:kids-beef-bundle-with-drink-": {
+   "meat": null,
+   "src": null
+  },
+  "betty:kids-apple-blackcurrant-pop-top": {
    "meat": [],
    "src": "name",
-   "vg": "vegetarian",
-   "al": [
-    "milk"
-   ]
+   "vg": "vegetarian"
+  },
+  "betty:caramel-thickshake": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "betty:chocolate-thickshake": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "betty:chocolate-peanut-butter-thickshake": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "betty:strawberry-thickshake": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "betty:vanilla-thickshake": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "betty:cookie-thickshake": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "betty:hazelnut-choc-thickshake": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "betty:strawberry-cheesecake-thickshake": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "betty:chocolate-deluxe": {
+   "meat": null,
+   "src": null
+  },
+  "betty:vanilla-cookie-butter": {
+   "meat": null,
+   "src": null
+  },
+  "betty:vanilla-pavlova": {
+   "meat": null,
+   "src": null
+  },
+  "betty:coke-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "betty:coke-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "betty:coke-no-sugar-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "betty:coke-no-sugar-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "betty:fanta-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "betty:fanta-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "betty:sprite-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "betty:sprite-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "fiveguys:hamburger": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:cheeseburger": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:bacon-burger": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:bacon-cheeseburger": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:little-hamburger": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:little-cheeseburger": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:little-bacon-burger": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:little-bacon-cheeseburger": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:hot-dog": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:cheese-dog": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:bacon-dog": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:bacon-cheese-dog": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:little-fries": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:regular-fries": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:large-fries": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:vanilla-milkshake": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "fiveguys:banana-milkshake": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "fiveguys:chocolate-milkshake": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "fiveguys:coffee-milkshake": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "fiveguys:salted-caramel-milkshake": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "fiveguys:strawberry-milkshake": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "fiveguys:peanut-butter-milkshake": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "fiveguys:oreo-milkshake": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "fiveguys:biscoff-milkshake": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "fiveguys:malted-milk-milkshake": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "fiveguys:peach-crumble-milkshake": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "fiveguys:add-bacon": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:add-cheese": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:add-patty": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:mayonnaise": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:grilled-onions": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:grilled-mushrooms": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:tomato-ketchup": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:mustard": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:relish": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:bbq-sauce": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:hp-brown-sauce": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:hot-sauce": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:lettuce": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:pickles": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:tomatoes": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:onions": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:green-peppers": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:jalapeno-peppers": {
+   "meat": null,
+   "src": null
+  },
+  "fiveguys:cajun-seasoning": {
+   "meat": null,
+   "src": null
+  },
+  "crust:1889-margherita-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:apple-pie-bites": {
+   "meat": null,
+   "src": null
+  },
+  "crust:australian-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:bbq-chicken-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:biscoff-cronut": {
+   "meat": null,
+   "src": null
+  },
+  "crust:bolognese": {
+   "meat": null,
+   "src": null
+  },
+  "crust:caesar-salad": {
+   "meat": null,
+   "src": null
+  },
+  "crust:capricciosa-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:carbonara": {
+   "meat": null,
+   "src": null
+  },
+  "crust:cheesy-garlic-bread": {
+   "meat": null,
+   "src": null
+  },
+  "crust:cheesy-garlic-sticks": {
+   "meat": null,
+   "src": null
+  },
+  "crust:chicken-bacon-loaded-fries": {
+   "meat": null,
+   "src": null
+  },
+  "crust:chicken-bites": {
+   "meat": null,
+   "src": null
+  },
+  "crust:chicken-pesto-calzone": {
+   "meat": null,
+   "src": null
+  },
+  "crust:choc-hazelnut-scrolls": {
+   "meat": null,
+   "src": null
+  },
+  "crust:chocolate-brownie-bites": {
+   "meat": null,
+   "src": null
+  },
+  "crust:chocolate-mousse": {
+   "meat": null,
+   "src": null
+  },
+  "crust:classic-cronut": {
+   "meat": null,
+   "src": null
+  },
+  "crust:classic-margherita-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:classic-pepperoni-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:crust-supreme-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:fiery-peri-peri-chicken-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:garden-salad": {
+   "meat": null,
+   "src": null
+  },
+  "crust:garlic-bread": {
+   "meat": null,
+   "src": null
+  },
+  "crust:garlic-prawn-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:greek-lamb": {
+   "meat": null,
+   "src": null
+  },
+  "crust:hawaiian-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:hazelnut-cronut": {
+   "meat": null,
+   "src": null
+  },
+  "crust:herb-garlic-squares": {
+   "meat": null,
+   "src": null
+  },
+  "crust:kids-cheese-pizza-with-juice-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:kids-chicken-pineapple-pizza-with-juice-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:kids-ham-cheese-pizza-with-juice-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:kids-ham-pineapple-pizza-with-juice-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:lotus-biscoff-scrolls": {
+   "meat": null,
+   "src": null
+  },
+  "crust:meat-deluxe-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:mediterranean-lamb-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:moroccan-lamb-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:oven-baked-chips": {
+   "meat": null,
+   "src": null
+  },
+  "crust:paneer-masala-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:peking-duck-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:pepperoni-hot-honey-calzone": {
+   "meat": null,
+   "src": null
+  },
+  "crust:pepperoni-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:pepperoni-pesto-caprese": {
+   "meat": null,
+   "src": null
+  },
+  "crust:peri-peri-beef-brisket-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:peri-peri-chicken-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:peri-peri-chicken-loaded-fries": {
+   "meat": null,
+   "src": null
+  },
+  "crust:peri-peri-chicken-loaded-garlic-bread": {
+   "meat": null,
+   "src": null
+  },
+  "crust:peri-peri-chicken-piadina": {
+   "meat": null,
+   "src": null
+  },
+  "crust:peri-peri-not-chicken-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:pesto-chicken-club-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:portuguese-peri-peri-prawn-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:prosciutto-rocket-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:pulled-pork-and-slaw-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:quattro-salumi-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:roast-chicken-bacon-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:rocket-parmesan": {
+   "meat": null,
+   "src": null
+  },
+  "crust:smokey-bbq-wings": {
+   "meat": null,
+   "src": null
+  },
+  "crust:spicy-korean-wings": {
+   "meat": null,
+   "src": null
+  },
+  "crust:spinach-fetta-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:szechuan-chilli-prawn-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:szechuan-spicy-chicken-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:truffle-beef-rossini-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:upper-crust": {
+   "meat": null,
+   "src": null
+  },
+  "crust:vegan-peri-peri-not-chicken-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:vegan-supreme-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:vegetarian-supreme-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:vietnamese-chilli-chicken-large-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:baby-blue-buddy": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:iced-ring-donut-baby-blue-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:iced-ring-donut-baby-pink-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:iced-ring-donut-caramel-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:iced-ring-donut-chocolate-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:iced-ring-donut-pineapple-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:iced-ring-donut-strawberry-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:iced-ring-donut-vanilla-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:iced-ring-donut-vanilla-glaze-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:babycino": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:baby-pink-buddy": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:beef-curry-pie": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:beef-mushroom-pie": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:beef-pastie": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:beef-pie": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:bloodshot-made-with-tabasco-sauce": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:blue-bird-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:blue-cookie-monster-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:blue-sour-strap-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:iced-cake-donut-caramel-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:iced-cake-donut-chocolate-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:iced-cake-donut-pineapple-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:iced-cake-donut-strawberry-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:cappuccino-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:cappuccino-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:cappuccino-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:caramel-bear-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:chai-latte-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:chai-latte-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:chai-latte-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:chase-paw-patrol-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:cheese-bacon-pie": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:cheese-bacon-roll": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:choc-banana-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:choc-caramel-sea-salt-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:choc-donut-buddy": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:choc-hazelnut-cronut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:choc-honeycomb-mixer": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:choc-jam-ball": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:choc-mini-marshmallow-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:choc-m-m-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:chocolate-bear-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:chocolate-mummy": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:chocolate-sundae": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:chocolate-sweetheart-ring": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:choc-smiley-face-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:christmas-tree": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:cinnamon-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:cinnamon-donut-vegetable-oil-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:cinnamon-scroll": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:cinnamon-sugar-cronut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:classic-single-cone": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:cookies-cream-crunch-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:crocodile-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:cursed-cat": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:custard-ball-caramel-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:custard-ball-chocolate-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:dinosaur-chocolate-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:dinosaur-strawberry-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:eclair-caramel-with-custard-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:eclair-chocolate-with-custard-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:eclair-chocolate-with-jam-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:eclair-dusted-with-custard-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:eclair-dusted-with-jam-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:eclair-strawberry-with-jam-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:espresso-macchiato": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:espresso-scroll": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:flat-white-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:flat-white-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:flat-white-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:frappe-caramel-crunch-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:frappe-cheeky-chocolate-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:frappe-chocolate-mocha-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:frappe-coffee-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:frappe-cookies-n-cream-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:frappe-strawberry-fusion-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:frosted-cronut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:game-day-blue-iced-ring-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:game-day-maroon-iced-ring-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:gingerbread-buddy": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:hazelnut-ball-prepared-with-nutella": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:hot-chocolate-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:hot-chocolate-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:hot-chocolate-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:hot-glazed-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:hot-glazed-donut-topping-chocolate-flake-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:hot-glazed-donut-topping-crushed-cookies-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:english-breakfast-tea-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:english-breakfast-tea-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:english-breakfast-tea-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:iced-chocolate": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:iced-coffee": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:iced-mocha": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:i-dough-ring-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:jam-ball": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:latte-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:latte-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:latte-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:long-black-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:long-black-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:long-black-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:malteser-mixer": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:marshall-paw-patrol-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:merrymisu": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:midnight-monster": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:milkshake-banana-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:milkshake-banana-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:milkshake-caramel-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:milkshake-caramel-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:milkshake-chocolate-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:milkshake-chocolate-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:milkshake-coffee-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:milkshake-coffee-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:milkshake-lime-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:milkshake-lime-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:milkshake-strawberry-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:milkshake-strawberry-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:milkshake-vanilla-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:milkshake-vanilla-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:mini-cini-bucket-10-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:mini-iced-cini-bucket-12-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:mini-jam-ball": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:mini-m-m-mixer": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:mocha-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:mocha-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:mocha-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:mother-s-day-ring-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:choc-jam-ball-new-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:custard-ball": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:over-ice-chai": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:over-ice-chocolate": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:over-ice-latte": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:over-ice-long-black": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:over-ice-mocha": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:party-pie": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:party-sausage-roll": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:pink-marshmallow-flower-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:pink-mini-marshmallow-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:pink-m-m-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:pink-piggy-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:pink-rainbow-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:pink-sour-strap-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:pink-sour-worm-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:pink-strawberry-cream-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:pistachio-ring": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:potato-top-pie": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:quakeshake-cherry-explosion-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:quakeshake-choc-volcano-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:quakeshake-honeycomb-lava-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:quakeshake-mint-lime-shockwave-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:quakeshake-made-with-biscoff-spread": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:raisin-toast-2-slices-with-butter-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:reindeer": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:rhubarb-paw-patrol-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:rubble-paw-patrol-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:salted-caramel-popcorn-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:santa-buddy-chocolate": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:santa-buddy-strawberry": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:sausage-roll": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:skye-paw-patrol-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:spiced-cookie-crumble-made-with-biscoff-spread": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:spinach-cheese-roll": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:st-paddy-s-green-iced-ring-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:st-paddy-s-white-iced-ring-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:strawberries-cream-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:strawberry-donut-buddy": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:strawberry-mummy": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:strawberry-quakeshake-made-with-biscoff-spread": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:strawberry-rose-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:strawberry-sundae": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:strawberry-sweetheart-ring": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:sweet-talker": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:aussie-hot-dog": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:new-yorker-hot-dog": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:outback-meat-deluxe-hot-dog": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:regular-hot-dog": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:thickshake-banana-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:thickshake-banana-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:thickshake-caramel-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:thickshake-caramel-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:thickshake-chocolate-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:thickshake-chocolate-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:thickshake-coffee-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:thickshake-coffee-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:thickshake-lime-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:thickshake-lime-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:thickshake-strawberry-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:thickshake-strawberry-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:thickshake-vanilla-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:thickshake-vanilla-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "donutking:toasted-sandwich-cheese-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:toasted-sandwich-cheese-and-tomato-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:toasted-sandwich-chicken-and-cheese-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:toasted-sandwich-chicken-cheese-and-avocado-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:toasted-sandwich-ham-and-cheese-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:toasted-sandwich-ham-cheese-and-tomato-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:twinkle-star-strawberry": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:twix-mixer": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:vanilla-buddy": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:vanilla-custard-almond-donut": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:vegetable-pastie": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:wafer-decals-dk-occasions-thanks-happy-b-day-congrats-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:warm-cinnamon-donut-sundae": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:wicked-web-orange-": {
+   "meat": null,
+   "src": null
+  },
+  "donutking:wicked-web-purple-": {
+   "meat": null,
+   "src": null
+  },
+  "michels:apple-cinnamon-muffin": {
+   "meat": null,
+   "src": null
+  },
+  "michels:babycino": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:bacon-cheese-roll": {
+   "meat": null,
+   "src": null
+  },
+  "michels:bacon-egg-pesto-turkish-melt": {
+   "meat": null,
+   "src": null
+  },
+  "michels:bacon-egg-sandwich": {
+   "meat": null,
+   "src": null
+  },
+  "michels:bacon-egg-toastie": {
+   "meat": null,
+   "src": null
+  },
+  "michels:bacon-lettuce-tomato-sandwich": {
+   "meat": null,
+   "src": null
+  },
+  "michels:baked-lemon-lime-cheesecake-slice": {
+   "meat": null,
+   "src": null
+  },
+  "michels:banana-bread": {
+   "meat": null,
+   "src": null
+  },
+  "michels:banana-honey-smoothie-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:banana-honey-smoothie-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:beef-mushroom-pie": {
+   "meat": null,
+   "src": null
+  },
+  "michels:beef-pastie": {
+   "meat": null,
+   "src": null
+  },
+  "michels:belgian-chocolate-brownie": {
+   "meat": null,
+   "src": null
+  },
+  "michels:breakfast-wrap": {
+   "meat": null,
+   "src": null
+  },
+  "michels:butter-chicken-gourmet-pie": {
+   "meat": null,
+   "src": null
+  },
+  "michels:cafe-latte-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:cafe-latte-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:cafe-latte-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:cappuccino-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:cappuccino-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:cappuccino-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:caramel-sin-gateaux-slice": {
+   "meat": null,
+   "src": null
+  },
+  "michels:cheese-spinach-roll": {
+   "meat": null,
+   "src": null
+  },
+  "michels:chicken-caesar-wrap": {
+   "meat": null,
+   "src": null
+  },
+  "michels:chicken-cheese-avocado-turkish-melt": {
+   "meat": null,
+   "src": null
+  },
+  "michels:chicken-leek-camembert-pie": {
+   "meat": null,
+   "src": null
+  },
+  "michels:chicken-salad-sandwich": {
+   "meat": null,
+   "src": null
+  },
+  "michels:chicken-salad-wrap": {
+   "meat": null,
+   "src": null
+  },
+  "michels:chipotle-chicken-bacon-avocado-turkish-melt": {
+   "meat": null,
+   "src": null
+  },
+  "michels:choc-delux-luxe-iced-coffee-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:choc-delux-luxe-iced-coffee-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:chocolate-mud-cake": {
+   "meat": null,
+   "src": null
+  },
+  "michels:chunky-choc-cheesecake-slice": {
+   "meat": null,
+   "src": null
+  },
+  "michels:cocktail-sausage-roll": {
+   "meat": null,
+   "src": null
+  },
+  "michels:creme-brulee-luxe-iced-coffee-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:creme-brulee-luxe-iced-coffee-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:croissant-plain": {
+   "meat": null,
+   "src": null
+  },
+  "michels:double-choc-chip-muffin": {
+   "meat": null,
+   "src": null
+  },
+  "michels:egg-lettuce-sandwich": {
+   "meat": null,
+   "src": null
+  },
+  "michels:espresso": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:flat-white-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:flat-white-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:flat-white-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:frappe-berry-cheesecake-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:frappe-berry-cheesecake-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:french-vanilla-luxe-iced-coffee-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:french-vanilla-luxe-iced-coffee-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:ham-cheese-croissant": {
+   "meat": null,
+   "src": null
+  },
+  "michels:ham-cheese-toastie": {
+   "meat": null,
+   "src": null
+  },
+  "michels:ham-cheese-tomato-croissant": {
+   "meat": null,
+   "src": null
+  },
+  "michels:ham-cheese-tomato-toastie": {
+   "meat": null,
+   "src": null
+  },
+  "michels:ham-cheese-tomato-turkish-melt": {
+   "meat": null,
+   "src": null
+  },
+  "michels:ham-salad-wrap": {
+   "meat": null,
+   "src": null
+  },
+  "michels:hot-chocolate-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:hot-chocolate-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:hot-chocolate-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:iced-chocolate-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:iced-chocolate-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:iced-coffee-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:iced-coffee-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:iced-mocha-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:iced-mocha-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:king-island-beef-pie": {
+   "meat": null,
+   "src": null
+  },
+  "michels:lemon-pistachio-cake-slice": {
+   "meat": null,
+   "src": null
+  },
+  "michels:long-black-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:long-black-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:long-black-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:mango-coconut-smoothie-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:mango-coconut-smoothie-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:marble-mud-cake": {
+   "meat": null,
+   "src": null
+  },
+  "michels:mississippi-mud-cake-slice": {
+   "meat": null,
+   "src": null
+  },
+  "michels:mixed-berry-muffin": {
+   "meat": null,
+   "src": null
+  },
+  "michels:mocha-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:mocha-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:mocha-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:carrot-cake-slice": {
+   "meat": null,
+   "src": null
+  },
+  "michels:new-york-flourless-cheesecake": {
+   "meat": null,
+   "src": null
+  },
+  "michels:quiche-lorraine": {
+   "meat": null,
+   "src": null
+  },
+  "michels:spinach-cheese-quiche": {
+   "meat": null,
+   "src": null
+  },
+  "michels:citrus-tart": {
+   "meat": null,
+   "src": null
+  },
+  "michels:bbq-chicken-cheese-open-melt": {
+   "meat": null,
+   "src": null
+  },
+  "michels:chicken-cheese-avo-open-melt": {
+   "meat": null,
+   "src": null
+  },
+  "michels:hawaiian-open-melt": {
+   "meat": null,
+   "src": null
+  },
+  "michels:orange-poppyseed-muffin": {
+   "meat": null,
+   "src": null
+  },
+  "michels:party-pie": {
+   "meat": null,
+   "src": null
+  },
+  "michels:passionfruit-cheesecake-slice": {
+   "meat": null,
+   "src": null
+  },
+  "michels:cheese-bacon-pie": {
+   "meat": null,
+   "src": null
+  },
+  "michels:beef-curry-pie": {
+   "meat": null,
+   "src": null
+  },
+  "michels:beef-pie": {
+   "meat": null,
+   "src": null
+  },
+  "michels:raisin-toast-2-slices": {
+   "meat": null,
+   "src": null
+  },
+  "michels:raspberry-new-york-cheesecake-slice": {
+   "meat": null,
+   "src": null
+  },
+  "michels:ristretto": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:rocky-road-slice": {
+   "meat": null,
+   "src": null
+  },
+  "michels:sausage-roll": {
+   "meat": null,
+   "src": null
+  },
+  "michels:rudolph-cookie": {
+   "meat": null,
+   "src": null
+  },
+  "michels:salad-sandwich": {
+   "meat": null,
+   "src": null
+  },
+  "michels:slow-cooked-pepper-beef-pie": {
+   "meat": null,
+   "src": null
+  },
+  "michels:smashed-avo-feta-on-turkish": {
+   "meat": null,
+   "src": null
+  },
+  "michels:southern-pulled-beef-turkish-melt": {
+   "meat": null,
+   "src": null
+  },
+  "michels:strawberry-passionfruit-smoothie-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:strawberry-passionfruit-smoothie-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:tea-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:tea-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:tea-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:turkey-cranberry-brie-turkish-melt": {
+   "meat": null,
+   "src": null
+  },
+  "michels:unicorn-cookie": {
+   "meat": null,
+   "src": null
+  },
+  "michels:vanilla-slice": {
+   "meat": null,
+   "src": null
+  },
+  "michels:vegetable-pastie": {
+   "meat": null,
+   "src": null
+  },
+  "michels:vienna-white-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:vienna-white-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:vienna-white-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:white-caramel-mocha-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:white-caramel-mocha-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:white-caramel-mocha-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:white-hot-chocolate-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:white-hot-chocolate-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:white-hot-chocolate-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:white-mocha-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:white-mocha-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "michels:white-mocha-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "brumbys:almond-croissant": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:ancient-grain-sourdough-vienna-malt-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:ancient-grain-sourdough-white-vienna-open-top-": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:anzac-biscuit": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:apple-custard-glen": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:apple-custard-tart-no-bake-": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:apple-glen": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:apple-slice": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:apple-tea-ring": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "brumbys:apple-turnover": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:apple-turnover-ap-with-cream": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:apple-turnover-with-cream": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:apricot-ball": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:authentic-sourdough-rye-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:authentic-sourdough-rye-vienna": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:authentic-sourdough-turmeric-lentil-loaf-cobb-": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:authentic-sourdough-white-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:babychino": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "brumbys:bacon-cheese-sausage-roll": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:baguette-white-": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:banana-bread": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:bbq-pulled-pork-slaw-on-brioche": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:beef-cheese-bacon-pie": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:beef-curry-pie": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:beef-mushroom-pie": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:beef-pastie": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:beef-pie": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:beesting-cake": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:bigger-than-texas-roll-white-": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:blueberry-custard-glen": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:blueberry-muffin": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:blueberry-white-choc-scone": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:boston-bun": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:brownie": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:bruffin-bbq-bacon-": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:brumby-s-christmas-cake": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:brumby-s-gluten-free-traditional-beef-pie": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:brumby-s-sausage-roll": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:butter-chicken-pie": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:caffe-latte-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "brumbys:caffe-latte-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "brumbys:caffe-latte-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "brumbys:cappuccino-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "brumbys:cappuccino-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "brumbys:cappuccino-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "brumbys:caramel-slice": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:caramel-tart": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:carnival-cookie": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:carrot-cake-slice": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:chai-latte-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "brumbys:chai-latte-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "brumbys:chai-latte-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "brumbys:cheese-bacon-tear-n-share-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:cheese-bacon-twist": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:cheese-roll": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:cheese-spinach-sausage-roll": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:chicken-avo-hollandaise-bruffin": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:chicken-caesar-baguette": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:chicken-leek-camembert-pie": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:chicken-salad-roll-white-": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:chicken-salad-roll-wholemeal-": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:chicken-salad-sandwich-white-": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:chicken-semi-dried-tomato-pesto-wrap": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:choc-chip-shortbread": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:choc-hazelnut-choc-chip-gourmet-cookie": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:chocolate-brownie-slice": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:chocolate-croissant": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:chocolate-hazelnut-balls": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:chocolate-mud-cake-family-": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:choppa-loaf-australian": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:choppa-loaf-supreme": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:christmas-pudding-large-per-serve-": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:cinnamon-bun": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:cinnamon-bun-made-with-biscoff-spread": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:cinnamon-donut": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:cinnamon-log": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:cinnamon-scroll": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:classic-garlic-twist": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:coffee-scroll": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:cream-bun": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:ham-cheese-croissant": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:croissant-plain": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:cupcake-iced-monkey-face-": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:custard-tart-no-bake-": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:damper-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:danish-apple-custard": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:danish-blueberry-custard": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:dark-rye-open-top-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:date-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:date-loaf-mini-": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:date-scone": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:double-bacon-egg-brioche-roll": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:double-chocolate-muffin": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:eclair-with-bavarian-cream": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:eclair-with-whipped-cream": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:espresso": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "brumbys:espresso-macchiato": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "brumbys:finger-bun": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:five-fruit-sourdough-five-fruit-loaf-vienna": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:flat-white-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "brumbys:flat-white-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "brumbys:flat-white-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "brumbys:french-stick-white-": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:fruit-apple-scroll": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:fruit-bun": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:fruit-loaf-open-top": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:fruit-mince-tart": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:greek-wrap": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:ham-cheese-danish": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:ham-salad-roll-white-": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:ham-salad-sandwich-white-": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:hedgehog-slice": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:high-fibre-low-gi-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:high-fibre-low-gi-roll": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:hot-chocolate-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "brumbys:hot-chocolate-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "brumbys:hot-chocolate-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "brumbys:iced-chai-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "brumbys:iced-chocolate-donut": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:iced-chocolate-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "brumbys:iced-latte-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "brumbys:iced-long-black-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "brumbys:iced-mocha-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "brumbys:italian-herbs-parmesan-baguette": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:italian-herbs-parmesan-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:jam-ball": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:jam-drop": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:jam-scroll": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:kythera": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:lamington": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:lemon-meringue-tart": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:long-black-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "brumbys:long-black-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "brumbys:long-black-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "brumbys:long-john-donut": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:macadamia-shortbread-bite": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:married-high-tin-white-": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:matt-s-egg-bacon-brekky-danish": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:mega-grain-roll": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:mega-protein-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:melting-moment": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:meringue-kisses": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:meringue-worms": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:mini-beesting-bun": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:mini-cheese-bacon-roll": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:mini-cinnamon-bun": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:mini-cinnamon-bun-made-with-biscoff-spread": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:mini-pizza-basil-pesto-cherry-tomato-cheese-": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:mini-pizza-meat-lovers-": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:mini-pizza-supremo-": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:mocha-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "brumbys:mocha-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "brumbys:mocha-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "brumbys:multigrain-cafe-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:multigrain-mini-sandwich-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:multigrain-open-top-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:multigrain-round-roll": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:multigrain-sandwich-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:mushy-peas-pie-topper": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:pane-de-casa": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:party-pie": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:party-sausage-roll": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:pasta-dura-loaf-white-": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:pasta-dura-roll-white-": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:pastrami-on-rye": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:pavlova-donut": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:pesto-cheese-turkish-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:pipe-loaf-white-": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:pizza-roll-australia": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:pizza-rope": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:plait-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:potato-top-pie": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:pumpkin-bread": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:quiche-lorraine": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:quinoa-linseed-low-fodmap-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:quinoa-linseed-low-fodmap-roll": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:raspberry-white-choc-balls": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:raspberry-white-choc-custard-glen": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:red-velvet-cake-family-": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:roasted-pecan-caramel-tart": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:roasted-pumpkin-spinach-fetta-caramelised-onion-mini-pizza": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:rosemary-garlic-sea-salt-vienna": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:rum-ball": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:salted-caramel-white-choc-gourmet-cookie": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:sausage-roll": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:savoury-roll-cheese-bacon": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:savoury-scroll-cheddarmite": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:savoury-scroll-mini-cheddarmite": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:scone-plain-": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:scotch-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:scotch-roll": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:slow-cooked-king-island-beef-pepper-pie": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:slow-cooked-king-island-beef-pie": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:smoky-bbq-meat-lovers-pie": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:sourdough-farmhouse-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:sourdough-round-roll": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:sourdough-wholemeal-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:spinach-feta-damper-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:spinach-feta-damper-roll": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:spinach-feta-danish": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:spinach-feta-quiche": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:spinach-feta-twist": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:sultana-scone": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:sunflower-honey-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:supreme-pizza-roll": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:swiss-seed-roll": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:tiger-cubs": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:tiger-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:tomato-sauce-portions": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:traditional-shortbread": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:turkish-bread-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:vanilla-slice": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:vanilla-slice-donut": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:vegetable-pastie": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:vegetarian-pizza-roll": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:victorian-sponge-cake-family-": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:white-cafe-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:white-cobb-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:white-cobb-loaf-mini-": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:white-devonshire-tin-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:white-dinner-roll": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:white-french-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:white-hamburger-roll": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:white-knot-roll": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:white-long-roll": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:white-mini-sandwich-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:vienna-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:white-round-roll": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:white-sandwich-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:white-shell-roll": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:wholemeal-cafe-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:wholemeal-cobb": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:wholemeal-grain-cafe-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:wholemeal-grain-mini-sandwich-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:wholemeal-grain-round-roll": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:wholemeal-grain-sandwich-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:wholemeal-mini-sandwich-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:wholemeal-round-roll": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:wholemeal-sandwich-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:wholemeal-vienna-loaf": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:wildberry-custard-glen": {
+   "meat": null,
+   "src": null
+  },
+  "soul:beef-noodle-salad-small-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:beef-noodle-salad-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:beef-noodle-salad-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:beetroot-salad-small-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:beetroot-salad-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:beetroot-salad-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:bocconcini-salad-small-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:bocconcini-salad-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:bocconcini-salad-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:buffalo-schnitzel-slaw-salad-small-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:buffalo-schnitzel-slaw-salad-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:buffalo-schnitzel-slaw-salad-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chicken-avocado-salad-small-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chicken-avocado-salad-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chicken-avocado-salad-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chicken-caesar-salad-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chicken-caesar-salad-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chicken-caesar-salad-halal-small-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chicken-caesar-salad-halal-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chicken-caesar-salad-halal-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chicken-chorizo-salad-small-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chicken-chorizo-salad-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chicken-chorizo-salad-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chicken-chorizo-salad-halal-small-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chicken-chorizo-salad-halal-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chicken-chorizo-salad-halal-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chicken-pesto-pasta-salad-small-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chicken-pesto-pasta-salad-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chicken-pesto-pasta-salad-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chicken-schnitzel-salad-small-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chicken-schnitzel-salad-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chicken-schnitzel-salad-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:crumbed-chicken-pasta-salad-small-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:crumbed-chicken-pasta-salad-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:crumbed-chicken-pasta-salad-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:falafel-salad-small-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:falafel-salad-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:falafel-salad-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:greek-salad-small-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:greek-salad-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:greek-salad-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:grilled-chicken-steamed-veg-salad-small-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:grilled-chicken-steamed-veg-salad-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:grilled-chicken-steamed-veg-salad-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:grilled-chicken-noodle-salad-small-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:grilled-chicken-noodle-salad-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:grilled-chicken-noodle-salad-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:haloumi-salad-small-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:haloumi-salad-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:haloumi-salad-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:marinated-beef-salad-small-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:marinated-beef-salad-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:marinated-beef-salad-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:pomegranate-quinoa-salad-small-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:pomegranate-quinoa-salad-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:pomegranate-quinoa-salad-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:tonkatsu-plant-based-schnitzel-salad-small-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:tonkatsu-plant-based-schnitzel-salad-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:tonkatsu-plant-based-schnitzel-salad-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:tuscan-veg-pasta-salad-small-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:tuscan-veg-pasta-salad-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:tuscan-veg-pasta-salad-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:summer-chicken-mango-salad-small-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:summer-chicken-mango-salad-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:summer-chicken-mango-salad-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:green-goddess-salad-small-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:green-goddess-salad-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:green-goddess-salad-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:sweet-chilli-schnitty-salad-small-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:sweet-chilli-schnitty-salad-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:sweet-chilli-schnitty-salad-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:sweet-chilli-schnitty-salad-halal-small-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:sweet-chilli-schnitty-salad-halal-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:sweet-chilli-schnitty-salad-halal-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:blt-schnitzel-baguette": {
+   "meat": null,
+   "src": null
+  },
+  "soul:blt-schnitzel-baguette-halal-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chicken-schnitzel-baguette": {
+   "meat": null,
+   "src": null
+  },
+  "soul:grilled-chicken-baguette": {
+   "meat": null,
+   "src": null
+  },
+  "soul:pesto-veggie-baguette": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chicken-avocado-wrap": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chicken-schnitzel-wrap": {
+   "meat": null,
+   "src": null
+  },
+  "soul:grilled-chicken-wrap": {
+   "meat": null,
+   "src": null
+  },
+  "soul:falafel-wrap": {
+   "meat": null,
+   "src": null
+  },
+  "soul:plant-based-schnitzel-wrap": {
+   "meat": null,
+   "src": null
+  },
+  "soul:spinach-mushroom-egg-wrap": {
+   "meat": null,
+   "src": null
+  },
+  "soul:crunchy-chicken-cheese-so-bun": {
+   "meat": null,
+   "src": null
+  },
+  "soul:spicy-crunchy-chicken-so-bun": {
+   "meat": null,
+   "src": null
+  },
+  "soul:bbq-steak-so-bun": {
+   "meat": null,
+   "src": null
+  },
+  "soul:classic-beef-so-bun": {
+   "meat": null,
+   "src": null
+  },
+  "soul:potato-gems-salt-added-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:potato-gems-salt-added-kids-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:avocado-cheese-tomato-on-soy-linseed": {
+   "meat": null,
+   "src": null
+  },
+  "soul:avocado-cheese-tomato-on-wholemeal": {
+   "meat": null,
+   "src": null
+  },
+  "soul:cheese-tomato-on-soy-linseed": {
+   "meat": null,
+   "src": null
+  },
+  "soul:cheese-tomato-on-wholemeal": {
+   "meat": null,
+   "src": null
+  },
+  "soul:ham-cheese-tomato-on-soy-linseed": {
+   "meat": null,
+   "src": null
+  },
+  "soul:ham-cheese-tomato-on-wholemeal": {
+   "meat": null,
+   "src": null
+  },
+  "soul:bacon-egg-roll": {
+   "meat": null,
+   "src": null
+  },
+  "soul:bacon-egg-roll-halal-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chorizo-egg-roll": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chorizo-egg-roll-halal-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:bacon-egg-wrap": {
+   "meat": null,
+   "src": null
+  },
+  "soul:bacon-egg-wrap-halal-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chorizo-egg-wrap": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chorizo-egg-wrap-halal-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:cheese-tomato-croissant": {
+   "meat": null,
+   "src": null
+  },
+  "soul:ham-cheese-croissant": {
+   "meat": null,
+   "src": null
+  },
+  "soul:plain-croissant": {
+   "meat": null,
+   "src": null
+  },
+  "soul:gourmet-brekkie-bun": {
+   "meat": null,
+   "src": null
+  },
+  "soul:gourmet-brekkie-bun-halal-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:schnitty-brekkie-bun": {
+   "meat": null,
+   "src": null
+  },
+  "soul:gourmet-brekkie-wrap": {
+   "meat": null,
+   "src": null
+  },
+  "soul:gourmet-brekkie-wrap-halal-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:haloumi-veggie-brekkie-wrap": {
+   "meat": null,
+   "src": null
+  },
+  "soul:fruit-salad": {
+   "meat": null,
+   "src": null
+  },
+  "soul:almond-croissant-brasserie-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:almond-croissant-fnt-bakery-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:banana-bread": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chocolate-coconut-banana-bread": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chocolate-protein-ball": {
+   "meat": null,
+   "src": null
+  },
+  "soul:salted-caramel-almond-protein-ball": {
+   "meat": null,
+   "src": null
+  },
+  "soul:white-chocolate-pistachio-protein-ball": {
+   "meat": null,
+   "src": null
+  },
+  "soul:nutella-brownie-full-slice": {
+   "meat": null,
+   "src": null
+  },
+  "soul:triple-choc-slim-slice": {
+   "meat": null,
+   "src": null
+  },
+  "soul:caramel-macadamia-slim-slice": {
+   "meat": null,
+   "src": null
+  },
+  "soul:choc-chip-cookie": {
+   "meat": null,
+   "src": null
+  },
+  "soul:carrot-cake": {
+   "meat": null,
+   "src": null
+  },
+  "soul:vegan-tonkatsu": {
+   "meat": null,
+   "src": null
+  },
+  "soul:balsamic": {
+   "meat": null,
+   "src": null
+  },
+  "soul:lime-mayo": {
+   "meat": null,
+   "src": null
+  },
+  "soul:lemon-olive-oil": {
+   "meat": null,
+   "src": null
+  },
+  "soul:soy-sesame": {
+   "meat": null,
+   "src": null
+  },
+  "soul:vegan-aioli": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chilli-mayo": {
+   "meat": null,
+   "src": null
+  },
+  "soul:habanero-hot-sauce": {
+   "meat": null,
+   "src": null
+  },
+  "soul:apple-crumble-danish": {
+   "meat": null,
+   "src": null
+  },
+  "soul:apricot-danish": {
+   "meat": null,
+   "src": null
+  },
+  "soul:cherry-danish": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chocolate-croissant": {
+   "meat": null,
+   "src": null
+  },
+  "soul:pain-au-raisin": {
+   "meat": null,
+   "src": null
+  },
+  "soul:rhubarb-danish": {
+   "meat": null,
+   "src": null
+  },
+  "soul:mini-croissant": {
+   "meat": null,
+   "src": null
+  },
+  "soul:mini-chocolate-croissant": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chicken-corn-soup-sipper-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chicken-corn-soup-medium-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chicken-corn-soup-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:tuscan-veg-soup-sipper-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:tuscan-veg-soup-medium-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:tuscan-veg-soup-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:pumpkin-soup-sipper-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:pumpkin-soup-medium-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:pumpkin-soup-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:mushroom-with-truffle-soup-sipper-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:mushroom-with-truffle-soup-medium-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:mushroom-with-truffle-soup-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:spiced-carrot-soup-with-garnish-sipper-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:spiced-carrot-soup-with-garnish-medium-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:spiced-carrot-soup-with-garnish-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:hearty-chicken-soup-sipper-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:hearty-chicken-soup-medium-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:hearty-chicken-soup-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:spiced-carrot-soup-sipper-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:spiced-carrot-soup-medium-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:spiced-carrot-soup-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:panini-slices-4-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:herb-bread": {
+   "meat": null,
+   "src": null
+  },
+  "soul:espresso": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:espresso-strong-double-shot-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:piccolo": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:piccolo-strong-double-shot-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:macchiato": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:macchiato-strong-double-shot-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:long-black-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:long-black-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:long-black-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:flat-white-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:flat-white-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:flat-white-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:latte-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:latte-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:latte-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:cappuccino-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:cappuccino-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:matcha-latte-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:matcha-latte-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:matcha-latte-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:chai-latte-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:chai-latte-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:chai-latte-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:dirty-chai-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:dirty-chai-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:dirty-chai-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:hot-chocolate-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:hot-chocolate-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:hot-chocolate-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:white-hot-chocolate-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:white-hot-chocolate-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:white-hot-chocolate-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:mocha-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:mocha-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:mocha-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:white-hot-chocolate-mocha-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:white-hot-chocolate-mocha-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:white-hot-chocolate-mocha-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:black-cold-brew-16oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:black-cold-brew-12oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:white-cold-brew-16oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:white-cold-brew-12oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:coffee-iced-classic-16oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:coffee-iced-classic-12oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:latte-over-ice-16oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:latte-over-ice-12oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:long-black-over-ice-16oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:long-black-over-ice-12oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:matcha-over-ice-16oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:matcha-over-ice-12oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:iced-matcha-16oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:iced-matcha-12oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:strawberry-matcha-latte-16oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:strawberry-matcha-latte-12oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:mocha-iced-classic-16oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:mocha-iced-classic-12oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:white-choc-mocha-iced-classic-16oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:white-choc-mocha-iced-classic-12oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:white-chocolate-iced-blend-16oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:white-chocolate-iced-blend-12oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:chocolate-iced-blend-16oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:chocolate-iced-blend-12oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:caramel-iced-blend-16oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:caramel-iced-blend-12oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:strawberry-iced-blend-16oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:strawberry-iced-blend-12oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:espresso-iced-blend-16oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:espresso-iced-blend-12oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:double-choc-iced-blend-16oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:double-choc-iced-blend-12oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:blueberry-matcha-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:blueberry-matcha-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:mango-matcha-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:mango-matcha-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:strawberry-matcha-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:strawberry-matcha-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:iced-matcha-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:iced-matcha-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:matcha-over-ice-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:matcha-over-ice-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:mango-fruit-blend-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:mango-fruit-blend-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:mango-passion-fruit-blend-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:mango-passion-fruit-blend-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:passionfruit-fruit-blend-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:passionfruit-fruit-blend-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:summerberry-fruit-blend-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:summerberry-fruit-blend-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:chicken-avocado-panini": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chicken-schnitzel-panini": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chorizo-panini": {
+   "meat": null,
+   "src": null
+  },
+  "soul:chorizo-halal-panini": {
+   "meat": null,
+   "src": null
+  },
+  "soul:grilled-chicken-panini": {
+   "meat": null,
+   "src": null
+  },
+  "soul:plant-based-avocado-schnitzel-panini": {
+   "meat": null,
+   "src": null
+  },
+  "soul:mortadella-pesto-panini": {
+   "meat": null,
+   "src": null
+  },
+  "soul:salami-classico-panini": {
+   "meat": null,
+   "src": null
+  },
+  "soul:salami-classico-panini-halal-": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:bbq-chicken-banh-mi": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:crispy-chicken-banh-mi": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:lemongrass-beef-banh-mi": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:roast-pork-crackling-banh-mi": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:crispy-flathead-banh-mi": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:tofu-banh-mi": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:bbq-chicken-bao": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:crispy-chicken-bao": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:crispy-prawn-bao": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:lemongrass-beef-bao": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:roast-duck-bao": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:roast-pork-crackling-bao": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:tofu-bao": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:bbq-chicken-fresh-roll": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:crispy-chicken-fresh-roll": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:crispy-flathead-avocado-fresh-roll": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:garlic-prawn-fresh-roll": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:lemongrass-beef-fresh-roll": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:low-carb-crispy-flathead-fresh-roll": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:low-carb-poached-chicken-fresh-roll": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:low-carb-tofu-fresh-roll": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:poached-chicken-breast-avocado-fresh-roll": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:pork-prawn-fresh-roll": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:roast-duck-fresh-roll": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:soft-shell-crab-fresh-roll": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:tofu-fresh-roll": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:roll-d-iced-tea-lemon": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "rolld:roll-d-iced-tea-peach": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "rolld:vietnamese-iced-coffee": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "rolld:crab-crackers": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:crispy-chicken-wings": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:crispy-prawns": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:seafood-spring-rolls": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:sweet-potato-fries": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:vegetable-spring-rolls": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:pho-sauce-hoisin": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:pho-sauce-sriracha": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:sauce-chilli-mayo": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:sauce-hoisin": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:sauce-hot-sauce": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:sauce-nuoc-mam": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:sauce-spicy-hoisin": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:sauce-veg-nuoc-mam": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:sauce-garlic-chilli-oil": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:chicken-curry-ph-cup": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:mixed-beef-chicken-ph-cup": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:mushroom-tofu-ph-cup": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:poached-chicken-ph-cup": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:seafood-ph-cup": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:sliced-rare-beef-ph-cup": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:spicy-beef-bbh-cup": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:chicken-curry-ph-bowl": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:mixed-beef-chicken-ph-bowl": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:mushroom-tofu-ph-bowl": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:poached-chicken-ph-bowl": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:sliced-rare-beef-ph-bowl": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:spicy-beef-bbh-bowl": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:bbq-chicken-b-n": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:lemongrass-beef-b-n": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:roast-pork-crackling-b-n": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:crispy-flathead-b-n": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:tofu-vegetable-spring-rolls-b-n": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:bbq-chicken-c-m-rice": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:crispy-chicken-wings-c-m-rice": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:lemongrass-beef-c-m-rice": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:lemongrass-chilli-chicken-c-m-rice": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:crispy-flathead-c-m-rice": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:roast-pork-crackling-c-m-rice": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:tofu-vegetable-spring-rolls-c-m-rice": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:lemongrass-beef-g-i-salad": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:poached-chicken-breast-g-i-salad": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:pork-prawn-g-i-salad": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:prawn-g-i-salad": {
+   "meat": null,
+   "src": null
+  },
+  "rolld:tofu-g-i-salad": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:yuzu-days-chicken-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:yuzu-days-chicken-large-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:salmon-o-g-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:salmon-o-g-large-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:chicken-o-g-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:chicken-o-g-large-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:roasted-tofu-o-g-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:roasted-tofu-o-g-large-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:chilli-chicken-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:chilli-chicken-large-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:tofu-boys-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:tofu-boys-large-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:nori-caesar-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:nori-caesar-large-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:miso-salmon-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:miso-salmon-large-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:braised-beef-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:braised-beef-large-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:spicy-salmon-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:spicy-salmon-large-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:lemon-chicken-box": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:beef-brisket-box": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:coconut-chicken-box": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:miso-glazed-eggplant-tofu-box": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:kids-aburi-salmon-box": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:kids-salmon-sashimi-box": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:kids-poached-chicken-box": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:sushi-rice": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:sushi-rice-large-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:brown-rice": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:brown-rice-large-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:cabbage": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:cabbage-large-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:glass-noodles": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:glass-noodles-large-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:brown-rice-cabbage": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:brown-rice-cabbage-large-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:add-salmon-sashimi": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:add-poached-chicken": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:add-roasted-tofu": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:add-miso-glazed-salmon-fillet": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:add-beef-brisket": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:add-miso-glazed-eggplant": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:add-coconut-chicken": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:add-avocado": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:add-chilli-jam": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:add-seaweed-salad": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:add-pickled-daikon": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:add-wasabi-mayo-drizzle": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:add-yuzu-mayo-drizzle": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:add-japanese-chilli-flakes": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:add-crispy-shallots": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:tamari-ponzu": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:roasted-sesame": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:spicy-sesame": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:red-hot-chilli": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:lemon-olive-oil": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:house-shoyu": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:lime-tahini": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:beetroot-yuzu": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "thisbowl:mango-pineapple-ginger": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "thisbowl:miso-bone-broth": {
+   "meat": null,
+   "src": "name"
+  },
+  "thisbowl:passionfruit-yuzu": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "thisbowl:hibiscus-pineapple": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "thisbowl:blue-lemonade": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "thisbowl:heat-check-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:heat-check-large-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:crispy-chicken-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:crispy-chicken-large-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:beef-brisket-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:beef-brisket-large-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:miso-eggplant-with-chicken-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:miso-eggplant-with-chicken-large-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:miso-eggplant-with-tofu-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:miso-eggplant-with-tofu-large-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:spring-chicken-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:spring-chicken-large-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:coconut-chicken-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:coconut-chicken-large-": {
+   "meat": null,
+   "src": null
+  },
+  "thisbowl:miso-salmon-box": {
+   "meat": null,
+   "src": null
   }
  }
 }

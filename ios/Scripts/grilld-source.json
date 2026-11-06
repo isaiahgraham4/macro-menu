@@ -18138,6 +18138,406 @@
      "LC"
     ]
    }
+  },
+  "1004100": {
+   "category": "Wraps",
+   "product": {
+    "id": 1004100,
+    "title": "The Classic",
+    "nutrition": {
+     "tableRows": [
+      [
+       "",
+       "Ave. qty (per serve)",
+       "% Daily intake (per serve)",
+       "Ave. qty per 100g"
+      ],
+      [
+       "Energy",
+       "2170kJ",
+       "24.9%",
+       "804kJ"
+      ],
+      [
+       "Protein",
+       "24.2g",
+       "48.4%",
+       "9g"
+      ],
+      [
+       "Total fat",
+       "28.6g",
+       "40.9%",
+       "10.6g"
+      ],
+      [
+       "Saturated fat",
+       "4.2g",
+       "17.5%",
+       "1.6g"
+      ],
+      [
+       "Carbohydrate",
+       "38.9g",
+       "12.5%",
+       "14.4g"
+      ],
+      [
+       "Sugars",
+       "3.6g",
+       "4%",
+       "1.4g"
+      ],
+      [
+       "Dietary fibre",
+       "5g",
+       "16.7%",
+       "1.8g"
+      ],
+      [
+       "Sodium",
+       "881mg",
+       "38.3%",
+       "326mg"
+      ]
+     ]
+    },
+    "choices": [
+     {
+      "title": "Lunch Wrapped Combo",
+      "items": [
+       {
+        "id": 2009,
+        "title": "Mini Famous Chips",
+        "nutrition": {
+         "tableRows": []
+        }
+       }
+      ]
+     }
+    ],
+    "subtractions": [
+     {
+      "title": "No Egg Mayo"
+     },
+     {
+      "title": "No Pickle"
+     }
+    ],
+    "ingredients": "<p>HFC&nbsp;Tenders&nbsp;(Chicken&nbsp;Tenderloin&nbsp;(74%),&nbsp;Batter&nbsp;(Water,&nbsp;Rice&nbsp;Flour,&nbsp;Maize&nbsp;Starch,&nbsp;Tapioca&nbsp;Starch,&nbsp;Potato&nbsp;Starch, Salt,&nbsp;Dehydrated&nbsp;Vegetables&nbsp;(Onion,&nbsp;Garlic),&nbsp;Potato&nbsp;Fibre,&nbsp;Mineral&nbsp;Salt&nbsp;(500),&nbsp;Canola&nbsp;Oil,&nbsp;Vegetable&nbsp;Gum&nbsp;(412)),&nbsp;Breader&nbsp;(Maize&nbsp;Flour,&nbsp;Rice&nbsp;Flour,&nbsp;Potato&nbsp;Starch,&nbsp;Tapioca&nbsp;Starch,&nbsp;Dextrose&nbsp;(Tapioca,&nbsp;Maize),&nbsp;Salt,&nbsp;Sugar,&nbsp;Dehydrated&nbsp;Vegetables&nbsp;(Onion,&nbsp;Garlic),&nbsp;Yeast&nbsp;Extract,&nbsp;Rice&nbsp;Bran),&nbsp;Dusting&nbsp;(Rice&nbsp;Flour,&nbsp;Maize&nbsp;Starch,&nbsp;Tapioca&nbsp;Starch,&nbsp;Potato&nbsp;Starch,&nbsp;Salt,&nbsp;Canola&nbsp;Oil,&nbsp;Dehydrated&nbsp;Vegetables&nbsp;(Garlic,&nbsp;Onion),&nbsp;Potato&nbsp;Fibre,&nbsp;Mineral&nbsp;Salt&nbsp;(500),&nbsp;Vegetable&nbsp;Gum&nbsp;(412)),&nbsp;Canola&nbsp;Oil),&nbsp;Wrap&nbsp;(Wheat&nbsp;flour&nbsp;[(62%)&nbsp;(thiamine,&nbsp;folic&nbsp;acid)],&nbsp;water,&nbsp;modified&nbsp;wheat&nbsp;starch,&nbsp;vegetable&nbsp;oil,&nbsp;mineral&nbsp;salts&nbsp;(450,500,341),&nbsp;acidity&nbsp;regulator&nbsp;(297),&nbsp;iodised&nbsp;salt,&nbsp;yeast),&nbsp;Cos&nbsp;Lettuce,&nbsp;Egg&nbsp;Mayonnaise&nbsp;Pasteurised&nbsp;free&nbsp;range&nbsp;Whole&nbsp;Egg,White&nbsp;Vinegar,&nbsp;Liquid&nbsp;Sugar,&nbsp;Mustard,&nbsp;Salt,&nbsp;Natural&nbsp;Flavour,&nbsp;Lemon&nbsp;Juice,&nbsp;Acidity&nbsp;Regulator&nbsp;(Citric),&nbsp;Natural&nbsp;Colour&nbsp;(160a),&nbsp;Spice&nbsp;extract),&nbsp;Dill&nbsp;Pickles&nbsp;(Cucumber&nbsp;(50%),&nbsp;Vinegar,&nbsp;Water,&nbsp;Salt,&nbsp;Sugar,&nbsp;Dill).</p><p></p><p><strong>Contains&nbsp;Wheat,&nbsp;Gluten,&nbsp;Egg.&nbsp;</strong></p>",
+    "attributes": [
+     "DF"
+    ]
+   }
+  },
+  "1004094": {
+   "category": "Wraps",
+   "product": {
+    "id": 1004094,
+    "title": "Bacon Club",
+    "nutrition": {
+     "tableRows": [
+      [
+       "",
+       "Ave. qty (per serve)",
+       "% Daily intake (per serve)",
+       "Ave. qty per 100g"
+      ],
+      [
+       "Energy",
+       "2950kJ",
+       "33.9%",
+       "877kJ"
+      ],
+      [
+       "Protein",
+       "49.8g",
+       "99.6%",
+       "14.9g"
+      ],
+      [
+       "Total fat",
+       "36.3g",
+       "51.9%",
+       "10.8g"
+      ],
+      [
+       "Saturated fat",
+       "8.6g",
+       "35.8%",
+       "2.6g"
+      ],
+      [
+       "Carbohydrate",
+       "41.5g",
+       "13.4%",
+       "12.4g"
+      ],
+      [
+       "Sugars",
+       "4.6g",
+       "5.1%",
+       "1.4g"
+      ],
+      [
+       "Dietary fibre",
+       "9.8g",
+       "32.7%",
+       "2.9g"
+      ],
+      [
+       "Sodium",
+       "916mg",
+       "39.8%",
+       "273mg"
+      ]
+     ]
+    },
+    "choices": [
+     {
+      "title": "Lunch Wrapped Combo",
+      "items": [
+       {
+        "id": 2009,
+        "title": "Mini Famous Chips",
+        "nutrition": {
+         "tableRows": []
+        }
+       }
+      ]
+     }
+    ],
+    "subtractions": [
+     {
+      "title": "No Aged Cheddar"
+     },
+     {
+      "title": "No Avocado"
+     },
+     {
+      "title": "No Crispy Bacon"
+     },
+     {
+      "title": "No Croutons"
+     },
+     {
+      "title": "No Egg Mayo"
+     },
+     {
+      "title": "No Green Goddess Dressing"
+     },
+     {
+      "title": "No Tomato"
+     }
+    ],
+    "ingredients": "<p>Chicken Breast, Wrap (<strong>Wheat </strong>flour [(62%) (thiamine, folic acid)], water, modified <strong>wheat</strong> starch, vegetable oil, mineral salts (450,500,341), acidity regulator (297), iodised salt, yeast), Cos Lettuce, Tomato, Avocado, Bacon (Pork (85%), Water, Salt, Sugar, Mineral Salts (451, 450), Antioxidant (316), Preservative (250)), Egg Mayonnasie Pasteurised&nbsp;free&nbsp;range&nbsp;Whole&nbsp;Egg.&nbsp;White&nbsp;Vinegar,&nbsp;Liquid&nbsp;Sugar,&nbsp;Mustard,&nbsp;Salt,&nbsp;Natural&nbsp;Flavour,&nbsp;Lemon&nbsp;Juice,&nbsp;Acidity&nbsp;Regulator&nbsp;(Citric),&nbsp;Natural&nbsp;Colour&nbsp;(160a),&nbsp;Spice&nbsp;extract) Aged Cheddar (Milk, Salt, Starter Culture, Non-Animal Rennet), Croutons (Wheat Flour (Contains Thiamine, Folic Acid), Water, Culture (Rice Flour, Water), Hi Fibre Concentrate (Wheat Flour, Vegetable Gum (412), Modified Wheat Starch (1413), Oat Fibre, Wheat Fibre, Wheat Gluten, Vitamins (Thiamine, Folate)), Canola Oil, Yeast, Salt, Wheat Gluten, Improver (Rice Flour, Malt Flour (Wheat), Ascorbic Acid, Enzymes, Extra Virgin Olive Oil, Herbs &amp; Spices)).</p><p></p><p>Contains Wheat, Gluten, Egg, Milk</p>",
+    "attributes": [
+     "NA"
+    ]
+   }
+  },
+  "1004093": {
+   "category": "Wraps",
+   "product": {
+    "id": 1004093,
+    "title": "Cali Green Goddess",
+    "nutrition": {
+     "tableRows": [
+      [
+       "",
+       "Ave. qty (per serve)",
+       "% Daily intake (per serve)",
+       "Ave. qty per 100g"
+      ],
+      [
+       "Energy",
+       "2050kJ",
+       "23.6%",
+       "615kJ"
+      ],
+      [
+       "Protein",
+       "42.5g",
+       "85%",
+       "12.8g"
+      ],
+      [
+       "Total fat",
+       "17.3g",
+       "24.7%",
+       "5.2g"
+      ],
+      [
+       "Saturated fat",
+       "4.2g",
+       "17.5%",
+       "1.3g"
+      ],
+      [
+       "Carbohydrate",
+       "39.6g",
+       "12.8%",
+       "11.9g"
+      ],
+      [
+       "Sugars",
+       "6.8g",
+       "7.6%",
+       "2.1g"
+      ],
+      [
+       "Dietary fibre",
+       "9.5g",
+       "31.7%",
+       "2.9g"
+      ],
+      [
+       "Sodium",
+       "519mg",
+       "22.6%",
+       "156mg"
+      ]
+     ]
+    },
+    "choices": [
+     {
+      "title": "Lunch Wrapped Combo",
+      "items": [
+       {
+        "id": 2009,
+        "title": "Mini Famous Chips",
+        "nutrition": {
+         "tableRows": []
+        }
+       }
+      ]
+     }
+    ],
+    "subtractions": [
+     {
+      "title": "No Avocado"
+     },
+     {
+      "title": "No Carrot"
+     },
+     {
+      "title": "No Green Goddess Dressing"
+     },
+     {
+      "title": "No Roasted Peppers"
+     },
+     {
+      "title": "No Seed Mix"
+     },
+     {
+      "title": "No Tomato"
+     }
+    ],
+    "ingredients": "<p>Chicken Breast, Wrap (Wheat flour [(62%) (thiamine, folic acid)], water, modified wheat starch, vegetable oil, mineral salts (450,500,341), acidity regulator (297), iodised salt, yeast), Cos Lettuce, Egg Mayonnasie CANOLA OIL, PASTEURISED FREE RANGE WHOLE EGG, WATER, WHITE VINEGAR, LIQUID SUGAR,MUSTARD, SALT, NATURAL FLAVOUR, LEMON JUICE, ACIDITY REGULATOR (CITRIC), NATURAL COLOUR (160a (iv), ), SPICE EXTRACT), Avocado, Cucumber, Roasted Red Peppers (Roasted red pepper (59%), water, sugar, salt, vinegar), Green Goddess dressing (Water, canola oil, lemon juice, white vinegar, sugar, Dijon mustard, garlic, salt, herbs &amp; spices, avocado, vegetable fibre, colours (141, 160a), vegetable protein, onion, vegetable gum (xanthan), onion powder, natural flavours), Seed Mix (Roasted Broad Beans (Rapeseed Oil, Salt, Sugar), Gluten-free Breadcrumb (Water, Corn Starch,<br>Coconut Cream, Canola Oil, Tapioca Starch, Salt, Caster Sugar, Yeast, Guar Gum, Xanthan Gum,<br>Psyllium Husk), Pumpkin Seeds, Olive Oil, Salt, Spices (Cumin, Smoked Paprika, Chilli).</p><p></p><p><strong>Contains Egg, Wheat, Gluten.</strong></p>",
+    "attributes": [
+     "DF"
+    ]
+   }
+  },
+  "1004095": {
+   "category": "Wraps",
+   "product": {
+    "id": 1004095,
+    "title": "Golden Caesar",
+    "nutrition": {
+     "tableRows": [
+      [
+       "",
+       "Ave. qty (per serve)",
+       "% Daily intake (per serve)",
+       "Ave. qty per 100g"
+      ],
+      [
+       "Energy",
+       "2750kJ",
+       "31.6%",
+       "878kJ"
+      ],
+      [
+       "Protein",
+       "34.7g",
+       "69.4%",
+       "11.1g"
+      ],
+      [
+       "Total fat",
+       "34.1g",
+       "48.7%",
+       "10.9g"
+      ],
+      [
+       "Saturated fat",
+       "8.2g",
+       "34.2%",
+       "2.6g"
+      ],
+      [
+       "Carbohydrate",
+       "48.9g",
+       "15.8%",
+       "15.6g"
+      ],
+      [
+       "Sugars",
+       "4g",
+       "4.4%",
+       "1.3g"
+      ],
+      [
+       "Dietary fibre",
+       "7.3g",
+       "24.3%",
+       "2.6g"
+      ],
+      [
+       "Sodium",
+       "891mg",
+       "38.7%",
+       "285mg"
+      ]
+     ]
+    },
+    "choices": [
+     {
+      "title": "Lunch Wrapped Combo",
+      "items": [
+       {
+        "id": 2009,
+        "title": "Mini Famous Chips",
+        "nutrition": {
+         "tableRows": []
+        }
+       }
+      ]
+     }
+    ],
+    "subtractions": [
+     {
+      "title": "No Caesar Dressing"
+     },
+     {
+      "title": "No Crispy Bacon"
+     },
+     {
+      "title": "No Croutons"
+     },
+     {
+      "title": "No Shaved Parmesan"
+     },
+     {
+      "title": "No Spanish Onion"
+     }
+    ],
+    "ingredients": "<p>HFC&nbsp;Tenders&nbsp;(Chicken&nbsp;Tenderloin&nbsp;(74%),&nbsp;Batter&nbsp;(Water,&nbsp;Rice&nbsp;Flour,&nbsp;Maize&nbsp;Starch,&nbsp;Tapioca&nbsp;Starch,&nbsp;Potato&nbsp;Starch,&nbsp;Salt,&nbsp;Dehydrated&nbsp;Vegetables&nbsp;(Onion,&nbsp;Garlic),&nbsp;Potato&nbsp;Fibre,&nbsp;Mineral&nbsp;Salt&nbsp;(500),&nbsp;Canola&nbsp;Oil,&nbsp;Vegetable&nbsp;Gum&nbsp;(412)),&nbsp;Breader&nbsp;(Maize&nbsp;Flour,&nbsp;Rice&nbsp;Flour,&nbsp;Potato&nbsp;Starch,&nbsp;Tapioca&nbsp;Starch,&nbsp;Dextrose&nbsp;(Tapioca,&nbsp;Maize),&nbsp;Salt,&nbsp;Sugar,&nbsp;Dehydrated&nbsp;Vegetables&nbsp;(Onion,&nbsp;Garlic),&nbsp;Yeast&nbsp;Extract,&nbsp;Rice&nbsp;Bran),&nbsp;Dusting&nbsp;(Rice&nbsp;Flour,&nbsp;Maize&nbsp;Starch,&nbsp;Tapioca&nbsp;Starch,&nbsp;Potato&nbsp;Starch,&nbsp;Salt,&nbsp;Canola&nbsp;Oil,&nbsp;Dehydrated&nbsp;Vegetables&nbsp;(Garlic,&nbsp;Onion),&nbsp;Potato&nbsp;Fibre,&nbsp;Mineral&nbsp;Salt&nbsp;(500),&nbsp;Vegetable&nbsp;Gum&nbsp;(412)),&nbsp;Canola&nbsp;Oil),&nbsp;Wrap&nbsp;(Wheat&nbsp;flour&nbsp;[(62%)&nbsp;(thiamine,&nbsp;folic&nbsp;acid)],&nbsp;water,&nbsp;modified&nbsp;wheat&nbsp;starch,&nbsp;vegetable&nbsp;oil,&nbsp;mineral&nbsp;salts&nbsp;(450,500,341),&nbsp;acidity&nbsp;regulator&nbsp;(297),&nbsp;iodised&nbsp;salt,&nbsp;yeast),&nbsp;Cos&nbsp;Lettuce,&nbsp;Croutons&nbsp;(Wheat&nbsp;Flour&nbsp;(Contains&nbsp;Thiamine,&nbsp;Folic&nbsp;Acid),&nbsp;Water,&nbsp;Culture&nbsp;(Rice&nbsp;Flour,&nbsp;Water),&nbsp;Hi&nbsp;Fibre&nbsp;Concentrate&nbsp;(Wheat&nbsp;Flour,&nbsp;Vegetable&nbsp;Gum&nbsp;(412),&nbsp;Modified&nbsp;Wheat&nbsp;Starch&nbsp;(1413),&nbsp;Oat&nbsp;Fibre,&nbsp;Wheat&nbsp;Fibre,&nbsp;Wheat&nbsp;Gluten,&nbsp;Vitamins&nbsp;(Thiamine,&nbsp;Folate)),&nbsp;Canola&nbsp;Oil,&nbsp;Yeast,&nbsp;Salt,&nbsp;Wheat&nbsp;Gluten,&nbsp;Improver&nbsp;(Rice&nbsp;Flour,&nbsp;Malt&nbsp;Flour&nbsp;(Wheat),&nbsp;Ascorbic&nbsp;Acid,&nbsp;Enzymes,&nbsp;Extra&nbsp;Virgin&nbsp;Olive&nbsp;Oil,&nbsp;Herbs&nbsp;&amp;&nbsp;Spices)).&nbsp;Bacon&nbsp;(Pork&nbsp;(85%),&nbsp;Water,&nbsp;Salt,&nbsp;Sugar,&nbsp;Mineral&nbsp;Salts&nbsp;(451,&nbsp;450),&nbsp;Antioxidant&nbsp;(316),&nbsp;Preservative&nbsp;(250)),&nbsp;Caesar&nbsp;Dressing&nbsp;(Canola&nbsp;Oil,&nbsp;Free&nbsp;Range&nbsp;Egg&nbsp;(Pasteurised),&nbsp;Water,&nbsp;Capers&nbsp;(3%),&nbsp;Vinegar,&nbsp;Anchovies&nbsp;(1.5%)&nbsp;(Contains&nbsp;Fish),&nbsp;Parmesan&nbsp;Cheese&nbsp;(Contains&nbsp;Milk),&nbsp;Tasty&nbsp;Cheese&nbsp;(Contains&nbsp;Milk),&nbsp;Salt,&nbsp;Sugar,&nbsp;Mustard,&nbsp;Natural&nbsp;Flavour&nbsp;(Contains&nbsp;Egg),&nbsp;Onion,&nbsp;Lemon&nbsp;Juice,&nbsp;Spices,&nbsp;Garlic,&nbsp;Citric&nbsp;Acid,&nbsp;Natural&nbsp;Colour,&nbsp;Parmesan&nbsp;Cheese&nbsp;(Pasteurised&nbsp;Milk,&nbsp;Salt,&nbsp;Starter&nbsp;Cultures,&nbsp;Enzyme&nbsp;(NonAnimal&nbsp;Rennet),&nbsp;Enzyme&nbsp;(Animal&nbsp;Lipase),&nbsp;Anticaking&nbsp;Agent,&nbsp;Preservative&nbsp;(200)),&nbsp;Spanish&nbsp;Onion.&nbsp;</p><p></p><p><strong>Contains&nbsp;Wheat,&nbsp;Gluten,&nbsp;Egg,&nbsp;Milk,&nbsp;Fish.&nbsp;</strong></p>",
+    "attributes": [
+     "NA"
+    ]
+   }
   }
  }
 }

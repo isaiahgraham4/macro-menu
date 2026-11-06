@@ -179,10 +179,14 @@ def build():
             if not found:
                 continue
             serve, grams = found
-            rows.append([clean_name(title), cat, serve, f"{grams} g" if grams else "1 serving"])
-            product_of[f"grilld:{slug(clean_name(title))}"] = pid
+            # Grill'd names its lunchtime wraps without the word (The Classic, Bacon Club), so it's added here.
+            wrap = category == "Wraps"
+            name = clean_name(title) + (" Wrap" if wrap and not title.lower().endswith("wrap") else "")
+            size = f"{grams} g" if grams else "1 serving"
+            rows.append([name, cat, serve, f"1 wrap · {size}" if wrap and grams else size])
+            product_of[f"grilld:{slug(name)}"] = pid
             if product.get("subtractions"):
-                others[clean_name(title)] = [s["title"][3:] for s in product["subtractions"]]
+                others[name] = [s["title"][3:] for s in product["subtractions"]]
 
     # Exact differences between burgers published with the same toppings, measured without the bun.
     def no_bun(name):

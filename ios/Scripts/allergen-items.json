@@ -2331,6 +2331,18 @@
    ],
    "src": "guide"
   },
+  "kfc:21-pieces-of-chicken": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "soy"
+   ],
+   "src": "guide"
+  },
   "kfc:10-wicked-wings": {
    "al": [
     "gluten",
@@ -2582,6 +2594,22 @@
     "sulphites"
    ],
    "text": "Bun Sesame Glazed 5\" (Wheat Flour, Water, Baker\u0019s Yeast, Sugar, Canola Oil,Wheat Gluten, Sesame Seeds, Iodised Salt, Soy Flour, Preservative (282), Emulsifiers (481, 322 from Rapeseed), Modified Potato Starch (1420), Wheat Malt Flour, Acidity Regulator (334), Vitamins (Thiamin, Folic Acid), Processing Aid (Wheat)), Beef Patty 5\" (Beef 100%), Tomato Slice (Tomato), Cheese SOS (Cheese (CowsMilk, Salt, Culture, Microbial/Calves Rennet), Water, Non-Fat Milk Solids (Cow’s Milk), Milk Solids (Cow’s Milk), Emulsifiers (331(iii), 322(i)), Acidity Regulators (330), Salt, Natural Cheese Flavour, Colour (160a), Natural Preservative (234)), Mayonnaise (Soybean Oil (<0.001% Tocopherol [Vitamin E]), Egg Yolks, Water, Distilled Vinegar, Corn Syrup, Salt, Sugar,Mustard Flour), Lettuce (Iceberg Lettuce), Onion Fresh (Brown Onion), Pickles (Cucumbers, Water, Vinegar, Salt, Calcium Lactate, Natural Flavours), Sauce Ketchup ( Concentrated Tomatoes, Sugar, Concentrated White Vinegar, Salt, Natural Flavours, Food Acid (Citric Acid), Spice )",
+   "src": "guide"
+  },
+  "hj:cheese-lovers-whopper": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "fish",
+    "sulphites"
+   ],
+   "text": "Bun Sesame Glazed 5\" (Wheat Flour, Water, Baker\u0019s Yeast, Sugar, Canola Oil,Wheat Gluten, Sesame Seeds, Iodised Salt, Soy Flour, Preservative (282), Emulsifiers [481, 472e, 322 (Soy, Rapeseed)], Modified Potato Starch (1420), Wheat Malt Flour, Acidity Regulator (334), Vitamins (Thiamin, Folic Acid), Processing Aid (Wheat)), Beef Patty 5\" (Beef 100%), Sauce Cheese (Water, Cheese (38%) (Milk, Salt, Starter Culture, Enzyme), Thickener (1442), Whey Protein Concentrate, Mineral Salts (452, 339), Xanthan Gum, Iodised Salt, Preservatives (234, 202), Citric Acid, Natural Colour (160a), Butyric Acid ), Tomato Slice (Tomato), Cheese SOS (Cheese (CowsMilk, Salt, Culture, Microbial/Calves Rennet), Water, Non-Fat Milk Solids (Cow’s Milk), Milk Solids (Cow’s Milk), Emulsifiers (331(iii), 322(i)), Acidity Regulators (330), Salt, Natural Cheese Flavour, Colour (160a), Natural Preservative (234)), Cheese Swiss (Pasteurised Milk, Salt, Starter Culture (Milk), Enzyme (Non-Animal Rennet)), Lettuce (Iceberg Lettuce), Sauce Cracked Pepper Mayonnaise (Vegetable Oil [Includes Antioxidant (307)], Water, White Vinegar, Sugar, Thickeners (1442, 1450, 415),Milk Solids, Cracked Black Peppercorns (2%), Salt, Egg Yolk (1%), Vegetable Powders, Spice, Natural Flavour, Acidity Regulator (270), Spice Extract, Preservative (202), Antioxidant (385)), Onion Fresh (Brown Onion), Pickles (Cucumbers, Water, Vinegar, Salt, Calcium Lactate, Natural Flavours)",
    "src": "guide"
   },
   "hj:double-whopper": {
@@ -5859,6 +5887,17 @@
    ],
    "src": "guide"
   },
+  "gyg:bbq-beef-rib-burrito-bowl": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "src": "guide"
+  },
   "gyg:grilled-chicken-burrito": {
    "al": [
     "gluten",
@@ -5934,6 +5973,18 @@
    ],
    "src": "guide"
   },
+  "gyg:bbq-beef-rib-burrito": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ],
+   "src": "guide"
+  },
   "gyg:crispy-chicken-tenders-caesar-burrito": {
    "al": [
     "egg",
@@ -5949,6 +6000,20 @@
    "src": "guide"
   },
   "gyg:grilled-chicken-caesar-burrito": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "gyg:bbq-beef-rib-caesar-burrito": {
    "al": [
     "egg",
     "gluten",
@@ -6030,6 +6095,20 @@
    "src": "guide"
   },
   "gyg:grilled-chicken-caesar-cali-burrito": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "gyg:bbq-beef-rib-caesar-cali-burrito": {
    "al": [
     "egg",
     "gluten",
@@ -6132,6 +6211,18 @@
    ],
    "src": "guide"
   },
+  "gyg:bbq-beef-rib-enchilada": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ],
+   "src": "guide"
+  },
   "gyg:saut-ed-vegetables-cali-burrito": {
    "al": [
     "gluten",
@@ -6161,6 +6252,19 @@
    "src": "guide"
   },
   "gyg:shredded-beef-brisket-cali-burrito": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "gyg:bbq-beef-rib-cali-burrito": {
    "al": [
     "gluten",
     "milk",
@@ -6243,6 +6347,17 @@
    ],
    "src": "guide"
   },
+  "gyg:bbq-beef-rib-nachos": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "src": "guide"
+  },
   "gyg:grilled-chicken-nacho-fries": {
    "al": [
     "milk"
@@ -6307,6 +6422,18 @@
    "src": "guide"
   },
   "gyg:shredded-beef-brisket-nacho-fries": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "sulphites",
+    "wheat"
+   ],
+   "src": "guide"
+  },
+  "gyg:bbq-beef-rib-nacho-fries": {
    "al": [
     "milk"
    ],
@@ -6406,6 +6533,18 @@
    ],
    "src": "guide"
   },
+  "gyg:bbq-beef-rib-quesadilla": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ],
+   "src": "guide"
+  },
   "gyg:grilled-chicken-quesadilla-plus": {
    "al": [
     "gluten",
@@ -6481,6 +6620,18 @@
    ],
    "src": "guide"
   },
+  "gyg:bbq-beef-rib-quesadilla-plus": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ],
+   "src": "guide"
+  },
   "gyg:crispy-chicken-tenders-caesar-salad": {
    "al": [
     "egg",
@@ -6496,6 +6647,20 @@
    "src": "guide"
   },
   "gyg:grilled-chicken-caesar-salad": {
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "sesame",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "src": "guide"
+  },
+  "gyg:bbq-beef-rib-caesar-salad": {
    "al": [
     "egg",
     "milk"
@@ -6612,6 +6777,18 @@
    ],
    "src": "guide"
   },
+  "gyg:bbq-beef-rib-soft-taco-1-": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ],
+   "src": "guide"
+  },
   "gyg:grilled-chicken-hard-taco-1-": {
    "al": [
     "milk"
@@ -6672,6 +6849,17 @@
    "src": "guide"
   },
   "gyg:shredded-beef-brisket-hard-taco-1-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "src": "guide"
+  },
+  "gyg:bbq-beef-rib-hard-taco-1-": {
    "al": [
     "milk"
    ],
@@ -7757,6 +7945,18 @@
    ],
    "src": "guide"
   },
+  "gyg:little-g-s-bbq-beef-rib-burrito": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ],
+   "src": "guide"
+  },
   "gyg:little-g-s-grilled-chicken-bowl": {
    "al": [
     "milk"
@@ -7817,6 +8017,17 @@
    "src": "guide"
   },
   "gyg:little-g-s-shredded-beef-brisket-bowl": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "src": "guide"
+  },
+  "gyg:little-g-s-bbq-beef-rib-bowl": {
    "al": [
     "milk"
    ],
@@ -7899,6 +8110,17 @@
    "src": "guide"
   },
   "gyg:little-g-s-shredded-beef-brisket-nachos": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "src": "guide"
+  },
+  "gyg:little-g-s-bbq-beef-rib-nachos": {
    "al": [
     "milk"
    ],
@@ -8456,6 +8678,18 @@
    ],
    "src": "guide"
   },
+  "gyg:bbq-beef-rib-mini-burrito": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ],
+   "src": "guide"
+  },
   "gyg:grilled-chicken-mini-bowl": {
    "al": [
     "milk"
@@ -8526,6 +8760,17 @@
    ],
    "src": "guide"
   },
+  "gyg:bbq-beef-rib-mini-bowl": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "src": "guide"
+  },
   "gyg:crispy-chicken-tenders-mini-caesar-burrito": {
    "al": [
     "egg",
@@ -8541,6 +8786,20 @@
    "src": "guide"
   },
   "gyg:grilled-chicken-mini-caesar-burrito": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "gyg:bbq-beef-rib-mini-caesar-burrito": {
    "al": [
     "egg",
     "gluten",
@@ -8583,6 +8842,20 @@
    "src": "guide"
   },
   "gyg:grilled-chicken-mini-caesar-cali-burrito": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
+  "gyg:bbq-beef-rib-mini-caesar-cali-burrito": {
    "al": [
     "egg",
     "gluten",
@@ -8690,6 +8963,19 @@
    ],
    "src": "guide"
   },
+  "gyg:bbq-beef-rib-mini-cali-burrito": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "sulphites"
+   ],
+   "src": "guide"
+  },
   "gyg:grilled-chicken-mini-enchilada": {
    "al": [
     "gluten",
@@ -8765,6 +9051,18 @@
    ],
    "src": "guide"
   },
+  "gyg:bbq-beef-rib-mini-enchilada": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ],
+   "src": "guide"
+  },
   "gyg:grilled-chicken-mini-nachos": {
    "al": [
     "milk"
@@ -8825,6 +9123,17 @@
    "src": "guide"
   },
   "gyg:shredded-beef-brisket-mini-nachos": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "src": "guide"
+  },
+  "gyg:bbq-beef-rib-mini-nachos": {
    "al": [
     "milk"
    ],
@@ -8910,6 +9219,18 @@
    ],
    "src": "guide"
   },
+  "gyg:bbq-beef-rib-mini-nacho-fries": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "sulphites",
+    "wheat"
+   ],
+   "src": "guide"
+  },
   "gyg:crispy-chicken-tenders-mini-caesar-salad": {
    "al": [
     "egg",
@@ -8925,6 +9246,20 @@
    "src": "guide"
   },
   "gyg:grilled-chicken-mini-caesar-salad": {
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "sesame",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "src": "guide"
+  },
+  "gyg:bbq-beef-rib-mini-caesar-salad": {
    "al": [
     "egg",
     "milk"
@@ -9332,6 +9667,20 @@
     "sesame",
     "shellfish",
     "sulphites"
+   ],
+   "src": "guide"
+  },
+  "oporto:bola-de-berlim": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "sesame",
+    "soy",
+    "treenut"
    ],
    "src": "guide"
   },
@@ -10813,6 +11162,40 @@
    "may": [
     "lupin",
     "milk",
+    "peanut",
+    "sesame",
+    "sulphites",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "rr:chicken-blt-burger": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [
+    "lupin",
+    "peanut",
+    "sesame",
+    "soy",
+    "sulphites",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "rr:cheesy-bacon-burger": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "lupin",
     "peanut",
     "sesame",
     "sulphites",
@@ -13956,6 +14339,14 @@
    "al": [],
    "may": [],
    "vg": "vegan",
+   "src": "guide"
+  },
+  "boost:lychee-charm-original-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "vg": "vegetarian",
    "src": "guide"
   },
   "boost:mango-co-original-": {

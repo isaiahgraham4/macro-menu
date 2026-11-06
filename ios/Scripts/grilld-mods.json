@@ -4530,6 +4530,10 @@
   "grilld:beef-dynamic": "1000801",
   "grilld:chicken-dynamic": "1000803",
   "grilld:veggie-dynamic": "1002856",
-  "grilld:dynamic-beef-cheeseburger": "1003007"
+  "grilld:dynamic-beef-cheeseburger": "1003007",
+  "grilld:the-classic-wrap": "1004100",
+  "grilld:bacon-club-wrap": "1004094",
+  "grilld:cali-green-goddess-wrap": "1004093",
+  "grilld:golden-caesar-wrap": "1004095"
  }
 }
