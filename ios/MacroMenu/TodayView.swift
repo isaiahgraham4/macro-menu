@@ -21,6 +21,7 @@ struct TodayView: View {
     @State private var mealTime = MealTime.suggested()
     @State private var tip: FeatureTip?
     @State private var planning = false
+    @State private var breakdown = false
     @Environment(HealthSync.self) private var health
     @Environment(Navigator.self) private var nav
     @Environment(\.dynamicTypeSize) private var typeSize
@@ -131,7 +132,21 @@ struct TodayView: View {
                         Text("Partial data for \(partialNames.joined(separator: ", ")): some logged items don't list them.")
                             .font(.roboto(.caption)).foregroundStyle(.secondary).frame(maxWidth: .infinity, alignment: .leading)
                     }
-                }.padding(.vertical, 10)
+                    HStack(spacing: 4) {
+                        Spacer()
+                        Text("Full breakdown")
+                        Image(systemName: "chevron.right").imageScale(.small)
+                    }
+                    .font(.roboto(.caption, weight: .medium)).foregroundStyle(.tint)
+                    .accessibilityHidden(true)
+                }
+                .padding(.vertical, 10)
+                // The whole card opens the day's breakdown: every food, macro and micronutrient.
+                .contentShape(Rectangle())
+                .onTapGesture { breakdown = true }
+                .accessibilityAddTraits(.isButton)
+                .accessibilityHint("Shows everything logged on this day, with micronutrients.")
+                .accessibilityAction { breakdown = true }
             } header: {
                 HStack {
                     Text(goals.name.trimmingCharacters(in: .whitespacesAndNewlines).lowercased().hasSuffix("targets") ? goals.name : "\(goals.name) targets")
@@ -251,6 +266,7 @@ struct TodayView: View {
                     }.accessibilityLabel("Tracking calendar, \(store.data.widgetCalories.streak(on: now)) day streak")
                 }
             }
+            .navigationDestination(isPresented: $breakdown) { DayBreakdownView(date: date, goals: goals) }
             .sheet(isPresented: $showingCalendar) {
                 NavigationStack { TrackingCalendarView(selectedDate: $date) }
             }

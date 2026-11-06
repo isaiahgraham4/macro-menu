@@ -50,8 +50,36 @@ import UniformTypeIdentifiers
         assert(!search.isEmpty && search.allSatisfy { $0.chain == "coles" || $0.name.lowercased().contains("coles") })
     }
 
+    /// The day breakdown behind a tap on Today's targets: macro shares, micronutrient totals, which foods listed them, and sources.
+    static func dayBreakdownChecks() {
+        let burger = Food(name: "Burger", kj: 2500, cal: 600, p: 30, c: 50, f: 30, nut: ["sodium": 1000, "sugar": 10])
+        let salad = Food(name: "Salad", kj: 400, cal: 100, p: 5, c: 10, f: 4, nut: ["sodium": 200, "fibre": 6])
+        let shake = Food(name: "Shake", kj: 1000, cal: 240, p: 25, c: 20, f: nil)
+        var goals = Goals(); goals.values = ["cal": 2000, "p": 150, "sodium": 2300, "fibre": 30, "calcium": 1000]
+        let entries = [
+            LogEntry(name: "Lunch", items: [Portion(food: burger, quantity: 2), Portion(food: salad)], mealTime: .lunch),
+            LogEntry(name: "Shake", items: [Portion(food: shake)], mealTime: nil)
+        ]
+        let day = DayBreakdown(entries: entries, goals: goals)
+        assert(day.foodCount == 3 && day.lines.map(\.name) == ["Burger", "Salad", "Shake"] && day.lines[0].amount == "2 × 1 serving")
+        assert(day.total.cal == 1540 && day.macros.map(\.key) == ["p", "c", "f"])
+        let protein = day.macros[0], fat = day.macros[2]
+        assert(protein.grams == 90 && protein.target == 150 && protein.minimum && !protein.partial)
+        assert(fat.partial && fat.grams == 64 && protein.sources.map(\.name) == ["Burger", "Shake", "Salad"])
+        assert(abs(day.macros.map(\.share).reduce(0, +) - 1) < 0.0001)
+        let sodium = day.nutrients.first { $0.key == "sodium" }!, fibre = day.nutrients.first { $0.key == "fibre" }!
+        assert(sodium.value == 2200 && sodium.listedBy == 2 && day.isPartial(sodium) && sodium.target == 2300 && !sodium.minimum)
+        assert(sodium.sources.map(\.value) == [2000, 200] && fibre.minimum && fibre.sources.map(\.name) == ["Salad"])
+        assert(day.nutrients.map(\.key) == ["sugar", "fibre", "sodium"] && day.unlisted == ["Calcium"])
+        assert(DayBreakdown.progress(2200, target: 2300, minimum: false, unit: "mg") == "96% of 2,300 mg limit")
+        assert(DayBreakdown.progress(6, target: 30, minimum: true, unit: "g") == "20% of 30 g goal" && DayBreakdown.progress(5, target: nil, minimum: true, unit: "g") == nil)
+        let empty = DayBreakdown(entries: [], goals: goals)
+        assert(empty.lines.isEmpty && empty.nutrients.isEmpty && empty.macros.allSatisfy { $0.share == 0 && $0.sources.isEmpty })
+    }
+
     @MainActor static func main() throws {
         try barcodeChecks()
+        dayBreakdownChecks()
         let root = FileManager.default.temporaryDirectory.appending(path: UUID().uuidString)
         try FileManager.default.createDirectory(at: root,withIntermediateDirectories: true)
         defer { try? FileManager.default.removeItem(at: root) }
