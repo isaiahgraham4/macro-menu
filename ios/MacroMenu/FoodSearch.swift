@@ -97,7 +97,8 @@ enum FoodSearch {
         var search = "", chain = "all", category = "all", sort = "density"
     }
 
-    /// Foods for the Best choices list: exact matches first, then typos from closest to furthest; each group in the chosen order.
+    /// Foods for the Best choices list: your own foods always come first, however close a menu item matches;
+    /// within each, exact matches first, then typos from closest to furthest; each group in the chosen order.
     /// Gives up early, returning nothing, if the task is cancelled.
     static func browse(_ foods: [Food], chainNames: [String: String], request: Browse) -> [Food] {
         let query = Query(request.search)
@@ -118,6 +119,7 @@ enum FoodSearch {
         guard !Task.isCancelled else { return [] }
         if request.sort == "value" { rows = rows.filter { ($0.price ?? 0) > 0 } }
         rows.sort { a,b in
+            if (a.chain == "mine") != (b.chain == "mine") { return a.chain == "mine" }
             let scoreA = scores[a.id] ?? 0, scoreB = scores[b.id] ?? 0
             if scoreA != scoreB { return scoreA < scoreB }
             switch request.sort {
