@@ -17047,6 +17047,68 @@
     "sulphites"
    ]
   },
+  "zam:doctor-s-order-burrito-grilled-chicken-chipotle-capsicum-": {
+   "meat": [
+    "chicken"
+   ],
+   "src": "name"
+  },
+  "zam:doctor-s-order-burrito-double-peppers-double-beans-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "zam:doctor-s-order-bowl-grilled-chicken-chipotle-capsicum-": {
+   "meat": [
+    "chicken"
+   ],
+   "src": "name"
+  },
+  "zam:doctor-s-order-bowl-double-peppers-double-beans-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "zam:loaded-chips-classic-beef-mince-": {
+   "meat": [
+    "beef"
+   ],
+   "src": "name"
+  },
+  "zam:loaded-chips-barbacoa-beef-": {
+   "meat": [
+    "beef"
+   ],
+   "src": "name"
+  },
+  "zam:loaded-chips-grilled-chicken-": {
+   "meat": [
+    "chicken"
+   ],
+   "src": "name"
+  },
+  "zam:loaded-chips-pork-": {
+   "meat": [
+    "pork"
+   ],
+   "src": "name"
+  },
+  "zam:loaded-chips-lamb-": {
+   "meat": [
+    "lamb"
+   ],
+   "src": "name"
+  },
+  "zam:loaded-chips-pulled-mushroom-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "zam:loaded-chips-fire-roasted-capsicum-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
   "zam:toasted-burrito-barbacoa-beef-": {
    "meat": [
     "beef"
@@ -19629,6 +19691,10 @@
    "meat": null,
    "src": null
   },
+  "crust:pepperoni-nouveau-large-": {
+   "meat": null,
+   "src": null
+  },
   "crust:pepperoni-pesto-caprese": {
    "meat": null,
    "src": null
@@ -19658,6 +19724,14 @@
    "src": null
   },
   "crust:pesto-chicken-club-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:pesto-chicken-large-": {
+   "meat": null,
+   "src": null
+  },
+  "crust:smoky-beef-brisket-large-": {
    "meat": null,
    "src": null
   },
@@ -21318,6 +21392,30 @@
    "src": null
   },
   "brumbys:butter-chicken-pie": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:red-thai-chicken-pie": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:traditional-hot-cross-bun": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:traditional-mini-hot-cross-bun": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:fruitless-hot-cross-bun": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:double-choc-hot-cross-bun": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:raspberry-white-choc-hot-cross-bun": {
    "meat": null,
    "src": null
   },

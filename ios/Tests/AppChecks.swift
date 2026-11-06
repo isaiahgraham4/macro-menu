@@ -85,7 +85,7 @@ import UniformTypeIdentifiers
         defer { try? FileManager.default.removeItem(at: root) }
         let catalogURL = URL(fileURLWithPath: CommandLine.arguments[1])
         let catalog = try JSONDecoder().decode(MenuCatalog.self,from: Data(contentsOf: catalogURL))
-        assert(catalog.foods.count == 2747)
+        assert(catalog.foods.count == 2767)
         let copycat = CopycatBook.load(catalogURL.deletingLastPathComponent().appending(path: "CopycatKitchen.json"))
         let compared = copycat.comparisons(menu: catalog.foods)
         assert(copycat.recipes.count == 12 && compared.count == 12)   // every recipe's shop item is on the menu
