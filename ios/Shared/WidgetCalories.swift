@@ -294,16 +294,28 @@ enum QuickLogQueue {
         FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: WidgetCalories.groupID)?
             .appendingPathComponent("quick-log-queue.json")
     }
-    static func read() -> [Request] {
-        guard let url = fileURL, let bytes = try? Data(contentsOf: url) else { return [] }
-        return (try? JSONDecoder().decode([Request].self, from: bytes)) ?? []
+    static func add(_ option: String, at date: Date) { _ = update { $0.append(Request(option: option, date: date)) } }
+    /// Takes everything off the queue at once, for Leanr to log. A tap the widget queues meanwhile waits for the next take.
+    static func take() -> [Request] {
+        update { requests in
+            defer { requests = [] }
+            return requests
+        } ?? []
     }
-    static func write(_ requests: [Request]) {
-        guard let url = fileURL else { return }
-        if requests.isEmpty { try? FileManager.default.removeItem(at: url); return }
-        try? JSONEncoder().encode(requests).write(to: url, options: [.atomic, .completeFileProtectionUntilFirstUserAuthentication])
+    /// Reads, changes and saves the queue as one step that the widget and Leanr take turns at, so neither overwrites
+    /// a tap the other just added. Nil when the shared folder isn't there.
+    private static func update<T>(_ change: (inout [Request]) -> T) -> T? {
+        guard let url = fileURL else { return nil }
+        var result: T?
+        var coordinationError: NSError?
+        NSFileCoordinator().coordinate(writingItemAt: url, options: [], error: &coordinationError) { url in
+            var requests = (try? Data(contentsOf: url)).flatMap { try? JSONDecoder().decode([Request].self, from: $0) } ?? []
+            result = change(&requests)
+            if requests.isEmpty { try? FileManager.default.removeItem(at: url) }
+            else { try? JSONEncoder().encode(requests).write(to: url, options: [.atomic, .completeFileProtectionUntilFirstUserAuthentication]) }
+        }
+        return result
     }
-    static func add(_ option: String, at date: Date) { write(read() + [Request(option: option, date: date)]) }
 
     /// Shows a queued request on the widgets straight away: its calories and nutrients in today's totals, a tick on the option,
     /// a planned meal gone from the plan or the water added. Returns the widgets that changed, tapped-on one first, to reload.

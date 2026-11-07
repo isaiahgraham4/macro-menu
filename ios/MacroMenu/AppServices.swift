@@ -54,9 +54,10 @@ import UserNotifications
 
     /// Logs anything the widget had to queue while Leanr couldn't run it.
     static func logQueued() {
-        let requests = QuickLogQueue.read()
+        // While saved data can't be read nothing can be logged, so leave the taps queued rather than lose them.
+        guard store.loadError == nil else { return }
+        let requests = QuickLogQueue.take()
         guard !requests.isEmpty else { return }
-        QuickLogQueue.write([])
         if store.applyQueuedQuickLogs(requests) > 0 { store.notice = "Logged from your widget" }
     }
 

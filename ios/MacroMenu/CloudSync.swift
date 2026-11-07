@@ -48,7 +48,18 @@ final class CloudSync {
         }
     }
 
+    /// The sync under way, so a second call waits for it and deleting the iCloud copy can let it finish first.
+    private var running: Task<Void, Never>?
+
     func sync() async {
+        if let running { return await running.value }
+        let task = Task { await run() }
+        running = task
+        await task.value
+        running = nil
+    }
+
+    private func run() async {
         guard enabled, !syncing, let store, store.loadError == nil else { return }
         syncing = true; changedWhileSyncing = false
         defer {
@@ -59,23 +70,28 @@ final class CloudSync {
         guard let file = await Self.fileURL() else {
             problem = "Sign in to iCloud and turn on iCloud Drive in the Settings app to sync."; return
         }
-        let defaults = UserDefaults.standard
-        let dirty = defaults.bool(forKey: Self.dirtyKey)
-        let lastRemote = defaults.object(forKey: Self.remoteKey) as? Date
         let remote: Snapshot?
         do { remote = try await Self.read(file) }
         catch is NotDownloaded {
             // The iCloud copy is there but not on this device yet. Uploading now could replace it, so try again later.
             problem = "Waiting for your iCloud copy to download."; schedule(after: 30); return
         } catch { problem = "Couldn’t read your iCloud copy. \(error.localizedDescription)"; return }
+        // Sync was turned off (Delete all my data) while iCloud was being read: take nothing in and upload nothing.
+        guard enabled else { return }
+        // Read only now: a change saved while the iCloud copy was being read must be merged, not replaced by it.
+        let defaults = UserDefaults.standard
+        let dirty = defaults.bool(forKey: Self.dirtyKey)
+        let lastRemote = defaults.object(forKey: Self.remoteKey) as? Date
 
         // A fresh install has nothing worth merging (only default targets), so it just takes the iCloud copy.
         let fresh = store.data.foods.isEmpty && store.data.logs.isEmpty && store.data.meals.isEmpty && store.data.weightLog.isEmpty && store.data.measurementLog.isEmpty && store.data.water == nil && store.data.plans == nil && store.data.checkIns == nil
         var upload: AppData?
         if let remote, remote.data.isValid, !Self.same(remote.modified, lastRemote) {
             if dirty && !fresh {
-                // Both sides changed: keep everything from both.
+                // Both sides changed: keep everything from both. An item changed on this device since the last sync keeps
+                // this device's version; anything else takes iCloud's.
                 var merged = AppStore.merged(store.data, remote.data)
+                if let base = Self.readBase() { merged = AppStore.keepingLocalEdits(merged, local: store.data, base: base) }
                 merged.tray = store.data.tray
                 guard store.applySynced(merged) else { problem = "Couldn’t save synced data on this device."; return }
                 upload = merged
@@ -83,6 +99,7 @@ final class CloudSync {
                 // The meal being built stays on each device.
                 var incoming = remote.data.keepingHealthWeights(from: store.data); incoming.tray = store.data.tray
                 guard store.applySynced(incoming) else { problem = "Couldn’t save synced data on this device."; return }
+                Self.saveBase(remote.data)
                 defaults.set(remote.modified, forKey: Self.remoteKey)
                 lastSynced = remote.modified; problem = nil
                 return
@@ -98,6 +115,7 @@ final class CloudSync {
         // Weights read from Apple Health stay on the device (Apple's rule for HealthKit data).
         let snapshot = Snapshot(modified: Date(timeIntervalSince1970: Date().timeIntervalSince1970.rounded(.down)), data: upload.forICloud)
         do { try await Self.write(snapshot, to: file) } catch { problem = "Couldn’t upload to iCloud. \(error.localizedDescription)"; return }
+        Self.saveBase(snapshot.data)
         defaults.set(snapshot.modified, forKey: Self.remoteKey)
         defaults.set(false, forKey: Self.dirtyKey)
         lastSynced = snapshot.modified; problem = nil
@@ -108,8 +126,11 @@ final class CloudSync {
     @discardableResult func deleteCopy() async -> Bool {
         pending?.cancel()
         enabled = false
+        // A sync under way stops at its next check, but an upload already started finishes, so let it land before deleting.
+        await running?.value
         let defaults = UserDefaults.standard
         defaults.removeObject(forKey: Self.remoteKey); defaults.set(false, forKey: Self.dirtyKey)
+        try? FileManager.default.removeItem(at: Self.baseURL)
         lastSynced = nil; problem = nil
         guard let file = await Self.fileURL() else { return false }
         return await Task.detached {
@@ -136,6 +157,17 @@ final class CloudSync {
             try? FileManager.default.createDirectory(at: folder, withIntermediateDirectories: true)
             return folder.appending(path: "Leanr.json")
         }.value
+    }
+
+    /// The copy this device and iCloud last agreed on, so a merge can tell which side changed an item since.
+    /// Saved with plain dates, unlike the iCloud copy, so times compare exactly with the data on this device.
+    private static var baseURL: URL { URL.applicationSupportDirectory.appending(path: "MacroMenu/icloud-base.json") }
+    private static func readBase() -> AppData? {
+        guard let bytes = try? Data(contentsOf: baseURL), let base = try? JSONDecoder().decode(AppData.self, from: bytes), base.isValid else { return nil }
+        return base
+    }
+    private static func saveBase(_ data: AppData) {
+        try? JSONEncoder().encode(data).write(to: baseURL, options: .atomic)
     }
 
     /// The iCloud copy exists but couldn't be read yet (usually still downloading).

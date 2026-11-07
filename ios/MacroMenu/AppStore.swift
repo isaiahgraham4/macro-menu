@@ -450,4 +450,59 @@ final class AppStore {
         }
         return state
     }
+
+    /// `merged` (where the other device's copy won each item both had) with this device's own changes put back. Anything that
+    /// differs here from `base`, the copy both devices last agreed on, was changed on this device since, so its version wins:
+    /// an edited meal, food, target set, weight or measurement, a logged meal moved to another day, or water added or taken off.
+    static func keepingLocalEdits(_ merged: AppData, local: AppData, base: AppData) -> AppData {
+        var state = merged
+        func keep<T: Identifiable & Equatable>(_ items: inout [T], local: [T], base: [T]) {
+            let before = Dictionary(base.map { ($0.id, $0) }) { a, _ in a }
+            for item in local where before[item.id] != item {
+                if let i = items.firstIndex(where: { $0.id == item.id }) { items[i] = item } else { items.append(item) }
+            }
+        }
+        func keep(_ days: inout [String: [LogEntry]], local: [String: [LogEntry]], base: [String: [LogEntry]]) {
+            var before: [UUID: (day: String, entry: LogEntry)] = [:]
+            for (day, entries) in base { for entry in entries { before[entry.id] = (day, entry) } }
+            for (day, entries) in local {
+                for entry in entries {
+                    if let old = before[entry.id], old.day == day, old.entry == entry { continue }
+                    // Moved to this day here: out of any day the other copy still has it on.
+                    for other in Array(days.keys) where other != day && days[other]?.contains(where: { $0.id == entry.id }) == true {
+                        days[other]?.removeAll { $0.id == entry.id }
+                        if days[other]?.isEmpty == true { days[other] = nil }
+                    }
+                    if let i = days[day]?.firstIndex(where: { $0.id == entry.id }) { days[day]?[i] = entry }
+                    else { days[day, default: []].append(entry) }
+                }
+            }
+        }
+        keep(&state.foods, local: local.foods, base: base.foods)
+        keep(&state.meals, local: local.meals, base: base.meals)
+        keep(&state.goalSets, local: local.goalSets, base: base.goalSets)
+        for (day, goal) in local.dayGoals where base.dayGoals[day] != goal { state.dayGoals[day] = goal }
+        keep(&state.logs, local: local.logs, base: base.logs)
+        if local.plans != nil || base.plans != nil {
+            var plans = state.plans ?? [:]
+            keep(&plans, local: local.plans ?? [:], base: base.plans ?? [:])
+            state.plans = plans.isEmpty ? nil : plans
+        }
+        if !local.weightLog.isEmpty {
+            var weights = state.weightLog
+            keep(&weights, local: local.weightLog, base: base.weightLog)
+            state.weights = weights
+        }
+        if !local.measurementLog.isEmpty {
+            var measurements = state.measurementLog
+            keep(&measurements, local: local.measurementLog, base: base.measurementLog)
+            state.measurements = measurements
+        }
+        // A day's water changed here (added, or taken off) beats the merge's higher total.
+        let waterHere = local.water ?? [:], waterBefore = base.water ?? [:]
+        var water = state.water ?? [:]
+        for day in Set(waterHere.keys).union(waterBefore.keys) where waterHere[day] != waterBefore[day] { water[day] = waterHere[day] }
+        state.water = water.isEmpty ? nil : water
+        return state
+    }
 }

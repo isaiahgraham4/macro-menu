@@ -251,7 +251,7 @@ struct LogEntry: Codable, Identifiable, Hashable, Sendable {
     var mealTime: MealTime? = nil
     var isValid: Bool { !name.isEmpty && !items.isEmpty && items.allSatisfy(\.isValid) }
 }
-struct Goals: Codable, Identifiable, Sendable {
+struct Goals: Codable, Identifiable, Equatable, Sendable {
     var id = UUID()
     var name = "Every day"
     var values: [String: Double] = ["cal":2200,"p":150]

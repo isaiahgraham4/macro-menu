@@ -1847,6 +1847,36 @@ import UniformTypeIdentifiers
             assert(merged.plans?[dayKey(tomorrow)]?.count == 1 && merged.checkInPace == -0.5 && merged.isValid)
         }
 
+        // iCloud merge when both devices changed: this device's edits since the last sync win, the other device's win elsewhere.
+        do {
+            let rice = Food(id: "rice", name: "Rice", kj: 840, cal: 200, p: 4)
+            var base = AppData()
+            let edited = LogEntry(name: "Lunch", items: [Portion(food: rice)], time: Date(timeIntervalSince1970: 1_790_000_000))
+            let untouched = LogEntry(name: "Dinner", items: [Portion(food: rice)], time: Date(timeIntervalSince1970: 1_790_020_000))
+            let moved = LogEntry(name: "Snack", items: [Portion(food: rice)], time: Date(timeIntervalSince1970: 1_790_030_000))
+            base.logs["2026-10-01"] = [edited, untouched, moved]
+            base.foods = [Food(id: "mine-1", name: "Shake", kj: 840, cal: 200, p: 30)]
+            base.water = ["2026-10-01": 1000]
+            // Here: lunch doubled, the snack moved to the next day, the shake renamed and water taken off.
+            var local = base
+            local.logs["2026-10-01"]![0].items[0].quantity = 2
+            local.logs["2026-10-01"]!.removeAll { $0.id == moved.id }
+            local.logs["2026-10-02"] = [moved]
+            local.foods[0].name = "Protein shake"
+            local.water = ["2026-10-01": 500]
+            // The other device: dinner halved, and an unchanged copy of everything else.
+            var remote = base
+            remote.logs["2026-10-01"]![1].items[0].quantity = 0.5
+            let merged = AppStore.keepingLocalEdits(AppStore.merged(local, remote), local: local, base: base)
+            let day = merged.logs["2026-10-01"] ?? []
+            assert(day.first { $0.id == edited.id }?.items[0].quantity == 2, "this device's edit kept")
+            assert(day.first { $0.id == untouched.id }?.items[0].quantity == 0.5, "the other device's edit kept")
+            assert(!day.contains { $0.id == moved.id } && merged.logs["2026-10-02"]?.map(\.id) == [moved.id], "moved, not copied")
+            assert(merged.foods.map(\.name) == ["Protein shake"] && merged.water?["2026-10-01"] == 500 && merged.isValid)
+            // Without this device's changes, the other device's copy wins as before.
+            assert(AppStore.keepingLocalEdits(AppStore.merged(base, remote), local: base, base: base).logs["2026-10-01"]?[1].items[0].quantity == 0.5)
+        }
+
         // Insights: patterns from the log, only when there's enough to go on.
         do {
             let monday = calendar.date(from: DateComponents(year: 2026, month: 6, day: 1))!
