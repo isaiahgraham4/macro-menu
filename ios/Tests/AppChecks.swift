@@ -1097,11 +1097,14 @@ import UniformTypeIdentifiers
         assert(Set(searched.map(\.name)) == ["Chicken breast, raw", "Chicken breast, cooked", "Chicken breast, skin on, roasted", "Roast chicken, breast meat only"])
         assert(MealSwaps.options(for: Portion(food: breast), foods: everydayStore.foods).isEmpty)
         assert(FoodSearch.browse(everydayStore.foods, chainNames: [:], request: .init(search: "banana")).first?.name == "Banana")
-        // Your own foods always come first, even when a menu item matches more closely or ranks higher in the chosen order.
+        // On the Best choices list your own foods always come first, even when a menu item matches more closely or ranks higher in the chosen order.
         let myBanana = Food(id: "my-banana", chain: "mine", name: "Banana smoothie bowl", kj: 2000, cal: 480, p: 2)
-        let bananaFirst = FoodSearch.browse(everydayStore.foods + [myBanana], chainNames: [:], request: .init(search: "banana"))
+        let bananaFirst = FoodSearch.browse(everydayStore.foods + [myBanana], chainNames: [:], request: .init(search: "banana", mineFirst: true))
         assert(bananaFirst.first?.id == "my-banana" && bananaFirst.dropFirst().first?.name == "Banana")
-        assert(FoodSearch.browse(everydayStore.foods + [myBanana], chainNames: [:], request: .init(sort: "protein")).first?.id == "my-banana")
+        assert(FoodSearch.browse(everydayStore.foods + [myBanana], chainNames: [:], request: .init(sort: "protein", mineFirst: true)).first?.id == "my-banana")
+        // Everywhere else (Siri, photo matching) the closest match still comes first.
+        let bananaClosest = FoodSearch.browse(everydayStore.foods + [myBanana], chainNames: [:], request: .init(search: "banana"))
+        assert(bananaClosest.first?.name == "Banana" && bananaClosest.contains { $0.id == "my-banana" })
         // "rice" finds rice itself before things made with it ("Rice pudding").
         let rice = FoodSearch.browse(everydayStore.foods, chainNames: [:], request: .init(search: "rice", chain: Food.everyday)).map(\.name)
         assert(rice.prefix(4).allSatisfy { !$0.hasPrefix("Rice ") } && rice.contains("Rice pudding") && everyday.count >= 330)

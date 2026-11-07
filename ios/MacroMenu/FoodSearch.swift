@@ -95,10 +95,13 @@ enum FoodSearch {
     /// What the Best choices list is showing.
     struct Browse: Equatable, Sendable {
         var search = "", chain = "all", category = "all", sort = "density"
+        /// Your own foods before everything else, however close a menu item matches. Only the Best choices list asks for this;
+        /// Siri and photo matching keep the closest match first.
+        var mineFirst = false
     }
 
-    /// Foods for the Best choices list: your own foods always come first, however close a menu item matches;
-    /// within each, exact matches first, then typos from closest to furthest; each group in the chosen order.
+    /// Foods for the Best choices list: exact matches first, then typos from closest to furthest; each group in the chosen order.
+    /// With `mineFirst`, your own foods come before all of that, each part keeping that order.
     /// Gives up early, returning nothing, if the task is cancelled.
     static func browse(_ foods: [Food], chainNames: [String: String], request: Browse) -> [Food] {
         let query = Query(request.search)
@@ -119,7 +122,6 @@ enum FoodSearch {
         guard !Task.isCancelled else { return [] }
         if request.sort == "value" { rows = rows.filter { ($0.price ?? 0) > 0 } }
         rows.sort { a,b in
-            if (a.chain == "mine") != (b.chain == "mine") { return a.chain == "mine" }
             let scoreA = scores[a.id] ?? 0, scoreB = scores[b.id] ?? 0
             if scoreA != scoreB { return scoreA < scoreB }
             switch request.sort {
@@ -130,6 +132,7 @@ enum FoodSearch {
             default: return a.p / max(a.cal,1) > b.p / max(b.cal,1)
             }
         }
+        if request.mineFirst { rows = rows.filter { $0.chain == "mine" } + rows.filter { $0.chain != "mine" } }
         return rows
     }
 

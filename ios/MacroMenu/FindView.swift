@@ -267,7 +267,7 @@ struct BrowseView: View {
     @State private var hidden = 0
     /// The request the rows were worked out for; nil until the first list is ready.
     @State private var shown: FoodSearch.Browse?
-    private var request: FoodSearch.Browse { .init(search: search, chain: chain, category: category, sort: sort) }
+    private var request: FoodSearch.Browse { .init(search: search, chain: chain, category: category, sort: sort, mineFirst: true) }
     /// Also redo the list when your own foods change or the menu loads.
     private struct Key: Equatable { var request: FoodSearch.Browse; var custom: [Food]; var catalog: String; var diet: String }
 
