@@ -706,6 +706,26 @@
    ],
    "src": "guide"
   },
+  "mcd:nashville-mcshaker-fries-medium-": {
+   "al": [],
+   "may": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "src": "guide"
+  },
+  "mcd:nashville-mcshaker-fries-large-": {
+   "al": [],
+   "may": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "src": "guide"
+  },
   "mcd:nashville-shaker-seasoning": {
    "al": [],
    "may": [],
@@ -754,7 +774,29 @@
    ],
    "src": "guide"
   },
+  "mcd:flat-white-small-full-cream-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
   "mcd:cappuccino-medium-full-cream-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:cappuccino-small-full-cream-": {
    "al": [
     "milk"
    ],
@@ -776,12 +818,49 @@
    ],
    "src": "guide"
   },
+  "mcd:iced-latte-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:iced-latte-large-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
   "mcd:coca-cola-medium-": {
    "al": [],
    "may": [],
    "src": "guide"
   },
+  "mcd:coca-cola-small-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
   "mcd:coca-cola-zero-sugar-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:coca-cola-zero-sugar-small-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:coca-cola-zero-sugar-large-": {
    "al": [],
    "may": [],
    "src": "guide"
@@ -1184,7 +1263,21 @@
    "may": [],
    "src": "guide"
   },
+  "mcd:hot-fudge-sundae-large-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
   "mcd:caramel-sundae-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:caramel-sundae-large-": {
    "al": [
     "milk"
    ],
@@ -1198,7 +1291,21 @@
    "may": [],
    "src": "guide"
   },
+  "mcd:strawberry-sundae-large-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
   "mcd:plain-sundae-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:plain-sundae-large-": {
    "al": [
     "milk"
    ],
@@ -1239,7 +1346,35 @@
    "may": [],
    "src": "guide"
   },
+  "mcd:chocolate-shake-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:chocolate-shake-medium-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
   "mcd:vanilla-shake-large-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:vanilla-shake-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:vanilla-shake-medium-": {
    "al": [
     "milk"
    ],
@@ -1253,7 +1388,32 @@
    "may": [],
    "src": "guide"
   },
+  "mcd:strawberry-shake-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:strawberry-shake-medium-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
   "mcd:coffee-frappe-large-": {
+   "al": [
+    "milk",
+    "sulphites"
+   ],
+   "may": [
+    "gluten",
+    "wheat"
+   ],
+   "src": "guide"
+  },
+  "mcd:coffee-frappe-medium-": {
    "al": [
     "milk",
     "sulphites"
@@ -1275,6 +1435,17 @@
    ],
    "src": "guide"
   },
+  "mcd:salted-caramel-frappe-medium-": {
+   "al": [
+    "milk",
+    "sulphites"
+   ],
+   "may": [
+    "gluten",
+    "wheat"
+   ],
+   "src": "guide"
+  },
   "mcd:choc-frappe-large-": {
    "al": [
     "gluten",
@@ -1283,6 +1454,30 @@
     "wheat"
    ],
    "may": [],
+   "src": "guide"
+  },
+  "mcd:choc-frappe-medium-": {
+   "al": [
+    "gluten",
+    "milk",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:strawberry-shortcake-frappe-large-": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "peanut",
+    "treenut"
+   ],
    "src": "guide"
   },
   "mcd:choc-coconut-frappe-medium-": {
@@ -1294,7 +1489,38 @@
    "may": [],
    "src": "guide"
   },
+  "mcd:choc-coconut-frappe-large-": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
   "mcd:latte-medium-full-cream-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:latte-small-full-cream-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:latte-large-full-cream-": {
    "al": [
     "milk"
    ],
@@ -1321,6 +1547,11 @@
    "may": [],
    "src": "guide"
   },
+  "mcd:long-black-small-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
   "mcd:mocha-medium-full-cream-": {
    "al": [
     "milk"
@@ -1332,7 +1563,52 @@
    ],
    "src": "guide"
   },
+  "mcd:mocha-small-full-cream-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:mocha-large-full-cream-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
   "mcd:hot-chocolate-medium-full-cream-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:hot-chocolate-small-full-cream-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:hot-chocolate-large-full-cream-": {
    "al": [
     "milk"
    ],
@@ -1356,7 +1632,42 @@
    ],
    "src": "guide"
   },
+  "mcd:vanilla-chai-latte-small-": {
+   "al": [
+    "gluten",
+    "milk",
+    "sulphites"
+   ],
+   "may": [
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:vanilla-chai-latte-large-": {
+   "al": [
+    "gluten",
+    "milk",
+    "sulphites"
+   ],
+   "may": [
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
   "mcd:matcha-latte-medium-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:matcha-latte-small-": {
    "al": [
     "milk"
    ],
@@ -1372,7 +1683,39 @@
    "may": [],
    "src": "guide"
   },
+  "mcd:iced-long-black-small-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:iced-long-black-large-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
   "mcd:iced-mocha-medium-full-cream-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:iced-mocha-small-full-cream-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:iced-mocha-large-full-cream-": {
    "al": [
     "milk"
    ],
@@ -1394,7 +1737,51 @@
    ],
    "src": "guide"
   },
+  "mcd:iced-chocolate-small-full-cream-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:iced-chocolate-large-full-cream-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
   "mcd:deluxe-caramel-iced-coffee-medium-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:deluxe-caramel-iced-coffee-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:deluxe-caramel-iced-coffee-large-": {
    "al": [
     "milk"
    ],
@@ -1416,6 +1803,28 @@
    ],
    "src": "guide"
   },
+  "mcd:deluxe-hazelnut-iced-coffee-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:deluxe-hazelnut-iced-coffee-large-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
   "mcd:deluxe-vanilla-iced-coffee-medium-": {
    "al": [
     "milk"
@@ -1427,7 +1836,64 @@
    ],
    "src": "guide"
   },
+  "mcd:deluxe-vanilla-iced-coffee-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:deluxe-vanilla-iced-coffee-large-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:iced-velvet-mocha-with-cold-foam-small-": {
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:iced-velvet-mocha-with-cold-foam-large-": {
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ],
+   "src": "guide"
+  },
   "mcd:iced-golden-caramel-latte-medium-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:iced-golden-caramel-latte-small-": {
    "al": [
     "milk"
    ],
@@ -1449,7 +1915,51 @@
    ],
    "src": "guide"
   },
+  "mcd:iced-tiramisu-latte-small-": {
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:iced-tiramisu-latte-large-": {
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ],
+   "src": "guide"
+  },
   "mcd:brown-sugar-shaken-espresso-oat-milk-medium-": {
+   "al": [
+    "gluten"
+   ],
+   "may": [
+    "milk",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:brown-sugar-shaken-espresso-oat-milk-small-": {
+   "al": [
+    "gluten"
+   ],
+   "may": [
+    "milk",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:brown-sugar-shaken-espresso-oat-milk-large-": {
    "al": [
     "gluten"
    ],
@@ -1471,7 +1981,40 @@
    ],
    "src": "guide"
   },
+  "mcd:iced-matcha-latte-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
   "mcd:iced-matcha-latte-with-cold-foam-medium-": {
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:iced-matcha-latte-with-cold-foam-small-": {
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:iced-matcha-latte-with-cold-foam-large-": {
    "al": [
     "milk",
     "soy"
@@ -1493,7 +2036,40 @@
    ],
    "src": "guide"
   },
+  "mcd:iced-strawberry-matcha-latte-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
   "mcd:iced-strawberry-matcha-latte-with-cold-foam-medium-": {
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:iced-strawberry-matcha-latte-with-cold-foam-small-": {
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:iced-strawberry-matcha-latte-with-cold-foam-large-": {
    "al": [
     "milk",
     "soy"
@@ -1515,7 +2091,51 @@
    ],
    "src": "guide"
   },
+  "mcd:iced-vanilla-matcha-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:iced-vanilla-matcha-large-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ],
+   "src": "guide"
+  },
   "mcd:iced-vanilla-matcha-with-cold-foam-medium-": {
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:iced-vanilla-matcha-with-cold-foam-small-": {
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ],
+   "src": "guide"
+  },
+  "mcd:iced-vanilla-matcha-with-cold-foam-large-": {
    "al": [
     "milk",
     "soy"
@@ -1534,7 +2154,33 @@
    ],
    "src": "guide"
   },
+  "mcd:strawberry-watermelon-refresher-small-": {
+   "al": [],
+   "may": [
+    "gluten",
+    "wheat"
+   ],
+   "src": "guide"
+  },
+  "mcd:strawberry-watermelon-refresher-large-": {
+   "al": [],
+   "may": [
+    "gluten",
+    "wheat"
+   ],
+   "src": "guide"
+  },
   "mcd:mango-popping-refresher-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:mango-popping-refresher-small-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:mango-popping-refresher-large-": {
    "al": [],
    "may": [],
    "src": "guide"
@@ -1547,7 +2193,33 @@
    "may": [],
    "src": "guide"
   },
+  "mcd:berry-blast-sprite-small-": {
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:berry-blast-sprite-large-": {
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [],
+   "src": "guide"
+  },
   "mcd:popping-green-apple-sprite-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:popping-green-apple-sprite-small-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:popping-green-apple-sprite-large-": {
    "al": [],
    "may": [],
    "src": "guide"
@@ -1597,7 +2269,27 @@
    "may": [],
    "src": "guide"
   },
+  "mcd:lemon-drink-small-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:lemon-drink-large-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
   "mcd:lemon-lime-bitters-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:lemon-lime-bitters-small-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:lemon-lime-bitters-large-": {
    "al": [],
    "may": [],
    "src": "guide"
@@ -1607,7 +2299,22 @@
    "may": [],
    "src": "guide"
   },
+  "mcd:vanilla-coke-small-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:vanilla-coke-large-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
   "mcd:sprite-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:sprite-small-": {
    "al": [],
    "may": [],
    "src": "guide"
@@ -1617,7 +2324,22 @@
    "may": [],
    "src": "guide"
   },
+  "mcd:fanta-orange-small-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
   "mcd:raspberry-fanta-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:raspberry-fanta-small-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:raspberry-fanta-large-": {
    "al": [],
    "may": [],
    "src": "guide"
@@ -1627,7 +2349,22 @@
    "may": [],
    "src": "guide"
   },
+  "mcd:frozen-coke-small-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
   "mcd:frozen-coke-zero-sugar-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:frozen-coke-zero-sugar-small-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:frozen-coke-zero-sugar-large-": {
    "al": [],
    "may": [],
    "src": "guide"
@@ -1637,7 +2374,22 @@
    "may": [],
    "src": "guide"
   },
+  "mcd:frozen-fanta-orange-small-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
   "mcd:frozen-fanta-lemon-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:frozen-fanta-lemon-small-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:frozen-fanta-lemon-large-": {
    "al": [],
    "may": [],
    "src": "guide"
@@ -1647,7 +2399,22 @@
    "may": [],
    "src": "guide"
   },
+  "mcd:frozen-fanta-raspberry-small-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
   "mcd:frozen-fanta-blueberry-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:frozen-fanta-blueberry-small-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:frozen-fanta-blueberry-large-": {
    "al": [],
    "may": [],
    "src": "guide"
@@ -1657,7 +2424,27 @@
    "may": [],
    "src": "guide"
   },
+  "mcd:frozen-fanta-mango-small-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:frozen-fanta-mango-large-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
   "mcd:frozen-fanta-mango-with-strawberry-popping-pearls-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:frozen-fanta-mango-with-strawberry-popping-pearls-small-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:frozen-fanta-mango-with-strawberry-popping-pearls-large-": {
    "al": [],
    "may": [],
    "src": "guide"
@@ -1730,7 +2517,17 @@
    "may": [],
    "src": "guide"
   },
+  "mcd:english-breakfast-tea-small-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
   "mcd:earl-grey-tea-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:earl-grey-tea-small-": {
    "al": [],
    "may": [],
    "src": "guide"
@@ -1740,12 +2537,42 @@
    "may": [],
    "src": "guide"
   },
+  "mcd:green-tea-small-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
   "mcd:peppermint-tea-medium-": {
    "al": [],
    "may": [],
    "src": "guide"
   },
+  "mcd:peppermint-tea-small-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:peppermint-tea-large-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:orange-juice-small-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
   "mcd:orange-apple-juice-medium-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:orange-apple-juice-small-": {
+   "al": [],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:orange-apple-juice-large-": {
    "al": [],
    "may": [],
    "src": "guide"
@@ -2860,7 +3687,7 @@
    "text": "Turkish Roll (Water, Wheat Flour [contains Vitamin B (Thiamin) and Folic Acid], Iodised Salt, Baco (Vegetable Oil and Fats contains 471, 476), Soft Improver (contains 481), Sugar, Yeast,Sesame Seeds (White and Black), Nigella Seeds), Eggs (Egg), Sausage Patty (Meat (96%) [Pork, Beef], Water, Soy Protein, Salt, Spices, Herbs, Sugar, Dextrose, Yeast Extract, Dehydrated Vegetable, Vegetable Oil), Cheese SOS (Cheese (CowsMilk, Salt, Culture, Microbial/Calves Rennet), Water, Non-Fat Milk Solids (Cow’s Milk), Milk Solids (Cow’s Milk), Emulsifiers (331(iii), 322(i)), Acidity Regulators (330), Salt, Natural Cheese Flavour, Colour (160a), Natural Preservative (234)), Sauce BBQ Smoky (Tomato Puree (48%), Sugar, Vinegar, Apple Paste, Thickener, Caramel Colour, Molasses, Salt, Smoke Flavour, Dehydrated Vegetables, Worcestershire Flavour, Spice.), Butter Clarified (Milk Fat)",
    "src": "guide"
   },
-  "hj:thick-cut-chips": {
+  "hj:thick-cut-chips-small-": {
    "al": [
     "sulphites"
    ],
@@ -2868,9 +3695,32 @@
     "gluten",
     "wheat"
    ],
+   "text": "Chips (Potato, Vegetable Oil, Modified Potato Starches (1412, 1400, 1414), Rice Flour, Potato Dextrin, Salt, Raising Agents (450, 500), Thickener (415), Maltodextrin), Salt Seasoned (Salt 74%, Maltodextrin (Corn), Yeast Extract, Rice Flour, Vegetable Powders (Onion, Garlic), Canola Oil)",
    "src": "guide"
   },
-  "hj:battered-onion-rings": {
+  "hj:thick-cut-chips-medium-": {
+   "al": [
+    "sulphites"
+   ],
+   "may": [
+    "gluten",
+    "wheat"
+   ],
+   "text": "Chips (Potato, Vegetable Oil, Modified Potato Starches (1412, 1400, 1414), Rice Flour, Potato Dextrin, Salt, Raising Agents (450, 500), Thickener (415), Maltodextrin), Salt Seasoned (Salt 74%, Maltodextrin (Corn), Yeast Extract, Rice Flour, Vegetable Powders (Onion, Garlic), Canola Oil)",
+   "src": "guide"
+  },
+  "hj:thick-cut-chips-large-": {
+   "al": [
+    "sulphites"
+   ],
+   "may": [
+    "gluten",
+    "wheat"
+   ],
+   "text": "Chips (Potato, Vegetable Oil, Modified Potato Starches (1412, 1400, 1414), Rice Flour, Potato Dextrin, Salt, Raising Agents (450, 500), Thickener (415), Maltodextrin), Salt Seasoned (Salt 74%, Maltodextrin (Corn), Yeast Extract, Rice Flour, Vegetable Powders (Onion, Garlic), Canola Oil)",
+   "src": "guide"
+  },
+  "hj:battered-onion-rings-medium-": {
    "al": [
     "gluten",
     "milk",
@@ -2878,6 +3728,18 @@
     "wheat"
    ],
    "may": [],
+   "text": "Onion Ring (Onion (50%), Water, Wheat Flour, Soybean Oil, Rice Flour, Thickener (1404, 1420, 415), Starch, Sugar, Onion Powder, Salt, Mineral Salt (450i, 500ii), Vegetable Oil, Whey Powder,Wheat Gluten , Soybean Flour, Yeast Extract, Corn Flour, Flavour, Brown Sugar. )",
+   "src": "guide"
+  },
+  "hj:battered-onion-rings-large-": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "text": "Onion Ring (Onion (50%), Water, Wheat Flour, Soybean Oil, Rice Flour, Thickener (1404, 1420, 415), Starch, Sugar, Onion Powder, Salt, Mineral Salt (450i, 500ii), Vegetable Oil, Whey Powder,Wheat Gluten , Soybean Flour, Yeast Extract, Corn Flour, Flavour, Brown Sugar. )",
    "src": "guide"
   },
   "hj:hash-brown": {
@@ -3585,7 +4447,17 @@
    "text": "Chicken Tenders Southern Style (Chicken (60%), Wheat Flour, Water, Vegetable Oil, Mineral Salts (508, 451, 452, 450, 500), Salt, Starch (Potato, Tapioca), Spices, Vegetable Gum (415), Herbs, Dehydrated Vegetables (Onion, Garlic), Flavour, Yeast Extract, Yeast, Sugar, Wheat Gluten), Tortilla Flour 5\" (Wheat Flour [(64%), Thiamine, Folic Acid], Water, Vegetable Shortening [Antioxidant (307b)], Sugar, Mineral Salts (500, 450, 341), Acidity Regulator (297), Iodised Salt, Preservative (282), Yeast), Lettuce (Iceberg Lettuce), Sauce Signature Extra Spicy (Vegetable Oil, Water, Gherkin Puree (Gherkin, Food Acid [260]), Vinegar, Reconstituted Lemon Juice, Sugar, Chilli (Food Acid [260]), Thickeners (1442, 415), Salt, Egg Yolk Powder, Mustard Flour, Spices, Colour (160c), Preservatives (202, 211, 234), Acidity Regulator (330), Natural Flavours)",
    "src": "guide"
   },
-  "hj:cappuccino": {
+  "hj:cappuccino-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "soy"
+   ],
+   "text": "Milk Full Cream (Milk), Coffee Grinders (100% imported Coffee Beans ), Water (Water), Chocolate Powder (Sugar, Cocoa Powder, Whey Powder, Maize Starch, Flavour)",
+   "src": "guide"
+  },
+  "hj:cappuccino-medium-": {
    "al": [
     "milk"
    ],
@@ -3593,9 +4465,10 @@
     "gluten",
     "soy"
    ],
+   "text": "Milk Full Cream (Milk), Water (Water), Coffee Grinders (100% imported Coffee Beans ), Chocolate Powder (Sugar, Cocoa Powder, Whey Powder, Maize Starch, Flavour)",
    "src": "guide"
   },
-  "hj:chai-latte": {
+  "hj:cappuccino-large-": {
    "al": [
     "milk"
    ],
@@ -3603,9 +4476,10 @@
     "gluten",
     "soy"
    ],
+   "text": "Milk Full Cream (Milk), Water (Water), Coffee Grinders (100% imported Coffee Beans ), Chocolate Powder (Sugar, Cocoa Powder, Whey Powder, Maize Starch, Flavour)",
    "src": "guide"
   },
-  "hj:iced-chai": {
+  "hj:chai-latte-medium-": {
    "al": [
     "milk"
    ],
@@ -3613,9 +4487,53 @@
     "gluten",
     "soy"
    ],
+   "text": "Milk Full Cream (Milk), Chai Spice (Sugar, Dextrose, Maltodextrin, Natural Flavours, Instant Tea, Ground Spices, Salt )",
    "src": "guide"
   },
-  "hj:chocolate-shake": {
+  "hj:chai-latte-large-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy"
+   ],
+   "text": "Milk Full Cream (Milk), Chai Spice (Sugar, Dextrose, Maltodextrin, Natural Flavours, Instant Tea, Ground Spices, Salt )",
+   "src": "guide"
+  },
+  "hj:iced-chai-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "soy"
+   ],
+   "text": "Water (Water), Milk Full Cream (Milk), Chai Spice (Sugar, Dextrose, Maltodextrin, Natural Flavours, Instant Tea, Ground Spices, Salt ), Cream Whipped (Cream, Propellant (Nitrous Oxide), Emulsifier (471), Natural Flavour, Stabilisers (401, 407))",
+   "src": "guide"
+  },
+  "hj:iced-chai-medium-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy"
+   ],
+   "text": "Water (Water), Milk Full Cream (Milk), Chai Spice (Sugar, Dextrose, Maltodextrin, Natural Flavours, Instant Tea, Ground Spices, Salt ), Cream Whipped (Cream, Propellant (Nitrous Oxide), Emulsifier (471), Natural Flavour, Stabilisers (401, 407))",
+   "src": "guide"
+  },
+  "hj:iced-chai-large-": {
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy"
+   ],
+   "text": "Water (Water), Milk Full Cream (Milk), Chai Spice (Sugar, Dextrose, Maltodextrin, Natural Flavours, Instant Tea, Ground Spices, Salt ), Cream Whipped (Cream, Propellant (Nitrous Oxide), Emulsifier (471), Natural Flavour, Stabilisers (401, 407))",
+   "src": "guide"
+  },
+  "hj:chocolate-shake-small-": {
    "al": [
     "gluten",
     "milk",
@@ -3623,47 +4541,148 @@
     "wheat"
    ],
    "may": [],
+   "text": "Shake Mix (Milk, Milk Solids, Sugar, Cream, Maltodextrin (Maize), Vegetable Gums (407, 412, 466), Mineral Salts (331, 339), Flavour.), Syrup Chocolate Shake (Sugar, Water, Cocoa Powder (4%), Salt, Acidity Regulators (330, 500), Preservative (202), Thickener (415))",
    "src": "guide"
   },
-  "hj:strawberry-shake": {
+  "hj:chocolate-shake-medium-": {
+   "al": [
+    "gluten",
+    "milk",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [],
+   "text": "Shake Mix (Milk, Milk Solids, Sugar, Cream, Maltodextrin (Maize), Vegetable Gums (407, 412, 466), Mineral Salts (331, 339), Flavour.), Syrup Chocolate Shake (Sugar, Water, Cocoa Powder (4%), Salt, Acidity Regulators (330, 500), Preservative (202), Thickener (415))",
+   "src": "guide"
+  },
+  "hj:chocolate-shake-large-": {
+   "al": [
+    "gluten",
+    "milk",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [],
+   "text": "Shake Mix (Milk, Milk Solids, Sugar, Cream, Maltodextrin (Maize), Vegetable Gums (407, 412, 466), Mineral Salts (331, 339), Flavour.), Syrup Chocolate Shake (Sugar, Water, Cocoa Powder (4%), Salt, Acidity Regulators (330, 500), Preservative (202), Thickener (415))",
+   "src": "guide"
+  },
+  "hj:strawberry-shake-small-": {
    "al": [
     "gluten",
     "milk",
     "wheat"
    ],
    "may": [],
+   "text": "Shake Mix (Milk, Milk Solids, Sugar, Cream, Maltodextrin (Maize), Vegetable Gums (407, 412, 466), Mineral Salts (331, 339), Flavour.), Syrup Strawberry Shake (Sugar, Water, Natural Flavour, Colour (120), Acidity Regulator (330), Preservative (211), Thickener (415))",
    "src": "guide"
   },
-  "hj:vanilla-shake": {
+  "hj:strawberry-shake-medium-": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [],
+   "text": "Shake Mix (Milk, Milk Solids, Sugar, Cream, Maltodextrin (Maize), Vegetable Gums (407, 412, 466), Mineral Salts (331, 339), Flavour.), Syrup Strawberry Shake (Sugar, Water, Natural Flavour, Colour (120), Acidity regulator (330), Preservative (211), Thickener (415).)",
+   "src": "guide"
+  },
+  "hj:strawberry-shake-large-": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [],
+   "text": "Shake Mix (Milk, Milk Solids, Sugar, Cream, Maltodextrin (Maize), Vegetable Gums (407, 412, 466), Mineral Salts (331, 339), Flavour.), Syrup Strawberry Shake (Sugar, Water, Natural Flavour, Colour (120), Acidity Regulator (330), Preservative (211), Thickener (415))",
+   "src": "guide"
+  },
+  "hj:vanilla-shake-small-": {
    "al": [
     "milk"
    ],
    "may": [],
+   "text": "Shake Mix (Milk, Milk Solids, Sugar, Cream, Maltodextrin (Maize), Vegetable Gums (407, 412, 466), Mineral Salts (331, 339), Flavour.)",
    "src": "guide"
   },
-  "hj:caramel-shake": {
+  "hj:vanilla-shake-medium-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "text": "Shake Mix (Milk, Milk Solids, Sugar, Cream, Maltodextrin (Maize), Vegetable Gums (407, 412, 466), Mineral Salts (331, 339), Flavour.)",
+   "src": "guide"
+  },
+  "hj:vanilla-shake-large-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "text": "Shake Mix (Milk, Milk Solids, Sugar, Cream, Maltodextrin (Maize), Vegetable Gums (407, 412, 466), Mineral Salts (331, 339), Flavour.)",
+   "src": "guide"
+  },
+  "hj:caramel-shake-small-": {
    "al": [
     "milk",
     "soy",
     "sulphites"
    ],
    "may": [],
+   "text": "Shake Mix (Milk, Milk Solids, Sugar, Cream, Maltodextrin (Maize), Vegetable Gums (407, 412, 466), Mineral Salts (331, 339), Flavour.), Syrup Caramel Shake (Sugar, Water, Natural Flavours, Colour (150a), Salt, Acidity Regulator (330), Preservative (202), Thickener (415))",
    "src": "guide"
   },
-  "hj:biscoff-shake": {
+  "hj:caramel-shake-medium-": {
    "al": [
-    "gluten"
-   ],
-   "may": [
     "milk",
     "soy",
-    "sulphites",
-    "treenut",
-    "wheat"
+    "sulphites"
    ],
+   "may": [],
+   "text": "Shake Mix (Milk, Milk Solids, Sugar, Cream, Maltodextrin (Maize), Vegetable Gums (407, 412, 466), Mineral Salts (331, 339), Flavour.), Syrup Caramel Shake (Sugar, Water, Natural Flavours, Colour (150a), Salt, Acidity Regulator (330), Preservative (202), Thickener (415))",
    "src": "guide"
   },
-  "hj:pistachio-papi-shake": {
+  "hj:caramel-shake-large-": {
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ],
+   "may": [],
+   "text": "Shake Mix (Milk, Milk Solids, Sugar, Cream, Maltodextrin (Maize), Vegetable Gums (407, 412, 466), Mineral Salts (331, 339), Flavour.), Syrup Caramel Shake (Sugar, Water, Natural Flavours, Colour (150a), Salt, Acidity Regulator (330), Preservative (202), Thickener (415))",
+   "src": "guide"
+  },
+  "hj:biscoff-shake-small-": {
+   "al": [
+    "gluten",
+    "sulphites",
+    "treenut"
+   ],
+   "may": [],
+   "text": "Quantity of A Available in S Cereal Gluten Gluten Cereal Natural Sulph Added Sulphi dded Sulphite Tree Nuts Typ Tree Nut Aller Trace Treenut",
+   "src": "guide"
+  },
+  "hj:biscoff-shake-medium-": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "text": "Shake Mix (Milk, Milk Solids, Sugar, Cream, Maltodextrin (Maize), Vegetable Gums (407, 412, 466), Mineral Salts (331, 339), Flavour), Biscuit Crumb Biscoff (Wheat Flour, Sugar, Vegetable Oils (Palm Oil, Canola Oil), Candy Sugar Syrup, Raising Agent (Sodium Bicarbonate), Salt, Cinnamon), Sauce Biscoff (Original Caramelised Biscuits (52%) (Wheat Flour, Sugar, Vegetable Oils (Palm Oil, Canola Oil), Candy Sugar Syrup, Raising Agent (Sodium Bicarbonate),Soy Flour, Salt, Cinnamon), Canola Oil, Sugar, Emulsifier (Soy Lecithin), Acid (Citric Acid))",
+   "src": "guide"
+  },
+  "hj:biscoff-shake-large-": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "text": "Shake Mix (Milk, Milk Solids, Sugar, Cream, Maltodextrin (Maize), Vegetable Gums (407, 412, 466), Mineral Salts (331, 339), Flavour), Biscuit Crumb Biscoff (Wheat Flour, Sugar, Vegetable Oils (Palm Oil, Canola Oil), Candy Sugar Syrup, Raising Agent (Sodium Bicarbonate), Salt, Cinnamon), Sauce Biscoff (Original Caramelised Biscuits (52%) (Wheat Flour, Sugar, Vegetable Oils (Palm Oil, Canola Oil), Candy Sugar Syrup, Raising Agent (Sodium Bicarbonate),Soy Flour, Salt, Cinnamon), Canola Oil, Sugar, Emulsifier (Soy Lecithin), Acid (Citric Acid))",
+   "src": "guide"
+  },
+  "hj:pistachio-papi-shake-small-": {
    "al": [
     "gluten",
     "milk",
@@ -3676,38 +4695,153 @@
     "sesame",
     "soy"
    ],
+   "text": "Shake Mix (Milk, Milk Solids, Sugar, Cream, Maltodextrin (Maize), Vegetable Gums (407, 412, 466), Mineral Salts (331, 339), Flavour), Sauce Pistachio Papi (Sugar, Sunflower Oil, Milk Solids, Pistachio (16%), Sunflower Lecithin, Salt, Vanilla Bean, Natural Flavours (Pistachio, White Chocolate), Colour (102, 133)), Crumb Biscuit Vanilla (Wheat Flour, Sugar, Canola Oil, Glucose Syrup, Malt Extract (Barley), Raising Agent (500), Salt, Flavour)",
    "src": "guide"
   },
-  "hj:coke": {
+  "hj:pistachio-papi-shake-medium-": {
+   "al": [
+    "gluten",
+    "milk",
+    "treenut",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "peanut",
+    "sesame",
+    "soy"
+   ],
+   "text": "Shake Mix (Milk, Milk Solids, Sugar, Cream, Maltodextrin (Maize), Vegetable Gums (407, 412, 466), Mineral Salts (331, 339), Flavour), Sauce Pistachio Papi (Sugar, Sunflower Oil, Milk Solids, Pistachio (16%), Sunflower Lecithin, Salt, Vanilla Bean, Natural Flavours (Pistachio, White Chocolate), Colour (102, 133)), Crumb Biscuit Vanilla (Wheat Flour, Sugar, Canola Oil, Glucose Syrup, Malt Extract (Barley), Raising Agent (500), Salt, Flavour)",
+   "src": "guide"
+  },
+  "hj:pistachio-papi-shake-large-": {
+   "al": [
+    "gluten",
+    "milk",
+    "treenut",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "peanut",
+    "sesame",
+    "soy"
+   ],
+   "text": "Shake Mix (Milk, Milk Solids, Sugar, Cream, Maltodextrin (Maize), Vegetable Gums (407, 412, 466), Mineral Salts (331, 339), Flavour), Sauce Pistachio Papi (Sugar, Sunflower Oil, Milk Solids, Pistachio (16%), Sunflower Lecithin, Salt, Vanilla Bean, Natural Flavours (Pistachio, White Chocolate), Colour (102, 133)), Crumb Biscuit Vanilla (Wheat Flour, Sugar, Canola Oil, Glucose Syrup, Malt Extract (Barley), Raising Agent (500), Salt, Flavour)",
+   "src": "guide"
+  },
+  "hj:coke-small-": {
    "al": [],
    "may": [],
+   "text": "Coke POM ( Carbonated Water, Sugar, Colour (150d), Food Acid (338), Flavour, Caffeine )",
    "src": "guide"
   },
-  "hj:coke-no-sugar": {
+  "hj:coke-medium-": {
    "al": [],
    "may": [],
+   "text": "Coke POM ( Carbonated Water, Sugar, Colour (150d), Food Acid (338), Flavour, Caffeine )",
    "src": "guide"
   },
-  "hj:sprite": {
+  "hj:coke-large-": {
    "al": [],
    "may": [],
+   "text": "Coke POM ( Carbonated Water, Sugar, Colour (150d), Food Acid (338), Flavour, Caffeine )",
    "src": "guide"
   },
-  "hj:fanta-orange": {
+  "hj:coke-no-sugar-small-": {
    "al": [],
    "may": [],
+   "text": "Coke Zero POM ( Carbonated Water, Colour (150d), Food Acids (338, 331), Flavour, Sweeteners (951, 950), Preservative (211), Caffeine)",
    "src": "guide"
   },
-  "hj:fanta-raspberry": {
+  "hj:coke-no-sugar-medium-": {
    "al": [],
    "may": [],
+   "text": "Coke Zero POM ( Carbonated Water, Colour (150d), Food Acids (338, 331), Flavour, Sweeteners (951, 950), Preservative (211), Caffeine)",
    "src": "guide"
   },
-  "hj:orange-fruit-drink": {
+  "hj:coke-no-sugar-large-": {
+   "al": [],
+   "may": [],
+   "text": "Coke Zero POM ( Carbonated Water, Colour (150d), Food Acids (338, 331), Flavour, Sweeteners (951, 950), Preservative (211), Caffeine)",
+   "src": "guide"
+  },
+  "hj:sprite-small-": {
+   "al": [],
+   "may": [],
+   "text": "Sprite POM (Carbonated Water, Sugar, Food Acids (330, 331), Flavour, Preservative (211))",
+   "src": "guide"
+  },
+  "hj:sprite-medium-": {
+   "al": [],
+   "may": [],
+   "text": "Sprite POM (Carbonated Water, Sugar, Food Acids (330, 331), Flavour, Preservative (211))",
+   "src": "guide"
+  },
+  "hj:sprite-large-": {
+   "al": [],
+   "may": [],
+   "text": "Sprite POM (Carbonated Water, Sugar, Food Acids (330, 331), Flavour, Preservative (211))",
+   "src": "guide"
+  },
+  "hj:fanta-orange-small-": {
+   "al": [],
+   "may": [],
+   "text": "Fanta Orange POM (Carbonated Water, Sugar, Food Acid (330), Flavour, Preservative (211), Antioxidant (300), Colour (110))",
+   "src": "guide"
+  },
+  "hj:fanta-orange-medium-": {
+   "al": [],
+   "may": [],
+   "text": "Fanta Orange POM (Carbonated Water, Sugar, Food Acid (330), Flavour, Preservative (211), Antioxidant (300), Colour (110))",
+   "src": "guide"
+  },
+  "hj:fanta-orange-large-": {
+   "al": [],
+   "may": [],
+   "text": "Fanta Orange POM (Carbonated Water, Sugar, Food Acid (330), Flavour, Preservative (211), Antioxidant (300), Colour (110))",
+   "src": "guide"
+  },
+  "hj:fanta-raspberry-small-": {
+   "al": [],
+   "may": [],
+   "text": "Fanta Raspberry POM (Carbonated Water, Sugar, Flavour, Food Acid (330), Preservative (211), Colour (122))",
+   "src": "guide"
+  },
+  "hj:fanta-raspberry-medium-": {
+   "al": [],
+   "may": [],
+   "text": "Fanta Raspberry POM (Carbonated Water, Sugar, Flavour, Food Acid (330), Preservative (211), Colour (122)) Date Printed: 17 Aug 2026",
+   "src": "guide"
+  },
+  "hj:fanta-raspberry-large-": {
+   "al": [],
+   "may": [],
+   "text": "Fanta Raspberry POM (Carbonated Water, Sugar, Flavour, Food Acid (330), Preservative (211), Colour (122))",
+   "src": "guide"
+  },
+  "hj:orange-fruit-drink-small-": {
    "al": [
     "sulphites"
    ],
    "may": [],
+   "text": "Orange Drink POM (Orange Juice from Concentrate (66.6%), Water, Sugar, Food Acid (330), Preservatives (211, 223 (Sulphites)), Stabiliser (405), Flavour, Antioxidant (300), Colour (160e))",
+   "src": "guide"
+  },
+  "hj:orange-fruit-drink-medium-": {
+   "al": [
+    "sulphites"
+   ],
+   "may": [],
+   "text": "Orange Drink POM (Orange Juice from Concentrate (66.6%), Water, Sugar, Food Acid (330), Preservatives (211, 223 (Sulphites)), Stabiliser (405), Flavour, Antioxidant (300), Colour (160e))",
+   "src": "guide"
+  },
+  "hj:orange-fruit-drink-large-": {
+   "al": [
+    "sulphites"
+   ],
+   "may": [],
+   "text": "Orange Drink POM (Orange Juice from Concentrate (66.6%), Water, Sugar, Food Acid (330), Preservatives (211, 223 (Sulphites)), Stabiliser (405), Flavour, Antioxidant (300), Colour (160e)) Date Printed: 17 Aug 2026",
    "src": "guide"
   },
   "hj:keri-apple-juice": {
@@ -3745,26 +4879,81 @@
    "text": "Sprite POM (Carbonated Water, Sugar, Food Acids (330, 331), Flavour, Preservative (211)), Syrup Strawberry Monin (Sugar, Water, Concentrated Strawberry Juice, Natural Flavouring, Acidity Regulator (Citric Acid), Concentrated Elderberry Juice, Preservative (Potassium Sorbate), Colour (129). Equivalent Fruit Juice: 14.2%, including 13% Strawberry Juice ) Quantity of A Available in S Cereal Gluten Gluten Cereal Natural Sulph Added Sulphi dded Sulphite Tree Nuts Typ Tree Nut Aller Trace Treenut",
    "src": "guide"
   },
-  "hj:frozen-coke": {
+  "hj:frozen-coke-small-": {
    "al": [],
    "may": [],
+   "text": "Coke FCB (Carbonated Water, Sugar, Colour (150d), Food Acid (338), Flavour, Caffeine)",
    "src": "guide"
   },
-  "hj:frozen-coke-spider": {
+  "hj:frozen-coke-medium-": {
+   "al": [],
+   "may": [],
+   "text": "Coke FCB (Carbonated Water, Sugar, Colour (150d), Food Acid (338), Flavour, Caffeine)",
+   "src": "guide"
+  },
+  "hj:frozen-coke-large-": {
+   "al": [],
+   "may": [],
+   "text": "Coke FCB (Carbonated Water, Sugar, Colour (150d), Food Acid (338), Flavour, Caffeine)",
+   "src": "guide"
+  },
+  "hj:frozen-coke-spider-small-": {
    "al": [
     "milk"
    ],
    "may": [],
+   "text": "Sundae Mix (Milk, Milk Solids, Sugar, Cream, Dextrose, Emulsifiers (471), Vegetable Gums (407, 412, 466), Mineral Salts (331, 339), Flavour), Coke FCB (Carbonated Water, Sugar, Colour (150d), Food Acid (338), Flavour, Caffeine)",
    "src": "guide"
   },
-  "hj:frozen-fanta-raspberry": {
+  "hj:frozen-coke-spider-medium-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "text": "Coke FCB (Carbonated Water, Sugar, Colour (150d), Food Acid (338), Flavour, Caffeine), Sundae Mix (Milk, Milk Solids, Sugar, Cream, Dextrose, Emulsifiers (471), Vegetable Gums (407, 412, 466), Mineral Salts (331, 339), Flavour)",
+   "src": "guide"
+  },
+  "hj:frozen-coke-spider-large-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "text": "Coke FCB (Carbonated Water, Sugar, Colour (150d), Food Acid (338), Flavour, Caffeine), Sundae Mix (Milk, Milk Solids, Sugar, Cream, Dextrose, Emulsifiers (471), Vegetable Gums (407, 412, 466), Mineral Salts (331, 339), Flavour)",
+   "src": "guide"
+  },
+  "hj:frozen-fanta-raspberry-small-": {
+   "al": [],
+   "may": [],
+   "text": "Fanta Raspberry FCB (Carbonated Water, Sugar, Flavour, Food Acid (330), Preservative (211), Colour (122))",
+   "src": "guide"
+  },
+  "hj:frozen-fanta-raspberry-medium-": {
+   "al": [],
+   "may": [],
+   "text": "Fanta Raspberry FCB (Carbonated Water, Sugar, Flavour, Food Acid (330), Preservative (211), Colour (122))",
+   "src": "guide"
+  },
+  "hj:frozen-fanta-raspberry-large-": {
+   "al": [],
+   "may": [],
+   "text": "Fanta Raspberry FCB (Carbonated Water, Sugar, Flavour, Food Acid (330), Preservative (211), Colour (122))",
+   "src": "guide"
+  },
+  "hj:frozen-keri-orange-mango-small-": {
    "al": [],
    "may": [],
    "src": "guide"
   },
-  "hj:frozen-keri-orange-mango": {
+  "hj:frozen-keri-orange-mango-medium-": {
    "al": [],
    "may": [],
+   "text": "Keri Orange & Mango FCB (Carbonated Water, Sugar, Orange Juice from Concentrate (16.7%), Food Acid (330), Flavour, Preservatives (211, 202), Colours (110, 102).)",
+   "src": "guide"
+  },
+  "hj:frozen-keri-orange-mango-large-": {
+   "al": [],
+   "may": [],
+   "text": "Keri Orange & Mango FCB (Carbonated Water, Sugar, Orange Juice from Concentrate (16.7%), Food Acid (330), Flavour, Preservatives (211, 202), Colours (110, 102))",
    "src": "guide"
   },
   "hj:oreo-storm": {
@@ -3817,7 +5006,7 @@
    "text": "Sundae Mix (Milk, Milk Solids, Sugar, Cream, Dextrose, Emulsifiers (471), Vegetable Gums (407, 412, 466), Mineral Salts (331, 339), Flavour), Sauce Pistachio Papi (Sugar, Sunflower Oil, Milk Solids, Pistachio (16%), Sunflower Lecithin, Salt, Vanilla Bean, Natural Flavours (Pistachio, White Chocolate), Colour (102, 133)), Crumb Biscuit Vanilla (Wheat Flour, Sugar, Canola Oil, Glucose Syrup, Malt Extract (Barley), Raising Agent (500), Salt, Flavour)",
    "src": "guide"
   },
-  "hj:chocolate-sundae": {
+  "hj:chocolate-sundae-small-": {
    "al": [
     "milk",
     "sulphites"
@@ -3825,9 +5014,21 @@
    "may": [
     "peanut"
    ],
+   "text": "Sundae Mix (Milk, Milk Solids, Sugar, Cream, Dextrose, Emulsifiers (471), Vegetable Gums (407, 412, 466), Mineral Salts (331, 339), Flavour.), Sauce Chocolate Sundae (Sugar, Water,Milk solids, Vegetable Fat [Vegetable fat, Emulsifier (322)], Cocoa (5%), Maltodextrin, Salt, Natural flavour, Preservative (202), Thickener (401).)",
    "src": "guide"
   },
-  "hj:caramel-sundae": {
+  "hj:chocolate-sundae-large-": {
+   "al": [
+    "milk",
+    "sulphites"
+   ],
+   "may": [
+    "peanut"
+   ],
+   "text": "Sundae Mix (Milk, Milk Solids, Sugar, Cream, Dextrose, Emulsifiers (471), Vegetable Gums (407, 412, 466), Mineral Salts (331, 339), Flavour), Sauce Chocolate Sundae (Sugar, Water,Milk Solids, Vegetable Fat [Vegetable Fat, Emulsifier (322)], Cocoa (5%), Maltodextrin, Salt, Natural flavour, Preservative (202), Thickener (401))",
+   "src": "guide"
+  },
+  "hj:caramel-sundae-small-": {
    "al": [
     "gluten",
     "milk",
@@ -3837,9 +5038,33 @@
    "may": [
     "soy"
    ],
+   "text": "Sundae Mix (Milk, Milk Solids, Sugar, Cream, Dextrose, Emulsifiers (471), Vegetable Gums (407, 412, 466), Mineral Salts (331, 339), Flavour), Sauce Caramel Sundae (Sugar, Water, Glucose Syrup,Milk solids, Thickeners (1442, 401), Vegetable Fat [Vegetable Fat, Emulsifier (322)], Salt, Emulsifier (471), Acidity Regulators (500, 339), Preservative (202))",
    "src": "guide"
   },
-  "hj:strawberry-sundae": {
+  "hj:caramel-sundae-large-": {
+   "al": [
+    "gluten",
+    "milk",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "soy"
+   ],
+   "text": "Sundae Mix (Milk, Milk Solids, Sugar, Cream, Dextrose, Emulsifiers (471), Vegetable Gums (407, 412, 466), Mineral Salts (331, 339), Flavour), Sauce Caramel Sundae (Sugar, Water, Glucose Syrup,Milk solids, Thickeners (1442, 401), Vegetable Fat [Vegetable Fat, Emulsifier (322)], Salt, Emulsifier (471), Acidity Regulators (500, 339), Preservative (202))",
+   "src": "guide"
+  },
+  "hj:strawberry-sundae-small-": {
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": [],
+   "text": "Sundae Mix (Milk, Milk Solids, Sugar, Cream, Dextrose, Emulsifiers (471), Vegetable Gums (407, 412, 466), Mineral Salts (331, 339), Flavour.), Sauce Strawberry Sundae (Sugar, Water, Strawberries (18%), Thickeners (1422, E415), Colour (163), Acidity Regulator (330), Natural Flavour, Preservative (202).)",
+   "src": "guide"
+  },
+  "hj:strawberry-sundae-large-": {
    "al": [
     "milk"
    ],
@@ -3847,6 +5072,7 @@
     "gluten",
     "wheat"
    ],
+   "text": "Sundae Mix (Milk, Milk Solids, Sugar, Cream, Dextrose, Emulsifiers (471), Vegetable Gums (407, 412, 466), Mineral Salts (331, 339), Flavour), Sauce Strawberry Sundae (Sugar, Water, Strawberries (18%), Thickeners (1422, E415), Colour (163), Acidity regulator (330), Natural Flavour, Preservative (202))",
    "src": "guide"
   },
   "hj:sticky-date-pudding": {
@@ -9886,7 +11112,7 @@
    ],
    "src": "guide"
   },
-  "oporto:chips": {
+  "oporto:chips-regular-": {
    "al": [],
    "may": [
     "egg",
@@ -9897,7 +11123,29 @@
    ],
    "src": "guide"
   },
-  "oporto:grilled-corn": {
+  "oporto:chips-large-": {
+   "al": [],
+   "may": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "src": "guide"
+  },
+  "oporto:chips-family-": {
+   "al": [],
+   "may": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "src": "guide"
+  },
+  "oporto:grilled-corn-single-": {
    "al": [],
    "may": [
     "egg",
@@ -9907,7 +11155,17 @@
    ],
    "src": "guide"
   },
-  "oporto:spicy-rice": {
+  "oporto:grilled-corn-share-": {
+   "al": [],
+   "may": [
+    "egg",
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "src": "guide"
+  },
+  "oporto:spicy-rice-single-": {
    "al": [
     "gluten",
     "soy",
@@ -9920,7 +11178,28 @@
    ],
    "src": "guide"
   },
-  "oporto:crunchy-slaw": {
+  "oporto:spicy-rice-share-": {
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "peanut",
+    "sesame"
+   ],
+   "src": "guide"
+  },
+  "oporto:crunchy-slaw-single-": {
+   "al": [
+    "egg",
+    "milk"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "oporto:crunchy-slaw-share-": {
    "al": [
     "egg",
     "milk"
@@ -9955,7 +11234,18 @@
    ],
    "src": "guide"
   },
-  "oporto:churros": {
+  "oporto:churros-5-pieces-": {
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk"
+   ],
+   "src": "guide"
+  },
+  "oporto:churros-8-pieces-": {
    "al": [
     "gluten",
     "wheat"
@@ -11253,7 +12543,7 @@
    ],
    "src": "guide"
   },
-  "rr:mash-gravy": {
+  "rr:mash-gravy-regular-": {
    "al": [
     "gluten",
     "milk",
@@ -11280,7 +12570,7 @@
    ],
    "src": "guide"
   },
-  "rr:sweet-potato": {
+  "rr:sweet-potato-regular-": {
    "al": [
     "soy"
    ],
@@ -11296,7 +12586,7 @@
    ],
    "src": "guide"
   },
-  "rr:crunchy-potato": {
+  "rr:crunchy-potato-regular-": {
    "al": [
     "sulphites"
    ],
@@ -11313,7 +12603,7 @@
    ],
    "src": "guide"
   },
-  "rr:crunchy-slaw": {
+  "rr:crunchy-slaw-regular-": {
    "al": [
     "egg",
     "milk"
@@ -11324,7 +12614,7 @@
    ],
    "src": "guide"
   },
-  "rr:peas": {
+  "rr:peas-regular-": {
    "al": [],
    "may": [
     "egg",

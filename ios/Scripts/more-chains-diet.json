@@ -11947,7 +11947,7 @@
 ],
 "src": "name"
 },
-"thisbowl:brown-rice": {
+"thisbowl:brown-rice-regular-": {
 "al": [
 "sesame",
 "soy"
@@ -11961,7 +11961,7 @@
 ],
 "src": "labels"
 },
-"thisbowl:cabbage": {
+"thisbowl:cabbage-regular-": {
 "al": [
 "sesame",
 "soy"
@@ -12061,7 +12061,7 @@
 ],
 "src": "name"
 },
-"thisbowl:glass-noodles": {
+"thisbowl:glass-noodles-regular-": {
 "al": [
 "sesame",
 "soy"
@@ -12305,7 +12305,7 @@
 ],
 "src": "name"
 },
-"thisbowl:sushi-rice": {
+"thisbowl:sushi-rice-regular-": {
 "al": [
 "sesame",
 "soy"

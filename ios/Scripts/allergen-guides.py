@@ -623,6 +623,8 @@ def match_oporto(food, guide):
     if name == "Crispy Wings with O Sauce":
         parts = [lookup(guide, "Crispy Wings"), lookup(guide, "O Sauce")]
         return combine(parts) if all(parts) else None
+    # Sizes share one allergen row ("Chips (large)" is "Chips").
+    name = re.sub(r" \((regular|large|family|single|share|\d+ pieces)\)$", "", name)
     return lookup(guide, OPORTO.get(name, name))
 
 
@@ -944,6 +946,14 @@ HJ_CAFE = {"Cappuccino": "Cappuccino", "Flat White": "Flat White", "Latte": "Lat
 
 
 def match_hj(name, guide):
+    # A sized item ("Coke (small)") uses the guide's row for that size, or every size when that one isn't listed.
+    sized = re.match(r"^(.+) \((small|medium|large)\)$", name)
+    if sized:
+        name, size = sized.groups()
+        stem = rf"jack.?s caf. {re.escape(HJ_CAFE[name].lower())}" if name in HJ_CAFE else re.escape(HJ.get(name, name).lower())
+        exact = [v for k, v in guide.items() if re.match(rf"{stem} {size}$", k.lower().replace("’", "'"))]
+        if exact:
+            return exact[0]
     saucy = re.match(r"(\d) (.+) Saucy Tenders$", name)
     if saucy:
         name = f"JFC Saucy Tender {saucy.group(2)} {saucy.group(1)} x Pack"

@@ -855,6 +855,28 @@
     "wheat"
    ]
   },
+  "mcd:nashville-mcshaker-fries-medium-": {
+   "meat": null,
+   "src": null,
+   "al": [],
+   "may": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
+  },
+  "mcd:nashville-mcshaker-fries-large-": {
+   "meat": null,
+   "src": null,
+   "al": [],
+   "may": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
+  },
   "mcd:nashville-shaker-seasoning": {
    "meat": null,
    "src": null,
@@ -908,7 +930,33 @@
     "treenut"
    ]
   },
+  "mcd:flat-white-small-full-cream-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
   "mcd:cappuccino-medium-full-cream-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "mcd:cappuccino-small-full-cream-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -934,13 +982,57 @@
     "treenut"
    ]
   },
+  "mcd:iced-latte-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "mcd:iced-latte-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
   "mcd:coca-cola-medium-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
    "al": []
   },
+  "mcd:coca-cola-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
   "mcd:coca-cola-zero-sugar-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "mcd:coca-cola-zero-sugar-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "mcd:coca-cola-zero-sugar-large-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -1411,10 +1503,24 @@
     "milk"
    ]
   },
+  "mcd:hot-fudge-sundae-large-": {
+   "meat": null,
+   "src": null,
+   "al": [
+    "milk"
+   ]
+  },
   "mcd:caramel-sundae-small-": {
    "meat": [],
    "src": "ingredients",
    "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
+  },
+  "mcd:caramel-sundae-large-": {
+   "meat": null,
+   "src": null,
    "al": [
     "milk"
    ]
@@ -1427,7 +1533,21 @@
     "milk"
    ]
   },
+  "mcd:strawberry-sundae-large-": {
+   "meat": null,
+   "src": null,
+   "al": [
+    "milk"
+   ]
+  },
   "mcd:plain-sundae-small-": {
+   "meat": null,
+   "src": null,
+   "al": [
+    "milk"
+   ]
+  },
+  "mcd:plain-sundae-large-": {
    "meat": null,
    "src": null,
    "al": [
@@ -1471,7 +1591,39 @@
     "milk"
    ]
   },
+  "mcd:chocolate-shake-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
+  },
+  "mcd:chocolate-shake-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
+  },
   "mcd:vanilla-shake-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
+  },
+  "mcd:vanilla-shake-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
+  },
+  "mcd:vanilla-shake-medium-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -1487,7 +1639,36 @@
     "milk"
    ]
   },
+  "mcd:strawberry-shake-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
+  },
+  "mcd:strawberry-shake-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
+  },
   "mcd:coffee-frappe-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "sulphites"
+   ],
+   "may": [
+    "gluten",
+    "wheat"
+   ]
+  },
+  "mcd:coffee-frappe-medium-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -1513,7 +1694,31 @@
     "wheat"
    ]
   },
+  "mcd:salted-caramel-frappe-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "sulphites"
+   ],
+   "may": [
+    "gluten",
+    "wheat"
+   ]
+  },
   "mcd:choc-frappe-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "sulphites",
+    "wheat"
+   ]
+  },
+  "mcd:choc-frappe-medium-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -1529,6 +1734,22 @@
    "src": "name",
    "vg": "vegetarian"
   },
+  "mcd:strawberry-shortcake-frappe-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "peanut",
+    "treenut"
+   ]
+  },
   "mcd:choc-coconut-frappe-medium-": {
    "meat": [],
    "src": "name",
@@ -1539,7 +1760,43 @@
     "wheat"
    ]
   },
+  "mcd:choc-coconut-frappe-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ]
+  },
   "mcd:latte-medium-full-cream-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "mcd:latte-small-full-cream-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "mcd:latte-large-full-cream-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -1571,6 +1828,12 @@
    "vg": "vegetarian",
    "al": []
   },
+  "mcd:long-black-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
   "mcd:mocha-medium-full-cream-": {
    "meat": [],
    "src": "name",
@@ -1584,7 +1847,60 @@
     "treenut"
    ]
   },
+  "mcd:mocha-small-full-cream-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "mcd:mocha-large-full-cream-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
   "mcd:hot-chocolate-medium-full-cream-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "mcd:hot-chocolate-small-full-cream-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "mcd:hot-chocolate-large-full-cream-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -1612,7 +1928,48 @@
     "treenut"
    ]
   },
+  "mcd:vanilla-chai-latte-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "sulphites"
+   ],
+   "may": [
+    "soy",
+    "treenut"
+   ]
+  },
+  "mcd:vanilla-chai-latte-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "sulphites"
+   ],
+   "may": [
+    "soy",
+    "treenut"
+   ]
+  },
   "mcd:matcha-latte-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "mcd:matcha-latte-small-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -1631,7 +1988,45 @@
    "vg": "vegetarian",
    "al": []
   },
+  "mcd:iced-long-black-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "mcd:iced-long-black-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
   "mcd:iced-mocha-medium-full-cream-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "mcd:iced-mocha-small-full-cream-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "mcd:iced-mocha-large-full-cream-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -1657,7 +2052,59 @@
     "treenut"
    ]
   },
+  "mcd:iced-chocolate-small-full-cream-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "mcd:iced-chocolate-large-full-cream-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
   "mcd:deluxe-caramel-iced-coffee-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "mcd:deluxe-caramel-iced-coffee-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "mcd:deluxe-caramel-iced-coffee-large-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -1683,7 +2130,59 @@
     "treenut"
    ]
   },
+  "mcd:deluxe-hazelnut-iced-coffee-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "mcd:deluxe-hazelnut-iced-coffee-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
   "mcd:deluxe-vanilla-iced-coffee-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "mcd:deluxe-vanilla-iced-coffee-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "mcd:deluxe-vanilla-iced-coffee-large-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -1701,7 +2200,48 @@
    "src": "name",
    "vg": "vegetarian"
   },
+  "mcd:iced-velvet-mocha-with-cold-foam-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ]
+  },
+  "mcd:iced-velvet-mocha-with-cold-foam-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ]
+  },
   "mcd:iced-golden-caramel-latte-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "mcd:iced-golden-caramel-latte-small-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -1727,7 +2267,59 @@
     "treenut"
    ]
   },
+  "mcd:iced-tiramisu-latte-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ]
+  },
+  "mcd:iced-tiramisu-latte-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ]
+  },
   "mcd:brown-sugar-shaken-espresso-oat-milk-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "gluten"
+   ],
+   "may": [
+    "milk",
+    "soy",
+    "treenut"
+   ]
+  },
+  "mcd:brown-sugar-shaken-espresso-oat-milk-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "gluten"
+   ],
+   "may": [
+    "milk",
+    "soy",
+    "treenut"
+   ]
+  },
+  "mcd:brown-sugar-shaken-espresso-oat-milk-large-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -1753,7 +2345,46 @@
     "treenut"
    ]
   },
+  "mcd:iced-matcha-latte-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
   "mcd:iced-matcha-latte-with-cold-foam-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ]
+  },
+  "mcd:iced-matcha-latte-with-cold-foam-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ]
+  },
+  "mcd:iced-matcha-latte-with-cold-foam-large-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -1779,7 +2410,46 @@
     "treenut"
    ]
   },
+  "mcd:iced-strawberry-matcha-latte-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
   "mcd:iced-strawberry-matcha-latte-with-cold-foam-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ]
+  },
+  "mcd:iced-strawberry-matcha-latte-with-cold-foam-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ]
+  },
+  "mcd:iced-strawberry-matcha-latte-with-cold-foam-large-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -1805,7 +2475,59 @@
     "treenut"
    ]
   },
+  "mcd:iced-vanilla-matcha-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "mcd:iced-vanilla-matcha-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
   "mcd:iced-vanilla-matcha-with-cold-foam-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ]
+  },
+  "mcd:iced-vanilla-matcha-with-cold-foam-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ]
+  },
+  "mcd:iced-vanilla-matcha-with-cold-foam-large-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -1828,7 +2550,39 @@
     "wheat"
    ]
   },
+  "mcd:strawberry-watermelon-refresher-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "gluten",
+    "wheat"
+   ]
+  },
+  "mcd:strawberry-watermelon-refresher-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [],
+   "may": [
+    "gluten",
+    "wheat"
+   ]
+  },
   "mcd:mango-popping-refresher-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "mcd:mango-popping-refresher-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "mcd:mango-popping-refresher-large-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -1843,7 +2597,37 @@
     "soy"
    ]
   },
+  "mcd:berry-blast-sprite-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy"
+   ]
+  },
+  "mcd:berry-blast-sprite-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy"
+   ]
+  },
   "mcd:popping-green-apple-sprite-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "mcd:popping-green-apple-sprite-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "mcd:popping-green-apple-sprite-large-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -1908,7 +2692,31 @@
    "vg": "vegetarian",
    "al": []
   },
+  "mcd:lemon-drink-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "mcd:lemon-drink-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
   "mcd:lemon-lime-bitters-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "mcd:lemon-lime-bitters-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "mcd:lemon-lime-bitters-large-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -1920,7 +2728,25 @@
    "vg": "vegetarian",
    "al": []
   },
+  "mcd:vanilla-coke-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "mcd:vanilla-coke-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
   "mcd:sprite-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "mcd:sprite-small-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -1932,7 +2758,25 @@
    "vg": "vegetarian",
    "al": []
   },
+  "mcd:fanta-orange-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
   "mcd:raspberry-fanta-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "mcd:raspberry-fanta-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "mcd:raspberry-fanta-large-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -1944,7 +2788,25 @@
    "vg": "vegetarian",
    "al": []
   },
+  "mcd:frozen-coke-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
   "mcd:frozen-coke-zero-sugar-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "mcd:frozen-coke-zero-sugar-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "mcd:frozen-coke-zero-sugar-large-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -1956,7 +2818,25 @@
    "vg": "vegetarian",
    "al": []
   },
+  "mcd:frozen-fanta-orange-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
   "mcd:frozen-fanta-lemon-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "mcd:frozen-fanta-lemon-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "mcd:frozen-fanta-lemon-large-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -1968,7 +2848,25 @@
    "vg": "vegetarian",
    "al": []
   },
+  "mcd:frozen-fanta-raspberry-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
   "mcd:frozen-fanta-blueberry-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "mcd:frozen-fanta-blueberry-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "mcd:frozen-fanta-blueberry-large-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -1980,7 +2878,31 @@
    "vg": "vegetarian",
    "al": []
   },
+  "mcd:frozen-fanta-mango-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "mcd:frozen-fanta-mango-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
   "mcd:frozen-fanta-mango-with-strawberry-popping-pearls-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "mcd:frozen-fanta-mango-with-strawberry-popping-pearls-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "mcd:frozen-fanta-mango-with-strawberry-popping-pearls-large-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -2072,7 +2994,19 @@
    "vg": "vegetarian",
    "al": []
   },
+  "mcd:english-breakfast-tea-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
   "mcd:earl-grey-tea-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "mcd:earl-grey-tea-small-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -2084,7 +3018,25 @@
    "vg": "vegetarian",
    "al": []
   },
+  "mcd:green-tea-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
   "mcd:peppermint-tea-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "mcd:peppermint-tea-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "mcd:peppermint-tea-large-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -2095,7 +3047,25 @@
    "src": "name",
    "vg": "vegetarian"
   },
+  "mcd:orange-juice-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
   "mcd:orange-apple-juice-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "mcd:orange-apple-juice-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "mcd:orange-apple-juice-large-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -3606,9 +4576,10 @@
     "sulphites"
    ]
   },
-  "hj:thick-cut-chips": {
-   "meat": null,
-   "src": null,
+  "hj:thick-cut-chips-small-": {
+   "meat": [],
+   "src": "description",
+   "vg": "vegetarian",
    "al": [
     "sulphites"
    ],
@@ -3617,9 +4588,45 @@
     "wheat"
    ]
   },
-  "hj:battered-onion-rings": {
-   "meat": null,
-   "src": null,
+  "hj:thick-cut-chips-medium-": {
+   "meat": [],
+   "src": "description",
+   "vg": "vegetarian",
+   "al": [
+    "sulphites"
+   ],
+   "may": [
+    "gluten",
+    "wheat"
+   ]
+  },
+  "hj:thick-cut-chips-large-": {
+   "meat": [],
+   "src": "description",
+   "vg": "vegetarian",
+   "al": [
+    "sulphites"
+   ],
+   "may": [
+    "gluten",
+    "wheat"
+   ]
+  },
+  "hj:battered-onion-rings-medium-": {
+   "meat": [],
+   "src": "description",
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
+  },
+  "hj:battered-onion-rings-large-": {
+   "meat": [],
+   "src": "description",
+   "vg": "vegetarian",
    "al": [
     "gluten",
     "milk",
@@ -4470,7 +5477,30 @@
    "meat": null,
    "src": null
   },
-  "hj:cappuccino": {
+  "hj:cappuccino-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "soy"
+   ]
+  },
+  "hj:cappuccino-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy"
+   ]
+  },
+  "hj:cappuccino-large-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -4507,7 +5537,19 @@
    "src": "name",
    "vg": "vegetarian"
   },
-  "hj:chai-latte": {
+  "hj:chai-latte-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy"
+   ]
+  },
+  "hj:chai-latte-large-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -4544,7 +5586,30 @@
    "src": "name",
    "vg": "vegetarian"
   },
-  "hj:iced-chai": {
+  "hj:iced-chai-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "soy"
+   ]
+  },
+  "hj:iced-chai-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy"
+   ]
+  },
+  "hj:iced-chai-large-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -4561,7 +5626,7 @@
    "src": "name",
    "vg": "vegetarian"
   },
-  "hj:chocolate-shake": {
+  "hj:chocolate-shake-small-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -4572,7 +5637,29 @@
     "wheat"
    ]
   },
-  "hj:strawberry-shake": {
+  "hj:chocolate-shake-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "sulphites",
+    "wheat"
+   ]
+  },
+  "hj:chocolate-shake-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "sulphites",
+    "wheat"
+   ]
+  },
+  "hj:strawberry-shake-small-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -4582,7 +5669,27 @@
     "wheat"
    ]
   },
-  "hj:vanilla-shake": {
+  "hj:strawberry-shake-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ]
+  },
+  "hj:strawberry-shake-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ]
+  },
+  "hj:vanilla-shake-small-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -4590,7 +5697,23 @@
     "milk"
    ]
   },
-  "hj:caramel-shake": {
+  "hj:vanilla-shake-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
+  },
+  "hj:vanilla-shake-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
+  },
+  "hj:caramel-shake-small-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -4600,22 +5723,59 @@
     "sulphites"
    ]
   },
-  "hj:biscoff-shake": {
+  "hj:caramel-shake-medium-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
    "al": [
-    "gluten"
-   ],
-   "may": [
     "milk",
     "soy",
+    "sulphites"
+   ]
+  },
+  "hj:caramel-shake-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ]
+  },
+  "hj:biscoff-shake-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
     "sulphites",
-    "treenut",
+    "treenut"
+   ]
+  },
+  "hj:biscoff-shake-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
     "wheat"
    ]
   },
-  "hj:pistachio-papi-shake": {
+  "hj:biscoff-shake-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
+  },
+  "hj:pistachio-papi-shake-small-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -4632,42 +5792,162 @@
     "soy"
    ]
   },
-  "hj:coke": {
+  "hj:pistachio-papi-shake-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "treenut",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "peanut",
+    "sesame",
+    "soy"
+   ]
+  },
+  "hj:pistachio-papi-shake-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "gluten",
+    "milk",
+    "treenut",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "peanut",
+    "sesame",
+    "soy"
+   ]
+  },
+  "hj:coke-small-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
    "al": []
   },
-  "hj:coke-no-sugar": {
+  "hj:coke-medium-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
    "al": []
   },
-  "hj:vanilla-coke": {
+  "hj:coke-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "hj:coke-no-sugar-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "hj:coke-no-sugar-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "hj:coke-no-sugar-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "hj:vanilla-coke-small-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian"
   },
-  "hj:sprite": {
+  "hj:vanilla-coke-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "hj:vanilla-coke-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "hj:sprite-small-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
    "al": []
   },
-  "hj:fanta-orange": {
+  "hj:sprite-medium-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
    "al": []
   },
-  "hj:fanta-raspberry": {
+  "hj:sprite-large-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
    "al": []
   },
-  "hj:orange-fruit-drink": {
+  "hj:fanta-orange-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "hj:fanta-orange-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "hj:fanta-orange-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "hj:fanta-raspberry-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "hj:fanta-raspberry-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "hj:fanta-raspberry-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "hj:orange-fruit-drink-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "sulphites"
+   ]
+  },
+  "hj:orange-fruit-drink-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "sulphites"
+   ]
+  },
+  "hj:orange-fruit-drink-large-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -4711,13 +5991,25 @@
    "meat": null,
    "src": "name"
   },
-  "hj:frozen-coke": {
+  "hj:frozen-coke-small-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
    "al": []
   },
-  "hj:frozen-coke-spider": {
+  "hj:frozen-coke-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "hj:frozen-coke-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "hj:frozen-coke-spider-small-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -4725,7 +6017,35 @@
     "milk"
    ]
   },
-  "hj:frozen-fanta-raspberry": {
+  "hj:frozen-coke-spider-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
+  },
+  "hj:frozen-coke-spider-large-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": [
+    "milk"
+   ]
+  },
+  "hj:frozen-fanta-raspberry-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "hj:frozen-fanta-raspberry-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "hj:frozen-fanta-raspberry-large-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -4741,7 +6061,19 @@
    "src": "name",
    "vg": "vegetarian"
   },
-  "hj:frozen-keri-orange-mango": {
+  "hj:frozen-keri-orange-mango-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "hj:frozen-keri-orange-mango-medium-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian",
+   "al": []
+  },
+  "hj:frozen-keri-orange-mango-large-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian",
@@ -4799,7 +6131,7 @@
     "soy"
    ]
   },
-  "hj:chocolate-sundae": {
+  "hj:chocolate-sundae-small-": {
    "meat": [],
    "src": "ingredients",
    "al": [
@@ -4811,7 +6143,19 @@
     "peanut"
    ]
   },
-  "hj:caramel-sundae": {
+  "hj:chocolate-sundae-large-": {
+   "meat": [],
+   "src": "ingredients",
+   "al": [
+    "milk",
+    "sulphites"
+   ],
+   "vg": "vegetarian",
+   "may": [
+    "peanut"
+   ]
+  },
+  "hj:caramel-sundae-small-": {
    "meat": [],
    "src": "ingredients",
    "al": [
@@ -4825,7 +6169,31 @@
     "soy"
    ]
   },
-  "hj:strawberry-sundae": {
+  "hj:caramel-sundae-large-": {
+   "meat": [],
+   "src": "ingredients",
+   "al": [
+    "gluten",
+    "milk",
+    "sulphites",
+    "wheat"
+   ],
+   "vg": "vegetarian",
+   "may": [
+    "soy"
+   ]
+  },
+  "hj:strawberry-sundae-small-": {
+   "meat": [],
+   "src": "ingredients",
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "vg": "vegetarian"
+  },
+  "hj:strawberry-sundae-large-": {
    "meat": [],
    "src": "ingredients",
    "al": [
@@ -11774,6 +13142,13 @@
     "soy"
    ]
   },
+  "nandos:spicy-rice-large-": {
+   "meat": null,
+   "src": "name",
+   "al": [
+    "soy"
+   ]
+  },
   "nandos:coleslaw-regular-": {
    "meat": [],
    "src": "labels",
@@ -12508,7 +13883,7 @@
     "wheat"
    ]
   },
-  "oporto:chips": {
+  "oporto:chips-regular-": {
    "meat": null,
    "src": "description",
    "al": [],
@@ -12520,7 +13895,31 @@
     "wheat"
    ]
   },
-  "oporto:grilled-corn": {
+  "oporto:chips-large-": {
+   "meat": null,
+   "src": "description",
+   "al": [],
+   "may": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
+  },
+  "oporto:chips-family-": {
+   "meat": null,
+   "src": null,
+   "al": [],
+   "may": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
+  },
+  "oporto:grilled-corn-single-": {
    "meat": [],
    "src": "description",
    "vg": "vegetarian",
@@ -12532,7 +13931,18 @@
     "wheat"
    ]
   },
-  "oporto:spicy-rice": {
+  "oporto:grilled-corn-share-": {
+   "meat": null,
+   "src": null,
+   "al": [],
+   "may": [
+    "egg",
+    "gluten",
+    "soy",
+    "wheat"
+   ]
+  },
+  "oporto:spicy-rice-single-": {
    "meat": [
     "chicken"
    ],
@@ -12548,10 +13958,32 @@
     "sesame"
    ]
   },
-  "oporto:crunchy-slaw": {
+  "oporto:spicy-rice-share-": {
+   "meat": null,
+   "src": null,
+   "al": [
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "peanut",
+    "sesame"
+   ]
+  },
+  "oporto:crunchy-slaw-single-": {
    "meat": [],
    "src": "description",
    "vg": "vegetarian",
+   "al": [
+    "egg",
+    "milk"
+   ]
+  },
+  "oporto:crunchy-slaw-share-": {
+   "meat": null,
+   "src": null,
    "al": [
     "egg",
     "milk"
@@ -12587,10 +14019,21 @@
     "wheat"
    ]
   },
-  "oporto:churros": {
-   "meat": [],
-   "src": "description",
-   "vg": "vegetarian",
+  "oporto:churros-5-pieces-": {
+   "meat": null,
+   "src": null,
+   "al": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "milk"
+   ]
+  },
+  "oporto:churros-8-pieces-": {
+   "meat": null,
+   "src": null,
    "al": [
     "gluten",
     "wheat"
@@ -12635,10 +14078,14 @@
     "sulphites"
    ]
   },
-  "oporto:portuguese-salad": {
+  "oporto:portuguese-salad-single-": {
    "meat": [],
    "src": "description",
    "vg": "vegetarian"
+  },
+  "oporto:portuguese-salad-share-": {
+   "meat": null,
+   "src": null
   },
   "oporto:dipping-sauce-prego": {
    "meat": null,
@@ -14891,7 +16338,7 @@
     "wheat"
    ]
   },
-  "rr:mash-gravy": {
+  "rr:mash-gravy-regular-": {
    "meat": null,
    "src": "description",
    "al": [
@@ -14921,7 +16368,7 @@
     "treenut"
    ]
   },
-  "rr:sweet-potato": {
+  "rr:sweet-potato-regular-": {
    "meat": null,
    "src": "description",
    "al": [
@@ -14938,7 +16385,7 @@
     "wheat"
    ]
   },
-  "rr:crunchy-potato": {
+  "rr:crunchy-potato-regular-": {
    "meat": [],
    "src": "description",
    "vg": "vegetarian",
@@ -14957,7 +16404,7 @@
     "wheat"
    ]
   },
-  "rr:crunchy-slaw": {
+  "rr:crunchy-slaw-regular-": {
    "meat": [],
    "src": "description",
    "vg": "vegetarian",
@@ -14970,7 +16417,7 @@
     "treenut"
    ]
   },
-  "rr:peas": {
+  "rr:peas-regular-": {
    "meat": [],
    "src": "description",
    "vg": "vegetarian",
@@ -23304,17 +24751,7 @@
    "src": "name",
    "vg": "vegetarian"
   },
-  "soul:iced-matcha-regular-": {
-   "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
-  },
   "soul:matcha-over-ice-small-": {
-   "meat": [],
-   "src": "name",
-   "vg": "vegetarian"
-  },
-  "soul:matcha-over-ice-regular-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian"
@@ -23802,7 +25239,7 @@
    "meat": null,
    "src": null
   },
-  "thisbowl:sushi-rice": {
+  "thisbowl:sushi-rice-regular-": {
    "meat": null,
    "src": null
   },
@@ -23810,7 +25247,7 @@
    "meat": null,
    "src": null
   },
-  "thisbowl:brown-rice": {
+  "thisbowl:brown-rice-regular-": {
    "meat": null,
    "src": null
   },
@@ -23818,7 +25255,7 @@
    "meat": null,
    "src": null
   },
-  "thisbowl:cabbage": {
+  "thisbowl:cabbage-regular-": {
    "meat": null,
    "src": null
   },
@@ -23826,7 +25263,7 @@
    "meat": null,
    "src": null
   },
-  "thisbowl:glass-noodles": {
+  "thisbowl:glass-noodles-regular-": {
    "meat": null,
    "src": null
   },
@@ -23834,7 +25271,7 @@
    "meat": null,
    "src": null
   },
-  "thisbowl:brown-rice-cabbage": {
+  "thisbowl:brown-rice-cabbage-regular-": {
    "meat": null,
    "src": null
   },

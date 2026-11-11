@@ -85,7 +85,7 @@ import UniformTypeIdentifiers
         defer { try? FileManager.default.removeItem(at: root) }
         let catalogURL = URL(fileURLWithPath: CommandLine.arguments[1])
         let catalog = try JSONDecoder().decode(MenuCatalog.self,from: Data(contentsOf: catalogURL))
-        assert(catalog.foods.count == 2767)
+        assert(catalog.foods.count == 2920)
         let copycat = CopycatBook.load(catalogURL.deletingLastPathComponent().appending(path: "CopycatKitchen.json"))
         let compared = copycat.comparisons(menu: catalog.foods)
         assert(copycat.recipes.count == 12 && compared.count == 12)   // every recipe's shop item is on the menu
@@ -196,7 +196,7 @@ import UniformTypeIdentifiers
         assert(MealPhoto.chain(for: "Grill'd", chainNames: Dictionary(uniqueKeysWithValues: catalog.chains.map { ($0.id, $0.name) })) == "grilld")
         // Nando's: every protein, style, extra and removal is a Nando's panel, so none are estimates.
         let nandos = catalog.foods.filter { $0.chain == "nandos" }
-        assert(nandos.count == 56 && nandos.allSatisfy { $0.c != nil && $0.f != nil })
+        assert(nandos.count == 57 && nandos.allSatisfy { $0.c != nil && $0.f != nil })
         let classic = nandos.first { $0.name == "PERinaise Classic" }!
         assert(classic.kj == 2300 && classic.serve.hasPrefix("Chicken Leg Fillets · Portuguese Roll"))
         let toBreast = classic.modifiers!.first { $0.name == "Swap to Chicken Breast" }!
@@ -222,7 +222,7 @@ import UniformTypeIdentifiers
         assert(vegetarian.allows(byID["hj:plant-based-whopper"]!) && vegetarian.allows(byID["grilld:garden-goodness"]!))
         assert(!noPork.allows(byID["dominos:hawaiian-1-slice-"]!) && !noBeef.allows(byID["dominos:pepperoni-1-slice-"]!))
         // Items whose words don't say everything stay unknown: a combo with chips and any drink, the B.M.T.'s "meats", seasoned chips.
-        for id in ["kfc:zinger-protein-bowl-combo-regular-", "sub:6-italian-b-m-t-", "oporto:chips"] {
+        for id in ["kfc:zinger-protein-bowl-combo-regular-", "sub:6-italian-b-m-t-", "oporto:chips-regular-"] {
             assert(byID[id]!.diet?.meat == nil && !vegetarian.allows(byID[id]!) && !noPork.allows(byID[id]!), id)
         }
         let glutenFree = DietFilter(options: [.gluten])
@@ -233,7 +233,7 @@ import UniformTypeIdentifiers
         // Hungry Jack's ordering menu has no lupin and says "gluten" without the cereal; its allergen reports cover both.
         let hjMenuOnly = catalog.foods.first { $0.chain == "hj" && ($0.diet?.unk ?? []).contains("lupin") }!
         assert(!DietFilter(options: [.lupin]).allows(hjMenuOnly))
-        let coke = catalog.foods.first { $0.chain == "hj" && $0.name == "Coke" }!
+        let coke = catalog.foods.first { $0.chain == "hj" && $0.name == "Coke (small)" }!
         assert(coke.diet?.al == [] && coke.diet?.unk == nil && DietFilter(options: [.lupin, .wheat]).allows(coke))
         assert(DietFilter(options: [.lupin, .sulphites]).allows(byID["nandos:1-2-peri-peri-chicken"]!))
         let wheatUnknown = catalog.foods.first { ($0.diet?.al ?? []).contains("gluten") && ($0.diet?.unk ?? []).contains("wheat") }!

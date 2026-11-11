@@ -68,7 +68,8 @@ SKIP_CATEGORIES = {"Drinks", "Nando's sauces", "Do Good, Feel Good", "Secret Men
 CATEGORY = {"Sides": "side", "Desserts": "sweet"}
 DIPS = {"PERinaise Chip Dip", "Mayo Chip Dip"}
 # Items whose panels are filed under another product's number.
-PANELS = {"9007": "1001049"}
+# Large Spicy Rice has no panel of its own; the meal side choice of it (same figures as every other side pair) does.
+PANELS = {"9007": "1001049", "3102": "1001131"}
 # Earlier names in Leanr, kept so foods people have pinned or saved keep their IDs.
 NAMES = {"4 PERi-PERi Tenders": "4 PERi-PERi Grilled Tenders", "4 BBQ Ribs": "BBQ Chicken Ribs (4)",
          "Mediterranean Salad with Protein": "Mediterranean Salad with Chicken", "Paella": "Paella with Chicken",
@@ -131,7 +132,7 @@ def build():
                 continue
             default = lambda c: c and (c["defaultSelectedOptions"] or [c["options"][0]["plu"]])[0]
             p_plu, s_plu = default(protein), default(style)
-            base = panel(PANELS.get(product["plu"], product["plu"]), p_plu, s_plu) if protein else panel(product["plu"])
+            base = panel(PANELS.get(product["plu"], product["plu"]), p_plu, s_plu) if protein else panel(PANELS.get(product["plu"], product["plu"]))
             if not base:
                 continue
             seen.add(product["plu"])
@@ -145,7 +146,7 @@ def build():
             serve = " · ".join(parts + [f"{round(base['g'])} g"])
             cat = "extra" if name in DIPS else CATEGORY.get(category["name"], "main")
             rows.append([name, cat, base, serve])
-            panel_of[f"nandos:{slug(name)}"] = ":".join(p for p in (product["plu"], p_plu if protein else None, s_plu if protein else None) if p)
+            panel_of[f"nandos:{slug(name)}"] = ":".join(p for p in (product["plu"] if protein else PANELS.get(product["plu"], product["plu"]), p_plu if protein else None, s_plu if protein else None) if p)
             options = []
 
             # Style swaps, on the default protein if that's published, otherwise on the first protein that has both.

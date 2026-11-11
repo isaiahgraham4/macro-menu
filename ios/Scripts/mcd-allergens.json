@@ -1,5 +1,5 @@
 {
- "source": "mcdonalds.com/au item pages (the site's own itemDetails, read in a browser; ingredients and allergens of each component), 15 Oct 2026; new items read 31 Oct 2026",
+ "source": "mcdonalds.com/au item pages (the site's own itemDetails, read in a browser; ingredients and allergens of each component), 15 Oct 2026; new items read 31 Oct 2026; other sizes read 11 Nov 2026",
  "fetched": "2026-10-15",
  "items": {
   "200000": {
@@ -146,6 +146,13 @@
    "al": [],
    "may": []
   },
+  "200079": {
+   "h": "caramel-sundae-large",
+   "al": [
+    "milk"
+   ],
+   "may": []
+  },
   "200080": {
    "h": "soft-serve-cone",
    "al": [
@@ -195,6 +202,30 @@
   },
   "200115": {
    "h": "chai-latte-medium",
+   "al": [
+    "gluten",
+    "milk",
+    "sulphites"
+   ],
+   "may": [
+    "soy",
+    "treenut"
+   ]
+  },
+  "200116": {
+   "h": "vanilla-chai-latte-small",
+   "al": [
+    "gluten",
+    "milk",
+    "sulphites"
+   ],
+   "may": [
+    "soy",
+    "treenut"
+   ]
+  },
+  "200117": {
+   "h": "vanilla-chai-latte-large",
    "al": [
     "gluten",
     "milk",
@@ -318,6 +349,17 @@
     "treenut"
    ]
   },
+  "200211": {
+   "h": "matcha-latte-small",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
   "200213": {
    "h": "iced-matcha-latte-medium",
    "al": [
@@ -345,6 +387,32 @@
     "treenut"
    ]
   },
+  "200216": {
+   "h": "iced-matcha-latte-small",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200220": {
+   "h": "peppermint-tea-large",
+   "al": [],
+   "may": []
+  },
+  "200221": {
+   "h": "english-breakfast-tea-small",
+   "al": [],
+   "may": []
+  },
+  "200222": {
+   "h": "peppermint-tea-small",
+   "al": [],
+   "may": []
+  },
   "200284": {
    "h": "ranch-sauce",
    "al": [
@@ -360,8 +428,23 @@
    ],
    "may": []
   },
+  "200320": {
+   "h": "green-tea-small",
+   "al": [],
+   "may": []
+  },
+  "200322": {
+   "h": "coca-cola-small",
+   "al": [],
+   "may": []
+  },
   "200323": {
    "h": "coca-cola-medium",
+   "al": [],
+   "may": []
+  },
+  "200325": {
+   "h": "fanta-orange-small",
    "al": [],
    "may": []
   },
@@ -370,8 +453,28 @@
    "al": [],
    "may": []
   },
+  "200328": {
+   "h": "vanilla-coke-small",
+   "al": [],
+   "may": []
+  },
   "200329": {
    "h": "coca-cola-vanilla-medium",
+   "al": [],
+   "may": []
+  },
+  "200330": {
+   "h": "vanilla-coke-large",
+   "al": [],
+   "may": []
+  },
+  "200335": {
+   "h": "frozen-coke-zero-sugar-small",
+   "al": [],
+   "may": []
+  },
+  "200356": {
+   "h": "frozen-coke-small",
    "al": [],
    "may": []
   },
@@ -399,6 +502,11 @@
   },
   "200387": {
    "h": "frozen-coke-zero-sugar-medium",
+   "al": [],
+   "may": []
+  },
+  "200388": {
+   "h": "frozen-coke-zero-sugar-large",
    "al": [],
    "may": []
   },
@@ -440,6 +548,13 @@
     "egg",
     "milk"
    ]
+  },
+  "200434": {
+   "h": "hot-fudge-sundae-large",
+   "al": [
+    "milk"
+   ],
+   "may": []
   },
   "200441": {
    "h": "chicken-mcwings",
@@ -565,8 +680,29 @@
     "sesame"
    ]
   },
+  "200503": {
+   "h": "chocolate-shake-small",
+   "al": [
+    "milk"
+   ],
+   "may": []
+  },
+  "200508": {
+   "h": "chocolate-shake-medium",
+   "al": [
+    "milk"
+   ],
+   "may": []
+  },
   "200509": {
    "h": "chocolate-shake-large",
+   "al": [
+    "milk"
+   ],
+   "may": []
+  },
+  "200511": {
+   "h": "vanilla-shake-small",
    "al": [
     "milk"
    ],
@@ -579,8 +715,22 @@
    ],
    "may": []
   },
+  "200513": {
+   "h": "strawberry-shake-small",
+   "al": [
+    "milk"
+   ],
+   "may": []
+  },
   "200514": {
    "h": "strawberry-shake-large",
+   "al": [
+    "milk"
+   ],
+   "may": []
+  },
+  "200515": {
+   "h": "vanilla-shake-medium",
    "al": [
     "milk"
    ],
@@ -597,9 +747,21 @@
     "wheat"
    ]
   },
+  "200526": {
+   "h": "frozen-fanta-raspberry-small",
+   "al": [],
+   "may": []
+  },
   "200529": {
    "h": "frozen-fanta-raspberry-medium",
    "al": [],
+   "may": []
+  },
+  "200532": {
+   "h": "strawberry-shake-medium",
+   "al": [
+    "milk"
+   ],
    "may": []
   },
   "200534": {
@@ -621,6 +783,16 @@
    ],
    "may": []
   },
+  "200542": {
+   "h": "frozen-fanta-blueberry-small",
+   "al": [],
+   "may": []
+  },
+  "200543": {
+   "h": "frozen-fanta-blueberry-large",
+   "al": [],
+   "may": []
+  },
   "200544": {
    "h": "frozen-fanta-blueberry-medium",
    "al": [],
@@ -628,6 +800,27 @@
   },
   "200548": {
    "h": "iced-long-black-medium",
+   "al": [],
+   "may": []
+  },
+  "200549": {
+   "h": "coffee-frappe-medium",
+   "al": [
+    "milk",
+    "sulphites"
+   ],
+   "may": [
+    "gluten",
+    "wheat"
+   ]
+  },
+  "200551": {
+   "h": "iced-long-black-small",
+   "al": [],
+   "may": []
+  },
+  "200552": {
+   "h": "iced-long-black-large",
    "al": [],
    "may": []
   },
@@ -641,6 +834,16 @@
     "gluten",
     "wheat"
    ]
+  },
+  "200555": {
+   "h": "choc-frappe-medium",
+   "al": [
+    "gluten",
+    "milk",
+    "sulphites",
+    "wheat"
+   ],
+   "may": []
   },
   "200556": {
    "h": "chocolate-frappe-large",
@@ -662,6 +865,33 @@
     "soy",
     "treenut"
    ]
+  },
+  "200570": {
+   "h": "latte-small-full-cream",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200571": {
+   "h": "latte-large-full-cream",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200572": {
+   "h": "long-black-small",
+   "al": [],
+   "may": []
   },
   "200574": {
    "h": "latte-medium",
@@ -690,10 +920,28 @@
     "treenut"
    ]
   },
+  "200593": {
+   "h": "strawberry-sundae-large",
+   "al": [
+    "milk"
+   ],
+   "may": []
+  },
   "200594": {
    "h": "long-black-medium",
    "al": [],
    "may": []
+  },
+  "200597": {
+   "h": "iced-strawberry-matcha-latte-small",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
   },
   "200599": {
    "h": "sausage-egg-mcmuffin",
@@ -713,6 +961,11 @@
    "al": [],
    "may": []
   },
+  "200602": {
+   "h": "frozen-fanta-orange-small",
+   "al": [],
+   "may": []
+  },
   "200605": {
    "h": "ham-cheese-pocket",
    "al": [
@@ -723,6 +976,18 @@
    ],
    "may": [
     "sesame"
+   ]
+  },
+  "200612": {
+   "h": "iced-velvet-mocha-with-cold-foam-small",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
    ]
   },
   "200617": {
@@ -852,6 +1117,28 @@
    ],
    "may": []
   },
+  "200663": {
+   "h": "flat-white-small-full-cream",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200664": {
+   "h": "iced-latte-small",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
   "200665": {
    "h": "iced-chai-latte-medium",
    "al": [
@@ -928,6 +1215,11 @@
     "egg"
    ]
   },
+  "200706": {
+   "h": "frozen-fanta-lemon-large",
+   "al": [],
+   "may": []
+  },
   "200708": {
    "h": "double-quarter-pounder",
    "al": [
@@ -955,6 +1247,17 @@
   },
   "200714": {
    "h": "flat-white-medium",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200716": {
+   "h": "iced-latte-large",
    "al": [
     "milk"
    ],
@@ -1012,6 +1315,17 @@
     "treenut"
    ]
   },
+  "200738": {
+   "h": "hot-chocolate-small-full-cream",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
   "200739": {
    "h": "hot-chocolate-medium",
    "al": [
@@ -1047,6 +1361,17 @@
   },
   "200743": {
    "h": "salted-caramel-frappe-large",
+   "al": [
+    "milk",
+    "sulphites"
+   ],
+   "may": [
+    "gluten",
+    "wheat"
+   ]
+  },
+  "200744": {
+   "h": "salted-caramel-frappe-medium",
    "al": [
     "milk",
     "sulphites"
@@ -1096,8 +1421,42 @@
     "soy"
    ]
   },
+  "200774": {
+   "h": "cappuccino-small-full-cream",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
   "200776": {
    "h": "cappuccino-large",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200777": {
+   "h": "hot-chocolate-large-full-cream",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200778": {
+   "h": "mocha-small-full-cream",
    "al": [
     "milk"
    ],
@@ -1118,6 +1477,17 @@
     "treenut"
    ]
   },
+  "200780": {
+   "h": "mocha-large-full-cream",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
   "200781": {
    "h": "green-tea-medium",
    "al": [],
@@ -1127,6 +1497,17 @@
    "h": "peppermint-tea-medium",
    "al": [],
    "may": []
+  },
+  "200783": {
+   "h": "iced-mocha-small-full-cream",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
   },
   "200784": {
    "h": "big-arch",
@@ -1151,6 +1532,17 @@
     "treenut"
    ]
   },
+  "200786": {
+   "h": "iced-mocha-large-full-cream",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
   "200787": {
    "h": "babyccino",
    "al": [
@@ -1162,8 +1554,29 @@
     "treenut"
    ]
   },
+  "200788": {
+   "h": "iced-chocolate-small-full-cream",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200789": {
+   "h": "raspberry-fanta-small",
+   "al": [],
+   "may": []
+  },
   "200790": {
    "h": "fanta-raspberry-medium",
+   "al": [],
+   "may": []
+  },
+  "200791": {
+   "h": "raspberry-fanta-large",
    "al": [],
    "may": []
   },
@@ -1178,13 +1591,33 @@
     "treenut"
    ]
   },
+  "200793": {
+   "h": "coca-cola-zero-sugar-small",
+   "al": [],
+   "may": []
+  },
+  "200794": {
+   "h": "coca-cola-zero-sugar-large",
+   "al": [],
+   "may": []
+  },
   "200795": {
    "h": "coca-cola-zero-sugar-medium",
    "al": [],
    "may": []
   },
+  "200796": {
+   "h": "sprite-small",
+   "al": [],
+   "may": []
+  },
   "200797": {
    "h": "sprite-medium",
+   "al": [],
+   "may": []
+  },
+  "200799": {
+   "h": "orange-juice-small",
    "al": [],
    "may": []
   },
@@ -1195,8 +1628,59 @@
    ],
    "may": []
   },
+  "200805": {
+   "h": "plain-sundae-large",
+   "al": [
+    "milk"
+   ],
+   "may": []
+  },
+  "200807": {
+   "h": "iced-chocolate-large-full-cream",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200808": {
+   "h": "deluxe-vanilla-iced-coffee-large",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
   "200809": {
    "h": "deluxe-vanilla-flavoured-iced-coffee-medium",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200810": {
+   "h": "deluxe-vanilla-iced-coffee-small",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200811": {
+   "h": "deluxe-hazelnut-iced-coffee-large",
    "al": [
     "milk"
    ],
@@ -1217,6 +1701,28 @@
     "treenut"
    ]
   },
+  "200813": {
+   "h": "deluxe-hazelnut-iced-coffee-small",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200814": {
+   "h": "deluxe-caramel-iced-coffee-large",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
   "200815": {
    "h": "deluxe-caramel-flavoured-iced-coffee-medium",
    "al": [
@@ -1227,6 +1733,22 @@
     "soy",
     "treenut"
    ]
+  },
+  "200816": {
+   "h": "deluxe-caramel-iced-coffee-small",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200817": {
+   "h": "frozen-fanta-lemon-small",
+   "al": [],
+   "may": []
   },
   "200818": {
    "h": "frozen-fanta-lemon-medium",
@@ -1258,8 +1780,18 @@
     "soy"
    ]
   },
+  "200837": {
+   "h": "lemon-lime-bitters-small",
+   "al": [],
+   "may": []
+  },
   "200838": {
    "h": "kirks-lemon-lime-bitters-medium",
+   "al": [],
+   "may": []
+  },
+  "200839": {
+   "h": "lemon-lime-bitters-large",
    "al": [],
    "may": []
   },
@@ -1271,8 +1803,26 @@
     "wheat"
    ]
   },
+  "200844": {
+   "h": "berry-blast-sprite-small",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": []
+  },
+  "200860": {
+   "h": "orange-apple-juice-small",
+   "al": [],
+   "may": []
+  },
   "200861": {
    "h": "orange-apple-juice-medium",
+   "al": [],
+   "may": []
+  },
+  "200862": {
+   "h": "orange-apple-juice-large",
    "al": [],
    "may": []
   },
@@ -1371,10 +1921,36 @@
    ],
    "may": []
   },
+  "200878": {
+   "h": "berry-blast-sprite-large",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": []
+  },
+  "200879": {
+   "h": "lemon-drink-small",
+   "al": [],
+   "may": []
+  },
   "200880": {
    "h": "lemon-flavour-drink-medium",
    "al": [],
    "may": []
+  },
+  "200881": {
+   "h": "lemon-drink-large",
+   "al": [],
+   "may": []
+  },
+  "200882": {
+   "h": "strawberry-watermelon-refresher-small",
+   "al": [],
+   "may": [
+    "gluten",
+    "wheat"
+   ]
   },
   "200883": {
    "h": "strawberry-watermelon-refresher-medium",
@@ -1384,13 +1960,41 @@
     "wheat"
    ]
   },
+  "200884": {
+   "h": "strawberry-watermelon-refresher-large",
+   "al": [],
+   "may": [
+    "gluten",
+    "wheat"
+   ]
+  },
+  "200885": {
+   "h": "mango-popping-refresher-small",
+   "al": [],
+   "may": []
+  },
   "200886": {
    "h": "popping-mango-refresher-medium",
    "al": [],
    "may": []
   },
+  "200887": {
+   "h": "mango-popping-refresher-large",
+   "al": [],
+   "may": []
+  },
+  "200888": {
+   "h": "popping-green-apple-sprite-small",
+   "al": [],
+   "may": []
+  },
   "200889": {
    "h": "popping-green-apple-sprite-medium",
+   "al": [],
+   "may": []
+  },
+  "200890": {
+   "h": "popping-green-apple-sprite-large",
    "al": [],
    "may": []
   },
@@ -1403,6 +2007,26 @@
    ],
    "may": []
   },
+  "200892": {
+   "h": "choc-coconut-frappe-large",
+   "al": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": []
+  },
+  "200893": {
+   "h": "brown-sugar-shaken-espresso-oat-milk-small",
+   "al": [
+    "gluten"
+   ],
+   "may": [
+    "milk",
+    "soy",
+    "treenut"
+   ]
+  },
   "200894": {
    "h": "brown-sugar-shaken-espresso-with-oat-milk-medium",
    "al": [
@@ -1410,6 +2034,40 @@
    ],
    "may": [
     "milk",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200895": {
+   "h": "brown-sugar-shaken-espresso-oat-milk-large",
+   "al": [
+    "gluten"
+   ],
+   "may": [
+    "milk",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200896": {
+   "h": "iced-velvet-mocha-with-cold-foam-large",
+   "al": [
+    "milk",
+    "soy",
+    "sulphites"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ]
+  },
+  "200897": {
+   "h": "iced-golden-caramel-latte-small",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
     "soy",
     "treenut"
    ]
@@ -1479,8 +2137,41 @@
     "sesame"
    ]
   },
+  "200904": {
+   "h": "iced-matcha-latte-with-cold-foam-large",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ]
+  },
   "200905": {
    "h": "iced-matcha-latte-with-cold-foam-medium",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ]
+  },
+  "200906": {
+   "h": "iced-matcha-latte-with-cold-foam-small",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ]
+  },
+  "200907": {
+   "h": "iced-strawberry-matcha-latte-with-cold-foam-large",
    "al": [
     "milk",
     "soy"
@@ -1501,6 +2192,28 @@
     "treenut"
    ]
   },
+  "200909": {
+   "h": "iced-strawberry-matcha-latte-with-cold-foam-small",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ]
+  },
+  "200910": {
+   "h": "iced-vanilla-matcha-with-cold-foam-large",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ]
+  },
   "200911": {
    "h": "iced-vanilla-matcha-with-cold-foam-medium",
    "al": [
@@ -1512,8 +2225,41 @@
     "treenut"
    ]
   },
+  "200912": {
+   "h": "iced-vanilla-matcha-with-cold-foam-small",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ]
+  },
+  "200913": {
+   "h": "iced-vanilla-matcha-large",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
   "200914": {
    "h": "iced-vanilla-matcha-medium",
+   "al": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "treenut"
+   ]
+  },
+  "200915": {
+   "h": "iced-vanilla-matcha-small",
    "al": [
     "milk"
    ],
@@ -1580,8 +2326,32 @@
     "sesame"
    ]
   },
+  "200925": {
+   "h": "strawberry-shortcake-frappe-large",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "peanut",
+    "treenut"
+   ]
+  },
+  "200930": {
+   "h": "frozen-fanta-mango-small",
+   "al": [],
+   "may": []
+  },
   "200931": {
    "h": "frozen-fanta-mango-medium",
+   "al": [],
+   "may": []
+  },
+  "200932": {
+   "h": "frozen-fanta-mango-large",
    "al": [],
    "may": []
   },
@@ -1668,6 +2438,26 @@
     "wheat"
    ]
   },
+  "200944": {
+   "h": "nashville-mcshaker-fries-medium",
+   "al": [],
+   "may": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
+  },
+  "200945": {
+   "h": "nashville-mcshaker-fries-large",
+   "al": [],
+   "may": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
+  },
   "200947": {
    "h": "affogato",
    "al": [
@@ -1675,8 +2465,18 @@
    ],
    "may": []
   },
+  "200948": {
+   "h": "frozen-fanta-mango-with-strawberry-popping-pearls-small",
+   "al": [],
+   "may": []
+  },
   "200949": {
    "h": "frozen-fanta-mango-strawberry-popping-pearls-medium",
+   "al": [],
+   "may": []
+  },
+  "200950": {
+   "h": "frozen-fanta-mango-with-strawberry-popping-pearls-large",
    "al": [],
    "may": []
   },
@@ -1687,8 +2487,30 @@
    ],
    "may": []
   },
+  "200955": {
+   "h": "iced-tiramisu-latte-small",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ]
+  },
   "200956": {
    "h": "iced-tiramisu-latte-medium",
+   "al": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "treenut"
+   ]
+  },
+  "200957": {
+   "h": "iced-tiramisu-latte-large",
    "al": [
     "milk",
     "soy"
