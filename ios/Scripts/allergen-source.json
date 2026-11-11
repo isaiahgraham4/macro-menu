@@ -859,13 +859,6 @@
    "may": [],
    "vg": "vegan"
   },
-  "Lychee Charm": {
-   "al": [
-    "milk"
-   ],
-   "may": [],
-   "vg": "vegetarian"
-  },
   "Pink Paradise": {
    "al": [
     "milk"
@@ -881,18 +874,9 @@
    "vg": "vegetarian"
   },
   "Bananas For Choc": {
-   "al": [
-    "soy"
-   ],
+   "al": [],
    "may": [],
    "vg": "vegan"
-  },
-  "Coffee Dream": {
-   "al": [
-    "milk"
-   ],
-   "may": [],
-   "vg": "vegetarian"
   },
   "Cookies & Crème": {
    "al": [
@@ -918,11 +902,38 @@
    "may": [],
    "vg": "vegetarian"
   },
+  "Banana Mocha": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "vg": "vegetarian"
+  },
+  "Brekkie to Go-Go": {
+   "al": [
+    "gluten",
+    "milk",
+    "sulphites"
+   ],
+   "may": [],
+   "vg": "vegetarian"
+  },
+  "Strawbrekkie": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites"
+   ],
+   "may": [],
+   "vg": "vegetarian"
+  },
   "Choc Muscle Hustle": {
    "al": [
     "gluten",
     "milk",
-    "soy"
+    "soy",
+    "sulphites"
    ],
    "may": [],
    "vg": "vegetarian"
@@ -953,13 +964,6 @@
     "milk",
     "soy",
     "sulphites"
-   ],
-   "may": [],
-   "vg": "vegetarian"
-  },
-  "Super Açaí": {
-   "al": [
-    "milk"
    ],
    "may": [],
    "vg": "vegetarian"
@@ -998,57 +1002,37 @@
    "vg": "vegan"
   },
   "Two & Five": {
-   "al": [
-    "milk"
-   ],
-   "may": [],
-   "vg": "vegetarian"
-  },
-  "Brekkie to Go-Go": {
-   "al": [
-    "gluten",
-    "milk",
-    "sulphites"
-   ],
-   "may": [],
-   "vg": "vegetarian"
-  },
-  "Strawbrekkie": {
-   "al": [
-    "gluten",
-    "milk",
-    "soy"
-   ],
-   "may": [],
-   "vg": "vegetarian"
-  },
-  "Mornin' Mocha": {
-   "al": [
-    "gluten",
-    "milk",
-    "soy"
-   ],
-   "may": [],
-   "vg": "vegetarian"
-  },
-  "All Greens": {
    "al": [],
    "may": [],
    "vg": "vegan"
   },
-  "Collagen": {
-   "al": [],
+  "Strawberry Glow": {
+   "al": [
+    "milk",
+    "treenut"
+   ],
    "may": []
   },
-  "Creatine (Electrolytes)": {
+  "Mango Refresh": {
    "al": [],
    "may": [],
    "vg": "vegan"
   },
-  "Fibre": {
-   "al": [],
+  "Peanut Butter Protein": {
+   "al": [
+    "milk",
+    "peanut",
+    "soy"
+   ],
    "may": [],
-   "vg": "vegan"
+   "vg": "vegetarian"
+  },
+  "Glow Latte": {
+   "al": [
+    "milk",
+    "treenut"
+   ],
+   "may": []
   }
  },
  "oporto": {

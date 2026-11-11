@@ -2726,6 +2726,42 @@
    "may": [],
    "src": "guide"
   },
+  "kfc:garlic-parmesan-sub": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:hot-honey-habanero-sub": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:supercharged-sub": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
   "kfc:double-tender-burger": {
    "al": [
     "egg",
@@ -15631,14 +15667,6 @@
    "vg": "vegan",
    "src": "guide"
   },
-  "boost:lychee-charm-original-": {
-   "al": [
-    "milk"
-   ],
-   "may": [],
-   "vg": "vegetarian",
-   "src": "guide"
-  },
   "boost:mango-co-original-": {
    "al": [],
    "may": [],
@@ -15728,19 +15756,9 @@
    "src": "guide"
   },
   "boost:bananas-for-choc-original-": {
-   "al": [
-    "soy"
-   ],
+   "al": [],
    "may": [],
    "vg": "vegan",
-   "src": "guide"
-  },
-  "boost:coffee-dream-original-": {
-   "al": [
-    "milk"
-   ],
-   "may": [],
-   "vg": "vegetarian",
    "src": "guide"
   },
   "boost:cookies-cr-me-original-": {
@@ -15770,39 +15788,30 @@
    "vg": "vegetarian",
    "src": "guide"
   },
-  "boost:energiser-original-": {
-   "al": [],
-   "may": [],
-   "vg": "vegan",
-   "src": "guide"
-  },
-  "boost:ginger-zing-original-": {
-   "al": [],
-   "may": [],
-   "vg": "vegan",
-   "src": "guide"
-  },
-  "boost:immunity-original-": {
-   "al": [],
-   "may": [],
-   "vg": "vegan",
-   "src": "guide"
-  },
-  "boost:mint-condition-original-": {
-   "al": [],
-   "may": [],
-   "vg": "vegan",
-   "src": "guide"
-  },
-  "boost:melon-moment-original-": {
-   "al": [],
-   "may": [],
-   "vg": "vegan",
-   "src": "guide"
-  },
-  "boost:two-five-original-": {
+  "boost:banana-mocha-original-": {
    "al": [
     "milk"
+   ],
+   "may": [],
+   "vg": "vegetarian",
+   "src": "guide"
+  },
+  "boost:brekkie-to-go-go-original-": {
+   "al": [
+    "gluten",
+    "milk",
+    "sulphites"
+   ],
+   "may": [],
+   "vg": "vegetarian",
+   "src": "guide"
+  },
+  "boost:strawbrekkie-original-": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites"
    ],
    "may": [],
    "vg": "vegetarian",
@@ -15812,7 +15821,8 @@
    "al": [
     "gluten",
     "milk",
-    "soy"
+    "soy",
+    "sulphites"
    ],
    "may": [],
    "vg": "vegetarian",
@@ -15861,34 +15871,40 @@
    "vg": "vegetarian",
    "src": "guide"
   },
-  "boost:brekkie-to-go-go-original-": {
-   "al": [
-    "gluten",
-    "milk",
-    "sulphites"
-   ],
+  "boost:energiser-original-": {
+   "al": [],
    "may": [],
-   "vg": "vegetarian",
+   "vg": "vegan",
    "src": "guide"
   },
-  "boost:strawbrekkie-original-": {
-   "al": [
-    "gluten",
-    "milk",
-    "soy"
-   ],
+  "boost:ginger-zing-original-": {
+   "al": [],
    "may": [],
-   "vg": "vegetarian",
+   "vg": "vegan",
    "src": "guide"
   },
-  "boost:mornin-mocha-original-": {
-   "al": [
-    "gluten",
-    "milk",
-    "soy"
-   ],
+  "boost:immunity-original-": {
+   "al": [],
    "may": [],
-   "vg": "vegetarian",
+   "vg": "vegan",
+   "src": "guide"
+  },
+  "boost:mint-condition-original-": {
+   "al": [],
+   "may": [],
+   "vg": "vegan",
+   "src": "guide"
+  },
+  "boost:melon-moment-original-": {
+   "al": [],
+   "may": [],
+   "vg": "vegan",
+   "src": "guide"
+  },
+  "boost:two-five-original-": {
+   "al": [],
+   "may": [],
+   "vg": "vegan",
    "src": "guide"
   },
   "boost:banana-buzz-medium-": {
@@ -16010,19 +16026,9 @@
    "src": "guide"
   },
   "boost:bananas-for-choc-medium-": {
-   "al": [
-    "soy"
-   ],
+   "al": [],
    "may": [],
    "vg": "vegan",
-   "src": "guide"
-  },
-  "boost:coffee-dream-medium-": {
-   "al": [
-    "milk"
-   ],
-   "may": [],
-   "vg": "vegetarian",
    "src": "guide"
   },
   "boost:cookies-cr-me-medium-": {
@@ -16052,39 +16058,30 @@
    "vg": "vegetarian",
    "src": "guide"
   },
-  "boost:energiser-medium-": {
-   "al": [],
-   "may": [],
-   "vg": "vegan",
-   "src": "guide"
-  },
-  "boost:ginger-zing-medium-": {
-   "al": [],
-   "may": [],
-   "vg": "vegan",
-   "src": "guide"
-  },
-  "boost:immunity-medium-": {
-   "al": [],
-   "may": [],
-   "vg": "vegan",
-   "src": "guide"
-  },
-  "boost:mint-condition-medium-": {
-   "al": [],
-   "may": [],
-   "vg": "vegan",
-   "src": "guide"
-  },
-  "boost:melon-moment-medium-": {
-   "al": [],
-   "may": [],
-   "vg": "vegan",
-   "src": "guide"
-  },
-  "boost:two-five-medium-": {
+  "boost:banana-mocha-medium-": {
    "al": [
     "milk"
+   ],
+   "may": [],
+   "vg": "vegetarian",
+   "src": "guide"
+  },
+  "boost:brekkie-to-go-go-medium-": {
+   "al": [
+    "gluten",
+    "milk",
+    "sulphites"
+   ],
+   "may": [],
+   "vg": "vegetarian",
+   "src": "guide"
+  },
+  "boost:strawbrekkie-medium-": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites"
    ],
    "may": [],
    "vg": "vegetarian",
@@ -16094,7 +16091,8 @@
    "al": [
     "gluten",
     "milk",
-    "soy"
+    "soy",
+    "sulphites"
    ],
    "may": [],
    "vg": "vegetarian",
@@ -16143,7 +16141,202 @@
    "vg": "vegetarian",
    "src": "guide"
   },
-  "boost:brekkie-to-go-go-medium-": {
+  "boost:energiser-medium-": {
+   "al": [],
+   "may": [],
+   "vg": "vegan",
+   "src": "guide"
+  },
+  "boost:ginger-zing-medium-": {
+   "al": [],
+   "may": [],
+   "vg": "vegan",
+   "src": "guide"
+  },
+  "boost:immunity-medium-": {
+   "al": [],
+   "may": [],
+   "vg": "vegan",
+   "src": "guide"
+  },
+  "boost:mint-condition-medium-": {
+   "al": [],
+   "may": [],
+   "vg": "vegan",
+   "src": "guide"
+  },
+  "boost:melon-moment-medium-": {
+   "al": [],
+   "may": [],
+   "vg": "vegan",
+   "src": "guide"
+  },
+  "boost:two-five-medium-": {
+   "al": [],
+   "may": [],
+   "vg": "vegan",
+   "src": "guide"
+  },
+  "boost:banana-buzz-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "vg": "vegetarian",
+   "src": "guide"
+  },
+  "boost:blue-honolulu-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "vg": "vegetarian",
+   "src": "guide"
+  },
+  "boost:green-tea-mango-mantra-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "vg": "vegetarian",
+   "src": "guide"
+  },
+  "boost:lychee-crush-small-": {
+   "al": [],
+   "may": [],
+   "vg": "vegan",
+   "src": "guide"
+  },
+  "boost:mango-co-small-": {
+   "al": [],
+   "may": [],
+   "vg": "vegan",
+   "src": "guide"
+  },
+  "boost:mango-magic-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "vg": "vegetarian",
+   "src": "guide"
+  },
+  "boost:mango-tango-crush-small-": {
+   "al": [],
+   "may": [],
+   "vg": "vegan",
+   "src": "guide"
+  },
+  "boost:palm-peach-crush-small-": {
+   "al": [],
+   "may": [],
+   "vg": "vegan",
+   "src": "guide"
+  },
+  "boost:passion-mango-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "vg": "vegetarian",
+   "src": "guide"
+  },
+  "boost:tropical-crush-small-": {
+   "al": [],
+   "may": [],
+   "vg": "vegan",
+   "src": "guide"
+  },
+  "boost:watermelon-crush-small-": {
+   "al": [],
+   "may": [],
+   "vg": "vegan",
+   "src": "guide"
+  },
+  "boost:all-berry-bang-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "vg": "vegetarian",
+   "src": "guide"
+  },
+  "boost:berry-crush-small-": {
+   "al": [],
+   "may": [],
+   "vg": "vegan",
+   "src": "guide"
+  },
+  "boost:berry-peachy-small-": {
+   "al": [],
+   "may": [],
+   "vg": "vegan",
+   "src": "guide"
+  },
+  "boost:pink-lemonade-small-": {
+   "al": [],
+   "may": [],
+   "vg": "vegan",
+   "src": "guide"
+  },
+  "boost:pink-paradise-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "vg": "vegetarian",
+   "src": "guide"
+  },
+  "boost:strawberry-squeeze-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "vg": "vegetarian",
+   "src": "guide"
+  },
+  "boost:bananas-for-choc-small-": {
+   "al": [],
+   "may": [],
+   "vg": "vegan",
+   "src": "guide"
+  },
+  "boost:cookies-cr-me-small-": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "vg": "vegetarian",
+   "src": "guide"
+  },
+  "boost:king-william-chocolate-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "vg": "vegetarian",
+   "src": "guide"
+  },
+  "boost:raspberry-ripe-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "vg": "vegetarian",
+   "src": "guide"
+  },
+  "boost:banana-mocha-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "vg": "vegetarian",
+   "src": "guide"
+  },
+  "boost:brekkie-to-go-go-small-": {
    "al": [
     "gluten",
     "milk",
@@ -16153,9 +16346,38 @@
    "vg": "vegetarian",
    "src": "guide"
   },
-  "boost:strawbrekkie-medium-": {
+  "boost:strawbrekkie-small-": {
    "al": [
     "gluten",
+    "milk",
+    "soy",
+    "sulphites"
+   ],
+   "may": [],
+   "vg": "vegetarian",
+   "src": "guide"
+  },
+  "boost:choc-muscle-hustle-small-": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites"
+   ],
+   "may": [],
+   "vg": "vegetarian",
+   "src": "guide"
+  },
+  "boost:energy-lift-small-": {
+   "al": [
+    "milk"
+   ],
+   "may": [],
+   "vg": "vegetarian",
+   "src": "guide"
+  },
+  "boost:gym-junkie-small-": {
+   "al": [
     "milk",
     "soy"
    ],
@@ -16163,14 +16385,98 @@
    "vg": "vegetarian",
    "src": "guide"
   },
-  "boost:mornin-mocha-medium-": {
+  "boost:power-plant-protein-small-": {
+   "al": [],
+   "may": [],
+   "vg": "vegan",
+   "src": "guide"
+  },
+  "boost:protein-supreme-small-": {
    "al": [
     "gluten",
+    "milk",
+    "soy",
+    "sulphites"
+   ],
+   "may": [],
+   "vg": "vegetarian",
+   "src": "guide"
+  },
+  "boost:wondermelon-small-": {
+   "al": [
     "milk",
     "soy"
    ],
    "may": [],
    "vg": "vegetarian",
+   "src": "guide"
+  },
+  "boost:energiser-small-": {
+   "al": [],
+   "may": [],
+   "vg": "vegan",
+   "src": "guide"
+  },
+  "boost:ginger-zing-small-": {
+   "al": [],
+   "may": [],
+   "vg": "vegan",
+   "src": "guide"
+  },
+  "boost:immunity-small-": {
+   "al": [],
+   "may": [],
+   "vg": "vegan",
+   "src": "guide"
+  },
+  "boost:mint-condition-small-": {
+   "al": [],
+   "may": [],
+   "vg": "vegan",
+   "src": "guide"
+  },
+  "boost:melon-moment-small-": {
+   "al": [],
+   "may": [],
+   "vg": "vegan",
+   "src": "guide"
+  },
+  "boost:two-five-small-": {
+   "al": [],
+   "may": [],
+   "vg": "vegan",
+   "src": "guide"
+  },
+  "boost:strawberry-glow": {
+   "al": [
+    "milk",
+    "treenut"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "boost:mango-refresh": {
+   "al": [],
+   "may": [],
+   "vg": "vegan",
+   "src": "guide"
+  },
+  "boost:peanut-butter-protein": {
+   "al": [
+    "milk",
+    "peanut",
+    "soy"
+   ],
+   "may": [],
+   "vg": "vegetarian",
+   "src": "guide"
+  },
+  "boost:glow-latte": {
+   "al": [
+    "milk",
+    "treenut"
+   ],
+   "may": [],
    "src": "guide"
   }
  }

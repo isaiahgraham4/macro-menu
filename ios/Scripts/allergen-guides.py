@@ -1088,7 +1088,7 @@ def build():
         if chain == "dominos":
             got = match_dominos(name, source["dominos"])
         elif chain == "boost":
-            got = lookup(source["boost"], re.sub(r" \((original|medium)\)$", "", name))
+            got = lookup(source["boost"], re.sub(r" \((original|medium|small)\)$", "", name))
         elif chain == "oporto":
             got = match_oporto(food, source["oporto"])
         elif chain == "rr":

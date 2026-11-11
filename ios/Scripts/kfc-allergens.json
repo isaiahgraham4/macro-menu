@@ -1,5 +1,5 @@
 {
- "source": "kfc.com.au Nutrition & Allergen Guide (each item's More Info panel, read in a browser; items whose panel lists no allergens table, like combos and boxes, are left out); new items read 31 Oct 2026",
+ "source": "kfc.com.au Nutrition & Allergen Guide (each item's More Info panel, read in a browser; items whose panel lists no allergens table, like combos and boxes, are left out); new items read 31 Oct and 11 Nov 2026",
  "fetched": "2026-10-15",
  "items": {
   "NEW 3 ORIGINAL TENDERS™ DIP'D": {
@@ -664,6 +664,39 @@
   "DARE CHARGED STRONG LATTE": {
    "al": [
     "milk"
+   ],
+   "may": []
+  },
+  "GARLIC PARMESAN SUB": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "HOT HONEY HABANERO SUB": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "SUPERCHARGED SUB": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
    ],
    "may": []
   }
