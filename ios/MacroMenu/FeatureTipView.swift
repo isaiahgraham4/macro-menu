@@ -11,8 +11,7 @@ struct FeatureTipCard: View {
         HStack(alignment: .top, spacing: 12) {
             Image(systemName: tip.symbol)
                 .font(.title3).foregroundStyle(.tint)
-                .frame(width: 40, height: 40)
-                .background(.tint.opacity(0.15), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                .frame(width: 28, height: 26)
             Button {
                 if let action = tip.action { act(action.does) } else { dismiss() }
             } label: {

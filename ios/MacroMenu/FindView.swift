@@ -41,16 +41,16 @@ struct FindView: View {
                     }
                 }.padding(.vertical, 4)
             }
-            // Short tiles instead of tall rows, so the order finder starts higher up the screen.
+            // One scrolling line of shortcuts instead of tiles, so the order finder starts higher up the screen.
             Section {
-                TileRow {
-                    Button { searchingFoods = true } label: { TileLabel(title: "Search foods", systemImage: "magnifyingglass") }
+                ChipRow {
+                    ActionPill(title: "Search foods", systemImage: "magnifyingglass") { searchingFoods = true }
                         .accessibilityHint("Macros for menu items, everyday foods and packaged products")
-                    Button { browsing = true } label: { TileLabel(title: "Best choices", systemImage: "chart.bar.xaxis") }
+                    ActionPill(title: "Best choices", systemImage: "chart.bar.xaxis") { browsing = true }
                         .accessibilityHint("Browse foods ranked by protein or calories")
-                    Button { spinning = true } label: { TileLabel(title: "Takeaway roulette", systemImage: "dice") }
+                    ActionPill(title: "Takeaway roulette", systemImage: "dice") { spinning = true }
                         .accessibilityHint("Spin a wheel for a dinner that fits what's left today")
-                    Button { cooking = true } label: { TileLabel(title: "Copycat Kitchen", systemImage: "frying.pan") }
+                    ActionPill(title: "Copycat Kitchen", systemImage: "frying.pan") { cooking = true }
                         .accessibilityHint("Home versions of takeaway favourites, compared to the real thing")
                 }
             }

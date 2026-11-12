@@ -94,7 +94,7 @@ private struct MomentConfetti: View {
     }
 }
 
-/// The app colour with the worktop's own timber and paper, so the flecks look like part of the counter.
+/// The app colour with warm timber and paper tones, so the flecks look like part of the counter.
 private func confettiColours(accent: Color, dark: Bool) -> [Color] {
     [accent, Color(red: 0.89, green: 0.77, blue: 0.59), Color(red: 0.64, green: 0.52, blue: 0.37),
      dark ? Color(red: 0.97, green: 0.95, blue: 0.89) : accent.opacity(0.6)]

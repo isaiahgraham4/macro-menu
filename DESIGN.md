@@ -1,19 +1,17 @@
 ---
 name: Leanrrr
-description: A warm order counter for eating out on target. Native iOS, warmed up with a worktop surface, Bebas titles and big honest numbers.
+description: A warm order counter for eating out on target. Native iOS, set on order-pad paper, Bebas titles and big honest numbers.
 colors:
   emerald: "#01714C"
   emerald-night: "#2BC47A"
   protein-blue: "#007AFF"
   carbs-orange: "#FF9500"
   fat-red: "#FF3B30"
-  worktop-cream: "#F7F2E3"
-  worktop-sage: "#E8F0E0"
-  worktop-wheat: "#F5E6CF"
-  worktop-night: "#1A211C"
-  worktop-umber: "#29241C"
+  order-pad: "#F6F2EA"
+  order-pad-night: "#121714"
   cutting-board: "#E3C496"
   grain-brown: "#A2845E"
+  dot-ink: "#664F33"
   grouped-cell: "#FFFFFF"
   share-card-white: "#FFFFFF"
   accent-green: "#01714C"
@@ -115,7 +113,7 @@ components:
     padding: "12px 16px 12px 20px"
   calorie-ring:
     typography: "{typography.stat}"
-    size: "116px"
+    size: "128px"
   target-bar:
     typography: "{typography.caption}"
     height: "6px"
@@ -131,13 +129,13 @@ This file governs the native iOS app, Leanrrr (`ios/`), which is the primary pro
 
 Leanrrr is the counter you stand at when you order: you read the menu, weigh it against what's left in your day, and pick. The screens have that decisiveness. Bebas Neue headlines read like a menu board, and big Roboto numbers answer the question before any label does. The first thing on each screen is a choice or a number, never decoration.
 
-The counter sits in a warm kitchen, not a gym. Every screen rests on the worktop: a cream-to-wheat gradient with faint timber grain, off-canvas plate rings, paper flecks and a soft accent glow in the top corner. That surface is what makes Leanrrr feel homely rather than clinical. Controls on top of it are stock iOS, warmed up with Leanrrr's fonts and accent rather than restyled. Native behaviour, gestures and Dynamic Type stay intact.
+The counter sits in a warm kitchen, not a gym. Every screen rests on order-pad paper: a flat warm cream with a fine grid of dots, like the pad an order is written on. It holds still, and it keeps Leanrrr homely rather than clinical without competing with the cards on top. Controls on top of it are stock iOS, warmed up with Leanrrr's fonts and accent rather than restyled. Native behaviour, gestures and Dynamic Type stay intact.
 
 Density is moderate: grouped lists, a few signature summaries (the calorie ring, target bars, stat tiles), and one prominent action per screen, pinned above the tab bar.
 
 **Key Characteristics:**
 - Menu-board display type over a readable Roboto interface.
-- A warm, textured worktop under every list, form and sheet.
+- Order-pad paper, flat cream with a fine dot grid, under every list, form and sheet.
 - Numbers as heroes: bold and tabular, with gaps marked plainly (`+`, "partial").
 - Stock iOS controls tinted with the chosen accent. No custom chrome.
 - Macro colours that mean the same thing everywhere.
@@ -147,7 +145,7 @@ Density is moderate: grouped lists, a few signature summaries (the calorie ring,
 The palette is a warm neutral ground with one user-chosen accent and three fixed macro signals.
 
 ### Primary
-- **Counter Emerald** (`emerald`, `emerald-night` in dark mode): the brand green and the default accent. It tints the tab bar, prominent buttons, selected chips, tile icons, the calorie ring's progress and the worktop's corner glow. It is defined in the asset catalog as `AccentColor`.
+- **Counter Emerald** (`emerald`, `emerald-night` in dark mode): the brand green and the default accent. It tints the tab bar, prominent buttons, selected chips, tile icons and the calorie ring's progress. It is defined in the asset catalog as `AccentColor`.
 
 ### Secondary: the accent presets
 - **Twelve accent presets** (`accent-*`): the user picks one in Settings (`AppAccent`, stored under `accent`), and it replaces Counter Emerald wherever the accent applies. Custom accents are planned as a Premium feature, so a locked user falls back to the default. Always read it through `AppAccent.resolved(...)`. The Green preset is Counter Emerald itself (`AppAccent.emerald`); the other eleven are iOS system colours.
@@ -158,10 +156,10 @@ The palette is a warm neutral ground with one user-chosen accent and three fixed
 - **Target-met green** is iOS system green, deliberately fixed rather than the accent. It is used only on the "Protein target met" pill.
 
 ### Neutral
-- **Worktop Cream → Sage → Wheat** (`worktop-cream`, `worktop-sage`, `worktop-wheat`): the light-mode worktop gradient, running from top-leading to bottom-trailing.
-- **Worktop Night → Umber** (`worktop-night`, `worktop-umber`): the dark-mode worktop, a deep green-black warming into brown.
+- **Order Pad** (`order-pad`, `order-pad-night` in dark mode): the flat background colour of `LeanrBackground`, and of `LaunchBackground` so launch doesn't flash a different shade.
+- **Dot Ink** (`dot-ink`): the dot grid, 1.6pt dots every 20pt, at 16% in light mode. In dark mode the dots are white at 13%.
 - **Cutting Board** (`cutting-board`): the timber card used in onboarding.
-- **Grain Brown** (`grain-brown`): the ink for grain, rings and flecks, used only at 3.5–7% opacity. In dark mode the ink is white at the same opacities.
+- **Grain Brown** (`grain-brown`): the ink for the onboarding cutting board's grain and border.
 - **Grouped cell** (`grouped-cell`): the light-mode value of `secondarySystemGroupedBackground`, the fill for cells, unselected chips and action tiles.
 - **Share-card white** (`share-card-white`): the meal share image is always light, on a white ground.
 - Text, secondary text and the grouped-cell fill (`secondarySystemGroupedBackground`) are iOS semantic colours, so they adapt to dark mode and increased contrast automatically.
@@ -203,7 +201,7 @@ Every size scales with Dynamic Type (`relativeTo:` the matching text style). Wid
 
 The app is built from SwiftUI `List` and `Form` screens inside a five-tab `TabView`: Today, Find, Map, Meal and My foods. Each tab has its own `NavigationStack`, and Settings is a gear button at the top right. Content uses the standard grouped-list insets.
 
-Signature rows break out of the cell to sit directly on the worktop: `ChipRow` and `TileRow` use zero leading inset, a clear row background and no separator. Chips scroll horizontally, and tiles share a row equally with 10pt gaps.
+Signature rows break out of the cell to sit directly on the background: `ChipRow` and `TileRow` use zero leading inset, a clear row background and no separator. Chips scroll horizontally, and tiles share a row equally with 10pt gaps.
 
 The primary action of a screen sits in a `BottomActionBar`, pinned above the tab bar at full width with 20pt horizontal and 10pt vertical padding. Transient feedback (Undo and other notices) floats at the top in a capsule toast.
 
@@ -211,12 +209,12 @@ Spacing steps are 2, 4, 8, 12, 16, 20 and 24pt, with 5, 6, 10 and 14 used inside
 
 ## Elevation & Depth
 
-Leanrrr is flat. Depth comes from layering, not shadows. Controls sit in grouped cells (`secondarySystemGroupedBackground`) or on translucent `.fill.tertiary` tiles, which float over the textured worktop. Toasts use `.regularMaterial` blur. The single shadow in the app is a 3pt lift that keeps a lock glyph legible on a colour swatch.
+Leanrrr is flat. Depth comes from layering, not shadows. Controls sit in grouped cells (`secondarySystemGroupedBackground`) or on translucent `.fill.tertiary` tiles, which float over the order-pad paper. Toasts use `.regularMaterial` blur. The single shadow in the app is a 3pt lift that keeps a lock glyph legible on a colour swatch.
 
 ### Named Rules
 **The Flat Counter Rule.** No drop shadows on cards, tiles, buttons or sheets. To separate something, change the fill or use material, never add a shadow.
 
-**The Quiet Texture Rule.** The worktop's grain, rings and flecks stay at or below 7% ink opacity and never carry information. When the user has Increase Contrast turned on, the texture and accent glow are removed and only the gradient remains.
+**The Quiet Texture Rule.** The dot grid stays at 1.6pt dots, 20pt apart, at or below 16% ink, and never carries information or lines up with content. When the user has Increase Contrast turned on, the dots are removed and only the flat colour remains.
 
 ## Shapes
 
@@ -226,7 +224,7 @@ The shapes are soft and familiar: capsules for anything you tap or read at a gla
 - **Field** (`field`): typed stat tiles.
 - **Tile** (`tile`): action tiles.
 - **Board** (`board`, with an inset stroke at `board-inset`): the onboarding cutting board, with a 1pt grain-brown border inset 7pt.
-- **Rings:** the calorie ring has a 12pt stroke with round caps and starts at 12 o'clock.
+- **Rings:** the calorie ring has a 13pt stroke with round caps and starts at 12 o'clock.
 
 ## Components
 
@@ -242,8 +240,10 @@ The feel is native iOS, warmed up. Use stock controls and the Leanrrr tint, and 
 - **Selected:** filled with the accent, with white text and the `.isSelected` accessibility trait.
 
 ### Cards / Containers
-- **Grouped cells** on the worktop are the default container.
+- **Grouped cells** on the background are the default container.
 - **Stat Field:** a caption title over a Stat-weight number and its unit, on a `.fill.tertiary` field-radius tile. They come in side-by-side pairs.
+- **Action Pill:** a capsule shortcut with an accent SF Symbol and a subheadline Medium label on the grouped-cell fill, in a scrolling `ChipRow`. Find's shortcuts use it so the order finder starts higher up.
+- **Log Method Button:** Today's Scan, Photo, Describe and Quick add: an accent symbol over a primary label on a `.fill.tertiary` field-radius tile, never a tinted fill.
 - **Action Tile:** an accent SF Symbol (title3) over a two-line caption label, on a grouped-cell fill with tile radius and a minimum height of 78pt.
 
 ### Inputs / Fields
@@ -254,10 +254,10 @@ The feel is native iOS, warmed up. Use stock controls and the Leanrrr tint, and 
 - **Nav bars:** Bebas large and inline titles, with a gear button at the top right on each tab root.
 
 ### Calorie Ring (signature)
-A 116pt ring. The track is quaternary; progress is the accent, or orange when over target. The centre shows the calories left (or over) in Stat type over a caption. It reads as one accessibility element: "x of y calories".
+A 128pt ring with a 13pt stroke. The track is the accent at 14%, so an empty day still reads as the brand; progress is the accent, or orange when over target. The centre shows the calories left (or over) in Stat type over a caption. It reads as one accessibility element: "x of y calories".
 
 ### Target Bar (signature)
-A label and "value / target unit" on one baseline over a 6pt capsule bar, filled in the nutrient's colour. The figure turns orange when a maximum is exceeded. It reads as one accessibility element.
+A label and "value / target unit" on one baseline over a 6pt capsule bar, filled in the nutrient's colour over a track of the same colour at 16%. The figure turns orange when a maximum is exceeded. It reads as one accessibility element.
 
 ### Nutrition Summary (signature)
 Stat Hero calories with a trailing price, then three macro columns (caption name over coloured headline grams, with `+` when partial), then a 6pt capsule energy-split bar weighted 4/4/9. Details list kJ and the optional nutrients, marking partial values "(partial)".
@@ -273,7 +273,7 @@ A fixed 390pt, always-light white card with 28pt padding: a small accent "LEANR"
 
 ## Motion
 
-Motion lives in `Motion.swift` and `Celebration.swift`. It marks things the person did, and it never decorates. With Reduce Motion on, numbers change straight away, the worktop holds still and there's no confetti.
+Motion lives in `Motion.swift` and `Celebration.swift`. It marks things the person did, and it never decorates. With Reduce Motion on, numbers change straight away and there's no confetti.
 
 - **Counting figures:** a logged amount counts to its new value through `CountingNumber` in 0.7 seconds, with its ring and bars moving alongside and the calories rising off the ring. Today waits for a sheet to close first, so the count happens in view. Other figures roll with `.rolling(_:)` in 0.2 seconds.
 - **Moment card:** a target hit, every target hit, a logging milestone, the step goal, a weigh-in or last week's summary on a small cutting board that rises from the bottom, leaves after 3 seconds and goes on a tap. Moments queue in `AppStore.moments`, and `AppData.celebrated` stops one being earned twice. Last week's card opens the weekly review when tapped.
@@ -283,9 +283,8 @@ Motion lives in `Motion.swift` and `Celebration.swift`. It marks things the pers
 - **Milestone share card:** a milestone card's share button, the goal screen and the Weight screen make a 9:16 story image (`MilestoneShareCard`), dark like the meal share card: the milestone, its figure, a line about it and the date.
 - **Haptics:** a light tap when food is logged, the success tap with a moment, and the error tap with a refusal (`AppStore.refuse`) or a failed save.
 - **Takeaway roulette:** the wheel on Find turns for 4 seconds, with a selection tap for each slice passing the pointer and the success tap when the order appears. It holds for 0.7 seconds so you see the slice, then the list moves to the order. With Reduce Motion on, it goes straight to the slice.
-- **Confetti:** the accent with the worktop's timber and paper colours, never macro colours.
-- **Launch:** the leaf and name on a cold start only. `LaunchBackground` keeps the system launch screen on the worktop colour.
-- **Worktop light:** soft patches of the accent drifting across `LeanrBackground`, 30 times a second. It stops in the background and holds still in Low Power Mode. Like the texture, it's removed with Increase Contrast.
+- **Confetti:** the accent with timber and paper colours, never macro colours.
+- **Launch:** the leaf and name on a cold start only. `LaunchBackground` keeps the system launch screen on the order-pad colour.
 - **Skeletons:** rows the shape of what's coming replace spinners when the layout is known. A spinner stays where Leanrrr is reading something you gave it, such as a photo.
 - **Springs:** `.figure` and `.counting` are springs, so a change that lands mid-way carries on from where it is rather than restarting.
 - **Zoom:** a progress photo opens out of its thumbnail and swipes back into it.
@@ -293,7 +292,7 @@ Motion lives in `Motion.swift` and `Celebration.swift`. It marks things the pers
 ## Do's and Don'ts
 
 ### Do:
-- **Do** wrap every list and form screen in `LeanrList` or `LeanrForm` so it sits on the worktop.
+- **Do** wrap every list and form screen in `LeanrList` or `LeanrForm` so it sits on the order-pad paper.
 - **Do** tint accent UI with `AppAccent.resolved(...)`, and let the Premium lock fall back to Counter Emerald.
 - **Do** use `.display()` for screen names and `.roboto()` for everything else, including in widgets.
 - **Do** make the answer the biggest thing on screen: calories left, grams short, a price.
@@ -304,5 +303,5 @@ Motion lives in `Motion.swift` and `Celebration.swift`. It marks things the pers
 - **Don't** replace stock iOS controls with custom-drawn buttons, toggles or pickers.
 - **Don't** add drop shadows or glossy effects; the counter is flat.
 - **Don't** hard-code `.green` for accent UI. The only fixed green is the "Protein target met" pill.
-- **Don't** render the worktop texture at more than 7% ink, or keep it when the user has Increase Contrast turned on.
+- **Don't** draw the dot grid above 16% ink, add gradients or moving light behind it, or keep it when the user has Increase Contrast turned on.
 - **Don't** use the system font, SF Rounded or Big Noodle Titling anywhere that ships.

@@ -54,6 +54,19 @@ struct TodayView: View {
                 .figureChange(value, animation: .counting)
         }.frame(maxWidth: .infinity, alignment: .leading)
     }
+    /// The link fills the space under the bars beside the ring, unless more rows follow below the ring.
+    private var breakdownBesideRing: Bool {
+        goals.values["cal"] != nil && !typeSize.isAccessibilitySize && otherKeys.isEmpty && partialNames.isEmpty
+    }
+    private var breakdownLink: some View {
+        HStack(spacing: 4) {
+            Spacer(minLength: 0)
+            Text("Full breakdown")
+            Image(systemName: "chevron.right").imageScale(.small)
+        }
+        .font(.roboto(.caption, weight: .medium)).foregroundStyle(.tint)
+        .accessibilityHidden(true)
+    }
     /// Does what a feature tip's button offers, then retires the tip.
     private func act(on action: FeatureTip.Action, tip shown: FeatureTip) {
         close(shown)
@@ -96,9 +109,15 @@ struct TodayView: View {
                     }
                 }
                 .buttonStyle(.borderless)
-                .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
-                if !isToday { Button("Jump to today") { date = Date() }.frame(maxWidth: .infinity) }
+                .listRowInsets(EdgeInsets(top: 0, leading: 4, bottom: 0, trailing: 4))
+                // The day sits straight on the background, under the title, rather than in a card of its own.
+                .listRowBackground(Color.clear)
+                if !isToday {
+                    Button("Jump to today") { date = Date() }.font(.roboto(.subheadline, weight: .medium)).frame(maxWidth: .infinity)
+                        .listRowBackground(Color.clear).listRowSeparator(.hidden)
+                }
             }
+            .listSectionSpacing(.custom(8))
             Section {
                 VStack(spacing: 18) {
                     // The ring sits above the bars at the largest text sizes, so neither gets squeezed.
@@ -121,6 +140,7 @@ struct TodayView: View {
                                     .figureChange(shown.cal, animation: .counting).frame(maxWidth: .infinity, alignment: .leading)
                             }
                             ForEach(macroKeys, id: \.self) { key in bar(key) }
+                            if breakdownBesideRing { breakdownLink.padding(.top, 2) }
                         }
                     }
                     if !otherKeys.isEmpty {
@@ -132,15 +152,9 @@ struct TodayView: View {
                         Text("Partial data for \(partialNames.joined(separator: ", ")): some logged items don't list them.")
                             .font(.roboto(.caption)).foregroundStyle(.secondary).frame(maxWidth: .infinity, alignment: .leading)
                     }
-                    HStack(spacing: 4) {
-                        Spacer()
-                        Text("Full breakdown")
-                        Image(systemName: "chevron.right").imageScale(.small)
-                    }
-                    .font(.roboto(.caption, weight: .medium)).foregroundStyle(.tint)
-                    .accessibilityHidden(true)
+                    if !breakdownBesideRing { breakdownLink }
                 }
-                .padding(.vertical, 10)
+                .padding(.vertical, 6)
                 // The whole card opens the day's breakdown: every food, macro and micronutrient.
                 .contentShape(Rectangle())
                 .onTapGesture { breakdown = true }
@@ -804,24 +818,25 @@ private struct LogMethodButton: View {
                 if typeSize.isAccessibilitySize {
                     // Stacked full-width at the largest sizes: icon beside its label.
                     HStack(spacing: 12) {
-                        Image(systemName: systemImage).font(.title2).frame(width: iconSize)
+                        Image(systemName: systemImage).font(.title2).frame(width: iconSize).foregroundStyle(.tint)
                         Text(title).font(.roboto(.subheadline, weight: .medium)).frame(maxWidth: .infinity, alignment: .leading)
                     }
                     .padding(.horizontal, 16).padding(.vertical, 12)
                 } else {
                     VStack(spacing: 6) {
-                        Image(systemName: systemImage).font(.title2).frame(height: iconSize)
+                        Image(systemName: systemImage).font(.title2).frame(height: iconSize).foregroundStyle(.tint)
                         Text(title).font(.roboto(.subheadline, weight: .medium)).lineLimit(1).minimumScaleFactor(0.8)
                     }
                     .padding(.vertical, 8)
                 }
             }
             .frame(maxWidth: .infinity, minHeight: 64)
-            .background(.tint.opacity(0.14), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            // A neutral fill with an accent symbol and a dark label, so the four don't read as one block of green.
+            .background(.fill.tertiary, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
             .contentShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
         }
         .buttonStyle(PressStyle())
-        .foregroundStyle(.tint)
+        .foregroundStyle(.primary)
         .accessibilityLabel(label)
     }
 }

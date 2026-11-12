@@ -1,8 +1,8 @@
 import SwiftUI
 import Combine
 
-// The app's small movements: figures that roll, skeletons that stand in for loading rows,
-// and the light on the worktop. All of them hold still with Reduce Motion on.
+// The app's small movements: figures that roll and skeletons that stand in for loading rows.
+// All of them hold still with Reduce Motion on.
 
 extension Animation {
     // Springs, so a change that lands mid-way carries on from where it is rather than restarting.
@@ -134,45 +134,3 @@ struct RowSkeleton: View {
     }
 }
 
-/// Light drifting slowly over the worktop: soft patches of the app colour, strongest at the top of the screen,
-/// drawn 30 times a second. It stops in the background and holds still in Low Power Mode or with Reduce Motion on.
-struct WorktopLight: View {
-    var tint: Color
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    @Environment(\.scenePhase) private var scenePhase
-    @State private var lowPower = ProcessInfo.processInfo.isLowPowerModeEnabled
-    private var still: Bool { reduceMotion || lowPower || scenePhase != .active }
-    private static let size = 4
-    /// How strong the light is in each row, top to bottom.
-    private static let depth = [1, 0.75, 0.3, 0.1]
-
-    var body: some View {
-        TimelineView(.animation(minimumInterval: 1.0 / 30, paused: still)) { context in
-            // From the clock, not from when this screen opened, so the light carries on across screens.
-            let time = context.date.timeIntervalSinceReferenceDate.truncatingRemainder(dividingBy: 3600 * 24)
-            MeshGradient(width: Self.size, height: Self.size, points: Self.points(time), colors: colours(time))
-        }
-        .onReceive(NotificationCenter.default.publisher(for: .NSProcessInfoPowerStateDidChange).receive(on: DispatchQueue.main)) { _ in
-            lowPower = ProcessInfo.processInfo.isLowPowerModeEnabled
-        }
-    }
-
-    /// A grid whose points wander slowly. Those on an edge slide along it, so the light always fills the screen.
-    private static func points(_ time: Double) -> [SIMD2<Float>] {
-        let last = Double(size - 1)
-        return (0..<size * size).map { index in
-            let row = Double(index / size), column = Double(index % size), phase = Double(index) * 1.7
-            let x = column / last + (column == 0 || column == last ? 0 : 0.12 * sin(time * 0.31 + phase))
-            let y = row / last + (row == 0 || row == last ? 0 : 0.12 * cos(time * 0.27 + phase))
-            return SIMD2(Float(x), Float(y))
-        }
-    }
-
-    /// Each patch of light swells and fades at its own pace.
-    private func colours(_ time: Double) -> [Color] {
-        (0..<Self.size * Self.size).map { index in
-            let glow = 0.5 + 0.5 * sin(time * 0.23 + Double(index) * 2.4)
-            return tint.opacity(glow * Self.depth[index / Self.size])
-        }
-    }
-}

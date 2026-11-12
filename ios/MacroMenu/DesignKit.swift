@@ -21,13 +21,14 @@ struct CalorieRing: View {
     var eaten: Double
     var target: Double
     /// Grows with the text size so "Cal left" still fits inside.
-    @ScaledMetric(relativeTo: .title2) private var size = 116.0
+    @ScaledMetric(relativeTo: .title2) private var size = 128.0
     var body: some View {
         let over = eaten > target
         ZStack {
-            Circle().stroke(.quaternary, lineWidth: 12)
+            // The track is a pale wash of the accent, so an empty day still reads as the brand rather than grey.
+            Circle().stroke(.tint.opacity(0.14), lineWidth: 13)
             Circle().trim(from: 0, to: min(max(eaten / max(target, 1), 0), 1))
-                .stroke(over ? AnyShapeStyle(.orange) : AnyShapeStyle(.tint), style: StrokeStyle(lineWidth: 12, lineCap: .round))
+                .stroke(over ? AnyShapeStyle(.orange) : AnyShapeStyle(.tint), style: StrokeStyle(lineWidth: 13, lineCap: .round))
                 .rotationEffect(.degrees(-90))
             VStack(spacing: 0) {
                 CountingNumber(abs(target - eaten)) { $0.number }.font(.roboto(.title2, weight: .bold)).minimumScaleFactor(0.6)
@@ -62,7 +63,8 @@ struct TargetBar: View {
             }
             GeometryReader { geo in
                 ZStack(alignment: .leading) {
-                    Capsule().fill(.quaternary)
+                    // The track is the nutrient's own colour, faint, so each bar is identifiable before anything is logged.
+                    Capsule().fill(style).opacity(0.16)
                     Capsule().fill(style)
                         .frame(width: geo.size.width * min(max(value / max(target, 0.001), 0), 1))
                 }
@@ -88,6 +90,25 @@ struct Chip: View {
         }
         .buttonStyle(PressStyle())
         .accessibilityAddTraits(selected ? .isSelected : [])
+    }
+}
+
+/// A capsule shortcut: an accent symbol and a label, on the cell fill. They sit in a `ChipRow`.
+struct ActionPill: View {
+    var title: String
+    var systemImage: String
+    var action: () -> Void
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 7) {
+                Image(systemName: systemImage).font(.subheadline.weight(.semibold)).foregroundStyle(.tint)
+                Text(title).font(.roboto(.subheadline, weight: .medium)).foregroundStyle(.primary).lineLimit(1)
+            }
+            .padding(.leading, 14).padding(.trailing, 16).padding(.vertical, 11)
+            .background(Color(.secondarySystemGroupedBackground), in: Capsule())
+            .contentShape(Capsule())
+        }
+        .buttonStyle(PressStyle())
     }
 }
 

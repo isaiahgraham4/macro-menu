@@ -23,55 +23,32 @@ struct CuttingBoard: View {
     }
 }
 
-/// A warm worktop with quiet grain and an engraved plate motif at the edges.
+/// The surface under every screen: flat order-pad paper with a fine dot grid. The dots are texture only and never carry
+/// information; with Increase Contrast on, only the flat colour is left.
 struct LeanrBackground: View {
-    @AppStorage(AppAccent.storageKey) private var accentRaw = AppAccent.standard.rawValue
     @Environment(\.colorScheme) private var scheme
     @Environment(\.colorSchemeContrast) private var contrast
     private var dark: Bool { scheme == .dark }
+    /// Kept in step with the LaunchBackground colour, so launch doesn't flash a different shade.
+    private var paper: Color { dark ? Color(red: 0.07, green: 0.09, blue: 0.08) : Color(red: 0.965, green: 0.950, blue: 0.918) }
+    private var ink: Color { dark ? .white : Color(red: 0.40, green: 0.31, blue: 0.20) }
+    /// The gap between dots, in points.
+    private static let step = 20.0
 
     var body: some View {
-        GeometryReader { geometry in
-            ZStack {
-                LinearGradient(
-                    colors: dark
-                        ? [Color(red: 0.10, green: 0.13, blue: 0.11), Color(red: 0.16, green: 0.14, blue: 0.11)]
-                        : [Color(red: 0.97, green: 0.95, blue: 0.89), Color(red: 0.91, green: 0.94, blue: 0.88), Color(red: 0.96, green: 0.90, blue: 0.81)],
-                    startPoint: .topLeading, endPoint: .bottomTrailing
-                )
-                if contrast != .increased {
-                    RadialGradient(colors: [AppAccent.resolved(accentRaw).color.opacity(dark ? 0.12 : 0.09), .clear],
-                                   center: .topTrailing, startRadius: 0, endRadius: geometry.size.width * 0.95)
-                    WorktopLight(tint: AppAccent.resolved(accentRaw).color.opacity(dark ? 0.08 : 0.14))
-                    Canvas { context, size in
-                        let ink = dark ? Color.white : Color.brown
-                        // Widely spaced, gently bent lines suggest timber without competing with copy.
-                        for line in 0..<38 {
-                            let x = CGFloat(line) * size.width / 30
-                            var grain = Path()
-                            grain.move(to: CGPoint(x: x, y: 0))
-                            grain.addCurve(to: CGPoint(x: x - 45, y: size.height),
-                                           control1: CGPoint(x: x + 30, y: size.height * 0.35),
-                                           control2: CGPoint(x: x - 65, y: size.height * 0.65))
-                            context.stroke(grain, with: .color(ink.opacity(0.035)), lineWidth: 0.7)
-                        }
-                        // Off-canvas concentric rings echo a plate on the worktop.
-                        let center = CGPoint(x: size.width + 25, y: size.height * 0.76)
-                        for radius in [100.0, 112.0, 150.0, 156.0] {
-                            let plate = Path(ellipseIn: CGRect(x: center.x - radius, y: center.y - radius,
-                                                              width: radius * 2, height: radius * 2))
-                            context.stroke(plate, with: .color(ink.opacity(0.07)), lineWidth: 1)
-                        }
-                        // Deterministic flecks give the surface a light paper texture.
-                        for dot in 0..<450 {
-                            let x = CGFloat((dot * 73) % 997) / 997 * size.width
-                            let y = CGFloat((dot * 137) % 991) / 991 * size.height
-                            context.fill(Path(ellipseIn: CGRect(x: x, y: y, width: 1, height: 1)),
-                                         with: .color(ink.opacity(0.06)))
+        ZStack {
+            paper
+            if contrast != .increased {
+                Canvas { context, size in
+                    var dots = Path()
+                    for x in stride(from: Self.step / 2, through: size.width, by: Self.step) {
+                        for y in stride(from: Self.step / 2, through: size.height, by: Self.step) {
+                            dots.addEllipse(in: CGRect(x: x - 0.8, y: y - 0.8, width: 1.6, height: 1.6))
                         }
                     }
+                    context.fill(dots, with: .color(ink.opacity(dark ? 0.13 : 0.16)))
                 }
-            }.clipped()
+            }
         }
         .ignoresSafeArea()
         .allowsHitTesting(false)
