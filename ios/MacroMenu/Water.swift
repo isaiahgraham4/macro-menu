@@ -26,6 +26,7 @@ enum Water {
         (data.water ?? [:]).allSatisfy { isDayKey($0.key) && $0.value.isFinite && (0...dayLimit).contains($0.value) }
             && (data.waterTarget.map { $0.isFinite && targetRange.contains($0) } ?? true)
             && (data.waterGlass.map { $0.isFinite && glassRange.contains($0) } ?? true)
+            && (data.waterSips ?? []).allSatisfy(\.isValid)
     }
 
     /// Adds water to a day, or with a negative amount takes some off. A day never goes below nothing or above the limit,

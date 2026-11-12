@@ -327,7 +327,10 @@ final class AppStore {
         return logged
     }
     /// Saves a weigh-in, and shows how far it's come towards the goal weight unless reaching the goal is already being marked.
+    /// Logs a weigh-in, with an estimate of how much of it is water drunk in the hours before (see `WaterWeight`).
     @discardableResult func logWeight(_ entry: WeightEntry) -> Bool {
+        var entry = entry
+        if entry.waterKG == nil { let water = WaterWeight.kilograms(at: entry.date, in: data); entry.waterKG = water > 0 ? water : nil }
         guard change(undo: "Logged \(entry.kg.kgText) kg", { $0.weights = $0.weightLog + [entry] }) else { return false }
         if !moments.contains(where: { if case .goalReached = $0 { true } else { false } }), let moment = data.weighInMoment { moments.append(moment) }
         return true
@@ -341,12 +344,16 @@ final class AppStore {
         return true
     }
     /// Adds water to a day (or takes some off with a negative amount). Returns false if it couldn't be saved.
-    /// With `undoable`, the toast offers Undo ("Added 500 mL of water").
-    @discardableResult func addWater(_ millilitres: Double, on date: Date = Date(), undoable: Bool = false) -> Bool {
+    /// With `undoable`, the toast offers Undo ("Added 500 mL of water"). Water added to today is also noted with the time it was
+    /// drunk, `at` (now, unless a widget tap was queued earlier), so a weigh-in soon after can allow for it.
+    @discardableResult func addWater(_ millilitres: Double, on date: Date = Date(), at time: Date = Date(), undoable: Bool = false) -> Bool {
         let key = dayKey(date)
         guard millilitres.isFinite, millilitres != 0, millilitres.magnitude <= Water.dayLimit else { return false }
         let label = undoable ? (millilitres > 0 ? "Added \(Water.text(millilitres)) of water" : "Took off \(Water.text(-millilitres)) of water") : nil
-        return change(undo: label) { Water.adding(millilitres, on: key, to: &$0) }
+        return change(undo: label) { state in
+            Water.adding(millilitres, on: key, to: &state)
+            WaterWeight.record(millilitres, on: key, at: time, in: &state)
+        }
     }
     /// Saves the daily water target and glass size, each only if it's within range.
     @discardableResult func setWater(target: Double, glass: Double) -> Bool {
@@ -440,6 +447,8 @@ final class AppStore {
             for (day, millilitres) in incoming { water[day] = max(water[day] ?? 0, millilitres) }
             state.water = water
         }
+        state.waterSips = WaterWeight.merged(state.waterSips, backup.waterSips)
+        WaterWeight.tidy(&state)
         if state.waterTarget == nil { state.waterTarget = backup.waterTarget }
         if state.waterGlass == nil { state.waterGlass = backup.waterGlass }
         if state.stepGoal == nil { state.stepGoal = backup.stepGoal }
@@ -530,6 +539,8 @@ final class AppStore {
         var water = state.water ?? [:]
         for day in Set(waterHere.keys).union(waterBefore.keys) where waterHere[day] != waterBefore[day] { water[day] = waterHere[day] }
         state.water = water.isEmpty ? nil : water
+        state.waterSips = WaterWeight.keepingLocal(state.waterSips, local: local.waterSips, base: base.waterSips)
+        WaterWeight.tidy(&state)
         return state
     }
 }

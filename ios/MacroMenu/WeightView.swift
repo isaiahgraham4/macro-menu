@@ -15,6 +15,8 @@ struct WeightView: View {
     private var shown: [WeightTrend.Point] { Array(points.suffix(5)) }
     private var weekly: Double? { WeightTrend.weeklyChange(points) }
     private var maintenance: WeightTrend.Maintenance? { WeightTrend.maintenance(logs: store.data.logs, points: points) }
+    /// Kilograms of a weigh-in at the chosen time that would be water logged in the hours before.
+    private var recentWater: Double { WaterWeight.kilograms(at: date, in: store.data) }
 
     var body: some View {
         LeanrList {
@@ -50,10 +52,20 @@ struct WeightView: View {
 
             goalSection
 
-            Section("Log weight") {
+            Section {
                 NumberField(title: "Weight (kg)", value: $kg, places: 2)
                 DatePicker("Date", selection: $date, in: ...Date())
+                if recentWater > 0 {
+                    LabeledContent("Recent water", value: "about \(recentWater.number) kg")
+                    if (20...400).contains(kg) {
+                        LabeledContent("Without it") { Text("\((kg - recentWater).kgText) kg").monospacedDigit() }
+                    }
+                }
                 Button("Save weight") { save() }.disabled(!(20...400).contains(kg))
+            } header: { Text("Log weight") } footer: {
+                if recentWater > 0 {
+                    Text(WaterWeight.explanation(kg: recentWater, at: date, sips: store.data.waterSips ?? []))
+                }
             }
 
             if let maintenance {
@@ -86,7 +98,13 @@ struct WeightView: View {
                             Text(entry.date.formatted(date: .abbreviated, time: .shortened))
                             if entry.healthID != nil { Image(systemName: "heart.fill").font(.caption).foregroundStyle(.pink).accessibilityLabel("From Apple Health") }
                             Spacer()
-                            Text("\(entry.kg.kgText) kg").monospacedDigit()
+                            VStack(alignment: .trailing, spacing: 1) {
+                                Text("\(entry.kg.kgText) kg").monospacedDigit()
+                                if let water = entry.waterKG {
+                                    Text("\(entry.adjustedKG.kgText) kg less \(water.number) kg water")
+                                        .font(.roboto(.caption)).foregroundStyle(.secondary).monospacedDigit()
+                                }
+                            }
                         }
                         .swipeActions {
                             Button("Delete", role: .destructive) {

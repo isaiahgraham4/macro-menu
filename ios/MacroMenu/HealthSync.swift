@@ -333,6 +333,12 @@ final class HealthSync {
             // Scales and other apps often store pounds converted to kg (181.5 lb is 82.3293 kg); Leanr keeps weights to 10 g.
             WeightEntry(date: $0.startDate, kg: $0.quantity.doubleValue(for: .gramUnit(with: .kilo)).hundredth, healthID: $0.uuid)
         }
+            .map { entry in
+                var entry = entry
+                let water = WaterWeight.kilograms(at: entry.date, in: store.data)
+                entry.waterKG = water > 0 ? water : nil
+                return entry
+            }
             .filter(\.isValid)
         guard !fresh.isEmpty else { return }
         store.change { $0.weights = $0.weightLog + fresh }

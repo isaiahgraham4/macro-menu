@@ -105,7 +105,7 @@ extension AppStore {
             return logPlanned([id], on: date)
         }
         if let amount = WidgetCalories.waterAmount(option) {
-            return addWater(amount, on: date)
+            return addWater(amount, on: date, at: date)
         }
         if option.hasPrefix("pin:"), let food = pinnedFoods.first(where: { "pin:\($0.id)" == option }) {
             guard !justLogged(food.name) else { return false }

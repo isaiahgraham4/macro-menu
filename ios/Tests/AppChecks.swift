@@ -725,6 +725,42 @@ import UniformTypeIdentifiers
         let sameDay = WeightTrend.points([WeightEntry(date: day(0), kg: 80), WeightEntry(date: day(0).addingTimeInterval(3600), kg: 81)], calendar: calendar)
         assert(sameDay.count == 1 && sameDay[0].kg == 81)
         assert(WeightTrend.points([WeightEntry(date: day(0), kg: 5)], calendar: calendar).isEmpty)
+        // Water drunk before a weigh-in: a litre is mostly still there at 30 minutes and mostly passed by 4 hours.
+        let litre = [WaterSip(time: day(0), millilitres: 1000)]
+        let afterLitre = [0.5, 1, 2, 3, 4, 6].map { WaterWeight.kilograms(at: day(0).addingTimeInterval($0 * 3600), sips: litre) }
+        print("1 L of water still in you after 0.5/1/2/3/4/6 h (kg):", afterLitre)
+        assert(afterLitre[0] > 0.8 && afterLitre[1] > 0.6 && (0.2...0.5).contains(afterLitre[2]) && afterLitre[4] < 0.15 && afterLitre[5] == 0)
+        assert(zip(afterLitre, afterLitre.dropFirst()).allSatisfy { $0 >= $1 }, "water only leaves")
+        // Nothing drunk, drunk only afterwards, or a small glass long ago: nothing to take off.
+        assert(WaterWeight.kilograms(at: day(0), sips: []) == 0)
+        assert(WaterWeight.kilograms(at: day(0), sips: [WaterSip(time: day(0).addingTimeInterval(60), millilitres: 750)]) == 0)
+        assert(WaterWeight.kilograms(at: day(0), sips: [WaterSip(time: day(0).addingTimeInterval(-5 * 3600), millilitres: 250)]) == 0)
+        // A glass every hour (about what a 2.5 L day is) only leaves a little extra in you at any time.
+        let sipping = (0..<8).map { WaterSip(time: day(0).addingTimeInterval(Double($0) * 3600), millilitres: 250) }
+        let steady = WaterWeight.kilograms(at: day(0).addingTimeInterval(7.5 * 3600), sips: sipping)
+        print("250 mL every hour, 30 min after the last glass (kg):", steady)
+        assert((0.2...0.6).contains(steady))
+        // A weigh-in logged with recent water: the trend follows the scale less the water.
+        var waterData = AppData()
+        waterData.water = [dayKey(day(0)): 1000]
+        WaterWeight.record(1000, on: dayKey(day(0)), at: day(0), in: &waterData, calendar: calendar)
+        assert(waterData.waterSips?.count == 1 && waterData.isValid)
+        let wet = WeightEntry(date: day(0).addingTimeInterval(1800), kg: 81, waterKG: WaterWeight.kilograms(at: day(0).addingTimeInterval(1800), in: waterData))
+        assert(wet.waterKG! > 0.8 && wet.isValid)
+        let wetTrend = WeightTrend.points([WeightEntry(date: day(-1), kg: 80), wet], calendar: calendar)
+        assert(abs(wetTrend[1].trend - (80 + 0.2 * (81 - wet.waterKG! - 80))) < 0.0001 && wetTrend[1].kg == 81)
+        // Taking water off removes the latest sips; water added to another day gets no sip; old sips are dropped.
+        waterData.water = [dayKey(day(0)): 400]
+        WaterWeight.record(-600, on: dayKey(day(0)), at: day(0), in: &waterData, calendar: calendar)
+        assert(waterData.waterSips?.map(\.millilitres) == [400])
+        WaterWeight.record(300, on: dayKey(day(-1)), at: day(0), in: &waterData, calendar: calendar)
+        assert(waterData.waterSips?.count == 1)
+        WaterWeight.tidy(&waterData, now: day(3), calendar: calendar)
+        assert(waterData.waterSips == nil)
+        // Merges: a backup brings its sips; an iCloud merge keeps a sip removed here removed.
+        let sipA = WaterSip(time: day(0), millilitres: 250), sipB = WaterSip(time: day(0).addingTimeInterval(60), millilitres: 500)
+        assert(WaterWeight.merged([sipA], [sipA, sipB])?.count == 2)
+        assert(WaterWeight.keepingLocal([sipA, sipB], local: [sipB], base: [sipA, sipB]) == [sipB])
         // Losing 0.1 kg a day while eating 2,000 Cal means maintenance is about 2,000 + 770.
         let losing = WeightTrend.points((0..<60).map { WeightEntry(date: day($0), kg: 90 - Double($0) * 0.1) }, calendar: calendar)
         assert(abs(WeightTrend.weeklyChange(losing, now: day(60), calendar: calendar)! + 0.7) < 0.05)

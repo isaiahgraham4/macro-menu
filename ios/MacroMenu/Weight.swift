@@ -6,7 +6,12 @@ struct WeightEntry: Codable, Identifiable, Hashable, Sendable {
     var kg: Double
     /// Set when the weight came from Apple Health, so it isn't imported twice or written back.
     var healthID: UUID?
-    var isValid: Bool { kg.isFinite && (20...400).contains(kg) }
+    /// Kilograms of this reading estimated to be water drunk in the hours before and not yet passed (see `WaterWeight`),
+    /// worked out when it's logged. Optional so weigh-ins from before the estimate still load.
+    var waterKG: Double? = nil
+    /// The reading less that water, which is what the trend follows.
+    var adjustedKG: Double { kg - (waterKG ?? 0) }
+    var isValid: Bool { kg.isFinite && (20...400).contains(kg) && (waterKG.map { $0.isFinite && (0...5).contains($0) } ?? true) }
 }
 
 /// A weight to aim for, and where you started so progress can be shown.
@@ -37,8 +42,13 @@ extension AppData {
 enum WeightTrend {
     struct Point: Hashable, Sendable {
         var date: Date
+        /// What the scale said.
         var kg: Double
         var trend: Double
+        /// Kilograms of the reading estimated to be recent water, left out of the trend.
+        var water: Double = 0
+        /// The reading the trend moves towards: the scale less recent water.
+        var adjusted: Double { kg - water }
     }
 
     /// Kilocalories in a kilogram of body weight change, the usual rule of thumb.
@@ -48,22 +58,24 @@ enum WeightTrend {
     /// little enough that one salty or dehydrated day doesn't swing it.
     static let dailyWeight = 0.2
 
-    /// One point per day with a weigh-in (the day's last), smoothed so each day moves the trend a fifth of the way to the scale.
+    /// One point per day with a weigh-in (the day's last), smoothed so each day moves the trend a fifth of the way to the scale
+    /// (less any water drunk just before, which the scale shows but isn't real weight).
     /// Days between weigh-ins are filled in along a straight line from one reading to the next, so after a gap the trend
     /// moves towards where your weight was heading rather than jumping as if every missing day had weighed the new amount.
     static func points(_ entries: [WeightEntry], calendar: Calendar = .current) -> [Point] {
         let byDay = Dictionary(grouping: entries.filter(\.isValid)) { calendar.startOfDay(for: $0.date) }
         var result: [Point] = []
         for day in byDay.keys.sorted() {
-            let kg = byDay[day]!.max { $0.date < $1.date }!.kg
-            guard let last = result.last else { result.append(Point(date: day, kg: kg, trend: kg)); continue }
+            let entry = byDay[day]!.max { $0.date < $1.date }!
+            let kg = entry.kg, water = entry.waterKG ?? 0, adjusted = entry.adjustedKG
+            guard let last = result.last else { result.append(Point(date: day, kg: kg, trend: adjusted, water: water)); continue }
             let gap = max(1, calendar.dateComponents([.day], from: last.date, to: day).day ?? 1)
             var trend = last.trend
             for step in 1...gap {
-                let scale = last.kg + (kg - last.kg) * Double(step) / Double(gap)
+                let scale = last.adjusted + (adjusted - last.adjusted) * Double(step) / Double(gap)
                 trend += dailyWeight * (scale - trend)
             }
-            result.append(Point(date: day, kg: kg, trend: trend))
+            result.append(Point(date: day, kg: kg, trend: trend, water: water))
         }
         return result
     }
@@ -77,11 +89,12 @@ enum WeightTrend {
 
     /// Why the trend isn't the last weigh-in, when they're 0.1 kg or more apart.
     static func gapText(_ point: Point) -> String? {
-        let gap = point.trend - point.kg
+        let gap = point.trend - point.adjusted
         guard abs(gap) >= 0.1 else { return nil }
-        let days = daysToCatchUp(from: point.trend, to: point.kg)
-        return "Your trend is \(abs(gap).number) kg \(gap > 0 ? "above" : "below") your last weigh-in, because each day moves it only a fifth "
-            + "of the way to the scale, so one reading doesn't swing it. If you stay around \(point.kg.kgText) kg, it catches up in about \(days) \(days == 1 ? "day" : "days")."
+        let days = daysToCatchUp(from: point.trend, to: point.adjusted)
+        let reading = point.water > 0 ? "your last weigh-in less recent water" : "your last weigh-in"
+        return "Your trend is \(abs(gap).number) kg \(gap > 0 ? "above" : "below") \(reading), because each day moves it only a fifth "
+            + "of the way to the scale, so one reading doesn't swing it. If you stay around \(point.adjusted.kgText) kg, it catches up in about \(days) \(days == 1 ? "day" : "days")."
     }
 
     /// Trend change per week over the last `days` days, once weigh-ins span at least a week.

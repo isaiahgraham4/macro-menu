@@ -288,6 +288,8 @@ struct AppData: Codable, Sendable {
     var water: [String: Double]? = nil
     var waterTarget: Double? = nil
     var waterGlass: Double? = nil
+    /// When the last two days' water was drunk (see `WaterWeight`), for telling how much of a weigh-in is water. Optional for the same reason.
+    var waterSips: [WaterSip]? = nil
     /// The daily step goal (see `Steps`). The step counts themselves stay in Apple Health.
     var stepGoal: Double? = nil
     /// Weekly check-ins and the pace they aim for (see `CheckIn`). Optional so saved data and backups from before check-ins still load.
