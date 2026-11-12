@@ -1,0 +1,1824 @@
+{
+  "checked": "2026-11-12",
+  "items": {
+    "daves-single": {
+      "cat": "hamburgers",
+      "name": "Dave's Single®",
+      "cal": 560,
+      "fat": 34,
+      "sat": 14,
+      "sodium": 1170,
+      "carbs": 37,
+      "fibre": 2,
+      "sugar": 9,
+      "protein": 31,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Sesame",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "A quarter-pound* of fresh, never-frozen beef, American cheese, crisp lettuce, tomato, pickle, ketchup, mustard, mayo, and onion on a potato bun. The single greatest single ever created by man—or at least by a man named, “Dave.”"
+    },
+    "daves-double": {
+      "cat": "hamburgers",
+      "name": "Dave's Double®",
+      "cal": 810,
+      "fat": 52,
+      "sat": 22,
+      "sodium": 1410,
+      "carbs": 37,
+      "fibre": 2,
+      "sugar": 9,
+      "protein": 50,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Sesame",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "A half-pound* of fresh, never-frozen beef, American cheese, crisp lettuce, tomato, pickle, ketchup, mustard, mayo, and onion on a potato bun. More meat means more to love."
+    },
+    "daves-triple": {
+      "cat": "hamburgers",
+      "name": "Dave's Triple®",
+      "cal": 1100,
+      "fat": 74,
+      "sat": 32,
+      "sodium": 1830,
+      "carbs": 38,
+      "fibre": 2,
+      "sugar": 9,
+      "protein": 72,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Sesame",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "Three quarters of a pound* of fresh, never-frozen beef, American cheese, crisp lettuce, tomato, pickle, ketchup, mustard, mayo, and onion on a potato bun. Jaw-dropping—because that’s the only way to eat it."
+    },
+    "baconator": {
+      "cat": "hamburgers",
+      "name": "Baconator®",
+      "cal": 890,
+      "fat": 58,
+      "sat": 24,
+      "sodium": 1580,
+      "carbs": 36,
+      "fibre": 1,
+      "sugar": 8,
+      "protein": 59,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Sesame",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "A half-pound* of fresh, never-frozen beef, American cheese, 6 pieces of crispy Applewood smoked bacon, ketchup, and mayo on a potato bun. Never too much bacon."
+    },
+    "son-of-baconator": {
+      "cat": "hamburgers",
+      "name": "Son of Baconator®",
+      "cal": 590,
+      "fat": 36,
+      "sat": 14,
+      "sodium": 1220,
+      "carbs": 35,
+      "fibre": 1,
+      "sugar": 8,
+      "protein": 34,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Sesame",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "Two patties of fresh, never frozen-beef, American cheese, plenty of Applewood smoked bacon, ketchup, and mayo on a potato bun. Like Baconator®, like Son."
+    },
+    "big-bacon-classic": {
+      "cat": "hamburgers",
+      "name": "Big Bacon Classic®",
+      "cal": 610,
+      "fat": 37,
+      "sat": 15,
+      "sodium": 1340,
+      "carbs": 38,
+      "fibre": 2,
+      "sugar": 9,
+      "protein": 35,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Sesame",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "A quarter-pound* of fresh, never-frozen beef, Applewood smoked bacon, American cheese, crisp lettuce, tomato, pickle, ketchup, mustard, mayo, and onion on a potato bun. It’s big. It’s classic. It’s got bacon."
+    },
+    "big-bacon-classic-double": {
+      "cat": "hamburgers",
+      "name": "Big Bacon Classic® Double",
+      "cal": 860,
+      "fat": 55,
+      "sat": 23,
+      "sodium": 1570,
+      "carbs": 38,
+      "fibre": 2,
+      "sugar": 9,
+      "protein": 55,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Sesame",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "A half-pound* of fresh, never-frozen beef, Applewood smoked bacon, American cheese, crisp lettuce, tomato, pickle, ketchup, mustard, mayo, and onion on a potato bun. AKA, The Bigger Bacon Classic."
+    },
+    "big-bacon-classic-triple": {
+      "cat": "hamburgers",
+      "name": "Big Bacon Classic® Triple",
+      "cal": 1140,
+      "fat": 77,
+      "sat": 33,
+      "sodium": 2000,
+      "carbs": 38,
+      "fibre": 2,
+      "sugar": 10,
+      "protein": 77,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Sesame",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "A half-pound* of fresh, never-frozen beef, Applewood smoked bacon, American cheese, crisp lettuce, tomato, pickle, ketchup, mustard, mayo, and onion on a potato bun. AKA, The Biggest Bacon Classic."
+    },
+    "bacon-double-stack-tm": {
+      "cat": "hamburgers",
+      "name": "Bacon Double Stack™",
+      "cal": 420,
+      "fat": 24,
+      "sat": 10,
+      "sodium": 880,
+      "carbs": 25,
+      "fibre": 1,
+      "sugar": 6,
+      "protein": 26,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Sesame",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "Two fresh, never-frozen beef patties, Applewood smoked bacon, cheese, ketchup, mustard, pickle and onion. Bacon makes even the Double Stack better."
+    },
+    "jr-bacon-cheeseburger": {
+      "cat": "hamburgers",
+      "name": "Jr. Bacon Cheeseburger",
+      "cal": 350,
+      "fat": 21,
+      "sat": 8,
+      "sodium": 650,
+      "carbs": 24,
+      "fibre": 1,
+      "sugar": 5,
+      "protein": 18,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Sesame",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "Fresh, never-frozen beef, Applewood smoked bacon, American cheese, crisp lettuce, tomato, and mayo. His fans call him JBC. One bite, and you will, too."
+    },
+    "jr-cheeseburger-deluxe": {
+      "cat": "hamburgers",
+      "name": "Jr. Cheeseburger Deluxe",
+      "cal": 330,
+      "fat": 19,
+      "sat": 7,
+      "sodium": 710,
+      "carbs": 26,
+      "fibre": 1,
+      "sugar": 6,
+      "protein": 15,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Sesame",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "Fresh, never-frozen beef topped with cheese, pickles, onions, tomatoes, crisp lettuce, ketchup, mustard, and mayo. Big flavor. Junior price."
+    },
+    "jr-cheeseburger": {
+      "cat": "hamburgers",
+      "name": "Jr. Cheeseburger",
+      "cal": 270,
+      "fat": 13,
+      "sat": 6,
+      "sodium": 660,
+      "carbs": 25,
+      "fibre": 1,
+      "sugar": 5,
+      "protein": 14,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Sesame",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "Fresh, never-frozen beef topped with cheese, pickles, onion, ketchup, and mustard on a toasted bun. Right down the middle done downright perfect."
+    },
+    "double-stack-tm": {
+      "cat": "hamburgers",
+      "name": "Double Stack™",
+      "cal": 380,
+      "fat": 21,
+      "sat": 9,
+      "sodium": 770,
+      "carbs": 25,
+      "fibre": 1,
+      "sugar": 5,
+      "protein": 23,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Sesame",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "Two patties of fresh, never frozen beef with cheese, ketchup, mustard, pickle, and onion. It’s double the fresh beef, stacked with deliciousness."
+    },
+    "jr-hamburger": {
+      "cat": "hamburgers",
+      "name": "Jr. Hamburger",
+      "cal": 230,
+      "fat": 10,
+      "sat": 4,
+      "sodium": 470,
+      "carbs": 24,
+      "fibre": 1,
+      "sugar": 5,
+      "protein": 12,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Sesame",
+        "Wheat"
+      ],
+      "desc": "Fresh, never-frozen beef topped with pickles, onion, ketchup, and mustard on a toasted bun. Because not everyone likes cheese and that’s totally fine."
+    },
+    "nuggs-party-pack": {
+      "cat": "chicken-nuggets-more",
+      "name": "Spicy Nuggs Party Pack",
+      "cal": 2340,
+      "fat": 153,
+      "sat": 34,
+      "sodium": 5960,
+      "carbs": 112,
+      "fibre": 8,
+      "sugar": 0,
+      "protein": 128,
+      "al": [
+        "Wheat"
+      ],
+      "desc": "Oh this? This is just around 50 of your favorite all-white-meat chicken nuggets—aka “The Dream.” You want them spicy? Done. You want to share? Probably not, but there’s enough here in case the rest of your family wants some—and, trust us, they will. Approx. 50 nuggets. Count based on approximate weight."
+    },
+    "10-pc-spicy-chicken-nuggets": {
+      "cat": "chicken-nuggets-more",
+      "name": "10 PC. Spicy Chicken Nuggets",
+      "cal": 470,
+      "fat": 31,
+      "sat": 7,
+      "sodium": 1190,
+      "carbs": 22,
+      "fibre": 2,
+      "sugar": 0,
+      "protein": 26,
+      "al": [
+        "Wheat"
+      ],
+      "desc": "All-white-meat chicken breaded and marinated in our unique, fiery blend of peppers and spices. Served with your choice of sauce—each of which technically become hot sauces when you dip these spicy little numbers in them."
+    },
+    "6-pc-spicy-chicken-nuggets": {
+      "cat": "chicken-nuggets-more",
+      "name": "6 PC. Spicy Chicken Nuggets",
+      "cal": 280,
+      "fat": 18,
+      "sat": 4,
+      "sodium": 720,
+      "carbs": 13,
+      "fibre": 1,
+      "sugar": 0,
+      "protein": 15,
+      "al": [
+        "Wheat"
+      ],
+      "desc": "All-white-meat chicken breaded and marinated in our unique, fiery blend of peppers and spices. Served with your choice of sauce—each of which technically become hot sauces when you dip these spicy little numbers in them."
+    },
+    "4-pc-spicy-chicken-nuggets": {
+      "cat": "chicken-nuggets-more",
+      "name": "4 PC. Spicy Chicken Nuggets",
+      "cal": 190,
+      "fat": 12,
+      "sat": 3,
+      "sodium": 480,
+      "carbs": 9,
+      "fibre": 1,
+      "sugar": 0,
+      "protein": 10,
+      "al": [
+        "Wheat"
+      ],
+      "desc": "All-white-meat chicken breaded and marinated in our unique, fiery blend of peppers and spices. Served with your choice sauce—each of which technically become hot sauces when you dip these spicy little numbers in them."
+    },
+    "classic-chicken-sandwich": {
+      "cat": "chicken-nuggets-more",
+      "name": "Classic Chicken Sandwich",
+      "cal": 550,
+      "fat": 25,
+      "sat": 4,
+      "sodium": 1630,
+      "carbs": 55,
+      "fibre": 3,
+      "sugar": 7,
+      "protein": 28,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Sesame",
+        "Wheat"
+      ],
+      "desc": "A juicy, crispy chicken breast with crunchy lettuce, tomato, mayo, and the perfect pickles, all on a potato bun. It’s a flawless blend of nostalgia and excitement—kinda like your all-time favorite song, only better ‘cause you can eat it."
+    },
+    "spicy-chicken-sandwich": {
+      "cat": "chicken-nuggets-more",
+      "name": "Spicy Chicken Sandwich",
+      "cal": 560,
+      "fat": 26,
+      "sat": 4.5,
+      "sodium": 1500,
+      "carbs": 55,
+      "fibre": 3,
+      "sugar": 7,
+      "protein": 28,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Sesame",
+        "Wheat"
+      ],
+      "desc": "A juicy chicken breast marinated in a fiery blend of peppers and spices and breaded for the perfect crunch cooled down with crisp lettuce, pickles, tomato, and mayo on a potato bun. The OG spicy chicken sandwich and the one you crave."
+    },
+    "grilled-chicken-wrap": {
+      "cat": "chicken-nuggets-more",
+      "name": "Grilled Chicken Ranch Wrap",
+      "cal": 420,
+      "fat": 16,
+      "sat": 5,
+      "sodium": 1100,
+      "carbs": 41,
+      "fibre": 1,
+      "sugar": 2,
+      "protein": 28,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Wheat"
+      ],
+      "desc": "Juicy, herb-marinated grilled chicken breast, shredded cheddar cheese and crispy romaine drizzled with a creamy ranch sauce and all wrapped up in a warm tortilla."
+    },
+    "asiago-ranch-club-sandwich-classic": {
+      "cat": "chicken-nuggets-more",
+      "name": "Asiago Ranch Club Sandwich, Classic",
+      "cal": 670,
+      "fat": 34,
+      "sat": 8,
+      "sodium": 1830,
+      "carbs": 56,
+      "fibre": 3,
+      "sugar": 7,
+      "protein": 37,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Sesame",
+        "Wheat"
+      ],
+      "desc": "A juicy, crispy chicken breast taken over the top with thick Applewood smoked bacon, Asiago cheese, creamy ranch sauce, crisp lettuce, and tomato, all on a potato bun. This club is poppin’ off."
+    },
+    "asiago-ranch-club-sandwich-spicy": {
+      "cat": "chicken-nuggets-more",
+      "name": "Asiago Ranch Club Sandwich, Spicy",
+      "cal": 680,
+      "fat": 35,
+      "sat": 9,
+      "sodium": 1700,
+      "carbs": 56,
+      "fibre": 3,
+      "sugar": 7,
+      "protein": 36,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Sesame",
+        "Wheat"
+      ],
+      "desc": "A juicy chicken breast marinated in a fiery blend of peppers and spices and breaded for the perfect crunch, topped with thick Applewood smoked bacon, Asiago cheese, creamy ranch sauce, crisp lettuce, and tomato, all on a potato bun. So hot you’ll wanna give your mouth a heads-up."
+    },
+    "crispy-chicken-blt": {
+      "cat": "chicken-nuggets-more",
+      "name": "Crispy Chicken BLT",
+      "cal": 420,
+      "fat": 23,
+      "sat": 6,
+      "sodium": 950,
+      "carbs": 34,
+      "fibre": 1,
+      "sugar": 6,
+      "protein": 20,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Sesame",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "Juicy white meat, lightly breaded and seasoned, topped with Applewood smoked bacon, crisp lettuce, tomato, cheese, and mayo. A classic taste, perfectly reinvented."
+    },
+    "crispy-chicken-sandwich": {
+      "cat": "chicken-nuggets-more",
+      "name": "Crispy Chicken Sandwich",
+      "cal": 340,
+      "fat": 17,
+      "sat": 3,
+      "sodium": 650,
+      "carbs": 32,
+      "fibre": 1,
+      "sugar": 4,
+      "protein": 15,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Sesame",
+        "Wheat"
+      ],
+      "desc": "Juicy white meat, lightly breaded and seasoned, topped with crisp lettuce, and mayo. More than delicious, and just the right size."
+    },
+    "10-pc-chicken-nuggets": {
+      "cat": "chicken-nuggets-more",
+      "name": "10 PC. Chicken Nuggets",
+      "cal": 430,
+      "fat": 27,
+      "sat": 6,
+      "sodium": 900,
+      "carbs": 22,
+      "fibre": 1,
+      "sugar": 0,
+      "protein": 23,
+      "al": [
+        "Wheat"
+      ],
+      "desc": "All-white-meat chicken breaded to crispy perfection and served with your choice of sauce. Because sometimes, you just need a nugg."
+    },
+    "6-pc-chicken-nuggets": {
+      "cat": "chicken-nuggets-more",
+      "name": "6 PC. Chicken Nuggets",
+      "cal": 260,
+      "fat": 16,
+      "sat": 3.5,
+      "sodium": 540,
+      "carbs": 13,
+      "fibre": 1,
+      "sugar": 0,
+      "protein": 14,
+      "al": [
+        "Wheat"
+      ],
+      "desc": "All-white-meat chicken breaded to crispy perfection and served with your choice of sauce. Because sometimes, you just need a nugg."
+    },
+    "4-pc-chicken-nuggets": {
+      "cat": "chicken-nuggets-more",
+      "name": "4 PC. Chicken Nuggets",
+      "cal": 170,
+      "fat": 11,
+      "sat": 2.5,
+      "sodium": 360,
+      "carbs": 9,
+      "fibre": 0,
+      "sugar": 0,
+      "protein": 9,
+      "al": [
+        "Wheat"
+      ],
+      "desc": "All-white-meat chicken breaded to crispy perfection and served with your choice of sauce. Because sometimes, you just need a nugg."
+    },
+    "3-pc-tenders": {
+      "cat": "tenders",
+      "name": "3 PC. Tenders",
+      "cal": 420,
+      "fat": 22,
+      "sat": 3.5,
+      "sodium": 1050,
+      "carbs": 22,
+      "fibre": 1,
+      "sugar": 0,
+      "protein": 33,
+      "al": [
+        "Wheat"
+      ],
+      "desc": "Crispy on the outside, tender, juicy white meat on the inside. And with new sauces like Signature, Honey Mustard, Creamy Ranch, Honey BBQ, Scorchin’ Hot, and Sweet Chili—yes, they’re ALL new—you best get to dippin’."
+    },
+    "4-pc-tenders": {
+      "cat": "tenders",
+      "name": "4 PC. Tenders",
+      "cal": 560,
+      "fat": 30,
+      "sat": 5,
+      "sodium": 1390,
+      "carbs": 29,
+      "fibre": 1,
+      "sugar": 0,
+      "protein": 44,
+      "al": [
+        "Wheat"
+      ],
+      "desc": "Crispy on the outside, tender, juicy white meat on the inside. And with new sauces like Signature, Honey Mustard, Creamy Ranch, Honey BBQ, Scorchin’ Hot, and Sweet Chili——yes, they’re ALL new—you best get to dippin’."
+    },
+    "parmesan-caesar-salad": {
+      "cat": "fresh-made-salads",
+      "name": "Parmesan Caesar Salad",
+      "cal": 270,
+      "fat": 11,
+      "sat": 5,
+      "sodium": 790,
+      "carbs": 12,
+      "fibre": 3,
+      "sugar": 2,
+      "protein": 31,
+      "al": [
+        "Entree",
+        "Dairy / Milk",
+        "Wheat",
+        "Dressing",
+        "Dairy / Milk",
+        "Egg",
+        "Fish"
+      ],
+      "desc": "Made fresh daily with romaine lettuce, grilled chicken, Italian cheeses, a crunchy Parmesan crumble (crouton), and creamy Caesar dressing. One bite will tell you why it’s king of more than just the Romaines."
+    },
+    "cobb-salad": {
+      "cat": "fresh-made-salads",
+      "name": "Cobb Salad",
+      "cal": 410,
+      "fat": 23,
+      "sat": 8,
+      "sodium": 860,
+      "carbs": 16,
+      "fibre": 3,
+      "sugar": 4,
+      "protein": 37,
+      "al": [
+        "Entree",
+        "Dairy / Milk",
+        "Egg",
+        "Wheat",
+        "Dressing",
+        "Dairy / Milk",
+        "Egg"
+      ],
+      "desc": "Made fresh daily with Wendy’s signature lettuce blend, grilled chicken, diced tomatoes, shredded cheddar cheese, chopped eggs, applewood smoked bacon, crispy fried onions, and ranch dressing. A hearty salad you can hardly wait for."
+    },
+    "apple-pecan-salad": {
+      "cat": "fresh-made-salads",
+      "name": "Apple Pecan Salad",
+      "cal": 420,
+      "fat": 22,
+      "sat": 9,
+      "sodium": 980,
+      "carbs": 27,
+      "fibre": 5,
+      "sugar": 18,
+      "protein": 30,
+      "al": [
+        "Dairy / Milk",
+        "Soy",
+        "Tree Nut"
+      ],
+      "desc": "Made fresh daily with Wendy’s signature lettuce blend, crisp red and green apples, dried cranberries, roasted pecans, crumbled blue cheese, and grilled chicken, all topped with a Pomegranate Vinaigrette dressing. An unbeatable pick."
+    },
+    "taco-salad": {
+      "cat": "fresh-made-salads",
+      "name": "Taco Salad",
+      "cal": 470,
+      "fat": 25,
+      "sat": 10,
+      "sodium": 1180,
+      "carbs": 36,
+      "fibre": 8,
+      "sugar": 12,
+      "protein": 27,
+      "al": [
+        "Entree",
+        "Dairy / Milk",
+        "Soy",
+        "Dressing",
+        "Dairy / Milk",
+        "Egg"
+      ],
+      "desc": "Made fresh daily with romaine lettuce, shredded cheddar cheese, diced tomatoes, fire roasted corn, chile lime taco strips, our famous, hearty chili and creamy salsa dressing. A fresh take on tacos perfect for Tuesdays, Wednesdays, or any other days for that matter."
+    },
+    "french-fries": {
+      "cat": "fries-sides",
+      "name": "Jr. Natural-Cut Fries",
+      "cal": 260,
+      "fat": 12,
+      "sat": 2,
+      "sodium": 420,
+      "carbs": 35,
+      "fibre": 3,
+      "sugar": 0,
+      "protein": 4,
+      "al": [],
+      "desc": "Natural-cut, skin-on, sea-salted fries served hot and crispy. The world loves them for a reason."
+    },
+    "baconator-fries": {
+      "cat": "fries-sides",
+      "name": "Baconator Fries",
+      "cal": 450,
+      "fat": 25,
+      "sat": 8,
+      "sodium": 1000,
+      "carbs": 42,
+      "fibre": 3,
+      "sugar": 1,
+      "protein": 14,
+      "al": [
+        "Dairy / Milk",
+        "Soy"
+      ],
+      "desc": "Our natural-cut, skin-on, sea-salted fries topped with warm, creamy cheese sauce, shredded cheddar, and crispy Applewood smoked bacon. The only fries worthy of the Baconator name."
+    },
+    "chili-cheese-fries": {
+      "cat": "fries-sides",
+      "name": "Chili Cheese Fries",
+      "cal": 510,
+      "fat": 27,
+      "sat": 9,
+      "sodium": 1260,
+      "carbs": 49,
+      "fibre": 5,
+      "sugar": 3,
+      "protein": 18,
+      "al": [
+        "Dairy / Milk",
+        "Soy"
+      ],
+      "desc": "Our natural-cut, skin-on, sea-salted fries topped with our hearty chili and rich, creamy cheese sauce. Easy to love. Hard to beat."
+    },
+    "cheese-fries": {
+      "cat": "fries-sides",
+      "name": "Cheese Fries",
+      "cal": 470,
+      "fat": 27,
+      "sat": 10,
+      "sodium": 1120,
+      "carbs": 44,
+      "fibre": 3,
+      "sugar": 1,
+      "protein": 12,
+      "al": [
+        "Dairy / Milk",
+        "Soy"
+      ],
+      "desc": "Our natural cut fries, smothered in a creamy cheese sauce."
+    },
+    "chili": {
+      "cat": "fries-sides",
+      "name": "Chili",
+      "cal": 280,
+      "fat": 12,
+      "sat": 4.5,
+      "sodium": 1050,
+      "carbs": 24,
+      "fibre": 3,
+      "sugar": 6,
+      "protein": 19,
+      "al": [
+        "Dairy / Milk",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "Perfectly seasoned and positively irresistible. Red’s kind of our thing, you know."
+    },
+    "sour-cream-and-chive-baked-potato": {
+      "cat": "fries-sides",
+      "name": "Sour Cream and Chive Baked Potato",
+      "cal": 300,
+      "fat": 2.5,
+      "sat": 1.5,
+      "sodium": 55,
+      "carbs": 63,
+      "fibre": 7,
+      "sugar": 4,
+      "protein": 8,
+      "al": [
+        "Dairy / Milk"
+      ],
+      "desc": "A hot, fluffy potato topped with the classic combination of chives, and sour cream. It’s a side, it’s a meal, it’s a potato’s potato. Potato."
+    },
+    "plain-baked-potato": {
+      "cat": "fries-sides",
+      "name": "Plain Baked Potato",
+      "cal": 270,
+      "fat": 0,
+      "sat": 0,
+      "sodium": 40,
+      "carbs": 61,
+      "fibre": 7,
+      "sugar": 3,
+      "protein": 7,
+      "al": [],
+      "desc": "The satisfying simplicity of good, honest, hot, fluffy baked potato perfection. Ingredients: Potato."
+    },
+    "bacon-cheese-baked-potato": {
+      "cat": "fries-sides",
+      "name": "Bacon Cheese Baked Potato",
+      "cal": 420,
+      "fat": 12,
+      "sat": 6,
+      "sodium": 570,
+      "carbs": 64,
+      "fibre": 7,
+      "sugar": 4,
+      "protein": 17,
+      "al": [
+        "Dairy / Milk",
+        "Soy"
+      ],
+      "desc": "Hot and fluffy potato topped with creamy cheese sauce, shredded cheese, and Applewood smoked bacon. Because nothing goes with a potato like cheese, more cheese, and also bacon."
+    },
+    "chili-cheese-baked-potato": {
+      "cat": "fries-sides",
+      "name": "Chili & Cheese Baked Potato",
+      "cal": 490,
+      "fat": 14,
+      "sat": 7,
+      "sodium": 830,
+      "carbs": 70,
+      "fibre": 8,
+      "sugar": 6,
+      "protein": 21,
+      "al": [
+        "Dairy / Milk",
+        "Soy"
+      ],
+      "desc": "Hot and fluffy potato topped with Wendy’s signature meaty, flavorful chili, rich, creamy cheese sauce, and shredded cheddar. This spud’s your best bud."
+    },
+    "cheese-baked-potato": {
+      "cat": "fries-sides",
+      "name": "Cheese Baked Potato",
+      "cal": 440,
+      "fat": 14,
+      "sat": 8,
+      "sodium": 700,
+      "carbs": 65,
+      "fibre": 7,
+      "sugar": 4,
+      "protein": 15,
+      "al": [
+        "Dairy / Milk",
+        "Soy"
+      ],
+      "desc": "Hot and fluffy potato with shredded cheddar cheese and rich, creamy cheese sauce on top. It’s savory and delicious no matter how you skin it."
+    },
+    "apple-bites": {
+      "cat": "fries-sides",
+      "name": "Apple Bites",
+      "cal": 35,
+      "fat": 0,
+      "sat": 0,
+      "sodium": 0,
+      "carbs": 8,
+      "fibre": 1,
+      "sugar": 6,
+      "protein": 0,
+      "al": [],
+      "desc": "A selection of crisp, juicy sliced apple pieces, perfect as a snack or a side. Great pick!"
+    },
+    "regular-hot-coffee": {
+      "cat": "coffee",
+      "name": "Small Regular Hot Coffee",
+      "cal": 5,
+      "fat": 0,
+      "sat": 0,
+      "sodium": 10,
+      "carbs": 0,
+      "fibre": 0,
+      "sugar": 0,
+      "protein": 0,
+      "al": [],
+      "desc": "A blend of 100% Arabica beans from central and south America, medium-roasted to bring out all the best flavors."
+    },
+    "cold-brew": {
+      "cat": "coffee",
+      "name": "Small Cold Brew",
+      "cal": 20,
+      "fat": 0,
+      "sat": 0,
+      "sodium": 15,
+      "carbs": 4,
+      "fibre": 0,
+      "sugar": 0,
+      "protein": 1,
+      "al": [],
+      "desc": "Slow steeped, to be extra rich and super-smooth, then served over ice to be extra refreshing and invigorating."
+    },
+    "vanilla-cold-brew-with-cream": {
+      "cat": "coffee",
+      "name": "Vanilla Cold Brew with Cream",
+      "cal": 120,
+      "fat": 4,
+      "sat": 2.5,
+      "sodium": 40,
+      "carbs": 17,
+      "fibre": 0,
+      "sugar": 15,
+      "protein": 1,
+      "al": [
+        "Dairy / Milk"
+      ],
+      "desc": "Our smooth, rich cold brew, cream, and a silky vanilla syrup. Proof that vanilla doesn’t have to mean boring."
+    },
+    "caramel-cold-brew-with-cream": {
+      "cat": "coffee",
+      "name": "Caramel Cold Brew with Cream",
+      "cal": 120,
+      "fat": 4,
+      "sat": 2.5,
+      "sodium": 40,
+      "carbs": 18,
+      "fibre": 0,
+      "sugar": 15,
+      "protein": 1,
+      "al": [
+        "Dairy / Milk"
+      ],
+      "desc": "Our smooth, rich cold brew, cream, and a sweet caramel syrup. Can something be your “usual” if it’s also everyone else’s “usual”? In this case, we’ll allow it."
+    },
+    "chocolate-cold-brew-with-cream": {
+      "cat": "coffee",
+      "name": "Chocolate Cold Brew with Cream",
+      "cal": 120,
+      "fat": 4,
+      "sat": 2.5,
+      "sodium": 50,
+      "carbs": 19,
+      "fibre": 0,
+      "sugar": 16,
+      "protein": 1,
+      "al": [
+        "Dairy / Milk"
+      ],
+      "desc": "Our smooth, rich cold brew, cream, and a sweet chocolate syrup—which is just a fancy way to say, “chocolate coffee,” which is all anyone needs to hear."
+    },
+    "cold-brew-with-cream-and-sugar": {
+      "cat": "coffee",
+      "name": "Cold Brew with Cream and Sugar",
+      "cal": 110,
+      "fat": 4,
+      "sat": 2.5,
+      "sodium": 35,
+      "carbs": 18,
+      "fibre": 0,
+      "sugar": 15,
+      "protein": 1,
+      "al": [
+        "Dairy / Milk"
+      ],
+      "desc": "Our smooth, rich cold brew, cream, and a sugary sweet simple syrup. Smooth, rich, and sweet? If only it were single."
+    },
+    "watermelon-lemonade": {
+      "cat": "beverages",
+      "name": "Watermelon Lemonade",
+      "cal": 220,
+      "fat": 0,
+      "sat": 0,
+      "sodium": 25,
+      "carbs": 57,
+      "fibre": 0,
+      "sugar": 54,
+      "protein": 0,
+      "al": [],
+      "desc": "Our all-natural lemonade blended with sweet watermelon puree and served over ice. Sip on a slice."
+    },
+    "pineapple-mango-lemonade": {
+      "cat": "beverages",
+      "name": "Pineapple Mango Lemonade",
+      "cal": 230,
+      "fat": 0,
+      "sat": 0,
+      "sodium": 25,
+      "carbs": 58,
+      "fibre": 0,
+      "sugar": 55,
+      "protein": 0,
+      "al": [],
+      "desc": "Our lemonade mixed with a tropical blend including mango and pineapple."
+    },
+    "all-natural-lemonade": {
+      "cat": "beverages",
+      "name": "All-Natural Lemonade",
+      "cal": 190,
+      "fat": 0,
+      "sat": 0,
+      "sodium": 25,
+      "carbs": 48,
+      "fibre": 0,
+      "sugar": 46,
+      "protein": 0,
+      "al": [],
+      "desc": "Real lemonade with no artificial ingredients or preservatives."
+    },
+    "strawberry-lemonade": {
+      "cat": "beverages",
+      "name": "Strawberry Lemonade",
+      "cal": 230,
+      "fat": 0,
+      "sat": 0,
+      "sodium": 20,
+      "carbs": 60,
+      "fibre": 0,
+      "sugar": 58,
+      "protein": 0,
+      "al": [],
+      "desc": "Our all-natural lemonade flavored with real strawberries."
+    },
+    "sprite-watermelon": {
+      "cat": "beverages",
+      "name": "Sprite® Watermelon",
+      "cal": 170,
+      "fat": 0,
+      "sat": 0,
+      "sodium": 40,
+      "carbs": 45,
+      "fibre": 0,
+      "sugar": 45,
+      "protein": 0,
+      "al": [],
+      "desc": "The always classic Sprite® mixed with a bright watermelon puree. As tasty as it is pretty."
+    },
+    "watermelon-sparkling-energy": {
+      "cat": "beverages",
+      "name": "Watermelon Sparkling Energy",
+      "cal": 190,
+      "fat": 0,
+      "sat": 0,
+      "sodium": 140,
+      "carbs": 48,
+      "fibre": 0,
+      "sugar": 47,
+      "protein": 0,
+      "al": [],
+      "desc": "A sparkling citrus blend mixed with watermelon puree and a couple of shots of natural energy over ice. 100% seedless wake-up juice."
+    },
+    "pineapple-citrus-sparkling-energy": {
+      "cat": "beverages",
+      "name": "Pineapple Citrus Sparkling Energy",
+      "cal": 160,
+      "fat": 0,
+      "sat": 0,
+      "sodium": 135,
+      "carbs": 42,
+      "fibre": 0,
+      "sugar": 41,
+      "protein": 0,
+      "al": [],
+      "desc": "A sparkling pineapple citrus blend with a couple shots of caffeine over ice. You know how before you go on vacation you’re so excited you can’t sleep? This is what that feeling tastes like."
+    },
+    "coca-cola": {
+      "cat": "beverages",
+      "name": "Coca-Cola®",
+      "cal": 0,
+      "fat": 0,
+      "sat": 0,
+      "sodium": 0,
+      "carbs": 0,
+      "fibre": 0,
+      "sugar": 0,
+      "protein": 0,
+      "al": [],
+      "desc": "The cold, refreshing, sparkling classic that America loves."
+    },
+    "coca-cola-zero-sugar": {
+      "cat": "beverages",
+      "name": "Coca-Cola® Zero Sugar",
+      "cal": 0,
+      "fat": 0,
+      "sat": 0,
+      "sodium": 0,
+      "carbs": 0,
+      "fibre": 0,
+      "sugar": 0,
+      "protein": 0,
+      "al": [],
+      "desc": "The same great taste as Coke Classic® but with zero calories."
+    },
+    "diet-coke": {
+      "cat": "beverages",
+      "name": "Diet Coke®",
+      "cal": 0,
+      "fat": 0,
+      "sat": 0,
+      "sodium": 0,
+      "carbs": 0,
+      "fibre": 0,
+      "sugar": 0,
+      "protein": 0,
+      "al": [],
+      "desc": "The great taste of Coca-Cola® with zero calories."
+    },
+    "sprite": {
+      "cat": "beverages",
+      "name": "Small Sprite®",
+      "cal": 0,
+      "fat": 0,
+      "sat": 0,
+      "sodium": 0,
+      "carbs": 0,
+      "fibre": 0,
+      "sugar": 0,
+      "protein": 0,
+      "al": [],
+      "desc": "The cold, refreshing flavors of lemon and lime, perfectly blended."
+    },
+    "dr-pepper": {
+      "cat": "beverages",
+      "name": "Dr Pepper®",
+      "cal": 0,
+      "fat": 0,
+      "sat": 0,
+      "sodium": 0,
+      "carbs": 0,
+      "fibre": 0,
+      "sugar": 0,
+      "protein": 0,
+      "al": [],
+      "desc": "A signature blend of 23 flavors makes it truly unique."
+    },
+    "diet-dr-pepper": {
+      "cat": "beverages",
+      "name": "Small Diet Dr. Pepper",
+      "cal": 0,
+      "fat": 0,
+      "sat": 0,
+      "sodium": 0,
+      "carbs": 0,
+      "fibre": 0,
+      "sugar": 0,
+      "protein": 0,
+      "al": [],
+      "desc": "A signature blend of 23 flavors makes every sip of Dr Pepper truly unique."
+    },
+    "barqs-root-beer": {
+      "cat": "beverages",
+      "name": "Barq's® Root Beer",
+      "cal": 0,
+      "fat": 0,
+      "sat": 0,
+      "sodium": 0,
+      "carbs": 0,
+      "fibre": 0,
+      "sugar": 0,
+      "protein": 0,
+      "al": [],
+      "desc": "A sweet, spiced favorite that’s stood the test of time."
+    },
+    "fanta-orange": {
+      "cat": "beverages",
+      "name": "Fanta® Orange",
+      "cal": 0,
+      "fat": 0,
+      "sat": 0,
+      "sodium": 0,
+      "carbs": 0,
+      "fibre": 0,
+      "sugar": 0,
+      "protein": 0,
+      "al": [],
+      "desc": "Change up your routine with the bright, bubbly, fruity flavor of Fanta® Orange."
+    },
+    "minute-maid-light-lemonade": {
+      "cat": "beverages",
+      "name": "Minute Maid® Light Lemonade",
+      "cal": 0,
+      "fat": 0,
+      "sat": 0,
+      "sodium": 0,
+      "carbs": 0,
+      "fibre": 0,
+      "sugar": 0,
+      "protein": 0,
+      "al": [],
+      "desc": "A lighter take on the sweet, tart American classic."
+    },
+    "hi-c-flashin-fruit-punch": {
+      "cat": "beverages",
+      "name": "Hi-C® Flashin' Fruit Punch®",
+      "cal": 0,
+      "fat": 0,
+      "sat": 0,
+      "sodium": 0,
+      "carbs": 0,
+      "fibre": 0,
+      "sugar": 0,
+      "protein": 0,
+      "al": [],
+      "desc": "Explosive fruit flavors and 100% of the vitamin C your body needs."
+    },
+    "pure-life-bottled-water": {
+      "cat": "beverages",
+      "name": "Pure Life® Bottled Water",
+      "cal": 0,
+      "fat": 0,
+      "sat": 0,
+      "sodium": 0,
+      "carbs": 0,
+      "fibre": 0,
+      "sugar": 0,
+      "protein": 0,
+      "al": [],
+      "desc": "Natural, pure, refreshing, and delicious."
+    },
+    "milk": {
+      "cat": "beverages",
+      "name": "Milk",
+      "cal": 90,
+      "fat": 2,
+      "sat": 1,
+      "sodium": 90,
+      "carbs": 10,
+      "fibre": 0,
+      "sugar": 10,
+      "protein": 7,
+      "al": [
+        "Dairy / Milk"
+      ],
+      "desc": "The cold, creamy, mustache-creating classic."
+    },
+    "chocolate-milk": {
+      "cat": "beverages",
+      "name": "Chocolate Milk",
+      "cal": 140,
+      "fat": 2.5,
+      "sat": 1.5,
+      "sodium": 160,
+      "carbs": 23,
+      "fibre": 1,
+      "sugar": 22,
+      "protein": 7,
+      "al": [
+        "Dairy / Milk"
+      ],
+      "desc": "Every kid’s favorite—every adult-who-was-ever-a-kid’s favorite, too."
+    },
+    "honest-kids-fruit-punch": {
+      "cat": "beverages",
+      "name": "Honest Kids® Fruit Punch",
+      "cal": 35,
+      "fat": 0,
+      "sat": 0,
+      "sodium": 15,
+      "carbs": 8,
+      "fibre": 0,
+      "sugar": 8,
+      "protein": 0,
+      "al": [],
+      "desc": "Grape, strawberry, and watermelon juices unite for a delicious, organic juice."
+    },
+    "simply-orange-juice": {
+      "cat": "beverages",
+      "name": "Simply Orange® Juice",
+      "cal": 160,
+      "fat": 0,
+      "sat": 0,
+      "sodium": 0,
+      "carbs": 39,
+      "fibre": 1,
+      "sugar": 34,
+      "protein": 3,
+      "al": [],
+      "desc": "100% Pure squeezed pasteurized orange juice. A delicious orange juice with a taste that’s the next best thing to fresh squeezed."
+    },
+    "classic-chocolate-frosty": {
+      "cat": "frosty",
+      "name": "Jr. Classic Chocolate Frosty®",
+      "cal": 310,
+      "fat": 9,
+      "sat": 6,
+      "sodium": 180,
+      "carbs": 49,
+      "fibre": 1,
+      "sugar": 41,
+      "protein": 9,
+      "al": [
+        "Dairy / Milk",
+        "Soy"
+      ],
+      "desc": "The Chocolate Frosty® was born out of Dave’s desire for a signature dessert to go with his vision of the perfect meal. Thick enough to use a spoon, smooth enough to use a straw, and perfect when enjoyed on the end of a fry."
+    },
+    "vanilla-frosty": {
+      "cat": "frosty",
+      "name": "Jr. Vanilla Frosty®",
+      "cal": 310,
+      "fat": 9,
+      "sat": 5,
+      "sodium": 180,
+      "carbs": 49,
+      "fibre": 0,
+      "sugar": 41,
+      "protein": 9,
+      "al": [
+        "Dairy / Milk",
+        "Soy"
+      ],
+      "desc": "The vanilla version of our signature frozen dessert. Cool and creamy don’t do it justice. This is the smooth, thick, sweet dessert masterpiece that goes with everything on our menu. You deserve a dessert this good, so go ahead."
+    },
+    "cookie-dough-frosty-fusion-vanilla": {
+      "cat": "frosty",
+      "name": "Cookie Dough Frosty Fusion®, Vanilla",
+      "cal": 540,
+      "fat": 24,
+      "sat": 10,
+      "sodium": 400,
+      "carbs": 73,
+      "fibre": 1,
+      "sugar": 55,
+      "protein": 10,
+      "al": [
+        "Dairy / Milk",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "Our famous vanilla Frosty® swirled with a rich, brownie batter sauce and mixed with cookie dough chunks. Who needs milk when you got Frosty?"
+    },
+    "cookie-dough-frosty-fusion-chocolate": {
+      "cat": "frosty",
+      "name": "Cookie Dough Frosty Fusion®, Chocolate",
+      "cal": 540,
+      "fat": 25,
+      "sat": 10,
+      "sodium": 400,
+      "carbs": 72,
+      "fibre": 2,
+      "sugar": 54,
+      "protein": 10,
+      "al": [
+        "Dairy / Milk",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "Our famous chocolate Frosty® swirled with a rich, brownie batter sauce and mixed with cookie dough chunks. Who needs milk when you got Frosty?"
+    },
+    "oreo-brownie-vanilla-frosty-fusion-tm": {
+      "cat": "frosty",
+      "name": "OREO® Brownie Vanilla Frosty Fusion™",
+      "cal": 500,
+      "fat": 23,
+      "sat": 8,
+      "sodium": 360,
+      "carbs": 66,
+      "fibre": 1,
+      "sugar": 52,
+      "protein": 10,
+      "al": [
+        "Dairy / Milk",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "Your favorite Frosty® flavor, chocolate or vanilla, swirled with a thick brownie batter sauce and mixed with crunchy OREO® cookie pieces. Not gonna lie, there’s a lot going on here—and all of it is delicious."
+    },
+    "caramel-crunch-vanilla-frosty-fusion-tm": {
+      "cat": "frosty",
+      "name": "Caramel Crunch Vanilla Frosty Fusion™",
+      "cal": 410,
+      "fat": 10,
+      "sat": 6,
+      "sodium": 380,
+      "carbs": 73,
+      "fibre": 0,
+      "sugar": 58,
+      "protein": 9,
+      "al": [
+        "Dairy / Milk",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "Your favorite Frosty® flavor, chocolate or vanilla, swirled with a sweet caramel sauce and mixed with crunchy toffee pieces. Creamy. Crunchy. Caramel-y."
+    },
+    "brownie-batter-vanilla-frosty-swirl-tm": {
+      "cat": "frosty",
+      "name": "Brownie Batter Vanilla Frosty Swirl™",
+      "cal": 480,
+      "fat": 24,
+      "sat": 8,
+      "sodium": 360,
+      "carbs": 60,
+      "fibre": 1,
+      "sugar": 50,
+      "protein": 9,
+      "al": [
+        "Dairy / Milk",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "Your favorite Frosty® flavor, chocolate or vanilla, swirled and topped with a thick brownie batter sauce. Brownies and ice cream but better because it’s brownies and Frosty®."
+    },
+    "strawberry-vanilla-frosty-swirl-tm": {
+      "cat": "frosty",
+      "name": "Strawberry Vanilla Frosty Swirl™",
+      "cal": 350,
+      "fat": 8,
+      "sat": 5,
+      "sodium": 160,
+      "carbs": 63,
+      "fibre": 0,
+      "sugar": 56,
+      "protein": 8,
+      "al": [
+        "Dairy / Milk",
+        "Soy"
+      ],
+      "desc": "Your favorite Frosty® flavor, chocolate or vanilla, swirled and topped with a sweet strawberry sauce. It’s like dipping a Frosty® in a strawberry. Yep, you read that right."
+    },
+    "caramel-vanilla-frosty-swirl-tm": {
+      "cat": "frosty",
+      "name": "Caramel Vanilla Frosty Swirl™",
+      "cal": 370,
+      "fat": 9,
+      "sat": 6,
+      "sodium": 310,
+      "carbs": 63,
+      "fibre": 0,
+      "sugar": 51,
+      "protein": 9,
+      "al": [
+        "Dairy / Milk",
+        "Soy"
+      ],
+      "desc": "Your favorite Frosty® flavor, chocolate or vanilla, swirled and topped with a sweet caramel sauce. Like a cold, creamy candy bar you eat with a spoon—or fry."
+    },
+    "oreo-brownie-chocolate-frosty-fusion-tm": {
+      "cat": "frosty",
+      "name": "OREO® Brownie Chocolate Frosty Fusion™",
+      "cal": 500,
+      "fat": 23,
+      "sat": 8,
+      "sodium": 360,
+      "carbs": 65,
+      "fibre": 2,
+      "sugar": 51,
+      "protein": 10,
+      "al": [
+        "Dairy / Milk",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "Your favorite Frosty® flavor, chocolate or vanilla, swirled with a thick brownie batter sauce and mixed with crunchy OREO® cookie pieces. Not gonna lie, there’s a lot going on here—and all of it is delicious."
+    },
+    "caramel-crunch-chocolate-frosty-fusion-tm": {
+      "cat": "frosty",
+      "name": "Caramel Crunch Chocolate Frosty Fusion™",
+      "cal": 410,
+      "fat": 10,
+      "sat": 6,
+      "sodium": 380,
+      "carbs": 73,
+      "fibre": 1,
+      "sugar": 58,
+      "protein": 9,
+      "al": [
+        "Dairy / Milk",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "Your favorite Frosty® flavor, chocolate or vanilla, swirled with a sweet caramel sauce and mixed with crunchy toffee pieces. Creamy. Crunchy. Caramel-y."
+    },
+    "brownie-batter-chocolate-frosty-swirl-tm": {
+      "cat": "frosty",
+      "name": "Brownie Batter Chocolate Frosty Swirl™",
+      "cal": 480,
+      "fat": 24,
+      "sat": 8,
+      "sodium": 360,
+      "carbs": 59,
+      "fibre": 2,
+      "sugar": 49,
+      "protein": 9,
+      "al": [
+        "Dairy / Milk",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "Your favorite Frosty® flavor, chocolate or vanilla, swirled and topped with a thick brownie batter sauce. Brownies and ice cream but better because it’s brownies and Frosty®."
+    },
+    "strawberry-chocolate-frosty-swirl-tm": {
+      "cat": "frosty",
+      "name": "Strawberry Chocolate Frosty Swirl™",
+      "cal": 350,
+      "fat": 8,
+      "sat": 5,
+      "sodium": 160,
+      "carbs": 62,
+      "fibre": 1,
+      "sugar": 55,
+      "protein": 8,
+      "al": [
+        "Dairy / Milk",
+        "Soy"
+      ],
+      "desc": "Your favorite Frosty® flavor, chocolate or vanilla, swirled and topped with a sweet strawberry sauce. It’s like dipping a Frosty® in a strawberry. Yep, you read that right."
+    },
+    "caramel-chocolate-frosty-swirl-tm": {
+      "cat": "frosty",
+      "name": "Caramel Chocolate Frosty Swirl™",
+      "cal": 370,
+      "fat": 10,
+      "sat": 6,
+      "sodium": 310,
+      "carbs": 63,
+      "fibre": 1,
+      "sugar": 50,
+      "protein": 9,
+      "al": [
+        "Dairy / Milk",
+        "Soy"
+      ],
+      "desc": "Your favorite Frosty® flavor, chocolate or vanilla, swirled and topped with a sweet caramel sauce. Like a cold, creamy candy bar you eat with a spoon—or fry."
+    },
+    "cinnabon-pull-apart": {
+      "cat": "bakery",
+      "name": "Cinnabon® Pull-Apart",
+      "cal": 550,
+      "fat": 26,
+      "sat": 11,
+      "sodium": 440,
+      "carbs": 70,
+      "fibre": 3,
+      "sugar": 30,
+      "protein": 8,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "Warm, buttery, dough bites baked together with world-famous Cinnabon®? cinnamon and topped with their signature cream cheese frosting. Ooey, gooey corporate synergy. Cinnabon® and the Cinnabon® logo are registered trademarks of Cinnabon Franchisor SPV LLC. ©2024 Cinnabon Franchisor SPV LLC."
+    },
+    "chocolate-chunk-cookie": {
+      "cat": "bakery",
+      "name": "Chocolate Chunk Cookie",
+      "cal": 330,
+      "fat": 16,
+      "sat": 8,
+      "sodium": 210,
+      "carbs": 43,
+      "fibre": 2,
+      "sugar": 26,
+      "protein": 3,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "A rich, soft, fresh-baked cookie full of semi-sweet chunks of chocolate, baked in-house. Grandma would love them."
+    },
+    "sugar-cookie": {
+      "cat": "bakery",
+      "name": "Sugar Cookie",
+      "cal": 330,
+      "fat": 16,
+      "sat": 8,
+      "sodium": 300,
+      "carbs": 44,
+      "fibre": 1,
+      "sugar": 24,
+      "protein": 3,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Wheat"
+      ],
+      "desc": "The traditional favorite. Soft, fresh-baked, simple, and perfect."
+    },
+    "maple-bacon-chicken-croissant": {
+      "cat": "croissants",
+      "name": "Maple Bacon Chicken Croissant",
+      "cal": 540,
+      "fat": 30,
+      "sat": 11,
+      "sodium": 880,
+      "carbs": 48,
+      "fibre": 3,
+      "sugar": 12,
+      "protein": 19,
+      "al": [
+        "Dairy / Milk",
+        "Wheat"
+      ],
+      "desc": "Juicy white meat, lightly breaded and seasoned, Applewood smoked bacon, and maple butter on a flaky croissant bun. A little sweet. A little savory. A lot good."
+    },
+    "sausage-egg-swiss-croissant": {
+      "cat": "croissants",
+      "name": "Sausage, Egg & Swiss Croissant",
+      "cal": 590,
+      "fat": 40,
+      "sat": 16,
+      "sodium": 960,
+      "carbs": 35,
+      "fibre": 0,
+      "sugar": 7,
+      "protein": 21,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "A fresh-cracked grade A egg and grilled sausage covered in creamy swiss cheese sauce on a flaky croissant bun. There’s a lot going on in this simple sandwich and it’s all delicious."
+    },
+    "bacon-egg-swiss-croissant": {
+      "cat": "croissants",
+      "name": "Bacon, Egg & Swiss Croissant",
+      "cal": 420,
+      "fat": 23,
+      "sat": 10,
+      "sodium": 800,
+      "carbs": 34,
+      "fibre": 0,
+      "sugar": 7,
+      "protein": 18,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "A fresh-cracked grade A egg and Applewood smoked bacon covered in creamy swiss cheese sauce on a flaky croissant bun. Breakfast basics worth waking up early for."
+    },
+    "sausage-egg-cheese-biscuit": {
+      "cat": "biscuits",
+      "name": "Sausage, Egg & Cheese Biscuit",
+      "cal": 590,
+      "fat": 41,
+      "sat": 17,
+      "sodium": 1350,
+      "carbs": 35,
+      "fibre": 2,
+      "sugar": 3,
+      "protein": 21,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "A fresh-cracked grade A egg on a fluffy buttermilk biscuit with grilled sausage and melted American cheese. Meet your new morning favorite."
+    },
+    "bacon-egg-cheese-biscuit": {
+      "cat": "biscuits",
+      "name": "Bacon, Egg & Cheese Biscuit",
+      "cal": 420,
+      "fat": 24,
+      "sat": 11,
+      "sodium": 1200,
+      "carbs": 34,
+      "fibre": 2,
+      "sugar": 3,
+      "protein": 17,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "A fresh-cracked grade A egg on a fluffy buttermilk biscuit with Applewood smoked bacon and melted American cheese. Rise and shine with a hearty favorite."
+    },
+    "egg-cheese-biscuit": {
+      "cat": "biscuits",
+      "name": "Egg & Cheese Biscuit",
+      "cal": 370,
+      "fat": 21,
+      "sat": 10,
+      "sodium": 1030,
+      "carbs": 34,
+      "fibre": 2,
+      "sugar": 3,
+      "protein": 13,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "Freshly cracked grade A egg on a butter-brushed buttermilk biscuit, topped with melted American cheese. It’s not complicated. It’s just good."
+    },
+    "honey-buddy-chicken-biscuit": {
+      "cat": "biscuits",
+      "name": "Honey Buddy Chicken Biscuit",
+      "cal": 490,
+      "fat": 27,
+      "sat": 9,
+      "sodium": 1040,
+      "carbs": 48,
+      "fibre": 4,
+      "sugar": 8,
+      "protein": 14,
+      "al": [
+        "Dairy / Milk",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "Juicy white meat, lightly breaded and seasoned, and topped with maple honey butter on a fluffy buttermilk biscuit. It’s sweet, it’s savory, and it’s a great reason to get out of bed in the morning."
+    },
+    "honey-butter-biscuit": {
+      "cat": "biscuits",
+      "name": "Honey Butter Biscuit",
+      "cal": 330,
+      "fat": 17,
+      "sat": 8,
+      "sodium": 740,
+      "carbs": 39,
+      "fibre": 2,
+      "sugar": 8,
+      "protein": 5,
+      "al": [
+        "Dairy / Milk",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "Fluffy buttermilk biscuit spread with maple honey butter. The kind of down-home breakfast that melts in your mouth and makes you reminisce about the farm, even if you’re from the city."
+    },
+    "sausage-gravy-biscuit": {
+      "cat": "biscuits",
+      "name": "Sausage Gravy & Biscuit",
+      "cal": 410,
+      "fat": 23,
+      "sat": 10,
+      "sodium": 1300,
+      "carbs": 45,
+      "fibre": 2,
+      "sugar": 3,
+      "protein": 7,
+      "al": [
+        "Dairy / Milk",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "A fluffy buttermilk biscuit smothered in white pepper gravy and grilled breakfast sausage. It’s what southern hospitality tastes like."
+    },
+    "sausage-biscuit": {
+      "cat": "biscuits",
+      "name": "Sausage Biscuit",
+      "cal": 470,
+      "fat": 31,
+      "sat": 13,
+      "sodium": 1020,
+      "carbs": 34,
+      "fibre": 2,
+      "sugar": 3,
+      "protein": 12,
+      "al": [
+        "Dairy / Milk",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "Grilled, breakfast sausage on a soft buttermilk biscuit. Simple breakfast perfection."
+    },
+    "breakfast-baconator": {
+      "cat": "classics",
+      "name": "Breakfast Baconator®",
+      "cal": 680,
+      "fat": 45,
+      "sat": 18,
+      "sodium": 1580,
+      "carbs": 36,
+      "fibre": 1,
+      "sugar": 8,
+      "protein": 34,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Sesame",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "Grilled sausage, American cheese, Applewood smoked bacon, fresh-cracked grade A eggs, (deep breath) more cheese and more bacon covered in swiss cheese sauce all on a potato bun. Don’t just break your fast. Destroy it."
+    },
+    "homestyle-french-toast-sticks-4-pc": {
+      "cat": "classics",
+      "name": "Homestyle French Toast Sticks, 4 PC",
+      "cal": 460,
+      "fat": 18,
+      "sat": 4,
+      "sodium": 380,
+      "carbs": 63,
+      "fibre": 1,
+      "sugar": 21,
+      "protein": 10,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Sesame",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "Four warm, fluffy French toast sticks that don’t really remind you of how Mom made them because, to be honest, these are better. Dip them in our syrup, and maybe don’t tell her about it."
+    },
+    "homestyle-french-toast-sticks-6-pc": {
+      "cat": "classics",
+      "name": "Homestyle French Toast Sticks, 6 PC",
+      "cal": 630,
+      "fat": 27,
+      "sat": 6,
+      "sodium": 550,
+      "carbs": 79,
+      "fibre": 2,
+      "sugar": 25,
+      "protein": 16,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Sesame",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "Six warm, fluffy French toast sticks that taste homemade—even if you never lived with someone who made amazing French toast sticks. They’re served with syrup and some fresh side-eye from Mom."
+    },
+    "breakfast-burrito-bacon": {
+      "cat": "breakfast-burrito",
+      "name": "Breakfast Burrito, Bacon",
+      "cal": 700,
+      "fat": 39,
+      "sat": 15,
+      "sodium": 2140,
+      "carbs": 55,
+      "fibre": 2,
+      "sugar": 3,
+      "protein": 32,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "Fresh-cracked grade A eggs, Applewood smoked bacon, American cheese, and seasoned potatoes smothered in a creamy Swiss cheese sauce and wrapped in a warm, flour tortilla with Cholula® Hot Sauce on the side. Breakfast will never burrito the same. Cholula is a registered trademark of SPICY LIQUID LLC © 2023, used under license."
+    },
+    "breakfast-burrito-sausage": {
+      "cat": "breakfast-burrito",
+      "name": "Breakfast Burrito, Sausage",
+      "cal": 820,
+      "fat": 53,
+      "sat": 20,
+      "sodium": 2120,
+      "carbs": 55,
+      "fibre": 3,
+      "sugar": 4,
+      "protein": 31,
+      "al": [
+        "Dairy / Milk",
+        "Egg",
+        "Soy",
+        "Wheat"
+      ],
+      "desc": "Fresh-cracked grade A eggs, grilled savory sausage, American cheese, and seasoned potatoes smothered in a creamy cheese sauce and wrapped in a warm flour tortilla with Cholula® Hot Sauce on the side. Breakfast will never burrito the same. Cholula is a registered trademark of SPICY LIQUID LLC © 2023, used under license."
+    },
+    "seasoned-potatoes": {
+      "cat": "sides-and-sweets",
+      "name": "Small Seasoned Potatoes",
+      "cal": 280,
+      "fat": 13,
+      "sat": 2,
+      "sodium": 600,
+      "carbs": 39,
+      "fibre": 4,
+      "sugar": 0,
+      "protein": 3,
+      "al": [],
+      "desc": "Natural-cut, skin-on potatoes cooked to perfection and seasoned with cracked black pepper and garlic powder."
+    }
+  }
+}

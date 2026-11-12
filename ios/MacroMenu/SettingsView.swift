@@ -9,6 +9,7 @@ struct SettingsView: View {
     @State private var showQuiz = false
     @State private var showPremium = false
     @State private var estimating = false
+    @State private var countryFailed = false
     @AppStorage(TodaySuggestions.storageKey) private var suggestFoods = true
     @AppStorage(LiveDay.storageKey) private var liveDay = false
     @AppStorage(FeatureTips.enabledKey) private var featureTips = true
@@ -99,6 +100,13 @@ struct SettingsView: View {
             } footer: {
                 Text(Premium.isUnlocked ? "\(currentIcon.name)" : "\(currentIcon.name) · More icon packs come with Even Leanrrr.")
             }
+            Section {
+                Picker(selection: Binding(get: { store.region }, set: { if !AppServices.useRegion($0) { countryFailed = true } })) {
+                    ForEach(MenuRegion.allCases) { Text($0.name).tag($0) }
+                } label: { Label("Country", systemImage: "globe") }
+            } header: { Text("Restaurant menus") } footer: {
+                Text("Changes which restaurants Leanrrr shows. Foods you’ve logged or saved keep their numbers. Supermarket ready meals and Copycat Kitchen are only in Australia.")
+            }
             Section("Targets") {
                 NavigationLink { TargetsView() } label: { Label("Targets & target sets", systemImage: "target") }
                 Button { estimating = true } label: { Label("Calculate my macros", systemImage: "function") }
@@ -160,7 +168,10 @@ struct SettingsView: View {
                 NavigationLink { DeleteDataView() } label: { Label("Delete all my data", systemImage: "trash").foregroundStyle(.red) }
             }
         }.navigationTitle("Settings")
-            .sheet(isPresented: $showQuiz) { LeanrOnboarding { showQuiz = false } }
+            .sheet(isPresented: $showQuiz) { LeanrOnboarding(askCountry: false) { showQuiz = false } }
+            .alert("Couldn’t load that menu", isPresented: $countryFailed) {
+                Button("OK", role: .cancel) {}
+            } message: { Text("Your restaurant menus haven’t changed.") }
             .sheet(isPresented: $showPremium) { PremiumView() }
             .sheet(isPresented: $estimating) {
                 NavigationStack {

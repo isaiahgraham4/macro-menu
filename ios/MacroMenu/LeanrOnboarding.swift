@@ -73,7 +73,15 @@ struct LeanrOnboarding: View {
     @State private var targetSaveFailed = false
     /// After the quiz: 0 targets, 1 location, 2 Apple Health. Steps already answered are skipped.
     @State private var setupStep = 0
+    /// Asked first, since the quiz and every menu after it are that country's.
+    @State private var countryPicked: Bool
+    @State private var countryFailed = false
     var complete: () -> Void
+    /// False when the quiz is replayed from Settings, where the country has its own setting.
+    init(askCountry: Bool = true, complete: @escaping () -> Void) {
+        _countryPicked = State(initialValue: !askCountry)
+        self.complete = complete
+    }
 
     private func advance() {
         withAnimation(motion) {
@@ -85,12 +93,37 @@ struct LeanrOnboarding: View {
     }
 
     private var meals: [Food] {
-        let ids = [
-            "kfc:10-wicked-wings",
-            "mcd:cheesy-double-quarter-pounder",
-            "hj:triple-whopper-with-cheese"
-        ]
-        return ids.compactMap { id in store.catalog.foods.first { $0.id == id } }
+        store.region.quiz.compactMap { item in store.catalog.foods.first { $0.id == item.id } }
+    }
+    private func note(for meal: Food) -> String {
+        store.region.quiz.first { $0.id == meal.id }?.note ?? "No sides or drink"
+    }
+
+    private var countryCard: some View {
+        VStack(alignment: .leading, spacing: 22) {
+            Image(systemName: "globe").font(.system(size: 48)).foregroundStyle(.tint)
+            Text("Where will you be eating?").font(.display()).balanced()
+            Text("Leanrrr shows the menus of restaurants in your country. You can change this later in Settings.")
+                .foregroundStyle(.secondary)
+            let suggested = MenuRegion.suggested
+            ForEach([suggested] + MenuRegion.allCases.filter { $0 != suggested }) { region in
+                Button {
+                    if AppServices.useRegion(region) { withAnimation(motion) { countryPicked = true } } else { countryFailed = true }
+                } label: {
+                    HStack {
+                        Text(region.name).font(.roboto(.headline))
+                        Spacer()
+                        Image(systemName: "chevron.right").font(.roboto(.subheadline, weight: .semibold))
+                    }.padding(.vertical, 8).padding(.horizontal, 4)
+                }
+                .buttonStyle(.bordered).controlSize(.large)
+                .accessibilityHint("Shows \(region.name) restaurant menus")
+            }
+        }
+        .padding(.vertical, 24)
+        .alert("Couldn’t load that menu", isPresented: $countryFailed) {
+            Button("OK", role: .cancel) {}
+        } message: { Text("Try again, or choose the other country and change it later in Settings.") }
     }
     private var meal: Food? { meals.indices.contains(round) ? meals[round] : nil }
     private var motion: Animation? { reduceMotion ? nil : .smooth(duration: 0.35) }
@@ -117,11 +150,13 @@ struct LeanrOnboarding: View {
                 HStack {
                     Label("Leanrrr", systemImage: "leaf.fill").font(.display(.title2))
                     Spacer()
-                    Button("Skip") {
+                    if countryPicked { Button("Skip") {
                         if targetPrompt { complete() } else { targetPrompt = true }
-                    }.foregroundStyle(.secondary).frame(minHeight: 44)
+                    }.foregroundStyle(.secondary).frame(minHeight: 44) }
                 }
-                if targetPrompt {
+                if !countryPicked {
+                    countryCard
+                } else if targetPrompt {
                     HStack(spacing: 6) {
                         ForEach(0..<3) { index in
                             Capsule().fill(index <= setupStep ? AnyShapeStyle(.tint) : AnyShapeStyle(Color.secondary.opacity(0.2))).frame(height: 4)
@@ -174,7 +209,7 @@ struct LeanrOnboarding: View {
                         Image(systemName: "takeoutbag.and.cup.and.straw.fill")
                             .font(.system(size: 60)).padding(.vertical, 8)
                         Text(meal.name).font(.display(.title2)).multilineTextAlignment(.center).balanced()
-                        Text(meal.chain == "kfc" ? "10 wings · no sides or drink" : "Burger only · no sides or drink")
+                        Text(note(for: meal))
                             .font(.roboto(.caption)).multilineTextAlignment(.center)
                         if !meal.serve.isEmpty { Text(meal.serve).font(.roboto(.caption)).multilineTextAlignment(.center) }
                     }
@@ -191,7 +226,7 @@ struct LeanrOnboarding: View {
                                 .onAppear { countingUp = true }
                             Text(abs(guess - meal.cal) <= 50 ? "Close guess! You were within 50 calories." : "Your guess: \(Int(guess)) Cal · about \(Int(abs(guess - meal.cal).rounded())) Cal away.")
                             Text("Leanrrr shows the calories and protein for each item, so you can compare options and build a meal around them.").foregroundStyle(.secondary)
-                            Text("\(meal.p.number) g protein · Bundled \(store.chainName(meal.chain)) Australia menu data. Servings and recipes may vary.").font(.roboto(.caption)).foregroundStyle(.secondary)
+                            Text("\(meal.p.number) g protein · Bundled \(store.chainName(meal.chain)) \(store.region == .australia ? "Australia" : "US") menu data. Servings and recipes may vary.").font(.roboto(.caption)).foregroundStyle(.secondary)
                         }.accessibilityElement(children: .combine).accessibilityAddTraits(.updatesFrequently)
                         .transition(.opacity)
                     } else {

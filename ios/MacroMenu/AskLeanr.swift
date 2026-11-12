@@ -79,7 +79,8 @@ enum AskLeanr {
             // Whole words, so "coleslaw" isn't Coles.
             if variants.contains(where: { lower.range(of: #"\s"# + NSRegularExpression.escapedPattern(for: $0) + #"(?:'s)?\b"#, options: .regularExpression) != nil }) { query.chains.insert(id) }
         }
-        for (nickname, id) in Assistant.nicknames where chainNames[id] != nil {
+        for (nickname, written) in Assistant.nicknames {
+            guard let id = MenuRegion.chain(written, in: chainNames) else { continue }
             if lower.range(of: #"\b"# + NSRegularExpression.escapedPattern(for: nickname) + #"\b"#, options: .regularExpression) != nil { query.chains.insert(id) }
         }
         if lower.contains("supermarket") || lower.contains("ready meal") { query.supermarket = true }

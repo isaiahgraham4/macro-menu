@@ -38,14 +38,26 @@ import UserNotifications
         // Foods other people shared, and any of yours still waiting to upload.
         Task { await community.refresh() }
         LeanrShortcuts.updateAppShortcutParameters()
-        // A menu downloaded earlier may be newer than the one built into the app.
+        Task { await useSavedMenu() }
+    }
+
+    /// A menu downloaded earlier may be newer than the one built into the app; then looks for a newer one online.
+    private static func useSavedMenu() async {
+        guard store.region.updatesOnline else { return }
         let bundled = store.catalog
-        Task {
-            let best = await Task.detached(priority: .utility) { MenuUpdates.best(bundled: bundled) }.value
-            // Only if it's still newer: a download may have landed while the saved copy was being read.
-            if MenuUpdates.acceptable(best, over: store.catalog) { useMenu(best) }
-            await checkMenu()
-        }
+        let best = await Task.detached(priority: .utility) { MenuUpdates.best(bundled: bundled) }.value
+        // Only if it's still newer, and still the same country: a download or a change in Settings may have landed meanwhile.
+        if store.region.updatesOnline, MenuUpdates.acceptable(best, over: store.catalog) { useMenu(best) }
+        await checkMenu()
+    }
+
+    /// Switches every menu to another country's, from setup or Settings.
+    @discardableResult static func useRegion(_ region: MenuRegion) -> Bool {
+        guard region != store.region else { return true }
+        guard store.useRegion(region) else { return false }
+        LeanrShortcuts.updateAppShortcutParameters()
+        if started { Task { await useSavedMenu() } }
+        return true
     }
 
     /// The Log again widget's button: logs the option now, then waits for Apple Health so it isn't cut off if Leanr goes back to sleep.
@@ -67,9 +79,10 @@ import UserNotifications
     /// Looks for a newer menu online; runs at most every few hours unless forced. Overlapping calls share one check.
     static func checkMenu(force: Bool = false) async {
         if let running = menuCheck { return await running.value }
+        guard store.region.updatesOnline else { return }
         let check = Task {
             if let menu = await MenuUpdates.check(current: store.catalog, force: force),
-               MenuUpdates.acceptable(menu, over: store.catalog) { useMenu(menu) }
+               store.region.updatesOnline, MenuUpdates.acceptable(menu, over: store.catalog) { useMenu(menu) }
         }
         menuCheck = check
         await check.value

@@ -146,10 +146,11 @@ enum ProductSearch {
         FoodSearch.tokens(text).prefix(8).map { String($0.prefix(30)) }.joined(separator: " ")
     }
 
-    static func url(_ terms: String, australia: Bool) -> URL {
+    /// `country` is an Open Food Facts country tag ("en:australia"); nil searches every country.
+    static func url(_ terms: String, country: String?) -> URL {
         var components = URLComponents(string: "https://search.openfoodfacts.org/search")!
         components.queryItems = [
-            URLQueryItem(name: "q", value: australia ? terms + #" countries_tags:"en:australia""# : terms),
+            URLQueryItem(name: "q", value: country.map { terms + #" countries_tags:""# + $0 + #"""# } ?? terms),
             URLQueryItem(name: "langs", value: "en"),
             URLQueryItem(name: "page_size", value: String(limit * 2)),
             URLQueryItem(name: "fields", value: "code,product_name,product_name_en,brands,quantity,nutriments"),
@@ -157,12 +158,12 @@ enum ProductSearch {
         return components.url!
     }
 
-    /// Products sold in Australia first; the rest of the world only if none match.
+    /// Products sold in the country chosen for menus first; the rest of the world only if none match.
     static func search(_ text: String) async throws -> [ProductHit] {
         let terms = terms(text)
         guard !terms.isEmpty else { return [] }
-        let local = try await fetch(url(terms, australia: true))
-        return local.isEmpty ? try await fetch(url(terms, australia: false)) : local
+        let local = try await fetch(url(terms, country: MenuRegion.saved.openFoodFactsCountry))
+        return local.isEmpty ? try await fetch(url(terms, country: nil)) : local
     }
 
     private static func fetch(_ url: URL) async throws -> [ProductHit] {

@@ -62,11 +62,14 @@ final class AppStore {
     /// Called whenever the widgets are brought up to date, so Apple Watch can be too.
     var widgetsRefreshed: (() -> Void)?
     private let url: URL
-    init(url: URL = URL.applicationSupportDirectory.appending(path: "MacroMenu/app-state.json"), catalogURL: URL? = Bundle.main.url(forResource: "MenuData", withExtension: "json"), legacyURL: URL? = URL.applicationSupportDirectory.appending(path: "MacroMenu/foods.json"),
+    /// Whose restaurant menus are loaded (`MenuRegion`). Changed with `useRegion`.
+    private(set) var region: MenuRegion
+    init(url: URL = URL.applicationSupportDirectory.appending(path: "MacroMenu/app-state.json"), region: MenuRegion = .saved, catalogURL: URL? = MenuRegion.saved.menuURL, legacyURL: URL? = URL.applicationSupportDirectory.appending(path: "MacroMenu/foods.json"),
          everydayURL: URL? = Bundle.main.url(forResource: "GenericFoods", withExtension: "json"),
          surveyURL: URL? = Bundle.main.url(forResource: "SurveyFoods", withExtension: "json"),
-         supermarketURL: URL? = Bundle.main.url(forResource: "SupermarketFoods", withExtension: "json")) {
+         supermarketURL: URL? = MenuRegion.saved.supermarketURL) {
         self.url = url
+        self.region = region
         if let everydayURL, let foods = try? JSONDecoder().decode([Food].self, from: Data(contentsOf: everydayURL)) {
             everyday = foods.filter { $0.isValid && $0.isEveryday }
         }
@@ -109,6 +112,21 @@ final class AppStore {
     var suggestibleEveryday: [Food] { let diet = DietFilter.saved; return diet.isEmpty ? everyday : everyday.filter(diet.allows) }
     /// Switches to a newer restaurant menu. Logged meals keep the figures they were logged with.
     func useMenu(_ menu: MenuCatalog) { catalog = menu }
+    /// Switches to another country's bundled menus and saves the choice. Logs, meals and your own foods stay as they are.
+    @discardableResult func useRegion(_ new: MenuRegion, menuURL: URL? = nil, supermarketURL: URL? = nil) -> Bool {
+        let menuURL = menuURL ?? new.menuURL
+        guard let menuURL, let menu = try? JSONDecoder().decode(MenuCatalog.self, from: Data(contentsOf: menuURL)) else { return false }
+        var shops: MenuCatalog?
+        if new.hasSupermarkets, let shopsURL = supermarketURL ?? new.supermarketURL {
+            shops = try? JSONDecoder().decode(MenuCatalog.self, from: Data(contentsOf: shopsURL))
+        }
+        UserDefaults.standard.set(new.rawValue, forKey: MenuRegion.key)
+        region = new
+        catalog = menu
+        supermarket = shops?.foods.filter { $0.isValid && $0.isSupermarket } ?? []
+        supermarketChains = shops?.chains ?? []
+        return true
+    }
     var goals: Goals { data.goalSets.first { $0.id == data.activeGoal } ?? data.goalSets[0] }
     @discardableResult func applyEstimatedTargets(_ values: [String: Double]) -> Bool {
         let activeID = goals.id

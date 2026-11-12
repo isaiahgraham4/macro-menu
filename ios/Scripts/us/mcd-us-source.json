@@ -1,0 +1,7251 @@
+{
+  "checked": "2026-11-12",
+  "items": [
+    {
+      "id": "200007",
+      "name": "Baked Hot Apple Pie",
+      "marketing": "Baked Apple Pie",
+      "cats": [
+        "Desserts & Shakes",
+        "Favorites Under 400"
+      ],
+      "n": {
+        "calories": 230,
+        "protein": 2,
+        "carbohydrate": 33,
+        "fat": 11,
+        "sodium": 100,
+        "saturated_fat": 6,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 1,
+        "sugars": 14,
+        "addedsugars": 13,
+        "vitaminD": 0,
+        "calcium": 6,
+        "iron": 1,
+        "potassium": 70,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 90,
+        "energy_kJ": 980,
+        "fibre2015": 1
+      },
+      "al": [
+        "wheat"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200009",
+      "name": "Chocolate Chip Cookie",
+      "marketing": "Chocolate Chip Cookie",
+      "cats": [
+        "Desserts & Shakes",
+        "Dollar Menu"
+      ],
+      "n": {
+        "calories": 170,
+        "protein": 2,
+        "carbohydrate": 22,
+        "fat": 8,
+        "sodium": 95,
+        "saturated_fat": 4,
+        "trans_fat": 0,
+        "cholesterol": 10,
+        "fibre": 1,
+        "sugars": 15,
+        "addedsugars": 15,
+        "vitaminD": 0,
+        "calcium": 10,
+        "iron": 2,
+        "potassium": 60,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 70,
+        "energy_kJ": 690,
+        "fibre2015": 1
+      },
+      "al": [
+        "egg",
+        "milk",
+        "soy",
+        "wheat"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200020",
+      "name": "Coffee (Small)",
+      "marketing": "Premium Roast Coffee",
+      "cats": [
+        "McCafé",
+        "Dollar Menu",
+        "Favorites Under 400",
+        "Meals-Change Drinks"
+      ],
+      "n": {
+        "calories": 5,
+        "protein": 0,
+        "carbohydrate": 1,
+        "fat": 0,
+        "sodium": 10,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 0,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 6,
+        "iron": 0,
+        "potassium": 160,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 30,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200020",
+          "label": "Small"
+        },
+        {
+          "id": "200543",
+          "label": "Medium"
+        },
+        {
+          "id": "200122",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200052",
+      "name": "Chocolate Shake (Medium)",
+      "marketing": "Chocolate Shake",
+      "cats": [
+        "Desserts & Shakes"
+      ],
+      "n": {
+        "calories": 650,
+        "protein": 15,
+        "carbohydrate": 107,
+        "fat": 17,
+        "sodium": 310,
+        "saturated_fat": 11,
+        "trans_fat": 1,
+        "cholesterol": 65,
+        "fibre": 1,
+        "sugars": 85,
+        "addedsugars": 68,
+        "vitaminD": 0,
+        "calcium": 500,
+        "iron": 0.5,
+        "potassium": 800,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 150,
+        "energy_kJ": 2730,
+        "fibre2015": 1
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200107",
+          "label": "Small"
+        },
+        {
+          "id": "200052",
+          "label": "Medium"
+        },
+        {
+          "id": "200058",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200058",
+      "name": "Chocolate Shake (Large)",
+      "marketing": "Chocolate Shake",
+      "cats": [
+        "Desserts & Shakes"
+      ],
+      "n": {
+        "calories": 800,
+        "protein": 18,
+        "carbohydrate": 134,
+        "fat": 20,
+        "sodium": 390,
+        "saturated_fat": 13,
+        "trans_fat": 1,
+        "cholesterol": 80,
+        "fibre": 1,
+        "sugars": 106,
+        "addedsugars": 86,
+        "vitaminD": 0,
+        "calcium": 610,
+        "iron": 0.5,
+        "potassium": 990,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 180,
+        "energy_kJ": 3360,
+        "fibre2015": 1
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200107",
+          "label": "Small"
+        },
+        {
+          "id": "200052",
+          "label": "Medium"
+        },
+        {
+          "id": "200058",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200062",
+      "name": "Vanilla Cone",
+      "marketing": "Vanilla Cone",
+      "cats": [
+        "Desserts & Shakes",
+        "Dollar Menu",
+        "Favorites Under 400"
+      ],
+      "n": {
+        "calories": 200,
+        "protein": 5,
+        "carbohydrate": 33,
+        "fat": 5,
+        "sodium": 80,
+        "saturated_fat": 3,
+        "trans_fat": 0,
+        "cholesterol": 20,
+        "fibre": 0,
+        "sugars": 23,
+        "addedsugars": 17,
+        "vitaminD": 0,
+        "calcium": 180,
+        "iron": 0.5,
+        "potassium": 240,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 45,
+        "energy_kJ": 840,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk",
+        "wheat"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200066",
+      "name": "Small French Fries",
+      "marketing": "World Famous Fries®",
+      "cats": [
+        "Snacks & Sides",
+        "McPick 2",
+        "Meals-Change Sides",
+        "Full Menu Items",
+        "PM D123 Menu",
+        "D123 Menu"
+      ],
+      "n": {
+        "calories": 230,
+        "protein": 3,
+        "carbohydrate": 31,
+        "fat": 11,
+        "sodium": 190,
+        "saturated_fat": 1.5,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 3,
+        "sugars": 0,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 10,
+        "iron": 0.5,
+        "potassium": 470,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 100,
+        "energy_kJ": 950,
+        "fibre2015": 3
+      },
+      "al": [
+        "wheat",
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200092",
+          "label": "Kids"
+        },
+        {
+          "id": "200066",
+          "label": "Small"
+        },
+        {
+          "id": "201234",
+          "label": "Medium"
+        },
+        {
+          "id": "200083",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200068",
+      "name": "Apple Slices",
+      "marketing": "Apple Slices",
+      "cats": [
+        "Snacks & Sides",
+        "Favorites Under 400",
+        "Happy Meal - Side",
+        "Mighty Kids Meal - Sides",
+        "Happy Meal"
+      ],
+      "n": {
+        "calories": 15,
+        "protein": 0,
+        "carbohydrate": 4,
+        "fat": 0,
+        "sodium": 0,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 3,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 10,
+        "iron": 0,
+        "potassium": 35,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 60,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200074",
+      "name": "Hot Fudge Sundae",
+      "marketing": "Hot Fudge Sundae",
+      "cats": [
+        "Desserts & Shakes",
+        "Favorites Under 400"
+      ],
+      "n": {
+        "calories": 330,
+        "protein": 8,
+        "carbohydrate": 51,
+        "fat": 10,
+        "sodium": 170,
+        "saturated_fat": 7,
+        "trans_fat": 0,
+        "cholesterol": 25,
+        "fibre": 2,
+        "sugars": 44,
+        "addedsugars": 36,
+        "vitaminD": 0,
+        "calcium": 260,
+        "iron": 0.5,
+        "potassium": 420,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 90,
+        "energy_kJ": 1360,
+        "fibre2015": 2
+      },
+      "al": [
+        "milk",
+        "soy"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200081",
+      "name": "Hot Caramel Sundae",
+      "marketing": "Hot Caramel Sundae",
+      "cats": [
+        "Desserts & Shakes"
+      ],
+      "n": {
+        "calories": 330,
+        "protein": 7,
+        "carbohydrate": 58,
+        "fat": 7,
+        "sodium": 150,
+        "saturated_fat": 4.5,
+        "trans_fat": 0,
+        "cholesterol": 30,
+        "fibre": 0,
+        "sugars": 41,
+        "addedsugars": 34,
+        "vitaminD": 0,
+        "calcium": 240,
+        "iron": 0,
+        "potassium": 320,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 70,
+        "energy_kJ": 1380,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200083",
+      "name": "Large French Fries",
+      "marketing": "World Famous Fries®",
+      "cats": [
+        "Snacks & Sides",
+        "Meals-Change Sides"
+      ],
+      "n": {
+        "calories": 480,
+        "protein": 7,
+        "carbohydrate": 65,
+        "fat": 23,
+        "sodium": 400,
+        "saturated_fat": 3,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 6,
+        "sugars": 0,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 25,
+        "iron": 1.5,
+        "potassium": 1000,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 210,
+        "energy_kJ": 2030,
+        "fibre2015": 6
+      },
+      "al": [
+        "wheat",
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200092",
+          "label": "Kids"
+        },
+        {
+          "id": "200066",
+          "label": "Small"
+        },
+        {
+          "id": "201234",
+          "label": "Medium"
+        },
+        {
+          "id": "200083",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200092",
+      "name": "Kids Fries",
+      "marketing": "World Famous Fries®",
+      "cats": [
+        "Snacks & Sides",
+        "Meals-Change Sides"
+      ],
+      "n": {
+        "calories": 110,
+        "protein": 2,
+        "carbohydrate": 14,
+        "fat": 5,
+        "sodium": 90,
+        "saturated_fat": 0.5,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 1,
+        "sugars": 0,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 6,
+        "iron": 0.5,
+        "potassium": 220,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 45,
+        "energy_kJ": 450,
+        "fibre2015": 1
+      },
+      "al": [
+        "wheat",
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200092",
+          "label": "Kids"
+        },
+        {
+          "id": "200066",
+          "label": "Small"
+        },
+        {
+          "id": "201234",
+          "label": "Medium"
+        },
+        {
+          "id": "200083",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200096",
+      "name": "McFlurry with M&M'S Chocolate Candies",
+      "marketing": "McFlurry® with M&M'S® Candies",
+      "cats": [
+        "Desserts & Shakes"
+      ],
+      "n": {
+        "calories": 570,
+        "protein": 11,
+        "carbohydrate": 85,
+        "fat": 19,
+        "sodium": 170,
+        "saturated_fat": 12,
+        "trans_fat": 0,
+        "cholesterol": 35,
+        "fibre": 2,
+        "sugars": 74,
+        "addedsugars": 62,
+        "vitaminD": 0,
+        "calcium": 370,
+        "iron": 0.5,
+        "potassium": 570,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 180,
+        "energy_kJ": 2370,
+        "fibre2015": 2
+      },
+      "al": [
+        "milk",
+        "soy"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200101",
+      "name": "McFlurry with Oreo Cookies",
+      "marketing": "McFlurry® with OREO® cookies",
+      "cats": [
+        "Desserts & Shakes"
+      ],
+      "n": {
+        "calories": 410,
+        "protein": 10,
+        "carbohydrate": 64,
+        "fat": 13,
+        "sodium": 210,
+        "saturated_fat": 7,
+        "trans_fat": 0,
+        "cholesterol": 35,
+        "fibre": 1,
+        "sugars": 48,
+        "addedsugars": 39,
+        "vitaminD": 0,
+        "calcium": 310,
+        "iron": 1,
+        "potassium": 430,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 120,
+        "energy_kJ": 1740,
+        "fibre2015": 1
+      },
+      "al": [
+        "milk",
+        "wheat",
+        "soy"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200107",
+      "name": "Chocolate Shake (Small)",
+      "marketing": "Chocolate Shake",
+      "cats": [
+        "Desserts & Shakes"
+      ],
+      "n": {
+        "calories": 520,
+        "protein": 12,
+        "carbohydrate": 85,
+        "fat": 14,
+        "sodium": 250,
+        "saturated_fat": 9,
+        "trans_fat": 0.5,
+        "cholesterol": 55,
+        "sugars": 67,
+        "addedsugars": 54,
+        "vitaminD": 0,
+        "calcium": 400,
+        "iron": 0.5,
+        "potassium": 640,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 130,
+        "energy_kJ": 2190,
+        "fibre2015": 1
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200107",
+          "label": "Small"
+        },
+        {
+          "id": "200052",
+          "label": "Medium"
+        },
+        {
+          "id": "200058",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200108",
+      "name": "Vanilla Shake (Small)",
+      "marketing": "Vanilla Shake",
+      "cats": [
+        "Desserts & Shakes"
+      ],
+      "n": {
+        "calories": 480,
+        "protein": 10,
+        "carbohydrate": 80,
+        "fat": 13,
+        "sodium": 210,
+        "saturated_fat": 8,
+        "trans_fat": 0.5,
+        "cholesterol": 50,
+        "fibre": 0,
+        "sugars": 51,
+        "addedsugars": 40,
+        "vitaminD": 0,
+        "calcium": 340,
+        "iron": 0,
+        "potassium": 460,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 110,
+        "energy_kJ": 2000,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200108",
+          "label": "Small"
+        },
+        {
+          "id": "200623",
+          "label": "Medium"
+        },
+        {
+          "id": "200624",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200109",
+      "name": "Strawberry Shake (Small)",
+      "marketing": "Strawberry Shake",
+      "cats": [
+        "Desserts & Shakes"
+      ],
+      "n": {
+        "calories": 470,
+        "protein": 10,
+        "carbohydrate": 77,
+        "fat": 13,
+        "sodium": 160,
+        "saturated_fat": 8,
+        "trans_fat": 0.5,
+        "cholesterol": 50,
+        "sugars": 58,
+        "addedsugars": 46,
+        "vitaminD": 0,
+        "calcium": 350,
+        "iron": 0,
+        "potassium": 500,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 120,
+        "energy_kJ": 1980,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200109",
+          "label": "Small"
+        },
+        {
+          "id": "200621",
+          "label": "Medium"
+        },
+        {
+          "id": "200622",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200122",
+      "name": "Coffee (Large)",
+      "marketing": "Premium Roast Coffee",
+      "cats": [
+        "McCafé"
+      ],
+      "n": {
+        "calories": 10,
+        "protein": 1,
+        "carbohydrate": 2,
+        "fat": 0,
+        "sodium": 15,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "sugars": 0,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 10,
+        "iron": 0,
+        "potassium": 270,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 50,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200020",
+          "label": "Small"
+        },
+        {
+          "id": "200543",
+          "label": "Medium"
+        },
+        {
+          "id": "200122",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200145",
+      "name": "Steak, Egg & Cheese Bagel",
+      "marketing": "Steak, Egg & Cheese Bagel",
+      "cats": [
+        "Breakfast"
+      ],
+      "n": {
+        "calories": 680,
+        "protein": 34,
+        "carbohydrate": 57,
+        "fat": 35,
+        "sodium": 1510,
+        "saturated_fat": 15,
+        "trans_fat": 1.5,
+        "cholesterol": 275,
+        "fibre": 3,
+        "sugars": 7,
+        "addedsugars": 2,
+        "vitaminD": 0,
+        "calcium": 210,
+        "iron": 5,
+        "potassium": 380,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 310,
+        "energy_kJ": 2830,
+        "fibre2015": 3
+      },
+      "al": [
+        "wheat",
+        "egg",
+        "milk",
+        "soy"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200148",
+      "name": "Frappe Mocha (Small)",
+      "marketing": "Mocha Frappé",
+      "cats": [
+        "McCafé",
+        "AM D123 Menu",
+        "D123 Menu"
+      ],
+      "n": {
+        "calories": 430,
+        "protein": 7,
+        "carbohydrate": 61,
+        "fat": 17,
+        "sodium": 120,
+        "saturated_fat": 11,
+        "trans_fat": 0.5,
+        "cholesterol": 65,
+        "fibre": 0,
+        "sugars": 51,
+        "addedsugars": 45,
+        "vitaminD": 0,
+        "calcium": 210,
+        "iron": 0.5,
+        "potassium": 430,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 90,
+        "calories_from_fat": 150,
+        "energy_kJ": 1790,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk",
+        "soy"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200148",
+          "label": "Small"
+        },
+        {
+          "id": "200562",
+          "label": "Medium"
+        },
+        {
+          "id": "200563",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200149",
+      "name": "Frappe Caramel (Small)",
+      "marketing": "Caramel Frappé",
+      "cats": [
+        "McCafé",
+        "AM D123 Menu",
+        "D123 Menu"
+      ],
+      "n": {
+        "calories": 420,
+        "protein": 7,
+        "carbohydrate": 60,
+        "fat": 17,
+        "sodium": 80,
+        "saturated_fat": 11,
+        "trans_fat": 0.5,
+        "cholesterol": 55,
+        "fibre": 1,
+        "sugars": 53,
+        "addedsugars": 44,
+        "vitaminD": 0,
+        "calcium": 200,
+        "iron": 0,
+        "potassium": 360,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 70,
+        "calories_from_fat": 160,
+        "energy_kJ": 1770,
+        "fibre2015": 1
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200149",
+          "label": "Small"
+        },
+        {
+          "id": "200564",
+          "label": "Medium"
+        },
+        {
+          "id": "200464",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200152",
+      "name": "Strawberry Banana Smoothie (Small)",
+      "marketing": "Strawberry Banana Smoothie",
+      "cats": [
+        "Beverages",
+        "McCafé",
+        "AM D123 Menu",
+        "D123 Menu"
+      ],
+      "n": {
+        "calories": 190,
+        "protein": 2,
+        "carbohydrate": 44,
+        "fat": 0.5,
+        "sodium": 40,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 5,
+        "fibre": 2,
+        "sugars": 39,
+        "addedsugars": 39,
+        "vitaminD": 0,
+        "calcium": 70,
+        "iron": 0.5,
+        "potassium": 250,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 5,
+        "energy_kJ": 800,
+        "fibre2015": 2
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200152",
+          "label": "Small"
+        },
+        {
+          "id": "200565",
+          "label": "Medium"
+        },
+        {
+          "id": "200566",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200155",
+      "name": "Mango Pineapple Smoothie (Small)",
+      "marketing": "Mango Pineapple Smoothie",
+      "cats": [
+        "Beverages",
+        "McCafé",
+        "AM D123 Menu",
+        "D123 Menu"
+      ],
+      "n": {
+        "calories": 200,
+        "protein": 2,
+        "carbohydrate": 45,
+        "fat": 0.5,
+        "sodium": 35,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 5,
+        "fibre": 1,
+        "sugars": 42,
+        "addedsugars": 34,
+        "vitaminD": 0,
+        "calcium": 70,
+        "iron": 0,
+        "potassium": 210,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 5,
+        "energy_kJ": 820,
+        "fibre2015": 1
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200155",
+          "label": "Small"
+        },
+        {
+          "id": "200548",
+          "label": "Medium"
+        },
+        {
+          "id": "200547",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200161",
+      "name": "Sausage McMuffin® with Egg",
+      "marketing": "Sausage McMuffin® with Egg",
+      "cats": [
+        "Breakfast",
+        "All Day Breakfast",
+        "ADB Muffin"
+      ],
+      "n": {
+        "calories": 480,
+        "protein": 20,
+        "carbohydrate": 30,
+        "fat": 31,
+        "sodium": 830,
+        "saturated_fat": 12,
+        "trans_fat": 0.5,
+        "cholesterol": 280,
+        "fibre": 2,
+        "sugars": 2,
+        "addedsugars": 1,
+        "vitaminD": 4,
+        "calcium": 170,
+        "iron": 3,
+        "potassium": 260,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 280,
+        "energy_kJ": 2010,
+        "fibre2015": 2
+      },
+      "al": [
+        "wheat",
+        "egg",
+        "milk",
+        "soy"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200181",
+      "name": "Caramel Cappuccino (Small)",
+      "marketing": "Caramel Cappuccino",
+      "cats": [
+        "McCafé"
+      ],
+      "n": {
+        "calories": 210,
+        "protein": 7,
+        "carbohydrate": 35,
+        "fat": 4.5,
+        "sodium": 290,
+        "saturated_fat": 3,
+        "trans_fat": 0,
+        "cholesterol": 20,
+        "fibre": 0,
+        "sugars": 31,
+        "addedsugars": 24,
+        "vitaminD": 0,
+        "calcium": 230,
+        "iron": 0,
+        "potassium": 400,
+        "vitaminB6": 0,
+        "phosphorus": 130,
+        "caffeine": 45,
+        "calories_from_fat": 40,
+        "energy_kJ": 880,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200181",
+          "label": "Small"
+        },
+        {
+          "id": "200386",
+          "label": "Medium"
+        },
+        {
+          "id": "200385",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200184",
+      "name": "French Vanilla Cappuccino (Large)",
+      "marketing": "French Vanilla Cappuccino",
+      "cats": [],
+      "n": {
+        "calories": 340,
+        "protein": 9,
+        "carbohydrate": 58,
+        "fat": 8,
+        "sodium": 115,
+        "saturated_fat": 5,
+        "trans_fat": 0,
+        "cholesterol": 30,
+        "fibre": 0,
+        "sugars": 43,
+        "addedsugars": 31,
+        "vitaminD": 2,
+        "calcium": 320,
+        "iron": 0,
+        "potassium": 550,
+        "vitaminB6": 0,
+        "phosphorus": 240,
+        "caffeine": 65,
+        "calories_from_fat": 70,
+        "energy_kJ": 1440,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200186",
+          "label": "Small"
+        },
+        {
+          "id": "200185",
+          "label": "Medium"
+        },
+        {
+          "id": "200184",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200185",
+      "name": "Vanilla Cappuccino (Medium)",
+      "marketing": "French Vanilla Cappuccino",
+      "cats": [],
+      "n": {
+        "calories": 260,
+        "protein": 7,
+        "carbohydrate": 47,
+        "fat": 6,
+        "sodium": 80,
+        "saturated_fat": 3.5,
+        "trans_fat": 0,
+        "cholesterol": 25,
+        "fibre": 0,
+        "sugars": 34,
+        "addedsugars": 25,
+        "vitaminD": 0,
+        "calcium": 220,
+        "iron": 0,
+        "potassium": 400,
+        "vitaminB6": 0,
+        "phosphorus": 160,
+        "caffeine": 55,
+        "calories_from_fat": 50,
+        "energy_kJ": 1110,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200186",
+          "label": "Small"
+        },
+        {
+          "id": "200185",
+          "label": "Medium"
+        },
+        {
+          "id": "200184",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200186",
+      "name": "Vanilla Cappuccino (Small)",
+      "marketing": "French Vanilla Cappuccino",
+      "cats": [
+        "McCafé"
+      ],
+      "n": {
+        "calories": 210,
+        "protein": 5,
+        "carbohydrate": 37,
+        "fat": 4.5,
+        "sodium": 65,
+        "saturated_fat": 3,
+        "trans_fat": 0,
+        "cholesterol": 20,
+        "fibre": 0,
+        "sugars": 28,
+        "addedsugars": 20,
+        "vitaminD": 0,
+        "calcium": 180,
+        "iron": 0,
+        "potassium": 330,
+        "vitaminB6": 0,
+        "phosphorus": 130,
+        "caffeine": 45,
+        "calories_from_fat": 40,
+        "energy_kJ": 890,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200186",
+          "label": "Small"
+        },
+        {
+          "id": "200185",
+          "label": "Medium"
+        },
+        {
+          "id": "200184",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200208",
+      "name": "Coca-Cola Zero Sugar (Small)",
+      "marketing": "Coca-Cola Zero Sugar (Small)",
+      "cats": [
+        "Beverages"
+      ],
+      "n": {
+        "calories": 0,
+        "protein": 0,
+        "carbohydrate": 0,
+        "fat": 0,
+        "sodium": 40,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "sugars": 0,
+        "vitaminD": 0,
+        "calcium": 0,
+        "iron": 0,
+        "potassium": 75,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200258",
+      "name": "Hotcakes and Sausage",
+      "marketing": "Hotcakes and Sausage",
+      "cats": [
+        "Breakfast",
+        "All Day Breakfast",
+        "ADB Biscuit",
+        "ADB Muffin"
+      ],
+      "n": {
+        "calories": 770,
+        "protein": 15,
+        "carbohydrate": 102,
+        "fat": 33,
+        "sodium": 810,
+        "saturated_fat": 12,
+        "trans_fat": 0,
+        "cholesterol": 75,
+        "fibre": 2,
+        "sugars": 46,
+        "addedsugars": 40,
+        "vitaminD": 0,
+        "calcium": 140,
+        "iron": 3,
+        "potassium": 520,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 300,
+        "energy_kJ": 3240,
+        "fibre2015": 2
+      },
+      "al": [
+        "wheat",
+        "egg",
+        "milk",
+        "soy"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200267",
+      "name": "Sausage Burrito",
+      "marketing": "Sausage Burrito",
+      "cats": [
+        "Breakfast",
+        "Dollar Menu",
+        "Favorites Under 400",
+        "All Day Breakfast",
+        "ADB Biscuit",
+        "ADB Muffin",
+        "Full Menu Items"
+      ],
+      "n": {
+        "calories": 310,
+        "protein": 13,
+        "carbohydrate": 25,
+        "fat": 17,
+        "sodium": 800,
+        "saturated_fat": 7,
+        "trans_fat": 0,
+        "cholesterol": 170,
+        "fibre": 1,
+        "sugars": 2,
+        "addedsugars": 1,
+        "vitaminD": 0,
+        "calcium": 140,
+        "iron": 2.5,
+        "potassium": 170,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 150,
+        "energy_kJ": 1280,
+        "fibre2015": 1
+      },
+      "al": [
+        "egg",
+        "milk",
+        "wheat",
+        "soy"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200268",
+      "name": "Ketchup Packet",
+      "marketing": "Ketchup Packet",
+      "cats": [
+        "Condiments"
+      ],
+      "n": {
+        "calories": 10,
+        "protein": 0,
+        "carbohydrate": 2,
+        "fat": 0,
+        "sodium": 90,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "sugars": 2,
+        "addedsugars": 2,
+        "vitaminD": 0,
+        "calcium": 0,
+        "iron": 0,
+        "potassium": 30,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 40,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200284",
+      "name": "Fruit & Maple Oatmeal",
+      "marketing": "Fruit & Maple Oatmeal",
+      "cats": [
+        "Breakfast",
+        "Favorites Under 400"
+      ],
+      "n": {
+        "calories": 320,
+        "protein": 6,
+        "carbohydrate": 64,
+        "fat": 4.5,
+        "sodium": 150,
+        "saturated_fat": 1.5,
+        "trans_fat": 0,
+        "cholesterol": 5,
+        "fibre": 4,
+        "sugars": 31,
+        "addedsugars": 18,
+        "vitaminD": 0,
+        "calcium": 80,
+        "iron": 2,
+        "potassium": 330,
+        "vitaminB6": 0,
+        "phosphorus": 10,
+        "caffeine": 0,
+        "calories_from_fat": 40,
+        "energy_kJ": 1340,
+        "fibre2015": 4
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200293",
+      "name": "Creamy Ranch Sauce",
+      "marketing": "Creamy Ranch Sauce",
+      "cats": [
+        "Condiments"
+      ],
+      "n": {
+        "calories": 110,
+        "protein": 0,
+        "carbohydrate": 1,
+        "fat": 12,
+        "sodium": 160,
+        "saturated_fat": 2,
+        "trans_fat": 0,
+        "cholesterol": 5,
+        "sugars": 1,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 4,
+        "iron": 0,
+        "potassium": 10,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 100,
+        "energy_kJ": 460,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200295",
+      "name": "Spicy Buffalo Sauce",
+      "marketing": "Spicy Buffalo Sauce",
+      "cats": [
+        "Condiments"
+      ],
+      "n": {
+        "calories": 30,
+        "protein": 0,
+        "carbohydrate": 1,
+        "fat": 3,
+        "sodium": 520,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 0,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 0,
+        "iron": 0,
+        "potassium": 20,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 30,
+        "energy_kJ": 140,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200298",
+      "name": "Egg McMuffin",
+      "marketing": "Egg McMuffin®",
+      "cats": [
+        "Breakfast",
+        "Favorites Under 400",
+        "All Day Breakfast",
+        "ADB Muffin",
+        "Full Menu Items"
+      ],
+      "n": {
+        "calories": 310,
+        "protein": 17,
+        "carbohydrate": 30,
+        "fat": 13,
+        "sodium": 770,
+        "saturated_fat": 6,
+        "trans_fat": 0,
+        "cholesterol": 250,
+        "fibre": 2,
+        "sugars": 3,
+        "addedsugars": 1,
+        "vitaminD": 2,
+        "calcium": 170,
+        "iron": 3,
+        "potassium": 200,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 120,
+        "energy_kJ": 1280,
+        "fibre2015": 2
+      },
+      "al": [
+        "wheat",
+        "egg",
+        "milk",
+        "soy"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200300",
+      "name": "Bacon, Egg  & Cheese Biscuit",
+      "marketing": "Bacon, Egg  & Cheese Biscuit",
+      "cats": [
+        "Breakfast",
+        "All Day Breakfast",
+        "ADB Biscuit"
+      ],
+      "n": {
+        "calories": 460,
+        "protein": 17,
+        "carbohydrate": 39,
+        "fat": 26,
+        "sodium": 1330,
+        "saturated_fat": 13,
+        "trans_fat": 0,
+        "cholesterol": 215,
+        "fibre": 2,
+        "sugars": 3,
+        "addedsugars": 1,
+        "vitaminD": 0,
+        "calcium": 180,
+        "iron": 3,
+        "potassium": 240,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 240,
+        "energy_kJ": 1940,
+        "fibre2015": 2
+      },
+      "al": [
+        "wheat",
+        "milk",
+        "soy",
+        "egg"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200301",
+      "name": "Sausage Biscuit",
+      "marketing": "Sausage Biscuit",
+      "cats": [
+        "Breakfast",
+        "Dollar Menu",
+        "All Day Breakfast",
+        "ADB Biscuit",
+        "AM D123 Menu",
+        "D123 Menu"
+      ],
+      "n": {
+        "calories": 460,
+        "protein": 11,
+        "carbohydrate": 37,
+        "fat": 30,
+        "sodium": 1090,
+        "saturated_fat": 13,
+        "trans_fat": 0,
+        "cholesterol": 35,
+        "fibre": 2,
+        "sugars": 2,
+        "addedsugars": 1,
+        "vitaminD": 0,
+        "calcium": 70,
+        "iron": 2.5,
+        "potassium": 200,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 270,
+        "energy_kJ": 1920,
+        "fibre2015": 2
+      },
+      "al": [
+        "wheat",
+        "milk",
+        "soy"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200302",
+      "name": "Sausage Biscuit  with Egg",
+      "marketing": "Sausage Biscuit  with Egg",
+      "cats": [
+        "Breakfast",
+        "All Day Breakfast",
+        "ADB Biscuit"
+      ],
+      "n": {
+        "calories": 530,
+        "protein": 17,
+        "carbohydrate": 38,
+        "fat": 35,
+        "sodium": 1190,
+        "saturated_fat": 15,
+        "trans_fat": 0,
+        "cholesterol": 225,
+        "fibre": 2,
+        "sugars": 3,
+        "addedsugars": 1,
+        "vitaminD": 0,
+        "calcium": 110,
+        "iron": 3.5,
+        "potassium": 260,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 310,
+        "energy_kJ": 2230,
+        "fibre2015": 2
+      },
+      "al": [
+        "wheat",
+        "milk",
+        "soy",
+        "egg"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200304",
+      "name": "Bacon, Egg & Cheese McGriddles",
+      "marketing": "Bacon, Egg & Cheese McGriddles®",
+      "cats": [
+        "Breakfast",
+        "All Day Breakfast",
+        "ADB Biscuit"
+      ],
+      "n": {
+        "calories": 430,
+        "protein": 17,
+        "carbohydrate": 44,
+        "fat": 21,
+        "sodium": 1230,
+        "saturated_fat": 9,
+        "trans_fat": 0,
+        "cholesterol": 215,
+        "fibre": 2,
+        "sugars": 15,
+        "addedsugars": 13,
+        "vitaminD": 0,
+        "calcium": 190,
+        "iron": 3,
+        "potassium": 220,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 190,
+        "energy_kJ": 1800,
+        "fibre2015": 2
+      },
+      "al": [
+        "wheat",
+        "milk",
+        "soy",
+        "egg"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200306",
+      "name": "Sausage McGriddles",
+      "marketing": "Sausage McGriddles®",
+      "cats": [
+        "Breakfast",
+        "All Day Breakfast",
+        "ADB Biscuit",
+        "AM D123 Menu",
+        "D123 Menu"
+      ],
+      "n": {
+        "calories": 430,
+        "protein": 11,
+        "carbohydrate": 41,
+        "fat": 24,
+        "sodium": 990,
+        "saturated_fat": 9,
+        "trans_fat": 0,
+        "cholesterol": 35,
+        "fibre": 2,
+        "sugars": 14,
+        "addedsugars": 13,
+        "vitaminD": 0,
+        "calcium": 80,
+        "iron": 2.5,
+        "potassium": 180,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 220,
+        "energy_kJ": 1780,
+        "fibre2015": 2
+      },
+      "al": [
+        "wheat",
+        "milk",
+        "soy"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200307",
+      "name": "Sausage, Egg & Cheese McGriddles",
+      "marketing": "Sausage, Egg & Cheese McGriddles®",
+      "cats": [
+        "Breakfast",
+        "All Day Breakfast",
+        "ADB Biscuit"
+      ],
+      "n": {
+        "calories": 550,
+        "protein": 19,
+        "carbohydrate": 44,
+        "fat": 33,
+        "sodium": 1290,
+        "saturated_fat": 13,
+        "trans_fat": 0,
+        "cholesterol": 235,
+        "fibre": 2,
+        "sugars": 15,
+        "addedsugars": 13,
+        "vitaminD": 0,
+        "calcium": 190,
+        "iron": 3,
+        "potassium": 270,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 300,
+        "energy_kJ": 2290,
+        "fibre2015": 2
+      },
+      "al": [
+        "wheat",
+        "milk",
+        "soy",
+        "egg"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200313",
+      "name": "Honey",
+      "marketing": "Honey",
+      "cats": [
+        "Condiments"
+      ],
+      "n": {
+        "calories": 50,
+        "protein": 0,
+        "carbohydrate": 12,
+        "fat": 0,
+        "sodium": 0,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 11,
+        "addedsugars": 11,
+        "vitaminD": 0,
+        "calcium": 0,
+        "iron": 0,
+        "potassium": 5,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 200,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200315",
+      "name": "Sweet 'N Sour Sauce",
+      "marketing": "Sweet 'N Sour Sauce",
+      "cats": [
+        "Condiments"
+      ],
+      "n": {
+        "calories": 50,
+        "protein": 0,
+        "carbohydrate": 11,
+        "fat": 0,
+        "sodium": 160,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 10,
+        "addedsugars": 9,
+        "vitaminD": 0,
+        "calcium": 2,
+        "iron": 0,
+        "potassium": 35,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 200,
+        "fibre2015": 0
+      },
+      "al": [
+        "wheat",
+        "soy"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200322",
+      "name": "Big Breakfast",
+      "marketing": "Big Breakfast®",
+      "cats": [
+        "Breakfast"
+      ],
+      "n": {
+        "calories": 1060,
+        "protein": 26,
+        "carbohydrate": 131,
+        "fat": 48,
+        "sodium": 1540,
+        "saturated_fat": 18,
+        "trans_fat": 0,
+        "cholesterol": 485,
+        "fibre": 3,
+        "sugars": 56,
+        "addedsugars": 54,
+        "vitaminD": 2,
+        "calcium": 140,
+        "iron": 4.5,
+        "potassium": 590,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 430,
+        "energy_kJ": 4420,
+        "fibre2015": 3
+      },
+      "al": [
+        "egg",
+        "wheat",
+        "milk",
+        "soy"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200323",
+      "name": "Big Breakfast with Hotcakes",
+      "marketing": "Big Breakfast® with Hotcakes",
+      "cats": [
+        "Breakfast"
+      ],
+      "n": {
+        "calories": 1340,
+        "protein": 36,
+        "carbohydrate": 158,
+        "fat": 63,
+        "sodium": 2070,
+        "saturated_fat": 24,
+        "trans_fat": 0.5,
+        "cholesterol": 525,
+        "fibre": 5,
+        "sugars": 48,
+        "addedsugars": 41,
+        "vitaminD": 2,
+        "calcium": 280,
+        "iron": 7.5,
+        "potassium": 980,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 560,
+        "energy_kJ": 5610,
+        "fibre2015": 5
+      },
+      "al": [
+        "wheat",
+        "egg",
+        "milk",
+        "soy"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200325",
+      "name": "Hotcakes",
+      "marketing": "Hotcakes",
+      "cats": [
+        "Breakfast",
+        "All Day Breakfast",
+        "ADB Biscuit",
+        "ADB Muffin"
+      ],
+      "n": {
+        "calories": 580,
+        "protein": 9,
+        "carbohydrate": 101,
+        "fat": 15,
+        "sodium": 530,
+        "saturated_fat": 6,
+        "trans_fat": 0,
+        "cholesterol": 40,
+        "fibre": 2,
+        "sugars": 45,
+        "addedsugars": 40,
+        "vitaminD": 0,
+        "calcium": 130,
+        "iron": 3,
+        "potassium": 430,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 130,
+        "energy_kJ": 2440,
+        "fibre2015": 2
+      },
+      "al": [
+        "wheat",
+        "egg",
+        "milk",
+        "soy"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200340",
+      "name": "Hash Browns",
+      "marketing": "Hash Browns",
+      "cats": [
+        "Breakfast",
+        "Dollar Menu",
+        "Favorites Under 400",
+        "All Day Breakfast",
+        "ADB Biscuit",
+        "ADB Muffin",
+        "Meals-Change Sides",
+        "AM D123 Menu",
+        "D123 Menu"
+      ],
+      "n": {
+        "calories": 140,
+        "protein": 2,
+        "carbohydrate": 18,
+        "fat": 8,
+        "sodium": 310,
+        "saturated_fat": 1,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 2,
+        "sugars": 0,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 8,
+        "iron": 0.5,
+        "potassium": 240,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 70,
+        "energy_kJ": 610,
+        "fibre2015": 2
+      },
+      "al": [
+        "wheat",
+        "milk"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200385",
+      "name": "Caramel Cappuccino (Large)",
+      "marketing": "McCafé® Caramel Cappuccino",
+      "cats": [
+        "McCafé"
+      ],
+      "n": {
+        "calories": 340,
+        "protein": 11,
+        "carbohydrate": 55,
+        "fat": 8,
+        "sodium": 460,
+        "saturated_fat": 5,
+        "trans_fat": 0,
+        "cholesterol": 35,
+        "fibre": 0,
+        "sugars": 49,
+        "addedsugars": 36,
+        "vitaminD": 2,
+        "calcium": 390,
+        "iron": 0,
+        "potassium": 660,
+        "vitaminB6": 0,
+        "phosphorus": 240,
+        "caffeine": 65,
+        "calories_from_fat": 70,
+        "energy_kJ": 1420,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200181",
+          "label": "Small"
+        },
+        {
+          "id": "200386",
+          "label": "Medium"
+        },
+        {
+          "id": "200385",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200386",
+      "name": "Caramel Cappuccino (Medium)",
+      "marketing": "McCafé® Caramel Cappuccino",
+      "cats": [
+        "McCafé"
+      ],
+      "n": {
+        "calories": 260,
+        "protein": 8,
+        "carbohydrate": 44,
+        "fat": 6,
+        "sodium": 370,
+        "saturated_fat": 3.5,
+        "trans_fat": 0,
+        "cholesterol": 25,
+        "fibre": 0,
+        "sugars": 39,
+        "addedsugars": 30,
+        "vitaminD": 0,
+        "calcium": 280,
+        "iron": 0,
+        "potassium": 490,
+        "vitaminB6": 0,
+        "phosphorus": 160,
+        "caffeine": 55,
+        "calories_from_fat": 50,
+        "energy_kJ": 1090,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200181",
+          "label": "Small"
+        },
+        {
+          "id": "200386",
+          "label": "Medium"
+        },
+        {
+          "id": "200385",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200411",
+      "name": "Honey Mustard Sauce",
+      "marketing": "Honey Mustard Sauce",
+      "cats": [
+        "Condiments"
+      ],
+      "n": {
+        "calories": 60,
+        "protein": 0,
+        "carbohydrate": 6,
+        "fat": 3.5,
+        "sodium": 125,
+        "saturated_fat": 0.5,
+        "trans_fat": 0,
+        "cholesterol": 5,
+        "fibre": 1,
+        "sugars": 4,
+        "addedsugars": 4,
+        "vitaminD": 0,
+        "calcium": 6,
+        "iron": 0,
+        "potassium": 10,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 30,
+        "energy_kJ": 240,
+        "fibre2015": 1
+      },
+      "al": [
+        "egg"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200412",
+      "name": "Tangy Barbeque Sauce",
+      "marketing": "Tangy Barbeque Sauce",
+      "cats": [
+        "Condiments"
+      ],
+      "n": {
+        "calories": 45,
+        "protein": 0,
+        "carbohydrate": 11,
+        "fat": 0,
+        "sodium": 260,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 9,
+        "addedsugars": 9,
+        "vitaminD": 0,
+        "calcium": 4,
+        "iron": 0,
+        "potassium": 55,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 200,
+        "fibre2015": 0
+      },
+      "al": [
+        "wheat",
+        "soy"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200424",
+      "name": "Bacon, Egg & Cheese Bagel",
+      "marketing": "Bacon, Egg & Cheese Bagel",
+      "cats": [],
+      "n": {
+        "calories": 590,
+        "protein": 25,
+        "carbohydrate": 56,
+        "fat": 30,
+        "sodium": 1320,
+        "saturated_fat": 12,
+        "trans_fat": 0.5,
+        "cholesterol": 245,
+        "fibre": 2,
+        "sugars": 7,
+        "addedsugars": 2,
+        "vitaminD": 0,
+        "calcium": 210,
+        "iron": 4,
+        "potassium": 240,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 270,
+        "energy_kJ": 2460,
+        "fibre2015": 2
+      },
+      "al": [
+        "wheat",
+        "egg",
+        "milk",
+        "soy"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200438",
+      "name": "McChicken",
+      "marketing": "McChicken®",
+      "cats": [
+        "Chicken and Sandwiches",
+        "Dollar Menu",
+        "McPick 2",
+        "PM D123 Menu",
+        "D123 Menu"
+      ],
+      "n": {
+        "calories": 390,
+        "protein": 14,
+        "carbohydrate": 38,
+        "fat": 21,
+        "sodium": 560,
+        "saturated_fat": 3.5,
+        "trans_fat": 0,
+        "cholesterol": 40,
+        "fibre": 1,
+        "sugars": 4,
+        "addedsugars": 4,
+        "vitaminD": 0,
+        "calcium": 20,
+        "iron": 2,
+        "potassium": 310,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 190,
+        "energy_kJ": 1640,
+        "fibre2015": 1
+      },
+      "al": [
+        "wheat",
+        "egg"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200445",
+      "name": "Filet-O-Fish",
+      "marketing": "Filet-O-Fish®",
+      "cats": [
+        "Chicken and Sandwiches",
+        "Favorites Under 400",
+        "Pick 2",
+        "McPick 2 0816",
+        "McPick 2 2017",
+        "McPick 2 2017 Row 2"
+      ],
+      "n": {
+        "calories": 380,
+        "protein": 16,
+        "carbohydrate": 38,
+        "fat": 19,
+        "sodium": 580,
+        "saturated_fat": 4,
+        "trans_fat": 0,
+        "cholesterol": 30,
+        "fibre": 1,
+        "sugars": 4,
+        "addedsugars": 4,
+        "vitaminD": 0,
+        "calcium": 60,
+        "iron": 2,
+        "potassium": 280,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 170,
+        "energy_kJ": 1610,
+        "fibre2015": 1
+      },
+      "al": [
+        "fish (pollock)",
+        "wheat",
+        "milk",
+        "egg",
+        "soy"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200449",
+      "name": "Sausage McMuffin",
+      "marketing": "Sausage McMuffin®",
+      "cats": [
+        "Breakfast",
+        "Dollar Menu",
+        "Favorites Under 400",
+        "All Day Breakfast",
+        "ADB Muffin",
+        "AM D123 Menu",
+        "D123 Menu"
+      ],
+      "n": {
+        "calories": 400,
+        "protein": 14,
+        "carbohydrate": 29,
+        "fat": 26,
+        "sodium": 760,
+        "saturated_fat": 10,
+        "trans_fat": 0.5,
+        "cholesterol": 55,
+        "fibre": 2,
+        "sugars": 2,
+        "addedsugars": 1,
+        "vitaminD": 0,
+        "calcium": 140,
+        "iron": 2.5,
+        "potassium": 190,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 230,
+        "energy_kJ": 1680,
+        "fibre2015": 2
+      },
+      "al": [
+        "wheat",
+        "milk",
+        "soy"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200463",
+      "name": "Big Mac",
+      "marketing": "Big Mac®",
+      "cats": [
+        "Burgers",
+        "McPick 2 2017",
+        "McPick 2 2017 Row 2",
+        "Full Menu Items"
+      ],
+      "n": {
+        "calories": 580,
+        "protein": 25,
+        "carbohydrate": 45,
+        "fat": 34,
+        "sodium": 1060,
+        "saturated_fat": 11,
+        "trans_fat": 1,
+        "cholesterol": 85,
+        "fibre": 3,
+        "sugars": 7,
+        "addedsugars": 5,
+        "vitaminD": 0,
+        "calcium": 120,
+        "iron": 4,
+        "potassium": 370,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 300,
+        "energy_kJ": 2430,
+        "fibre2015": 2
+      },
+      "al": [
+        "wheat",
+        "sesame",
+        "egg",
+        "soy",
+        "milk"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200464",
+      "name": "Frappe Caramel (Large)",
+      "marketing": "Caramel Frappé",
+      "cats": [
+        "McCafé"
+      ],
+      "n": {
+        "calories": 650,
+        "protein": 11,
+        "carbohydrate": 94,
+        "fat": 26,
+        "sodium": 115,
+        "saturated_fat": 17,
+        "trans_fat": 1,
+        "cholesterol": 80,
+        "fibre": 1,
+        "sugars": 84,
+        "addedsugars": 70,
+        "vitaminD": 0,
+        "calcium": 320,
+        "iron": 0,
+        "potassium": 560,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 115,
+        "calories_from_fat": 230,
+        "energy_kJ": 2720,
+        "fibre2015": 1
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200149",
+          "label": "Small"
+        },
+        {
+          "id": "200564",
+          "label": "Medium"
+        },
+        {
+          "id": "200464",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200466",
+      "name": "Quarter Pounder with Cheese",
+      "marketing": "Quarter Pounder®* with Cheese",
+      "cats": [
+        "Burgers",
+        "Pick 2",
+        "McPick 2 0816",
+        "Full Menu Items"
+      ],
+      "n": {
+        "calories": 520,
+        "protein": 30,
+        "carbohydrate": 42,
+        "fat": 26,
+        "sodium": 1140,
+        "saturated_fat": 12,
+        "trans_fat": 1.5,
+        "cholesterol": 95,
+        "fibre": 2,
+        "sugars": 10,
+        "addedsugars": 8,
+        "vitaminD": 0,
+        "calcium": 190,
+        "iron": 4,
+        "potassium": 420,
+        "vitaminB6": 0,
+        "phosphorus": 2,
+        "caffeine": 0,
+        "calories_from_fat": 230,
+        "energy_kJ": 2170,
+        "fibre2015": 2
+      },
+      "al": [
+        "wheat",
+        "sesame",
+        "milk",
+        "soy"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200476",
+      "name": "Double Quarter Pounder with Cheese",
+      "marketing": "Double Quarter Pounder®* with Cheese",
+      "cats": [
+        "Burgers"
+      ],
+      "n": {
+        "calories": 740,
+        "protein": 48,
+        "carbohydrate": 43,
+        "fat": 42,
+        "sodium": 1360,
+        "saturated_fat": 20,
+        "trans_fat": 2.5,
+        "cholesterol": 165,
+        "fibre": 2,
+        "sugars": 10,
+        "addedsugars": 8,
+        "vitaminD": 0,
+        "calcium": 200,
+        "iron": 6,
+        "potassium": 660,
+        "vitaminB6": 0,
+        "phosphorus": 2,
+        "caffeine": 0,
+        "calories_from_fat": 380,
+        "energy_kJ": 3090,
+        "fibre2015": 2
+      },
+      "al": [
+        "wheat",
+        "sesame",
+        "milk",
+        "soy"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200477",
+      "name": "Hamburger",
+      "marketing": "Hamburger",
+      "cats": [
+        "Burgers",
+        "Favorites Under 400",
+        "Happy Meal - Protein",
+        "Happy Meal"
+      ],
+      "n": {
+        "calories": 250,
+        "protein": 12,
+        "carbohydrate": 30,
+        "fat": 9,
+        "sodium": 510,
+        "saturated_fat": 3.5,
+        "trans_fat": 0,
+        "cholesterol": 30,
+        "fibre": 1,
+        "sugars": 5,
+        "addedsugars": 5,
+        "vitaminD": 0,
+        "calcium": 15,
+        "iron": 2.5,
+        "potassium": 190,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 80,
+        "energy_kJ": 1030,
+        "fibre2015": 1
+      },
+      "al": [
+        "wheat"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200480",
+      "name": "Cheeseburger",
+      "marketing": "Cheeseburger",
+      "cats": [
+        "Burgers",
+        "Favorites Under 400"
+      ],
+      "n": {
+        "calories": 300,
+        "protein": 15,
+        "carbohydrate": 31,
+        "fat": 13,
+        "sodium": 720,
+        "saturated_fat": 6,
+        "trans_fat": 0.5,
+        "cholesterol": 40,
+        "fibre": 2,
+        "sugars": 6,
+        "addedsugars": 5,
+        "vitaminD": 0,
+        "calcium": 90,
+        "iron": 2.5,
+        "potassium": 210,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 110,
+        "energy_kJ": 1240,
+        "fibre2015": 2
+      },
+      "al": [
+        "wheat",
+        "milk",
+        "soy"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200486",
+      "name": "Double Cheeseburger",
+      "marketing": "Double Cheeseburger",
+      "cats": [
+        "Burgers",
+        "Dollar Menu"
+      ],
+      "n": {
+        "calories": 440,
+        "protein": 25,
+        "carbohydrate": 34,
+        "fat": 24,
+        "sodium": 1120,
+        "saturated_fat": 11,
+        "trans_fat": 1.5,
+        "cholesterol": 85,
+        "fibre": 2,
+        "sugars": 6,
+        "addedsugars": 5,
+        "vitaminD": 0,
+        "calcium": 180,
+        "iron": 3.5,
+        "potassium": 350,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 210,
+        "energy_kJ": 1850,
+        "fibre2015": 2
+      },
+      "al": [
+        "wheat",
+        "milk",
+        "soy"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200491",
+      "name": "McDouble",
+      "marketing": "McDouble®",
+      "cats": [
+        "Burgers",
+        "Dollar Menu",
+        "McPick 2",
+        "PM D123 Menu",
+        "D123 Menu"
+      ],
+      "n": {
+        "calories": 390,
+        "protein": 22,
+        "carbohydrate": 32,
+        "fat": 20,
+        "sodium": 920,
+        "saturated_fat": 9,
+        "trans_fat": 1,
+        "cholesterol": 70,
+        "fibre": 2,
+        "sugars": 6,
+        "addedsugars": 5,
+        "vitaminD": 0,
+        "calcium": 100,
+        "iron": 3.5,
+        "potassium": 320,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 180,
+        "energy_kJ": 1650,
+        "fibre2015": 2
+      },
+      "al": [
+        "wheat",
+        "milk",
+        "soy"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200497",
+      "name": "Daily Double",
+      "marketing": "Daily Double",
+      "cats": [],
+      "n": {
+        "calories": 490,
+        "protein": 22,
+        "carbohydrate": 30,
+        "fat": 31,
+        "sodium": 810,
+        "saturated_fat": 11,
+        "trans_fat": 1,
+        "cholesterol": 80,
+        "fibre": 2,
+        "sugars": 5,
+        "addedsugars": 3,
+        "vitaminD": 0,
+        "calcium": 100,
+        "iron": 3.5,
+        "potassium": 320,
+        "vitaminB6": 0,
+        "phosphorus": 2,
+        "caffeine": 0,
+        "calories_from_fat": 280,
+        "energy_kJ": 2030,
+        "fibre2015": 2
+      },
+      "al": [
+        "wheat",
+        "milk",
+        "soy",
+        "egg"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200500",
+      "name": "Cappuccino (Small)",
+      "marketing": "Cappuccino",
+      "cats": [
+        "McCafé"
+      ],
+      "n": {
+        "calories": 110,
+        "protein": 6,
+        "carbohydrate": 10,
+        "fat": 5,
+        "sodium": 75,
+        "saturated_fat": 3.5,
+        "trans_fat": 0,
+        "cholesterol": 20,
+        "fibre": 0,
+        "sugars": 8,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 210,
+        "iron": 0,
+        "potassium": 360,
+        "vitaminB6": 0,
+        "phosphorus": 160,
+        "caffeine": 45,
+        "calories_from_fat": 50,
+        "energy_kJ": 480,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200500",
+          "label": "Small"
+        },
+        {
+          "id": "200501",
+          "label": "Medium"
+        },
+        {
+          "id": "200502",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200501",
+      "name": "Cappuccino (Medium)",
+      "marketing": "McCafé® Cappuccino",
+      "cats": [
+        "McCafé"
+      ],
+      "n": {
+        "calories": 160,
+        "protein": 9,
+        "carbohydrate": 14,
+        "fat": 7,
+        "sodium": 100,
+        "saturated_fat": 4.5,
+        "trans_fat": 0,
+        "cholesterol": 30,
+        "fibre": 0,
+        "sugars": 11,
+        "addedsugars": 0,
+        "vitaminD": 2,
+        "calcium": 290,
+        "iron": 0,
+        "potassium": 470,
+        "vitaminB6": 0,
+        "phosphorus": 210,
+        "caffeine": 50,
+        "calories_from_fat": 70,
+        "energy_kJ": 650,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200500",
+          "label": "Small"
+        },
+        {
+          "id": "200501",
+          "label": "Medium"
+        },
+        {
+          "id": "200502",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200502",
+      "name": "Cappuccino (Large)",
+      "marketing": "McCafé® Cappuccino",
+      "cats": [
+        "McCafé"
+      ],
+      "n": {
+        "calories": 200,
+        "protein": 11,
+        "carbohydrate": 18,
+        "fat": 10,
+        "sodium": 130,
+        "saturated_fat": 6,
+        "trans_fat": 0,
+        "cholesterol": 40,
+        "fibre": 0,
+        "sugars": 14,
+        "addedsugars": 0,
+        "vitaminD": 2,
+        "calcium": 380,
+        "iron": 0,
+        "potassium": 610,
+        "vitaminB6": 0,
+        "phosphorus": 280,
+        "caffeine": 60,
+        "calories_from_fat": 90,
+        "energy_kJ": 850,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200500",
+          "label": "Small"
+        },
+        {
+          "id": "200501",
+          "label": "Medium"
+        },
+        {
+          "id": "200502",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200543",
+      "name": "Coffee (Medium)",
+      "marketing": "Premium Roast Coffee",
+      "cats": [
+        "McCafé"
+      ],
+      "n": {
+        "calories": 10,
+        "protein": 1,
+        "carbohydrate": 1,
+        "fat": 0,
+        "sodium": 10,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "sugars": 0,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 8,
+        "iron": 0,
+        "potassium": 210,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 40,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200020",
+          "label": "Small"
+        },
+        {
+          "id": "200543",
+          "label": "Medium"
+        },
+        {
+          "id": "200122",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200547",
+      "name": "Mango Pineapple Smoothie (Large)",
+      "marketing": "Mango Pineapple Smoothie",
+      "cats": [
+        "McCafé"
+      ],
+      "n": {
+        "calories": 340,
+        "protein": 4,
+        "carbohydrate": 78,
+        "fat": 1,
+        "sodium": 60,
+        "saturated_fat": 0.5,
+        "trans_fat": 0,
+        "cholesterol": 5,
+        "fibre": 2,
+        "sugars": 72,
+        "addedsugars": 60,
+        "vitaminD": 0,
+        "calcium": 110,
+        "iron": 0.5,
+        "potassium": 370,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 10,
+        "energy_kJ": 1420,
+        "fibre2015": 2
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200155",
+          "label": "Small"
+        },
+        {
+          "id": "200548",
+          "label": "Medium"
+        },
+        {
+          "id": "200547",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200548",
+      "name": "Mango Pineapple Smoothie (Medium)",
+      "marketing": "Mango Pineapple Smoothie",
+      "cats": [
+        "Favorites Under 400"
+      ],
+      "n": {
+        "calories": 250,
+        "protein": 3,
+        "carbohydrate": 57,
+        "fat": 1,
+        "sodium": 45,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 5,
+        "fibre": 1,
+        "sugars": 52,
+        "addedsugars": 43,
+        "vitaminD": 0,
+        "calcium": 80,
+        "iron": 0.5,
+        "potassium": 270,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 5,
+        "energy_kJ": 1030,
+        "fibre2015": 1
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200155",
+          "label": "Small"
+        },
+        {
+          "id": "200548",
+          "label": "Medium"
+        },
+        {
+          "id": "200547",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200562",
+      "name": "Frappe Mocha (Medium)",
+      "marketing": "Mocha Frappé",
+      "cats": [
+        "McCafé"
+      ],
+      "n": {
+        "calories": 490,
+        "protein": 8,
+        "carbohydrate": 72,
+        "fat": 20,
+        "sodium": 140,
+        "saturated_fat": 13,
+        "trans_fat": 0.5,
+        "cholesterol": 75,
+        "fibre": 0,
+        "sugars": 60,
+        "addedsugars": 53,
+        "vitaminD": 0,
+        "calcium": 250,
+        "iron": 0.5,
+        "potassium": 510,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 105,
+        "calories_from_fat": 180,
+        "energy_kJ": 2070,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk",
+        "soy"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200148",
+          "label": "Small"
+        },
+        {
+          "id": "200562",
+          "label": "Medium"
+        },
+        {
+          "id": "200563",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200563",
+      "name": "Frappe Mocha (Large)",
+      "marketing": "Mocha Frappé",
+      "cats": [
+        "McCafé"
+      ],
+      "n": {
+        "calories": 660,
+        "protein": 11,
+        "carbohydrate": 97,
+        "fat": 26,
+        "sodium": 190,
+        "saturated_fat": 17,
+        "trans_fat": 1,
+        "cholesterol": 95,
+        "fibre": 1,
+        "sugars": 81,
+        "addedsugars": 72,
+        "vitaminD": 0,
+        "calcium": 340,
+        "iron": 0.5,
+        "potassium": 690,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 145,
+        "calories_from_fat": 230,
+        "energy_kJ": 2760,
+        "fibre2015": 1
+      },
+      "al": [
+        "milk",
+        "soy"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200148",
+          "label": "Small"
+        },
+        {
+          "id": "200562",
+          "label": "Medium"
+        },
+        {
+          "id": "200563",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200564",
+      "name": "Frappe Caramel (Medium)",
+      "marketing": "Caramel Frappé",
+      "cats": [
+        "McCafé"
+      ],
+      "n": {
+        "calories": 490,
+        "protein": 8,
+        "carbohydrate": 70,
+        "fat": 20,
+        "sodium": 90,
+        "saturated_fat": 13,
+        "trans_fat": 1,
+        "cholesterol": 60,
+        "fibre": 1,
+        "sugars": 62,
+        "addedsugars": 52,
+        "vitaminD": 0,
+        "calcium": 240,
+        "iron": 0,
+        "potassium": 420,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 80,
+        "calories_from_fat": 180,
+        "energy_kJ": 2040,
+        "fibre2015": 1
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200149",
+          "label": "Small"
+        },
+        {
+          "id": "200564",
+          "label": "Medium"
+        },
+        {
+          "id": "200464",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200565",
+      "name": "Strawberry Banana Smoothie (Medium)",
+      "marketing": "Strawberry Banana Smoothie",
+      "cats": [
+        "Favorites Under 400"
+      ],
+      "n": {
+        "calories": 240,
+        "protein": 3,
+        "carbohydrate": 55,
+        "fat": 1,
+        "sodium": 50,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 5,
+        "fibre": 3,
+        "sugars": 49,
+        "addedsugars": 49,
+        "vitaminD": 0,
+        "calcium": 90,
+        "iron": 0.5,
+        "potassium": 320,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 5,
+        "energy_kJ": 1000,
+        "fibre2015": 3
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200152",
+          "label": "Small"
+        },
+        {
+          "id": "200565",
+          "label": "Medium"
+        },
+        {
+          "id": "200566",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200566",
+      "name": "Strawberry Banana Smoothie (Large)",
+      "marketing": "Strawberry Banana Smoothie",
+      "cats": [
+        "McCafé"
+      ],
+      "n": {
+        "calories": 330,
+        "protein": 4,
+        "carbohydrate": 76,
+        "fat": 1,
+        "sodium": 70,
+        "saturated_fat": 0.5,
+        "trans_fat": 0,
+        "cholesterol": 5,
+        "sugars": 68,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 120,
+        "iron": 0.5,
+        "potassium": 440,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 10,
+        "energy_kJ": 1380,
+        "fibre2015": 4
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200152",
+          "label": "Small"
+        },
+        {
+          "id": "200565",
+          "label": "Medium"
+        },
+        {
+          "id": "200566",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200567",
+      "name": "Chicken McNuggets 10 piece",
+      "marketing": "10 Piece Chicken McNuggets®",
+      "cats": [
+        "Chicken and Sandwiches"
+      ],
+      "n": {
+        "calories": 410,
+        "protein": 23,
+        "carbohydrate": 26,
+        "fat": 24,
+        "sodium": 850,
+        "saturated_fat": 4,
+        "trans_fat": 0,
+        "cholesterol": 65,
+        "fibre": 1,
+        "sugars": 0,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 15,
+        "iron": 1,
+        "potassium": 360,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 220,
+        "energy_kJ": 1730,
+        "fibre2015": 1
+      },
+      "al": [
+        "wheat"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200692",
+          "label": "4 piece"
+        },
+        {
+          "id": "200574",
+          "label": "6 piece"
+        },
+        {
+          "id": "200567",
+          "label": "10 piece"
+        },
+        {
+          "id": "200573",
+          "label": "20 piece"
+        },
+        {
+          "id": "200577",
+          "label": "40 piece"
+        }
+      ]
+    },
+    {
+      "id": "200573",
+      "name": "Chicken McNuggets (20 piece)",
+      "marketing": "20 Piece Chicken McNuggets®",
+      "cats": [
+        "Chicken and Sandwiches",
+        "Dollar Menu"
+      ],
+      "n": {
+        "calories": 830,
+        "protein": 46,
+        "carbohydrate": 51,
+        "fat": 49,
+        "sodium": 1700,
+        "saturated_fat": 8,
+        "trans_fat": 0,
+        "cholesterol": 125,
+        "fibre": 2,
+        "sugars": 0,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 35,
+        "iron": 2,
+        "potassium": 730,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 440,
+        "energy_kJ": 3460,
+        "fibre2015": 2
+      },
+      "al": [
+        "wheat"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200692",
+          "label": "4 piece"
+        },
+        {
+          "id": "200574",
+          "label": "6 piece"
+        },
+        {
+          "id": "200567",
+          "label": "10 piece"
+        },
+        {
+          "id": "200573",
+          "label": "20 piece"
+        },
+        {
+          "id": "200577",
+          "label": "40 piece"
+        }
+      ]
+    },
+    {
+      "id": "200574",
+      "name": "Chicken McNuggets® (6 piece)",
+      "marketing": "6 Piece Chicken McNuggets®",
+      "cats": [
+        "Chicken and Sandwiches",
+        "Favorites Under 400",
+        "Happy Meal - Protein",
+        "Mighty Kids Meal - Protein "
+      ],
+      "n": {
+        "calories": 250,
+        "protein": 14,
+        "carbohydrate": 15,
+        "fat": 15,
+        "sodium": 500,
+        "saturated_fat": 2.5,
+        "trans_fat": 0,
+        "cholesterol": 40,
+        "sugars": 0,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 10,
+        "iron": 0.5,
+        "potassium": 220,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 130,
+        "energy_kJ": 1040,
+        "fibre2015": 1
+      },
+      "al": [
+        "wheat"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200692",
+          "label": "4 piece"
+        },
+        {
+          "id": "200574",
+          "label": "6 piece"
+        },
+        {
+          "id": "200567",
+          "label": "10 piece"
+        },
+        {
+          "id": "200573",
+          "label": "20 piece"
+        },
+        {
+          "id": "200577",
+          "label": "40 piece"
+        }
+      ]
+    },
+    {
+      "id": "200577",
+      "name": "Chicken McNuggets (40 piece)",
+      "marketing": "40 Piece Chicken McNuggets®",
+      "cats": [
+        "Chicken and Sandwiches"
+      ],
+      "n": {
+        "calories": 1650,
+        "protein": 92,
+        "carbohydrate": 102,
+        "fat": 98,
+        "sodium": 3400,
+        "saturated_fat": 16,
+        "trans_fat": 0.5,
+        "cholesterol": 255,
+        "fibre": 4,
+        "sugars": 1,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 70,
+        "iron": 4,
+        "potassium": 1450,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 880,
+        "energy_kJ": 6920,
+        "fibre2015": 4
+      },
+      "al": [
+        "wheat"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200692",
+          "label": "4 piece"
+        },
+        {
+          "id": "200574",
+          "label": "6 piece"
+        },
+        {
+          "id": "200567",
+          "label": "10 piece"
+        },
+        {
+          "id": "200573",
+          "label": "20 piece"
+        },
+        {
+          "id": "200577",
+          "label": "40 piece"
+        }
+      ]
+    },
+    {
+      "id": "200609",
+      "name": "Dasani Water",
+      "marketing": "DASANI® Water",
+      "cats": [
+        "Beverages",
+        "Happy Meal - Drinks",
+        "Happy Meal - Drinks",
+        "Happy Meal"
+      ],
+      "n": {
+        "calories": 0,
+        "protein": 0,
+        "carbohydrate": 0,
+        "fat": 0,
+        "sodium": 0,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 0,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 0,
+        "iron": 0,
+        "potassium": 0,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 0,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200612",
+      "name": "Diet Coke (Small)",
+      "marketing": "Diet Coke®",
+      "cats": [
+        "Beverages",
+        "Favorites Under 400",
+        "Meals-Change Drinks",
+        "PM D123 Menu",
+        "D123 Menu"
+      ],
+      "n": {
+        "calories": 0,
+        "protein": 0,
+        "carbohydrate": 0,
+        "fat": 0,
+        "sodium": 50,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "sugars": 0,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 2,
+        "iron": 0,
+        "potassium": 45,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 0,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200640",
+          "label": "Extra Small"
+        },
+        {
+          "id": "200612",
+          "label": "Small"
+        },
+        {
+          "id": "200642",
+          "label": "Medium"
+        },
+        {
+          "id": "200641",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200621",
+      "name": "Strawberry Shake (Medium)",
+      "marketing": "Strawberry Shake",
+      "cats": [
+        "Desserts & Shakes"
+      ],
+      "n": {
+        "calories": 600,
+        "protein": 13,
+        "carbohydrate": 99,
+        "fat": 16,
+        "sodium": 210,
+        "saturated_fat": 10,
+        "trans_fat": 0.5,
+        "cholesterol": 60,
+        "fibre": 0,
+        "sugars": 74,
+        "addedsugars": 59,
+        "vitaminD": 0,
+        "calcium": 460,
+        "iron": 0,
+        "potassium": 650,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 140,
+        "energy_kJ": 2500,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200109",
+          "label": "Small"
+        },
+        {
+          "id": "200621",
+          "label": "Medium"
+        },
+        {
+          "id": "200622",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200622",
+      "name": "Strawberry Shake (Large)",
+      "marketing": "Strawberry Shake",
+      "cats": [
+        "Desserts & Shakes"
+      ],
+      "n": {
+        "calories": 850,
+        "protein": 19,
+        "carbohydrate": 143,
+        "fat": 21,
+        "sodium": 310,
+        "saturated_fat": 13,
+        "trans_fat": 1,
+        "cholesterol": 80,
+        "fibre": 0,
+        "sugars": 107,
+        "addedsugars": 86,
+        "vitaminD": 0,
+        "calcium": 650,
+        "iron": 0,
+        "potassium": 930,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 190,
+        "energy_kJ": 3540,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200109",
+          "label": "Small"
+        },
+        {
+          "id": "200621",
+          "label": "Medium"
+        },
+        {
+          "id": "200622",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200623",
+      "name": "Vanilla Shake (Medium)",
+      "marketing": "Vanilla Shake",
+      "cats": [
+        "Desserts & Shakes"
+      ],
+      "n": {
+        "calories": 570,
+        "protein": 12,
+        "carbohydrate": 97,
+        "fat": 15,
+        "sodium": 260,
+        "saturated_fat": 9,
+        "trans_fat": 0.5,
+        "cholesterol": 60,
+        "fibre": 0,
+        "sugars": 62,
+        "addedsugars": 48,
+        "vitaminD": 0,
+        "calcium": 410,
+        "iron": 0,
+        "potassium": 560,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 130,
+        "energy_kJ": 2400,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200108",
+          "label": "Small"
+        },
+        {
+          "id": "200623",
+          "label": "Medium"
+        },
+        {
+          "id": "200624",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200624",
+      "name": "Vanilla Shake (Large)",
+      "marketing": "Vanilla Shake",
+      "cats": [
+        "Desserts & Shakes"
+      ],
+      "n": {
+        "calories": 780,
+        "protein": 17,
+        "carbohydrate": 133,
+        "fat": 19,
+        "sodium": 360,
+        "saturated_fat": 12,
+        "trans_fat": 1,
+        "cholesterol": 75,
+        "fibre": 0,
+        "sugars": 85,
+        "addedsugars": 67,
+        "vitaminD": 0,
+        "calcium": 570,
+        "iron": 0,
+        "potassium": 780,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 170,
+        "energy_kJ": 3260,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200108",
+          "label": "Small"
+        },
+        {
+          "id": "200623",
+          "label": "Medium"
+        },
+        {
+          "id": "200624",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200626",
+      "name": "Unsweetened Iced Tea (Small)",
+      "marketing": "Unsweetened Iced Tea",
+      "cats": [
+        "Beverages",
+        "D123 Menu"
+      ],
+      "n": {
+        "calories": 0,
+        "protein": 1,
+        "carbohydrate": 0,
+        "fat": 0,
+        "sodium": 10,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "sugars": 0,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 10,
+        "iron": 0,
+        "potassium": 45,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 0,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200660",
+          "label": "Extra Small"
+        },
+        {
+          "id": "200626",
+          "label": "Small"
+        },
+        {
+          "id": "200662",
+          "label": "Medium"
+        },
+        {
+          "id": "200661",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200640",
+      "name": "Diet Coke (Extra Small)",
+      "marketing": "Diet Coke®",
+      "cats": [
+        "Beverages"
+      ],
+      "n": {
+        "calories": 0,
+        "protein": 0,
+        "carbohydrate": 0,
+        "fat": 0,
+        "sodium": 10,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "sugars": 0,
+        "vitaminD": 0,
+        "calcium": 0,
+        "iron": 0,
+        "potassium": 0,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200640",
+          "label": "Extra Small"
+        },
+        {
+          "id": "200612",
+          "label": "Small"
+        },
+        {
+          "id": "200642",
+          "label": "Medium"
+        },
+        {
+          "id": "200641",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200641",
+      "name": "Diet Coke (Large)",
+      "marketing": "Diet Coke®",
+      "cats": [
+        "Beverages",
+        "Meals-Change Drinks"
+      ],
+      "n": {
+        "calories": 0,
+        "protein": 0,
+        "carbohydrate": 1,
+        "fat": 0,
+        "sodium": 20,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "sugars": 0,
+        "vitaminD": 0,
+        "calcium": 0,
+        "iron": 0,
+        "potassium": 0,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200640",
+          "label": "Extra Small"
+        },
+        {
+          "id": "200612",
+          "label": "Small"
+        },
+        {
+          "id": "200642",
+          "label": "Medium"
+        },
+        {
+          "id": "200641",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200642",
+      "name": "Diet Coke (Medium)",
+      "marketing": "Diet Coke®",
+      "cats": [
+        "Beverages",
+        "Meals-Change Drinks"
+      ],
+      "n": {
+        "calories": 0,
+        "protein": 0,
+        "carbohydrate": 0,
+        "fat": 0,
+        "sodium": 15,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "sugars": 0,
+        "vitaminD": 0,
+        "calcium": 0,
+        "iron": 0,
+        "potassium": 0,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200640",
+          "label": "Extra Small"
+        },
+        {
+          "id": "200612",
+          "label": "Small"
+        },
+        {
+          "id": "200642",
+          "label": "Medium"
+        },
+        {
+          "id": "200641",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200660",
+      "name": "Unsweetened Iced Tea (Extra Small)",
+      "marketing": "Unsweetened Iced Tea",
+      "cats": [
+        "Beverages"
+      ],
+      "n": {
+        "calories": 0,
+        "protein": 1,
+        "carbohydrate": 0,
+        "fat": 0,
+        "sodium": 10,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "sugars": 0,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 8,
+        "iron": 0,
+        "potassium": 30,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 0,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200660",
+          "label": "Extra Small"
+        },
+        {
+          "id": "200626",
+          "label": "Small"
+        },
+        {
+          "id": "200662",
+          "label": "Medium"
+        },
+        {
+          "id": "200661",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200661",
+      "name": "Unsweetened Iced Tea (Large)",
+      "marketing": "Unsweetened Iced Tea",
+      "cats": [
+        "Beverages"
+      ],
+      "n": {
+        "calories": 0,
+        "protein": 1,
+        "carbohydrate": 0,
+        "fat": 0,
+        "sodium": 20,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "sugars": 0,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 20,
+        "iron": 0,
+        "potassium": 80,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 0,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200660",
+          "label": "Extra Small"
+        },
+        {
+          "id": "200626",
+          "label": "Small"
+        },
+        {
+          "id": "200662",
+          "label": "Medium"
+        },
+        {
+          "id": "200661",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200662",
+      "name": "Unsweetened Iced Tea (Medium)",
+      "marketing": "Unsweetened Iced Tea",
+      "cats": [
+        "Beverages"
+      ],
+      "n": {
+        "calories": 0,
+        "protein": 1,
+        "carbohydrate": 0,
+        "fat": 0,
+        "sodium": 15,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 0,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 15,
+        "iron": 0,
+        "potassium": 55,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 95,
+        "calories_from_fat": 0,
+        "energy_kJ": 0,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200660",
+          "label": "Extra Small"
+        },
+        {
+          "id": "200626",
+          "label": "Small"
+        },
+        {
+          "id": "200662",
+          "label": "Medium"
+        },
+        {
+          "id": "200661",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200663",
+      "name": "Minute Maid Orange Juice (Large)",
+      "marketing": "Minute Maid® Premium Orange Juice",
+      "cats": [
+        "Beverages"
+      ],
+      "n": {
+        "calories": 270,
+        "protein": 4,
+        "carbohydrate": 65,
+        "fat": 0,
+        "sodium": 65,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 1,
+        "sugars": 58,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 60,
+        "iron": 0.5,
+        "potassium": 1070,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 1150,
+        "fibre2015": 1
+      },
+      "al": [],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200982",
+          "label": "Small"
+        },
+        {
+          "id": "201248",
+          "label": "Medium"
+        },
+        {
+          "id": "200663",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "200692",
+      "name": "Chicken McNuggets® (4 piece)",
+      "marketing": "Chicken McNuggets®",
+      "cats": [
+        "Chicken and Sandwiches",
+        "Happy Meal - Protein",
+        "Happy Meal",
+        "Full Menu Items",
+        "PM D123 Menu",
+        "D123 Menu"
+      ],
+      "n": {
+        "calories": 170,
+        "protein": 9,
+        "carbohydrate": 10,
+        "fat": 10,
+        "sodium": 340,
+        "saturated_fat": 1.5,
+        "trans_fat": 0,
+        "cholesterol": 25,
+        "fibre": 0,
+        "sugars": 0,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 6,
+        "iron": 0.5,
+        "potassium": 150,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 90,
+        "energy_kJ": 690,
+        "fibre2015": 0
+      },
+      "al": [
+        "wheat"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200692",
+          "label": "4 piece"
+        },
+        {
+          "id": "200574",
+          "label": "6 piece"
+        },
+        {
+          "id": "200567",
+          "label": "10 piece"
+        },
+        {
+          "id": "200573",
+          "label": "20 piece"
+        },
+        {
+          "id": "200577",
+          "label": "40 piece"
+        }
+      ]
+    },
+    {
+      "id": "200765",
+      "name": "Quarter Pounder® with Cheese Deluxe",
+      "marketing": "Quarter Pounder®* with Cheese Deluxe",
+      "cats": [
+        "Burgers"
+      ],
+      "n": {
+        "calories": 630,
+        "protein": 30,
+        "carbohydrate": 44,
+        "fat": 37,
+        "sodium": 1210,
+        "saturated_fat": 14,
+        "trans_fat": 1.5,
+        "cholesterol": 105,
+        "fibre": 3,
+        "sugars": 11,
+        "addedsugars": 8,
+        "vitaminD": 0,
+        "calcium": 200,
+        "iron": 4.5,
+        "potassium": 500,
+        "vitaminB6": 0,
+        "phosphorus": 2,
+        "caffeine": 0,
+        "calories_from_fat": 330,
+        "energy_kJ": 2620,
+        "fibre2015": 3
+      },
+      "al": [
+        "wheat",
+        "sesame",
+        "milk",
+        "soy",
+        "egg"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200876",
+      "name": "Egg and Cheese Bagel",
+      "marketing": "Egg and Cheese Bagel",
+      "cats": [
+        "Breakfast"
+      ],
+      "n": {
+        "calories": 520,
+        "protein": 21,
+        "carbohydrate": 55,
+        "fat": 24,
+        "sodium": 1100,
+        "saturated_fat": 10,
+        "trans_fat": 0.5,
+        "cholesterol": 230,
+        "fibre": 2,
+        "sugars": 6,
+        "addedsugars": 2,
+        "vitaminD": 0,
+        "calcium": 210,
+        "iron": 4,
+        "potassium": 200,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 210,
+        "energy_kJ": 2160,
+        "fibre2015": 2
+      },
+      "al": [
+        "wheat",
+        "egg",
+        "milk",
+        "soy"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "200982",
+      "name": "Minute Maid Orange Juice (Small)",
+      "marketing": "Minute Maid® Premium Orange Juice",
+      "cats": [
+        "Beverages"
+      ],
+      "n": {
+        "calories": 150,
+        "protein": 2,
+        "carbohydrate": 36,
+        "fat": 0,
+        "sodium": 35,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 1,
+        "sugars": 32,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 35,
+        "iron": 0.5,
+        "potassium": 590,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 630,
+        "fibre2015": 1
+      },
+      "al": [],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200982",
+          "label": "Small"
+        },
+        {
+          "id": "201248",
+          "label": "Medium"
+        },
+        {
+          "id": "200663",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "201030",
+      "name": "Sausage Egg and Cheese Bagel",
+      "marketing": "Sausage Egg and Cheese Bagel",
+      "cats": [
+        "Breakfast"
+      ],
+      "n": {
+        "calories": 710,
+        "protein": 27,
+        "carbohydrate": 56,
+        "fat": 42,
+        "sodium": 1380,
+        "saturated_fat": 16,
+        "trans_fat": 0.5,
+        "cholesterol": 265,
+        "fibre": 2,
+        "sugars": 6,
+        "addedsugars": 2,
+        "vitaminD": 0,
+        "calcium": 210,
+        "iron": 4.5,
+        "potassium": 290,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 370,
+        "energy_kJ": 2950,
+        "fibre2015": 2
+      },
+      "al": [
+        "wheat",
+        "egg",
+        "milk",
+        "soy"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "201038",
+      "name": "Coffee Decaf (Small)",
+      "marketing": "Coffee Decaf (Small)",
+      "cats": [],
+      "n": {
+        "calories": 5,
+        "protein": 1,
+        "carbohydrate": 1,
+        "fat": 0,
+        "sodium": 10,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 0,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 8,
+        "iron": 0,
+        "potassium": 170,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 5,
+        "calories_from_fat": 0,
+        "energy_kJ": 30,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "201157",
+      "name": "Mayonnaise Packet",
+      "marketing": "Mayonnaise (Package)",
+      "cats": [
+        "Condiments"
+      ],
+      "n": {
+        "calories": 90,
+        "protein": 0,
+        "carbohydrate": 0,
+        "fat": 10,
+        "sodium": 60,
+        "saturated_fat": 1.5,
+        "trans_fat": 0,
+        "cholesterol": 10,
+        "fibre": 0,
+        "sugars": 0,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 0,
+        "iron": 0,
+        "potassium": 0,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 90,
+        "energy_kJ": 380,
+        "fibre2015": 0
+      },
+      "al": [
+        "egg"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "201191",
+      "name": "Coca-Cola (Medium) No Ice",
+      "marketing": "Coca-Cola (Medium) No Ice",
+      "cats": [
+        "Beverages"
+      ],
+      "n": {
+        "calories": 270,
+        "protein": 0,
+        "carbohydrate": 70,
+        "fat": 0,
+        "sodium": 65,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 70,
+        "addedsugars": 70,
+        "vitaminD": 0,
+        "calcium": 0,
+        "iron": 0,
+        "potassium": 10,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 1120,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "201201",
+      "name": "Dr Pepper (Small) No Ice",
+      "marketing": "Dr Pepper (Small) No Ice",
+      "cats": [
+        "Beverages"
+      ],
+      "n": {
+        "calories": 190,
+        "protein": 0,
+        "carbohydrate": 52,
+        "fat": 0,
+        "sodium": 60,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 51,
+        "addedsugars": 51,
+        "vitaminD": 0,
+        "calcium": 0,
+        "iron": 0,
+        "potassium": 0,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 55,
+        "calories_from_fat": 0,
+        "energy_kJ": 800,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "201234",
+      "name": "Medium French Fries",
+      "marketing": "World Famous Fries®",
+      "cats": [
+        "Snacks & Sides",
+        "Favorites Under 400",
+        "Meals-Change Sides"
+      ],
+      "n": {
+        "calories": 320,
+        "protein": 5,
+        "carbohydrate": 43,
+        "fat": 15,
+        "sodium": 260,
+        "saturated_fat": 2,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 4,
+        "sugars": 0,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 15,
+        "iron": 1,
+        "potassium": 650,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 130,
+        "energy_kJ": 1320,
+        "fibre2015": 4
+      },
+      "al": [
+        "wheat",
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200092",
+          "label": "Kids"
+        },
+        {
+          "id": "200066",
+          "label": "Small"
+        },
+        {
+          "id": "201234",
+          "label": "Medium"
+        },
+        {
+          "id": "200083",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "201248",
+      "name": "Minute Maid Orange Juice (Medium)",
+      "marketing": "Minute Maid® Premium Orange Juice",
+      "cats": [
+        "Beverages"
+      ],
+      "n": {
+        "calories": 190,
+        "protein": 3,
+        "carbohydrate": 45,
+        "fat": 0,
+        "sodium": 45,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 1,
+        "sugars": 41,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 45,
+        "iron": 0.5,
+        "potassium": 760,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 810,
+        "fibre2015": 1
+      },
+      "al": [],
+      "may": [],
+      "sizes": [
+        {
+          "id": "200982",
+          "label": "Small"
+        },
+        {
+          "id": "201248",
+          "label": "Medium"
+        },
+        {
+          "id": "200663",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "201256",
+      "name": "Egg and Cheese Biscuit",
+      "marketing": "Egg and Cheese Biscuit",
+      "cats": [
+        "Breakfast"
+      ],
+      "n": {
+        "calories": 390,
+        "protein": 13,
+        "carbohydrate": 39,
+        "fat": 21,
+        "sodium": 1110,
+        "saturated_fat": 11,
+        "trans_fat": 0,
+        "cholesterol": 205,
+        "fibre": 1,
+        "sugars": 3,
+        "addedsugars": 1,
+        "vitaminD": 0,
+        "calcium": 180,
+        "iron": 3,
+        "potassium": 190,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 180,
+        "energy_kJ": 1640,
+        "fibre2015": 1
+      },
+      "al": [
+        "wheat",
+        "milk",
+        "soy",
+        "egg"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "201306",
+      "name": "Bagel Plain",
+      "marketing": "Bagel Plain",
+      "cats": [
+        "Breakfast"
+      ],
+      "n": {
+        "calories": 270,
+        "protein": 9,
+        "carbohydrate": 51,
+        "fat": 3.5,
+        "sodium": 550,
+        "saturated_fat": 0.5,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 2,
+        "sugars": 5,
+        "addedsugars": 2,
+        "vitaminD": 0,
+        "calcium": 15,
+        "iron": 3,
+        "potassium": 80,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 30,
+        "energy_kJ": 1140,
+        "fibre2015": 2
+      },
+      "al": [
+        "wheat"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "201660",
+      "name": "Mustard Packet",
+      "marketing": "Mustard (Package)",
+      "cats": [
+        "Condiments"
+      ],
+      "n": {
+        "calories": 0,
+        "protein": 0,
+        "carbohydrate": 0,
+        "fat": 0,
+        "sodium": 70,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 0,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 4,
+        "iron": 0,
+        "potassium": 10,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 15,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "201677",
+      "name": "Coca-Cola (Small) No Ice",
+      "marketing": "Coca-Cola (Small) No Ice",
+      "cats": [
+        "Beverages"
+      ],
+      "n": {
+        "calories": 200,
+        "protein": 0,
+        "carbohydrate": 53,
+        "fat": 0,
+        "sodium": 50,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 53,
+        "addedsugars": 53,
+        "vitaminD": 0,
+        "calcium": 0,
+        "iron": 0,
+        "potassium": 10,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 850,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "201711",
+      "name": "Sprite (Small) No Ice",
+      "marketing": "Sprite (Small) No Ice",
+      "cats": [
+        "Beverages"
+      ],
+      "n": {
+        "calories": 190,
+        "protein": 0,
+        "carbohydrate": 49,
+        "fat": 0,
+        "sodium": 90,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 49,
+        "addedsugars": 49,
+        "vitaminD": 0,
+        "calcium": 0,
+        "iron": 0,
+        "potassium": 0,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 790,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "201970",
+      "name": "Frozen Fanta Blue Raspberry (Medium)",
+      "marketing": "Frozen Fanta® Blue Raspberry",
+      "cats": [
+        "Beverages"
+      ],
+      "n": {
+        "calories": 110,
+        "protein": 0,
+        "carbohydrate": 31,
+        "fat": 0,
+        "sodium": 10,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 31,
+        "addedsugars": 31,
+        "vitaminD": 0,
+        "calcium": 0,
+        "iron": 0,
+        "potassium": 0,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 480,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": [
+        {
+          "id": "201971",
+          "label": "Small"
+        },
+        {
+          "id": "201970",
+          "label": "Medium"
+        },
+        {
+          "id": "201972",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "201971",
+      "name": "Frozen Fanta Blue Raspberry (Small)",
+      "marketing": "Frozen Fanta® Blue Raspberry",
+      "cats": [
+        "Beverages"
+      ],
+      "n": {
+        "calories": 90,
+        "protein": 0,
+        "carbohydrate": 23,
+        "fat": 0,
+        "sodium": 10,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 23,
+        "addedsugars": 23,
+        "vitaminD": 0,
+        "calcium": 0,
+        "iron": 0,
+        "potassium": 0,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 360,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": [
+        {
+          "id": "201971",
+          "label": "Small"
+        },
+        {
+          "id": "201970",
+          "label": "Medium"
+        },
+        {
+          "id": "201972",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "201972",
+      "name": "Frozen Fanta Blue Raspberry (Large)",
+      "marketing": "Frozen Fanta® Blue Raspberry",
+      "cats": [
+        "Beverages"
+      ],
+      "n": {
+        "calories": 160,
+        "protein": 0,
+        "carbohydrate": 42,
+        "fat": 0,
+        "sodium": 15,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 42,
+        "addedsugars": 42,
+        "vitaminD": 0,
+        "calcium": 0,
+        "iron": 0,
+        "potassium": 0,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 660,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": [
+        {
+          "id": "201971",
+          "label": "Small"
+        },
+        {
+          "id": "201970",
+          "label": "Medium"
+        },
+        {
+          "id": "201972",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "202115",
+      "name": "Hot Tea (Large)",
+      "marketing": "Hot Tea",
+      "cats": [
+        "Beverages"
+      ],
+      "n": {
+        "calories": 15,
+        "protein": 3,
+        "carbohydrate": 0,
+        "fat": 0,
+        "sodium": 10,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 0,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 15,
+        "iron": 0,
+        "potassium": 75,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 50,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": [
+        {
+          "id": "202116",
+          "label": "Small"
+        },
+        {
+          "id": "202764",
+          "label": "Medium"
+        },
+        {
+          "id": "202115",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "202116",
+      "name": "Hot Tea (Small )",
+      "marketing": "Hot Tea",
+      "cats": [
+        "Beverages"
+      ],
+      "n": {
+        "calories": 10,
+        "protein": 2,
+        "carbohydrate": 0,
+        "fat": 0,
+        "sodium": 5,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 0,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 10,
+        "iron": 0,
+        "potassium": 55,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 40,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": [
+        {
+          "id": "202116",
+          "label": "Small"
+        },
+        {
+          "id": "202764",
+          "label": "Medium"
+        },
+        {
+          "id": "202115",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "202140",
+      "name": "Sweet Tea (Small) No Ice",
+      "marketing": "Sweet Tea (Small) No Ice",
+      "cats": [
+        "Beverages"
+      ],
+      "n": {
+        "calories": 170,
+        "protein": 1,
+        "carbohydrate": 42,
+        "fat": 0,
+        "sodium": 15,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 40,
+        "addedsugars": 40,
+        "vitaminD": 0,
+        "calcium": 10,
+        "iron": 0,
+        "potassium": 60,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 95,
+        "calories_from_fat": 0,
+        "energy_kJ": 710,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "202274",
+      "name": "Frozen Coca Cola Classic (Small)",
+      "marketing": "Frozen Coke®",
+      "cats": [
+        "Beverages"
+      ],
+      "n": {
+        "calories": 90,
+        "protein": 0,
+        "carbohydrate": 24,
+        "fat": 0,
+        "sodium": 0,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 24,
+        "addedsugars": 24,
+        "vitaminD": 0,
+        "calcium": 0,
+        "iron": 0,
+        "potassium": 0,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 360,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": [
+        {
+          "id": "202274",
+          "label": "Small"
+        },
+        {
+          "id": "202279",
+          "label": "Medium"
+        },
+        {
+          "id": "202282",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "202279",
+      "name": "Frozen Coca Cola Classic (Medium)",
+      "marketing": "Frozen Coke®",
+      "cats": [
+        "Beverages"
+      ],
+      "n": {
+        "calories": 110,
+        "protein": 0,
+        "carbohydrate": 31,
+        "fat": 0,
+        "sodium": 0,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 31,
+        "addedsugars": 31,
+        "vitaminD": 0,
+        "calcium": 0,
+        "iron": 0,
+        "potassium": 0,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 480,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": [
+        {
+          "id": "202274",
+          "label": "Small"
+        },
+        {
+          "id": "202279",
+          "label": "Medium"
+        },
+        {
+          "id": "202282",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "202282",
+      "name": "Frozen Coca Cola Classic (Large)",
+      "marketing": "Frozen Coke®",
+      "cats": [
+        "Beverages"
+      ],
+      "n": {
+        "calories": 160,
+        "protein": 0,
+        "carbohydrate": 43,
+        "fat": 0,
+        "sodium": 0,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 43,
+        "addedsugars": 43,
+        "vitaminD": 0,
+        "calcium": 0,
+        "iron": 0,
+        "potassium": 0,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 660,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": [
+        {
+          "id": "202274",
+          "label": "Small"
+        },
+        {
+          "id": "202279",
+          "label": "Medium"
+        },
+        {
+          "id": "202282",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "202371",
+      "name": "Americano Coffee (Large)",
+      "marketing": "McCafé® Americano",
+      "cats": [
+        "McCafé"
+      ],
+      "n": {
+        "calories": 5,
+        "protein": 0,
+        "carbohydrate": 1,
+        "fat": 0,
+        "sodium": 15,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 0,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 15,
+        "iron": 0,
+        "potassium": 135,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 75,
+        "calories_from_fat": 0,
+        "energy_kJ": 25,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": [
+        {
+          "id": "202381",
+          "label": "Small"
+        },
+        {
+          "id": "202383",
+          "label": "Medium"
+        },
+        {
+          "id": "202371",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "202381",
+      "name": "Espresso Americano Coffee (Small)",
+      "marketing": "Americano",
+      "cats": [
+        "McCafé"
+      ],
+      "n": {
+        "calories": 0,
+        "protein": 0,
+        "carbohydrate": 1,
+        "fat": 0,
+        "sodium": 10,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 0,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 10,
+        "iron": 0,
+        "potassium": 110,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 60,
+        "calories_from_fat": 0,
+        "energy_kJ": 20,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": [
+        {
+          "id": "202381",
+          "label": "Small"
+        },
+        {
+          "id": "202383",
+          "label": "Medium"
+        },
+        {
+          "id": "202371",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "202383",
+      "name": "Espresso Americano Coffee (Medium)",
+      "marketing": "McCafé® Americano",
+      "cats": [
+        "McCafé"
+      ],
+      "n": {
+        "calories": 5,
+        "protein": 0,
+        "carbohydrate": 1,
+        "fat": 0,
+        "sodium": 10,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 0,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 15,
+        "iron": 0,
+        "potassium": 120,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 65,
+        "calories_from_fat": 0,
+        "energy_kJ": 20,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": [
+        {
+          "id": "202381",
+          "label": "Small"
+        },
+        {
+          "id": "202383",
+          "label": "Medium"
+        },
+        {
+          "id": "202371",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "202764",
+      "name": "Hot Tea (Medium)",
+      "marketing": "Hot Tea",
+      "cats": [
+        "Beverages"
+      ],
+      "n": {
+        "calories": 10,
+        "protein": 3,
+        "carbohydrate": 0,
+        "fat": 0,
+        "sodium": 5,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 0,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 15,
+        "iron": 0,
+        "potassium": 65,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 50,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": [
+        {
+          "id": "202116",
+          "label": "Small"
+        },
+        {
+          "id": "202764",
+          "label": "Medium"
+        },
+        {
+          "id": "202115",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "203082",
+      "name": "Honest Kids Appley Ever After (Box 6 fl oz Drink Box)",
+      "marketing": "Honest Kids® Appley Ever After® Organic Juice Drink",
+      "cats": [
+        "Beverages",
+        "Happy Meal - Drinks",
+        "Happy Meal - Drinks"
+      ],
+      "n": {
+        "calories": 35,
+        "protein": 0,
+        "carbohydrate": 8,
+        "fat": 0,
+        "sodium": 15,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 8,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 0,
+        "iron": 0,
+        "potassium": 75,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 150,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "203087",
+      "name": "Caramel Macchiato (Small)",
+      "marketing": "Caramel Macchiato",
+      "cats": [
+        "McCafé",
+        "AM D123 Menu",
+        "D123 Menu"
+      ],
+      "n": {
+        "calories": 260,
+        "protein": 9,
+        "carbohydrate": 41,
+        "fat": 6,
+        "sodium": 320,
+        "saturated_fat": 4,
+        "trans_fat": 0,
+        "cholesterol": 25,
+        "fibre": 0,
+        "sugars": 35,
+        "addedsugars": 26,
+        "vitaminD": 0,
+        "calcium": 290,
+        "iron": 0,
+        "potassium": 490,
+        "vitaminB6": 0,
+        "phosphorus": 180,
+        "caffeine": 45,
+        "calories_from_fat": 60,
+        "energy_kJ": 1080,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "203087",
+          "label": "Small"
+        },
+        {
+          "id": "203102",
+          "label": "Medium"
+        },
+        {
+          "id": "203088",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "203088",
+      "name": "Caramel Macchiato (Large)",
+      "marketing": "Caramel Macchiato",
+      "cats": [
+        "McCafé"
+      ],
+      "n": {
+        "calories": 400,
+        "protein": 14,
+        "carbohydrate": 62,
+        "fat": 10,
+        "sodium": 490,
+        "saturated_fat": 6,
+        "trans_fat": 0,
+        "cholesterol": 40,
+        "fibre": 0,
+        "sugars": 53,
+        "addedsugars": 38,
+        "vitaminD": 4,
+        "calcium": 470,
+        "iron": 0,
+        "potassium": 770,
+        "vitaminB6": 0,
+        "phosphorus": 290,
+        "caffeine": 65,
+        "calories_from_fat": 90,
+        "energy_kJ": 1660,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "203087",
+          "label": "Small"
+        },
+        {
+          "id": "203102",
+          "label": "Medium"
+        },
+        {
+          "id": "203088",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "203098",
+      "name": "Iced Caramel Macchiato (Medium)",
+      "marketing": "McCafé® Iced Caramel Macchiato",
+      "cats": [
+        "McCafé"
+      ],
+      "n": {
+        "calories": 240,
+        "protein": 8,
+        "carbohydrate": 41,
+        "fat": 6,
+        "sodium": 320,
+        "saturated_fat": 3.5,
+        "trans_fat": 0,
+        "cholesterol": 25,
+        "fibre": 0,
+        "sugars": 35,
+        "addedsugars": 26,
+        "vitaminD": 0,
+        "calcium": 270,
+        "iron": 0,
+        "potassium": 450,
+        "vitaminB6": 0,
+        "phosphorus": 160,
+        "caffeine": 40,
+        "calories_from_fat": 50,
+        "energy_kJ": 1020,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "203275",
+          "label": "Small"
+        },
+        {
+          "id": "203098",
+          "label": "Medium"
+        },
+        {
+          "id": "203109",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "203102",
+      "name": "Caramel Macchiato (Medium)",
+      "marketing": "Caramel Macchiato",
+      "cats": [
+        "McCafé"
+      ],
+      "n": {
+        "calories": 320,
+        "protein": 11,
+        "carbohydrate": 51,
+        "fat": 8,
+        "sodium": 400,
+        "saturated_fat": 5,
+        "trans_fat": 0,
+        "cholesterol": 30,
+        "fibre": 0,
+        "sugars": 44,
+        "addedsugars": 32,
+        "vitaminD": 2,
+        "calcium": 360,
+        "iron": 0,
+        "potassium": 600,
+        "vitaminB6": 0,
+        "phosphorus": 220,
+        "caffeine": 55,
+        "calories_from_fat": 70,
+        "energy_kJ": 1320,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "203087",
+          "label": "Small"
+        },
+        {
+          "id": "203102",
+          "label": "Medium"
+        },
+        {
+          "id": "203088",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "203109",
+      "name": "Iced Caramel Macchiato (Large)",
+      "marketing": "McCafé® Iced Caramel Macchiato",
+      "cats": [
+        "McCafé"
+      ],
+      "n": {
+        "calories": 360,
+        "protein": 12,
+        "carbohydrate": 59,
+        "fat": 9,
+        "sodium": 480,
+        "saturated_fat": 5,
+        "trans_fat": 0,
+        "cholesterol": 35,
+        "fibre": 0,
+        "sugars": 51,
+        "addedsugars": 38,
+        "vitaminD": 2,
+        "calcium": 410,
+        "iron": 0,
+        "potassium": 650,
+        "vitaminB6": 0,
+        "phosphorus": 250,
+        "caffeine": 50,
+        "calories_from_fat": 80,
+        "energy_kJ": 1510,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "203275",
+          "label": "Small"
+        },
+        {
+          "id": "203098",
+          "label": "Medium"
+        },
+        {
+          "id": "203109",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "203275",
+      "name": "Iced Caramel Macchiato (Small)",
+      "marketing": "Iced Caramel Macchiato",
+      "cats": [
+        "McCafé"
+      ],
+      "n": {
+        "calories": 200,
+        "protein": 7,
+        "carbohydrate": 33,
+        "fat": 5,
+        "sodium": 250,
+        "saturated_fat": 3,
+        "trans_fat": 0,
+        "cholesterol": 20,
+        "fibre": 0,
+        "sugars": 28,
+        "addedsugars": 20,
+        "vitaminD": 0,
+        "calcium": 230,
+        "iron": 0,
+        "potassium": 380,
+        "vitaminB6": 0,
+        "phosphorus": 140,
+        "caffeine": 35,
+        "calories_from_fat": 45,
+        "energy_kJ": 850,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": [
+        {
+          "id": "203275",
+          "label": "Small"
+        },
+        {
+          "id": "203098",
+          "label": "Medium"
+        },
+        {
+          "id": "203109",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "id": "203410",
+      "name": "Bacon Quarter Pounder with Cheese",
+      "marketing": "Quarter Pounder®* with Cheese Bacon",
+      "cats": [
+        "Burgers"
+      ],
+      "n": {
+        "calories": 630,
+        "protein": 36,
+        "carbohydrate": 43,
+        "fat": 35,
+        "sodium": 1470,
+        "saturated_fat": 15,
+        "trans_fat": 1.5,
+        "cholesterol": 115,
+        "fibre": 3,
+        "sugars": 10,
+        "addedsugars": 8,
+        "vitaminD": 0,
+        "calcium": 190,
+        "iron": 4.5,
+        "potassium": 490,
+        "vitaminB6": 0,
+        "phosphorus": 2,
+        "caffeine": 0,
+        "calories_from_fat": 310,
+        "energy_kJ": 2620,
+        "fibre2015": 3
+      },
+      "al": [
+        "wheat",
+        "sesame",
+        "milk",
+        "soy"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "203557",
+      "name": "Hi-C Orange (Small) No Ice",
+      "marketing": "Hi-C Orange (Small) No Ice",
+      "cats": [],
+      "n": {
+        "calories": 220,
+        "protein": 0,
+        "carbohydrate": 56,
+        "fat": 0,
+        "sodium": 55,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 56,
+        "addedsugars": 56,
+        "vitaminD": 0,
+        "calcium": 0,
+        "iron": 53.5,
+        "potassium": 20,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 910,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "203745",
+      "name": "Deluxe McCrispy®",
+      "marketing": "Deluxe McCrispy®",
+      "cats": [
+        "Chicken and Sandwiches"
+      ],
+      "n": {
+        "calories": 530,
+        "protein": 27,
+        "carbohydrate": 48,
+        "fat": 26,
+        "sodium": 1050,
+        "saturated_fat": 4,
+        "trans_fat": 0,
+        "cholesterol": 65,
+        "fibre": 2,
+        "sugars": 10,
+        "addedsugars": 7,
+        "vitaminD": 0,
+        "calcium": 30,
+        "iron": 2.5,
+        "potassium": 490,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 230,
+        "energy_kJ": 2210,
+        "fibre2015": 2
+      },
+      "al": [
+        "wheat",
+        "egg"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "203747",
+      "name": "McCrispy®",
+      "marketing": "McCrispy®",
+      "cats": [
+        "Chicken and Sandwiches"
+      ],
+      "n": {
+        "calories": 470,
+        "protein": 26,
+        "carbohydrate": 46,
+        "fat": 20,
+        "sodium": 1140,
+        "saturated_fat": 5,
+        "trans_fat": 0,
+        "cholesterol": 70,
+        "fibre": 1,
+        "sugars": 9,
+        "addedsugars": 7,
+        "vitaminD": 0,
+        "calcium": 30,
+        "iron": 2,
+        "potassium": 420,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 180,
+        "energy_kJ": 1950,
+        "fibre2015": 1
+      },
+      "al": [
+        "wheat",
+        "milk"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "203873",
+      "name": "Spicy Deluxe McCrispy®",
+      "marketing": "Spicy Deluxe McCrispy®",
+      "cats": [
+        "Chicken and Sandwiches"
+      ],
+      "n": {
+        "calories": 530,
+        "protein": 27,
+        "carbohydrate": 49,
+        "fat": 26,
+        "sodium": 1200,
+        "saturated_fat": 4,
+        "trans_fat": 0,
+        "cholesterol": 65,
+        "fibre": 2,
+        "sugars": 10,
+        "addedsugars": 8,
+        "vitaminD": 0,
+        "calcium": 30,
+        "iron": 2.5,
+        "potassium": 510,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 230,
+        "energy_kJ": 2230,
+        "fibre2015": 2
+      },
+      "al": [
+        "wheat",
+        "egg"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "203885",
+      "name": "Iced Coffee (Small)",
+      "marketing": "Iced Coffee (Small)",
+      "cats": [],
+      "n": {
+        "calories": 150,
+        "protein": 1,
+        "carbohydrate": 25,
+        "fat": 5,
+        "sodium": 35,
+        "saturated_fat": 3,
+        "trans_fat": 0,
+        "cholesterol": 15,
+        "fibre": 0,
+        "sugars": 20,
+        "addedsugars": 19,
+        "vitaminD": 0,
+        "calcium": 40,
+        "iron": 0,
+        "potassium": 150,
+        "vitaminB6": 0,
+        "phosphorus": 25,
+        "caffeine": 85,
+        "calories_from_fat": 45,
+        "energy_kJ": 620,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "203901",
+      "name": "Spicy McCrispy®",
+      "marketing": "Spicy McCrispy®",
+      "cats": [
+        "Chicken and Sandwiches",
+        "Full Menu Items"
+      ],
+      "n": {
+        "calories": 530,
+        "protein": 27,
+        "carbohydrate": 48,
+        "fat": 26,
+        "sodium": 1320,
+        "saturated_fat": 4,
+        "trans_fat": 0,
+        "cholesterol": 65,
+        "fibre": 2,
+        "sugars": 9,
+        "addedsugars": 8,
+        "vitaminD": 0,
+        "calcium": 30,
+        "iron": 2.5,
+        "potassium": 440,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 230,
+        "energy_kJ": 2210,
+        "fibre2015": 2
+      },
+      "al": [
+        "wheat",
+        "egg"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "203957",
+      "name": "McDonald's Lemonade (16 Oz.)",
+      "marketing": "McDonald's Lemonade (16 Oz.)",
+      "cats": [],
+      "n": {
+        "calories": 120,
+        "protein": 0,
+        "carbohydrate": 31,
+        "fat": 0,
+        "sodium": 5,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 29,
+        "addedsugars": 24,
+        "vitaminD": 0,
+        "calcium": 15,
+        "iron": 0,
+        "potassium": 45,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 520,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204159",
+      "name": "Frozen Hawaiian Punch (small)",
+      "marketing": "Frozen Hawaiian Punch (small)",
+      "cats": [],
+      "n": {
+        "calories": 60,
+        "protein": 0,
+        "carbohydrate": 15,
+        "fat": 0,
+        "sodium": 20,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 15,
+        "addedsugars": 15,
+        "vitaminD": 0,
+        "calcium": 0,
+        "iron": 0,
+        "potassium": 0,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 0,
+        "energy_kJ": 240,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204171",
+      "name": "Iced Bold Blend Coffee Black (small)",
+      "marketing": "Iced Bold Blend Coffee Black (small)",
+      "cats": [],
+      "n": {
+        "calories": 5,
+        "protein": 1,
+        "carbohydrate": 1,
+        "fat": 0,
+        "sodium": 10,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 0,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 8,
+        "iron": 0,
+        "potassium": 135,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 110,
+        "calories_from_fat": 0,
+        "energy_kJ": 25,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204189",
+      "name": "Latte Iced Caramel (small)",
+      "marketing": "Latte Iced Caramel (small)",
+      "cats": [],
+      "n": {
+        "calories": 180,
+        "protein": 6,
+        "carbohydrate": 28,
+        "fat": 4.5,
+        "sodium": 240,
+        "saturated_fat": 2.5,
+        "trans_fat": 0,
+        "cholesterol": 20,
+        "fibre": 0,
+        "sugars": 25,
+        "addedsugars": 18,
+        "vitaminD": 0,
+        "calcium": 210,
+        "iron": 0,
+        "potassium": 360,
+        "vitaminB6": 0,
+        "phosphorus": 130,
+        "caffeine": 35,
+        "calories_from_fat": 40,
+        "energy_kJ": 750,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204193",
+      "name": "Mocha Iced (small)",
+      "marketing": "Mocha Iced (small)",
+      "cats": [],
+      "n": {
+        "calories": 270,
+        "protein": 7,
+        "carbohydrate": 39,
+        "fat": 10,
+        "sodium": 115,
+        "saturated_fat": 6,
+        "trans_fat": 0,
+        "cholesterol": 35,
+        "fibre": 1,
+        "sugars": 33,
+        "addedsugars": 24,
+        "vitaminD": 0,
+        "calcium": 220,
+        "iron": 0.5,
+        "potassium": 390,
+        "vitaminB6": 0,
+        "phosphorus": 140,
+        "caffeine": 35,
+        "calories_from_fat": 90,
+        "energy_kJ": 1130,
+        "fibre2015": 1
+      },
+      "al": [
+        "milk",
+        "soy"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204196",
+      "name": "Latte (small)",
+      "marketing": "Latte (small)",
+      "cats": [],
+      "n": {
+        "calories": 140,
+        "protein": 8,
+        "carbohydrate": 13,
+        "fat": 7,
+        "sodium": 90,
+        "saturated_fat": 4,
+        "trans_fat": 0,
+        "cholesterol": 25,
+        "fibre": 0,
+        "sugars": 10,
+        "addedsugars": 0,
+        "vitaminD": 2,
+        "calcium": 260,
+        "iron": 0,
+        "potassium": 430,
+        "vitaminB6": 0,
+        "phosphorus": 190,
+        "caffeine": 45,
+        "calories_from_fat": 60,
+        "energy_kJ": 590,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204201",
+      "name": "Mocha (small)",
+      "marketing": "Mocha (small)",
+      "cats": [],
+      "n": {
+        "calories": 290,
+        "protein": 8,
+        "carbohydrate": 45,
+        "fat": 9,
+        "sodium": 125,
+        "saturated_fat": 5,
+        "trans_fat": 0,
+        "cholesterol": 30,
+        "fibre": 1,
+        "sugars": 39,
+        "addedsugars": 29,
+        "vitaminD": 0,
+        "calcium": 240,
+        "iron": 0.5,
+        "potassium": 440,
+        "vitaminB6": 0,
+        "phosphorus": 160,
+        "caffeine": 45,
+        "calories_from_fat": 80,
+        "energy_kJ": 1210,
+        "fibre2015": 1
+      },
+      "al": [
+        "milk",
+        "soy"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204205",
+      "name": "Iced Caramel Coffee (small)",
+      "marketing": "Iced Caramel Coffee (small)",
+      "cats": [],
+      "n": {
+        "calories": 150,
+        "protein": 2,
+        "carbohydrate": 23,
+        "fat": 5,
+        "sodium": 210,
+        "saturated_fat": 3,
+        "trans_fat": 0,
+        "cholesterol": 15,
+        "fibre": 0,
+        "sugars": 19,
+        "addedsugars": 18,
+        "vitaminD": 0,
+        "calcium": 70,
+        "iron": 0,
+        "potassium": 200,
+        "vitaminB6": 0,
+        "phosphorus": 25,
+        "caffeine": 85,
+        "calories_from_fat": 45,
+        "energy_kJ": 610,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204206",
+      "name": "Hot Chocolate (small)",
+      "marketing": "Hot Chocolate (small)",
+      "cats": [],
+      "n": {
+        "calories": 360,
+        "protein": 11,
+        "carbohydrate": 51,
+        "fat": 12,
+        "sodium": 170,
+        "saturated_fat": 8,
+        "trans_fat": 0,
+        "cholesterol": 45,
+        "fibre": 1,
+        "sugars": 45,
+        "addedsugars": 29,
+        "vitaminD": 2,
+        "calcium": 380,
+        "iron": 0.5,
+        "potassium": 550,
+        "vitaminB6": 0,
+        "phosphorus": 270,
+        "caffeine": 0,
+        "calories_from_fat": 110,
+        "energy_kJ": 1510,
+        "fibre2015": 1
+      },
+      "al": [
+        "milk",
+        "soy"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204208",
+      "name": "Latte Caramel (small)",
+      "marketing": "Latte Caramel (small)",
+      "cats": [],
+      "n": {
+        "calories": 250,
+        "protein": 9,
+        "carbohydrate": 39,
+        "fat": 7,
+        "sodium": 320,
+        "saturated_fat": 4,
+        "trans_fat": 0,
+        "cholesterol": 25,
+        "fibre": 0,
+        "sugars": 34,
+        "addedsugars": 24,
+        "vitaminD": 0,
+        "calcium": 300,
+        "iron": 0,
+        "potassium": 500,
+        "vitaminB6": 0,
+        "phosphorus": 190,
+        "caffeine": 45,
+        "calories_from_fat": 60,
+        "energy_kJ": 1040,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204209",
+      "name": "Latte French Vanilla (small)",
+      "marketing": "Latte French Vanilla (small)",
+      "cats": [],
+      "n": {
+        "calories": 250,
+        "protein": 8,
+        "carbohydrate": 41,
+        "fat": 6,
+        "sodium": 90,
+        "saturated_fat": 4,
+        "trans_fat": 0,
+        "cholesterol": 25,
+        "fibre": 0,
+        "sugars": 30,
+        "addedsugars": 20,
+        "vitaminD": 0,
+        "calcium": 250,
+        "iron": 0,
+        "potassium": 430,
+        "vitaminB6": 0,
+        "phosphorus": 190,
+        "caffeine": 45,
+        "calories_from_fat": 60,
+        "energy_kJ": 1050,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204219",
+      "name": "Iced French Vanilla Coffee (small)",
+      "marketing": "Iced French Vanilla Coffee (small)",
+      "cats": [],
+      "n": {
+        "calories": 150,
+        "protein": 1,
+        "carbohydrate": 25,
+        "fat": 5,
+        "sodium": 35,
+        "saturated_fat": 3,
+        "trans_fat": 0,
+        "cholesterol": 15,
+        "fibre": 0,
+        "sugars": 17,
+        "addedsugars": 15,
+        "vitaminD": 0,
+        "calcium": 40,
+        "iron": 0,
+        "potassium": 150,
+        "vitaminB6": 0,
+        "phosphorus": 25,
+        "caffeine": 85,
+        "calories_from_fat": 45,
+        "energy_kJ": 620,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204221",
+      "name": "Latte Iced (small)",
+      "marketing": "Latte Iced (small)",
+      "cats": [],
+      "n": {
+        "calories": 80,
+        "protein": 5,
+        "carbohydrate": 8,
+        "fat": 4,
+        "sodium": 60,
+        "saturated_fat": 2.5,
+        "trans_fat": 0,
+        "cholesterol": 15,
+        "fibre": 0,
+        "sugars": 6,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 160,
+        "iron": 0,
+        "potassium": 290,
+        "vitaminB6": 0,
+        "phosphorus": 110,
+        "caffeine": 45,
+        "calories_from_fat": 35,
+        "energy_kJ": 360,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204377",
+      "name": "Mccrispy Signature Creamy Chili Sauce",
+      "marketing": "Mccrispy Signature Creamy Chili Sauce",
+      "cats": [],
+      "n": {
+        "calories": 110,
+        "protein": 0,
+        "carbohydrate": 3,
+        "fat": 11,
+        "sodium": 250,
+        "saturated_fat": 2,
+        "trans_fat": 0,
+        "cholesterol": 10,
+        "fibre": 0,
+        "sugars": 2,
+        "addedsugars": 2,
+        "vitaminD": 0,
+        "calcium": 4,
+        "iron": 0,
+        "potassium": 25,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 100,
+        "energy_kJ": 470,
+        "fibre2015": 0
+      },
+      "al": [
+        "egg",
+        "wheat",
+        "soy",
+        "sesame"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204386",
+      "name": "Mccrispy Strips (3 Piece)",
+      "marketing": "Mccrispy Strips (3 Piece)",
+      "cats": [],
+      "n": {
+        "calories": 400,
+        "protein": 31,
+        "carbohydrate": 24,
+        "fat": 20,
+        "sodium": 1320,
+        "saturated_fat": 2,
+        "trans_fat": 0,
+        "cholesterol": 90,
+        "fibre": 2,
+        "sugars": 1,
+        "addedsugars": 0,
+        "vitaminD": 0,
+        "calcium": 10,
+        "iron": 1,
+        "potassium": 650,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 180,
+        "energy_kJ": 1660,
+        "fibre2015": 1
+      },
+      "al": [
+        "wheat"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204401",
+      "name": "Snack Wrap Mccrispy Ranch",
+      "marketing": "Snack Wrap Mccrispy Ranch",
+      "cats": [
+        "Snack Wraps"
+      ],
+      "n": {
+        "calories": 400,
+        "protein": 17,
+        "carbohydrate": 32,
+        "fat": 23,
+        "sodium": 970,
+        "saturated_fat": 6,
+        "trans_fat": 0,
+        "cholesterol": 45,
+        "fibre": 1,
+        "sugars": 3,
+        "addedsugars": 1,
+        "vitaminD": 0,
+        "calcium": 130,
+        "iron": 2,
+        "potassium": 310,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 210,
+        "energy_kJ": 1690,
+        "fibre2015": 1
+      },
+      "al": [
+        "wheat",
+        "milk"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204402",
+      "name": "Snack Wrap Mccrispy Spicy",
+      "marketing": "Snack Wrap Mccrispy Spicy",
+      "cats": [
+        "Snack Wraps"
+      ],
+      "n": {
+        "calories": 390,
+        "protein": 17,
+        "carbohydrate": 32,
+        "fat": 22,
+        "sodium": 1000,
+        "saturated_fat": 6,
+        "trans_fat": 0,
+        "cholesterol": 50,
+        "fibre": 2,
+        "sugars": 2,
+        "addedsugars": 1,
+        "vitaminD": 0,
+        "calcium": 130,
+        "iron": 2,
+        "potassium": 300,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 200,
+        "energy_kJ": 1650,
+        "fibre2015": 1
+      },
+      "al": [
+        "wheat",
+        "egg",
+        "milk"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204452",
+      "name": "Sprite Berry Blast 16 Oz",
+      "marketing": "Sprite Berry Blast",
+      "cats": [],
+      "n": {
+        "calories": 240,
+        "protein": 0,
+        "carbohydrate": 47,
+        "fat": 6,
+        "sodium": 65,
+        "saturated_fat": 0.5,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 45,
+        "addedsugars": 45,
+        "vitaminD": 0,
+        "calcium": 4,
+        "iron": 0,
+        "potassium": 25,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 60,
+        "energy_kJ": 1010,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204472",
+      "name": "Strawberry Watermelon Lemonade Refresher 16 Oz",
+      "marketing": "Strawberry Watermelon Lemonade Refresher",
+      "cats": [],
+      "n": {
+        "calories": 160,
+        "protein": 0,
+        "carbohydrate": 36,
+        "fat": 0,
+        "sodium": 40,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 34,
+        "addedsugars": 30,
+        "vitaminD": 0,
+        "calcium": 20,
+        "iron": 0.5,
+        "potassium": 115,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 45,
+        "calories_from_fat": 0,
+        "energy_kJ": 650,
+        "fibre2015": 1
+      },
+      "al": [],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204487",
+      "name": "Mango Pineapple Lemonade Refresher 16 Oz",
+      "marketing": "Mango Pineapple Lemonade Refresher",
+      "cats": [],
+      "n": {
+        "calories": 180,
+        "protein": 0,
+        "carbohydrate": 43,
+        "fat": 0,
+        "sodium": 40,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 39,
+        "addedsugars": 34,
+        "vitaminD": 0,
+        "calcium": 90,
+        "iron": 0,
+        "potassium": 115,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 45,
+        "calories_from_fat": 0,
+        "energy_kJ": 770,
+        "fibre2015": 0
+      },
+      "al": [],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204498",
+      "name": "Red Bull Dragonberry Energizer 22 Oz",
+      "marketing": "Red Bull Dragonberry Energizer 22 Oz",
+      "cats": [],
+      "n": {
+        "calories": 200,
+        "protein": 0,
+        "carbohydrate": 50,
+        "fat": 0,
+        "sodium": 115,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 1,
+        "sugars": 48,
+        "addedsugars": 46,
+        "vitaminD": 0,
+        "calcium": 10,
+        "iron": 0,
+        "potassium": 90,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 80,
+        "calories_from_fat": 0,
+        "energy_kJ": 850,
+        "fibre2015": 1
+      },
+      "al": [],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204618",
+      "name": "Blackberry Passion Fruit Lemonade Refresher 16 Oz",
+      "marketing": "Blackberry Passion Fruit Lemonade Refresher",
+      "cats": [],
+      "n": {
+        "calories": 170,
+        "protein": 1,
+        "carbohydrate": 40,
+        "fat": 0,
+        "sodium": 40,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 1,
+        "sugars": 35,
+        "addedsugars": 30,
+        "vitaminD": 0,
+        "calcium": 20,
+        "iron": 0.5,
+        "potassium": 180,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 45,
+        "calories_from_fat": 0,
+        "energy_kJ": 700,
+        "fibre2015": 1
+      },
+      "al": [],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204626",
+      "name": "Orange Dream with Hi-C Small",
+      "marketing": "Orange Dream with Hi-C Small",
+      "cats": [],
+      "n": {
+        "calories": 260,
+        "protein": 0,
+        "carbohydrate": 53,
+        "fat": 6,
+        "sodium": 45,
+        "saturated_fat": 0.5,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 49,
+        "addedsugars": 48,
+        "vitaminD": 0,
+        "calcium": 6,
+        "iron": 26.5,
+        "potassium": 45,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 60,
+        "energy_kJ": 1110,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204630",
+      "name": "Dirty Dr. Pepper 16 Oz",
+      "marketing": "Dirty Dr. Pepper",
+      "cats": [],
+      "n": {
+        "calories": 250,
+        "protein": 0,
+        "carbohydrate": 51,
+        "fat": 6,
+        "sodium": 45,
+        "saturated_fat": 0.5,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 47,
+        "addedsugars": 46,
+        "vitaminD": 0,
+        "calcium": 6,
+        "iron": 0,
+        "potassium": 30,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 25,
+        "calories_from_fat": 60,
+        "energy_kJ": 1050,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204688",
+      "name": "Red Bull Zero Sugar Dragonberry Energizer Medium",
+      "marketing": "Red Bull Zero Sugar Dragonberry Energizer Medium",
+      "cats": [],
+      "n": {
+        "calories": 100,
+        "protein": 0,
+        "carbohydrate": 29,
+        "fat": 0,
+        "sodium": 35,
+        "saturated_fat": 0,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 1,
+        "sugars": 24,
+        "addedsugars": 22,
+        "vitaminD": 0,
+        "calcium": 10,
+        "iron": 0,
+        "potassium": 60,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 80,
+        "calories_from_fat": 0,
+        "energy_kJ": 440,
+        "fibre2015": 1
+      },
+      "al": [],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204709",
+      "name": "Reduced Sugar Vanilla Swirl with Diet Coke Small",
+      "marketing": "Reduced Sugar Vanilla Swirl with Diet Coke Small",
+      "cats": [],
+      "n": {
+        "calories": 150,
+        "protein": 0,
+        "carbohydrate": 25,
+        "fat": 6,
+        "sodium": 45,
+        "saturated_fat": 0.5,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 23,
+        "addedsugars": 23,
+        "vitaminD": 0,
+        "calcium": 6,
+        "iron": 0,
+        "potassium": 60,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 60,
+        "energy_kJ": 640,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204716",
+      "name": "Orange Dream with Fanta Small",
+      "marketing": "Orange Dream with Fanta Small",
+      "cats": [],
+      "n": {
+        "calories": 250,
+        "protein": 0,
+        "carbohydrate": 51,
+        "fat": 6,
+        "sodium": 40,
+        "saturated_fat": 0.5,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 49,
+        "addedsugars": 49,
+        "vitaminD": 0,
+        "calcium": 6,
+        "iron": 0,
+        "potassium": 45,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 60,
+        "energy_kJ": 1060,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204717",
+      "name": "Vanilla Swirl With Coke Small",
+      "marketing": "Vanilla Swirl With Coke Small",
+      "cats": [],
+      "n": {
+        "calories": 260,
+        "protein": 0,
+        "carbohydrate": 53,
+        "fat": 6,
+        "sodium": 40,
+        "saturated_fat": 0.5,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 49,
+        "addedsugars": 48,
+        "vitaminD": 0,
+        "calcium": 6,
+        "iron": 0,
+        "potassium": 35,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 60,
+        "energy_kJ": 1080,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204722",
+      "name": "Red Bull Cranberry Splash Energizer Medium",
+      "marketing": "Red Bull Cranberry Splash Energizer Medium",
+      "cats": [],
+      "n": {
+        "calories": 300,
+        "protein": 0,
+        "carbohydrate": 56,
+        "fat": 7,
+        "sodium": 120,
+        "saturated_fat": 0.5,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 53,
+        "addedsugars": 53,
+        "vitaminD": 0,
+        "calcium": 8,
+        "iron": 0,
+        "potassium": 60,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 80,
+        "calories_from_fat": 70,
+        "energy_kJ": 1240,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204723",
+      "name": "Reduced Sugar Red Bull Cranberry Splash Energizer Medium",
+      "marketing": "Reduced Sugar Red Bull Cranberry Splash Energizer Medium",
+      "cats": [],
+      "n": {
+        "calories": 200,
+        "protein": 0,
+        "carbohydrate": 34,
+        "fat": 7,
+        "sodium": 45,
+        "saturated_fat": 0.5,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 27,
+        "addedsugars": 27,
+        "vitaminD": 0,
+        "calcium": 8,
+        "iron": 0,
+        "potassium": 60,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 80,
+        "calories_from_fat": 70,
+        "energy_kJ": 830,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204729",
+      "name": "Frosted Cranberry Splash With Sprite Small",
+      "marketing": "Frosted Cranberry Splash With Sprite Small",
+      "cats": [],
+      "n": {
+        "calories": 260,
+        "protein": 0,
+        "carbohydrate": 51,
+        "fat": 6,
+        "sodium": 70,
+        "saturated_fat": 0.5,
+        "trans_fat": 0,
+        "cholesterol": 0,
+        "fibre": 0,
+        "sugars": 49,
+        "addedsugars": 49,
+        "vitaminD": 0,
+        "calcium": 6,
+        "iron": 0,
+        "potassium": 45,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 0,
+        "calories_from_fat": 60,
+        "energy_kJ": 1100,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204734",
+      "name": "Cookie Butter Latte Small",
+      "marketing": "Cookie Butter Latte Small",
+      "cats": [],
+      "n": {
+        "calories": 360,
+        "protein": 8,
+        "carbohydrate": 48,
+        "fat": 15,
+        "sodium": 350,
+        "saturated_fat": 9,
+        "trans_fat": 0.5,
+        "cholesterol": 65,
+        "fibre": 0,
+        "sugars": 41,
+        "addedsugars": 30,
+        "vitaminD": 0,
+        "calcium": 280,
+        "iron": 0,
+        "potassium": 470,
+        "vitaminB6": 0,
+        "phosphorus": 190,
+        "caffeine": 0,
+        "calories_from_fat": 130,
+        "energy_kJ": 1500,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204736",
+      "name": "Cookie Butter Iced Coffee Small",
+      "marketing": "Cookie Butter Iced Coffee Small",
+      "cats": [],
+      "n": {
+        "calories": 250,
+        "protein": 2,
+        "carbohydrate": 32,
+        "fat": 13,
+        "sodium": 240,
+        "saturated_fat": 8,
+        "trans_fat": 0.5,
+        "cholesterol": 55,
+        "fibre": 0,
+        "sugars": 26,
+        "addedsugars": 24,
+        "vitaminD": 0,
+        "calcium": 60,
+        "iron": 0,
+        "potassium": 240,
+        "vitaminB6": 0,
+        "phosphorus": 25,
+        "caffeine": 0,
+        "calories_from_fat": 110,
+        "energy_kJ": 1060,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204738",
+      "name": "Cookie Butter Frappe",
+      "marketing": "Cookie Butter Frappe",
+      "cats": [],
+      "n": {
+        "calories": 540,
+        "protein": 7,
+        "carbohydrate": 80,
+        "fat": 21,
+        "sodium": 270,
+        "saturated_fat": 13,
+        "trans_fat": 1,
+        "cholesterol": 80,
+        "fibre": 1,
+        "sugars": 72,
+        "addedsugars": 63,
+        "vitaminD": 0,
+        "calcium": 190,
+        "iron": 0,
+        "potassium": 360,
+        "vitaminB6": 0,
+        "phosphorus": 0,
+        "caffeine": 70,
+        "calories_from_fat": 190,
+        "energy_kJ": 2250,
+        "fibre2015": 1
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": []
+    },
+    {
+      "id": "204744",
+      "name": "Cookie Butter Iced Latte Small",
+      "marketing": "Cookie Butter Iced Latte Small",
+      "cats": [],
+      "n": {
+        "calories": 330,
+        "protein": 8,
+        "carbohydrate": 41,
+        "fat": 15,
+        "sodium": 300,
+        "saturated_fat": 9,
+        "trans_fat": 0.5,
+        "cholesterol": 65,
+        "fibre": 0,
+        "sugars": 35,
+        "addedsugars": 24,
+        "vitaminD": 0,
+        "calcium": 280,
+        "iron": 0,
+        "potassium": 460,
+        "vitaminB6": 0,
+        "phosphorus": 190,
+        "caffeine": 0,
+        "calories_from_fat": 130,
+        "energy_kJ": 1380,
+        "fibre2015": 0
+      },
+      "al": [
+        "milk"
+      ],
+      "may": [],
+      "sizes": []
+    }
+  ]
+}

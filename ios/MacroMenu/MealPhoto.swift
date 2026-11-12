@@ -211,14 +211,16 @@ enum MealPhoto {
         "bettys": "betty", "bettys burgers": "betty", "betty's burgers": "betty", "fiveguys": "fiveguys", "five guys": "fiveguys", "crust": "crust", "crust pizza": "crust",
         "donutking": "donutking", "donut king": "donutking", "michels": "michels", "michel's": "michels", "michels patisserie": "michels",
         "brumbys": "brumbys", "brumby's": "brumbys", "soulorigin": "soul", "soul origin": "soul", "rolld": "rolld", "roll'd": "rolld", "thisbowl": "thisbowl", "fishbowl": "thisbowl",
+        "chickfila": "us-cfa", "chick fil a": "us-cfa", "wendys": "us-wendys", "taco bell": "us-tacobell", "tacobell": "us-tacobell",
+        "panda express": "us-panda", "pandaexpress": "us-panda",
     ]
 
     /// The restaurant a brand names, if it's one Leanr has: a known nickname first, then a close match to the chain's name.
     static func chain(for brand: String?, chainNames: [String: String]) -> String? {
         guard let brand, !brand.trimmingCharacters(in: .whitespaces).isEmpty else { return nil }
         let letters = brand.lowercased().filter { $0.isLetter || $0 == " " }.trimmingCharacters(in: .whitespaces)
-        if let id = brandAliases[letters] ?? brandAliases[letters.replacingOccurrences(of: " ", with: "")],
-           id != Food.everyday, chainNames[id] != nil { return id }
+        if let written = brandAliases[letters] ?? brandAliases[letters.replacingOccurrences(of: " ", with: "")],
+           written != Food.everyday, let id = MenuRegion.chain(written, in: chainNames) { return id }
         return chainNames.sorted { $0.key < $1.key }.first {
             $0.key != Food.everyday && (FoodSearch.score($0.value, query: brand) == 0 || FoodSearch.score(brand, query: $0.value) == 0)
         }?.key

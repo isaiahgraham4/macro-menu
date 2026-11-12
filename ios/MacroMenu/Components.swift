@@ -151,7 +151,7 @@ struct SourcesView: View {
     @Environment(AppStore.self) private var store
     var body: some View {
         LeanrList {
-            Section { Text("Bundled Australian menu snapshot from 24 September 2026. Missing nutrients stay unknown. Custom orders and recipes are estimates based on their ingredients.") }
+            Section { Text("\(store.region.menuNote) Missing nutrients stay unknown. Custom orders and recipes are estimates based on their ingredients.") }
             ForEach(store.catalog.chains.filter { $0.id != "mine" }) { chain in
                 Section(chain.name) {
                     Text(chain.src ?? "").font(.roboto(.subheadline))

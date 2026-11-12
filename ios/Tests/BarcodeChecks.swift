@@ -70,9 +70,10 @@ func barcodeChecks() throws {
     // Searching by name: only letters and numbers are sent, and only complete, sensible products come back once each.
     assert(ProductSearch.terms("  Tim Tam: \"dark\" OR * ") == "tim tam dark or")
     assert(ProductSearch.terms("!!!").isEmpty)
-    let searchURL = ProductSearch.url("tim tam", australia: true).absoluteString
+    let searchURL = ProductSearch.url("tim tam", country: "en:australia").absoluteString
     assert(searchURL.hasPrefix("https://search.openfoodfacts.org/search?") && searchURL.contains("en:australia"))
-    assert(!ProductSearch.url("tim tam", australia: false).absoluteString.contains("australia"))
+    assert(!ProductSearch.url("tim tam", country: nil).absoluteString.contains("australia"))
+    assert(ProductSearch.url("oreo", country: MenuRegion.unitedStates.openFoodFactsCountry).absoluteString.contains("en:united-states"))
     let hits = try ProductSearch.parse(Data(#"""
     {"hits":[
       {"code":"9310072000817","product_name":"Tim Tam","brands":["Arnott's"],"quantity":"200 g","nutriments":{"energy-kj_100g":2180,"proteins_100g":4.4,"fat_100g":26}},

@@ -3,7 +3,7 @@ import MapKit
 import CoreLocation
 import UIKit
 
-/// How to find a chain in Apple Maps and open its Australian ordering app.
+/// How to find a chain in Apple Maps and open its ordering app in that country's App Store.
 struct ChainPlace: Sendable {
     /// Apple Maps search text.
     let query: String
@@ -15,10 +15,12 @@ struct ChainPlace: Sendable {
     /// opens the app when it's installed. Chains without one go to their App Store page, which shows
     /// "Open" when the app is installed.
     let appLink: URL?
+    /// The App Store country the app id is from.
+    var store = "au"
 
     var launchTitle: String { appLink == nil ? "\(appName) on App Store" : "Open \(appName)" }
 
-    var storeURL: URL { URL(string: "https://apps.apple.com/au/app/id\(appStoreID)")! }
+    var storeURL: URL { URL(string: "https://apps.apple.com/\(store)/app/id\(appStoreID)")! }
     func matches(_ name: String?) -> Bool {
         let name = (name ?? "").lowercased()
         return match.contains { name.contains($0) }
@@ -51,6 +53,13 @@ struct ChainPlace: Sendable {
         "thisbowl": ChainPlace(query: "THISBOWL", match: ["thisbowl", "this bowl", "fishbowl"], appName: "THISBOWL", appStoreID: 6465208456, appLink: nil),
         "coles": ChainPlace(query: "Coles Supermarket", match: ["coles"], appName: "Coles", appStoreID: 529118855, appLink: nil),
         "woolworths": ChainPlace(query: "Woolworths", match: ["woolworths"], appName: "Woolworths", appStoreID: 975089690, appLink: nil),
+        // US menu (`MenuRegion.unitedStates`). App Store ids are from the US store (checked 13 Nov 2026). No universal links yet,
+        // so they open the App Store page, which shows "Open" when the app is installed.
+        "us-mcd": ChainPlace(query: "McDonald's", match: ["mcdonald"], appName: "McDonald's", appStoreID: 922103212, appLink: nil, store: "us"),
+        "us-cfa": ChainPlace(query: "Chick-fil-A", match: ["chick-fil-a", "chick fil a", "chickfila"], appName: "Chick-fil-A", appStoreID: 488818252, appLink: nil, store: "us"),
+        "us-wendys": ChainPlace(query: "Wendy's", match: ["wendy's", "wendys", "wendy’s"], appName: "Wendy's", appStoreID: 540518599, appLink: nil, store: "us"),
+        "us-tacobell": ChainPlace(query: "Taco Bell", match: ["taco bell"], appName: "Taco Bell", appStoreID: 497387361, appLink: nil, store: "us"),
+        "us-panda": ChainPlace(query: "Panda Express", match: ["panda express"], appName: "Panda Express", appStoreID: 903990394, appLink: nil, store: "us"),
     ]
 }
 

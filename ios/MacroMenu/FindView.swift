@@ -27,7 +27,7 @@ struct FindView: View {
                     // The example sits behind the field as ordinary text, so it wraps at larger sizes instead of being cut off.
                     ZStack(alignment: .leading) {
                         if question.isEmpty {
-                            Text("Ask Leanrrr: 40 g protein at Nando's").foregroundStyle(.tertiary)
+                            Text(store.region == .australia ? "Ask Leanrrr: 40 g protein at Nando's" : "Ask Leanrrr: 40 g protein at Chick-fil-A").foregroundStyle(.tertiary)
                                 .accessibilityHidden(true).allowsHitTesting(false)
                         }
                         TextField("", text: $question, axis: .vertical)
@@ -50,16 +50,20 @@ struct FindView: View {
                         .accessibilityHint("Browse foods ranked by protein or calories")
                     ActionPill(title: "Takeaway roulette", systemImage: "dice") { spinning = true }
                         .accessibilityHint("Spin a wheel for a dinner that fits what's left today")
-                    ActionPill(title: "Copycat Kitchen", systemImage: "frying.pan") { cooking = true }
-                        .accessibilityHint("Home versions of takeaway favourites, compared to the real thing")
+                    if store.region.hasCopycatKitchen {
+                        ActionPill(title: "Copycat Kitchen", systemImage: "frying.pan") { cooking = true }
+                            .accessibilityHint("Home versions of takeaway favourites, compared to the real thing")
+                    }
                 }
             }
             Section {
                 // Set here rather than on a change of value, so a restaurant opened from elsewhere keeps its choice.
-                Picker("Where from", selection: Binding(get: { query.supermarket }, set: { query.supermarket = $0; query.chains = [] })) {
-                    Text("Takeaway").tag(false); Text("Supermarket").tag(true)
-                }.pickerStyle(.segmented)
-                    .listRowSeparator(.hidden)
+                if !store.supermarketChains.isEmpty {
+                    Picker("Where from", selection: Binding(get: { query.supermarket }, set: { query.supermarket = $0; query.chains = [] })) {
+                        Text("Takeaway").tag(false); Text("Supermarket").tag(true)
+                    }.pickerStyle(.segmented)
+                        .listRowSeparator(.hidden)
+                }
                 // Pairs sit side by side, and stack at the largest text sizes so numbers and labels stay whole.
                 let big = typeSize.isAccessibilitySize
                 FoldRow { fold in
@@ -149,6 +153,8 @@ struct FindView: View {
         .onChange(of: dietRaw, initial: true) { query.diet = DietFilter(raw: dietRaw) }
         .onChange(of: nav.findChain, initial: true) { if let chain = nav.findChain { query.supermarket = false; query.chains = [chain]; nav.findChain = nil } }
         .onChange(of: store.data.foods) { searchID = UUID() }
+        // Another country's menus: restaurants picked from the old ones no longer exist.
+        .onChange(of: store.region) { query.supermarket = false; query.chains = []; searchID = UUID() }
         .task(id: SearchKey(query: query, refresh: searchID)) { await search() }
         // The closest restaurant of each chain, once location is allowed (it's never asked for here).
         .task(id: location.location?.timestamp) {

@@ -51,6 +51,42 @@ import UniformTypeIdentifiers
     }
 
     /// The day breakdown behind a tap on Today's targets: macro shares, micronutrient totals, which foods listed them, and sources.
+    /// The US menu (`MenuRegion.unitedStates`): its own file with its own chain ids, switched to from setup or Settings.
+    @MainActor static func usMenuChecks(_ catalogURL: URL, australia: MenuCatalog) throws {
+        let usURL = catalogURL.deletingLastPathComponent().appending(path: "MenuData-US.json")
+        let us = try JSONDecoder().decode(MenuCatalog.self, from: Data(contentsOf: usURL))
+        assert(us.format == MenuUpdates.format && us.foods.count > 700)
+        let chains = Set(us.chains.map(\.id))
+        assert(chains == ["mine", "us-mcd", "us-cfa", "us-wendys", "us-tacobell", "us-panda"])
+        assert(us.foods.allSatisfy { $0.isValid && chains.contains($0.chain) } && Set(us.foods.map(\.id)).count == us.foods.count)
+        assert(Set(us.foods.map(\.id)).isDisjoint(with: australia.foods.map(\.id)))   // logs from either menu never collide
+        for region in MenuRegion.allCases {
+            assert(region.quiz.allSatisfy { item in (region == .australia ? australia : us).foods.contains { $0.id == item.id } })
+        }
+        // Nicknames are written with Australian ids; the US menu's chains carry "us-".
+        let names = Dictionary(uniqueKeysWithValues: us.chains.map { ($0.id, $0.name) })
+        assert(MenuRegion.chain("mcd", in: names) == "us-mcd" && MenuRegion.chain("kfc", in: names) == nil)
+        for id in Set(Assistant.nicknames.values).union(MealPhoto.brandAliases.values) where id.hasPrefix("us-") { assert(chains.contains(id), "unknown chain \(id)") }
+        assert(AskLeanr.parse("40 g protein at maccas", chainNames: names, defaults: FindQuery()).query.chains == ["us-mcd"])
+        assert(AskLeanr.parse("high protein at chick fil a", chainNames: names, defaults: FindQuery()).query.chains == ["us-cfa"])
+        assert(AskLeanr.parse("dinner at wendys under 700 calories", chainNames: names, defaults: FindQuery()).query.chains == ["us-wendys"])
+        assert(MealPhoto.chain(for: "McDonald's", chainNames: names) == "us-mcd" && MealPhoto.chain(for: "Taco Bell", chainNames: names) == "us-tacobell")
+        let meals = MealFinder.find(us.foods, query: FindQuery(chains: ["us-cfa"], calories: 600, protein: 40))
+        assert(!meals.isEmpty && meals.allSatisfy { $0.chain == "us-cfa" && $0.total.cal <= 600 })
+        // Switching keeps your data and drops the Australian supermarkets; switching back brings them back.
+        let root = FileManager.default.temporaryDirectory.appending(path: UUID().uuidString)
+        let shopsURL = catalogURL.deletingLastPathComponent().appending(path: "SupermarketFoods.json")
+        let store = AppStore(url: root.appending(path: "state.json"), region: .australia, catalogURL: catalogURL, legacyURL: nil, supermarketURL: shopsURL)
+        assert(store.saveFood(Food(id: "mine-1", name: "Protein shake", kj: 800, cal: 190, p: 30)))
+        assert(store.useRegion(.unitedStates, menuURL: usURL))
+        assert(store.region == .unitedStates && MenuRegion.saved == .unitedStates && store.catalog.foods.count == us.foods.count)
+        assert(store.supermarket.isEmpty && store.supermarketChains.isEmpty && store.data.foods.contains { $0.id == "mine-1" })
+        assert(store.useRegion(.australia, menuURL: catalogURL, supermarketURL: shopsURL))
+        assert(store.catalog.foods.count == australia.foods.count && !store.supermarket.isEmpty)
+        assert(!store.useRegion(.unitedStates, menuURL: root.appending(path: "missing.json")) && store.region == .australia)
+        UserDefaults.standard.removeObject(forKey: MenuRegion.key)
+        try? FileManager.default.removeItem(at: root)
+    }
     static func dayBreakdownChecks() {
         let burger = Food(name: "Burger", kj: 2500, cal: 600, p: 30, c: 50, f: 30, nut: ["sodium": 1000, "sugar": 10])
         let salad = Food(name: "Salad", kj: 400, cal: 100, p: 5, c: 10, f: 4, nut: ["sodium": 200, "fibre": 6])
@@ -166,6 +202,7 @@ import UniformTypeIdentifiers
         assert(CopycatSort.saving.sorted(compared).first?.id == "popcorn" && compared.filter { $0.verdict == .homeLighter }.count == 7)
         assert(Set(catalog.foods.map(\.chain)).isSubset(of: Set(catalog.chains.map(\.id))))
         try supermarketChecks(catalogURL)
+        try usMenuChecks(catalogURL, australia: catalog)
         // A juice bar has no mains, so its drinks are the order.
         let juice = MealFinder.find(catalog.foods, query: FindQuery(chains: ["boost"], calories: 700, protein: 25, maxItems: 1))
         assert(!juice.isEmpty && juice.allSatisfy { $0.chain == "boost" && $0.total.cal <= 700 } && juice[0].total.p >= 20)
@@ -791,7 +828,7 @@ import UniformTypeIdentifiers
         assert(answer == "At KFC, for up to 500 Cal with 40 g protein:\n• Chicken wrap: 480 Cal, 35 g protein")
         assert(Assistant.fitsAnswer(restaurant: "KFC", query: lunchBudget, matches: [], caloriesLeft: 1720) == "Nothing at KFC fits in 500 Cal.")
         // Siri's restaurant names match the menu.
-        for id in Set(Assistant.nicknames.values) { assert(catalog.chains.contains { $0.id == id } || Food.supermarkets.contains(id), "unknown chain \(id)") }
+        for id in Set(Assistant.nicknames.values) where !id.hasPrefix("us-") { assert(catalog.chains.contains { $0.id == id } || Food.supermarkets.contains(id), "unknown chain \(id)") }
 
         // Meal reminders: two weeks ahead, none for meals already logged, none in the past.
         let reminderNow = calendar.date(bySettingHour: 12, minute: 0, second: 0, of: day(5))!
