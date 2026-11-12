@@ -272,15 +272,36 @@ for (const [itemId, name, addTo] of SOLD_SEPARATELY) {
 console.log(`Added ${separate} extras that are sold on their own.`);
 // Dietary info (diet-info.py): the meats in each item ([] when none), allergens where the restaurant publishes them, and its
 // vegetarian or vegan label. Items the restaurant's own words don't cover are left without, and the filters leave those out.
+// The app's allergen filter only knows these keys (DietOption in Diet.swift). Some sources name the nut or cereal itself
+// ("macadamia", "barley"), which the filter would never match, so those become the key, wheat also counts as gluten, and
+// anything else stops the export rather than slipping past the filter unread.
+const ALLERGENS = ['gluten', 'wheat', 'milk', 'egg', 'soy', 'sesame', 'peanut', 'treenut', 'fish', 'shellfish', 'lupin', 'sulphites'];
+const ALLERGEN_WORDS = {almond: 'treenut', brazil: 'treenut', cashew: 'treenut', hazelnut: 'treenut', macadamia: 'treenut', pecan: 'treenut',
+  pinenut: 'treenut', pistachio: 'treenut', walnut: 'treenut', barley: 'gluten', rye: 'gluten', oats: 'gluten'};
+function allergenKeys(words, id) {
+  const out = new Set();
+  for (const word of words || []) {
+    const key = ALLERGENS.includes(word) ? word : ALLERGEN_WORDS[word];
+    if (!key) throw new Error(`${id}: allergen "${word}" isn't one of the app's keys`);
+    out.add(key);
+    if (key === 'wheat') out.add('gluten');
+  }
+  return [...out].sort();
+}
 let dietCount = 0;
 for (const [id, info] of Object.entries({...require('./diet.json').items, ...require('./more-chains-diet.json').items})) {
   const food = byId[id];
   if (!food) continue;
   const diet = {};
+  const al = info.al ? allergenKeys(info.al, id) : null;
+  const may = allergenKeys(info.may, id).filter(k => !(al || []).includes(k));
+  // Not-stated allergens are already keys and aren't widened: "wheat" there sits beside a stated "gluten".
+  for (const word of info.unk || []) if (!ALLERGENS.includes(word)) throw new Error(`${id}: allergen "${word}" isn't one of the app's keys`);
+  const unk = (info.unk || []).filter(k => !(al || []).includes(k) && !may.includes(k));
   if (info.meat) diet.meat = info.meat;
-  if (info.al) diet.al = info.al;
-  if (info.may && info.may.length) diet.may = info.may;
-  if (info.unk && info.unk.length) diet.unk = info.unk;
+  if (al) diet.al = al;
+  if (may.length) diet.may = may;
+  if (unk.length) diet.unk = unk;
   if (info.vg) diet.vg = info.vg;
   if (info.src && Object.keys(diet).length) diet.src = info.src;
   if (Object.keys(diet).length) { food.diet = diet; dietCount++; }

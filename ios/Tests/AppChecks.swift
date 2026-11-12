@@ -291,6 +291,28 @@ import UniformTypeIdentifiers
         }
         assert(byID["dominos:margherita-1-slice-"]!.diet?.al == ["gluten", "milk", "soy", "wheat"] && vegetarian.allows(byID["dominos:margherita-1-slice-"]!))
         assert(!glutenFree.allows(byID["gyg:grilled-chicken-burrito-bowl"]!))   // GYG: everything may contain gluten
+        // Every allergen in the catalog is one of the filter's keys, and wheat is always gluten too: guides that name the nut
+        // ("macadamia") or only say "wheat" used to slip past No tree nuts and No gluten.
+        for food in catalog.foods {
+            let listed = Set((food.diet?.al ?? []) + (food.diet?.may ?? []) + (food.diet?.unk ?? []))
+            assert(listed.isSubset(of: DietOption.allergenKeys), "allergen key the filter doesn't know on \(food.id): \(listed)")
+            let stated = Set((food.diet?.al ?? []) + (food.diet?.may ?? []))
+            assert(!stated.contains("wheat") || stated.contains("gluten"), "wheat without gluten on \(food.id)")
+        }
+        let noTreeNuts = DietFilter(options: [.treenut])
+        assert(!noTreeNuts.allows(byID["sub:white-chip-macadamia-nut-cookie"]!) && !noTreeNuts.allows(byID["sub:chocolate-chip-cookie"]!))
+        assert(!noTreeNuts.allows(byID["zam:sauce-basilo"]!))
+        assert(!glutenFree.allows(byID["gyg:soft-serve-cone"]!) && !glutenFree.allows(byID["gyg:brekkie-extra-toast-1-slice-"]!))
+        // A downloaded menu that still names the nut, or says wheat without gluten, is left out rather than trusted.
+        var oldMenuCookie = Food(chain: "sub", name: "Old cookie", kj: 900, cal: 215, p: 3)
+        oldMenuCookie.diet = DietInfo(meat: [], al: ["egg", "macadamia"], vg: "vegetarian", src: "guide")
+        assert(!noTreeNuts.allows(oldMenuCookie) && !DietFilter(options: [.milk]).allows(oldMenuCookie))
+        oldMenuCookie.diet = DietInfo(meat: [], al: [], may: ["wheat"], vg: "vegetarian", src: "guide")
+        assert(!glutenFree.allows(oldMenuCookie) && DietFilter(options: [.milk]).allows(oldMenuCookie))
+        // Items a labelling guide leaves unmarked, or with carmine colour or collagen, aren't vegetarian whatever the name says.
+        for id in ["gyg:caesar-dressing", "gyg:pulled-shiitake-mushroom-caesar-salad", "boost:strawberry-glow", "boost:glow-latte", "hj:strawberry-shake-small-"] {
+            assert(byID[id]!.diet?.meat == nil && !vegetarian.allows(byID[id]!), id)
+        }
         // GYG's nachos are built on corn chips, so their removals aren't the Nacho Fries list.
         let nachoRemovals = byID["gyg:grilled-chicken-nachos"]!.modifiers!.filter { $0.kind == "r" }
         assert(nachoRemovals.contains { $0.name == "No Corn Chips" && $0.est == true })

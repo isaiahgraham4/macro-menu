@@ -46,6 +46,7 @@ enum DietOption: String, CaseIterable, Identifiable, Sendable {
     static let meatOptions: [DietOption] = [.vegetarian, .vegan, .noBeef, .noPork]
     static let allergenOptions: [DietOption] = [.gluten, .wheat, .milk, .egg, .soy, .sesame, .peanut, .treenut, .fish, .shellfish, .lupin, .sulphites]
     var isAllergen: Bool { DietOption.allergenOptions.contains(self) }
+    static let allergenKeys = Set(allergenOptions.map(\.rawValue))
 
     var title: String {
         switch self {
@@ -134,7 +135,12 @@ struct DietFilter: Equatable, Hashable, Sendable {
             // "May contain" counts too: someone avoiding an allergen can't take that chance.
             guard let al = info.al else { return false }
             // So does one it doesn't say either way about.
-            if !avoid.isDisjoint(with: al) || !avoid.isDisjoint(with: info.may ?? []) || !avoid.isDisjoint(with: info.unk ?? []) { return false }
+            let listed = Set(al + (info.may ?? []) + (info.unk ?? []))
+            // An allergen named some other way ("macadamia" in an older downloaded menu) can't be shown to fit, so the item is left out.
+            guard listed.isSubset(of: DietOption.allergenKeys) else { return false }
+            if !avoid.isDisjoint(with: listed) { return false }
+            // Wheat is gluten too, wherever a menu says so without saying gluten.
+            if avoid.contains("gluten") && (al.contains("wheat") || info.may?.contains("wheat") == true) { return false }
         }
         return true
     }

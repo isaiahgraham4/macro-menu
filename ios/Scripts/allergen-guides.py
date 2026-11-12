@@ -48,6 +48,34 @@ def keys(words):
     return sorted({k for pattern, out in WORDS if re.search(pattern, words) for k in out})
 
 
+# The only keys the app's allergen filter knows (DietOption in Diet.swift).
+KNOWN = {"gluten", "wheat", "milk", "egg", "soy", "sesame", "peanut", "treenut", "fish", "shellfish", "lupin", "sulphites"}
+
+
+def canonical(got, where):
+    """A matched row in the app's keys. Some guides' rows come back in their own words ("macadamia", or GYG's "wheat" with
+    no "gluten"), which the filter never matches, so every row goes through keys() here. A word that maps to no key stops the build."""
+    def std(words):
+        out = set()
+        for word in words:
+            mapped = keys(word)
+            if not mapped:
+                raise SystemExit(f"{where}: allergen word {word!r} isn't one of the app's keys")
+            out |= set(mapped)
+        return out
+    al = std(got.get("al", []))
+    may = std(got.get("may", [])) - al
+    # Not-stated allergens are already keys, and stay as they are: "wheat" there doesn't mean gluten isn't stated.
+    unk = set(got.get("unk", [])) - al - may
+    if not unk <= KNOWN:
+        raise SystemExit(f"{where}: unknown allergen key {sorted(unk - KNOWN)}")
+    out = {k: v for k, v in got.items() if k != "unk"}
+    out.update(al=sorted(al), may=sorted(may))
+    if unk:
+        out["unk"] = sorted(unk)
+    return out
+
+
 def get(url, binary=False):
     out = subprocess.run(["curl", "-sfL", "-A", UA, "-m", "90", url], capture_output=True, check=True).stdout
     return out if binary else out.decode("utf-8", "replace")
@@ -1112,7 +1140,7 @@ def build():
         else:
             continue
         if got:
-            out[food["id"]] = {**got, "src": "guide"}
+            out[food["id"]] = {**canonical(got, food["id"]), "src": "guide"}
         else:
             missed.setdefault(chain, []).append(name)
     OUT.write_text(json.dumps({"fetched": source["fetched"], "items": out}, indent=1, ensure_ascii=False) + "\n")

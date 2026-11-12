@@ -6864,16 +6864,8 @@
     "wheat"
    ],
    "may": [
-    "almond",
-    "brazil",
-    "cashew",
-    "hazelnut",
-    "macadamia",
     "peanut",
-    "pecan",
-    "pinenut",
-    "pistachio",
-    "walnut"
+    "treenut"
    ],
    "src": "guide"
   },
@@ -6886,16 +6878,8 @@
     "wheat"
    ],
    "may": [
-    "almond",
-    "brazil",
-    "cashew",
-    "hazelnut",
-    "macadamia",
     "peanut",
-    "pecan",
-    "pinenut",
-    "pistachio",
-    "walnut"
+    "treenut"
    ],
    "src": "guide"
   },
@@ -6908,16 +6892,8 @@
     "wheat"
    ],
    "may": [
-    "almond",
-    "brazil",
-    "cashew",
-    "hazelnut",
-    "macadamia",
     "peanut",
-    "pecan",
-    "pinenut",
-    "pistachio",
-    "walnut"
+    "treenut"
    ],
    "src": "guide"
   },
@@ -6930,16 +6906,8 @@
     "wheat"
    ],
    "may": [
-    "almond",
-    "brazil",
-    "cashew",
-    "hazelnut",
-    "macadamia",
     "peanut",
-    "pecan",
-    "pinenut",
-    "pistachio",
-    "walnut"
+    "treenut"
    ],
    "src": "guide"
   },
@@ -6947,21 +6915,13 @@
    "al": [
     "egg",
     "gluten",
-    "macadamia",
     "milk",
     "soy",
+    "treenut",
     "wheat"
    ],
    "may": [
-    "almond",
-    "brazil",
-    "cashew",
-    "hazelnut",
-    "peanut",
-    "pecan",
-    "pinenut",
-    "pistachio",
-    "walnut"
+    "peanut"
    ],
    "src": "guide"
   },
@@ -7956,10 +7916,11 @@
     "milk"
    ],
    "may": [
-    "sulphites",
-    "wheat",
+    "gluten",
     "sesame",
-    "soy"
+    "soy",
+    "sulphites",
+    "wheat"
    ],
    "vg": null,
    "src": "guide"
@@ -8179,9 +8140,10 @@
   "gyg:fries-with-chipotle-seasoning-large-": {
    "al": [],
    "may": [
+    "gluten",
+    "milk",
     "sulphites",
-    "wheat",
-    "milk"
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8189,9 +8151,10 @@
   "gyg:fries-with-chipotle-seasoning-medium-": {
    "al": [],
    "may": [
+    "gluten",
+    "milk",
     "sulphites",
-    "wheat",
-    "milk"
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8199,9 +8162,10 @@
   "gyg:fries-with-chipotle-seasoning-family-": {
    "al": [],
    "may": [
+    "gluten",
+    "milk",
     "sulphites",
-    "wheat",
-    "milk"
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8248,9 +8212,10 @@
   "gyg:dipping-sauce-sweet-chipotle-bbq": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8260,8 +8225,9 @@
     "egg"
    ],
    "may": [
-    "wheat",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8269,9 +8235,10 @@
   "gyg:dipping-sauce-herb-mayo": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8279,12 +8246,13 @@
   "gyg:dipping-sauce-jalape-o-ketchup": {
    "al": [],
    "may": [
-    "sulphites",
-    "wheat",
     "egg",
+    "gluten",
     "milk",
     "sesame",
-    "soy"
+    "soy",
+    "sulphites",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8407,9 +8375,10 @@
   "gyg:extra-black-beans": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8417,9 +8386,10 @@
   "gyg:brown-rice-bowl-portion-": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8427,9 +8397,10 @@
   "gyg:brown-rice-burrito-portion-": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8437,9 +8408,10 @@
   "gyg:extra-crushed-corn-chips": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8447,9 +8419,10 @@
   "gyg:extra-guacamole": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8457,9 +8430,10 @@
   "gyg:extra-habanero-salsa": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8467,9 +8441,10 @@
   "gyg:extra-lettuce-bowl-": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8477,9 +8452,10 @@
   "gyg:extra-lettuce-burrito-": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8487,9 +8463,10 @@
   "gyg:extra-grilled-chicken": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": null,
    "src": "guide"
@@ -8497,9 +8474,10 @@
   "gyg:extra-ground-beef": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": null,
    "src": "guide"
@@ -8507,22 +8485,24 @@
   "gyg:extra-pulled-pork": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": null,
    "src": "guide"
   },
   "gyg:extra-pulled-shiitake-mushroom": {
    "al": [
-    "sulphites",
-    "soy"
+    "soy",
+    "sulphites"
    ],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8530,9 +8510,10 @@
   "gyg:extra-saut-ed-vegetables": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8540,9 +8521,10 @@
   "gyg:extra-saut-ed-vegetables-with-guacamole": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8550,9 +8532,10 @@
   "gyg:extra-shredded-beef-brisket": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": null,
    "src": "guide"
@@ -8560,9 +8543,10 @@
   "gyg:extra-crispy-chicken-tenders-2-": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": null,
    "src": "guide"
@@ -8570,9 +8554,10 @@
   "gyg:extra-pickled-jalape-os": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8580,9 +8565,10 @@
   "gyg:extra-roasted-jalape-o-salsa": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8590,9 +8576,10 @@
   "gyg:extra-smokey-chipotle-salsa": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8600,9 +8587,10 @@
   "gyg:spicy-sauce-add-to-any-item-": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8610,9 +8598,10 @@
   "gyg:extra-cos-lettuce": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8622,8 +8611,9 @@
     "milk"
    ],
    "may": [
-    "wheat",
-    "egg"
+    "egg",
+    "gluten",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8633,8 +8623,9 @@
     "milk"
    ],
    "may": [
-    "wheat",
-    "egg"
+    "egg",
+    "gluten",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8642,9 +8633,10 @@
   "gyg:corn-chips": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8790,9 +8782,10 @@
   "gyg:black-beans": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8800,9 +8793,10 @@
   "gyg:brown-rice": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8810,9 +8804,10 @@
   "gyg:small-guacamole": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8820,9 +8815,10 @@
   "gyg:medium-guacamole": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8830,9 +8826,10 @@
   "gyg:large-guacamole": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8840,9 +8837,10 @@
   "gyg:medium-pico-de-gallo": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8850,9 +8848,10 @@
   "gyg:large-pico-de-gallo": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8868,8 +8867,9 @@
     "milk"
    ],
    "may": [
-    "wheat",
-    "egg"
+    "egg",
+    "gluten",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8879,8 +8879,9 @@
     "milk"
    ],
    "may": [
-    "wheat",
-    "egg"
+    "egg",
+    "gluten",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8890,8 +8891,9 @@
     "milk"
    ],
    "may": [
-    "wheat",
-    "egg"
+    "egg",
+    "gluten",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8901,8 +8903,9 @@
     "milk"
    ],
    "may": [
-    "wheat",
-    "egg"
+    "egg",
+    "gluten",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8912,8 +8915,9 @@
     "milk"
    ],
    "may": [
-    "wheat",
-    "egg"
+    "egg",
+    "gluten",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8923,8 +8927,9 @@
     "milk"
    ],
    "may": [
-    "wheat",
-    "egg"
+    "egg",
+    "gluten",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8934,8 +8939,9 @@
     "milk"
    ],
    "may": [
-    "wheat",
-    "egg"
+    "egg",
+    "gluten",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8945,8 +8951,9 @@
     "milk"
    ],
    "may": [
-    "wheat",
-    "egg"
+    "egg",
+    "gluten",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8956,8 +8963,9 @@
     "milk"
    ],
    "may": [
-    "wheat",
-    "egg"
+    "egg",
+    "gluten",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8967,8 +8975,9 @@
     "milk"
    ],
    "may": [
-    "wheat",
-    "egg"
+    "egg",
+    "gluten",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8976,9 +8985,10 @@
   "gyg:medium-tomatillo-salsa": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8986,9 +8996,10 @@
   "gyg:large-tomatillo-salsa": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8996,17 +9007,19 @@
   "gyg:white-rice": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
   },
   "gyg:soft-serve-cone": {
    "al": [
-    "wheat",
-    "soy"
+    "gluten",
+    "soy",
+    "wheat"
    ],
    "may": [
     "egg",
@@ -9115,8 +9128,9 @@
     "soy"
    ],
    "may": [
-    "wheat",
-    "egg"
+    "egg",
+    "gluten",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -9126,8 +9140,9 @@
     "milk"
    ],
    "may": [
-    "wheat",
-    "egg"
+    "egg",
+    "gluten",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -9396,9 +9411,10 @@
   "gyg:little-g-s-apple": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegan",
    "src": "guide"
@@ -9406,9 +9422,10 @@
   "gyg:little-g-s-fries-with-chipotle-seasoning": {
    "al": [],
    "may": [
+    "gluten",
+    "milk",
     "sulphites",
-    "wheat",
-    "milk"
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -9416,10 +9433,11 @@
   "gyg:little-g-s-fries-with-plain-salt": {
    "al": [],
    "may": [
-    "sulphites",
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "sulphites",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -9769,9 +9787,10 @@
   "gyg:brekkie-extra-bacon": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": null,
    "src": "guide"
@@ -9781,21 +9800,23 @@
     "milk"
    ],
    "may": [
-    "wheat",
-    "egg"
+    "egg",
+    "gluten",
+    "wheat"
    ],
    "vg": null,
    "src": "guide"
   },
   "gyg:brekkie-extra-pulled-shiitake-mushroom": {
    "al": [
-    "sulphites",
-    "soy"
+    "soy",
+    "sulphites"
    ],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -9803,9 +9824,10 @@
   "gyg:brekkie-extra-saut-ed-vegetables-with-guacamole": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -9816,6 +9838,7 @@
     "milk"
    ],
    "may": [
+    "gluten",
     "wheat"
    ],
    "vg": "vegetarian",
@@ -9824,9 +9847,10 @@
   "gyg:brekkie-extra-guacamole": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -9834,10 +9858,11 @@
   "gyg:brekkie-extra-hashbrown": {
    "al": [],
    "may": [
-    "sulphites",
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "sulphites",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -9845,15 +9870,17 @@
   "gyg:brekkie-extra-pico-de-gallo": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
   },
   "gyg:brekkie-extra-toast-1-slice-": {
    "al": [
+    "gluten",
     "wheat"
    ],
    "may": [
@@ -10555,10 +10582,11 @@
     "milk"
    ],
    "may": [
-    "sulphites",
-    "wheat",
+    "gluten",
     "sesame",
-    "soy"
+    "soy",
+    "sulphites",
+    "wheat"
    ],
    "vg": null,
    "src": "guide"
@@ -10566,9 +10594,10 @@
   "gyg:mini-extra-guacamole": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -10576,9 +10605,10 @@
   "gyg:mini-extra-grilled-chicken": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": null,
    "src": "guide"
@@ -10586,9 +10616,10 @@
   "gyg:mini-extra-ground-beef": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": null,
    "src": "guide"
@@ -10596,22 +10627,24 @@
   "gyg:mini-extra-pulled-pork": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": null,
    "src": "guide"
   },
   "gyg:mini-extra-pulled-shiitake-mushroom": {
    "al": [
-    "sulphites",
-    "soy"
+    "soy",
+    "sulphites"
    ],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -10619,9 +10652,10 @@
   "gyg:mini-extra-saut-ed-vegetables": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -10629,9 +10663,10 @@
   "gyg:mini-extra-saut-ed-vegetables-with-guacamole": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -10639,9 +10674,10 @@
   "gyg:mini-extra-shredded-beef-brisket": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": null,
    "src": "guide"
@@ -10649,9 +10685,10 @@
   "gyg:mini-extra-crispy-chicken-tender-1-": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": null,
    "src": "guide"
@@ -10659,9 +10696,10 @@
   "gyg:mini-extra-spicy-sauce": {
    "al": [],
    "may": [
-    "wheat",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -11798,125 +11836,125 @@
   },
   "schnitz:3-pack-tenders": {
    "al": [
-    "wheat",
-    "gluten",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "may": [
-    "soy",
     "sesame",
-    "shellfish"
+    "shellfish",
+    "soy"
    ],
    "src": "guide"
   },
   "schnitz:5-pack-tenders": {
    "al": [
-    "wheat",
-    "gluten",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "may": [
-    "soy",
     "sesame",
-    "shellfish"
+    "shellfish",
+    "soy"
    ],
    "src": "guide"
   },
   "schnitz:10-pack-tenders": {
    "al": [
-    "wheat",
-    "gluten",
     "egg",
-    "milk"
+    "gluten",
+    "milk",
+    "wheat"
    ],
    "may": [
-    "soy",
     "sesame",
-    "shellfish"
+    "shellfish",
+    "soy"
    ],
    "src": "guide"
   },
   "schnitz:tender-box-2": {
    "al": [
-    "wheat",
-    "gluten",
     "egg",
+    "gluten",
     "milk",
-    "sulphites"
+    "sulphites",
+    "wheat"
    ],
    "may": [
-    "soy",
+    "fish",
     "peanut",
-    "treenut",
     "sesame",
     "shellfish",
-    "fish"
+    "soy",
+    "treenut"
    ],
    "src": "guide"
   },
   "schnitz:tender-box-3": {
    "al": [
-    "wheat",
-    "gluten",
     "egg",
+    "gluten",
     "milk",
-    "sulphites"
+    "sulphites",
+    "wheat"
    ],
    "may": [
-    "soy",
+    "fish",
     "peanut",
-    "treenut",
     "sesame",
     "shellfish",
-    "fish"
+    "soy",
+    "treenut"
    ],
    "src": "guide"
   },
   "schnitz:tender-box-5": {
    "al": [
-    "wheat",
-    "gluten",
     "egg",
+    "gluten",
     "milk",
-    "sulphites"
+    "sulphites",
+    "wheat"
    ],
    "may": [
-    "soy",
+    "fish",
     "peanut",
-    "treenut",
     "sesame",
     "shellfish",
-    "fish"
+    "soy",
+    "treenut"
    ],
    "src": "guide"
   },
   "schnitz:original-tender": {
    "al": [
-    "wheat",
     "gluten",
-    "milk"
+    "milk",
+    "wheat"
    ],
    "may": [
     "egg",
-    "soy",
     "sesame",
-    "shellfish"
+    "shellfish",
+    "soy"
    ],
    "src": "guide"
   },
   "schnitz:spicy-tender": {
    "al": [
-    "wheat",
     "gluten",
-    "milk"
+    "milk",
+    "wheat"
    ],
    "may": [
     "egg",
-    "soy",
     "sesame",
-    "shellfish"
+    "shellfish",
+    "soy"
    ],
    "src": "guide"
   },
@@ -12042,58 +12080,58 @@
   },
   "schnitz:nosh-box": {
    "al": [
-    "wheat",
-    "gluten",
     "egg",
-    "sulphites"
+    "gluten",
+    "sulphites",
+    "wheat"
    ],
    "may": [
+    "fish",
+    "lupin",
     "milk",
-    "soy",
     "peanut",
-    "treenut",
     "sesame",
     "shellfish",
-    "lupin",
-    "fish"
+    "soy",
+    "treenut"
    ],
    "src": "guide"
   },
   "schnitz:schnuggets-6-pack": {
    "al": [
-    "wheat",
-    "gluten",
     "egg",
-    "sulphites"
+    "gluten",
+    "sulphites",
+    "wheat"
    ],
    "may": [
+    "fish",
+    "lupin",
     "milk",
-    "soy",
     "peanut",
-    "treenut",
     "sesame",
     "shellfish",
-    "lupin",
-    "fish"
+    "soy",
+    "treenut"
    ],
    "src": "guide"
   },
   "schnitz:schnuggets-18-pack": {
    "al": [
-    "wheat",
-    "gluten",
     "egg",
-    "sulphites"
+    "gluten",
+    "sulphites",
+    "wheat"
    ],
    "may": [
+    "fish",
+    "lupin",
     "milk",
-    "soy",
     "peanut",
-    "treenut",
     "sesame",
     "shellfish",
-    "lupin",
-    "fish"
+    "soy",
+    "treenut"
    ],
    "src": "guide"
   },
@@ -12137,20 +12175,20 @@
   },
   "schnitz:kiddy-schnugget-pack": {
    "al": [
-    "wheat",
-    "gluten",
     "egg",
-    "sulphites"
+    "gluten",
+    "sulphites",
+    "wheat"
    ],
    "may": [
+    "fish",
+    "lupin",
     "milk",
-    "soy",
     "peanut",
-    "treenut",
     "sesame",
     "shellfish",
-    "lupin",
-    "fish"
+    "soy",
+    "treenut"
    ],
    "src": "guide"
   },
@@ -12177,117 +12215,117 @@
   "schnitz:small-sweet-potato-chips": {
    "al": [],
    "may": [
-    "wheat",
-    "gluten",
     "egg",
+    "fish",
+    "gluten",
     "milk",
-    "soy",
     "peanut",
-    "treenut",
     "sesame",
-    "fish"
+    "soy",
+    "treenut",
+    "wheat"
    ],
    "src": "guide"
   },
   "schnitz:regular-sweet-potato-chips": {
    "al": [],
    "may": [
-    "wheat",
-    "gluten",
     "egg",
+    "fish",
+    "gluten",
     "milk",
-    "soy",
     "peanut",
-    "treenut",
     "sesame",
-    "fish"
+    "soy",
+    "treenut",
+    "wheat"
    ],
    "src": "guide"
   },
   "schnitz:large-sweet-potato-chips": {
    "al": [],
    "may": [
-    "wheat",
-    "gluten",
     "egg",
+    "fish",
+    "gluten",
     "milk",
-    "soy",
     "peanut",
-    "treenut",
     "sesame",
-    "fish"
+    "soy",
+    "treenut",
+    "wheat"
    ],
    "src": "guide"
   },
   "schnitz:family-sweet-potato-chips": {
    "al": [],
    "may": [
-    "wheat",
-    "gluten",
     "egg",
+    "fish",
+    "gluten",
     "milk",
-    "soy",
     "peanut",
-    "treenut",
     "sesame",
-    "fish"
+    "soy",
+    "treenut",
+    "wheat"
    ],
    "src": "guide"
   },
   "schnitz:chick-n-gravy-loaded-chips": {
    "al": [
-    "wheat",
     "gluten",
     "milk",
     "soy",
-    "sulphites"
+    "sulphites",
+    "wheat"
    ],
    "may": [
     "egg",
+    "fish",
+    "lupin",
     "peanut",
-    "treenut",
     "sesame",
     "shellfish",
-    "lupin",
-    "fish"
+    "treenut"
    ],
    "src": "guide"
   },
   "schnitz:american-loaded-chips": {
    "al": [
-    "wheat",
     "gluten",
     "milk",
-    "sulphites"
+    "sulphites",
+    "wheat"
    ],
    "may": [
     "egg",
-    "soy",
+    "fish",
+    "lupin",
     "peanut",
-    "treenut",
     "sesame",
     "shellfish",
-    "lupin",
-    "fish"
+    "soy",
+    "treenut"
    ],
    "src": "guide"
   },
   "schnitz:veggie-volcano-loaded-chips": {
    "al": [
-    "wheat",
-    "gluten",
     "egg",
-    "sulphites"
+    "gluten",
+    "sulphites",
+    "wheat"
    ],
    "may": [
+    "fish",
+    "lupin",
     "milk",
-    "soy",
     "peanut",
-    "treenut",
     "sesame",
     "shellfish",
-    "lupin",
-    "fish"
+    "soy",
+    "treenut"
    ],
    "src": "guide"
   },
@@ -12335,11 +12373,11 @@
     "soy"
    ],
    "may": [
-    "wheat",
-    "gluten",
     "egg",
+    "fish",
+    "gluten",
     "shellfish",
-    "fish"
+    "wheat"
    ],
    "src": "guide"
   },
@@ -15531,7 +15569,7 @@
   "zam:sauce-basilo": {
    "al": [
     "egg",
-    "pinenut"
+    "treenut"
    ],
    "may": [],
    "vg": "vegetarian",
@@ -15561,7 +15599,6 @@
   },
   "zam:sauce-secret-bbq": {
    "al": [
-    "barley",
     "gluten"
    ],
    "may": [],

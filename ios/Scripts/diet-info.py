@@ -125,6 +125,11 @@ NOT_MEAT = r"plant[- ]based|meat[- ]free|meatless|\bvegan\b[^,;]*|beyond|great p
 COMPLETE = {"dominos", "oporto", "hj", "gyg", "zam"}
 VEG_CUE = r"veggie|vegetarian|vegan|plant[- ]based|falafel|mushroom|margherita|cheese toastie|halloumi"
 GELATINE_RISK = r"cheesecake|mousse|jelly|marshmallow|panna cotta|gumm|lolly|trifle"
+# Allergen guides that mark every vegetarian item, so an item they leave unmarked isn't vegetarian, whatever its name says
+# (GYG's Caesar Dressing has parmesan; Boost's Glow drinks have collagen).
+LABELLED = {"gyg", "zam", "dominos", "boost"}
+# Animal-made ingredients a meat word list misses: carmine colour (120) is from insects.
+ANIMAL = r"\(120\)|carmine|cochineal|collagen"
 
 
 def meats(text):
@@ -325,6 +330,17 @@ def build():
                 info["unk"] = guide["unk"]
             if guide.get("vg") and info["meat"] is None or guide.get("vg") == "vegan" and info["meat"] == []:
                 info.update(meat=[], vg=guide["vg"], src="labels")
+        if guide and info["meat"] == [] and info["src"] != "labels":
+            # A name or description with no meat word doesn't outrank the restaurant's own guide: an item its guide leaves
+            # unmarked as vegetarian, or whose ingredients name a meat or an animal-made ingredient, isn't counted as meat-free.
+            text = guide.get("text") or ""
+            found, unsure = meats(text) if text else (set(), False)
+            if chain in LABELLED and not guide.get("vg") or unsure or re.search(ANIMAL, text, re.I):
+                info = {**info, "meat": None}
+                info.pop("vg", None)
+            elif found:
+                info = {**info, "meat": sorted(found)}
+                info.pop("vg", None)
         out[fid] = info
 
     OUT.write_text(json.dumps({"fetched": source["fetched"], "items": out}, indent=1, ensure_ascii=False) + "\n")
