@@ -257,7 +257,7 @@ def main():
     foods = sorted(foods_from([row for row in rows if australian(row)], counts), key=lambda f: (f["chain"], f["name"].lower()))
     source = ("Label figures from Open Food Facts, entered by volunteers and available under the Open Database License (ODbL). "
               "Includes each supermarket's own brands and other brands seen on its shelves, so a flavour may not be in your store. "
-              "Takeawise checks that energy matches the macros, but not every product is listed. Check the pack.")
+              "Leanrrr checks that energy matches the macros, but not every product is listed. Check the pack.")
     chains = [{"id": shop, "name": name, "url": "https://world.openfoodfacts.org/data", "src": source, "how": "Open Food Facts"}
               for shop, name in (("coles", "Coles"), ("woolworths", "Woolworths"))]
     published = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")

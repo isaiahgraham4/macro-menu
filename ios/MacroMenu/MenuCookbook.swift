@@ -1,6 +1,6 @@
 import Foundation
 
-/// What restaurant dishes are usually made of, so a dish on a photographed menu can be added up from Takeawise's own foods.
+/// What restaurant dishes are usually made of, so a dish on a photographed menu can be added up from Leanrrr's own foods.
 /// Every food named here is an exact name in `GenericFoods.json` or `SurveyFoods.json` (the checks hold that), and the gram
 /// weights are a typical Australian restaurant serve. They're starting points to adjust, not published figures.
 enum MenuCookbook {

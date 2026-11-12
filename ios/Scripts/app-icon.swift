@@ -1,4 +1,4 @@
-// Draws every Takeawise app icon: the lowercase t with the leaf growing from its foot.
+// Draws every Leanrrr app icon: the lowercase t with the leaf growing from its foot.
 // Run from ios/: swift Scripts/app-icon.swift
 // Pass a path to write a single preview of the mark there instead: swift Scripts/app-icon.swift /tmp/mark.png
 import CoreGraphics

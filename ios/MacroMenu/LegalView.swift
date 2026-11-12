@@ -10,7 +10,7 @@ enum AppInfo {
     /// to the App Store page instead and the Contact row is hidden.
     static let contactEmail: String? = nil
 
-    static var contactText: String { contactEmail ?? "the App Support link on Takeawise's App Store page" }
+    static var contactText: String { contactEmail ?? "the App Support link on Leanrrr's App Store page" }
 }
 
 /// The privacy policy or terms, read from the Markdown files in `Legal/` (the same text to host for the App Store).
@@ -77,7 +77,7 @@ struct AcknowledgementsView: View {
     var body: some View {
         LeanrList {
             Section {
-                Text("Takeawise isn't affiliated with, endorsed by or sponsored by any restaurant, supermarket or delivery service. Restaurant, supermarket and product names and brands belong to their owners and are used only to identify their food.")
+                Text("Leanrrr isn't affiliated with, endorsed by or sponsored by any restaurant, supermarket or delivery service. Restaurant, supermarket and product names and brands belong to their owners and are used only to identify their food.")
             } header: { Text("Restaurants") }
             Section {
                 credit("Restaurant nutrition", "Each chain's published nutrition information. See Settings → Menu sources.")
@@ -92,7 +92,7 @@ struct AcknowledgementsView: View {
                 licence("Bebas Neue", "Copyright 2019 The Bebas Neue Project Authors. SIL Open Font License, Version 1.1.", file: "OFL-BebasNeue")
             } header: { Text("Fonts") }
             Section {
-                Text("Takeawise's icons are Apple's SF Symbols, used under Apple's licence for apps on its platforms.")
+                Text("Leanrrr's icons are Apple's SF Symbols, used under Apple's licence for apps on its platforms.")
             } header: { Text("Icons") }
         }
         .navigationTitle("Acknowledgements")
@@ -135,14 +135,14 @@ struct DeleteDataView: View {
     var body: some View {
         LeanrList {
             Section {
-                Text("This deletes your foods, recipes, saved meals, food log, meal plans, check-ins, weigh-ins, measurements, water, progress photos, targets, reminders and settings from this iPhone, and Takeawise's copy in your iCloud. It can't be undone.")
+                Text("This deletes your foods, recipes, saved meals, food log, meal plans, check-ins, weigh-ins, measurements, water, progress photos, targets, reminders and settings from this iPhone, and Leanrrr's copy in your iCloud. It can't be undone.")
                 Text("Want a copy first? Export a backup in Settings.").foregroundStyle(.secondary)
             }
             if health.enabled {
                 Section {
-                    Toggle("Also delete what Takeawise saved to Apple Health", isOn: $includeHealth)
+                    Toggle("Also delete what Leanrrr saved to Apple Health", isOn: $includeHealth)
                 } footer: {
-                    Text("Removes the food, water and weights Takeawise wrote to Health. Weights from your scale or other apps stay.")
+                    Text("Removes the food, water and weights Leanrrr wrote to Health. Weights from your scale or other apps stay.")
                 }
             }
             Section {
@@ -154,7 +154,7 @@ struct DeleteDataView: View {
                 }
                 .disabled(working)
             } footer: {
-                Text("iCloud sync is turned off on this iPhone afterwards, so copies on your other devices don't come back. Delete there too if Takeawise is on another device. I don't hold any of your data, so there's nothing else to delete.")
+                Text("iCloud sync is turned off on this iPhone afterwards, so copies on your other devices don't come back. Delete there too if Leanrrr is on another device. I don't hold any of your data, so there's nothing else to delete.")
             }
         }
         .navigationTitle("Delete all my data")
@@ -163,7 +163,7 @@ struct DeleteDataView: View {
             Button("Delete", role: .destructive) { Task { await delete() } }
             Button("Cancel", role: .cancel) {}
         } message: {
-            Text(includeHealth && health.enabled ? "Your Takeawise data on this iPhone, in iCloud and in Apple Health will be deleted." : "Your Takeawise data on this iPhone and in iCloud will be deleted.")
+            Text(includeHealth && health.enabled ? "Your Leanrrr data on this iPhone, in iCloud and in Apple Health will be deleted." : "Your Leanrrr data on this iPhone and in iCloud will be deleted.")
         }
         .alert("Your data is deleted", isPresented: Binding(get: { result != nil }, set: { if !$0 { result = nil; dismiss() } })) {
             Button("OK") { result = nil; dismiss() }
@@ -180,7 +180,7 @@ struct DeleteDataView: View {
         DataDeletion.clearSettings()
         guard store.eraseEverything() else { return }
         WidgetCenter.shared.reloadAllTimelines()
-        result = cloudDeleted ? "Takeawise has started fresh." : "Takeawise has started fresh on this iPhone. iCloud couldn't be reached, so delete Takeawise's folder in the Files app under iCloud Drive."
+        result = cloudDeleted ? "Leanrrr has started fresh." : "Leanrrr has started fresh on this iPhone. iCloud couldn't be reached, so delete Leanrrr's folder in the Files app under iCloud Drive."
     }
 }
 

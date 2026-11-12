@@ -131,7 +131,7 @@ struct PlannedWidgetView: View {
     private var empty: some View {
         VStack(alignment: .leading, spacing: 4) {
             Label("Planned meals", systemImage: "calendar").font(.roboto(.caption, weight: .semibold)).foregroundStyle(accent)
-            Text(entry.calories == nil ? "Open Takeawise to sync" : "Nothing left planned for today. Plan ahead from Today in Takeawise.")
+            Text(entry.calories == nil ? "Open Leanrrr to sync" : "Nothing left planned for today. Plan ahead from Today in Leanrrr.")
                 .font(.roboto(.caption)).foregroundStyle(.secondary)
         }
         .frame(maxWidth: .infinity, alignment: .leading)

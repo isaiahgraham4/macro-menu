@@ -2,7 +2,7 @@ import SwiftUI
 import PhotosUI
 import VisionKit
 
-/// Scan a menu: photograph any restaurant's menu and Takeawise estimates each dish from its own foods. Your iPhone reads the
+/// Scan a menu: photograph any restaurant's menu and Leanrrr estimates each dish from its own foods. Your iPhone reads the
 /// photo and nothing is sent anywhere. Figures are estimates unless the restaurant's own item was found, and say so.
 struct MenuScanView: View {
     @Environment(AppStore.self) private var store
@@ -248,7 +248,7 @@ struct MenuScanView: View {
         }
     }
 
-    /// Where the iPhone has Apple Intelligence, asks what's in the dishes Takeawise had little or nothing to go on for.
+    /// Where the iPhone has Apple Intelligence, asks what's in the dishes Leanrrr had little or nothing to go on for.
     private func refine() async {
         guard MenuModel.isAvailable, let estimator else { return }
         let unsure = rows.filter { $0.estimate == nil || $0.estimate?.basis == .rough }.prefix(MenuModel.dishLimit)
@@ -303,7 +303,7 @@ private struct MenuDishDetail: View {
                     }
                 }
             } else {
-                Section { Text("Takeawise can't tell what's in this from the words on the menu. Fix the wording below if it misread them, or search for something close.").foregroundStyle(.secondary) }
+                Section { Text("Leanrrr can't tell what's in this from the words on the menu. Fix the wording below if it misread them, or search for something close.").foregroundStyle(.secondary) }
             }
             Section {
                 TextField("Dish", text: $name)

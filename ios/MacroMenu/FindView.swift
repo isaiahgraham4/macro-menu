@@ -27,12 +27,12 @@ struct FindView: View {
                     // The example sits behind the field as ordinary text, so it wraps at larger sizes instead of being cut off.
                     ZStack(alignment: .leading) {
                         if question.isEmpty {
-                            Text("Ask Takeawise: 40 g protein at Nando's").foregroundStyle(.tertiary)
+                            Text("Ask Leanrrr: 40 g protein at Nando's").foregroundStyle(.tertiary)
                                 .accessibilityHidden(true).allowsHitTesting(false)
                         }
                         TextField("", text: $question, axis: .vertical)
                             .lineLimit(1...3).submitLabel(.search)
-                            .accessibilityLabel("Ask Takeawise")
+                            .accessibilityLabel("Ask Leanrrr")
                             .onSubmit { ask() }
                     }
                     if !question.trimmingCharacters(in: .whitespaces).isEmpty {

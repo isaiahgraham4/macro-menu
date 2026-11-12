@@ -116,7 +116,7 @@ struct MealShareCard: View {
                 }
             }
             Spacer(minLength: 12)
-            Text("Tracked with Takeawise · Nutrition may vary").font(.roboto(.caption2)).foregroundStyle(.white.opacity(0.45))
+            Text("Tracked with Leanrrr · Nutrition may vary").font(.roboto(.caption2)).foregroundStyle(.white.opacity(0.45))
         }
     }
 

@@ -1,6 +1,6 @@
 import Foundation
 
-/// One thing in a dish and how much of it, from Takeawise's own foods.
+/// One thing in a dish and how much of it, from Leanrrr's own foods.
 struct MenuComponent: Identifiable, Equatable, Sendable {
     var id = UUID()
     var food: Food
@@ -11,16 +11,16 @@ struct MenuComponent: Identifiable, Equatable, Sendable {
     var portion: Portion { Portion(food: food, quantity: quantity) }
 }
 
-/// What a dish probably has in it, and how that was worked out. The figures always come from Takeawise's foods.
+/// What a dish probably has in it, and how that was worked out. The figures always come from Leanrrr's foods.
 struct MenuEstimate: Equatable, Sendable {
     enum Basis: Equatable, Sendable {
-        /// The restaurant's own item, found in Takeawise's menus.
+        /// The restaurant's own item, found in Leanrrr's menus.
         case official
-        /// A dish Takeawise knows, at a typical serve.
+        /// A dish Leanrrr knows, at a typical serve.
         case typicalDish
         /// Added up from the ingredients the menu lists.
         case ingredients
-        /// Apple Intelligence said what's usually in it, and Takeawise added that up.
+        /// Apple Intelligence said what's usually in it, and Leanrrr added that up.
         case suggested
         /// Very little to go on, such as one ingredient or only the menu's heading.
         case rough
@@ -81,7 +81,7 @@ struct MenuEstimate: Equatable, Sendable {
 }
 
 /// Works out what's in a dish from its name and description. In order: the restaurant's own item, a dish in `MenuCookbook`,
-/// the ingredients the menu lists, a dish with the same name in Takeawise's everyday foods, then the menu's heading.
+/// the ingredients the menu lists, a dish with the same name in Leanrrr's everyday foods, then the menu's heading.
 /// With nothing to go on it gives no figure at all, rather than a made-up one.
 struct MenuEstimator: Sendable {
     private let foods: [Food]
@@ -114,7 +114,7 @@ struct MenuEstimator: Sendable {
 
     func food(_ name: String) -> Food? { byName[name] }
 
-    /// The restaurant a menu belongs to, when Takeawise has its menu.
+    /// The restaurant a menu belongs to, when Leanrrr has its menu.
     func chain(for restaurant: String?) -> String? {
         MealPhoto.chain(for: restaurant, chainNames: chainNames)
     }
@@ -156,7 +156,7 @@ struct MenuEstimator: Sendable {
         return nil
     }
 
-    /// The same sum from a list of ingredients and grams, for Apple Intelligence's answer. Nil when too little of it is in Takeawise.
+    /// The same sum from a list of ingredients and grams, for Apple Intelligence's answer. Nil when too little of it is in Leanrrr.
     func estimate(suggested parts: [(name: String, grams: Double)], section: String?) -> MenuEstimate? {
         var components: [MenuComponent] = []
         for part in parts.prefix(10) where part.grams > 0 {

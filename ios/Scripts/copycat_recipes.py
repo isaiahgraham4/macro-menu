@@ -310,7 +310,7 @@ RECIPES = [
     ),
 ]
 
-# Ingredient keys to USDA entries. Local entries come from Takeawise's GenericFoods.json and SurveyFoods.json.
+# Ingredient keys to USDA entries. Local entries come from Leanrrr's GenericFoods.json and SurveyFoods.json.
 LOCAL = {
     "beef15": "usda-171796", "beef10": "usda-174030", "beef5": "usda-171790",
     "breast": "usda-171077", "thigh": "usda-173627",

@@ -45,7 +45,7 @@ struct WeeklyReviewView: View {
                 }
                 if let image {
                     Section {
-                        ShareLink(item: ShareImage(image: image), preview: SharePreview("My week in Takeawise", image: Image(uiImage: image))) {
+                        ShareLink(item: ShareImage(image: image), preview: SharePreview("My week in Leanrrr", image: Image(uiImage: image))) {
                             Label("Share this week", systemImage: "square.and.arrow.up")
                         }
                     }

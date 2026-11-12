@@ -6,6 +6,7 @@ struct WidgetCalories: Codable, Equatable, Sendable {
     static let kind = "LeanrCaloriesLeft"
     static let premiumKind = "LeanrAllTargets"
     static let macrosKind = "LeanrMacros"
+    static let macroSummaryKind = "LeanrMacroSummary"
     static let streakKind = "LeanrTrackingStreak"
     static let stepsKind = "LeanrSteps"
     static let burntKind = "LeanrCaloriesBurnt"
@@ -263,7 +264,7 @@ extension WidgetCalories {
 }
 
 extension WidgetCalories {
-    static let allKinds = [waterKind, plannedKind, logAgainKind, stepsKind, burntKind, kind, premiumKind, macrosKind, streakKind]
+    static let allKinds = [waterKind, plannedKind, logAgainKind, stepsKind, burntKind, kind, premiumKind, macrosKind, macroSummaryKind, streakKind]
 
     /// The widgets that a change from `old` to this affects, with the ones people tap first at the front: a tap on a widget shows its
     /// result as soon as that widget reloads, so water or a planned meal doesn't wait behind the calorie widgets.

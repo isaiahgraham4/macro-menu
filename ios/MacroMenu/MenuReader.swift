@@ -41,8 +41,8 @@ enum MenuReader {
     }
 }
 
-/// Apple Intelligence's idea of what's in a dish Takeawise can't place. It only says what's in it and how much; the figures
-/// come from Takeawise's foods. Nothing where the iPhone doesn't have it, and then the dish keeps what it had.
+/// Apple Intelligence's idea of what's in a dish Leanrrr can't place. It only says what's in it and how much; the figures
+/// come from Leanrrr's foods. Nothing where the iPhone doesn't have it, and then the dish keeps what it had.
 enum MenuModel {
     static var isAvailable: Bool { MealWords.isAvailable }
 

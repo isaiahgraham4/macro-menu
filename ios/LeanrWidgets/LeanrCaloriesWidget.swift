@@ -13,7 +13,7 @@ struct CaloriesEntry: TimelineEntry {
         guard let target = calories?.target else { return 0 }
         return min(1, max(0, (calories?.eaten(on: date) ?? 0) / target))
     }
-    var prompt: String { calories == nil ? "Open Takeawise to sync" : "Set a calorie target" }
+    var prompt: String { calories == nil ? "Open Leanrrr to sync" : "Set a calorie target" }
     static var example: CaloriesEntry {
         let now = Date()
         return CaloriesEntry(date: now, calories: WidgetCalories(target: 2200, dailyCalories: [WidgetCalories.dayKey(now): 1350]))
@@ -42,12 +42,12 @@ struct CaloriesWidgetView: View {
         Group {
             switch family {
             case .accessoryInline:
-                Text(entry.remaining == nil ? "Takeawise · \(entry.prompt)" : "Takeawise · \(entry.value) \(entry.caption)")
+                Text(entry.remaining == nil ? "Leanrrr · \(entry.prompt)" : "Leanrrr · \(entry.value) \(entry.caption)")
             case .accessoryCircular:
                 circularProgress
             case .accessoryRectangular:
                 VStack(alignment: .leading, spacing: 3) {
-                    Label("Takeawise", systemImage: "leaf.fill").font(.roboto(.caption, weight: .semibold))
+                    Label("Leanrrr", systemImage: "leaf.fill").font(.roboto(.caption, weight: .semibold))
                     if entry.remaining != nil {
                         Text("\(entry.value) \(entry.caption)").font(.roboto(.headline)).minimumScaleFactor(0.7).lineLimit(1)
                         ProgressView(value: entry.progress).tint(accent)
@@ -61,7 +61,7 @@ struct CaloriesWidgetView: View {
         }
         .privacySensitive()
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(entry.remaining == nil ? "Takeawise. \(entry.prompt)" : (family == .accessoryCircular ? "Takeawise. \(entry.eatenValue) calories eaten out of a daily target of \(entry.targetValue) calories." : "Takeawise. \(entry.value) \(entry.caption)"))
+        .accessibilityLabel(entry.remaining == nil ? "Leanrrr. \(entry.prompt)" : (family == .accessoryCircular ? "Leanrrr. \(entry.eatenValue) calories eaten out of a daily target of \(entry.targetValue) calories." : "Leanrrr. \(entry.value) \(entry.caption)"))
         .widgetURL(URL(string: "leanr://today"))
         .containerBackground(for: .widget) {
             Color(.systemBackground)
@@ -100,7 +100,7 @@ struct CaloriesWidgetView: View {
     private var homeScreen: some View {
         HStack(spacing: 16) {
             VStack(alignment: .leading, spacing: 5) {
-                Label("Takeawise", systemImage: "leaf.fill")
+                Label("Leanrrr", systemImage: "leaf.fill")
                     .font(.roboto(.caption, weight: .bold)).foregroundStyle(accent)
                 Spacer(minLength: 2)
                 if entry.remaining != nil {
@@ -140,7 +140,7 @@ struct LeanrCaloriesWidget: Widget {
             CaloriesWidgetView(entry: entry)
         }
         .configurationDisplayName("Calories left")
-        .description("See today's calories remaining against your Takeawise target.")
+        .description("See today's calories remaining against your Leanrrr target.")
         .supportedFamilies([.systemSmall, .systemMedium, .accessoryCircular, .accessoryRectangular, .accessoryInline])
     }
 }

@@ -32,7 +32,7 @@ struct StoryCard: View {
             }
             Spacer(minLength: 24)
             Text(footnote).font(.roboto(.subheadline)).foregroundStyle(.white.opacity(0.6))
-            Text("Tracked with Takeawise").font(.roboto(.caption2)).foregroundStyle(.white.opacity(0.45)).padding(.top, 6)
+            Text("Tracked with Leanrrr").font(.roboto(.caption2)).foregroundStyle(.white.opacity(0.45)).padding(.top, 6)
         }
         .padding(.horizontal, 32).padding(.vertical, 40)
         .frame(width: MealShareCard.size.width, height: MealShareCard.size.height, alignment: .topLeading)

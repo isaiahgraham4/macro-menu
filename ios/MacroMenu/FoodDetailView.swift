@@ -276,7 +276,7 @@ struct SupermarketSourceSection: View {
             LabeledContent("From", value: "Open Food Facts")
             if let url = food.productSource { Link("View this product at Open Food Facts", destination: url) }
         } header: { Text("Source") } footer: {
-            Text("Label figures entered by Open Food Facts volunteers, available under the Open Database License (ODbL). Recipes change and stores vary, so check the pack. Takeawise isn't affiliated with Coles or Woolworths.")
+            Text("Label figures entered by Open Food Facts volunteers, available under the Open Database License (ODbL). Recipes change and stores vary, so check the pack. Leanrrr isn't affiliated with Coles or Woolworths.")
         }
     }
 }
@@ -292,7 +292,7 @@ struct FoodSourceSection: View {
             if let date = store.menuDate { LabeledContent("Menu snapshot", value: date.formatted(date: .abbreviated, time: .omitted)) }
             if let raw = chain.url, let url = URL(string: raw) { Link("View \(chain.name.possessive) nutrition information", destination: url) }
         } header: { Text("Source") } footer: {
-            Text("Figures are \(chain.name.possessive) own published information, as at the snapshot date. Takeawise isn't affiliated with \(chain.name). Spot something wrong? Let me know through \(AppInfo.contactText).")
+            Text("Figures are \(chain.name.possessive) own published information, as at the snapshot date. Leanrrr isn't affiliated with \(chain.name). Spot something wrong? Let me know through \(AppInfo.contactText).")
         }
     }
 }

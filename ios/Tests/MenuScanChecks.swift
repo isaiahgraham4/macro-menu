@@ -73,10 +73,10 @@ enum MenuScanChecks {
         })
         precondition(centred.dishes.map(\.name).first == "Dish number 0 with a long name" && centred.dishes.count == 12, "\(centred.dishes.map(\.name))")
 
-        // The tables only use foods Takeawise has, by weight
+        // The tables only use foods Leanrrr has, by weight
         let estimator = MenuEstimator(foods: foods, chainNames: chainNames)
         for name in MenuCookbook.foodNames {
-            guard let food = estimator.food(name) else { preconditionFailure("MenuCookbook names a food Takeawise doesn't have: \(name)") }
+            guard let food = estimator.food(name) else { preconditionFailure("MenuCookbook names a food Leanrrr doesn't have: \(name)") }
             precondition((food.servingWeight?.0 ?? 0) > 0, "No weight for \(name)")
         }
 
@@ -162,7 +162,7 @@ enum MenuScanChecks {
         for index in dish.components.indices { dish.components[index].isOn = false }
         precondition(dish.food(named: "Chicken Parma") == nil)
 
-        // Apple Intelligence's list is priced from Takeawise's foods, and needs at least two it knows
+        // Apple Intelligence's list is priced from Leanrrr's foods, and needs at least two it knows
         let suggested = estimator.estimate(suggested: [("kangaroo", 180), ("beetroot", 80), ("mashed potato", 150), ("not a food at all", 50)], section: "Mains")
         precondition(suggested?.basis == .suggested && (suggested?.components.count ?? 0) >= 2, "\(String(describing: suggested?.components.map(\.food.name)))")
         precondition(estimator.estimate(suggested: [("not a food at all", 50)], section: nil) == nil)
