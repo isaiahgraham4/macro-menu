@@ -108,7 +108,7 @@ struct WeeklyReviewCard: View {
     var review: WeeklyReview
     var body: some View {
         VStack(alignment: .leading, spacing: 18) {
-            Label("TAKEAWISE", systemImage: "leaf.fill").font(.roboto(.caption, weight: .bold)).foregroundStyle(AppAccent.resolved(accentRaw).color)
+            Label("LEANRRR", systemImage: "leaf.fill").font(.roboto(.caption, weight: .bold)).foregroundStyle(AppAccent.resolved(accentRaw).color)
             VStack(alignment: .leading, spacing: 2) {
                 Text("My week").font(.display())
                 Text(Self.range(review)).font(.roboto(.subheadline)).foregroundStyle(.secondary)

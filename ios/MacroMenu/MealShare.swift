@@ -81,7 +81,7 @@ struct MealShareCard: View {
     /// The card's contents, listing up to `rows` ingredient lines (the last of them "and N more" when there are too many).
     private func card(rows: Int) -> some View {
         VStack(alignment: .leading, spacing: 0) {
-            Label("TAKEAWISE", systemImage: "leaf.fill").font(.roboto(.caption, weight: .bold))
+            Label("LEANRRR", systemImage: "leaf.fill").font(.roboto(.caption, weight: .bold))
                 .foregroundStyle(AppAccent.resolved(accentRaw).color)
             Text(name).font(.custom(AppFonts.display, size: 54)).lineLimit(3).minimumScaleFactor(0.5)
                 .padding(.top, 18)

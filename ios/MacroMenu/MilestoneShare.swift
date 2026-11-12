@@ -13,7 +13,7 @@ struct StoryCard: View {
     var body: some View {
         let accent = AppAccent.resolved(accentRaw).color
         VStack(alignment: .leading, spacing: 0) {
-            Label("TAKEAWISE", systemImage: "leaf.fill").font(.roboto(.caption, weight: .bold)).foregroundStyle(accent)
+            Label("LEANRRR", systemImage: "leaf.fill").font(.roboto(.caption, weight: .bold)).foregroundStyle(accent)
             Spacer(minLength: 24)
             Image(systemName: icon).font(.system(size: 44)).foregroundStyle(accent).padding(.bottom, 22)
             Text(title).font(.custom(AppFonts.display, size: figure == nil ? 64 : 40)).lineLimit(3).minimumScaleFactor(0.5)
