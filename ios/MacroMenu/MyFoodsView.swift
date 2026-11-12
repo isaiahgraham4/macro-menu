@@ -159,9 +159,15 @@ struct FoodEditor: View {
     /// When logging, also keep the food in My foods. On for barcode products (remembered, shared with the scan screen), off for one-offs.
     @State private var keepInMyFoods: Bool
     static let keepKey = "barcode.saveToMyFoods"
+    /// Sharing: the first-time agreement, and why iCloud can't share right now.
+    @State private var askingToShare = false
+    @State private var checkingShare = false
+    @State private var shareCheck: String?
     init(food: Food?, scannedProduct: BarcodeProduct? = nil, barcode: String? = nil, savePortion: ((Portion) -> Bool)? = nil, logTitle: String = "Log food", save: @escaping (Food) -> Bool) {
         var initial = scannedProduct?.food ?? food ?? Food(name: "", kj: 0, cal: 0, p: 0, c: nil, f: nil)
         if let barcode { initial.barcode = barcode }
+        // A food someone shared is edited as your own copy.
+        if initial.isCommunity { initial.chain = "mine"; initial.id = UUID().uuidString; initial.contributor = nil }
         _draft = State(initialValue: initial); _energy = State(initialValue: initial.cal); self.save = save
         _per100 = State(initialValue: scannedProduct?.per100 ?? false)
         _servingUnit = State(initialValue: scannedProduct?.unit ?? "g")
@@ -346,6 +352,20 @@ struct FoodEditor: View {
                 }
             }
             Section("Per-serving preview") { NutritionView(total: Nutrition([Portion(food: result)])) }
+            if savePortion == nil {
+                Section {
+                    Toggle(isOn: Binding(get: { draft.shared == true }, set: { on in
+                        if on { Task { await turnOnSharing() } } else { draft.shared = nil; shareCheck = nil }
+                    })) { Label("Share with other Leanrrr users", systemImage: "person.2") }
+                        .disabled(checkingShare)
+                    if draft.shared == true, let problem = SharingRules.problem(result) {
+                        Text("Can't be shared yet. \(problem)").font(.roboto(.caption)).foregroundStyle(.orange)
+                    }
+                    if let shareCheck { Text(shareCheck).font(.roboto(.caption)).foregroundStyle(.orange) }
+                } header: { Text("Sharing") } footer: {
+                    Text("Others find shared foods in search and when they scan the barcode. Your name isn't shown. Turn this off or delete the food to take it down.")
+                }
+            }
             if savePortion != nil {
                 Section(byWeight && servingWeight != nil ? "Total for \(weight.number) \(servingWeight?.unit ?? "g")" : "Total for \(servings.number) servings") {
                     NutritionView(total: Nutrition([Portion(food: result, quantity: quantity.isFinite && quantity > 0 ? quantity : 0)]))
@@ -361,10 +381,16 @@ struct FoodEditor: View {
                             var item = result
                             if keepInMyFoods && !inMyFoods, let kept = store.saveToMyFoods(item) { item = kept }
                             succeeded = savePortion(Portion(food: item, quantity: quantity))
-                        } else { succeeded = save(result) }
+                        } else { succeeded = save(sharable(result)) }
                         if succeeded { dismiss() } else { saveFailed = true }
                     }.disabled(!result.isValid || barcodeInvalid || servingSize <= 0 || scanning || !scanBasisConfirmed || !quantity.isFinite || quantity <= 0 || quantity > 10000)
                 }
+            }
+            .alert("Share this food with everyone?", isPresented: $askingToShare) {
+                Button("Share") { UserDefaults.standard.set(true, forKey: CommunityFoods.agreedKey); draft.shared = true }
+                Button("Cancel", role: .cancel) {}
+            } message: {
+                Text("Anyone using Leanrrr can see foods you share, without your name. Only share real figures from the label or another trusted source, and nothing offensive. Foods that break the terms of use are taken down.")
             }
             .alert("Couldn’t save food", isPresented: $saveFailed) { Button("OK", role: .cancel) {} } message: { Text("Your data was not changed. Check available storage and any data recovery message in the app.") }
             .sheet(isPresented: $barcodeLookup) {
@@ -410,9 +436,28 @@ struct FoodEditor: View {
             }
     }
 
+    /// Checks iCloud, then asks once for agreement to the sharing rules.
+    private func turnOnSharing() async {
+        checkingShare = true; defer { checkingShare = false }
+        if let problem = await AppServices.community.canShare() { shareCheck = problem; return }
+        shareCheck = nil
+        if UserDefaults.standard.bool(forKey: CommunityFoods.agreedKey) { draft.shared = true } else { askingToShare = true }
+    }
+
+    /// The food to save: still marked shared only if it passes the sharing rules, with a notice saying why when it doesn't.
+    private func sharable(_ food: Food) -> Food {
+        var value = food
+        if value.shared == true, let problem = SharingRules.problem(value) {
+            value.shared = nil
+            store.notice = "Saved, but not shared. \(problem)"
+        }
+        return value
+    }
+
     private func applyBarcode(_ product: BarcodeProduct) {
-        let existingID = draft.id, existingBarcode = draft.barcode
-        draft = product.food; draft.id = existingID
+        let existingID = draft.id, existingBarcode = draft.barcode, wasShared = draft.shared
+        draft = product.food; draft.id = existingID; draft.shared = wasShared
+        if product.food.isCommunity { draft.chain = "mine"; draft.contributor = nil }
         if draft.barcode == nil { draft.barcode = existingBarcode }
         per100 = product.per100; servingSize = 100; servingUnit = product.unit
         servings = 1; scanBasisConfirmed = true

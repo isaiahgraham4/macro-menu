@@ -14,6 +14,11 @@ final class AppStore {
     /// and Find's supermarket mode see them but the Map, roulette, suggestions and restaurant lists don't.
     private(set) var supermarket: [Food] = []
     private(set) var supermarketChains: [Chain] = []
+    /// Foods other people shared (`CommunityFoods`), already filtered for reports and hidden people.
+    private(set) var community: [Food] = []
+    /// Goes up whenever `community` changes, so lists can redo their search cheaply.
+    private(set) var communityRevision = 0
+    func useCommunity(_ foods: [Food]) { if foods != community { community = foods; communityRevision += 1 } }
     private(set) var loadError: String?
     var errorMessage: String?
     var notice: String?
@@ -91,7 +96,7 @@ final class AppStore {
     /// Search, photos and the food lists see every food; suggestions keep to the curated everyday foods.
     var foods: [Food] { catalog.foods + everyday + survey + data.foods }
     /// Foods the search lists show: all of the above and the supermarket shelves, which stay out of photo and text matching.
-    var searchFoods: [Food] { foods + supermarket }
+    var searchFoods: [Food] { foods + supermarket + community }
     /// Foods that make up an order: restaurant menus and your own foods, without everyday foods.
     var orderFoods: [Food] { catalog.foods + data.foods }
     /// The foods one order search needs. A question can name a supermarket and a restaurant together.
@@ -142,11 +147,13 @@ final class AppStore {
     }
     func chainName(_ id: String) -> String {
         if id == Food.everyday { return "Everyday foods" }
+        if id == Food.community { return "Community" }
         return (catalog.chains + supermarketChains).first { $0.id == id }?.name ?? "My foods"
     }
     /// Restaurants, supermarkets and everyday foods by ID, for search and questions.
     var searchChainNames: [String: String] {
-        Dictionary((catalog.chains + supermarketChains).map { ($0.id, $0.name) }) { a, _ in a }.merging([Food.everyday: chainName(Food.everyday)]) { a, _ in a }
+        Dictionary((catalog.chains + supermarketChains).map { ($0.id, $0.name) }) { a, _ in a }
+            .merging([Food.everyday: chainName(Food.everyday), Food.community: chainName(Food.community)]) { a, _ in a }
     }
     private func write(_ updated: AppData) throws {
         guard loadError == nil, updated.isValid else { throw CocoaError(.fileReadCorruptFile) }
@@ -231,6 +238,8 @@ final class AppStore {
     /// A food that already has this barcode is updated rather than added twice. Returns the saved food.
     @discardableResult func saveToMyFoods(_ food: Food) -> Food? {
         var value = food; value.chain = "mine"; value.modifiers = nil
+        // A shared food becomes your own copy: its own ID, nobody else's, and not shared on again unless you choose to.
+        if food.isCommunity { value.id = UUID().uuidString; value.contributor = nil; value.shared = nil }
         // One decimal place, like foods saved from the editor.
         value.cal = value.cal.tenth; value.kj = value.cal * 4.184; value.p = value.p.tenth
         value.c = value.c?.tenth; value.f = value.f?.tenth; value.nut = value.nut?.mapValues(\.tenth)

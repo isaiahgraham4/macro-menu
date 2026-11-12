@@ -77,7 +77,61 @@ import UniformTypeIdentifiers
         assert(empty.lines.isEmpty && empty.nutrients.isEmpty && empty.macros.allSatisfy { $0.share == 0 && $0.sources.isEmpty })
     }
 
+    /// Shared foods: what can be shared, the word filter, record names, and where community foods sit in search.
+    @MainActor static func sharingChecks() {
+        let bar = Food(name: "Protein bar choc chip", cat: "snack", kj: 160 * 4.184, cal: 160, p: 10, c: 17, f: 5.5, serve: "1 bar (40 g)")
+        assert(SharingRules.problem(bar) == nil)
+        var noFat = bar; noFat.f = nil
+        assert(SharingRules.problem(noFat) != nil)
+        var noServe = bar; noServe.serve = " "
+        assert(SharingRules.problem(noServe) != nil)
+        var short = bar; short.name = "ab"
+        assert(SharingRules.problem(short) != nil)
+        var wrongEnergy = bar; wrongEnergy.cal = 400; wrongEnergy.kj = 400 * 4.184
+        assert(SharingRules.problem(wrongEnergy)?.contains("energy") == true)
+        var tooHeavy = bar; tooHeavy.serve = "1 bar (20 g)"
+        assert(SharingRules.problem(tooHeavy) != nil)
+        var huge = bar; huge.cal = 5000; huge.p = 300; huge.c = 500; huge.f = 200; huge.serve = "1 tray"
+        assert(SharingRules.problem(huge) != nil)
+        // Alcohol's energy isn't a macro, so a beer listing more energy than its macros explain is fine; a burger isn't.
+        let beer = Food(name: "Pale ale schooner", cat: "drink", kj: 180 * 4.184, cal: 180, p: 1.5, c: 14, f: 0, serve: "425 mL")
+        assert(SharingRules.problem(beer) == nil)
+        var burger = beer; burger.name = "Cheese burger"
+        assert(SharingRules.problem(burger) != nil)
+        var recipe = bar; recipe.ingredients = []
+        assert(SharingRules.problem(recipe) != nil)
+        // Strong language and contact details, whole words only.
+        for bad in ["Fuck bar", "f uck bar", "Shit sandwich", "Call 0412 345 678", "Visit www.example.com", "Order at example.com.au", "Bar by me@mail"] {
+            var food = bar; food.name = bad
+            assert(SharingRules.problem(food) != nil, bad)
+        }
+        for fine in ["Scunthorpe pie", "Cocktail frankfurts", "Grass-fed beef", "Cucumber salad", "Assorted nuts", "Dickens cider", "Cumin rice", "Shiitake noodles"] {
+            var food = bar; food.name = fine
+            assert(SharingRules.problem(food) == nil, fine)
+        }
+        // Record names: deterministic, and only characters CloudKit accepts.
+        assert(sharedRecordName(for: "ABC-123") == "food-ABC-123")
+        assert(sharedRecordName(for: "off:9300000000001") == "food-off9300000000001")
+        assert(sharedRecordName(for: String(repeating: "a", count: 400)).count == 205)
+        // Search: a community food comes after a published food that matches as well, and says "Community".
+        let official = Food(id: "a", chain: "kfc", name: "Chicken wrap", kj: 1500, cal: 360, p: 20, c: 30, f: 15)
+        let shared = Food(id: "community:food-x", chain: Food.community, name: "Chicken wrap", kj: 1500, cal: 360, p: 40, c: 20, f: 10)
+        let rows = FoodSearch.browse([shared, official], chainNames: ["kfc": "KFC", Food.community: "Community"], request: .init(search: "chicken wrap"))
+        assert(rows.map(\.id) == ["a", "community:food-x"])
+        assert(FoodSearch.browse([shared, official], chainNames: ["kfc": "KFC", Food.community: "Community"], request: .init(search: "community")).map(\.id) == ["community:food-x"])
+        // A shared food saved to My foods becomes your own copy.
+        let root = FileManager.default.temporaryDirectory.appending(path: UUID().uuidString)
+        let store = AppStore(url: root.appending(path: "state.json"), catalogURL: nil, legacyURL: nil, everydayURL: nil, surveyURL: nil, supermarketURL: nil)
+        var scanned = shared; scanned.contributor = "someone"; scanned.barcode = "9310000000017"
+        let copy = store.saveToMyFoods(scanned)
+        assert(copy?.chain == "mine" && copy?.contributor == nil && copy?.id.hasPrefix("community:") == false && copy?.shared == nil)
+        store.useCommunity([shared])
+        assert(store.searchFoods.contains { $0.id == shared.id } && !store.foods.contains { $0.id == shared.id } && store.chainName(Food.community) == "Community")
+        try? FileManager.default.removeItem(at: root)
+    }
+
     @MainActor static func main() throws {
+        sharingChecks()
         try barcodeChecks()
         dayBreakdownChecks()
         let root = FileManager.default.temporaryDirectory.appending(path: UUID().uuidString)

@@ -87,7 +87,11 @@ struct BarcodeScanView: View {
                                 .font(.roboto(.caption)).foregroundStyle(.secondary)
                             Button("Use nutrition & choose serving") { use(product); if dismissAfterUse { dismiss() } }.buttonStyle(.borderedProminent)
                         }
-                        Link("Source: Open Food Facts · ODbL", destination: product.sourceURL)
+                        if product.food.isCommunity {
+                            Text("Shared by a Leanrrr user. Leanrrr hasn't checked these figures.").font(.roboto(.caption)).foregroundStyle(.secondary)
+                        } else {
+                            Link("Source: Open Food Facts · ODbL", destination: product.sourceURL)
+                        }
                         Button("Scan another product") { reset() }
                     }
                 } else {
@@ -154,6 +158,14 @@ struct BarcodeScanView: View {
                     product = found; pending = nil
                     recentData = RecentBarcodes.recording(found, in: recentData)
                 } catch {
+                    guard !Task.isCancelled, pending == code else { return }
+                    // Not in Open Food Facts (or offline): someone may have shared this product.
+                    if let shared = await AppServices.community.food(barcode: code), !Task.isCancelled, pending == code {
+                        product = BarcodeProduct(food: shared, per100: false, unit: shared.servingWeight?.1 ?? "g",
+                                                 sourceURL: URL(string: "leanr://community/\(code)")!)
+                        pending = nil
+                        return
+                    }
                     guard !Task.isCancelled, pending == code else { return }
                     message = (error as? BarcodeLookupError)?.errorDescription ?? "Couldn't connect to the food database. Check your internet connection and try again."
                     switch error as? BarcodeLookupError {

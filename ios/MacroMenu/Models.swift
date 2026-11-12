@@ -54,6 +54,10 @@ struct Food: Codable, Identifiable, Hashable, Sendable {
     var barcode: String?
     /// The meats and allergens in it: for restaurant items, where the restaurant's own words say; for everyday foods, curated in `Scripts/generic-foods.py` (see `DietInfo`).
     var diet: DietInfo?
+    /// One of your own foods that you chose to share with other Leanrrr users (see `CommunityFoods`).
+    var shared: Bool?
+    /// For a food someone else shared: their anonymous iCloud ID for Leanrrr, so you can hide their foods.
+    var contributor: String?
     var isAnchor: Bool { chain == "mine" || cat == "main" || cat == "breakfast" }
     /// Everyday foods such as bananas and chicken breast, from USDA FoodData Central. Searchable everywhere, but not a restaurant.
     static let everyday = "generic"
@@ -68,6 +72,9 @@ struct Food: Codable, Identifiable, Hashable, Sendable {
     /// Ready meals and snacks from `SupermarketFoods.json`. Searchable and part of Find's supermarket mode, but not a restaurant.
     static let supermarkets: Set<String> = ["coles", "woolworths"]
     var isSupermarket: Bool { Food.supermarkets.contains(chain) }
+    /// Foods other Leanrrr users shared, from iCloud. Searchable and found by barcode, but never suggested or matched from photos.
+    static let community = "community"
+    var isCommunity: Bool { chain == Food.community }
     /// The Open Food Facts page for a supermarket product; its ID ends in the barcode.
     var productSource: URL? {
         guard isSupermarket, let code = id.split(separator: ":").last else { return nil }

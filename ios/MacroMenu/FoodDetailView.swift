@@ -13,6 +13,8 @@ struct FoodDetailView: View {
     var logMeal: MealTime?
     @State private var editing = false
     @State private var sharingImage = false
+    @State private var reporting = false
+    @State private var confirmingHide = false
 
     init(food: Food, pick: ((Portion) -> Void)? = nil, pickTitle: String = "Use this portion", logYesterday: Bool = false, logMeal: MealTime? = nil) {
         initial = food; self.pick = pick; self.pickTitle = pickTitle; self.logYesterday = logYesterday; self.logMeal = logMeal
@@ -39,6 +41,10 @@ struct FoodDetailView: View {
     var portion: Portion { Portion(food: adjusted, quantity: amount) }
     /// "McDonald's", "Hungry Jack's" or "KFC's", for "… energy" and "… figures".
     var owner: String { let name = store.chainName(food.chain); return name.hasSuffix("'s") || name.hasSuffix("’s") ? name : name + "'s" }
+    /// Keeps a shared food as one of your own, so it's yours to edit and doesn't change if they edit theirs.
+    private func saveCopy() {
+        if store.saveToMyFoods(food) != nil { store.notice = "Saved to My foods" }
+    }
     var customized: Bool { changes.values.contains { $0 > 0 } || ownAdjustment != nil }
     var body: some View {
         LeanrForm {
@@ -49,6 +55,19 @@ struct FoodDetailView: View {
                 }.padding(.vertical, 4)
                 if let note = food.note { Text(note).font(.roboto(.caption)) }
                 if food.mismatch { Label("Published energy doesn’t match the listed macros.", systemImage: "exclamationmark.triangle").font(.roboto(.caption)).foregroundStyle(.orange) }
+            }
+            if food.isCommunity {
+                Section {
+                    Button("Save a copy to My foods", systemImage: "bookmark") { saveCopy() }
+                    Button("Report this food", systemImage: "flag") { reporting = true }
+                    Button("Hide foods from this person", systemImage: "eye.slash", role: .destructive) { confirmingHide = true }
+                } header: { Text("Shared by a Leanrrr user") } footer: {
+                    Text("Leanrrr hasn't checked these figures. Compare them with the label before relying on them.")
+                }
+            } else if editable && food.shared == true {
+                Section {
+                    Label("Shared with other Leanrrr users", systemImage: "person.2").font(.roboto(.subheadline))
+                } footer: { Text("Edit the food to stop sharing it. Deleting it takes it down too.") }
             }
             Section("Nutrition for your portion") { NutritionView(total: Nutrition([portion])) }
             if let ingredients = portion.ingredientPortions {
@@ -70,7 +89,7 @@ struct FoodDetailView: View {
                 } else { NumberField(title: "Servings", value: $quantity, places: 2) }
                 Text("\(amount.number) × \(food.serve)").font(.roboto(.caption)).foregroundStyle(.secondary)
             }
-            if food.chain != "mine" && !food.isEveryday {
+            if food.chain != "mine" && !food.isEveryday && !food.isCommunity {
                 let removals = (food.modifiers ?? []).filter { $0.kind == "r" }
                 if !removals.isEmpty {
                     Section {
@@ -167,7 +186,23 @@ struct FoodDetailView: View {
                     Button { saveCustom() } label: { Label("Save custom order to My foods", systemImage: "bookmark") }.disabled(!adjusted.isValid)
                 }
             }
-        }.navigationTitle("Food details").navigationBarTitleDisplayMode(.inline)
+        }
+        .confirmationDialog("Why are you reporting it?", isPresented: $reporting, titleVisibility: .visible) {
+            ForEach(ShareReportReason.allCases) { reason in
+                Button(reason.rawValue) {
+                    Task {
+                        let sent = await AppServices.community.report(food, reason: reason)
+                        store.notice = sent ? "Thanks for reporting it. It's hidden for you now." : "It's hidden for you. The report couldn't be sent, so try again later."
+                    }
+                    dismiss()
+                }
+            }
+        } message: { Text("It's hidden for you straight away. Foods reported by several people are hidden for everyone and checked.") }
+        .alert("Hide this person's foods?", isPresented: $confirmingHide) {
+            Button("Hide", role: .destructive) { AppServices.community.block(food); store.notice = "You won't see foods from this person."; dismiss() }
+            Button("Cancel", role: .cancel) {}
+        } message: { Text("You won't see anything they share. Bring them back in Settings → Shared foods.") }
+        .navigationTitle("Food details").navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 if editable {
                     ToolbarItem(placement: .topBarTrailing) {

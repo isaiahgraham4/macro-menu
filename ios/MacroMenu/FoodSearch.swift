@@ -124,6 +124,8 @@ enum FoodSearch {
         rows.sort { a,b in
             let scoreA = scores[a.id] ?? 0, scoreB = scores[b.id] ?? 0
             if scoreA != scoreB { return scoreA < scoreB }
+            // Foods other people shared come after published figures that match as well.
+            if a.isCommunity != b.isCommunity { return b.isCommunity }
             switch request.sort {
             case "protein": return a.p > b.p
             case "calories": return a.cal < b.cal

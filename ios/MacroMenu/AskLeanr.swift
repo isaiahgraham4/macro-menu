@@ -73,7 +73,7 @@ enum AskLeanr {
         if lower.contains("with a side") || lower.contains("and a side") || lower.contains("with sides") { query.maxItems = max(query.maxItems, 2); said.insert(.items) }
 
         // Restaurants: the menu's own names and the names people say.
-        for (id, name) in chainNames where id != "mine" && id != Food.everyday {
+        for (id, name) in chainNames where id != "mine" && id != Food.everyday && id != Food.community {
             let plain = name.lowercased().replacingOccurrences(of: "’", with: "'").replacingOccurrences(of: "-", with: " ")
             let variants = [plain, plain.replacingOccurrences(of: "'", with: ""), plain.replacingOccurrences(of: " ", with: "")]
             // Whole words, so "coleslaw" isn't Coles.

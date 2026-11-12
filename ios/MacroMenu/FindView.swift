@@ -269,7 +269,7 @@ struct BrowseView: View {
     @State private var shown: FoodSearch.Browse?
     private var request: FoodSearch.Browse { .init(search: search, chain: chain, category: category, sort: sort, mineFirst: true) }
     /// Also redo the list when your own foods change or the menu loads.
-    private struct Key: Equatable { var request: FoodSearch.Browse; var custom: [Food]; var catalog: String; var diet: String }
+    private struct Key: Equatable { var request: FoodSearch.Browse; var custom: [Food]; var catalog: String; var diet: String; var community: Int }
 
     private func update(_ request: FoodSearch.Browse) async {
         // Wait for a pause in typing so each keystroke doesn't start a new search.
@@ -310,6 +310,9 @@ struct BrowseView: View {
                 ChipRow {
                     Chip(title: "All", selected: chain == "all") { chain = "all" }
                     Chip(title: "Everyday foods", selected: chain == Food.everyday) { chain = chain == Food.everyday ? "all" : Food.everyday }
+                    if !store.community.isEmpty {
+                        Chip(title: "Community", selected: chain == Food.community) { chain = chain == Food.community ? "all" : Food.community }
+                    }
                     ForEach(store.supermarketChains + store.catalog.chains) { item in Chip(title: item.name, selected: chain == item.id) { chain = chain == item.id ? "all" : item.id } }
                 }
                 ChipRow {
@@ -381,7 +384,7 @@ struct BrowseView: View {
                 if search.isEmpty && !initialSearch.isEmpty { search = initialSearch }
                 if startSearching && search.isEmpty { searchShown = true }
             }
-            .task(id: Key(request: request, custom: store.data.foods, catalog: store.catalog.revision ?? String(store.catalog.foods.count), diet: dietRaw)) { await update(request) }
+            .task(id: Key(request: request, custom: store.data.foods, catalog: store.catalog.revision ?? String(store.catalog.foods.count), diet: dietRaw, community: store.communityRevision)) { await update(request) }
             .searchSuggestions {
                 if search.isEmpty && !recent.isEmpty {
                     Section("Recent searches") {

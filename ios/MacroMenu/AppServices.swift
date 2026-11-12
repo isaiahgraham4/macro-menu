@@ -8,6 +8,7 @@ import UserNotifications
     static let store = AppStore()
     static let health = HealthSync()
     static let cloud = CloudSync()
+    static let community = CommunityFoods()
     static let nav = Navigator()
     private static let router = NotificationRouter()
     private static var started = false
@@ -16,7 +17,7 @@ import UserNotifications
     static func start() {
         guard !started else { return }
         started = true
-        health.store = store; cloud.store = store
+        health.store = store; cloud.store = store; community.store = store
         // Connected before? Steps arriving in the background keep the Steps widget current.
         health.watchSteps()
         // Premium turning on or off changes the app colour, the widgets and which reminders are booked.
@@ -25,7 +26,7 @@ import UserNotifications
             Purchases.shared.start()
         }
         UNUserNotificationCenter.current().delegate = router
-        store.logsChanged = { old, new in health.follow(old: old, new: new) }
+        store.logsChanged = { old, new in health.follow(old: old, new: new); community.follow(old: old, new: new) }
         store.saved = { cloud.markDirty(); rebookReminders() }
         // Meals, targets and weigh-ins from another device change what's reminded, too.
         store.synced = { rebookReminders() }
@@ -34,6 +35,8 @@ import UserNotifications
         WatchLink.shared.start(store)
         rebookReminders()
         logQueued()
+        // Foods other people shared, and any of yours still waiting to upload.
+        Task { await community.refresh() }
         LeanrShortcuts.updateAppShortcutParameters()
         // A menu downloaded earlier may be newer than the one built into the app.
         let bundled = store.catalog

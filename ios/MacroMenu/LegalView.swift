@@ -154,7 +154,7 @@ struct DeleteDataView: View {
                 }
                 .disabled(working)
             } footer: {
-                Text("iCloud sync is turned off on this iPhone afterwards, so copies on your other devices don't come back. Delete there too if Leanrrr is on another device. I don't hold any of your data, so there's nothing else to delete.")
+                Text("iCloud sync is turned off on this iPhone afterwards, so copies on your other devices don't come back. Delete there too if Leanrrr is on another device. Foods you shared with other Leanrrr users are taken down too. I don't hold any of your data, so there's nothing else to delete.")
             }
         }
         .navigationTitle("Delete all my data")
@@ -172,6 +172,8 @@ struct DeleteDataView: View {
 
     private func delete() async {
         working = true; defer { working = false }
+        // Foods you shared come down first, while the list of them still exists.
+        let sharedDeleted = await AppServices.community.deleteAllShared(store.data.foods)
         let cloudDeleted = await cloud.deleteCopy()
         if includeHealth && health.enabled { await health.deleteEverythingSaved() }
         health.disconnect()
@@ -181,6 +183,7 @@ struct DeleteDataView: View {
         guard store.eraseEverything() else { return }
         WidgetCenter.shared.reloadAllTimelines()
         result = cloudDeleted ? "Leanrrr has started fresh." : "Leanrrr has started fresh on this iPhone. iCloud couldn't be reached, so delete Leanrrr's folder in the Files app under iCloud Drive."
+        if !sharedDeleted { result! += " Some foods you shared couldn't be taken down. Contact \(AppInfo.contactText) to have them removed." }
     }
 }
 

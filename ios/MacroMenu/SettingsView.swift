@@ -140,6 +140,7 @@ struct SettingsView: View {
             } header: { Text("iCloud") } footer: {
                 Text("Keeps your foods, logs, targets and weigh-ins the same on every device signed in to your Apple Account. Your current meal and settings like colours stay on each device.")
             }
+            SharedFoodsSection()
             BackupSection()
             Section("About") {
                 LabeledContent("App", value: "Leanrrr")
@@ -337,5 +338,32 @@ struct ReminderSettings: View {
     private func reload() {
         revision += 1
         MealReminders.refresh(store.data, goals: store.goals, logReminders: Premium.isUnlocked)
+    }
+}
+
+/// Showing foods others shared, and bringing back people or foods you hid.
+struct SharedFoodsSection: View {
+    private var community: CommunityFoods { AppServices.community }
+    var body: some View {
+        Section {
+            Toggle(isOn: Binding(get: { community.show }, set: { on in
+                community.show = on
+                if on { Task { await community.refresh(force: true) } }
+            })) { Label("Show foods others shared", systemImage: "person.2") }
+            if community.show {
+                if let problem = community.problem {
+                    Text(problem).font(.roboto(.caption)).foregroundStyle(.orange)
+                } else if let last = community.lastRefreshed {
+                    LabeledContent("Updated", value: last.formatted(.relative(presentation: .named)))
+                }
+                Button("Update now") { Task { await community.refresh(force: true) } }.disabled(community.refreshing)
+            }
+            let hidden = community.blocked.count + community.reported.count
+            if hidden > 0 {
+                Button("Show hidden people and reported foods again (\(hidden))") { community.unblockEveryone() }
+            }
+        } header: { Text("Shared foods") } footer: {
+            Text("Foods other Leanrrr users share show up in search marked Community, and when you scan their barcode. Leanrrr doesn't check them. To share one of yours, turn on sharing when you add or edit it in My foods.")
+        }
     }
 }

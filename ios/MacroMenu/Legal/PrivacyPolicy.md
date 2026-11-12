@@ -1,6 +1,6 @@
 # Leanrrr privacy policy
 
-Effective 15 October 2026
+Effective 12 November 2026
 
 Leanrrr is made by Isaiah Graham, an independent developer in Victoria, Australia ("I", "me"). This policy explains what happens to your information when you use Leanrrr. You can reach me at {{CONTACT}}.
 
@@ -8,6 +8,7 @@ Leanrrr is made by Isaiah Graham, an independent developer in Victoria, Australi
 
 - Leanrrr has no account, no ads, no analytics and no tracking. It doesn't use cookies.
 - Everything you enter stays on your device and, if you choose, in your own iCloud and Apple Health. I never receive it.
+- The one exception is a food you choose to share with other Leanrrr users. Only that food's name, serving, nutrition and barcode are shared, without your name.
 - A few features ask other services for information. They are told only what they need: a barcode number, the words you search for packaged foods, your position for an Apple Maps search, or the address of a recipe page you ask Leanrrr to load.
 
 ## What Leanrrr keeps on your device
@@ -61,6 +62,14 @@ If you allow it, Leanrrr uses your location only while you're using the app, to 
 
 You can turn location off at any time in the Settings app. Leanrrr works without it, and you can search for a suburb or address instead.
 
+## Foods you share
+
+Sharing is off for every food unless you turn it on for that food. When you do, its name, serving size, nutrition figures, category and barcode are saved in Leanrrr's public database in Apple's iCloud, where anyone using Leanrrr can see them. Your name, Apple Account, log and other foods are never part of it. iCloud attaches an anonymous ID that's only used inside Leanrrr, so you can change or remove what you shared and other people can hide everything from one sharer. I can't use it to work out who you are.
+
+Turning sharing off for a food, or deleting the food, takes the shared copy down. Settings → Delete all my data takes down everything you shared. Foods that break the terms of use may be removed.
+
+If you report a shared food, the report records which food it was, the reason you chose and your anonymous ID, so each person's report counts once. Foods other people shared are downloaded to your iPhone so search works offline. Turn them off in Settings → Shared foods.
+
 ## Product lookups
 
 When you scan a product, its barcode number is sent to Open Food Facts (a non-profit in France) to look up its nutrition.
@@ -82,16 +91,16 @@ Leanrrr isn't designed for children under 13, and the target estimate is only fo
 ## Deleting your data
 
 - To delete one item, swipe it or tap it and choose Delete.
-- Settings → Delete all my data removes everything Leanrrr keeps on this device and its iCloud copy. It can also remove the food, water and weights Leanrrr saved to Apple Health.
+- Settings → Delete all my data removes everything Leanrrr keeps on this device and its iCloud copy, and takes down any foods you shared. It can also remove the food, water and weights Leanrrr saved to Apple Health.
 - Deleting the app removes what's on the device.
 
-Because I don't hold any of your data, there's nothing for me to delete on my side. If you have a question, contact me and I'll answer within 30 days.
+Apart from foods you chose to share, I don't hold any of your data, so there's nothing for me to delete on my side. If a food you shared can't be taken down from the app, contact me and I'll remove it. If you have a question, contact me and I'll answer within 30 days.
 
 ## Other services
 
 Leanrrr doesn't sell or share your personal data, and it uses no analytics, advertising or tracking services. The only outside services it contacts are:
 
-- **Apple** (United States and elsewhere): Maps, iCloud, Health, Siri and Visual Intelligence, which are part of your device and your Apple Account and are covered by Apple's privacy policy.
+- **Apple** (United States and elsewhere): Maps, iCloud (including the public database that holds shared foods), Health, Siri and Visual Intelligence, which are part of your device and your Apple Account and are covered by Apple's privacy policy.
 - **Open Food Facts** (France): receives only a product's barcode number or the words you search for packaged foods. Neither is linked to you.
 - **Recipe websites you choose**: when you import a recipe from a link, that website receives the request for the page and nothing else.
 - **GitHub** (United States): hosts the restaurant menu file. A few times a day Leanrrr asks it whether the menu has changed and, if it has, downloads the new one. The request contains nothing about you or your data. As with any website, GitHub sees your device's IP address and handles it under GitHub's privacy statement.

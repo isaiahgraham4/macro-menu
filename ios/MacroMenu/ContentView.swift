@@ -78,6 +78,7 @@ struct ContentView: View {
                 AppServices.rebookReminders()
                 Task { await health.refresh() }
                 Task { await AppServices.checkMenu() }
+                Task { await AppServices.community.refresh() }
             }
         }
         .task {

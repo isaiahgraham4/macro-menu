@@ -1,6 +1,6 @@
 # Leanrrr terms of use
 
-Effective 11 October 2026
+Effective 12 November 2026
 
 These terms apply when you use Leanrrr, an app made by Isaiah Graham, an independent developer in Victoria, Australia. Apple's standard Licensed Application End User License Agreement also applies. Contact me at {{CONTACT}}.
 
@@ -31,6 +31,18 @@ Leanrrr is free to use. If paid features are ever added, how they're sold and re
 ## Your data
 
 What you enter in Leanrrr is yours. The privacy policy explains how it's handled.
+
+## Foods you share
+
+You can choose to share foods you've added with other Leanrrr users. When you share one:
+
+- Only share figures from the product's label, the restaurant or another source you trust, and only for a real food.
+- Don't put offensive, abusive, sexual or hateful words, advertising, links or contact details in a shared food.
+- You let Leanrrr show that food to other users, for free and for as long as it's shared. It stays yours, and you can take it down at any time.
+
+There's no tolerance for objectionable content or abusive users. Any food can be reported from its page, and anyone's shared foods can be hidden. Foods reported by several people are hidden for everyone until they're checked. I may remove any shared food, or stop someone sharing, without notice. Reports are looked at within 24 hours.
+
+Foods other people share haven't been checked by me. Compare them with the label before relying on them.
 
 ## Age
 
