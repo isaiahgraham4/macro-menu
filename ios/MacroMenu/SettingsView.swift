@@ -16,7 +16,14 @@ struct SettingsView: View {
     @AppStorage(AppAccent.storageKey) private var accentRaw = AppAccent.standard.rawValue
     @AppStorage(AppIconTheme.storageKey) private var iconRaw = AppIconTheme.standard.rawValue
     private var current: AppAccent { AppAccent.resolved(accentRaw) }
+    private var isCustomAccent: Bool { Premium.isUnlocked && ThemeColour.isCustom(accentRaw) }
     private var currentIcon: AppIconTheme { AppIconTheme(rawValue: iconRaw) ?? .standard }
+    @AppStorage(MacroColours.proteinKey) private var proteinRaw = "blue"
+    @AppStorage(MacroColours.carbsKey) private var carbsRaw = "orange"
+    @AppStorage(MacroColours.fatKey) private var fatRaw = "red"
+    private var currentPack: ColourPack? {
+        ColourPack.matching(accent: accentRaw, protein: proteinRaw, carbs: carbsRaw, fat: fatRaw, icon: iconRaw)
+    }
     @Environment(AppStore.self) private var store
     var version: String { Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "" }
     /// When the restaurant menu in use was published.
@@ -47,28 +54,52 @@ struct SettingsView: View {
                     .font(.roboto(.caption)).foregroundStyle(.secondary)
             }
             Section {
+                ForEach(ColourPack.all) { pack in
+                    let locked = !Premium.isUnlocked && !pack.isFree
+                    Button { if locked { showPremium = true } else { applyPack(pack) } } label: {
+                        ColourPackRow(pack: pack, selected: pack == currentPack, locked: locked)
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel(locked ? "\(pack.name) colour pack, needs Even Leanrrr" : "\(pack.name) colour pack")
+                    .accessibilityHint(pack.detail)
+                    .accessibilityAddTraits(pack == currentPack ? .isSelected : [])
+                }
+            } header: {
+                Text("Colour packs")
+            } footer: {
+                if Premium.isUnlocked {
+                    Text("\(currentPack?.name ?? "Your own mix") · Sets the app icon, app colour and macro colours together. You can still change any of them below.")
+                } else {
+                    Label("Colour packs come with Even Leanrrr.", systemImage: "lock.fill")
+                }
+            }
+            Section {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 6), spacing: 16) {
                     ForEach(AppAccent.allCases) { accent in
                         let locked = !Premium.isUnlocked && accent != AppAccent.standard
+                        let chosen = !isCustomAccent && accent == current
                         // A locked colour opens Premium instead of doing nothing.
                         Button { if locked { showPremium = true } else { accentRaw = accent.rawValue } } label: {
                             Circle().fill(accent.color).frame(width: 36, height: 36)
                                 .overlay {
-                                    if accent == current { Image(systemName: "checkmark").fontWeight(.bold).foregroundStyle(.white) }
+                                    if chosen { Image(systemName: "checkmark").fontWeight(.bold).foregroundStyle(.white) }
                                     else if locked { Image(systemName: "lock.fill").font(.roboto(.caption)).foregroundStyle(.white) }
                                 }
-                                .background { Circle().strokeBorder(accent.color, lineWidth: 2).padding(-5).opacity(accent == current ? 1 : 0) }
+                                .background { Circle().strokeBorder(accent.color, lineWidth: 2).padding(-5).opacity(chosen ? 1 : 0) }
                         }
                         .buttonStyle(.plain)
                         .accessibilityLabel(locked ? "\(accent.name), needs Even Leanrrr" : accent.name)
-                        .accessibilityAddTraits(accent == current ? .isSelected : [])
+                        .accessibilityAddTraits(chosen ? .isSelected : [])
                     }
                 }.padding(.vertical, 8)
+                CustomColourRow(title: "Custom colour", raw: $accentRaw, fallback: AppAccent.standard) { showPremium = true }
             } header: {
                 Text("App colour")
             } footer: {
-                if Premium.isUnlocked { Text("\(current.name) · Changes buttons, tabs, links and progress bars.") }
-                else { Label("More colours come with Even Leanrrr.", systemImage: "lock.fill") }
+                if Premium.isUnlocked {
+                    Text("\(isCustomAccent ? "Custom" : current.name) · Changes buttons, tabs, links and progress bars.")
+                    + Text(ThemeColour.lightWarning(accentRaw).map { " " + $0 } ?? "")
+                } else { Label("More colours come with Even Leanrrr.", systemImage: "lock.fill") }
             }
             Section {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 3), spacing: 14) {
@@ -190,6 +221,102 @@ struct SettingsView: View {
         iconRaw = icon.rawValue
         UIApplication.shared.setAlternateIconName(icon.alternateName)
     }
+
+    private func applyPack(_ pack: ColourPack) {
+        accentRaw = pack.accent.rawValue
+        proteinRaw = pack.protein.rawValue
+        carbsRaw = pack.carbs.rawValue
+        fatRaw = pack.fat.rawValue
+        // iOS shows an alert for every icon change, so skip it when the icon is already the pack's.
+        if UIApplication.shared.alternateIconName != pack.icon.alternateName { selectIcon(pack.icon) } else { iconRaw = pack.icon.rawValue }
+    }
+}
+
+/// One pack in Settings: its icon, name, a line about it, and swatches for the app colour and the three macros.
+private struct ColourPackRow: View {
+    let pack: ColourPack
+    let selected: Bool
+    let locked: Bool
+
+    var body: some View {
+        HStack(spacing: 12) {
+            Image(pack.icon.previewAsset)
+                .resizable().scaledToFill().frame(width: 44, height: 44)
+                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                // A hairline, so the white Classic icon doesn't vanish into the white row.
+                .overlay { RoundedRectangle(cornerRadius: 10, style: .continuous).strokeBorder(Color(.separator), lineWidth: 0.5) }
+            VStack(alignment: .leading, spacing: 2) {
+                Text(pack.name).font(.roboto(.body, weight: .medium)).foregroundStyle(.primary)
+                Text(pack.detail).font(.roboto(.caption)).foregroundStyle(.secondary).lineLimit(2)
+                HStack(spacing: 5) {
+                    swatch(pack.accent, wide: true)
+                    swatch(pack.protein)
+                    swatch(pack.carbs)
+                    swatch(pack.fat)
+                }.padding(.top, 3).accessibilityHidden(true)
+            }
+            Spacer(minLength: 8)
+            if selected {
+                Image(systemName: "checkmark").fontWeight(.semibold).foregroundStyle(.tint)
+            } else if locked {
+                Image(systemName: "lock.fill").font(.roboto(.caption)).foregroundStyle(.secondary)
+            }
+        }
+        .padding(.vertical, 2)
+        .contentShape(Rectangle())
+    }
+
+    /// The app colour is a short bar, the macros are dots, so the two kinds read apart.
+    private func swatch(_ accent: AppAccent, wide: Bool = false) -> some View {
+        Capsule().fill(accent.color).frame(width: wide ? 22 : 10, height: 10)
+    }
+}
+
+/// Any colour, from the system colour picker, stored as "#RRGGBB" next to the preset swatches.
+/// Locked rows open Premium when `onLocked` is given; inside an already-disabled screen they just sit greyed out.
+struct CustomColourRow: View {
+    let title: String
+    @Binding var raw: String
+    let fallback: AppAccent
+    let onLocked: (() -> Void)?
+
+    private var isCustom: Bool { ThemeColour.isCustom(raw) }
+
+    var body: some View {
+        if !Premium.isUnlocked, let onLocked {
+            Button(action: onLocked) {
+                Label { Text(title).foregroundStyle(.primary) } icon: { Image(systemName: "lock.fill") }
+            }
+            .accessibilityLabel("\(title), needs Even Leanrrr")
+        } else {
+            ColorPicker(selection: Binding(
+                // The picked value itself, not the readable shade, so nudging it starts from what was chosen.
+                get: { ThemeColour.rgb(raw).map { Color(red: $0.r, green: $0.g, blue: $0.b) } ?? fallback.color },
+                set: { raw = ThemeColour.hex(from: $0) }
+            ), supportsOpacity: false) {
+                Label {
+                    VStack(alignment: .leading, spacing: 1) {
+                        Text(title)
+                        if isCustom {
+                            Text(ThemeColour.isAdjusted(raw) ? "\(raw) · adjusted to stay readable" : raw)
+                                .font(.roboto(.caption)).foregroundStyle(.secondary).monospacedDigit()
+                        }
+                    }
+                } icon: {
+                    Image(systemName: isCustom ? "checkmark.circle.fill" : "eyedropper")
+                }
+            }
+            .accessibilityValue(isCustom ? "Chosen, \(raw)" : "Not chosen")
+        }
+    }
+}
+
+extension ThemeColour {
+    /// A short note when a custom colour is shown a shade darker or lighter than picked, so text stays readable.
+    static func lightWarning(_ raw: String) -> String? {
+        guard isAdjusted(raw) else { return nil }
+        return "Leanrrr shows it a shade darker or lighter where needed so text stays easy to read."
+    }
 }
 
 struct MacroColourSettings: View {
@@ -214,7 +341,8 @@ struct MacroColourSettings: View {
     /// Real colour swatches, like App colour: a menu picker redraws its icons in the tint colour, so every choice looked the same.
     private func swatches(_ title: String, key: String, selection: Binding<String>) -> some View {
         let current = MacroColours.colour(key, choices: [key: selection.wrappedValue])
-        let name = AppAccent(rawValue: selection.wrappedValue)?.name ?? ""
+        let name = AppAccent(rawValue: selection.wrappedValue)?.name ?? (ThemeColour.isCustom(selection.wrappedValue) ? "Custom" : "")
+        let fallback: AppAccent = key == "p" ? .blue : key == "c" ? .orange : .red
         return Section {
             LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 6), spacing: 16) {
                 ForEach(AppAccent.allCases) { colour in
@@ -228,6 +356,7 @@ struct MacroColourSettings: View {
                     .accessibilityLabel("\(title), \(colour.name)").accessibilityAddTraits(chosen ? .isSelected : [])
                 }
             }.padding(.vertical, 8)
+            CustomColourRow(title: "Custom \(title.lowercased()) colour", raw: selection, fallback: fallback, onLocked: nil)
         } header: {
             HStack(spacing: 6) {
                 Text(title)

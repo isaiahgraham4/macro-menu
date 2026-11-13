@@ -11,7 +11,7 @@ struct StoryCard: View {
     var footnote: String
 
     var body: some View {
-        let accent = AppAccent.resolved(accentRaw).color
+        let accent = AppAccent.resolvedColor(accentRaw)
         VStack(alignment: .leading, spacing: 0) {
             Label("LEANRRR", systemImage: "leaf.fill").font(.roboto(.caption, weight: .bold)).foregroundStyle(accent)
             Spacer(minLength: 24)

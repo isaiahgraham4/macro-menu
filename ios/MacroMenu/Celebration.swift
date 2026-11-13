@@ -88,7 +88,7 @@ private struct MomentConfetti: View {
     @Environment(\.colorScheme) private var scheme
     var body: some View {
         if !reduceMotion {
-            Confetti(colours: confettiColours(accent: AppAccent.resolved(accentRaw).color, dark: scheme == .dark),
+            Confetti(colours: confettiColours(accent: AppAccent.resolvedColor(accentRaw), dark: scheme == .dark),
                      count: 60, power: 700, origin: UnitPoint(x: 0.5, y: 0.78))
         }
     }
@@ -112,7 +112,7 @@ private struct MomentCard: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.dynamicTypeSize) private var typeSize
     @State private var appeared = false
-    private var accent: Color { AppAccent.resolved(accentRaw).color }
+    private var accent: Color { AppAccent.resolvedColor(accentRaw) }
     private var copy: Moment.Copy { moment.copy }
     private var title: String { copy.title }
     private var detail: String { copy.detail }
@@ -220,7 +220,7 @@ private struct GoalReachedView: View {
                 .leftOfFold(fold).frame(maxWidth: .infinity)
             }
             if confetti && !reduceMotion {
-                Confetti(colours: confettiColours(accent: AppAccent.resolved(accentRaw).color, dark: scheme == .dark), count: 150, power: 1300, origin: UnitPoint(x: 0.5, y: 0.4))
+                Confetti(colours: confettiColours(accent: AppAccent.resolvedColor(accentRaw), dark: scheme == .dark), count: 150, power: 1300, origin: UnitPoint(x: 0.5, y: 0.4))
             }
         }
         .accessibilityAddTraits(.isModal)

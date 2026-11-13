@@ -47,7 +47,7 @@ struct ContentView: View {
     @AppStorage(MacroColours.fatKey) private var fatColour = "red"
     @AppStorage(AppAppearance.storageKey) private var appearance = AppAppearance.system
     @AppStorage(AppAccent.storageKey) private var accentRaw = AppAccent.standard.rawValue
-    private var accent: Color { AppAccent.resolved(accentRaw).color }
+    private var accent: Color { AppAccent.resolvedColor(accentRaw) }
     var body: some View {
         TabView(selection: $nav.tab) {
             Tab("Today", systemImage: "calendar", value: .today) { screen(TodayView()).id(nav.todayStack) }

@@ -17,7 +17,7 @@ struct StreakWidgetView: View {
     let entry: CaloriesEntry
     private var count: Int { entry.calories?.streak(on: entry.date) ?? 0 }
     private var tracked: Bool { entry.calories?.trackingDays.contains(WidgetCalories.dayKey(entry.date)) == true }
-    private var accent: Color { (entry.calories?.selectedAccent ?? .standard).color }
+    private var accent: Color { (entry.calories?.accentColour ?? AppAccent.standard.color) }
     var body: some View {
         Group {
             if family == .accessoryCircular {

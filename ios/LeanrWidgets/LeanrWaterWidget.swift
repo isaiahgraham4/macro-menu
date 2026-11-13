@@ -45,7 +45,7 @@ struct WaterWidgetView: View {
     private let sip: Double = 100
     private let glass: Double = 250
     private var progress: Double { target > 0 ? min(1, drunk / target) : 0 }
-    private var accent: Color { (entry.calories?.selectedAccent ?? .standard).color }
+    private var accent: Color { (entry.calories?.accentColour ?? AppAccent.standard.color) }
 
     private func amount(_ millilitres: Double) -> String {
         millilitres < 1000 ? "\(Int(millilitres.rounded())) mL" : (millilitres / 1000).formatted(.number.precision(.fractionLength(0...2))) + " L"

@@ -16,7 +16,7 @@ enum LiveDay {
             return
         }
         let total = Nutrition((store.data.logs[day] ?? []).flatMap(\.items))
-        let accent = AppAccent.resolved(UserDefaults.standard.string(forKey: AppAccent.storageKey) ?? AppAccent.standard.rawValue).rawValue
+        let accent = AppAccent.resolvedRaw(UserDefaults.standard.string(forKey: AppAccent.storageKey) ?? AppAccent.standard.rawValue)
         let state = LeanrDayAttributes.ContentState(eaten: total.cal, target: target, protein: total.p, proteinTarget: store.goals.values["p"], accent: accent)
         // It goes stale at midnight, when the figures stop being today's.
         let midnight = Calendar.current.date(byAdding: .day, value: 1, to: Calendar.current.startOfDay(for: now))

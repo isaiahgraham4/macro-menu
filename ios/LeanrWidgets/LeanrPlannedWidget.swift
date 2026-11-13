@@ -42,7 +42,7 @@ struct PlannedWidgetView: View {
     @Environment(\.widgetFamily) private var family
     let entry: CaloriesEntry
     private var meals: [WidgetQuickLog] { entry.calories?.plannedMeals(on: entry.date) ?? [] }
-    private var accent: Color { (entry.calories?.selectedAccent ?? .standard).color }
+    private var accent: Color { (entry.calories?.accentColour ?? AppAccent.standard.color) }
 
     var body: some View {
         Group {

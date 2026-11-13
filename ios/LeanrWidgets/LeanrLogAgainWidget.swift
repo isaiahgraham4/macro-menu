@@ -42,7 +42,7 @@ struct LogAgainWidgetView: View {
     @Environment(\.widgetFamily) private var family
     let entry: CaloriesEntry
     private var options: [WidgetQuickLog] { entry.calories?.quickLogs(at: entry.date) ?? [] }
-    private var accent: Color { (entry.calories?.selectedAccent ?? .standard).color }
+    private var accent: Color { (entry.calories?.accentColour ?? AppAccent.standard.color) }
     private var today: String { WidgetCalories.dayKey(entry.date) }
 
     var body: some View {

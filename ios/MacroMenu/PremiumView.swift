@@ -4,9 +4,10 @@ import StoreKit
 /// What Premium includes. Kept in one place so the paywall and the locked screens say the same thing.
 enum PremiumFeatures {
     static let all: [(symbol: String, title: String, detail: String)] = [
-        ("paintpalette", "App colours", "Choose any colour for buttons, tabs and progress bars."),
+        ("paintpalette", "App colours", "Pick a preset or any colour you like for buttons, tabs and progress bars."),
+        ("swatchpalette", "Colour packs", "Matching sets of app icon, app colour and macro colours, from Warm to Ocean."),
         ("app.badge", "App icons", "More icon packs for your Home Screen."),
-        ("chart.bar.fill", "Macro colours", "Pick separate colours for protein, carbs and fat, in the app and widgets."),
+        ("chart.bar.fill", "Macro colours", "Pick any colour for protein, carbs and fat, in the app and widgets."),
         ("square.grid.2x2", "Two more widgets", "Calories & macros, and All targets."),
         ("bell.badge", "Meal and water reminders", "Choose which meals remind you, and when, pick when your weekly review arrives, and get nudged to drink water."),
     ]

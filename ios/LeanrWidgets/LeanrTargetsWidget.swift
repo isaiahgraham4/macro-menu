@@ -56,7 +56,7 @@ struct TargetsProvider: TimelineProvider {
 
 struct TargetsWidgetView: View {
     let entry: CaloriesEntry
-    private var accent: Color { (entry.calories?.selectedAccent ?? .standard).color }
+    private var accent: Color { (entry.calories?.accentColour ?? AppAccent.standard.color) }
     private var targets: [WidgetNutrientTarget] { entry.calories?.nutrientTargets ?? [] }
     private var key: String { WidgetCalories.dayKey(entry.date) }
     private var partial: [String] { entry.calories?.dailyPartialNutrients?[key] ?? [] }

@@ -35,8 +35,86 @@ enum MacroColours {
     static let fatKey = "macroColour.fat"
     static func colour(_ key: String, choices: [String: String]) -> Color {
         let fallback: AppAccent = key == "p" ? .blue : key == "c" ? .orange : .red
-        return (choices[key].flatMap(AppAccent.init(rawValue:)) ?? fallback).color
+        return ThemeColour.color(choices[key], fallback: fallback)
     }
+}
+
+/// A stored colour choice: a preset name such as "blue", or a custom colour as "#RRGGBB".
+/// The app, widgets and Live Activity all read colours through here, so a custom colour shows everywhere.
+enum ThemeColour {
+    static func color(_ raw: String?, fallback: AppAccent) -> Color {
+        guard let raw else { return fallback.color }
+        if let preset = AppAccent(rawValue: raw) { return preset.color }
+        if let rgb = rgb(raw) { return readableColor(rgb) }
+        return fallback.color
+    }
+
+    typealias RGB = (r: Double, g: Double, b: Double)
+    /// What colours have to stay readable on: the cream page in light mode (darker than white, so the stricter of the two),
+    /// and grouped cards in dark mode (lighter than the page, so the stricter of the two).
+    static let lightBackground: RGB = (0xF6 / 255, 0xF2 / 255, 0xEA / 255)
+    static let darkBackground: RGB = (0x1C / 255, 0x1C / 255, 0x1E / 255)
+    /// WCAG AA for normal text.
+    static let minimumContrast = 4.5
+
+    /// The same hue, darkened (light mode) or lightened (dark mode) only as far as needed for 4.5:1.
+    static func readable(_ c: RGB, dark: Bool) -> RGB {
+        let background = dark ? darkBackground : lightBackground
+        let target: Double = dark ? 1 : 0
+        var out = c
+        var step = 0
+        while contrast(out, background) < minimumContrast && step < 40 {
+            out = (out.r + (target - out.r) * 0.05, out.g + (target - out.g) * 0.05, out.b + (target - out.b) * 0.05)
+            step += 1
+        }
+        return out
+    }
+
+    /// Whether a custom colour is shown differently from the picked value in either mode.
+    static func isAdjusted(_ raw: String) -> Bool {
+        guard isCustom(raw), let c = rgb(raw) else { return false }
+        return contrast(c, lightBackground) < minimumContrast || contrast(c, darkBackground) < minimumContrast
+    }
+
+    static func contrast(_ a: RGB, _ b: RGB) -> Double {
+        let la = luminance(a), lb = luminance(b)
+        return (max(la, lb) + 0.05) / (min(la, lb) + 0.05)
+    }
+
+    static func luminance(_ c: RGB) -> Double {
+        func lin(_ x: Double) -> Double { x <= 0.04045 ? x / 12.92 : pow((x + 0.055) / 1.055, 2.4) }
+        return 0.2126 * lin(c.r) + 0.7152 * lin(c.g) + 0.0722 * lin(c.b)
+    }
+
+    /// A colour that adjusts itself to the light or dark appearance it's drawn in.
+    static func readableColor(_ c: RGB) -> Color {
+        #if canImport(UIKit)
+        let light = readable(c, dark: false), dark = readable(c, dark: true)
+        return Color(UIColor { trait in
+            let x = trait.userInterfaceStyle == .dark ? dark : light
+            return UIColor(red: x.r, green: x.g, blue: x.b, alpha: 1)
+        })
+        #else
+        let x = readable(c, dark: false)
+        return Color(red: x.r, green: x.g, blue: x.b)
+        #endif
+    }
+
+    /// Whether a stored value is something this version can show (a preset or a well-formed hex colour).
+    static func isValid(_ raw: String) -> Bool { AppAccent(rawValue: raw) != nil || rgb(raw) != nil }
+    static func isCustom(_ raw: String) -> Bool { AppAccent(rawValue: raw) == nil && rgb(raw) != nil }
+
+    /// "#RRGGBB" to 0–1 components, or nil for anything else.
+    static func rgb(_ raw: String) -> (r: Double, g: Double, b: Double)? {
+        guard raw.count == 7, raw.first == "#", let v = UInt32(raw.dropFirst(), radix: 16) else { return nil }
+        return (Double(v >> 16 & 0xFF) / 255, Double(v >> 8 & 0xFF) / 255, Double(v & 0xFF) / 255)
+    }
+
+    static func hex(r: Double, g: Double, b: Double) -> String {
+        func byte(_ x: Double) -> Int { Int((min(max(x, 0), 1) * 255).rounded()) }
+        return String(format: "#%02X%02X%02X", byte(r), byte(g), byte(b))
+    }
+
 }
 
 /// One palette for both the app and its widget extension.
@@ -92,9 +170,17 @@ enum AppAccent: String, CaseIterable, Identifiable {
     }
 
     #if canImport(UIKit)
+    /// Dark mode starts from the system colour, then goes through `ThemeColour.readable` so every preset
+    /// reaches 4.5:1 on dark cards too (system indigo on its own is only about 3.4:1).
     private static func readable(_ light: UInt32, dark: UIColor) -> Color {
         let shade = UIColor(red: CGFloat(light >> 16 & 0xFF) / 255, green: CGFloat(light >> 8 & 0xFF) / 255, blue: CGFloat(light & 0xFF) / 255, alpha: 1)
-        return Color(UIColor { $0.userInterfaceStyle == .dark ? dark.resolvedColor(with: $0) : shade })
+        return Color(UIColor { trait in
+            guard trait.userInterfaceStyle == .dark else { return shade }
+            var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
+            dark.resolvedColor(with: trait).getRed(&r, green: &g, blue: &b, alpha: &a)
+            let x = ThemeColour.readable((Double(r), Double(g), Double(b)), dark: true)
+            return UIColor(red: x.r, green: x.g, blue: x.b, alpha: 1)
+        })
     }
     #endif
 }

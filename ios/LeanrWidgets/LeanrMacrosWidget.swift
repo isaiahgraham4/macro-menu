@@ -14,7 +14,7 @@ struct LeanrMacrosWidget: Widget {
 
 struct MacrosWidgetView: View {
     let entry: CaloriesEntry
-    private var accent: Color { (entry.calories?.selectedAccent ?? .standard).color }
+    private var accent: Color { (entry.calories?.accentColour ?? AppAccent.standard.color) }
     private var key: String { WidgetCalories.dayKey(entry.date) }
 
     var body: some View {

@@ -132,7 +132,7 @@ extension AppStore {
                 return
             }
             var snapshot = data.widgetCalories
-            snapshot.accent = AppAccent.resolved(UserDefaults.standard.string(forKey: AppAccent.storageKey) ?? AppAccent.standard.rawValue).rawValue
+            snapshot.accent = AppAccent.resolvedRaw(UserDefaults.standard.string(forKey: AppAccent.storageKey) ?? AppAccent.standard.rawValue)
             snapshot.premiumUnlocked = Premium.isUnlocked
             // The nutrients the widgets total, so a tap on a widget can be shown in them before Leanr runs.
             let nutrientKeys = Set((snapshot.nutrientTargets ?? []).map(\.id)).union(["p", "c", "f"]).sorted()

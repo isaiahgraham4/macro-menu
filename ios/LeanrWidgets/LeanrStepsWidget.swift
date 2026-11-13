@@ -17,7 +17,7 @@ struct StepsWidgetView: View {
     let entry: CaloriesEntry
 
     private var goal: Double { entry.calories?.stepGoal ?? 8000 }
-    private var accent: Color { (entry.calories?.selectedAccent ?? .standard).color }
+    private var accent: Color { (entry.calories?.accentColour ?? AppAccent.standard.color) }
     private var count: Double? { entry.calories?.stepCount(on: entry.date) }
     private var progress: Double { goal > 0 ? min(1, (count ?? 0) / goal) : 0 }
     private func text(_ value: Double) -> String { value.formatted(.number.precision(.fractionLength(0))) }

@@ -36,7 +36,7 @@ struct CaloriesProvider: TimelineProvider {
 struct CaloriesWidgetView: View {
     @Environment(\.widgetFamily) private var family
     let entry: CaloriesEntry
-    private var accent: Color { (entry.calories?.selectedAccent ?? .standard).color }
+    private var accent: Color { (entry.calories?.accentColour ?? AppAccent.standard.color) }
 
     var body: some View {
         Group {
@@ -143,4 +143,9 @@ struct LeanrCaloriesWidget: Widget {
         .description("See today's calories remaining against your Leanrrr target.")
         .supportedFamilies([.systemSmall, .systemMedium, .accessoryCircular, .accessoryRectangular, .accessoryInline])
     }
+}
+
+extension WidgetCalories {
+    /// The app colour for every widget, including a custom "#RRGGBB" one.
+    var accentColour: Color { ThemeColour.color(accent, fallback: .standard) }
 }

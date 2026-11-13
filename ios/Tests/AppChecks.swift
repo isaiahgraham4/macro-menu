@@ -532,6 +532,25 @@ import UniformTypeIdentifiers
         }
         var unknownAccent = oldWidget; unknownAccent.accent = "unrecognised"
         assert(unknownAccent.selectedAccent == .standard)
+        // Custom colours: stored as "#RRGGBB", and whatever is picked comes out at 4.5:1 in both appearances.
+        var customAccent = oldWidget; customAccent.accent = "#FFF76B"
+        let customRoundTrip = try JSONDecoder().decode(WidgetCalories.self, from: JSONEncoder().encode(customAccent))
+        assert(customRoundTrip.accent == "#FFF76B" && customRoundTrip.selectedAccent == .standard)
+        assert(ThemeColour.isCustom("#FFF76B") && !ThemeColour.isCustom("blue") && ThemeColour.isValid("blue"))
+        assert(!ThemeColour.isValid("#12345") && !ThemeColour.isValid("#GGGGGG") && !ThemeColour.isValid("purple-ish"))
+        assert(ThemeColour.hex(r: 1, g: 0.5, b: 0) == "#FF8000")
+        // The picks people are most likely to regret, plus the system dark-mode colours behind the presets.
+        let trickyColours = ["#FFFFFF", "#000000", "#FFF76B", "#FFFF00", "#00FFFF", "#7F7F7F", "#0A84FF", "#5E5CE6",
+                             "#BF5AF2", "#FF375F", "#FF453A", "#AC8E68", "#8E8E93", "#1C1C1E", "#F6F2EA", "#6A1B9A"]
+        for hex in trickyColours {
+            let c = ThemeColour.rgb(hex)!
+            assert(ThemeColour.contrast(ThemeColour.readable(c, dark: false), ThemeColour.lightBackground) >= ThemeColour.minimumContrast, "\(hex) light")
+            assert(ThemeColour.contrast(ThemeColour.readable(c, dark: true), ThemeColour.darkBackground) >= ThemeColour.minimumContrast, "\(hex) dark")
+        }
+        // A colour that already passes is left exactly as picked; a light yellow is flagged as adjusted.
+        let passing = ThemeColour.rgb("#01714C")!
+        assert(ThemeColour.readable(passing, dark: false) == passing)
+        assert(ThemeColour.isAdjusted("#FFF76B"))
         let legacyURL = root.appending(path: "foods.json")
         let oldFood = SavedFood(name: "Existing breakfast", calories: 300, protein: 20, carbs: 30, fat: 8)
         let oldBytes = try FoodBackup(foods: [oldFood]).encoded()

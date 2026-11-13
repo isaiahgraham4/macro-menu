@@ -82,7 +82,7 @@ struct MealShareCard: View {
     private func card(rows: Int) -> some View {
         VStack(alignment: .leading, spacing: 0) {
             Label("LEANRRR", systemImage: "leaf.fill").font(.roboto(.caption, weight: .bold))
-                .foregroundStyle(AppAccent.resolved(accentRaw).color)
+                .foregroundStyle(AppAccent.resolvedColor(accentRaw))
             Text(name).font(.custom(AppFonts.display, size: 54)).lineLimit(3).minimumScaleFactor(0.5)
                 .padding(.top, 18)
             if let subtitle { Text(subtitle).font(.roboto(.subheadline)).foregroundStyle(.white.opacity(0.6)) }

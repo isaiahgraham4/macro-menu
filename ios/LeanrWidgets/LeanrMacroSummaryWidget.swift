@@ -16,7 +16,7 @@ struct LeanrMacroSummaryWidget: Widget {
 struct MacroSummaryWidgetView: View {
     @Environment(\.widgetFamily) private var family
     let entry: CaloriesEntry
-    private var accent: Color { (entry.calories?.selectedAccent ?? .standard).color }
+    private var accent: Color { (entry.calories?.accentColour ?? AppAccent.standard.color) }
     private var key: String { WidgetCalories.dayKey(entry.date) }
     private var choices: [String: String] { entry.calories?.macroColours ?? [:] }
 

@@ -265,7 +265,7 @@ private struct WheelFace: View {
     private func ink(_ index: Int) -> Color { index % 2 == 0 && !isPaper(index) ? accentInk : boardInk }
     /// White or timber, whichever reads better on the app colour as it is now: the green is far lighter in dark mode.
     private var accentInk: Color {
-        let accent = AppAccent.resolved(accentRaw).color.resolve(in: environment)
+        let accent = AppAccent.resolvedColor(accentRaw).resolve(in: environment)
         return 0.2126 * accent.linearRed + 0.7152 * accent.linearGreen + 0.0722 * accent.linearBlue <= 0.24 ? .white : boardInk
     }
 

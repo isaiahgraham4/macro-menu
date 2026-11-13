@@ -8,7 +8,7 @@ struct StepsRow: View {
     @AppStorage(AppAccent.storageKey) private var accentRaw = AppAccent.standard.rawValue
     /// The day being looked at on Today.
     let date: Date
-    private var accent: Color { AppAccent.resolved(accentRaw).color }
+    private var accent: Color { AppAccent.resolvedColor(accentRaw) }
 
     private var count: Double { health.steps[dayKey(date)] ?? 0 }
     private var goal: Double { Steps.goal(store.data) }
@@ -118,7 +118,7 @@ struct StepsProgressSection: View {
     /// The days in the range, by day key.
     let days: [String: Date]
     @State private var selected: Date?
-    private var accent: Color { AppAccent.resolved(accentRaw).color }
+    private var accent: Color { AppAccent.resolvedColor(accentRaw) }
 
     var body: some View {
         if health.isAvailable {
