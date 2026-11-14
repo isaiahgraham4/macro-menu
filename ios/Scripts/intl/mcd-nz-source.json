@@ -1,0 +1,6518 @@
+{
+  "country": "NZ",
+  "checked": "2026-11-14",
+  "pages": [
+    "https://www.mcdonalds.com/nz/en-nz/menu/featured.html",
+    "https://www.mcdonalds.com/nz/en-nz/menu/share-meals.html",
+    "https://www.mcdonalds.com/nz/en-nz/menu/breakfast.html",
+    "https://www.mcdonalds.com/nz/en-nz/menu/burgers.html",
+    "https://www.mcdonalds.com/nz/en-nz/menu/beef.html",
+    "https://www.mcdonalds.com/nz/en-nz/menu/chicken-fish.html",
+    "https://www.mcdonalds.com/nz/en-nz/menu/wraps-salads.html",
+    "https://www.mcdonalds.com/nz/en-nz/menu/sides.html",
+    "https://www.mcdonalds.com/nz/en-nz/menu/happy-meal.html",
+    "https://www.mcdonalds.com/nz/en-nz/menu/desserts.html",
+    "https://www.mcdonalds.com/nz/en-nz/menu/McCafe-drinks.html",
+    "https://www.mcdonalds.com/nz/en-nz/menu/drinks.html",
+    "https://www.mcdonalds.com/nz/en-nz/menu/condiments.html",
+    "https://www.mcdonalds.com/nz/en-nz/menu/all-day-menu.html"
+  ],
+  "items": [
+    {
+      "id": "200000",
+      "name": "Hamburger",
+      "marketing": "Hamburger",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1120,
+        "energy_kcal": 267,
+        "protein": 12.4,
+        "fat": 5.6,
+        "saturated_fat": 5,
+        "carbohydrate": 28,
+        "sugars": 11.1,
+        "sodium": 650,
+        "primary_serving_size": 110
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Soy, Sesame.",
+      "item_may": "Milk, Egg.",
+      "flags": [],
+      "comp_al": [
+        "Gluten, Wheat, Sesame",
+        "",
+        "Soy",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "comp_may": [
+        "Milk, Soy.",
+        "BEEF PATTIES may be cooked on the same grill as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "",
+        "",
+        "",
+        "ONION may be cooked on the same grill as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "burgers",
+        "beef"
+      ]
+    },
+    {
+      "id": "200001",
+      "name": "Cheeseburger",
+      "marketing": "Cheeseburger",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1320,
+        "energy_kcal": 315,
+        "protein": 16.2,
+        "fat": 8.2,
+        "saturated_fat": 5.8,
+        "carbohydrate": 28.6,
+        "sugars": 13.9,
+        "sodium": 813,
+        "primary_serving_size": 99
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Milk, Soy, Sesame.",
+      "item_may": "Egg",
+      "flags": [],
+      "comp_al": [
+        "Gluten, Wheat, Sesame",
+        "",
+        "Milk, Soy.",
+        "Soy",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "comp_may": [
+        "Milk, Soy.",
+        "BEEF PATTIES may be cooked on the same grill as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "",
+        "",
+        "",
+        "",
+        "ONION may be cooked on the same grill as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "burgers",
+        "beef",
+        "happy-meal",
+        "all-day-menu"
+      ]
+    },
+    {
+      "id": "200002",
+      "name": "Filet-O-Fish",
+      "marketing": "Filet-O-Fish®",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1450,
+        "energy_kcal": 347,
+        "protein": 17.7,
+        "fat": 4.3,
+        "saturated_fat": 10.4,
+        "carbohydrate": 26.7,
+        "sugars": 13.8,
+        "sodium": 654,
+        "primary_serving_size": 116
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Milk, Soy, Egg, Sesame, Fish.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Gluten, Wheat, Milk, Fish",
+        "Gluten, Wheat, Sesame",
+        "Egg",
+        "Milk, Soy."
+      ],
+      "comp_may": [
+        "",
+        "Milk, Soy.",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "burgers",
+        "chicken-fish"
+      ]
+    },
+    {
+      "id": "200003",
+      "name": "Big Mac",
+      "marketing": "Big Mac®",
+      "cats": [],
+      "n": {
+        "energy_kJ": 2380,
+        "energy_kcal": 571,
+        "protein": 34.7,
+        "fat": 13.7,
+        "saturated_fat": 9.6,
+        "carbohydrate": 40.7,
+        "sugars": 22.2,
+        "sodium": 1218,
+        "primary_serving_size": 214
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Milk, Soy, Egg, Sesame.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Gluten, Wheat, Sesame",
+        "",
+        "Egg",
+        "",
+        "Milk, Soy.",
+        "",
+        "",
+        ""
+      ],
+      "comp_may": [
+        "Soy",
+        "BEEF PATTIES may be cooked on the same grill as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "",
+        "",
+        "",
+        "",
+        "ONION may be cooked on the same grill as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "burgers",
+        "beef",
+        "all-day-menu"
+      ]
+    },
+    {
+      "id": "200004",
+      "name": "Double Cheeseburger",
+      "marketing": "Double Cheeseburger",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1950,
+        "energy_kcal": 467,
+        "protein": 26.8,
+        "fat": 14.2,
+        "saturated_fat": 8.1,
+        "carbohydrate": 29.5,
+        "sugars": 24.3,
+        "sodium": 1190,
+        "primary_serving_size": 181
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Milk, Soy, Sesame.",
+      "item_may": "Egg",
+      "flags": [],
+      "comp_al": [
+        "",
+        "Gluten, Wheat, Sesame",
+        "Milk, Soy.",
+        "Soy",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "comp_may": [
+        "BEEF PATTIES may be cooked on the same grill as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "Milk, Soy.",
+        "",
+        "",
+        "",
+        "",
+        "ONION may be cooked on the same grill as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "burgers",
+        "beef"
+      ]
+    },
+    {
+      "id": "200005",
+      "name": "McChicken",
+      "marketing": "McChicken®",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1850,
+        "energy_kcal": 443,
+        "protein": 27.8,
+        "fat": 13.1,
+        "saturated_fat": 4.6,
+        "carbohydrate": 42.7,
+        "sugars": 4.2,
+        "sodium": 1152,
+        "primary_serving_size": 148
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Egg, Sesame.",
+      "item_may": "Milk.",
+      "flags": [],
+      "comp_al": [
+        "Gluten, Wheat",
+        "Wheat, Gluten, Sesame.",
+        "",
+        "Egg"
+      ],
+      "comp_may": [
+        "CHICKEN PATTY is cooked in a McDonald's Vegetable Oil blend and may be cooked using the same equipment as products containing Gluten, Wheat, Egg, Milk, Soy.",
+        "Soy",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "chicken-fish",
+        "all-day-menu"
+      ]
+    },
+    {
+      "id": "200006",
+      "name": "Quarter Pounder w/ cheese",
+      "marketing": "Quarter Pounder® w/ cheese",
+      "cats": [],
+      "n": {
+        "energy_kJ": 2300,
+        "energy_kcal": 552,
+        "protein": 34.3,
+        "fat": 26.7,
+        "saturated_fat": 16,
+        "carbohydrate": 37.2,
+        "sugars": 10.2,
+        "sodium": 1224,
+        "primary_serving_size": 215.75
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Milk, Soy, Sesame.",
+      "item_may": "Egg",
+      "flags": [],
+      "comp_al": [
+        "",
+        "Wheat, Gluten, Sesame.",
+        "Milk, Soy.",
+        "Soy",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "comp_may": [
+        "BEEF PATTIES may be cooked on the same grill as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "Soy",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "burgers",
+        "beef",
+        "all-day-menu"
+      ]
+    },
+    {
+      "id": "200007",
+      "name": "6 Chicken McNuggets",
+      "marketing": "Chicken McNuggets® (6Pc)",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1260,
+        "energy_kcal": 301,
+        "protein": 17.2,
+        "fat": 17.5,
+        "saturated_fat": 2.2,
+        "carbohydrate": 20.9,
+        "sugars": 0.1,
+        "sodium": 635,
+        "primary_serving_size": 120
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat.",
+      "item_may": "Egg, Milk, Soy",
+      "flags": [],
+      "comp_al": [
+        "Gluten, Wheat"
+      ],
+      "comp_may": [
+        "CHICKEN MCNUGGETS are cooked in a McDonald's Vegetable Oil Blend and are cooked in the same equipment as products containing Gluten, Wheat, Milk, Soy."
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "chicken-fish",
+        "happy-meal",
+        "all-day-menu"
+      ]
+    },
+    {
+      "id": "200008",
+      "name": "10 Chicken McNuggets",
+      "marketing": "Chicken McNuggets® (10Pc)",
+      "cats": [],
+      "n": {
+        "energy_kJ": 2100,
+        "energy_kcal": 502,
+        "protein": 28.6,
+        "fat": 29.2,
+        "saturated_fat": 3.7,
+        "carbohydrate": 34.8,
+        "sugars": 0.1,
+        "sodium": 1058,
+        "primary_serving_size": 200
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat.",
+      "item_may": "Egg, Milk, Soy",
+      "flags": [],
+      "comp_al": [
+        "Gluten, Wheat"
+      ],
+      "comp_may": [
+        "CHICKEN MCNUGGETS are cooked in a McDonald's Vegetable Oil Blend and are cooked in the same equipment as products containing Gluten, Wheat, Milk, Soy."
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "chicken-fish",
+        "all-day-menu"
+      ]
+    },
+    {
+      "id": "200009",
+      "name": "Small Fries",
+      "marketing": "Small Fries",
+      "cats": [],
+      "n": {
+        "energy_kJ": 821,
+        "energy_kcal": 196,
+        "protein": 3.1,
+        "fat": 9.9,
+        "saturated_fat": 0.8,
+        "carbohydrate": 22.2,
+        "sugars": 0.3,
+        "sodium": 189,
+        "primary_serving_size": 72
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "Gluten, Wheat, Egg, Milk, Soy",
+      "flags": [],
+      "comp_al": [
+        ""
+      ],
+      "comp_may": [
+        "FRIES are cooked in a McDonald's Vegetable Oil blend and may be cooked using the same equipment as products containing Gluten, Wheat, Egg, Milk, Soy. \nSalt added."
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "happy-meal"
+      ]
+    },
+    {
+      "id": "200010",
+      "name": "Medium Fries",
+      "marketing": "Medium Fries",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1190,
+        "energy_kcal": 283,
+        "protein": 4.5,
+        "fat": 14.4,
+        "saturated_fat": 1.1,
+        "carbohydrate": 32,
+        "sugars": 0.4,
+        "sodium": 274,
+        "primary_serving_size": 104
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "Gluten, Wheat, Egg, Milk, Soy",
+      "flags": [],
+      "comp_al": [
+        ""
+      ],
+      "comp_may": [
+        "FRIES are cooked in a McDonald's Vegetable Oil blend and may be cooked using the same equipment as products containing Gluten, Wheat, Egg, Milk, Soy. \nSalt added."
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "sides",
+        "all-day-menu"
+      ]
+    },
+    {
+      "id": "200012",
+      "name": "Condiment - Sauce Packet Mayonnaise",
+      "marketing": "Condiment - Sauce Packet Mayonnaise",
+      "cats": [],
+      "n": {
+        "energy_kJ": 402,
+        "energy_kcal": 96,
+        "protein": 0.1,
+        "fat": 10.7,
+        "saturated_fat": 1.7,
+        "carbohydrate": 0.3,
+        "sugars": 0.1,
+        "sodium": 68,
+        "primary_serving_size": 13
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Egg.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Egg."
+      ],
+      "comp_may": [
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "condiments"
+      ]
+    },
+    {
+      "id": "200013",
+      "name": "Condiment - Sauce Packet Ketchup",
+      "marketing": "Condiment - Sauce Packet Ketchup",
+      "cats": [],
+      "n": {
+        "energy_kJ": 48,
+        "energy_kcal": 11,
+        "protein": 0.2,
+        "fat": 0,
+        "saturated_fat": 0,
+        "carbohydrate": 2.6,
+        "sugars": 2,
+        "sodium": 98,
+        "primary_serving_size": 10
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Soy.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Soy."
+      ],
+      "comp_may": [
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "condiments"
+      ]
+    },
+    {
+      "id": "200015",
+      "name": "Medium Coca-Cola",
+      "marketing": "Medium Coca-Cola®",
+      "cats": [],
+      "n": {
+        "energy_kJ": 567,
+        "energy_kcal": 134,
+        "protein": 0,
+        "fat": 0,
+        "saturated_fat": 0,
+        "carbohydrate": 34.7,
+        "sugars": 34.7,
+        "sodium": 33,
+        "primary_serving_size": 328
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Caffeine.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Caffeine",
+        ""
+      ],
+      "comp_may": [
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "drinks"
+      ]
+    },
+    {
+      "id": "200018",
+      "name": "Medium Sprite® Zero Sugar",
+      "marketing": "Medium Sprite® Zero Sugar",
+      "cats": [],
+      "n": {
+        "energy_kJ": 13,
+        "energy_kcal": 3,
+        "protein": 0.3,
+        "fat": 0,
+        "saturated_fat": 0,
+        "carbohydrate": 0.3,
+        "sugars": 0,
+        "sodium": 43,
+        "primary_serving_size": 328
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Phenylalanine.",
+        ""
+      ],
+      "comp_may": [
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "drinks"
+      ]
+    },
+    {
+      "id": "200021",
+      "name": "Medium Fanta® Orange",
+      "marketing": "Medium Fanta® Orange",
+      "cats": [],
+      "n": {
+        "energy_kJ": 422,
+        "energy_kcal": 102,
+        "protein": 0,
+        "fat": 0,
+        "saturated_fat": 0,
+        "carbohydrate": 24.9,
+        "sugars": 24.9,
+        "sodium": 26,
+        "primary_serving_size": 328
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "",
+        ""
+      ],
+      "comp_may": [
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "drinks"
+      ]
+    },
+    {
+      "id": "200024",
+      "name": "Medium Chocolate Shake",
+      "marketing": "Medium Chocolate Shake",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1550,
+        "energy_kcal": 371,
+        "protein": 10.2,
+        "fat": 9.9,
+        "saturated_fat": 6.9,
+        "carbohydrate": 59.6,
+        "sugars": 51.6,
+        "sodium": 207,
+        "primary_serving_size": 290
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Milk.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        ""
+      ],
+      "comp_may": [
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "drinks"
+      ]
+    },
+    {
+      "id": "200027",
+      "name": "Medium Strawberry Shake",
+      "marketing": "Medium Strawberry Shake",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1540,
+        "energy_kcal": 368,
+        "protein": 9.7,
+        "fat": 9.6,
+        "saturated_fat": 6.7,
+        "carbohydrate": 60.1,
+        "sugars": 53.4,
+        "sodium": 145,
+        "primary_serving_size": 290
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Milk.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        ""
+      ],
+      "comp_may": [
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "drinks"
+      ]
+    },
+    {
+      "id": "200036",
+      "err": "TypeError: Cannot read properties of undefined (reading 'nutrient_facts')"
+    },
+    {
+      "id": "200037",
+      "name": "Sundae - Hot Fudge Small",
+      "marketing": "Sundae - Hot Fudge Small",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1340,
+        "energy_kcal": 320,
+        "protein": 6.9,
+        "fat": 9.6,
+        "saturated_fat": 7.4,
+        "carbohydrate": 50.3,
+        "sugars": 44.6,
+        "sodium": 381,
+        "primary_serving_size": 173
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Milk, Soy.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        "Milk."
+      ],
+      "comp_may": [
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "desserts"
+      ]
+    },
+    {
+      "id": "200038",
+      "name": "Sundae - Caramel Small",
+      "marketing": "Sundae - Caramel Small",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1340,
+        "energy_kcal": 322,
+        "protein": 6.3,
+        "fat": 7.4,
+        "saturated_fat": 5.2,
+        "carbohydrate": 56.3,
+        "sugars": 47.4,
+        "sodium": 357,
+        "primary_serving_size": 173
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Milk.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        "Milk."
+      ],
+      "comp_may": [
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "desserts"
+      ]
+    },
+    {
+      "id": "200039",
+      "name": "Sundae - Strawberry Small",
+      "marketing": "Sundae - Strawberry Small",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1020,
+        "energy_kcal": 258,
+        "protein": 5.4,
+        "fat": 5.6,
+        "saturated_fat": 4,
+        "carbohydrate": 45.8,
+        "sugars": 41.5,
+        "sodium": 280,
+        "primary_serving_size": 173
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Milk, Sulphites.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        ""
+      ],
+      "comp_may": [
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "desserts"
+      ]
+    },
+    {
+      "id": "200041",
+      "name": "Apple Slices",
+      "marketing": "Apple Slices",
+      "cats": [],
+      "n": {
+        "energy_kJ": 210,
+        "energy_kcal": 50,
+        "protein": 0.2,
+        "fat": 0.2,
+        "saturated_fat": 0.1,
+        "carbohydrate": 10.2,
+        "sugars": 8.2,
+        "sodium": 1,
+        "primary_serving_size": 80
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        ""
+      ],
+      "comp_may": [
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "sides",
+        "happy-meal"
+      ]
+    },
+    {
+      "id": "200042",
+      "name": "Bacon & Egg McMuffin",
+      "marketing": "Bacon & Egg McMuffin",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1340,
+        "energy_kcal": 322,
+        "protein": 20.3,
+        "fat": 12.3,
+        "saturated_fat": 3.8,
+        "carbohydrate": 28.6,
+        "sugars": 5.8,
+        "sodium": 718,
+        "primary_serving_size": 137
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Egg, Milk, Soy.",
+      "item_may": "ENGLISH MUFFIN is made in the same facility as products containing Sesame and the same equipment as products containing Milk. \nBACON may be cooked on the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy. \nEGG may be cooked on the same equipment as products containing Gluten, Wheat, Milk, Soy.",
+      "flags": [],
+      "comp_al": [
+        "Gluten, Wheat, Soy.",
+        "Egg.",
+        "",
+        "Milk, Soy.",
+        "Soy."
+      ],
+      "comp_may": [
+        "ENGLISH MUFFIN is made in the same facility as products containing Sesame and the same equipment as products containing Milk.",
+        "",
+        "BACON may be cooked on the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "breakfast"
+      ]
+    },
+    {
+      "id": "200043",
+      "name": "Sausage & Egg McMuffin",
+      "marketing": "Sausage & Egg McMuffin",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1620,
+        "energy_kcal": 389,
+        "protein": 24.4,
+        "fat": 17.6,
+        "saturated_fat": 6.6,
+        "carbohydrate": 29.8,
+        "sugars": 5.7,
+        "sodium": 760,
+        "primary_serving_size": 158
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Egg, Milk, Soy.",
+      "item_may": "ENGLISH MUFFIN is made in the same facility as products containing Sesame and the same equipment as products containing Milk. \nSAUSAGE PATTY may be cooked on the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy. \nEGG may be cooked on the same equipment as products containing Gluten, Wheat, Milk, Soy.",
+      "flags": [],
+      "comp_al": [
+        "Gluten, Wheat, Soy.",
+        "Egg.",
+        "",
+        "Milk, Soy.",
+        "Soy."
+      ],
+      "comp_may": [
+        "ENGLISH MUFFIN is made in the same facility as products containing Sesame and the same equipment as products containing Milk.",
+        "",
+        "SAUSAGE PATTY may be cooked on the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "breakfast"
+      ]
+    },
+    {
+      "id": "200044",
+      "name": "Hotcakes",
+      "marketing": "Hotcakes",
+      "cats": [],
+      "n": {
+        "energy_kJ": 2290,
+        "energy_kcal": 547,
+        "protein": 9.1,
+        "fat": 18.2,
+        "saturated_fat": 7.8,
+        "carbohydrate": 85.2,
+        "sugars": 35.9,
+        "sodium": 576,
+        "primary_serving_size": 156
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Egg, Milk.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Wheat, Gluten, Milk, Egg.",
+        "",
+        "Milk."
+      ],
+      "comp_may": [
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "breakfast"
+      ]
+    },
+    {
+      "id": "200045",
+      "name": "HASH BROWN",
+      "marketing": "HASH BROWN",
+      "cats": [],
+      "n": {
+        "energy_kJ": 600,
+        "energy_kcal": 144,
+        "protein": 1.4,
+        "fat": 9.6,
+        "saturated_fat": 0.8,
+        "carbohydrate": 12.5,
+        "sugars": 0.2,
+        "sodium": 294,
+        "primary_serving_size": 56
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "HASHBROWNS are cooked in a McDonald's Vegetable Oil blend and may be cooked using the same equipment as products containing Gluten, Wheat, Egg, Milk, Soy.",
+      "flags": [],
+      "comp_al": [
+        ""
+      ],
+      "comp_may": [
+        "HASHBROWNS are cooked in a McDonald's Vegetable Oil blend and may be cooked using the same equipment as products containing Gluten, Wheat, Egg, Milk, Soy."
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "breakfast",
+        "sides"
+      ]
+    },
+    {
+      "id": "200046",
+      "name": "Sausage McMuffin",
+      "marketing": "Sausage McMuffin",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1240,
+        "energy_kcal": 298,
+        "protein": 17.1,
+        "fat": 11,
+        "saturated_fat": 4.4,
+        "carbohydrate": 29.2,
+        "sugars": 5.3,
+        "sodium": 673,
+        "primary_serving_size": 109
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Milk, Soy.",
+      "item_may": "ENGLISH MUFFIN is made in the same facility as products containing Sesame and the same equipment as products containing Milk. \nSAUSAGE PATTY may be cooked on the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy. \nEGG may be cooked on the same equipment as products containing Gluten, Wheat, Milk, Soy.",
+      "flags": [],
+      "comp_al": [
+        "Gluten, Wheat, Soy.",
+        "",
+        "Milk, Soy.",
+        "Soy."
+      ],
+      "comp_may": [
+        "ENGLISH MUFFIN is made in the same facility as products containing Sesame and the same equipment as products containing Milk.",
+        "SAUSAGE PATTY may be cooked on the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "breakfast"
+      ]
+    },
+    {
+      "id": "200047",
+      "name": "Pump® Mini Water",
+      "marketing": "Pump® Mini Water",
+      "cats": [],
+      "n": {
+        "energy_kJ": 0,
+        "energy_kcal": 0,
+        "protein": 0,
+        "fat": 0,
+        "saturated_fat": 0,
+        "carbohydrate": 0,
+        "sugars": 0,
+        "sodium": 4,
+        "primary_serving_size": 400
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        ""
+      ],
+      "comp_may": [
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "happy-meal",
+        "drinks"
+      ]
+    },
+    {
+      "id": "200048",
+      "name": "BLT Bagel",
+      "marketing": "BLT Bagel",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1510,
+        "energy_kcal": 359,
+        "protein": 20.3,
+        "fat": 5.3,
+        "saturated_fat": 3.4,
+        "carbohydrate": 49.7,
+        "sugars": 8.1,
+        "sodium": 900,
+        "primary_serving_size": 186
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Egg, Soy.",
+      "item_may": "BAGELS are made on equipment which also produces products containing Milk, Sesame. BACON may be cooked on the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy.",
+      "flags": [],
+      "comp_al": [
+        "Gluten, Wheat, Soy.",
+        "",
+        "",
+        "",
+        "Egg"
+      ],
+      "comp_may": [
+        "Milk, Sesame.",
+        "BACON may be cooked on the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "breakfast"
+      ]
+    },
+    {
+      "id": "200049",
+      "name": "Massive McMuffin",
+      "marketing": "Massive McMuffin",
+      "cats": [],
+      "n": {
+        "energy_kJ": 2170,
+        "energy_kcal": 520,
+        "protein": 36,
+        "fat": 25.5,
+        "saturated_fat": 12.1,
+        "carbohydrate": 32.9,
+        "sugars": 6.3,
+        "sodium": 1225,
+        "primary_serving_size": 219
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Egg, Milk, Soy.",
+      "item_may": "ENGLISH MUFFIN is made in the same facility as products containing Sesame and the same equipment as products containing Milk. BACON, SAUSAGE PATTY may be cooked on the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy. EGG may be cooked on the same equipment as products containing Gluten, Wheat, Milk, Soy.",
+      "flags": [],
+      "comp_al": [
+        "",
+        "Gluten, Wheat, Soy.",
+        "Egg.",
+        "",
+        "Milk, Soy.",
+        "Soy",
+        "Soy."
+      ],
+      "comp_may": [
+        "SAUSAGE PATTY may be cooked on the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "ENGLISH MUFFIN is made in the same facility as products containing Sesame and the same equipment as products containing Milk.",
+        "",
+        "BACON may be cooked on the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "breakfast"
+      ]
+    },
+    {
+      "id": "200050",
+      "name": "Keri® Apple & Blackcurrant Fruit Drink",
+      "marketing": "Keri® Apple & Blackcurrant Fruit Drink",
+      "cats": [],
+      "n": {
+        "energy_kJ": 260,
+        "energy_kcal": 63,
+        "protein": 2.5,
+        "fat": 2.5,
+        "saturated_fat": 0,
+        "carbohydrate": 14.5,
+        "sugars": 14.5,
+        "sodium": 3,
+        "primary_serving_size": 250
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        ""
+      ],
+      "comp_may": [
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "happy-meal"
+      ]
+    },
+    {
+      "id": "200051",
+      "name": "Garden Salad",
+      "marketing": "Garden Salad",
+      "cats": [],
+      "n": {
+        "energy_kJ": 54,
+        "energy_kcal": 13,
+        "protein": 0.1,
+        "fat": 0,
+        "saturated_fat": 1.8,
+        "carbohydrate": 1.8,
+        "sugars": 0.8,
+        "sodium": 9,
+        "primary_serving_size": 79
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "",
+        "",
+        ""
+      ],
+      "comp_may": [
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "wraps-salads",
+        "sides"
+      ]
+    },
+    {
+      "id": "200052",
+      "name": "Condiment - Syrup Hotcake",
+      "marketing": "Condiment - Syrup Hotcake",
+      "cats": [],
+      "n": {
+        "energy_kJ": 547,
+        "energy_kcal": 131,
+        "protein": 0,
+        "fat": 0,
+        "saturated_fat": 0,
+        "carbohydrate": 32.7,
+        "sugars": 23.4,
+        "sodium": 4,
+        "primary_serving_size": 44
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        ""
+      ],
+      "comp_may": [
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "condiments"
+      ]
+    },
+    {
+      "id": "200053",
+      "name": "3 Chicken McNuggets",
+      "marketing": "Chicken McNuggets® (3Pc)",
+      "cats": [],
+      "n": {
+        "energy_kJ": 630,
+        "energy_kcal": 151,
+        "protein": 8.6,
+        "fat": 8.8,
+        "saturated_fat": 1.1,
+        "carbohydrate": 10.4,
+        "sugars": 0,
+        "sodium": 317,
+        "primary_serving_size": 60
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat.",
+      "item_may": "Egg, Milk, Soy",
+      "flags": [],
+      "comp_al": [
+        "Gluten, Wheat"
+      ],
+      "comp_may": [
+        "CHICKEN MCNUGGETS are cooked in a McDonald's Vegetable Oil Blend and are cooked in the same equipment as products containing Gluten, Wheat, Milk, Soy."
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "chicken-fish",
+        "happy-meal",
+        "all-day-menu"
+      ]
+    },
+    {
+      "id": "200054",
+      "name": "Condiment - Sauce Packet Sweet & Sour",
+      "marketing": "Condiment - Sauce Packet Sweet & Sour",
+      "cats": [],
+      "n": {
+        "energy_kJ": 209,
+        "energy_kcal": 50,
+        "protein": 0,
+        "fat": 0.1,
+        "saturated_fat": 0,
+        "carbohydrate": 12.1,
+        "sugars": 10.8,
+        "sodium": 131,
+        "primary_serving_size": 25
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Gluten, Wheat, Soy.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Gluten, Wheat, Soy"
+      ],
+      "comp_may": [
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "condiments"
+      ]
+    },
+    {
+      "id": "200055",
+      "name": "Condiment - Sauce Packet Barbeque",
+      "marketing": "Condiment - Sauce Packet Barbeque",
+      "cats": [],
+      "n": {
+        "energy_kJ": 163,
+        "energy_kcal": 39,
+        "protein": 0.2,
+        "fat": 0.3,
+        "saturated_fat": 0.1,
+        "carbohydrate": 8.7,
+        "sugars": 7.9,
+        "sodium": 157,
+        "primary_serving_size": 25
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Soy.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Gluten, Wheat, Soy"
+      ],
+      "comp_may": [
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "condiments"
+      ]
+    },
+    {
+      "id": "200056",
+      "name": "NYC Benedict Bagel",
+      "marketing": "NYC Benedict Bagel",
+      "cats": [],
+      "n": {
+        "energy_kJ": 2270,
+        "energy_kcal": 543,
+        "protein": 28.6,
+        "fat": 23.5,
+        "saturated_fat": 5.1,
+        "carbohydrate": 49.7,
+        "sugars": 11.3,
+        "sodium": 1225,
+        "primary_serving_size": 206
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Egg, Milk, Soy.",
+      "item_may": "BAGELS are made on equipment which also produces products containing Milk, Sesame. BACON may be cooked on the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy.",
+      "flags": [],
+      "comp_al": [
+        "Gluten, Wheat, Soy.",
+        "Egg.",
+        "",
+        "Milk, Soy.",
+        "Egg, Milk, Wheat.",
+        "Soy."
+      ],
+      "comp_may": [
+        "Milk, Sesame.",
+        "",
+        "BACON may be cooked on the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "featured",
+        "breakfast"
+      ]
+    },
+    {
+      "id": "200057",
+      "name": "Condiment - Packet Whipped Butter",
+      "marketing": "Condiment - Packet Whipped Butter",
+      "cats": [],
+      "n": {
+        "energy_kJ": 211,
+        "energy_kcal": 50,
+        "protein": 0,
+        "fat": 5.7,
+        "saturated_fat": 3.9,
+        "carbohydrate": 0,
+        "sugars": 0,
+        "sodium": 49,
+        "primary_serving_size": 7
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Milk.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Milk."
+      ],
+      "comp_may": [
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "condiments"
+      ]
+    },
+    {
+      "id": "200058",
+      "name": "Happy Meal - Hotcakes",
+      "marketing": "Happy Meal - Hotcakes",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1650,
+        "energy_kcal": 394,
+        "protein": 5.8,
+        "fat": 11.4,
+        "saturated_fat": 4.8,
+        "carbohydrate": 66.1,
+        "sugars": 31.4,
+        "sodium": 367,
+        "primary_serving_size": 151
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Egg, Milk.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "",
+        "Wheat, Gluten, Milk, Egg.",
+        "Milk."
+      ],
+      "comp_may": [
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "happy-meal"
+      ]
+    },
+    {
+      "id": "200059",
+      "name": "Sundae - Plain Small",
+      "marketing": "Sundae - Plain Small",
+      "cats": [],
+      "n": {
+        "energy_kJ": 828,
+        "energy_kcal": 198,
+        "protein": 5.3,
+        "fat": 5.5,
+        "saturated_fat": 3.9,
+        "carbohydrate": 31.1,
+        "sugars": 26.7,
+        "sodium": 279,
+        "primary_serving_size": 135
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Milk.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Milk."
+      ],
+      "comp_may": [
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "desserts"
+      ]
+    },
+    {
+      "id": "200063",
+      "name": "Medium Coke® Zero Sugar",
+      "marketing": "Medium Coke® Zero Sugar",
+      "cats": [],
+      "n": {
+        "energy_kJ": 3,
+        "energy_kcal": 1,
+        "protein": 0.3,
+        "fat": 0,
+        "saturated_fat": 0,
+        "carbohydrate": 0.3,
+        "sugars": 0,
+        "sodium": 26,
+        "primary_serving_size": 328
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Caffeine, Phenylalanine.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Caffeine, Phenylalanine.",
+        ""
+      ],
+      "comp_may": [
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "drinks"
+      ]
+    },
+    {
+      "id": "200065",
+      "name": "10pc Chicken McBites",
+      "marketing": "10pc Chicken McBites",
+      "cats": [],
+      "n": {
+        "energy_kJ": 775,
+        "energy_kcal": 185,
+        "protein": 10.8,
+        "fat": 11.2,
+        "saturated_fat": 1.3,
+        "carbohydrate": 10.1,
+        "sugars": 0,
+        "sodium": 712,
+        "primary_serving_size": 63
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Wheat, Gluten, Milk.",
+      "item_may": "CHICKEN MCBITES are cooked in a McDonald's Vegetable Oil blend and may be cooked using the same equipment as products containing Gluten, Wheat, Egg, Milk, Soy.",
+      "flags": [],
+      "comp_al": [
+        "Wheat, Gluten, Milk."
+      ],
+      "comp_may": [
+        "CHICKEN MCBITES are cooked in a McDonald's Vegetable Oil blend and may be cooked using the same equipment as products containing Gluten, Wheat, Egg, Milk, Soy."
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "chicken-fish"
+      ]
+    },
+    {
+      "id": "200066",
+      "name": "Big Brekkie Burger",
+      "marketing": "Big Brekkie Burger",
+      "cats": [],
+      "n": {
+        "energy_kJ": 3250,
+        "energy_kcal": 779,
+        "protein": 43.6,
+        "fat": 42,
+        "saturated_fat": 13.5,
+        "carbohydrate": 53.6,
+        "sugars": 14.5,
+        "sodium": 1574,
+        "primary_serving_size": 274
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Egg, Milk, Soy, Sesame, Fish.",
+      "item_may": "QUARTER BUN is made on equipment that also produces products containing Soy, Milk. HASH BROWN are cooked in a McDonald's Vegetable Oil blend and may be cooked using the same equipment as products containing Gluten, Wheat, Egg, Milk, Soy BACON may be cooked on the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy.",
+      "flags": [],
+      "comp_al": [
+        "",
+        "Wheat, Gluten, Sesame.",
+        "",
+        "Egg.",
+        "Wheat, Gluten, Fish.",
+        "",
+        "Milk, Soy.",
+        "",
+        "Soy."
+      ],
+      "comp_may": [
+        "BEEF PATTIES may be cooked on the same grill as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "Soy",
+        "HASHBROWNS are cooked in a McDonald's Vegetable Oil blend and may be cooked using the same equipment as products containing Gluten, Wheat, Egg, Milk, Soy.",
+        "",
+        "",
+        "BACON may be cooked on the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "breakfast",
+        "burgers"
+      ]
+    },
+    {
+      "id": "200067",
+      "name": "Frozen Coke McFloat Medium",
+      "marketing": "Frozen Coke McFloat Medium",
+      "cats": [],
+      "n": {
+        "energy_kJ": 991,
+        "energy_kcal": 238,
+        "protein": 5,
+        "fat": 5.2,
+        "saturated_fat": 3.7,
+        "carbohydrate": 42.1,
+        "sugars": 38,
+        "sodium": 274,
+        "primary_serving_size": 312
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Milk, Caffeine.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Caffeine.",
+        "Milk."
+      ],
+      "comp_may": [
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "drinks"
+      ]
+    },
+    {
+      "id": "200070",
+      "name": "Medium Fanta® Raspberry",
+      "marketing": "Medium Fanta® Raspberry",
+      "cats": [],
+      "n": {
+        "energy_kJ": 422,
+        "energy_kcal": 102,
+        "protein": 0,
+        "fat": 0,
+        "saturated_fat": 0,
+        "carbohydrate": 25.2,
+        "sugars": 25.2,
+        "sodium": 13,
+        "primary_serving_size": 328
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "",
+        ""
+      ],
+      "comp_may": [
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "drinks"
+      ]
+    },
+    {
+      "id": "200073",
+      "name": "Medium L&P®",
+      "marketing": "Medium L&P®",
+      "cats": [],
+      "n": {
+        "energy_kJ": 580,
+        "energy_kcal": 138,
+        "protein": 0,
+        "fat": 0,
+        "saturated_fat": 0,
+        "carbohydrate": 34.1,
+        "sugars": 34.1,
+        "sodium": 72,
+        "primary_serving_size": 32750
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "",
+        ""
+      ],
+      "comp_may": [
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "drinks"
+      ]
+    },
+    {
+      "id": "200076",
+      "name": "Medium Fuze Tea® Peach Black Iced Tea",
+      "marketing": "Medium Fuze Tea® Peach Black Iced Tea",
+      "cats": [],
+      "n": {
+        "energy_kJ": 177,
+        "energy_kcal": 46,
+        "protein": 0,
+        "fat": 0,
+        "saturated_fat": 0,
+        "carbohydrate": 9.8,
+        "sugars": 9.8,
+        "sodium": 26,
+        "primary_serving_size": 328
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Caffeine.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Caffeine.",
+        ""
+      ],
+      "comp_may": [
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "drinks"
+      ]
+    },
+    {
+      "id": "200078",
+      "name": "Super Sundae - Choc Top",
+      "marketing": "Super Sundae - Choc Top",
+      "cats": [],
+      "n": {
+        "energy_kJ": 2330,
+        "energy_kcal": 554,
+        "protein": 9.3,
+        "fat": 25.6,
+        "saturated_fat": 20.9,
+        "carbohydrate": 70.3,
+        "sugars": 63.2,
+        "sodium": 464,
+        "primary_serving_size": 237
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Milk, Soy.",
+      "item_may": "CHOC TOP TOPPING is produced on the same equipment as product containing Tree Nuts (Hazelnut).",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        "Milk.",
+        "Milk, Soy."
+      ],
+      "comp_may": [
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "desserts"
+      ]
+    },
+    {
+      "id": "200079",
+      "name": "Double FiIet-O-Fish",
+      "marketing": "Double FiIet-O-Fish",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1980,
+        "energy_kcal": 472,
+        "protein": 23.6,
+        "fat": 4.7,
+        "saturated_fat": 18.3,
+        "carbohydrate": 27.1,
+        "sugars": 23,
+        "sodium": 830,
+        "primary_serving_size": 180
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Milk, Soy, Egg, Sesame, Fish.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Gluten, Wheat, Milk, Fish",
+        "Gluten, Wheat, Sesame",
+        "Egg",
+        "Milk, Soy."
+      ],
+      "comp_may": [
+        "",
+        "Milk, Soy.",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "burgers",
+        "chicken-fish"
+      ]
+    },
+    {
+      "id": "200080",
+      "name": "Double McChicken",
+      "marketing": "Double McChicken",
+      "cats": [],
+      "n": {
+        "energy_kJ": 2880,
+        "energy_kcal": 691,
+        "protein": 48.4,
+        "fat": 22.8,
+        "saturated_fat": 8.2,
+        "carbohydrate": 52.2,
+        "sugars": 4.3,
+        "sodium": 1980,
+        "primary_serving_size": 271
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Egg, Sesame.",
+      "item_may": "Milk.",
+      "flags": [],
+      "comp_al": [
+        "Gluten, Wheat",
+        "Wheat, Gluten, Sesame.",
+        "Egg",
+        ""
+      ],
+      "comp_may": [
+        "CHICKEN PATTY is cooked in a McDonald's Vegetable Oil blend and may be cooked using the same equipment as products containing Gluten, Wheat, Egg, Milk, Soy.",
+        "Soy",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "burgers",
+        "chicken-fish"
+      ]
+    },
+    {
+      "id": "200085",
+      "name": "McFlurry - Oreo",
+      "marketing": "McFlurry - Oreo",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1300,
+        "energy_kcal": 311,
+        "protein": 6.6,
+        "fat": 10,
+        "saturated_fat": 6.2,
+        "carbohydrate": 47.4,
+        "sugars": 36.3,
+        "sodium": 403,
+        "primary_serving_size": 165
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Milk, Soy.",
+      "item_may": "OREO COOKIE PIECES are made in the same equipment as products containing Milk, Peanuts.",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        "Wheat, Gluten, Soy."
+      ],
+      "comp_may": [
+        "",
+        "Milk, Peanuts."
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "desserts"
+      ]
+    },
+    {
+      "id": "200086",
+      "name": "McFlurry - Mini M&M",
+      "marketing": "McFlurry - Mini M&M",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1540,
+        "energy_kcal": 367,
+        "protein": 7.2,
+        "fat": 11.7,
+        "saturated_fat": 7.7,
+        "carbohydrate": 56.7,
+        "sugars": 50.8,
+        "sodium": 320,
+        "primary_serving_size": 180
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Milk, Soy.",
+      "item_may": "M&M's MINIS® are produced in the same facility as products containing Gluten, Wheat, Peanuts, Tree Nuts (Almond, Brazil Nut, Cashew, Hazelnut, Macadamia, Pecan, Pine Nut, Pistachio, Walnut).",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        "Milk, Soy."
+      ],
+      "comp_may": [
+        "",
+        "Gluten, Wheat, Peanuts, Almond, Brazil Nut, Cashew, Hazelnut, Macadamia, Pecan, Pine Nut, Pistachio, Walnut."
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "desserts"
+      ]
+    },
+    {
+      "id": "200087",
+      "name": "Double Quarter Pounder W/Cheese",
+      "marketing": "Double Quarter Pounder W/Cheese",
+      "cats": [],
+      "n": {
+        "energy_kJ": 3510,
+        "energy_kcal": 839,
+        "protein": 57.4,
+        "fat": 47.6,
+        "saturated_fat": 25.7,
+        "carbohydrate": 37.9,
+        "sugars": 13.2,
+        "sodium": 1640,
+        "primary_serving_size": 271
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Milk, Soy, Sesame.",
+      "item_may": "Egg",
+      "flags": [],
+      "comp_al": [
+        "",
+        "Wheat, Gluten, Sesame.",
+        "Milk, Soy.",
+        "Soy",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "comp_may": [
+        "BEEF PATTIES may be cooked on the same grill as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "Soy",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "burgers",
+        "beef"
+      ]
+    },
+    {
+      "id": "200088",
+      "name": "Double Big Mac",
+      "marketing": "Double Big Mac",
+      "cats": [],
+      "n": {
+        "energy_kJ": 3240,
+        "energy_kcal": 776,
+        "protein": 48.2,
+        "fat": 20.6,
+        "saturated_fat": 12.6,
+        "carbohydrate": 41.2,
+        "sugars": 37.3,
+        "sodium": 1555,
+        "primary_serving_size": 291
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Milk, Soy, Egg, Sesame.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "",
+        "Gluten, Wheat, Sesame",
+        "Egg",
+        "",
+        "Milk, Soy.",
+        "",
+        "",
+        ""
+      ],
+      "comp_may": [
+        "BEEF PATTIES may be cooked on the same grill as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "Soy",
+        "",
+        "",
+        "",
+        "ONION may be cooked on the same grill as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "burgers",
+        "beef"
+      ]
+    },
+    {
+      "id": "200089",
+      "name": "Grilled Chicken Snack Wrap",
+      "marketing": "Grilled Chicken Snack Wrap",
+      "cats": [],
+      "n": {
+        "energy_kJ": 825,
+        "energy_kcal": 197,
+        "protein": 17.5,
+        "fat": 4.4,
+        "saturated_fat": 3,
+        "carbohydrate": 16.6,
+        "sugars": 1.7,
+        "sodium": 398,
+        "primary_serving_size": 104
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Egg, Soy.",
+      "item_may": "GRILLED CHICKEN may be cooked in the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy. TORTILLA may be produced on the same equipment as products containing Soy.    TORTILLA may be heated in the same equipment as products containing Sesame.",
+      "flags": [],
+      "comp_al": [
+        "Soy.",
+        "Wheat, Gluten.",
+        "",
+        "Egg",
+        "Soy."
+      ],
+      "comp_may": [
+        "GRILLED CHICKEN may be cooked in the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "Soy.\n\nTORTILLA may be heated in the same equipment as products containing Sesame.",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "wraps-salads",
+        "happy-meal"
+      ]
+    },
+    {
+      "id": "200090",
+      "name": "20 Chicken McNuggets",
+      "marketing": "Chicken McNuggets®  (20Pc)",
+      "cats": [],
+      "n": {
+        "energy_kJ": 4200,
+        "energy_kcal": 1004,
+        "protein": 57.2,
+        "fat": 58.4,
+        "saturated_fat": 7.4,
+        "carbohydrate": 69.6,
+        "sugars": 0.2,
+        "sodium": 2116,
+        "primary_serving_size": 400
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat.",
+      "item_may": "Egg, Milk, Soy",
+      "flags": [],
+      "comp_al": [
+        "Gluten, Wheat"
+      ],
+      "comp_may": [
+        "CHICKEN MCNUGGETS are cooked in a McDonald's Vegetable Oil Blend and are cooked in the same equipment as products containing Gluten, Wheat, Milk, Soy."
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "chicken-fish",
+        "all-day-menu"
+      ]
+    },
+    {
+      "id": "200092",
+      "name": "McCafe - Cappuccino Medium",
+      "marketing": "McCafe - Cappuccino Medium",
+      "cats": [],
+      "n": {
+        "energy_kJ": 850,
+        "energy_kcal": 204,
+        "protein": 10.3,
+        "fat": 10.6,
+        "saturated_fat": 7.1,
+        "carbohydrate": 16.4,
+        "sugars": 16.3,
+        "sodium": 124,
+        "primary_serving_size": 377
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Milk, Caffeine.",
+      "item_may": "May be present: Gluten, Soy, Almond due to equipment cross contact. \nHOT CHOCOLATE POWDER is produced in the same facility as products containing Gluten, Soy.",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        "Caffeine.",
+        ""
+      ],
+      "comp_may": [
+        "Gluten, Soy, Almond due to equipment cross contact.",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "McCafe-drinks"
+      ]
+    },
+    {
+      "id": "200095",
+      "name": "McCafe - Mochacinno Medium",
+      "marketing": "McCafe - Mochacinno Medium",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1170,
+        "energy_kcal": 281,
+        "protein": 9.8,
+        "fat": 9.2,
+        "saturated_fat": 6.1,
+        "carbohydrate": 38.2,
+        "sugars": 36.6,
+        "sodium": 102,
+        "primary_serving_size": 342
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Milk, Caffeine.",
+      "item_may": "May be present: Gluten, Soy, Almond due to equipment cross contact. \nHOT CHOCOLATE POWDER is produced in the same facility as products containing Gluten, Soy.",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        "Caffeine.",
+        ""
+      ],
+      "comp_may": [
+        "Gluten, Soy, Almond due to equipment cross contact.",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "McCafe-drinks"
+      ]
+    },
+    {
+      "id": "200098",
+      "name": "McCafe - Hot Chocolate Medium",
+      "marketing": "McCafe - Hot Chocolate Medium",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1760,
+        "energy_kcal": 421,
+        "protein": 12.8,
+        "fat": 11.8,
+        "saturated_fat": 7.8,
+        "carbohydrate": 63.5,
+        "sugars": 61.1,
+        "sodium": 134,
+        "primary_serving_size": 367
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Milk.",
+      "item_may": "May be present: Gluten, Soy, Almond due to equipment cross contact. \nHOT CHOCOLATE POWDER is produced in the same facility as products containing Gluten, Soy.",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        "",
+        ""
+      ],
+      "comp_may": [
+        "Gluten, Soy, Almond due to equipment cross contact.",
+        "",
+        "Milk."
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "McCafe-drinks"
+      ]
+    },
+    {
+      "id": "200101",
+      "name": "McCafe - Flat White Medium",
+      "marketing": "McCafe - Flat White Medium",
+      "cats": [],
+      "n": {
+        "energy_kJ": 792,
+        "energy_kcal": 190,
+        "protein": 10,
+        "fat": 10.2,
+        "saturated_fat": 6.8,
+        "carbohydrate": 14.3,
+        "sugars": 14.3,
+        "sodium": 121,
+        "primary_serving_size": 365
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Milk, Caffeine.",
+      "item_may": "May be present: Gluten, Soy, Almond due to equipment cross contact.",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        "Caffeine."
+      ],
+      "comp_may": [
+        "Gluten, Soy, Almond due to equipment cross contact.",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "McCafe-drinks"
+      ]
+    },
+    {
+      "id": "200104",
+      "name": "McCafe - Latte Medium",
+      "marketing": "McCafe - Latte Medium",
+      "cats": [],
+      "n": {
+        "energy_kJ": 792,
+        "energy_kcal": 190,
+        "protein": 10,
+        "fat": 10.2,
+        "saturated_fat": 6.8,
+        "carbohydrate": 14.3,
+        "sugars": 14.3,
+        "sodium": 121,
+        "primary_serving_size": 365
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Milk, Caffeine.",
+      "item_may": "May be present: Gluten, Soy, Almond due to equipment cross contact.",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        "Caffeine."
+      ],
+      "comp_may": [
+        "Gluten, Soy, Almond due to equipment cross contact.",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "McCafe-drinks"
+      ]
+    },
+    {
+      "id": "200107",
+      "name": "McCafe - Long Black Medium",
+      "marketing": "McCafe - Long Black Medium",
+      "cats": [],
+      "n": {
+        "energy_kJ": 2,
+        "energy_kcal": 0,
+        "protein": 0.1,
+        "fat": 0,
+        "saturated_fat": 0,
+        "carbohydrate": 0,
+        "sugars": 0,
+        "sodium": 1,
+        "primary_serving_size": 340
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Caffeine.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "",
+        "Caffeine."
+      ],
+      "comp_may": [
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "McCafe-drinks"
+      ]
+    },
+    {
+      "id": "200109",
+      "name": "Medium Frozen Coke® Zero Sugar",
+      "marketing": "Medium Frozen Coke® Zero Sugar",
+      "cats": [],
+      "n": {
+        "energy_kJ": 33,
+        "energy_kcal": 7,
+        "protein": 0,
+        "fat": 0,
+        "saturated_fat": 0,
+        "carbohydrate": 2,
+        "sugars": 0,
+        "sodium": 7,
+        "primary_serving_size": 326
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Caffeine",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Caffeine."
+      ],
+      "comp_may": [
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "drinks"
+      ]
+    },
+    {
+      "id": "200111",
+      "name": "Frozen Coke Zero Sugar McFloat Medium",
+      "marketing": "Frozen Coke Zero Sugar McFloat Medium",
+      "cats": [],
+      "n": {
+        "energy_kJ": 803,
+        "energy_kcal": 192,
+        "protein": 5,
+        "fat": 5.2,
+        "saturated_fat": 3.7,
+        "carbohydrate": 30.5,
+        "sugars": 25.3,
+        "sodium": 269,
+        "primary_serving_size": 312
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Milk, Caffeine.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Caffeine.",
+        "Milk."
+      ],
+      "comp_may": [
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "drinks"
+      ]
+    },
+    {
+      "id": "200116",
+      "name": "Frozen L&P Medium",
+      "marketing": "Frozen L&P Medium",
+      "cats": [],
+      "n": {
+        "energy_kJ": 342,
+        "energy_kcal": 82,
+        "protein": 0,
+        "fat": 0,
+        "saturated_fat": 0,
+        "carbohydrate": 21.2,
+        "sugars": 21.2,
+        "sodium": 36,
+        "primary_serving_size": 326
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        ""
+      ],
+      "comp_may": [
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "drinks"
+      ]
+    },
+    {
+      "id": "200118",
+      "name": "Frozen L&P McFloat Medium",
+      "marketing": "Frozen L&P McFloat Medium",
+      "cats": [],
+      "n": {
+        "energy_kJ": 978,
+        "energy_kcal": 234,
+        "protein": 5,
+        "fat": 5.2,
+        "saturated_fat": 3.7,
+        "carbohydrate": 41.4,
+        "sugars": 37.3,
+        "sodium": 285,
+        "primary_serving_size": 312
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Milk.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "",
+        "Milk."
+      ],
+      "comp_may": [
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "drinks"
+      ]
+    },
+    {
+      "id": "200120",
+      "name": "Frozen Lift Medium",
+      "marketing": "Frozen Lift Medium",
+      "cats": [],
+      "n": {
+        "energy_kJ": 381,
+        "energy_kcal": 91,
+        "protein": 0,
+        "fat": 0,
+        "saturated_fat": 0,
+        "carbohydrate": 23.5,
+        "sugars": 23.5,
+        "sodium": 7,
+        "primary_serving_size": 326
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        ""
+      ],
+      "comp_may": [
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "drinks"
+      ]
+    },
+    {
+      "id": "200122",
+      "name": "Medium Frozen Sprite®",
+      "marketing": "Medium Frozen Sprite®",
+      "cats": [],
+      "n": {
+        "energy_kJ": 365,
+        "energy_kcal": 88,
+        "protein": 0,
+        "fat": 0,
+        "saturated_fat": 0,
+        "carbohydrate": 22.5,
+        "sugars": 22.5,
+        "sodium": 16,
+        "primary_serving_size": 326
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        ""
+      ],
+      "comp_may": [
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "drinks"
+      ]
+    },
+    {
+      "id": "200124",
+      "name": "Medium Frozen Fanta® Orange",
+      "marketing": "Medium Frozen Fanta® Orange",
+      "cats": [],
+      "n": {
+        "energy_kJ": 365,
+        "energy_kcal": 88,
+        "protein": 0,
+        "fat": 0,
+        "saturated_fat": 0,
+        "carbohydrate": 22.5,
+        "sugars": 22.5,
+        "sodium": 16,
+        "primary_serving_size": 326
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        ""
+      ],
+      "comp_may": [
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "drinks"
+      ]
+    },
+    {
+      "id": "200128",
+      "name": "Frozen Coke Raspberry Medium",
+      "marketing": "Frozen Coke Raspberry Medium",
+      "cats": [],
+      "n": {
+        "energy_kJ": 365,
+        "energy_kcal": 88,
+        "protein": 0,
+        "fat": 0,
+        "saturated_fat": 0,
+        "carbohydrate": 22.5,
+        "sugars": 22.5,
+        "sodium": 16,
+        "primary_serving_size": 326
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Caffeine.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "",
+        "Caffeine."
+      ],
+      "comp_may": [
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "drinks"
+      ]
+    },
+    {
+      "id": "200130",
+      "name": "Frozen Fanta Orange McFloat Medium",
+      "marketing": "Frozen Fanta Orange McFloat Medium",
+      "cats": [],
+      "n": {
+        "energy_kJ": 991,
+        "energy_kcal": 238,
+        "protein": 5,
+        "fat": 5.2,
+        "saturated_fat": 3.7,
+        "carbohydrate": 42.1,
+        "sugars": 38,
+        "sodium": 274,
+        "primary_serving_size": 312
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Milk.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "",
+        "Milk."
+      ],
+      "comp_may": [
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "drinks"
+      ]
+    },
+    {
+      "id": "200132",
+      "name": "Frozen Sprite McFloat Medium",
+      "marketing": "Frozen Sprite McFloat Medium",
+      "cats": [],
+      "n": {
+        "energy_kJ": 991,
+        "energy_kcal": 238,
+        "protein": 5,
+        "fat": 5.2,
+        "saturated_fat": 3.7,
+        "carbohydrate": 42.1,
+        "sugars": 38,
+        "sodium": 274,
+        "primary_serving_size": 312
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Milk.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "",
+        "Milk."
+      ],
+      "comp_may": [
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "drinks"
+      ]
+    },
+    {
+      "id": "200135",
+      "name": "Frozen Coke Raspberry McFloat Medium",
+      "marketing": "Frozen Coke Raspberry McFloat Medium",
+      "cats": [],
+      "n": {
+        "energy_kJ": 991,
+        "energy_kcal": 238,
+        "protein": 5,
+        "fat": 5.2,
+        "saturated_fat": 3.7,
+        "carbohydrate": 42.1,
+        "sugars": 38,
+        "sodium": 274,
+        "primary_serving_size": 312
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Caffeine, Milk.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        "Caffeine.",
+        ""
+      ],
+      "comp_may": [
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "drinks"
+      ]
+    },
+    {
+      "id": "200137",
+      "name": "Frozen Lift McFloat Medium",
+      "marketing": "Frozen Lift McFloat Medium",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1000,
+        "energy_kcal": 240,
+        "protein": 5,
+        "fat": 5.2,
+        "saturated_fat": 3.7,
+        "carbohydrate": 42.7,
+        "sugars": 38.6,
+        "sodium": 269,
+        "primary_serving_size": 312
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Milk.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "",
+        "Milk."
+      ],
+      "comp_may": [
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "drinks"
+      ]
+    },
+    {
+      "id": "200139",
+      "name": "McCafe - Iced Caramel Latte Medium",
+      "marketing": "McCafe - Iced Caramel Latte Medium",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1080,
+        "energy_kcal": 259,
+        "protein": 8.9,
+        "fat": 9.1,
+        "saturated_fat": 6.1,
+        "carbohydrate": 34.6,
+        "sugars": 34.5,
+        "sodium": 108,
+        "primary_serving_size": 370
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Milk, Caffeine.",
+      "item_may": "Gluten, Soy, Tree Nuts (Almond) due to equipment cross contact.",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        "",
+        "Caffeine.",
+        ""
+      ],
+      "comp_may": [
+        "Gluten, Soy, Almond due to equipment cross contact.",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "McCafe-drinks"
+      ]
+    },
+    {
+      "id": "200141",
+      "name": "McCafe - Iced Matcha Medium",
+      "marketing": "McCafe - Iced Matcha Medium",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1630,
+        "energy_kcal": 391,
+        "protein": 12.2,
+        "fat": 10.9,
+        "saturated_fat": 7.3,
+        "carbohydrate": 59.1,
+        "sugars": 40.9,
+        "sodium": 209,
+        "primary_serving_size": 410
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Milk.",
+      "item_may": "Gluten, Soy, Tree Nuts (Almonds) due to equipment cross contact.",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        "",
+        ""
+      ],
+      "comp_may": [
+        "Gluten, Soy, Almond due to equipment cross contact.",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "McCafe-drinks"
+      ]
+    },
+    {
+      "id": "200143",
+      "name": "McCafe - Iced Strawberry Matcha Medium",
+      "marketing": "McCafe - Iced Strawberry Matcha Medium",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1280,
+        "energy_kcal": 322,
+        "protein": 10.4,
+        "fat": 9.9,
+        "saturated_fat": 6.6,
+        "carbohydrate": 46.9,
+        "sugars": 39.6,
+        "sodium": 150,
+        "primary_serving_size": 360
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Milk.",
+      "item_may": "Gluten, Soy, Tree Nuts (Almonds) due to equipment cross contact.",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        "",
+        "",
+        ""
+      ],
+      "comp_may": [
+        "Gluten, Soy, Almond due to equipment cross contact.",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "McCafe-drinks"
+      ]
+    },
+    {
+      "id": "200146",
+      "name": "McCafe - Matcha Medium",
+      "marketing": "McCafe - Matcha Medium",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1530,
+        "energy_kcal": 366,
+        "protein": 10.9,
+        "fat": 9.6,
+        "saturated_fat": 6.4,
+        "carbohydrate": 57.2,
+        "sugars": 39,
+        "sodium": 194,
+        "primary_serving_size": 340
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Milk.",
+      "item_may": "Gluten, Soy, Tree Nuts (Almonds) due to equipment cross contact.",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        "",
+        ""
+      ],
+      "comp_may": [
+        "Gluten, Soy, Almond due to equipment cross contact.",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "McCafe-drinks"
+      ]
+    },
+    {
+      "id": "200148",
+      "name": "McSpicy",
+      "marketing": "McSpicy",
+      "cats": [],
+      "n": {
+        "energy_kJ": 2570,
+        "energy_kcal": 615,
+        "protein": 39.6,
+        "fat": 20.5,
+        "saturated_fat": 5.8,
+        "carbohydrate": 58.2,
+        "sugars": 4.2,
+        "sodium": 1623,
+        "primary_serving_size": 222
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Egg, Milk, Soy, Sesame.",
+      "item_may": "SPICY CHICKEN PATTY is cooked in a McDonald's Vegetable Oil blend and may be cooked using the same equipment as products containing Gluten, Wheat, Egg, Milk, Soy. QUARTER BUN is made on equipment that also produces products containing Soy, Milk.",
+      "flags": [],
+      "comp_al": [
+        "Gluten, Wheat.",
+        "Wheat, Gluten, Sesame.",
+        "Egg",
+        ""
+      ],
+      "comp_may": [
+        "SPICY CHICKEN PATTY is cooked in a McDonald's Vegetable Oil blend and may be cooked using the same equipment as products containing Gluten, Wheat, Egg, Milk, Soy.",
+        "Soy",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "burgers",
+        "chicken-fish"
+      ]
+    },
+    {
+      "id": "200149",
+      "name": "Mega Brekkie Wrap",
+      "marketing": "Mega Brekkie Wrap",
+      "cats": [],
+      "n": {
+        "energy_kJ": 3080,
+        "energy_kcal": 735,
+        "protein": 42.4,
+        "fat": 40,
+        "saturated_fat": 17.9,
+        "carbohydrate": 47.1,
+        "sugars": 6.9,
+        "sodium": 1727,
+        "primary_serving_size": 303
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Egg, Milk, Soy.",
+      "item_may": "TORTILLA may be produced on the same equipment as products containing Soy.    TORTILLA may be heated in the same equipment as products containing Sesame.  BACON, SAUSAGE PATTY may be cooked on the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy. EGG may be cooked on the same equipment as products containing Gluten, Wheat, Milk, Soy. HASHBROWNS are cooked in a McDonald's Vegetable Oil blend and may be cooked using the same equipment as products containing Gluten, Wheat, Egg, Milk, Soy.",
+      "flags": [],
+      "comp_al": [
+        "",
+        "Wheat, Gluten.",
+        "",
+        "Egg.",
+        "",
+        "Soy",
+        "Milk, Soy.",
+        "Soy."
+      ],
+      "comp_may": [
+        "SAUSAGE PATTY may be cooked on the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "Soy.\nTORTILLA may be heated in the same equipment as products containing Sesame.",
+        "HASHBROWNS are cooked in a McDonald's Vegetable Oil blend and may be cooked using the same equipment as products containing Gluten, Wheat, Egg, Milk, Soy.",
+        "",
+        "BACON may be cooked on the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "breakfast"
+      ]
+    },
+    {
+      "id": "200159",
+      "name": "Medium Banana Shake",
+      "marketing": "Medium Banana Shake",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1510,
+        "energy_kcal": 361,
+        "protein": 9.7,
+        "fat": 9.6,
+        "saturated_fat": 6.7,
+        "carbohydrate": 58.5,
+        "sugars": 53,
+        "sodium": 145,
+        "primary_serving_size": 290
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Milk.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        ""
+      ],
+      "comp_may": [
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "drinks"
+      ]
+    },
+    {
+      "id": "200161",
+      "name": "Medium Frozen Coke®",
+      "marketing": "Medium Frozen Coke®",
+      "cats": [],
+      "n": {
+        "energy_kJ": 365,
+        "energy_kcal": 88,
+        "protein": 0,
+        "fat": 0,
+        "saturated_fat": 0,
+        "carbohydrate": 22.5,
+        "sugars": 22.5,
+        "sodium": 16,
+        "primary_serving_size": 326
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Caffeine",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Caffeine."
+      ],
+      "comp_may": [
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "drinks"
+      ]
+    },
+    {
+      "id": "200166",
+      "name": "Big Arch",
+      "marketing": "Big Arch®",
+      "cats": [],
+      "n": {
+        "energy_kJ": 4500,
+        "energy_kcal": 1073,
+        "protein": 74.2,
+        "fat": 49.9,
+        "saturated_fat": 33.5,
+        "carbohydrate": 46.2,
+        "sugars": 14.3,
+        "sodium": 2193,
+        "primary_serving_size": 382
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Milk, Egg, Soy, Sesame.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "",
+        "Gluten, Wheat, Sesame",
+        "Milk, Soy.",
+        "Egg, Soy.",
+        "",
+        "",
+        "Gluten, Wheat",
+        "",
+        ""
+      ],
+      "comp_may": [
+        "BEEF PATTIES may be cooked on the same grill as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "Milk, Soy.",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "burgers",
+        "beef"
+      ]
+    },
+    {
+      "id": "200167",
+      "name": "Serious Beef Burger",
+      "marketing": "Serious Beef Burger",
+      "cats": [],
+      "n": {
+        "energy_kJ": 2820,
+        "energy_kcal": 672,
+        "protein": 44.8,
+        "fat": 30.3,
+        "saturated_fat": 14.3,
+        "carbohydrate": 43,
+        "sugars": 10.9,
+        "sodium": 1684,
+        "primary_serving_size": 295
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Egg, Milk, Soy, Sesame.",
+      "item_may": "BEEF PATTY and BACON may be cooked in the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy.",
+      "flags": [],
+      "comp_al": [
+        "",
+        "Gluten, Wheat, Sesame",
+        "Milk, Soy.",
+        "",
+        "",
+        "",
+        "",
+        "Egg",
+        "",
+        "",
+        ""
+      ],
+      "comp_may": [
+        "BEEF PATTIES may be cooked on the same grill as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "Milk, Soy.",
+        "",
+        "",
+        "BACON may be cooked on the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "burgers",
+        "beef"
+      ]
+    },
+    {
+      "id": "200168",
+      "name": "Almighty Texan BBQ",
+      "marketing": "Almighty Texan BBQ",
+      "cats": [],
+      "n": {
+        "energy_kJ": 3930,
+        "energy_kcal": 938,
+        "protein": 64.3,
+        "fat": 48.6,
+        "saturated_fat": 22.8,
+        "carbohydrate": 50.2,
+        "sugars": 17,
+        "sodium": 2031,
+        "primary_serving_size": 344
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Milk, Egg, Soy, Fish, Sesame",
+      "item_may": "BEEF PATTY, BACON and ONION may be cooked in the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy.",
+      "flags": [],
+      "comp_al": [
+        "",
+        "Gluten, Wheat, Sesame",
+        "",
+        "Milk, Soy.",
+        "Wheat, Gluten, Fish.",
+        "",
+        "Egg",
+        ""
+      ],
+      "comp_may": [
+        "BEEF PATTIES may be cooked on the same grill as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "Milk, Soy.",
+        "BACON may be cooked on the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "burgers",
+        "beef"
+      ]
+    },
+    {
+      "id": "200169",
+      "name": "McCrispy",
+      "marketing": "McCrispy®",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1930,
+        "energy_kcal": 500,
+        "protein": 23.8,
+        "fat": 14.5,
+        "saturated_fat": 2.5,
+        "carbohydrate": 56.9,
+        "sugars": 6.1,
+        "sodium": 1099,
+        "primary_serving_size": 255
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Egg, Milk, Sesame.",
+      "item_may": "Soy, Sulphites",
+      "flags": [],
+      "comp_al": [
+        "Gluten, Wheat.",
+        "Gluten, Wheat, Sulphites, Sesame.",
+        "",
+        "Egg."
+      ],
+      "comp_may": [
+        "MCCRISPY CHICKEN PATTY is cooked in a McDonald's Vegetable Oil blend and may be cooked using the same equipment as products containing Gluten, Wheat, Egg, Milk, Soy.",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "burgers",
+        "chicken-fish"
+      ]
+    },
+    {
+      "id": "200170",
+      "name": "McCrispy Deluxe",
+      "marketing": "McCrispy® Deluxe",
+      "cats": [],
+      "n": {
+        "energy_kJ": 2410,
+        "energy_kcal": 612,
+        "protein": 35.6,
+        "fat": 19.9,
+        "saturated_fat": 4.4,
+        "carbohydrate": 58,
+        "sugars": 10.1,
+        "sodium": 1688,
+        "primary_serving_size": 299
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Egg, Milk, Sesame.",
+      "item_may": "Soy, Sulphites",
+      "flags": [],
+      "comp_al": [
+        "Gluten, Wheat.",
+        "Gluten, Wheat, Sulphites, Sesame.",
+        "",
+        "",
+        "",
+        "Egg.",
+        "Milk, Soy."
+      ],
+      "comp_may": [
+        "MCCRISPY CHICKEN PATTY is cooked in a McDonald's Vegetable Oil blend and may be cooked using the same equipment as products containing Gluten, Wheat, Egg, Milk, Soy.",
+        "",
+        "BACON may be cooked on the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "burgers",
+        "chicken-fish"
+      ]
+    },
+    {
+      "id": "200173",
+      "name": "McCafe Drink - Iced Chai Medium",
+      "marketing": "McCafe Drink - Iced Chai Medium",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1540,
+        "energy_kcal": 368,
+        "protein": 12.9,
+        "fat": 13,
+        "saturated_fat": 8.3,
+        "carbohydrate": 49,
+        "sugars": 45.3,
+        "sodium": 192,
+        "primary_serving_size": 360
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Gluten, Milk, Sulphites.",
+      "item_may": "Soy, Tree Nuts (Almond) due to equipment cross contact.",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        "",
+        "Milk, Sulphites, Gluten.",
+        ""
+      ],
+      "comp_may": [
+        "Gluten, Soy, Almond due to equipment cross contact.",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "McCafe-drinks"
+      ]
+    },
+    {
+      "id": "200175",
+      "name": "McCafe Drink - Iced Chocolate Medium",
+      "marketing": "McCafe Drink - Iced Chocolate Medium",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1510,
+        "energy_kcal": 361,
+        "protein": 10.7,
+        "fat": 15.9,
+        "saturated_fat": 10.5,
+        "carbohydrate": 43,
+        "sugars": 36.8,
+        "sodium": 222,
+        "primary_serving_size": 352
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Milk.",
+      "item_may": "Gluten, Soy,Tree Nuts (Almond) due to equipment cross contact. HOT CHOCOLATE POWDER is produced in the same facility as products containing Gluten, Soy.",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        "",
+        "Milk.",
+        ""
+      ],
+      "comp_may": [
+        "Gluten, Soy, Almond due to equipment cross contact.",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "McCafe-drinks"
+      ]
+    },
+    {
+      "id": "200177",
+      "name": "McCafe Drink - Iced Long Black Medium",
+      "marketing": "McCafe Drink - Iced Long Black Medium",
+      "cats": [],
+      "n": {
+        "energy_kJ": 2,
+        "energy_kcal": 0,
+        "protein": 0.1,
+        "fat": 0,
+        "saturated_fat": 0,
+        "carbohydrate": 0,
+        "sugars": 0,
+        "sodium": 1,
+        "primary_serving_size": 335
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Caffeine.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "",
+        "Caffeine.",
+        ""
+      ],
+      "comp_may": [
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "McCafe-drinks"
+      ]
+    },
+    {
+      "id": "200179",
+      "name": "Salad Burger",
+      "marketing": "Salad Burger",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1350,
+        "energy_kcal": 325,
+        "protein": 18.4,
+        "fat": 6.5,
+        "saturated_fat": 5.2,
+        "carbohydrate": 35.5,
+        "sugars": 7.6,
+        "sodium": 694,
+        "primary_serving_size": 160
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Egg, Milk, Soy, Sesame.",
+      "item_may": "QUARTER BUN is made on equipment that also produces products containing Soy, Milk.",
+      "flags": [],
+      "comp_al": [
+        "Wheat, Gluten, Sesame.",
+        "",
+        "",
+        "Egg",
+        "Milk, Soy.",
+        "",
+        ""
+      ],
+      "comp_may": [
+        "Soy",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "burgers",
+        "all-day-menu"
+      ]
+    },
+    {
+      "id": "200183",
+      "name": "Double McCrispy",
+      "marketing": "Double McCrispy",
+      "cats": [],
+      "n": {
+        "energy_kJ": 3130,
+        "energy_kcal": 827,
+        "protein": 41.4,
+        "fat": 27,
+        "saturated_fat": 4,
+        "carbohydrate": 82,
+        "sugars": 8,
+        "sodium": 1916,
+        "primary_serving_size": 393
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Egg, Milk, Sesame.",
+      "item_may": "Soy, Sulphites",
+      "flags": [],
+      "comp_al": [
+        "Gluten, Wheat.",
+        "Gluten, Wheat, Sulphites, Sesame.",
+        "Egg.",
+        ""
+      ],
+      "comp_may": [
+        "MCCRISPY CHICKEN PATTY is cooked in a McDonald's Vegetable Oil blend and may be cooked using the same equipment as products containing Gluten, Wheat, Egg, Milk, Soy.",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "burgers",
+        "chicken-fish"
+      ]
+    },
+    {
+      "id": "200184",
+      "name": "Crispy Chicken McWrap",
+      "marketing": "Crispy Chicken McWrap",
+      "cats": [],
+      "n": {
+        "energy_kJ": 2040,
+        "energy_kcal": 529,
+        "protein": 24.5,
+        "fat": 18,
+        "saturated_fat": 5.7,
+        "carbohydrate": 53.6,
+        "sugars": 4.9,
+        "sodium": 1069,
+        "primary_serving_size": 299
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Egg.",
+      "item_may": "MCCRISPY CHICKEN PATTY is cooked in a McDonald's Vegetable Oil blend and may be cooked using the same equipment as products containing Gluten, Wheat, Egg, Milk, Soy TORTILLA may be produced on the same equipment as products containing Soy.    TORTILLA may be heated in the same equipment as products containing Sesame.",
+      "flags": [],
+      "comp_al": [
+        "Gluten, Wheat.",
+        "Wheat, Gluten.",
+        "",
+        "",
+        "Egg."
+      ],
+      "comp_may": [
+        "MCCRISPY CHICKEN PATTY is cooked in a McDonald's Vegetable Oil blend and may be cooked using the same equipment as products containing Gluten, Wheat, Egg, Milk, Soy.",
+        "Soy.\nTORTILLA may be heated in the same equipment as products containing Sesame.",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "wraps-salads"
+      ]
+    },
+    {
+      "id": "200185",
+      "name": "Grilled Chicken McWrap",
+      "marketing": "Grilled Chicken McWrap",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1570,
+        "energy_kcal": 376,
+        "protein": 27.3,
+        "fat": 14.8,
+        "saturated_fat": 5.4,
+        "carbohydrate": 31.8,
+        "sugars": 4.5,
+        "sodium": 803,
+        "primary_serving_size": 236
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Milk, Egg, Soy.",
+      "item_may": "GRILLED CHICKEN may be cooked in the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy. TORTILLA may be produced on the same equipment as products containing Soy.    TORTILLA may be heated in the same equipment as products containing Sesame.",
+      "flags": [],
+      "comp_al": [
+        "Soy.",
+        "Wheat, Gluten.",
+        "",
+        "",
+        "Egg.",
+        "Soy."
+      ],
+      "comp_may": [
+        "GRILLED CHICKEN may be cooked in the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "Soy.\nTORTILLA may be heated in the same equipment as products containing Sesame.",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "wraps-salads"
+      ]
+    },
+    {
+      "id": "200186",
+      "name": "Grilled Chicken Bacon Deluxe",
+      "marketing": "Grilled Chicken Bacon Deluxe",
+      "cats": [],
+      "n": {
+        "energy_kJ": 2020,
+        "energy_kcal": 483,
+        "protein": 47.5,
+        "fat": 11.4,
+        "saturated_fat": 5.4,
+        "carbohydrate": 36,
+        "sugars": 8.2,
+        "sodium": 1460,
+        "primary_serving_size": 265
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Egg, Milk, Soy, Sesame.",
+      "item_may": "GRILLED CHICKEN and BACON may be cooked in the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy.",
+      "flags": [],
+      "comp_al": [
+        "Soy.",
+        "Wheat, Gluten, Sesame.",
+        "",
+        "",
+        "",
+        "Egg",
+        "Milk, Soy.",
+        "Soy."
+      ],
+      "comp_may": [
+        "GRILLED CHICKEN may be cooked in the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "Soy",
+        "BACON may be cooked on the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "burgers",
+        "chicken-fish"
+      ]
+    },
+    {
+      "id": "200187",
+      "name": "Crispy Chicken Snack Wrap",
+      "marketing": "Crispy Chicken Snack Wrap",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1060,
+        "energy_kcal": 274,
+        "protein": 16,
+        "fat": 6,
+        "saturated_fat": 3.2,
+        "carbohydrate": 27.5,
+        "sugars": 1.9,
+        "sodium": 531,
+        "primary_serving_size": 60
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Egg, Soy.",
+      "item_may": "CRISPY CHICKEN is cooked in a McDonald's Vegetable Oil blend and may be cooked using the same equipment as products containing Gluten, Wheat, Egg, Milk, Soy. TORTILLA may be produced on the same equipment as products containing Soy.   TORTILLA may be heated in the same equipment as products containing Sesame.",
+      "flags": [],
+      "comp_al": [
+        "Gluten, Wheat.",
+        "Wheat, Gluten.",
+        "",
+        "Egg"
+      ],
+      "comp_may": [
+        "MCCRISPY CHICKEN PATTY is cooked in a McDonald's Vegetable Oil blend and may be cooked using the same equipment as products containing Gluten, Wheat, Egg, Milk, Soy.",
+        "Soy.\n\nTORTILLA may be heated in the same equipment as products containing Sesame.",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "wraps-salads",
+        "happy-meal"
+      ]
+    },
+    {
+      "id": "200188",
+      "name": "McCafe - Iced Latte Medium",
+      "marketing": "McCafe - Iced Latte Medium",
+      "cats": [],
+      "n": {
+        "energy_kJ": 978,
+        "energy_kcal": 234,
+        "protein": 9.5,
+        "fat": 9.7,
+        "saturated_fat": 6.5,
+        "carbohydrate": 26.8,
+        "sugars": 26.8,
+        "sodium": 117,
+        "primary_serving_size": 370
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Milk, Caffeine.",
+      "item_may": "Gluten, Soy, Tree Nuts (Almond) due to equipment cross contact.",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        "",
+        "Caffeine.",
+        ""
+      ],
+      "comp_may": [
+        "Gluten, Soy, Almond due to equipment cross contact.",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "McCafe-drinks"
+      ]
+    },
+    {
+      "id": "200189",
+      "name": "McCafe - Iced Mocha Medium",
+      "marketing": "McCafe - Iced Mocha Medium",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1390,
+        "energy_kcal": 331,
+        "protein": 8.8,
+        "fat": 8.8,
+        "saturated_fat": 5.8,
+        "carbohydrate": 53.2,
+        "sugars": 48.3,
+        "sodium": 183,
+        "primary_serving_size": 380
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Milk, Caffeine.",
+      "item_may": "Gluten, Soy, Tree Nuts (Almond) due to equipment cross contact.",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        "",
+        "Caffeine.",
+        "",
+        ""
+      ],
+      "comp_may": [
+        "Gluten, Soy, Almond due to equipment cross contact.",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "McCafe-drinks"
+      ]
+    },
+    {
+      "id": "200190",
+      "name": "Triple Cheeseburger",
+      "marketing": "Triple Cheeseburger",
+      "cats": [],
+      "n": {
+        "energy_kJ": 2590,
+        "energy_kcal": 617,
+        "protein": 37.3,
+        "fat": 20.3,
+        "saturated_fat": 10.4,
+        "carbohydrate": 30.3,
+        "sugars": 34.7,
+        "sodium": 1529,
+        "primary_serving_size": 184
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Milk, Soy, Sesame.",
+      "item_may": "Egg",
+      "flags": [],
+      "comp_al": [
+        "",
+        "Gluten, Wheat, Sesame",
+        "Milk, Soy.",
+        "",
+        "Soy",
+        "",
+        "",
+        ""
+      ],
+      "comp_may": [
+        "BEEF PATTIES may be cooked on the same grill as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "Milk, Soy.",
+        "",
+        "ONION may be cooked on the same grill as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "burgers",
+        "beef"
+      ]
+    },
+    {
+      "id": "200191",
+      "name": "Dilmah Earl Grey Tea",
+      "marketing": "Dilmah Earl Grey Tea",
+      "cats": [],
+      "n": {
+        "energy_kJ": 20,
+        "energy_kcal": 3,
+        "protein": 0,
+        "fat": 0,
+        "saturated_fat": 0,
+        "carbohydrate": 0,
+        "sugars": 0,
+        "sodium": 14,
+        "primary_serving_size": 340
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "",
+        ""
+      ],
+      "comp_may": [
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "McCafe-drinks"
+      ]
+    },
+    {
+      "id": "200192",
+      "name": "Dilmah Jasmine Green Tea",
+      "marketing": "Dilmah Jasmine Green Tea",
+      "cats": [],
+      "n": {
+        "energy_kJ": 20,
+        "energy_kcal": 3,
+        "protein": 0,
+        "fat": 0,
+        "saturated_fat": 0,
+        "carbohydrate": 0,
+        "sugars": 0,
+        "sodium": 14,
+        "primary_serving_size": 340
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "",
+        ""
+      ],
+      "comp_may": [
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "McCafe-drinks"
+      ]
+    },
+    {
+      "id": "200193",
+      "name": "Dilmah English Breakfast Tea",
+      "marketing": "Dilmah English Breakfast Tea",
+      "cats": [],
+      "n": {
+        "energy_kJ": 20,
+        "energy_kcal": 3,
+        "protein": 0,
+        "fat": 0,
+        "saturated_fat": 0,
+        "carbohydrate": 0,
+        "sugars": 0,
+        "sodium": 14,
+        "primary_serving_size": 340
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "",
+        ""
+      ],
+      "comp_may": [
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "McCafe-drinks"
+      ]
+    },
+    {
+      "id": "200194",
+      "name": "Dilmah Peppermint Tea",
+      "marketing": "Dilmah Peppermint Tea",
+      "cats": [],
+      "n": {
+        "energy_kJ": 20,
+        "energy_kcal": 3,
+        "protein": 0,
+        "fat": 0,
+        "saturated_fat": 0,
+        "carbohydrate": 0,
+        "sugars": 0,
+        "sodium": 14,
+        "primary_serving_size": 340
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "",
+        ""
+      ],
+      "comp_may": [
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "McCafe-drinks"
+      ]
+    },
+    {
+      "id": "200197",
+      "name": "Shake - Vanilla Medium",
+      "marketing": "Shake - Vanilla Medium",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1530,
+        "energy_kcal": 365,
+        "protein": 9.7,
+        "fat": 9.6,
+        "saturated_fat": 6.7,
+        "carbohydrate": 59.4,
+        "sugars": 54.4,
+        "sodium": 144,
+        "primary_serving_size": 290
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Milk.",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        ""
+      ],
+      "comp_may": [
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "drinks"
+      ]
+    },
+    {
+      "id": "200200",
+      "name": "McCafe - Vanilla Chai Latte Medium",
+      "marketing": "McCafe - Vanilla Chai Latte Medium",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1260,
+        "energy_kcal": 302,
+        "protein": 11,
+        "fat": 11.1,
+        "saturated_fat": 7.2,
+        "carbohydrate": 38.7,
+        "sugars": 35.9,
+        "sodium": 160,
+        "primary_serving_size": 320
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "Gluten, Milk, Sulphites.",
+      "item_may": "Soy, Tree Nuts (Almonds) due to equipment cross contact.",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        "Milk, Sulphites, Gluten.",
+        "",
+        ""
+      ],
+      "comp_may": [
+        "Gluten, Soy, Almond due to equipment cross contact.",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "McCafe-drinks"
+      ]
+    },
+    {
+      "id": "200202",
+      "name": "Chicken McMuffin",
+      "marketing": "Chicken McMuffin",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1890,
+        "energy_kcal": 453,
+        "protein": 29.9,
+        "fat": 14.2,
+        "saturated_fat": 4.8,
+        "carbohydrate": 37.5,
+        "sugars": 5.3,
+        "sodium": 1284,
+        "primary_serving_size": 165
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Egg, Milk, Soy.",
+      "item_may": "ENGLISH MUFFIN is made in the same facility as products containing Sesame and the same equipment as products containing Milk. CHICKEN PATTY is cooked in a McDonald's Vegetable Oil blend and may be cooked using the same equipment as products containing Gluten, Wheat, Egg, Milk, Soy.",
+      "flags": [],
+      "comp_al": [
+        "Gluten, Wheat",
+        "Gluten, Wheat, Soy.",
+        "Egg",
+        "Milk, Soy.",
+        "Soy."
+      ],
+      "comp_may": [
+        "CHICKEN PATTY is cooked in a McDonald's Vegetable Oil blend and may be cooked using the same equipment as products containing Gluten, Wheat, Egg, Milk, Soy.",
+        "ENGLISH MUFFIN is made in the same facility as products containing Sesame and the same equipment as products containing Milk.",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "breakfast"
+      ]
+    },
+    {
+      "id": "200203",
+      "name": "Chicken & Bacon McMuffin",
+      "marketing": "Chicken & Bacon McMuffin",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1850,
+        "energy_kcal": 444,
+        "protein": 30,
+        "fat": 15.2,
+        "saturated_fat": 4.3,
+        "carbohydrate": 37.4,
+        "sugars": 5.5,
+        "sodium": 1400,
+        "primary_serving_size": 159
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "Gluten, Wheat, Egg, Milk, Soy.",
+      "item_may": "ENGLISH MUFFIN is made in the same facility as products containing Sesame and the same equipment as products containing Milk. CHICKEN PATTY is cooked in a McDonald's Vegetable Oil blend and may be cooked using the same equipment as products containing Gluten, Wheat, Egg, Milk, Soy. BACON may be cooked on the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy.",
+      "flags": [],
+      "comp_al": [
+        "Gluten, Wheat",
+        "Gluten, Wheat, Soy.",
+        "Milk, Soy.",
+        "",
+        "Egg",
+        "Soy."
+      ],
+      "comp_may": [
+        "CHICKEN PATTY is cooked in a McDonald's Vegetable Oil blend and may be cooked using the same equipment as products containing Gluten, Wheat, Egg, Milk, Soy.",
+        "ENGLISH MUFFIN is made in the same facility as products containing Sesame and the same equipment as products containing Milk.",
+        "",
+        "BACON may be cooked on the same equipment as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "breakfast"
+      ]
+    },
+    {
+      "id": "200204",
+      "name": "Balsamic Dressing",
+      "marketing": "Balsamic Dressing",
+      "cats": [],
+      "n": {
+        "energy_kJ": 238,
+        "energy_kcal": 57,
+        "protein": 0,
+        "fat": 4.2,
+        "saturated_fat": 0.3,
+        "carbohydrate": 4,
+        "sugars": 3.7,
+        "sodium": 217,
+        "primary_serving_size": 0
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Soy, Sulphites."
+      ],
+      "comp_may": [
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "condiments"
+      ]
+    },
+    {
+      "id": "200207",
+      "name": "Soft Serve Cone",
+      "marketing": "Soft Serve Cone",
+      "cats": [],
+      "n": {
+        "energy_kJ": 451,
+        "energy_kcal": 108,
+        "protein": 2.9,
+        "fat": 2.8,
+        "saturated_fat": 1.9,
+        "carbohydrate": 17.4,
+        "sugars": 12.6,
+        "sodium": 137,
+        "primary_serving_size": 67
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        "Gluten, Wheat, Soy."
+      ],
+      "comp_may": [
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "desserts"
+      ]
+    },
+    {
+      "id": "200208",
+      "name": "Soft Serve Cone with Flake",
+      "marketing": "Soft Serve Cone with Flake",
+      "cats": [],
+      "n": {
+        "energy_kJ": 637,
+        "energy_kcal": 153,
+        "protein": 3.5,
+        "fat": 5.3,
+        "saturated_fat": 3.3,
+        "carbohydrate": 22.4,
+        "sugars": 17.4,
+        "sodium": 144,
+        "primary_serving_size": 76
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        "Milk, Soy.",
+        "Gluten, Wheat, Soy."
+      ],
+      "comp_may": [
+        "",
+        "Gluten, Wheat, Peanuts, Almonds, Hazelnuts.",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "desserts"
+      ]
+    },
+    {
+      "id": "200217",
+      "name": "Choc McDip®",
+      "marketing": "Choc McDip®",
+      "cats": [],
+      "n": {
+        "energy_kJ": 872,
+        "energy_kcal": 208,
+        "protein": 4.1,
+        "fat": 9.1,
+        "saturated_fat": 7.1,
+        "carbohydrate": 26.9,
+        "sugars": 21.3,
+        "sodium": 188,
+        "primary_serving_size": 100
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        "Milk, Soy.",
+        "Gluten, Wheat, Soy."
+      ],
+      "comp_may": [
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "desserts"
+      ]
+    },
+    {
+      "id": "200218",
+      "name": "Espresso",
+      "marketing": "Espresso",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1,
+        "energy_kcal": 0,
+        "protein": 0,
+        "fat": 0,
+        "saturated_fat": 0,
+        "carbohydrate": 0,
+        "sugars": 0,
+        "sodium": 1,
+        "primary_serving_size": 30
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Caffeine."
+      ],
+      "comp_may": [
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "McCafe-drinks"
+      ]
+    },
+    {
+      "id": "200220",
+      "name": "Fluffy",
+      "marketing": "Fluffy",
+      "cats": [],
+      "n": {
+        "energy_kJ": 236,
+        "energy_kcal": 57,
+        "protein": 2.7,
+        "fat": 2.7,
+        "saturated_fat": 1.8,
+        "carbohydrate": 5.3,
+        "sugars": 5.2,
+        "sodium": 31,
+        "primary_serving_size": 82
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        ""
+      ],
+      "comp_may": [
+        "Gluten, Soy, Almond due to equipment cross contact.",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "McCafe-drinks"
+      ]
+    },
+    {
+      "id": "200222",
+      "name": "Piccolo",
+      "marketing": "Piccolo",
+      "cats": [],
+      "n": {
+        "energy_kJ": 192,
+        "energy_kcal": 46,
+        "protein": 2.4,
+        "fat": 2.5,
+        "saturated_fat": 1.7,
+        "carbohydrate": 3.5,
+        "sugars": 3.5,
+        "sodium": 30,
+        "primary_serving_size": 105
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        "Caffeine."
+      ],
+      "comp_may": [
+        "Gluten, Soy, Almond due to equipment cross contact.",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "McCafe-drinks"
+      ]
+    },
+    {
+      "id": "200223",
+      "name": "3 pc Chicken McWings",
+      "marketing": "3 pc Chicken McWings",
+      "cats": [],
+      "n": {
+        "energy_kJ": 2060,
+        "energy_kcal": 491,
+        "protein": 27.5,
+        "fat": 30.5,
+        "saturated_fat": 5.3,
+        "carbohydrate": 25.2,
+        "sugars": 0.4,
+        "sodium": 1212,
+        "primary_serving_size": 210
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Wheat, Gluten."
+      ],
+      "comp_may": [
+        "CHICKEN MCWINGS are cooked in a McDonald's Vegetable Oil blend and may be cooked using the same equipment as products containing Gluten, Wheat, Egg, Milk, Soy."
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "chicken-fish"
+      ]
+    },
+    {
+      "id": "200225",
+      "name": "Cheesy Chicken Burger",
+      "marketing": "Cheesy Chicken Burger",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1760,
+        "energy_kcal": 420,
+        "protein": 28,
+        "fat": 13.2,
+        "saturated_fat": 4.3,
+        "carbohydrate": 35.7,
+        "sugars": 4.6,
+        "sodium": 1167,
+        "primary_serving_size": 159
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Gluten, Wheat",
+        "Gluten, Wheat, Sesame",
+        "Egg",
+        "Milk, Soy."
+      ],
+      "comp_may": [
+        "CHICKEN PATTY is cooked in a McDonald's Vegetable Oil blend and may be cooked using the same equipment as products containing Gluten, Wheat, Egg, Milk, Soy.",
+        "Milk, Soy.",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "burgers",
+        "chicken-fish"
+      ]
+    },
+    {
+      "id": "200231",
+      "name": "Medium Orange and Apple Juice",
+      "marketing": "Medium Orange and Apple Juice",
+      "cats": [],
+      "n": {
+        "energy_kJ": 735,
+        "energy_kcal": 178,
+        "protein": 0,
+        "fat": 0,
+        "saturated_fat": 0,
+        "carbohydrate": 42.1,
+        "sugars": 36.7,
+        "sodium": 22,
+        "primary_serving_size": 429
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        ""
+      ],
+      "comp_may": [
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "drinks"
+      ]
+    },
+    {
+      "id": "200247",
+      "name": "MCD Land Cookies",
+      "marketing": "MCD Land Cookies",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1130,
+        "energy_kcal": 271,
+        "protein": 3.1,
+        "fat": 8.2,
+        "saturated_fat": 4,
+        "carbohydrate": 45,
+        "sugars": 16.4,
+        "sodium": 152,
+        "primary_serving_size": 60
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Gluten, Wheat, Soy."
+      ],
+      "comp_may": [
+        "Peanuts, Hazelnuts, Milk, Egg, Sesame."
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "sides"
+      ]
+    },
+    {
+      "id": "200249",
+      "name": "Sweet Chilli Dipping Sauce",
+      "marketing": "Sweet Chilli Dipping Sauce",
+      "cats": [],
+      "n": {
+        "energy_kJ": 233,
+        "energy_kcal": 56,
+        "protein": 0.1,
+        "fat": 0.1,
+        "saturated_fat": 0,
+        "carbohydrate": 13.5,
+        "sugars": 11.4,
+        "sodium": 140,
+        "primary_serving_size": 25
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "ml"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        ""
+      ],
+      "comp_may": [
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "condiments"
+      ]
+    },
+    {
+      "id": "200250",
+      "name": "Tim Tam Jatz McFlurry",
+      "marketing": "Tim Tam Jatz McFlurry",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1390,
+        "energy_kcal": 333,
+        "protein": 6.9,
+        "fat": 9.7,
+        "saturated_fat": 6.3,
+        "carbohydrate": 52.3,
+        "sugars": 41.6,
+        "sodium": 487,
+        "primary_serving_size": 176
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        "Milk, Soy.",
+        "Gluten, Wheat, Soy."
+      ],
+      "comp_may": [
+        "",
+        "",
+        "Milk, Egg, Sesame."
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "desserts"
+      ]
+    },
+    {
+      "id": "200251",
+      "name": "Mozzarella Sticks 3pc",
+      "marketing": "Mozzarella Sticks 3pc",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1020,
+        "energy_kcal": 244,
+        "protein": 12.8,
+        "fat": 14.7,
+        "saturated_fat": 4.8,
+        "carbohydrate": 13.6,
+        "sugars": 1.2,
+        "sodium": 312,
+        "primary_serving_size": 0
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Milk, Wheat, Gluten."
+      ],
+      "comp_may": [
+        "MOZZARELLA STICKS is cooked in a McDonald's Vegetable Oil blend and may be cooked using the same equipment as products containing Gluten, Wheat, Egg, Milk, Soy."
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "sides"
+      ]
+    },
+    {
+      "id": "200252",
+      "name": "PHILLY CHEESE STACK BEEF BURGER",
+      "marketing": "PHILLY CHEESE STACK BEEF BURGER",
+      "cats": [],
+      "n": {
+        "energy_kJ": 3670,
+        "energy_kcal": 878,
+        "protein": 60.7,
+        "fat": 49.1,
+        "saturated_fat": 26.7,
+        "carbohydrate": 35.9,
+        "sugars": 13.1,
+        "sodium": 1845,
+        "primary_serving_size": 324
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "",
+        "Wheat, Gluten, Sesame.",
+        "Milk, Soy.",
+        "Milk.",
+        "",
+        "",
+        "Gluten, Wheat",
+        ""
+      ],
+      "comp_may": [
+        "BEEF PATTIES may be cooked on the same grill as Egg or products containing Gluten, Wheat, Milk, Soy.",
+        "Soy",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "featured",
+        "burgers",
+        "beef"
+      ]
+    },
+    {
+      "id": "200253",
+      "name": "DUNKED TERIYAKI MCCRISPY",
+      "marketing": "DUNKED TERIYAKI MCCRISPY",
+      "cats": [],
+      "n": {
+        "energy_kJ": 2210,
+        "energy_kcal": 566,
+        "protein": 24.1,
+        "fat": 14.5,
+        "saturated_fat": 2.5,
+        "carbohydrate": 73.1,
+        "sugars": 21.5,
+        "sodium": 1674,
+        "primary_serving_size": 269
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Gluten, Wheat.",
+        "Gluten, Wheat, Sulphites, Sesame.",
+        "Soy, Wheat, Gluten.",
+        "",
+        "Egg."
+      ],
+      "comp_may": [
+        "MCCRISPY CHICKEN PATTY is cooked in a McDonald's Vegetable Oil blend and may be cooked using the same equipment as products containing Gluten, Wheat, Egg, Milk, Soy.",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "featured",
+        "burgers",
+        "chicken-fish"
+      ]
+    },
+    {
+      "id": "200254",
+      "name": "6PC GARLIC & PEPPER CHICKEN MCNUGGETS",
+      "marketing": "6PC GARLIC & PEPPER CHICKEN MCNUGGETS",
+      "cats": [],
+      "n": {
+        "energy_kJ": 977,
+        "energy_kcal": 234,
+        "protein": 14.3,
+        "fat": 10.6,
+        "saturated_fat": 1.7,
+        "carbohydrate": 20.4,
+        "sugars": 0.4,
+        "sodium": 815,
+        "primary_serving_size": 120
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Wheat, Gluten."
+      ],
+      "comp_may": [
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "featured",
+        "share-meals",
+        "chicken-fish"
+      ]
+    },
+    {
+      "id": "200255",
+      "name": "10PC GARLIC & BLACK PEPPER MCNUGGETS",
+      "marketing": "10PC GARLIC & BLACK PEPPER MCNUGGETS",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1630,
+        "energy_kcal": 389,
+        "protein": 23.8,
+        "fat": 17.6,
+        "saturated_fat": 2.8,
+        "carbohydrate": 34,
+        "sugars": 0.6,
+        "sodium": 1358,
+        "primary_serving_size": 40
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Wheat, Gluten."
+      ],
+      "comp_may": [
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "featured",
+        "share-meals",
+        "chicken-fish"
+      ]
+    },
+    {
+      "id": "200256",
+      "name": "20PC GARLIC & BLACK PEPPER  CHICKEN MCNUGGETS",
+      "marketing": "20PC GARLIC & BLACK PEPPER CHICKEN MCNUGGETS",
+      "cats": [],
+      "n": {
+        "energy_kJ": 3260,
+        "energy_kcal": 778,
+        "protein": 47.6,
+        "fat": 35.2,
+        "saturated_fat": 5.6,
+        "carbohydrate": 68,
+        "sugars": 1.2,
+        "sodium": 2716,
+        "primary_serving_size": 400
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Wheat, Gluten."
+      ],
+      "comp_may": [
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "featured",
+        "share-meals",
+        "chicken-fish"
+      ]
+    },
+    {
+      "id": "200257",
+      "name": "LIMITED EDITION GOLD SAUCE",
+      "marketing": "LIMITED EDITION GOLD SAUCE",
+      "cats": [],
+      "n": {
+        "energy_kJ": 422,
+        "energy_kcal": 101,
+        "protein": 0.3,
+        "fat": 8.4,
+        "saturated_fat": 0.6,
+        "carbohydrate": 6.3,
+        "sugars": 5.8,
+        "sodium": 272,
+        "primary_serving_size": 25
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Egg."
+      ],
+      "comp_may": [
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "featured",
+        "condiments"
+      ]
+    },
+    {
+      "id": "200258",
+      "name": "Medium - Strawberry Watermelon Refresher",
+      "marketing": "Medium - Strawberry Watermelon Refresher",
+      "cats": [],
+      "n": {
+        "energy_kJ": 414,
+        "energy_kcal": 99,
+        "protein": 0.4,
+        "fat": 0.2,
+        "saturated_fat": 0,
+        "carbohydrate": 22.6,
+        "sugars": 21.6,
+        "sodium": 22,
+        "primary_serving_size": 355
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "comp_may": [
+        "",
+        "",
+        "Caffeine",
+        "",
+        "Wheat, Gluten."
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "featured",
+        "McCafe-drinks",
+        "drinks"
+      ]
+    },
+    {
+      "id": "200260",
+      "name": "Medium - Popping Mango Refresher",
+      "marketing": "Medium - Popping Mango Refresher",
+      "cats": [],
+      "n": {
+        "energy_kJ": 483,
+        "energy_kcal": 116,
+        "protein": 0.2,
+        "fat": 0,
+        "saturated_fat": 0,
+        "carbohydrate": 28.4,
+        "sugars": 26.1,
+        "sodium": 35,
+        "primary_serving_size": 236
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "",
+        "Caffeine.",
+        "",
+        ""
+      ],
+      "comp_may": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "featured",
+        "McCafe-drinks",
+        "drinks"
+      ]
+    },
+    {
+      "id": "200262",
+      "name": "Medium - Berry Blast & Sprite® Zero",
+      "marketing": "Medium - Berry Blast & Sprite® Zero",
+      "cats": [],
+      "n": {
+        "energy_kJ": 536,
+        "energy_kcal": 59,
+        "protein": 0.7,
+        "fat": 4.4,
+        "saturated_fat": 4.2,
+        "carbohydrate": 4,
+        "sugars": 2.7,
+        "sodium": 59,
+        "primary_serving_size": 399
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Phenylalanine.",
+        "",
+        "",
+        "Milk, Soy."
+      ],
+      "comp_may": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "featured",
+        "McCafe-drinks",
+        "drinks"
+      ]
+    },
+    {
+      "id": "200264",
+      "name": "Medium - Popping Green Apple & Sprite® Zero",
+      "marketing": "Medium - Popping Green Apple & Sprite® Zero",
+      "cats": [],
+      "n": {
+        "energy_kJ": 440,
+        "energy_kcal": 105,
+        "protein": 0.3,
+        "fat": 0,
+        "saturated_fat": 0,
+        "carbohydrate": 25.3,
+        "sugars": 23.4,
+        "sodium": 63,
+        "primary_serving_size": 399
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Phenylalanine.",
+        "",
+        "",
+        ""
+      ],
+      "comp_may": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "featured",
+        "McCafe-drinks",
+        "drinks"
+      ]
+    },
+    {
+      "id": "200269",
+      "name": "Medium - Iced Velvet Mocha with Cold Foam",
+      "marketing": "Medium - Iced Velvet Mocha with Cold Foam",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1750,
+        "energy_kcal": 419,
+        "protein": 9.4,
+        "fat": 13.9,
+        "saturated_fat": 10.5,
+        "carbohydrate": 62.7,
+        "sugars": 55.6,
+        "sodium": 217,
+        "primary_serving_size": 475
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        "",
+        "Caffeine.",
+        "",
+        "",
+        "Milk, Soy.",
+        "Milk.",
+        ""
+      ],
+      "comp_may": [
+        "Gluten, Soy, Almond due to equipment cross contact.",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "featured",
+        "McCafe-drinks",
+        "drinks"
+      ]
+    },
+    {
+      "id": "200271",
+      "name": "Medium - Iced Golden Caramel Latte",
+      "marketing": "Medium - Iced Golden Caramel Latte",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1460,
+        "energy_kcal": 349,
+        "protein": 8.5,
+        "fat": 9.2,
+        "saturated_fat": 6.1,
+        "carbohydrate": 56.8,
+        "sugars": 54.4,
+        "sodium": 136,
+        "primary_serving_size": 502
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "Milk.",
+        "",
+        "Caffeine.",
+        "",
+        "",
+        "Milk."
+      ],
+      "comp_may": [
+        "Gluten, Soy, Almond due to equipment cross contact.",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "featured",
+        "McCafe-drinks",
+        "drinks"
+      ]
+    },
+    {
+      "id": "200273",
+      "name": "Medium - Frozen Fanta® Raspberry McFloat",
+      "marketing": "Medium - Frozen Fanta® Raspberry McFloat",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1090,
+        "energy_kcal": 263,
+        "protein": 5,
+        "fat": 5.2,
+        "saturated_fat": 3.7,
+        "carbohydrate": 47.3,
+        "sugars": 43.2,
+        "sodium": 276,
+        "primary_serving_size": 398
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "",
+        "Milk."
+      ],
+      "comp_may": [
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "featured",
+        "McCafe-drinks",
+        "drinks"
+      ]
+    },
+    {
+      "id": "200275",
+      "name": "Medium - Frozen Fanta® Raspberry",
+      "marketing": "Medium - Frozen Fanta® Raspberry",
+      "cats": [],
+      "n": {
+        "energy_kJ": 306,
+        "energy_kcal": 75,
+        "protein": 0,
+        "fat": 0,
+        "saturated_fat": 0,
+        "carbohydrate": 17.8,
+        "sugars": 17.8,
+        "sodium": 11,
+        "primary_serving_size": 270
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        ""
+      ],
+      "comp_may": [
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "featured",
+        "McCafe-drinks",
+        "drinks"
+      ]
+    },
+    {
+      "id": "200277",
+      "name": "Medium - Frozen Fanta® Tropical",
+      "marketing": "Medium - Frozen Fanta® Tropical",
+      "cats": [],
+      "n": {
+        "energy_kJ": 306,
+        "energy_kcal": 72,
+        "protein": 0,
+        "fat": 0,
+        "saturated_fat": 0,
+        "carbohydrate": 17.7,
+        "sugars": 17.7,
+        "sodium": 5,
+        "primary_serving_size": 270
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        ""
+      ],
+      "comp_may": [
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "featured",
+        "McCafe-drinks",
+        "drinks"
+      ]
+    },
+    {
+      "id": "200279",
+      "name": "Medium - Frozen Fanta® Tropical McFloat",
+      "marketing": "Medium - Frozen Fanta® Tropical McFloat",
+      "cats": [],
+      "n": {
+        "energy_kJ": 1090,
+        "energy_kcal": 260,
+        "protein": 5,
+        "fat": 5.2,
+        "saturated_fat": 3.7,
+        "carbohydrate": 47.2,
+        "sugars": 43.1,
+        "sodium": 270,
+        "primary_serving_size": 398
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "",
+        "Milk."
+      ],
+      "comp_may": [
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "featured",
+        "McCafe-drinks",
+        "drinks"
+      ]
+    },
+    {
+      "id": "200282",
+      "name": "Large - Lemonade Refresher",
+      "marketing": "Large - Lemonade Refresher",
+      "cats": [],
+      "n": {
+        "energy_kJ": 47,
+        "energy_kcal": 11,
+        "protein": 0,
+        "fat": 0,
+        "saturated_fat": 0,
+        "carbohydrate": 2.7,
+        "sugars": 2.5,
+        "sodium": 1,
+        "primary_serving_size": 434
+      },
+      "u": {
+        "energy_kJ": "kJ",
+        "energy_kcal": "kcal",
+        "protein": "g",
+        "fat": "g",
+        "saturated_fat": "g",
+        "carbohydrate": "g",
+        "sugars": "g",
+        "sodium": "mg",
+        "primary_serving_size": "g"
+      },
+      "item_al": "",
+      "item_may": "",
+      "flags": [],
+      "comp_al": [
+        "",
+        "",
+        ""
+      ],
+      "comp_may": [
+        "",
+        "",
+        ""
+      ],
+      "serve": {},
+      "sizes": [],
+      "pages": [
+        "McCafe-drinks"
+      ]
+    }
+  ]
+}

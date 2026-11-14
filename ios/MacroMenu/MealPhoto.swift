@@ -212,7 +212,8 @@ enum MealPhoto {
         "donutking": "donutking", "donut king": "donutking", "michels": "michels", "michel's": "michels", "michels patisserie": "michels",
         "brumbys": "brumbys", "brumby's": "brumbys", "soulorigin": "soul", "soul origin": "soul", "rolld": "rolld", "roll'd": "rolld", "thisbowl": "thisbowl", "fishbowl": "thisbowl",
         "chickfila": "us-cfa", "chick fil a": "us-cfa", "wendys": "us-wendys", "taco bell": "us-tacobell", "tacobell": "us-tacobell",
-        "panda express": "us-panda", "pandaexpress": "us-panda",
+        "panda express": "us-panda", "pandaexpress": "us-panda", "popeyes": "us-popeyes",
+        "tim hortons": "ca-tims", "timhortons": "ca-tims", "tims": "ca-tims", "greggs": "uk-greggs",
     ]
 
     /// The restaurant a brand names, if it's one Leanr has: a known nickname first, then a close match to the chain's name.

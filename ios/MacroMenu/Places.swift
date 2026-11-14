@@ -60,6 +60,16 @@ struct ChainPlace: Sendable {
         "us-wendys": ChainPlace(query: "Wendy's", match: ["wendy's", "wendys", "wendy’s"], appName: "Wendy's", appStoreID: 540518599, appLink: nil, store: "us"),
         "us-tacobell": ChainPlace(query: "Taco Bell", match: ["taco bell"], appName: "Taco Bell", appStoreID: 497387361, appLink: nil, store: "us"),
         "us-panda": ChainPlace(query: "Panda Express", match: ["panda express"], appName: "Panda Express", appStoreID: 903990394, appLink: nil, store: "us"),
+        "us-bk": ChainPlace(query: "Burger King", match: ["burger king"], appName: "Burger King", appStoreID: 638323895, appLink: nil, store: "us"),
+        "us-popeyes": ChainPlace(query: "Popeyes", match: ["popeyes"], appName: "Popeyes", appStoreID: 1386566985, appLink: nil, store: "us"),
+        // Canada, UK and New Zealand menus. App Store ids from each country's store (checked 14 Nov 2026); no universal links yet.
+        "ca-mcd": ChainPlace(query: "McDonald's", match: ["mcdonald"], appName: "McDonald's", appStoreID: 375695000, appLink: nil, store: "ca"),
+        "ca-bk": ChainPlace(query: "Burger King", match: ["burger king"], appName: "Burger King", appStoreID: 1422864779, appLink: nil, store: "ca"),
+        "ca-tims": ChainPlace(query: "Tim Hortons", match: ["tim hortons", "tim horton"], appName: "Tim Hortons", appStoreID: 1143883086, appLink: nil, store: "ca"),
+        "uk-mcd": ChainPlace(query: "McDonald's", match: ["mcdonald"], appName: "McDonald's", appStoreID: 1082476620, appLink: nil, store: "gb"),
+        "uk-greggs": ChainPlace(query: "Greggs", match: ["greggs"], appName: "Greggs", appStoreID: 1098233626, appLink: nil, store: "gb"),
+        "nz-mcd": ChainPlace(query: "McDonald's", match: ["mcdonald"], appName: "McDonald's", appStoreID: 1217507712, appLink: nil, store: "nz"),
+        "nz-dominos": ChainPlace(query: "Domino's Pizza", match: ["domino"], appName: "Domino's", appStoreID: 415419062, appLink: nil, store: "nz"),
     ]
 }
 

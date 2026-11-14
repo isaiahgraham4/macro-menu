@@ -244,5 +244,8 @@ enum Assistant {
                                                "soul origin": "soul", "rolld": "rolld", "roll'd": "rolld", "roll’d": "rolld", "fishbowl": "thisbowl", "this bowl": "thisbowl", "woolies": "woolworths", "woolis": "woolworths",
                                                // US menu (`MenuRegion`): only used when that menu is loaded.
                                                "chickfila": "us-cfa", "chick fil a": "us-cfa", "chick-fil-a": "us-cfa", "wendys": "us-wendys", "wendy's": "us-wendys", "wendy’s": "us-wendys",
-                                               "taco bell": "us-tacobell", "tacobell": "us-tacobell", "panda": "us-panda", "panda express": "us-panda"]
+                                               "taco bell": "us-tacobell", "tacobell": "us-tacobell", "panda": "us-panda", "panda express": "us-panda",
+                                               "burger king": "hj", "bk": "hj", "popeyes": "us-popeyes", "popeye's": "us-popeyes",
+                                               // Canada, UK and New Zealand menus.
+                                               "tims": "ca-tims", "timmies": "ca-tims", "tim hortons": "ca-tims", "greggs": "uk-greggs", "maccies": "mcd", "mickey d's": "mcd"]
 }

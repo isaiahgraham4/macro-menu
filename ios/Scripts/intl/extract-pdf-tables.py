@@ -1,0 +1,96 @@
+#!/usr/bin/env python3
+"""Reads the two chains that only publish a PDF into JSON the menu builds use. The PDFs aren't kept in the repo; download them
+from the chain's own nutrition page and pass the paths.
+
+  Tim Hortons Canada  timhortons.ca/nutrition-and-allergens, "Nutrition Information" PDF  -> intl/th-ca-source.json
+  Popeyes US          popeyes.com/nutritional-information, PLK_Nutrition.pdf             -> us/plk-us-source.json
+
+Tim Hortons' text layer lists names and figures in different orders, so rows are matched by their position on the page
+(each figures row goes with the name printed level with it). Popeyes' text layer keeps each row on one line.
+
+Run: python3 -I ios/Scripts/intl/extract-pdf-tables.py th <tim-hortons.pdf>
+     python3 -I ios/Scripts/intl/extract-pdf-tables.py plk <popeyes.pdf>
+"""
+import json
+import pathlib
+import re
+import sys
+from datetime import date
+
+HERE = pathlib.Path(__file__).parent
+NUM = re.compile(r'^-?\d+(\.\d+)?$')
+
+
+def tim_hortons(path):
+    import pymupdf
+    doc = pymupdf.open(path)
+    edition = re.search(r'as of (\w+ \d{4})', doc[0].get_text())
+    rows, section, unpaired = [], '', []
+    for page in doc:
+        words = page.get_text('words')                      # x0, y0, x1, y1, text, block, line, word
+        if not words:
+            continue
+        # Figures sit right of the name column; the first figure column starts where the "Calories" header does.
+        cal = [w for w in words if w[4].startswith('Calories')]
+        if not cal:
+            continue
+        split = min(w[0] for w in cal) - 4
+        header_bottom = max(w[3] for w in words if w[4] in ('(kcal)', 'Calories', 'Item', '(mg)', '(g)'))
+        names, figures = {}, {}
+        for w in words:
+            if w[1] < header_bottom:
+                continue
+            mid = round((w[1] + w[3]) / 2, 1)
+            (names if w[0] < split else figures).setdefault(mid, []).append(w)
+        name_lines = sorted((y, ' '.join(x[4] for x in sorted(ws, key=lambda x: x[0]))) for y, ws in names.items())
+        fig_lines = sorted((y, [x[4] for x in sorted(ws, key=lambda x: x[0])]) for y, ws in figures.items())
+        used = set()
+        paired = {}
+        for y, vals in fig_lines:
+            if len(vals) != 10 or not all(NUM.match(v) for v in vals):
+                continue
+            best = min(((abs(ny - y), ny, text) for ny, text in name_lines if ny not in used), default=None)
+            if best and best[0] <= 3.5:
+                used.add(best[1])
+                paired[best[1]] = vals
+        for ny, text in name_lines:
+            if ny in paired:
+                cal_, fat, sat, trans, chol, na, carb, fib, sug, prot = paired[ny]
+                rows.append({'section': section, 'name': text, 'cal': cal_, 'fat': fat, 'sat': sat, 'trans': trans, 'chol': chol,
+                             'sodium': na, 'carbs': carb, 'fibre': fib, 'sugar': sug, 'protein': prot})
+            elif re.search(r' - (Small|Medium|Large|X Large|Extra Large)$', text):
+                unpaired.append(text)                       # an item whose figures couldn't be placed: left out, listed below
+            elif not re.search(r'Nutrition Information|Menu Item|Hortons|^\(|^\*', text):
+                section = text                              # a heading row, such as "Brewed Coffee"
+    if unpaired:
+        print('Left out (no figures level with the name):', unpaired)
+    return {'edition': edition.group(1) if edition else None, 'rows': rows}
+
+
+def popeyes(path):
+    import pypdf
+    reader = pypdf.PdfReader(path)
+    text = '\n'.join(p.extract_text() for p in reader.pages)
+    edition = re.search(r'Nutrition Guide\s*\n?\s*(\w+\s+\d{4})', text)
+    rows = []
+    for line in text.splitlines():
+        m = re.match(r'^(.+?) (\d+(?: Pieces?)?|Reg|Lg|Sm|Med|Kids) ((?:-?\d+(?:\.\d+)? ?){11})$', line.strip())
+        if not m:
+            continue
+        cal, calfat, fat, sat, trans, chol, na, carb, fib, sug, prot = m.group(3).split()
+        rows.append({'name': m.group(1), 'portion': m.group(2), 'cal': cal, 'fat': fat, 'sat': sat, 'trans': trans, 'chol': chol,
+                     'sodium': na, 'carbs': carb, 'fibre': fib, 'sugar': sug, 'protein': prot})
+    return {'edition': re.sub(r'\s+', ' ', edition.group(1)) if edition else None, 'rows': rows}
+
+
+if __name__ == '__main__':
+    kind, path = sys.argv[1], sys.argv[2]
+    if kind == 'th':
+        data, out = tim_hortons(path), HERE / 'th-ca-source.json'
+    elif kind == 'plk':
+        data, out = popeyes(path), HERE.parent / 'us' / 'plk-us-source.json'
+    else:
+        raise SystemExit('kind is th or plk')
+    data['checked'] = date.today().isoformat()
+    out.write_text(json.dumps(data, ensure_ascii=False, indent=0))
+    print(f'{len(data["rows"])} rows ({data["edition"]}) -> {out}')

@@ -124,7 +124,7 @@ struct LeanrOnboarding: View {
         .padding(.vertical, 24)
         .alert("Couldn’t load that menu", isPresented: $countryFailed) {
             Button("OK", role: .cancel) {}
-        } message: { Text("Try again, or choose the other country and change it later in Settings.") }
+        } message: { Text("Try again, or choose another country and change it later in Settings.") }
     }
     private var meal: Food? { meals.indices.contains(round) ? meals[round] : nil }
     private var motion: Animation? { reduceMotion ? nil : .smooth(duration: 0.35) }
@@ -227,7 +227,7 @@ struct LeanrOnboarding: View {
                                 .onAppear { countingUp = true }
                             Text(abs(guess - meal.cal) <= 50 ? "Close guess! You were within 50 calories." : "Your guess: \(Int(guess)) Cal · about \(Int(abs(guess - meal.cal).rounded())) Cal away.")
                             Text("Leanrrr shows the calories and protein for each item, so you can compare options and build a meal around them.").foregroundStyle(.secondary)
-                            Text("\(meal.p.number) g protein · Bundled \(store.chainName(meal.chain)) \(store.region == .australia ? "Australia" : "US") menu data. Servings and recipes may vary.").font(.roboto(.caption)).foregroundStyle(.secondary)
+                            Text("\(meal.p.number) g protein · Bundled \(store.chainName(meal.chain)) \(store.region.menuLabel) menu data. Servings and recipes may vary.").font(.roboto(.caption)).foregroundStyle(.secondary)
                         }.accessibilityElement(children: .combine).accessibilityAddTraits(.updatesFrequently)
                         .transition(.opacity)
                     } else {

@@ -27,7 +27,8 @@ struct RestaurantQuery: EntityStringQuery {
     func entities(matching string: String) async throws -> [RestaurantEntity] {
         let restaurants = await all()
         if let written = Assistant.nicknames[string.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)],
-           let match = restaurants.first(where: { $0.id == written || $0.id == "us-" + written }) { return [match] }
+           let id = MenuRegion.chain(written, in: Dictionary(restaurants.map { ($0.id, $0.name) }, uniquingKeysWith: { a, _ in a })),
+           let match = restaurants.first(where: { $0.id == id }) { return [match] }
         return FoodSearch.filter(restaurants, query: string) { $0.name }
     }
     private func all() async -> [RestaurantEntity] {

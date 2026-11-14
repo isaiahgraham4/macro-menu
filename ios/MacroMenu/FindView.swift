@@ -27,7 +27,7 @@ struct FindView: View {
                     // The example sits behind the field as ordinary text, so it wraps at larger sizes instead of being cut off.
                     ZStack(alignment: .leading) {
                         if question.isEmpty {
-                            Text(store.region == .australia ? "Ask Leanrrr: 40 g protein at Nando's" : "Ask Leanrrr: 40 g protein at Chick-fil-A").foregroundStyle(.tertiary)
+                            Text(store.region.askExample).foregroundStyle(.tertiary)
                                 .accessibilityHidden(true).allowsHitTesting(false)
                         }
                         TextField("", text: $question, axis: .vertical)

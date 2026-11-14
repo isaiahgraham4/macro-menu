@@ -7,6 +7,8 @@ Each chain's own published figures, read by the scraper beside this file:
   Wendy's      wendys-us-scrape.js  (browser)  -> wendys-us-source.json
   Taco Bell    tacobell-us-scrape.py (requests) -> tacobell-us-source.json
   Panda Express  read in Chrome (the page refuses scripts) -> panda-us-source.txt
+  Burger King  bk.com/nutrition-explorer's feed, saved from the browser -> bk-us-source.json (read with intl/menu_feeds.py)
+  Popeyes      popeyes.com Nutrition Guide PDF, via intl/extract-pdf-tables.py -> plk-us-source.json
 
 US chains publish Calories, so `cal` is the published figure and `kj` is worked out from it (x 4.184). Chain IDs start with
 "us-" so they can never collide with the Australian chains (McDonald's is "mcd" there, "us-mcd" here).
@@ -19,9 +21,12 @@ import math
 import json
 import pathlib
 import re
+import sys
 from datetime import datetime, timezone
 
 HERE = pathlib.Path(__file__).parent
+sys.path.insert(0, str(HERE.parent / 'intl'))
+import menu_feeds  # noqa: E402
 OUT = HERE.parent.parent / 'MacroMenu' / 'MenuData-US.json'
 
 CHAINS = [
@@ -36,6 +41,10 @@ CHAINS = [
      'src': "tacobell.com item pages and the Nutritionix label each one links under Nutrition Info, every drink size ({checked}). Rounded the way Taco Bell's label rounds them (FDA rules)"},
     {'id': 'us-panda', 'name': 'Panda Express', 'how': 'Official nutrition and allergen table', 'url': 'https://www.pandaexpress.com/nutritioninformation',
      'src': "Panda Express Nutrition & Allergen Information ({checked}). Sides and entrées are listed on their own, as Panda does; a bowl is one side and one entrée. Drinks are by cup size in fl oz"},
+    {'id': 'us-bk', 'name': 'Burger King', 'how': 'Official Nutrition Explorer', 'url': 'https://www.bk.com/nutrition-explorer',
+     'src': "Burger King Nutrition Explorer ({checked}), each item as served with its standard toppings. Allergens are the ones Burger King lists as contained; may-contain includes shared cooking equipment"},
+    {'id': 'us-popeyes', 'name': 'Popeyes', 'how': 'Official nutrition guide', 'url': 'https://www.popeyes.com/nutritional-information',
+     'src': "Popeyes USA Nutrition Guide ({edition}, checked {checked}). Classic and spicy chicken share one row, as Popeyes lists them. No allergens yet: they're in a separate chart"},
 ]
 
 ALLERGENS = {'gluten', 'wheat', 'milk', 'egg', 'soy', 'sesame', 'peanut', 'treenut', 'fish', 'shellfish', 'lupin', 'sulphites'}
@@ -58,13 +67,13 @@ def allergen_keys(words, where):
 
 # Meats from the name, as the Australian menus do when that's all there is. First match per meat; no match = unknown.
 MEATS = [
-    ('chicken', r'chicken|nugget|nuggs|mccrispy|mcchicken|tender|chick-n|filet(?!-o)|strips?\b|deluxe sandwich|cool wrap|asiago ranch club'),
-    ('beef', r'beef|burger|big mac|quarter pounder|mcdouble|daily double|steak|dave|^(son of )?baconator$|double stack|big bacon classic|chili'),
+    ('chicken', r'chicken|nugget|nuggs|mccrispy|mcchicken|tender|chick-n|filet(?!-o)|strips?\b|deluxe sandwich|cool wrap|asiago ranch club|royal crispy|wings?\b|^leg\b|^thigh\b|^breast\b'),
+    ('beef', r'beef|burger|big mac|quarter pounder|mcdouble|daily double|steak|dave|^(son of )?baconator$|double stack|big bacon classic|chili|whopper|bacon king|rodeo burger'),
     ('pork', r'bacon|sausage|\bham\b'),
     ('fish', r'fish'),
     ('seafood', r'shrimp|prawn'),
 ]
-NO_MEAT = r'no meat|no chicken'
+NO_MEAT = r'no meat|no chicken|impossible|plant[- ]based|veggie'
 
 
 def meats(name):
@@ -397,9 +406,94 @@ def panda():
     return rows, datetime.strptime(checked, '%d %b %Y').strftime('%Y-%m-%d')
 
 
+# ---------- Burger King ----------
+BK_CATS = {'Breakfast': 'breakfast', 'Flame Grilled Burgers': 'main', 'Chicken & Fish': 'main', 'Sides': 'side', 'Drinks & Coffee': 'drink',
+           'Sweets': 'sweet', 'Condiments': 'extra', 'Shakes': 'drink', 'Flame Grilled': 'main', 'King Jr. Kids Meals': 'main'}
+
+
+def bk_rows(chain, path):
+    """Burger King's Nutrition Explorer (bk.com, burgerking.ca): the same feed and format in both countries."""
+    rows, seen = [], set()
+    for o in menu_feeds.rbi_items(path):
+        name = menu_feeds.sized(clean(o['name']).replace('’', "'"))
+        name = name.replace("Barqs", "Barq's")
+        if name in seen:
+            continue
+        seen.add(name)
+        cat = BK_CATS.get(o['section'], 'main')
+        if cat == 'breakfast' and re.search(r'Hash Brown', name):
+            cat = 'side'
+        if cat == 'extra' and re.search(r'Sauce|Ranch|Dressing', name):
+            name = 'Dipping Sauce: ' + re.sub(r' Dipping Sauce$| Sauce$', '', name)
+        if cat == 'drink' and re.search(r'Shake|Freezee', name) is None and o['n']['calories'] == 0 and re.search(r'Coke|Sprite|Pepper|Fanta|Barq|Hi-C', name) and not re.search(r'Diet|Zero', name):
+            continue                                        # a sugary soda listed at 0 Cal can't be right
+        n = o['n']
+        r1 = lambda x: None if x is None else round(x, 1) if x != int(x) else int(x)
+        nut = {'sat': r1(n.get('saturatedFat')), 'sugar': r1(n.get('sugar')), 'fibre': r1(n.get('fiber')), 'sodium': r1(n.get('sodium'))}
+        weight = n.get('weight') if cat != 'drink' else None
+        serve = re.search(r'\((value|kids|small|medium|large|extra large|\d+ pc)\)$', name)
+        serve = f'{round(weight)} g' if weight and weight < 1500 else (serve.group(1) if serve else '')
+        rows.append(food(chain, name, cat, round(n['calories']), r1(n['proteins']), r1(n.get('carbohydrates')), r1(n.get('fat')), serve, nut,
+                         o['al'], o['may'], src='allergen table'))
+    return rows
+
+
+BK_CHECKED = '2026-11-14'                                   # when bk-us-source.json was saved from the site
+
+
+def bk():
+    return bk_rows('us-bk', HERE / 'bk-us-source.json'), BK_CHECKED
+
+
+# ---------- Popeyes ----------
+def popeyes():
+    data = json.loads((HERE / 'plk-us-source.json').read_text())
+    rows = []
+    for o in data['rows']:
+        raw = o['name'].strip()
+        if re.match(r'^(TENDER - CLASSIC|LEG - CLASSIC)$', raw):
+            name = raw.title().replace(' - Classic', ' (kids, classic)')       # the kids' meal pieces, on the desserts page
+        else:
+            name = ' '.join(w if w in ('&', '-') else w.lower() if w in ('WITH', 'OR', 'AND') else w.capitalize() for w in raw.split())
+        for a, b in (('Bbq', 'BBQ'), ('Boldbq', 'BoldBQ'), ('Jalapeño', 'Jalapeño'), ('Dr Pepper', 'Dr Pepper'), ('(each)', ''), ('(Each)', ''),
+                     ('Bayou Buffalo', 'Bayou Buffalo'), ('Mac & Cheese', 'Mac & Cheese'), ('Sandwich-classic', 'Sandwich, Classic'),
+                     ('Sandwich-spicy', 'Sandwich, Spicy'), (' - Classic Or Spicy', ', Classic or Spicy'), (' - Blackened', ', Blackened'),
+                     ('Signature Chicken', 'Signature Chicken')):
+            name = name.replace(a, b)
+        name = clean(name)
+        portion = o['portion']
+        if portion in ('Reg', 'Lg'):
+            name += ' (regular)' if portion == 'Reg' else ' (large)'
+        elif re.match(r'^\d+ Pieces?$', portion):
+            name += f' ({portion.split()[0]} pc)'
+        low = name.lower()
+        if re.search(r'^(jalapeño|bayou buffalo|boldbq|blackened ranch|buttermilk ranch|mardi gras mustard|sweet heat|wild honey mustard|cocktail sauce)', low):
+            cat, name = 'extra', 'Dipping Sauce: ' + name
+        elif re.search(r'coffee|juice|coke|sprite|fanta|dew|pepsi|dr pepper|lemonade|tea\b', low):
+            cat = 'drink'
+        elif re.search(r'pie$', low):
+            cat = 'sweet'
+        elif re.search(r'biscuit|hash rounds', low) and low != 'biscuit':
+            cat = 'breakfast'
+        elif re.search(r'fries|mac & cheese|mashed|beans|coleslaw|cajun rice|gravy|^biscuit$', low):
+            cat = 'side'
+        else:
+            cat = 'main'
+        num = lambda x: float(x) if '.' in x else int(x)
+        nut = {'sat': num(o['sat']), 'sugar': num(o['sugar']), 'fibre': num(o['fibre']), 'sodium': num(o['sodium'])}
+        serve = {'Reg': 'regular', 'Lg': 'large'}.get(portion) or (f"{portion.split()[0]} pieces" if 'Piece' in portion else '1 piece' if re.search(r'^(Wing|Leg|Thigh|Breast)', name) else '')
+        rows.append(food('us-popeyes', name, cat, num(o['cal']), num(o['protein']), num(o['carbs']), num(o['fat']), serve, nut))
+    CHAIN_EXTRA['us-popeyes'] = {'edition': data.get('edition') or ''}
+    return rows, data['checked']
+
+
+CHAIN_EXTRA = {}
+
+
 def main():
     foods, checked = [], {}
-    for chain, fn in (('us-mcd', mcd), ('us-cfa', cfa), ('us-wendys', wendys), ('us-tacobell', tacobell), ('us-panda', panda)):
+    for chain, fn in (('us-mcd', mcd), ('us-cfa', cfa), ('us-wendys', wendys), ('us-tacobell', tacobell), ('us-panda', panda), ('us-bk', bk),
+                      ('us-popeyes', popeyes)):
         rows, when = fn()
         foods += rows
         checked[chain] = datetime.strptime(when, '%Y-%m-%d').strftime('%-d %b %Y')
@@ -410,7 +504,7 @@ def main():
     for f in foods:
         for k in f.get('diet', {}).get('al', []) + f.get('diet', {}).get('may', []):
             assert k in ALLERGENS, (f['id'], k)
-    chains = [dict(c, src=c['src'].format(checked=checked[c['id']])) if 'src' in c else c for c in CHAINS]
+    chains = [dict(c, src=c['src'].format(checked=checked[c['id']], **CHAIN_EXTRA.get(c['id'], {}))) if 'src' in c else c for c in CHAINS]
     revision = hashlib.sha256(json.dumps({'chains': chains, 'foods': foods}, sort_keys=True).encode()).hexdigest()[:16]
     published = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%S.000Z')
     try:
