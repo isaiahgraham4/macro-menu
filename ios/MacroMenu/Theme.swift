@@ -29,7 +29,7 @@ enum AppIconTheme: String, CaseIterable, Identifiable {
     var alternateName: String? { self == .standard ? nil : "AppIcon\(name)" }
 }
 
-/// A matching set: app icon, app colour and the three macro colours, applied together from Settings.
+/// A matching set: app icon, app colour, the three macro colours and a paper tint, applied together from Settings.
 /// Built only from `AppAccent` presets, so widgets and the watch show a pack without knowing about it.
 /// Classic is the default look and stays free; the rest need Even Leanrrr.
 struct ColourPack: Identifiable, Equatable {
@@ -41,27 +41,64 @@ struct ColourPack: Identifiable, Equatable {
     let protein: AppAccent
     let carbs: AppAccent
     let fat: AppAccent
+    let paper: PaperTint
 
     var isFree: Bool { id == "classic" }
 
     static let all: [ColourPack] = [
-        ColourPack(id: "classic", name: "Classic", detail: "Emerald with blue, orange and red", icon: .standard, accent: .green, protein: .blue, carbs: .orange, fat: .red),
-        ColourPack(id: "warm", name: "Warm", detail: "Terracotta, ember and toast", icon: .warm, accent: .orange, protein: .red, carbs: .orange, fat: .brown),
-        ColourPack(id: "crimson", name: "Crimson", detail: "Deep red with pink and plum", icon: .crimson, accent: .red, protein: .pink, carbs: .orange, fat: .purple),
-        ColourPack(id: "berry", name: "Berry", detail: "Plum, raspberry and blackcurrant", icon: .berry, accent: .purple, protein: .indigo, carbs: .pink, fat: .purple),
-        ColourPack(id: "forest", name: "Forest", detail: "Pine, bark and autumn leaves", icon: .forest, accent: .green, protein: .teal, carbs: .brown, fat: .orange),
-        ColourPack(id: "ocean", name: "Ocean", detail: "Deep blue, sea glass and dusk", icon: .ocean, accent: .blue, protein: .blue, carbs: .teal, fat: .purple),
-        ColourPack(id: "sage", name: "Sage", detail: "Soft mint, clay and stone", icon: .sage, accent: .mint, protein: .indigo, carbs: .brown, fat: .graphite),
-        ColourPack(id: "latte", name: "Latte", detail: "Coffee, caramel and steel", icon: .latte, accent: .brown, protein: .brown, carbs: .orange, fat: .graphite),
-        ColourPack(id: "slate", name: "Slate", detail: "Quiet grey with the classic macro colours", icon: .slate, accent: .graphite, protein: .blue, carbs: .orange, fat: .red),
+        ColourPack(id: "classic", name: "Classic", detail: "Emerald with blue, orange and red", icon: .standard, accent: .green, protein: .blue, carbs: .orange, fat: .red, paper: .cream),
+        ColourPack(id: "warm", name: "Warm", detail: "Terracotta, ember and toast", icon: .warm, accent: .orange, protein: .red, carbs: .orange, fat: .brown, paper: .peach),
+        ColourPack(id: "crimson", name: "Crimson", detail: "Deep red with pink and plum", icon: .crimson, accent: .red, protein: .pink, carbs: .orange, fat: .purple, paper: .blush),
+        ColourPack(id: "berry", name: "Berry", detail: "Plum, raspberry and blackcurrant", icon: .berry, accent: .purple, protein: .indigo, carbs: .pink, fat: .purple, paper: .lilac),
+        ColourPack(id: "forest", name: "Forest", detail: "Pine, bark and autumn leaves", icon: .forest, accent: .green, protein: .teal, carbs: .brown, fat: .orange, paper: .moss),
+        ColourPack(id: "ocean", name: "Ocean", detail: "Deep blue, sea glass and dusk", icon: .ocean, accent: .blue, protein: .blue, carbs: .teal, fat: .purple, paper: .mist),
+        ColourPack(id: "sage", name: "Sage", detail: "Soft mint, clay and stone", icon: .sage, accent: .mint, protein: .indigo, carbs: .brown, fat: .graphite, paper: .sage),
+        ColourPack(id: "latte", name: "Latte", detail: "Coffee, caramel and steel", icon: .latte, accent: .brown, protein: .brown, carbs: .orange, fat: .graphite, paper: .oat),
+        ColourPack(id: "slate", name: "Slate", detail: "Quiet grey with the classic macro colours", icon: .slate, accent: .graphite, protein: .blue, carbs: .orange, fat: .red, paper: .fog),
     ]
 
-    /// The pack whose five settings all match what's stored, or nil when the person has mixed their own.
-    static func matching(accent: String, protein: String, carbs: String, fat: String, icon: String) -> ColourPack? {
+    /// The pack whose settings all match what's stored, or nil when the person has mixed their own.
+    /// `paper` is nil when no tint has ever been chosen (packs applied before tints existed still count as that pack).
+    static func matching(accent: String, protein: String, carbs: String, fat: String, icon: String, paper: String?) -> ColourPack? {
         all.first {
             $0.accent.rawValue == accent && $0.protein.rawValue == protein && $0.carbs.rawValue == carbs
-                && $0.fat.rawValue == fat && $0.icon.rawValue == icon
+                && $0.fat.rawValue == fat && $0.icon.rawValue == icon && (paper == nil || $0.paper.rawValue == paper)
         }
+    }
+}
+
+/// The page colour behind every screen: the order-pad cream, or a faint wash of a pack's colour.
+/// Flat colours only (no gradients), each checked so every preset and custom colour still reads at 4.5:1 on it.
+/// Oat is the darkest light tint, so `ThemeColour.lightBackground` uses it as the reference.
+enum PaperTint: String, CaseIterable, Identifiable {
+    case cream, peach, blush, lilac, moss, mist, sage, oat, fog
+
+    static let storageKey = "paperTint"
+    var id: Self { self }
+    var name: String { rawValue.capitalized }
+
+    private var hex: (light: UInt32, dark: UInt32) {
+        switch self {
+        case .cream: (0xF6F2EA, 0x121714)
+        case .peach: (0xF8EDE2, 0x1A1410)
+        case .blush: (0xF8ECEC, 0x1B1113)
+        case .lilac: (0xF4ECF3, 0x181119)
+        case .moss: (0xEDF1E8, 0x0F1610)
+        case .mist: (0xE9F1F3, 0x0D151A)
+        case .sage: (0xEEF1EA, 0x121612)
+        case .oat: (0xF3ECE2, 0x17130F)
+        case .fog: (0xEDEFF1, 0x121418)
+        }
+    }
+
+    func color(dark: Bool) -> Color {
+        let v = dark ? hex.dark : hex.light
+        return Color(red: Double(v >> 16 & 0xFF) / 255, green: Double(v >> 8 & 0xFF) / 255, blue: Double(v & 0xFF) / 255)
+    }
+
+    /// The tint to draw for a stored choice; cream when Premium is locked or the value is unknown.
+    @MainActor static func resolved(_ raw: String) -> PaperTint {
+        Premium.isUnlocked ? PaperTint(rawValue: raw) ?? .cream : .cream
     }
 }
 

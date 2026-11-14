@@ -50,9 +50,9 @@ enum ThemeColour {
     }
 
     typealias RGB = (r: Double, g: Double, b: Double)
-    /// What colours have to stay readable on: the cream page in light mode (darker than white, so the stricter of the two),
-    /// and grouped cards in dark mode (lighter than the page, so the stricter of the two).
-    static let lightBackground: RGB = (0xF6 / 255, 0xF2 / 255, 0xEA / 255)
+    /// What colours have to stay readable on: in light mode the darkest page tint (Oat, darker than the cream page and white
+    /// cards, so the strictest), and grouped cards in dark mode (lighter than every page tint, so the strictest).
+    static let lightBackground: RGB = (0xF3 / 255, 0xEC / 255, 0xE2 / 255)
     static let darkBackground: RGB = (0x1C / 255, 0x1C / 255, 0x1E / 255)
     /// WCAG AA for normal text.
     static let minimumContrast = 4.5

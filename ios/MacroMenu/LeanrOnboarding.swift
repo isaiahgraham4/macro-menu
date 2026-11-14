@@ -28,9 +28,10 @@ struct CuttingBoard: View {
 struct LeanrBackground: View {
     @Environment(\.colorScheme) private var scheme
     @Environment(\.colorSchemeContrast) private var contrast
+    @AppStorage(PaperTint.storageKey) private var paperRaw = PaperTint.cream.rawValue
     private var dark: Bool { scheme == .dark }
-    /// Kept in step with the LaunchBackground colour, so launch doesn't flash a different shade.
-    private var paper: Color { dark ? Color(red: 0.07, green: 0.09, blue: 0.08) : Color(red: 0.965, green: 0.950, blue: 0.918) }
+    /// Cream by default, kept in step with the LaunchBackground colour; a colour pack or Settings can tint it.
+    private var paper: Color { PaperTint.resolved(paperRaw).color(dark: dark) }
     private var ink: Color { dark ? .white : Color(red: 0.40, green: 0.31, blue: 0.20) }
     /// The gap between dots, in points.
     private static let step = 20.0

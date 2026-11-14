@@ -21,8 +21,11 @@ struct SettingsView: View {
     @AppStorage(MacroColours.proteinKey) private var proteinRaw = "blue"
     @AppStorage(MacroColours.carbsKey) private var carbsRaw = "orange"
     @AppStorage(MacroColours.fatKey) private var fatRaw = "red"
+    @AppStorage(PaperTint.storageKey) private var paperRaw = PaperTint.cream.rawValue
+    private var currentPaper: PaperTint { PaperTint.resolved(paperRaw) }
     private var currentPack: ColourPack? {
-        ColourPack.matching(accent: accentRaw, protein: proteinRaw, carbs: carbsRaw, fat: fatRaw, icon: iconRaw)
+        ColourPack.matching(accent: accentRaw, protein: proteinRaw, carbs: carbsRaw, fat: fatRaw, icon: iconRaw,
+                            paper: UserDefaults.standard.string(forKey: PaperTint.storageKey).map { _ in paperRaw })
     }
     @Environment(AppStore.self) private var store
     var version: String { Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "" }
@@ -68,7 +71,7 @@ struct SettingsView: View {
                 Text("Colour packs")
             } footer: {
                 if Premium.isUnlocked {
-                    Text("\(currentPack?.name ?? "Your own mix") · Sets the app icon, app colour and macro colours together. You can still change any of them below.")
+                    Text("\(currentPack?.name ?? "Your own mix") · Sets the app icon, app colour, macro colours and background together. You can still change any of them below.")
                 } else {
                     Label("Colour packs come with Even Leanrrr.", systemImage: "lock.fill")
                 }
@@ -100,6 +103,33 @@ struct SettingsView: View {
                     Text("\(isCustomAccent ? "Custom" : current.name) · Changes buttons, tabs, links and progress bars.")
                     + Text(ThemeColour.lightWarning(accentRaw).map { " " + $0 } ?? "")
                 } else { Label("More colours come with Even Leanrrr.", systemImage: "lock.fill") }
+            }
+            Section {
+                LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 5), spacing: 14) {
+                    ForEach(PaperTint.allCases) { tint in
+                        let locked = !Premium.isUnlocked && tint != .cream
+                        let chosen = tint == currentPaper
+                        Button { if locked { showPremium = true } else { paperRaw = tint.rawValue } } label: {
+                            VStack(spacing: 6) {
+                                PaperSwatch(tint: tint)
+                                    .overlay {
+                                        if chosen { Image(systemName: "checkmark").fontWeight(.bold).foregroundStyle(.tint) }
+                                        else if locked { Image(systemName: "lock.fill").font(.roboto(.caption)).foregroundStyle(.secondary) }
+                                    }
+                                    .background { Circle().strokeBorder(.tint, lineWidth: 2).padding(-5).opacity(chosen ? 1 : 0) }
+                                Text(tint.name).font(.roboto(.caption2, weight: .medium)).foregroundStyle(.secondary)
+                            }
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityLabel(locked ? "\(tint.name) background, needs Even Leanrrr" : "\(tint.name) background")
+                        .accessibilityAddTraits(chosen ? .isSelected : [])
+                    }
+                }.padding(.vertical, 8)
+            } header: {
+                Text("Background")
+            } footer: {
+                if Premium.isUnlocked { Text("\(currentPaper.name) · A faint tint behind every screen, in light and dark mode.") }
+                else { Label("Tinted backgrounds come with Even Leanrrr.", systemImage: "lock.fill") }
             }
             Section {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 3), spacing: 14) {
@@ -227,12 +257,13 @@ struct SettingsView: View {
         proteinRaw = pack.protein.rawValue
         carbsRaw = pack.carbs.rawValue
         fatRaw = pack.fat.rawValue
+        paperRaw = pack.paper.rawValue
         // iOS shows an alert for every icon change, so skip it when the icon is already the pack's.
         if UIApplication.shared.alternateIconName != pack.icon.alternateName { selectIcon(pack.icon) } else { iconRaw = pack.icon.rawValue }
     }
 }
 
-/// One pack in Settings: its icon, name, a line about it, and swatches for the app colour and the three macros.
+/// One pack in Settings: its icon, name, a line about it, and swatches for the app colour, the three macros and the background.
 private struct ColourPackRow: View {
     let pack: ColourPack
     let selected: Bool
@@ -253,6 +284,7 @@ private struct ColourPackRow: View {
                     swatch(pack.protein)
                     swatch(pack.carbs)
                     swatch(pack.fat)
+                    PaperSwatch(tint: pack.paper, size: 12).padding(.leading, 3)
                 }.padding(.top, 3).accessibilityHidden(true)
             }
             Spacer(minLength: 8)
@@ -269,6 +301,27 @@ private struct ColourPackRow: View {
     /// The app colour is a short bar, the macros are dots, so the two kinds read apart.
     private func swatch(_ accent: AppAccent, wide: Bool = false) -> some View {
         Capsule().fill(accent.color).frame(width: wide ? 22 : 10, height: 10)
+    }
+}
+
+/// A background tint as a pale circle with a hairline, its dark-mode shade as a small quarter at the lower right.
+/// The light shade gets most of the space because that's where the tints differ most; the dark ones are all near black.
+struct PaperSwatch: View {
+    let tint: PaperTint
+    var size: CGFloat = 36
+    var body: some View {
+        Circle().fill(tint.color(dark: false))
+            .overlay {
+                Path { p in
+                    let c = CGPoint(x: size / 2, y: size / 2)
+                    p.move(to: c)
+                    p.addArc(center: c, radius: size / 2, startAngle: .degrees(0), endAngle: .degrees(90), clockwise: false)
+                    p.closeSubpath()
+                }.fill(tint.color(dark: true))
+            }
+            .overlay { Circle().strokeBorder(Color(.separator), lineWidth: 0.5) }
+            .frame(width: size, height: size)
+            .accessibilityHidden(true)
     }
 }
 

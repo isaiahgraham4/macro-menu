@@ -5,7 +5,7 @@ import StoreKit
 enum PremiumFeatures {
     static let all: [(symbol: String, title: String, detail: String)] = [
         ("paintpalette", "App colours", "Pick a preset or any colour you like for buttons, tabs and progress bars."),
-        ("swatchpalette", "Colour packs", "Matching sets of app icon, app colour and macro colours, from Warm to Ocean."),
+        ("swatchpalette", "Colour packs", "Matching sets of app icon, app colour, macro colours and background tint, from Warm to Ocean."),
         ("app.badge", "App icons", "More icon packs for your Home Screen."),
         ("chart.bar.fill", "Macro colours", "Pick any colour for protein, carbs and fat, in the app and widgets."),
         ("square.grid.2x2", "Two more widgets", "Calories & macros, and All targets."),
