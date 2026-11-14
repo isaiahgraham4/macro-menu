@@ -21,9 +21,9 @@ Before each new upload, raise the build number (`CURRENT_PROJECT_VERSION`) in th
 - Before release, set `AppInfo.contactEmail` in `MacroMenu/LegalView.swift`. Until then the policies point people to the
   App Support link on the App Store page, and the Contact row in Settings is hidden. Add the same address as the
   support URL or email in App Store Connect.
-- `MacroMenu/PrivacyInfo.xcprivacy` and `LeanrWidgets/PrivacyInfo.xcprivacy` declare no tracking and no collected data. The app's only required-reason API is UserDefaults,
+- `MacroMenu/PrivacyInfo.xcprivacy` declares no tracking and two collected data types for shared foods (Other User Content and User ID, not linked, App Functionality only). `LeanrWidgets/PrivacyInfo.xcprivacy` declares no tracking and no collected data. The app's only required-reason API is UserDefaults,
   for its own settings (reason `CA92.1`).
-- App Privacy answers in App Store Connect: **Data Not Collected**. Location is only used on the device and by Apple Maps,
+- App Privacy answers in App Store Connect (filled in 15 Nov 2026, privacy policy URL set to the gist): **Data Not Linked to You: User Content (Other User Content) and Identifiers (User ID)**, both for App Functionality and not used for tracking, because of shared foods. Nothing else is collected. Location is only used on the device and by Apple Maps,
   which Apple doesn't count as collection by the developer. Food logs, weights and targets stay on the device, in the
   user's iCloud and (if connected) in Apple Health. Barcode lookups send only the barcode number, and packaged-food searches only the search words, to Open Food Facts.
 - Weights read from Apple Health never go to iCloud (App Review Guideline 5.1.3). Weights entered in Leanrrr do.
