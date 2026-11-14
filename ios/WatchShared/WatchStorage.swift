@@ -28,5 +28,6 @@ enum WatchStorage {
         guard let a else { return true }
         return a.day != b.day || a.calories.rounded() != b.calories.rounded() || a.protein.rounded() != b.protein.rounded()
             || a.water != b.water || a.energy?.rounded() != b.energy?.rounded() || a.calorieTarget != b.calorieTarget || a.proteinTarget != b.proteinTarget || a.waterTarget != b.waterTarget
+            || a.accent != b.accent || a.proteinColour != b.proteinColour
     }
 }

@@ -14,6 +14,20 @@ final class WatchModel: NSObject {
     override init() {
         super.init()
         snapshot = WatchStorage.read()
+        #if DEBUG
+        // For checking layouts in the simulator without a paired iPhone: `-demoWatch`, optionally with `-demoAccent "#RRGGBB"`.
+        let arguments = ProcessInfo.processInfo.arguments
+        if arguments.contains("-demoWatch") {
+            let accent = arguments.firstIndex(of: "-demoAccent").flatMap { arguments.indices.contains($0 + 1) ? arguments[$0 + 1] : nil }
+            snapshot = WatchSnapshot(day: WatchSnapshot.key(Date()), calories: 1340, calorieTarget: 2200, protein: 96, proteinTarget: 150,
+                                     water: 1250, waterTarget: 2000, glass: 250,
+                                     options: [.init(id: "usual:breakfast", name: "Usual breakfast", calories: 420, protein: 32, loggedToday: true),
+                                               .init(id: "pin:bar", name: "Chocolate protein bar", calories: 210, protein: 20, loggedToday: false)],
+                                     accent: accent, energy: 412)
+            snapshot?.proteinColour = "#5AC8FA"
+            return
+        }
+        #endif
         if WCSession.isSupported() {
             WCSession.default.delegate = self
             WCSession.default.activate()

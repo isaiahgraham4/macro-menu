@@ -1,4 +1,6 @@
 import Foundation
+import SwiftUI
+import UIKit
 @preconcurrency import WatchConnectivity
 
 /// Keeps Leanr on Apple Watch up to date and logs what's tapped there. Everything goes directly between the iPhone and
@@ -20,7 +22,10 @@ import Foundation
     func send() {
         let session = WCSession.default
         guard let store, WCSession.isSupported(), session.activationState == .activated, session.isPaired, session.isWatchAppInstalled else { return }
-        let snapshot = store.watchSnapshot()
+        var snapshot = store.watchSnapshot()
+        snapshot.accent = Self.watchHex(AppAccent.resolvedColor(UserDefaults.standard.string(forKey: AppAccent.storageKey) ?? AppAccent.standard.rawValue))
+        let protein = Premium.isUnlocked ? UserDefaults.standard.string(forKey: MacroColours.proteinKey) : nil
+        snapshot.proteinColour = Self.watchHex(ThemeColour.color(protein, fallback: .blue))
         guard snapshot != lastSent else { return }
         // A Leanr complication on the watch face gets a priority update (about 50 a day), which wakes the watch app to
         // redraw it; spent only when the calories, protein or water shown have changed.
@@ -30,6 +35,14 @@ import Foundation
             lastComplication = snapshot
         }
         do { try session.updateApplicationContext(snapshot.context); lastSent = snapshot } catch {}
+    }
+
+    /// A colour as the watch shows it: the dark-mode shade, which is already readable on dark grey and so on black too.
+    static func watchHex(_ color: Color) -> String {
+        let shade = UIColor(color).resolvedColor(with: UITraitCollection(userInterfaceStyle: .dark))
+        var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
+        shade.getRed(&r, green: &g, blue: &b, alpha: &a)
+        return ThemeColour.hex(r: Double(r), g: Double(g), b: Double(b))
     }
 
     private static let handledKey = "leanr.watch.handled"

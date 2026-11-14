@@ -24,8 +24,11 @@ struct WatchSnapshot: Codable, Equatable, Sendable {
     var waterTarget: Double
     var glass: Double
     var options: [Option]
-    /// The app colour, by name (see `AppAccent`).
+    /// The app colour as "#RRGGBB", already shaded the way the iPhone shows it in dark mode (the watch is always dark), so
+    /// a colour pack or a custom colour looks the same on the wrist. Nil from older iPhone builds; the watch then uses green.
     var accent: String?
+    /// The protein colour, the same way. Nil from older iPhone builds.
+    var proteinColour: String? = nil
     /// Active calories burnt today, from Apple Health on the iPhone. Nil when none are known; absent from older snapshots.
     var energy: Double? = nil
 

@@ -2162,6 +2162,10 @@ import UniformTypeIdentifiers
             var optionsOnly = snapshot; optionsOnly.options = []
             assert(!WatchStorage.complicationsDiffer(snapshot, optionsOnly) && WatchStorage.complicationsDiffer(snapshot, logged))
             assert(WatchStorage.complicationsDiffer(snapshot, snapshot.addingWater(250)) && WatchStorage.complicationsDiffer(snapshot, fresh))
+            // The app and protein colours go to the watch, survive the day turning over, and redraw the complications when changed.
+            var coloured = snapshot; coloured.accent = "#FF6B6B"; coloured.proteinColour = "#5AC8FA"
+            assert(WatchSnapshot(context: coloured.context) == coloured && coloured.current(on: tomorrow).accent == "#FF6B6B")
+            assert(WatchStorage.complicationsDiffer(snapshot, coloured) && coloured.addingWater(250).proteinColour == "#5AC8FA")
             // The Planned widget: today's plan in meal order, logged by its option, and gone once logged.
             let toast = Food(id: "toast", name: "Toast", kj: 630, cal: 150, p: 5)
             watchStore.plan([Portion(food: bar)], name: "Bar for dinner", mealTime: .dinner, on: now)

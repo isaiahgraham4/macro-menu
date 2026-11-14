@@ -73,16 +73,19 @@ struct CaloriesComplicationView: View {
     private var value: String { left.map { number(abs($0)) } ?? today.map { number($0.calories) } ?? "—" }
     private var label: String { left.map { $0 >= 0 ? "left" : "over" } ?? "eaten" }
     private var progress: Double { fraction(today?.calories ?? 0, of: today?.calorieTarget) }
+    /// The app colour on full-colour faces; tinted faces recolour it with the rest of the face.
+    private var accent: Color { today?.accentColour ?? WatchSnapshot.defaultAccent }
 
     var body: some View {
         switch family {
         case .accessoryInline:
             Text(today == nil ? "Leanrrr" : "\(value) Cal \(label)")
         case .accessoryCorner:
-            Image(systemName: "fork.knife").font(.title3).widgetAccentable()
+            Image(systemName: "fork.knife").font(.title3).foregroundStyle(accent).widgetAccentable()
                 .widgetLabel {
                     Gauge(value: progress) { Text("Cal") } currentValueLabel: { Text(value) }
                         minimumValueLabel: { Text("") } maximumValueLabel: { Text(value) }
+                        .tint(accent)
                 }
         case .accessoryRectangular:
             VStack(alignment: .leading, spacing: 2) {
@@ -92,7 +95,7 @@ struct CaloriesComplicationView: View {
                     let to = target - today.protein
                     Text(to > 0 ? "\(number(to)) g protein to go" : "Protein target reached").font(.caption2).foregroundStyle(.secondary)
                 }
-                Gauge(value: progress) { EmptyView() }.gaugeStyle(.accessoryLinearCapacity).widgetAccentable()
+                Gauge(value: progress) { EmptyView() }.gaugeStyle(.accessoryLinearCapacity).tint(accent).widgetAccentable()
             }
         default:
             Gauge(value: progress) {
@@ -100,7 +103,7 @@ struct CaloriesComplicationView: View {
             } currentValueLabel: {
                 Text(value).minimumScaleFactor(0.5)
             }
-            .gaugeStyle(.accessoryCircularCapacity).widgetAccentable()
+            .gaugeStyle(.accessoryCircularCapacity).tint(accent).widgetAccentable()
             .accessibilityLabel(today == nil ? "Leanrrr" : "\(value) calories \(label)")
         }
     }
@@ -125,16 +128,18 @@ struct ProteinComplicationView: View {
 
     private var eaten: String { entry.today.map { number($0.protein) } ?? "—" }
     private var progress: Double { fraction(entry.today?.protein ?? 0, of: entry.today?.proteinTarget) }
+    private var tint: Color { entry.today?.proteinTint ?? .blue }
 
     var body: some View {
         switch family {
         case .accessoryInline:
             Text(entry.today.map { "\(eaten)\($0.proteinTarget.map { " of \(number($0))" } ?? "") g protein" } ?? "Leanrrr")
         case .accessoryCorner:
-            Text("P").font(.title3.weight(.bold)).widgetAccentable()
+            Text("P").font(.title3.weight(.bold)).foregroundStyle(tint).widgetAccentable()
                 .widgetLabel {
                     Gauge(value: progress) { Text("Protein") } currentValueLabel: { Text(eaten) }
                         minimumValueLabel: { Text("") } maximumValueLabel: { Text("\(eaten) g") }
+                        .tint(tint)
                 }
         default:
             Gauge(value: progress) {
@@ -142,7 +147,7 @@ struct ProteinComplicationView: View {
             } currentValueLabel: {
                 Text(eaten).minimumScaleFactor(0.5)
             }
-            .gaugeStyle(.accessoryCircularCapacity).widgetAccentable()
+            .gaugeStyle(.accessoryCircularCapacity).tint(tint).widgetAccentable()
             .accessibilityLabel("\(eaten) grams of protein")
         }
     }
