@@ -20,7 +20,7 @@ enum AppIconTheme: String, CaseIterable, Identifiable {
     /// The icon that follows the person's own appearance: white in light mode, black in dark mode.
     /// The raw value stays "black" so a choice saved by an earlier version still matches.
     case standard = "black"
-    case cream, crimson, forest, midnight, plum, sage, terracotta
+    case berry, cream, crimson, forest, latte, midnight, ocean, plum, sage, slate, terracotta, warm
 
     static let storageKey = "appIcon"
     var id: Self { self }
@@ -46,14 +46,14 @@ struct ColourPack: Identifiable, Equatable {
 
     static let all: [ColourPack] = [
         ColourPack(id: "classic", name: "Classic", detail: "Emerald with blue, orange and red", icon: .standard, accent: .green, protein: .blue, carbs: .orange, fat: .red),
-        ColourPack(id: "warm", name: "Warm", detail: "Terracotta, ember and toast", icon: .terracotta, accent: .orange, protein: .red, carbs: .orange, fat: .brown),
+        ColourPack(id: "warm", name: "Warm", detail: "Terracotta, ember and toast", icon: .warm, accent: .orange, protein: .red, carbs: .orange, fat: .brown),
         ColourPack(id: "crimson", name: "Crimson", detail: "Deep red with pink and plum", icon: .crimson, accent: .red, protein: .pink, carbs: .orange, fat: .purple),
-        ColourPack(id: "berry", name: "Berry", detail: "Plum, raspberry and blackcurrant", icon: .plum, accent: .purple, protein: .indigo, carbs: .pink, fat: .purple),
+        ColourPack(id: "berry", name: "Berry", detail: "Plum, raspberry and blackcurrant", icon: .berry, accent: .purple, protein: .indigo, carbs: .pink, fat: .purple),
         ColourPack(id: "forest", name: "Forest", detail: "Pine, bark and autumn leaves", icon: .forest, accent: .green, protein: .teal, carbs: .brown, fat: .orange),
-        ColourPack(id: "ocean", name: "Ocean", detail: "Deep blue, sea glass and dusk", icon: .midnight, accent: .blue, protein: .blue, carbs: .teal, fat: .purple),
+        ColourPack(id: "ocean", name: "Ocean", detail: "Deep blue, sea glass and dusk", icon: .ocean, accent: .blue, protein: .blue, carbs: .teal, fat: .purple),
         ColourPack(id: "sage", name: "Sage", detail: "Soft mint, clay and stone", icon: .sage, accent: .mint, protein: .indigo, carbs: .brown, fat: .graphite),
-        ColourPack(id: "latte", name: "Latte", detail: "Coffee, caramel and steel", icon: .cream, accent: .brown, protein: .brown, carbs: .orange, fat: .graphite),
-        ColourPack(id: "slate", name: "Slate", detail: "Quiet grey with the classic macro colours", icon: .midnight, accent: .graphite, protein: .blue, carbs: .orange, fat: .red),
+        ColourPack(id: "latte", name: "Latte", detail: "Coffee, caramel and steel", icon: .latte, accent: .brown, protein: .brown, carbs: .orange, fat: .graphite),
+        ColourPack(id: "slate", name: "Slate", detail: "Quiet grey with the classic macro colours", icon: .slate, accent: .graphite, protein: .blue, carbs: .orange, fat: .red),
     ]
 
     /// The pack whose five settings all match what's stored, or nil when the person has mixed their own.
