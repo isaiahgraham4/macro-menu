@@ -1,6 +1,6 @@
 # Leanrrr terms of use
 
-Effective 12 November 2026
+Effective 15 November 2026
 
 These terms apply when you use Leanrrr, an app made by Isaiah Graham, an independent developer in Victoria, Australia. Apple's standard Licensed Application End User License Agreement also applies. Contact me at {{CONTACT}}.
 
@@ -25,9 +25,20 @@ Opening hours are shown in Apple Maps' place card and come from Apple. "Delivery
 
 Restaurant, supermarket and product names and brands belong to their owners. Leanrrr isn't affiliated with, endorsed by or sponsored by any restaurant, supermarket or delivery service.
 
-## Cost
+## Even Leanrrr, purchases and refunds
 
-Leanrrr is free to use. If paid features are ever added, how they're sold and refunded will be described here before they go on sale.
+Leanrrr is free to use. Even Leanrrr is an optional subscription that adds custom app colours, colour packs, background tints and app icons, separate macro colours, the Calories & macros and All targets widgets, and choosing your meal and water reminders. Logging, searching, scanning, photos, Siri, shared foods and your data stay free.
+
+- It's sold through Apple's App Store, which handles payment. In Australia it's A$5 a week, A$10 a month or A$35 a year. The price for your country and the billing period are shown before you buy, and there are no other fees.
+- New subscribers get a 7-day free trial. Apple allows one trial per Apple Account. You aren't charged during the trial. When it ends, your subscription starts and the price shown at sign-up is charged to your Apple Account, unless you cancel at least 24 hours before the trial ends. A cancelled trial stops at the end of its 7 days.
+- It renews automatically until you cancel it in your Apple Account settings, at least 24 hours before the renewal date. Cancelling keeps Even Leanrrr until the end of the period you've paid for.
+- Apple may change the price at renewal and will tell you first. You can cancel before it takes effect.
+- Refunds are handled by Apple. Request one at reportaproblem.apple.com.
+- If Even Leanrrr ends, the extras go back to their defaults. Everything you've logged and saved stays.
+- It's tied to your Apple Account. "Restore purchases" brings it back on a new iPhone.
+
+Nothing in these terms limits your rights under the Australian Consumer Law. That includes a refund or remedy when something has a major fault.
+
 ## Your data
 
 What you enter in Leanrrr is yours. The privacy policy explains how it's handled.

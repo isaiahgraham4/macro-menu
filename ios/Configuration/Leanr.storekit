@@ -6,7 +6,8 @@
     "_applicationInternalID": "6760000000",
     "_compatibilityTimeRate": {
       "P1M": 3600,
-      "P1Y": 7200
+      "P1Y": 7200,
+      "P1W": 1800
     },
     "_locale": "en_AU",
     "_storefront": "AUS",
@@ -22,7 +23,7 @@
         {
           "adHocOffers": [],
           "codeOffers": [],
-          "displayPrice": "49.99",
+          "displayPrice": "35.00",
           "familyShareable": false,
           "groupNumber": 1,
           "internalID": "6760000101",
@@ -49,7 +50,7 @@
         {
           "adHocOffers": [],
           "codeOffers": [],
-          "displayPrice": "5.99",
+          "displayPrice": "10.00",
           "familyShareable": false,
           "groupNumber": 2,
           "internalID": "6760000102",
@@ -69,6 +70,33 @@
           "productID": "com.isaiahgraham.MacroMenu.premium.monthly",
           "recurringSubscriptionPeriod": "P1M",
           "referenceName": "Even Leanrrr monthly",
+          "subscriptionGroupID": "21800001",
+          "type": "RecurringSubscription",
+          "winbackOffers": []
+        },
+        {
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "5.00",
+          "familyShareable": false,
+          "groupNumber": 3,
+          "internalID": "6760000103",
+          "introductoryOffer": {
+            "internalID": "6760000203",
+            "numberOfPeriods": 1,
+            "paymentMode": "free",
+            "subscriptionPeriod": "P1W"
+          },
+          "localizations": [
+            {
+              "description": "All of Even Leanrrr, billed weekly",
+              "displayName": "Even Leanrrr weekly",
+              "locale": "en_AU"
+            }
+          ],
+          "productID": "com.isaiahgraham.MacroMenu.premium.weekly",
+          "recurringSubscriptionPeriod": "P1W",
+          "referenceName": "Even Leanrrr weekly",
           "subscriptionGroupID": "21800001",
           "type": "RecurringSubscription",
           "winbackOffers": []

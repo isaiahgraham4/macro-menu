@@ -1454,7 +1454,8 @@ import UniformTypeIdentifiers
         assert(!PremiumAccess.isActive(productID: PremiumAccess.monthly, expires: earlier, revoked: false, now: premiumNow))
         assert(!PremiumAccess.isActive(productID: PremiumAccess.monthly, expires: soon, revoked: true, now: premiumNow))
         assert(!PremiumAccess.isActive(productID: "com.example.other", expires: soon, revoked: false, now: premiumNow))
-        assert(PremiumAccess.productIDs == [PremiumAccess.yearly, PremiumAccess.monthly])
+        assert(PremiumAccess.productIDs == [PremiumAccess.yearly, PremiumAccess.monthly, PremiumAccess.weekly])
+        assert(PremiumAccess.isActive(productID: PremiumAccess.weekly, expires: soon, revoked: false, now: premiumNow))
         // A remembered subscription is trusted a few days past its end (renewals land late), not forever.
         let ended = PremiumAccess.Entitlement(productID: PremiumAccess.monthly, expires: premiumNow.addingTimeInterval(-86400), renews: true)
         assert(PremiumAccess.isRemembered(ended, now: premiumNow))

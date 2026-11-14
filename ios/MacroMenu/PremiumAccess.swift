@@ -5,8 +5,9 @@ import Foundation
 enum PremiumAccess {
     static let yearly = "com.isaiahgraham.MacroMenu.premium.yearly"
     static let monthly = "com.isaiahgraham.MacroMenu.premium.monthly"
+    static let weekly = "com.isaiahgraham.MacroMenu.premium.weekly"
     /// Longest plan first, so it's listed first.
-    static let productIDs = [yearly, monthly]
+    static let productIDs = [yearly, monthly, weekly]
 
     /// A paid-up subscription as of the last time StoreKit was asked, remembered so Premium doesn't flicker off at launch
     /// or offline while StoreKit is still answering.

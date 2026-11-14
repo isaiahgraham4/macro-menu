@@ -123,15 +123,16 @@ struct LeanrForm<Content: View>: View {
     }
 }
 
-/// Leanr Premium: custom app colours and icons, separate macro colours, the Calories & macros and All targets widgets,
-/// and choosing which meal reminders you get. Locked users fall back to the defaults; nothing they've logged is affected.
+/// Even Leanrrr (called Premium in code): custom app colours, colour packs, background tints and icons, separate macro colours,
+/// the Calories & macros and All targets widgets, and choosing which meal reminders you get. Locked users fall back to the
+/// defaults; nothing they've logged is affected.
 /// The answer comes from StoreKit (see `Purchases`); the screens that read it redraw when it changes.
 enum Premium {
-    /// Whether Even Leanr (the paid subscription) is on sale. While it's false, nothing is locked: every feature is
-    /// available to everyone, the Even Leanr row and screen are hidden, and StoreKit is never contacted.
-    /// Set it to true when the subscriptions exist in App Store Connect and the legal text in
-    /// `AppStore/even-leanr-legal.md` is back in Terms.md and PrivacyPolicy.md.
-    static let subscriptionsEnabled = false
+    /// Whether Even Leanrrr (the paid subscription) is on sale. While it's false, nothing is locked: every feature is
+    /// available to everyone, the Even Leanrrr row and screen are hidden, and StoreKit is never contacted.
+    /// Turned on 15 Nov 2026. The subscriptions must exist in App Store Connect (see AppStore/README.md) before a build
+    /// with this on goes to review, or the Even Leanrrr screen has nothing to sell.
+    static let subscriptionsEnabled = true
 
     @MainActor static var isUnlocked: Bool {
         guard subscriptionsEnabled else { return true }

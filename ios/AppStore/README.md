@@ -48,29 +48,34 @@ Before each new upload, raise the build number (`CURRENT_PROJECT_VERSION`) in th
   Settings → Acknowledgements, with the Open Food Facts credit (ODbL) and the USDA FoodData Central credit (public
   domain; `MacroMenu/GenericFoods.json` is built by `Scripts/generic-foods.py`).
 
-## Even Leanrrr (subscriptions): currently switched off
+## Even Leanrrr (subscriptions)
 
-**Subscriptions are off for now.** `Premium.subscriptionsEnabled` in `MacroMenu/Theme.swift` is `false`: every feature is unlocked
-for everyone, the Even Leanrrr row and screen are hidden and StoreKit is never contacted. The legal text that describes the
-subscription is held in `AppStore/even-leanr-legal.md` and must go back into Terms.md and PrivacyPolicy.md (and the hosted
-privacy gist) when the switch is turned on.
+**Switched on 15 Nov 2026.** `Premium.subscriptionsEnabled` in `MacroMenu/Theme.swift` is `true`: the Even Leanrrr row shows
+at the top of Settings, Premium features lock without a subscription and StoreKit is asked at launch. Terms.md and
+PrivacyPolicy.md describe the subscription again (effective 15 Nov 2026); the hosted privacy gist must match before review.
+Setting the switch back to `false` unlocks everything and hides the row, but the legal text would then need the old "Cost"
+section back (it's in git history, `AppStore/even-leanr-legal.md` before 15 Nov 2026).
 
 The subscription is called **Even Leanrrr** everywhere users see it. In code it's still "Premium" (`Premium.isUnlocked`,
 `PremiumView`) and the product IDs keep `premium`; users never see those, and product IDs can't be renamed once created.
 
 `MacroMenu/Purchases.swift` reads StoreKit 2 entitlements; `MacroMenu/PremiumView.swift` is Apple's subscription view with
 the features list; `Premium.isUnlocked` (Theme.swift) is what the screens, widgets and reminders check. Premium gates: app
-colours, app icons, macro colours, the Calories & macros and All targets widgets, and choosing meal reminders.
+colours (presets and custom), colour packs other than Classic, background tints other than Cream, app icons, macro colours, the
+Calories & macros and All targets widgets, and choosing meal and water reminders and the weekly review time.
 
-Before the first release, in App Store Connect → the app → Monetization → Subscriptions:
+In App Store Connect → the app → Monetization → Subscriptions (all set up 15 Nov 2026):
 
-1. Create a subscription group named "Even Leanrrr".
-2. Add two auto-renewable subscriptions with these exact product IDs (they're hard-coded in `PremiumAccess.swift`):
-   `com.isaiahgraham.MacroMenu.premium.yearly` (1 year) and `com.isaiahgraham.MacroMenu.premium.monthly` (1 month).
-3. Set the prices: monthly A$5.99, yearly A$49.99 (App Store Connect only offers Apple's price points, and A$49.99 is the
-   one nearest $50; `Configuration/Leanr.storekit` uses the same). Add a display name and description for each and a review
-   screenshot of the Premium screen. Then on each subscription add a **Subscription Prices → Introductory offer**: Free,
-   1 week (7 days), all countries, new subscribers. A trial is once per Apple Account across the whole group.
+1. Subscription group "Even Leanrrr" (ID 22580539). Its English (Australia) display name is "Even Leanrrr" with the custom
+   app name "Leanrrr", because the App Store Connect app name is still "Leanr".
+2. Three auto-renewable subscriptions with these exact product IDs (hard-coded in `PremiumAccess.swift`):
+   level 1 `com.isaiahgraham.MacroMenu.premium.yearly` (1 year, A$35.00), level 2 `com.isaiahgraham.MacroMenu.premium.monthly`
+   (1 month, A$10.00) and level 3 `com.isaiahgraham.MacroMenu.premium.weekly` (1 week, A$5.00). Round prices come from
+   "See Additional Prices" in the price picker. Other countries use Apple's conversions from the AUD price (US$22 / US$6 / US$3).
+3. Each is on sale in all 175 countries, has an English (Australia) display name and description, and a free 1-week
+   introductory offer for new subscribers with no end date. A trial is once per Apple Account across the whole group.
+   `Configuration/Leanr.storekit` mirrors these prices and trials. Still to add: a review screenshot of the Even Leanrrr
+   screen on each subscription.
 4. Accept the Paid Apps agreement and add banking and tax details, or the products won't load.
 5. Add the subscriptions to the version you submit; Apple reviews them with the app.
 6. The Premium screen shows the required subscription wording and links to the privacy policy and terms itself. Also put the

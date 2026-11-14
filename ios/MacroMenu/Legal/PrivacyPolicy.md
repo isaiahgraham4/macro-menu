@@ -1,6 +1,6 @@
 # Leanrrr privacy policy
 
-Effective 12 November 2026
+Effective 15 November 2026
 
 Leanrrr is made by Isaiah Graham, an independent developer in Victoria, Australia ("I", "me"). This policy explains what happens to your information when you use Leanrrr. You can reach me at {{CONTACT}}.
 
@@ -96,11 +96,15 @@ Leanrrr isn't designed for children under 13, and the target estimate is only fo
 
 Apart from foods you chose to share, I don't hold any of your data, so there's nothing for me to delete on my side. If a food you shared can't be taken down from the app, contact me and I'll remove it. If you have a question, contact me and I'll answer within 30 days.
 
+## Purchases
+
+Even Leanrrr is bought through Apple. Apple handles your payment, including the free trial, and tells Leanrrr, on your device, whether your subscription or trial is active. I don't receive your name, your Apple Account or any payment details, and there's no Leanrrr account.
+
 ## Other services
 
 Leanrrr doesn't sell or share your personal data, and it uses no analytics, advertising or tracking services. The only outside services it contacts are:
 
-- **Apple** (United States and elsewhere): Maps, iCloud (including the public database that holds shared foods), Health, Siri and Visual Intelligence, which are part of your device and your Apple Account and are covered by Apple's privacy policy.
+- **Apple** (United States and elsewhere): Maps, iCloud (including the public database that holds shared foods), Health, Siri, Visual Intelligence and the App Store (for Even Leanrrr), which are part of your device and your Apple Account and are covered by Apple's privacy policy.
 - **Open Food Facts** (France): receives only a product's barcode number or the words you search for packaged foods. Neither is linked to you.
 - **Recipe websites you choose**: when you import a recipe from a link, that website receives the request for the page and nothing else.
 - **GitHub** (United States): hosts the restaurant menu file. A few times a day Leanrrr asks it whether the menu has changed and, if it has, downloads the new one. The request contains nothing about you or your data. As with any website, GitHub sees your device's IP address and handles it under GitHub's privacy statement.
