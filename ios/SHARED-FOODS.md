@@ -29,10 +29,13 @@ Done in Development on 15 Nov 2026 through CloudKit Console (no management token
 - Checked: an anonymous Debug build in the simulator fetched the shared list from Development without errors. A test record `food-console-test` is still there.
 - Not yet checked: uploading from the app, since the simulator isn't signed in to iCloud.
 
-Still to do:
-1. **Deploy to Production:** sidebar → Deploy Schema Changes. TestFlight and App Store builds use Production. Fields and types can't be removed once there.
-2. **Moderator in Production:** switch to Production, open Records once (that creates your user record there), then tick Moderator on it as above.
-3. **App Store Connect:** App Privacy → add **User Content → Other User Content**, used for App Functionality, not linked to identity, not used for tracking. Update the hosted privacy policy gist from `MacroMenu/Legal/PrivacyPolicy.md`. In review notes, say where Report and Hide are and that reports are reviewed within 24 hours.
+Done in Production on 15 Nov 2026: Deploy Schema Changes (it only added the three types, their indexes and the Moderator role), Moderator ticked on the same user record in Production, and a SharedFood query there returns without errors.
+
+Still to do (App Store Connect, needs Isaiah):
+- App Privacy → add **User Content → Other User Content**, used for App Functionality, not linked to identity, not used for tracking.
+- Update the hosted privacy policy gist from `MacroMenu/Legal/PrivacyPolicy.md`.
+- In review notes, say where Report and Hide are and that reports are reviewed within 24 hours.
+- Try sharing a food from a TestFlight build on a phone signed in to iCloud, then find it from a second Apple Account.
 
 ## Reviewing reports
 
