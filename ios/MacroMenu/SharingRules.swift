@@ -6,6 +6,25 @@ nonisolated enum SharingRules {
     /// Several people reporting a food hides it for everyone until it's looked at.
     static let reportsToHide = 3
 
+    /// The foods enough different people have reported to hide them for everyone. One person reporting twice counts once.
+    static func hiddenByReports(_ reports: [(recordName: String, reporter: String)]) -> Set<String> {
+        var reporters: [String: Set<String>] = [:]
+        for report in reports { reporters[report.recordName, default: []].insert(report.reporter) }
+        return Set(reporters.filter { $0.value.count >= reportsToHide }.keys)
+    }
+
+    /// The most one serving could plausibly have of each extra nutrient: grams for the fats, sugars and fibre, milligrams for the rest.
+    static let nutrientLimits: [String: Double] = ["sat": 300, "trans": 100, "sugar": 500, "fibre": 200, "sodium": 20_000, "potassium": 10_000,
+                                                   "calcium": 5_000, "iron": 200, "chol": 5_000, "caffeine": 1_000]
+    /// The longest `nut` text a shared record may carry; ten nutrients take about 200 characters.
+    static let longestNutrientText = 1_000
+
+    /// Only the nutrients Leanr knows, so a shared food can't carry anything else along.
+    static func knownNutrients(_ nut: [String: Double]?) -> [String: Double]? {
+        guard let kept = nut?.filter({ nutrientLimits[$0.key] != nil }), !kept.isEmpty else { return nil }
+        return kept
+    }
+
     /// Why this food can't be shared, or nil when it can.
     static func problem(_ food: Food) -> String? {
         let name = food.name.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -18,9 +37,13 @@ nonisolated enum SharingRules {
         if ContentFilter.hasContactDetails(name + " " + serve) { return "Leave links and contact details out of the name and serving." }
         guard food.isValid, food.cal > 0 else { return "Add the energy first." }
         guard let c = food.c, let f = food.f else { return "Add carbs and fat too, so others can see the numbers add up." }
-        if food.cal > 3000 || food.p > 250 || c > 500 || f > 300 {
+        if food.cal > 3000 || food.p > 250 || c > 500 || f > 300 || (food.nut ?? [:]).contains(where: { $0.value > (nutrientLimits[$0.key] ?? .infinity) }) {
             return "These numbers are more than one serving would have. Check them, or enter one serving."
         }
+        if let barcode = food.barcode, !(6...14).contains(barcode.count) || !barcode.utf8.allSatisfy({ (48...57).contains($0) }) {
+            return "The barcode should be 6 to 14 digits."
+        }
+        if food.cat.isEmpty || food.cat.count > 20 || !food.cat.utf8.allSatisfy({ (97...122).contains($0) }) { return "This kind of food can't be shared." }
         if let (weight, _) = food.servingWeight, food.p + c + f > weight * 1.02 {
             return "Protein, carbs and fat add up to more than the serving weighs. Check the label."
         }

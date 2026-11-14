@@ -182,6 +182,18 @@ import UniformTypeIdentifiers
             var food = bar; food.name = fine
             assert(SharingRules.problem(food) == nil, fine)
         }
+        // Extra nutrients, the barcode and the kind of food are bounded too, since anyone can write a shared record.
+        var salty = bar; salty.nut = ["sodium": 1_000_000]
+        assert(SharingRules.problem(salty) != nil)
+        salty.nut = ["sodium": 400, "fibre": 3]
+        assert(SharingRules.problem(salty) == nil)
+        assert(SharingRules.knownNutrients(["sodium": 400, "made-up": 5]) == ["sodium": 400] && SharingRules.knownNutrients(["made-up": 5]) == nil)
+        for code in ["12345", "123456789012345", "93100000abc17", "９３１００００００００１７"] { var food = bar; food.barcode = code; assert(SharingRules.problem(food) != nil, code) }
+        var coded = bar; coded.barcode = "9310000000017"
+        assert(SharingRules.problem(coded) == nil)
+        for cat in ["", "Main", "main course", String(repeating: "a", count: 21)] { var food = bar; food.cat = cat; assert(SharingRules.problem(food) != nil, cat) }
+        // Three different reporters hide a food; one person reporting three times doesn't.
+        assert(SharingRules.hiddenByReports([("a", "x"), ("a", "y"), ("a", "z"), ("b", "x"), ("b", "x"), ("b", "x"), ("c", "x"), ("c", "y")]) == ["a"])
         // Record names: deterministic, and only characters CloudKit accepts.
         assert(sharedRecordName(for: "ABC-123") == "food-ABC-123")
         assert(sharedRecordName(for: "off:9300000000001") == "food-off9300000000001")

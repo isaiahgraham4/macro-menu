@@ -46,6 +46,8 @@ protocol SharedFoodBackend: Sendable {
     /// Every shared food, report and moderator removal, newest first, up to the cap.
     func everything() async throws -> (foods: [SharedFood], reports: [SharedFoodReport], removed: Set<String>)
     func foods(barcode: String) async throws -> [SharedFood]
+    /// Every report made about these foods.
+    func reports(on recordNames: [String]) async throws -> [SharedFoodReport]
     func save(_ food: Food) async throws
     func delete(recordName: String) async throws
     func report(recordName: String, reason: ShareReportReason) async throws
@@ -74,37 +76,52 @@ actor CloudKitSharedFoods: SharedFoodBackend {
         return id
     }
 
-    private func all(_ type: String, predicate: NSPredicate = NSPredicate(value: true), keys: [String]? = nil, limit: Int = cap) async throws -> [CKRecord] {
+    /// Reads up to `limit` records, newest first, turning each page into `T` as it arrives so the records themselves
+    /// (which anyone can write, at any size) are never all held at once.
+    private func all<T: Sendable>(_ type: String, predicate: NSPredicate = NSPredicate(value: true), keys: [String]? = nil, limit: Int = cap,
+                                  page: Int = 400, _ make: @Sendable (CKRecord) -> T?) async throws -> [T] {
         let query = CKQuery(recordType: type, predicate: predicate)
         query.sortDescriptors = [NSSortDescriptor(key: "modificationDate", ascending: false)]
-        var (results, cursor) = try await db.records(matching: query, desiredKeys: keys, resultsLimit: min(limit, 400))
-        var records = results.compactMap { try? $0.1.get() }
-        while let next = cursor, records.count < limit {
-            (results, cursor) = try await db.records(continuingMatchFrom: next, desiredKeys: keys, resultsLimit: 400)
-            records += results.compactMap { try? $0.1.get() }
+        var (results, cursor) = try await db.records(matching: query, desiredKeys: keys, resultsLimit: min(limit, page))
+        var read = results.count
+        var made = results.compactMap { (try? $0.1.get()).flatMap(make) }
+        while let next = cursor, read < limit {
+            (results, cursor) = try await db.records(continuingMatchFrom: next, desiredKeys: keys, resultsLimit: page)
+            read += results.count
+            made += results.compactMap { (try? $0.1.get()).flatMap(make) }
         }
-        return records
+        return made
     }
 
     /// An empty result when the record type doesn't exist yet (nothing's been shared in this environment).
-    private func tolerant(_ work: () async throws -> [CKRecord]) async throws -> [CKRecord] {
+    private func tolerant<T>(_ work: () async throws -> [T]) async throws -> [T] {
         do { return try await work() }
         catch let error as CKError where error.code == .unknownItem { return [] }
     }
 
     func everything() async throws -> (foods: [SharedFood], reports: [SharedFoodReport], removed: Set<String>) {
-        let foods = try await tolerant { try await all("SharedFood") }.compactMap(Self.food(from:))
-        let reports = try await tolerant { try await all("SharedFoodReport", keys: ["foodRecord"]) }.compactMap { record -> SharedFoodReport? in
-            guard let name = record["foodRecord"] as? String, let by = record.creatorUserRecordID?.recordName else { return nil }
-            return SharedFoodReport(recordName: name, reporter: by)
-        }
-        let removed = try await tolerant { try await all("SharedFoodRemoved", keys: ["foodRecord"]) }.compactMap { $0["foodRecord"] as? String }
+        let foods = try await tolerant { try await all("SharedFood", keys: Self.foodKeys, page: 100, Self.food(from:)) }
+        let reports = try await tolerant { try await all("SharedFoodReport", keys: ["foodRecord"], Self.report(from:)) }
+        let removed = try await tolerant { try await all("SharedFoodRemoved", keys: ["foodRecord"]) { $0["foodRecord"] as? String } }
         return (foods, reports, Set(removed))
     }
 
     func foods(barcode: String) async throws -> [SharedFood] {
         let trimmed = String(barcode.drop { $0 == "0" })
-        return try await tolerant { try await all("SharedFood", predicate: NSPredicate(format: "barcodeKey == %@", trimmed), limit: 20) }.compactMap(Self.food(from:))
+        return try await tolerant { try await all("SharedFood", predicate: NSPredicate(format: "barcodeKey == %@", trimmed), keys: Self.foodKeys, limit: 20, Self.food(from:)) }
+    }
+
+    func reports(on recordNames: [String]) async throws -> [SharedFoodReport] {
+        guard !recordNames.isEmpty else { return [] }
+        return try await tolerant { try await all("SharedFoodReport", predicate: NSPredicate(format: "foodRecord IN %@", recordNames), keys: ["foodRecord"], Self.report(from:)) }
+    }
+
+    /// The fields the app reads; anything else on a record isn't downloaded.
+    private static let foodKeys = ["name", "serve", "cat", "cal", "p", "c", "f", "nut", "barcode"]
+
+    private static func report(from record: CKRecord) -> SharedFoodReport? {
+        guard let name = record["foodRecord"] as? String, let by = record.creatorUserRecordID?.recordName else { return nil }
+        return SharedFoodReport(recordName: name, reporter: by)
     }
 
     func save(_ food: Food) async throws {
@@ -120,7 +137,7 @@ actor CloudKitSharedFoods: SharedFoodBackend {
         record["p"] = food.p
         record["c"] = food.c
         record["f"] = food.f
-        record["nut"] = food.nut.flatMap { try? JSONEncoder().encode($0) }.flatMap { String(data: $0, encoding: .utf8) }
+        record["nut"] = SharingRules.knownNutrients(food.nut).flatMap { try? JSONEncoder().encode($0) }.flatMap { String(data: $0, encoding: .utf8) }
         record["barcode"] = food.barcode
         record["barcodeKey"] = food.barcode.map { String($0.drop { $0 == "0" }) }
         record["version"] = 1
@@ -145,7 +162,11 @@ actor CloudKitSharedFoods: SharedFoodBackend {
     nonisolated static func food(from record: CKRecord) -> SharedFood? {
         guard let name = record["name"] as? String, let cal = record["cal"] as? Double, let p = record["p"] as? Double,
               let creator = record.creatorUserRecordID?.recordName else { return nil }
-        let nut = (record["nut"] as? String).flatMap { $0.data(using: .utf8) }.flatMap { try? JSONDecoder().decode([String: Double].self, from: $0) }
+        // Anyone signed in to iCloud can write a record, so the text fields are sized before they're kept or decoded.
+        let text = record["nut"] as? String
+        guard name.utf8.count <= 400, ((record["serve"] as? String)?.utf8.count ?? 0) <= 200, (text?.utf8.count ?? 0) <= SharingRules.longestNutrientText,
+              ((record["barcode"] as? String)?.utf8.count ?? 0) <= 14, ((record["cat"] as? String)?.utf8.count ?? 0) <= 20 else { return nil }
+        let nut = SharingRules.knownNutrients(text.flatMap { $0.data(using: .utf8) }.flatMap { try? JSONDecoder().decode([String: Double].self, from: $0) })
         let food = Food(id: "community:" + record.recordID.recordName, chain: Food.community, name: name,
                         cat: (record["cat"] as? String) ?? "main", kj: cal * 4.184, cal: cal, p: p,
                         c: record["c"] as? Double, f: record["f"] as? Double, serve: (record["serve"] as? String) ?? "1 serving",
@@ -184,6 +205,7 @@ actor DemoSharedFoods: SharedFoodBackend {
         let key = barcode.drop { $0 == "0" }
         return foods.filter { $0.food.barcode?.drop { $0 == "0" } == key }
     }
+    func reports(on recordNames: [String]) async throws -> [SharedFoodReport] { reports.filter { recordNames.contains($0.recordName) } }
     func save(_ food: Food) async throws {
         let name = sharedRecordName(for: food.id)
         var copy = food; copy.id = "community:" + name; copy.chain = Food.community; copy.contributor = "demo-me"; copy.shared = nil
@@ -252,11 +274,10 @@ final class CommunityFoods {
     /// Foods others shared that you can see: not removed, not reported by several people or by you, not from someone you've hidden, and not your own.
     var visible: [SharedFood] {
         guard show else { return [] }
-        var reporters: [String: Set<String>] = [:]
-        for report in cache.reports { reporters[report.recordName, default: []].insert(report.reporter) }
+        let hidden = SharingRules.hiddenByReports(cache.reports.map { ($0.recordName, $0.reporter) })
         let mine = Set((store?.data.foods ?? []).map { sharedRecordName(for: $0.id) })
         return cache.foods.filter { item in
-            !cache.removed.contains(item.recordName) && (reporters[item.recordName]?.count ?? 0) < SharingRules.reportsToHide &&
+            !cache.removed.contains(item.recordName) && !hidden.contains(item.recordName) &&
             !reported.contains(item.recordName) && !blocked.contains(item.creator) &&
             item.creator != myID && item.creator != CKCurrentUserDefaultName && !mine.contains(item.recordName)
         }
@@ -286,8 +307,11 @@ final class CommunityFoods {
     func food(barcode: String) async -> Food? {
         guard show else { return nil }
         if let hit = BarcodeLookup.match(barcode, in: visible.map(\.food)) { return hit }
-        guard let found = try? await backend.foods(barcode: barcode) else { return nil }
-        let allowed = Set(found.map(\.recordName)).subtracting(cache.removed).subtracting(reported)
+        // The live lookup has to pass the same report check as the saved list. If the reports can't be read, show nothing.
+        guard let found = try? await backend.foods(barcode: barcode), !found.isEmpty,
+              let live = try? await backend.reports(on: found.map(\.recordName)) else { return nil }
+        let hidden = SharingRules.hiddenByReports((cache.reports + live).map { ($0.recordName, $0.reporter) })
+        let allowed = Set(found.map(\.recordName)).subtracting(cache.removed).subtracting(reported).subtracting(hidden)
         return found.first { allowed.contains($0.recordName) && !blocked.contains($0.creator) && $0.creator != myID }?.food
     }
 

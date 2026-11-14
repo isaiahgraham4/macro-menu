@@ -14,8 +14,8 @@ People can share a food they've added so everyone else finds it in search (marke
 
 | Requirement | What the app does |
 |---|---|
-| Filter objectionable content | `SharingRules.problem`: a whole-word strong-language and slur filter, no links or phone numbers, name 3–80 characters, serving required, carbs and fat required, energy within 15% (or 25 Cal) of 4/4/9 from the macros (alcohol excepted), macros no heavier than the serving, sane maximums. The same check runs on every record the app reads back, so a record written outside the app is ignored. |
-| Report | Food page → Report this food (reason picker). The food is hidden for the reporter immediately. **3 different reporters hide it for everyone.** One report per person per food (`report-<food>-<user>`). |
+| Filter objectionable content | `SharingRules.problem`: a whole-word strong-language and slur filter, no links or phone numbers, name 3–80 characters, serving required, carbs and fat required, energy within 15% (or 25 Cal) of 4/4/9 from the macros (alcohol excepted), macros no heavier than the serving, sane maximums, only known extra nutrients within per-serving limits, a 6 to 14 digit barcode and a one-word category. Oversized text fields are dropped before decoding, and downloads are converted a page at a time. The same check runs on every record the app reads back, so a record written outside the app is ignored. |
+| Report | Food page → Report this food (reason picker). The food is hidden for the reporter immediately. **3 different reporters hide it for everyone.** Barcode scans that fall back to a live query check the food's reports live too. One report per person per food (`report-<food>-<user>`). |
 | Block | Food page → Hide foods from this person. It's kept on the device; Settings → Shared foods brings them back. |
 | Remove | A `SharedFoodRemoved` record with `foodRecord` = the food's record name hides it for everyone. Only the Moderator role can write these. |
 | Terms agreed | One-time alert before the first share. Terms.md has a "Foods you share" section with zero tolerance and a 24-hour review promise. |
