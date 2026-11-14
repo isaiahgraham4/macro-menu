@@ -21,18 +21,18 @@ People can share a food they've added so everyone else finds it in search (marke
 | Terms agreed | One-time alert before the first share. Terms.md has a "Foods you share" section with zero tolerance and a 24-hour review promise. |
 | Contact | `AppInfo.contactEmail` (still nil, so the App Store support link is used). |
 
-## One-time setup before TestFlight or release
+## Setup status and steps
 
-1. **Signing:** the app entitlement now lists `CloudKit` beside `CloudDocuments`. In Xcode open the MacroMenu target → Signing & Capabilities and check that iCloud shows CloudKit ticked for `iCloud.com.isaiahgraham.MacroMenu`, so automatic signing refreshes the profile.
-2. **Schema:** import `cloudkit/schema.ckdb` into Development. A management token comes from CloudKit Console → Settings → Tokens.
-   ```
-   xcrun cktool save-token --type management
-   xcrun cktool import-schema --team-id <TEAM> --container-id iCloud.com.isaiahgraham.MacroMenu --environment development --file cloudkit/schema.ckdb
-   ```
-   Or add the record types and indexes by hand in CloudKit Console. The indexes that matter: `___modTime` SORTABLE and `___recordID` QUERYABLE on all three types, `barcodeKey` QUERYABLE, `foodRecord` QUERYABLE.
-3. **Moderator:** in CloudKit Console → Development → Public database → Records → `Users`, find your own user record and add the `Moderator` role to it. Do the same in Production after deploying.
-4. **Deploy to Production:** CloudKit Console → Deploy Schema Changes. TestFlight and App Store builds use Production, so nothing works there until this is done.
-5. **App Store Connect:** App Privacy → add **User Content → Other User Content**, used for App Functionality, not linked to identity, not used for tracking. Update the hosted privacy policy gist from `MacroMenu/Legal/PrivacyPolicy.md`. In the review notes, say where Report and Hide are and that reports are reviewed within 24 hours.
+Done in Development on 15 Nov 2026 through CloudKit Console (no management token needed):
+- Sidebar → **Import Schema…** with `cloudkit/schema.ckdb`. It validates first, then replaces the environment's whole schema.
+- Moderator role given to Isaiah's user record `_d08d3c20c6b8a5196c36bbfa9ec833d8`: Records → Public Database → query `Users` → open the record → **Security Roles** → tick Moderator → Save. Opening the Console creates your user record in that environment.
+- Checked: an anonymous Debug build in the simulator fetched the shared list from Development without errors. A test record `food-console-test` is still there.
+- Not yet checked: uploading from the app, since the simulator isn't signed in to iCloud.
+
+Still to do:
+1. **Deploy to Production:** sidebar → Deploy Schema Changes. TestFlight and App Store builds use Production. Fields and types can't be removed once there.
+2. **Moderator in Production:** switch to Production, open Records once (that creates your user record there), then tick Moderator on it as above.
+3. **App Store Connect:** App Privacy → add **User Content → Other User Content**, used for App Functionality, not linked to identity, not used for tracking. Update the hosted privacy policy gist from `MacroMenu/Legal/PrivacyPolicy.md`. In review notes, say where Report and Hide are and that reports are reviewed within 24 hours.
 
 ## Reviewing reports
 
