@@ -105,19 +105,26 @@ struct SettingsView: View {
                 } else { Label("More colours come with Even Leanrrr.", systemImage: "lock.fill") }
             }
             Section {
-                LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 5), spacing: 14) {
+                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 3), spacing: 14) {
                     ForEach(PaperTint.allCases) { tint in
                         let locked = !Premium.isUnlocked && tint != .cream
                         let chosen = tint == currentPaper
                         Button { if locked { showPremium = true } else { paperRaw = tint.rawValue } } label: {
                             VStack(spacing: 6) {
                                 PaperSwatch(tint: tint)
-                                    .overlay {
-                                        if chosen { Image(systemName: "checkmark").fontWeight(.bold).foregroundStyle(.tint) }
-                                        else if locked { Image(systemName: "lock.fill").font(.roboto(.caption)).foregroundStyle(.secondary) }
+                                    .frame(width: 74, height: 52)
+                                    .overlay(alignment: .bottomTrailing) {
+                                        // Corner badges, the same as the app icons, so nothing sits on the preview itself.
+                                        if locked {
+                                            Image(systemName: "lock.fill").font(.roboto(.caption2, weight: .bold)).foregroundStyle(.white)
+                                                .frame(width: 22, height: 22).background(Color.black.opacity(0.6), in: Circle()).padding(4)
+                                        }
                                     }
-                                    .background { Circle().strokeBorder(.tint, lineWidth: 2).padding(-5).opacity(chosen ? 1 : 0) }
-                                Text(tint.name).font(.roboto(.caption2, weight: .medium)).foregroundStyle(.secondary)
+                                    .overlay {
+                                        RoundedRectangle(cornerRadius: PaperSwatch.radius, style: .continuous)
+                                            .stroke(chosen ? AnyShapeStyle(.tint) : AnyShapeStyle(.clear), lineWidth: 3)
+                                    }
+                                Text(tint.name).font(.roboto(.caption, weight: .medium))
                             }
                         }
                         .buttonStyle(.plain)
@@ -284,7 +291,7 @@ private struct ColourPackRow: View {
                     swatch(pack.protein)
                     swatch(pack.carbs)
                     swatch(pack.fat)
-                    PaperSwatch(tint: pack.paper, size: 12).padding(.leading, 3)
+                    PaperSwatch(tint: pack.paper, compact: true).frame(width: 18, height: 12).padding(.leading, 3)
                 }.padding(.top, 3).accessibilityHidden(true)
             }
             Spacer(minLength: 8)
@@ -304,24 +311,63 @@ private struct ColourPackRow: View {
     }
 }
 
-/// A background tint as a pale circle with a hairline, its dark-mode shade as a small quarter at the lower right.
-/// The light shade gets most of the space because that's where the tints differ most; the dark ones are all near black.
+/// A background tint as a tiny screen: the light shade with the app's dot grid and two cards, and the dark shade as a
+/// band on the right with its own cards. The light side gets most of the room because that's where the tints differ;
+/// the dark ones are all near black. The cards are what make a faint tint readable, the same way they do in the app.
+/// `compact` draws only the two shades, for the colour pack rows.
 struct PaperSwatch: View {
     let tint: PaperTint
-    var size: CGFloat = 36
+    var compact = false
+
+    static let radius: CGFloat = 10
+    /// The card colour in dark mode (secondary grouped background).
+    private static let darkCard = Color(red: 28 / 255, green: 28 / 255, blue: 30 / 255)
+    private static let ink = Color(red: 0.40, green: 0.31, blue: 0.20)
+
     var body: some View {
-        Circle().fill(tint.color(dark: false))
-            .overlay {
-                Path { p in
-                    let c = CGPoint(x: size / 2, y: size / 2)
-                    p.move(to: c)
-                    p.addArc(center: c, radius: size / 2, startAngle: .degrees(0), endAngle: .degrees(90), clockwise: false)
-                    p.closeSubpath()
-                }.fill(tint.color(dark: true))
+        let shape = RoundedRectangle(cornerRadius: compact ? 3 : Self.radius, style: .continuous)
+        Canvas { context, size in
+            let split = (size.width * (compact ? 0.62 : 0.64)).rounded()
+            let light = CGRect(x: 0, y: 0, width: split, height: size.height)
+            let dark = CGRect(x: split, y: 0, width: size.width - split, height: size.height)
+            context.fill(Path(light), with: .color(tint.color(dark: false)))
+            context.fill(Path(dark), with: .color(tint.color(dark: true)))
+            guard !compact else { return }
+            drawDots(in: light, ink: Self.ink.opacity(0.22), context: context)
+            drawDots(in: dark, ink: Color.white.opacity(0.14), context: context)
+            drawCards(in: light, card: .white, line: Color.black.opacity(0.12), second: true, context: context)
+            drawCards(in: dark, card: Self.darkCard, line: Color.white.opacity(0.16), second: false, context: context)
+        }
+        .clipShape(shape)
+        .overlay { shape.strokeBorder(Color(.separator), lineWidth: 0.5) }
+        .accessibilityHidden(true)
+    }
+
+    /// The order-pad dot grid, scaled down.
+    private func drawDots(in rect: CGRect, ink: Color, context: GraphicsContext) {
+        var dots = Path()
+        let step = 6.0
+        for x in stride(from: rect.minX + step / 2, to: rect.maxX, by: step) {
+            for y in stride(from: rect.minY + step / 2, to: rect.maxY, by: step) {
+                dots.addEllipse(in: CGRect(x: x - 0.55, y: y - 0.55, width: 1.1, height: 1.1))
             }
-            .overlay { Circle().strokeBorder(Color(.separator), lineWidth: 0.5) }
-            .frame(width: size, height: size)
-            .accessibilityHidden(true)
+        }
+        context.fill(dots, with: .color(ink))
+    }
+
+    /// A card like the app's with a short line of text, and on the light side a smaller card under it.
+    /// They're kept small so most of the swatch is the tint itself.
+    private func drawCards(in rect: CGRect, card: Color, line: Color, second: Bool, context: GraphicsContext) {
+        let inset = rect.width > 40 ? 7.0 : 5.0
+        let width = rect.width - inset * 2
+        let first = CGRect(x: rect.minX + inset, y: rect.minY + (rect.height * 0.16).rounded(), width: width, height: (rect.height * 0.3).rounded())
+        context.fill(Path(roundedRect: first, cornerRadius: 3.5, style: .continuous), with: .color(card))
+        let text = CGRect(x: first.minX + 4, y: first.midY - 1.25, width: first.width * 0.5, height: 2.5)
+        context.fill(Path(roundedRect: text, cornerRadius: 1.25), with: .color(line))
+        if second {
+            let below = CGRect(x: first.minX, y: first.maxY + 4, width: (width * 0.62).rounded(), height: (rect.height * 0.18).rounded())
+            context.fill(Path(roundedRect: below, cornerRadius: 3, style: .continuous), with: .color(card))
+        }
     }
 }
 
