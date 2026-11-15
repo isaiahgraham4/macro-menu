@@ -3295,6 +3295,165 @@
    "meat": null,
    "src": null
   },
+  "kfc:zinger-brekkie-tower": {
+   "meat": [
+    "chicken"
+   ],
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ]
+  },
+  "kfc:original-crispy-brekkie-tower": {
+   "meat": null,
+   "src": null,
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ]
+  },
+  "kfc:zinger-bacon-egg-roll": {
+   "meat": [
+    "chicken",
+    "pork"
+   ],
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ]
+  },
+  "kfc:original-crispy-bacon-egg-roll": {
+   "meat": [
+    "pork"
+   ],
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ]
+  },
+  "kfc:zinger-ultimate-brekkie-wrap": {
+   "meat": [
+    "chicken"
+   ],
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
+  },
+  "kfc:original-crispy-ultimate-brekkie-wrap": {
+   "meat": null,
+   "src": null,
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
+  },
+  "kfc:zinger-toastie": {
+   "meat": [
+    "chicken"
+   ],
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ]
+  },
+  "kfc:original-crispy-toastie": {
+   "meat": null,
+   "src": null,
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ]
+  },
+  "kfc:bacon-egg-roll": {
+   "meat": [
+    "pork"
+   ],
+   "src": "name",
+   "al": [
+    "egg",
+    "gluten",
+    "sesame",
+    "soy",
+    "wheat"
+   ]
+  },
+  "kfc:bacon-egg-pocket": {
+   "meat": [
+    "pork"
+   ],
+   "src": "name"
+  },
+  "kfc:blat": {
+   "meat": null,
+   "src": null,
+   "al": [
+    "gluten",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ]
+  },
+  "kfc:avocado-toast": {
+   "meat": null,
+   "src": null,
+   "al": [
+    "gluten",
+    "sesame",
+    "soy",
+    "wheat"
+   ]
+  },
+  "kfc:hashbrown": {
+   "meat": null,
+   "src": null,
+   "al": [],
+   "may": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
+  },
   "kfc:double-tender-burger": {
    "meat": [
     "chicken"
@@ -4068,6 +4227,21 @@
    "vg": "vegetarian"
   },
   "kfc:lipton-peach-ice-tea": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "kfc:black-tea-small-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "kfc:black-tea-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "kfc:black-tea-large-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian"
@@ -17329,6 +17503,22 @@
     "wheat"
    ]
   },
+  "dominos:bbq-steak-1-slice-": {
+   "meat": null,
+   "src": "description",
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "fish",
+    "shellfish"
+   ]
+  },
   "dominos:double-bacon-cheeseburger-1-slice-": {
    "meat": [
     "beef",
@@ -21507,7 +21697,7 @@
    "meat": null,
    "src": null
   },
-  "crust:smoky-beef-brisket-large-": {
+  "crust:smokey-beef-brisket-large-": {
    "meat": null,
    "src": null
   },
@@ -23574,6 +23764,10 @@
    "src": null
   },
   "brumbys:kythera": {
+   "meat": null,
+   "src": null
+  },
+  "brumbys:lamb-sausage-roll": {
    "meat": null,
    "src": null
   },

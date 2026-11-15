@@ -12336,6 +12336,22 @@
 "chicken"
 ],
 "src": "name"
+},
+"brumbys:lamb-sausage-roll": {
+"al": [
+"gluten",
+"milk",
+"soy",
+"sulphites",
+"wheat"
+],
+"may": [
+"egg"
+],
+"meat": [
+"lamb"
+],
+"src": "ingredients"
 }
 }
 }

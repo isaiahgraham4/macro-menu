@@ -2762,6 +2762,144 @@
    "may": [],
    "src": "guide"
   },
+  "kfc:zinger-brekkie-tower": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:original-crispy-brekkie-tower": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:zinger-bacon-egg-roll": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:original-crispy-bacon-egg-roll": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:zinger-ultimate-brekkie-wrap": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:original-crispy-ultimate-brekkie-wrap": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:zinger-toastie": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:original-crispy-toastie": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:bacon-egg-roll": {
+   "al": [
+    "egg",
+    "gluten",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:blat": {
+   "al": [
+    "gluten",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [
+    "egg"
+   ],
+   "src": "guide"
+  },
+  "kfc:avocado-toast": {
+   "al": [
+    "gluten",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "kfc:hashbrown": {
+   "al": [],
+   "may": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "src": "guide"
+  },
   "kfc:double-tender-burger": {
    "al": [
     "egg",
@@ -13412,6 +13550,21 @@
     "wheat"
    ],
    "may": [],
+   "src": "guide"
+  },
+  "dominos:bbq-steak-1-slice-": {
+   "al": [
+    "gluten",
+    "milk",
+    "soy",
+    "sulphites",
+    "wheat"
+   ],
+   "may": [
+    "egg",
+    "fish",
+    "shellfish"
+   ],
    "src": "guide"
   },
   "dominos:double-bacon-cheeseburger-1-slice-": {
