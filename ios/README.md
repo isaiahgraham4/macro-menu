@@ -271,6 +271,8 @@ All tabs use one observable store. Changes are written atomically to
 Existing `foods.json` saves are migrated on first launch; the original is retained.
 A corrupt save is preserved and modifications are blocked instead of overwriting
 it. Historical log entries and saved meals retain their nutrition snapshots.
+The meal being built (Meal tab) takes foods from Add food or Scan barcode. Scan barcode is the same scan screen as Today, its
+button saying "Add to meal", and the editor's button too; the food goes into the meal rather than the log.
 Saved meals open in an editor (Meal tab → tap a saved meal): rename it, change amounts, add foods from the menu or
 swipe items out, then Save (`SavedMealEditor`, `AppStore.updateMeal`, with Undo).
 Logged meals on Today open the same way (tap one): rename, change the meal time or move it to another day, change

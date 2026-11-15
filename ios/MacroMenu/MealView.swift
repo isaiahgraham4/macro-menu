@@ -3,6 +3,7 @@ import SwiftUI
 struct MealView: View {
     @Environment(AppStore.self) private var store
     @State private var picking = false
+    @State private var scanning = false
     @State private var name = ""
     @State private var date = Date()
     @State private var mealTime = MealTime.suggested()
@@ -63,6 +64,7 @@ struct MealView: View {
                     }.padding(.vertical, 4)
                 }.onDelete { offsets in store.change(undo: "Removed from your meal") { $0.tray.remove(atOffsets: offsets) } }
                 Button { picking = true } label: { Label("Add food", systemImage: "plus.circle.fill") }
+                Button { scanning = true } label: { Label("Scan barcode", systemImage: "barcode.viewfinder") }
             }
             if !store.data.tray.isEmpty {
                 Section("Meal totals") { NutritionView(total: Nutrition(store.data.tray)) }
@@ -115,6 +117,10 @@ struct MealView: View {
             .confirmationDialog("Clear this meal?", isPresented: $clear, titleVisibility: .visible) { Button("Clear meal", role: .destructive) { store.change(undo: "Cleared your meal") { $0.tray = [] } } }
             .sheet(isPresented: $picking) { NavigationStack { BrowseView(pick: { portion in store.add([portion]); picking = false }, pickTitle: "Add to meal", quickAddLabel: "Add").toolbar { Button("Done") { picking = false } } } }
             .task(id: LeftTodayModel.key(store, enabled: suggestionsOn)) { await left.refresh(store, enabled: suggestionsOn) }
+            // A packet's barcode goes straight into the meal; the editor is there if the serving needs changing.
+            .sheet(isPresented: $scanning) {
+                BarcodeFoodFlow(savePortion: { store.add([$0]) }, actionTitle: "Add to meal") { store.add([Portion(food: $0)]) }
+            }
             .sheet(isPresented: $makingImage) { NavigationStack { MealSharePreview(name: title, items: store.data.tray) } }
     }
     /// One-tap logging: the same meal as yesterday, or a meal you log often.

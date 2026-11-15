@@ -306,14 +306,16 @@ final class AppStore {
             if let i = state.meals.firstIndex(where: { $0.id == meal.id }) { state.meals[i] = meal }
         }
     }
-    func add(_ items: [Portion]) {
-        if change({ state in
+    @discardableResult func add(_ items: [Portion]) -> Bool {
+        let added = change { state in
             for item in items {
                 if let i = state.tray.firstIndex(where: { $0.food == item.food }) { state.tray[i].quantity += item.quantity }
                 else { var fresh = item; fresh.id = UUID(); state.tray.append(fresh) }
             }
             state.tray = combined(state.tray)
-        }) { notice = "Added to your meal" }
+        }
+        if added { notice = "Added to your meal" }
+        return added
     }
     /// `time` stamps the entry with when it was asked for (a queued widget tap) rather than now.
     @discardableResult func log(_ items: [Portion], name: String, date: Date, clearTray: Bool = false, mealTime: MealTime? = nil, time: Date? = nil) -> Bool {
