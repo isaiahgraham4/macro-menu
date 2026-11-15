@@ -12,6 +12,7 @@ import json
 import pathlib
 import re
 import time
+import urllib.parse
 import urllib.request
 
 OUT = pathlib.Path(__file__).with_name('tacobell-us-source.json')
@@ -22,15 +23,32 @@ CATEGORIES = ['breakfast', 'cantina-menu', 'specialties', 'tacos', 'burritos', '
               'snacks-sweets', 'drinks', 'bowls', 'vegetarian', 'featured', 'best-sellers', 'online-exclusives']
 
 
+# Addresses come from the scraped pages, so only these two https sites are ever opened (no file:, ftp: or other hosts).
+HOSTS = {'www.tacobell.com', 'www.nutritionix.com'}
+OPENER = urllib.request.OpenerDirector()
+for handler in (urllib.request.HTTPSHandler(), urllib.request.HTTPRedirectHandler(), urllib.request.HTTPErrorProcessor(),
+                urllib.request.HTTPDefaultErrorHandler()):
+    OPENER.add_handler(handler)
+
+
+def allowed(url):
+    u = urllib.parse.urlsplit(url)
+    return u.scheme == 'https' and u.hostname in HOSTS and u.username is None and u.port in (None, 443)
+
+
 def get(url):
+    if not allowed(url):
+        raise ValueError('address not allowed')
     for attempt in range(3):
         try:
             req = urllib.request.Request(url, headers={'User-Agent': UA, 'Accept-Language': 'en-US'})
-            with urllib.request.urlopen(req, timeout=40) as r:
+            with OPENER.open(req, timeout=40) as r:
                 if 'tacobell.com.au' in r.geturl():
                     raise SystemExit(f'{url} redirected to the Australian site')
+                if not allowed(r.geturl()):
+                    raise ValueError('redirected to an address that is not allowed')
                 return r.read().decode('utf8', 'ignore')
-        except SystemExit:
+        except (SystemExit, ValueError):
             raise
         except Exception:
             if attempt == 2:
@@ -60,7 +78,7 @@ products = {}
 for cat in CATEGORIES:
     pp = next_data(get(f'{BASE}/food/{cat}'))
     for p in pp.get('products') or []:
-        if p.get('itemType') == 'Product' and p.get('url'):
+        if p.get('itemType') == 'Product' and re.fullmatch(r'/(?!/)[\w\-./%]+', p.get('url') or ''):
             products.setdefault(p['url'], {'code': p['code'], 'name': p['name'], 'category': cat, 'type': p.get('productType')})
     time.sleep(0.4)
 print(f'{len(products)} Taco Bell products')
@@ -70,7 +88,7 @@ for url, info in products.items():
     try:
         p = next_data(get(BASE + url))['product']
     except Exception as e:
-        items.append({**info, 'url': url, 'err': str(e)[:120]})
+        items.append({**info, 'url': url, 'err': type(e).__name__})
         continue
     if not p:
         items.append({**info, 'url': url, 'err': 'page has no product data'})
@@ -84,7 +102,7 @@ for url, info in products.items():
         try:
             items.append({**info, 'url': url, 'size': size, 'variant': vname, 'label_url': nix, **label(nix)})
         except Exception as e:
-            items.append({**info, 'url': url, 'size': size, 'err': str(e)[:120]})
+            items.append({**info, 'url': url, 'size': size, 'err': type(e).__name__})
         time.sleep(0.3)
     time.sleep(0.3)
 

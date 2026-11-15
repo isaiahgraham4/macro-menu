@@ -120,7 +120,7 @@ actor CloudKitSharedFoods: SharedFoodBackend {
     private static let foodKeys = ["name", "serve", "cat", "cal", "p", "c", "f", "nut", "barcode"]
 
     private static func report(from record: CKRecord) -> SharedFoodReport? {
-        guard let name = record["foodRecord"] as? String, let by = record.creatorUserRecordID?.recordName else { return nil }
+        guard let name = record["foodRecord"] as? String, isSharedRecordName(name), let by = record.creatorUserRecordID?.recordName else { return nil }
         return SharedFoodReport(recordName: name, reporter: by)
     }
 
@@ -152,7 +152,7 @@ actor CloudKitSharedFoods: SharedFoodBackend {
     func report(recordName: String, reason: ShareReportReason) async throws {
         let me = try await myID()
         // One report per person per food: reporting again just updates the reason.
-        let id = CKRecord.ID(recordName: "report-\(recordName)-\(me)".prefix(255).description)
+        let id = CKRecord.ID(recordName: reportRecordName(food: recordName, reporter: me))
         let record = CKRecord(recordType: "SharedFoodReport", recordID: id)
         record["foodRecord"] = recordName
         record["reason"] = reason.rawValue
@@ -161,7 +161,7 @@ actor CloudKitSharedFoods: SharedFoodBackend {
 
     nonisolated static func food(from record: CKRecord) -> SharedFood? {
         guard let name = record["name"] as? String, let cal = record["cal"] as? Double, let p = record["p"] as? Double,
-              let creator = record.creatorUserRecordID?.recordName else { return nil }
+              let creator = record.creatorUserRecordID?.recordName, isSharedRecordName(record.recordID.recordName) else { return nil }
         // Anyone signed in to iCloud can write a record, so the text fields are sized before they're kept or decoded.
         let text = record["nut"] as? String
         guard name.utf8.count <= 400, ((record["serve"] as? String)?.utf8.count ?? 0) <= 200, (text?.utf8.count ?? 0) <= SharingRules.longestNutrientText,

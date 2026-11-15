@@ -76,11 +76,17 @@ MEATS = [
 NO_MEAT = r'no meat|no chicken|impossible|plant[- ]based|veggie'
 
 
-def meats(name):
+# Meats a restaurant's own description names outright. Narrower than the name patterns: a description is prose, so only the plain words count.
+DESC_MEATS = {'chicken': r'\bchicken\b', 'beef': r'\bbeef\b', 'pork': r'\bbacon\b|\bsausage\b|\bham\b|\bpork\b|\bpepperoni\b',
+              'fish': r'\bfish\b', 'seafood': r'\bshrimp\b|\bprawns?\b'}
+
+
+def meats(name, desc=None):
     n = name.lower()
     if re.search(NO_MEAT, n):
         return []
-    return [m for m, pat in MEATS if re.search(pat, n)]
+    d = (desc or '').lower()
+    return [m for m, pat in MEATS if re.search(pat, n) or (d and re.search(DESC_MEATS[m], d))]
 
 
 def clean(name):
@@ -93,7 +99,7 @@ def slug(s):
     return re.sub(r'^-|-$', '', re.sub(r'[^a-z0-9]+', '-', s.lower()))
 
 
-def food(chain, name, cat, cal, p, c, f, serve, nut, al=None, may=None, src='labels', vg=None):
+def food(chain, name, cat, cal, p, c, f, serve, nut, al=None, may=None, src='labels', vg=None, desc=None):
     kj = round(cal * 4.184)
     row = {'id': f'{chain}:{slug(name)}', 'chain': chain, 'name': name, 'cat': cat, 'kj': kj, 'cal': cal,
            'p': p, 'c': c, 'f': f, 'serve': serve or '1 serving'}
@@ -101,7 +107,7 @@ def food(chain, name, cat, cal, p, c, f, serve, nut, al=None, may=None, src='lab
     if nut:
         row['nut'] = nut
     diet = {}
-    m = meats(name) if cat in ('main', 'breakfast', 'side') else []
+    m = meats(name, desc) if cat in ('main', 'breakfast', 'side') else []
     if m or (cat in ('main', 'breakfast', 'side') and re.search(NO_MEAT, name.lower())):
         diet['meat'] = m
     if al is not None:
@@ -295,15 +301,15 @@ def wendys():
                 entree = allergen_keys([w for w in raw[:raw.index('Dressing')] if w != 'Entree'], f"Wendy's {name}")
             else:
                 entree = al
-            rows.append(food('us-wendys', f'{name} (no dressing)', cat, o['cal'], o['protein'], o['carbs'], o['fat'], 'salad without dressing', nut, entree))
+            rows.append(food('us-wendys', f'{name} (no dressing)', cat, o['cal'], o['protein'], o['carbs'], o['fat'], 'salad without dressing', nut, entree, desc=o.get('desc')))
             dc, dfat, dsat, dna, dcarb, dfib, dsug, dp, dal = WENDYS_DRESSINGS[s]
             add = lambda a, b: None if a is None else round(a + b, 1)
             nut2 = {'sat': add(o['sat'], dsat), 'sugar': add(o['sugar'], dsug), 'fibre': add(o['fibre'], dfib), 'sodium': add(o['sodium'], dna)}
             both = sorted(set(al) | set(allergen_keys(dal, f"Wendy's {name} dressing")))
             rows.append(food('us-wendys', f'{name} (with dressing)', cat, o['cal'] + dc, add(o['protein'], dp), add(o['carbs'], dcarb),
-                             add(o['fat'], dfat), 'salad with its dressing packet', nut2, both))
+                             add(o['fat'], dfat), 'salad with its dressing packet', nut2, both, desc=o.get('desc')))
             continue
-        rows.append(food('us-wendys', name, cat, o['cal'], o['protein'], o['carbs'], o['fat'], size, nut, al))
+        rows.append(food('us-wendys', name, cat, o['cal'], o['protein'], o['carbs'], o['fat'], size, nut, al, desc=o.get('desc')))
     return rows, data['checked']
 
 

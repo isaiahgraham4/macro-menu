@@ -198,6 +198,12 @@ import UniformTypeIdentifiers
         assert(sharedRecordName(for: "ABC-123") == "food-ABC-123")
         assert(sharedRecordName(for: "off:9300000000001") == "food-off9300000000001")
         assert(sharedRecordName(for: String(repeating: "a", count: 400)).count == 205)
+        // Reports on a long food name still differ per reporter, and only names the app writes are read back.
+        let longFood = sharedRecordName(for: String(repeating: "a", count: 400))
+        assert(reportRecordName(food: longFood, reporter: "_x") != reportRecordName(food: longFood, reporter: "_y"))
+        assert(reportRecordName(food: "food-abc", reporter: "_x") == "report-food-abc-_x" && reportRecordName(food: longFood, reporter: "_x").count <= 255)
+        assert(isSharedRecordName(longFood) && isSharedRecordName("food-ABC-123") && !isSharedRecordName("food-") && !isSharedRecordName("other-1"))
+        assert(!isSharedRecordName("food-" + String(repeating: "a", count: 201)) && !isSharedRecordName("food-a b"))
         // Search: a community food comes after a published food that matches as well, and says "Community".
         let official = Food(id: "a", chain: "kfc", name: "Chicken wrap", kj: 1500, cal: 360, p: 20, c: 30, f: 15)
         let shared = Food(id: "community:food-x", chain: Food.community, name: "Chicken wrap", kj: 1500, cal: 360, p: 40, c: 20, f: 10)
@@ -1119,8 +1125,16 @@ import UniformTypeIdentifiers
         // Menu updates: only a newer menu in a known format, with every item valid, replaces the one in use.
         assert(catalog.format == MenuUpdates.format && catalog.published != nil && catalog.revision != nil)
         assert(MenuUpdates.url?.scheme == "https" && MenuUpdates.url?.host == "gist.githubusercontent.com" && MenuUpdates.url?.lastPathComponent == "MenuData.json")
-        var newer = catalog; newer.published = "2099-01-01T00:00:00.000Z"
+        var newer = catalog; newer.published = Date().formatted(Date.ISO8601FormatStyle(includingFractionalSeconds: true))
         assert(MenuUpdates.acceptable(newer, over: catalog))
+        // A date from the future, or one that isn't a date, never wins, and a menu carrying one can't block a real menu.
+        assert(MenuUpdates.publishedDate(catalog.published) != nil && MenuUpdates.publishedDate("2026-11-16T03:04:05Z") != nil && MenuUpdates.publishedDate("zzz") == nil)
+        var farFuture = catalog; farFuture.published = "2099-01-01T00:00:00.000Z"
+        var notADate = catalog; notADate.published = "zzz"
+        var undated = catalog; undated.published = nil
+        assert(!MenuUpdates.acceptable(farFuture, over: catalog) && !MenuUpdates.acceptable(notADate, over: catalog) && !MenuUpdates.acceptable(undated, over: catalog))
+        assert(!MenuUpdates.acceptable(farFuture, over: undated) && !MenuUpdates.acceptable(notADate, over: undated))
+        assert(MenuUpdates.acceptable(newer, over: farFuture) && MenuUpdates.acceptable(newer, over: notADate) && MenuUpdates.acceptable(catalog, over: farFuture))
         assert(!MenuUpdates.acceptable(catalog, over: catalog))
         assert(!MenuUpdates.acceptable(catalog, over: newer))
         var future = newer; future.format = 2; assert(!MenuUpdates.acceptable(future, over: catalog))
@@ -1131,6 +1145,8 @@ import UniformTypeIdentifiers
         let cachedMenu = root.appending(path: "cached-menu.json")
         try JSONEncoder().encode(newer).write(to: cachedMenu)
         assert(MenuUpdates.best(bundled: catalog, cachedAt: cachedMenu).published == newer.published)
+        try JSONEncoder().encode(farFuture).write(to: cachedMenu)
+        assert(MenuUpdates.best(bundled: catalog, cachedAt: cachedMenu).published == catalog.published)
         try Data("not json".utf8).write(to: cachedMenu)
         assert(MenuUpdates.best(bundled: catalog, cachedAt: cachedMenu).published == catalog.published)
         assert(MenuUpdates.best(bundled: catalog, cachedAt: root.appending(path: "missing.json")).published == catalog.published)

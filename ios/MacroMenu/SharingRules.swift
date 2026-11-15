@@ -91,3 +91,18 @@ nonisolated func sharedRecordName(for foodID: String) -> String {
     let safe = foodID.unicodeScalars.filter { CharacterSet.alphanumerics.contains($0) || $0 == "-" || $0 == "_" }
     return "food-" + String(String(String.UnicodeScalarView(safe)).prefix(200))
 }
+
+/// Whether a record name is one this app writes: "food-" and up to 200 letters, digits, hyphens or underscores.
+/// Anyone can write a record under any name, so other shapes are ignored when read back.
+nonisolated func isSharedRecordName(_ name: String) -> Bool {
+    guard name.hasPrefix("food-") else { return false }
+    let rest = name.dropFirst(5).unicodeScalars
+    return (1...200).contains(rest.count) && rest.allSatisfy { CharacterSet.alphanumerics.contains($0) || $0 == "-" || $0 == "_" }
+}
+
+/// One report per person per food. The reporter comes first so a long food name can never push it off the end.
+nonisolated func reportRecordName(food recordName: String, reporter: String) -> String {
+    let plain = "report-\(recordName)-\(reporter)"
+    if plain.count <= 255 { return plain }
+    return String("report-\(String(reporter.prefix(100)))-\(recordName)".prefix(255))
+}

@@ -18,12 +18,27 @@ enum MenuUpdates {
     private static let interval: TimeInterval = 6 * 60 * 60
     private static let maxBytes = 12_000_000
 
+    /// How far ahead of this device's clock a menu's date may be: enough for a wrong time zone, not for a made-up date.
+    private static let clockSlack: TimeInterval = 24 * 60 * 60
+
+    /// When a menu says it was published, or nil when that isn't a date and time.
+    static func publishedDate(_ text: String?) -> Date? {
+        guard let text else { return nil }
+        return (try? Date(text, strategy: Date.ISO8601FormatStyle(includingFractionalSeconds: true))) ?? (try? Date(text, strategy: .iso8601))
+    }
+
     /// Whether `candidate` can replace `current`.
-    static func acceptable(_ candidate: MenuCatalog, over current: MenuCatalog) -> Bool {
+    static func acceptable(_ candidate: MenuCatalog, over current: MenuCatalog, now: Date = Date()) -> Bool {
         guard candidate.format == format, !candidate.chains.isEmpty,
               candidate.foods.count >= current.foods.count / 2 else { return false }
-        if let published = current.published {
-            guard let newer = candidate.published, newer > published else { return false }
+        let latest = now.addingTimeInterval(clockSlack)
+        if let text = candidate.published {
+            // A date that can't be read, or one from the future, would outrank every real menu after it.
+            guard let date = publishedDate(text), date <= latest else { return false }
+            // A menu in use whose own date is unreadable or ahead of the clock can't hold a real one back.
+            if let mine = publishedDate(current.published), mine <= latest, date <= mine { return false }
+        } else if current.published != nil {
+            return false
         }
         let chains = Set(candidate.chains.map(\.id)), ids = candidate.foods.map(\.id)
         return Set(ids).count == ids.count && candidate.foods.allSatisfy { $0.isValid && chains.contains($0.chain) }
