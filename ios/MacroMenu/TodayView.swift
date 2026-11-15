@@ -19,6 +19,7 @@ struct TodayView: View {
     @State private var showingCalendar = false
     @State private var now = Date()
     @State private var mealTime = MealTime.suggested()
+    @State private var sharing: MealShareRequest?
     @State private var tip: FeatureTip?
     @State private var planning = false
     @State private var breakdown = false
@@ -268,7 +269,15 @@ struct TodayView: View {
                     Button { choosing = true } label: { TileLabel(title: "Log a menu item", systemImage: "fork.knife") }
                     Button { quick = true } label: { TileLabel(title: "Enter a food", systemImage: "square.and.pencil") }
                     if !entries.isEmpty {
-                        ShareLink(item: mealText("\(date.formatted(date: .complete,time: .omitted))", entries.flatMap(\.items))) { TileLabel(title: "Share day", systemImage: "square.and.arrow.up") }
+                        Menu {
+                            Button("Whole day as image", systemImage: "photo") { sharing = .day(entries, on: date) }
+                            Section("One meal as image") {
+                                ForEach(MealTime.allCases.filter { time in entries.contains { $0.mealTime == time } }) { time in
+                                    Button(time.title) { sharing = .meal(time, entries, on: date) }
+                                }
+                            }
+                            ShareLink("Day as text", item: mealText("\(date.formatted(date: .complete,time: .omitted))", entries.flatMap(\.items)))
+                        } label: { TileLabel(title: "Share day", systemImage: "square.and.arrow.up") }
                     }
                 }
             }
@@ -281,6 +290,7 @@ struct TodayView: View {
                 }
             }
             .navigationDestination(isPresented: $breakdown) { DayBreakdownView(date: date, goals: goals) }
+            .sheet(item: $sharing) { request in NavigationStack { MealSharePreview(request) } }
             .sheet(isPresented: $showingCalendar) {
                 NavigationStack { TrackingCalendarView(selectedDate: $date) }
             }
@@ -401,6 +411,7 @@ struct MealTimeDetailView: View {
     let date: Date
     @State private var editing: LogEntry?
     @State private var savingRecipe = false
+    @State private var sharing: MealShareRequest?
 
     private var entries: [LogEntry] {
         (store.data.logs[dayKey(date)] ?? []).filter { $0.mealTime == mealTime }
@@ -445,6 +456,7 @@ struct MealTimeDetailView: View {
             }
             if !entries.isEmpty {
                 Section {
+                    Button { sharing = .meal(mealTime, entries, on: date) } label: { Label("Share as image", systemImage: "photo") }
                     Button { savingRecipe = true } label: { Label("Save as a recipe", systemImage: "carrot") }
                 } footer: {
                     Text("Puts everything in \(mealTime.title.lowercased()) into one recipe in My foods, so you can log it again in one go and change the amounts each time.")
@@ -452,6 +464,7 @@ struct MealTimeDetailView: View {
             }
         }
         .navigationTitle(mealTime.title)
+        .sheet(item: $sharing) { request in NavigationStack { MealSharePreview(request) } }
         .sheet(isPresented: $savingRecipe) {
             NavigationStack {
                 RecipeEditor(food: .recipeDraft(name: recipeName, from: entries.flatMap(\.items)), imported: true) { store.notice = "Saved to My foods" }

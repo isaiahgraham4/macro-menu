@@ -45,6 +45,40 @@ struct IngredientRows: View {
     }
 }
 
+/// One meal time on a whole-day card: "Lunch" and what was logged to it.
+struct MealShareGroup: Hashable {
+    var title: String
+    var items: [Portion]
+}
+
+/// What a share-image sheet should draw: one meal, one meal time, or a whole day split by meal.
+struct MealShareRequest: Identifiable {
+    let id = UUID()
+    var name: String
+    var items: [Portion]
+    var subtitle: String?
+    var groups: [MealShareGroup] = []
+
+    /// A day's log as a card: every meal time with something in it, then anything not given one.
+    static func day(_ entries: [LogEntry], on date: Date) -> MealShareRequest {
+        var groups = MealTime.allCases.compactMap { time -> MealShareGroup? in
+            let items = entries.filter { $0.mealTime == time }.flatMap(\.items)
+            return items.isEmpty ? nil : MealShareGroup(title: time.title, items: items)
+        }
+        let other = entries.filter { $0.mealTime == nil }.flatMap(\.items)
+        if !other.isEmpty { groups.append(MealShareGroup(title: "Other", items: other)) }
+        return MealShareRequest(name: date.formatted(.dateTime.weekday(.wide)), items: entries.flatMap(\.items),
+                                subtitle: date.formatted(.dateTime.day().month(.wide).year()), groups: groups)
+    }
+
+    /// Everything logged to one meal time, such as the day's lunch.
+    static func meal(_ time: MealTime, _ entries: [LogEntry], on date: Date) -> MealShareRequest {
+        let logged = entries.filter { $0.mealTime == time }
+        return MealShareRequest(name: logged.count == 1 ? logged[0].name : time.title, items: logged.flatMap(\.items),
+                                subtitle: "\(time.title) · \(date.formatted(.dateTime.day().month(.abbreviated)))")
+    }
+}
+
 /// A 9:16 card for an Instagram or TikTok story: the meal's name, calories and macros, and what's in it.
 struct MealShareCard: View {
     @AppStorage(AppAccent.storageKey) private var accentRaw = AppAccent.standard.rawValue
@@ -55,6 +89,8 @@ struct MealShareCard: View {
     var items: [Portion]
     /// "Dinner · 21 Oct", for a logged meal.
     var subtitle: String?
+    /// For a whole day: a row per meal time in place of the food list.
+    var groups: [MealShareGroup] = []
 
     static let size = CGSize(width: 360, height: 640)
 
@@ -99,7 +135,27 @@ struct MealShareCard: View {
                 macro("Fat", total.f, missing: total.missingFat, key: "f")
             }.padding(.top, 6)
 
-            if !lines.isEmpty {
+            if !groups.isEmpty {
+                Text("BY MEAL").font(.roboto(.caption, weight: .bold)).foregroundStyle(.white.opacity(0.6))
+                    .padding(.top, 26).padding(.bottom, 8)
+                VStack(alignment: .leading, spacing: 12) {
+                    ForEach(groups, id: \.self) { group in
+                        VStack(alignment: .leading, spacing: 2) {
+                            HStack(alignment: .firstTextBaseline) {
+                                Text(group.title).font(.roboto(.subheadline, weight: .semibold))
+                                Spacer(minLength: 8)
+                                Text("\(Nutrition(group.items).cal.rounded().number) Cal").font(.roboto(.subheadline))
+                                    .foregroundStyle(.white.opacity(0.6)).monospacedDigit()
+                            }
+                            // Fewer rows to fit means fewer food names under each meal, down to just the totals.
+                            if rows > 2 {
+                                Text(mealLines(group.items).map(\.food.name).joined(separator: ", "))
+                                    .font(.roboto(.caption)).foregroundStyle(.white.opacity(0.6)).lineLimit(rows > 5 ? 2 : 1)
+                            }
+                        }
+                    }
+                }
+            } else if !lines.isEmpty {
                 Text(isRecipe ? "INGREDIENTS" : "IN THIS MEAL").font(.roboto(.caption, weight: .bold)).foregroundStyle(.white.opacity(0.6))
                     .padding(.top, 26).padding(.bottom, 8)
                 let shown = lines.count > rows ? max(rows - 1, 0) : rows
@@ -130,8 +186,8 @@ struct MealShareCard: View {
     }
 
     /// The card drawn at three times its size: 1080 × 1920, a story's own size.
-    @MainActor static func image(name: String, items: [Portion], subtitle: String? = nil) -> UIImage? {
-        let renderer = ImageRenderer(content: MealShareCard(name: name, items: items, subtitle: subtitle))
+    @MainActor static func image(name: String, items: [Portion], subtitle: String? = nil, groups: [MealShareGroup] = []) -> UIImage? {
+        let renderer = ImageRenderer(content: MealShareCard(name: name, items: items, subtitle: subtitle, groups: groups))
         renderer.scale = 3
         return renderer.uiImage
     }
@@ -168,6 +224,7 @@ struct ShareCardActions: View {
     var image: UIImage
     var shareTitle = "Share image"
     var hint = "Post it to an Instagram or TikTok story, or paste it into a chat."
+    @AppStorage(AppAccent.storageKey) private var accentRaw = AppAccent.standard.rawValue
     @State private var status: Status?
 
     enum Status: Equatable { case saved, copied, saveFailed }
@@ -178,6 +235,7 @@ struct ShareCardActions: View {
                 Label(shareTitle, systemImage: "square.and.arrow.up").frame(maxWidth: .infinity)
             }
             .buttonStyle(.borderedProminent).controlSize(.large)
+            .tint(AppAccent.resolvedColor(accentRaw))
             HStack(spacing: 10) {
                 Button { Task { await save() } } label: {
                     Label("Save to Photos", systemImage: "square.and.arrow.down").frame(maxWidth: .infinity)
@@ -260,8 +318,16 @@ struct MealSharePreview: View {
     var name: String
     var items: [Portion]
     var subtitle: String?
+    var groups: [MealShareGroup] = []
+
+    init(name: String, items: [Portion], subtitle: String? = nil, groups: [MealShareGroup] = []) {
+        self.name = name; self.items = items; self.subtitle = subtitle; self.groups = groups
+    }
+    init(_ request: MealShareRequest) {
+        self.init(name: request.name, items: request.items, subtitle: request.subtitle, groups: request.groups)
+    }
 
     var body: some View {
-        StoryImagePreview(name: name) { MealShareCard.image(name: name, items: items, subtitle: subtitle) }
+        StoryImagePreview(name: name) { MealShareCard.image(name: name, items: items, subtitle: subtitle, groups: groups) }
     }
 }

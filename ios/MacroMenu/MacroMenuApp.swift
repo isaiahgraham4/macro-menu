@@ -23,11 +23,29 @@ struct MacroMenuApp: App {
                         }
                     }
                 }
+                // `-demoShareDay` opens a whole day's share image, made from sample food.
+                .sheet(isPresented: .constant(CommandLine.arguments.contains("-demoShareDay"))) {
+                    NavigationStack { MealSharePreview(.day(DemoDay.entries, on: Date())) }
+                }
                 #endif
         }
         .commands { LeanrCommands() }
     }
 }
+
+#if DEBUG
+private enum DemoDay {
+    static func entry(_ name: String, _ time: MealTime, _ foods: [(String, Double, Double, Double, Double)]) -> LogEntry {
+        LogEntry(name: name, items: foods.map { Portion(food: Food(name: $0.0, kj: $0.1 * 4.184, cal: $0.1, p: $0.2, c: $0.3, f: $0.4)) }, mealTime: time)
+    }
+    static let entries = [
+        entry("Oats", .breakfast, [("Rolled oats", 300, 10, 54, 6), ("Banana", 105, 1, 27, 0)]),
+        entry("Big Mac meal", .lunch, [("Big Mac", 563, 26, 45, 31), ("Medium fries", 320, 4, 43, 15)]),
+        entry("Chicken bowl", .dinner, [("Grilled chicken", 280, 52, 0, 6), ("Rice", 260, 5, 57, 1), ("Broccoli", 50, 4, 10, 0)]),
+        entry("Protein bar", .snacks, [("Protein bar", 200, 20, 22, 7)]),
+    ]
+}
+#endif
 
 /// Shortcuts for an iPad or any attached keyboard. Holding ⌘ lists them, so they teach themselves.
 private struct LeanrCommands: Commands {
