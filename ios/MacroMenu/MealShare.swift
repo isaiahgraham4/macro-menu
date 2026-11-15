@@ -1,3 +1,4 @@
+import Photos
 import SwiftUI
 import UniformTypeIdentifiers
 
@@ -136,24 +137,104 @@ struct MealShareCard: View {
     }
 }
 
-/// A rendered card shared as its own full-size PNG. Sharing a SwiftUI `Image` hands over a re-encoded copy, which looks softer once copied or posted.
-struct ShareImage: Transferable {
-    var image: UIImage
+extension UIImage {
+    /// The same picture redrawn at 1×, so its pixel size is its size. A 3× render is 1080 × 1920 pixels but says 360 × 640,
+    /// and apps that go by the stated size (pasting into Snapchat, for one) blow up the small version and it looks blurry.
+    var flattened: UIImage {
+        guard scale != 1 else { return self }
+        let format = UIGraphicsImageRendererFormat.default(); format.scale = 1; format.opaque = true
+        let pixels = CGSize(width: (size.width * scale).rounded(), height: (size.height * scale).rounded())
+        return UIGraphicsImageRenderer(size: pixels, format: format).image { _ in draw(in: CGRect(origin: .zero, size: pixels)) }
+    }
+}
 
-    static var transferRepresentation: some TransferRepresentation {
-        DataRepresentation(exportedContentType: .png) { value in
-            guard let data = value.image.pngData() else { throw CocoaError(.fileWriteUnknown) }
-            return data
+/// The share sheet for a picture, handed the full-size image itself so Copy, Save Image and every app get all of it.
+@MainActor enum ImageShareSheet {
+    static func present(_ image: UIImage) {
+        let sheet = UIActivityViewController(activityItems: [image.flattened], applicationActivities: nil)
+        guard let root = UIApplication.shared.connectedScenes.compactMap({ ($0 as? UIWindowScene)?.keyWindow }).first?.rootViewController else { return }
+        var top = root
+        while let presented = top.presentedViewController { top = presented }
+        // On iPad the sheet is a popover and needs somewhere to point.
+        sheet.popoverPresentationController?.sourceView = top.view
+        sheet.popoverPresentationController?.sourceRect = CGRect(x: top.view.bounds.midX, y: top.view.bounds.maxY - 80, width: 0, height: 0)
+        sheet.popoverPresentationController?.permittedArrowDirections = .down
+        top.present(sheet, animated: true)
+    }
+}
+
+/// Share, Save to Photos and Copy for a rendered story card, each handing over the full 1080 × 1920 picture.
+struct ShareCardActions: View {
+    var image: UIImage
+    var shareTitle = "Share image"
+    var hint = "Post it to an Instagram or TikTok story, or paste it into a chat."
+    @State private var status: Status?
+
+    enum Status: Equatable { case saved, copied, saveFailed }
+
+    var body: some View {
+        VStack(spacing: 10) {
+            Button { ImageShareSheet.present(image) } label: {
+                Label(shareTitle, systemImage: "square.and.arrow.up").frame(maxWidth: .infinity)
+            }
+            .buttonStyle(.borderedProminent).controlSize(.large)
+            HStack(spacing: 10) {
+                Button { Task { await save() } } label: {
+                    Label("Save to Photos", systemImage: "square.and.arrow.down").frame(maxWidth: .infinity)
+                }
+                Button(action: copy) {
+                    Label("Copy", systemImage: "doc.on.doc").frame(maxWidth: .infinity)
+                }
+            }
+            .buttonStyle(.bordered).controlSize(.large)
+            Text(message).font(.roboto(.caption)).foregroundStyle(status == .saveFailed ? .red : .secondary)
+                .multilineTextAlignment(.center).balanced()
+                .contentTransition(.opacity).animation(.default, value: status)
+        }
+        .sensoryFeedback(trigger: status) { _, new in new == .saveFailed ? .error : new == nil ? nil : .success }
+    }
+
+    private var message: String {
+        switch status {
+        case .saved: "Saved to Photos."
+        case .copied: "Copied. Paste it into a story or chat."
+        case .saveFailed: "Couldn't save. Let Leanrrr add photos in Settings > Privacy > Photos."
+        case nil: hint
+        }
+    }
+
+    private func copy() {
+        guard let png = image.flattened.pngData() else { return }
+        UIPasteboard.general.setData(png, forPasteboardType: UTType.png.identifier)
+        status = .copied
+    }
+
+    private func save() async {
+        guard let png = image.flattened.pngData() else { return }
+        status = await Self.addToPhotos(png) ? .saved : .saveFailed
+    }
+
+    /// Adds the PNG to the photo library as it is, asking for add-only access first. Off the main actor:
+    /// Photos runs the change block on its own queue, and a main-actor closure there traps.
+    nonisolated private static func addToPhotos(_ png: Data) async -> Bool {
+        let access = await PHPhotoLibrary.requestAuthorization(for: .addOnly)
+        guard access == .authorized || access == .limited else { return false }
+        do {
+            try await PHPhotoLibrary.shared().performChanges {
+                PHAssetCreationRequest.forAsset().addResource(with: .photo, data: png, options: nil)
+            }
+            return true
+        } catch {
+            return false
         }
     }
 }
 
-/// Shows the story card before sharing it, so you see what you're posting.
-struct MealSharePreview: View {
+/// Shows a story card before sharing it, so you see what you're posting, with ways to share, save or copy it.
+struct StoryImagePreview: View {
     @Environment(\.dismiss) private var dismiss
     var name: String
-    var items: [Portion]
-    var subtitle: String?
+    var make: @MainActor () -> UIImage?
     @State private var image: UIImage?
 
     var body: some View {
@@ -161,13 +242,8 @@ struct MealSharePreview: View {
             if let image {
                 Image(uiImage: image).resizable().scaledToFit()
                     .clipShape(RoundedRectangle(cornerRadius: 18))
-                    .accessibilityLabel("Share image of \(name)")
-                ShareLink(item: ShareImage(image: image), preview: SharePreview(name, image: Image(uiImage: image))) {
-                    Label("Share image", systemImage: "square.and.arrow.up").frame(maxWidth: .infinity)
-                }
-                .buttonStyle(.borderedProminent).controlSize(.large)
-                Text("Post it to an Instagram or TikTok story, or save it to Photos from the share sheet.")
-                    .font(.roboto(.caption)).foregroundStyle(.secondary).multilineTextAlignment(.center).balanced()
+                    .accessibilityLabel("Share image: \(name)")
+                ShareCardActions(image: image)
             } else {
                 ShareCardSkeleton()
             }
@@ -175,6 +251,17 @@ struct MealSharePreview: View {
         .padding()
         .navigationTitle("Share image").navigationBarTitleDisplayMode(.inline)
         .toolbar { ToolbarItem(placement: .cancellationAction) { Button("Done") { dismiss() } } }
-        .task { image = MealShareCard.image(name: name, items: items, subtitle: subtitle) }
+        .task { image = make() }
+    }
+}
+
+/// A meal's story card, previewed before sharing.
+struct MealSharePreview: View {
+    var name: String
+    var items: [Portion]
+    var subtitle: String?
+
+    var body: some View {
+        StoryImagePreview(name: name) { MealShareCard.image(name: name, items: items, subtitle: subtitle) }
     }
 }

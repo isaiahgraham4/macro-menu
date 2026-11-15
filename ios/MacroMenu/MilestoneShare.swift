@@ -63,30 +63,9 @@ extension Moment {
 
 /// Shows a milestone's story card before sharing it, so you see what you're posting.
 struct MomentSharePreview: View {
-    @Environment(\.dismiss) private var dismiss
     let moment: Moment
-    @State private var image: UIImage?
 
     var body: some View {
-        let title = moment.copy.title
-        VStack(spacing: 20) {
-            if let image {
-                Image(uiImage: image).resizable().scaledToFit()
-                    .clipShape(RoundedRectangle(cornerRadius: 18))
-                    .accessibilityLabel("Share image: \(title)")
-                ShareLink(item: ShareImage(image: image), preview: SharePreview(title, image: Image(uiImage: image))) {
-                    Label("Share image", systemImage: "square.and.arrow.up").frame(maxWidth: .infinity)
-                }
-                .buttonStyle(.borderedProminent).controlSize(.large)
-                Text("Post it to an Instagram or TikTok story, or save it to Photos from the share sheet.")
-                    .font(.roboto(.caption)).foregroundStyle(.secondary).multilineTextAlignment(.center).balanced()
-            } else {
-                ShareCardSkeleton()
-            }
-        }
-        .padding()
-        .navigationTitle("Share image").navigationBarTitleDisplayMode(.inline)
-        .toolbar { ToolbarItem(placement: .cancellationAction) { Button("Done") { dismiss() } } }
-        .task { image = moment.storyCard.image }
+        StoryImagePreview(name: moment.copy.title) { moment.storyCard.image }
     }
 }

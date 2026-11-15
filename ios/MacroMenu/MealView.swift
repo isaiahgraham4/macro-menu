@@ -7,7 +7,7 @@ struct MealView: View {
     @State private var date = Date()
     @State private var mealTime = MealTime.suggested()
     @State private var clear = false
-    @State private var image: UIImage?
+    @State private var makingImage = false
     @State private var left = LeftTodayModel()
     @AppStorage(TodaySuggestions.storageKey) private var suggestionsOn = true
     /// "Log again" cards widen with the text size.
@@ -87,13 +87,7 @@ struct MealView: View {
                         } label: { TileLabel(title: "Save for later", systemImage: "bookmark") }
                         ShareLink(item: mealText(title, store.data.tray)) { TileLabel(title: "Share text", systemImage: "square.and.arrow.up") }
                         Button { UIPasteboard.general.string = mealText(title,store.data.tray); store.notice = "Meal copied" } label: { TileLabel(title: "Copy", systemImage: "doc.on.doc") }
-                        Button {
-                            let renderer = ImageRenderer(content: MealShareCard(name: title, items: store.data.tray)); renderer.scale = 3
-                            image = renderer.uiImage
-                        } label: { TileLabel(title: "Make image", systemImage: "photo") }
-                    }
-                    if let image {
-                        ShareLink(item: ShareImage(image: image), preview: SharePreview(title, image: Image(uiImage: image))) { Label("Share meal image", systemImage: "photo.on.rectangle") }
+                        Button { makingImage = true } label: { TileLabel(title: "Make image", systemImage: "photo") }
                     }
                 }
             }
@@ -121,8 +115,7 @@ struct MealView: View {
             .confirmationDialog("Clear this meal?", isPresented: $clear, titleVisibility: .visible) { Button("Clear meal", role: .destructive) { store.change(undo: "Cleared your meal") { $0.tray = [] } } }
             .sheet(isPresented: $picking) { NavigationStack { BrowseView(pick: { portion in store.add([portion]); picking = false }, pickTitle: "Add to meal", quickAddLabel: "Add").toolbar { Button("Done") { picking = false } } } }
             .task(id: LeftTodayModel.key(store, enabled: suggestionsOn)) { await left.refresh(store, enabled: suggestionsOn) }
-            .onChange(of: store.data.tray) { image = nil }
-            .onChange(of: name) { image = nil }
+            .sheet(isPresented: $makingImage) { NavigationStack { MealSharePreview(name: title, items: store.data.tray) } }
     }
     /// One-tap logging: the same meal as yesterday, or a meal you log often.
     @ViewBuilder private var quickLog: some View {

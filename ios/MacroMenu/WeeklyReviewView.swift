@@ -4,6 +4,7 @@ struct WeeklyReviewView: View {
     @Environment(AppStore.self) private var store
     @State private var weeksBack = 0
     @State private var image: UIImage?
+    @State private var sharing = false
     private var review: WeeklyReview {
         let end = Calendar.current.date(byAdding: .day, value: -7 * weeksBack, to: Date()) ?? Date()
         return WeeklyReview.make(store.data, goals: store.goals, ending: end)
@@ -45,14 +46,15 @@ struct WeeklyReviewView: View {
                 }
                 if let image {
                     Section {
-                        ShareLink(item: ShareImage(image: image), preview: SharePreview("My week in Leanrrr", image: Image(uiImage: image))) {
-                            Label("Share this week", systemImage: "square.and.arrow.up")
-                        }
+                        Button { sharing = true } label: { Label("Share this week", systemImage: "square.and.arrow.up") }
                     }
                 }
             }
         }
         .navigationTitle("Your week")
+        .sheet(isPresented: $sharing) {
+            if let image { NavigationStack { StoryImagePreview(name: "My week in Leanrrr") { image } } }
+        }
         .task(id: review) {
             let renderer = ImageRenderer(content: WeeklyReviewCard(review: review)); renderer.scale = 3
             image = review.loggedDays > 0 ? renderer.uiImage : nil

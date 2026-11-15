@@ -43,11 +43,7 @@ struct YearReviewView: View {
                     }
                 }
                 .tabViewStyle(.page(indexDisplayMode: .always)).indexViewStyle(.page(backgroundDisplayMode: .always))
-                ShareLink(item: ShareImage(image: images[min(page, images.count - 1)]),
-                          preview: SharePreview("My \(String(review.year)) in Leanrrr", image: Image(uiImage: images[min(page, images.count - 1)]))) {
-                    Label("Share this card", systemImage: "square.and.arrow.up").frame(maxWidth: .infinity)
-                }
-                .buttonStyle(.borderedProminent).controlSize(.large)
+                ShareCardActions(image: images[min(page, images.count - 1)], shareTitle: "Share this card")
             }
         }
         .padding()

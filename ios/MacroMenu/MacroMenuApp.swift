@@ -13,6 +13,17 @@ struct MacroMenuApp: App {
                           [.decimalPad, .numberPad].contains(field.keyboardType) else { return }
                     Task { @MainActor in field.selectAll(nil) }
                 }
+                #if DEBUG
+                // `-demoShare` opens a share image at launch, to try Share, Save to Photos and Copy without making one.
+                .sheet(isPresented: .constant(CommandLine.arguments.contains("-demoShare"))) {
+                    NavigationStack {
+                        StoryImagePreview(name: "7 day streak") {
+                            StoryCard(icon: "flame.fill", title: "7 day streak", figure: ("7", "days"), detail: "Logged every day this week.",
+                                      progress: nil, footnote: Date().formatted(date: .long, time: .omitted)).image
+                        }
+                    }
+                }
+                #endif
         }
         .commands { LeanrCommands() }
     }
