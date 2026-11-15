@@ -22,12 +22,15 @@ struct PremiumView: View {
 
     var body: some View {
         NavigationStack {
-            Group {
-                if purchases.isUnlocked { subscribed } else { store }
+            if purchases.isUnlocked {
+                subscribed
+                    .navigationTitle("Even Leanrrr").navigationBarTitleDisplayMode(.inline)
+                    .toolbar { ToolbarItem(placement: .cancellationAction) { Button("Done") { dismiss() } } }
+            } else {
+                // The store's own heading says "Even Leanrrr" and Apple's view brings its own close button,
+                // so a navigation bar here would only repeat the title.
+                store.toolbar(.hidden, for: .navigationBar)
             }
-            .navigationTitle("Even Leanrrr").navigationBarTitleDisplayMode(.inline)
-            // Apple's subscription view brings its own close button; the subscribed screen needs ours.
-            .toolbar { if purchases.isUnlocked { ToolbarItem(placement: .cancellationAction) { Button("Done") { dismiss() } } } }
         }
     }
 
