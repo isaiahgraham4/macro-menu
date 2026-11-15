@@ -4,6 +4,8 @@ import StoreKit
 /// What Premium includes. Kept in one place so the paywall and the locked screens say the same thing.
 enum PremiumFeatures {
     static let all: [(symbol: String, title: String, detail: String)] = [
+        ("menucard", "Scan a menu", "Photograph any menu and see estimated calories and macros for each dish, then log it."),
+        ("calendar.badge.plus", "Plan ahead", "Plan tomorrow's meals now and tick them off with one tap when you eat them."),
         ("paintpalette", "App colours", "Pick a preset or any colour you like for buttons, tabs and progress bars."),
         ("swatchpalette", "Colour packs", "Matching sets of app icon, app colour, macro colours and background tint, from Warm to Ocean."),
         ("app.badge", "App icons", "More icon packs for your Home Screen."),
@@ -47,14 +49,14 @@ struct PremiumView: View {
                         }
                     }
                 }
-                Text("Logging, searching, scanning, photos, Siri and your data stay free.")
+                Text("Logging, searching, barcode scanning, photos, Siri and your data stay free.")
                     .font(.roboto(.footnote)).foregroundStyle(.secondary)
             }
             .padding(.horizontal, 20).padding(.top, 12)
             .accessibilityElement(children: .contain)
         }
         .subscriptionStoreControlStyle(.prominentPicker)
-        .storeButton(.visible, for: .restorePurchases)
+        .storeButton(.visible, for: .restorePurchases, .redeemCode)
         .subscriptionStorePolicyDestination(for: .privacyPolicy) { NavigationStack { LegalDocumentView(document: .privacy) } }
         .subscriptionStorePolicyDestination(for: .termsOfService) { NavigationStack { LegalDocumentView(document: .terms) } }
         .onInAppPurchaseCompletion { _, result in

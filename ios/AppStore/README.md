@@ -60,7 +60,8 @@ The subscription is called **Even Leanrrr** everywhere users see it. In code it'
 `PremiumView`) and the product IDs keep `premium`; users never see those, and product IDs can't be renamed once created.
 
 `MacroMenu/Purchases.swift` reads StoreKit 2 entitlements; `MacroMenu/PremiumView.swift` is Apple's subscription view with
-the features list; `Premium.isUnlocked` (Theme.swift) is what the screens, widgets and reminders check. Premium gates: app
+the features list; `Premium.isUnlocked` (Theme.swift) is what the screens, widgets and reminders check. Premium gates: menu
+scanning (Today → Scan a menu) and Plan ahead (both since 15 Nov 2026; planned meals still show and tick off), app
 colours (presets and custom), colour packs other than Classic, background tints other than Cream, app icons, macro colours, the
 Calories & macros and All targets widgets, and choosing meal and water reminders and the weekly review time.
 
@@ -81,6 +82,14 @@ In App Store Connect → the app → Monetization → Subscriptions (all set up 
 5. Add the subscriptions to the version you submit; Apple reviews them with the app.
 6. The Premium screen shows the required subscription wording and links to the privacy policy and terms itself. Also put the
    hosted privacy policy URL in App Store Connect, and mention subscription terms in the app description.
+
+Codes for friends: "Redeem a code" at the very bottom of Settings (shown until Premium is on) and the Redeem Code button on the Even Leanrrr
+screen both open Apple's offer-code sheet. App Review rule 3.1.1 rules out Leanrrr's own unlock codes, so make them in
+App Store Connect → Subscriptions → pick a plan → Subscription Prices → Offer Codes: choose "Free" for up to 12 months,
+eligibility "New, Active and Expired subscribers" as needed, then generate one-time codes (download as CSV) or a custom code
+like a word you text to friends. A redeemed code starts the subscription free; it renews at the normal price at the end
+unless the friend turns off auto-renew in their Apple Account. Codes only work once the Paid Apps agreement is active, and
+the offer-code sheet doesn't open in the simulator.
 
 Testing without paying: in Xcode, Product → Scheme → Edit Scheme → Run → Options → StoreKit Configuration →
 `Configuration/Leanr.storekit` (set it on a scheme you don't commit), then run on a simulator. Purchases are free there, and

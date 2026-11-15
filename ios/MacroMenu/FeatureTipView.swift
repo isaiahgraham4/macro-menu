@@ -52,7 +52,7 @@ extension FeatureTips {
         if let widgets = try? await WidgetCenter.shared.currentConfigurations(), !widgets.isEmpty { used.insert(.widgets) }
         var available = Set(FeatureTip.allCases)
         if !health.isAvailable { available.remove(.health) }
-        if !Premium.isUnlocked { available.remove(.reminders) }
+        if !Premium.isUnlocked { available.remove(.reminders); available.remove(.plan) }
         var state = load()
         #if DEBUG
         // `-demoTips` shows the first tip every time, as for a tester who has tried nothing, and keeps nothing.

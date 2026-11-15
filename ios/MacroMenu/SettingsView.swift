@@ -1,4 +1,5 @@
 import SwiftUI
+import StoreKit
 
 struct SettingsView: View {
     @Environment(\.dismiss) private var dismiss
@@ -8,6 +9,7 @@ struct SettingsView: View {
     @AppStorage(AppAppearance.storageKey) private var appearance = AppAppearance.system
     @State private var showQuiz = false
     @State private var showPremium = false
+    @State private var redeeming = false
     @State private var estimating = false
     @State private var countryFailed = false
     @AppStorage(TodaySuggestions.storageKey) private var suggestFoods = true
@@ -235,12 +237,21 @@ struct SettingsView: View {
                 NavigationLink { AcknowledgementsView() } label: { Label("Acknowledgements", systemImage: "text.book.closed") }
                 NavigationLink { DeleteDataView() } label: { Label("Delete all my data", systemImage: "trash").foregroundStyle(.red) }
             }
+            if Premium.subscriptionsEnabled && !Premium.isUnlocked {
+                // Last in Settings. Apple's own sheet for offer codes made in App Store Connect (App Review rule 3.1.1 allows no other kind).
+                Section {
+                    Button { redeeming = true } label: { Label("Redeem a code", systemImage: "ticket") }
+                } footer: {
+                    Text("Got a code for Even Leanrrr? Enter it here to start it free.")
+                }
+            }
         }.navigationTitle("Settings")
             .sheet(isPresented: $showQuiz) { LeanrOnboarding(askCountry: false) { showQuiz = false } }
             .alert("Couldn’t load that menu", isPresented: $countryFailed) {
                 Button("OK", role: .cancel) {}
             } message: { Text("Your restaurant menus haven’t changed.") }
             .sheet(isPresented: $showPremium) { PremiumView() }
+            .offerCodeRedemption(isPresented: $redeeming) { _ in Task { await Purchases.shared.refresh() } }
             .sheet(isPresented: $estimating) {
                 NavigationStack {
                     TargetCalculator { values in

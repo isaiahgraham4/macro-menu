@@ -14,6 +14,7 @@ struct TodayView: View {
     @State private var photo = false
     @State private var describing = false
     @State private var scanningMenu = false
+    @State private var showPremium = false
     @State private var editing: LogEntry?
     @State private var editingTargets = false
     @State private var showingCalendar = false
@@ -75,7 +76,7 @@ struct TodayView: View {
         case .describe: describing = true
         case .scan: barcode = true
         case .photo: photo = true
-        case .plan: planning = true
+        case .plan: planAhead()
         case .settings: nav.requestedSheet = .settings
         case .reminders: nav.requestedSheet = .reminders
         case .find: nav.tab = .find
@@ -188,8 +189,25 @@ struct TodayView: View {
                     }
                 }
                 .listRowInsets(EdgeInsets(top: 10, leading: 16, bottom: 10, trailing: 16))
-                Button { scanningMenu = true } label: { Label("Scan a menu", systemImage: "menucard") }
-                NavigationLink { PlanView() } label: { Label("Plan ahead", systemImage: "calendar.badge.plus") }
+                Button { scanMenu() } label: {
+                    HStack {
+                        Label("Scan a menu", systemImage: "menucard")
+                        if !Premium.isUnlocked {
+                            Spacer()
+                            Image(systemName: "lock.fill").font(.footnote).foregroundStyle(Color(.secondaryLabel)).accessibilityLabel("Even Leanrrr")
+                        }
+                    }
+                }
+                Button { planAhead() } label: {
+                    HStack {
+                        Label("Plan ahead", systemImage: "calendar.badge.plus")
+                        Spacer()
+                        Image(systemName: Premium.isUnlocked ? "chevron.right" : "lock.fill")
+                            .font(.footnote.weight(Premium.isUnlocked ? .semibold : .regular)).foregroundStyle(Color(Premium.isUnlocked ? .tertiaryLabel : .secondaryLabel))
+                            .accessibilityHidden(Premium.isUnlocked)
+                            .accessibilityLabel("Even Leanrrr")
+                    }
+                }
             }
             PlannedSection(date: date)
             ForEach(MealTime.allCases) { category in
@@ -237,7 +255,11 @@ struct TodayView: View {
                             Button("Scan barcode") { mealTime = category; barcode = true }
                             if MealPhoto.canOffer { Button("Photo of your meal") { mealTime = category; photo = true } }
                             Button("Describe your meal") { mealTime = category; describing = true }
-                            Button("Scan a menu") { mealTime = category; scanningMenu = true }
+                            if Premium.isUnlocked {
+                                Button("Scan a menu") { mealTime = category; scanMenu() }
+                            } else {
+                                Button("Scan a menu", systemImage: "lock.fill") { mealTime = category; scanMenu() }
+                            }
                             Button("Quick add calories and macros") { mealTime = category; quickAdd = true }
                             Button("Enter a food / scan label") { mealTime = category; quick = true }
                             Button("Choose menu item") { mealTime = category; choosing = true }
@@ -354,6 +376,7 @@ struct TodayView: View {
                     }
                 }
             }
+            .sheet(isPresented: $showPremium) { PremiumView() }
             .sheet(isPresented: $scanningMenu) {
                 NavigationStack {
                     MenuScanView(mealTime: mealTime) { portions, name in
@@ -372,6 +395,14 @@ struct TodayView: View {
                 now = value
                 if followingToday { date = value }
             }
+    }
+    /// Menu scanning is part of Even Leanrrr: without it, the button opens the Even Leanrrr screen instead.
+    private func scanMenu() {
+        if Premium.isUnlocked { scanningMenu = true } else { showPremium = true }
+    }
+    /// Plan ahead is part of Even Leanrrr too. Meals already planned still show on Today and can be ticked off.
+    private func planAhead() {
+        if Premium.isUnlocked { planning = true } else { showPremium = true }
     }
     private func logRow(_ entry: LogEntry) -> some View {
         Button { editing = entry } label: {
