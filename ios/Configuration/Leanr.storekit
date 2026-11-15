@@ -35,7 +35,7 @@
           },
           "localizations": [
             {
-              "description": "All of Even Leanrrr, billed once a year",
+              "description": "Colours, icons, widgets and reminders, billed yearly",
               "displayName": "Even Leanrrr yearly",
               "locale": "en_AU"
             }
@@ -62,7 +62,7 @@
           },
           "localizations": [
             {
-              "description": "All of Even Leanrrr, billed monthly",
+              "description": "Colours, icons, widgets and reminders, billed monthly",
               "displayName": "Even Leanrrr monthly",
               "locale": "en_AU"
             }
@@ -89,7 +89,7 @@
           },
           "localizations": [
             {
-              "description": "All of Even Leanrrr, billed weekly",
+              "description": "Colours, icons, widgets and reminders, billed weekly",
               "displayName": "Even Leanrrr weekly",
               "locale": "en_AU"
             }

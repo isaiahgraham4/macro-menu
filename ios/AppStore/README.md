@@ -74,8 +74,9 @@ In App Store Connect → the app → Monetization → Subscriptions (all set up 
    "See Additional Prices" in the price picker. Other countries use Apple's conversions from the AUD price (US$22 / US$6 / US$3).
 3. Each is on sale in all 175 countries, has an English (Australia) display name and description, and a free 1-week
    introductory offer for new subscribers with no end date. A trial is once per Apple Account across the whole group.
-   `Configuration/Leanr.storekit` mirrors these prices and trials. Still to add: a review screenshot of the Even Leanrrr
-   screen on each subscription.
+   `Configuration/Leanr.storekit` mirrors these prices, trials and descriptions. Each subscription's Review Information has
+   `AppStore/Review/even-leanrrr-subscriptions.png` (added 15 Nov 2026): the Even Leanrrr screen with all three plans,
+   taken from Xcode with the StoreKit file and a 9:41 status bar. Retake it if the screen or the prices change.
 4. Accept the Paid Apps agreement and add banking and tax details, or the products won't load.
 5. Add the subscriptions to the version you submit; Apple reviews them with the app.
 6. The Premium screen shows the required subscription wording and links to the privacy policy and terms itself. Also put the
