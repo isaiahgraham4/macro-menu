@@ -245,6 +245,7 @@ struct ShareCardActions: View {
                 }
             }
             .buttonStyle(.bordered).controlSize(.large)
+            .tint(AppAccent.resolvedColor(accentRaw))
             Text(message).font(.roboto(.caption)).foregroundStyle(status == .saveFailed ? .red : .secondary)
                 .multilineTextAlignment(.center).balanced()
                 .contentTransition(.opacity).animation(.default, value: status)

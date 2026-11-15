@@ -44,7 +44,7 @@ struct WeeklyReviewView: View {
                         }
                     }
                 }
-                if let image {
+                if image != nil {
                     Section {
                         Button { sharing = true } label: { Label("Share this week", systemImage: "square.and.arrow.up") }
                     }
