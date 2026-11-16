@@ -1285,6 +1285,8 @@ import UniformTypeIdentifiers
         for name in ["PrivacyPolicy.md", "Terms.md"] {
             let text = try String(contentsOf: legal.appending(path: name), encoding: .utf8)
             assert(text.contains("{{CONTACT}}") && text.contains("Effective "), "\(name) has its contact and date")
+            // The device is a placeholder too, so an iPad isn't called an iPhone. Only the Apple Watch section names the iPhone.
+            assert(text.contains("{{DEVICE}}") && text.components(separatedBy: "iPhone").count - 1 == (name == "Terms.md" ? 0 : 3), "\(name) names the device through its placeholder")
         }
         for name in ["Apache-2.0.txt", "OFL-BebasNeue.txt"] { assert(FileManager.default.fileExists(atPath: legal.appending(path: name).path)) }
 

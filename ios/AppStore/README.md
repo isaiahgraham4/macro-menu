@@ -21,6 +21,8 @@ Before each new upload, raise the build number (`CURRENT_PROJECT_VERSION`) in th
   The terms of use are hosted the same way (since 16 Nov 2026):
   https://gist.github.com/isaiahgraham4/239ce4f41914e5991bb0eb1bbff215aa. Subscriptions need a working terms link in the
   listing, so it's at the end of the description below; update that gist whenever `Terms.md` changes.
+  Both files also carry a `{{DEVICE}}` placeholder: the app shows iPhone or iPad, and the hosted copies say
+  "iPhone or iPad". Fill both placeholders before updating a gist.
 - `AppInfo.contactEmail` in `MacroMenu/LegalView.swift` is isaiahgraham.app@gmail.com (set 16 Nov 2026). It shows in the policies
   and as the Contact row in Settings, and both hosted gists carry it. Use the same address for support in App Store Connect.
 - `MacroMenu/PrivacyInfo.xcprivacy` declares no tracking and two collected data types for shared foods (Other User Content and User ID, not linked, App Functionality only). `LeanrWidgets/PrivacyInfo.xcprivacy` declares no tracking and no collected data. The app's only required-reason API is UserDefaults,

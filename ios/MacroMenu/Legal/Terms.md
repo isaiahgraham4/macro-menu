@@ -1,6 +1,6 @@
 # Leanrrr terms of use
 
-Effective 15 November 2026
+Effective 16 November 2026
 
 These terms apply when you use Leanrrr, an app made by Isaiah Graham, an independent developer in Victoria, Australia. Apple's standard Licensed Application End User License Agreement also applies. Contact me at {{CONTACT}}.
 
@@ -14,7 +14,7 @@ Leanrrr gives general nutrition information to help you choose and log food. It 
 - Custom orders (with ingredients taken off) and recipes are estimates.
 - Everyday foods (such as bananas and chicken breast) are average figures from the U.S. Department of Agriculture's FoodData Central. Brands, varieties and cooking change them.
 - Scanned and searched packaged products, and the Coles and Woolworths products in Find, come from Open Food Facts, which is edited by volunteers. Check them against the package.
-- When you log from a photo, your iPhone only names the foods, and it can't count them or read portions. The figures are Leanrrr's own, but the match and the amount are up to you, so check both before logging.
+- When you log from a photo, your {{DEVICE}} only names the foods, and it can't count them or read portions. The figures are Leanrrr's own, but the match and the amount are up to you, so check both before logging.
 - Leanrrr isn't an allergen guide. Always check allergens with the restaurant.
 
 ## Opening hours, distances and delivery
@@ -35,7 +35,7 @@ Leanrrr is free to use. Even Leanrrr is an optional subscription that adds menu 
 - Apple may change the price at renewal and will tell you first. You can cancel before it takes effect.
 - Refunds are handled by Apple. Request one at reportaproblem.apple.com.
 - If Even Leanrrr ends, the extras go back to their defaults. Everything you've logged and saved stays.
-- It's tied to your Apple Account. "Restore purchases" brings it back on a new iPhone.
+- It's tied to your Apple Account. "Restore purchases" brings it back on a new {{DEVICE}}.
 
 Nothing in these terms limits your rights under the Australian Consumer Law. That includes a refund or remedy when something has a major fault.
 

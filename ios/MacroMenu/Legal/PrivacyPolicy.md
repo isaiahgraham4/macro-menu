@@ -13,7 +13,7 @@ Leanrrr is made by Isaiah Graham, an independent developer in Victoria, Australi
 
 ## What Leanrrr keeps on your device
 
-Your foods, recipes, saved meals, food log, meal plans, weekly check-ins, weigh-ins, water, body measurements, progress photos, targets, reminders and settings are saved on your iPhone, inside Leanrrr's own storage. Your target estimate uses your age, height, weight, sex and activity level. Those figures are only used for the calculation on your device.
+Your foods, recipes, saved meals, food log, meal plans, weekly check-ins, weigh-ins, water, body measurements, progress photos, targets, reminders and settings are saved on your {{DEVICE}}, inside Leanrrr's own storage. Your target estimate uses your age, height, weight, sex and activity level. Those figures are only used for the calculation on your device.
 
 ## iCloud
 
@@ -24,21 +24,21 @@ iCloud sync is on unless you turn it off in Settings. It keeps a copy of your fo
 Leanrrr only uses Apple Health if you connect it in Settings, and you choose which types it may read or write. If you connect:
 
 - Leanrrr writes the food you log, the water you log (one total for each day) and the weights you enter.
-- Leanrrr reads your weight, active energy (your calories burnt) and steps to show your trend, your steps and your calories burnt, and to estimate your target. Step counts and calories burnt are held in memory while you use Leanrrr, and the last week's figures are shared with Leanrrr's Steps and Calories burnt widgets through a file on this iPhone. If you choose one source for steps or calories burnt, Leanrrr remembers which one on this iPhone. These figures are never saved in Leanrrr's data, its iCloud copy or its exports.
+- Leanrrr reads your weight, active energy (your calories burnt) and steps to show your trend, your steps and your calories burnt, and to estimate your target. Step counts and calories burnt are held in memory while you use Leanrrr, and the last week's figures are shared with Leanrrr's Steps and Calories burnt widgets through a file on this {{DEVICE}}. If you choose one source for steps or calories burnt, Leanrrr remembers which one on this {{DEVICE}}. These figures are never saved in Leanrrr's data, its iCloud copy or its exports.
 
 Health information is never used for advertising or marketing, never sold, and never leaves your device except through Apple's own Health sync.
 
 ## Camera
 
-The camera is used to scan barcodes, read nutrition labels and restaurant menus, recognise the foods in a photo of your meal and take progress photos. Recognising food happens on your device, using Apple Intelligence where your iPhone has it and Apple's built-in image recognition otherwise. Photos of meals aren't saved or sent anywhere, and you can also choose a photo from your library instead; Leanrrr only sees the one you pick.
+The camera is used to scan barcodes, read nutrition labels and restaurant menus, recognise the foods in a photo of your meal and take progress photos. Recognising food happens on your device, using Apple Intelligence where your {{DEVICE}} has it and Apple's built-in image recognition otherwise. Photos of meals aren't saved or sent anywhere, and you can also choose a photo from your library instead; Leanrrr only sees the one you pick.
 
 ## Describing a meal
 
-If you type or say what you ate, your iPhone reads the words to find each food, using Apple Intelligence where your iPhone has it and Leanrrr's own reading otherwise. Both happen on your device. The words aren't saved or sent anywhere; only the foods you choose to log are kept. Saying it uses your keyboard's dictation, which Apple's privacy policy covers.
+If you type or say what you ate, your {{DEVICE}} reads the words to find each food, using Apple Intelligence where your {{DEVICE}} has it and Leanrrr's own reading otherwise. Both happen on your device. The words aren't saved or sent anywhere; only the foods you choose to log are kept. Saying it uses your keyboard's dictation, which Apple's privacy policy covers.
 
 ## Asking Leanrrr and dietary needs
 
-If you ask Leanrrr a question on Find, such as "40 g protein under 600 Cal at Nando's", your iPhone reads it to set up an order search, using Apple Intelligence where your iPhone has it and Leanrrr's own reading otherwise. Both happen on your device, and the question isn't saved or sent anywhere. The dietary needs you choose (such as vegetarian, no pork or an allergen to avoid) are kept only on this iPhone and are used only to leave out menu items that don't fit.
+If you ask Leanrrr a question on Find, such as "40 g protein under 600 Cal at Nando's", your {{DEVICE}} reads it to set up an order search, using Apple Intelligence where your {{DEVICE}} has it and Leanrrr's own reading otherwise. Both happen on your device, and the question isn't saved or sent anywhere. The dietary needs you choose (such as vegetarian, no pork or an allergen to avoid) are kept only on this {{DEVICE}} and are used only to leave out menu items that don't fit.
 
 ## Recipe links
 
@@ -50,7 +50,7 @@ If you install Leanrrr on Apple Watch, your iPhone sends it today's calories, pr
 
 ## Progress photos
 
-If you add progress photos, they're kept as files inside Leanrrr's storage on this iPhone. They are never uploaded, never part of the iCloud copy, backups or exports Leanrrr makes, and never used for anything but showing them to you. Your iPhone's own backup may include them, like any app's files. Delete a photo in Leanrrr to remove it, or use Settings → Delete all my data to remove them all.
+If you add progress photos, they're kept as files inside Leanrrr's storage on this {{DEVICE}}. They are never uploaded, never part of the iCloud copy, backups or exports Leanrrr makes, and never used for anything but showing them to you. Your {{DEVICE}}'s own backup may include them, like any app's files. Delete a photo in Leanrrr to remove it, or use Settings → Delete all my data to remove them all.
 
 ## Siri and Visual Intelligence
 
@@ -68,7 +68,7 @@ Sharing is off for every food unless you turn it on for that food. When you do, 
 
 Turning sharing off for a food, or deleting the food, takes the shared copy down. Settings → Delete all my data takes down everything you shared. Foods that break the terms of use may be removed.
 
-If you report a shared food, the report records which food it was, the reason you chose and your anonymous ID, so each person's report counts once. Foods other people shared are downloaded to your iPhone so search works offline. Turn them off in Settings → Shared foods.
+If you report a shared food, the report records which food it was, the reason you chose and your anonymous ID, so each person's report counts once. Foods other people shared are downloaded to your {{DEVICE}} so search works offline. Turn them off in Settings → Shared foods.
 
 ## Product lookups
 

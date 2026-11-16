@@ -23,7 +23,8 @@ struct LegalDocumentView: View {
     private var blocks: [Block] {
         guard let url = Bundle.main.url(forResource: document.rawValue, withExtension: "md"),
               let text = try? String(contentsOf: url, encoding: .utf8) else { return [.paragraph("This document couldn't be loaded.")] }
-        return Block.parse(text.replacingOccurrences(of: "{{CONTACT}}", with: AppInfo.contactText))
+        return Block.parse(text.replacingOccurrences(of: "{{CONTACT}}", with: AppInfo.contactText)
+            .replacingOccurrences(of: "{{DEVICE}}", with: DeviceName.current))
     }
 
     var body: some View {
