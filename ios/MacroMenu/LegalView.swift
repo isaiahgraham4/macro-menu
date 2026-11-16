@@ -6,9 +6,9 @@ import WidgetKit
 enum AppInfo {
     static let developer = "Isaiah Graham"
     static let location = "Victoria, Australia"
-    /// The support address shown in the policies and Settings. Set it before release; while it's nil the policies point
-    /// to the App Store page instead and the Contact row is hidden.
-    static let contactEmail: String? = nil
+    /// The support address shown in the policies and Settings. If it's ever nil the policies point to the App Store page
+    /// instead and the Contact row is hidden. The hosted privacy and terms gists carry the same address.
+    static let contactEmail: String? = "isaiahgraham.app@gmail.com"
 
     static var contactText: String { contactEmail ?? "the App Support link on Leanrrr's App Store page" }
 }

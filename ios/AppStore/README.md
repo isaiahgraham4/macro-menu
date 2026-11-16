@@ -21,9 +21,8 @@ Before each new upload, raise the build number (`CURRENT_PROJECT_VERSION`) in th
   The terms of use are hosted the same way (since 16 Nov 2026):
   https://gist.github.com/isaiahgraham4/239ce4f41914e5991bb0eb1bbff215aa. Subscriptions need a working terms link in the
   listing, so it's at the end of the description below; update that gist whenever `Terms.md` changes.
-- Before release, set `AppInfo.contactEmail` in `MacroMenu/LegalView.swift`. Until then the policies point people to the
-  App Support link on the App Store page, and the Contact row in Settings is hidden. Add the same address as the
-  support URL or email in App Store Connect.
+- `AppInfo.contactEmail` in `MacroMenu/LegalView.swift` is isaiahgraham.app@gmail.com (set 16 Nov 2026). It shows in the policies
+  and as the Contact row in Settings, and both hosted gists carry it. Use the same address for support in App Store Connect.
 - `MacroMenu/PrivacyInfo.xcprivacy` declares no tracking and two collected data types for shared foods (Other User Content and User ID, not linked, App Functionality only). `LeanrWidgets/PrivacyInfo.xcprivacy` declares no tracking and no collected data. The app's only required-reason API is UserDefaults,
   for its own settings (reason `CA92.1`).
 - App Privacy answers in App Store Connect (filled in 15 Nov 2026, privacy policy URL set to the gist): **Data Not Linked to You: User Content (Other User Content) and Identifiers (User ID)**, both for App Functionality and not used for tracking, because of shared foods. Nothing else is collected. Location is only used on the device and by Apple Maps,

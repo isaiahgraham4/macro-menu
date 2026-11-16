@@ -19,7 +19,7 @@ People can share a food they've added so everyone else finds it in search (marke
 | Block | Food page → Hide foods from this person. It's kept on the device; Settings → Shared foods brings them back. |
 | Remove | A `SharedFoodRemoved` record with `foodRecord` = the food's record name hides it for everyone. Only the Moderator role can write these. |
 | Terms agreed | One-time alert before the first share. Terms.md has a "Foods you share" section with zero tolerance and a 24-hour review promise. |
-| Contact | `AppInfo.contactEmail` (still nil, so the App Store support link is used). |
+| Contact | `AppInfo.contactEmail` (isaiahgraham.app@gmail.com), shown in the policies and Settings. |
 
 ## Setup status and steps
 
