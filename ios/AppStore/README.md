@@ -104,12 +104,12 @@ In Debug builds only, launching with `-LeanrForcePremium` shows the unlocked scr
 
 ## Screenshots
 
-`Screenshots/` holds 6.9-inch iPhone screenshots (1320 × 2868) from the iPhone 18 Pro Max simulator, with a clean
-status bar and a week of sample meals:
+`Screenshots/` holds five 6.9-inch iPhone screenshots (1320 × 2868, retaken 16 Nov 2026 on the iPhone 18 Pro Max
+simulator with a 9:41 status bar and the same sample data as the iPad set):
 
-1. Today: calories left, protein, weight trend and the weekly review.
+1. Today: calories left, protein and the Log food card.
 2. Find: an order that fits your calories and protein.
-3. Your week: days logged, averages, protein days and trend.
+3. Progress: your week, with days logged, averages and protein days.
 4. Weight: scale readings and the smoothed trend.
 5. Meal: Log again.
 
