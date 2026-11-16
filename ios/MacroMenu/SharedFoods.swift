@@ -265,6 +265,7 @@ final class CommunityFoods {
         self.backend = backend ?? (demo ? DemoSharedFoods() : CloudKitSharedFoods())
         self.cacheURL = demo ? URL.temporaryDirectory.appending(path: "community-demo.json") : cacheURL
         #else
+        let demo = false
         self.backend = backend ?? CloudKitSharedFoods()
         self.cacheURL = cacheURL
         #endif
