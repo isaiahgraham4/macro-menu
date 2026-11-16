@@ -96,7 +96,7 @@ struct BackupSection: View {
         } header: {
             Text("Your data")
         } footer: {
-            Text("Foods, recipes, saved meals, daily logs, targets and your current meal are saved on this device. Export a backup to transfer them. Native backups and Macro Menu web exports are supported; web exports do not include daily history. CSV files open in Numbers, Excel or Google Sheets; figures a food didn't list are left blank.")
+            Text("Foods, recipes, saved meals, daily logs, targets and your current meal are saved on this device. Export a backup to transfer them. Backups from the earlier web version also import, without daily history. CSV files open in Numbers, Excel or Google Sheets; figures a food didn't list are left blank.")
         }
         .disabled(store.loadError != nil)
         .fileExporter(isPresented: Binding(get: { export != nil }, set: { if !$0 { export = nil } }), document: export?.document,

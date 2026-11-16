@@ -176,7 +176,8 @@ actor CloudKitSharedFoods: SharedFoodBackend {
     }
 }
 
-/// Launch with `-demoCommunityFoods` to try shared foods without iCloud: a few made-up foods, kept in memory.
+#if DEBUG
+/// Launch with `-demoCommunityFoods` to try shared foods without iCloud: a few made-up foods, kept in memory. Not compiled into releases.
 actor DemoSharedFoods: SharedFoodBackend {
     private var foods: [SharedFood]
     private var reports: [SharedFoodReport] = [
@@ -215,6 +216,7 @@ actor DemoSharedFoods: SharedFoodBackend {
     func delete(recordName: String) async throws { foods.removeAll { $0.recordName == recordName } }
     func report(recordName: String, reason: ShareReportReason) async throws { reports.append(.init(recordName: recordName, reporter: "demo-me")) }
 }
+#endif
 
 // MARK: - Store
 
@@ -258,9 +260,14 @@ final class CommunityFoods {
     }
 
     init(backend: (any SharedFoodBackend)? = nil, cacheURL: URL = URL.applicationSupportDirectory.appending(path: "MacroMenu/community-foods.json")) {
+        #if DEBUG
         let demo = CommandLine.arguments.contains("-demoCommunityFoods")
         self.backend = backend ?? (demo ? DemoSharedFoods() : CloudKitSharedFoods())
         self.cacheURL = demo ? URL.temporaryDirectory.appending(path: "community-demo.json") : cacheURL
+        #else
+        self.backend = backend ?? CloudKitSharedFoods()
+        self.cacheURL = cacheURL
+        #endif
         let defaults = UserDefaults.standard
         defaults.register(defaults: [Self.showKey: true])
         show = defaults.bool(forKey: Self.showKey)
