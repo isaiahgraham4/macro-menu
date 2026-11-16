@@ -80,8 +80,8 @@ In App Store Connect → the app → Monetization → Subscriptions (all set up 
 3. Each is on sale in all 175 countries, has an English (Australia) display name and description, and a free 1-week
    introductory offer for new subscribers with no end date. A trial is once per Apple Account across the whole group.
    `Configuration/Leanr.storekit` mirrors these prices and trials. Its descriptions were changed on 16 Nov 2026 to
-   "Menu scans, plans, colours and widgets, billed yearly" (and monthly, weekly); App Store Connect still has the old
-   "Colours, icons, widgets and reminders" wording until it's changed there. Each subscription's Review Information has
+   "Menu scans, plans, colours and widgets, billed yearly" (and monthly, weekly); App Store Connect has the same wording
+   since 17 Nov 2026 (the monthly plan had no display name until then). Each subscription's Review Information has
    `AppStore/Review/even-leanrrr-subscriptions.png` (added 15 Nov 2026): the Even Leanrrr screen with all three plans,
    taken from Xcode with the StoreKit file and a 9:41 status bar. Retake it if the screen or the prices change.
 4. Accept the Paid Apps agreement and add banking and tax details, or the products won't load.
@@ -142,7 +142,12 @@ meals, weigh-ins and water ending 16 Nov 2026, with the protein target met on mo
 
 ## Listing draft
 
-**Subtitle:** Fast food that fits your macros
+Entered in App Store Connect on 17 Nov 2026 (name Leanrrr, category, description, keywords, copyright "2026 Isaiah Graham",
+review notes, Free in all 175 countries, Build 111 attached, "Sign-in required" unticked). The support URL is the privacy
+policy gist, which carries the contact email. The subscription group and all three plans are in the draft submission; the
+app version joins it with Add for Review once the age rating, content rights, review contact and App Privacy Publish are done.
+
+**Subtitle:** Fast food to fit your macros (the limit is 30 characters; "that fits" was 31)
 
 **Description:**
 Leanrrr finds the order that fits. Tell it your calories and protein and it searches the published nutrition figures from
