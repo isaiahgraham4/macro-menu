@@ -118,6 +118,16 @@ five scaled to 1206 × 2622 (`sips -z 2622 1206`; the two shapes differ by under
 set went into the required "medium display" slot and the full-size set into the optional "large display" slot (Media
 Manager), with the iPad and Watch sets in theirs.
 
+Later on 16 Nov 2026 both iPhone slots were replaced with the seven campaign slides from `Campaign/final-1206x2622/`
+(medium) and `Campaign/final-1320x2868/` (large). The five plain screenshots above were removed from the listing but stay
+in the Asset Library and in this folder. iPad, Watch and iPhone Duo slots were not changed.
+
+On 17 Nov 2026 the iPhone Duo slot got seven slides from `Campaign/final-duo-2007x2853/` (2007 × 2853, built by
+`Campaign/duo.py` from cover-screen captures in `Campaign/raw/duo/`; the Duo simulator captures its cover screen while
+closed with `simctl io <udid> screenshot --display=primary`). The product page header is `Campaign/header/`
+(5244 × 2950 PNG, built by `Campaign/header.py`; App Store Connect takes PNG only). Each device shows a different slice
+of the header, so its message sits in the band y 700-1700, centred; the measured crops are noted in `header.py`.
+
 `Screenshots/iPad/` holds five 13-inch iPad screenshots (2064 × 2752, taken 16 Nov 2026 on an iPad Pro 13-inch (M5)
 simulator named "Leanr iPad 13"): Today, Find, Progress (Eating), Weight and Meal. `Screenshots/Watch/` holds three Apple
 Watch screenshots (422 × 514, the Ultra size, from the "Leanr Ultra 49" simulator): calories left, Log again and water.

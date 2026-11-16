@@ -1,0 +1,43 @@
+Create a premium iPhone App Store advertisement for Leanrrr, a calorie tracker built around takeaway food.
+
+Attached image 1 is the real app screenshot. Attached image 2 is the app icon.
+Use the app screenshot faithfully: place it, unaltered, on the screen of a current iPhone with a natural titanium frame. Every word, number, colour and position in the screenshot must stay exactly as supplied.
+
+Slide archetype: typography-led hero with a centred phone.
+
+Required copy:
+Headline (2 lines, all capitals):
+EAT OUT.
+STAY ON TARGET.
+Support (1 line, sentence case): The calorie tracker for takeaway.
+No other text anywhere outside the phone screen.
+
+Core message: you can eat takeaway and still hit your calories. The "984 Cal left" ring on the phone is the proof.
+
+Layout direction:
+- Portrait 9:16 canvas.
+- The app icon, small with rounded corners, centred near the top.
+- The headline directly below it, very large, centred, in deep black. Second line in deep emerald green #01714C.
+- The support line directly under the headline, small, dark warm grey.
+- The iPhone centred below, upright and straight-on, large, with its lower third running off the bottom of the canvas. The calorie ring card must be fully visible.
+- Lower left, small and partly tucked behind the phone: the top edge of a plain brown paper takeaway bag and the corner of a blank paper receipt. No logos, no printed words on them.
+
+Lock these family traits:
+- Headline type: a tall condensed bold sans-serif in all capitals with tight line spacing, in the style of Bebas Neue, like a menu board. No serif type.
+- Support type: a plain geometric sans-serif in the Roboto style, medium weight.
+- Background: flat warm cream #F6F2EA covered with a fine, evenly spaced grid of tiny brown dots, like an order pad. Completely flat: no gradient, no glow, no light rays, no vignette.
+- Device: realistic iPhone, soft short contact shadow, no neon rim light, no reflections across the screen.
+- Accent: emerald green #01714C only.
+- Supporting imagery: unbranded takeaway objects on brown paper, photographed from above, used sparingly.
+
+Hard rules:
+- preserve the supplied screenshot faithfully and do not redesign the app UI
+- keep typography readable at thumbnail size
+- compose for a later centre-crop to a narrower App Store size: about 10 to 16 percent of the width will be cut from each side
+- keep the icon, headline, support line, phone and paper bag inside the central 64 percent of the canvas width
+- only cream background and dots may sit in the outer side strips
+- keep the icon at least 7 percent of the canvas height below the top edge
+- no restaurant logos, wordmarks, mascots or branded packaging
+- no ratings, stars, badges, awards, testimonials or invented claims
+- no emoji
+- do not render literal <br /> characters
