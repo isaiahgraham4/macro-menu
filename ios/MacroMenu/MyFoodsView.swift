@@ -117,7 +117,7 @@ struct BackupSection: View {
             }
             Button("Cancel", role: .cancel) { pending = nil }
         } message: {
-            Text("Import \(pending?.foods.count ?? 0) foods, \(pending?.meals.count ?? 0) saved meals and \(pending?.logs.count ?? 0) days. Existing entries are kept; matching IDs are updated. A nonempty current meal is kept.")
+            Text("Import \(pending?.foods.count ?? 0) foods, \(pending?.meals.count ?? 0) saved meals and \(pending?.logs.count ?? 0) days. Existing entries are kept; matching IDs are updated. A nonempty current meal is kept. Importing never shares a food with the community.")
         }
         .alert(message ?? "", isPresented: Binding(get: { message != nil }, set: { if !$0 { message = nil } })) { Button("OK") { message = nil } }
     }

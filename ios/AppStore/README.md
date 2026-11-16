@@ -18,6 +18,9 @@ Before each new upload, raise the build number (`CURRENT_PROJECT_VERSION`) in th
   Settings → Privacy and legal. The privacy policy is hosted as a public gist for App Store Connect:
   https://gist.github.com/isaiahgraham4/26dad078a14afa56462a3438de13cc98 (not the Macro Menu site, which is no longer
   updated). When `PrivacyPolicy.md` or the contact email changes, update the gist to match.
+  The terms of use are hosted the same way (since 16 Nov 2026):
+  https://gist.github.com/isaiahgraham4/239ce4f41914e5991bb0eb1bbff215aa. Subscriptions need a working terms link in the
+  listing, so it's at the end of the description below; update that gist whenever `Terms.md` changes.
 - Before release, set `AppInfo.contactEmail` in `MacroMenu/LegalView.swift`. Until then the policies point people to the
   App Support link on the App Store page, and the Contact row in Settings is hidden. Add the same address as the
   support URL or email in App Store Connect.
@@ -75,7 +78,9 @@ In App Store Connect → the app → Monetization → Subscriptions (all set up 
    "See Additional Prices" in the price picker. Other countries use Apple's conversions from the AUD price (US$22 / US$6 / US$3).
 3. Each is on sale in all 175 countries, has an English (Australia) display name and description, and a free 1-week
    introductory offer for new subscribers with no end date. A trial is once per Apple Account across the whole group.
-   `Configuration/Leanr.storekit` mirrors these prices, trials and descriptions. Each subscription's Review Information has
+   `Configuration/Leanr.storekit` mirrors these prices and trials. Its descriptions were changed on 16 Nov 2026 to
+   "Menu scans, plans, colours and widgets, billed yearly" (and monthly, weekly); App Store Connect still has the old
+   "Colours, icons, widgets and reminders" wording until it's changed there. Each subscription's Review Information has
    `AppStore/Review/even-leanrrr-subscriptions.png` (added 15 Nov 2026): the Even Leanrrr screen with all three plans,
    taken from Xcode with the StoreKit file and a 9:41 status bar. Retake it if the screen or the prices change.
 4. Accept the Paid Apps agreement and add banking and tax details, or the products won't load.
@@ -113,8 +118,8 @@ status bar and a week of sample meals:
 
 **Description:**
 Leanrrr finds the order that fits. Tell it your calories and protein and it searches the published nutrition figures from
-McDonald's, KFC, Hungry Jack's, Subway, Guzman y Gomez, Nando's, Oporto, Red Rooster, Domino's, Spud Bar, Zambrero,
-Boost Juice, Schnitz and Grill'd for combinations from one restaurant.
+McDonald's, KFC, Hungry Jack's, Subway, Guzman y Gomez, Nando's, Oporto, Red Rooster, Domino's, Grill'd, Zambrero and
+more than ten other Australian restaurants for combinations from one restaurant.
 
 - Log meals, scan barcodes and nutrition labels, and see what's left of your day at a glance.
 - Take ingredients off: no cheese, no sauce, no mayo, with the figures adjusted.
@@ -131,6 +136,15 @@ Boost Juice, Schnitz and Grill'd for combinations from one restaurant.
 Nutrition figures are the chains' own published data; where a chain doesn't publish a figure, Leanrrr leaves it blank
 rather than guessing. Custom orders and recipes are estimates. Leanrrr isn't medical advice and isn't affiliated with
 any restaurant.
+
+Leanrrr is free to use. Even Leanrrr is an optional subscription that adds menu scanning (photograph any restaurant's menu
+for estimated calories and macros), meal planning, app colours, colour packs and icons, two more widgets, and your choice of
+meal and water reminders. It's A$35 a year, A$10 a month or A$5 a week in Australia, with a 7-day free trial for new
+subscribers. Payment is charged to your Apple Account, and it renews automatically unless you cancel at least 24 hours
+before the end of the period, in your Apple Account settings.
+
+Terms of use: https://gist.github.com/isaiahgraham4/239ce4f41914e5991bb0eb1bbff215aa
+Privacy policy: https://gist.github.com/isaiahgraham4/26dad078a14afa56462a3438de13cc98
 
 **Keywords:** macros,calories,protein,fast food,drive thru,meal finder,nutrition,diet,tracker,weight
 

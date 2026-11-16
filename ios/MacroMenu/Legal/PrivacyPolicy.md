@@ -1,6 +1,6 @@
 # Leanrrr privacy policy
 
-Effective 15 November 2026
+Effective 16 November 2026
 
 Leanrrr is made by Isaiah Graham, an independent developer in Victoria, Australia ("I", "me"). This policy explains what happens to your information when you use Leanrrr. You can reach me at {{CONTACT}}.
 
@@ -86,7 +86,7 @@ Reminders are scheduled on your device and only check your log on your device. T
 
 ## Children
 
-Leanrrr isn't designed for children under 13, and the target estimate is only for adults 18 and over. Leanrrr doesn't collect personal information from anyone. If you're under 18, use Leanrrr with a parent's or doctor's guidance.
+Leanrrr isn't designed for children under 13, and the target estimate is only for adults 18 and over. The only thing Leanrrr collects from anyone is a food they choose to share, as described under Foods you share. If you're under 18, use Leanrrr with a parent's or doctor's guidance.
 
 ## Deleting your data
 

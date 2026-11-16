@@ -412,7 +412,15 @@ final class AppStore {
     }
     func merge(_ backup: AppData) -> Bool {
         guard backup.isValid else { errorMessage = "This backup is invalid."; return false }
-        return change { state in state = Self.merged(state, backup) }
+        return change { state in state = Self.merged(state, Self.withoutNewSharing(backup, over: state)) }
+    }
+    /// An imported file can't turn sharing on: that takes the switch in the food editor, after the sharing agreement.
+    /// A food already shared on this device stays shared. iCloud sync between your own devices doesn't go through this.
+    static func withoutNewSharing(_ backup: AppData, over current: AppData) -> AppData {
+        let sharedHere = Set(current.foods.filter { $0.shared == true }.map(\.id))
+        var backup = backup
+        for i in backup.foods.indices where backup.foods[i].shared == true && !sharedHere.contains(backup.foods[i].id) { backup.foods[i].shared = nil }
+        return backup
     }
     /// Everything in `current` plus `incoming`; entries with the same ID take the incoming version.
     static func merged(_ current: AppData, _ backup: AppData) -> AppData {

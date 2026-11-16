@@ -1211,6 +1211,15 @@ import UniformTypeIdentifiers
         assert(!pinStore.isPinned(zinger) && pinStore.notice == "Unpinned Zinger Burger")
         var pinsFromBackup = AppData(); pinsFromBackup.pinned = [zinger]
         assert(AppStore.merged(AppData(), pinsFromBackup).pinned?.map(\.id) == [zinger.id])
+        // An imported backup can't switch sharing on; a food already shared here stays shared, and iCloud sync is untouched.
+        var sharedInBackup = zinger; sharedInBackup.shared = true
+        var sharingBackup = AppData(); sharingBackup.foods = [sharedInBackup]
+        var unsharedHere = AppData(); unsharedHere.foods = [zinger]
+        assert(AppStore.withoutNewSharing(sharingBackup, over: AppData()).foods.map(\.shared) == [nil])
+        assert(AppStore.withoutNewSharing(sharingBackup, over: unsharedHere).foods.map(\.shared) == [nil])
+        assert(AppStore.withoutNewSharing(sharingBackup, over: sharingBackup).foods.map(\.shared) == [true])
+        assert(AppStore.merged(AppData(), sharingBackup).foods.map(\.shared) == [true])
+        assert(pinStore.merge(sharingBackup) && pinStore.data.foods.first { $0.id == zinger.id }?.shared == nil)
 
         // Saving a scanned product to My foods: rounded like the editor, and the same barcode updates rather than duplicates.
         let scanStore = AppStore(url: root.appending(path: "scans.json"), catalogURL: catalogURL, legacyURL: nil)
