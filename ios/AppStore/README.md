@@ -111,6 +111,17 @@ status bar and a week of sample meals:
 4. Weight: scale readings and the smoothed trend.
 5. Meal: Log again.
 
+`Screenshots/iPad/` holds five 13-inch iPad screenshots (2064 × 2752, taken 16 Nov 2026 on an iPad Pro 13-inch (M5)
+simulator named "Leanr iPad 13"): Today, Find, Progress (Eating), Weight and Meal. `Screenshots/Watch/` holds three Apple
+Watch screenshots (422 × 514, the Ultra size, from the "Leanr Ultra 49" simulator): calories left, Log again and water.
+
+To retake the iPad ones: build Debug for the simulator, copy `Screenshots/sample-app-state.json` (two weeks of sample
+meals, weigh-ins and water ending 16 Nov 2026; shift the dates if it's much later) to
+`Library/Application Support/MacroMenu/app-state.json` in the app's data container, set the defaults
+`leanr.onboarding.completed` to YES and `tips.enabled` to NO, set the status bar with `xcrun simctl status_bar … override
+--time 9:41`, and launch with `-LeanrForcePremium`. The Watch ones are a Debug build of LeanrWatch launched with
+`-demoWatch`; the status bar override doesn't work on the watch simulator, so they show the real time.
+
 ## Listing draft
 
 **Subtitle:** Fast food that fits your macros
