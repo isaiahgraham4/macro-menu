@@ -406,3 +406,17 @@ enum QuickLog {
         return groups.values.sorted { ($0.count, $0.latest.time) > ($1.count, $1.latest.time) }.prefix(limit).map(\.latest)
     }
 }
+
+/// "iPad" or "iPhone", for text that names the device Leanrrr is running on. Read from the hardware model so it can be
+/// used from any thread; the simulator reports its model through the environment.
+enum DeviceName {
+    static let current: String = {
+        var model = ProcessInfo.processInfo.environment["SIMULATOR_MODEL_IDENTIFIER"] ?? ""
+        if model.isEmpty {
+            var info = utsname()
+            uname(&info)
+            model = withUnsafeBytes(of: &info.machine) { String(decoding: $0.prefix { $0 != 0 }, as: UTF8.self) }
+        }
+        return model.hasPrefix("iPad") ? "iPad" : "iPhone"
+    }()
+}

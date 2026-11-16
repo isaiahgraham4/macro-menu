@@ -47,7 +47,7 @@ struct MenuEstimate: Equatable, Sendable {
         case .official: "Official figures"
         case .typicalDish: "Typical serve"
         case .ingredients: "From the menu's ingredients"
-        case .suggested: "Ingredients suggested on your iPhone"
+        case .suggested: "Ingredients suggested on your \(DeviceName.current)"
         case .rough: "Rough guess"
         case .chosen: "Your pick"
         }

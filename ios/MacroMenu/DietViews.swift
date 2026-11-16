@@ -131,7 +131,7 @@ struct AskLeanrView: View {
                     }.accessibilityElement(children: .combine).accessibilityLabel("Understood: " + request.understood.joined(separator: ", "))
                 }
             } footer: {
-                Text(usedModel ? "Read with Apple Intelligence on this iPhone. The orders come from Leanrrr's menus." : "The orders come from Leanrrr's menus and the restaurants' published figures.")
+                Text(usedModel ? "Read with Apple Intelligence on this \(DeviceName.current). The orders come from Leanrrr's menus." : "The orders come from Leanrrr's menus and the restaurants' published figures.")
             }
             if searching {
                 ForEach(0..<3, id: \.self) { _ in

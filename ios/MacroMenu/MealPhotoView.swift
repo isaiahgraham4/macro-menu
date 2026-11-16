@@ -86,8 +86,8 @@ struct MealPhotoView: View {
                 } else {
                     Section {
                         Text(engine == .appleIntelligence
-                             ? "Named by Apple Intelligence on your iPhone. Check each match and how much you had."
-                             : "Named by your iPhone's built-in image recognition\(engine == .both ? " and Apple Intelligence" : ""). It can't count, so each food is one serving: check the amounts.")
+                             ? "Named by Apple Intelligence on your \(DeviceName.current). Check each match and how much you had."
+                             : "Named by your \(DeviceName.current)'s built-in image recognition\(engine == .both ? " and Apple Intelligence" : ""). It can't count, so each food is one serving: check the amounts.")
                             .font(.roboto(.caption)).foregroundStyle(.secondary)
                     }
                 }

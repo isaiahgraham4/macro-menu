@@ -18,7 +18,7 @@ struct BodySection: View {
             }
             NavigationLink { ProgressPhotosView() } label: { Label("Progress photos", systemImage: "camera") }
         } header: { Text("Body") } footer: {
-            Text("Measurements sync with iCloud like the rest of your data. Progress photos stay on this iPhone.")
+            Text("Measurements sync with iCloud like the rest of your data. Progress photos stay on this \(DeviceName.current).")
         }
     }
 }
@@ -193,7 +193,7 @@ final class ProgressPhotoLibrary {
     /// Saves a picture from the camera or Photos, shrunk to a sensible size.
     @discardableResult func add(_ data: Data, date: Date = Date()) -> Bool {
         guard let jpeg = ProgressPhotoFiles.prepared(data) else { problem = "That photo couldn't be read."; return false }
-        do { try files.add(jpeg: jpeg, date: date) } catch { problem = "Couldn't save the photo. Check your iPhone's storage."; return false }
+        do { try files.add(jpeg: jpeg, date: date) } catch { problem = "Couldn't save the photo. Check your \(DeviceName.current)'s storage."; return false }
         photos = files.load()
         return true
     }
@@ -262,9 +262,9 @@ struct ProgressPhotosView: View {
                 }
             }
             Section {
-                Label("Stay on this iPhone", systemImage: "lock.fill").foregroundStyle(.secondary)
+                Label("Stay on this \(DeviceName.current)", systemImage: "lock.fill").foregroundStyle(.secondary)
             } footer: {
-                Text("Leanrrr doesn't upload these. They aren't part of iCloud sync, backups or exports, and \"Delete all my data\" removes them. Your iPhone's own backup may include them, like any app's files.")
+                Text("Leanrrr doesn't upload these. They aren't part of iCloud sync, backups or exports, and \"Delete all my data\" removes them. Your \(DeviceName.current)'s own backup may include them, like any app's files.")
             }
         }
         .navigationTitle("Progress photos")

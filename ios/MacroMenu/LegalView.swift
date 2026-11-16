@@ -135,7 +135,7 @@ struct DeleteDataView: View {
     var body: some View {
         LeanrList {
             Section {
-                Text("This deletes your foods, recipes, saved meals, food log, meal plans, check-ins, weigh-ins, measurements, water, progress photos, targets, reminders and settings from this iPhone, and Leanrrr's copy in your iCloud. It can't be undone.")
+                Text("This deletes your foods, recipes, saved meals, food log, meal plans, check-ins, weigh-ins, measurements, water, progress photos, targets, reminders and settings from this \(DeviceName.current), and Leanrrr's copy in your iCloud. It can't be undone.")
                 Text("Want a copy first? Export a backup in Settings.").foregroundStyle(.secondary)
             }
             if health.enabled {
@@ -154,7 +154,7 @@ struct DeleteDataView: View {
                 }
                 .disabled(working)
             } footer: {
-                Text("iCloud sync is turned off on this iPhone afterwards, so copies on your other devices don't come back. Delete there too if Leanrrr is on another device. Foods you shared with other Leanrrr users are taken down too. I don't hold any of your data, so there's nothing else to delete.")
+                Text("iCloud sync is turned off on this \(DeviceName.current) afterwards, so copies on your other devices don't come back. Delete there too if Leanrrr is on another device. Foods you shared with other Leanrrr users are taken down too. I don't hold any of your data, so there's nothing else to delete.")
             }
         }
         .navigationTitle("Delete all my data")
@@ -163,7 +163,7 @@ struct DeleteDataView: View {
             Button("Delete", role: .destructive) { Task { await delete() } }
             Button("Cancel", role: .cancel) {}
         } message: {
-            Text(includeHealth && health.enabled ? "Your Leanrrr data on this iPhone, in iCloud and in Apple Health will be deleted." : "Your Leanrrr data on this iPhone and in iCloud will be deleted.")
+            Text(includeHealth && health.enabled ? "Your Leanrrr data on this \(DeviceName.current), in iCloud and in Apple Health will be deleted." : "Your Leanrrr data on this \(DeviceName.current) and in iCloud will be deleted.")
         }
         .alert("Your data is deleted", isPresented: Binding(get: { result != nil }, set: { if !$0 { result = nil; dismiss() } })) {
             Button("OK") { result = nil; dismiss() }
@@ -182,7 +182,7 @@ struct DeleteDataView: View {
         DataDeletion.clearSettings()
         guard store.eraseEverything() else { return }
         WidgetCenter.shared.reloadAllTimelines()
-        result = cloudDeleted ? "Leanrrr has started fresh." : "Leanrrr has started fresh on this iPhone. iCloud couldn't be reached, so delete Leanrrr's folder in the Files app under iCloud Drive."
+        result = cloudDeleted ? "Leanrrr has started fresh." : "Leanrrr has started fresh on this \(DeviceName.current). iCloud couldn't be reached, so delete Leanrrr's folder in the Files app under iCloud Drive."
         if !sharedDeleted { result! += " Some foods you shared couldn't be taken down. Contact \(AppInfo.contactText) to have them removed." }
     }
 }

@@ -33,7 +33,7 @@ enum SharedFoodError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .noAccount: "Sign in to iCloud in Settings to share foods."
-        case .restricted: "iCloud is restricted on this iPhone, so foods can't be shared."
+        case .restricted: "iCloud is restricted on this \(DeviceName.current), so foods can't be shared."
         case .unavailable: "iCloud can't be reached right now. Try again shortly."
         }
     }
