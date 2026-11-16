@@ -113,6 +113,11 @@ simulator with a 9:41 status bar and the same sample data as the iPad set):
 4. Weight: scale readings and the smoothed trend.
 5. Meal: Log again.
 
+App Store Connect's required iPhone slot is the 6.1/6.3-inch size, not 6.9-inch. `Screenshots/iPhone-6.3/` holds the same
+five scaled to 1206 × 2622 (`sips -z 2622 1206`; the two shapes differ by under two pixels). On 16 Nov 2026 the 6.3-inch
+set went into the required "medium display" slot and the full-size set into the optional "large display" slot (Media
+Manager), with the iPad and Watch sets in theirs.
+
 `Screenshots/iPad/` holds five 13-inch iPad screenshots (2064 × 2752, taken 16 Nov 2026 on an iPad Pro 13-inch (M5)
 simulator named "Leanr iPad 13"): Today, Find, Progress (Eating), Weight and Meal. `Screenshots/Watch/` holds three Apple
 Watch screenshots (422 × 514, the Ultra size, from the "Leanr Ultra 49" simulator): calories left, Log again and water.
