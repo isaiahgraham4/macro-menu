@@ -128,6 +128,10 @@ closed with `simctl io <udid> screenshot --display=primary`). The product page h
 (5244 × 2950 PNG, built by `Campaign/header.py`; App Store Connect takes PNG only). Each device shows a different slice
 of the header, so its message sits in the band y 700-1700, centred; the measured crops are noted in `header.py`.
 
+On 17 Nov 2026 seven iPad campaign slides were built in `Campaign/final-ipad-2064x2752/` (2064 × 2752) by
+`Campaign/ipad.py` from Gemini plates in `Campaign/native/ipad/` and captures in `Campaign/raw/ipad/`. They replaced the
+five plain screenshots in the iPad 13-inch slot the same day (the plain ones stay in the Asset Library). Not submitted.
+
 `Screenshots/iPad/` holds five 13-inch iPad screenshots (2064 × 2752, taken 16 Nov 2026 on an iPad Pro 13-inch (M5)
 simulator named "Leanr iPad 13"): Today, Find, Progress (Eating), Weight and Meal. `Screenshots/Watch/` holds three Apple
 Watch screenshots (422 × 514, the Ultra size, from the "Leanr Ultra 49" simulator): calories left, Log again and water.
