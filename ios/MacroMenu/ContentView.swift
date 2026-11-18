@@ -20,6 +20,8 @@ final class Navigator {
     enum RequestedSheet { case settings, reminders }
     /// Set when the weekly review notification is tapped.
     var showWeeklyReview = false
+    /// Set by Settings to replay the tour of the tabs.
+    var tourRequested = false
     /// A food or search opened from Siri or Visual Intelligence, shown over the current tab.
     var opened: Opened?
     enum Opened: Identifiable {
@@ -42,6 +44,9 @@ struct ContentView: View {
     @State private var settings = false
     @State private var reminderPrompt = false
     @AppStorage("leanr.onboarding.completed") private var onboardingCompleted = false
+    @AppStorage(TabTour.seenKey) private var tourSeen = false
+    /// The tour step on screen, if the tour is running.
+    @State private var tourStep: TourStep?
     @AppStorage(MacroColours.proteinKey) private var proteinColour = "blue"
     @AppStorage(MacroColours.carbsKey) private var carbsColour = "orange"
     @AppStorage(MacroColours.fatKey) private var fatColour = "red"
@@ -59,6 +64,7 @@ struct ContentView: View {
         // A tab bar on iPhone; on iPad the same tabs also open as a sidebar.
         .tabViewStyle(.sidebarAdaptable)
         .modifier(MomentsOverlay(store: store, openWeeklyReview: { nav.showWeeklyReview = true }))
+        .modifier(TabTourOverlay(step: $tourStep, nav: nav, finished: { tourSeen = true }))
         .tint(accent)
         .onChange(of: accentRaw) { store.refreshWidgets() }
         .onChange(of: proteinColour) { store.refreshWidgets() }
@@ -89,6 +95,14 @@ struct ContentView: View {
             store.launchSettled = true
             if onboardingCompleted { store.offerReviews() }
         }
+        #if DEBUG
+        // `-demoTour` runs the tour of the tabs a few seconds after launch, whether or not it's been seen.
+        .task {
+            guard CommandLine.arguments.contains("-demoTour") else { return }
+            try? await Task.sleep(for: .seconds(3))
+            tourStep = .today
+        }
+        #endif
         .task {
             FeatureTips.noteLaunch(onboardingCompleted: onboardingCompleted)
             // A cold launch doesn't report a scene phase change, so the first visit after days away is checked here.
@@ -100,6 +114,13 @@ struct ContentView: View {
         .onChange(of: nav.scanRequested) {
             // The scanner opens over Today, so anything already covering it is closed first.
             if nav.scanRequested { settings = false; reminderPrompt = false; nav.showWeeklyReview = false }
+        }
+        .onChange(of: nav.tourRequested) {
+            guard nav.tourRequested else { return }
+            nav.tourRequested = false
+            settings = false
+            // After the Settings sheet has gone, so the first tab is in view.
+            Task { try? await Task.sleep(for: .seconds(0.6)); tourStep = .today }
         }
         .onChange(of: nav.requestedSheet) {
             switch nav.requestedSheet {
@@ -125,8 +146,8 @@ struct ContentView: View {
         .environment(health)
         .environment(cloud)
         .preferredColorScheme(appearance.colorScheme)
-        .fullScreenCover(isPresented: Binding(get: { !onboardingCompleted }, set: { if !$0 { onboardingCompleted = true } })) {
-            LeanrOnboarding { onboardingCompleted = true }
+        .fullScreenCover(isPresented: Binding(get: { !onboardingCompleted }, set: { if !$0 { finishOnboarding() } })) {
+            LeanrOnboarding { finishOnboarding() }
                 .environment(store).environment(location).environment(health).tint(accent)
                 .preferredColorScheme(appearance.colorScheme)
         }
@@ -180,6 +201,16 @@ struct ContentView: View {
         } message: { Text(store.errorMessage ?? "") }
         .modifier(LaunchOverlay(showing: onboardingCompleted))
     }
+    /// Onboarding is done: the launch animation plays once, then the tour of the tabs is offered to someone who hasn't had it.
+    private func finishOnboarding() {
+        guard !onboardingCompleted else { return }
+        onboardingCompleted = true
+        guard !tourSeen else { return }
+        Task {
+            try? await Task.sleep(for: .seconds(2))
+            if !tourSeen && tourStep == nil { tourStep = .today }
+        }
+    }
     /// A tab's root screen with Settings at the top right.
     /// Offers reminders to someone coming back after a few days away with none set up. The last visit is stamped when Leanr
     /// goes to the background, and again here, so a first launch has no earlier visit and never asks straight away.
@@ -191,7 +222,7 @@ struct ContentView: View {
         // `-demoAway` behaves as if Leanr was last opened five days ago, to try the reminders prompt.
         if CommandLine.arguments.contains("-demoAway") { last = Date().addingTimeInterval(-5 * 24 * 3600) }
         #endif
-        guard onboardingCompleted, !reminderPrompt, !settings, nav.opened == nil, !nav.showWeeklyReview else { return }
+        guard onboardingCompleted, tourStep == nil, !reminderPrompt, !settings, nav.opened == nil, !nav.showWeeklyReview else { return }
         var asked = defaults.object(forKey: ReminderPrompt.askedKey) as? Date
         #if DEBUG
         if CommandLine.arguments.contains("-demoAway") { asked = nil }

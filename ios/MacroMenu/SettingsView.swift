@@ -5,6 +5,7 @@ struct SettingsView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(HealthSync.self) private var health
     @Environment(CloudSync.self) private var cloud
+    @Environment(Navigator.self) private var nav
     @State private var healthFailed = false
     @AppStorage(AppAppearance.storageKey) private var appearance = AppAppearance.system
     @State private var showQuiz = false
@@ -227,6 +228,7 @@ struct SettingsView: View {
                     Link(destination: url) { LabeledContent("Contact", value: email) }
                 }
                 Button("Play the calorie quiz") { showQuiz = true }
+                Button("Take the tour of the tabs") { nav.tourRequested = true }
                 NavigationLink { SourcesView() } label: { Label("Menu sources", systemImage: "info.circle") }
                 LabeledContent("Menu updated", value: menuDate)
                 LabeledContent("Version", value: version)
