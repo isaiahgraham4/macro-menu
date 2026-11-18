@@ -153,6 +153,12 @@ app version joins it with Add for Review once the age rating, content rights, re
 
 **Subtitle:** Fast food to fit your macros (the limit is 30 characters; "that fits" was 31)
 
+**Promotional text** (entered 18 Nov 2026; 150 of 170 characters; can be changed any time without a new version or review):
+Eat out and stay on target. Tell Leanrrr the calories and macros you have left, and it finds the orders that fit, using
+each restaurant's own numbers.
+
+The Regulated Medical Device declaration (App Compliance) was answered "No" on 18 Nov 2026.
+
 **Description:**
 Leanrrr finds the order that fits. Tell it your calories and protein and it searches the published nutrition figures from
 McDonald's, KFC, Hungry Jack's, Subway, Guzman y Gomez, Nando's, Oporto, Red Rooster, Domino's, Grill'd, Zambrero and
