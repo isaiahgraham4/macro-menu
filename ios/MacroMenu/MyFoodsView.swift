@@ -207,6 +207,8 @@ struct FoodEditor: View {
     /// The entered barcode's digits, or nil when there's none or it isn't a valid product barcode.
     var barcodeCode: String? { draft.barcode.flatMap { try? BarcodeLookup.validatedCode($0) } }
     var barcodeInvalid: Bool { !(draft.barcode ?? "").isEmpty && barcodeCode == nil }
+    /// Everything typed into this food that others could read: its name, serving and any nutrient you named.
+    var namedTexts: [String] { [draft.name, draft.serve] + (draft.nut ?? [:]).keys }
     var body: some View {
         LeanrForm {
             if draft.name.isEmpty {
@@ -215,6 +217,7 @@ struct FoodEditor: View {
             Section("Food") {
                 TextField("Name", text: $draft.name)
                 if !per100 { TextField("Serving size (e.g. 150 g)", text: $draft.serve) }
+                OffensiveTextNote(namedTexts)
                 Toggle("Enter nutrition per 100 g / mL", isOn: $per100)
                     // Per-100 figures are logged by the weight eaten unless you switch back to servings.
                     .onChange(of: per100) { if savePortion != nil { byWeight = per100 } }
@@ -347,10 +350,11 @@ struct FoodEditor: View {
                     TextField("Nutrient name", text: $customNutrient)
                     Picker("Unit", selection: $customUnit) { ForEach(["g","mg","µg","%"], id: \.self) { Text($0) } }
                     NumberField(title: "Amount", value: $customValue)
+                    OffensiveTextNote(customNutrient)
                     Button("Add nutrient") {
                         if draft.nut == nil { draft.nut = [:] }
                         draft.nut?["\(customNutrient) (\(customUnit))"] = customValue; customNutrient = ""; customValue = 0
-                    }.disabled(customNutrient.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || customValue < 0)
+                    }.disabled(customNutrient.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || customValue < 0 || ContentFilter.flags([customNutrient]))
                 }
             }
             Section("Per-serving preview") { NutritionView(total: Nutrition([Portion(food: result)])) }
@@ -385,7 +389,7 @@ struct FoodEditor: View {
                             succeeded = savePortion(Portion(food: item, quantity: quantity))
                         } else { succeeded = save(sharable(result)) }
                         if succeeded { dismiss() } else { saveFailed = true }
-                    }.disabled(!result.isValid || barcodeInvalid || servingSize <= 0 || scanning || !scanBasisConfirmed || !quantity.isFinite || quantity <= 0 || quantity > 10000)
+                    }.disabled(!result.isValid || ContentFilter.flags(namedTexts) || barcodeInvalid || servingSize <= 0 || scanning || !scanBasisConfirmed || !quantity.isFinite || quantity <= 0 || quantity > 10000)
                 }
             }
             .alert("Share this food with everyone?", isPresented: $askingToShare) {

@@ -182,6 +182,16 @@ import UniformTypeIdentifiers
             var food = bar; food.name = fine
             assert(SharingRules.problem(food) == nil, fine)
         }
+        // The same filter flags any food or meal name, including disguised spellings, but lets real dishes through.
+        for bad in ["sh1t burger", "$hit pie", "f*ck wrap", "c**t", "f u c k nuggets", "fuuuuck fries", "SHIIIT", "fuckburger", "motherfucking taco",
+                    "fuk this", "b!tch salad", "Kill yourself", "kill your self", "nigga wings", "rape seed you", "cock"] {
+            assert(!ContentFilter.isAcceptable(bad), bad)
+        }
+        for fine in ["Spotted dick", "Cock-a-leekie soup", "Dick Smith peanut butter", "Coon cheese", "Faggots and peas", "Rape seed oil", "Shitake mushrooms",
+                     "5 Guys burger", "7 Eleven coffee", "100 g", "B B Q chicken", "Assam tea", "Cucumber", "Chicken con queso", "Flame grilled", "Hot dog"] {
+            assert(ContentFilter.isAcceptable(fine), fine)
+        }
+        assert(ContentFilter.flags(["Chicken", "150 g", "f*cking"]) && !ContentFilter.flags(["Chicken", "150 g"]))
         // Extra nutrients, the barcode and the kind of food are bounded too, since anyone can write a shared record.
         var salty = bar; salty.nut = ["sodium": 1_000_000]
         assert(SharingRules.problem(salty) != nil)

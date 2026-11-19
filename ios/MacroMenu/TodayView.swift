@@ -543,6 +543,7 @@ struct LogEditor: View {
         LeanrForm {
             Section {
                 TextField("Meal name", text: $entry.name, axis: .vertical)
+                OffensiveTextNote(entry.name)
                 Picker("Meal time", selection: $entry.mealTime) {
                     Text("Unassigned").tag(MealTime?.none)
                     ForEach(MealTime.allCases) { Text($0.title).tag(Optional($0)) }
@@ -602,7 +603,7 @@ struct LogEditor: View {
         .toolbar {
             ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } }
             ToolbarItem(placement: .confirmationAction) {
-                Button("Save") { save() }.disabled(!changed || !entry.isValid || entry.name.trimmingCharacters(in: .whitespaces).isEmpty)
+                Button("Save") { save() }.disabled(!changed || !entry.isValid || entry.name.trimmingCharacters(in: .whitespaces).isEmpty || ContentFilter.flags([entry.name]))
             }
         }
         .sheet(isPresented: $picking) {

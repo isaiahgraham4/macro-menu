@@ -70,6 +70,7 @@ struct MealView: View {
                 Section("Meal totals") { NutritionView(total: Nutrition(store.data.tray)) }
                 Section("Log it") {
                     TextField("Name this meal", text: $name, prompt: Text(suggestedName), axis: .vertical)
+                    OffensiveTextNote(name)
                     DatePicker("Log date", selection: $date, in: ...Date(), displayedComponents: .date)
                     Picker("Meal time", selection: $mealTime) {
                         ForEach(MealTime.allCases) { Text($0.title).tag($0) }
@@ -80,6 +81,7 @@ struct MealView: View {
                         }
                     } label: { Text("Log meal").font(.roboto(.headline)).frame(maxWidth: .infinity) }
                         .buttonStyle(.borderedProminent).controlSize(.large)
+                        .disabled(ContentFilter.flags([name]))
                         .listRowSeparator(.hidden)
                 }
                 Section {
@@ -87,6 +89,7 @@ struct MealView: View {
                         Button {
                             if store.change({ $0.meals.append(SavedMeal(name: title, items: $0.tray)) }) { store.notice = "Meal saved" }
                         } label: { TileLabel(title: "Save for later", systemImage: "bookmark") }
+                            .disabled(ContentFilter.flags([name]))
                         ShareLink(item: mealText(title, store.data.tray)) { TileLabel(title: "Share text", systemImage: "square.and.arrow.up") }
                         Button { UIPasteboard.general.string = mealText(title,store.data.tray); store.notice = "Meal copied" } label: { TileLabel(title: "Copy", systemImage: "doc.on.doc") }
                         Button { makingImage = true } label: { TileLabel(title: "Make image", systemImage: "photo") }
@@ -211,6 +214,7 @@ struct SavedMealEditor: View {
         LeanrList {
             Section("Name") {
                 TextField("Meal name", text: $draft.name, axis: .vertical).font(.roboto(.body))
+                OffensiveTextNote(draft.name)
             }
             Section {
                 if draft.items.isEmpty {
@@ -250,7 +254,7 @@ struct SavedMealEditor: View {
                     var meal = draft; meal.name = trimmedName
                     if store.updateMeal(meal) { store.notice = "Saved \(meal.name)"; dismiss() }
                 }
-                .disabled(!changed || trimmedName.isEmpty || draft.items.isEmpty)
+                .disabled(!changed || trimmedName.isEmpty || draft.items.isEmpty || ContentFilter.flags([trimmedName]))
             }
         }
         .sheet(isPresented: $picking) {

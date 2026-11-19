@@ -52,6 +52,7 @@ struct QuickAddView: View {
             }
             Section {
                 TextField("What was it? (optional)", text: $note)
+                OffensiveTextNote(note)
             }
         }
         .navigationTitle("Quick add").navigationBarTitleDisplayMode(.inline)
@@ -61,7 +62,7 @@ struct QuickAddView: View {
                 Button("Log") {
                     guard let food else { return }
                     if save(Portion(food: food), mealTime) { dismiss() } else { failed = true }
-                }.disabled(food == nil)
+                }.disabled(food == nil || ContentFilter.flags([note]))
             }
             ToolbarItem(placement: .keyboard) { Button("Done") { focused = false } }
         }

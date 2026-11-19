@@ -62,21 +62,88 @@ nonisolated enum SharingRules {
     }
 }
 
-/// Keeps strong language and abuse out of shared food names. Whole words only, so "Scunthorpe" or "cocktail" pass.
+/// Keeps strong language and abuse out of the foods and meals people name, and out of shared foods.
+/// Whole words only, so "Scunthorpe" or "cocktail" pass, but disguised spellings like "sh1t", "f*ck", "f u c k" and "fuuuck" are caught.
 nonisolated enum ContentFilter {
     private static let words: Set<String> = [
-        "fuck", "fucks", "fucked", "fucking", "fucker", "fuckers", "motherfucker", "cunt", "cunts", "shit", "shits", "shitty", "bullshit",
-        "bitch", "bitches", "bastard", "bastards", "wanker", "wankers", "twat", "twats", "dickhead", "dickheads", "arsehole", "asshole",
-        "cock", "cocks", "dick", "dicks", "pussy", "slut", "sluts", "whore", "whores", "porn", "nazi", "nazis", "rape", "rapist",
-        "nigger", "niggers", "nigga", "niggas", "faggot", "faggots", "fag", "fags", "retard", "retards", "retarded", "spastic", "tranny", "kike", "chink", "coon", "paki", "abo", "abos", "gook",
-        "kys",
+        "fuck", "fucks", "fucked", "fucking", "fucker", "fuckers", "motherfucker", "fuk", "fuks", "fukin", "fuking", "fuq", "fck", "fcking", "fking", "fkn",
+        "phuck", "phuk", "cunt", "cunts", "shit", "shits", "shitty", "shite", "bullshit", "shyt",
+        "bitch", "bitches", "biatch", "bastard", "bastards", "wanker", "wankers", "twat", "twats", "dickhead", "dickheads", "arsehole", "arseholes", "asshole", "assholes",
+        "cock", "cocks", "dick", "dicks", "pussy", "slut", "sluts", "whore", "whores", "porn", "cum", "jizz", "dildo", "blowjob", "handjob",
+        "nazi", "nazis", "hitler", "rape", "raped", "rapist",
+        "nigger", "niggers", "nigga", "niggas", "faggot", "faggots", "fag", "fags", "retard", "retards", "retarded", "spastic", "tranny",
+        "kike", "chink", "coon", "paki", "abo", "abos", "gook", "spic", "wetback", "raghead", "towelhead",
+        "kys", "killyourself",
     ]
+    /// Caught even inside another word, because no food name contains them.
+    private static let roots = ["fuck", "nigger", "nigga", "faggot"]
+    /// Real foods that would otherwise trip a word above.
+    private static let allowedPhrases = ["spotted dick", "dick smith", "cock a leekie", "cockaleekie", "coon cheese", "rape seed oil", "faggots and peas", "faggots in gravy"]
+    /// Symbols and digits standing in for letters, as in "sh1t" or "$hit".
+    private static let lookalikes: [Character: Character] = ["0": "o", "1": "i", "3": "e", "4": "a", "5": "s", "7": "t", "@": "a", "$": "s", "!": "i", "|": "i"]
+
     static func isAcceptable(_ text: String) -> Bool {
-        let tokens = FoodSearch.tokens(text)
-        // Also catch "f u c k" and "fu.ck" style spacing by joining short neighbouring pieces.
-        let joined = tokens.indices.dropLast().map { tokens[$0] + tokens[$0 + 1] }
-        return (tokens + joined).allSatisfy { !words.contains($0) }
+        var tokens = pieces(text)
+        let padded = " " + tokens.joined(separator: " ") + " "
+        if let allowed = allowedPhrases.first(where: { padded.contains(" \($0) ") }) {
+            return isAcceptable(padded.replacingOccurrences(of: " \(allowed) ", with: " "))
+        }
+        tokens = tokens.map(unmasked)
+        // Spaced-out letters ("f u c k") and words split in two or three ("fu ck", "kill your self").
+        var joined = tokens.indices.dropLast().map { tokens[$0] + tokens[$0 + 1] }
+            + tokens.indices.dropLast(2).map { tokens[$0] + tokens[$0 + 1] + tokens[$0 + 2] }
+        var run: [String] = []
+        for token in tokens + [""] {
+            if token.count == 1 { run.append(token); continue }
+            if run.count >= 3 { joined.append(run.joined()) }
+            run = []
+        }
+        return (tokens + joined).allSatisfy { token in
+            !variants(token).contains { word in words.contains(word) || roots.contains { word.contains($0) } || matchesMasked(word) }
+        }
     }
+
+    /// Whether any of these is unacceptable.
+    static func flags(_ texts: [String]) -> Bool { !texts.allSatisfy(isAcceptable) }
+    static let flagMessage = "Take out the offensive language to save this."
+
+    /// Lowercased words, keeping the symbols people swap in for letters.
+    private static func pieces(_ text: String) -> [String] {
+        text.folding(options: [.caseInsensitive, .diacriticInsensitive], locale: nil).lowercased()
+            .replacingOccurrences(of: "'", with: "").replacingOccurrences(of: "’", with: "")
+            .split { !$0.isLetter && !$0.isNumber && !"*@$!|".contains($0) }
+            .map { String($0).trimmingCharacters(in: CharacterSet(charactersIn: "!|*")) }
+            .filter { !$0.isEmpty }
+    }
+
+    /// "sh1t" as "shit". Plain numbers like "100" or "7" are left alone.
+    private static func unmasked(_ token: String) -> String {
+        guard token.contains(where: \.isLetter) else { return token }
+        return String(token.map { lookalikes[$0] ?? $0 })
+    }
+
+    /// The word with long runs of one letter shortened, so "fuuuck" and "shiiit" are checked as well.
+    private static func variants(_ token: String) -> [String] {
+        var single = "", double = ""
+        var last: Character?, count = 0
+        for char in token {
+            count = char == last ? count + 1 : 1
+            last = char
+            if count == 1 { single.append(char) }
+            if count <= 2 { double.append(char) }
+        }
+        return [token, single, double]
+    }
+
+    /// "f*ck" or "c**t": each star stands for one letter of a listed word.
+    private static func matchesMasked(_ token: String) -> Bool {
+        guard token.contains("*"), token.contains(where: \.isLetter) else { return false }
+        let chars = Array(token)
+        return words.contains { word in
+            word.count == chars.count && zip(word, chars).allSatisfy { $0 == $1 || $1 == "*" }
+        }
+    }
+
     static func hasContactDetails(_ text: String) -> Bool {
         let lower = text.lowercased()
         if lower.contains("http") || lower.contains("www.") || lower.contains("@") { return true }

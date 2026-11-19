@@ -167,3 +167,16 @@ struct SourcesView: View {
         }.navigationTitle("Menu sources")
     }
 }
+
+/// Shown under a food or meal name with offensive language in it. Saving stays off until it's changed.
+struct OffensiveTextNote: View {
+    let texts: [String]
+    init(_ texts: String...) { self.texts = texts }
+    init(_ texts: [String]) { self.texts = texts }
+    var body: some View {
+        if ContentFilter.flags(texts) {
+            Label(ContentFilter.flagMessage, systemImage: "exclamationmark.triangle.fill")
+                .font(.roboto(.caption)).foregroundStyle(.red)
+        }
+    }
+}

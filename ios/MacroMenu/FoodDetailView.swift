@@ -36,6 +36,7 @@ struct FoodDetailView: View {
         if let pinnedCustom, pinnedCustom.name == adjusted.name, pinnedCustom.kj == adjusted.kj { return pinnedCustom }
         var value = adjusted; value.id = UUID().uuidString; return value
     }
+    private var nameFlagged: Bool { ContentFilter.flags([customName]) }
     var adjusted: Food { food.customised(changes, adding: ownAdjustment, subtract: subtract, name: customName) }
     var amount: Double { useWeight ? weight / (food.servingWeight?.0 ?? 100) : quantity }
     var portion: Portion { Portion(food: adjusted, quantity: amount) }
@@ -149,7 +150,10 @@ struct FoodDetailView: View {
                         Button { subtract = true; editingAdjustment = true } label: { Label("Remove something else", systemImage: "minus.circle") }
                         Button { subtract = false; editingAdjustment = true } label: { Label("Add something else", systemImage: "plus.circle") }
                     }
-                    if customized { TextField("Name this custom order", text: $customName) }
+                    if customized {
+                        TextField("Name this custom order", text: $customName)
+                        OffensiveTextNote(customName)
+                    }
                 } header: {
                     Text("Customise your order")
                 } footer: {
@@ -183,7 +187,7 @@ struct FoodDetailView: View {
             if food.isSupermarket { SupermarketSourceSection(food: food) }
             if customized {
                 Section {
-                    Button { saveCustom() } label: { Label("Save custom order to My foods", systemImage: "bookmark") }.disabled(!adjusted.isValid)
+                    Button { saveCustom() } label: { Label("Save custom order to My foods", systemImage: "bookmark") }.disabled(!adjusted.isValid || nameFlagged)
                 }
             }
         }
@@ -229,7 +233,7 @@ struct FoodDetailView: View {
                 BottomActionBar {
                     if pick != nil {
                         Button { addPortion() } label: { Text("\(pickTitle) · \(Nutrition([portion]).cal.number) Cal").frame(maxWidth: .infinity) }
-                            .disabled(!portion.isValid)
+                            .disabled(!portion.isValid || nameFlagged)
                     } else {
                         let suggested = logMeal ?? MealTime.suggested()
                         HStack(spacing: 10) {
@@ -248,7 +252,7 @@ struct FoodDetailView: View {
                                 Button("Add to the meal I'm building", systemImage: "fork.knife") { addPortion() }
                             } label: { Image(systemName: "ellipsis").frame(width: 24, height: 22) }
                                 .buttonStyle(.bordered).accessibilityLabel("More ways to add")
-                        }.disabled(!portion.isValid)
+                        }.disabled(!portion.isValid || nameFlagged)
                     }
                 }
             }
