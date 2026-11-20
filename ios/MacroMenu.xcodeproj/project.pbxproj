@@ -512,7 +512,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Leanrrr;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Leanrrr uses the camera to scan product barcodes, read nutrition labels and menus, recognise the foods in a photo of your meal and take progress photos.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Leanrrr uses the camera to scan product barcodes, read nutrition labels and menus, recognise the foods in a photo of your meal, take progress photos and take a photo of your food to share.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Leanrrr saves the share images you make to your photo library.";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Leanrrr reads your weight, active energy and steps to show your weight trend, your steps and an estimate of your calorie target.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Leanrrr saves the food and water you log and the weights you enter to Apple Health.";
@@ -553,7 +553,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Leanrrr;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Leanrrr uses the camera to scan product barcodes, read nutrition labels and menus, recognise the foods in a photo of your meal and take progress photos.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Leanrrr uses the camera to scan product barcodes, read nutrition labels and menus, recognise the foods in a photo of your meal, take progress photos and take a photo of your food to share.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Leanrrr saves the share images you make to your photo library.";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Leanrrr reads your weight, active energy and steps to show your weight trend, your steps and an estimate of your calorie target.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Leanrrr saves the food and water you log and the weights you enter to Apple Health.";

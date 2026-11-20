@@ -29,6 +29,11 @@ struct YearReviewView: View {
     let review: YearReview
     @State private var images: [UIImage] = []
     @State private var page = 0
+    @AppStorage(ShareDesign.storageKey) private var designRaw = ShareDesign.night.rawValue
+    private var design: ShareDesign {
+        let saved = ShareDesign(rawValue: designRaw) ?? .night
+        return ShareDesign.forMoments.contains(saved) ? saved : .night
+    }
 
     var body: some View {
         VStack(spacing: 16) {
@@ -38,17 +43,26 @@ struct YearReviewView: View {
                 TabView(selection: $page) {
                     ForEach(images.indices, id: \.self) { index in
                         Image(uiImage: images[index]).resizable().scaledToFit()
+                            .background { if design.isTransparent { Checkerboard() } }
                             .clipShape(RoundedRectangle(cornerRadius: 18)).padding(.bottom, 36).tag(index)
                             .accessibilityLabel("Card \(index + 1) of \(images.count)")
                     }
                 }
                 .tabViewStyle(.page(indexDisplayMode: .always)).indexViewStyle(.page(backgroundDisplayMode: .always))
-                ShareCardActions(image: images[min(page, images.count - 1)], shareTitle: "Share this card")
+                ShareDesignPicker(designs: ShareDesign.forMoments, selection: $designRaw)
+                ShareCardActions(image: images[min(page, images.count - 1)], shareTitle: "Share this card",
+                                 hint: design.hint ?? ShareCardActions.standardHint, transparent: design.isTransparent)
             }
         }
         .padding()
         .navigationTitle("Your \(String(review.year))").navigationBarTitleDisplayMode(.inline)
         .toolbar { ToolbarItem(placement: .confirmationAction) { Button("Done") { dismiss() } } }
-        .task { images = review.cards(chainName: store.chainName).compactMap(\.image) }
+        .task(id: design) {
+            images = review.cards(chainName: store.chainName).compactMap { card in
+                var card = card
+                card.design = design
+                return card.image
+            }
+        }
     }
 }

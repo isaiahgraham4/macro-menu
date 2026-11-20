@@ -402,8 +402,8 @@ private struct ProgressPhotoCompare: View {
     }
 }
 
-/// The system camera, for one photo.
-private struct ProgressCameraPicker: UIViewControllerRepresentable {
+/// The system camera, for one photo (progress photos, and the photo behind a share image).
+struct ProgressCameraPicker: UIViewControllerRepresentable {
     let done: (UIImage?) -> Void
     func makeUIViewController(context: Context) -> UIImagePickerController {
         let picker = UIImagePickerController()

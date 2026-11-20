@@ -9,44 +9,42 @@ struct StoryCard: View {
     var detail: String
     var progress: Double?
     var footnote: String
+    /// Any design but the docket, which is for meals; a docket here is drawn as Paper.
+    var design: ShareDesign = .night
 
     var body: some View {
-        let accent = AppAccent.resolvedColor(accentRaw)
+        let palette = (design == .docket ? .paper : design).palette(accent: AppAccent.resolvedColor(accentRaw))
         VStack(alignment: .leading, spacing: 0) {
-            Label("LEANRRR", systemImage: "leaf.fill").font(.roboto(.caption, weight: .bold)).foregroundStyle(accent)
+            Label("LEANRRR", systemImage: "leaf.fill").font(.roboto(.caption, weight: .bold)).foregroundStyle(palette.brand)
             Spacer(minLength: 24)
-            Image(systemName: icon).font(.system(size: 44)).foregroundStyle(accent).padding(.bottom, 22)
+            Image(systemName: icon).font(.system(size: 44)).foregroundStyle(palette.brand).padding(.bottom, 22)
             Text(title).font(.custom(AppFonts.display, size: figure == nil ? 64 : 40)).lineLimit(3).minimumScaleFactor(0.5)
             if let figure {
                 HStack(alignment: .firstTextBaseline, spacing: 8) {
                     Text(figure.value).font(.custom(AppFonts.display, size: 96)).monospacedDigit().lineLimit(1).minimumScaleFactor(0.5)
-                    Text(figure.unit).font(.roboto(.title2)).foregroundStyle(.white.opacity(0.6))
+                    Text(figure.unit).font(.roboto(.title2)).foregroundStyle(palette.dim)
                 }.padding(.top, 6)
             }
-            Text(detail).font(.roboto(.title3)).foregroundStyle(.white.opacity(0.75)).padding(.top, 14)
+            Text(detail).font(.roboto(.title3)).foregroundStyle(palette.ink.opacity(0.8)).padding(.top, 14)
             if let progress {
                 ZStack(alignment: .leading) {
-                    Capsule().fill(.white.opacity(0.15))
-                    GeometryReader { geometry in Capsule().fill(accent).frame(width: geometry.size.width * progress) }
+                    Capsule().fill(palette.ink.opacity(0.15))
+                    GeometryReader { geometry in Capsule().fill(palette.brand).frame(width: geometry.size.width * progress) }
                 }.frame(height: 8).padding(.top, 24)
             }
             Spacer(minLength: 24)
-            Text(footnote).font(.roboto(.subheadline)).foregroundStyle(.white.opacity(0.6))
-            Text("Tracked with Leanrrr").font(.roboto(.caption2)).foregroundStyle(.white.opacity(0.45)).padding(.top, 6)
+            Text(footnote).font(.roboto(.subheadline)).foregroundStyle(palette.dim)
+            Text("Tracked with Leanrrr").font(.roboto(.caption2)).foregroundStyle(palette.faint).padding(.top, 6)
         }
         .padding(.horizontal, 32).padding(.vertical, 40)
-        .frame(width: MealShareCard.size.width, height: MealShareCard.size.height, alignment: .topLeading)
-        .background(Color(red: 0.07, green: 0.07, blue: 0.08))
-        .foregroundStyle(.white)
-        .environment(\.colorScheme, .dark)
-        // A picture, not a screen: the same size whatever text size the sharer uses.
-        .dynamicTypeSize(.large)
+        .modifier(ShareSurface(palette: palette))
     }
 
     /// The card drawn at three times its size: 1080 × 1920, a story's own size.
     @MainActor var image: UIImage? {
         let renderer = ImageRenderer(content: self)
         renderer.scale = 3
+        renderer.isOpaque = !design.isTransparent
         return renderer.uiImage
     }
 }
@@ -66,6 +64,10 @@ struct MomentSharePreview: View {
     let moment: Moment
 
     var body: some View {
-        StoryImagePreview(name: moment.copy.title) { moment.storyCard.image }
+        StoryImagePreview(name: moment.copy.title, designs: ShareDesign.forMoments) { design in
+            var card = moment.storyCard
+            card.design = design
+            return card.image
+        }
     }
 }

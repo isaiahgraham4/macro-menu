@@ -17,9 +17,9 @@ struct MacroMenuApp: App {
                 // `-demoShare` opens a share image at launch, to try Share, Save to Photos and Copy without making one.
                 .sheet(isPresented: .constant(CommandLine.arguments.contains("-demoShare"))) {
                     NavigationStack {
-                        StoryImagePreview(name: "7 day streak") {
+                        StoryImagePreview(name: "7 day streak", designs: ShareDesign.forMoments) { design in
                             StoryCard(icon: "flame.fill", title: "7 day streak", figure: ("7", "days"), detail: "Logged every day this week.",
-                                      progress: nil, footnote: Date().formatted(date: .long, time: .omitted)).image
+                                      progress: 1, footnote: Date().formatted(date: .long, time: .omitted), design: design).image
                         }
                     }
                 }
