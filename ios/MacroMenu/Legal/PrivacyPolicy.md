@@ -111,7 +111,7 @@ Leanrrr doesn't sell or share your personal data, and it uses no analytics, adve
 - **Apple** (United States and elsewhere): Maps, iCloud (including the public database that holds shared foods), Health, Siri, Visual Intelligence and the App Store (for Even Leanrrr), which are part of your device and your Apple Account and are covered by Apple's privacy policy.
 - **Open Food Facts** (France): receives only a product's barcode number or the words you search for packaged foods. Neither is linked to you.
 - **Recipe websites you choose**: when you import a recipe from a link, that website receives the request for the page and nothing else.
-- **GitHub** (United States): hosts the restaurant menu file. A few times a day Leanrrr asks it whether the menu has changed and, if it has, downloads the new one. The request contains nothing about you or your data. As with any website, GitHub sees your device's IP address and handles it under GitHub's privacy statement.
+- **Supabase** (United States company; the data is stored in Sydney, Australia): hosts Leanrrr's food data (restaurant menus, everyday foods and supermarket foods). A few times a day Leanrrr asks it whether that data has changed and, if it has, downloads the new copy. The request contains nothing about you or your data. As with any website, Supabase sees your device's IP address and handles it under Supabase's privacy policy.
 
 Any service that receives data from Leanrrr must protect it at least as well as this policy does. If that ever changes, this policy will be updated before the app sends anything new.
 

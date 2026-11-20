@@ -14,6 +14,10 @@ final class AppStore {
     /// and Find's supermarket mode see them but the Map, roulette, suggestions and restaurant lists don't.
     private(set) var supermarket: [Food] = []
     private(set) var supermarketChains: [Chain] = []
+    /// Revision and date of the everyday, survey and supermarket foods in use, by dataset id, so updates know what they'd replace.
+    private(set) var listVersions: [String: FoodListVersion] = [:]
+    /// The same for the copies built into the app (`FoodLists.json`).
+    private let bundledListVersions: [String: FoodListVersion]
     /// Foods other people shared (`CommunityFoods`), already filtered for reports and hidden people.
     private(set) var community: [Food] = []
     /// Goes up whenever `community` changes, so lists can redo their search cheaply.
@@ -67,9 +71,12 @@ final class AppStore {
     init(url: URL = URL.applicationSupportDirectory.appending(path: "MacroMenu/app-state.json"), region: MenuRegion = .saved, catalogURL: URL? = MenuRegion.saved.menuURL, legacyURL: URL? = URL.applicationSupportDirectory.appending(path: "MacroMenu/foods.json"),
          everydayURL: URL? = Bundle.main.url(forResource: "GenericFoods", withExtension: "json"),
          surveyURL: URL? = Bundle.main.url(forResource: "SurveyFoods", withExtension: "json"),
-         supermarketURL: URL? = MenuRegion.saved.supermarketURL) {
+         supermarketURL: URL? = MenuRegion.saved.supermarketURL,
+         foodListsURL: URL? = Bundle.main.url(forResource: "FoodLists", withExtension: "json")) {
         self.url = url
         self.region = region
+        bundledListVersions = FoodListVersion.bundled(foodListsURL)
+        listVersions = bundledListVersions
         if let everydayURL, let foods = try? JSONDecoder().decode([Food].self, from: Data(contentsOf: everydayURL)) {
             everyday = foods.filter { $0.isValid && $0.isEveryday }
         }
@@ -79,6 +86,7 @@ final class AppStore {
         if let supermarketURL, let shops = try? JSONDecoder().decode(MenuCatalog.self, from: Data(contentsOf: supermarketURL)) {
             supermarket = shops.foods.filter { $0.isValid && $0.isSupermarket }
             supermarketChains = shops.chains
+            if listVersions["supermarket"]?.published == nil { listVersions["supermarket", default: FoodListVersion()].published = shops.published }
         }
         if let catalogURL {
             do { catalog = try JSONDecoder().decode(MenuCatalog.self, from: Data(contentsOf: catalogURL)) }
@@ -112,6 +120,33 @@ final class AppStore {
     var suggestibleEveryday: [Food] { let diet = DietFilter.saved; return diet.isEmpty ? everyday : everyday.filter(diet.allows) }
     /// Switches to a newer restaurant menu. Logged meals keep the figures they were logged with.
     func useMenu(_ menu: MenuCatalog) { catalog = menu }
+    /// Switches to newer foods downloaded for a dataset (`MenuUpdates`). Logged meals keep the figures they were logged with.
+    func useFoods(_ list: MenuCatalog, for dataset: FoodDataset) {
+        switch dataset {
+        case .menu(let menuRegion):
+            if menuRegion == region { catalog = list }
+            return
+        case .everyday: everyday = list.foods.filter { $0.isValid && $0.isEveryday }
+        case .survey: survey = list.foods.filter { $0.isValid && $0.isEveryday }
+        case .supermarket:
+            guard region.hasSupermarkets else { return }
+            supermarket = list.foods.filter { $0.isValid && $0.isSupermarket }
+            supermarketChains = list.chains
+        }
+        listVersions[dataset.id] = FoodListVersion(revision: list.revision, published: list.published)
+    }
+    /// The foods in use for a dataset, as an update would replace them, or nil when it isn't in use (another country's menu).
+    func foodsInUse(_ dataset: FoodDataset) -> MenuCatalog? {
+        let version = listVersions[dataset.id]
+        switch dataset {
+        case .menu(let menuRegion): return menuRegion == region ? catalog : nil
+        case .everyday: return MenuCatalog(format: MenuUpdates.format, revision: version?.revision, published: version?.published, chains: [], foods: everyday)
+        case .survey: return MenuCatalog(format: MenuUpdates.format, revision: version?.revision, published: version?.published, chains: [], foods: survey)
+        case .supermarket:
+            guard region.hasSupermarkets, !supermarketChains.isEmpty else { return nil }
+            return MenuCatalog(format: MenuUpdates.format, revision: version?.revision, published: version?.published, chains: supermarketChains, foods: supermarket)
+        }
+    }
     /// Switches to another country's bundled menus and saves the choice. Logs, meals and your own foods stay as they are.
     @discardableResult func useRegion(_ new: MenuRegion, menuURL: URL? = nil, supermarketURL: URL? = nil) -> Bool {
         let menuURL = menuURL ?? new.menuURL
@@ -125,6 +160,7 @@ final class AppStore {
         catalog = menu
         supermarket = shops?.foods.filter { $0.isValid && $0.isSupermarket } ?? []
         supermarketChains = shops?.chains ?? []
+        listVersions["supermarket"] = shops.map { FoodListVersion(revision: bundledListVersions["supermarket"]?.revision, published: bundledListVersions["supermarket"]?.published ?? $0.published) }
         return true
     }
     var goals: Goals { data.goalSets.first { $0.id == data.activeGoal } ?? data.goalSets[0] }

@@ -42,14 +42,20 @@ import UserNotifications
         Task { await useSavedMenu() }
     }
 
-    /// A menu downloaded earlier may be newer than the one built into the app; then looks for a newer one online.
+    /// Food data downloaded earlier may be newer than what's built into the app; then looks for newer data online.
     private static func useSavedMenu() async {
-        guard store.region.updatesOnline else { return }
-        let bundled = store.catalog
-        let best = await Task.detached(priority: .utility) { MenuUpdates.best(bundled: bundled) }.value
-        // Only if it's still newer, and still the same country: a download or a change in Settings may have landed meanwhile.
-        if store.region.updatesOnline, MenuUpdates.acceptable(best, over: store.catalog) { useMenu(best) }
+        for dataset in onlineDatasets {
+            guard let bundled = store.foodsInUse(dataset) else { continue }
+            let best = await Task.detached(priority: .utility) { MenuUpdates.best(bundled: bundled, cachedAt: dataset.cacheURL) }.value
+            // Only if it's still newer and still in use: a download or a change of country in Settings may have landed meanwhile.
+            if let current = store.foodsInUse(dataset), MenuUpdates.acceptable(best, over: current) { use(best, for: dataset) }
+        }
         await checkMenu()
+    }
+
+    /// Every dataset the chosen country uses: its menu, everyday and survey foods, and supermarket foods in Australia.
+    private static var onlineDatasets: [FoodDataset] {
+        [.menu(store.region), .everyday, .survey] + (store.region.hasSupermarkets ? [.supermarket] : [])
     }
 
     /// Switches every menu to another country's, from setup or Settings.
@@ -77,13 +83,15 @@ import UserNotifications
         if store.applyQueuedQuickLogs(requests) > 0 { store.notice = "Logged from your widget" }
     }
 
-    /// Looks for a newer menu online; runs at most every few hours unless forced. Overlapping calls share one check.
+    /// Looks for newer food data online; runs at most every few hours unless forced. Overlapping calls share one check.
     static func checkMenu(force: Bool = false) async {
         if let running = menuCheck { return await running.value }
-        guard store.region.updatesOnline else { return }
         let check = Task {
-            if let menu = await MenuUpdates.check(current: store.catalog, force: force),
-               store.region.updatesOnline, MenuUpdates.acceptable(menu, over: store.catalog) { useMenu(menu) }
+            for dataset in onlineDatasets {
+                guard let current = store.foodsInUse(dataset) else { continue }
+                if let newer = await MenuUpdates.check(dataset, current: current, force: force),
+                   let latest = store.foodsInUse(dataset), MenuUpdates.acceptable(newer, over: latest) { use(newer, for: dataset) }
+            }
         }
         menuCheck = check
         await check.value
@@ -91,8 +99,8 @@ import UserNotifications
     }
     private static var menuCheck: Task<Void, Never>?
 
-    private static func useMenu(_ menu: MenuCatalog) {
-        store.useMenu(menu)
+    private static func use(_ foods: MenuCatalog, for dataset: FoodDataset) {
+        store.useFoods(foods, for: dataset)
         LeanrShortcuts.updateAppShortcutParameters()
     }
 

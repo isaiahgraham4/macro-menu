@@ -218,10 +218,11 @@ The app uses SwiftUI and requires no third-party packages or API keys.
 - CSV export (Settings → Your data): every logged food, or daily totals with that
   day's targets. Figures a food didn't list are blank, and an "Incomplete" column
   names partial totals.
-- Menu updates: `MenuUpdates.swift` downloads a newer `MenuData.json` (known
-  format, newer, every item valid; the bundled copy is the fallback) from an unlisted GitHub gist, at most every
-  6 hours, asking "only if changed" (ETag) so an unchanged menu costs a 304, not 2.9 MB. The request carries nothing
-  about the user. Publish with `Scripts/publish-menu.sh` (below).
+- Food data updates: `MenuUpdates.swift` checks Leanrrr's Supabase project (`ios/supabase/README.md`) for a newer copy of
+  each dataset in use (the chosen country's menu, everyday foods, survey foods and, in Australia, supermarket foods):
+  known format, newer, every item valid; the bundled copy is the fallback. At most every 6 hours it asks for the
+  revision and date first, so an unchanged dataset costs a few bytes. The request carries nothing about the user.
+  Publish with `Scripts/supabase/upload.py` (below).
   Settings → About shows the date of the menu in use.
 
 Restaurant nutrition is a September 2026 snapshot, not live data. Zambrero (July 2026 sheet; burritos, bowls,
@@ -297,8 +298,9 @@ The menus live in `ios/Scripts/menu-source.js` (chains, every item's published
 figures and the rules for customising orders). The exporter turns that into
 `ios/MacroMenu/MenuData.json`, stamped with a format number, a content fingerprint
 and a publish date that only changes when the menu does. To send it to phones without an app update, run the
-checks and then `sh ios/Scripts/publish-menu.sh`, which uploads it to the menu gist and waits until GitHub serves it.
-The gist is unlisted (not searchable) and its address is in `MenuUpdates.url`; the GitHub pages site stays off. The Macro Menu web app
+checks and then `python3 ios/Scripts/supabase/upload.py menu-AU` (or `sh ios/Scripts/publish-menu.sh`, which does the
+same, and also updates the old menu gist that versions 1.0-1.2 read). Every country's menu and the other food files go
+to Supabase the same way; see `ios/supabase/README.md`. The Macro Menu web app
 (`index.html`, `docs/`) is no longer updated; don't edit or publish it.
 
 The exporter runs the menu source's data and pure modifier functions,

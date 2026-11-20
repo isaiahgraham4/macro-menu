@@ -56,8 +56,6 @@ enum MenuRegion: String, CaseIterable, Identifiable, Sendable {
     var supermarketURL: URL? { hasSupermarkets ? Bundle.main.url(forResource: "SupermarketFoods", withExtension: "json") : nil }
     /// Copycat Kitchen compares home recipes with Australian menu items.
     var hasCopycatKitchen: Bool { self == .australia }
-    /// Only the Australian menu is published online for updates between app versions (`MenuUpdates`).
-    var updatesOnline: Bool { self == .australia }
     /// Open Food Facts' tag for products sold here, searched before the rest of the world.
     var openFoodFactsCountry: String {
         switch self {

@@ -1136,7 +1136,14 @@ import UniformTypeIdentifiers
 
         // Menu updates: only a newer menu in a known format, with every item valid, replaces the one in use.
         assert(catalog.format == MenuUpdates.format && catalog.published != nil && catalog.revision != nil)
-        assert(MenuUpdates.url?.scheme == "https" && MenuUpdates.url?.host == "gist.githubusercontent.com" && MenuUpdates.url?.lastPathComponent == "MenuData.json")
+        assert(MenuUpdates.server?.scheme == "https" && MenuUpdates.server?.host == "dmfmrqvmwvabzkqgdbdw.supabase.co" && MenuUpdates.publishableKey.hasPrefix("sb_publishable_"))
+        assert(MenuUpdates.url(.menu(.australia))?.absoluteString == "https://dmfmrqvmwvabzkqgdbdw.supabase.co/rest/v1/rpc/dataset?id=menu-AU")
+        assert(MenuUpdates.versionURL(.survey)?.absoluteString == "https://dmfmrqvmwvabzkqgdbdw.supabase.co/rest/v1/datasets?id=eq.survey&select=revision,published")
+        // Each dataset matches Scripts/supabase/leanrrr_data.py, and the Australian menu keeps the cache earlier versions wrote.
+        assert(MenuRegion.allCases.map { FoodDataset.menu($0).id } == ["menu-AU", "menu-NZ", "menu-US", "menu-CA", "menu-GB", "menu-ZA", "menu-IN"])
+        assert([FoodDataset.everyday, .survey, .supermarket].map(\.id) == ["generic", "survey", "supermarket"])
+        assert(FoodDataset.menu(.australia).cacheURL.lastPathComponent == "MenuData.json" && FoodDataset.survey.cacheURL.lastPathComponent == "survey.json")
+        assert(Set(([FoodDataset.everyday, .survey, .supermarket] + MenuRegion.allCases.map { .menu($0) }).map(\.cacheURL)).count == 10)
         var newer = catalog; newer.published = Date().formatted(Date.ISO8601FormatStyle(includingFractionalSeconds: true))
         assert(MenuUpdates.acceptable(newer, over: catalog))
         // A date from the future, or one that isn't a date, never wins, and a menu carrying one can't block a real menu.
@@ -1162,6 +1169,39 @@ import UniformTypeIdentifiers
         try Data("not json".utf8).write(to: cachedMenu)
         assert(MenuUpdates.best(bundled: catalog, cachedAt: cachedMenu).published == catalog.published)
         assert(MenuUpdates.best(bundled: catalog, cachedAt: root.appending(path: "missing.json")).published == catalog.published)
+
+        // Everyday, survey and supermarket foods update the same way. A food list (no chains) only takes "generic" foods,
+        // and a list can't stand in for a menu or the other way round.
+        let appFolder = catalogURL.deletingLastPathComponent()
+        let lists = FoodListVersion.bundled(appFolder.appending(path: "FoodLists.json"))
+        assert(Set(lists.keys) == ["generic", "survey", "supermarket"] && lists.values.allSatisfy { $0.revision?.count == 16 && MenuUpdates.publishedDate($0.published) != nil })
+        let listStore = AppStore(url: root.appending(path: "lists.json"), region: .australia, catalogURL: catalogURL, legacyURL: nil,
+                                 everydayURL: appFolder.appending(path: "GenericFoods.json"), surveyURL: appFolder.appending(path: "SurveyFoods.json"),
+                                 supermarketURL: appFolder.appending(path: "SupermarketFoods.json"), foodListsURL: appFolder.appending(path: "FoodLists.json"))
+        guard let everydayInUse = listStore.foodsInUse(.everyday), let shopsInUse = listStore.foodsInUse(.supermarket),
+              listStore.foodsInUse(.survey) != nil, listStore.foodsInUse(.menu(.unitedStates)) == nil,
+              listStore.foodsInUse(.menu(.australia))?.revision == catalog.revision else { fatalError("food lists in use") }
+        assert(everydayInUse.chains.isEmpty && everydayInUse.revision == lists["generic"]?.revision && everydayInUse.published == lists["generic"]?.published)
+        assert(shopsInUse.revision == lists["supermarket"]?.revision && !shopsInUse.chains.isEmpty)
+        var newerEveryday = everydayInUse; newerEveryday.published = newer.published; newerEveryday.revision = "0123456789abcdef"
+        assert(MenuUpdates.acceptable(newerEveryday, over: everydayInUse) && !MenuUpdates.acceptable(everydayInUse, over: newerEveryday))
+        var chainedEveryday = newerEveryday; chainedEveryday.foods[0].chain = "mcd"; assert(!MenuUpdates.acceptable(chainedEveryday, over: everydayInUse))
+        assert(!MenuUpdates.acceptable(newer, over: everydayInUse) && !MenuUpdates.acceptable(newerEveryday, over: catalog))
+        var emptyEveryday = newerEveryday; emptyEveryday.foods = []; assert(!MenuUpdates.acceptable(emptyEveryday, over: MenuCatalog(chains: [], foods: [])))
+        newerEveryday.foods[0].name = "Banana (updated)"
+        listStore.useFoods(newerEveryday, for: .everyday)
+        assert(listStore.everyday.contains { $0.name == "Banana (updated)" } && listStore.foodsInUse(.everyday)?.revision == "0123456789abcdef")
+        // Another country's menu arriving late doesn't replace the one in use; leaving Australia drops supermarket updates.
+        var usMenu = newer; usMenu.revision = "us"
+        listStore.useFoods(usMenu, for: .menu(.unitedStates)); assert(listStore.catalog.revision == catalog.revision)
+        assert(listStore.useRegion(.unitedKingdom, menuURL: appFolder.appending(path: "MenuData-GB.json")))
+        assert(listStore.foodsInUse(.supermarket) == nil && listStore.foodsInUse(.menu(.unitedKingdom)) != nil)
+        listStore.useFoods(shopsInUse, for: .supermarket); assert(listStore.supermarket.isEmpty)
+        UserDefaults.standard.removeObject(forKey: MenuRegion.key)
+        let cachedList = root.appending(path: "cached-list.json")
+        try JSONEncoder().encode(newerEveryday).write(to: cachedList)
+        assert(MenuUpdates.best(bundled: everydayInUse, cachedAt: cachedList).revision == "0123456789abcdef")
+        assert(MenuUpdates.best(bundled: newerEveryday, cachedAt: cachedList).revision == "0123456789abcdef")
 
         // Undo and merging weights.
         let undoURL = root.appending(path: "undo.json")
