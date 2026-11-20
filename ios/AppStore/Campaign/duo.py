@@ -133,9 +133,11 @@ def s7():
     im = head(im, ['NO ACCOUNT.', 'NO SIGN-UP.'], [CREAM] * 2, 510, 290)
     im = sub(im, ['Your food log stays on your iPhone.'], MINT, 1010)
     S = 2; layer = Image.new('RGBA', (W * S, H * S), (0, 0, 0, 0)); d = ImageDraw.Draw(layer)
-    f = ImageFont.truetype(FONTS + 'Roboto-Medium.ttf', 58 * S); labels = ['On your iPhone', 'iCloud if you want', 'Health if you want']
-    pw, gap, y, ph = 560, 40, 1220, 124; x = (W - 3 * pw - 2 * gap) // 2
-    for t in labels:
+    f = ImageFont.truetype(FONTS + 'Roboto-Medium.ttf', 52 * S); labels = ['On your iPhone', 'iCloud (optional)', 'Apple Health (optional)']
+    pad, gap, y, ph = 50, 36, 1220, 124
+    pws = [round((d.textbbox((0, 0), t, font=f)[2] - d.textbbox((0, 0), t, font=f)[0]) / S) + 2 * pad for t in labels]
+    x = (W - sum(pws) - 2 * gap) // 2
+    for t, pw in zip(labels, pws):
         d.rounded_rectangle([x * S, y * S, (x + pw) * S, (y + ph) * S], radius=ph // 2 * S, fill=CREAM)
         l, t0, r, b = d.textbbox((0, 0), t, font=f); d.text(((x + pw / 2) * S - (r - l) / 2 - l, (y + ph / 2) * S - (t0 + b) / 2), t, font=f, fill=GREEN)
         x += pw + gap

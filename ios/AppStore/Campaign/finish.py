@@ -157,8 +157,8 @@ def s7():
     im, _ = type_block(im, ['Your food log stays', 'on your iPhone.'], [MINT] * 2, 1010, 56, 70, font='Roboto-Regular.ttf')
     S = 4; layer = Image.new('RGBA', (W * S, H * S), (0, 0, 0, 0)); d = ImageDraw.Draw(layer)
     f = ImageFont.truetype(FONTS + 'Roboto-Medium.ttf', 46 * S)
-    for k, t in enumerate(['On your iPhone', 'iCloud if you want', 'Health if you want']):
-        y = 1290 + k * 132; d.rounded_rectangle([(W // 2 - 290) * S, y * S, (W // 2 + 290) * S, (y + 104) * S], radius=52 * S, fill=CREAM)
+    for k, t in enumerate(['On your iPhone', 'iCloud (optional)', 'Apple Health (optional)']):
+        y = 1290 + k * 132; d.rounded_rectangle([(W // 2 - 330) * S, y * S, (W // 2 + 330) * S, (y + 104) * S], radius=52 * S, fill=CREAM)
         l, t0, r, b = d.textbbox((0, 0), t, font=f); d.text((W * S / 2 - (r - l) / 2 - l, (y + 52) * S - (t0 + b) / 2), t, font=f, fill=GREEN)
     out = im.convert('RGBA'); out.alpha_composite(layer.resize((W, H), Image.Resampling.LANCZOS))
     save(out.convert('RGB'), '07-no-account')
