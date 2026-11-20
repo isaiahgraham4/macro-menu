@@ -27,12 +27,13 @@ Restaurant, supermarket and product names and brands belong to their owners. Lea
 
 ## Even Leanrrr, purchases and refunds
 
-Leanrrr is free to use. Even Leanrrr is an optional subscription that adds menu scanning, meal planning, custom app colours, colour packs, background tints and app icons, separate macro colours, the Calories & macros and All targets widgets, and choosing your meal and water reminders. Logging, searching, barcode scanning, photos, Siri, shared foods and your data stay free.
+Leanrrr is free to use. Even Leanrrr is an optional subscription, or a one-off Lifetime purchase, that adds menu scanning, meal planning, custom app colours, colour packs, background tints and app icons, separate macro colours, the Calories & macros and All targets widgets, and choosing your meal and water reminders. Logging, searching, barcode scanning, photos, Siri, shared foods and your data stay free.
 
 - It's sold through Apple's App Store, which handles payment. In Australia it's A$5 a week, A$10 a month or A$35 a year. The price for your country and the billing period are shown before you buy, and there are no other fees.
 - New subscribers get a 7-day free trial. Apple allows one trial per Apple Account. You aren't charged during the trial. When it ends, your subscription starts and the price shown at sign-up is charged to your Apple Account, unless you cancel at least 24 hours before the trial ends. A cancelled trial stops at the end of its 7 days.
 - It renews automatically until you cancel it in your Apple Account settings, at least 24 hours before the renewal date. Cancelling keeps Even Leanrrr until the end of the period you've paid for.
 - Apple may change the price at renewal and will tell you first. You can cancel before it takes effect.
+- Lifetime is paid once, never renews and keeps Even Leanrrr for as long as Leanrrr is offered on the App Store. It can also be given with an Apple offer code.
 - Refunds are handled by Apple. Request one at reportaproblem.apple.com.
 - If Even Leanrrr ends, the extras go back to their defaults. Everything you've logged and saved stays.
 - It's tied to your Apple Account. "Restore purchases" brings it back on a new {{DEVICE}}.

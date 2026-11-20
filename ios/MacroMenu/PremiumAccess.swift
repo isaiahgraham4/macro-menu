@@ -1,13 +1,17 @@
 import Foundation
 
 /// The rules for who has Leanr Premium, kept free of StoreKit so they can be checked on their own.
-/// The product IDs must match the subscriptions created in App Store Connect (and `Configuration/Leanr.storekit`, for testing).
+/// The product IDs must match the products created in App Store Connect (and `Configuration/Leanr.storekit`, for testing).
 enum PremiumAccess {
     static let yearly = "com.isaiahgraham.MacroMenu.premium.yearly"
     static let monthly = "com.isaiahgraham.MacroMenu.premium.monthly"
     static let weekly = "com.isaiahgraham.MacroMenu.premium.weekly"
-    /// Longest plan first, so it's listed first.
-    static let productIDs = [yearly, monthly, weekly]
+    /// A one-off purchase that never ends. Also given away free with Apple offer codes.
+    static let lifetime = "com.isaiahgraham.MacroMenu.premium.lifetime"
+    /// The auto-renewing plans, longest first, so it's listed first in Apple's subscription view.
+    static let subscriptionIDs = [yearly, monthly, weekly]
+    /// Everything that gives Premium.
+    static let productIDs = subscriptionIDs + [lifetime]
 
     /// A paid-up subscription as of the last time StoreKit was asked, remembered so Premium doesn't flicker off at launch
     /// or offline while StoreKit is still answering.
@@ -52,6 +56,7 @@ enum PremiumAccess {
 
     /// "Renews 3 Nov 2026" or "Ends 3 Nov 2026" for the Premium row in Settings.
     static func statusText(_ entitlement: Entitlement?, now: Date = Date(), calendar: Calendar = .current) -> String {
+        if entitlement?.productID == lifetime { return "Lifetime" }
         guard let entitlement, let expires = entitlement.expires else { return "Active" }
         let date = expires.formatted(.dateTime.day().month(.abbreviated).year().locale(Locale(identifier: "en_AU")))
         if entitlement.trial == true { return (entitlement.renews ?? true) ? "Free trial ends \(date), then renews" : "Free trial ends \(date)" }

@@ -37,7 +37,7 @@ struct PremiumView: View {
     }
 
     private var store: some View {
-        SubscriptionStoreView(productIDs: PremiumAccess.productIDs) {
+        SubscriptionStoreView(productIDs: PremiumAccess.subscriptionIDs) {
             VStack(alignment: .leading, spacing: 14) {
                 Text("Even Leanrrr").font(.display(.largeTitle))
                 ForEach(PremiumFeatures.all, id: \.title) { feature in
@@ -51,6 +51,13 @@ struct PremiumView: View {
                 }
                 Text("Logging, searching, barcode scanning, photos, Siri and your data stay free.")
                     .font(.roboto(.footnote)).foregroundStyle(.secondary)
+                // A one-off purchase sits outside Apple's subscription picker, so it gets its own row.
+                ProductView(id: PremiumAccess.lifetime) {
+                    Image(systemName: "infinity").font(.title2).foregroundStyle(.tint)
+                }
+                .productViewStyle(.compact)
+                .padding(12)
+                .background(.background.secondary, in: .rect(cornerRadius: 12))
             }
             .padding(.horizontal, 20).padding(.top, 12)
             .accessibilityElement(children: .contain)
@@ -80,10 +87,12 @@ struct PremiumView: View {
                     } icon: { Image(systemName: feature.symbol) }
                 }
             }
-            Section {
-                Button("Manage subscription", systemImage: "gearshape") { managing = true }
-            } footer: {
-                Text("Change plan, cancel or see receipts in your Apple Account. Cancelling keeps Even Leanrrr until the end of the period you've paid for.")
+            if purchases.entitlement?.productID != PremiumAccess.lifetime {
+                Section {
+                    Button("Manage subscription", systemImage: "gearshape") { managing = true }
+                } footer: {
+                    Text("Change plan, cancel or see receipts in your Apple Account. Cancelling keeps Even Leanrrr until the end of the period you've paid for.")
+                }
             }
         }
         .manageSubscriptionsSheet(isPresented: $managing)

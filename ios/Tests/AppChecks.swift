@@ -91,10 +91,11 @@ import UniformTypeIdentifiers
         try? FileManager.default.removeItem(at: root)
     }
 
-    /// Canada, the UK and New Zealand: each its own file and chain prefix, with nicknames, quiz meals and store links that resolve.
+    /// Canada, the UK, New Zealand and South Africa: each its own file and chain prefix, with nicknames, quiz meals and store links that resolve.
     @MainActor static func intlMenuChecks(_ catalogURL: URL, australia: MenuCatalog) throws {
         let expected: [MenuRegion: Set<String>] = [.canada: ["mine", "ca-mcd", "ca-bk", "ca-tims"], .unitedKingdom: ["mine", "uk-mcd", "uk-greggs"],
-                                                   .newZealand: ["mine", "nz-mcd", "nz-dominos"]]
+                                                   .newZealand: ["mine", "nz-mcd", "nz-dominos"],
+                                                   .southAfrica: ["mine", "za-mcd", "za-nandos", "za-wimpy", "za-debonairs", "za-kauai"]]
         for (region, ids) in expected {
             let url = catalogURL.deletingLastPathComponent().appending(path: region.menuFile + ".json")
             let menu = try JSONDecoder().decode(MenuCatalog.self, from: Data(contentsOf: url))
@@ -110,7 +111,7 @@ import UniformTypeIdentifiers
         let canada = Dictionary(uniqueKeysWithValues: try JSONDecoder().decode(MenuCatalog.self, from: Data(contentsOf: catalogURL.deletingLastPathComponent().appending(path: "MenuData-CA.json"))).chains.map { ($0.id, $0.name) })
         assert(AskLeanr.parse("breakfast at timmies", chainNames: canada, defaults: FindQuery()).query.chains == ["ca-tims"])
         assert(MenuRegion.chain("hj", in: canada) == "ca-bk")
-        for id in Set(Assistant.nicknames.values).union(MealPhoto.brandAliases.values) where id.hasPrefix("ca-") || id.hasPrefix("uk-") || id.hasPrefix("nz-") {
+        for id in Set(Assistant.nicknames.values).union(MealPhoto.brandAliases.values) where id.hasPrefix("ca-") || id.hasPrefix("uk-") || id.hasPrefix("nz-") || id.hasPrefix("za-") {
             assert(expected.values.contains { $0.contains(id) }, "unknown chain \(id)")
         }
         // Switching to another country and back keeps your foods.
@@ -1491,7 +1492,13 @@ import UniformTypeIdentifiers
         assert(!PremiumAccess.isActive(productID: PremiumAccess.monthly, expires: earlier, revoked: false, now: premiumNow))
         assert(!PremiumAccess.isActive(productID: PremiumAccess.monthly, expires: soon, revoked: true, now: premiumNow))
         assert(!PremiumAccess.isActive(productID: "com.example.other", expires: soon, revoked: false, now: premiumNow))
-        assert(PremiumAccess.productIDs == [PremiumAccess.yearly, PremiumAccess.monthly, PremiumAccess.weekly])
+        assert(PremiumAccess.subscriptionIDs == [PremiumAccess.yearly, PremiumAccess.monthly, PremiumAccess.weekly])
+        assert(PremiumAccess.productIDs == PremiumAccess.subscriptionIDs + [PremiumAccess.lifetime])
+        assert(PremiumAccess.isActive(productID: PremiumAccess.lifetime, expires: nil, revoked: false, now: premiumNow))
+        assert(!PremiumAccess.isActive(productID: PremiumAccess.lifetime, expires: nil, revoked: true, now: premiumNow))
+        let lifetimeEntitlement = PremiumAccess.Entitlement(productID: PremiumAccess.lifetime, expires: nil, renews: nil)
+        assert(PremiumAccess.isRemembered(lifetimeEntitlement, now: premiumNow))
+        assert(PremiumAccess.statusText(lifetimeEntitlement) == "Lifetime")
         assert(PremiumAccess.isActive(productID: PremiumAccess.weekly, expires: soon, revoked: false, now: premiumNow))
         // A remembered subscription is trusted a few days past its end (renewals land late), not forever.
         let ended = PremiumAccess.Entitlement(productID: PremiumAccess.monthly, expires: premiumNow.addingTimeInterval(-86400), renews: true)
@@ -1502,6 +1509,7 @@ import UniformTypeIdentifiers
         let monthlyEntitlement = PremiumAccess.Entitlement(productID: PremiumAccess.monthly, expires: premiumNow.addingTimeInterval(86400 * 20), renews: true)
         let yearlyEntitlement = PremiumAccess.Entitlement(productID: PremiumAccess.yearly, expires: premiumNow.addingTimeInterval(86400 * 300), renews: true)
         assert(PremiumAccess.best([monthlyEntitlement, yearlyEntitlement]) == yearlyEntitlement && PremiumAccess.best([]) == nil)
+        assert(PremiumAccess.best([yearlyEntitlement, lifetimeEntitlement]) == lifetimeEntitlement)
         let premiumDefaults = UserDefaults(suiteName: "leanr.checks.premium.\(UUID().uuidString)")!
         assert(PremiumAccess.load(from: premiumDefaults) == nil)
         PremiumAccess.save(monthlyEntitlement, to: premiumDefaults)

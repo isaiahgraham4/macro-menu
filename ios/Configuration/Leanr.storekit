@@ -1,7 +1,23 @@
 {
   "identifier": "B7C4F1A2",
   "nonRenewingSubscriptions": [],
-  "products": [],
+  "products": [
+    {
+      "displayPrice": "79.99",
+      "familyShareable": false,
+      "internalID": "6760000301",
+      "localizations": [
+        {
+          "description": "Every Even Leanrrr feature, paid once",
+          "displayName": "Even Leanrrr Lifetime",
+          "locale": "en_AU"
+        }
+      ],
+      "productID": "com.isaiahgraham.MacroMenu.premium.lifetime",
+      "referenceName": "Even Leanrrr lifetime",
+      "type": "NonConsumable"
+    }
+  ],
   "settings": {
     "_applicationInternalID": "6760000000",
     "_compatibilityTimeRate": {
