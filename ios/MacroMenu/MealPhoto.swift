@@ -214,6 +214,8 @@ enum MealPhoto {
         "chickfila": "us-cfa", "chick fil a": "us-cfa", "wendys": "us-wendys", "taco bell": "us-tacobell", "tacobell": "us-tacobell",
         "panda express": "us-panda", "pandaexpress": "us-panda", "popeyes": "us-popeyes",
         "tim hortons": "ca-tims", "timhortons": "ca-tims", "tims": "ca-tims", "greggs": "uk-greggs",
+        "wimpy": "za-wimpy", "debonairs": "za-debonairs", "debonairs pizza": "za-debonairs", "kauai": "za-kauai",
+        "pizza hut": "in-pizzahut", "pizzahut": "in-pizzahut",
     ]
 
     /// The restaurant a brand names, if it's one Leanr has: a known nickname first, then a close match to the chain's name.

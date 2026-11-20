@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""Builds the Canadian, British and New Zealand restaurant menus, bundled with the app beside MenuData.json (Australia) and
+"""Builds the Canadian, British, New Zealand, South African and Indian restaurant menus, bundled with the app beside MenuData.json (Australia) and
 MenuData-US.json, in the same format:
 
   ios/MacroMenu/MenuData-CA.json  McDonald's, Burger King, Tim Hortons
   ios/MacroMenu/MenuData-GB.json  McDonald's, Greggs
   ios/MacroMenu/MenuData-NZ.json  McDonald's, Domino's
+  ios/MacroMenu/MenuData-ZA.json  McDonald's, Nando's, Wimpy, Debonairs Pizza, Kauai
+  ios/MacroMenu/MenuData-IN.json  McDonald's, KFC, Pizza Hut
 
 Each chain's own published figures, saved beside this file:
   McDonald's (CA, UK, NZ)  mcd-intl-scrape.js in a browser on the country's McDonald's site -> mcd-<cc>-source.json
@@ -12,6 +14,10 @@ Each chain's own published figures, saved beside this file:
   Tim Hortons              Nutrition Information PDF via extract-pdf-tables.py               -> th-ca-source.json
   Greggs                   the menu feed greggs.com/menu loads, saved from the browser       -> greggs-uk-source.json
   Domino's New Zealand     dominos.co.nz/menu/nutritional-information, every crust, read in the browser -> dominos-nz-source.json
+  McDonald's South Africa  mcd-za-scrape.js in a browser on mcdonalds.co.za (its own site, not the API above) -> mcd-za-source.json
+  Nando's South Africa     the menu feed nandos.co.za/eat/order/menu loads, saved from the browser   -> nandos-za-source.json
+  Wimpy, Debonairs, Kauai  za-fetch.py (plain web pages)                                             -> <chain>-za-source.json
+  McDonald's, KFC, Pizza Hut India  each chain's nutrition booklet (PDF) via in-extract.py                 -> <chain>-in-source.json
 
 Chain IDs carry the country ("ca-mcd", "uk-mcd", "nz-mcd") so no two menus share one. Energy is whatever the chain publishes:
 Canada publishes Calories (kJ worked out), the UK and New Zealand publish both. UK chains publish salt, not sodium; sodium is
@@ -286,6 +292,416 @@ def dominos_nz():
     return dedupe(rows)
 
 
+# ---------- South Africa ----------
+def fnum(x):
+    """'3,8 g', '2356 kJ', '4.79gg', '440kCal' -> a number; anything else (blank, '-', 'n/a') -> None."""
+    m = re.search(r'-?\d+(?:[.,]\d+)?', str(x) if x is not None else '')
+    return num(m.group(0).replace(',', '.')) if m else None
+
+
+SMALL_WORDS = {'And', 'Or', 'The', 'With', 'On', 'Of', 'In', 'A'}
+KEEP_UPPER = {'BBQ', 'PERi-PERi'}
+
+
+def titled(name):
+    """Chains that write names in capitals: 'ALL THE GREENS' -> 'All the Greens', 'BBQ BEEF' -> 'BBQ Beef'."""
+    if name != name.upper():
+        return name
+    words = [w if w in KEEP_UPPER else w.capitalize() for w in name.split(' ')]
+    words = [w.lower() if i and w in SMALL_WORDS else w for i, w in enumerate(words)]
+    return re.sub(r"(?<=[-/'’&(])([a-z])(?=[a-z]{2})", lambda m: m.group(1).upper(), ' '.join(words))
+
+
+def mcd_za():
+    """mcdonalds.co.za item pages (mcd-za-scrape.js). Each size is a button carrying its own figures. Meal and Happy Meal pages
+    are left out (a meal is its parts, which are all here), and so are items whose page has no Calories or protein."""
+    data = json.loads((HERE / 'mcd-za-source.json').read_text())
+    CHECKED['za-mcd'] = data['checked']
+    rows = []
+    for o in data['items']:
+        if o.get('err') or not o.get('name'):
+            continue
+        name = us.clean(o['name']).replace('’', "'")
+        if re.search(r'\bmeal\b|happy meal|with filter coffee|& glazed doughnut', name, re.I) or set(o['cats']) <= {'combo-meals', 'happy-meal'}:
+            continue
+        name = re.sub(r'^(\d+) Piece (.+)$', r'\2 (\1 pc)', name)
+        name = {'Chilli Cheese Double burger': 'Chilli Cheese Double Burger', 'Caramel muffin': 'Caramel Muffin', 'Fries': 'Fries'}.get(name, name)
+        groups = o['cats']
+        text = ' '.join(o['allergens'])
+        al = may = None
+        if re.search(r'no allergens', text, re.I):
+            al = []
+        elif o['allergens']:
+            spaced = [re.sub(r'(?<=[a-z)])(?=[A-Z])', ' ', a) for a in o['allergens']]         # "WheatSoya", "Cow's MilkEggWheat (Gluten)Soy"
+            contains = ' '.join(a for a in spaced if not re.search(r'may contain|ingredients:', a, re.I))
+            al = menu_feeds.allergen_mentions(contains.replace('\xa0', ' ').replace('Nuts', 'tree nuts'))
+            may = menu_feeds.allergen_mentions(' '.join(a for a in o['allergens'] if re.search(r'may contain', a, re.I)).replace('nuts', 'tree nuts')) or None
+        sized_rows = [(s['label'].replace('Meduim', 'Medium'), {'cal': s['product_cals'], 'fat': s['product_fats'], 'carbs': s['product_carbs'],
+                                                                'protein': s['product_protein'], 'sat': s.get('table_satfat'), 'sodium': s.get('table_sodium'),
+                                                                'fibre': s.get('table_fiber'), 'sugar': s.get('table_sugars')}) for s in o['sizes']]
+        for label, n in sized_rows or [('', o['n'])]:
+            cal, p = fnum(n['cal']), fnum(n['protein'])
+            if cal is None or p is None:
+                continue
+            full = f'{name} ({label.lower()})' if label else name
+            nut = {'sat': fnum(n['sat']), 'sugar': fnum(n['sugar']), 'fibre': fnum(n['fibre']), 'sodium': fnum(n['sodium'])}
+            cat = mcd_cat(full, groups)
+            if re.search(r'sandwich|\broll\b', full, re.I):
+                cat = 'main'
+            elif 'all-day-breakfast' in groups and name != 'Hash Brown':
+                cat = 'breakfast'
+            rows.append(row('za-mcd', full, cat, p, fnum(n['carbs']), fnum(n['fat']), '', nut, al, may, cal=cal, src='allergen list'))
+    return dedupe(rows)
+
+
+def nandos_za():
+    """The menu feed nandos.co.za/eat/order/menu loads, saved from the browser. Nando's publishes each item per 100 g with its
+    serving weight (the site's own per-serving column shows 0), so a serve is worked out from the two. "Energy" is kilojoules,
+    whatever the feed's unit says. Left out: items with no serving weight, "+ any side" and kids' meals (the figures are for the
+    chicken alone), and rows whose protein, carbohydrate and fat add up to more than 80 g in 100 g (figures entered per serve)."""
+    menu = json.loads((HERE / 'nandos-za-source.json').read_text())['data']['menu']
+    CHECKED['za-nandos'] = '2026-11-20'                   # when nandos-za-source.json was saved from the site
+    comp = {c['id']: c['name'] for c in menu['nutritionalComponents']}
+    allergen = {a['id']: a['name'] for a in menu['productAllergens']}
+    NOTES = {'Marinade & Basting', 'Disclaimer', 'Chicken Soup Powder', 'Spicy Rice', 'Veggie Patty', 'Halloumi', 'Wedges', 'Salt'}  # ingredient notes, not allergens
+    AL = {'Cows Milk': 'milk', 'Egg': 'egg', 'Soya': 'soy', 'Wheat Gluten': 'wheat', 'Sulphur & Sulphur Derivatives': 'sulphites',
+          'Sulphur Dioxide': 'sulphites', 'Sulphites': 'sulphites', 'Fish (Anchovy Extract)': 'fish', 'Mustard': None, 'Celery': None}
+    group = {ch['destinationId']: c['name'] for c in menu['categories'] for ch in c['children']}
+    defs = [d for d in menu['productDefinitions'] if d.get('nutritionalComponents')]
+    single = {re.sub(r'\s*\((Single|Sharing)\)\s*$', '', d['name']): d.get('servingSize') for d in defs if '(Single)' in d['name']}
+    rows = []
+    for d in defs:
+        raw = re.sub(r'\s+', ' ', d['name']).strip()
+        g = group.get(d['id']) or ''
+        serve = d.get('servingSize')
+        v = {comp[x['destinationId']]: fnum(x['weight']) for x in d['nutritionalComponents']}
+        if re.search(r'livers|4 nando\'s rolls', raw, re.I):
+            print(f"  ZA za-nandos: left out {raw}: its figures don't fit a {serve} g serve")
+            continue
+        if not serve or '+' in raw or g == 'Nandinos' or v.get('Energy') is None or v.get('Protein') is None:
+            continue
+        p100, c100, f100 = v['Protein'], v.get('Glycaemic Carbohydrate') or 0, v.get('Total Fat') or 0
+        if p100 + c100 + f100 > 80:
+            print(f"  ZA za-nandos: left out {raw}: {p100 + c100 + f100:g} g of protein, carbohydrate and fat in 100 g")
+            continue
+        est = 17 * p100 + 17 * c100 + 37 * f100
+        if est >= 250 and abs(est - v['Energy']) / est > 1 / 3:
+            print(f"  ZA za-nandos: left out {raw}: {v['Energy']:g} kJ per 100 g but its macros add up to {round(est)}")
+            continue
+        base = re.sub(r'\s*\((Single|Sharing)\)\s*$', '', raw)
+        if '(Sharing)' in raw and single.get(base) == serve:
+            continue                                         # the sharing side listed with the single side's weight
+        name = re.sub(r'\s*\(on (its|their) own\)', '', raw)
+        name = re.sub(r'\s*\((Single|Sharing)\)\s*$', lambda m: f' ({m.group(1).lower()})', name)
+        name = re.sub(r'\s*\(Full portion\)', ' (full portion)', name)
+        name = re.sub(r'^(\d+) (Winglets)$', r'\2 (\1 pc)', name).replace("’", "'").replace('with cheese', 'with Cheese')
+        each = lambda k: num(round(v[k] * serve / 100, 1)) if v.get(k) is not None else None
+        if g == "125g Nando's Sauces" or re.search(r'\bDip$', name):
+            cat, name = 'extra', 'Dipping Sauce: ' + re.sub(r'\s*(Sauce|Dip)$', '', name)
+        elif g in ('Treats',) or re.search(r'shake|churros', name, re.I):
+            cat = 'drink' if re.search(r'shake', name, re.I) else 'sweet'
+        elif re.search(r'\((single|sharing)\)$', name) or re.search(r'rolls?$', name, re.I):
+            cat = 'side'
+        else:
+            cat = 'main'
+        ids = [allergen.get(a, '') for a in d.get('allergens') or []]
+        al = sorted({AL[a] for a in ids if AL.get(a)} | ({'gluten'} if 'Wheat Gluten' in ids else set()))
+        for a in ids:
+            assert a in AL or a in NOTES, (raw, a)
+        nut = {'sat': each('Of which saturated fat'), 'sugar': each('Of which total sugar'), 'fibre': each('Dietary Fibre'), 'sodium': each('Sodium')}
+        vg = 'vegetarian' if re.search(r'^veg\b|\(veg\)|halloumi(?!.*chicken)', name, re.I) and not re.search(r'chicken', name, re.I) else None
+        rows.append(row('za-nandos', name, cat, each('Protein'), each('Glycaemic Carbohydrate'), each('Total Fat'), f'{serve} g', nut, al,
+                        kj=v['Energy'] * serve / 100, vg=vg, src='allergen list'))
+    return dedupe(rows)
+
+
+KAUAI_GROUPS = {'all-day-breakfast': ('breakfast', ''), 'wraps': ('main', 'Wrap'), 'salad-bowls': ('main', 'Salad'), 'warm-meals': ('main', ''),
+                'sourdoughtoasties': ('main', 'Toastie'), 'snacks': ('side', ''), 'smoothies': ('drink', 'Smoothie'),
+                'protein-smoothies': ('drink', 'Protein Smoothie'), 'superfood-smoothies': ('drink', 'Smoothie'), 'raw-juices-shots': ('drink', ''),
+                'recovery-drinks': ('drink', ''), 'organic-coffee-hot-drinks': ('drink', '')}
+
+
+def kauai():
+    """kauai.co.za menu panels (za-fetch.py). Each panel's table has a per-100 column and one or two serving columns (a serve, or
+    350 ml and 500 ml); the serving columns are used. Items whose panel has no table, or no column headings, are left out."""
+    data = json.loads((HERE / 'kauai-za-source.json').read_text())
+    CHECKED['za-kauai'] = data['checked']
+    rows = []
+    for o in data['items']:
+        if not o['rows'] or o['rows'][0][0] or not any(o['rows'][0]):
+            continue
+        cat, suffix = KAUAI_GROUPS[o['groups'][0]]
+        name = titled(us.clean(o['name']).replace('’', "'"))
+        if suffix and not re.search(r'wrap|quesadilla|burrito|salad|noodles|bowl|smoothie|toast|flat$', name, re.I):
+            name = f"{name} {'Smoothie' if 'Protein' in name else suffix}"
+        name = re.sub(r' Flat$', ' Flat Wrap', name)
+        table = {re.sub(r'\s*\(.*?\)', '', r[0]).strip().lower(): r[1:] for r in o['rows'][1:] if r[0]}
+        get = lambda key, i: next((fnum(v[i]) for k, v in table.items() if k.startswith(key) and i < len(v)), None)
+        al = menu_feeds.allergen_words(', '.join(o['allergens']), f"Kauai {name}") if o['allergens'] is not None else None
+        vg = 'vegan' if 'V' in o['tags'] else 'vegetarian' if 'VEG' in o['tags'] else None
+        if vg == 'vegan' and al and {'milk', 'egg', 'fish'} & set(al):
+            vg = 'vegetarian'                                # tagged vegan, but its own allergen list has milk or egg
+        for i, head in enumerate(o['rows'][0][1:]):
+            h = head.lower().strip()
+            if not h or re.match(r'per 100', h):
+                continue
+            size = re.search(r'(\d+) ?(ml|g)', h)
+            label = f'{size.group(1)} ml' if size and size.group(2) == 'ml' else {'regular wrap': 'regular wrap', 'low carb wrap': 'low carb wrap'}.get(h, '')
+            serve = f'{size.group(1)} {size.group(2)}' if size else ''
+            kj, p = get('energy', i), get('protein', i)
+            if kj is None or p is None or size and size.group(2) == 'ml' and int(size.group(1)) < 50:
+                continue
+            nut = {'sat': get('of which saturated', i), 'sugar': get('of which total sugar', i), 'fibre': get('dietary fibre', i), 'sodium': get('total sodium', i)}
+            rows.append(row('za-kauai', f'{name} ({label})' if label else name, cat, p, get('carbohydrate', i) if get('carbohydrate', i) is not None else get('glycaemic', i),
+                            get('total fat', i), serve, nut, al, kj=kj, vg=vg, src='allergen list'))
+    return dedupe(rows)
+
+
+WIMPY_AL = {'GLUTEN': ['gluten'], 'LACTOSE': ['milk'], 'SOYA': ['soy'], 'EGG': ['egg'], 'NUT': ['peanut', 'treenut'], 'SULPHITES': ['sulphites'],
+            'WHEAT': ['wheat', 'gluten']}
+WIMPY_CATS = {'breakfast': 'breakfast', 'burger': 'main', 'grills': 'main', 'sandwiches-light-meals': 'main', 'kids': 'main', 'desserts': 'sweet',
+              'drinks': 'drink'}
+
+
+def wimpy():
+    """wimpy.co.za classic menu pages (za-fetch.py): the table behind each item's card, as plated. Left out: items with only an
+    energy figure, and any set of figures Wimpy lists under more than one item (Brekkie Bun, Mzansi Brekkie and Early Bird share
+    one row; so do the 300 g and 600 g ribs), since there's no telling whose they are."""
+    data = json.loads((HERE / 'wimpy-za-source.json').read_text())
+    CHECKED['za-wimpy'] = data['checked']
+    key = lambda o: tuple(o['n'].get(k) for k in ('TOTAL ENERGY (kJ)', 'PROTEIN (g)', 'CARB (g)', 'TOTAL FAT (g)'))
+    seen = {}
+    for o in data['items']:
+        seen.setdefault(key(o), set()).add(o['name'])
+    rows = []
+    for o in data['items']:
+        n = o['n']
+        kj, p = fnum(n.get('TOTAL ENERGY (kJ)')), fnum(n.get('PROTEIN (g)'))
+        if kj is None or p is None:
+            continue
+        if len(seen[key(o)]) > 1:
+            print(f"  ZA za-wimpy: left out {o['name']}: same figures as {', '.join(sorted(seen[key(o)] - {o['name']}))}")
+            continue
+        name = us.clean(o['name']).replace('’', "'").replace('*', '').replace(' ®', '')
+        name = re.sub(r'^NEW & IMPROVED\s+', '', name).replace('...', '')
+        name = re.sub(r'\s+', ' ', name).strip()
+        sec, low = o['section'], name.lower()
+        if sec in ('Classic Burgers', 'Big Eat Burgers') and not re.search(r'burger|combo|meal', low):
+            name += ' Burger'
+        elif sec == 'Toasteds & lighter meals' and not re.search(r'salad|wrap|dagwood', low):
+            name = 'Toasted ' + name
+        elif sec == 'Iced Coffees' and 'frappe' not in low:
+            name += ' Iced Coffee'
+        elif sec == 'Frozen Lemonades' and 'smoothie' not in low:
+            name += ' Frozen Lemonade'
+        elif sec == 'Chill Shakes' and 'shake' not in low:
+            name += ' Shake'
+        elif sec == 'Sharing Jugs':
+            name += ' Sharing Jug'
+        elif sec == 'Kids' and not re.match(r"kids", low):
+            name = "Kids' " + name
+        cat = WIMPY_CATS[o['page']]
+        if cat == 'drink' and re.search(r'muffin', low):
+            cat = 'sweet'
+        if o['page'] == 'kids' and re.search(r'scrambled|breakfast', low):
+            cat = 'breakfast'
+        elif o['page'] == 'kids' and re.search(r'waffle', low):
+            cat = 'sweet'
+        elif o['page'] == 'kids' and re.search(r'candy|cooler', low):
+            cat = 'drink'
+        al = sorted({k for a, yes in o['allergens'].items() if yes == 'y' for k in WIMPY_AL[a]}) if o['allergens'] else None
+        nut = {'sat': fnum(n.get('SAT FAT (g)')), 'sugar': fnum(n.get('SUGAR (g)')), 'fibre': fnum(n.get('DIETARY FIBRE (g)')), 'sodium': fnum(n.get('TOTAL SODIUM (mg)'))}
+        rows.append(row('za-wimpy', name, cat, p, fnum(n.get('CARB (g)')), fnum(n.get('TOTAL FAT (g)')), '', nut, al, kj=kj, src='allergen table'))
+    return dedupe(rows)
+
+
+DEB_AL = {'Gluten': ['gluten'], 'Soya': ['soy'], 'Cows Milk': ['milk'], 'Egg': ['egg'], 'Nuts': ['peanut', 'treenut'], 'Sulphates': ['sulphites'],
+          'Wheat': ['wheat', 'gluten']}
+
+
+def debonairs():
+    """debonairspizza.co.za Nutritional & Allergen Guide (za-fetch.py). Pizzas are the whole pizza, one row per size. Left out:
+    bases, sauces and toppings on their own, the two Specialty rows named only "Chicken" and "Meaty", and any pizza whose sizes
+    don't rise in order (BBQ Beef's small is larger than its medium on the site)."""
+    data = json.loads((HERE / 'debonairs-za-source.json').read_text())
+    CHECKED['za-debonairs'] = data['checked']
+    allergens = {}
+    for a in data['allergens']:
+        allergens.setdefault(a['name'].upper().strip(), set()).add(tuple(sorted(k for label, x in a['al'].items() if x.strip() for k in DEB_AL.get(label, []))))
+        for label in a['al']:
+            assert label in DEB_AL, label
+    wraps = {tuple(z['n'].values()) for o in data['items'] if o['section'].upper().startswith('PIZZAWRAP') for z in o['sizes']}
+    rows = []
+    for o in data['items']:
+        sec = o['section'].upper()
+        raw = re.sub(r'\s*<br>\s*', '', o['name']).strip()
+        if sec in ('BASE', 'SAUCES', 'EXTRAS') or sec == 'SPECIALTY' and raw in ('Chicken', 'Meaty'):
+            continue
+        name = us.clean(titled(re.sub(r'\s*\(Halaal version:.*?\)', '', raw))).replace('Triple- Decker', 'Triple-Decker').replace('JalapeÃ±o', 'Jalapeño')
+        name = re.sub(r'^(\d+) (.+ Wings)$', r'\2 (\1 pc)', name)
+        wrap = sec.startswith('PIZZAWRAP')
+        if not wrap and sec != 'SIDES' and all(tuple(z['n'].values()) in wraps for z in o['sizes']):
+            continue                                         # a Pizzawrap's row repeated under the pizzas
+        sizes = [z for z in o['sizes'] if (fnum(z['n'].get('Energy (kJ)')) or 0) < 20000]
+        order = [fnum(z['n'].get('Energy (kJ)')) for z in sizes if z['label'].lower() in ('small', 'medium', 'large')]
+        if order != sorted(order) or len({z['label'] for z in sizes}) < len(sizes):
+            print(f"  ZA za-debonairs: left out {name}: its sizes are out of order on the site ({', '.join(z['label'] + ' ' + z['n'].get('Energy (kJ)', '') for z in o['sizes'])})")
+            continue
+        found = allergens.get(raw.upper(), set())
+        al = sorted(next(iter(found))) if len(found) == 1 and next(iter(found)) else None    # a row with nothing ticked isn't "no allergens" for a pizza
+        for z in sizes:
+            n, label = z['n'], z['label'].lower()
+            kj, p = fnum(n.get('Energy (kJ)')), fnum(n.get('Protein (g)'))
+            if kj is None or p is None:
+                continue
+            if sec == 'SIDES':
+                full, cat, serve = menu_feeds.sized(name), 'sweet' if 'chocolate' in name.lower() else 'side', ''
+            elif wrap:
+                full, cat, serve = f'{name} Pizzawrap', 'main', '1 Pizzawrap'
+            else:
+                full, cat, serve = f"{name}{'' if 'Triple-Decker' in name else ' Pizza'} ({label})", 'main', f'1 whole {label} pizza'
+            nut = {'fibre': fnum(n.get('Dietary Fibre (g)')), 'sodium': fnum(n.get('Total Sodium (mg)'))}
+            nut = {k: v for k, v in nut.items() if v is not None and v >= 0}     # the guide lists minus fibre for two rows
+            vg = 'vegetarian' if re.search(r'veggie|margherita', name, re.I) else None
+            rows.append(row('za-debonairs', full, cat, num(round(p, 1)), num(round(fnum(n.get('Carbohydrates (g)')) or 0, 1)), num(round(fnum(n.get('Fat (g)')) or 0, 1)),
+                            serve, nut, al, kj=kj, vg=vg, src='allergen table'))
+    return dedupe(rows)
+
+
+# ---------- India ----------
+def mcd_in():
+    """McDonald's India (North & East) menu booklet, read page by page (in-extract.py mcd). One size an item, as the booklet has it.
+    McDonald's India (West & South) is a separate company that publishes Calories only, so its figures aren't used."""
+    data = json.loads((HERE / 'mcd-in-source.json').read_text())
+    CHECKED['in-mcd'] = data['checked']
+    rows = []
+    for o in data['items']:
+        n = {k: fnum(v) for k, v in o['n'].items()}
+        if n.get('cal') is None or n.get('protein') is None or n.get('carbs') is None or n.get('fat') is None:
+            continue
+        name = us.clean(o['name']).replace('PaneerBurger', 'Paneer Burger').replace('Filet O Fish', 'Filet-O-Fish').replace('Egg McWrap', 'Egg McWrap')
+        name = {'Our World Famous Fries': 'Fries', 'Sundae (Chocolate)': 'Chocolate Sundae', 'Sundae (Strawberry)': 'Strawberry Sundae',
+                'Sundae (Chocolate Brownie)': 'Chocolate Brownie Sundae', 'McFlurry (Oreo)': 'Oreo McFlurry', 'McFlurry (Choco Crunch)': 'Choco Crunch McFlurry'}.get(name, name)
+        sec, low = o['section'].upper(), name.lower()
+        if re.search(r'hash brown|fries|puff', low):
+            cat = 'side'
+        elif sec.startswith('MCCAF'):
+            cat = 'sweet' if re.search(r'cookie|croissant|cheesecake', low) else 'main' if 'toasty' in low else 'drink'
+        elif sec == 'DESSERTS':
+            cat = 'sweet'
+        elif sec == 'BREAKFAST':
+            cat = 'drink' if 'cappuccino' in low else 'breakfast'
+        else:
+            cat = 'main'
+        text = re.sub(r'(?i)cereal containing\s*(gluten)?', 'gluten ', (o['allergens'] or '')).replace('Nuts', 'tree nuts')   # "Cereal containinggluten", "Cereal containing Milk"
+        al = [] if re.search(r'no allergens', text, re.I) else menu_feeds.allergen_mentions(text) if text.strip() else None
+        nut = {'sat': n.get('sat'), 'sugar': n.get('sugar'), 'sodium': n.get('sodium')}
+        rows.append(row('in-mcd', name, cat, n['protein'], n['carbs'], n['fat'], '', nut, al, cal=n['cal'], src='allergen list'))
+    return dedupe(rows)
+
+
+KFC_IN_NAMES = [(r'\bHC Leg\b', 'Hot & Crispy Leg Piece'), (r'\bHC chicken\b', 'Hot & Crispy Chicken'), (r'\bHC\b', 'Hot & Crispy Chicken'),
+                (r'Piripiri', 'Peri Peri'), (r'Bonless', 'Boneless'), (r'Chiken', 'Chicken'), (r'Buger', 'Burger'), (r'Chatpta Channa', 'Chatpata Chana'),
+                (r'Ricebowl', 'Rice Bowl'), (r'^Popcorn\b(?! Chicken)', 'Popcorn Chicken'), (r'\bstrips\b', 'Strips'), (r'\bleg\b', 'Leg'),
+                (r'^Smoky$', 'Smoky Grilled Chicken'), (r'\bDew\b', 'Mountain Dew'), (r'^7 ?[Uu]p\b', '7UP'), (r'Nashvillle', 'Nashville'),
+                (r'\bthousand\b', 'Thousand'), (r'Mousse cake \( Coffee Flavoured\)', 'Coffee Mousse Cake'), (r'Andra Rice', 'Andhra Rice')]
+
+
+def kfc_in():
+    """KFC India Nutrition Information booklet (in-extract.py kfc). The booklet gives a serve's share for bigger packs ("3 Pc" as two
+    serves), so only rows that are one serve are used. Allergens and the veg mark are pictures in the booklet, so they're unknown."""
+    data = json.loads((HERE / 'kfc-in-source.json').read_text())
+    CHECKED['in-kfc'] = data['checked']
+    rows = []
+    for o in data['items']:
+        if o['servings'] != 1 or re.search(r'bottle|seasoning', o['name'], re.I):
+            continue
+        name = o['name']
+        for a, b in KFC_IN_NAMES:
+            name = re.sub(a, b, name)
+        name = re.sub(r'^(\d+) Pc (.+)$', r'\2 (\1 pc)', name)
+        name = re.sub(r'^Smoky(?= \()', 'Smoky Grilled Chicken', name)
+        name = re.sub(r'^Boneless Wing(?= \()', 'Boneless Wings', re.sub(r'^Peri Peri Strip(?= \()', 'Peri Peri Strips', name))
+        name = re.sub(r'^(.+) (Regular|Medium|Large|Single|Double)$', lambda m: f'{m.group(1)} ({m.group(2).lower()})', name)
+        name = re.sub(r'^(Single|Double) (Veg Patty)$', lambda m: f'{m.group(2)} ({m.group(1).lower()})', name)
+        sec, low = o['section'], name.lower()
+        if re.search(r'cola|krushers|pepsico', sec, re.I):
+            cat = 'drink'
+        elif sec == 'French Fries' or 'veg patty' in low:
+            cat = 'side'
+        elif sec == 'Sides & Desserts':
+            cat = 'sweet'
+        elif sec.startswith('Dips'):
+            cat, name = 'extra', 'Dipping Sauce: ' + re.sub(r'\s*Dip$', '', name)
+        else:
+            cat = 'main'
+        if cat == 'drink' and o['protein'] > o['carbs']:
+            print(f"  IN in-kfc: left out {name}: a drink listed with {num(o['protein'])} g protein and {num(o['carbs'])} g carbohydrate")
+            continue
+        if cat == 'drink':
+            name = re.sub(r' (Can|Pet)$', lambda m: ' (can)' if m.group(1) == 'Can' else ' (bottle)', name)
+        nut = {'sat': num(o['sat']), 'sugar': num(o['sugar']), 'sodium': num(o['sodium'])}
+        rows.append(row('in-kfc', name, cat, num(o['protein']), num(o['carbs']), num(o['fat']), f"{num(o['weight'])} g" if cat != 'drink' else '', nut, cal=num(o['cal'])))
+    return dedupe(rows)
+
+
+PH_SKIP = r'3-IN-1|Half N Half|Dips|Crust Upgrade|Golden Hand Stretched'
+PH_CRUST = [('TnC', 'thin n crispy'), ('Pan', 'pan'), ('Ultimate Cheese', 'ultimate cheese'), ('Spicy Range Pizzas', 'pan'), ('Flavour Fun', 'personal')]
+
+
+def pizzahut_in():
+    """Pizza Hut India Nutrition & Allergen Information Booklet (in-extract.py pizzahut). A pizza row is the whole pizza: its weight
+    and number of slices are in the serve. Left out: dips, crust upgrades on their own, half-and-half and 3-in-1 pizzas (the booklet
+    doesn't name their halves clearly) and the hand-stretched page, whose names don't read as items."""
+    data = json.loads((HERE / 'pizzahut-in-source.json').read_text())
+    CHECKED['in-pizzahut'] = data['checked']
+    val = lambda o, k: fnum(o.get(k)) if o.get(k) not in (None, 'ND', '-', 'NA', 'BLQ') else None
+    rows, taken = [], set()
+    for o in data['items']:
+        sec = o['section']
+        if re.search(PH_SKIP, sec):
+            continue
+        cal, p = val(o, 'cal'), val(o, 'protein')
+        if cal is None or p is None and 'Beverages' not in sec:
+            continue
+        name = re.sub(r'\s+', ' ', o['name'].replace('}', ')').replace('`', "'").replace('–', '-')).strip()
+        name = re.sub(r'\s*\((\d+) ?pc\.?\)', '', name)
+        name = re.sub(r'^Non ?- ?Veg ', 'Chicken ', name).replace('Masal Pepsi', 'Masala Pepsi').replace('7 up', '7UP').replace('7 UP', '7UP')
+        size = re.search(r'\(?\b(Personal|Medium|Large)\)?', name)
+        by_slices = {'4': 'personal', '6': 'medium', '8': 'large'}.get(str(o.get('count')))
+        base = re.sub(r'\s*\(?\b(Personal|Medium|Large)\)?', '', name) if size else name
+        base = re.sub(r'\s*\b(TnC|TNC|Pan|Ultimate Cheese)\b', '', base).replace('Pizza Pizza', 'Pizza').strip()
+        base = re.sub(r'\s+Pizza$', '', base)
+        count, weight = val(o, 'count'), val(o, 'weight')
+        low = base.lower()
+        if re.search(r'pizza|flatzz', sec, re.I):
+            crust = next((label for key, label in PH_CRUST if key in sec), '')
+            said = size.group(1).lower() if size else ''
+            if said and crust == 'pan' and by_slices and said != by_slices:
+                said = by_slices                             # "Double Chicken Delight (Personal)" with 6 slices and 550 g is the medium
+            label = ' '.join(x for x in (said, crust) if x)
+            label = {'personal personal': 'personal'}.get(label, label)
+            full = f"{base} {'Flatzz' if 'Flatzz' in sec else 'Pizza'}" + (f' ({label})' if label else '')
+            cat, serve = 'main', f"1 whole pizza, {num(count)} slices ({num(weight)} g)" if count else f'{num(weight)} g'
+        elif sec == 'Beverages':
+            full, cat, serve = f'{base} ({num(weight)} ml)', 'drink', f'{num(weight)} ml'
+        else:
+            cat = {'Melts': 'main', 'Pastas': 'main', 'Dessert': 'sweet'}.get(sec, 'main' if 'wing' in low else 'side')
+            full = base + (' Melt' if sec == 'Melts' else '') + (' Fries' if 'Fries' in sec and 'fries' not in low else '')
+            if 'wing' in low and count:
+                full = re.sub(r'\bWing\b', 'Wings', re.sub(r'\bwings\b', 'Wings', full)) + f' ({num(count)} pc)'
+            serve = f'{num(weight)} g'
+        al = menu_feeds.allergen_mentions(o['allergens']) if o['allergens'].strip() else None
+        nut = {'sat': val(o, 'sat'), 'sugar': val(o, 'sugar'), 'fibre': val(o, 'fibre'), 'sodium': val(o, 'sodium')}
+        r1 = lambda x: num(round(x or 0, 1))
+        if full in taken:                                    # the booklet lists a veg and a chicken version under one name; the weight tells them apart
+            full = f'{full[:-1]}, {num(weight)} g)' if full.endswith(')') else f'{full} ({num(weight)} g)'
+        taken.add(full)
+        rows.append(row('in-pizzahut', full, cat, r1(p), r1(val(o, 'carbs')), r1(val(o, 'fat')), serve, {k: (r1(v) if v is not None else None) for k, v in nut.items()},
+                        al, cal=round(cal), src='allergen list'))
+    return dedupe(rows)
+
+
 COUNTRIES = {
     'CA': [
         ({'id': 'ca-mcd', 'name': "McDonald's", 'how': 'Official website item pages', 'url': 'https://www.mcdonalds.com/ca/en-ca/full-menu.html',
@@ -314,6 +730,34 @@ COUNTRIES = {
           'src': "Domino's New Zealand Nutritional Information ({checked}). Pizzas are per slice, one row per crust"},
          dominos_nz),
     ],
+    'ZA': [
+        ({'id': 'za-mcd', 'name': "McDonald's", 'how': 'Official website item pages', 'url': 'https://www.mcdonalds.co.za/menu',
+          'src': "mcdonalds.co.za item nutrition, every size McDonald's lists ({checked}). McDonald's South Africa publishes Calories; kilojoules are worked out. Allergens are McDonald's own list for each item. Items whose energy is more than a third away from their macros are left out"},
+         mcd_za),
+        ({'id': 'za-nandos', 'name': "Nando's", 'how': 'Official online menu', 'url': 'https://www.nandos.co.za/eat/order/menu',
+          'src': "Nando's South Africa online menu, Allergens & Nutritional Info ({checked}). Nando's lists each item per 100 g with its serving weight; a serve is worked out from the two. Items with no serving weight are left out"},
+         nandos_za),
+        ({'id': 'za-wimpy', 'name': 'Wimpy', 'how': 'Official menu nutrition', 'url': 'https://wimpy.co.za/classic-menu/burger/',
+          'src': "Wimpy South Africa classic menu nutrition and allergens ({checked}), each item as Wimpy lists it. Figures Wimpy shows under more than one item are left out. Nut means peanuts or tree nuts"},
+         wimpy),
+        ({'id': 'za-debonairs', 'name': 'Debonairs Pizza', 'how': 'Official nutritional guide', 'url': 'https://debonairspizza.co.za/nutritional-and-allergen-guide/',
+          'src': "Debonairs Pizza Nutritional & Allergen Guide ({checked}). Pizzas are the whole pizza, one row per size. Nuts means peanuts or tree nuts"},
+         debonairs),
+        ({'id': 'za-kauai', 'name': 'Kauai', 'how': 'Official menu nutrition', 'url': 'https://kauai.co.za/menu/',
+          'src': "Kauai menu nutrition and allergens ({checked}), per serving as ready to eat. Smoothies are listed at 350 ml and 500 ml"},
+         kauai),
+    ],
+    'IN': [
+        ({'id': 'in-mcd', 'name': "McDonald's", 'how': 'Official menu booklet', 'url': 'https://mcdindia.com/',
+          'src': "McDonald's India (North & East) menu booklet with nutrition and allergens ({checked}). McDonald's India publishes Calories; kilojoules are worked out. Restaurants in the west and south are run by a different company that publishes Calories only, and their recipes can differ"},
+         mcd_in),
+        ({'id': 'in-kfc', 'name': 'KFC', 'how': 'Official nutrition booklet', 'url': 'https://online.kfc.co.in/',
+          'src': "KFC India Nutrition Information booklet, version 6 ({checked}), one serve of each item. Calories as published; kilojoules are worked out. No allergens: the booklet shows them as pictures"},
+         kfc_in),
+        ({'id': 'in-pizzahut', 'name': 'Pizza Hut', 'how': 'Official nutrition booklet', 'url': 'https://www.pizzahut.co.in/nutrition/',
+          'src': "Pizza Hut India Nutrition & Allergen Information Booklet ({checked}). Pizzas are the whole pizza, one row per size and crust. Calories as published; kilojoules are worked out"},
+         pizzahut_in),
+    ],
 }
 
 
@@ -337,6 +781,25 @@ def build(country, chains):
         rows = []
         for r in fn():
             why = misprinted(r)
+            if country in ('ZA', 'IN'):
+                est = 4 * r['p'] + 4 * (r['c'] or 0) + 9 * (r['f'] or 0)
+                if not why and est >= 30 and r['cal'] < est / 2:
+                    why = f"{r['cal']} Cal but its macros add up to {round(est)}"
+                if country == 'IN' and 'diet' in r and 'meat' in r['diet']:
+                    # These chains sell no beef or pork in India: burgers are chicken, fish or vegetarian, and sausage, pepperoni and keema are chicken.
+                    low = r['name'].lower()
+                    kept = [m for m in r['diet']['meat'] if m in ('chicken', 'fish')]
+                    if not kept and re.search(r'sausage|pepperoni|keema|zinger(?! fillet)|leg\b|strips|drums|chizza|double down|krisper', low) and not re.search(r'\bveg|paneer', low):
+                        kept = ['chicken']
+                    if kept or re.search(r'\bveg|veggie|paneer|aloo|margherita|corn\b', low):
+                        r['diet']['meat'] = kept
+                    else:
+                        del r['diet']['meat']
+                        if set(r['diet']) <= {'src'}:
+                            del r['diet']
+                meat = r.get('diet', {}).get('meat') or []
+                if 'beef' in meat and re.search(r'chicken', r['name'], re.I) and not re.search(r'beef|steak|meaty', r['name'], re.I):
+                    meat.remove('beef')
             if why:
                 print(f"  {country} {r['chain']}: left out {r['name']}: {why}")
             else:

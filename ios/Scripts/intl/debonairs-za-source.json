@@ -1,0 +1,2579 @@
+{
+ "checked": "2026-11-20",
+ "items": [
+  {
+   "section": "Real Deal®",
+   "name": "BBQ BEEF",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "184.5",
+      "Protein (g)": "78.37",
+      "Fat (g)": "44.56",
+      "Energy (kJ)": "6075.41",
+      "Total Sodium (mg)": "1388.42",
+      "Dietary Fibre (g)": "5.95"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "110.47",
+      "Protein (g)": "44.38",
+      "Fat (g)": "25.42",
+      "Energy (kJ)": "3562.84",
+      "Total Sodium (mg)": "753.95",
+      "Dietary Fibre (g)": "2.94"
+     }
+    },
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "7368",
+      "Protein (g)": "2634",
+      "Fat (g)": "1399",
+      "Energy (kJ)": "220913",
+      "Total Sodium (mg)": "494.42",
+      "Dietary Fibre (g)": "2"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Real Deal®",
+   "name": "BBQ Chicken",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "73.89",
+      "Protein (g)": "26.54",
+      "Fat (g)": "13.07",
+      "Energy (kJ)": "2178.5",
+      "Total Sodium (mg)": "397.66",
+      "Dietary Fibre (g)": "2"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "110.83",
+      "Protein (g)": "45.04",
+      "Fat (g)": "24",
+      "Energy (kJ)": "3522.2",
+      "Total Sodium (mg)": "603.71",
+      "Dietary Fibre (g)": "2.94"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "185.1",
+      "Protein (g)": "77.39",
+      "Fat (g)": "42.11",
+      "Energy (kJ)": "6003.19",
+      "Total Sodium (mg)": "1129.7",
+      "Dietary Fibre (g)": "5.95"
+     }
+    }
+   ]
+  },
+  {
+   "section": "PIZZAWRAP®",
+   "name": "BBQ BACON",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "60.24",
+      "Protein (g)": "30.45",
+      "Fat (g)": "30.19",
+      "Energy (kJ)": "2659.73",
+      "Total Sodium (mg)": "798.86",
+      "Dietary Fibre (g)": "-33.74"
+     }
+    }
+   ]
+  },
+  {
+   "section": "PIZZAWRAP®",
+   "name": "DEBONAIRS CHICKEN",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "58.63",
+      "Protein (g)": "30.67",
+      "Fat (g)": "29.99",
+      "Energy (kJ)": "2635.55",
+      "Total Sodium (mg)": "585.13",
+      "Dietary Fibre (g)": "1.82"
+     }
+    }
+   ]
+  },
+  {
+   "section": "PIZZAWRAP®",
+   "name": "TIKKA CHICKEN",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "59.87",
+      "Protein (g)": "31",
+      "Fat (g)": "26.34",
+      "Energy (kJ)": "2535.69",
+      "Total Sodium (mg)": "678.44",
+      "Dietary Fibre (g)": "2.44"
+     }
+    }
+   ]
+  },
+  {
+   "section": "PIZZAWRAP®",
+   "name": "CREAMY BEEF & JALAPEÑO",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "59.18",
+      "Protein (g)": "33.27",
+      "Fat (g)": "39.87",
+      "Energy (kJ)": "3080.3",
+      "Total Sodium (mg)": "755.13",
+      "Dietary Fibre (g)": "2.23"
+     }
+    }
+   ]
+  },
+  {
+   "section": "PIZZAWRAP®",
+   "name": "CREAMY CHICKEN & MUSHROOM",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "60.4",
+      "Protein (g)": "30.64",
+      "Fat (g)": "34.24",
+      "Energy (kJ)": "2862.42",
+      "Total Sodium (mg)": "1114.2",
+      "Dietary Fibre (g)": "2.18"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Cheezy",
+   "name": "CHEEZY CHICKEN & MUSHROOM",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "66.86",
+      "Protein (g)": "36.34",
+      "Fat (g)": "35",
+      "Energy (kJ)": "3089.91",
+      "Total Sodium (mg)": "628.73",
+      "Dietary Fibre (g)": "2.18"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "102.31",
+      "Protein (g)": "58.84",
+      "Fat (g)": "53.36",
+      "Energy (kJ)": "4765.88",
+      "Total Sodium (mg)": "963.73",
+      "Dietary Fibre (g)": "3.27"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "171.85",
+      "Protein (g)": "101.17",
+      "Fat (g)": "92.63",
+      "Energy (kJ)": "8200.85",
+      "Total Sodium (mg)": "1692.08",
+      "Dietary Fibre (g)": "-0.56"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Cheezy",
+   "name": "CHEEZY BEEF & ONION",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "72.17",
+      "Protein (g)": "35.72",
+      "Fat (g)": "35.95",
+      "Energy (kJ)": "3203.71",
+      "Total Sodium (mg)": "753.67",
+      "Dietary Fibre (g)": "2.14"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "109.17",
+      "Protein (g)": "57.51",
+      "Fat (g)": "54.8",
+      "Energy (kJ)": "4913.08",
+      "Total Sodium (mg)": "1151.37",
+      "Dietary Fibre (g)": "3.16"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "179.52",
+      "Protein (g)": "98.91",
+      "Fat (g)": "95.06",
+      "Energy (kJ)": "8386.78",
+      "Total Sodium (mg)": "1999.99",
+      "Dietary Fibre (g)": "6.19"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Vegetarian",
+   "name": "ORIGINAL VEGGIE",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "77.15",
+      "Protein (g)": "22.71",
+      "Fat (g)": "14.69",
+      "Energy (kJ)": "2203.6",
+      "Total Sodium (mg)": "280.51",
+      "Dietary Fibre (g)": "2.96"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "116.74",
+      "Protein (g)": "38.55",
+      "Fat (g)": "25.97",
+      "Energy (kJ)": "3551",
+      "Total Sodium (mg)": "457.51",
+      "Dietary Fibre (g)": "4.37"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "192.41",
+      "Protein (g)": "66.11",
+      "Fat (g)": "45.26",
+      "Energy (kJ)": "5990.98",
+      "Total Sodium (mg)": "763.11",
+      "Dietary Fibre (g)": "8.33"
+     }
+    },
+    {
+     "label": "Thin Base",
+     "n": {
+      "Carbohydrates (g)": "129.59",
+      "Protein (g)": "54.99",
+      "Fat (g)": "43.79",
+      "Energy (kJ)": "4683.13",
+      "Total Sodium (mg)": "759.81",
+      "Dietary Fibre (g)": "6.93"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Vegetarian",
+   "name": "MARGHERITA",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "70.13",
+      "Protein (g)": "22.03",
+      "Fat (g)": "12.66",
+      "Energy (kJ)": "2006.43",
+      "Total Sodium (mg)": "182.2",
+      "Dietary Fibre (g)": "2.14"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "106.7",
+      "Protein (g)": "37.61",
+      "Fat (g)": "23.43",
+      "Energy (kJ)": "3277.04",
+      "Total Sodium (mg)": "325.71",
+      "Dietary Fibre (g)": "3.2"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "175.36",
+      "Protein (g)": "64.55",
+      "Fat (g)": "40.73",
+      "Energy (kJ)": "5531.76",
+      "Total Sodium (mg)": "560.23",
+      "Dietary Fibre (g)": "6.34"
+     }
+    },
+    {
+     "label": "Thin Base",
+     "n": {
+      "Carbohydrates (g)": "112.54",
+      "Protein (g)": "53.43",
+      "Fat (g)": "39.26",
+      "Energy (kJ)": "4223.91",
+      "Total Sodium (mg)": "543.6",
+      "Dietary Fibre (g)": "4.94"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Chicken",
+   "name": "CHICKEN & SPICY PINE",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "73.46",
+      "Protein (g)": "26.53",
+      "Fat (g)": "13.05",
+      "Energy (kJ)": "2156.55",
+      "Total Sodium (mg)": "221.24",
+      "Dietary Fibre (g)": "2.35"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "111.42",
+      "Protein (g)": "45.06",
+      "Fat (g)": "23.99",
+      "Energy (kJ)": "3513.5",
+      "Total Sodium (mg)": "392.09",
+      "Dietary Fibre (g)": "3.47"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "183.89",
+      "Protein (g)": "77.36",
+      "Fat (g)": "42.07",
+      "Energy (kJ)": "5944.44",
+      "Total Sodium (mg)": "671",
+      "Dietary Fibre (g)": "6.83"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Chicken",
+   "name": "DEBONAIRS CHICKEN",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "58.63",
+      "Protein (g)": "30.67",
+      "Fat (g)": "29.99",
+      "Energy (kJ)": "2635.55",
+      "Total Sodium (mg)": "585.13",
+      "Dietary Fibre (g)": "1.82"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Chicken",
+   "name": "TIKKA CHICKEN",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "6.43",
+      "Protein (g)": "28.17",
+      "Fat (g)": "13.33",
+      "Energy (kJ)": "2271.83",
+      "Total Sodium (mg)": "719.32",
+      "Dietary Fibre (g)": "3.47"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "116.23",
+      "Protein (g)": "47.6",
+      "Fat (g)": "24.42",
+      "Energy (kJ)": "3706.45",
+      "Total Sodium (mg)": "1222.28",
+      "Dietary Fibre (g)": "5.3"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "188.54",
+      "Protein (g)": "80.93",
+      "Fat (g)": "42.66",
+      "Energy (kJ)": "6181.3",
+      "Total Sodium (mg)": "1802.3",
+      "Dietary Fibre (g)": "9.24"
+     }
+    },
+    {
+     "label": "Thin Base",
+     "n": {
+      "Carbohydrates (g)": "125.72",
+      "Protein (g)": "69.81",
+      "Fat (g)": "41.19",
+      "Energy (kJ)": "4873.45",
+      "Total Sodium (mg)": "1785.67",
+      "Dietary Fibre (g)": "7.84"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Chicken",
+   "name": "CHICKEN & MUSHROOM",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "77.12",
+      "Protein (g)": "28.02",
+      "Fat (g)": "19.39",
+      "Energy (kJ)": "2492.33",
+      "Total Sodium (mg)": "568.96",
+      "Dietary Fibre (g)": "568.96"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "117.7",
+      "Protein (g)": "47.31",
+      "Fat (g)": "34.53",
+      "Energy (kJ)": "4070.48",
+      "Total Sodium (mg)": "969.64",
+      "Dietary Fibre (g)": "4.48"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "191.18",
+      "Protein (g)": "80.68",
+      "Fat (g)": "56.45",
+      "Energy (kJ)": "6691.21",
+      "Total Sodium (mg)": "1466.43",
+      "Dietary Fibre (g)": "8.23"
+     }
+    },
+    {
+     "label": "Thin Base",
+     "n": {
+      "Carbohydrates (g)": "128.36",
+      "Protein (g)": "69.56",
+      "Fat (g)": "54.98",
+      "Energy (kJ)": "5383.36",
+      "Total Sodium (mg)": "1449.8",
+      "Dietary Fibre (g)": "6.83"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Chicken",
+   "name": "SWEET CHILLI CHICKEN",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "6.83",
+      "Protein (g)": "30.44",
+      "Fat (g)": "19.02",
+      "Energy (kJ)": "2498.96",
+      "Total Sodium (mg)": "603.45",
+      "Dietary Fibre (g)": "2.01"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "113.55",
+      "Protein (g)": "50.73",
+      "Fat (g)": "32.52",
+      "Energy (kJ)": "3986.53",
+      "Total Sodium (mg)": "911.45",
+      "Dietary Fibre (g)": "2.99"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "189.98",
+      "Protein (g)": "87.48",
+      "Fat (g)": "57.42",
+      "Energy (kJ)": "6832.25",
+      "Total Sodium (mg)": "1658.74",
+      "Dietary Fibre (g)": "5.98"
+     }
+    },
+    {
+     "label": "Thin Base",
+     "n": {
+      "Carbohydrates (g)": "127.16",
+      "Protein (g)": "76.36",
+      "Fat (g)": "55.95",
+      "Energy (kJ)": "5524.4",
+      "Total Sodium (mg)": "1642.12",
+      "Dietary Fibre (g)": "4.58"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Chicken",
+   "name": "BBQ Chicken",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "73.89",
+      "Protein (g)": "26.54",
+      "Fat (g)": "13.07",
+      "Energy (kJ)": "2178.5",
+      "Total Sodium (mg)": "397.66",
+      "Dietary Fibre (g)": "2"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "110.83",
+      "Protein (g)": "45.04",
+      "Fat (g)": "24",
+      "Energy (kJ)": "3522.2",
+      "Total Sodium (mg)": "603.71",
+      "Dietary Fibre (g)": "2.94"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "185.1",
+      "Protein (g)": "77.39",
+      "Fat (g)": "42.11",
+      "Energy (kJ)": "6003.19",
+      "Total Sodium (mg)": "1129.7",
+      "Dietary Fibre (g)": "5.95"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Meat",
+   "name": "PEPPERONI",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "68.93",
+      "Protein (g)": "28.01",
+      "Fat (g)": "27.68",
+      "Energy (kJ)": "2668.85",
+      "Total Sodium (mg)": "802.23",
+      "Dietary Fibre (g)": "1.88"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "104.77",
+      "Protein (g)": "46.52",
+      "Fat (g)": "45.83",
+      "Energy (kJ)": "4267.29",
+      "Total Sodium (mg)": "1255.48",
+      "Dietary Fibre (g)": "2.79"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "172.15",
+      "Protein (g)": "79.5",
+      "Fat (g)": "78.43",
+      "Energy (kJ)": "7184.32",
+      "Total Sodium (mg)": "2107.23",
+      "Dietary Fibre (g)": "5.63"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Meat",
+   "name": "BBQ BACON",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "73.68",
+      "Protein (g)": "28.61",
+      "Fat (g)": "19.29",
+      "Energy (kJ)": "2440.15",
+      "Total Sodium (mg)": "842.48",
+      "Dietary Fibre (g)": "2.00"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "110.47",
+      "Protein (g)": "44",
+      "Fat (g)": "29.8",
+      "Energy (kJ)": "3712.59",
+      "Total Sodium (mg)": "1016.08",
+      "Dietary Fibre (g)": "2.94"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "184.5",
+      "Protein (g)": "73.04",
+      "Fat (g)": "49.33",
+      "Energy (kJ)": "6184.7",
+      "Total Sodium (mg)": "1640.38",
+      "Dietary Fibre (g)": "5.95"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Meat",
+   "name": "CLUB",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "75.49",
+      "Protein (g)": "41.31",
+      "Fat (g)": "28.32",
+      "Energy (kJ)": "2999.58",
+      "Total Sodium (mg)": "1307.8",
+      "Dietary Fibre (g)": "2.23"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "115.36",
+      "Protein (g)": "63.66",
+      "Fat (g)": "44.42",
+      "Energy (kJ)": "4642.75",
+      "Total Sodium (mg)": "1821.41",
+      "Dietary Fibre (g)": "3.38"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "187.91",
+      "Protein (g)": "107.73",
+      "Fat (g)": "71.08",
+      "Energy (kJ)": "7577.82",
+      "Total Sodium (mg)": "2775.1",
+      "Dietary Fibre (g)": "6.43"
+     }
+    },
+    {
+     "label": "Thin Base",
+     "n": {
+      "Carbohydrates (g)": "129.17",
+      "Protein (g)": "98.42",
+      "Fat (g)": "79.04",
+      "Energy (kJ)": "6716.43",
+      "Total Sodium (mg)": "3198.99",
+      "Dietary Fibre (g)": "5.1"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Meat",
+   "name": "SOMETHING MEATY",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "74.46",
+      "Protein (g)": "43.98",
+      "Fat (g)": "30.66",
+      "Energy (kJ)": "3122.08",
+      "Total Sodium (mg)": "1524.35",
+      "Dietary Fibre (g)": "1.98"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "113.01",
+      "Protein (g)": "65.65",
+      "Fat (g)": "43.1",
+      "Energy (kJ)": "4594.84",
+      "Total Sodium (mg)": "1937.76",
+      "Dietary Fibre (g)": "7.94"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "189.16",
+      "Protein (g)": "110.4",
+      "Fat (g)": "69.61",
+      "Energy (kJ)": "7606.79",
+      "Total Sodium (mg)": "3148.37",
+      "Dietary Fibre (g)": "11.95"
+     }
+    },
+    {
+     "label": "Thin Base",
+     "n": {
+      "Carbohydrates (g)": "129.91",
+      "Protein (g)": "100.83",
+      "Fat (g)": "77.02",
+      "Energy (kJ)": "6731.84",
+      "Total Sodium (mg)": "3571.14",
+      "Dietary Fibre (g)": "4.55"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Meat",
+   "name": "HAWAIIAN",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "75.85",
+      "Protein (g)": "33.57",
+      "Fat (g)": "15.67",
+      "Energy (kJ)": "2377.25",
+      "Total Sodium (mg)": "557.74",
+      "Dietary Fibre (g)": "2.35"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "114.86",
+      "Protein (g)": "54.41",
+      "Fat (g)": "27.68",
+      "Energy (kJ)": "3814.14",
+      "Total Sodium (mg)": "873.92",
+      "Dietary Fibre (g)": "3.47"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "190.28",
+      "Protein (g)": "95.68",
+      "Fat (g)": "49.02",
+      "Energy (kJ)": "6523.57",
+      "Total Sodium (mg)": "1570.11",
+      "Dietary Fibre (g)": "6.83"
+     }
+    },
+    {
+     "label": "Thin base",
+     "n": {
+      "Carbohydrates (g)": "127.46",
+      "Protein (g)": "84.55",
+      "Fat (g)": "47.54",
+      "Energy (kJ)": "5215.72",
+      "Total Sodium (mg)": "1553.47",
+      "Dietary Fibre (g)": "5.43"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Meat",
+   "name": "Mexican Fiesta",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "76.82",
+      "Protein (g)": "27.02",
+      "Fat (g)": "14.19",
+      "Energy (kJ)": "2246.69",
+      "Total Sodium (mg)": "319.24",
+      "Dietary Fibre (g)": "2.85"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "115.04",
+      "Protein (g)": "45.3",
+      "Fat (g)": "25.67",
+      "Energy (kJ)": "3617.71",
+      "Total Sodium (mg)": "544.12",
+      "Dietary Fibre (g)": "4.2"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "191.65",
+      "Protein (g)": "78",
+      "Fat (g)": "45.07",
+      "Energy (kJ)": "6162.15",
+      "Total Sodium (mg)": "1532.52",
+      "Dietary Fibre (g)": "7.88"
+     }
+    },
+    {
+     "label": "Thin Base",
+     "n": {
+      "Carbohydrates (g)": "128.83",
+      "Protein (g)": "66.88",
+      "Fat (g)": "43.59",
+      "Energy (kJ)": "4854.3",
+      "Total Sodium (mg)": "1515.89",
+      "Dietary Fibre (g)": "6.48"
+     }
+    }
+   ]
+  },
+  {
+   "section": "SPECIALTY",
+   "name": "Meaty Triple-Decker®",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "161.73",
+      "Protein (g)": "58.17",
+      "Fat (g)": "28.69",
+      "Energy (kJ)": "4732.87",
+      "Total Sodium (mg)": "1027.18",
+      "Dietary Fibre (g)": "13.63"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "331.89",
+      "Protein (g)": "141.42",
+      "Fat (g)": "101.65",
+      "Energy (kJ)": "11824.39",
+      "Total Sodium (mg)": "3382.59",
+      "Dietary Fibre (g)": "9.75"
+     }
+    }
+   ]
+  },
+  {
+   "section": "SPECIALTY",
+   "name": "Creamy Chicken Triple-Decker®",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "157.05",
+      "Protein (g)": "49.77",
+      "Fat (g)": "27.55",
+      "Energy (kJ)": "4491.14",
+      "Total Sodium (mg)": "669.54",
+      "Dietary Fibre (g)": "10.21"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "318.1",
+      "Protein (g)": "118.82",
+      "Fat (g)": "95.84",
+      "Energy (kJ)": "11042.98",
+      "Total Sodium (mg)": "2329.13",
+      "Dietary Fibre (g)": "11.08"
+     }
+    }
+   ]
+  },
+  {
+   "section": "SPECIALTY",
+   "name": "Sweet Chilli Chicken Triple-Decker®",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "176.63",
+      "Protein (g)": "49.54",
+      "Fat (g)": "21.55",
+      "Energy (kJ)": "4580.62",
+      "Total Sodium (mg)": "876",
+      "Dietary Fibre (g)": "14.02"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "370.41",
+      "Protein (g)": "118.28",
+      "Fat (g)": "82.14",
+      "Energy (kJ)": "11378.84",
+      "Total Sodium (mg)": "2962.42",
+      "Dietary Fibre (g)": "10.7"
+     }
+    }
+   ]
+  },
+  {
+   "section": "SPECIALTY",
+   "name": "Veggie Triple- Decker",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "158.4",
+      "Protein (g)": "44.8",
+      "Fat (g)": "26.9",
+      "Energy (kJ)": "4386",
+      "Total Sodium (mg)": "635.2",
+      "Dietary Fibre (g)": "15.4"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "319.8",
+      "Protein (g)": "102.9",
+      "Fat (g)": "93.7",
+      "Energy (kJ)": "10685",
+      "Total Sodium (mg)": "2191.7",
+      "Dietary Fibre (g)": "13.4"
+     }
+    }
+   ]
+  },
+  {
+   "section": "SPECIALTY",
+   "name": "Chicken",
+   "sizes": [
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "331.21",
+      "Protein (g)": "180.2",
+      "Fat (g)": "142.67",
+      "Energy (kJ)": "14146.83",
+      "Total Sodium (mg)": "3858.71",
+      "Dietary Fibre (g)": "12.69"
+     }
+    }
+   ]
+  },
+  {
+   "section": "SPECIALTY",
+   "name": "Meaty",
+   "sizes": [
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "341.51",
+      "Protein (g)": "199.63",
+      "Fat (g)": "153.02",
+      "Energy (kJ)": "14958.51",
+      "Total Sodium (mg)": "5241.95",
+      "Dietary Fibre (g)": "11.24"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Base",
+   "name": "Original Base",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "68.92",
+      "Protein (g)": "21.71",
+      "Fat (g)": "12.38",
+      "Energy (kJ)": "1980.35",
+      "Total Sodium (mg)": "371.39",
+      "Dietary Fibre (g)": "1.88"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "104.77",
+      "Protein (g)": "37.07",
+      "Fat (g)": "22.87",
+      "Energy (kJ)": "3234.54",
+      "Total Sodium (mg)": "576.03",
+      "Dietary Fibre (g)": "2.79"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "172.15",
+      "Protein (g)": "63.75",
+      "Fat (g)": "40.18",
+      "Energy (kJ)": "5463.07",
+      "Total Sodium (mg)": "518.9",
+      "Dietary Fibre (g)": "5.63"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Base",
+   "name": "Crammed-Crust®",
+   "sizes": [
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "184.12",
+      "Protein (g)": "110.55",
+      "Fat (g)": "86.65",
+      "Energy (kJ)": "8223.07",
+      "Total Sodium (mg)": "3193.74",
+      "Dietary Fibre (g)": "5.63"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Sides",
+   "name": "2 BBQ Wings",
+   "sizes": [
+    {
+     "label": "Regular",
+     "n": {
+      "Carbohydrates (g)": "10.37",
+      "Protein (g)": "7.89",
+      "Fat (g)": "8.5",
+      "Energy (kJ)": "650.77",
+      "Total Sodium (mg)": "607.57",
+      "Dietary Fibre (g)": "0.51"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Sides",
+   "name": "4 BBQ Wings",
+   "sizes": [
+    {
+     "label": "Regular",
+     "n": {
+      "Carbohydrates (g)": "20.73",
+      "Protein (g)": "15.77",
+      "Fat (g)": "17",
+      "Energy (kJ)": "1301.53",
+      "Total Sodium (mg)": "1215.13",
+      "Dietary Fibre (g)": "1.03"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Sides",
+   "name": "6 BBQ Wings",
+   "sizes": [
+    {
+     "label": "Regular",
+     "n": {
+      "Carbohydrates (g)": "31.1",
+      "Protein (g)": "23.66",
+      "Fat (g)": "25.5",
+      "Energy (kJ)": "1952.3",
+      "Total Sodium (mg)": "1822.7",
+      "Dietary Fibre (g)": "1.54"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Sides",
+   "name": "2 Peri-Peri Wings",
+   "sizes": [
+    {
+     "label": "Regular",
+     "n": {
+      "Carbohydrates (g)": "1.82",
+      "Protein (g)": "8.08",
+      "Fat (g)": "14.4",
+      "Energy (kJ)": "737.77",
+      "Total Sodium (mg)": "1319.57",
+      "Dietary Fibre (g)": "1.12"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Sides",
+   "name": "4 Peri-Peri Wings",
+   "sizes": [
+    {
+     "label": "Regular",
+     "n": {
+      "Carbohydrates (g)": "3.63",
+      "Protein (g)": "16.17",
+      "Fat (g)": "28.8",
+      "Energy (kJ)": "1475.53",
+      "Total Sodium (mg)": "2639.13",
+      "Dietary Fibre (g)": "2.23"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Sides",
+   "name": "6 Peri-Peri Wings",
+   "sizes": [
+    {
+     "label": "Regular",
+     "n": {
+      "Carbohydrates (g)": "5.45",
+      "Protein (g)": "24.25",
+      "Fat (g)": "43.2",
+      "Energy (kJ)": "2213.3",
+      "Total Sodium (mg)": "3958.7",
+      "Dietary Fibre (g)": "3.35"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Sides",
+   "name": "Cocktail Pork Cheese Grillers (Halaal version: Cocktail Chicken Cheese Grillers)",
+   "sizes": [
+    {
+     "label": "Regular",
+     "n": {
+      "Carbohydrates (g)": "0",
+      "Protein (g)": "23",
+      "Fat (g)": "44",
+      "Energy (kJ)": "1932",
+      "Total Sodium (mg)": "462",
+      "Dietary Fibre (g)": "0"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Sides",
+   "name": "Death by Chocolate <br>",
+   "sizes": [
+    {
+     "label": "Regular",
+     "n": {
+      "Carbohydrates (g)": "124.86",
+      "Protein (g)": "13.87",
+      "Fat (g)": "85.29",
+      "Energy (kJ)": "5467.87",
+      "Total Sodium (mg)": "896.06",
+      "Dietary Fibre (g)": "1.81"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Sides",
+   "name": "Pork Cocktail Cheese Griller (Halaal version: Chicken Cheese Griller)",
+   "sizes": [
+    {
+     "label": "Regular",
+     "n": {
+      "Carbohydrates (g)": "4.1",
+      "Protein (g)": "18.2",
+      "Fat (g)": "18.1",
+      "Energy (kJ)": "669",
+      "Total Sodium (mg)": "1333",
+      "Dietary Fibre (g)": "1.4"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Sauces",
+   "name": "BBQ Sauce",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "4.75",
+      "Protein (g)": "0.18",
+      "Fat (g)": "0.05",
+      "Energy (kJ)": "91.25",
+      "Total Sodium (mg)": "176.75",
+      "Dietary Fibre (g)": "0.12"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "5.7",
+      "Protein (g)": "0.21",
+      "Fat (g)": "0.06",
+      "Energy (kJ)": "109.5",
+      "Total Sodium (mg)": "212.1",
+      "Dietary Fibre (g)": "0.14"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "12.35",
+      "Protein (g)": "0.46",
+      "Fat (g)": "0.13",
+      "Energy (kJ)": "237.25",
+      "Total Sodium (mg)": "459.55",
+      "Dietary Fibre (g)": "0.32"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Sauces",
+   "name": "Mexican Sauce",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "4.65",
+      "Protein (g)": "0.38",
+      "Fat (g)": "0.18",
+      "Energy (kJ)": "87.5",
+      "Total Sodium (mg)": "0",
+      "Dietary Fibre (g)": "0"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "5.58",
+      "Protein (g)": "0.46",
+      "Fat (g)": "0.22",
+      "Energy (kJ)": "105",
+      "Total Sodium (mg)": "0",
+      "Dietary Fibre (g)": "0"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "12.09",
+      "Protein (g)": "1",
+      "Fat (g)": "0.48",
+      "Energy (kJ)": "227.5",
+      "Total Sodium (mg)": "0",
+      "Dietary Fibre (g)": "0"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Sauces",
+   "name": "Tikka Sauce",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "3.96",
+      "Protein (g)": "0.66",
+      "Fat (g)": "0.198",
+      "Energy (kJ)": "111.54",
+      "Total Sodium (mg)": "495",
+      "Dietary Fibre (g)": "0.92"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "6.6",
+      "Protein (g)": "1.1",
+      "Fat (g)": "0.33",
+      "Energy (kJ)": "185.9",
+      "Total Sodium (mg)": "825",
+      "Dietary Fibre (g)": "1.54"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "9",
+      "Protein (g)": "1.5",
+      "Fat (g)": "0.45",
+      "Energy (kJ)": "253.5",
+      "Total Sodium (mg)": "1125",
+      "Dietary Fibre (g)": "2.1"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Sauces",
+   "name": "Debonairs Sauce",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "4.62",
+      "Protein (g)": "0.4268",
+      "Fat (g)": "6.27",
+      "Energy (kJ)": "325.38",
+      "Total Sodium (mg)": "336.6",
+      "Dietary Fibre (g)": "0.352"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "7.7",
+      "Protein (g)": "0.71",
+      "Fat (g)": "10.45",
+      "Energy (kJ)": "542.3",
+      "Total Sodium (mg)": "561",
+      "Dietary Fibre (g)": "0.58"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "10.5",
+      "Protein (g)": "0.97",
+      "Fat (g)": "14.25",
+      "Energy (kJ)": "739.5",
+      "Total Sodium (mg)": "765",
+      "Dietary Fibre (g)": "0.8"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Sauces",
+   "name": "Sweet Chilli Sauce",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "11.75",
+      "Protein (g)": "0",
+      "Fat (g)": "0",
+      "Energy (kJ)": "199.75",
+      "Total Sodium (mg)": "271.25",
+      "Dietary Fibre (g)": "0"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "14.1",
+      "Protein (g)": "0",
+      "Fat (g)": "0",
+      "Energy (kJ)": "239.7",
+      "Total Sodium (mg)": "325.5",
+      "Dietary Fibre (g)": "0"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "30.55",
+      "Protein (g)": "0",
+      "Fat (g)": "0",
+      "Energy (kJ)": "519.35",
+      "Total Sodium (mg)": "705.25",
+      "Dietary Fibre (g)": "0"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Extras",
+   "name": "Garlic",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "1.32",
+      "Protein (g)": "0.25",
+      "Fat (g)": "0.02",
+      "Energy (kJ)": "25.03",
+      "Total Sodium (mg)": "1.33",
+      "Dietary Fibre (g)": "0"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "1.98",
+      "Protein (g)": "0.38",
+      "Fat (g)": "0.03",
+      "Energy (kJ)": "37.55",
+      "Total Sodium (mg)": "2",
+      "Dietary Fibre (g)": "0"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "3.97",
+      "Protein (g)": "0.77",
+      "Fat (g)": "0.06",
+      "Energy (kJ)": "75.1",
+      "Total Sodium (mg)": "4",
+      "Dietary Fibre (g)": "0"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Extras",
+   "name": "Mushroom",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "0.46",
+      "Protein (g)": "0.43",
+      "Fat (g)": "0.04",
+      "Energy (kJ)": "16.82",
+      "Total Sodium (mg)": "0.7",
+      "Dietary Fibre (g)": "0.14"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "0.66",
+      "Protein (g)": "0.62",
+      "Fat (g)": "0.06",
+      "Energy (kJ)": "24.04",
+      "Total Sodium (mg)": "1",
+      "Dietary Fibre (g)": "0.2"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "0.99",
+      "Protein (g)": "0.93",
+      "Fat (g)": "0.09",
+      "Energy (kJ)": "36.06",
+      "Total Sodium (mg)": "1.5",
+      "Dietary Fibre (g)": "0.3"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Extras",
+   "name": "JalapeÃ±o",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "1.1",
+      "Protein (g)": "0.17",
+      "Fat (g)": "0.01",
+      "Energy (kJ)": "2.85",
+      "Total Sodium (mg)": "0.51",
+      "Dietary Fibre (g)": "0.48"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "1.63",
+      "Protein (g)": "0.25",
+      "Fat (g)": "0.02",
+      "Energy (kJ)": "4.19",
+      "Total Sodium (mg)": "0.75",
+      "Dietary Fibre (g)": "0.7"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "2.41",
+      "Protein (g)": "0.37",
+      "Fat (g)": "0.03",
+      "Energy (kJ)": "6.2",
+      "Total Sodium (mg)": "1.11",
+      "Dietary Fibre (g)": "1.04"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Extras",
+   "name": "Pineapple",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "4.323",
+      "Protein (g)": "0.165",
+      "Fat (g)": "0.033",
+      "Energy (kJ)": "69.3",
+      "Total Sodium (mg)": "0.33",
+      "Dietary Fibre (g)": "0.46"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "6.288",
+      "Protein (g)": "0.24",
+      "Fat (g)": "0.048",
+      "Energy (kJ)": "100.8",
+      "Total Sodium (mg)": "0.48",
+      "Dietary Fibre (g)": "0.68"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "11.13",
+      "Protein (g)": "0.42",
+      "Fat (g)": "0.085",
+      "Energy (kJ)": "178.5",
+      "Total Sodium (mg)": "0.85",
+      "Dietary Fibre (g)": "1.2"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Extras",
+   "name": "Sweet Bell Pepper",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "0.45",
+      "Protein (g)": "0.06",
+      "Fat (g)": "0",
+      "Energy (kJ)": "8.58",
+      "Total Sodium (mg)": "0",
+      "Dietary Fibre (g)": "0.13"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "0.69",
+      "Protein (g)": "0.1",
+      "Fat (g)": "0",
+      "Energy (kJ)": "13.2",
+      "Total Sodium (mg)": "0",
+      "Dietary Fibre (g)": "0.2"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "1.2",
+      "Protein (g)": "0.17",
+      "Fat (g)": "0",
+      "Energy (kJ)": "23.1",
+      "Total Sodium (mg)": "0",
+      "Dietary Fibre (g)": "0.35"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Extras",
+   "name": "Green Pepper",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "0.64",
+      "Protein (g)": "0.13",
+      "Fat (g)": "0.03",
+      "Energy (kJ)": "11.7",
+      "Total Sodium (mg)": "0.42",
+      "Dietary Fibre (g)": "0.24"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "0.92",
+      "Protein (g)": "0.18",
+      "Fat (g)": "0.04",
+      "Energy (kJ)": "16.72",
+      "Total Sodium (mg)": "0.6",
+      "Dietary Fibre (g)": "0.34"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "1.75",
+      "Protein (g)": "0.34",
+      "Fat (g)": "0.08",
+      "Energy (kJ)": "31.77",
+      "Total Sodium (mg)": "1.14",
+      "Dietary Fibre (g)": "0.65"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Extras",
+   "name": "Tomato",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "0.95",
+      "Protein (g)": "0.19",
+      "Fat (g)": "0",
+      "Energy (kJ)": "19.3",
+      "Total Sodium (mg)": "9.41",
+      "Dietary Fibre (g)": "0.22"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "1.42",
+      "Protein (g)": "0.28",
+      "Fat (g)": "0",
+      "Energy (kJ)": "28.94",
+      "Total Sodium (mg)": "14.11",
+      "Dietary Fibre (g)": "0.34"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "2.7",
+      "Protein (g)": "0.54",
+      "Fat (g)": "0",
+      "Energy (kJ)": "55.13",
+      "Total Sodium (mg)": "26.88",
+      "Dietary Fibre (g)": "0.64"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Extras",
+   "name": "Onion",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "1.49",
+      "Protein (g)": "0.17",
+      "Fat (g)": "0.02",
+      "Energy (kJ)": "26.75",
+      "Total Sodium (mg)": "0.64",
+      "Dietary Fibre (g)": "0.26"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "2.14",
+      "Protein (g)": "0.25",
+      "Fat (g)": "0.03",
+      "Energy (kJ)": "38.46",
+      "Total Sodium (mg)": "0.92",
+      "Dietary Fibre (g)": "0.37"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "3.25",
+      "Protein (g)": "0.38",
+      "Fat (g)": "0.04",
+      "Energy (kJ)": "58.52",
+      "Total Sodium (mg)": "1.4",
+      "Dietary Fibre (g)": "0.56"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Extras",
+   "name": "Crushed Chilli in a tub",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "0.1",
+      "Protein (g)": "0",
+      "Fat (g)": "7.8",
+      "Energy (kJ)": "295.94",
+      "Total Sodium (mg)": "0.2",
+      "Dietary Fibre (g)": "0"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "0.2",
+      "Protein (g)": "0",
+      "Fat (g)": "15.6",
+      "Energy (kJ)": "591.88",
+      "Total Sodium (mg)": "0.4",
+      "Dietary Fibre (g)": "0"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "0.3",
+      "Protein (g)": "0",
+      "Fat (g)": "23.4",
+      "Energy (kJ)": "887.83",
+      "Total Sodium (mg)": "0.6",
+      "Dietary Fibre (g)": "0"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Extras",
+   "name": "Feta",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "0.61",
+      "Protein (g)": "4",
+      "Fat (g)": "6",
+      "Energy (kJ)": "309.32",
+      "Total Sodium (mg)": "256.79",
+      "Dietary Fibre (g)": "0"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "0.87",
+      "Protein (g)": "5.72",
+      "Fat (g)": "8.57",
+      "Energy (kJ)": "441.88",
+      "Total Sodium (mg)": "366.86",
+      "Dietary Fibre (g)": "0"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "2.83",
+      "Protein (g)": "10.29",
+      "Fat (g)": "15.43",
+      "Energy (kJ)": "795.39",
+      "Total Sodium (mg)": "660.34",
+      "Dietary Fibre (g)": "0"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Extras",
+   "name": "Mozzarella",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "0.51",
+      "Protein (g)": "5.11",
+      "Fat (g)": "5.15",
+      "Energy (kJ)": "291.18",
+      "Total Sodium (mg)": "69",
+      "Dietary Fibre (g)": "0"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "1",
+      "Protein (g)": "9.77",
+      "Fat (g)": "9.85",
+      "Energy (kJ)": "557.04",
+      "Total Sodium (mg)": "132",
+      "Dietary Fibre (g)": "0"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "1.72",
+      "Protein (g)": "17.32",
+      "Fat (g)": "17.47",
+      "Energy (kJ)": "987.48",
+      "Total Sodium (mg)": "234",
+      "Dietary Fibre (g)": "0"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Extras",
+   "name": "Cheddar",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "0.31",
+      "Protein (g)": "6.58",
+      "Fat (g)": "9.27",
+      "Energy (kJ)": "467.71",
+      "Total Sodium (mg)": "154.56",
+      "Dietary Fibre (g)": "0"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "0.46",
+      "Protein (g)": "9.6",
+      "Fat (g)": "13.52",
+      "Energy (kJ)": "682.08",
+      "Total Sodium (mg)": "257.6",
+      "Dietary Fibre (g)": "0"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "0.88",
+      "Protein (g)": "16.32",
+      "Fat (g)": "21.97",
+      "Energy (kJ)": "1159.54",
+      "Total Sodium (mg)": "437.92",
+      "Dietary Fibre (g)": "0"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Extras",
+   "name": "Ham",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "1.73",
+      "Protein (g)": "7.8",
+      "Fat (g)": "2.17",
+      "Energy (kJ)": "218.4",
+      "Total Sodium (mg)": "256.79",
+      "Dietary Fibre (g)": "0"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "2.53",
+      "Protein (g)": "11.4",
+      "Fat (g)": "3.17",
+      "Energy (kJ)": "319.2",
+      "Total Sodium (mg)": "375.3",
+      "Dietary Fibre (g)": "0"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "4.66",
+      "Protein (g)": "21",
+      "Fat (g)": "5.84",
+      "Energy (kJ)": "588",
+      "Total Sodium (mg)": "691.35",
+      "Dietary Fibre (g)": "0"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Extras",
+   "name": "Pepperoni (Halaal version: Salami)",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "0",
+      "Protein (g)": "3.15",
+      "Fat (g)": "7.65",
+      "Energy (kJ)": "344.25",
+      "Total Sodium (mg)": "315",
+      "Dietary Fibre (g)": "0"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "0",
+      "Protein (g)": "3.15",
+      "Fat (g)": "7.65",
+      "Energy (kJ)": "344.25",
+      "Total Sodium (mg)": "315",
+      "Dietary Fibre (g)": "0"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "0",
+      "Protein (g)": "4.2",
+      "Fat (g)": "10.2",
+      "Energy (kJ)": "459",
+      "Total Sodium (mg)": "420",
+      "Dietary Fibre (g)": "0"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Extras",
+   "name": "Bacon (Halaal version: Macon)",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "1.12",
+      "Protein (g)": "3.36",
+      "Fat (g)": "5.79",
+      "Energy (kJ)": "296.77",
+      "Total Sodium (mg)": "352",
+      "Dietary Fibre (g)": "0"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "1.84",
+      "Protein (g)": "5.34",
+      "Fat (g)": "9.21",
+      "Energy (kJ)": "472.13",
+      "Total Sodium (mg)": "560",
+      "Dietary Fibre (g)": "0"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "3.57",
+      "Protein (g)": "10.38",
+      "Fat (g)": "17.9",
+      "Energy (kJ)": "917.28",
+      "Total Sodium (mg)": "1088",
+      "Dietary Fibre (g)": "0"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Extras",
+   "name": "Chicken",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "0.21",
+      "Protein (g)": "4.65",
+      "Fat (g)": "0.64",
+      "Energy (kJ)": "106.9",
+      "Total Sodium (mg)": "48.68",
+      "Dietary Fibre (g)": "0"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "0.35",
+      "Protein (g)": "7.75",
+      "Fat (g)": "1.06",
+      "Energy (kJ)": "178.16",
+      "Total Sodium (mg)": "81.13",
+      "Dietary Fibre (g)": "0"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "0.6",
+      "Protein (g)": "13.18",
+      "Fat (g)": "1.8",
+      "Energy (kJ)": "302.87",
+      "Total Sodium (mg)": "137.92",
+      "Dietary Fibre (g)": "0"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Extras",
+   "name": "Ground Beef",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "0",
+      "Protein (g)": "4.46",
+      "Fat (g)": "1.56",
+      "Energy (kJ)": "137.53",
+      "Total Sodium (mg)": "145.43",
+      "Dietary Fibre (g)": "0"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "0",
+      "Protein (g)": "7.09",
+      "Fat (g)": "2.48",
+      "Energy (kJ)": "218.8",
+      "Total Sodium (mg)": "231.37",
+      "Dietary Fibre (g)": "0"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "0",
+      "Protein (g)": "12.16",
+      "Fat (g)": "4.25",
+      "Energy (kJ)": "375.09",
+      "Total Sodium (mg)": "396.64",
+      "Dietary Fibre (g)": "0"
+     }
+    }
+   ]
+  },
+  {
+   "section": "Extras",
+   "name": "Spare Rib (Halaal version: Beef Rib Meat)",
+   "sizes": [
+    {
+     "label": "Small",
+     "n": {
+      "Carbohydrates (g)": "0",
+      "Protein (g)": "4.12",
+      "Fat (g)": "4.35",
+      "Energy (kJ)": "235.2",
+      "Total Sodium (mg)": "21.79",
+      "Dietary Fibre (g)": "0"
+     }
+    },
+    {
+     "label": "Medium",
+     "n": {
+      "Carbohydrates (g)": "0",
+      "Protein (g)": "6.65",
+      "Fat (g)": "7.02",
+      "Energy (kJ)": "379.94",
+      "Total Sodium (mg)": "35.2",
+      "Dietary Fibre (g)": "0"
+     }
+    },
+    {
+     "label": "Large",
+     "n": {
+      "Carbohydrates (g)": "0",
+      "Protein (g)": "11.4",
+      "Fat (g)": "12.04",
+      "Energy (kJ)": "651.32",
+      "Total Sodium (mg)": "60.34",
+      "Dietary Fibre (g)": "0"
+     }
+    }
+   ]
+  }
+ ],
+ "allergens": [
+  {
+   "section": "Pizzawrap",
+   "name": "BBQ BACON",
+   "al": {
+    "Gluten": "X",
+    "Soya": "X",
+    "Cows Milk": "X",
+    "Egg": "",
+    "Nuts": "",
+    "Sulphates": "X"
+   }
+  },
+  {
+   "section": "Pizzawrap",
+   "name": "CREAMY BEEF & JALAPEÑO",
+   "al": {
+    "Gluten": "X",
+    "Soya": "X",
+    "Cows Milk": "X",
+    "Egg": "X",
+    "Nuts": "",
+    "Sulphates": ""
+   }
+  },
+  {
+   "section": "Pizzawrap",
+   "name": "CREAMY CHICKEN & MUSHROOM",
+   "al": {
+    "Gluten": "",
+    "Soya": "",
+    "Cows Milk": "",
+    "Egg": "",
+    "Nuts": "",
+    "Sulphates": ""
+   }
+  },
+  {
+   "section": "Pizzawrap",
+   "name": "DEBONAIRS CHICKEN",
+   "al": {
+    "Gluten": "",
+    "Soya": "X",
+    "Cows Milk": "X",
+    "Egg": "X",
+    "Nuts": "",
+    "Sulphates": "X"
+   }
+  },
+  {
+   "section": "Pizzawrap",
+   "name": "TIKKA CHICKEN",
+   "al": {
+    "Gluten": "X",
+    "Soya": "X",
+    "Cows Milk": "X",
+    "Egg": "X",
+    "Nuts": "",
+    "Sulphates": "X"
+   }
+  },
+  {
+   "section": "Real deal®",
+   "name": "BBQ BACON",
+   "al": {
+    "Gluten": "X",
+    "Soya": "X",
+    "Cows Milk": "X",
+    "Egg": "",
+    "Nuts": "",
+    "Sulphates": "X"
+   }
+  },
+  {
+   "section": "Real deal®",
+   "name": "BBQ BEEF",
+   "al": {
+    "Gluten": "X",
+    "Soya": "X",
+    "Cows Milk": "X",
+    "Egg": "X",
+    "Nuts": "",
+    "Sulphates": "X"
+   }
+  },
+  {
+   "section": "Real deal®",
+   "name": "BBQ Chicken",
+   "al": {
+    "Gluten": "X",
+    "Soya": "",
+    "Cows Milk": "X",
+    "Egg": "X",
+    "Nuts": "",
+    "Sulphates": "X"
+   }
+  },
+  {
+   "section": "Real deal®",
+   "name": "CHICKEN & SPICY PINE",
+   "al": {
+    "Gluten": "X",
+    "Soya": "",
+    "Cows Milk": "X",
+    "Egg": "X",
+    "Nuts": "",
+    "Sulphates": "X"
+   }
+  },
+  {
+   "section": "Real deal®",
+   "name": "Debonairs Chicken",
+   "al": {
+    "Gluten": "X",
+    "Soya": "X",
+    "Cows Milk": "X",
+    "Egg": "X",
+    "Nuts": "",
+    "Sulphates": "X"
+   }
+  },
+  {
+   "section": "Real deal®",
+   "name": "MARGHERITA",
+   "al": {
+    "Gluten": "X",
+    "Soya": "",
+    "Cows Milk": "X",
+    "Egg": "X",
+    "Nuts": "",
+    "Sulphates": "X"
+   }
+  },
+  {
+   "section": "Real deal®",
+   "name": "RUSSIAN",
+   "al": {
+    "Gluten": "",
+    "Soya": "",
+    "Cows Milk": "",
+    "Egg": "",
+    "Nuts": "",
+    "Sulphates": ""
+   }
+  },
+  {
+   "section": "Clazzics",
+   "name": "BBQ CHICKEN & MUSHROOM",
+   "al": {
+    "Gluten": "",
+    "Soya": "",
+    "Cows Milk": "",
+    "Egg": "",
+    "Nuts": "",
+    "Sulphates": ""
+   }
+  },
+  {
+   "section": "Clazzics",
+   "name": "CHICKEN & MUSHROOM",
+   "al": {
+    "Gluten": "",
+    "Soya": "",
+    "Cows Milk": "",
+    "Egg": "",
+    "Nuts": "",
+    "Sulphates": ""
+   }
+  },
+  {
+   "section": "Clazzics",
+   "name": "HAWAIIAN",
+   "al": {
+    "Gluten": "X",
+    "Soya": "X",
+    "Cows Milk": "X",
+    "Egg": "X",
+    "Nuts": "",
+    "Sulphates": "X"
+   }
+  },
+  {
+   "section": "Clazzics",
+   "name": "MEATY CLAZZIC",
+   "al": {
+    "Gluten": "",
+    "Soya": "",
+    "Cows Milk": "",
+    "Egg": "",
+    "Nuts": "",
+    "Sulphates": ""
+   }
+  },
+  {
+   "section": "Clazzics",
+   "name": "Mexican Fiesta",
+   "al": {
+    "Gluten": "X",
+    "Soya": "X",
+    "Cows Milk": "X",
+    "Egg": "X",
+    "Nuts": "",
+    "Sulphates": "X"
+   }
+  },
+  {
+   "section": "Clazzics",
+   "name": "ORIGINAL VEGGIE",
+   "al": {
+    "Gluten": "X",
+    "Soya": "",
+    "Cows Milk": "X",
+    "Egg": "X",
+    "Nuts": "",
+    "Sulphates": "X"
+   }
+  },
+  {
+   "section": "Clazzics",
+   "name": "PEPPERONI",
+   "al": {
+    "Gluten": "X",
+    "Soya": "X",
+    "Cows Milk": "X",
+    "Egg": "X",
+    "Nuts": "",
+    "Sulphates": "X"
+   }
+  },
+  {
+   "section": "Clazzics",
+   "name": "SWEET CHILLI CHICKEN",
+   "al": {
+    "Gluten": "",
+    "Soya": "",
+    "Cows Milk": "",
+    "Egg": "",
+    "Nuts": "",
+    "Sulphates": ""
+   }
+  },
+  {
+   "section": "Deluxe",
+   "name": "CHEEZY BEEF & ONION",
+   "al": {
+    "Gluten": "",
+    "Soya": "",
+    "Cows Milk": "",
+    "Egg": "",
+    "Nuts": "",
+    "Sulphates": ""
+   }
+  },
+  {
+   "section": "Deluxe",
+   "name": "CHEEZY CHICKEN & MUSHROOM",
+   "al": {
+    "Gluten": "X",
+    "Soya": "",
+    "Cows Milk": "X",
+    "Egg": "X",
+    "Nuts": "",
+    "Sulphates": "X"
+   }
+  },
+  {
+   "section": "Deluxe",
+   "name": "CLUB",
+   "al": {
+    "Gluten": "X",
+    "Soya": "X",
+    "Cows Milk": "X",
+    "Egg": "",
+    "Nuts": "",
+    "Sulphates": "X"
+   }
+  },
+  {
+   "section": "Deluxe",
+   "name": "SOMETHING MEATY",
+   "al": {
+    "Gluten": "X",
+    "Soya": "X",
+    "Cows Milk": "X",
+    "Egg": "",
+    "Nuts": "",
+    "Sulphates": "X"
+   }
+  },
+  {
+   "section": "Deluxe",
+   "name": "TIKKA CHICKEN",
+   "al": {
+    "Gluten": "X",
+    "Soya": "X",
+    "Cows Milk": "X",
+    "Egg": "X",
+    "Nuts": "",
+    "Sulphates": "X"
+   }
+  },
+  {
+   "section": "Specialty",
+   "name": "CHICKEN",
+   "al": {
+    "Gluten": "",
+    "Soya": "",
+    "Cows Milk": "",
+    "Egg": "",
+    "Nuts": "",
+    "Sulphates": ""
+   }
+  },
+  {
+   "section": "Specialty",
+   "name": "CREAMY CHICKEN",
+   "al": {
+    "Gluten": "",
+    "Soya": "",
+    "Cows Milk": "",
+    "Egg": "",
+    "Nuts": "",
+    "Sulphates": ""
+   }
+  },
+  {
+   "section": "Specialty",
+   "name": "MEATY",
+   "al": {
+    "Gluten": "",
+    "Soya": "",
+    "Cows Milk": "",
+    "Egg": "",
+    "Nuts": "",
+    "Sulphates": ""
+   }
+  },
+  {
+   "section": "Specialty",
+   "name": "SWEET CHILLI CHICKEN",
+   "al": {
+    "Gluten": "X",
+    "Soya": "",
+    "Cows Milk": "X",
+    "Egg": "X",
+    "Nuts": "",
+    "Sulphates": "X"
+   }
+  },
+  {
+   "section": "Specialty",
+   "name": "VEGGIE",
+   "al": {
+    "Gluten": "",
+    "Soya": "",
+    "Cows Milk": "",
+    "Egg": "",
+    "Nuts": "",
+    "Sulphates": ""
+   }
+  },
+  {
+   "section": "Sides",
+   "name": "BBQ Wings",
+   "al": {
+    "Gluten": "X",
+    "Soya": "",
+    "Cows Milk": "",
+    "Egg": "X",
+    "Nuts": "",
+    "Sulphates": "X"
+   }
+  },
+  {
+   "section": "Sides",
+   "name": "Peri-Peri Wings",
+   "al": {
+    "Gluten": "X",
+    "Soya": "",
+    "Cows Milk": "",
+    "Egg": "X",
+    "Nuts": "",
+    "Sulphates": "X"
+   }
+  },
+  {
+   "section": "Sides",
+   "name": "Chicken Pops + Debs Sauce",
+   "al": {
+    "Gluten": "X",
+    "Soya": "",
+    "Cows Milk": "X",
+    "Egg": "X",
+    "Nuts": "",
+    "Sulphates": "X"
+   }
+  },
+  {
+   "section": "Sides",
+   "name": "Chicken Pops + BBQ",
+   "al": {
+    "Gluten": "X",
+    "Soya": "",
+    "Cows Milk": "X",
+    "Egg": "X",
+    "Nuts": "",
+    "Sulphates": "X"
+   }
+  },
+  {
+   "section": "Sides",
+   "name": "Chicken Pops + Sweet chilli",
+   "al": {
+    "Gluten": "X",
+    "Soya": "",
+    "Cows Milk": "X",
+    "Egg": "X",
+    "Nuts": "",
+    "Sulphates": "X"
+   }
+  },
+  {
+   "section": "Sides",
+   "name": "Cocktail Pork Cheese Griller",
+   "al": {
+    "Gluten": "",
+    "Soya": "X",
+    "Cows Milk": "X",
+    "Egg": "",
+    "Nuts": "",
+    "Sulphates": ""
+   }
+  },
+  {
+   "section": "Sides",
+   "name": "Halaal Cocktail Chicken Cheese Griller",
+   "al": {
+    "Gluten": "",
+    "Soya": "X",
+    "Cows Milk": "X",
+    "Egg": "",
+    "Nuts": "",
+    "Sulphates": ""
+   }
+  },
+  {
+   "section": "Sides",
+   "name": "Death by Chocolate",
+   "al": {
+    "Gluten": "X",
+    "Soya": "X",
+    "Cows Milk": "X",
+    "Egg": "X",
+    "Nuts": "X",
+    "Sulphates": ""
+   }
+  }
+ ]
+}

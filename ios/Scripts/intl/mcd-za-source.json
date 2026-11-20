@@ -1,0 +1,5594 @@
+{
+  "country": "ZA",
+  "checked": "2026-11-20",
+  "items": [
+    {
+      "slug": "boerie-egg-burger",
+      "cats": [
+        "all-day-breakfast"
+      ],
+      "name": "Boerie & Egg Burger",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Egg",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "355kCal",
+        "fat": "15.6g",
+        "carbs": "33.4g",
+        "protein": "18g",
+        "sat": "7.5g",
+        "sodium": "691mg",
+        "fibre": "3.9g",
+        "sugar": "8.6g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "boerie-egg-meal-with-fries-small-coffee",
+      "cats": [
+        "all-day-breakfast"
+      ],
+      "name": "Boerie & Egg Meal with Fries & Small Coffee",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Egg"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "659kCal",
+        "fat": "32g",
+        "carbs": "47g",
+        "protein": "23g",
+        "sat": "15g",
+        "sodium": "888mg",
+        "fibre": "7g",
+        "sugar": "6g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "boerie-hashbrown-stack",
+      "cats": [
+        "all-day-breakfast"
+      ],
+      "name": "Boerie & Hash Brown Stack",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Egg",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "446kCal",
+        "fat": "24.7g",
+        "carbs": "40.5g",
+        "protein": "13.6g",
+        "sat": "9.6g",
+        "sodium": "795mg",
+        "fibre": "3.8g",
+        "sugar": "6.5g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "boerie-and-hash-stack-with-filter-coffee",
+      "cats": [
+        "all-day-breakfast"
+      ],
+      "name": "Boerie & Hash Brown Stack with Filter Coffee",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Egg",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "405kCal",
+        "fat": "23g",
+        "carbs": "14g",
+        "protein": "12g",
+        "sat": "9g",
+        "sodium": "728mg",
+        "fibre": "3g",
+        "sugar": "3g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "boerie-burger",
+      "cats": [
+        "all-day-breakfast"
+      ],
+      "name": "Boerie Burger",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "274kCal",
+        "fat": "11.1g",
+        "carbs": "30.2g",
+        "protein": "12.4g",
+        "sat": "5.7g",
+        "sodium": "537mg",
+        "fibre": "2g",
+        "sugar": "6.4g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "boerie-burger-double",
+      "cats": [
+        "all-day-breakfast"
+      ],
+      "name": "Boerie Burger Double",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "384kCal",
+        "fat": "19.3g",
+        "carbs": "31.9g",
+        "protein": "19.9g",
+        "sat": "10g",
+        "sodium": "845mg",
+        "fibre": "2g",
+        "sugar": "7.6g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "boerie-burger-double-meal",
+      "cats": [
+        "all-day-breakfast"
+      ],
+      "name": "Boerie Burger Double Meal",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "860kCal",
+        "fat": "42.4g",
+        "carbs": "88.7g",
+        "protein": "27.1g",
+        "sat": "20.8g",
+        "sodium": "1223mg",
+        "fibre": "7.2g",
+        "sugar": "9.3g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "boerie-burger--meal",
+      "cats": [
+        "all-day-breakfast"
+      ],
+      "name": "Boerie Burger Meal",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "750kCal",
+        "fat": "34.2g",
+        "carbs": "87g",
+        "protein": "19.6g",
+        "sat": "16.5g",
+        "sodium": "914mg",
+        "fibre": "7.1g",
+        "sugar": "8.1g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "egg-mcmuffin",
+      "cats": [
+        "all-day-breakfast"
+      ],
+      "name": "Egg McMuffin®",
+      "allergens": [
+        "Wheat Milk Egg Soya"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "220kCal",
+        "fat": "7.2g",
+        "carbs": "25.5g",
+        "protein": "13.5g",
+        "sat": "2.8g",
+        "sodium": "271mg",
+        "fibre": "3.7g",
+        "sugar": "2g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "egg-mcmuffin-meal",
+      "cats": [
+        "all-day-breakfast"
+      ],
+      "name": "Egg McMuffin® Meal",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Egg",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "360kCal",
+        "fat": "14g",
+        "carbs": "34g",
+        "protein": "23g",
+        "sat": "6g",
+        "sodium": "684mg",
+        "fibre": "5g",
+        "sugar": "4g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "hash-brown",
+      "cats": [
+        "all-day-breakfast",
+        "vegetarian",
+        "snacks-sides"
+      ],
+      "name": "Hash Brown",
+      "allergens": [],
+      "hasAllergenCard": false,
+      "n": {
+        "cal": "115kCal",
+        "fat": "6.9g",
+        "carbs": "11.1g",
+        "protein": "1.3g",
+        "sat": "2.9g",
+        "sodium": "234mg",
+        "fibre": "1.7g",
+        "sugar": "0.3g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "mega-mcmuffin",
+      "cats": [
+        "all-day-breakfast"
+      ],
+      "name": "Mega McMuffin®",
+      "allergens": [
+        "Wheat",
+        "Egg",
+        "Milk",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "366kCal",
+        "fat": "16g",
+        "carbs": "29.4g",
+        "protein": "26.2g",
+        "sat": "6.6g",
+        "sodium": "844mg",
+        "fibre": "3.9g",
+        "sugar": "4.6g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "mega-mcmuffin-meal",
+      "cats": [
+        "all-day-breakfast"
+      ],
+      "name": "Mega McMuffin® Meal",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Egg",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "542kCal",
+        "fat": "25g",
+        "carbs": "37g",
+        "protein": "42g",
+        "sat": "9g",
+        "sodium": "1335mg",
+        "fibre": "5g",
+        "sugar": "6g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "south-african-breakfast",
+      "cats": [
+        "all-day-breakfast"
+      ],
+      "name": "SA Breakfast",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Egg",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "835kCal",
+        "fat": "44.7g",
+        "carbs": "67.6g",
+        "protein": "36g",
+        "sat": "21.3g",
+        "sodium": "1027mg",
+        "fibre": "9.4g",
+        "sugar": "6.1g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "south-african-breakfast-meal",
+      "cats": [
+        "all-day-breakfast"
+      ],
+      "name": "SA Breakfast Meal",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Egg",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "818kCal",
+        "fat": "45g",
+        "carbs": "42g",
+        "protein": "35g",
+        "sat": "21g",
+        "sodium": "1005mg",
+        "fibre": "9mg",
+        "sugar": "2g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "sausage-mcmuffin-1",
+      "cats": [
+        "all-day-breakfast"
+      ],
+      "name": "Sausage McMuffin®",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "266kCal",
+        "fat": "10.7g",
+        "carbs": "25.9g",
+        "protein": "17.4g",
+        "sat": "4.5g",
+        "sodium": "635mg",
+        "fibre": "1.9g",
+        "sugar": "2g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "sausage-mcmuffin-meal",
+      "cats": [
+        "all-day-breakfast"
+      ],
+      "name": "Sausage McMuffin® Meal",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "369kCal",
+        "fat": "14g",
+        "carbs": "34g",
+        "protein": "24g",
+        "sat": "6g",
+        "sodium": "852mg",
+        "fibre": "3g",
+        "sugar": "3g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "sausage-mcmuffin-with-egg",
+      "cats": [
+        "all-day-breakfast"
+      ],
+      "name": "Sausage McMuffin® with Egg",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Egg",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "333kCal",
+        "fat": "15.2g",
+        "carbs": "25.9g",
+        "protein": "23g",
+        "sat": "6.4g",
+        "sodium": "697mg",
+        "fibre": "3.8g",
+        "sugar": "2g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "sausage-egg-mcmuffin-meal",
+      "cats": [
+        "all-day-breakfast"
+      ],
+      "name": "Sausage McMuffin® with egg Meal",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Egg",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "436kCal",
+        "fat": "19g",
+        "carbs": "34g",
+        "protein": "30g",
+        "sat": "7g",
+        "sodium": "914mg",
+        "fibre": "5g",
+        "sugar": "3g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "chicken-tenders-2-piece",
+      "cats": [
+        "chicken-sandwiches"
+      ],
+      "name": "2 Piece Chicken Tenders",
+      "allergens": [
+        "Wheat",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "194Cal",
+        "fat": "10g",
+        "carbs": "10g",
+        "protein": "17g",
+        "sat": "0g",
+        "sodium": "610mg",
+        "fibre": "1g",
+        "sugar": "1g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "4-pack-nuggets",
+      "cats": [
+        "chicken-sandwiches"
+      ],
+      "name": "4 Piece Chicken McNuggets®",
+      "allergens": [
+        "Wheat",
+        "Milk"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "159kCal",
+        "fat": "8.4g",
+        "carbs": "9.6g",
+        "protein": "10.6g",
+        "sat": "3.5g",
+        "sodium": "329mg",
+        "fibre": "1.4g",
+        "sugar": "0.3g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "chicken-tenders-4-piece",
+      "cats": [
+        "chicken-sandwiches"
+      ],
+      "name": "4 Piece Chicken Tenders",
+      "allergens": [
+        "Wheat",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "389Cal",
+        "fat": "20g",
+        "carbs": "20g",
+        "protein": "34g",
+        "sat": "0g",
+        "sodium": "1220mg",
+        "fibre": "1g",
+        "sugar": "12g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "6-pack-nuggets",
+      "cats": [
+        "chicken-sandwiches"
+      ],
+      "name": "6 Piece Chicken McNuggets®",
+      "allergens": [
+        "Wheat",
+        "Milk"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "238kCal",
+        "fat": "12.6g",
+        "carbs": "14.3g",
+        "protein": "15.8g",
+        "sat": "5.2g",
+        "sodium": "491mg",
+        "fibre": "2.1g",
+        "sugar": "0.4g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "cajun-chicken",
+      "cats": [
+        "chicken-sandwiches"
+      ],
+      "name": "Cajun Chicken",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Egg",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "460kCal",
+        "fat": "19.2g",
+        "carbs": "45.4g",
+        "protein": "23g",
+        "sat": "6.4g",
+        "sodium": "1127mg",
+        "fibre": "5.2g",
+        "sugar": "8.4g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "chicken-burger",
+      "cats": [
+        "chicken-sandwiches"
+      ],
+      "name": "Chicken Burger",
+      "allergens": [
+        "Wheat",
+        "Soy",
+        "Egg"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "284kCal",
+        "fat": "10.8g",
+        "carbs": "27.1g",
+        "protein": "12.6g",
+        "sat": "3.7g",
+        "sodium": "403mg",
+        "fibre": "2.4g",
+        "sugar": "4.1g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "chicken-foldover",
+      "cats": [
+        "chicken-sandwiches"
+      ],
+      "name": "Chicken Foldover",
+      "allergens": [
+        "Wheat",
+        "Eggs",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "531kCal",
+        "fat": "24.9g",
+        "carbs": "43.3g",
+        "protein": "26g",
+        "sat": "5.5g",
+        "sodium": "892mg",
+        "fibre": "5.3g",
+        "sugar": "5.5g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "foldover-spicy",
+      "cats": [
+        "chicken-sandwiches"
+      ],
+      "name": "Chicken Foldover Spicy",
+      "allergens": [
+        "Wheat",
+        "Egg",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "544kCal",
+        "fat": "26g",
+        "carbs": "47.8g",
+        "protein": "26g",
+        "sat": "5.6g",
+        "sodium": "1072mg",
+        "fibre": "5.5g",
+        "sugar": "6.5g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "chilli-cheese-tenders",
+      "cats": [
+        "chicken-sandwiches",
+        "snacks-sides",
+        "limited-offers"
+      ],
+      "name": "Chilli Cheese Tenders",
+      "allergens": [
+        "Egg, wheat and soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "895Cal",
+        "fat": "57.5g",
+        "carbs": "46.7g",
+        "protein": "48.6g",
+        "sat": "25.3g",
+        "sodium": "2109mg",
+        "fibre": "2.6g",
+        "sugar": "6.5g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "crispy-chicken-salad",
+      "cats": [
+        "chicken-sandwiches",
+        "salads"
+      ],
+      "name": "Crispy Chicken Salad",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Egg"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "72kCal",
+        "fat": "16.9g",
+        "carbs": "16.6g",
+        "protein": "19.4g",
+        "sat": "4.5g",
+        "sodium": "666mg",
+        "fibre": "3.4g",
+        "sugar": "4.6g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "double-jalape-o-chicken",
+      "cats": [
+        "chicken-sandwiches"
+      ],
+      "name": "Double Jalapeño Chicken",
+      "allergens": [
+        "Wheat",
+        "Soy",
+        "Egg"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "383kCal",
+        "fat": "16.5g",
+        "carbs": "33g",
+        "protein": "23.6g",
+        "sat": "4.1g",
+        "sodium": "1180mg",
+        "fibre": "3.4g",
+        "sugar": "7.6g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "grand-chicken-classic",
+      "cats": [
+        "chicken-sandwiches"
+      ],
+      "name": "Grand Chicken Classic",
+      "allergens": [
+        "Wheat (Gluten)",
+        "Egg",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": null,
+        "fat": "24g",
+        "carbs": "42g",
+        "protein": "21.4g",
+        "sat": "6.8g",
+        "sodium": "854.2mg",
+        "fibre": "3.5g",
+        "sugar": "8g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "grand-chicken-special",
+      "cats": [
+        "chicken-sandwiches"
+      ],
+      "name": "Grand Chicken Special",
+      "allergens": [
+        "Cow's MilkEggWheat (Gluten)Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": null,
+        "fat": "24.6g",
+        "carbs": "46.4g",
+        "protein": "27.2g",
+        "sat": "9.1g",
+        "sodium": "1029.6mg",
+        "fibre": "3.9g",
+        "sugar": "10g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "grand-chicken-spicy",
+      "cats": [
+        "chicken-sandwiches"
+      ],
+      "name": "Grand Chicken Spicy",
+      "allergens": [
+        "Cow's MilkEggWheat (Gluten)Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": null,
+        "fat": "25.2g",
+        "carbs": "43.7g",
+        "protein": "25.3g",
+        "sat": "8.6g",
+        "sodium": "994.2mg",
+        "fibre": "3.8g",
+        "sugar": "8.5g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "jalapeno-chicken",
+      "cats": [
+        "chicken-sandwiches"
+      ],
+      "name": "Jalapeño Chicken Meal",
+      "allergens": [],
+      "hasAllergenCard": false,
+      "n": {
+        "cal": "284kCal",
+        "fat": "10.8g",
+        "carbs": "27.1g",
+        "protein": "12.6g",
+        "sat": "3.7g",
+        "sodium": "203mg",
+        "fibre": "2.4g",
+        "sugar": "4.1g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "mcchicken",
+      "cats": [
+        "chicken-sandwiches"
+      ],
+      "name": "McChicken®",
+      "allergens": [
+        "Wheat",
+        "Egg",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "432kCal",
+        "fat": "17.3g",
+        "carbs": "48.9g",
+        "protein": "17.6g",
+        "sat": "5.1g",
+        "sodium": "687mg",
+        "fibre": "3.4g",
+        "sugar": "6.3g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "mccrispy",
+      "cats": [
+        "chicken-sandwiches"
+      ],
+      "name": "McCrispy",
+      "allergens": [
+        "Wheat",
+        "Soya"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "616Cal",
+        "fat": "36.4g",
+        "carbs": "25.2g",
+        "protein": "21.4g",
+        "sat": "12.2g",
+        "sodium": "678mg",
+        "fibre": "1.7g",
+        "sugar": "4.1g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "mccrispy-deluxe",
+      "cats": [
+        "chicken-sandwiches"
+      ],
+      "name": "McCrispy Deluxe",
+      "allergens": [
+        "WheatSoya"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "725Cal",
+        "fat": "44.5g",
+        "carbs": "27.6g",
+        "protein": "27.7g",
+        "sat": "17.6g",
+        "sodium": "1099mg",
+        "fibre": "2.2g",
+        "sugar": "5.8g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "mccrispy-spicy",
+      "cats": [
+        "chicken-sandwiches"
+      ],
+      "name": "McCrispy Spicy",
+      "allergens": [
+        "WheatSoya"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "481Cal",
+        "fat": "22.4g",
+        "carbs": "22.5g",
+        "protein": "21.6g",
+        "sat": "8.2g",
+        "sodium": "859mg",
+        "fibre": "2.1g",
+        "sugar": "1.6"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "snackwrap",
+      "cats": [
+        "chicken-sandwiches"
+      ],
+      "name": "SnackWrap",
+      "allergens": [
+        "Egg, Milk and wheat"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "285Cal",
+        "fat": "16.4g",
+        "carbs": "23.5g",
+        "protein": "11.1g",
+        "sat": "5.9g",
+        "sodium": "525mg",
+        "fibre": "9.3g",
+        "sugar": "2.4g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "big-mac",
+      "cats": [
+        "beef"
+      ],
+      "name": "Big Mac®",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Egg",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "543kCal",
+        "fat": "26.7g",
+        "carbs": "46.8g",
+        "protein": "27g",
+        "sat": "12.2g",
+        "sodium": "549mg",
+        "fibre": "4.2g",
+        "sugar": "9.3g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "cheeseburger",
+      "cats": [
+        "beef"
+      ],
+      "name": "Cheeseburger",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "324kCal",
+        "fat": "13.5g",
+        "carbs": "33.4g",
+        "protein": "16.1g",
+        "sat": "7.4g",
+        "sodium": "523mg",
+        "fibre": "2.3g",
+        "sugar": "6.9g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "chilli-cheese-double",
+      "cats": [
+        "beef"
+      ],
+      "name": "Chilli Cheese Double burger",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Soy",
+        "Egg"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "482kCal",
+        "fat": "28.9g",
+        "carbs": "30.3g",
+        "protein": "24.1g",
+        "sat": "12.4g",
+        "sodium": "1284mg",
+        "fibre": "2.3g",
+        "sugar": "5.7g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "double-cheese-burger",
+      "cats": [
+        "beef"
+      ],
+      "name": "Double Cheeseburger",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "429kCal",
+        "fat": "21.5g",
+        "carbs": "33.8g",
+        "protein": "24.2g",
+        "sat": "11.5g",
+        "sodium": "628mg",
+        "fibre": "2.3g",
+        "sugar": "6.9g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "hamburger",
+      "cats": [
+        "beef"
+      ],
+      "name": "Hamburger",
+      "allergens": [
+        "Wheat",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "276kCal",
+        "fat": "9.7g",
+        "carbs": "32.6g",
+        "protein": "13.3g",
+        "sat": "4.9g",
+        "sodium": "324mg",
+        "fibre": "2.3g",
+        "sugar": "6.5g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "mcfeast",
+      "cats": [
+        "beef"
+      ],
+      "name": "McFeast®",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Egg",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "846kCal",
+        "fat": "52.7g",
+        "carbs": "44.8g",
+        "protein": "50.7g",
+        "sat": "23.6g",
+        "sodium": "834mg",
+        "fibre": "3.4g",
+        "sugar": "11.8g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "quarter-pounder-with-cheese-1",
+      "cats": [
+        "beef"
+      ],
+      "name": "Quarter Pounder® with Cheese",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "440kCal",
+        "fat": "19.9g",
+        "carbs": "37.2g",
+        "protein": "26.1g",
+        "sat": "9.4g",
+        "sodium": "746mg",
+        "fibre": "4.6g",
+        "sugar": "8.2g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "qpcd",
+      "cats": [
+        "beef"
+      ],
+      "name": "Quarter Pounder® with Cheese Deluxe",
+      "allergens": [
+        "Wheat",
+        "Egg",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "474kCal",
+        "fat": "23g",
+        "carbs": "38.6g",
+        "protein": "25.8g",
+        "sat": "9.7g",
+        "sodium": "606mg",
+        "fibre": "4.1g",
+        "sugar": "9.1g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "medium-corn",
+      "cats": [
+        "vegetarian",
+        "snacks-sides"
+      ],
+      "name": "Corn",
+      "allergens": [],
+      "hasAllergenCard": false,
+      "n": {
+        "cal": "84kCal",
+        "fat": "0.6g",
+        "carbs": "15.4g",
+        "protein": "2.3g",
+        "sat": "0.1g",
+        "sodium": "2.1mg",
+        "fibre": "1.9g",
+        "sugar": "1.9g"
+      },
+      "sizes": [
+        {
+          "label": "Small",
+          "product_cals": "84",
+          "product_fats": "0.6",
+          "product_carbs": "15.4",
+          "product_protein": "2.3",
+          "table_cals": "84kCal",
+          "table_satfat": "0.1g",
+          "table_transfat": "0g",
+          "table_cholesterol": "0mg",
+          "table_sodium": "2.1mg",
+          "table_fiber": "1.9g",
+          "table_sugars": "1.9g",
+          "table_vitamina": "n/a",
+          "table_vitaminc": "n/a",
+          "table_calcium": "n/a",
+          "table_iron": "n/a"
+        },
+        {
+          "label": "Regular",
+          "product_cals": "146",
+          "product_fats": "1",
+          "product_carbs": "27",
+          "product_protein": "4",
+          "table_cals": "146kCal.",
+          "table_satfat": "0.1g",
+          "table_transfat": "0g",
+          "table_cholesterol": "0g",
+          "table_sodium": "3.8mg",
+          "table_fiber": "3.4g",
+          "table_sugars": "3.3g",
+          "table_vitamina": "n/a",
+          "table_vitaminc": "n/a",
+          "table_calcium": "n/a",
+          "table_iron": "n/a"
+        }
+      ]
+    },
+    {
+      "slug": "medium-fries",
+      "cats": [
+        "vegetarian",
+        "snacks-sides"
+      ],
+      "name": "Fries®",
+      "allergens": [],
+      "hasAllergenCard": false,
+      "n": {
+        "cal": "334kCal",
+        "fat": "16.3g",
+        "carbs": "40g",
+        "protein": "5.1g",
+        "sat": "7.6g",
+        "sodium": "220mg",
+        "fibre": "3.6g",
+        "sugar": "1.2g"
+      },
+      "sizes": [
+        {
+          "label": "Small",
+          "product_cals": "334",
+          "product_fats": "16.3",
+          "product_carbs": "40",
+          "product_protein": "5.1",
+          "table_cals": "334kCal",
+          "table_satfat": "7.6g",
+          "table_transfat": "0g",
+          "table_cholesterol": "5.5mg",
+          "table_sodium": "220mg",
+          "table_fiber": "3.6g",
+          "table_sugars": "1.2g",
+          "table_vitamina": "n/a",
+          "table_vitaminc": "n/a",
+          "table_calcium": "n/a",
+          "table_iron": "n/a"
+        },
+        {
+          "label": "Regular",
+          "product_cals": "474",
+          "product_fats": "23.1",
+          "product_carbs": "56.8",
+          "product_protein": "7.2",
+          "table_cals": "474kCal",
+          "table_satfat": "10.8g",
+          "table_transfat": "0g",
+          "table_cholesterol": "7.8mg",
+          "table_sodium": "312mg",
+          "table_fiber": "5.1g",
+          "table_sugars": "1.7g",
+          "table_vitamina": "n/a",
+          "table_vitaminc": "n/a",
+          "table_calcium": "n/a",
+          "table_iron": "n/a"
+        },
+        {
+          "label": "Medium",
+          "product_cals": "669",
+          "product_fats": "32.6",
+          "product_carbs": "80",
+          "product_protein": "10.1",
+          "table_cals": "669kCal",
+          "table_satfat": "15.2g",
+          "table_transfat": "0g",
+          "table_cholesterol": "11mg",
+          "table_sodium": "440mg",
+          "table_fiber": "7.3g",
+          "table_sugars": "2.4g",
+          "table_vitamina": "n/a",
+          "table_vitaminc": "n/a",
+          "table_calcium": "n/a",
+          "table_iron": "n/a"
+        },
+        {
+          "label": "Large",
+          "product_cals": "790",
+          "product_fats": "38.5",
+          "product_carbs": "95",
+          "product_protein": "12",
+          "table_cals": "790kCal",
+          "table_satfat": "17.9g",
+          "table_transfat": "0g",
+          "table_cholesterol": "13mg",
+          "table_sodium": "520mg",
+          "table_fiber": "8.6g",
+          "table_sugars": "2.9g",
+          "table_vitamina": "n/a",
+          "table_vitaminc": "n/a",
+          "table_calcium": "n/a",
+          "table_iron": "n/a"
+        }
+      ]
+    },
+    {
+      "slug": "green-salad",
+      "cats": [
+        "vegetarian",
+        "salads"
+      ],
+      "name": "Green Salad",
+      "allergens": [],
+      "hasAllergenCard": false,
+      "n": {
+        "cal": "30kCal",
+        "fat": "9.5g",
+        "carbs": "7.5g",
+        "protein": "2.4g",
+        "sat": "1.2g",
+        "sodium": "184mg",
+        "fibre": "0.1g",
+        "sugar": "4.6g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "veggie",
+      "cats": [
+        "vegetarian"
+      ],
+      "name": "Veggie Burger",
+      "allergens": [
+        "Wheat",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "369kCal",
+        "fat": "12.4g",
+        "carbs": "37.7g",
+        "protein": "9.7g",
+        "sat": "5.9g",
+        "sodium": "750mg",
+        "fibre": "5.9g",
+        "sugar": "9.9g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "americano",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Americano",
+      "allergens": [],
+      "hasAllergenCard": false,
+      "n": {
+        "cal": "9kCal",
+        "fat": "0.3g",
+        "carbs": "8.1g",
+        "protein": "0.2g",
+        "sat": "0.3g",
+        "sodium": "16mg",
+        "fibre": "1.6g",
+        "sugar": "1.6g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "blueberry-muffin",
+      "cats": [
+        "mccafé",
+        "desserts-shakes"
+      ],
+      "name": "Blueberry Muffin",
+      "allergens": [
+        "Wheat",
+        "Egg",
+        "Milk"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "431kCal",
+        "fat": "20.1gg",
+        "carbs": "57.2gg",
+        "protein": "4.79gg",
+        "sat": "2.95g",
+        "sodium": "212mg",
+        "fibre": "0.91g",
+        "sugar": "33.9g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "bran-muffin",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Bran Muffin",
+      "allergens": [
+        "Milk",
+        "Egg",
+        "Wheat"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": null,
+        "fat": null,
+        "carbs": null,
+        "protein": null,
+        "sat": null,
+        "sodium": null,
+        "fibre": null,
+        "sugar": null
+      },
+      "sizes": []
+    },
+    {
+      "slug": "caff--latte",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Café Latte",
+      "allergens": [
+        "Milk"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "176kCal",
+        "fat": "11.5g",
+        "carbs": "19.3g",
+        "protein": "8.6g",
+        "sat": "6.9g",
+        "sodium": "16g",
+        "fibre": "1.6g",
+        "sugar": "11.7g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "cappuccino",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Cappuccino",
+      "allergens": [
+        "Milk"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "169kCal",
+        "fat": "7.7g",
+        "carbs": "15.6g",
+        "protein": "9.3g",
+        "sat": "0.4g",
+        "sodium": "18mg",
+        "fibre": "1.8g",
+        "sugar": "12.7g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "caramel-frappe-1",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Caramel Frappe",
+      "allergens": [
+        "Milk"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "199kCal",
+        "fat": "2.95g",
+        "carbs": "40.8g",
+        "protein": "1.61g",
+        "sat": "2.33g",
+        "sodium": "43.2mg",
+        "fibre": "0.5g",
+        "sugar": "12.8g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "caramel-muffin",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Caramel muffin",
+      "allergens": [
+        "Milk",
+        "Egg",
+        "Wheat",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": null,
+        "fat": null,
+        "carbs": null,
+        "protein": null,
+        "sat": null,
+        "sodium": null,
+        "fibre": null,
+        "sugar": null
+      },
+      "sizes": []
+    },
+    {
+      "slug": "choc-chip-muffin",
+      "cats": [
+        "mccafé",
+        "desserts-shakes"
+      ],
+      "name": "Choc Chip Muffin",
+      "allergens": [
+        "Wheat",
+        "Egg",
+        "Milk"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "444kCal",
+        "fat": "22.4g",
+        "carbs": "53.8g",
+        "protein": "5.61g",
+        "sat": "5.62g",
+        "sodium": "156mg",
+        "fibre": "2.21g",
+        "sugar": "34.6g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "koko-donut",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Choc Doughnut",
+      "allergens": [
+        "Wheat",
+        "Egg",
+        "Milk",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": null,
+        "fat": null,
+        "carbs": null,
+        "protein": null,
+        "sat": null,
+        "sodium": null,
+        "fibre": null,
+        "sugar": null
+      },
+      "sizes": []
+    },
+    {
+      "slug": "chocco-frappe",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Choco Frappe",
+      "allergens": [
+        "Wheat",
+        "Milk"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "208kCal",
+        "fat": "2.98g",
+        "carbs": "43.6g",
+        "protein": "0.92g",
+        "sat": "2.08g",
+        "sodium": "60.1mg",
+        "fibre": "0.6g",
+        "sugar": "15.9g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "chocolate-danish",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Chocolate Danish",
+      "allergens": [
+        "Milk",
+        "Egg",
+        "Wheat",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": null,
+        "fat": null,
+        "carbs": null,
+        "protein": null,
+        "sat": null,
+        "sodium": null,
+        "fibre": null,
+        "sugar": null
+      },
+      "sizes": []
+    },
+    {
+      "slug": "chocolate-ganache",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Chocolate Ganache",
+      "allergens": [
+        "Wheat",
+        "Egg",
+        "Milk"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": null,
+        "fat": null,
+        "carbs": null,
+        "protein": null,
+        "sat": null,
+        "sodium": null,
+        "fibre": null,
+        "sugar": null
+      },
+      "sizes": []
+    },
+    {
+      "slug": "custard-danish",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Custard Danish",
+      "allergens": [
+        "Milk",
+        "Egg",
+        "Wheat",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": null,
+        "fat": null,
+        "carbs": null,
+        "protein": null,
+        "sat": null,
+        "sodium": null,
+        "fibre": null,
+        "sugar": null
+      },
+      "sizes": []
+    },
+    {
+      "slug": "espresso",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Espresso",
+      "allergens": [],
+      "hasAllergenCard": false,
+      "n": {
+        "cal": "15kCal",
+        "fat": "0.1g",
+        "carbs": "1.1g",
+        "protein": "0.9g",
+        "sat": "0.0g",
+        "sodium": "2mg",
+        "fibre": "0.2g",
+        "sugar": "0.2g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "filter-coffee-no-milk",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Filter Coffee",
+      "allergens": [],
+      "hasAllergenCard": false,
+      "n": {
+        "cal": "13kCal",
+        "fat": "0.0g",
+        "carbs": "0.0g",
+        "protein": "0.0g",
+        "sat": "0.0g",
+        "sodium": "0mg",
+        "fibre": "0.0g",
+        "sugar": "0.0g"
+      },
+      "sizes": [
+        {
+          "label": "Small",
+          "product_cals": "13",
+          "product_fats": "0.0",
+          "product_carbs": "0.0",
+          "product_protein": "0.0",
+          "table_cals": "13kCal",
+          "table_satfat": "0.0g",
+          "table_transfat": "0.0g",
+          "table_cholesterol": "0.0mg",
+          "table_sodium": "0mg",
+          "table_fiber": "0.0g",
+          "table_sugars": "0.0g",
+          "table_vitamina": "0.0ug",
+          "table_vitaminc": "0.0ug",
+          "table_calcium": "7.3mg",
+          "table_iron": "0.0mg"
+        },
+        {
+          "label": "Medium",
+          "product_cals": "18",
+          "product_fats": "0.0",
+          "product_carbs": "0.0",
+          "product_protein": "0.0",
+          "table_cals": "18Cal",
+          "table_satfat": "0.0g",
+          "table_transfat": "0.0g",
+          "table_cholesterol": "0.0mg",
+          "table_sodium": "0mg",
+          "table_fiber": "0.0g",
+          "table_sugars": "0.0g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0.0mg",
+          "table_calcium": "10.0mg",
+          "table_iron": "0.0mg"
+        }
+      ]
+    },
+    {
+      "slug": "filter-coffee-with-milk",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Filter Coffee with Milk",
+      "allergens": [
+        "Milk"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": null,
+        "fat": null,
+        "carbs": null,
+        "protein": null,
+        "sat": null,
+        "sodium": null,
+        "fibre": null,
+        "sugar": null
+      },
+      "sizes": []
+    },
+    {
+      "slug": "flat-white",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Flat White",
+      "allergens": [
+        "Milk"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": null,
+        "fat": null,
+        "carbs": null,
+        "protein": null,
+        "sat": null,
+        "sodium": null,
+        "fibre": null,
+        "sugar": null
+      },
+      "sizes": []
+    },
+    {
+      "slug": "glazed-doughnut",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Glazed doughnut",
+      "allergens": [
+        "Milk",
+        "Wheat",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": null,
+        "fat": null,
+        "carbs": null,
+        "protein": null,
+        "sat": null,
+        "sodium": null,
+        "fibre": null,
+        "sugar": null
+      },
+      "sizes": []
+    },
+    {
+      "slug": "homestyle-donut",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Homestyle Doughnut",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "497kCal",
+        "fat": "32.1g",
+        "carbs": "45.7g",
+        "protein": "6.18g",
+        "sat": "13.5g",
+        "sodium": "293mg",
+        "fibre": "1.38g",
+        "sugar": "10.8g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "hot-chocolate",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Hot Chocolate",
+      "allergens": [
+        "Milk"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "418kCal",
+        "fat": "15.2g",
+        "carbs": "58.1g",
+        "protein": "11.8g",
+        "sat": "11.0g",
+        "sodium": "291mg",
+        "fibre": "2.0g",
+        "sugar": "44.2g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "iced-coffee",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Iced Latte",
+      "allergens": [
+        "Milk"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": null,
+        "fat": null,
+        "carbs": null,
+        "protein": null,
+        "sat": null,
+        "sodium": null,
+        "fibre": null,
+        "sugar": null
+      },
+      "sizes": []
+    },
+    {
+      "slug": "iced-coffee-caramel",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Iced Latte Caramel",
+      "allergens": [
+        "Allergens: Milk",
+        "Ingredients: Ice & Milk"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": null,
+        "fat": null,
+        "carbs": null,
+        "protein": null,
+        "sat": null,
+        "sodium": null,
+        "fibre": null,
+        "sugar": null
+      },
+      "sizes": []
+    },
+    {
+      "slug": "iced-coffe-hazelnut",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Iced Latte Hazelnut",
+      "allergens": [
+        "Allergens: Milk",
+        "Ingredients: Ice & Milk"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": null,
+        "fat": null,
+        "carbs": null,
+        "protein": null,
+        "sat": null,
+        "sodium": null,
+        "fibre": null,
+        "sugar": null
+      },
+      "sizes": []
+    },
+    {
+      "slug": "iced-coffee-vanilla",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Iced Latte Vanilla",
+      "allergens": [
+        "Allergens: Milk",
+        "Ingredients: Ice & Milk"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": null,
+        "fat": null,
+        "carbs": null,
+        "protein": null,
+        "sat": null,
+        "sodium": null,
+        "fibre": null,
+        "sugar": null
+      },
+      "sizes": []
+    },
+    {
+      "slug": "latte-frappe",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Latte Frappe",
+      "allergens": [
+        "Milk"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": null,
+        "fat": null,
+        "carbs": null,
+        "protein": null,
+        "sat": null,
+        "sodium": null,
+        "fibre": null,
+        "sugar": null
+      },
+      "sizes": []
+    },
+    {
+      "slug": "low-gi-cheese-and-tomato-sandwich",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Low GI Cheese and Tomato Sandwich",
+      "allergens": [
+        "Wheat",
+        "Milk"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "245kCal",
+        "fat": "8.1g",
+        "carbs": "27.2g",
+        "protein": "12.2g",
+        "sat": "2.8g",
+        "sodium": "477mg",
+        "fibre": "4.6g",
+        "sugar": "2g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "low-gi-cheese-tomato-chicken",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Low GI Cheese, Tomato and Chicken Roll",
+      "allergens": [
+        "Wheat",
+        "Milk"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "263kCal.",
+        "fat": "8.7g",
+        "carbs": "27.3g",
+        "protein": "15g",
+        "sat": "3g",
+        "sodium": "604mg",
+        "fibre": "5g",
+        "sugar": "2.1g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "low-gi-chicken-club-sandwich",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Low GI Chicken Club Sandwich",
+      "allergens": [
+        "Wheat",
+        "Egg",
+        "Milk"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "372kCal",
+        "fat": "15g",
+        "carbs": "30.4g",
+        "protein": "24.4g",
+        "sat": "4.5g",
+        "sodium": "923mg",
+        "fibre": "6.1g",
+        "sugar": "4.3g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "macchiato",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Macchiato",
+      "allergens": [
+        "Milk"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "16kCal",
+        "fat": "0.0g",
+        "carbs": "3.0g",
+        "protein": "0.8g",
+        "sat": "0.0g",
+        "sodium": "2mg",
+        "fibre": "0.2g",
+        "sugar": "0.2g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "mango-frappe",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Mango Frappe",
+      "allergens": [],
+      "hasAllergenCard": false,
+      "n": {
+        "cal": null,
+        "fat": null,
+        "carbs": null,
+        "protein": null,
+        "sat": null,
+        "sodium": null,
+        "fibre": null,
+        "sugar": null
+      },
+      "sizes": []
+    },
+    {
+      "slug": "mocha",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Mocha",
+      "allergens": [
+        "Milk"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "301kCal",
+        "fat": "11.2g",
+        "carbs": "41.3g",
+        "protein": "8.7g",
+        "sat": "7.3g",
+        "sodium": "163mg",
+        "fibre": "1.6g",
+        "sugar": "31.0g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "mocha-frappe",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Mocha Frappe",
+      "allergens": [
+        "Milk"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": null,
+        "fat": null,
+        "carbs": null,
+        "protein": null,
+        "sat": null,
+        "sodium": null,
+        "fibre": null,
+        "sugar": null
+      },
+      "sizes": []
+    },
+    {
+      "slug": "white-choc-donut-with-oreo-bits",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Oreo Doughnut",
+      "allergens": [
+        "Wheat",
+        "Egg",
+        "Milk",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "462kCal",
+        "fat": "29.8g",
+        "carbs": "42.2g",
+        "protein": "5.96g",
+        "sat": "12.4g",
+        "sodium": "282mg",
+        "fibre": "1.49g",
+        "sugar": "9.6g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "pistachio-iced-latte-glazed-doughnut",
+      "cats": [
+        "mccafé",
+        "limited-offers"
+      ],
+      "name": "Pistachio Iced Latte & Glazed Doughnut",
+      "allergens": [
+        "Cow's Milk"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": null,
+        "fat": "9.6g",
+        "carbs": "25.9g",
+        "protein": "8.7g",
+        "sat": "5.6g",
+        "sodium": "87.2mg",
+        "fibre": "4.5g",
+        "sugar": "20.4g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "red-velvet-round",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Red Velvet Round Cake",
+      "allergens": [
+        "Milk, wheat and Egg"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "435Cal",
+        "fat": "19.7g",
+        "carbs": "57.2g",
+        "protein": "5.1g",
+        "sat": "7.0g",
+        "sodium": "266mg",
+        "fibre": "3.6g",
+        "sugar": "40.8g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "rooibos-tea",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Rooibos Tea",
+      "allergens": [],
+      "hasAllergenCard": false,
+      "n": {
+        "cal": null,
+        "fat": null,
+        "carbs": null,
+        "protein": null,
+        "sat": null,
+        "sodium": null,
+        "fibre": null,
+        "sugar": null
+      },
+      "sizes": []
+    },
+    {
+      "slug": "round-carmel-cake",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Round Carmel Cake",
+      "allergens": [
+        "Milk",
+        "Egg",
+        "Wheat"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": null,
+        "fat": null,
+        "carbs": null,
+        "protein": null,
+        "sat": null,
+        "sodium": null,
+        "fibre": null,
+        "sugar": null
+      },
+      "sizes": []
+    },
+    {
+      "slug": "carrot-cake",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Round Carrot Cake",
+      "allergens": [
+        "Wheat",
+        "Egg",
+        "Milk"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": null,
+        "fat": null,
+        "carbs": null,
+        "protein": null,
+        "sat": null,
+        "sodium": null,
+        "fibre": null,
+        "sugar": null
+      },
+      "sizes": []
+    },
+    {
+      "slug": "strawberry-frappe",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Strawberry Frappe",
+      "allergens": [],
+      "hasAllergenCard": false,
+      "n": {
+        "cal": null,
+        "fat": null,
+        "carbs": null,
+        "protein": null,
+        "sat": null,
+        "sodium": null,
+        "fibre": null,
+        "sugar": null
+      },
+      "sizes": []
+    },
+    {
+      "slug": "tea",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "Tea",
+      "allergens": [],
+      "hasAllergenCard": false,
+      "n": {
+        "cal": "0kCal",
+        "fat": "0.0g",
+        "carbs": "0.0g",
+        "protein": "0.0g",
+        "sat": "0.0g",
+        "sodium": "0mg",
+        "fibre": "0.0g",
+        "sugar": "0.0g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "white-chocolate-donut",
+      "cats": [
+        "mccafé"
+      ],
+      "name": "White Chocolate Doughnut",
+      "allergens": [
+        "Wheat",
+        "Egg",
+        "Milk",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "486kCal",
+        "fat": "30.9g",
+        "carbs": "45.6g",
+        "protein": "6.05g",
+        "sat": "13.2g",
+        "sodium": "271mg",
+        "fibre": "1.39g",
+        "sugar": "10.1g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "apple-juice",
+      "cats": [
+        "beverages"
+      ],
+      "name": "Apple Juice",
+      "allergens": [],
+      "hasAllergenCard": false,
+      "n": {
+        "cal": "150kCal",
+        "fat": "0.0g",
+        "carbs": "36.7g",
+        "protein": "0.0g",
+        "sat": "0g",
+        "sodium": "6mg",
+        "fibre": "0g",
+        "sugar": "33.5g"
+      },
+      "sizes": [
+        {
+          "label": "Small",
+          "product_cals": "150",
+          "product_fats": "0.0",
+          "product_carbs": "36.7",
+          "product_protein": "0.0",
+          "table_cals": "150kCal",
+          "table_satfat": "0g",
+          "table_transfat": "0g",
+          "table_cholesterol": "2.7mg",
+          "table_sodium": "6mg",
+          "table_fiber": "0g",
+          "table_sugars": "33.5g",
+          "table_vitamina": "27.0ug",
+          "table_vitaminc": "1.4mg",
+          "table_calcium": "12.2mg",
+          "table_iron": "3.8mg"
+        },
+        {
+          "label": "Regular",
+          "product_cals": "225",
+          "product_fats": "0",
+          "product_carbs": "55.1",
+          "product_protein": "0",
+          "table_cals": "225Cal",
+          "table_satfat": "0g",
+          "table_transfat": "0g",
+          "table_cholesterol": "4.1mg",
+          "table_sodium": "9mg",
+          "table_fiber": "0g",
+          "table_sugars": "50.2g",
+          "table_vitamina": "40.5ug",
+          "table_vitaminc": "2.0mg",
+          "table_calcium": "18.2mg",
+          "table_iron": "5.7mg"
+        },
+        {
+          "label": "Medium",
+          "product_cals": "432",
+          "product_fats": "0",
+          "product_carbs": "106.1",
+          "product_protein": "0",
+          "table_cals": "432kCal",
+          "table_satfat": "0g",
+          "table_transfat": "0g",
+          "table_cholesterol": "7.8mg",
+          "table_sodium": "18mg",
+          "table_fiber": "0g",
+          "table_sugars": "96.7g",
+          "table_vitamina": "78.0ug",
+          "table_vitaminc": "3.9mg",
+          "table_calcium": "35.1mg",
+          "table_iron": "10.9mg"
+        },
+        {
+          "label": "Large",
+          "product_cals": "438",
+          "product_fats": "0",
+          "product_carbs": "107.4",
+          "product_protein": "0",
+          "table_cals": "438kCal",
+          "table_satfat": "0g",
+          "table_transfat": "0g",
+          "table_cholesterol": "7.9mg",
+          "table_sodium": "18mg",
+          "table_fiber": "0g",
+          "table_sugars": "98.0g",
+          "table_vitamina": "79.0ug",
+          "table_vitaminc": "4.0mg",
+          "table_calcium": "35.6mg",
+          "table_iron": "11.1mg"
+        }
+      ]
+    },
+    {
+      "slug": "bonaqua-water",
+      "cats": [
+        "beverages"
+      ],
+      "name": "Bonaqua Water",
+      "allergens": [],
+      "hasAllergenCard": false,
+      "n": {
+        "cal": null,
+        "fat": null,
+        "carbs": null,
+        "protein": null,
+        "sat": null,
+        "sodium": null,
+        "fibre": null,
+        "sugar": null
+      },
+      "sizes": []
+    },
+    {
+      "slug": "cappy-apple-juice",
+      "cats": [
+        "beverages"
+      ],
+      "name": "Cappy Apple Juice®",
+      "allergens": [],
+      "hasAllergenCard": false,
+      "n": {
+        "cal": "98kcal",
+        "fat": "0g",
+        "carbs": "0g",
+        "protein": "0g",
+        "sat": "0g",
+        "sodium": "1mg",
+        "fibre": "0g",
+        "sugar": "23.5g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "coke",
+      "cats": [
+        "beverages"
+      ],
+      "name": "Coke",
+      "allergens": [],
+      "hasAllergenCard": false,
+      "n": {
+        "cal": "82kCal",
+        "fat": "0g",
+        "carbs": "20.1g",
+        "protein": "0g",
+        "sat": "0g",
+        "sodium": "0mg",
+        "fibre": "0g",
+        "sugar": "20.0g"
+      },
+      "sizes": [
+        {
+          "label": "Small",
+          "product_cals": "82",
+          "product_fats": "0",
+          "product_carbs": "20.1",
+          "product_protein": "0",
+          "table_cals": "82kCal",
+          "table_satfat": "0g",
+          "table_transfat": "0g",
+          "table_cholesterol": "0mg",
+          "table_sodium": "0mg",
+          "table_fiber": "0g",
+          "table_sugars": "20.0g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "0mg",
+          "table_iron": "0mg"
+        },
+        {
+          "label": "Regular",
+          "product_cals": "118",
+          "product_fats": "0",
+          "product_carbs": "29.3",
+          "product_protein": "0",
+          "table_cals": "118kCal",
+          "table_satfat": "0g",
+          "table_transfat": "0g",
+          "table_cholesterol": "0mg",
+          "table_sodium": "0mg",
+          "table_fiber": "0g",
+          "table_sugars": "29.0g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "0mg",
+          "table_iron": "0mg"
+        },
+        {
+          "label": "Medium",
+          "product_cals": "158",
+          "product_fats": "0",
+          "product_carbs": "39.8",
+          "product_protein": "0",
+          "table_cals": "158kCal",
+          "table_satfat": "0g",
+          "table_transfat": "0g",
+          "table_cholesterol": "0mg",
+          "table_sodium": "0mg",
+          "table_fiber": "0g",
+          "table_sugars": "38.8g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "0mg",
+          "table_iron": "0mg"
+        },
+        {
+          "label": "Large",
+          "product_cals": "245",
+          "product_fats": "0",
+          "product_carbs": "60.7",
+          "product_protein": "0",
+          "table_cals": "245kCal",
+          "table_satfat": "0g",
+          "table_transfat": "0g",
+          "table_cholesterol": "0mg",
+          "table_sodium": "0mg",
+          "table_fiber": "0g",
+          "table_sugars": "59.9g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "0mg",
+          "table_iron": "0mg"
+        }
+      ]
+    },
+    {
+      "slug": "medium-coke-zero",
+      "cats": [
+        "beverages"
+      ],
+      "name": "Coke No Sugar",
+      "allergens": [],
+      "hasAllergenCard": false,
+      "n": {
+        "cal": "2kCal",
+        "fat": "0g",
+        "carbs": "0g",
+        "protein": "0g",
+        "sat": "0g",
+        "sodium": "26mg",
+        "fibre": "0g",
+        "sugar": "0g"
+      },
+      "sizes": [
+        {
+          "label": "Small",
+          "product_cals": "2",
+          "product_fats": "0",
+          "product_carbs": "0",
+          "product_protein": "0",
+          "table_cals": "2kCal",
+          "table_satfat": "0g",
+          "table_transfat": "0g",
+          "table_cholesterol": "0mg",
+          "table_sodium": "26mg",
+          "table_fiber": "0g",
+          "table_sugars": "0g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "0mg",
+          "table_iron": "0mg"
+        },
+        {
+          "label": "Regular",
+          "product_cals": "3",
+          "product_fats": "0",
+          "product_carbs": "0",
+          "product_protein": "0",
+          "table_cals": "3kCal",
+          "table_satfat": "0g",
+          "table_transfat": "0g",
+          "table_cholesterol": "0mg",
+          "table_sodium": "41mg",
+          "table_fiber": "0g",
+          "table_sugars": "0g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "0mg",
+          "table_iron": "0mg"
+        },
+        {
+          "label": "Medium",
+          "product_cals": "3",
+          "product_fats": "0",
+          "product_carbs": "0",
+          "product_protein": "0",
+          "table_cals": "3kCal",
+          "table_satfat": "0g",
+          "table_transfat": "0g",
+          "table_cholesterol": "0g",
+          "table_sodium": "54mg",
+          "table_fiber": "0g",
+          "table_sugars": "0g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "0mg",
+          "table_iron": "0mg"
+        },
+        {
+          "label": "Large",
+          "product_cals": "5",
+          "product_fats": "0",
+          "product_carbs": "0",
+          "product_protein": "0",
+          "table_cals": "5kCal",
+          "table_satfat": "0g",
+          "table_transfat": "0g",
+          "table_cholesterol": "0mg",
+          "table_sodium": "84mg",
+          "table_fiber": "0g",
+          "table_sugars": "0g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "30.6mg",
+          "table_iron": "7.7mg"
+        }
+      ]
+    },
+    {
+      "slug": "creme-soda",
+      "cats": [
+        "beverages"
+      ],
+      "name": "Creme Soda",
+      "allergens": [],
+      "hasAllergenCard": false,
+      "n": {
+        "cal": "41kCal",
+        "fat": "0g",
+        "carbs": "10.0g",
+        "protein": "0g",
+        "sat": "0g",
+        "sodium": "26mg",
+        "fibre": "0g",
+        "sugar": "10.0g"
+      },
+      "sizes": [
+        {
+          "label": "Small",
+          "product_cals": "41",
+          "product_fats": "0",
+          "product_carbs": "10.0",
+          "product_protein": "0",
+          "table_cals": "41kCal",
+          "table_satfat": "0g",
+          "table_transfat": "0g",
+          "table_cholesterol": "0mg",
+          "table_sodium": "26mg",
+          "table_fiber": "0g",
+          "table_sugars": "10.0g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "0mg",
+          "table_iron": "0mg"
+        },
+        {
+          "label": "Regular",
+          "product_cals": "59",
+          "product_fats": "0",
+          "product_carbs": "14.4",
+          "product_protein": "0",
+          "table_cals": "59kCal",
+          "table_satfat": "0g",
+          "table_transfat": "0g",
+          "table_cholesterol": "0mg",
+          "table_sodium": "37mg",
+          "table_fiber": "0g",
+          "table_sugars": "14.4g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "0mg",
+          "table_iron": "0mg"
+        },
+        {
+          "label": "Medium",
+          "product_cals": "78",
+          "product_fats": "0",
+          "product_carbs": "19.1",
+          "product_protein": "0",
+          "table_cals": "78kCal",
+          "table_satfat": "0g",
+          "table_transfat": "0g",
+          "table_cholesterol": "0mg",
+          "table_sodium": "49mg",
+          "table_fiber": "0g",
+          "table_sugars": "19.0g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "0mg",
+          "table_iron": "0mg"
+        },
+        {
+          "label": "Large",
+          "product_cals": "121",
+          "product_fats": "0",
+          "product_carbs": "29.5",
+          "product_protein": "0",
+          "table_cals": "121Cal",
+          "table_satfat": "0g",
+          "table_transfat": "0g",
+          "table_cholesterol": "0mg",
+          "table_sodium": "76mg",
+          "table_fiber": "0g",
+          "table_sugars": "29.4g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "0mg",
+          "table_iron": "0mg"
+        }
+      ]
+    },
+    {
+      "slug": "medium-fanta",
+      "cats": [
+        "beverages"
+      ],
+      "name": "Fanta",
+      "allergens": [],
+      "hasAllergenCard": false,
+      "n": {
+        "cal": "83kCal",
+        "fat": "0g",
+        "carbs": "20.3g",
+        "protein": "0g",
+        "sat": "0g",
+        "sodium": "20mg",
+        "fibre": "0g",
+        "sugar": "20.2g"
+      },
+      "sizes": [
+        {
+          "label": "Small",
+          "product_cals": "83",
+          "product_fats": "0",
+          "product_carbs": "20.3",
+          "product_protein": "0",
+          "table_cals": "83kCal",
+          "table_satfat": "0g",
+          "table_transfat": "0g",
+          "table_cholesterol": "0mg",
+          "table_sodium": "20mg",
+          "table_fiber": "0g",
+          "table_sugars": "20.2g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "0mg",
+          "table_iron": "0mg"
+        },
+        {
+          "label": "Regular",
+          "product_cals": "121",
+          "product_fats": "0",
+          "product_carbs": "29.7",
+          "product_protein": "0",
+          "table_cals": "121kCal",
+          "table_satfat": "0g",
+          "table_transfat": "0g",
+          "table_cholesterol": "0mg",
+          "table_sodium": "29mg",
+          "table_fiber": "0g",
+          "table_sugars": "29.6g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "13.3mg",
+          "table_calcium": "0mg",
+          "table_iron": "0mg"
+        },
+        {
+          "label": "Medium",
+          "product_cals": "157",
+          "product_fats": "0",
+          "product_carbs": "38.7",
+          "product_protein": "0",
+          "table_cals": "157kCal",
+          "table_satfat": "0g",
+          "table_transfat": "0g",
+          "table_cholesterol": "0mg",
+          "table_sodium": "37mg",
+          "table_fiber": "0g",
+          "table_sugars": "38.7g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "17.3mg",
+          "table_calcium": "0mg",
+          "table_iron": "0mg"
+        },
+        {
+          "label": "Large",
+          "product_cals": "243",
+          "product_fats": "0",
+          "product_carbs": "59.8",
+          "product_protein": "0",
+          "table_cals": "243kCal",
+          "table_satfat": "0g",
+          "table_transfat": "0g",
+          "table_cholesterol": "0mg",
+          "table_sodium": "57mg",
+          "table_fiber": "0g",
+          "table_sugars": "59.5g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "26.8mg",
+          "table_calcium": "0mg",
+          "table_iron": "0mg"
+        }
+      ]
+    },
+    {
+      "slug": "medium-orange-juice",
+      "cats": [
+        "beverages"
+      ],
+      "name": "Orange Juice",
+      "allergens": [],
+      "hasAllergenCard": false,
+      "n": {
+        "cal": "129kCal",
+        "fat": "0.0g",
+        "carbs": "30.2g",
+        "protein": "1.6g",
+        "sat": "0.0g",
+        "sodium": "5mg",
+        "fibre": "0.0g",
+        "sugar": "31.1g"
+      },
+      "sizes": [
+        {
+          "label": "Small",
+          "product_cals": "129",
+          "product_fats": "0.0",
+          "product_carbs": "30.2",
+          "product_protein": "1.6",
+          "table_cals": "129kCal",
+          "table_satfat": "0.0g",
+          "table_transfat": "0.0g",
+          "table_cholesterol": "2.7mg",
+          "table_sodium": "5mg",
+          "table_fiber": "0.0g",
+          "table_sugars": "31.1g",
+          "table_vitamina": "27.0ug",
+          "table_vitaminc": "27.0mg",
+          "table_calcium": "19.4mg",
+          "table_iron": "2.7mg"
+        },
+        {
+          "label": "Regular",
+          "product_cals": "194",
+          "product_fats": "0.0",
+          "product_carbs": "45.4",
+          "product_protein": "2.4",
+          "table_cals": "194kCal",
+          "table_satfat": "0.0g",
+          "table_transfat": "0.0g",
+          "table_cholesterol": "4.1mg",
+          "table_sodium": "8mg",
+          "table_fiber": "0.0g",
+          "table_sugars": "46.6g",
+          "table_vitamina": "40.5ug",
+          "table_vitaminc": "40.5mg",
+          "table_calcium": "29.2mg",
+          "table_iron": "4.1mg"
+        },
+        {
+          "label": "Medium",
+          "product_cals": "373",
+          "product_fats": "0",
+          "product_carbs": "87.4",
+          "product_protein": "4.5",
+          "table_cals": "373kCal",
+          "table_satfat": "0g",
+          "table_transfat": "0g",
+          "table_cholesterol": "7.8mg",
+          "table_sodium": "16mg",
+          "table_fiber": "0g",
+          "table_sugars": "89.7g",
+          "table_vitamina": "78.0ug",
+          "table_vitaminc": "78.0mg",
+          "table_calcium": "56.2mg",
+          "table_iron": "7.8mg"
+        },
+        {
+          "label": "Large",
+          "product_cals": "378",
+          "product_fats": "0.0",
+          "product_carbs": "88.5",
+          "product_protein": "4.6",
+          "table_cals": "378Cal",
+          "table_satfat": "0.0g",
+          "table_transfat": "0.0g",
+          "table_cholesterol": "7.9mg",
+          "table_sodium": "16mg",
+          "table_fiber": "0.0g",
+          "table_sugars": "90.9g",
+          "table_vitamina": "79.0ug",
+          "table_vitaminc": "79.0mg",
+          "table_calcium": "56.9mg",
+          "table_iron": "7.9mg"
+        }
+      ]
+    },
+    {
+      "slug": "passion-fruit-mcfizz",
+      "cats": [
+        "beverages"
+      ],
+      "name": "Passion Fruit McFizz™",
+      "allergens": [],
+      "hasAllergenCard": false,
+      "n": {
+        "cal": "125kCal",
+        "fat": "0.0g",
+        "carbs": "28.7g",
+        "protein": "0.5g",
+        "sat": "0g",
+        "sodium": "47mg",
+        "fibre": "0g",
+        "sugar": "28.9g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "powerade-mountain-blast",
+      "cats": [
+        "beverages"
+      ],
+      "name": "Powerade Mountain Blast",
+      "allergens": [],
+      "hasAllergenCard": false,
+      "n": {
+        "cal": "153kCal",
+        "fat": "0g",
+        "carbs": "0g",
+        "protein": "0g",
+        "sat": "0g",
+        "sodium": "150mg",
+        "fibre": "0g",
+        "sugar": "30.5g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "medium-sprite",
+      "cats": [
+        "beverages"
+      ],
+      "name": "Sprite",
+      "allergens": [],
+      "hasAllergenCard": false,
+      "n": {
+        "cal": "34kCal",
+        "fat": "0g",
+        "carbs": "7.8g",
+        "protein": "0g",
+        "sat": "0g",
+        "sodium": "26mg",
+        "fibre": "0g",
+        "sugar": "7.8g"
+      },
+      "sizes": [
+        {
+          "label": "Small",
+          "product_cals": "34",
+          "product_fats": "0",
+          "product_carbs": "7.8",
+          "product_protein": "0",
+          "table_cals": "34kCal",
+          "table_satfat": "0g",
+          "table_transfat": "0g",
+          "table_cholesterol": "0mg",
+          "table_sodium": "26mg",
+          "table_fiber": "0g",
+          "table_sugars": "7.8g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "0mg",
+          "table_iron": "0mg"
+        },
+        {
+          "label": "Regular",
+          "product_cals": "49",
+          "product_fats": "0",
+          "product_carbs": "11.4",
+          "product_protein": "0",
+          "table_cals": "49kCal",
+          "table_satfat": "0g",
+          "table_transfat": "0g",
+          "table_cholesterol": "0mg",
+          "table_sodium": "38mg",
+          "table_fiber": "0g",
+          "table_sugars": "11.4g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "0mg",
+          "table_iron": "0mg"
+        },
+        {
+          "label": "Medium",
+          "product_cals": "64",
+          "product_fats": "0",
+          "product_carbs": "14.9",
+          "product_protein": "0",
+          "table_cals": "64kCal",
+          "table_satfat": "0g",
+          "table_transfat": "0g",
+          "table_cholesterol": "0mg",
+          "table_sodium": "50mg",
+          "table_fiber": "0g",
+          "table_sugars": "14.9g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "0mg",
+          "table_iron": "0mg"
+        },
+        {
+          "label": "Large",
+          "product_cals": "99",
+          "product_fats": "0",
+          "product_carbs": "23.0",
+          "product_protein": "0",
+          "table_cals": "99kCal",
+          "table_satfat": "0g",
+          "table_transfat": "0g",
+          "table_cholesterol": "0mg",
+          "table_sodium": "77mg",
+          "table_fiber": "0g",
+          "table_sugars": "23.0g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "0mg",
+          "table_iron": "0mg"
+        }
+      ]
+    },
+    {
+      "slug": "stoney-zero",
+      "cats": [
+        "beverages"
+      ],
+      "name": "Stoney Zero",
+      "allergens": [
+        "No Allergens"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "1kCal",
+        "fat": "0g",
+        "carbs": "6.0g",
+        "protein": "0g",
+        "sat": "0g",
+        "sodium": "12mg",
+        "fibre": "0g",
+        "sugar": "1.2g"
+      },
+      "sizes": [
+        {
+          "label": "Small",
+          "product_cals": "1",
+          "product_fats": "0",
+          "product_carbs": "6.0",
+          "product_protein": "0",
+          "table_cals": "1kCal",
+          "table_satfat": "0g",
+          "table_transfat": "0g",
+          "table_cholesterol": "0mg",
+          "table_sodium": "12mg",
+          "table_fiber": "0g",
+          "table_sugars": "1.2g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "0mg",
+          "table_iron": "0mg"
+        },
+        {
+          "label": "Regular",
+          "product_cals": "2",
+          "product_fats": "0",
+          "product_carbs": "9.4",
+          "product_protein": "0",
+          "table_cals": "2kCal",
+          "table_satfat": "0g",
+          "table_transfat": "0g",
+          "table_cholesterol": "0mg",
+          "table_sodium": "19mg",
+          "table_fiber": "0g",
+          "table_sugars": "1.9g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "0mg",
+          "table_iron": "0mg"
+        },
+        {
+          "label": "Medium",
+          "product_cals": "2",
+          "product_fats": "0",
+          "product_carbs": "12.4",
+          "product_protein": "0",
+          "table_cals": "2kCal",
+          "table_satfat": "0g",
+          "table_transfat": "0g",
+          "table_cholesterol": "0mg",
+          "table_sodium": "25mg",
+          "table_fiber": "0g",
+          "table_sugars": "2.5g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "0mg",
+          "table_iron": "0mg"
+        },
+        {
+          "label": "Large",
+          "product_cals": "4",
+          "product_fats": "0",
+          "product_carbs": "19.1",
+          "product_protein": "0",
+          "table_cals": "4kCal",
+          "table_satfat": "0g",
+          "table_transfat": "g",
+          "table_cholesterol": "0mg",
+          "table_sodium": "38mg",
+          "table_fiber": "0g",
+          "table_sugars": "3.8g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "0mg",
+          "table_iron": "0mg"
+        }
+      ]
+    },
+    {
+      "slug": "watermelon-mcfizz",
+      "cats": [
+        "beverages"
+      ],
+      "name": "Watermelon McFizz™",
+      "allergens": [],
+      "hasAllergenCard": false,
+      "n": {
+        "cal": "73kCal",
+        "fat": "0g",
+        "carbs": "17.8g",
+        "protein": "0g",
+        "sat": "0g",
+        "sodium": "39mg",
+        "fibre": "0g",
+        "sugar": "17.8g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "apple-pie",
+      "cats": [
+        "desserts-shakes"
+      ],
+      "name": "Apple Pie",
+      "allergens": [
+        "Wheat"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "235kCal",
+        "fat": "13g",
+        "carbs": "27g",
+        "protein": "2g",
+        "sat": "3g",
+        "sodium": "166mg",
+        "fibre": "1g",
+        "sugar": "11g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "caramel-sundae",
+      "cats": [
+        "desserts-shakes"
+      ],
+      "name": "Caramel Sundae",
+      "allergens": [
+        "Milk"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "715kCal",
+        "fat": "13.6g",
+        "carbs": "152.7g",
+        "protein": "7.0g",
+        "sat": "9.5g",
+        "sodium": "418mg",
+        "fibre": "0g",
+        "sugar": "86.2g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "medium-chocolate-shake",
+      "cats": [
+        "desserts-shakes"
+      ],
+      "name": "Chocolate Shake",
+      "allergens": [
+        "Milk"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "355kCal",
+        "fat": "11.6g",
+        "carbs": "47.5g",
+        "protein": "7.3g",
+        "sat": "5.9g",
+        "sodium": "175mg",
+        "fibre": "0.9g",
+        "sugar": "46.2g"
+      },
+      "sizes": [
+        {
+          "label": "Small",
+          "product_cals": "355",
+          "product_fats": "11.6",
+          "product_carbs": "47.5",
+          "product_protein": "7.3",
+          "table_cals": "355kCal",
+          "table_satfat": "5.9g",
+          "table_transfat": "8.5g",
+          "table_cholesterol": "11.9mg",
+          "table_sodium": "175mg",
+          "table_fiber": "0.9g",
+          "table_sugars": "46.2g",
+          "table_vitamina": "0.0ug",
+          "table_vitaminc": "0.0mg",
+          "table_calcium": "301.0mg",
+          "table_iron": "0.0mg"
+        },
+        {
+          "label": "Regular",
+          "product_cals": "641",
+          "product_fats": "12.2",
+          "product_carbs": "68.3",
+          "product_protein": "7.7",
+          "table_cals": "641kCal",
+          "table_satfat": "6.2g",
+          "table_transfat": "9.0g",
+          "table_cholesterol": "12.5mg",
+          "table_sodium": "332mg",
+          "table_fiber": "1.0g",
+          "table_sugars": "64.2g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "316.2mg",
+          "table_iron": "0mg"
+        },
+        {
+          "label": "Medium",
+          "product_cals": "741",
+          "product_fats": "16.8",
+          "product_carbs": "84.3",
+          "product_protein": "10.6",
+          "table_cals": "741Cal",
+          "table_satfat": "8.5g",
+          "table_transfat": "12.3g",
+          "table_cholesterol": "17.2mg",
+          "table_sodium": "379mg",
+          "table_fiber": "1.4g",
+          "table_sugars": "80.2g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "435.6mg",
+          "table_iron": "0mg"
+        },
+        {
+          "label": "Large",
+          "product_cals": "1071",
+          "product_fats": "23.2",
+          "product_carbs": "119.6",
+          "product_protein": "14.7",
+          "table_cals": "1071Cal",
+          "table_satfat": "11.8",
+          "table_transfat": "17.0g",
+          "table_cholesterol": "23.7mg",
+          "table_sodium": "549mg",
+          "table_fiber": "1.9g",
+          "table_sugars": "113.5g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "602.0mg",
+          "table_iron": "0mg"
+        }
+      ]
+    },
+    {
+      "slug": "chocolate-sundae",
+      "cats": [
+        "desserts-shakes"
+      ],
+      "name": "Chocolate Sundae",
+      "allergens": [
+        "Milk",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "560kCal",
+        "fat": "8.4g",
+        "carbs": "126.2g",
+        "protein": "6.4g",
+        "sat": "6.2g",
+        "sodium": "410mg",
+        "fibre": "0g",
+        "sugar": "89.7g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "cone",
+      "cats": [
+        "desserts-shakes"
+      ],
+      "name": "Ice-Cream Cone",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "26kCal",
+        "fat": "0.6g",
+        "carbs": "4.9g",
+        "protein": "0.7g",
+        "sat": "0.2g",
+        "sodium": "15mg",
+        "fibre": "0g",
+        "sugar": "1.2g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "kitkat-mcflurry",
+      "cats": [
+        "desserts-shakes"
+      ],
+      "name": "McFlurry Kit Kat",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Soy",
+        "May contain nuts"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "486KCal",
+        "fat": "18.7g",
+        "carbs": "72.1g",
+        "protein": "6.1g",
+        "sat": "10.1g",
+        "sodium": "195mg",
+        "fibre": "1.2g",
+        "sugar": "51.4g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "mcflurry-pistachio",
+      "cats": [
+        "desserts-shakes"
+      ],
+      "name": "McFlurry Pistachio",
+      "allergens": [
+        "Cow's Milk",
+        "Wheat",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": null,
+        "fat": "15.9g",
+        "carbs": "83.8g",
+        "protein": "5.8g",
+        "sat": "8.4g",
+        "sodium": "201.6mg",
+        "fibre": "1.5g",
+        "sugar": "60g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "oreo-mcflurry",
+      "cats": [
+        "desserts-shakes"
+      ],
+      "name": "Oreo McFlurry®",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "266kCal",
+        "fat": "11g",
+        "carbs": "52g",
+        "protein": "5g",
+        "sat": "8g",
+        "sodium": "123mg",
+        "fibre": "0g",
+        "sugar": "50g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "plain-sundae",
+      "cats": [
+        "desserts-shakes"
+      ],
+      "name": "Plain Sundae",
+      "allergens": [
+        "Milk"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "165kCal",
+        "fat": "7.2g",
+        "carbs": "34.6g",
+        "protein": "3.8g",
+        "sat": "5.4g",
+        "sodium": "94mg",
+        "fibre": "0g",
+        "sugar": "33.5g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "medium-strawberry-shake",
+      "cats": [
+        "desserts-shakes"
+      ],
+      "name": "Strawberry Shake",
+      "allergens": [
+        "Milk"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "294kCal",
+        "fat": "11.6g",
+        "carbs": "46.8g",
+        "protein": "7.3g",
+        "sat": "5.9g",
+        "sodium": "130mg",
+        "fibre": "0.9g",
+        "sugar": "46.4g"
+      },
+      "sizes": [
+        {
+          "label": "Small",
+          "product_cals": "294",
+          "product_fats": "11.6",
+          "product_carbs": "46.8",
+          "product_protein": "7.3",
+          "table_cals": "294kCal",
+          "table_satfat": "5.9g",
+          "table_transfat": "8.5g",
+          "table_cholesterol": "11.9mg",
+          "table_sodium": "130mg",
+          "table_fiber": "0.9g",
+          "table_sugars": "46.4g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "301.0mg",
+          "table_iron": "0mg"
+        },
+        {
+          "label": "Regular",
+          "product_cals": "349",
+          "product_fats": "12.1",
+          "product_carbs": "60.2",
+          "product_protein": "7.7",
+          "table_cals": "349kCal",
+          "table_satfat": "6.1g",
+          "table_transfat": "8.9g",
+          "table_cholesterol": "12.3mg",
+          "table_sodium": "136mg",
+          "table_fiber": "1.0g",
+          "table_sugars": "59.7g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "0mg",
+          "table_iron": "0mg"
+        },
+        {
+          "label": "Medium",
+          "product_cals": "478",
+          "product_fats": "16.8",
+          "product_carbs": "81.6",
+          "product_protein": "0",
+          "table_cals": "478Cal",
+          "table_satfat": "8.5g",
+          "table_transfat": "12.3g",
+          "table_cholesterol": "17.2mg",
+          "table_sodium": "189mg",
+          "table_fiber": "1.4g",
+          "table_sugars": "81.0g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "435.9mg",
+          "table_iron": "0mg"
+        },
+        {
+          "label": "Large",
+          "product_cals": "671",
+          "product_fats": "23.2",
+          "product_carbs": "115.6",
+          "product_protein": "14.7",
+          "table_cals": "671Cal",
+          "table_satfat": "11.8g",
+          "table_transfat": "17.0g",
+          "table_cholesterol": "23.7mg",
+          "table_sodium": "261mg",
+          "table_fiber": "1.9g",
+          "table_sugars": "114.6g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "602.0mg",
+          "table_iron": "0mg"
+        }
+      ]
+    },
+    {
+      "slug": "strawberry-sundae",
+      "cats": [
+        "desserts-shakes"
+      ],
+      "name": "Strawberry Sundae",
+      "allergens": [
+        "Milk"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "481kCal",
+        "fat": "7.2g",
+        "carbs": "111.3g",
+        "protein": "4.9g",
+        "sat": "5.4g",
+        "sodium": "131mg",
+        "fibre": "0g",
+        "sugar": "102.3g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "medium-vanilla-shake",
+      "cats": [
+        "desserts-shakes"
+      ],
+      "name": "Vanilla Shake",
+      "allergens": [
+        "Milk"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "346kCal",
+        "fat": "11.6g",
+        "carbs": "47.3g",
+        "protein": "7.3g",
+        "sat": "5.9g",
+        "sodium": "130mg",
+        "fibre": "0.9g",
+        "sugar": "45.9g"
+      },
+      "sizes": [
+        {
+          "label": "Small",
+          "product_cals": "346",
+          "product_fats": "11.6",
+          "product_carbs": "47.3",
+          "product_protein": "7.3",
+          "table_cals": "346kCal",
+          "table_satfat": "5.9g",
+          "table_transfat": "8.5g",
+          "table_cholesterol": "11.9mg",
+          "table_sodium": "130mg",
+          "table_fiber": "0.9g",
+          "table_sugars": "45.9g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "301.0mg",
+          "table_iron": "0mg"
+        },
+        {
+          "label": "Regular",
+          "product_cals": "525",
+          "product_fats": "12.1",
+          "product_carbs": "61.9",
+          "product_protein": "7.7",
+          "table_cals": "525al",
+          "table_satfat": "6.1g",
+          "table_transfat": "8.9g",
+          "table_cholesterol": "12.3mg",
+          "table_sodium": "136mg",
+          "table_fiber": "1.0g",
+          "table_sugars": "58.0g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "313.6mg",
+          "table_iron": "0mg"
+        },
+        {
+          "label": "Medium",
+          "product_cals": "703",
+          "product_fats": "16.8",
+          "product_carbs": "84.0",
+          "product_protein": "10.6",
+          "table_cals": "703Cal",
+          "table_satfat": "8.5g",
+          "table_transfat": "12.3g",
+          "table_cholesterol": "17.2mg",
+          "table_sodium": "189mg",
+          "table_fiber": "1.4g",
+          "table_sugars": "79.0g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "435.9mg",
+          "table_iron": "0mg"
+        },
+        {
+          "label": "Large",
+          "product_cals": "1008",
+          "product_fats": "23.2g",
+          "product_carbs": "118.7",
+          "product_protein": "0.0g",
+          "table_cals": "1008Cal",
+          "table_satfat": "11.8g",
+          "table_transfat": "17.0g",
+          "table_cholesterol": "23.7mg",
+          "table_sodium": "261mg",
+          "table_fiber": "1.9g",
+          "table_sugars": "111.3g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "602.0mg",
+          "table_iron": "0mg"
+        }
+      ]
+    },
+    {
+      "slug": "beef-share-bag",
+      "cats": [
+        "sharebox"
+      ],
+      "name": "Beef Sharebag",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Egg",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "3617kCal",
+        "fat": "183.7g",
+        "carbs": "248.7g",
+        "protein": "134.9g",
+        "sat": "83.7g",
+        "sodium": "3973mg",
+        "fibre": "30.3g",
+        "sugar": "19.9g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "chicken-share-bag",
+      "cats": [
+        "sharebox"
+      ],
+      "name": "Chicken Sharebag",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Egg",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "3340kCal",
+        "fat": "154g",
+        "carbs": "358.1g",
+        "protein": "109g",
+        "sat": "60.6g",
+        "sodium": "4568mg",
+        "fibre": "38.5g",
+        "sugar": "28.8g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "combo-sharebag",
+      "cats": [
+        "sharebox"
+      ],
+      "name": "Combo Sharebag",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Egg",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "3668kCal",
+        "fat": "175.9g",
+        "carbs": "369.7g",
+        "protein": "131.7g",
+        "sat": "75.8g",
+        "sodium": "5083mg",
+        "fibre": "43.9g",
+        "sugar": "34.5g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "mcfizz-float-watermelon",
+      "cats": [
+        "limited-offers"
+      ],
+      "name": "McFizz Float Watermelon",
+      "allergens": [],
+      "hasAllergenCard": false,
+      "n": {
+        "cal": null,
+        "fat": "0g",
+        "carbs": "17.8g",
+        "protein": "0g",
+        "sat": "0g",
+        "sodium": "39mg",
+        "fibre": "0g",
+        "sugar": "17.8g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "mcfizz-float-passion-fruit",
+      "cats": [
+        "limited-offers"
+      ],
+      "name": "McFizz Float Passion Fruit",
+      "allergens": [],
+      "hasAllergenCard": false,
+      "n": {
+        "cal": "125Cal",
+        "fat": "0g",
+        "carbs": "28.7g",
+        "protein": "0.5g",
+        "sat": "0g",
+        "sodium": "47mg",
+        "fibre": "0g",
+        "sugar": "0g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "mcfizz-float-blue-hawaiian",
+      "cats": [
+        "limited-offers"
+      ],
+      "name": "McFizz Float Blue Hawaiian",
+      "allergens": [],
+      "hasAllergenCard": false,
+      "n": {
+        "cal": null,
+        "fat": null,
+        "carbs": null,
+        "protein": null,
+        "sat": null,
+        "sodium": null,
+        "fibre": null,
+        "sugar": null
+      },
+      "sizes": []
+    },
+    {
+      "slug": "mega-chilli-cheese",
+      "cats": [
+        "limited-offers"
+      ],
+      "name": "Mega Chilli Cheese",
+      "allergens": [
+        "Cow's Milk",
+        "Wheat",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": null,
+        "fat": "30.9g",
+        "carbs": "39.6g",
+        "protein": "26.2g",
+        "sat": "12.2g",
+        "sodium": "1055.1mg",
+        "fibre": "3.4g",
+        "sugar": "8.1g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "korean-bbq-mcwrap",
+      "cats": [
+        "limited-offers"
+      ],
+      "name": "Korean BBQ McWrap",
+      "allergens": [
+        "Wheat",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": null,
+        "fat": "27.6g",
+        "carbs": "61.6g",
+        "protein": "31.7g",
+        "sat": "13.7g",
+        "sodium": "1188.3mg",
+        "fibre": "4.1g",
+        "sugar": "13g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "jalapeno-mcwrap",
+      "cats": [
+        "limited-offers"
+      ],
+      "name": "Jalapeno McWrap",
+      "allergens": [
+        "Wheat",
+        "Soy",
+        "Egg"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": null,
+        "fat": "37.7g",
+        "carbs": "53.8g",
+        "protein": "31.6g",
+        "sat": "15.1g",
+        "sodium": "1486.2mg",
+        "fibre": "4.5g",
+        "sugar": "6.8g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "spicy-mcwrap",
+      "cats": [
+        "limited-offers"
+      ],
+      "name": "Spicy McWrap",
+      "allergens": [
+        "Wheat",
+        "Soy",
+        "Egg"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": null,
+        "fat": "33.4g",
+        "carbs": "58.3g",
+        "protein": "33.6g",
+        "sat": "14.5g",
+        "sodium": "1286.1mg",
+        "fibre": "6.8g",
+        "sugar": "11.7g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "lemon-pepper-mcwrap",
+      "cats": [
+        "limited-offers"
+      ],
+      "name": "Lemon Pepper McWrap",
+      "allergens": [
+        "Wheat",
+        "Soy",
+        "Egg"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": null,
+        "fat": "37.6g",
+        "carbs": "53.6g",
+        "protein": "31.5g",
+        "sat": "15.1g",
+        "sodium": "1283.7mg",
+        "fibre": "4g",
+        "sugar": "6.7g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "breakfast-wrap-2",
+      "cats": [
+        "limited-offers"
+      ],
+      "name": "Breakfast Wrap",
+      "allergens": [
+        "Cow's Milk",
+        "Wheat",
+        "Egg"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": null,
+        "fat": "31.3g",
+        "carbs": "40.4g",
+        "protein": "26g",
+        "sat": "11.4g",
+        "sodium": "1116.2mg",
+        "fibre": "5.1g",
+        "sugar": "3.9g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "happy--meal-nuggets",
+      "cats": [
+        "happy-meal"
+      ],
+      "name": "4 Piece Chicken McNuggets® Happy Meal",
+      "allergens": [
+        "Wheat"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "594kCal",
+        "fat": "25.4g",
+        "carbs": "71.5g",
+        "protein": "15.7g",
+        "sat": "11.5g",
+        "sodium": "547mg",
+        "fibre": "3.6g",
+        "sugar": "24.8g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "happy-meal-corn-nuggets",
+      "cats": [
+        "happy-meal"
+      ],
+      "name": "4 Piece Chicken McNuggets® Happy Meal with Corn",
+      "allergens": [
+        "Wheat"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "482kCal",
+        "fat": "9.5g",
+        "carbs": "41.2g",
+        "protein": "12.1g",
+        "sat": "3.9g",
+        "sodium": "328mg",
+        "fibre": "1.2g",
+        "sugar": "24.8g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "happy-meal-cheeseburger",
+      "cats": [
+        "happy-meal"
+      ],
+      "name": "Cheeseburger Happy Meal®",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "753kCal",
+        "fat": "29.8g",
+        "carbs": "96.6g",
+        "protein": "18.5g",
+        "sat": "14.5g",
+        "sodium": "759mg",
+        "fibre": "5.7g",
+        "sugar": "32.8g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "happy-meal-corn-cheese-burger",
+      "cats": [
+        "happy-meal"
+      ],
+      "name": "Cheeseburger Happy Meal® with Corn",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Soya"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "642kCal",
+        "fat": "13.8g",
+        "carbs": "66.2g",
+        "protein": "14.8g",
+        "sat": "6.9g",
+        "sodium": "541mg",
+        "fibre": "3.3g",
+        "sugar": "32.7g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "happy-meal-chicken-burger",
+      "cats": [
+        "happy-meal"
+      ],
+      "name": "Chicken Burger Happy Meal®",
+      "allergens": [
+        "Wheat",
+        "Egg"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "726kCal",
+        "fat": "28.7g",
+        "carbs": "94.5g",
+        "protein": "15.5g",
+        "sat": "9.4",
+        "sodium": "400mg",
+        "fibre": "6.0g",
+        "sugar": "30.5"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "happy-meal-corn-chicken-burger",
+      "cats": [
+        "happy-meal"
+      ],
+      "name": "Chicken Burger Happy Meal® with Corn",
+      "allergens": [
+        "Wheat",
+        "Egg"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "476kCal",
+        "fat": "12.9g",
+        "carbs": "69.8g",
+        "protein": "12.7g",
+        "sat": "1.8g",
+        "sodium": "183mg",
+        "fibre": "4.3g",
+        "sugar": "31.1g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "happy-meal-hamburger",
+      "cats": [
+        "happy-meal"
+      ],
+      "name": "Hamburger Happy Meal®",
+      "allergens": [
+        "Wheat",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "705kCal",
+        "fat": "26.0g",
+        "carbs": "95.9g",
+        "protein": "15.7g",
+        "sat": "11.9g",
+        "sodium": "561mg",
+        "fibre": "5.6g",
+        "sugar": "32.4g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "happy-meal-corn-hamburger",
+      "cats": [
+        "happy-meal"
+      ],
+      "name": "Hamburger Happy Meal® with Corn",
+      "allergens": [
+        "Wheat",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "594Cal",
+        "fat": "19.6g",
+        "carbs": "65.8g",
+        "protein": "12.1g",
+        "sat": "4.4g",
+        "sodium": "343mg",
+        "fibre": "3.2g",
+        "sugar": "32.3g"
+      },
+      "sizes": []
+    },
+    {
+      "slug": "2-cheeseburger-meal",
+      "cats": [
+        "combo-meals"
+      ],
+      "name": "2 Cheeseburger Meal",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "1110kCal",
+        "fat": "49g",
+        "carbs": "123.1g",
+        "protein": "39g",
+        "sat": "25.3g",
+        "sodium": "1945mg",
+        "fibre": "11.3g",
+        "sugar": "15.6g"
+      },
+      "sizes": [
+        {
+          "label": "Regular",
+          "product_cals": "1110",
+          "product_fats": "49",
+          "product_carbs": "123.1",
+          "product_protein": "39",
+          "table_cals": "1110kCal",
+          "table_satfat": "25.3g",
+          "table_transfat": "0.4g",
+          "table_cholesterol": "78.9mg",
+          "table_sodium": "1945mg",
+          "table_fiber": "11.3g",
+          "table_sugars": "15.6g",
+          "table_vitamina": "72.1ug",
+          "table_vitaminc": "3.9ug",
+          "table_calcium": "187.8mg",
+          "table_iron": "1mg"
+        },
+        {
+          "label": "Medium",
+          "product_cals": "1305",
+          "product_fats": "58.5",
+          "product_carbs": "146.4",
+          "product_protein": "42",
+          "table_cals": "1305kCal",
+          "table_satfat": "29.7g",
+          "table_transfat": "0.4g",
+          "table_cholesterol": "82.1mg",
+          "table_sodium": "2105mg",
+          "table_fiber": "13.4g",
+          "table_sugars": "16.3g",
+          "table_vitamina": "72.1ug",
+          "table_vitaminc": "3.9ug",
+          "table_calcium": "187.8mg",
+          "table_iron": "1mg"
+        },
+        {
+          "label": "Large",
+          "product_cals": "1428",
+          "product_fats": "64.4",
+          "product_carbs": "161",
+          "product_protein": "43.8",
+          "table_cals": "1428kCal",
+          "table_satfat": "32.5g",
+          "table_transfat": "0.4g",
+          "table_cholesterol": "84.1mg",
+          "table_sodium": "2229mg",
+          "table_fiber": "14.7g",
+          "table_sugars": "16.7g",
+          "table_vitamina": "72.1ug",
+          "table_vitaminc": "3.9ug",
+          "table_calcium": "187.8mg",
+          "table_iron": "1mg"
+        }
+      ]
+    },
+    {
+      "slug": "6-nuggets-meal",
+      "cats": [
+        "combo-meals"
+      ],
+      "name": "6 Piece Chicken McNuggets® Meal",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Soy",
+        "Egg"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "714kCal",
+        "fat": "35.7g",
+        "carbs": "71.1g",
+        "protein": "23g",
+        "sat": "16g",
+        "sodium": "870mg",
+        "fibre": "7.3g",
+        "sugar": "2.1g"
+      },
+      "sizes": [
+        {
+          "label": "Regular",
+          "product_cals": "714",
+          "product_fats": "35.7",
+          "product_carbs": "71.1",
+          "product_protein": "23",
+          "table_cals": "714kCal",
+          "table_satfat": "16g",
+          "table_transfat": "0g",
+          "table_cholesterol": "50mg",
+          "table_sodium": "870mg",
+          "table_fiber": "7.3g",
+          "table_sugars": "2.1g",
+          "table_vitamina": "1.2ug",
+          "table_vitaminc": "4.2ug",
+          "table_calcium": "14.1mg",
+          "table_iron": "0.7mg"
+        },
+        {
+          "label": "Medium",
+          "product_cals": "909",
+          "product_fats": "45.2",
+          "product_carbs": "94.4",
+          "product_protein": "26",
+          "table_cals": "909kCal",
+          "table_satfat": "20.4g",
+          "table_transfat": "0g",
+          "table_cholesterol": "53g",
+          "table_sodium": "1030mg",
+          "table_fiber": "9.4g",
+          "table_sugars": "2.8g",
+          "table_vitamina": "1.2ug",
+          "table_vitaminc": "4.2ug",
+          "table_calcium": "14.1mg",
+          "table_iron": "0.7mg"
+        },
+        {
+          "label": "Large",
+          "product_cals": "1031",
+          "product_fats": "51.1",
+          "product_carbs": "109",
+          "product_protein": "27.8",
+          "table_cals": "1031kCal",
+          "table_satfat": "23.2g",
+          "table_transfat": "0g",
+          "table_cholesterol": "55g",
+          "table_sodium": "1153mg",
+          "table_fiber": "10.7g",
+          "table_sugars": "3.3g",
+          "table_vitamina": "1.2ug",
+          "table_vitaminc": "4.2ug",
+          "table_calcium": "14.1mg",
+          "table_iron": "0.7mg"
+        }
+      ]
+    },
+    {
+      "slug": "bigmac-meal",
+      "cats": [
+        "combo-meals"
+      ],
+      "name": "Big Mac® Meal",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Egg",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "1024kCal",
+        "fat": "50.1g",
+        "carbs": "104.7g",
+        "protein": "34.4g",
+        "sat": "22.1g",
+        "sodium": "935mg",
+        "fibre": "8.0g",
+        "sugar": "10.8g"
+      },
+      "sizes": [
+        {
+          "label": "Regular",
+          "product_cals": "1024",
+          "product_fats": "50.1",
+          "product_carbs": "104.7",
+          "product_protein": "34.4",
+          "table_cals": "1024kCal",
+          "table_satfat": "22.1g",
+          "table_transfat": "0.2g",
+          "table_cholesterol": "75.3mg",
+          "table_sodium": "935mg",
+          "table_fiber": "8.0g",
+          "table_sugars": "10.8g",
+          "table_vitamina": "53.0ug",
+          "table_vitaminc": "3.1ug",
+          "table_calcium": "268.3mg",
+          "table_iron": "5.4g"
+        },
+        {
+          "label": "Medium",
+          "product_cals": "1219",
+          "product_fats": "59.6",
+          "product_carbs": "128.0",
+          "product_protein": "37.4",
+          "table_cals": "1219kCal",
+          "table_satfat": "26.5g",
+          "table_transfat": "0.2g",
+          "table_cholesterol": "78.5mg",
+          "table_sodium": "1077mg",
+          "table_fiber": "10.1g",
+          "table_sugars": "11.5g",
+          "table_vitamina": "53.0ug",
+          "table_vitaminc": "3.1mg",
+          "table_calcium": "273.1mg",
+          "table_iron": "6.6mg"
+        },
+        {
+          "label": "Large",
+          "product_cals": "1343",
+          "product_fats": "65.5",
+          "product_carbs": "142.6",
+          "product_protein": "39.2",
+          "table_cals": "1343kCal",
+          "table_satfat": "29.3g",
+          "table_transfat": "0.2g",
+          "table_cholesterol": "80.5mg",
+          "table_sodium": "1186mg",
+          "table_fiber": "11.4g",
+          "table_sugars": "11.9g",
+          "table_vitamina": "53.0ug",
+          "table_vitaminc": "3.1mg",
+          "table_calcium": "283.9mg",
+          "table_iron": "9.3mg"
+        }
+      ]
+    },
+    {
+      "slug": "cajun-chicken-meal",
+      "cats": [
+        "combo-meals"
+      ],
+      "name": "Cajun Chicken Meal",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Egg",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "896kCal",
+        "fat": "39.1g",
+        "carbs": "101.4g",
+        "protein": "27.9g",
+        "sat": "14.7g",
+        "sodium": "1448mg",
+        "fibre": "11.3g",
+        "sugar": "9.6g"
+      },
+      "sizes": [
+        {
+          "label": "Regular",
+          "product_cals": "896",
+          "product_fats": "39.1",
+          "product_carbs": "101.4",
+          "product_protein": "27.9",
+          "table_cals": "896kCal",
+          "table_satfat": "14.7g",
+          "table_transfat": "0g",
+          "table_cholesterol": "18.5mg",
+          "table_sodium": "1448mg",
+          "table_fiber": "11.3g",
+          "table_sugars": "9.6g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0ug",
+          "table_calcium": "9.7mg",
+          "table_iron": "0.2mg"
+        },
+        {
+          "label": "Medium",
+          "product_cals": "1091",
+          "product_fats": "48.6",
+          "product_carbs": "124.7",
+          "product_protein": "30.9",
+          "table_cals": "1091kCal",
+          "table_satfat": "19.1g",
+          "table_transfat": "0g",
+          "table_cholesterol": "21.7mg",
+          "table_sodium": "1608mg",
+          "table_fiber": "13.4g",
+          "table_sugars": "10.3g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0ug",
+          "table_calcium": "9.7mg",
+          "table_iron": "0.2mg"
+        },
+        {
+          "label": "Large",
+          "product_cals": "1213",
+          "product_fats": "54.5",
+          "product_carbs": "139.3",
+          "product_protein": "32.7",
+          "table_cals": "1213kCal",
+          "table_satfat": "21.8g",
+          "table_transfat": "0g",
+          "table_cholesterol": "23.7mg",
+          "table_sodium": "1732mg",
+          "table_fiber": "14.7g",
+          "table_sugars": "10.8g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "0ug",
+          "table_calcium": "9.7mg",
+          "table_iron": "0.2mg"
+        }
+      ]
+    },
+    {
+      "slug": "cheeseburger-1",
+      "cats": [
+        "combo-meals"
+      ],
+      "name": "Cheeseburger Meal",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "798kCal",
+        "fat": "36.5g",
+        "carbs": "89.3g",
+        "protein": "20.6g",
+        "sat": "17.6g",
+        "sodium": "891mg",
+        "fibre": "7.2g",
+        "sugar": "9.7g"
+      },
+      "sizes": [
+        {
+          "label": "Regular",
+          "product_cals": "798",
+          "product_fats": "36.5",
+          "product_carbs": "89.3",
+          "product_protein": "20.6",
+          "table_cals": "798kCal",
+          "table_satfat": "17.6g",
+          "table_transfat": "0.2g",
+          "table_cholesterol": "45.7mg",
+          "table_sodium": "891mg",
+          "table_fiber": "7.2g",
+          "table_sugars": "9.7g",
+          "table_vitamina": "41.8ug",
+          "table_vitaminc": "3.0mg",
+          "table_calcium": "206.9mg",
+          "table_iron": "6.9mg"
+        },
+        {
+          "label": "Medium",
+          "product_cals": "993",
+          "product_fats": "46.0",
+          "product_carbs": "112.6",
+          "product_protein": "23.5",
+          "table_cals": "993kCal",
+          "table_satfat": "22.0g",
+          "table_transfat": "0.2g",
+          "table_cholesterol": "48.9mg",
+          "table_sodium": "1032mg",
+          "table_fiber": "9.3g",
+          "table_sugars": "10.4g",
+          "table_vitamina": "41.8ug",
+          "table_vitaminc": "3.0mg",
+          "table_calcium": "211.7mg",
+          "table_iron": "8.1mg"
+        },
+        {
+          "label": "Large",
+          "product_cals": "1117",
+          "product_fats": "51.9",
+          "product_carbs": "127.2",
+          "product_protein": "25.4",
+          "table_cals": "1117kCal",
+          "table_satfat": "24.8g",
+          "table_transfat": "0.2g",
+          "table_cholesterol": "50.9mg",
+          "table_sodium": "1142mg",
+          "table_fiber": "10.6g",
+          "table_sugars": "10.8g",
+          "table_vitamina": "41.8ug",
+          "table_vitaminc": "3.0mg",
+          "table_calcium": "222.5mg",
+          "table_iron": "10.8mg"
+        }
+      ]
+    },
+    {
+      "slug": "chicken-foldover-meal",
+      "cats": [
+        "combo-meals"
+      ],
+      "name": "Chicken Foldover Meal",
+      "allergens": [
+        "Wheat",
+        "Egg",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "1007kCal",
+        "fat": "48g",
+        "carbs": "104.1g",
+        "protein": "33.1g",
+        "sat": "16.2g",
+        "sodium": "1270mg",
+        "fibre": "10.4g",
+        "sugar": "7.2g"
+      },
+      "sizes": [
+        {
+          "label": "Regular",
+          "product_cals": "1007",
+          "product_fats": "48",
+          "product_carbs": "104.1",
+          "product_protein": "33.1",
+          "table_cals": "1007kCal",
+          "table_satfat": "16.2g",
+          "table_transfat": "0g",
+          "table_cholesterol": "112mg",
+          "table_sodium": "1270mg",
+          "table_fiber": "10.4g",
+          "table_sugars": "7.2g",
+          "table_vitamina": "16.3ug",
+          "table_vitaminc": "0ug",
+          "table_calcium": "12.9mg",
+          "table_iron": "1.3mg"
+        },
+        {
+          "label": "Medium",
+          "product_cals": "1202",
+          "product_fats": "57.4",
+          "product_carbs": "127.4",
+          "product_protein": "36.1",
+          "table_cals": "1202kCal",
+          "table_satfat": "20.7g",
+          "table_transfat": "0g",
+          "table_cholesterol": "115mg",
+          "table_sodium": "1430mg",
+          "table_fiber": "12.5g",
+          "table_sugars": "7.9g",
+          "table_vitamina": "16.3ug",
+          "table_vitaminc": "0ug",
+          "table_calcium": "12.9mg",
+          "table_iron": "1.3mg"
+        },
+        {
+          "label": "Large",
+          "product_cals": "1324",
+          "product_fats": "63.4",
+          "product_carbs": "142",
+          "product_protein": "37.9",
+          "table_cals": "1324kCal",
+          "table_satfat": "23.4g",
+          "table_transfat": "0g",
+          "table_cholesterol": "117mg",
+          "table_sodium": "1554mg",
+          "table_fiber": "13.9g",
+          "table_sugars": "8.4g",
+          "table_vitamina": "16.3ug",
+          "table_vitaminc": "0ug",
+          "table_calcium": "12.9mg",
+          "table_iron": "1.3mg"
+        }
+      ]
+    },
+    {
+      "slug": "chilli-cheese-double-meal",
+      "cats": [
+        "combo-meals"
+      ],
+      "name": "Chilli Cheeseburger Double Meal",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Egg",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "972kCal",
+        "fat": "52.1g",
+        "carbs": "70.7g",
+        "protein": "32.0g",
+        "sat": "22.6g",
+        "sodium": "1129mg",
+        "fibre": "8.1g",
+        "sugar": "5.8g"
+      },
+      "sizes": [
+        {
+          "label": "Regular",
+          "product_cals": "972",
+          "product_fats": "52.1",
+          "product_carbs": "70.7",
+          "product_protein": "32.0",
+          "table_cals": "972kCal",
+          "table_satfat": "22.6g",
+          "table_transfat": "0.2g",
+          "table_cholesterol": "75.1mg",
+          "table_sodium": "1129mg",
+          "table_fiber": "8.1g",
+          "table_sugars": "5.8g",
+          "table_vitamina": "47.5ug",
+          "table_vitaminc": "3.1mg",
+          "table_calcium": "112.3mg",
+          "table_iron": "5.0mg"
+        },
+        {
+          "label": "Medium",
+          "product_cals": "1165",
+          "product_fats": "64.1",
+          "product_carbs": "84.7",
+          "product_protein": "35.8",
+          "table_cals": "1165kCal",
+          "table_satfat": "28.1g",
+          "table_transfat": "0.3g",
+          "table_cholesterol": "84.2mg",
+          "table_sodium": "1233mg",
+          "table_fiber": "8.9g",
+          "table_sugars": "4.5g",
+          "table_vitamina": "51.9ug",
+          "table_vitaminc": "3.3ug",
+          "table_calcium": "125.6mg",
+          "table_iron": "6.4mg"
+        },
+        {
+          "label": "Large",
+          "product_cals": "1289",
+          "product_fats": "70.0",
+          "product_carbs": "99.3",
+          "product_protein": "37.7",
+          "table_cals": "1289kCal",
+          "table_satfat": "30.8g",
+          "table_transfat": "0.3g",
+          "table_cholesterol": "82.6mg",
+          "table_sodium": "1342mg",
+          "table_fiber": "10.3g",
+          "table_sugars": "5.0g",
+          "table_vitamina": "51.9ug",
+          "table_vitaminc": "3.3mg",
+          "table_calcium": "136.4mg",
+          "table_iron": "9.1mg"
+        }
+      ]
+    },
+    {
+      "slug": "double-jalape-o-chicken-meal",
+      "cats": [
+        "combo-meals"
+      ],
+      "name": "Double Jalapeño Chicken Meal",
+      "allergens": [
+        "Wheat",
+        "Soy",
+        "Egg"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "859kCal",
+        "fat": "39.6g",
+        "carbs": "89.8g",
+        "protein": "30.7g",
+        "sat": "14.9g",
+        "sodium": "1558mg",
+        "fibre": "8.6g",
+        "sugar": "9.3g"
+      },
+      "sizes": [
+        {
+          "label": "Regular",
+          "product_cals": "859",
+          "product_fats": "39.6",
+          "product_carbs": "89.8",
+          "product_protein": "30.7",
+          "table_cals": "859kCal",
+          "table_satfat": "14.9g",
+          "table_transfat": "0g",
+          "table_cholesterol": "72mg",
+          "table_sodium": "1558mg",
+          "table_fiber": "8.6g",
+          "table_sugars": "9.3g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "4.7ug",
+          "table_calcium": "20.3mg",
+          "table_iron": "1mg"
+        },
+        {
+          "label": "Medium",
+          "product_cals": "1054",
+          "product_fats": "49.1",
+          "product_carbs": "113.1",
+          "product_protein": "33.7",
+          "table_cals": "1054kCal",
+          "table_satfat": "19.3g",
+          "table_transfat": "0g",
+          "table_cholesterol": "75.2mg",
+          "table_sodium": "1718mg",
+          "table_fiber": "10.7g",
+          "table_sugars": "10g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "4.7ug",
+          "table_calcium": "20.3mg",
+          "table_iron": "1mg"
+        },
+        {
+          "label": "Large",
+          "product_cals": "1176",
+          "product_fats": "55",
+          "product_carbs": "127.7",
+          "product_protein": "35.5",
+          "table_cals": "1176kCal",
+          "table_satfat": "22.1g",
+          "table_transfat": "0g",
+          "table_cholesterol": "77.2mg",
+          "table_sodium": "1842mg",
+          "table_fiber": "12g",
+          "table_sugars": "10.4g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "4.7ug",
+          "table_calcium": "20.3mg",
+          "table_iron": "1mg"
+        }
+      ]
+    },
+    {
+      "slug": "grand-chicken-spicy-hot-meal",
+      "cats": [
+        "combo-meals"
+      ],
+      "name": "Grand Chicken Spicy Meal",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Egg",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "1009kCal",
+        "fat": "53.2g",
+        "carbs": "92.7g",
+        "protein": "33.7g",
+        "sat": "22.4g",
+        "sodium": "1403mg",
+        "fibre": "10.6g",
+        "sugar": "8.3g"
+      },
+      "sizes": [
+        {
+          "label": "Regular",
+          "product_cals": "1009",
+          "product_fats": "53.2",
+          "product_carbs": "92.7",
+          "product_protein": "33.7",
+          "table_cals": "1009kCal",
+          "table_satfat": "22.4g",
+          "table_transfat": "0.2g",
+          "table_cholesterol": "59mg",
+          "table_sodium": "1403mg",
+          "table_fiber": "10.6g",
+          "table_sugars": "8.3g",
+          "table_vitamina": "1.2ug",
+          "table_vitaminc": "1.9ug",
+          "table_calcium": "90.5mg",
+          "table_iron": "0.2mg"
+        },
+        {
+          "label": "Medium",
+          "product_cals": "1204",
+          "product_fats": "62.7",
+          "product_carbs": "116",
+          "product_protein": "36.7",
+          "table_cals": "1204kCal",
+          "table_satfat": "26.8g",
+          "table_transfat": "0.2g",
+          "table_cholesterol": "61.7mg",
+          "table_sodium": "1563mg",
+          "table_fiber": "12.7g",
+          "table_sugars": "9g",
+          "table_vitamina": "1.2ug",
+          "table_vitaminc": "1.9ug",
+          "table_calcium": "90.5mg",
+          "table_iron": "0.2mg"
+        },
+        {
+          "label": "Large",
+          "product_cals": "1327",
+          "product_fats": "68.6",
+          "product_carbs": "130.5",
+          "product_protein": "38.5",
+          "table_cals": "1327kCal",
+          "table_satfat": "29.5g",
+          "table_transfat": "0.2g",
+          "table_cholesterol": "63.7mg",
+          "table_sodium": "1687mg",
+          "table_fiber": "14.1g",
+          "table_sugars": "9.4g",
+          "table_vitamina": "1.2ug",
+          "table_vitaminc": "1.9ug",
+          "table_calcium": "90.5mg",
+          "table_iron": "0.2mg"
+        }
+      ]
+    },
+    {
+      "slug": "jalapeno-chicken-meal",
+      "cats": [
+        "combo-meals"
+      ],
+      "name": "Jalapeño Chicken Meal",
+      "allergens": [
+        "Wheat",
+        "Egg",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "748kCal",
+        "fat": "32.2g",
+        "carbs": "88.2g",
+        "protein": "21.6g",
+        "sat": "13.3g",
+        "sodium": "1051mg",
+        "fibre": "8.1g",
+        "sugar": "8.1g"
+      },
+      "sizes": [
+        {
+          "label": "Regular",
+          "product_cals": "748",
+          "product_fats": "32.2",
+          "product_carbs": "88.2",
+          "product_protein": "21.6",
+          "table_cals": "748kCal",
+          "table_satfat": "13.3g",
+          "table_transfat": "0g",
+          "table_cholesterol": "41.1mg",
+          "table_sodium": "1051mg",
+          "table_fiber": "8.1g",
+          "table_sugars": "8.1g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "2.3ug",
+          "table_calcium": "10.1mg",
+          "table_iron": "0.5mg"
+        },
+        {
+          "label": "Medium",
+          "product_cals": "748",
+          "product_fats": "32.2",
+          "product_carbs": "88.2",
+          "product_protein": "21.6",
+          "table_cals": "748kCal",
+          "table_satfat": "13.3g",
+          "table_transfat": "0g",
+          "table_cholesterol": "41.1mg",
+          "table_sodium": "1051mg",
+          "table_fiber": "8.1g",
+          "table_sugars": "8.1g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "2.3ug",
+          "table_calcium": "10.1mg",
+          "table_iron": "0.5mg"
+        },
+        {
+          "label": "Large",
+          "product_cals": "1065",
+          "product_fats": "47.6",
+          "product_carbs": "126",
+          "product_protein": "26.4",
+          "table_cals": "1065kCal",
+          "table_satfat": "20.4g",
+          "table_transfat": "0g",
+          "table_cholesterol": "46.3mg",
+          "table_sodium": "1334mg",
+          "table_fiber": "11.5g",
+          "table_sugars": "9.2g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "2.3mg",
+          "table_calcium": "10.1mg",
+          "table_iron": "0.5mg"
+        }
+      ]
+    },
+    {
+      "slug": "mcchicken-meal",
+      "cats": [
+        "combo-meals"
+      ],
+      "name": "McChicken® Meal",
+      "allergens": [
+        "Wheat",
+        "Egg",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "934kCal",
+        "fat": "41.7g",
+        "carbs": "107.6g",
+        "protein": "26.6g",
+        "sat": "16.4g",
+        "sodium": "1142mg",
+        "fibre": "8.6g",
+        "sugar": "8.1g"
+      },
+      "sizes": [
+        {
+          "label": "Regular",
+          "product_cals": "934",
+          "product_fats": "41.7",
+          "product_carbs": "107.6",
+          "product_protein": "26.6",
+          "table_cals": "934kCal",
+          "table_satfat": "16.4g",
+          "table_transfat": "0.1g",
+          "table_cholesterol": "53.3mg",
+          "table_sodium": "1142mg",
+          "table_fiber": "8.6g",
+          "table_sugars": "8.1g",
+          "table_vitamina": "n/a",
+          "table_vitaminc": "n/a",
+          "table_calcium": "n/a",
+          "table_iron": "n/a"
+        },
+        {
+          "label": "Medium",
+          "product_cals": "1129",
+          "product_fats": "51.2",
+          "product_carbs": "130.9",
+          "product_protein": "29.6",
+          "table_cals": "1129kCal",
+          "table_satfat": "20.8g",
+          "table_transfat": "0.1g",
+          "table_cholesterol": "56.5mg",
+          "table_sodium": "1302mg",
+          "table_fiber": "10.7g",
+          "table_sugars": "8.8g",
+          "table_vitamina": "n/a",
+          "table_vitaminc": "n/a",
+          "table_calcium": "n/a",
+          "table_iron": "n/a"
+        },
+        {
+          "label": "Large",
+          "product_cals": "1251",
+          "product_fats": "57.1",
+          "product_carbs": "145.5",
+          "product_protein": "31.4",
+          "table_cals": "1251kCal",
+          "table_satfat": "23.6g",
+          "table_transfat": "0.1g",
+          "table_cholesterol": "58.5mg",
+          "table_sodium": "1425mg",
+          "table_fiber": "12.1g",
+          "table_sugars": "9.2g",
+          "table_vitamina": "n/a",
+          "table_vitaminc": "n/a",
+          "table_calcium": "n/a",
+          "table_iron": "n/a"
+        }
+      ]
+    },
+    {
+      "slug": "mccrispy-meal",
+      "cats": [
+        "combo-meals"
+      ],
+      "name": "McCrispy Meal",
+      "allergens": [
+        "Wheat",
+        "Soya"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "1093Cal",
+        "fat": "59.5g",
+        "carbs": "82.0g",
+        "protein": "28.6g",
+        "sat": "23.0g",
+        "sodium": "1031mg",
+        "fibre": "6.9g",
+        "sugar": "5.8g"
+      },
+      "sizes": [
+        {
+          "label": "Regular",
+          "product_cals": "1093",
+          "product_fats": "59.5",
+          "product_carbs": "82.0",
+          "product_protein": "28.6",
+          "table_cals": "1093Cal",
+          "table_satfat": "23.0g",
+          "table_transfat": "0g",
+          "table_cholesterol": "60.3mg",
+          "table_sodium": "1031mg",
+          "table_fiber": "6.9g",
+          "table_sugars": "5.8g",
+          "table_vitamina": "0.4UG",
+          "table_vitaminc": "7.2mg",
+          "table_calcium": "30.2mg",
+          "table_iron": "3.8mg"
+        },
+        {
+          "label": "Medium",
+          "product_cals": "1288",
+          "product_fats": "69.0",
+          "product_carbs": "105.3",
+          "product_protein": "31.6",
+          "table_cals": "1288Cal",
+          "table_satfat": "27.4g",
+          "table_transfat": "0g",
+          "table_cholesterol": "63.5mg",
+          "table_sodium": "1172mg",
+          "table_fiber": "9.0g",
+          "table_sugars": "6.5g",
+          "table_vitamina": "0.4UG",
+          "table_vitaminc": "7.2mg",
+          "table_calcium": "35.0mg",
+          "table_iron": "5.0mg"
+        },
+        {
+          "label": "Large",
+          "product_cals": "1412",
+          "product_fats": "74.9",
+          "product_carbs": "119.9",
+          "product_protein": "33.4",
+          "table_cals": "1412Cal",
+          "table_satfat": "30.1g",
+          "table_transfat": "0g",
+          "table_cholesterol": "65.5mg",
+          "table_sodium": "1282mg",
+          "table_fiber": "10.3g",
+          "table_sugars": "6.9g",
+          "table_vitamina": "0.4UG",
+          "table_vitaminc": "7.2mg",
+          "table_calcium": "45.8mg",
+          "table_iron": "7.7mg"
+        }
+      ]
+    },
+    {
+      "slug": "mcfeast-chicken",
+      "cats": [
+        "combo-meals"
+      ],
+      "name": "McFeast® Chicken Meal",
+      "allergens": [
+        "Milk , Wheat and Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "1184Cal",
+        "fat": "55.8g",
+        "carbs": "125.4g",
+        "protein": "44.1g",
+        "sat": "24.8g",
+        "sodium": "2077mg",
+        "fibre": "9.2g",
+        "sugar": "13.6g"
+      },
+      "sizes": [
+        {
+          "label": "Regular",
+          "product_cals": "1184",
+          "product_fats": "55.8",
+          "product_carbs": "125.4",
+          "product_protein": "44.1",
+          "table_cals": "1184Cal",
+          "table_satfat": "24.8g",
+          "table_transfat": "0.7g",
+          "table_cholesterol": "106.4mg",
+          "table_sodium": "2077mg",
+          "table_fiber": "9.2g",
+          "table_sugars": "13.6g",
+          "table_vitamina": "72.2ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "169mg",
+          "table_iron": "0mg"
+        },
+        {
+          "label": "Medium",
+          "product_cals": "1379",
+          "product_fats": "65.3",
+          "product_carbs": "148.6",
+          "product_protein": "47",
+          "table_cals": "1379Cal",
+          "table_satfat": "29.2g",
+          "table_transfat": "0.7g",
+          "table_cholesterol": "109.6mg",
+          "table_sodium": "2217mg",
+          "table_fiber": "11.3g",
+          "table_sugars": "14.3g",
+          "table_vitamina": "72.2ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "169mg",
+          "table_iron": "0mg"
+        },
+        {
+          "label": "Large",
+          "product_cals": "1501",
+          "product_fats": "71.2",
+          "product_carbs": "163.2",
+          "product_protein": "48.9",
+          "table_cals": "1501Cal",
+          "table_satfat": "32g",
+          "table_transfat": "0.7g",
+          "table_cholesterol": "111.6mg",
+          "table_sodium": "2324mg",
+          "table_fiber": "12.6g",
+          "table_sugars": "14.8g",
+          "table_vitamina": "72.2ug",
+          "table_vitaminc": "0mg",
+          "table_calcium": "169mg",
+          "table_iron": "0mg"
+        }
+      ]
+    },
+    {
+      "slug": "mcfeast-meal",
+      "cats": [
+        "combo-meals"
+      ],
+      "name": "McFeast® Meal",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Egg",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "1424kCal",
+        "fat": "85.2g",
+        "carbs": "103.7g",
+        "protein": "60.5g",
+        "sat": "40.4g",
+        "sodium": "1310mg",
+        "fibre": "14.1g",
+        "sugar": "13.6g"
+      },
+      "sizes": [
+        {
+          "label": "Regular",
+          "product_cals": "1424",
+          "product_fats": "85.2",
+          "product_carbs": "103.7",
+          "product_protein": "60.5",
+          "table_cals": "1424kCal",
+          "table_satfat": "40.4g",
+          "table_transfat": "2.3g",
+          "table_cholesterol": "163.2mg",
+          "table_sodium": "1310mg",
+          "table_fiber": "14.1g",
+          "table_sugars": "13.6g",
+          "table_vitamina": "103.4ug",
+          "table_vitaminc": "7.2mg",
+          "table_calcium": "217.8mg",
+          "table_iron": "7.9mg"
+        },
+        {
+          "label": "Medium",
+          "product_cals": "1619",
+          "product_fats": "94.7",
+          "product_carbs": "127.0",
+          "product_protein": "63.4",
+          "table_cals": "1619kCal",
+          "table_satfat": "44.8g",
+          "table_transfat": "2.3g",
+          "table_cholesterol": "166.4mg",
+          "table_sodium": "1452mg",
+          "table_fiber": "16.2g",
+          "table_sugars": "14.3g",
+          "table_vitamina": "103.4ug",
+          "table_vitaminc": "7.2mg",
+          "table_calcium": "222.6mg",
+          "table_iron": "9.1mg"
+        },
+        {
+          "label": "Large",
+          "product_cals": "1743",
+          "product_fats": "100.6",
+          "product_carbs": "141.6",
+          "product_protein": "65.3",
+          "table_cals": "1743kCal",
+          "table_satfat": "47.6g",
+          "table_transfat": "2.3g",
+          "table_cholesterol": "168.4mg",
+          "table_sodium": "1561mg",
+          "table_fiber": "17.5g",
+          "table_sugars": "14.7g",
+          "table_vitamina": "103.4ug",
+          "table_vitaminc": "7.2mg",
+          "table_calcium": "233.4mg",
+          "table_iron": "11.8mg"
+        }
+      ]
+    },
+    {
+      "slug": "mcfeast-chicken-spicy",
+      "cats": [
+        "combo-meals"
+      ],
+      "name": "McFeast® Spicy Meal",
+      "allergens": [
+        "Milk , Wheat and Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "1462kCal",
+        "fat": "2.4g",
+        "carbs": "171.9g",
+        "protein": "60.5g",
+        "sat": "42.0g",
+        "sodium": "1343mg",
+        "fibre": "14.4g",
+        "sugar": "11.9g"
+      },
+      "sizes": [
+        {
+          "label": "Regular",
+          "product_cals": "1462",
+          "product_fats": "2.4",
+          "product_carbs": "171.9",
+          "product_protein": "60.5",
+          "table_cals": "1462kCal",
+          "table_satfat": "42.0g",
+          "table_transfat": "2.4g",
+          "table_cholesterol": "171.9mg",
+          "table_sodium": "1343mg",
+          "table_fiber": "14.4g",
+          "table_sugars": "11.9g",
+          "table_vitamina": "123.7g",
+          "table_vitaminc": "7.2mg",
+          "table_calcium": "217.8mg",
+          "table_iron": "7.9mg"
+        },
+        {
+          "label": "Medium",
+          "product_cals": "1658",
+          "product_fats": "103.6",
+          "product_carbs": "175.1",
+          "product_protein": "63.4",
+          "table_cals": "1658kCal",
+          "table_satfat": "46.4g",
+          "table_transfat": "2.4g",
+          "table_cholesterol": "175.1mg",
+          "table_sodium": "1484mg",
+          "table_fiber": "16.5g",
+          "table_sugars": "12.6g",
+          "table_vitamina": "123.7ug",
+          "table_vitaminc": "7.2mg",
+          "table_calcium": "222.6mg",
+          "table_iron": "9.1mg"
+        },
+        {
+          "label": "Large",
+          "product_cals": "1781",
+          "product_fats": "109.5",
+          "product_carbs": "139.5",
+          "product_protein": "65.3",
+          "table_cals": "1781kCal",
+          "table_satfat": "49.2g",
+          "table_transfat": "2.4g",
+          "table_cholesterol": "177.1mg",
+          "table_sodium": "1594mg",
+          "table_fiber": "17.8g",
+          "table_sugars": "13.0g",
+          "table_vitamina": "123.7ug",
+          "table_vitaminc": "7.2mg",
+          "table_calcium": "233.4mg",
+          "table_iron": "11.8mg"
+        }
+      ]
+    },
+    {
+      "slug": "qpcd-meal",
+      "cats": [
+        "combo-meals"
+      ],
+      "name": "Quarter Pounder® with Cheese Deluxe Meal",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "999kCal",
+        "fat": "50.8g",
+        "carbs": "96.4g",
+        "protein": "34.3g",
+        "sat": "23.5g",
+        "sodium": "1045mg",
+        "fibre": "12g",
+        "sugar": "10.9g"
+      },
+      "sizes": [
+        {
+          "label": "Regular",
+          "product_cals": "999",
+          "product_fats": "50.8",
+          "product_carbs": "96.4",
+          "product_protein": "34.3",
+          "table_cals": "999kCal",
+          "table_satfat": "23.5g",
+          "table_transfat": "1g",
+          "table_cholesterol": "74.4mg",
+          "table_sodium": "1045mg",
+          "table_fiber": "12g",
+          "table_sugars": "10.9g",
+          "table_vitamina": "15.6ug",
+          "table_vitaminc": "4.3ug",
+          "table_calcium": "29.7mg",
+          "table_iron": "2.5mg"
+        },
+        {
+          "label": "Medium",
+          "product_cals": "1194",
+          "product_fats": "60.3",
+          "product_carbs": "119.7",
+          "product_protein": "37.2",
+          "table_cals": "1194kCal",
+          "table_satfat": "27.9g",
+          "table_transfat": "1g",
+          "table_cholesterol": "77.6mg",
+          "table_sodium": "1205mg",
+          "table_fiber": "14.1g",
+          "table_sugars": "11.6g",
+          "table_vitamina": "15.6ug",
+          "table_vitaminc": "4.3ug",
+          "table_calcium": "29.7mg",
+          "table_iron": "2.5mg"
+        },
+        {
+          "label": "Large",
+          "product_cals": "1317",
+          "product_fats": "66.2",
+          "product_carbs": "134.2",
+          "product_protein": "39.1",
+          "table_cals": "1317kCal",
+          "table_satfat": "30.6g",
+          "table_transfat": "1g",
+          "table_cholesterol": "79.6mg",
+          "table_sodium": "1329mg",
+          "table_fiber": "15.5g",
+          "table_sugars": "12g",
+          "table_vitamina": "15.6ug",
+          "table_vitaminc": "4.3ug",
+          "table_calcium": "29.7mg",
+          "table_iron": "2.5mg"
+        }
+      ]
+    },
+    {
+      "slug": "quarter-pounder-with-cheese-meal",
+      "cats": [
+        "combo-meals"
+      ],
+      "name": "Quarter Pounder® with Cheese Meal",
+      "allergens": [
+        "Wheat",
+        "Milk",
+        "Egg",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "928Cal",
+        "fat": "43.4g",
+        "carbs": "95.7g",
+        "protein": "34.0g",
+        "sat": "20.2g",
+        "sodium": "1135mg",
+        "fibre": "8.7g",
+        "sugar": "12.2g"
+      },
+      "sizes": [
+        {
+          "label": "Regular",
+          "product_cals": "928",
+          "product_fats": "43.4",
+          "product_carbs": "95.7",
+          "product_protein": "34.0",
+          "table_cals": "928Cal",
+          "table_satfat": "20.2g",
+          "table_transfat": "0.1g",
+          "table_cholesterol": "60.1mg",
+          "table_sodium": "1135mg",
+          "table_fiber": "8.7g",
+          "table_sugars": "12.2g",
+          "table_vitamina": "9.9ug",
+          "table_vitaminc": "8.9ug",
+          "table_calcium": "176.4mg",
+          "table_iron": "8.9mg"
+        },
+        {
+          "label": "Medium",
+          "product_cals": "1123",
+          "product_fats": "52.9",
+          "product_carbs": "119.0",
+          "product_protein": "37.0",
+          "table_cals": "1123kCal",
+          "table_satfat": "24.6g",
+          "table_transfat": "0.1g",
+          "table_cholesterol": "63.3mg",
+          "table_sodium": "1276mg",
+          "table_fiber": "10.8g",
+          "table_sugars": "12.9g",
+          "table_vitamina": "9.9ug",
+          "table_vitaminc": "8.9ug",
+          "table_calcium": "181.2mg",
+          "table_iron": "10.1mg"
+        },
+        {
+          "label": "Large",
+          "product_cals": "1247",
+          "product_fats": "58.8",
+          "product_carbs": "133.6",
+          "product_protein": "38.8",
+          "table_cals": "1247kCal",
+          "table_satfat": "27.4g",
+          "table_transfat": "0.1g",
+          "table_cholesterol": "65.3mg",
+          "table_sodium": "1386mg",
+          "table_fiber": "12.2g",
+          "table_sugars": "13.3g",
+          "table_vitamina": "9.9ug",
+          "table_vitaminc": "8.9mg",
+          "table_calcium": "192.0mg",
+          "table_iron": "12.8mg"
+        }
+      ]
+    },
+    {
+      "slug": "foldover-spicy-meal",
+      "cats": [
+        "combo-meals"
+      ],
+      "name": "Spicy Chicken Foldover Meal",
+      "allergens": [
+        "Wheat",
+        "Egg",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "1020kCal",
+        "fat": "49.1g",
+        "carbs": "104.6g",
+        "protein": "33.2g",
+        "sat": "16.4g",
+        "sodium": "1451mg",
+        "fibre": "10.7g",
+        "sugar": "8.2g"
+      },
+      "sizes": [
+        {
+          "label": "Regular",
+          "product_cals": "1020",
+          "product_fats": "49.1",
+          "product_carbs": "104.6",
+          "product_protein": "33.2",
+          "table_cals": "1020kCal",
+          "table_satfat": "16.4g",
+          "table_transfat": "0g",
+          "table_cholesterol": "80mg",
+          "table_sodium": "1451mg",
+          "table_fiber": "10.7g",
+          "table_sugars": "8.2g",
+          "table_vitamina": "16.3ug",
+          "table_vitaminc": "0ug",
+          "table_calcium": "12.9mg",
+          "table_iron": "1.3mg"
+        },
+        {
+          "label": "Medium",
+          "product_cals": "1215",
+          "product_fats": "58.6",
+          "product_carbs": "127.9",
+          "product_protein": "36.2",
+          "table_cals": "1215kCal",
+          "table_satfat": "20.8g",
+          "table_transfat": "0g",
+          "table_cholesterol": "84mg",
+          "table_sodium": "1611mg",
+          "table_fiber": "12.8g",
+          "table_sugars": "8.9g",
+          "table_vitamina": "16.3ug",
+          "table_vitaminc": "0ug",
+          "table_calcium": "12.9mg",
+          "table_iron": "1.3mg"
+        },
+        {
+          "label": "Large",
+          "product_cals": "1337",
+          "product_fats": "64.5",
+          "product_carbs": "142.4",
+          "product_protein": "38",
+          "table_cals": "1337kCal",
+          "table_satfat": "23.5g",
+          "table_transfat": "0g",
+          "table_cholesterol": "86mg",
+          "table_sodium": "1735mg",
+          "table_fiber": "14.1g",
+          "table_sugars": "9.4g",
+          "table_vitamina": "16.3ug",
+          "table_vitaminc": "0ug",
+          "table_calcium": "12.9mg",
+          "table_iron": "1.3mg"
+        }
+      ]
+    },
+    {
+      "slug": "veggie-meal",
+      "cats": [
+        "combo-meals"
+      ],
+      "name": "Veggie Burger Meal",
+      "allergens": [
+        "Wheat",
+        "Soy"
+      ],
+      "hasAllergenCard": true,
+      "n": {
+        "cal": "847kCal",
+        "fat": "31.7g",
+        "carbs": "115.3g",
+        "protein": "18.4g",
+        "sat": "15.1g",
+        "sodium": "1014mg",
+        "fibre": "11.2g",
+        "sugar": "13g"
+      },
+      "sizes": [
+        {
+          "label": "Regular",
+          "product_cals": "847",
+          "product_fats": "31.7",
+          "product_carbs": "115.3",
+          "product_protein": "18.4",
+          "table_cals": "847kCal",
+          "table_satfat": "15.1g",
+          "table_transfat": "0g",
+          "table_cholesterol": "15.1mg",
+          "table_sodium": "1014mg",
+          "table_fiber": "11.2g",
+          "table_sugars": "13g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "9.8ug",
+          "table_calcium": "60.6mg",
+          "table_iron": "1.7mg"
+        },
+        {
+          "label": "Meduim",
+          "product_cals": "1042",
+          "product_fats": "41.2",
+          "product_carbs": "138.6",
+          "product_protein": "21.3",
+          "table_cals": "1042kCal",
+          "table_satfat": "19.5g",
+          "table_transfat": "0g",
+          "table_cholesterol": "18.3mg",
+          "table_sodium": "1174mg",
+          "table_fiber": "13.3g",
+          "table_sugars": "13.7g",
+          "table_vitamina": "0ug",
+          "table_vitaminc": "9.8ug",
+          "table_calcium": "60.6mg",
+          "table_iron": "1.7mg"
+        },
+        {
+          "label": "Large",
+          "product_cals": "1165",
+          "product_fats": "47.1",
+          "product_carbs": "153.2",
+          "product_protein": "23.2",
+          "table_cals": "1165kCal",
+          "table_satfat": "22.2g",
+          "table_transfat": "0g",
+          "table_cholesterol": "20.3mg",
+          "table_sodium": "1297mg",
+          "table_fiber": "14.6g",
+          "table_sugars": "14.2g",
+          "table_vitamina": "0g",
+          "table_vitaminc": "9.8ug",
+          "table_calcium": "60.6mg",
+          "table_iron": "1.7mg"
+        }
+      ]
+    }
+  ]
+}

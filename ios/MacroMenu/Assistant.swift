@@ -247,5 +247,9 @@ enum Assistant {
                                                "taco bell": "us-tacobell", "tacobell": "us-tacobell", "panda": "us-panda", "panda express": "us-panda",
                                                "burger king": "hj", "bk": "hj", "popeyes": "us-popeyes", "popeye's": "us-popeyes",
                                                // Canada, UK and New Zealand menus.
-                                               "tims": "ca-tims", "timmies": "ca-tims", "tim hortons": "ca-tims", "greggs": "uk-greggs", "maccies": "mcd", "mickey d's": "mcd"]
+                                               "tims": "ca-tims", "timmies": "ca-tims", "tim hortons": "ca-tims", "greggs": "uk-greggs", "maccies": "mcd", "mickey d's": "mcd",
+                                               // South African menu.
+                                               "wimpy": "za-wimpy", "debonairs": "za-debonairs", "debonairs pizza": "za-debonairs", "kauai": "za-kauai",
+                                               // Indian menu.
+                                               "pizza hut": "in-pizzahut", "pizzahut": "in-pizzahut"]
 }

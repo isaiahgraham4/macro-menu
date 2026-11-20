@@ -9,6 +9,8 @@ enum MenuRegion: String, CaseIterable, Identifiable, Sendable {
     case unitedStates = "US"
     case canada = "CA"
     case unitedKingdom = "GB"
+    case southAfrica = "ZA"
+    case india = "IN"
 
     var id: String { rawValue }
     var name: String {
@@ -18,6 +20,8 @@ enum MenuRegion: String, CaseIterable, Identifiable, Sendable {
         case .unitedStates: "United States"
         case .canada: "Canada"
         case .unitedKingdom: "United Kingdom"
+        case .southAfrica: "South Africa"
+        case .india: "India"
         }
     }
     /// Short name for "Bundled … menu data": "Australian", "US".
@@ -28,6 +32,8 @@ enum MenuRegion: String, CaseIterable, Identifiable, Sendable {
         case .unitedStates: "US"
         case .canada: "Canadian"
         case .unitedKingdom: "UK"
+        case .southAfrica: "South African"
+        case .india: "Indian"
         }
     }
     /// What this country's chain ids start with ("us-mcd", "ca-mcd"); Australia's ids have none ("mcd").
@@ -38,10 +44,12 @@ enum MenuRegion: String, CaseIterable, Identifiable, Sendable {
         case .unitedStates: "us-"
         case .canada: "ca-"
         case .unitedKingdom: "uk-"
+        case .southAfrica: "za-"
+        case .india: "in-"
         }
     }
     /// Bundled menu file: `MenuData.json` (`Scripts/export-menu.cjs`), `MenuData-US.json` (`Scripts/us/build-us-menu.py`), or
-    /// `MenuData-CA.json`, `-GB` and `-NZ` (`Scripts/intl/build-intl-menu.py`).
+    /// `MenuData-CA.json`, `-GB`, `-NZ`, `-ZA` and `-IN` (`Scripts/intl/build-intl-menu.py`).
     var menuFile: String { self == .australia ? "MenuData" : "MenuData-\(rawValue)" }
     var menuURL: URL? { Bundle.main.url(forResource: menuFile, withExtension: "json") }
     var hasSupermarkets: Bool { self == .australia }
@@ -58,6 +66,8 @@ enum MenuRegion: String, CaseIterable, Identifiable, Sendable {
         case .unitedStates: "en:united-states"
         case .canada: "en:canada"
         case .unitedKingdom: "en:united-kingdom"
+        case .southAfrica: "en:south-africa"
+        case .india: "en:india"
         }
     }
     /// The App Store country chains' ordering apps are linked in.
@@ -68,6 +78,7 @@ enum MenuRegion: String, CaseIterable, Identifiable, Sendable {
         case .australia: "Bundled Australian menu snapshot from 24 September 2026."
         case .unitedStates: "Bundled US menu snapshot from 12–14 November 2026, from each chain’s own published nutrition."
         case .newZealand, .canada, .unitedKingdom: "Bundled \(menuLabel) menu snapshot from 14 November 2026, from each chain’s own published nutrition."
+        case .southAfrica, .india: "Bundled \(menuLabel) menu snapshot from 20 November 2026, from each chain’s own published nutrition."
         }
     }
     /// The example under Find's Ask box.
@@ -78,6 +89,8 @@ enum MenuRegion: String, CaseIterable, Identifiable, Sendable {
         case .unitedStates: "Ask Leanrrr: 40 g protein at Chick-fil-A"
         case .canada: "Ask Leanrrr: 40 g protein at Tim Hortons"
         case .unitedKingdom: "Ask Leanrrr: 30 g protein at Greggs"
+        case .southAfrica: "Ask Leanrrr: 40 g protein at Nando's"
+        case .india: "Ask Leanrrr: 30 g protein at KFC"
         }
     }
 
@@ -99,6 +112,12 @@ enum MenuRegion: String, CaseIterable, Identifiable, Sendable {
         case .newZealand: [("nz-mcd:double-quarter-pounder-w-cheese", "Burger only · no sides or drink"),
                            ("nz-dominos:mega-meatlovers-classic-crust-slice", "One slice of a large classic crust"),
                            ("nz-mcd:chicken-mcnuggets-20-pc", "20 nuggets · no sauce, sides or drink")]
+        case .southAfrica: [("za-nandos:1-2-chicken", "Half chicken · no sides or drink"),
+                            ("za-mcd:mcfeast", "Burger only · no sides or drink"),
+                            ("za-wimpy:mega-breakfast", "As plated · no drink")]
+        case .india: [("in-mcd:veg-maharaja-mac", "Burger only · no sides or drink"),
+                      ("in-kfc:hot-crispy-chicken-2-pc", "2 pieces · no sides or drink"),
+                      ("in-pizzahut:margherita-pizza-medium-pan", "A whole medium pan pizza, 6 slices")]
         }
     }
 
@@ -114,6 +133,8 @@ enum MenuRegion: String, CaseIterable, Identifiable, Sendable {
         case "NZ": .newZealand
         case "CA": .canada
         case "GB": .unitedKingdom
+        case "ZA": .southAfrica
+        case "IN": .india
         default: .australia
         }
     }

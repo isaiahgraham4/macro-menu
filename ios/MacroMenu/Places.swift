@@ -70,6 +70,16 @@ struct ChainPlace: Sendable {
         "uk-greggs": ChainPlace(query: "Greggs", match: ["greggs"], appName: "Greggs", appStoreID: 1098233626, appLink: nil, store: "gb"),
         "nz-mcd": ChainPlace(query: "McDonald's", match: ["mcdonald"], appName: "McDonald's", appStoreID: 1217507712, appLink: nil, store: "nz"),
         "nz-dominos": ChainPlace(query: "Domino's Pizza", match: ["domino"], appName: "Domino's", appStoreID: 415419062, appLink: nil, store: "nz"),
+        // South African menu. App Store ids from the ZA store (checked 20 Nov 2026); no universal links yet.
+        "za-mcd": ChainPlace(query: "McDonald's", match: ["mcdonald"], appName: "McDonald's", appStoreID: 1217507712, appLink: nil, store: "za"),
+        "za-nandos": ChainPlace(query: "Nando's", match: ["nando"], appName: "Nando's", appStoreID: 1316416867, appLink: nil, store: "za"),
+        "za-wimpy": ChainPlace(query: "Wimpy", match: ["wimpy"], appName: "Wimpy Rewards", appStoreID: 1514418099, appLink: nil, store: "za"),
+        "za-debonairs": ChainPlace(query: "Debonairs Pizza", match: ["debonairs"], appName: "Debonairs Pizza", appStoreID: 1048945719, appLink: nil, store: "za"),
+        "za-kauai": ChainPlace(query: "Kauai", match: ["kauai"], appName: "Kauai", appStoreID: 1585206786, appLink: nil, store: "za"),
+        // Indian menu. App Store ids from the IN store (checked 20 Nov 2026); no universal links yet.
+        "in-mcd": ChainPlace(query: "McDonald's", match: ["mcdonald"], appName: "McDonald's", appStoreID: 1217507712, appLink: nil, store: "in"),
+        "in-kfc": ChainPlace(query: "KFC", match: ["kfc"], appName: "KFC India", appStoreID: 915824379, appLink: nil, store: "in"),
+        "in-pizzahut": ChainPlace(query: "Pizza Hut", match: ["pizza hut"], appName: "Pizza Hut India", appStoreID: 1597873835, appLink: nil, store: "in"),
     ]
 }
 

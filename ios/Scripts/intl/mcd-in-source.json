@@ -1,0 +1,1220 @@
+{
+"checked": "2026-11-20",
+"items": [
+{
+"page": "p01.png",
+"section": "BREAKFAST",
+"name": "Veg McMuffin®",
+"allergens": "Cereal containing gluten, Milk, Soya",
+"size_text": [],
+"n": {
+"cal": "303.35kCal",
+"sat": "7.29g",
+"protein": "10.22g",
+"carbs": "38.86g",
+"fat": "11.78g",
+"sugar": "3.02g",
+"chol": "25.31mg",
+"added_sugar": "0.75g",
+"trans": "0.18g",
+"sodium": "804.63mg"
+}
+},
+{
+"page": "p02.png",
+"section": "BREAKFAST",
+"name": "Veg Supreme McMuffin®",
+"allergens": "Cereal containing gluten, Milk, Soya",
+"size_text": [],
+"n": {
+"cal": "347.96kCal",
+"sat": "8.00g",
+"protein": "10.50g",
+"carbs": "40.96g",
+"fat": "15.78g",
+"sugar": "4.22g",
+"chol": "27.31mg",
+"added_sugar": "2.00g",
+"trans": "0.18g",
+"sodium": "1004.33mg"
+}
+},
+{
+"page": "p03.png",
+"section": "BREAKFAST",
+"name": "Hot Cake",
+"allergens": "Cereal containing gluten, Milk, Soya",
+"size_text": [],
+"n": {
+"cal": "226.00kCal",
+"sat": "0.70g",
+"protein": "6g",
+"carbs": "34.00g",
+"fat": "6.60g",
+"sugar": "9.1g",
+"chol": "1.0mg",
+"added_sugar": "7.80g",
+"trans": "0.10g",
+"sodium": "371.00mg"
+}
+},
+{
+"page": "p04.png",
+"section": "BREAKFAST",
+"name": "Hash Brown",
+"allergens": "Cereal containing gluten, Milk, Soya",
+"size_text": [],
+"n": {
+"cal": "136.80kCal",
+"sat": "3.42g",
+"protein": "1.93g",
+"carbs": "15.63g",
+"fat": "7.32g",
+"sugar": "0.32g",
+"chol": "0.64 mg",
+"added_sugar": "0.00g",
+"trans": "0.06 g",
+"sodium": "275.26 mg"
+}
+},
+{
+"page": "p05.png",
+"section": "BREAKFAST",
+"name": "Egg & Cheese Muffin®",
+"allergens": "Cereal containing gluten, Milk, Soya",
+"size_text": [],
+"n": {
+"cal": "283.46kCal",
+"sat": "6.92 g",
+"protein": "14.05g",
+"carbs": "28.12 g",
+"fat": "12.31g",
+"sugar": "2.38 g",
+"chol": "233.30mg",
+"added_sugar": "0.75 g",
+"trans": "0.17 g",
+"sodium": "519.31 mg"
+}
+},
+{
+"page": "p06.png",
+"section": "BREAKFAST",
+"name": "Egg & Sausage McMuffin®",
+"allergens": "Cereal containing gluten, Milk, Egg, Soya",
+"size_text": [],
+"n": {
+"cal": "350.46kCal",
+"sat": "8.08g",
+"protein": "22.46g",
+"carbs": "28.87g",
+"fat": "15.94g",
+"sugar": "2.61g",
+"chol": "264.80mg",
+"added_sugar": "0.75g",
+"trans": "0.22g",
+"sodium": "804.04mg"
+}
+},
+{
+"page": "p07.png",
+"section": "BREAKFAST",
+"name": "Sausage McMuffin®",
+"allergens": "Cereal containing gluten, Milk, Egg, Soya",
+"size_text": [],
+"n": {
+"cal": "281.44kCal",
+"sat": "6.04g",
+"protein": "16.25g",
+"carbs": "28.62g",
+"fat": "10.81g",
+"sugar": "2.38g",
+"chol": "53.02mg",
+"added_sugar": "0.75g",
+"trans": "0.17g",
+"sodium": "742.60mg"
+}
+},
+{
+"page": "p08.png",
+"section": "BREAKFAST",
+"name": "Cappuccino",
+"allergens": "Milk",
+"size_text": [],
+"n": {
+"cal": "136.39kCal",
+"sat": "5.06g",
+"protein": "7.97g",
+"carbs": "9.98g",
+"fat": "7.18g",
+"sugar": "6.14g",
+"chol": "14.73mg",
+"added_sugar": "1.51g",
+"trans": "0.00g",
+"sodium": "111.86mg"
+}
+},
+{
+"page": "p09.png",
+"section": "BURGERS",
+"name": "McAloo Tikki Burger®",
+"allergens": "Cereal containing gluten, Milk, Soya",
+"size_text": [],
+"n": {
+"cal": "339.52kCal",
+"sat": "4.27g",
+"protein": "8.50g",
+"carbs": "50.27g",
+"fat": "11.31g",
+"sugar": "7.05g",
+"chol": "1.47mg",
+"added_sugar": "4.07g",
+"trans": "0.20g",
+"sodium": "545.34mg"
+}
+},
+{
+"page": "p10.png",
+"section": "BURGERS",
+"name": "McEgg® Burger",
+"allergens": "Cereal containing gluten, Milk, Egg Soya",
+"size_text": [],
+"n": {
+"cal": "262.77kCal",
+"sat": "0.80g",
+"protein": "12.00g",
+"carbs": "31.00g",
+"fat": "10.00g",
+"sugar": "5.00g",
+"chol": "76.88mg",
+"added_sugar": "1.60g",
+"trans": "0.10g",
+"sodium": "675.00mg"
+}
+},
+{
+"page": "p11.png",
+"section": "BURGERS",
+"name": "McVeggie® Burger",
+"allergens": "Cereal containing gluten, Milk, Soya",
+"size_text": [],
+"n": {
+"cal": "387.88kCal",
+"sat": "5.34g",
+"protein": "10.24g",
+"carbs": "56.54g",
+"fat": "13.83g",
+"sugar": "7.90g",
+"chol": "2.49mg",
+"added_sugar": "4.49g",
+"trans": "0.16g",
+"sodium": "706.13mg"
+}
+},
+{
+"page": "p12.png",
+"section": "BURGERS",
+"name": "Veg Surprise Burger",
+"allergens": "Cereal containing gluten, Milk, Soya",
+"size_text": [],
+"n": {
+"cal": "313.44kCal",
+"sat": "3.73g",
+"protein": "5.71g",
+"carbs": "39.84g",
+"fat": "14.95g",
+"sugar": "5.66g",
+"chol": "0.00mg",
+"added_sugar": "1.64g",
+"trans": "0.14g",
+"sodium": "504.19mg"
+}
+},
+{
+"page": "p13.png",
+"section": "BURGERS",
+"name": "Crispy Veggie Burger",
+"allergens": "Cereal containinggluten, Milk, Soya",
+"size_text": [],
+"n": {
+"cal": "482.33kCal",
+"sat": "6.64g",
+"protein": "9.9g",
+"carbs": "62.37g",
+"fat": "19.8g",
+"sugar": "10.56g",
+"chol": "3mg",
+"added_sugar": "1.22g",
+"trans": "1g",
+"sodium": "1080.62mg"
+}
+},
+{
+"page": "p14.png",
+"section": "BURGERS",
+"name": "McChicken® Burger",
+"allergens": "Cereal containing gluten, Milk, Soya, Fish",
+"size_text": [],
+"n": {
+"cal": "396.77kCal",
+"sat": "5.47g",
+"protein": "15.66g",
+"carbs": "47.98g",
+"fat": "15.70g",
+"sugar": "5.53g",
+"chol": "31.17mg",
+"added_sugar": "4.49g",
+"trans": "0.16g",
+"sodium": "766.33mg"
+}
+},
+{
+"page": "p15.png",
+"section": "BURGERS",
+"name": "Veg Maharaja Mac®",
+"allergens": "Cereal containing gluten, Milk, Soya",
+"size_text": [],
+"n": {
+"cal": "832.67kCal",
+"protein": "24.17g",
+"fat": "37.94g",
+"sat": "16.83g",
+"carbs": "93.84g",
+"sugar": "11.52g",
+"chol": "36.19mg",
+"added_sugar": "6.92g",
+"trans": "0.28g",
+"sodium": "1529.22mg"
+}
+},
+{
+"page": "p16.png",
+"section": "BURGERS",
+"name": "McSpicy® Chicken Burger",
+"allergens": "Cereal containing gluten, Milk, Egg Soya",
+"size_text": [],
+"n": {
+"cal": "449.92kCal",
+"sat": "7.63g",
+"protein": "21.46g",
+"carbs": "46.08g",
+"fat": "19.36g",
+"sugar": "5.88g",
+"chol": "66.04mg",
+"added_sugar": "4.49g",
+"trans": "0.18g",
+"sodium": "928.52mg"
+}
+},
+{
+"page": "p17.png",
+"section": "BURGERS",
+"name": "Chicken McGrill® Burger",
+"allergens": "Cereal containing gluten, Milk, Soya",
+"size_text": [],
+"n": {
+"cal": "274.17kCal",
+"sat": "2.64g",
+"protein": "13.19g",
+"carbs": "36.18g",
+"fat": "8.52g",
+"sugar": "6.28g",
+"chol": "16.60mg",
+"added_sugar": "4.53g",
+"trans": "0.00g",
+"sodium": "528.33mg"
+}
+},
+{
+"page": "p18.png",
+"section": "BURGERS",
+"name": "Chicken Maharaja Mac®",
+"allergens": "Cereal containing gluten, Milk, Soya",
+"size_text": [],
+"n": {
+"cal": "689.12kCal",
+"sat": "10.33g",
+"protein": "34.00g",
+"carbs": "55.39g",
+"fat": "36.69g",
+"sugar": "8.92g",
+"chol": "81.49mg",
+"added_sugar": "6.14g",
+"trans": "0.25g",
+"sodium": "1854.71mg"
+}
+},
+{
+"page": "p19.png",
+"section": "BURGERS",
+"name": "Filet O Fish® Burger",
+"allergens": "Cereal containing gluten, Milk,Egg Fish, Soya",
+"size_text": [],
+"n": {
+"cal": "345.11kCal",
+"sat": "5.79g",
+"protein": "15.44g",
+"carbs": "38.85g",
+"fat": "14.16g",
+"sugar": "5.58g",
+"chol": "32.83mg",
+"added_sugar": "3.54g",
+"trans": "0.21g",
+"sodium": "530.54mg"
+}
+},
+{
+"page": "p20.png",
+"section": "BURGERS",
+"name": "McSpicy® PaneerBurger",
+"allergens": "Cereal containing gluten, Milk, Soya",
+"size_text": [],
+"n": {
+"cal": "646.52kCal",
+"sat": "17.12g",
+"protein": "20.29g",
+"carbs": "52.33g",
+"fat": "39.45g",
+"sugar": "8.35g",
+"chol": "21.85mg",
+"added_sugar": "5.27g",
+"trans": "0.18g",
+"sodium": "1074.58mg"
+}
+},
+{
+"page": "p21.png",
+"section": "BURGERS",
+"name": "McCrispy® Chicken Burger",
+"allergens": "Cereal containing gluten, Milk, Soya",
+"size_text": [],
+"n": {
+"cal": "507.72kCal",
+"sat": "10.38g",
+"protein": "22.32g",
+"carbs": "49.38g",
+"fat": "27.65g",
+"sugar": "7.7g",
+"chol": "70.65mg",
+"added_sugar": "1.1g",
+"trans": "0g",
+"sodium": "1003.78mg"
+}
+},
+{
+"page": "p22.png",
+"section": "BURGERS",
+"name": "Butter Paneer Grilled Burger",
+"allergens": "Cereal containing gluten, Milk, Soya",
+"size_text": [],
+"n": {
+"cal": "382.26Cal",
+"sat": "8.29g",
+"protein": "12.85g",
+"carbs": "44.12g",
+"fat": "17.15g",
+"sugar": "8.78g",
+"chol": "6.62mg",
+"added_sugar": "5.08g",
+"trans": "0.00g",
+"sodium": "900.37mg"
+}
+},
+{
+"page": "p27.png",
+"section": "McCafé.",
+"name": "Iced Americano",
+"allergens": "No Allergens",
+"size_text": [],
+"n": {
+"cal": "6.31kCal",
+"sat": "0.00g",
+"protein": "1.02g",
+"carbs": "0.22g",
+"fat": "0.07g",
+"sugar": "0.00g",
+"chol": "0.00mg",
+"added_sugar": "0.00g",
+"trans": "0.00g",
+"sodium": "2.78mg"
+}
+},
+{
+"page": "p28.png",
+"section": "McCafé.",
+"name": "Americano",
+"allergens": "No Allergens",
+"size_text": [],
+"n": {
+"cal": "10.69kCal",
+"sat": "0.00g",
+"protein": "1.84g",
+"carbs": "0.43g",
+"fat": "0.18g",
+"sugar": "0.00g",
+"chol": "0.00mg",
+"added_sugar": "0.00g",
+"trans": "0.00g",
+"sodium": "4.21mg"
+}
+},
+{
+"page": "p29.png",
+"section": "McCafé.",
+"name": "Mocha",
+"allergens": "Milk",
+"size_text": [],
+"n": {
+"cal": "331.42kCal",
+"sat": "6.19g",
+"protein": "12.85g",
+"carbs": "50.08g",
+"fat": "8.86g",
+"sugar": "20.63g",
+"chol": "21.50mg",
+"added_sugar": "10.69g",
+"trans": "0.00g",
+"sodium": "160.31mg"
+}
+},
+{
+"page": "p30.png",
+"section": "McCafé.",
+"name": "Espresso",
+"allergens": "No Allergens",
+"size_text": [],
+"n": {
+"cal": "6.38kCal",
+"sat": "0.04g",
+"protein": "0.65g",
+"carbs": "0.75g",
+"fat": "0.09g",
+"sugar": "0.60g",
+"chol": "0.00mg",
+"added_sugar": "0.57g",
+"trans": "0.00g",
+"sodium": "0.06mg"
+}
+},
+{
+"page": "p31.png",
+"section": "McCafe.",
+"name": "Macchiato",
+"allergens": "Milk",
+"size_text": [],
+"n": {
+"cal": "44.90kCal",
+"sat": "1.31g",
+"protein": "1.91g",
+"carbs": "5.05g",
+"fat": "1.90g",
+"sugar": "2.24g",
+"chol": "5.14mg",
+"added_sugar": "0.62g",
+"trans": "0.00g",
+"sodium": "23.92mg"
+}
+},
+{
+"page": "p32.png",
+"section": "McCafe.",
+"name": "Velvety Hot Chocolate",
+"allergens": "Milk & Soya",
+"size_text": [],
+"n": {
+"cal": "454.80 kCal",
+"sat": "23.40g",
+"protein": "7.00g",
+"carbs": "34.80 g",
+"fat": "31.90g",
+"sugar": "29.40 g",
+"chol": "26.00 mg",
+"added_sugar": "22.20 g",
+"trans": "0.00g",
+"sodium": "91.80mg"
+}
+},
+{
+"page": "p33.png",
+"section": "McCafé.",
+"name": "Cold Coffee Frappe",
+"allergens": "Milk & Soya",
+"size_text": [],
+"n": {
+"cal": "364.00kCal",
+"sat": "12.64g",
+"protein": "5.50g",
+"carbs": "55.90g",
+"fat": "13.15g",
+"sugar": "33.57g",
+"chol": "8.18mg",
+"added_sugar": "21.28g",
+"trans": "0.00g",
+"sodium": "290.509mg"
+}
+},
+{
+"page": "p34.png",
+"section": "McCafé.",
+"name": "Caramel Frappe",
+"allergens": "Milk & Soya",
+"size_text": [],
+"n": {
+"cal": "445.38kCal",
+"sat": "12.38g",
+"protein": "4.13g",
+"carbs": "77.12g",
+"fat": "13.38g",
+"sugar": "52.00g",
+"chol": "7.80mg",
+"added_sugar": "35.33g",
+"trans": "0.00g",
+"sodium": "312.35mg"
+}
+},
+{
+"page": "p35.png",
+"section": "McCafé.",
+"name": "Chocolate Shake",
+"allergens": "Milk & Soya",
+"size_text": [],
+"n": {
+"cal": "467.67kCal",
+"sat": "9.30g",
+"protein": "3.78g",
+"carbs": "90.66g",
+"fat": "9.99g",
+"sugar": "76.95g",
+"chol": "8.30mg",
+"added_sugar": "52.44g",
+"trans": "0.00g",
+"sodium": "279.39mg"
+}
+},
+{
+"page": "p36.png",
+"section": "McCafé.",
+"name": "Strawberry Shake",
+"allergens": "Milk & Soya",
+"size_text": [],
+"n": {
+"cal": "452.34kCal",
+"sat": "6.24g",
+"protein": "3.57 g",
+"carbs": "94.53g",
+"fat": "6.66g",
+"sugar": "68.58g",
+"chol": "9.37mg",
+"added_sugar": "50.40g",
+"trans": "0.00g",
+"sodium": "264.36mg"
+}
+},
+{
+"page": "p37.png",
+"section": "McCafé.",
+"name": "Vanilla Oreo Shake",
+"allergens": "Cereal containing gluten, Milk, Soya, Sulphites",
+"size_text": [],
+"n": {
+"cal": "554.25kCal",
+"sat": "13.59g",
+"protein": "13.29g",
+"carbs": "85.92g",
+"fat": "17.49g",
+"sugar": "65.55g",
+"chol": "8.53mg",
+"added_sugar": "48.90g",
+"trans": "0.00g",
+"sodium": "393.66mg"
+}
+},
+{
+"page": "p38.png",
+"section": "McCafé.",
+"name": "Iced Latte",
+"allergens": "Milk",
+"size_text": [],
+"n": {
+"cal": "93.38kCal",
+"sat": "3.04g",
+"protein": "5.15g",
+"carbs": "7.50g",
+"fat": "4.69g",
+"sugar": "7.35g",
+"chol": "22.50mg",
+"added_sugar": "0.00g",
+"trans": "0.00g",
+"sodium": "70.56mg"
+}
+},
+{
+"page": "p39.png",
+"section": "McCafé.",
+"name": "Iced Coffee",
+"allergens": "Milk",
+"size_text": [],
+"n": {
+"cal": "228.38kCal",
+"sat": "3.79g",
+"protein": "6.05g",
+"carbs": "37.70g",
+"fat": "6.00g",
+"sugar": "37.00g",
+"chol": "28.50mg",
+"added_sugar": "25.77g",
+"trans": "0.00g",
+"sodium": "93.00mg"
+}
+},
+{
+"page": "p40.png",
+"section": "McCafé.",
+"name": "Watermelon Cooler",
+"allergens": "No Allergens",
+"size_text": [],
+"n": {
+"cal": "112.64kCal",
+"sat": "0.01g",
+"protein": "0.04g",
+"carbs": "28.00g",
+"fat": "0.03g",
+"sugar": "27.60g",
+"chol": "0.00mg",
+"added_sugar": "27.50g",
+"trans": "0.00g",
+"sodium": "502.60mg"
+}
+},
+{
+"page": "p41.png",
+"section": "McCafé.",
+"name": "Peach Iced Tea",
+"allergens": "No Allergens",
+"size_text": [],
+"n": {
+"cal": "157.22kCal",
+"sat": "0.00g",
+"protein": "0.83g",
+"carbs": "38.40g",
+"fat": "0.03g",
+"sugar": "23.68g",
+"chol": "0.00mg",
+"added_sugar": "2.24g",
+"trans": "0.00g",
+"sodium": "15.78mg"
+}
+},
+{
+"page": "p42.png",
+"section": "McCafe.",
+"name": "Skillet Cookies",
+"allergens": "Cereal containing gluten, Milk, Soya",
+"size_text": [],
+"n": {
+"cal": "304.88kCal",
+"sat": "6.00g",
+"protein": "4.88g",
+"carbs": "43.15g",
+"fat": "11.98g",
+"sugar": "29.20g",
+"chol": "4.03mg",
+"added_sugar": "25.68g",
+"trans": "0.00g",
+"sodium": "233.33mg"
+}
+},
+{
+"page": "p43.png",
+"section": "McCafé.",
+"name": "Garlic Marinara Toasty",
+"allergens": "Cereal containing gluten, Milk, Soya",
+"size_text": [],
+"n": {
+"cal": "213.68kCal",
+"sat": "6.05g",
+"protein": "9.1g",
+"carbs": "21.88g",
+"fat": "9.97g",
+"sugar": "3.57g",
+"chol": "24.7mg",
+"added_sugar": "1.12g",
+"trans": "0.52g",
+"sodium": "438.75mg"
+}
+},
+{
+"page": "p44.png",
+"section": "McCafe.",
+"name": "Butter Croissant",
+"allergens": "Cereal containing gluten, Milk",
+"size_text": [],
+"n": {
+"cal": "267.11kCal",
+"sat": "8.53g",
+"protein": "6.22g",
+"carbs": "31.36g",
+"fat": "12.98g",
+"sugar": "4.87g",
+"chol": "8mg",
+"added_sugar": "2.58g",
+"trans": "0.7g",
+"sodium": "264mg"
+}
+},
+{
+"page": "p45.png",
+"section": "McCafé.",
+"name": "Strawberry Cheesecake",
+"allergens": "Cereal containing gluten, Milk",
+"size_text": [],
+"n": {
+"cal": "337.27kCal",
+"sat": "14.25g",
+"protein": "4.8g",
+"carbs": "31.03g",
+"fat": "21.55g",
+"sugar": "24.79g",
+"chol": "64.82mg",
+"added_sugar": "19.9g",
+"trans": "1.21g",
+"sodium": "305.72mg"
+}
+},
+{
+"page": "p46.png",
+"section": "McCafe.",
+"name": "Latte",
+"allergens": "Milk",
+"size_text": [],
+"n": {
+"cal": "194.65kCal",
+"sat": "6.88g",
+"protein": "11.09g",
+"carbs": "15.95g",
+"fat": "9.61g",
+"sugar": "7.56g",
+"chol": "27.04mg",
+"added_sugar": "1.40g",
+"trans": "0.00g",
+"sodium": "157.03mg"
+}
+},
+{
+"page": "p47.png",
+"section": "McCafé.",
+"name": "Cappuccino",
+"allergens": "Milk",
+"size_text": [],
+"n": {
+"cal": "206.50kCal",
+"sat": "7.67g",
+"protein": "11.81g",
+"carbs": "15.52g",
+"fat": "10.80g",
+"sugar": "9.25g",
+"chol": "27.81mg",
+"added_sugar": "2.20g",
+"trans": "0.00g",
+"sodium": "159.26mg"
+}
+},
+{
+"page": "p48.png",
+"section": "SNACKS & SIDES",
+"name": "McFlavor Fries",
+"allergens": null,
+"size_text": [],
+"n": {
+"cal": "289.81kCal",
+"sat": "7.77g",
+"protein": "5.19g",
+"carbs": "29.98g",
+"fat": "15.54g",
+"sugar": "1.14g",
+"chol": "3.22mg",
+"added_sugar": "0.50g",
+"trans": "0.12g",
+"sodium": "329.84mg"
+}
+},
+{
+"page": "p49.png",
+"section": "SNACKS & SIDES",
+"name": "Pizza McPuff®",
+"allergens": null,
+"size_text": [],
+"n": {
+"cal": "225.21kCal",
+"sat": "5.72g",
+"protein": "5.45g",
+"carbs": "24.79g",
+"fat": "11.44g",
+"sugar": "2.73g",
+"chol": "5.17mg",
+"added_sugar": "0.35g",
+"trans": "0.09g",
+"sodium": "390.74mg"
+}
+},
+{
+"page": "p50.png",
+"section": "SNACKS & SIDES",
+"name": "Chicken Puff",
+"allergens": null,
+"size_text": [],
+"n": {
+"cal": "212.60kCal",
+"sat": "5.72g",
+"protein": "5.13g",
+"carbs": "22.28g",
+"fat": "11.44g",
+"sugar": "1.57g",
+"chol": "5.19mg",
+"added_sugar": "0.00g",
+"trans": "0.09g",
+"sodium": "407.41mg"
+}
+},
+{
+"page": "p51.png",
+"section": "SNACKS & SIDES",
+"name": "Spicy Chicken Wrap®",
+"allergens": null,
+"size_text": [],
+"n": {
+"cal": "567.19kCal",
+"sat": "12.54g",
+"protein": "23.74g",
+"carbs": "57.06g",
+"fat": "26.89g",
+"chol": "87.63mg",
+"added_sugar": "1.08g",
+"trans": "0.27g",
+"sodium": "1152.38mg"
+}
+},
+{
+"page": "p52.png",
+"section": "SNACKS & SIDES",
+"name": "Our World Famous Fries®",
+"allergens": null,
+"size_text": [],
+"n": {
+"cal": "215.77kCal",
+"sat": "4.97g",
+"protein": "3.38g",
+"carbs": "27.08g",
+"fat": "10.39g",
+"sugar": "0.39g",
+"chol": "0.77mg",
+"added_sugar": "0.00g",
+"trans": "0.08g",
+"sodium": "153.15mg"
+}
+},
+{
+"page": "p53.png",
+"section": "SNACKS & SIDES",
+"name": "Egg® McWrap",
+"allergens": null,
+"size_text": [],
+"n": {
+"cal": "283.78kCal",
+"sat": "4.90g",
+"protein": "7.34g",
+"carbs": "29.48g",
+"fat": "15.13g",
+"sugar": "3.55g",
+"chol": "172.89mg",
+"added_sugar": "1.47 g",
+"trans": "0.20g",
+"sodium": "414.83mg"
+}
+},
+{
+"page": "p54.png",
+"section": "SNACKS & SIDES",
+"name": "Tandoori Chicken McWrap",
+"allergens": null,
+"size_text": [],
+"n": {
+"cal": "312.10kCal",
+"sat": "5.20g",
+"protein": "13.60g",
+"carbs": "30.83g",
+"fat": "14.90g",
+"sugar": "3.10g",
+"chol": "35.11mg",
+"added_sugar": "1.47g",
+"trans": "0.14g",
+"sodium": "512.03mg"
+}
+},
+{
+"page": "p55.png",
+"section": "SNACKS & SIDES",
+"name": "Aloo Tikki® McWrap",
+"allergens": null,
+"size_text": [],
+"n": {
+"cal": "386.92kCal",
+"sat": "10.64g",
+"protein": "7.19g",
+"carbs": "41.94g",
+"fat": "21.10g",
+"sugar": "0.95g",
+"chol": "3.89mg",
+"added_sugar": "0.40g",
+"trans": "0.59g",
+"sodium": "430.79mg"
+}
+},
+{
+"page": "p56.png",
+"section": "SNACKS & SIDES",
+"name": "Chicken McNuggets®",
+"allergens": null,
+"size_text": [],
+"n": {
+"cal": "168.58kCal",
+"sat": "4.45g",
+"protein": "10.03g",
+"carbs": "10.50g",
+"fat": "9.54g",
+"sugar": "0.32g",
+"chol": "24.66mg",
+"added_sugar": "0.00g",
+"trans": "0.06g",
+"sodium": "313.25mg"
+}
+},
+{
+"page": "p57.png",
+"section": "SNACKS & SIDES",
+"name": "McSpicy Paneer Wrap®",
+"allergens": null,
+"size_text": [],
+"n": {
+"cal": "674.68kCal",
+"sat": "19.73g",
+"protein": "20.96g",
+"carbs": "59.27g",
+"fat": "39.10g",
+"sugar": "3.50g",
+"chol": "40.93mg",
+"added_sugar": "1.08g",
+"trans": "0.26g",
+"sodium": "1087.46mg"
+}
+},
+{
+"page": "p58.png",
+"section": "DESSERTS",
+"name": "McFlurry (Oreo)®",
+"allergens": "Cereal containing gluten, Milk, Soya, Sulphites",
+"size_text": [],
+"n": {
+"cal": "116.36kCal",
+"sat": "2.25g",
+"protein": "2.05g",
+"carbs": "18.69g",
+"fat": "3.70g",
+"sugar": "14.49g",
+"chol": "4.80mg",
+"added_sugar": "10.80g",
+"trans": "0.07g",
+"sodium": "80.73mg"
+}
+},
+{
+"page": "p59.png",
+"section": "DESSERTS",
+"name": "McFlurry (Choco Crunch)®",
+"allergens": "Cereal containing Milk, Soya",
+"size_text": [],
+"n": {
+"cal": "154.19kCal",
+"sat": "3.91g",
+"protein": "2.62g",
+"carbs": "23.67g",
+"fat": "5.39g",
+"sugar": "17.36g",
+"chol": "5.37mg",
+"added_sugar": "13.04g",
+"trans": "0.07g",
+"sodium": "420.00mg"
+}
+},
+{
+"page": "p60.png",
+"section": "DESSERTS",
+"name": "Soft Serve Cone",
+"allergens": "Cereal containing gluten, Milk, Soya",
+"size_text": [],
+"n": {
+"cal": "85.73kCal",
+"sat": "1.31g",
+"protein": "1.99g",
+"carbs": "15.23g",
+"fat": "1.82g",
+"sugar": "10.68g",
+"chol": "4.75mg",
+"added_sugar": "6.99g",
+"trans": "0.05g",
+"sodium": "40.78mg"
+}
+},
+{
+"page": "p61.png",
+"section": "DESSERTS",
+"name": "Bobaaa Sundae",
+"allergens": "Milk",
+"size_text": [],
+"n": {
+"cal": "147.28kCal",
+"sat": "2.20g",
+"protein": "2.60g",
+"carbs": "27.44g",
+"fat": "3.00g",
+"sugar": "25.19g",
+"chol": "8.00mg",
+"added_sugar": "19.82g",
+"trans": "0.00g",
+"sodium": "57.87mg"
+}
+},
+{
+"page": "p62.png",
+"section": "DESSERTS",
+"name": "Mango Soft Serve Sundae",
+"allergens": null,
+"size_text": [],
+"n": {
+"cal": "193.73kCal",
+"sat": "7.68g",
+"protein": "3.09g",
+"carbs": "22.84g",
+"fat": "10.00g",
+"sugar": "21.27g",
+"chol": "6.69mg",
+"added_sugar": "15.70g",
+"trans": "0.00g",
+"sodium": "57.50mg"
+}
+},
+{
+"page": "p63.png",
+"section": "DESSERTS",
+"name": "Sundae (Chocolate)®",
+"allergens": "Containing Milk",
+"size_text": [],
+"n": {
+"cal": "121.64kCal",
+"sat": "3.01g",
+"protein": "2.25g",
+"carbs": "19.11g",
+"fat": "4.02g",
+"sugar": "17.07g",
+"chol": "5.85mg",
+"added_sugar": "10.78g",
+"trans": "0.08g",
+"sodium": "65.56mg"
+}
+},
+{
+"page": "p64.png",
+"section": "DESSERTS",
+"name": "Sundae (Strawberry)®",
+"allergens": "Containing Milk",
+"size_text": [],
+"n": {
+"cal": "100.99kCal",
+"sat": "1.30g",
+"protein": "1.54g",
+"carbs": "19.78g",
+"fat": "1.77g",
+"sugar": "17.66g",
+"chol": "4.85mg",
+"added_sugar": "12.49g",
+"trans": "0.06g",
+"sodium": "34.51mg"
+}
+},
+{
+"page": "p65.png",
+"section": "DESSERTS",
+"name": "Sundae (Chocolate Brownie)®",
+"allergens": "Cereal containing gluten, Milk, Nuts",
+"size_text": [],
+"n": {
+"cal": "203.26kCal",
+"sat": "3.65g",
+"protein": "3.20g",
+"carbs": "35.26g",
+"fat": "5.45g",
+"sugar": "20.75g",
+"chol": "6.04mg",
+"added_sugar": "14.39g",
+"trans": "0.10g",
+"sodium": "100.89mg"
+}
+},
+{
+"page": "p66.png",
+"section": "DESSERTS",
+"name": "Mango McSwirl®",
+"allergens": "Cereal containing gluten, Milk, Soya",
+"size_text": [],
+"n": {
+"cal": "150.03kCal",
+"sat": "5.30g",
+"protein": "2.60g",
+"carbs": "19.40g",
+"fat": "9.32g",
+"sugar": "14.80g",
+"chol": "4.75mg",
+"added_sugar": "10.10g",
+"trans": "0.05g",
+"sodium": "49.78mg"
+}
+},
+{
+"page": "p67.png",
+"section": "DESSERTS",
+"name": "Chocolate McSwirl®",
+"allergens": "Cereal containing gluten, Milk, Soya",
+"size_text": [],
+"n": {
+"cal": "160.14kCal",
+"sat": "5.25g",
+"protein": "2.71g",
+"carbs": "20.92g",
+"fat": "7.14g",
+"sugar": "15.39g",
+"chol": "5.71mg",
+"added_sugar": "11.31g",
+"trans": "0.07g",
+"sodium": "51.31mg"
+}
+},
+{
+"page": "p68.png",
+"section": "DESSERTS",
+"name": "Butterscotch McSwirl®",
+"allergens": "",
+"size_text": [],
+"n": {
+"cal": "173.54kCal",
+"sat": "5.50g",
+"protein": "2.82g",
+"carbs": "22.18g",
+"fat": "8.11g",
+"sugar": "16.87 g",
+"chol": "6.09mg",
+"added_sugar": "13.32g",
+"trans": "0.10g",
+"sodium": "39.67mg"
+}
+}
+]
+}

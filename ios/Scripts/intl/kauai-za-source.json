@@ -1,0 +1,6158 @@
+{
+ "checked": "2026-11-20",
+ "items": [
+  {
+   "name": "ALMOND PORRIDGE POT",
+   "url": "https://kauai.co.za/menu-item/almond-porridge-pot-2/",
+   "groups": [
+    "all-day-breakfast"
+   ],
+   "tags": [
+    "VEG"
+   ],
+   "allergens": [
+    "Milk",
+    "Oats (gluten)",
+    "Peanuts",
+    "Tree Nuts",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "rolled oats, almond macadamia nut butter, dates, yoghurt, milk, honey, cinnamon",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per Serving"
+    ],
+    [
+     "Energy (kJ)",
+     "558",
+     "1678"
+    ],
+    [
+     "Protein (g)",
+     "3.9",
+     "11.8"
+    ],
+    [
+     "Carbohydrate (g)",
+     "22",
+     "65"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "7.0",
+     "21"
+    ],
+    [
+     "Total Fat (g)",
+     "3.3",
+     "10.1"
+    ],
+    [
+     "of which Saturated Fat (g)",
+     "1.4",
+     "4.1"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "3.0",
+     "9"
+    ],
+    [
+     "Total Sodium (mg)",
+     "47",
+     "142"
+    ]
+   ]
+  },
+  {
+   "name": "AVO MISO MUSHROOM TOAST",
+   "url": "https://kauai.co.za/menu-item/avo-miso-mushroom-toast/",
+   "groups": [
+    "all-day-breakfast"
+   ],
+   "tags": [
+    "NEW"
+   ],
+   "allergens": [
+    "Sesame seeds",
+    "Soy",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "avo, miso mushrooms, baby spinach, crispy onions, sesame",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per Serving"
+    ],
+    [
+     "Energy (kj)",
+     "633",
+     "1411"
+    ],
+    [
+     "Protein (g)",
+     "7",
+     "15"
+    ],
+    [
+     "Carbohydrates (g)",
+     "13",
+     "30"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "2",
+     "5"
+    ],
+    [
+     "Total Fat (g)",
+     "8",
+     "17"
+    ],
+    [
+     "Of which Saturated Fat (g)",
+     "2",
+     "3"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "2",
+     "5"
+    ],
+    [
+     "Total Sodium (mg)",
+     "263",
+     "587"
+    ]
+   ]
+  },
+  {
+   "name": "BREAKFAST BOWL",
+   "url": "https://kauai.co.za/menu-item/breakfast-bowl/",
+   "groups": [
+    "all-day-breakfast"
+   ],
+   "tags": [
+    "GF",
+    "VEG"
+   ],
+   "allergens": [
+    "Milk",
+    "Tree Nuts"
+   ],
+   "ingredients": "full cream yoghurt, pineapple, strawberries, banana, almonds, honey, chia seeds",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per Serving"
+    ],
+    [
+     "Energy (kJ)",
+     "536",
+     "1366"
+    ],
+    [
+     "Protein (g)",
+     "3,8",
+     "9,8"
+    ],
+    [
+     "Carbohydrate (g)",
+     "14",
+     "35"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "9,1",
+     "23,2"
+    ],
+    [
+     "Total fat (g)",
+     "7,3",
+     "18,6"
+    ],
+    [
+     "of which Saturated fat (g",
+     "3,2",
+     "8,1"
+    ],
+    [
+     "Dietary fibre (g)",
+     "1,2",
+     "3,1"
+    ],
+    [
+     "Total Sodium (mg)",
+     "57",
+     "146"
+    ]
+   ]
+  },
+  {
+   "name": "BREAKI BURRITO",
+   "url": "https://kauai.co.za/menu-item/breaki-burrito-2/",
+   "groups": [
+    "all-day-breakfast"
+   ],
+   "tags": [],
+   "allergens": [
+    "Eggs",
+    "Milk",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "free range scrambled eggs, chipotle free range beef mince, white cheddar, red pepper, spring onion",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per Serving"
+    ],
+    [
+     "Energy (kj)",
+     "858",
+     "3455"
+    ],
+    [
+     "Protein (g)",
+     "11",
+     "42"
+    ],
+    [
+     "Carbohydrates (g)",
+     "11",
+     "43"
+    ],
+    [
+     "Total Sugar (g)",
+     "3",
+     "11"
+    ],
+    [
+     "Total Fat (g)",
+     "13",
+     "54"
+    ],
+    [
+     "of which saturated fat (g)",
+     "7",
+     "27"
+    ],
+    [
+     "Dietery Fibre (g)",
+     "1",
+     "6"
+    ],
+    [
+     "Sodium (mg)",
+     "286",
+     "1149"
+    ]
+   ]
+  },
+  {
+   "name": "CHIPOTLE PROTEIN POT",
+   "url": "https://kauai.co.za/menu-item/chipotle-protein-pot/",
+   "groups": [
+    "all-day-breakfast"
+   ],
+   "tags": [
+    "NEW"
+   ],
+   "allergens": [
+    "Eggs"
+   ],
+   "ingredients": "chipotle free range beef mince, free range poached egg, jalapeno, red pepper, baby spinach, rosa tomatoes, coriander",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per Serving"
+    ],
+    [
+     "Energy (kj)",
+     "401",
+     "926"
+    ],
+    [
+     "Protein (g)",
+     "8",
+     "18"
+    ],
+    [
+     "Carbohydrates (g)",
+     "4",
+     "10"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "2",
+     "5"
+    ],
+    [
+     "Total Fat (g)",
+     "5",
+     "12"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "1",
+     "3"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "2",
+     "4"
+    ],
+    [
+     "Total Sodium",
+     "210",
+     "486"
+    ]
+   ]
+  },
+  {
+   "name": "CHOC PROTEIN POT",
+   "url": "https://kauai.co.za/menu-item/choc-protein-pot/",
+   "groups": [
+    "all-day-breakfast"
+   ],
+   "tags": [
+    "NEW"
+   ],
+   "allergens": [
+    "Milk",
+    "Peanuts"
+   ],
+   "ingredients": "chocolate chia protein yoghurt topped with banana, iced blueberries, hemp seeds, chocolate peanut drizzle",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per Serving"
+    ],
+    [
+     "Energy (kj)",
+     "738",
+     "2082"
+    ],
+    [
+     "Protein (g)",
+     "7",
+     "20"
+    ],
+    [
+     "Carbohydrate (g)",
+     "13",
+     "36"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "4",
+     "12"
+    ],
+    [
+     "Total Fat (g)",
+     "11",
+     "30"
+    ],
+    [
+     "Of which Saturated Fat (g)",
+     "6",
+     "16"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "4",
+     "10"
+    ],
+    [
+     "Total Sodium (mg)",
+     "96",
+     "271"
+    ]
+   ]
+  },
+  {
+   "name": "POACHED EGGS & TOAST",
+   "url": "https://kauai.co.za/menu-item/poached-eggs-toast/",
+   "groups": [
+    "all-day-breakfast"
+   ],
+   "tags": [
+    "VEG"
+   ],
+   "allergens": [
+    "Eggs",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "free range eggs, toasted artisan bread",
+   "rows": []
+  },
+  {
+   "name": "POWER OATS",
+   "url": "https://kauai.co.za/menu-item/power-oats/",
+   "groups": [
+    "all-day-breakfast"
+   ],
+   "tags": [
+    "VEG"
+   ],
+   "allergens": [
+    "Milk",
+    "Tree Nuts",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "rolled oats, toasted almonds, banana, chia seeds, strawberries, milk, honey",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per Serving"
+    ],
+    [
+     "Energy (kJ)",
+     "547 kJ",
+     "2356 kJ"
+    ],
+    [
+     "Protein (g)",
+     "4,9 g",
+     "21,1 g"
+    ],
+    [
+     "Carbohydrate (g)",
+     "19 g",
+     "81 g"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "4,4 g",
+     "18,9 g"
+    ],
+    [
+     "Total fat (g)",
+     "3,8 g",
+     "16,6 g"
+    ],
+    [
+     "of which Saturated fat (g)",
+     "0,9 g",
+     "4,1 g"
+    ],
+    [
+     "Dietary fibre (g)",
+     "2,7 g",
+     "11,8 g"
+    ],
+    [
+     "Total Sodium (mg)",
+     "13 mg",
+     "55 mg"
+    ]
+   ]
+  },
+  {
+   "name": "PROTEIN BREAKFAST WRAP",
+   "url": "https://kauai.co.za/menu-item/protein-breakfast-wrap/",
+   "groups": [
+    "all-day-breakfast"
+   ],
+   "tags": [],
+   "allergens": [
+    "Eggs",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "free range scrambled eggs, free range beef sausage, cream cheese, chipotle chili, red pepper, baby spinach, rosa tomatoes",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per Serving"
+    ],
+    [
+     "Energy (kJ)",
+     "656",
+     "2901"
+    ],
+    [
+     "Protein (g)",
+     "8,2",
+     "36,2"
+    ],
+    [
+     "Carbohydrate (g)",
+     "11",
+     "47"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "1,5",
+     "6,8"
+    ],
+    [
+     "Total fat (g)",
+     "9,1",
+     "40,2"
+    ],
+    [
+     "of which Saturated fat (g)",
+     "3,8",
+     "16,7"
+    ],
+    [
+     "Dietary fibre (g)",
+     "2,1",
+     "9,3"
+    ],
+    [
+     "Total Sodium (mg)",
+     "194",
+     "860"
+    ]
+   ]
+  },
+  {
+   "name": "PROTEIN POCKET WRAP",
+   "url": "https://kauai.co.za/menu-item/protein-pocket-wrap-2/",
+   "groups": [
+    "all-day-breakfast"
+   ],
+   "tags": [
+    "VEG"
+   ],
+   "allergens": [
+    "Eggs",
+    "Milk",
+    "Peanuts",
+    "Soy",
+    "Tree Nuts"
+   ],
+   "ingredients": "free range scrambled eggs, white cheddar, tomatoes, jalapeno, sundried tomato pesto",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per Serving"
+    ],
+    [
+     "Energy (kJ)",
+     "991",
+     "2875"
+    ],
+    [
+     "Protein (g)",
+     "11",
+     "31"
+    ],
+    [
+     "Carbohydrates (g)",
+     "16",
+     "48"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "3",
+     "9"
+    ],
+    [
+     "Total fat",
+     "15",
+     "43"
+    ],
+    [
+     "of which Saturated fat (g)",
+     "8",
+     "22"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "1",
+     "4"
+    ],
+    [
+     "Total Sodium (mg)",
+     "359",
+     "1041"
+    ]
+   ]
+  },
+  {
+   "name": "SCRAMBLED EGGS & TOAST",
+   "url": "https://kauai.co.za/menu-item/scrambled-eggs-toast/",
+   "groups": [
+    "all-day-breakfast"
+   ],
+   "tags": [
+    "VEG"
+   ],
+   "allergens": [
+    "Eggs",
+    "Milk",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "free range eggs, toasted artisan bread, butter",
+   "rows": []
+  },
+  {
+   "name": "SLICED AVO, POACHED EGGS & TOAST",
+   "url": "https://kauai.co.za/menu-item/sliced-avo-poached-eggs-toast/",
+   "groups": [
+    "all-day-breakfast"
+   ],
+   "tags": [
+    "DF",
+    "VEG"
+   ],
+   "allergens": [
+    "Eggs",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "free range poached eggs, sliced avo, toast, chili, hemp seeds",
+   "rows": [
+    [
+     "",
+     "per 100g",
+     "per serving"
+    ],
+    [
+     "Energy (kJ)",
+     "1319",
+     "1570"
+    ],
+    [
+     "Protein (g)",
+     "14,0",
+     "16,6"
+    ],
+    [
+     "Carbohydrates (g)",
+     "14",
+     "16"
+    ],
+    [
+     "Total sugar (g)",
+     "4,7",
+     "5,6"
+    ],
+    [
+     "Total fat (g)",
+     "22,9",
+     "27,3"
+    ],
+    [
+     "Saturated fat (g)",
+     "4,9",
+     "5,8"
+    ],
+    [
+     "Dietary fibre (g)",
+     "7,2",
+     "8,5"
+    ],
+    [
+     "Sodium (mg)",
+     "471",
+     "560"
+    ]
+   ]
+  },
+  {
+   "name": "SUNRISE UNWRAPPED",
+   "url": "https://kauai.co.za/menu-item/sunrise-unwrapped/",
+   "groups": [
+    "all-day-breakfast"
+   ],
+   "tags": [
+    "GF",
+    "VEG"
+   ],
+   "allergens": [
+    "Eggs",
+    "Milk"
+   ],
+   "ingredients": "free range scrambled eggs, butter, salsa (red onion, tomato, chili flakes, coriander, lemon juice, sweet chili sauce, salt, black pepper) white cheddar, sautéed rosa tomato, baby spinach",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per Serving"
+    ],
+    [
+     "Energy (kJ)",
+     "564",
+     "1932"
+    ],
+    [
+     "Protein (g)",
+     "8,8",
+     "30,2"
+    ],
+    [
+     "Carbohydrate (g)",
+     "2",
+     "8"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "1,8",
+     "6,1"
+    ],
+    [
+     "Total fat (g)",
+     "9,9",
+     "34"
+    ],
+    [
+     "of which Saturated fat (g",
+     "4,6",
+     "15,6"
+    ],
+    [
+     "Dietary fibre (g)",
+     "0,4",
+     "1,5"
+    ],
+    [
+     "Total Sodium (mg)",
+     "164",
+     "560"
+    ]
+   ]
+  },
+  {
+   "name": "SUNRISE WRAPPED",
+   "url": "https://kauai.co.za/menu-item/sunrise-wrapped/",
+   "groups": [
+    "all-day-breakfast",
+    "wraps"
+   ],
+   "tags": [
+    "VEG"
+   ],
+   "allergens": [
+    "Eggs",
+    "Milk",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "free range scrambled eggs, butter, salsa, (red onion, tomato, chili flakes, coriander, lemon juice, sweet chili sauce, salt, black pepper) white cheddar, sautéed rosa tomato, baby spinach",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per Serving"
+    ],
+    [
+     "Energy (kJ)",
+     "680",
+     "2839"
+    ],
+    [
+     "Protein (g)",
+     "8,7",
+     "36,2"
+    ],
+    [
+     "Carbohydrate (g)",
+     "10",
+     "43"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "1,8",
+     "7,5"
+    ],
+    [
+     "Total fat (g)",
+     "9,8",
+     "40,8"
+    ],
+    [
+     "of which Saturated fat (g)",
+     "4,5",
+     "18,7"
+    ],
+    [
+     "Dietary fibre (g)",
+     "1,6",
+     "6,8"
+    ],
+    [
+     "Total Sodium (mg)",
+     "173",
+     "724"
+    ]
+   ]
+  },
+  {
+   "name": "BREAKFAST SANDWICH",
+   "url": "https://kauai.co.za/menu-item/breakfast-sandwich/",
+   "groups": [
+    "all-day-breakfast"
+   ],
+   "tags": [
+    "VEG"
+   ],
+   "allergens": [
+    "Eggs",
+    "Milk",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "free range egg, cheddar cheese, sweet chilli sauce, toasted sourdough",
+   "rows": [
+    [
+     "",
+     "Per 100 g",
+     "Per 270 g serving"
+    ],
+    [
+     "Energy",
+     "1065 kJ",
+     "2876 kJ"
+    ],
+    [
+     "Protein",
+     "11,0 g",
+     "29,6 g"
+    ],
+    [
+     "Carbohydrate",
+     "18 g",
+     "50 g"
+    ],
+    [
+     "of which Total Sugar",
+     "2,2 g",
+     "6,0 g"
+    ],
+    [
+     "Total fat",
+     "15,3 g",
+     "41,4 g"
+    ],
+    [
+     "of which Saturated fat",
+     "8,5 g",
+     "22,9 g"
+    ],
+    [
+     "Dietary fibre",
+     "1,0 g",
+     "2,7 g"
+    ],
+    [
+     "Total Sodium",
+     "363 mg",
+     "979 mg"
+    ]
+   ]
+  },
+  {
+   "name": "CINNAMON HONEY OATS",
+   "url": "https://kauai.co.za/menu-item/cinnamon-honey-oats/",
+   "groups": [
+    "all-day-breakfast"
+   ],
+   "tags": [],
+   "allergens": [
+    "Milk",
+    "Oats (gluten)",
+    "Tree Nuts",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "oats, almonds, cinnamon, honey",
+   "rows": [
+    [
+     "",
+     "Per 100 g",
+     "Per 400g serving"
+    ],
+    [
+     "Energy",
+     "476 kJ",
+     "1904 kJ"
+    ],
+    [
+     "Protein",
+     "3,3 g",
+     "13,1 g"
+    ],
+    [
+     "Carbohydrate",
+     "16 g",
+     "64 g"
+    ],
+    [
+     "of which Total Sugar",
+     "4,5 g",
+     "18,2 g"
+    ],
+    [
+     "Total fat",
+     "4,0 g",
+     "16,0 g"
+    ],
+    [
+     "of which Saturated fat",
+     "0,5 g",
+     "1,9 g"
+    ],
+    [
+     "Dietary fibre",
+     "3,2 g",
+     "12,9 g"
+    ],
+    [
+     "Total Sodium",
+     "16 mg",
+     "65 mg"
+    ]
+   ]
+  },
+  {
+   "name": "PEANUT BUTTER BANANA POT",
+   "url": "https://kauai.co.za/menu-item/peanut-butter-banana-pot/",
+   "groups": [
+    "all-day-breakfast"
+   ],
+   "tags": [
+    "GF",
+    "VEG"
+   ],
+   "allergens": [
+    "Milk",
+    "Peanuts",
+    "Tree Nuts"
+   ],
+   "ingredients": "yoghurt, banana, sugar-free peanut butter, toasted almonds, honey",
+   "rows": [
+    [
+     "",
+     "Per 100 g",
+     "Per 260 g serving"
+    ],
+    [
+     "Energy",
+     "748 kJ",
+     "1967 kJ"
+    ],
+    [
+     "Protein",
+     "5,9 g",
+     "15,6 g"
+    ],
+    [
+     "Carbohydrate",
+     "14 g",
+     "36 g"
+    ],
+    [
+     "of which Total Sugar",
+     "8,2 g",
+     "21,4 g"
+    ],
+    [
+     "Total fat",
+     "11,3 g",
+     "29,6 g"
+    ],
+    [
+     "of which Saturated fat",
+     "4,1 g",
+     "10,8 g"
+    ],
+    [
+     "Dietary fibre",
+     "1,9 g",
+     "5,1 g"
+    ],
+    [
+     "Total Sodium",
+     "46 mg",
+     "122 mg"
+    ]
+   ]
+  },
+  {
+   "name": "YOGHURT POT",
+   "url": "https://kauai.co.za/menu-item/express-yoghurt-pot/",
+   "groups": [
+    "all-day-breakfast"
+   ],
+   "tags": [],
+   "allergens": [],
+   "ingredients": "",
+   "rows": [
+    [
+     "",
+     "Per 100 g",
+     "Per 190 g serving"
+    ],
+    [
+     "Energy",
+     "478 kJ",
+     "893 kJ"
+    ],
+    [
+     "Protein",
+     "4,1 g",
+     "7,6 g"
+    ],
+    [
+     "Carbohydrate",
+     "10 g",
+     "18 g"
+    ],
+    [
+     "of which Total Sugar",
+     "4,1 g",
+     "7,7 g"
+    ],
+    [
+     "Total fat",
+     "6,5 g",
+     "12,2 g"
+    ],
+    [
+     "of which Saturated fat",
+     "4,5 g",
+     "8,5 g"
+    ],
+    [
+     "Dietary fibre",
+     "0,9 g",
+     "1,8 g"
+    ],
+    [
+     "Total Sodium",
+     "54 mg",
+     "102 mg"
+    ]
+   ]
+  },
+  {
+   "name": "AVO FALAFEL",
+   "url": "https://kauai.co.za/menu-item/avo-falafel/",
+   "groups": [
+    "wraps"
+   ],
+   "tags": [
+    "V",
+    "VEG"
+   ],
+   "allergens": [
+    "Tree Nuts",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "chickpea falafel, avo, red pepper, cabbage, cucumber, gherkin, rocket, vegan nut butter dressing",
+   "rows": [
+    [
+     "",
+     "per 100g",
+     "per serving"
+    ],
+    [
+     "Energy (kJ)",
+     "769",
+     "2961"
+    ],
+    [
+     "Protein (g)",
+     "4,1",
+     "15,7"
+    ],
+    [
+     "Carbohydrates (g)",
+     "20",
+     "77"
+    ],
+    [
+     "Total sugar (g)",
+     "4,2",
+     "16,2"
+    ],
+    [
+     "Total fat (g)",
+     "9,7",
+     "37,5"
+    ],
+    [
+     "Saturated fat (g)",
+     "1,5",
+     "5,9"
+    ],
+    [
+     "Dietary fibre (g)",
+     "4,0",
+     "15,4"
+    ],
+    [
+     "Sodium (mg)",
+     "270",
+     "1040"
+    ]
+   ]
+  },
+  {
+   "name": "BASIL STEAK PARM",
+   "url": "https://kauai.co.za/menu-item/basil-steak-parm/",
+   "groups": [
+    "wraps"
+   ],
+   "tags": [
+    "NEW"
+   ],
+   "allergens": [
+    "Milk",
+    "Soy",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "grilled steak, avo, parmesan, broccoli, red onion pickle, tomato, greens, rocket, basil dressing. Served warm.",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per Serving"
+    ],
+    [
+     "Energy (kj)",
+     "917",
+     "3483"
+    ],
+    [
+     "Protein (g)",
+     "14",
+     "53"
+    ],
+    [
+     "Carbohydrates (g)",
+     "12",
+     "46"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "4",
+     "14"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "13",
+     "48"
+    ],
+    [
+     "Of which Saturated Fat (g)",
+     "4",
+     "15"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "1",
+     "6"
+    ],
+    [
+     "Total Sodium (mg)",
+     "204",
+     "774"
+    ]
+   ]
+  },
+  {
+   "name": "BBQ Chicken",
+   "url": "https://kauai.co.za/menu-item/bbq-chicken/",
+   "groups": [
+    "wraps"
+   ],
+   "tags": [],
+   "allergens": [
+    "Eggs",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "free range chicken, BBQ sauce, carrot, cabbage, celery, greens, crispy onions, celery & onion mayo",
+   "rows": [
+    [
+     "",
+     "Per 100 g",
+     "Per 314g serving"
+    ],
+    [
+     "Energy",
+     "840 kJ",
+     "2636 kJ"
+    ],
+    [
+     "Protein",
+     "10,8 g",
+     "33,8 g"
+    ],
+    [
+     "Carbohydrate",
+     "15 g",
+     "46 g"
+    ],
+    [
+     "of which Total Sugar",
+     "4,0 g",
+     "12,5 g"
+    ],
+    [
+     "Total fat",
+     "11,0 g",
+     "34,4 g"
+    ],
+    [
+     "of which Saturated fat",
+     "2,7 g",
+     "8,6 g"
+    ],
+    [
+     "Dietary fibre",
+     "2,0 g",
+     "6,1 g"
+    ],
+    [
+     "Total Sodium",
+     "219 mg",
+     "688 mg"
+    ]
+   ]
+  },
+  {
+   "name": "BBQ Miso Mushroom Wrap",
+   "url": "https://kauai.co.za/menu-item/bbq-miso-mushroom-wrap/",
+   "groups": [
+    "wraps"
+   ],
+   "tags": [],
+   "allergens": [
+    "Sesame seeds",
+    "Soy",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "BBQ miso mushrooms, roasted corn salsa, edamame, red onion pickle, cucumber, cabbage, baby spinach, rocket, coriander, chili crisp dressing. Served warm.",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per Serving"
+    ],
+    [
+     "Energy (kJ)",
+     "703",
+     "3024"
+    ],
+    [
+     "Protein (g)",
+     "3",
+     "13"
+    ],
+    [
+     "Carbohydrate (g)",
+     "21",
+     "89"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "10",
+     "42"
+    ],
+    [
+     "Total Fat (g)",
+     "8",
+     "34"
+    ],
+    [
+     "Of which Saturated Fat (g)",
+     "2",
+     "7"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "2",
+     "9"
+    ],
+    [
+     "Total Sodium (mg)",
+     "296",
+     "1272"
+    ]
+   ]
+  },
+  {
+   "name": "CAJUN CHICKEN CAESAR",
+   "url": "https://kauai.co.za/menu-item/cajun-chicken-caesar/",
+   "groups": [
+    "wraps"
+   ],
+   "tags": [],
+   "allergens": [
+    "Eggs",
+    "Milk",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "cajun free range chicken, parmesan, smoky coconut shavings, rosa tomatoes, cucumber, greens, caesar dressing",
+   "rows": [
+    [
+     "",
+     "Per 100 g",
+     "Per Serving"
+    ],
+    [
+     "Energy",
+     "758 kJ",
+     "2886 kJ"
+    ],
+    [
+     "Protein",
+     "10,3 g",
+     "38,3 g"
+    ],
+    [
+     "Carbohydrate",
+     "5 g",
+     "45 g"
+    ],
+    [
+     "of which Total Sugar",
+     "2,2 g",
+     "11,5 g"
+    ],
+    [
+     "Total fat",
+     "13,7 g",
+     "39,8 g"
+    ],
+    [
+     "of which Saturated fat",
+     "5,7 g",
+     "16,1 g"
+    ],
+    [
+     "Dietary fibre",
+     "1,8 g",
+     "6,5 g"
+    ],
+    [
+     "Total Sodium",
+     "87 mg",
+     "681 mg"
+    ]
+   ]
+  },
+  {
+   "name": "CAJUN CHICKEN QUESADILLA",
+   "url": "https://kauai.co.za/menu-item/cajun-chicken-quesadilla/",
+   "groups": [
+    "wraps"
+   ],
+   "tags": [],
+   "allergens": [
+    "Milk",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "cajun free range chicken, white cheddar, salsa, jalapeno, spring onion, coriander",
+   "rows": [
+    [
+     "",
+     "per 100g",
+     "per serving"
+    ],
+    [
+     "Energy",
+     "806 kJ",
+     "2258 kJ"
+    ],
+    [
+     "Protein",
+     "15,8 g",
+     "44,2 g"
+    ],
+    [
+     "Carbohydrate",
+     "15 g",
+     "43 g"
+    ],
+    [
+     "of which Total Sugar",
+     "2,0 g",
+     "5,5 g"
+    ],
+    [
+     "Total fat",
+     "7,6 g",
+     "21,1 g"
+    ],
+    [
+     "of which Saturated fat",
+     "4,5 g",
+     "12,5 g"
+    ],
+    [
+     "Dietary fibre",
+     "2,3 g",
+     "6,4 g"
+    ],
+    [
+     "Total Sodium",
+     "290 mg",
+     "811 mg"
+    ]
+   ]
+  },
+  {
+   "name": "CHEESE & CHILI QUESADILLA",
+   "url": "https://kauai.co.za/menu-item/cheese-chili-quesadilla/",
+   "groups": [
+    "wraps"
+   ],
+   "tags": [
+    "VEG"
+   ],
+   "allergens": [
+    "Milk",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "white cheddar, tomato, jalapeno, pepadewsTM",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "217 g"
+    ],
+    [
+     "Energy",
+     "1046 kj",
+     "2270 kj"
+    ],
+    [
+     "Protein",
+     "12,3 g",
+     "26,8 g"
+    ],
+    [
+     "Carbohydrate",
+     "19 g",
+     "41 g"
+    ],
+    [
+     "of which Total Sugar",
+     "3,1 g",
+     "6,7 g"
+    ],
+    [
+     "Total fat",
+     "13,9 g",
+     "30,1 g"
+    ],
+    [
+     "of which Saturated fat",
+     "9,2 g",
+     "20,0 g"
+    ],
+    [
+     "Dietary fibre",
+     "2,2 g",
+     "4,8 g"
+    ],
+    [
+     "Total Sodium",
+     "388 mg",
+     "843 mg"
+    ]
+   ]
+  },
+  {
+   "name": "CHICKEN FETA CRUNCH",
+   "url": "https://kauai.co.za/menu-item/chicken-feta-crunch/",
+   "groups": [
+    "wraps"
+   ],
+   "tags": [],
+   "allergens": [
+    "Eggs",
+    "Milk",
+    "Oats (gluten)",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "free range chicken, carrot, cabbage, gherkins, rosa tomatoes, creamy feta dressing",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per Serving"
+    ],
+    [
+     "Energy (kJ)",
+     "641",
+     "2128"
+    ],
+    [
+     "Protein (g)",
+     "9",
+     "31"
+    ],
+    [
+     "Carbohydrates (g)",
+     "14",
+     "48"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "4",
+     "14"
+    ],
+    [
+     "Total fat",
+     "5",
+     "15"
+    ],
+    [
+     "of which Saturated fat (g)",
+     "2",
+     "8"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "2",
+     "6"
+    ],
+    [
+     "Total Sodium (mg)",
+     "256",
+     "849"
+    ]
+   ]
+  },
+  {
+   "name": "CHILI CHICKEN QUESADILLA",
+   "url": "https://kauai.co.za/menu-item/chili-chicken-quesadilla/",
+   "groups": [
+    "wraps"
+   ],
+   "tags": [],
+   "allergens": [
+    "Milk",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "free range chicken, white cheddar, tomato, jalapeno",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per 227g serving"
+    ],
+    [
+     "Energy",
+     "890 kj",
+     "2021 kj"
+    ],
+    [
+     "Protein",
+     "13,9 g",
+     "31,5 g"
+    ],
+    [
+     "Carbohydrate",
+     "18 g",
+     "42 g"
+    ],
+    [
+     "of which Total Sugar",
+     "3,0 g",
+     "6,8 g"
+    ],
+    [
+     "Total fat",
+     "9,2 g",
+     "20,9 g"
+    ],
+    [
+     "of which Saturated Fat",
+     "5,2 g",
+     "11,9 g"
+    ],
+    [
+     "Dietary Fibre",
+     "2,4 g",
+     "5,5 g"
+    ],
+    [
+     "Total Sodium",
+     "319 mg",
+     "724 mg"
+    ]
+   ]
+  },
+  {
+   "name": "HOT HONEY CHICKEN",
+   "url": "https://kauai.co.za/menu-item/hot-honey-chicken/",
+   "groups": [
+    "wraps"
+   ],
+   "tags": [],
+   "allergens": [
+    "Eggs",
+    "Milk",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "hot honey free range chicken, avo, roasted corn salsa, cabbage, greens, salsa, creamy feta dressing. Served warm.",
+   "rows": [
+    [
+     "",
+     "Per 100 g",
+     "Per Serving"
+    ],
+    [
+     "Energy",
+     "678 kJ",
+     "2951 kJ"
+    ],
+    [
+     "Protein",
+     "8,5 g",
+     "36,9 g"
+    ],
+    [
+     "Carbohydrate",
+     "14 g",
+     "61 g"
+    ],
+    [
+     "of which Total Sugar",
+     "4,9 g",
+     "21,2 g"
+    ],
+    [
+     "Total fat",
+     "8,0 g",
+     "34,7 g"
+    ],
+    [
+     "of which Saturated fat",
+     "2,2 g",
+     "9,8 g"
+    ],
+    [
+     "Dietary fibre",
+     "2,3 g",
+     "10,1 g"
+    ],
+    [
+     "Total Sodium",
+     "199 mg",
+     "866 mg"
+    ]
+   ]
+  },
+  {
+   "name": "MEXI BEEF BURRITO",
+   "url": "https://kauai.co.za/menu-item/mexi-beef-burrito-2/",
+   "groups": [
+    "wraps"
+   ],
+   "tags": [],
+   "allergens": [
+    "Milk",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "chipotle free range beef mince, avo, brown rice & quinoa, cream cheese, salsa, jalapeno, red pepper. Served warm.",
+   "rows": [
+    [
+     "",
+     "per 100g",
+     "Per Serving"
+    ],
+    [
+     "Energy (kj)",
+     "597",
+     "2538"
+    ],
+    [
+     "Protein (g)",
+     "4",
+     "19"
+    ],
+    [
+     "Carbohydrates (g)",
+     "14",
+     "58"
+    ],
+    [
+     "Total Sugars (g)",
+     "4",
+     "16"
+    ],
+    [
+     "Total Fat (g)",
+     "8",
+     "33"
+    ],
+    [
+     "Saturated Fat (g)",
+     "3",
+     "14"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "3",
+     "13"
+    ],
+    [
+     "Sodium (mg)",
+     "272",
+     "1156"
+    ]
+   ]
+  },
+  {
+   "name": "PRINCE",
+   "url": "https://kauai.co.za/menu-item/prince-wrap/",
+   "groups": [
+    "wraps"
+   ],
+   "tags": [],
+   "allergens": [
+    "Eggs",
+    "Milk",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "grilled steak, avo, feta, rosa tomatoes, carrot, celery & onion mayo (red onion, celery, mayo, (contains free range egg)), greens",
+   "rows": []
+  },
+  {
+   "name": "PRINCESS",
+   "url": "https://kauai.co.za/menu-item/princess-wrap/",
+   "groups": [
+    "wraps"
+   ],
+   "tags": [],
+   "allergens": [
+    "Eggs",
+    "Milk",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "free range chicken, avo, feta, rosa tomato, carrot, celery & onion mayo (red onion, celery, mayo, (contains free range egg)), greens",
+   "rows": []
+  },
+  {
+   "name": "SALSA QUESADILLA",
+   "url": "https://kauai.co.za/menu-item/salsa-quesadilla-wrap/",
+   "groups": [
+    "wraps"
+   ],
+   "tags": [],
+   "allergens": [
+    "Milk",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "white cheddar, red pepper, salsa (red onion, tomato, chili flakes, coriander, lemon juice, sweet chili sauce, salt, black pepper) , jalapeno, spring onion, coriander. Served warm.",
+   "rows": []
+  },
+  {
+   "name": "SPICY BURRITO",
+   "url": "https://kauai.co.za/menu-item/spicy-burrito-wrap/",
+   "groups": [
+    "wraps"
+   ],
+   "tags": [
+    "GUT"
+   ],
+   "allergens": [
+    "Milk",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "free range chicken, salsa, jalapeno & chipotle chili, red pepper, cream cheese, rocket, carrot, coriander. Served warm.",
+   "rows": []
+  },
+  {
+   "name": "SRIRACHA CHICKEN",
+   "url": "https://kauai.co.za/menu-item/sriracha-chicken/",
+   "groups": [
+    "wraps"
+   ],
+   "tags": [],
+   "allergens": [
+    "Eggs",
+    "Soy",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "free range chicken, avo, rosa tomatoes, smoky coconut shavings, red pepper, greens, sriracha mayo",
+   "rows": [
+    [
+     "",
+     "",
+     ""
+    ]
+   ]
+  },
+  {
+   "name": "Steak & Avo Quesadilla",
+   "url": "https://kauai.co.za/menu-item/steak-and-avo-quesadilla/",
+   "groups": [
+    "wraps"
+   ],
+   "tags": [],
+   "allergens": [
+    "Milk",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "grilled steak, avo, white cheddar, salsa, jalapeno, spring onion, coriander. Served warm.",
+   "rows": [
+    [
+     "",
+     "Regular Wrap",
+     "Low Carb Wrap"
+    ],
+    [
+     "Energy (kJ)",
+     "2919",
+     "2327"
+    ],
+    [
+     "Protein (g)",
+     "44.5",
+     "42.2"
+    ],
+    [
+     "Carbohydrate (g)",
+     "46",
+     "17"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "6.1",
+     "5.7"
+    ],
+    [
+     "Total fat (g)",
+     "37.5",
+     "35.5"
+    ],
+    [
+     "of which Saturated fat (g)",
+     "16.1",
+     "16.0"
+    ],
+    [
+     "Dietary fibre (g)",
+     "8.5",
+     "10.9"
+    ],
+    [
+     "Total Sodium (mg)",
+     "777",
+     "590"
+    ]
+   ]
+  },
+  {
+   "name": "TERIYAKI CHICKEN",
+   "url": "https://kauai.co.za/menu-item/teriyaki-chicken/",
+   "groups": [
+    "wraps"
+   ],
+   "tags": [],
+   "allergens": [
+    "Peanuts",
+    "Sesame seeds",
+    "Soy",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "teriyaki free range chicken, sriracha sesame peanuts, pineapple, carrot, cabbage, baby spinach, miso dressing",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per Serving"
+    ],
+    [
+     "Energy (kj)",
+     "968",
+     "3196"
+    ],
+    [
+     "Protein (g)",
+     "11",
+     "37"
+    ],
+    [
+     "Carbohydrates (g)",
+     "16",
+     "51"
+    ],
+    [
+     "Total Sugars (g)",
+     "5",
+     "16"
+    ],
+    [
+     "Total Fat (g)",
+     "14",
+     "45"
+    ],
+    [
+     "Saturated Fat (g)",
+     "3",
+     "10"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "2",
+     "7"
+    ],
+    [
+     "Sodium (mg)",
+     "339",
+     "1119"
+    ]
+   ]
+  },
+  {
+   "name": "CHICKEN CHEDDAR FLAT",
+   "url": "https://kauai.co.za/menu-item/chicken-cheddar-flat-wrap/",
+   "groups": [
+    "wraps"
+   ],
+   "tags": [],
+   "allergens": [
+    "Eggs",
+    "Milk",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "free range chicken breast, melted cheddar, mayo",
+   "rows": [
+    [
+     "",
+     "Per 100 g",
+     "Per 230 g"
+    ],
+    [
+     "Energy",
+     "1152 kJ",
+     "2419 kJ"
+    ],
+    [
+     "Protein",
+     "15,8 g",
+     "33,2 g"
+    ],
+    [
+     "Carbohydrate",
+     "20 g",
+     "42 g"
+    ],
+    [
+     "of which Total Sugar",
+     "2,8 g",
+     "5,9 g"
+    ],
+    [
+     "Total fat",
+     "14,7 g",
+     "30,8 g"
+    ],
+    [
+     "of which Saturated fat",
+     "5,2 g",
+     "10,8 g"
+    ],
+    [
+     "Dietary fibre",
+     "1,5 g",
+     "10,8 g"
+    ],
+    [
+     "Dietary fibre",
+     "416 mg",
+     "873 mg"
+    ]
+   ]
+  },
+  {
+   "name": "Avo Falafel",
+   "url": "https://kauai.co.za/menu-item/avo-falafel-2/",
+   "groups": [
+    "salad-bowls"
+   ],
+   "tags": [
+    "V",
+    "VEG"
+   ],
+   "allergens": [
+    "Tree Nuts",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "chickpea falafel, avo, red pepper, cabbage, cucumber, red onion pickle, rocket, greens, vegan nut butter dressing",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per Serving"
+    ],
+    [
+     "Energy (kj)",
+     "635",
+     "2222"
+    ],
+    [
+     "Protein (g)",
+     "2,9",
+     "10,0"
+    ],
+    [
+     "Carbohydrate (g)",
+     "11",
+     "40"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "3,6",
+     "12,6"
+    ],
+    [
+     "Total Fat (g)",
+     "10,6",
+     "37,1"
+    ],
+    [
+     "of which Saturated Fat (g)",
+     "1,4",
+     "4,8"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "3,5",
+     "12,2"
+    ],
+    [
+     "Total Sodium (mg)",
+     "165",
+     "576"
+    ]
+   ]
+  },
+  {
+   "name": "BASIL STEAK PARM SALAD",
+   "url": "https://kauai.co.za/menu-item/basil-steak-parm-salad/",
+   "groups": [
+    "salad-bowls"
+   ],
+   "tags": [
+    "NEW"
+   ],
+   "allergens": [
+    "Milk",
+    "Soy",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "grilled steak, avo, parmesan, broccoli, red onion pickle, rosa tomatoes, greens, rocket, sourdough croutons, basil dressing",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per Serving"
+    ],
+    [
+     "Energy (kJ)",
+     "854",
+     "2905"
+    ],
+    [
+     "Protein (g)",
+     "15",
+     "49"
+    ],
+    [
+     "Carbohydrate (g)",
+     "7",
+     "23"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "3",
+     "9"
+    ],
+    [
+     "Total Fat (g)",
+     "13",
+     "45"
+    ],
+    [
+     "Of which Saturated Fat (g)",
+     "3",
+     "11"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "1",
+     "4"
+    ],
+    [
+     "Total Sodium (mg)",
+     "121",
+     "411"
+    ]
+   ]
+  },
+  {
+   "name": "GOLDEN CHILI NOODLES",
+   "url": "https://kauai.co.za/menu-item/golden-chili-noodles/",
+   "groups": [
+    "salad-bowls"
+   ],
+   "tags": [
+    "NEW"
+   ],
+   "allergens": [
+    "Sesame seeds",
+    "Soy",
+    "Tree Nuts",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "free range chicken, golden rice noodles, edamame, cucumber, radish, cabbage, spring onion, coriander, baby spinach, cashews, sesame, chili crisp dressing",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per Serving"
+    ],
+    [
+     "Energy (kJ)",
+     "696",
+     "2303"
+    ],
+    [
+     "Protein (g)",
+     "10",
+     "33"
+    ],
+    [
+     "Carbohydrate (g)",
+     "19",
+     "63"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "8",
+     "27"
+    ],
+    [
+     "Total Fat (g)",
+     "6",
+     "19"
+    ],
+    [
+     "Of which Saturated Fat (g)",
+     "1",
+     "4"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "2",
+     "5"
+    ],
+    [
+     "Total Sodium (mg)",
+     "106",
+     "350"
+    ]
+   ]
+  },
+  {
+   "name": "SMOKY BBQ CHICKEN",
+   "url": "https://kauai.co.za/menu-item/smoky-bbq-chicken-salad-2/",
+   "groups": [
+    "salad-bowls"
+   ],
+   "tags": [],
+   "allergens": [
+    "Eggs",
+    "Milk",
+    "Oats (gluten)",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "smoky BBQ free range chicken, cabbage, carrot, celery, roasted corn salsa, rosa tomatoes, white cheddar, gherkins, crispy onions, greens, creamy feta dressing",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per Serving"
+    ],
+    [
+     "Energy (kJ)",
+     "578",
+     "2490"
+    ],
+    [
+     "Protein (g)",
+     "10",
+     "42"
+    ],
+    [
+     "Carbohydrates (g)",
+     "5",
+     "22"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "2",
+     "11"
+    ],
+    [
+     "Total fat",
+     "9",
+     "39"
+    ],
+    [
+     "of which Saturated fat (g)",
+     "4",
+     "16"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "1",
+     "6"
+    ],
+    [
+     "Total Sodium (mg)",
+     "197",
+     "848"
+    ]
+   ]
+  },
+  {
+   "name": "SUPERFOOD",
+   "url": "https://kauai.co.za/menu-item/superfood-salad/",
+   "groups": [
+    "salad-bowls"
+   ],
+   "tags": [
+    "DF",
+    "GF",
+    "V",
+    "VEG"
+   ],
+   "allergens": [
+    "Tree Nuts"
+   ],
+   "ingredients": "avo, broccoli, cashews, red pepper, rosa tomatoes, carrot, cucumber, chia seeds, lettuce, vegan nut butter dressing",
+   "rows": [
+    [
+     "",
+     "Per 100 g",
+     "Per Serving"
+    ],
+    [
+     "Energy",
+     "466 kJ",
+     "1893 kJ"
+    ],
+    [
+     "Protein",
+     "1,7 g",
+     "6,9 g"
+    ],
+    [
+     "Carbohydrate",
+     "7 g",
+     "28 g"
+    ],
+    [
+     "of which Total Sugar",
+     "2,8 g",
+     "11,6 g"
+    ],
+    [
+     "Total fat",
+     "8,6 g",
+     "34,9 g"
+    ],
+    [
+     "of which Saturated fat",
+     "1,2 g",
+     "5,0 g"
+    ],
+    [
+     "Dietary fibre",
+     "2,5 g",
+     "10,1 g"
+    ],
+    [
+     "Dietary fibre",
+     "65 mg",
+     "264 mg"
+    ]
+   ]
+  },
+  {
+   "name": "BUTTA CHICKEN",
+   "url": "https://kauai.co.za/menu-item/butta-chicken-warm-bowl/",
+   "groups": [
+    "warm-meals"
+   ],
+   "tags": [
+    "GF"
+   ],
+   "allergens": [
+    "Milk"
+   ],
+   "ingredients": "free range chicken & butternut curry (tomato paste, garlic, ginger, garam masala, turmeric, cayenne pepper, butter, cream), brown rice & quinoa, tumeric roast cauliflower, baby spinach, curried sunflower seeds, carrot pickle",
+   "rows": [
+    [
+     "",
+     "Per 100 g",
+     "Per Serving"
+    ],
+    [
+     "Energy (kJ)",
+     "545",
+     "2819"
+    ],
+    [
+     "Protein (g)",
+     "5,2",
+     "26,8"
+    ],
+    [
+     "Carbohydrate (g)",
+     "10",
+     "51"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "1,5",
+     "8,0"
+    ],
+    [
+     "Total fat (g)",
+     "8,1",
+     "41,7"
+    ],
+    [
+     "of which Saturated fat (g)",
+     "3,3",
+     "16,9"
+    ],
+    [
+     "Dietary fibre (g)",
+     "1,9",
+     "10,0"
+    ],
+    [
+     "Total Sodium (mg)",
+     "317",
+     "1641"
+    ]
+   ]
+  },
+  {
+   "name": "PROTEIN PLATE WITH BROCCOLI",
+   "url": "https://kauai.co.za/menu-item/protein-with-broccoli/",
+   "groups": [
+    "warm-meals"
+   ],
+   "tags": [
+    "GF"
+   ],
+   "allergens": [
+    "Eggs"
+   ],
+   "ingredients": "free range chicken breast with lemon & herb sauce, side salad with caesar dressing with steamed broccoli",
+   "rows": [
+    [
+     "",
+     "Per 100 g",
+     "Per serving"
+    ],
+    [
+     "Energy (kJ)",
+     "452 kJ",
+     "1312 kJ"
+    ],
+    [
+     "Protein (g)",
+     "9,8 g",
+     "28,4 g"
+    ],
+    [
+     "Carbohydrate (g)",
+     "4 g",
+     "12 g"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "2,0 g",
+     "5,8 g"
+    ],
+    [
+     "Total fat (g)",
+     "5,8 g",
+     "16,9 g"
+    ],
+    [
+     "of which Saturated fat (g",
+     "1,2 g",
+     "3,4 g"
+    ],
+    [
+     "Dietary fibre (g)",
+     "1,4 g",
+     "4,1 g"
+    ],
+    [
+     "Total Sodium (mg)",
+     "240 mg",
+     "696 mg"
+    ]
+   ]
+  },
+  {
+   "name": "PROTEIN WITH WARM GRAIN",
+   "url": "https://kauai.co.za/menu-item/protein-with-warm-grain/",
+   "groups": [
+    "warm-meals"
+   ],
+   "tags": [
+    "GF"
+   ],
+   "allergens": [
+    "Eggs"
+   ],
+   "ingredients": "free range chicken breast with lemon & herb sauce, side salad with caesar dressing with brown rice, quinoa & salsa",
+   "rows": [
+    [
+     "",
+     "Per 100 g",
+     "Per serving"
+    ],
+    [
+     "Energy (kJ)",
+     "398",
+     "1650"
+    ],
+    [
+     "Protein (g)",
+     "6,9",
+     "28,5"
+    ],
+    [
+     "Carbohydrate (g)",
+     "10",
+     "43"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "1,3",
+     "5,4"
+    ],
+    [
+     "Total fat (g)",
+     "2,7",
+     "11,3"
+    ],
+    [
+     "of which Saturated fat (g)",
+     "0,6",
+     "2,3"
+    ],
+    [
+     "Dietary fibre (g)",
+     "1,3",
+     "5,5"
+    ],
+    [
+     "Total Sodium (mg)",
+     "324",
+     "1344"
+    ]
+   ]
+  },
+  {
+   "name": "TERIYAKI CHICKEN POKE BOWL",
+   "url": "https://kauai.co.za/menu-item/teriyaki-chicken-poke-bowl/",
+   "groups": [
+    "warm-meals"
+   ],
+   "tags": [],
+   "allergens": [
+    "Sesame seeds",
+    "Soy",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "teriyaki free range chicken, brown rice & quinoa, avo, pineapple, cabbage, carrot, cucumber, radish, sesame, crispy onions, miso dressing",
+   "rows": [
+    [
+     "",
+     "Per 100 g",
+     "Per Serving"
+    ],
+    [
+     "Energy (kj)",
+     "678",
+     "3551"
+    ],
+    [
+     "Protein (g)",
+     "7,0",
+     "36,9"
+    ],
+    [
+     "Carbohydrates (g)",
+     "12",
+     "60"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "2,2",
+     "11,7"
+    ],
+    [
+     "Total Fat (g)",
+     "9,8",
+     "51,3"
+    ],
+    [
+     "of which Saturated Fat (g)",
+     "1,9",
+     "9,7"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "2,2",
+     "11,6"
+    ],
+    [
+     "Total Sodium (mg)",
+     "254",
+     "1330"
+    ]
+   ]
+  },
+  {
+   "name": "TERIYAKI MUSHROOM POKE BOWL",
+   "url": "https://kauai.co.za/menu-item/teriyaki-mushroom-poke-bowl/",
+   "groups": [
+    "warm-meals"
+   ],
+   "tags": [
+    "DF",
+    "V"
+   ],
+   "allergens": [
+    "Peanuts",
+    "Sesame seeds",
+    "Soy",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "teriyaki mushrooms, spring onion, sesame sriracha peanuts, brown rice & quinoa, cabbage, steamed broccoli, carrot, avo, radish, cucumber, sesame, crispy onions, miso dressing",
+   "rows": [
+    [
+     "",
+     "Per 100 g",
+     "Per Serving"
+    ],
+    [
+     "Energy",
+     "629 kJ",
+     "3329 kJ"
+    ],
+    [
+     "Protein",
+     "3,0 g",
+     "15,8 g"
+    ],
+    [
+     "Carbohydrate",
+     "13 g",
+     "67 g"
+    ],
+    [
+     "of which Total Sugar",
+     "2,7 g",
+     "14,5 g"
+    ],
+    [
+     "Total fat",
+     "9,8 g",
+     "51,7 g"
+    ],
+    [
+     "of which Saturated fat",
+     "1,6 g",
+     "8,6 g"
+    ],
+    [
+     "Dietary fibre",
+     "2,7 g",
+     "14,3 g"
+    ],
+    [
+     "Total Sodium",
+     "237 mg",
+     "1254 mg"
+    ]
+   ]
+  },
+  {
+   "name": "VIETNAMESE STEAK POKE BOWL",
+   "url": "https://kauai.co.za/menu-item/vietnamese-steak-poke-bowl-2/",
+   "groups": [
+    "warm-meals"
+   ],
+   "tags": [],
+   "allergens": [
+    "Eggs",
+    "Peanuts",
+    "Sesame seeds",
+    "Soy"
+   ],
+   "ingredients": "teriyaki grilled steak, brown rice & quinoa, sriracha sesame peanuts, cucumber, red onion pickle, baby spinach, carrot, jalapeno, coriander, mint, sesame sriracha dressing",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per Serving"
+    ],
+    [
+     "Energy (kj)",
+     "757",
+     "3295"
+    ],
+    [
+     "Protein (g)",
+     "8",
+     "34"
+    ],
+    [
+     "Carbohydrates (g)",
+     "8",
+     "34"
+    ],
+    [
+     "Total Sugar (g)",
+     "5",
+     "20"
+    ],
+    [
+     "Total fat (g)",
+     "13",
+     "58"
+    ],
+    [
+     "Saturated fat (g)",
+     "2",
+     "10"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "2",
+     "9"
+    ],
+    [
+     "Sodium (mg)",
+     "361",
+     "1134"
+    ]
+   ]
+  },
+  {
+   "name": "AVO CHICKEN DELUXE",
+   "url": "https://kauai.co.za/menu-item/avo-chicken-deluxe-2/",
+   "groups": [
+    "sourdoughtoasties"
+   ],
+   "tags": [],
+   "allergens": [
+    "Eggs",
+    "Milk",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "free range chicken, avo, basil pesto, baby spinach, tomato, dijon mayo, 36hr fermented sourdough",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per Serving"
+    ],
+    [
+     "Energy (kj)",
+     "793",
+     "2777"
+    ],
+    [
+     "Protein (g)",
+     "10",
+     "36"
+    ],
+    [
+     "Carbohydrates (g)",
+     "16",
+     "55"
+    ],
+    [
+     "Total Sugar (g)",
+     "2",
+     "7"
+    ],
+    [
+     "Total Fat (g)",
+     "9",
+     "33"
+    ],
+    [
+     "Saturated Fat (g)",
+     "1",
+     "5"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "3",
+     "10"
+    ],
+    [
+     "Sodium (mg)",
+     "143",
+     "500"
+    ]
+   ]
+  },
+  {
+   "name": "CHEDDAR STEAK",
+   "url": "https://kauai.co.za/menu-item/cheddar-steak/",
+   "groups": [
+    "sourdoughtoasties"
+   ],
+   "tags": [
+    "NEW"
+   ],
+   "allergens": [
+    "Eggs",
+    "Milk",
+    "Soy",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "grilled steak, white cheddar, chipotle chili, BBQ sauce, jalapeno, gherkins, rocket, celery & onion mayo, 36hr fermented sourdough",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per Serving"
+    ],
+    [
+     "Energy (kJ)",
+     "1289",
+     "3557"
+    ],
+    [
+     "Protein (g)",
+     "18",
+     "50"
+    ],
+    [
+     "Carbohydrate (g)",
+     "18",
+     "49"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "3",
+     "7"
+    ],
+    [
+     "Total Fat (g)",
+     "18",
+     "50"
+    ],
+    [
+     "Of which Saturated Fat (g)",
+     "6",
+     "17"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "2",
+     "6"
+    ],
+    [
+     "Total Sodium (mg)",
+     "281",
+     "776"
+    ]
+   ]
+  },
+  {
+   "name": "CHEESY SUNDRIED TOMATO",
+   "url": "https://kauai.co.za/menu-item/cheesy-sundried-tomato-2/",
+   "groups": [
+    "sourdoughtoasties"
+   ],
+   "tags": [],
+   "allergens": [
+    "Milk",
+    "Tree Nuts",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "white cheddar, sundried tomato pesto, feta, tomato, 36hr fermented sourdough",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per Serving"
+    ],
+    [
+     "Energy (kj)",
+     "878",
+     "1976"
+    ],
+    [
+     "Protein (g)",
+     "9",
+     "21"
+    ],
+    [
+     "Carbohydrates (g)",
+     "22",
+     "49"
+    ],
+    [
+     "Total Sugar (g)",
+     "2",
+     "5"
+    ],
+    [
+     "Total Fat (g)",
+     "10",
+     "22"
+    ],
+    [
+     "Saturated Fat (g)",
+     "5",
+     "12"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "3",
+     "6"
+    ],
+    [
+     "Sodium (mg)",
+     "271",
+     "609"
+    ]
+   ]
+  },
+  {
+   "name": "SPICY TUNA AVO",
+   "url": "https://kauai.co.za/menu-item/spicy-tuna-avo/",
+   "groups": [
+    "sourdoughtoasties"
+   ],
+   "tags": [
+    "NEW"
+   ],
+   "allergens": [
+    "Eggs",
+    "Fish",
+    "Wheat (Gluten)"
+   ],
+   "ingredients": "spicy tuna salad, avo, rocket, celery & onion mayo, 36hr fermented sourdough",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per serving"
+    ],
+    [
+     "Energy (kJ)",
+     "723",
+     "1881"
+    ],
+    [
+     "Protein (g)",
+     "8",
+     "20"
+    ],
+    [
+     "Carbohydrate (g)",
+     "19",
+     "50"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "3",
+     "8"
+    ],
+    [
+     "Total Fat (g)",
+     "7",
+     "18"
+    ],
+    [
+     "Of which Saturated Fat (g)",
+     "1",
+     "3"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "2",
+     "6"
+    ],
+    [
+     "Total Sodium (mg)",
+     "235",
+     "611"
+    ]
+   ]
+  },
+  {
+   "name": "CAPPUCCINO DARK CHOCOLATE PROTEIN BAR",
+   "url": "https://kauai.co.za/menu-item/cappuccino-dark-chocolate-protein-bar/",
+   "groups": [
+    "snacks"
+   ],
+   "tags": [],
+   "allergens": [
+    "Milk",
+    "Soy"
+   ],
+   "ingredients": "Ingredient info coming soon!",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per 65g"
+    ],
+    [
+     "Energy (kJ)",
+     "1526",
+     "1099"
+    ],
+    [
+     "Protein (g)",
+     "28,3",
+     "20,4"
+    ],
+    [
+     "Glycaemic Carbohdrate(g)",
+     "44,8",
+     "32,3"
+    ],
+    [
+     "of which total sugars (g)",
+     "21,1",
+     "15,3"
+    ],
+    [
+     "Total Fat (g)",
+     "6,9",
+     "4,9"
+    ],
+    [
+     "of which Saturated fat (g)",
+     "5,9",
+     "4,2"
+    ],
+    [
+     "of which Monounsaturated fat (g)",
+     "0,9",
+     "0,6"
+    ],
+    [
+     "of which Polyunsaturated fat (g)",
+     "0,1",
+     "0,1"
+    ],
+    [
+     "of which Trans fat (g)",
+     "0,0",
+     "0,0"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "3,4",
+     "2,4"
+    ],
+    [
+     "Total Sodium (mg)",
+     "181",
+     "130"
+    ]
+   ]
+  },
+  {
+   "name": "DARK CHOC & PEANUT BUTTER PROTEIN BAR",
+   "url": "https://kauai.co.za/menu-item/dark-choc-peanut-butter-protein-bar/",
+   "groups": [
+    "snacks"
+   ],
+   "tags": [],
+   "allergens": [
+    "Milk",
+    "Peanuts"
+   ],
+   "ingredients": "Ingredient info coming soon!",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per 65g"
+    ],
+    [
+     "Energy (kJ)",
+     "1642",
+     "1182"
+    ],
+    [
+     "Protein (g)",
+     "27,7",
+     "20"
+    ],
+    [
+     "Glycaemic Carbohdrate(g)",
+     "26",
+     "19"
+    ],
+    [
+     "of which total sugars (g)",
+     "9,7",
+     "7,0"
+    ],
+    [
+     "Total Fat (g)",
+     "17,3",
+     "12,4"
+    ],
+    [
+     "of which Saturated fat (g)",
+     "7,1",
+     "5,1"
+    ],
+    [
+     "of which Monounsaturated fat (g)",
+     "6,3",
+     "4,5"
+    ],
+    [
+     "of which Polyunsaturated fat (g)",
+     "3,9",
+     "2,8"
+    ],
+    [
+     "of which Trans fat (g)",
+     "0,0",
+     "0,0"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "15,2",
+     "10,9"
+    ],
+    [
+     "Total Sodium (mg)",
+     "66",
+     "48"
+    ]
+   ]
+  },
+  {
+   "name": "Keto Protein Bar",
+   "url": "https://kauai.co.za/menu-item/keto-protein-bar/",
+   "groups": [
+    "snacks"
+   ],
+   "tags": [
+    "DF",
+    "V"
+   ],
+   "allergens": [
+    "Tree Nuts"
+   ],
+   "ingredients": "Almonds (32%), Tapioca Fibre Syrup, Sunflower Seeds (20%), Coconut Flakes (12%), Xylitol, Sea Salt, Cinnamon, Flavouring",
+   "rows": [
+    [
+     "Energy (kJ)",
+     "1438",
+     "575"
+    ],
+    [
+     "Protein (g)",
+     "10.8",
+     "4.3"
+    ],
+    [
+     "Glycaemic Carbohydrate (g)",
+     "6",
+     "2"
+    ],
+    [
+     "of which total sugars (g)",
+     "4.2",
+     "1.7"
+    ],
+    [
+     "Polyols (g)",
+     "8",
+     "3.2"
+    ],
+    [
+     "Total Fat (g)",
+     "25.4",
+     "10.2"
+    ],
+    [
+     "of which Saturated fat (g)",
+     "7.1",
+     "2.8"
+    ],
+    [
+     "of which Monounsaturated fat (g)",
+     "10.4",
+     "4.2"
+    ],
+    [
+     "of which Polyunsaturated fat (g)",
+     "7.7",
+     "3.1"
+    ],
+    [
+     "of which Trans fat (g)",
+     "0.0",
+     "0.0"
+    ],
+    [
+     "Dietry Fibre (g)",
+     "8.8",
+     "3.5"
+    ],
+    [
+     "Total Sodium (g)",
+     "204",
+     "82"
+    ]
+   ]
+  },
+  {
+   "name": "PEANUT BUTTER PROTEIN BAR",
+   "url": "https://kauai.co.za/menu-item/peanut-butter-protein-bar/",
+   "groups": [
+    "snacks"
+   ],
+   "tags": [],
+   "allergens": [
+    "Milk",
+    "Peanuts",
+    "Tree Nuts"
+   ],
+   "ingredients": "Ingredient info coming soon!",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per 65g"
+    ],
+    [
+     "Energy (kJ)",
+     "1495",
+     "972"
+    ],
+    [
+     "Protein (g)",
+     "33,6",
+     "21,8"
+    ],
+    [
+     "Glycaemic Carbohdrate(g)",
+     "23,8",
+     "15,5"
+    ],
+    [
+     "of which total sugars (g)",
+     "7,3",
+     "4,7"
+    ],
+    [
+     "Total Fat (g)",
+     "13,1",
+     "8,5"
+    ],
+    [
+     "of which Saturated fat (g)",
+     "2,9",
+     "1,9"
+    ],
+    [
+     "of which Monounsaturated fat (g)",
+     "6,3",
+     "4,1"
+    ],
+    [
+     "of which Polyunsaturated fat (g)",
+     "3,9",
+     "2,5"
+    ],
+    [
+     "of which Trans fat (g)",
+     "0,0",
+     "0,0"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "16",
+     "10,4"
+    ],
+    [
+     "Total Sodium (mg)",
+     "79",
+     "51"
+    ]
+   ]
+  },
+  {
+   "name": "Peanut Butter with Cocoa Nibs Granola Bar",
+   "url": "https://kauai.co.za/menu-item/peanut-butter-with-cocoa-nibs-granola-bar/",
+   "groups": [
+    "snacks"
+   ],
+   "tags": [
+    "DF"
+   ],
+   "allergens": [
+    "Oats (gluten)",
+    "Peanuts"
+   ],
+   "ingredients": "",
+   "rows": [
+    [
+     "Energy (kJ)",
+     "1516",
+     "606"
+    ],
+    [
+     "Protein (g)",
+     "12.7",
+     "5.1"
+    ],
+    [
+     "Glycaemic Carbohydrate",
+     "33",
+     "13"
+    ],
+    [
+     "of which total sugars",
+     "3.9",
+     "1.5"
+    ],
+    [
+     "Total Fat",
+     "13.9",
+     "5.6"
+    ],
+    [
+     "of which Saturated fat",
+     "3.2",
+     "1.3"
+    ],
+    [
+     "of which Monounsaturated fat",
+     "8.6",
+     "3.4"
+    ],
+    [
+     "of which Polyunsaturated fat",
+     "2.2",
+     "0.9"
+    ],
+    [
+     "of which Trans fat",
+     "0.0",
+     "0.0"
+    ],
+    [
+     "Dietary Fibre",
+     "7.2",
+     "2.9"
+    ],
+    [
+     "Total Sodium",
+     "214",
+     "86"
+    ]
+   ]
+  },
+  {
+   "name": "VANILLA CHOC CHIP DARK CHOC COATED PROTEIN BAR",
+   "url": "https://kauai.co.za/menu-item/vanilla-choc-chip-dark-cho-coated-protein-bar/",
+   "groups": [
+    "snacks"
+   ],
+   "tags": [],
+   "allergens": [
+    "Milk",
+    "Soy"
+   ],
+   "ingredients": "Ingredient info coming soon!",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per 65g"
+    ],
+    [
+     "Energy (kJ)",
+     "1526",
+     "1099"
+    ],
+    [
+     "Protein (g)",
+     "28,3",
+     "20,4"
+    ],
+    [
+     "Glycaemic Carbohdrate(g)",
+     "44,8",
+     "32,3"
+    ],
+    [
+     "of which total sugars (g)",
+     "21,1",
+     "15,3"
+    ],
+    [
+     "Total Fat (g)",
+     "6,9",
+     "4,9"
+    ],
+    [
+     "of which Saturated fat (g)",
+     "5,9",
+     "4,2"
+    ],
+    [
+     "of which Monounsaturated fat (g)",
+     "0,9",
+     "0,6"
+    ],
+    [
+     "of which Polyunsaturated fat (g)",
+     "0,1",
+     "0,1"
+    ],
+    [
+     "of which Trans fat (g)",
+     "0,0",
+     "0,0"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "3,4",
+     "2,4"
+    ],
+    [
+     "Total Sodium (mg)",
+     "181",
+     "130"
+    ]
+   ]
+  },
+  {
+   "name": "RAW MIXED NUTS",
+   "url": "https://kauai.co.za/menu-item/raw-mixed-nuts/",
+   "groups": [
+    "snacks"
+   ],
+   "tags": [],
+   "allergens": [
+    "Tree Nuts"
+   ],
+   "ingredients": "",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per 30g"
+    ],
+    [
+     "Energy (kJ)",
+     "2812",
+     "844"
+    ],
+    [
+     "Protein (g)",
+     "13,1",
+     "3,9"
+    ],
+    [
+     "Glycaemic Carbohydrate(g)",
+     "4",
+     "1"
+    ],
+    [
+     "of which total sugars (g)",
+     "3,9",
+     "1,2"
+    ],
+    [
+     "Total Fat (g)",
+     "63,9",
+     "19,2"
+    ],
+    [
+     "of which Saturated fat (g)",
+     "7,9",
+     "2,4"
+    ],
+    [
+     "Trans Fat (g)",
+     "0,1",
+     "0,0"
+    ],
+    [
+     "of which Polyunsatu- rated fat (g)",
+     "14,3",
+     "4,3"
+    ],
+    [
+     "of which Monounsatu- rated fat (g)",
+     "41,6",
+     "12,5"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "21,0",
+     "6,3"
+    ],
+    [
+     "Total",
+     "21,0",
+     "6,3"
+    ],
+    [
+     "Sodium (mg)",
+     "2",
+     "1"
+    ]
+   ]
+  },
+  {
+   "name": "SLICED FREE RANGE BILTONG",
+   "url": "https://kauai.co.za/menu-item/sliced-free-range-biltong/",
+   "groups": [
+    "snacks"
+   ],
+   "tags": [],
+   "allergens": [
+    "Peanuts",
+    "Tree Nuts"
+   ],
+   "ingredients": "Beef (100%), Spice Mix (salt, dextrose, coriander, black pepper, cayenne pepper, cloves, garlic), preservative (potassium sorbate)",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per 40g"
+    ],
+    [
+     "Energy (kJ)",
+     "1117",
+     "447"
+    ],
+    [
+     "Protein (g)",
+     "41,7",
+     "16,7"
+    ],
+    [
+     "Glycaemic Carbohdrate(g)",
+     "<0.50",
+     "<0.25"
+    ],
+    [
+     "of which total sugars (g)",
+     "<0.50",
+     "<0.25"
+    ],
+    [
+     "Total Fat (g)",
+     "10,9",
+     "4,4"
+    ],
+    [
+     "of which Saturated fat (g)",
+     "4,1",
+     "1,7"
+    ],
+    [
+     "of which Monounsaturated fat (g)",
+     "5,4",
+     "2,2"
+    ],
+    [
+     "of which Polyunsaturated fat (g)",
+     "1,3",
+     "0,5"
+    ],
+    [
+     "of which Trans fat (g)",
+     "0,1",
+     "0,0"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "0,57",
+     "0,2"
+    ],
+    [
+     "Total Sodium (mg)",
+     "1818,9",
+     "727,6"
+    ]
+   ]
+  },
+  {
+   "name": "SNACK STICKS FREE RANGE BILTONG",
+   "url": "https://kauai.co.za/menu-item/snack-sticks-free-range-biltong/",
+   "groups": [
+    "snacks"
+   ],
+   "tags": [],
+   "allergens": [
+    "Peanuts",
+    "Tree Nuts"
+   ],
+   "ingredients": "Beef (100%), Spice Mix (salt, dextrose, coriander, black pepper, cayenne pepper, cloves, garlic), preservative (potassium sorbate)",
+   "rows": [
+    [
+     "",
+     "Per 100g",
+     "Per 40g"
+    ],
+    [
+     "Energy (kJ)",
+     "1173",
+     "469"
+    ],
+    [
+     "Protein (g)",
+     "57.8",
+     "23,1"
+    ],
+    [
+     "Glycaemic Carbohdrate(g)",
+     "<0.50",
+     "<0.25"
+    ],
+    [
+     "of which total sugars (g)",
+     "<0.50",
+     "<0.25"
+    ],
+    [
+     "Total Fat (g)",
+     "5,0",
+     "2,0"
+    ],
+    [
+     "of which Saturated fat (g)",
+     "2,1",
+     "0,8"
+    ],
+    [
+     "of which Monounsaturated fat (g)",
+     "1,8",
+     "0,7"
+    ],
+    [
+     "of which Polyunsaturated fat (g)",
+     "1,1",
+     "0,4"
+    ],
+    [
+     "of which Trans fat (g)",
+     "<0,1",
+     "<0,1"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "0,59",
+     "0,0"
+    ],
+    [
+     "Total Sodium (mg)",
+     "2595",
+     "1038"
+    ]
+   ]
+  },
+  {
+   "name": "BERRY DAIRY",
+   "url": "https://kauai.co.za/menu-item/berry-dairy/",
+   "groups": [
+    "smoothies"
+   ],
+   "tags": [
+    "GF",
+    "",
+    "VEG"
+   ],
+   "allergens": [
+    "Milk"
+   ],
+   "ingredients": "blueberries, strawberries, banana, frozen yoghurt, honey, milk",
+   "rows": [
+    [
+     "",
+     "Per 100 ml",
+     "Per 350 ml serving",
+     "Per 500 ml serving"
+    ],
+    [
+     "Energy (kJ)",
+     "325",
+     "1136",
+     "1772"
+    ],
+    [
+     "Protein (g)",
+     "2,4",
+     "8,3",
+     "11,7"
+    ],
+    [
+     "Carbohydrate (g)",
+     "13",
+     "44",
+     "73"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "11",
+     "38,5",
+     "65,5"
+    ],
+    [
+     "Total fat (g)",
+     "2,2",
+     "7,9",
+     "11"
+    ],
+    [
+     "of which Saturated fat (g)",
+     "1,2",
+     "4,3",
+     "5,9"
+    ],
+    [
+     "Dietary fibre (g)",
+     "1,1",
+     "3,9",
+     "6,3"
+    ],
+    [
+     "Total Sodium (mg)",
+     "29",
+     "100",
+     "139"
+    ]
+   ]
+  },
+  {
+   "name": "C-BREEZE",
+   "url": "https://kauai.co.za/menu-item/c-breeze/",
+   "groups": [
+    "smoothies"
+   ],
+   "tags": [
+    "DF",
+    "GF",
+    "",
+    "V",
+    "VEG"
+   ],
+   "allergens": [],
+   "ingredients": "mango, strawberries, pineapple, 500mg vit C & zinc, pressed apple juice, dates",
+   "rows": [
+    [
+     "",
+     "Per 100 ml",
+     "Per 350 ml serving",
+     "Per 500 ml serving"
+    ],
+    [
+     "Energy (kJ)",
+     "236",
+     "830",
+     "1047"
+    ],
+    [
+     "Protein (g)",
+     "0.3",
+     "1.2",
+     "1.5"
+    ],
+    [
+     "Carbohydrate (g)",
+     "13",
+     "47",
+     "59"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "10.9",
+     "38.2",
+     "47.7"
+    ],
+    [
+     "Total fat (g)",
+     "0.1",
+     "0.5",
+     "0.6"
+    ],
+    [
+     "of which Saturated fat (g)",
+     "0.0",
+     "0.1",
+     "0.1"
+    ],
+    [
+     "Dietary fibre (g)",
+     "1",
+     "3.6",
+     "4.7"
+    ],
+    [
+     "Total Sodium (mg)",
+     "3",
+     "9",
+     "11"
+    ]
+   ]
+  },
+  {
+   "name": "COCO LIME",
+   "url": "https://kauai.co.za/menu-item/coco-lime/",
+   "groups": [
+    "smoothies"
+   ],
+   "tags": [
+    "NEW"
+   ],
+   "allergens": [
+    "Milk"
+   ],
+   "ingredients": "mango, pineapple, lime, baby spinach, mint, frozen yoghurt, honey, coconut water",
+   "rows": [
+    [
+     "",
+     "Per 350ml",
+     "Per 500 ml"
+    ],
+    [
+     "Energy (kJ)",
+     "1141",
+     "1367"
+    ],
+    [
+     "Protein (g)",
+     "5",
+     "6"
+    ],
+    [
+     "Carbohydrate (g)",
+     "51",
+     "64"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "45",
+     "56"
+    ],
+    [
+     "Total Fat (g)",
+     "5",
+     "5"
+    ],
+    [
+     "Of which Saturated Fat (g)",
+     "3",
+     "3"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "3",
+     "4"
+    ],
+    [
+     "Total Sodium (mg)",
+     "118",
+     "142"
+    ]
+   ]
+  },
+  {
+   "name": "GEM",
+   "url": "https://kauai.co.za/menu-item/gem-smoothie/",
+   "groups": [
+    "smoothies"
+   ],
+   "tags": [
+    "GF",
+    "",
+    "VEG"
+   ],
+   "allergens": [
+    "Milk",
+    "Tree Nuts"
+   ],
+   "ingredients": "banana, almonds, frozen yoghurt, milk, honey",
+   "rows": [
+    [
+     "",
+     "Per 100 ml",
+     "Per 350 ml serving",
+     "Per 500 ml serving"
+    ],
+    [
+     "Energy (kJ)",
+     "504",
+     "1764",
+     "2302"
+    ],
+    [
+     "Protein (g)",
+     "3,6",
+     "12,7",
+     "15,6"
+    ],
+    [
+     "Carbohydrate (g)",
+     "16",
+     "58",
+     "81"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "14,2",
+     "49,7",
+     "73,4"
+    ],
+    [
+     "Total fat (g)",
+     "5",
+     "17,3",
+     "20,3"
+    ],
+    [
+     "of which Saturated fat (g)",
+     "1,6",
+     "5,6",
+     "7,2"
+    ],
+    [
+     "Dietary fibre (g)",
+     "1,2",
+     "4",
+     "4,4"
+    ],
+    [
+     "Total Sodium (mg)",
+     "48",
+     "167",
+     "205"
+    ]
+   ]
+  },
+  {
+   "name": "PEANUT BUTTER BERRY",
+   "url": "https://kauai.co.za/menu-item/peanut-butter-berry-smoothie/",
+   "groups": [
+    "smoothies"
+   ],
+   "tags": [
+    "GF",
+    "",
+    "V",
+    "VEG"
+   ],
+   "allergens": [
+    "Peanuts",
+    "Tree Nuts"
+   ],
+   "ingredients": "sugar-free peanut butter, blueberries, banana, dates, almond milk, purified water",
+   "rows": [
+    [
+     "",
+     "Per 100 ml",
+     "Per 350 ml serving",
+     "Per 500 ml serving"
+    ],
+    [
+     "Energy (kJ)",
+     "375",
+     "1311",
+     "2178"
+    ],
+    [
+     "Protein (g)",
+     "2,6",
+     "9,3",
+     "19,1"
+    ],
+    [
+     "Carbohydrate (g)",
+     "11",
+     "39",
+     "41"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "7,2",
+     "25,1",
+     "27,4"
+    ],
+    [
+     "Total fat (g)",
+     "1,7",
+     "5,8",
+     "10,5"
+    ],
+    [
+     "of which Saturated fat (g)",
+     "0,5",
+     "1,7",
+     "15,8"
+    ],
+    [
+     "Dietary fibre (g)",
+     "1,5",
+     "5,1",
+     "4"
+    ],
+    [
+     "Total Sodium (mg)",
+     "1",
+     "2",
+     "4"
+    ]
+   ]
+  },
+  {
+   "name": "PEANUT BUTTER BLISS",
+   "url": "https://kauai.co.za/menu-item/peanut-butter-bliss-smoothie/",
+   "groups": [
+    "smoothies"
+   ],
+   "tags": [
+    "GF",
+    "",
+    "VEG"
+   ],
+   "allergens": [
+    "Milk",
+    "Peanuts",
+    "Tree Nuts"
+   ],
+   "ingredients": "sugar-free peanut butter, banana, cacao, frozen yoghurt, milk",
+   "rows": [
+    [
+     "",
+     "Per 100 ml",
+     "Per 350 ml serving",
+     "Per 500 ml serving"
+    ],
+    [
+     "Energy (kJ)",
+     "489",
+     "1711",
+     "2139"
+    ],
+    [
+     "Protein (g)",
+     "4,2",
+     "14,8",
+     "17,8"
+    ],
+    [
+     "Carbohydrate (g)",
+     "13",
+     "44",
+     "62"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "9,8",
+     "34,1",
+     "48,7"
+    ],
+    [
+     "Total fat (g)",
+     "5,8",
+     "20,3",
+     "22,9"
+    ],
+    [
+     "of which Saturated fat (g)",
+     "2",
+     "7",
+     "8,4"
+    ],
+    [
+     "Dietary fibre (g)",
+     "1,5",
+     "5,2",
+     "6,9"
+    ],
+    [
+     "Total Sodium (mg)",
+     "22",
+     "75",
+     "105"
+    ]
+   ]
+  },
+  {
+   "name": "STRAWBERRY STINGER",
+   "url": "https://kauai.co.za/menu-item/strawberry-stinger-smoothie/",
+   "groups": [
+    "smoothies"
+   ],
+   "tags": [
+    "GF",
+    "",
+    "VEG"
+   ],
+   "allergens": [
+    "Milk"
+   ],
+   "ingredients": "strawberries, banana, frozen yoghurt, pressed apple juice",
+   "rows": [
+    [
+     "",
+     "Per 100 ml",
+     "Per 350 ml serving",
+     "Per 500 ml serving"
+    ],
+    [
+     "Energy (kJ)",
+     "237",
+     "829",
+     "977"
+    ],
+    [
+     "Protein (g)",
+     "0,6",
+     "2,1",
+     "2,3"
+    ],
+    [
+     "Carbohydrate (g)",
+     "13",
+     "45",
+     "54"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "10,3",
+     "36,1",
+     "43,1"
+    ],
+    [
+     "Total fat (g)",
+     "0,5",
+     "1,7",
+     "1,8"
+    ],
+    [
+     "of which Saturated fat (g)",
+     "0,2",
+     "0,8",
+     "0,8"
+    ],
+    [
+     "Dietary fibre (g)",
+     "0,8",
+     "2,7",
+     "3,2"
+    ],
+    [
+     "Total Sodium (mg)",
+     "7",
+     "26",
+     "29"
+    ]
+   ]
+  },
+  {
+   "name": "TROPICAL BLISS",
+   "url": "https://kauai.co.za/menu-item/tropical-bliss/",
+   "groups": [
+    "smoothies"
+   ],
+   "tags": [],
+   "allergens": [
+    "Milk"
+   ],
+   "ingredients": "mango, pineapple, frozen yoghurt, coconut milk, lemon honey, milk, toasted coconut, chia seeds, mango swirl",
+   "rows": [
+    [
+     "",
+     "Per 350ml",
+     "Per 500ml"
+    ],
+    [
+     "Energy (kJ)",
+     "1910",
+     "2435"
+    ],
+    [
+     "Protein (g)",
+     "8",
+     "11"
+    ],
+    [
+     "Carbohydrates (g)",
+     "56",
+     "63"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "49",
+     "56"
+    ],
+    [
+     "Total fat",
+     "23",
+     "32"
+    ],
+    [
+     "of which Saturated fat (g)",
+     "18",
+     "26"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "4",
+     "6"
+    ],
+    [
+     "Total Sodium (mg)",
+     "149",
+     "181"
+    ]
+   ]
+  },
+  {
+   "name": "MOCHA PROTEIN",
+   "url": "https://kauai.co.za/menu-item/mocha-protein/",
+   "groups": [
+    "protein-smoothies"
+   ],
+   "tags": [
+    "GF",
+    "",
+    "VEG"
+   ],
+   "allergens": [
+    "Milk"
+   ],
+   "ingredients": "whey protein, espresso, frozen yoghurt, coconut milk, cacao",
+   "rows": [
+    [
+     "",
+     "Per 350 ml",
+     "Per 500 ml"
+    ],
+    [
+     "Energy",
+     "1803 kJ",
+     "2642 kJ"
+    ],
+    [
+     "Protein",
+     "21,9 g",
+     "37,6 g"
+    ],
+    [
+     "Carbohydrates",
+     "44 g",
+     "59 g"
+    ],
+    [
+     "of which Total Sugar",
+     "27,7 g",
+     "36,8 g"
+    ],
+    [
+     "Total fat",
+     "18,3 g",
+     "22,2 g"
+    ],
+    [
+     "of which Saturated fat",
+     "14,0 g",
+     "16,0 g"
+    ],
+    [
+     "Dietary fibre",
+     "2,7 g",
+     "3,5 g"
+    ],
+    [
+     "Total Sodium",
+     "266 mg",
+     "370 mg"
+    ]
+   ]
+  },
+  {
+   "name": "PEANUT BUTTER BOMB",
+   "url": "https://kauai.co.za/menu-item/peanut-butter-bomb-smoothie/",
+   "groups": [
+    "protein-smoothies"
+   ],
+   "tags": [
+    "GF",
+    "VEG"
+   ],
+   "allergens": [
+    "Milk",
+    "Peanuts",
+    "Tree Nuts"
+   ],
+   "ingredients": "whey protein, sugar-free peanut butter, banana, cacao, full cream yoghurt, milk",
+   "rows": [
+    [
+     "",
+     "per 350ml",
+     "per 500ml"
+    ],
+    [
+     "Energy",
+     "1952 kj",
+     "3196 kj"
+    ],
+    [
+     "Protein",
+     "25,9 g",
+     "46,9 g"
+    ],
+    [
+     "Carbohydrate",
+     "38 g",
+     "53 g"
+    ],
+    [
+     "of which Total Sugar",
+     "14,6 g",
+     "19,8 g"
+    ],
+    [
+     "Total fat",
+     "23,2 g",
+     "40,5 g"
+    ],
+    [
+     "of which Saturated fat",
+     "7,9 g",
+     "11,7 g"
+    ],
+    [
+     "Dietary fibre",
+     "5,5 g",
+     "9,3 g"
+    ],
+    [
+     "Total Sodium",
+     "105 mg",
+     "149 mg"
+    ]
+   ]
+  },
+  {
+   "name": "PLANT PEANUT BUTTER BOMB",
+   "url": "https://kauai.co.za/menu-item/plant-peanut-butter-bomb/",
+   "groups": [
+    "protein-smoothies"
+   ],
+   "tags": [
+    "DF",
+    "V",
+    "VEG"
+   ],
+   "allergens": [
+    "Peanuts",
+    "Tree Nuts"
+   ],
+   "ingredients": "plant protein, sugar-free peanut butter, banana, cacao, almond milk, coconut milk",
+   "rows": [
+    [
+     "",
+     "per 350 ml",
+     "Per 500 ml"
+    ],
+    [
+     "Energy",
+     "2010 kJ",
+     "2952 kJ"
+    ],
+    [
+     "Protein",
+     "24,5 g",
+     "33,3 g"
+    ],
+    [
+     "Carbohydrate",
+     "28 g",
+     "38 g"
+    ],
+    [
+     "of which Total Sugar",
+     "8,5 g",
+     "11,8 g"
+    ],
+    [
+     "Total fat",
+     "30,3 g",
+     "46,9 g"
+    ],
+    [
+     "of which Saturated fat",
+     "14,1 g",
+     "17,6 g"
+    ],
+    [
+     "Dietary fibre",
+     "11,7 g",
+     "17,0 g"
+    ],
+    [
+     "Total Sodium",
+     "89 mg",
+     "107 mg"
+    ]
+   ]
+  },
+  {
+   "name": "SALTED CARAMEL",
+   "url": "https://kauai.co.za/menu-item/salted-caramel-smoothie/",
+   "groups": [
+    "protein-smoothies"
+   ],
+   "tags": [
+    "GF",
+    "VEG"
+   ],
+   "allergens": [
+    "Milk",
+    "Peanuts",
+    "Tree Nuts"
+   ],
+   "ingredients": "whey protein, dates, banana, almond macadamia nut butter, desert salt, coconut water, almond milk",
+   "rows": [
+    [
+     "",
+     "Per 350 ml serving",
+     "Per 500 ml serving"
+    ],
+    [
+     "Energy (kJ)",
+     "1937 kJ",
+     "2546 kJ"
+    ],
+    [
+     "Protein (g)",
+     "17,4 g",
+     "30,3 g"
+    ],
+    [
+     "Carbohydrate (g)",
+     "35 g",
+     "53 g"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "23,7 g",
+     "34,9 g"
+    ],
+    [
+     "Total fat (g)",
+     "28,3 g",
+     "30,5 g"
+    ],
+    [
+     "of which Saturated fat (g)",
+     "3,3 g",
+     "3,6 g"
+    ],
+    [
+     "Dietary fibre (g)",
+     "5,6 g",
+     "7,3 g"
+    ],
+    [
+     "Total Sodium (mg)",
+     "484 mg",
+     "529 mg"
+    ]
+   ]
+  },
+  {
+   "name": "STRAWBERRY GLO",
+   "url": "https://kauai.co.za/menu-item/strawberry-glo-2/",
+   "groups": [
+    "protein-smoothies"
+   ],
+   "tags": [
+    "V"
+   ],
+   "allergens": [
+    "Tree Nuts"
+   ],
+   "ingredients": "‘plant protein, strawberries, mango, toasted coconut, salted date caramel, roasted cashews, almond milk, coconut milk",
+   "rows": [
+    [
+     "",
+     "Per 350ml",
+     "Per 500ml"
+    ],
+    [
+     "Energy (kj)",
+     "2211",
+     "2474"
+    ],
+    [
+     "Protein (g)",
+     "16",
+     "26"
+    ],
+    [
+     "Carbohydrates (g)",
+     "41",
+     "47"
+    ],
+    [
+     "Total Sugar (g)",
+     "27",
+     "30"
+    ],
+    [
+     "Total Fat (g)",
+     "34",
+     "35"
+    ],
+    [
+     "Saturated fat (g)",
+     "23",
+     "23"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "6",
+     "7"
+    ],
+    [
+     "Sodium (mg)",
+     "145",
+     "198"
+    ]
+   ]
+  },
+  {
+   "name": "ALL THE GREENS",
+   "url": "https://kauai.co.za/menu-item/all-the-greens/",
+   "groups": [
+    "superfood-smoothies"
+   ],
+   "tags": [
+    "DF",
+    "GF",
+    "P",
+    "V",
+    "VEG"
+   ],
+   "allergens": [],
+   "ingredients": "mango, cucumber, pineapple, celery, baby spinach, pressed apple juice, chia & hemp seeds",
+   "rows": [
+    [
+     "",
+     "Per 350ml",
+     "Per 500ml"
+    ],
+    [
+     "Energy (kJ)",
+     "398",
+     "836"
+    ],
+    [
+     "Protein (g)",
+     "1,9",
+     "2,6"
+    ],
+    [
+     "Carbohydrate (g)",
+     "19",
+     "43"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "14,3",
+     "34,0"
+    ],
+    [
+     "Total fat (g)",
+     "1,2",
+     "1,5"
+    ],
+    [
+     "of which Saturated fat (g)",
+     "0,1",
+     "0,2"
+    ],
+    [
+     "Dietary fibre (g)",
+     "2,1",
+     "3,9"
+    ],
+    [
+     "Total Sodium (mg)",
+     "37",
+     "41"
+    ]
+   ]
+  },
+  {
+   "name": "BRAIN BOOST",
+   "url": "https://kauai.co.za/menu-item/brain-boost/",
+   "groups": [
+    "superfood-smoothies"
+   ],
+   "tags": [
+    "GF"
+   ],
+   "allergens": [
+    "Milk",
+    "Tree Nuts"
+   ],
+   "ingredients": "blueberries, banana, full cream yoghurt, almonds, toasted coconut, cacao, almond milk, focus blend (reishi, lion’s mane, cordyceps, ashwagandha)",
+   "rows": [
+    [
+     "",
+     "per 350 ml",
+     "Per 500 ml"
+    ],
+    [
+     "Energy",
+     "1561 kJ",
+     "1849 kJ"
+    ],
+    [
+     "Protein",
+     "9,9 g",
+     "11,6 g"
+    ],
+    [
+     "Carbohydrate",
+     "40 g",
+     "51 g"
+    ],
+    [
+     "of which Total Sugar",
+     "15,3 g",
+     "19,8 g"
+    ],
+    [
+     "Total fat",
+     "19,4 g",
+     "21,3 g"
+    ],
+    [
+     "of which Saturated fat",
+     "7,8 g",
+     "8,3 g"
+    ],
+    [
+     "Dietary fibre",
+     "14,0 g",
+     "17,0 g"
+    ],
+    [
+     "Total Sodium",
+     "125 mg",
+     "152 mg"
+    ]
+   ]
+  },
+  {
+   "name": "CITRUS GLO",
+   "url": "https://kauai.co.za/menu-item/citrus-glo/",
+   "groups": [
+    "superfood-smoothies"
+   ],
+   "tags": [
+    "GF"
+   ],
+   "allergens": [
+    "Milk"
+   ],
+   "ingredients": "orange juice, mango, frozen yoghurt, chia seeds, collagen, citrus-spiced honey, (honey, orange zest, orange juice, cinnamon, star anise)",
+   "rows": [
+    [
+     "",
+     "Per 100 ml",
+     "Per 350 ml serving",
+     "Per 500 ml serving"
+    ],
+    [
+     "Energy (kJ)",
+     "295",
+     "1032",
+     "1409"
+    ],
+    [
+     "Protein (g)",
+     "2,2",
+     "7,8",
+     "9,9"
+    ],
+    [
+     "Carbohydrate (g)",
+     "14",
+     "49",
+     "67"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "12,5",
+     "43,9",
+     "60,3"
+    ],
+    [
+     "Total fat (g)",
+     "0,9",
+     "3,3",
+     "4,6"
+    ],
+    [
+     "of which Saturated fat (g)",
+     "0,5",
+     "1,7",
+     "2,5"
+    ],
+    [
+     "Dietary fibre (g)",
+     "0,8",
+     "2,9",
+     "3,7"
+    ],
+    [
+     "Total Sodium (mg)",
+     "31",
+     "110",
+     "162"
+    ]
+   ]
+  },
+  {
+   "name": "NUT MILK",
+   "url": "https://kauai.co.za/menu-item/nut-milk/",
+   "groups": [
+    "superfood-smoothies"
+   ],
+   "tags": [
+    "DF",
+    "GF",
+    "P",
+    "V",
+    "VEG"
+   ],
+   "allergens": [
+    "Peanuts",
+    "Tree Nuts"
+   ],
+   "ingredients": "almond/macadamia nut butter, cashews, cacao nibs, banana, coconut milk, dates, almond milk",
+   "rows": [
+    [
+     "",
+     "Per 100 ml",
+     "Per 350 ml serving",
+     "Per 500 ml serving"
+    ],
+    [
+     "Energy (kJ)",
+     "501",
+     "1754",
+     "2366"
+    ],
+    [
+     "Protein (g)",
+     "3,2",
+     "11,1",
+     "15,4"
+    ],
+    [
+     "Carbohydrate (g)",
+     "12",
+     "41",
+     "53"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "4,4",
+     "15,5",
+     "23"
+    ],
+    [
+     "Total fat (g)",
+     "3,2",
+     "11,3",
+     "19"
+    ],
+    [
+     "of which Saturated fat (g)",
+     "0,8",
+     "2,9",
+     "4,2"
+    ],
+    [
+     "Dietary fibre (g)",
+     "1,7",
+     "5,8",
+     "7,8"
+    ],
+    [
+     "Total Sodium (mg)",
+     "17",
+     "59",
+     "86"
+    ]
+   ]
+  },
+  {
+   "name": "VANILLA BLUE",
+   "url": "https://kauai.co.za/menu-item/vanilla-blue/",
+   "groups": [
+    "superfood-smoothies"
+   ],
+   "tags": [
+    "NEW"
+   ],
+   "allergens": [
+    "Milk",
+    "Tree Nuts"
+   ],
+   "ingredients": "strawberries, blueberries, vanilla, banana, frozen yoghurt, collagen, almond milk, honey",
+   "rows": [
+    [
+     "",
+     "Per 350ml",
+     "Per 500ml"
+    ],
+    [
+     "Energy (kJ)",
+     "1230",
+     "1832"
+    ],
+    [
+     "Protein (g)",
+     "11",
+     "15"
+    ],
+    [
+     "Carbohydrate (g)",
+     "47",
+     "68"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "37",
+     "57"
+    ],
+    [
+     "Total Fat (g)",
+     "7",
+     "11"
+    ],
+    [
+     "Of which Saturated Fat (g)",
+     "3",
+     "5"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "5",
+     "6"
+    ],
+    [
+     "Total Sodium (mg)",
+     "109",
+     "164"
+    ]
+   ]
+  },
+  {
+   "name": "DAILY GREENS",
+   "url": "https://kauai.co.za/menu-item/daily-greens/",
+   "groups": [
+    "raw-juices-shots"
+   ],
+   "tags": [
+    "DF",
+    "GF",
+    "P",
+    "V",
+    "VEG"
+   ],
+   "allergens": [],
+   "ingredients": "apple, baby spinach, cucumber, celery, chia seeds",
+   "rows": [
+    [
+     "",
+     "Per 100 ml",
+     "Per 350 ml serving",
+     ""
+    ],
+    [
+     "Energy (kJ)",
+     "195",
+     "561",
+     ""
+    ],
+    [
+     "Protein (g)",
+     "0,5",
+     "2,2",
+     ""
+    ],
+    [
+     "Carbohydrate (g)",
+     "11",
+     "30,4",
+     ""
+    ],
+    [
+     "of which Total Sugar (g)",
+     "9,2",
+     "22,3",
+     ""
+    ],
+    [
+     "Total fat (g)",
+     "0,2",
+     "1,2",
+     ""
+    ],
+    [
+     "of which Saturated fat (g",
+     "0",
+     "0,2",
+     ""
+    ],
+    [
+     "Dietary fibre (g)",
+     "0,8",
+     "3",
+     ""
+    ],
+    [
+     "Total Sodium (mg)",
+     "18",
+     "63",
+     ""
+    ]
+   ]
+  },
+  {
+   "name": "FLOO JUICE",
+   "url": "https://kauai.co.za/menu-item/floo-juice/",
+   "groups": [
+    "raw-juices-shots"
+   ],
+   "tags": [
+    "DF",
+    "GF",
+    "P",
+    "V"
+   ],
+   "allergens": [],
+   "ingredients": "orange, carrot, lemon, ginger, cayenne pepper",
+   "rows": [
+    [
+     "",
+     "Per 100 ml",
+     "Per 350 ml serving",
+     ""
+    ],
+    [
+     "Energy (kJ)",
+     "195",
+     "636,9",
+     ""
+    ],
+    [
+     "Protein (g)",
+     "0,5",
+     "3,1",
+     ""
+    ],
+    [
+     "Carbohydrate (g)",
+     "11",
+     "35,2",
+     ""
+    ],
+    [
+     "of which Total Sugar (g)",
+     "9,2",
+     "20",
+     ""
+    ],
+    [
+     "Total fat (g)",
+     "0,2",
+     "0,8",
+     ""
+    ],
+    [
+     "of which Saturated fat (g)",
+     "0",
+     "0,1",
+     ""
+    ],
+    [
+     "Dietary fibre (g)",
+     "0,8",
+     "2,2",
+     ""
+    ],
+    [
+     "Total Sodium (mg)",
+     "35",
+     "123",
+     ""
+    ]
+   ]
+  },
+  {
+   "name": "GINGER PRESS",
+   "url": "https://kauai.co.za/menu-item/ginger-press/",
+   "groups": [
+    "raw-juices-shots"
+   ],
+   "tags": [
+    "NEW"
+   ],
+   "allergens": [],
+   "ingredients": "ginger, pineapple, apple, lemon",
+   "rows": [
+    [
+     "",
+     "Per 350ml",
+     "Per 500ml"
+    ],
+    [
+     "Energy (kJ)",
+     "940",
+     "1385"
+    ],
+    [
+     "Protein (g)",
+     "1",
+     "2"
+    ],
+    [
+     "Carbohydrate (g)",
+     "53",
+     "78"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "35",
+     "53"
+    ],
+    [
+     "Total Fat (g)",
+     "1",
+     "1"
+    ],
+    [
+     "Of which Saturated Fat (g)",
+     "0",
+     "0"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "8",
+     "12"
+    ],
+    [
+     "Total Sodium (mg)",
+     "8",
+     "11"
+    ]
+   ]
+  },
+  {
+   "name": "HELPER",
+   "url": "https://kauai.co.za/menu-item/helper/",
+   "groups": [
+    "raw-juices-shots"
+   ],
+   "tags": [
+    "GF",
+    "P",
+    "V",
+    "VEG"
+   ],
+   "allergens": [],
+   "ingredients": "carrot, apple, pineapple, anti-inflammatory blend (turmeric, 500mg vit C & zinc)",
+   "rows": [
+    [
+     "",
+     "Per 100 ml",
+     "Per 350 ml serving",
+     ""
+    ],
+    [
+     "Energy",
+     "206 kj",
+     "723 kj",
+     ""
+    ],
+    [
+     "Protein",
+     "0,6 g",
+     "2,2 g",
+     ""
+    ],
+    [
+     "Carbohydrate",
+     "11 g",
+     "39 g",
+     ""
+    ],
+    [
+     "of which Total Sugar",
+     "7,5 g",
+     "26,2 g",
+     ""
+    ],
+    [
+     "Total fat",
+     "0,1 g",
+     "0,5 g",
+     ""
+    ],
+    [
+     "of which Saturated fat",
+     "0,0 g",
+     "0,1 g",
+     ""
+    ],
+    [
+     "Dietary fibre",
+     "0,6 g",
+     "2,0 g",
+     ""
+    ],
+    [
+     "Total Sodium",
+     "39 mg",
+     "136 mg",
+     ""
+    ]
+   ]
+  },
+  {
+   "name": "LEMON CUCUMBER COOLER",
+   "url": "https://kauai.co.za/menu-item/lemon-cucumber-cooler/",
+   "groups": [
+    "raw-juices-shots"
+   ],
+   "tags": [
+    "DF",
+    "GF",
+    "P",
+    "V",
+    "VEG"
+   ],
+   "allergens": [],
+   "ingredients": "cucumber, lemon, pineapple, celery, apple, mint",
+   "rows": [
+    [
+     "",
+     "Per 100 ml",
+     "Per 350 ml serving",
+     ""
+    ],
+    [
+     "Energy (kJ)",
+     "123",
+     "430",
+     ""
+    ],
+    [
+     "Protein (g)",
+     "0,4",
+     "1,4",
+     ""
+    ],
+    [
+     "Carbohydrate (g)",
+     "7",
+     "25",
+     ""
+    ],
+    [
+     "of which Total Sugar (g)",
+     "5,2",
+     "18,2",
+     ""
+    ],
+    [
+     "Total fat (g)",
+     "0,1",
+     "0,3",
+     ""
+    ],
+    [
+     "of which Saturated fat (g)",
+     "0",
+     "0,1",
+     ""
+    ],
+    [
+     "Dietary fibre (g)",
+     "0,4",
+     "1,3",
+     ""
+    ],
+    [
+     "Total Sodium (mg)",
+     "9",
+     "31",
+     ""
+    ]
+   ]
+  },
+  {
+   "name": "PROBIOTIC SHOT",
+   "url": "https://kauai.co.za/menu-item/probiotic-shot-2/",
+   "groups": [
+    "raw-juices-shots"
+   ],
+   "tags": [],
+   "allergens": [],
+   "ingredients": "ginger, apple, prebiotic & probiotic shot",
+   "rows": [
+    [
+     "",
+     "Per 50ml",
+     ""
+    ],
+    [
+     "Energy (kJ)",
+     "114",
+     ""
+    ],
+    [
+     "Protein (g)",
+     "0",
+     ""
+    ],
+    [
+     "Carbohydrates (g)",
+     "7",
+     ""
+    ],
+    [
+     "of which Total Sugar (g)",
+     "5",
+     ""
+    ],
+    [
+     "Total fat",
+     "0",
+     ""
+    ],
+    [
+     "of which Saturated fat (g)",
+     "0",
+     ""
+    ],
+    [
+     "Dietary Fibre (g)",
+     "0",
+     ""
+    ],
+    [
+     "Total Sodium (mg)",
+     "3",
+     ""
+    ]
+   ]
+  },
+  {
+   "name": "FLOO SHOT",
+   "url": "https://kauai.co.za/menu-item/floo-shot/",
+   "groups": [
+    "raw-juices-shots"
+   ],
+   "tags": [
+    "DF",
+    "GF",
+    "P",
+    "VEG"
+   ],
+   "allergens": [],
+   "ingredients": "(50ML) ginger, honey, lemon, cayenne pepper",
+   "rows": [
+    [
+     "",
+     "",
+     ""
+    ]
+   ]
+  },
+  {
+   "name": "GINGER SHOT",
+   "url": "https://kauai.co.za/menu-item/ginger-shot/",
+   "groups": [
+    "raw-juices-shots"
+   ],
+   "tags": [
+    "DF",
+    "GF",
+    "P",
+    "V",
+    "VEG"
+   ],
+   "allergens": [],
+   "ingredients": "Ginger",
+   "rows": [
+    [
+     "",
+     "",
+     ""
+    ]
+   ]
+  },
+  {
+   "name": "CREATINE KICK",
+   "url": "https://kauai.co.za/menu-item/creatine-kick/",
+   "groups": [
+    "recovery-drinks"
+   ],
+   "tags": [],
+   "allergens": [],
+   "ingredients": "strawberries, mango, coconut milk, citrus-spiced honey, coconut water, creatine",
+   "rows": [
+    [
+     "",
+     "Per 350ml",
+     "Per 500ml"
+    ],
+    [
+     "Energy (kJ)",
+     "995",
+     "1258"
+    ],
+    [
+     "Protein (g)",
+     "2",
+     "2"
+    ],
+    [
+     "Carbohydrates (g)",
+     "33",
+     "48"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "26",
+     "39"
+    ],
+    [
+     "Total fat",
+     "11",
+     "11"
+    ],
+    [
+     "of which Saturated fat (g)",
+     "10",
+     "10"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "2",
+     "3"
+    ],
+    [
+     "Total Sodium (mg)",
+     "63",
+     "85"
+    ]
+   ]
+  },
+  {
+   "name": "CREATINE TROPICAL ELECTROLYF",
+   "url": "https://kauai.co.za/menu-item/creatine-tropical-electrolyf-2/",
+   "groups": [
+    "recovery-drinks"
+   ],
+   "tags": [],
+   "allergens": [],
+   "ingredients": "creatine, electrolyte recovery blend with magnesium, potassium, sodium",
+   "rows": [
+    [
+     "",
+     "Per 100ml",
+     "Per 500ml"
+    ],
+    [
+     "Energy (kj)",
+     "89",
+     "444"
+    ],
+    [
+     "Protein (g)",
+     "0",
+     "0"
+    ],
+    [
+     "Carbohydrates (g)",
+     "5",
+     "26"
+    ],
+    [
+     "Total Sugar (g)",
+     "5",
+     "26"
+    ],
+    [
+     "Total Fat (g)",
+     "0",
+     "0"
+    ],
+    [
+     "Saturated Fat (g)",
+     "0",
+     "0"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "0",
+     "0"
+    ],
+    [
+     "Sodium (mg)",
+     "21",
+     "105"
+    ]
+   ]
+  },
+  {
+   "name": "THE ULTIMATE RECOVERY",
+   "url": "https://kauai.co.za/menu-item/the-ultimate-recovery/",
+   "groups": [
+    "recovery-drinks"
+   ],
+   "tags": [
+    "DF",
+    "GF",
+    "V"
+   ],
+   "allergens": [],
+   "ingredients": "pineapple, mango, banana, coconut milk, baby spinach, coconut water, recovery blend (BCAA, L-glutamine, electrolytes)",
+   "rows": [
+    [
+     "",
+     "per 350 ml",
+     "Per 500 ml"
+    ],
+    [
+     "Energy",
+     "1018 kJ",
+     "1133 kJ"
+    ],
+    [
+     "Protein",
+     "2,5 g",
+     "2,8 g"
+    ],
+    [
+     "Carbohydrate",
+     "33 g",
+     "40 g"
+    ],
+    [
+     "of which Total Sugar",
+     "23,8 g",
+     "28,9 g"
+    ],
+    [
+     "Total fat",
+     "11,0 g",
+     "11,1 g"
+    ],
+    [
+     "of which Saturated fat",
+     "9,5 g",
+     "9,5 g"
+    ],
+    [
+     "Dietary fibre",
+     "3,2 g",
+     "3,7 g"
+    ],
+    [
+     "Total Sodium",
+     "58 mg",
+     "71 mg"
+    ]
+   ]
+  },
+  {
+   "name": "TROPICAL ELECTROLYF",
+   "url": "https://kauai.co.za/menu-item/tropical-electrolyf/",
+   "groups": [
+    "recovery-drinks"
+   ],
+   "tags": [],
+   "allergens": [],
+   "ingredients": "electrolyte recovery blend with magnesium, potassium, sodium",
+   "rows": [
+    [
+     "",
+     "Per 100ml",
+     "Per 500ml"
+    ],
+    [
+     "Energy (kJ)",
+     "89",
+     "444"
+    ],
+    [
+     "Protein (g)",
+     "0",
+     "0"
+    ],
+    [
+     "Carbohydrates (g)",
+     "5",
+     "26"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "5",
+     "26"
+    ],
+    [
+     "Total fat",
+     "0",
+     "0"
+    ],
+    [
+     "of which Saturated fat (g)",
+     "0",
+     "0"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "0",
+     "0"
+    ],
+    [
+     "Total Sodium (mg)",
+     "21",
+     "105"
+    ]
+   ]
+  },
+  {
+   "name": "ULTIMATE PROTEIN",
+   "url": "https://kauai.co.za/menu-item/ultimate-protein-2/",
+   "groups": [
+    "recovery-drinks"
+   ],
+   "tags": [],
+   "allergens": [
+    "Milk"
+   ],
+   "ingredients": "whey protein, strawberries, mango, coconut milk, coconut water, carrot juice, honey, recovery blend (BCAA, L-glutamine, electrolytes)",
+   "rows": [
+    [
+     "",
+     "Per 350ml",
+     "Per 500ml"
+    ],
+    [
+     "Energy (kj)",
+     "1550",
+     "1832"
+    ],
+    [
+     "Protein (g)",
+     "23",
+     "23"
+    ],
+    [
+     "Carbohydrates (g)",
+     "42",
+     "58"
+    ],
+    [
+     "Total Sugar (g)",
+     "29",
+     "40"
+    ],
+    [
+     "Total Fat (g)",
+     "13",
+     "13"
+    ],
+    [
+     "Saturated Fat",
+     "10",
+     "10"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "3",
+     "4"
+    ],
+    [
+     "Sodium (mg)",
+     "69",
+     "103"
+    ]
+   ]
+  },
+  {
+   "name": "AMERICANO",
+   "url": "https://kauai.co.za/menu-item/americano/",
+   "groups": [
+    "organic-coffee-hot-drinks"
+   ],
+   "tags": [],
+   "allergens": [
+    "Milk"
+   ],
+   "ingredients": "Swap for FREE Oat or Almond Milk.",
+   "rows": [
+    [
+     "",
+     "",
+     ""
+    ]
+   ]
+  },
+  {
+   "name": "CAFFE LATTE",
+   "url": "https://kauai.co.za/menu-item/cafe-latte/",
+   "groups": [
+    "organic-coffee-hot-drinks"
+   ],
+   "tags": [],
+   "allergens": [
+    "Milk"
+   ],
+   "ingredients": "Swap for FREE Oat or Almond Milk.",
+   "rows": [
+    [
+     "",
+     "",
+     ""
+    ]
+   ]
+  },
+  {
+   "name": "CAPPUCCINO",
+   "url": "https://kauai.co.za/menu-item/cappucino/",
+   "groups": [
+    "organic-coffee-hot-drinks"
+   ],
+   "tags": [],
+   "allergens": [
+    "Milk"
+   ],
+   "ingredients": "Swap for FREE Oat or Almond Milk.",
+   "rows": [
+    [
+     "",
+     "",
+     ""
+    ]
+   ]
+  },
+  {
+   "name": "CHAI LATTE",
+   "url": "https://kauai.co.za/menu-item/chai-latte/",
+   "groups": [
+    "organic-coffee-hot-drinks"
+   ],
+   "tags": [],
+   "allergens": [
+    "Milk"
+   ],
+   "ingredients": "Swap for FREE Oat or Almond Milk.",
+   "rows": [
+    [
+     "",
+     "",
+     ""
+    ]
+   ]
+  },
+  {
+   "name": "CORTADO",
+   "url": "https://kauai.co.za/menu-item/cortado-2/",
+   "groups": [
+    "organic-coffee-hot-drinks"
+   ],
+   "tags": [],
+   "allergens": [
+    "Milk"
+   ],
+   "ingredients": "Swap for FREE Oat or Almond Milk.",
+   "rows": [
+    [
+     "",
+     "Per 100ml",
+     "Per 83 ml Serving"
+    ],
+    [
+     "Energy (kJ)",
+     "294",
+     "244"
+    ],
+    [
+     "Protein (g)",
+     "2.3",
+     "1.9"
+    ],
+    [
+     "Carbohydrate (g)",
+     "10",
+     "8"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "9.5",
+     "7.9"
+    ],
+    [
+     "Total Fat (g)",
+     "2.4",
+     "2.0"
+    ],
+    [
+     "of which Saturated Fats (g)",
+     "1.4",
+     "1.1"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "0.0",
+     "0.0"
+    ],
+    [
+     "Total Sodium (mg)",
+     "36",
+     "30"
+    ]
+   ]
+  },
+  {
+   "name": "ESPRESSO",
+   "url": "https://kauai.co.za/menu-item/espresso/",
+   "groups": [
+    "organic-coffee-hot-drinks"
+   ],
+   "tags": [],
+   "allergens": [],
+   "ingredients": "",
+   "rows": [
+    [
+     "",
+     "",
+     ""
+    ]
+   ]
+  },
+  {
+   "name": "FLAT WHITE",
+   "url": "https://kauai.co.za/menu-item/flat-white/",
+   "groups": [
+    "organic-coffee-hot-drinks"
+   ],
+   "tags": [],
+   "allergens": [
+    "Milk"
+   ],
+   "ingredients": "Double espresso, steamed milk. Swap for FREE Oat or Almond Milk.",
+   "rows": [
+    [
+     "",
+     "",
+     ""
+    ]
+   ]
+  },
+  {
+   "name": "FLOO FIGHTER",
+   "url": "https://kauai.co.za/menu-item/floo-fighter-tea/",
+   "groups": [
+    "organic-coffee-hot-drinks"
+   ],
+   "tags": [],
+   "allergens": [],
+   "ingredients": "Mint tea, lemon, ginger, cayenne pepper, honey.",
+   "rows": [
+    [
+     "",
+     "",
+     ""
+    ]
+   ]
+  },
+  {
+   "name": "Fresh Mint & Ginger Tea",
+   "url": "https://kauai.co.za/menu-item/fresh-mint-ginger-tea-2/",
+   "groups": [
+    "organic-coffee-hot-drinks"
+   ],
+   "tags": [
+    "DF",
+    "GF"
+   ],
+   "allergens": [],
+   "ingredients": "Fresh mint, fresh ginger root.",
+   "rows": [
+    [
+     "",
+     "Per 100ml",
+     "Per 25ml Serving"
+    ],
+    [
+     "Energy (kJ)",
+     "280",
+     "70"
+    ],
+    [
+     "Protein (g)",
+     "2.7",
+     "0.7"
+    ],
+    [
+     "Carbohydrate (g)",
+     "12",
+     "3"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "0.7",
+     "0.2"
+    ],
+    [
+     "Total Fat (g)",
+     "0.7",
+     "0.2"
+    ],
+    [
+     "of which Saturated Fat (g)",
+     "0.2",
+     "0.0"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "4.9",
+     "1.2"
+    ],
+    [
+     "Total Sodium (mg)",
+     "23",
+     "6"
+    ]
+   ]
+  },
+  {
+   "name": "HOT CHOCOLATE",
+   "url": "https://kauai.co.za/menu-item/hot-chocolate/",
+   "groups": [
+    "organic-coffee-hot-drinks"
+   ],
+   "tags": [],
+   "allergens": [
+    "Milk"
+   ],
+   "ingredients": "Swap for FREE Oat or Almond Milk.",
+   "rows": [
+    [
+     "",
+     "",
+     ""
+    ]
+   ]
+  },
+  {
+   "name": "ICED AMERICANO",
+   "url": "https://kauai.co.za/menu-item/iced-americano/",
+   "groups": [
+    "organic-coffee-hot-drinks"
+   ],
+   "tags": [],
+   "allergens": [
+    "Milk"
+   ],
+   "ingredients": "Espresso, honey, purified water, ice, milk. Swap for FREE Oat or Almond Milk.",
+   "rows": [
+    [
+     "",
+     "Per 350 ml Serving",
+     "Per 500ml Serving"
+    ],
+    [
+     "Energy (kJ)",
+     "104",
+     "155"
+    ],
+    [
+     "Protein (g)",
+     "1.2",
+     "1.8"
+    ],
+    [
+     "Carbohydrate (g)",
+     "2",
+     "3"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "1.9",
+     "2.9"
+    ],
+    [
+     "Total Fat (g)",
+     "1.3",
+     "1.9"
+    ],
+    [
+     "of which Saturated Fat (g)",
+     "0.7",
+     "1.1"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "0.0",
+     "0.0"
+    ],
+    [
+     "Total Sodium (mg)",
+     "19",
+     "27"
+    ]
+   ]
+  },
+  {
+   "name": "ICED CAPPUCCINO",
+   "url": "https://kauai.co.za/menu-item/iced-cappuccino/",
+   "groups": [
+    "organic-coffee-hot-drinks"
+   ],
+   "tags": [],
+   "allergens": [
+    "Milk"
+   ],
+   "ingredients": "Espresso, honey, ice, milk, milk foam. Swap for FREE Oat or Almond Milk.",
+   "rows": [
+    [
+     "",
+     "Per 350ml Serving",
+     "Per 500ml Serving"
+    ],
+    [
+     "Energy (kJ)",
+     "310",
+     "439"
+    ],
+    [
+     "Protein (g)",
+     "3.8",
+     "5.3"
+    ],
+    [
+     "Carbohydrate (g)",
+     "6",
+     "8"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "6.0",
+     "8.5"
+    ],
+    [
+     "Total Fat (g)",
+     "3.9",
+     "5.6"
+    ],
+    [
+     "of which Saturated Fat (g)",
+     "2.2",
+     "3.2"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "0.0",
+     "0.0"
+    ],
+    [
+     "Total Sodium (mg)",
+     "54",
+     "75"
+    ]
+   ]
+  },
+  {
+   "name": "ICED MATCHA LATTE",
+   "url": "https://kauai.co.za/menu-item/iced-matcha-latte-2/",
+   "groups": [
+    "organic-coffee-hot-drinks"
+   ],
+   "tags": [],
+   "allergens": [
+    "Milk"
+   ],
+   "ingredients": "matcha, mint, honey, milk, ice",
+   "rows": [
+    [
+     "",
+     "Per 350ml",
+     "Per 500ml"
+    ],
+    [
+     "Energy (kJ)",
+     "534",
+     "662"
+    ],
+    [
+     "Protein (g)",
+     "5",
+     "6"
+    ],
+    [
+     "Carbohydrates (g)",
+     "18",
+     "20"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "17",
+     "20"
+    ],
+    [
+     "Milk sugar (g)",
+     "9",
+     "9"
+    ],
+    [
+     "Total fat",
+     "8",
+     "12"
+    ],
+    [
+     "of which Saturated fat (g)",
+     "2",
+     "3"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "1",
+     "1"
+    ],
+    [
+     "Total Sodium (mg)",
+     "54",
+     "76"
+    ]
+   ]
+  },
+  {
+   "name": "MATCHA MINT LATTE",
+   "url": "https://kauai.co.za/menu-item/matcha-mint-latte/",
+   "groups": [
+    "organic-coffee-hot-drinks"
+   ],
+   "tags": [],
+   "allergens": [
+    "Milk"
+   ],
+   "ingredients": "Free milk alternatives.",
+   "rows": [
+    [
+     "",
+     "",
+     ""
+    ]
+   ]
+  },
+  {
+   "name": "MOCHA",
+   "url": "https://kauai.co.za/menu-item/mocha/",
+   "groups": [
+    "organic-coffee-hot-drinks"
+   ],
+   "tags": [],
+   "allergens": [
+    "Milk"
+   ],
+   "ingredients": "Swap for FREE Oat or Almond Milk.",
+   "rows": [
+    [
+     "",
+     "Per 100ml Serving",
+     "Per 250ml Serving"
+    ],
+    [
+     "Energy (kJ)",
+     "347 kJ",
+     "506 kJ"
+    ],
+    [
+     "Protein (g)",
+     "4.0 g",
+     "5.9 g"
+    ],
+    [
+     "Carbohydrate (g)",
+     "8 g",
+     "12 g"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "4.4 g",
+     "6.5 g"
+    ],
+    [
+     "Total Fat (g)",
+     "3.8 g",
+     "5.5 g"
+    ],
+    [
+     "of which Saturated Fat (g)",
+     "2.2 g",
+     "3.1 g"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "2.5 g",
+     "3.7 g"
+    ],
+    [
+     "Total Sodium (mg)",
+     "39 mg",
+     "57 mg"
+    ]
+   ]
+  },
+  {
+   "name": "PROTEIN COFFEE SLUSH",
+   "url": "https://kauai.co.za/menu-item/protein-coffee-slush/",
+   "groups": [
+    "organic-coffee-hot-drinks"
+   ],
+   "tags": [
+    "NEW"
+   ],
+   "allergens": [
+    "Milk"
+   ],
+   "ingredients": "whey protein, espresso, vanilla, milk, honey",
+   "rows": [
+    [
+     "",
+     "Per 350ml",
+     "Per 500ml"
+    ],
+    [
+     "Energy (kJ)",
+     "620",
+     "790"
+    ],
+    [
+     "Protein (g)",
+     "12",
+     "13"
+    ],
+    [
+     "Carbohydrate (g)",
+     "19",
+     "24"
+    ],
+    [
+     "of which Total Sugar (g)",
+     "15",
+     "20"
+    ],
+    [
+     "Total Fat (g)",
+     "3",
+     "4"
+    ],
+    [
+     "Of which Saturated Fat (g)",
+     "1",
+     "2"
+    ],
+    [
+     "Dietary Fibre (g)",
+     "2",
+     "2"
+    ],
+    [
+     "Total Sodium (mg)",
+     "27",
+     "49"
+    ]
+   ]
+  },
+  {
+   "name": "RED CAPPUCCINO",
+   "url": "https://kauai.co.za/menu-item/red-cappuccino/",
+   "groups": [
+    "organic-coffee-hot-drinks"
+   ],
+   "tags": [],
+   "allergens": [
+    "Milk"
+   ],
+   "ingredients": "Swap for FREE Oat or Almond Milk.",
+   "rows": [
+    [
+     "",
+     "",
+     ""
+    ]
+   ]
+  },
+  {
+   "name": "TEA",
+   "url": "https://kauai.co.za/menu-item/tea/",
+   "groups": [
+    "organic-coffee-hot-drinks"
+   ],
+   "tags": [],
+   "allergens": [
+    "Milk"
+   ],
+   "ingredients": "Choose between rooibos, ceylon, green, mint & chai.",
+   "rows": [
+    [
+     "",
+     "",
+     ""
+    ]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,2905 @@
+{
+ "checked": "2026-11-20",
+ "items": [
+  {
+   "page": "breakfast",
+   "section": "All Day Brekkie",
+   "name": "Brekkie Bun",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "21,3",
+    "CARB (g)": "23,9",
+    "TOTAL FAT (g)": "44,9",
+    "SAT FAT (g)": "13,8",
+    "DIETARY FIBRE (g)": "1,9",
+    "TOTAL SODIUM (mg)": "1153,4",
+    "SUGAR (g)": "1,8",
+    "TOTAL ENERGY (kJ)": "2474,4"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "breakfast",
+   "section": "All Day Brekkie",
+   "name": "Mzansi Brekkie",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "21,3",
+    "CARB (g)": "23,9",
+    "TOTAL FAT (g)": "44,9",
+    "SAT FAT (g)": "13,8",
+    "DIETARY FIBRE (g)": "1,9",
+    "TOTAL SODIUM (mg)": "1153,4",
+    "SUGAR (g)": "1,8",
+    "TOTAL ENERGY (kJ)": "2474,4"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "breakfast",
+   "section": "All Day Brekkie",
+   "name": "Early Bird",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "21,3",
+    "CARB (g)": "23,9",
+    "TOTAL FAT (g)": "44,9",
+    "SAT FAT (g)": "13,8",
+    "DIETARY FIBRE (g)": "1,9",
+    "TOTAL SODIUM (mg)": "1153,4",
+    "SUGAR (g)": "1,8",
+    "TOTAL ENERGY (kJ)": "2474,4"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "breakfast",
+   "section": "All Day Brekkie",
+   "name": "NEW & IMPROVED Streaky Breakfast",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "20,7",
+    "CARB (g)": "32,0",
+    "TOTAL FAT (g)": "63,9",
+    "SAT FAT (g)": "15,6",
+    "DIETARY FIBRE (g)": "4,6",
+    "TOTAL SODIUM (mg)": "658,5",
+    "SUGAR (g)": "15,7",
+    "TOTAL ENERGY (kJ)": "3278,5"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "breakfast",
+   "section": "All Day Brekkie",
+   "name": "Avo* On Toasted Sourdough",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "17.7",
+    "CARB (g)": "24.4",
+    "TOTAL FAT (g)": "45,4",
+    "SAT FAT (g)": "7,3",
+    "DIETARY FIBRE (g)": "6,7",
+    "TOTAL SODIUM (mg)": "996,9",
+    "SUGAR (g)": "3,6",
+    "TOTAL ENERGY (kJ)": "2393,5"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "breakfast",
+   "section": "All Day Brekkie",
+   "name": "Cheese Griller",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "23,9",
+    "CARB (g)": "22,0",
+    "TOTAL FAT (g)": "40,2",
+    "SAT FAT (g)": "11,7",
+    "DIETARY FIBRE (g)": "5,1",
+    "TOTAL SODIUM (mg)": "1319,8",
+    "SUGAR (g)": "3,3",
+    "TOTAL ENERGY (kJ)": "2293,2"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "breakfast",
+   "section": "All Day Brekkie",
+   "name": "Chakalaka Beans on Toasted Sourdough",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "23,9",
+    "CARB (g)": "22,0",
+    "TOTAL FAT (g)": "40,2",
+    "SAT FAT (g)": "11,7",
+    "DIETARY FIBRE (g)": "5,1",
+    "TOTAL SODIUM (mg)": "1319,8",
+    "SUGAR (g)": "3,3",
+    "TOTAL ENERGY (kJ)": "2293,2"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "breakfast",
+   "section": "All Day Brekkie",
+   "name": "Creamy Chicken Livers & Eggs",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "22,3",
+    "CARB (g)": "40,8",
+    "TOTAL FAT (g)": "38",
+    "SAT FAT (g)": "3,8",
+    "DIETARY FIBRE (g)": "2,8",
+    "TOTAL SODIUM (mg)": "1411,4",
+    "SUGAR (g)": "7,8",
+    "TOTAL ENERGY (kJ)": "2520,6"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "n",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "breakfast",
+   "section": "All Day Brekkie",
+   "name": "Cheese & Tomato Omelette",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "30,5",
+    "CARB (g)": "19,3",
+    "TOTAL FAT (g)": "55,3",
+    "SAT FAT (g)": "25,5",
+    "DIETARY FIBRE (g)": "1,2",
+    "TOTAL SODIUM (mg)": "764,8",
+    "SUGAR (g)": "2,5",
+    "TOTAL ENERGY (kJ)": "2936,7"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "breakfast",
+   "section": "All Day Brekkie",
+   "name": "Double Up Breakfast",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "31,8",
+    "CARB (g)": "28,3",
+    "TOTAL FAT (g)": "57,7",
+    "SAT FAT (g)": "16,4",
+    "DIETARY FIBRE (g)": "3,2",
+    "TOTAL SODIUM (mg)": "1428,9",
+    "SUGAR (g)": "3,3",
+    "TOTAL ENERGY (kJ)": "3186,1"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "breakfast",
+   "section": "All Day Brekkie",
+   "name": "Boerewors & Hash Breakfast",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "31,8",
+    "CARB (g)": "28,3",
+    "TOTAL FAT (g)": "57,7",
+    "SAT FAT (g)": "16,4",
+    "DIETARY FIBRE (g)": "3,2",
+    "TOTAL SODIUM (mg)": "1428,9",
+    "SUGAR (g)": "3,3",
+    "TOTAL ENERGY (kJ)": "3186,1"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "breakfast",
+   "section": "All Day Brekkie",
+   "name": "Mince & Avo* on Toasted Sourdough",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "23.8",
+    "CARB (g)": "27.2",
+    "TOTAL FAT (g)": "18.7",
+    "SAT FAT (g)": "6.2",
+    "DIETARY FIBRE (g)": "3.4",
+    "TOTAL SODIUM (mg)": "1318.2",
+    "SUGAR (g)": "6.2",
+    "TOTAL ENERGY (kJ)": "1532"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "breakfast",
+   "section": "All Day Brekkie",
+   "name": "Farmhouse Breakfast",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "26,8",
+    "CARB (g)": "49,3",
+    "TOTAL FAT (g)": "79,5",
+    "SAT FAT (g)": "19,7",
+    "DIETARY FIBRE (g)": "9,8",
+    "TOTAL SODIUM (mg)": "938,5",
+    "SUGAR (g)": "29,7",
+    "TOTAL ENERGY (kJ)": "4165,1"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "breakfast",
+   "section": "All Day Brekkie",
+   "name": "Mega Breakfast",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "49,8",
+    "CARB (g)": "57,6",
+    "TOTAL FAT (g)": "96,8",
+    "SAT FAT (g)": "26,3",
+    "DIETARY FIBRE (g)": "13,4",
+    "TOTAL SODIUM (mg)": "1481,4",
+    "SUGAR (g)": "32,5",
+    "TOTAL ENERGY (kJ)": "5374,5"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "burger",
+   "section": "Classic Burgers",
+   "name": "Savour Beef Single",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "",
+    "CARB (g)": "",
+    "TOTAL FAT (g)": "",
+    "SAT FAT (g)": "",
+    "DIETARY FIBRE (g)": "",
+    "TOTAL SODIUM (mg)": "",
+    "SUGAR (g)": "",
+    "TOTAL ENERGY (kJ)": "1223"
+   },
+   "allergens": {
+    "GLUTEN": "",
+    "LACTOSE": "",
+    "SOYA": "",
+    "EGG": "",
+    "NUT": "",
+    "SULPHITES": "",
+    "WHEAT": ""
+   }
+  },
+  {
+   "page": "burger",
+   "section": "Classic Burgers",
+   "name": "Savour Beef Double",
+   "n": {
+    "QUANTITY": "",
+    "PROTEIN (g)": "",
+    "CARB (g)": "",
+    "TOTAL FAT (g)": "",
+    "SAT FAT (g)": "",
+    "DIETARY FIBRE (g)": "",
+    "TOTAL SODIUM (mg)": "",
+    "SUGAR (g)": "",
+    "TOTAL ENERGY (kJ)": ""
+   },
+   "allergens": {
+    "GLUTEN": "",
+    "LACTOSE": "",
+    "SOYA": "",
+    "EGG": "",
+    "NUT": "",
+    "SULPHITES": "",
+    "WHEAT": ""
+   }
+  },
+  {
+   "page": "burger",
+   "section": "Classic Burgers",
+   "name": "Savour Chicken Single",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "",
+    "CARB (g)": "",
+    "TOTAL FAT (g)": "",
+    "SAT FAT (g)": "",
+    "DIETARY FIBRE (g)": "",
+    "TOTAL SODIUM (mg)": "",
+    "SUGAR (g)": "",
+    "TOTAL ENERGY (kJ)": "959"
+   },
+   "allergens": {
+    "GLUTEN": "",
+    "LACTOSE": "",
+    "SOYA": "",
+    "EGG": "",
+    "NUT": "",
+    "SULPHITES": "",
+    "WHEAT": ""
+   }
+  },
+  {
+   "page": "burger",
+   "section": "Classic Burgers",
+   "name": "Savour Chicken Double",
+   "n": {
+    "QUANTITY": "",
+    "PROTEIN (g)": "",
+    "CARB (g)": "",
+    "TOTAL FAT (g)": "",
+    "SAT FAT (g)": "",
+    "DIETARY FIBRE (g)": "",
+    "TOTAL SODIUM (mg)": "",
+    "SUGAR (g)": "",
+    "TOTAL ENERGY (kJ)": ""
+   },
+   "allergens": {
+    "GLUTEN": "",
+    "LACTOSE": "",
+    "SOYA": "",
+    "EGG": "",
+    "NUT": "",
+    "SULPHITES": "",
+    "WHEAT": ""
+   }
+  },
+  {
+   "page": "burger",
+   "section": "Classic Burgers",
+   "name": "Savour Beef & Cheese Single",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "",
+    "CARB (g)": "",
+    "TOTAL FAT (g)": "",
+    "SAT FAT (g)": "",
+    "DIETARY FIBRE (g)": "",
+    "TOTAL SODIUM (mg)": "",
+    "SUGAR (g)": "",
+    "TOTAL ENERGY (kJ)": "1474"
+   },
+   "allergens": {
+    "GLUTEN": "",
+    "LACTOSE": "",
+    "SOYA": "",
+    "EGG": "",
+    "NUT": "",
+    "SULPHITES": "",
+    "WHEAT": ""
+   }
+  },
+  {
+   "page": "burger",
+   "section": "Classic Burgers",
+   "name": "Savour Beef & Cheese Double",
+   "n": {
+    "QUANTITY": "",
+    "PROTEIN (g)": "",
+    "CARB (g)": "",
+    "TOTAL FAT (g)": "",
+    "SAT FAT (g)": "",
+    "DIETARY FIBRE (g)": "",
+    "TOTAL SODIUM (mg)": "",
+    "SUGAR (g)": "",
+    "TOTAL ENERGY (kJ)": ""
+   },
+   "allergens": {
+    "GLUTEN": "",
+    "LACTOSE": "",
+    "SOYA": "",
+    "EGG": "",
+    "NUT": "",
+    "SULPHITES": "",
+    "WHEAT": ""
+   }
+  },
+  {
+   "page": "burger",
+   "section": "Classic Burgers",
+   "name": "Savour Chicken & Cheese Single",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "",
+    "CARB (g)": "",
+    "TOTAL FAT (g)": "",
+    "SAT FAT (g)": "",
+    "DIETARY FIBRE (g)": "",
+    "TOTAL SODIUM (mg)": "",
+    "SUGAR (g)": "",
+    "TOTAL ENERGY (kJ)": "1209"
+   },
+   "allergens": {
+    "GLUTEN": "",
+    "LACTOSE": "",
+    "SOYA": "",
+    "EGG": "",
+    "NUT": "",
+    "SULPHITES": "",
+    "WHEAT": ""
+   }
+  },
+  {
+   "page": "burger",
+   "section": "Classic Burgers",
+   "name": "Savour Chicken & Cheese Double",
+   "n": {
+    "QUANTITY": "",
+    "PROTEIN (g)": "",
+    "CARB (g)": "",
+    "TOTAL FAT (g)": "",
+    "SAT FAT (g)": "",
+    "DIETARY FIBRE (g)": "",
+    "TOTAL SODIUM (mg)": "",
+    "SUGAR (g)": "",
+    "TOTAL ENERGY (kJ)": ""
+   },
+   "allergens": {
+    "GLUTEN": "",
+    "LACTOSE": "",
+    "SOYA": "",
+    "EGG": "",
+    "NUT": "",
+    "SULPHITES": "",
+    "WHEAT": ""
+   }
+  },
+  {
+   "page": "burger",
+   "section": "Classic Burgers",
+   "name": "Classic Wimpy",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "31,4",
+    "CARB (g)": "56,4",
+    "TOTAL FAT (g)": "18,9",
+    "SAT FAT (g)": "7,5",
+    "DIETARY FIBRE (g)": "2,9",
+    "TOTAL SODIUM (mg)": "936,9",
+    "SUGAR (g)": "9,9",
+    "TOTAL ENERGY (kJ)": "2205,3"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "n",
+    "SOYA": "y",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "burger",
+   "section": "Classic Burgers",
+   "name": "Veggie",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "30,8",
+    "CARB (g)": "66,0",
+    "TOTAL FAT (g)": "31,3",
+    "SAT FAT (g)": "11,8",
+    "DIETARY FIBRE (g)": "4,6",
+    "TOTAL SODIUM (mg)": "1197,2",
+    "SUGAR (g)": "16,2",
+    "TOTAL ENERGY (kJ)": "2784,7"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "n",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "burger",
+   "section": "Classic Burgers",
+   "name": "Classic Cheese",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "37,4",
+    "CARB (g)": "58,4",
+    "TOTAL FAT (g)": "22,9",
+    "SAT FAT (g)": "10,8",
+    "DIETARY FIBRE (g)": "2,9",
+    "TOTAL SODIUM (mg)": "1086,9",
+    "SUGAR (g)": "10,9",
+    "TOTAL ENERGY (kJ)": "2456,1"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "burger",
+   "section": "Classic Burgers",
+   "name": "Chicken",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "31,1",
+    "CARB (g)": "53,3",
+    "TOTAL FAT (g)": "13,4",
+    "SAT FAT (g)": "5,0",
+    "DIETARY FIBRE (g)": "2,1",
+    "TOTAL SODIUM (mg)": "460,1",
+    "SUGAR (g)": "9,5",
+    "TOTAL ENERGY (kJ)": "1955,6"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "n",
+    "SOYA": "y",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "burger",
+   "section": "Classic Burgers",
+   "name": "Chicken Schnitzel",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "",
+    "CARB (g)": "",
+    "TOTAL FAT (g)": "",
+    "SAT FAT (g)": "",
+    "DIETARY FIBRE (g)": "",
+    "TOTAL SODIUM (mg)": "",
+    "SUGAR (g)": "",
+    "TOTAL ENERGY (kJ)": "2814"
+   },
+   "allergens": {
+    "GLUTEN": "",
+    "LACTOSE": "",
+    "SOYA": "",
+    "EGG": "",
+    "NUT": "",
+    "SULPHITES": "",
+    "WHEAT": ""
+   }
+  },
+  {
+   "page": "burger",
+   "section": "Classic Burgers",
+   "name": "Crispy Onion Chicken",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "",
+    "CARB (g)": "",
+    "TOTAL FAT (g)": "",
+    "SAT FAT (g)": "",
+    "DIETARY FIBRE (g)": "",
+    "TOTAL SODIUM (mg)": "",
+    "SUGAR (g)": "",
+    "TOTAL ENERGY (kJ)": "3292"
+   },
+   "allergens": {
+    "GLUTEN": "",
+    "LACTOSE": "",
+    "SOYA": "",
+    "EGG": "",
+    "NUT": "",
+    "SULPHITES": "",
+    "WHEAT": ""
+   }
+  },
+  {
+   "page": "burger",
+   "section": "Classic Burgers",
+   "name": "Bacon & Cheese",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "40,6",
+    "CARB (g)": "58,6",
+    "TOTAL FAT (g)": "35,5",
+    "SAT FAT (g)": "15,0",
+    "DIETARY FIBRE (g)": "2,9",
+    "TOTAL SODIUM (mg)": "1319,9",
+    "SUGAR (g)": "10,9",
+    "TOTAL ENERGY (kJ)": "2992,1"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "burger",
+   "section": "Classic Burgers",
+   "name": "Crispy Stack",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "41,5",
+    "CARB (g)": "65,2",
+    "TOTAL FAT (g)": "44,5",
+    "SAT FAT (g)": "16,4",
+    "DIETARY FIBRE (g)": "3,0",
+    "TOTAL SODIUM (mg)": "1416,4",
+    "SUGAR (g)": "10,9",
+    "TOTAL ENERGY (kJ)": "3458,5"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "burger",
+   "section": "Classic Burgers",
+   "name": "Wimpy Champion",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "47,1",
+    "CARB (g)": "61,0",
+    "TOTAL FAT (g)": "60,8",
+    "SAT FAT (g)": "21,5",
+    "DIETARY FIBRE (g)": "2,9",
+    "TOTAL SODIUM (mg)": "1392,6",
+    "SUGAR (g)": "12,8",
+    "TOTAL ENERGY (kJ)": "4095,6"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "burger",
+   "section": "Classic Burgers",
+   "name": "Crispy Stack Combo",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "38,7",
+    "CARB (g)": "156,2",
+    "TOTAL FAT (g)": "89,7",
+    "SAT FAT (g)": "25,9",
+    "DIETARY FIBRE (g)": "17,7",
+    "TOTAL SODIUM (mg)": "1094,0",
+    "SUGAR (g)": "101,6",
+    "TOTAL ENERGY (kJ)": "4053"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "n",
+    "SOYA": "y",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "burger",
+   "section": "Big Eat Burgers",
+   "name": "Big Wimpy",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "32,23",
+    "CARB (g)": "63,08",
+    "TOTAL FAT (g)": "55,13",
+    "SAT FAT (g)": "16,91",
+    "DIETARY FIBRE (g)": "9,20",
+    "TOTAL SODIUM (mg)": "798,25",
+    "SUGAR (g)": "34,15",
+    "TOTAL ENERGY (kJ)": "3601,16"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "burger",
+   "section": "Big Eat Burgers",
+   "name": "Big Cheese",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "58,1",
+    "CARB (g)": "58,4",
+    "TOTAL FAT (g)": "39,6",
+    "SAT FAT (g)": "17,3",
+    "DIETARY FIBRE (g)": "2,9",
+    "TOTAL SODIUM (mg)": "1446,9",
+    "SUGAR (g)": "10,9",
+    "TOTAL ENERGY (kJ)": "3443,5"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "burger",
+   "section": "Big Eat Burgers",
+   "name": "Big Chicken",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "31,1",
+    "CARB (g)": "53,3",
+    "TOTAL FAT (g)": "13,4",
+    "SAT FAT (g)": "5,0",
+    "DIETARY FIBRE (g)": "2,1",
+    "TOTAL SODIUM (mg)": "460,1",
+    "SUGAR (g)": "9,5",
+    "TOTAL ENERGY (kJ)": "1955,6"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "n",
+    "SOYA": "y",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "burger",
+   "section": "Big Eat Burgers",
+   "name": "Big Bacon & Cheese",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "61,3",
+    "CARB (g)": "58,6",
+    "TOTAL FAT (g)": "52,2",
+    "SAT FAT (g)": "21,5",
+    "DIETARY FIBRE (g)": "2,9",
+    "TOTAL SODIUM (mg)": "1679,9",
+    "SUGAR (g)": "10,9",
+    "TOTAL ENERGY (kJ)": "3979,5"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "burger",
+   "section": "Big Eat Burgers",
+   "name": "Wimpy Big Champion",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "68,1",
+    "CARB (g)": "62,5",
+    "TOTAL FAT (g)": "77,5",
+    "SAT FAT (g)": "28,0",
+    "DIETARY FIBRE (g)": "3,2",
+    "TOTAL SODIUM (mg)": "1754,6",
+    "SUGAR (g)": "13,5",
+    "TOTAL ENERGY (kJ)": "5111,1"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "burger",
+   "section": "Big Eat Burgers",
+   "name": "Big Champion Combo",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "77,3",
+    "CARB (g)": "138,0",
+    "TOTAL FAT (g)": "132,2",
+    "SAT FAT (g)": "48,4",
+    "DIETARY FIBRE (g)": "10,7",
+    "TOTAL SODIUM (mg)": "1993,6",
+    "SUGAR (g)": "65,1",
+    "TOTAL ENERGY (kJ)": "9077,9"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "burger",
+   "section": "Big Eat Burgers",
+   "name": "Family Burger Meal",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "138,6",
+    "CARB (g)": "240,3",
+    "TOTAL FAT (g)": "168,4",
+    "SAT FAT (g)": "59,9",
+    "DIETARY FIBRE (g)": "22,8",
+    "TOTAL SODIUM (mg)": "3719,8",
+    "SUGAR (g)": "92,4",
+    "TOTAL ENERGY (kJ)": "12526,1"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "n",
+    "SOYA": "y",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "grills",
+   "section": "Famous Grills",
+   "name": "Pap, Boerewors & Chakalaka",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "22,9",
+    "CARB (g)": "41,1",
+    "TOTAL FAT (g)": "38,6",
+    "SAT FAT (g)": "9,3",
+    "DIETARY FIBRE (g)": "11,5",
+    "TOTAL SODIUM (mg)": "1218,6",
+    "SUGAR (g)": "1,7",
+    "TOTAL ENERGY (kJ)": "2522,9"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "n",
+    "SOYA": "n",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "grills",
+   "section": "Famous Grills",
+   "name": "1/4 Chicken",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "44,835",
+    "CARB (g)": "39,9",
+    "TOTAL FAT (g)": "42,885",
+    "SAT FAT (g)": "8,65",
+    "DIETARY FIBRE (g)": "2,92",
+    "TOTAL SODIUM (mg)": "1311,75",
+    "SUGAR (g)": "3,02",
+    "TOTAL ENERGY (kJ)": "3062,55"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "n",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "grills",
+   "section": "Famous Grills",
+   "name": "Creamy Peri-Peri Chicken Livers",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "16.3",
+    "CARB (g)": "66.6",
+    "TOTAL FAT (g)": "87.1",
+    "SAT FAT (g)": "9.3",
+    "DIETARY FIBRE (g)": "4.9",
+    "TOTAL SODIUM (mg)": "2106.3",
+    "SUGAR (g)": "12.2",
+    "TOTAL ENERGY (kJ)": "4695"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "grills",
+   "section": "Famous Grills",
+   "name": "Grilled Chicken Fillets",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "51,5",
+    "CARB (g)": "51,7",
+    "TOTAL FAT (g)": "78,6",
+    "SAT FAT (g)": "19,9",
+    "DIETARY FIBRE (g)": "8,3",
+    "TOTAL SODIUM (mg)": "377,9",
+    "SUGAR (g)": "36,6",
+    "TOTAL ENERGY (kJ)": "4667,7"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "n",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "grills",
+   "section": "Famous Grills",
+   "name": "Thrill of the Grill",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "63,1",
+    "CARB (g)": "47,7",
+    "TOTAL FAT (g)": "93,3",
+    "SAT FAT (g)": "24,5",
+    "DIETARY FIBRE (g)": "9,2",
+    "TOTAL SODIUM (mg)": "1035,0",
+    "SUGAR (g)": "33,6",
+    "TOTAL ENERGY (kJ)": "5320,5"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "n",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "grills",
+   "section": "Famous Grills",
+   "name": "1/2 Chicken",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "86,96",
+    "CARB (g)": "54,9",
+    "TOTAL FAT (g)": "65,485",
+    "SAT FAT (g)": "14,65",
+    "DIETARY FIBRE (g)": "4,395",
+    "TOTAL SODIUM (mg)": "2620,6",
+    "SUGAR (g)": "3,02",
+    "TOTAL ENERGY (kJ)": "4885,49"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "n",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "grills",
+   "section": "Famous Grills",
+   "name": "NEW & IMPROVED Double Grill",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "46,3",
+    "CARB (g)": "82,9",
+    "TOTAL FAT (g)": "102,0",
+    "SAT FAT (g)": "34,9",
+    "DIETARY FIBRE (g)": "11,7",
+    "TOTAL SODIUM (mg)": "2038,3",
+    "SUGAR (g)": "47,9",
+    "TOTAL ENERGY (kJ)": "5760,8"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "grills",
+   "section": "Famous Grills",
+   "name": "300g Pork Ribs",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "74.5",
+    "CARB (g)": "62",
+    "TOTAL FAT (g)": "139.7",
+    "SAT FAT (g)": "47.9",
+    "DIETARY FIBRE (g)": "8.7",
+    "TOTAL SODIUM (mg)": "966.6",
+    "SUGAR (g)": "45.3",
+    "TOTAL ENERGY (kJ)": "7578"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "n",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "grills",
+   "section": "Famous Grills",
+   "name": "600g Pork Ribs",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "74.5",
+    "CARB (g)": "62",
+    "TOTAL FAT (g)": "139.7",
+    "SAT FAT (g)": "47.9",
+    "DIETARY FIBRE (g)": "8.7",
+    "TOTAL SODIUM (mg)": "966.6",
+    "SUGAR (g)": "45.3",
+    "TOTAL ENERGY (kJ)": "7578"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "n",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "grills",
+   "section": "Famous Grills",
+   "name": "Chicken Wings",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "22,4",
+    "CARB (g)": "67,7",
+    "TOTAL FAT (g)": "70,0",
+    "SAT FAT (g)": "16,7",
+    "DIETARY FIBRE (g)": "8,8",
+    "TOTAL SODIUM (mg)": "1050,2",
+    "SUGAR (g)": "50,0",
+    "TOTAL ENERGY (kJ)": "4115,3"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "n",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "grills",
+   "section": "Famous Grills",
+   "name": "Double Chicken Schnitzel",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "41",
+    "CARB (g)": "67,6",
+    "TOTAL FAT (g)": "157,6",
+    "SAT FAT (g)": "46,7",
+    "DIETARY FIBRE (g)": "10,5",
+    "TOTAL SODIUM (mg)": "1288,6",
+    "SUGAR (g)": "35,3",
+    "TOTAL ENERGY (kJ)": "7601,4"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "n",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "grills",
+   "section": "Famous Grills",
+   "name": "Meaty Grill",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "60,5",
+    "CARB (g)": "64,9",
+    "TOTAL FAT (g)": "132,7",
+    "SAT FAT (g)": "53,7",
+    "DIETARY FIBRE (g)": "13,0",
+    "TOTAL SODIUM (mg)": "1732,4",
+    "SUGAR (g)": "34,2",
+    "TOTAL ENERGY (kJ)": "6893,4"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "grills",
+   "section": "Famous Grills",
+   "name": "Mixed Grill",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "77,0",
+    "CARB (g)": "21,8",
+    "TOTAL FAT (g)": "84,7",
+    "SAT FAT (g)": "25,4",
+    "DIETARY FIBRE (g)": "3,2",
+    "TOTAL SODIUM (mg)": "1799,1",
+    "SUGAR (g)": "7,9",
+    "TOTAL ENERGY (kJ)": "6661"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "n",
+    "SOYA": "n",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "grills",
+   "section": "Famous Grills",
+   "name": "Chicken Wings & Steak",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "55,7",
+    "CARB (g)": "60,4",
+    "TOTAL FAT (g)": "99,6",
+    "SAT FAT (g)": "32,8",
+    "DIETARY FIBRE (g)": "8,8",
+    "TOTAL SODIUM (mg)": "1086,4",
+    "SUGAR (g)": "39,5",
+    "TOTAL ENERGY (kJ)": "5567,6"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "grills",
+   "section": "Famous Grills",
+   "name": "Pork Ribs & Chicken Wings",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "82,8",
+    "CARB (g)": "62,0",
+    "TOTAL FAT (g)": "146,9",
+    "SAT FAT (g)": "50,3",
+    "DIETARY FIBRE (g)": "8,7",
+    "TOTAL SODIUM (mg)": "998,3",
+    "SUGAR (g)": "45,3",
+    "TOTAL ENERGY (kJ)": "7992,9"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "n",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "grills",
+   "section": "Famous Grills",
+   "name": "Full Chicken",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "204,21",
+    "CARB (g)": "84,9",
+    "TOTAL FAT (g)": "167,685",
+    "SAT FAT (g)": "46,05",
+    "DIETARY FIBRE (g)": "7,345",
+    "TOTAL SODIUM (mg)": "5587,9",
+    "SUGAR (g)": "3,02",
+    "TOTAL ENERGY (kJ)": "11128,61"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "n",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "grills",
+   "section": "Famous Grills",
+   "name": "Ultimate Meaty Feast",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "115,7",
+    "CARB (g)": "59,5",
+    "TOTAL FAT (g)": "122,6",
+    "SAT FAT (g)": "38,2",
+    "DIETARY FIBRE (g)": "9,9",
+    "TOTAL SODIUM (mg)": "1625,4",
+    "SUGAR (g)": "42,4",
+    "TOTAL ENERGY (kJ)": "7523,7"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "n",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "grills",
+   "section": "Famous Grills",
+   "name": "NEW & IMPROVED Mega Grill",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "67,1",
+    "CARB (g)": "81,4",
+    "TOTAL FAT (g)": "112,3",
+    "SAT FAT (g)": "35,7",
+    "DIETARY FIBRE (g)": "11,0",
+    "TOTAL SODIUM (mg)": "2533,8",
+    "SUGAR (g)": "56,8",
+    "TOTAL ENERGY (kJ)": "6584,6"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "n",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "grills",
+   "section": "Sharing Meals",
+   "name": "Bits & Bites Platter",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "106,9",
+    "CARB (g)": "184,5",
+    "TOTAL FAT (g)": "209,4",
+    "SAT FAT (g)": "79,0",
+    "DIETARY FIBRE (g)": "20,2",
+    "TOTAL SODIUM (mg)": "3125,4",
+    "SUGAR (g)": "92,6",
+    "TOTAL ENERGY (kJ)": "12604,3"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "grills",
+   "section": "Sharing Meals",
+   "name": "Chicken Wings Platter",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "42,5",
+    "CARB (g)": "119,1",
+    "TOTAL FAT (g)": "99,9",
+    "SAT FAT (g)": "28,2",
+    "DIETARY FIBRE (g)": "16,3",
+    "TOTAL SODIUM (mg)": "2309,3",
+    "SUGAR (g)": "101,2",
+    "TOTAL ENERGY (kJ)": "6400,4"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "n",
+    "SOYA": "n",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "sandwiches-light-meals",
+   "section": "Toasteds & lighter meals",
+   "name": "Cheese & Tomato",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "28,0",
+    "CARB (g)": "32,3",
+    "TOTAL FAT (g)": "38,4",
+    "SAT FAT (g)": "24,3",
+    "DIETARY FIBRE (g)": "2,0",
+    "TOTAL SODIUM (mg)": "1174,7",
+    "SUGAR (g)": "2,1",
+    "TOTAL ENERGY (kJ)": "2470,0"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "sandwiches-light-meals",
+   "section": "Toasteds & lighter meals",
+   "name": "Ham & Cheese",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "23,88",
+    "CARB (g)": "33,23",
+    "TOTAL FAT (g)": "24,53",
+    "SAT FAT (g)": "13,30",
+    "DIETARY FIBRE (g)": "1,8",
+    "TOTAL SODIUM (mg)": "1182,565",
+    "SUGAR (g)": "1,79",
+    "TOTAL ENERGY (kJ)": "1882,03"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "sandwiches-light-meals",
+   "section": "Toasteds & lighter meals",
+   "name": "Chicken Mayo",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "18,1",
+    "CARB (g)": "33,2",
+    "TOTAL FAT (g)": "25,3",
+    "SAT FAT (g)": "8,5",
+    "DIETARY FIBRE (g)": "1,8",
+    "TOTAL SODIUM (mg)": "536,3",
+    "SUGAR (g)": "4,1",
+    "TOTAL ENERGY (kJ)": "1825,1"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "sandwiches-light-meals",
+   "section": "Toasteds & lighter meals",
+   "name": "Bacon & Egg",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "17,5",
+    "CARB (g)": "31,4",
+    "TOTAL FAT (g)": "29,8",
+    "SAT FAT (g)": "7,6",
+    "DIETARY FIBRE (g)": "2,8",
+    "TOTAL SODIUM (mg)": "892,0",
+    "SUGAR (g)": "2,1",
+    "TOTAL ENERGY (kJ)": "1934,5"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "sandwiches-light-meals",
+   "section": "Toasteds & lighter meals",
+   "name": "Mince & Cheese",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "26,1",
+    "CARB (g)": "33,8",
+    "TOTAL FAT (g)": "28,3",
+    "SAT FAT (g)": "15,5",
+    "DIETARY FIBRE (g)": "1,9",
+    "TOTAL SODIUM (mg)": "1298,8",
+    "SUGAR (g)": "4,2",
+    "TOTAL ENERGY (kJ)": "2078,9"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "sandwiches-light-meals",
+   "section": "Toasteds & lighter meals",
+   "name": "Wimpy Dagwood",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "54,0",
+    "CARB (g)": "55,8",
+    "TOTAL FAT (g)": "58,7",
+    "SAT FAT (g)": "21,9",
+    "DIETARY FIBRE (g)": "4,6",
+    "TOTAL SODIUM (mg)": "1982,4",
+    "SUGAR (g)": "6,9",
+    "TOTAL ENERGY (kJ)": "3988,1"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "sandwiches-light-meals",
+   "section": "Toasteds & lighter meals",
+   "name": "Wimpy Fully Loaded Dagwood",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "90,6",
+    "CARB (g)": "80,4",
+    "TOTAL FAT (g)": "87,6",
+    "SAT FAT (g)": "36,1",
+    "DIETARY FIBRE (g)": "6,4",
+    "TOTAL SODIUM (mg)": "3074,2",
+    "SUGAR (g)": "11,8",
+    "TOTAL ENERGY (kJ)": "6044,7"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "sandwiches-light-meals",
+   "section": "Toasteds & lighter meals",
+   "name": "Chicken Fillet Salad",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "29,2",
+    "CARB (g)": "20,6",
+    "TOTAL FAT (g)": "13,9",
+    "SAT FAT (g)": "7,1",
+    "DIETARY FIBRE (g)": "1,7",
+    "TOTAL SODIUM (mg)": "871,2",
+    "SUGAR (g)": "14,0",
+    "TOTAL ENERGY (kJ)": "1380,2"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "n"
+   }
+  },
+  {
+   "page": "sandwiches-light-meals",
+   "section": "Toasteds & lighter meals",
+   "name": "Sweet Chilli Chicken Wrap",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "34,0",
+    "CARB (g)": "67,0",
+    "TOTAL FAT (g)": "18,7",
+    "SAT FAT (g)": "8,9",
+    "DIETARY FIBRE (g)": "1,8",
+    "TOTAL SODIUM (mg)": "501,9",
+    "SUGAR (g)": "19,2",
+    "TOTAL ENERGY (kJ)": "2405,9"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "kids",
+   "section": "Kids",
+   "name": "Speckled Candy",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "1,8",
+    "CARB (g)": "17,8",
+    "TOTAL FAT (g)": "13",
+    "SAT FAT (g)": "7,7",
+    "DIETARY FIBRE (g)": "0",
+    "TOTAL SODIUM (mg)": "79,1",
+    "SUGAR (g)": "9,9",
+    "TOTAL ENERGY (kJ)": "801,7"
+   },
+   "allergens": {
+    "GLUTEN": "n",
+    "LACTOSE": "y",
+    "SOYA": "n",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "n"
+   }
+  },
+  {
+   "page": "kids",
+   "section": "Kids",
+   "name": "Speckled Candy",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "1,8",
+    "CARB (g)": "17,8",
+    "TOTAL FAT (g)": "13",
+    "SAT FAT (g)": "7,7",
+    "DIETARY FIBRE (g)": "0",
+    "TOTAL SODIUM (mg)": "79,1",
+    "SUGAR (g)": "9,9",
+    "TOTAL ENERGY (kJ)": "801,7"
+   },
+   "allergens": {
+    "GLUTEN": "n",
+    "LACTOSE": "y",
+    "SOYA": "n",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "n"
+   }
+  },
+  {
+   "page": "kids",
+   "section": "Kids",
+   "name": "Tropical Soda Cooler",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "1,8",
+    "CARB (g)": "17,8",
+    "TOTAL FAT (g)": "13",
+    "SAT FAT (g)": "7,7",
+    "DIETARY FIBRE (g)": "0",
+    "TOTAL SODIUM (mg)": "79,1",
+    "SUGAR (g)": "9,9",
+    "TOTAL ENERGY (kJ)": "801,7"
+   },
+   "allergens": {
+    "GLUTEN": "n",
+    "LACTOSE": "y",
+    "SOYA": "n",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "n"
+   }
+  },
+  {
+   "page": "kids",
+   "section": "Kids",
+   "name": "Kids' Waffle",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "7,6",
+    "CARB (g)": "73,2",
+    "TOTAL FAT (g)": "15,1",
+    "SAT FAT (g)": "8,3",
+    "DIETARY FIBRE (g)": "1,2",
+    "TOTAL SODIUM (mg)": "241,3",
+    "SUGAR (g)": "42,2",
+    "TOTAL ENERGY (kJ)": "1925,3"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "kids",
+   "section": "Kids",
+   "name": "Chicken Strips Combo",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "10,8",
+    "CARB (g)": "11,3",
+    "TOTAL FAT (g)": "22,3",
+    "SAT FAT (g)": "5,3",
+    "DIETARY FIBRE (g)": "0,7",
+    "TOTAL SODIUM (mg)": "293,6",
+    "SUGAR (g)": "0,0",
+    "TOTAL ENERGY (kJ)": "1214,0"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "n",
+    "SOYA": "n",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "kids",
+   "section": "Kids",
+   "name": "Frank Combo",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "24,7",
+    "CARB (g)": "17.9",
+    "TOTAL FAT (g)": "48,6",
+    "SAT FAT (g)": "19",
+    "DIETARY FIBRE (g)": "0,9",
+    "TOTAL SODIUM (mg)": "1221,0",
+    "SUGAR (g)": "1,6",
+    "TOTAL ENERGY (kJ)": "736"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "n",
+    "SOYA": "n",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "kids",
+   "section": "Kids",
+   "name": "Toasted Chicken Mayo Combo",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "18,1",
+    "CARB (g)": "33,2",
+    "TOTAL FAT (g)": "20,6",
+    "SAT FAT (g)": "7,2",
+    "DIETARY FIBRE (g)": "1,8",
+    "TOTAL SODIUM (mg)": "443,0",
+    "SUGAR (g)": "4,1",
+    "TOTAL ENERGY (kJ)": "1652,6"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "kids",
+   "section": "Kids",
+   "name": "Toasted Cheese Combo",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "17,0",
+    "CARB (g)": "30,6",
+    "TOTAL FAT (g)": "23,2",
+    "SAT FAT (g)": "13,3",
+    "DIETARY FIBRE (g)": "1,8",
+    "TOTAL SODIUM (mg)": "790,8",
+    "SUGAR (g)": "1,8",
+    "TOTAL ENERGY (kJ)": "1682,9"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "kids",
+   "section": "Kids",
+   "name": "Scrambled Eggs, Cream Cheese & Avo...",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "15,9",
+    "CARB (g)": "20,7",
+    "TOTAL FAT (g)": "35,5",
+    "SAT FAT (g)": "15,7",
+    "DIETARY FIBRE (g)": "3,6",
+    "TOTAL SODIUM (mg)": "471,6",
+    "SUGAR (g)": "1,6",
+    "TOTAL ENERGY (kJ)": "1964"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "kids",
+   "section": "Kids",
+   "name": "Rib Patty Combo",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "15,1",
+    "CARB (g)": "42,5",
+    "TOTAL FAT (g)": "32,8",
+    "SAT FAT (g)": "11,2",
+    "DIETARY FIBRE (g)": "5,5",
+    "TOTAL SODIUM (mg)": "1311,2",
+    "SUGAR (g)": "31,4",
+    "TOTAL ENERGY (kJ)": "2036,7"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "n",
+    "SOYA": "y",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "kids",
+   "section": "Kids",
+   "name": "Frank & Egg Breakfast Combo",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "24.67",
+    "CARB (g)": "17.9",
+    "TOTAL FAT (g)": "48.57",
+    "SAT FAT (g)": "18.97",
+    "DIETARY FIBRE (g)": "0.9",
+    "TOTAL SODIUM (mg)": "1220.9",
+    "SUGAR (g)": "1.56",
+    "TOTAL ENERGY (kJ)": "2552"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "kids",
+   "section": "Kids",
+   "name": "Cheeseburger Combo",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "22,7",
+    "CARB (g)": "31,3",
+    "TOTAL FAT (g)": "14,3",
+    "SAT FAT (g)": "7,4",
+    "DIETARY FIBRE (g)": "1,2",
+    "TOTAL SODIUM (mg)": "668,3",
+    "SUGAR (g)": "7,8",
+    "TOTAL ENERGY (kJ)": "1428,2"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "kids",
+   "section": "Kids",
+   "name": "Chicken Burger Combo",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "28,2",
+    "CARB (g)": "26,7",
+    "TOTAL FAT (g)": "8,3",
+    "SAT FAT (g)": "3,1",
+    "DIETARY FIBRE (g)": "1,0",
+    "TOTAL SODIUM (mg)": "264,6",
+    "SUGAR (g)": "4,9",
+    "TOTAL ENERGY (kJ)": "1269,8"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "n",
+    "SOYA": "y",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "desserts",
+   "section": "Desserts",
+   "name": "Savour Ice-Cream Cone",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "0,8",
+    "CARB (g)": "55,07",
+    "TOTAL FAT (g)": "10,0",
+    "SAT FAT (g)": "4,0",
+    "DIETARY FIBRE (g)": "0,4",
+    "TOTAL SODIUM (mg)": "244,9",
+    "SUGAR (g)": "33,6",
+    "TOTAL ENERGY (kJ)": "1307,9"
+   },
+   "allergens": {
+    "GLUTEN": "n",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "n"
+   }
+  },
+  {
+   "page": "desserts",
+   "section": "Desserts",
+   "name": "Ice-Cream & Choc Sauce",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "0,8",
+    "CARB (g)": "55,07",
+    "TOTAL FAT (g)": "10,0",
+    "SAT FAT (g)": "4,0",
+    "DIETARY FIBRE (g)": "0,4",
+    "TOTAL SODIUM (mg)": "244,9",
+    "SUGAR (g)": "33,6",
+    "TOTAL ENERGY (kJ)": "1307,9"
+   },
+   "allergens": {
+    "GLUTEN": "n",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "n"
+   }
+  },
+  {
+   "page": "desserts",
+   "section": "Desserts",
+   "name": "Classic Flapjacks",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "5.9",
+    "CARB (g)": "65.6",
+    "TOTAL FAT (g)": "0.7",
+    "SAT FAT (g)": "0.2",
+    "DIETARY FIBRE (g)": "0.0",
+    "TOTAL SODIUM (mg)": "209.4",
+    "SUGAR (g)": "34.6",
+    "TOTAL ENERGY (kJ)": "1251.2"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "desserts",
+   "section": "Desserts",
+   "name": "Plain Waffle",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "9,5",
+    "CARB (g)": "106,0",
+    "TOTAL FAT (g)": "1,1",
+    "SAT FAT (g)": "0,3",
+    "DIETARY FIBRE (g)": "0,0",
+    "TOTAL SODIUM (mg)": "339,6",
+    "SUGAR (g)": "55,7",
+    "TOTAL ENERGY (kJ)": "2021,6"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "desserts",
+   "section": "Desserts",
+   "name": "Chocolate Brownie",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "4,8",
+    "CARB (g)": "57,0",
+    "TOTAL FAT (g)": "23,7",
+    "SAT FAT (g)": "12,6",
+    "DIETARY FIBRE (g)": "4,9",
+    "TOTAL SODIUM (mg)": "239",
+    "SUGAR (g)": "36,2",
+    "TOTAL ENERGY (kJ)": "1966"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "y",
+    "SULPHITES": "n",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "desserts",
+   "section": "Desserts",
+   "name": "Carrot Cake Malva Pudding",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "7.2",
+    "CARB (g)": "79.3",
+    "TOTAL FAT (g)": "23.1",
+    "SAT FAT (g)": "15.9",
+    "DIETARY FIBRE (g)": "1.7",
+    "TOTAL SODIUM (mg)": "445",
+    "SUGAR (g)": "56.4",
+    "TOTAL ENERGY (kJ)": "2330"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "y",
+    "SULPHITES": "n",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "desserts",
+   "section": "Desserts",
+   "name": "Kit Kat ® Waffle",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "15,3",
+    "CARB (g)": "133,5",
+    "TOTAL FAT (g)": "10,9",
+    "SAT FAT (g)": "4,3",
+    "DIETARY FIBRE (g)": "1",
+    "TOTAL SODIUM (mg)": "548,1",
+    "SUGAR (g)": "61",
+    "TOTAL ENERGY (kJ)": "2959,9"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "desserts",
+   "section": "Desserts",
+   "name": "Bar-One ® Waffle",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "12,5",
+    "CARB (g)": "104,9",
+    "TOTAL FAT (g)": "18,4",
+    "SAT FAT (g)": "7,3",
+    "DIETARY FIBRE (g)": "0,7",
+    "TOTAL SODIUM (mg)": "384,4",
+    "SUGAR (g)": "55,3",
+    "TOTAL ENERGY (kJ)": "2716,0"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "drinks",
+   "section": "Coffee & More",
+   "name": "Filter Coffee",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "1,6",
+    "CARB (g)": "2,0",
+    "TOTAL FAT (g)": "1,6",
+    "SAT FAT (g)": "0,9",
+    "DIETARY FIBRE (g)": "0,0",
+    "TOTAL SODIUM (mg)": "21,7",
+    "SUGAR (g)": "1,6",
+    "TOTAL ENERGY (kJ)": "123,9"
+   },
+   "allergens": {
+    "GLUTEN": "n",
+    "LACTOSE": "y",
+    "SOYA": "n",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "n"
+   }
+  },
+  {
+   "page": "drinks",
+   "section": "Coffee & More",
+   "name": "Five Roses Ceylon or Rooibos Tea",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "2,1",
+    "CARB (g)": "3,2",
+    "TOTAL FAT (g)": "2,5",
+    "SAT FAT (g)": "1,5",
+    "DIETARY FIBRE (g)": "0,0",
+    "TOTAL SODIUM (mg)": "27,2",
+    "SUGAR (g)": "2,7",
+    "TOTAL ENERGY (kJ)": "185,1"
+   },
+   "allergens": {
+    "GLUTEN": "n",
+    "LACTOSE": "y",
+    "SOYA": "n",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "n"
+   }
+  },
+  {
+   "page": "drinks",
+   "section": "Coffee & More",
+   "name": "Espresso",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "0,0",
+    "CARB (g)": "0,0",
+    "TOTAL FAT (g)": "0,0",
+    "SAT FAT (g)": "0,0",
+    "DIETARY FIBRE (g)": "0,0",
+    "TOTAL SODIUM (mg)": "0,0",
+    "SUGAR (g)": "0,0",
+    "TOTAL ENERGY (kJ)": "0,6"
+   },
+   "allergens": {
+    "GLUTEN": "n",
+    "LACTOSE": "n",
+    "SOYA": "n",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "n"
+   }
+  },
+  {
+   "page": "drinks",
+   "section": "Coffee & More",
+   "name": "Americano Africano",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "1,6",
+    "CARB (g)": "2,5",
+    "TOTAL FAT (g)": "1,9",
+    "SAT FAT (g)": "1,1",
+    "DIETARY FIBRE (g)": "0,0",
+    "TOTAL SODIUM (mg)": "20,6",
+    "SUGAR (g)": "2,1",
+    "TOTAL ENERGY (kJ)": "141,6"
+   },
+   "allergens": {
+    "GLUTEN": "n",
+    "LACTOSE": "y",
+    "SOYA": "n",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "n"
+   }
+  },
+  {
+   "page": "drinks",
+   "section": "Coffee & More",
+   "name": "Famous Wimpy Coffee",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "6,5",
+    "CARB (g)": "9,7",
+    "TOTAL FAT (g)": "7,6",
+    "SAT FAT (g)": "4,4",
+    "DIETARY FIBRE (g)": "0,0",
+    "TOTAL SODIUM (mg)": "84,4",
+    "SUGAR (g)": "8,1",
+    "TOTAL ENERGY (kJ)": "561,8"
+   },
+   "allergens": {
+    "GLUTEN": "n",
+    "LACTOSE": "y",
+    "SOYA": "n",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "n"
+   }
+  },
+  {
+   "page": "drinks",
+   "section": "Coffee & More",
+   "name": "Cappuccino",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "7,2",
+    "CARB (g)": "11,0",
+    "TOTAL FAT (g)": "8,5",
+    "SAT FAT (g)": "4,9",
+    "DIETARY FIBRE (g)": "0,0",
+    "TOTAL SODIUM (mg)": "92,3",
+    "SUGAR (g)": "9,2",
+    "TOTAL ENERGY (kJ)": "630,4"
+   },
+   "allergens": {
+    "GLUTEN": "n",
+    "LACTOSE": "y",
+    "SOYA": "n",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "n"
+   }
+  },
+  {
+   "page": "drinks",
+   "section": "Coffee & More",
+   "name": "Caffè Latte",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "8,5",
+    "CARB (g)": "13,0",
+    "TOTAL FAT (g)": "10,1",
+    "SAT FAT (g)": "5,8",
+    "DIETARY FIBRE (g)": "0,0",
+    "TOTAL SODIUM (mg)": "109,2",
+    "SUGAR (g)": "10,9",
+    "TOTAL ENERGY (kJ)": "745,0"
+   },
+   "allergens": {
+    "GLUTEN": "n",
+    "LACTOSE": "y",
+    "SOYA": "n",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "n"
+   }
+  },
+  {
+   "page": "drinks",
+   "section": "Coffee & More",
+   "name": "Hot Chocolate",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "11,1",
+    "CARB (g)": "57,1",
+    "TOTAL FAT (g)": "16,4",
+    "SAT FAT (g)": "8,2",
+    "DIETARY FIBRE (g)": "2,1",
+    "TOTAL SODIUM (mg)": "173,1",
+    "SUGAR (g)": "51,2",
+    "TOTAL ENERGY (kJ)": "1785,0"
+   },
+   "allergens": {
+    "GLUTEN": "n",
+    "LACTOSE": "y",
+    "SOYA": "n",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "n"
+   }
+  },
+  {
+   "page": "drinks",
+   "section": "Coffee & More",
+   "name": "Chai Latte",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "8,7",
+    "CARB (g)": "33,1",
+    "TOTAL FAT (g)": "16,4",
+    "SAT FAT (g)": "7,8",
+    "DIETARY FIBRE (g)": "0,2",
+    "TOTAL SODIUM (mg)": "173,2",
+    "SUGAR (g)": "10,3",
+    "TOTAL ENERGY (kJ)": "1321,1"
+   },
+   "allergens": {
+    "GLUTEN": "n",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "n"
+   }
+  },
+  {
+   "page": "drinks",
+   "section": "Coffee & More",
+   "name": "Filter Coffee & Muffin Combo",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "12,9",
+    "CARB (g)": "40,6",
+    "TOTAL FAT (g)": "17,5",
+    "SAT FAT (g)": "7,1",
+    "DIETARY FIBRE (g)": "2,0",
+    "TOTAL SODIUM (mg)": "384,7",
+    "SUGAR (g)": "25,5",
+    "TOTAL ENERGY (kJ)": "2352,0"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "drinks",
+   "section": "Iced Coffees",
+   "name": "Choc Hazelnut",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "5,6",
+    "CARB (g)": "26,4",
+    "TOTAL FAT (g)": "6,0",
+    "SAT FAT (g)": "3,3",
+    "DIETARY FIBRE (g)": "0,0",
+    "TOTAL SODIUM (mg)": "109,9",
+    "SUGAR (g)": "21,7",
+    "TOTAL ENERGY (kJ)": "763,5"
+   },
+   "allergens": {
+    "GLUTEN": "n",
+    "LACTOSE": "y",
+    "SOYA": "n",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "n"
+   }
+  },
+  {
+   "page": "drinks",
+   "section": "Iced Coffees",
+   "name": "Salted Caramel",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "5,3",
+    "CARB (g)": "34,0",
+    "TOTAL FAT (g)": "5,6",
+    "SAT FAT (g)": "3,1",
+    "DIETARY FIBRE (g)": "0,0",
+    "TOTAL SODIUM (mg)": "86,7",
+    "SUGAR (g)": "30,0",
+    "TOTAL ENERGY (kJ)": "876,3"
+   },
+   "allergens": {
+    "GLUTEN": "n",
+    "LACTOSE": "y",
+    "SOYA": "n",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "n"
+   }
+  },
+  {
+   "page": "drinks",
+   "section": "Iced Coffees",
+   "name": "Choc Hazelnut Coffee Frappe",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "4.3",
+    "CARB (g)": "38.1",
+    "TOTAL FAT (g)": "4.9",
+    "SAT FAT (g)": "2.7",
+    "DIETARY FIBRE (g)": "0",
+    "TOTAL SODIUM (mg)": "75.1",
+    "SUGAR (g)": "36.5",
+    "TOTAL ENERGY (kJ)": "893"
+   },
+   "allergens": {
+    "GLUTEN": "n",
+    "LACTOSE": "y",
+    "SOYA": "n",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "n"
+   }
+  },
+  {
+   "page": "drinks",
+   "section": "Iced Coffees",
+   "name": "Salted Caramel Coffee Frappe",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "6",
+    "CARB (g)": "28.7",
+    "TOTAL FAT (g)": "15",
+    "SAT FAT (g)": "8.9",
+    "DIETARY FIBRE (g)": "0.4",
+    "TOTAL SODIUM (mg)": "124",
+    "SUGAR (g)": "23.8",
+    "TOTAL ENERGY (kJ)": "1140"
+   },
+   "allergens": {
+    "GLUTEN": "n",
+    "LACTOSE": "y",
+    "SOYA": "n",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "n"
+   }
+  },
+  {
+   "page": "drinks",
+   "section": "Frozen Lemonades",
+   "name": "Strawberry Steelworks",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "0",
+    "CARB (g)": "30,4",
+    "TOTAL FAT (g)": "0",
+    "SAT FAT (g)": "0",
+    "DIETARY FIBRE (g)": "0",
+    "TOTAL SODIUM (mg)": "10,8",
+    "SUGAR (g)": "30,4",
+    "TOTAL ENERGY (kJ)": "516,7"
+   },
+   "allergens": {
+    "GLUTEN": "n",
+    "LACTOSE": "n",
+    "SOYA": "n",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "n"
+   }
+  },
+  {
+   "page": "drinks",
+   "section": "Frozen Lemonades",
+   "name": "Tropical Soda",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "0,6",
+    "CARB (g)": "30,9",
+    "TOTAL FAT (g)": "0",
+    "SAT FAT (g)": "0",
+    "DIETARY FIBRE (g)": "1,7",
+    "TOTAL SODIUM (mg)": "20",
+    "SUGAR (g)": "27,2",
+    "TOTAL ENERGY (kJ)": "544,7"
+   },
+   "allergens": {
+    "GLUTEN": "n",
+    "LACTOSE": "n",
+    "SOYA": "n",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "n"
+   }
+  },
+  {
+   "page": "drinks",
+   "section": "Frozen Lemonades",
+   "name": "Blue Lagoon",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "0,0",
+    "CARB (g)": "33,2",
+    "TOTAL FAT (g)": "0,0",
+    "SAT FAT (g)": "0,0",
+    "DIETARY FIBRE (g)": "0,0",
+    "TOTAL SODIUM (mg)": "48,9",
+    "SUGAR (g)": "33,2",
+    "TOTAL ENERGY (kJ)": "583,9"
+   },
+   "allergens": {
+    "GLUTEN": "n",
+    "LACTOSE": "n",
+    "SOYA": "n",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "n"
+   }
+  },
+  {
+   "page": "drinks",
+   "section": "Frozen Lemonades",
+   "name": "Mango Fruit Smoothie",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "1.6",
+    "CARB (g)": "30",
+    "TOTAL FAT (g)": "0.8",
+    "SAT FAT (g)": "0.2",
+    "DIETARY FIBRE (g)": "3.2",
+    "TOTAL SODIUM (mg)": "4",
+    "SUGAR (g)": "27",
+    "TOTAL ENERGY (kJ)": "502"
+   },
+   "allergens": {
+    "GLUTEN": "n",
+    "LACTOSE": "n",
+    "SOYA": "n",
+    "EGG": "y",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "n"
+   }
+  },
+  {
+   "page": "drinks",
+   "section": "Frozen Lemonades",
+   "name": "Peanut Butter & Banana Smoothie",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "10,5",
+    "CARB (g)": "32",
+    "TOTAL FAT (g)": "16,5",
+    "SAT FAT (g)": "4,1",
+    "DIETARY FIBRE (g)": "3",
+    "TOTAL SODIUM (mg)": "194",
+    "SUGAR (g)": "16",
+    "TOTAL ENERGY (kJ)": "1249,8"
+   },
+   "allergens": {
+    "GLUTEN": "n",
+    "LACTOSE": "y",
+    "SOYA": "n",
+    "EGG": "n",
+    "NUT": "y",
+    "SULPHITES": "n",
+    "WHEAT": "n"
+   }
+  },
+  {
+   "page": "drinks",
+   "section": "Sharing Jugs",
+   "name": "Passion Fruit",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "2.7",
+    "CARB (g)": "110.3",
+    "TOTAL FAT (g)": "0.1",
+    "SAT FAT (g)": "0",
+    "DIETARY FIBRE (g)": "7.9",
+    "TOTAL SODIUM (mg)": "1.1",
+    "SUGAR (g)": "92.9",
+    "TOTAL ENERGY (kJ)": "1965.4"
+   },
+   "allergens": {
+    "GLUTEN": "n",
+    "LACTOSE": "n",
+    "SOYA": "n",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "n"
+   }
+  },
+  {
+   "page": "drinks",
+   "section": "Sharing Jugs",
+   "name": "Strawberry",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "0",
+    "CARB (g)": "66.4",
+    "TOTAL FAT (g)": "0",
+    "SAT FAT (g)": "0",
+    "DIETARY FIBRE (g)": "0",
+    "TOTAL SODIUM (mg)": "0",
+    "SUGAR (g)": "66.4",
+    "TOTAL ENERGY (kJ)": "1157"
+   },
+   "allergens": {
+    "GLUTEN": "n",
+    "LACTOSE": "n",
+    "SOYA": "n",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "n"
+   }
+  },
+  {
+   "page": "drinks",
+   "section": "Chill Shakes",
+   "name": "Savour Shakes",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "5.6",
+    "CARB (g)": "43.5",
+    "TOTAL FAT (g)": "19.3",
+    "SAT FAT (g)": "11.2",
+    "DIETARY FIBRE (g)": "0.1",
+    "TOTAL SODIUM (mg)": "173",
+    "SUGAR (g)": "23.7",
+    "TOTAL ENERGY (kJ)": "2962"
+   },
+   "allergens": {
+    "GLUTEN": "n",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "n"
+   }
+  },
+  {
+   "page": "drinks",
+   "section": "Chill Shakes",
+   "name": "Classic Shakes",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "5.6",
+    "CARB (g)": "43.5",
+    "TOTAL FAT (g)": "19.3",
+    "SAT FAT (g)": "11.2",
+    "DIETARY FIBRE (g)": "0.1",
+    "TOTAL SODIUM (mg)": "173",
+    "SUGAR (g)": "23.7",
+    "TOTAL ENERGY (kJ)": "2962"
+   },
+   "allergens": {
+    "GLUTEN": "n",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "n"
+   }
+  },
+  {
+   "page": "drinks",
+   "section": "Chill Shakes",
+   "name": "Speckled Candy Gourmet Shake",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "5,4",
+    "CARB (g)": "61,3",
+    "TOTAL FAT (g)": "22,4",
+    "SAT FAT (g)": "12,8",
+    "DIETARY FIBRE (g)": "0,3",
+    "TOTAL SODIUM (mg)": "222,2",
+    "SUGAR (g)": "39,7",
+    "TOTAL ENERGY (kJ)": "1927,2"
+   },
+   "allergens": {
+    "GLUTEN": "n",
+    "LACTOSE": "y",
+    "SOYA": "n",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "n"
+   }
+  },
+  {
+   "page": "drinks",
+   "section": "Chill Shakes",
+   "name": "Bar-One ® Gourmet Shake",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "8.2",
+    "CARB (g)": "67.2",
+    "TOTAL FAT (g)": "34.6",
+    "SAT FAT (g)": "17",
+    "DIETARY FIBRE (g)": "0.8",
+    "TOTAL SODIUM (mg)": "215.4",
+    "SUGAR (g)": "46.8",
+    "TOTAL ENERGY (kJ)": "3374.1"
+   },
+   "allergens": {
+    "GLUTEN": "y",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "y"
+   }
+  },
+  {
+   "page": "drinks",
+   "section": "Chill Shakes",
+   "name": "Toffee Mocha Gourmet Shake",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "3.6",
+    "CARB (g)": "50.9",
+    "TOTAL FAT (g)": "15",
+    "SAT FAT (g)": "8.8",
+    "DIETARY FIBRE (g)": "1",
+    "TOTAL SODIUM (mg)": "221.6",
+    "SUGAR (g)": "28.2",
+    "TOTAL ENERGY (kJ)": "2147"
+   },
+   "allergens": {
+    "GLUTEN": "n",
+    "LACTOSE": "y",
+    "SOYA": "n",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "y",
+    "WHEAT": "n"
+   }
+  },
+  {
+   "page": "drinks",
+   "section": "Chill Shakes",
+   "name": "White Choc Berry",
+   "n": {
+    "QUANTITY": "1",
+    "PROTEIN (g)": "5",
+    "CARB (g)": "54",
+    "TOTAL FAT (g)": "26.5",
+    "SAT FAT (g)": "10",
+    "DIETARY FIBRE (g)": "0",
+    "TOTAL SODIUM (mg)": "164.5",
+    "SUGAR (g)": "39.7",
+    "TOTAL ENERGY (kJ)": "2871.1"
+   },
+   "allergens": {
+    "GLUTEN": "n",
+    "LACTOSE": "y",
+    "SOYA": "y",
+    "EGG": "n",
+    "NUT": "n",
+    "SULPHITES": "n",
+    "WHEAT": "n"
+   }
+  }
+ ]
+}
