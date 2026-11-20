@@ -31,7 +31,7 @@ menu as a quick fix: make the same change in the source too, or the next export 
 
 ```sh
 python3 ios/Scripts/supabase/upload.py            # upload every bundled file that changed
-python3 ios/Scripts/supabase/upload.py menu-AU    # just one (publish-menu.sh does this, plus the old gist for 1.0-1.2)
+python3 ios/Scripts/supabase/upload.py menu-AU    # just one (publish-menu.sh does this, plus the old gist for 1.0-1.1)
 python3 ios/Scripts/supabase/pull.py --check      # what's been edited on Supabase
 python3 ios/Scripts/supabase/pull.py              # write those edits into the bundled files
 ```

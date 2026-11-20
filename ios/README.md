@@ -299,7 +299,7 @@ figures and the rules for customising orders). The exporter turns that into
 `ios/MacroMenu/MenuData.json`, stamped with a format number, a content fingerprint
 and a publish date that only changes when the menu does. To send it to phones without an app update, run the
 checks and then `python3 ios/Scripts/supabase/upload.py menu-AU` (or `sh ios/Scripts/publish-menu.sh`, which does the
-same, and also updates the old menu gist that versions 1.0-1.2 read). Every country's menu and the other food files go
+same, and also updates the old menu gist that versions 1.0-1.1 read). Every country's menu and the other food files go
 to Supabase the same way; see `ios/supabase/README.md`. The Macro Menu web app
 (`index.html`, `docs/`) is no longer updated; don't edit or publish it.
 

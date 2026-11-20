@@ -2,8 +2,8 @@
 # Publishes ios/MacroMenu/MenuData.json for menu updates between app versions.
 # Run `node ios/Scripts/export-menu.cjs` and `sh ios/Tests/run-checks.sh` first. Phones pick the new menu up within about 6 hours;
 # the app only switches to it if it's a newer, valid menu.
-# 1. Supabase, which version 1.3 and later read for every dataset (ios/supabase/README.md).
-# 2. The old unlisted gist, which versions 1.0-1.2 still read. Drop this step once nobody is on those versions.
+# 1. Supabase, which version 1.2 and later read for every dataset (ios/supabase/README.md).
+# 2. The old unlisted gist, which versions 1.0-1.1 still read. Drop this step once nobody is on those versions.
 set -eu
 cd "$(dirname "$0")/../.."
 python3 ios/Scripts/supabase/upload.py menu-AU
