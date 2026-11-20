@@ -4954,12 +4954,12 @@
    },
    "Flour Tortilla (Burrito, Enchilada, Soft Taco, Brekkie Taco, Quesadilla, Quesadilla Plus)": {
     "al": [
-     "wheat",
-     "soy"
+     "wheat"
     ],
     "may": [
      "egg",
-     "milk"
+     "milk",
+     "soy"
     ],
     "vg": "vegetarian"
    },
@@ -5097,11 +5097,6 @@
      "milk"
     ],
     "vg": "vegetarian"
-   },
-   "Pinto Beans": {
-    "al": [],
-    "may": [],
-    "vg": "vegan"
    },
    "Pulled Pork": {
     "al": [],

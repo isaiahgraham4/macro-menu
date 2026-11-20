@@ -242,7 +242,7 @@ import UniformTypeIdentifiers
         defer { try? FileManager.default.removeItem(at: root) }
         let catalogURL = URL(fileURLWithPath: CommandLine.arguments[1])
         let catalog = try JSONDecoder().decode(MenuCatalog.self,from: Data(contentsOf: catalogURL))
-        assert(catalog.foods.count == 2979)
+        assert(catalog.foods.count == 2982)
         let copycat = CopycatBook.load(catalogURL.deletingLastPathComponent().appending(path: "CopycatKitchen.json"))
         let compared = copycat.comparisons(menu: catalog.foods)
         assert(copycat.recipes.count == 12 && compared.count == 12)   // every recipe's shop item is on the menu
@@ -330,7 +330,7 @@ import UniformTypeIdentifiers
         assert(Roulette.limits(dinnerDay, goals: dinnerDay.goalSets[0], now: dinnerTime) == nil)
         // Grill'd: every burger on its default bun, with bun and patty swaps that are differences between Grill'd's own panels.
         let grilld = catalog.foods.filter { $0.chain == "grilld" }
-        assert(grilld.count == 78 && grilld.allSatisfy { $0.c != nil && $0.f != nil })
+        assert(grilld.count == 80 && grilld.allSatisfy { $0.c != nil && $0.f != nil })
         // The lunchtime wraps (Nov 2026): Grill'd names them without "Wrap", so the build adds it.
         let classicWrap = grilld.first { $0.id == "grilld:the-classic-wrap" }!
         assert(classicWrap.name == "The Classic Wrap" && classicWrap.kj == 2170 && classicWrap.p == 24.2 && classicWrap.serve == "1 wrap · 270 g")

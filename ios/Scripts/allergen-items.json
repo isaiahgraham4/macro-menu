@@ -191,6 +191,28 @@
    ],
    "src": "guide"
   },
+  "mcd:mcrib": {
+   "al": [
+    "gluten",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "mcd:mcrib-deluxe": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
   "mcd:mccrispy": {
    "al": [
     "egg",
@@ -7262,11 +7284,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -7274,11 +7296,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -7286,11 +7308,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -7298,11 +7320,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -7325,11 +7347,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -7337,11 +7359,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -7350,11 +7372,11 @@
     "egg",
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
     "sesame",
+    "soy",
     "sulphites"
    ],
    "src": "guide"
@@ -7364,11 +7386,11 @@
     "egg",
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
     "sesame",
+    "soy",
     "sulphites"
    ],
    "src": "guide"
@@ -7378,11 +7400,11 @@
     "egg",
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
     "sesame",
+    "soy",
     "sulphites"
    ],
    "src": "guide"
@@ -7405,11 +7427,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
     "egg",
+    "soy",
     "sulphites"
    ],
    "src": "guide"
@@ -7418,11 +7440,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
     "egg",
+    "soy",
     "sulphites"
    ],
    "src": "guide"
@@ -7431,11 +7453,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
     "egg",
+    "soy",
     "sulphites"
    ],
    "src": "guide"
@@ -7445,11 +7467,11 @@
     "egg",
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
     "sesame",
+    "soy",
     "sulphites"
    ],
    "src": "guide"
@@ -7459,11 +7481,11 @@
     "egg",
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
     "sesame",
+    "soy",
     "sulphites"
    ],
    "src": "guide"
@@ -7473,11 +7495,11 @@
     "egg",
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
     "sesame",
+    "soy",
     "sulphites"
    ],
    "src": "guide"
@@ -7500,11 +7522,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -7512,11 +7534,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -7524,11 +7546,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -7536,11 +7558,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -7563,11 +7585,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -7575,11 +7597,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -7587,11 +7609,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
     "egg",
+    "soy",
     "sulphites"
    ],
    "vg": "vegetarian",
@@ -7615,11 +7637,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
     "egg",
+    "soy",
     "sulphites"
    ],
    "src": "guide"
@@ -7628,11 +7650,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
     "egg",
+    "soy",
     "sulphites"
    ],
    "src": "guide"
@@ -7809,11 +7831,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -7822,11 +7844,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -7834,11 +7856,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -7846,11 +7868,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -7872,11 +7894,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -7885,11 +7907,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -7897,11 +7919,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -7909,11 +7931,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -7921,11 +7943,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -7933,11 +7955,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -7959,11 +7981,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -7972,11 +7994,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -7984,11 +8006,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -8067,11 +8089,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -8079,11 +8101,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -8091,11 +8113,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -8117,11 +8139,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -8130,11 +8152,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -8142,11 +8164,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -8258,10 +8280,11 @@
     "egg",
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
-   "may": [],
+   "may": [
+    "soy"
+   ],
    "src": "guide"
   },
   "gyg:crispy-chicken-tender-taco-chipotle-mayo-hard-shell": {
@@ -8994,12 +9017,6 @@
    "vg": "vegetarian",
    "src": "guide"
   },
-  "gyg:pinto-beans": {
-   "al": [],
-   "may": [],
-   "vg": "vegan",
-   "src": "guide"
-  },
   "gyg:small-queso-plain-": {
    "al": [
     "milk"
@@ -9289,11 +9306,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -9301,11 +9318,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -9313,11 +9330,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -9339,11 +9356,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -9352,11 +9369,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -9364,11 +9381,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -9585,10 +9602,10 @@
     "egg",
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
+    "soy",
     "sulphites"
    ],
    "src": "guide"
@@ -9598,10 +9615,10 @@
     "egg",
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
+    "soy",
     "sulphites"
    ],
    "src": "guide"
@@ -9611,10 +9628,10 @@
     "egg",
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
+    "soy",
     "sulphites"
    ],
    "vg": "vegetarian",
@@ -9638,10 +9655,10 @@
     "egg",
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
+    "soy",
     "sulphites"
    ],
    "src": "guide"
@@ -9651,10 +9668,10 @@
     "egg",
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
+    "soy",
     "sulphites"
    ],
    "src": "guide"
@@ -9664,10 +9681,10 @@
     "egg",
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
+    "soy",
     "sulphites"
    ],
    "vg": "vegetarian",
@@ -9766,11 +9783,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -9778,11 +9795,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -9790,11 +9807,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -9818,11 +9835,11 @@
     "egg",
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
     "sesame",
+    "soy",
     "sulphites"
    ],
    "src": "guide"
@@ -9832,11 +9849,11 @@
     "egg",
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
     "sesame",
+    "soy",
     "sulphites"
    ],
    "src": "guide"
@@ -9846,11 +9863,11 @@
     "egg",
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
     "sesame",
+    "soy",
     "sulphites"
    ],
    "vg": "vegetarian",
@@ -9875,11 +9892,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -9887,11 +9904,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -9899,11 +9916,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -10034,11 +10051,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -10046,11 +10063,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -10058,11 +10075,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -10070,11 +10087,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -10097,11 +10114,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -10109,11 +10126,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -10203,11 +10220,11 @@
     "egg",
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
     "sesame",
+    "soy",
     "sulphites"
    ],
    "src": "guide"
@@ -10217,11 +10234,11 @@
     "egg",
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
     "sesame",
+    "soy",
     "sulphites"
    ],
    "src": "guide"
@@ -10231,11 +10248,11 @@
     "egg",
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
     "sesame",
+    "soy",
     "sulphites"
    ],
    "src": "guide"
@@ -10259,11 +10276,11 @@
     "egg",
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
     "sesame",
+    "soy",
     "sulphites"
    ],
    "src": "guide"
@@ -10273,11 +10290,11 @@
     "egg",
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
     "sesame",
+    "soy",
     "sulphites"
    ],
    "src": "guide"
@@ -10287,11 +10304,11 @@
     "egg",
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
     "sesame",
+    "soy",
     "sulphites"
    ],
    "src": "guide"
@@ -10314,11 +10331,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
     "egg",
+    "soy",
     "sulphites"
    ],
    "src": "guide"
@@ -10327,11 +10344,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
     "egg",
+    "soy",
     "sulphites"
    ],
    "src": "guide"
@@ -10340,11 +10357,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
     "egg",
+    "soy",
     "sulphites"
    ],
    "src": "guide"
@@ -10353,11 +10370,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
     "egg",
+    "soy",
     "sulphites"
    ],
    "vg": "vegetarian",
@@ -10381,11 +10398,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
     "egg",
+    "soy",
     "sulphites"
    ],
    "src": "guide"
@@ -10394,11 +10411,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
     "egg",
+    "soy",
     "sulphites"
    ],
    "src": "guide"
@@ -10407,11 +10424,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -10419,11 +10436,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -10431,11 +10448,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -10443,11 +10460,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "vg": "vegetarian",
    "src": "guide"
@@ -10470,11 +10487,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -10482,11 +10499,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
-    "egg"
+    "egg",
+    "soy"
    ],
    "src": "guide"
   },
@@ -10846,11 +10863,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
     "egg",
+    "soy",
     "sulphites"
    ],
    "src": "guide"
@@ -10859,11 +10876,11 @@
    "al": [
     "gluten",
     "milk",
-    "soy",
     "wheat"
    ],
    "may": [
     "egg",
+    "soy",
     "sulphites"
    ],
    "src": "guide"

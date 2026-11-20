@@ -1,5 +1,5 @@
 {
- "source": "mcdonalds.com/au item pages (the site's own itemDetails, read in a browser; ingredients and allergens of each component), 15 Oct 2026; new items read 31 Oct 2026; other sizes read 11 Nov 2026",
+ "source": "mcdonalds.com/au item pages (the site's own itemDetails, read in a browser; ingredients and allergens of each component), 15 Oct 2026; new items read 31 Oct 2026; other sizes read 11 Nov 2026; McRib read 20 Nov 2026",
  "fetched": "2026-10-15",
  "items": {
   "200000": {
@@ -2634,6 +2634,28 @@
     "milk",
     "soy"
    ]
+  },
+  "200967": {
+   "h": "mcrib",
+   "al": [
+    "gluten",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "200968": {
+   "h": "mcrib-deluxe",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "sesame",
+    "soy",
+    "wheat"
+   ],
+   "may": []
   }
  }
 }

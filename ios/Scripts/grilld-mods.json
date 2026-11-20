@@ -105,7 +105,7 @@
     "est": true
    }
   ],
-  "grilld:cluck-norris": [
+  "grilld:barbeque-powerhouse": [
    {
     "key": "s:bun-traditional",
     "id": "swap-to-traditional-bun",
@@ -175,7 +175,7 @@
     "est": true
    }
   ],
-  "grilld:big-dill-energy": [
+  "grilld:protein-pickle": [
    {
     "key": "s:bun-traditional",
     "id": "swap-to-traditional-bun",
@@ -4459,12 +4459,135 @@
     },
     "price": 0
    }
+  ],
+  "grilld:mushroom-magic": [
+   {
+    "key": "s:bun-traditional",
+    "id": "swap-to-traditional-bun",
+    "kind": "s",
+    "name": "Swap to Traditional Bun",
+    "kj": -40,
+    "p": -0.4,
+    "c": -0.9,
+    "f": -0.5,
+    "nut": {
+     "sat": 0.1,
+     "sugar": 0.0,
+     "fibre": 0.4,
+     "sodium": -34.0
+    },
+    "price": 0
+   },
+   {
+    "key": "s:bun-superbun",
+    "id": "swap-to-superbun",
+    "kind": "s",
+    "name": "Swap to SuperBun",
+    "kj": 700,
+    "p": 10.0,
+    "c": -16.5,
+    "f": 8.1,
+    "nut": {
+     "sat": 1.8,
+     "sugar": 1.3,
+     "fibre": -1.7,
+     "sodium": -155.0
+    },
+    "price": 0
+   },
+   {
+    "key": "s:bun-gluten-free",
+    "id": "swap-to-gluten-free-bun",
+    "kind": "s",
+    "name": "Swap to Gluten Free Bun",
+    "kj": 350,
+    "p": -2.2,
+    "c": 11.4,
+    "f": 3.9,
+    "nut": {
+     "sat": 4.2,
+     "sugar": 2.0,
+     "fibre": 5.9,
+     "sodium": 8.0
+    },
+    "price": 0
+   },
+   {
+    "key": "s:bun-no-bun",
+    "id": "no-bun",
+    "kind": "s",
+    "name": "No Bun",
+    "kj": -740,
+    "p": -5.7,
+    "c": -23.5,
+    "f": -5.1,
+    "nut": {
+     "sat": -0.5,
+     "sugar": -1.0,
+     "fibre": -7.0,
+     "sodium": -262.0
+    },
+    "price": 0
+   }
+  ],
+  "grilld:vegan-mushroom-magic": [
+   {
+    "key": "s:bun-traditional",
+    "id": "swap-to-traditional-bun",
+    "kind": "s",
+    "name": "Swap to Traditional Bun",
+    "kj": -40,
+    "p": -0.4,
+    "c": -0.9,
+    "f": -0.5,
+    "nut": {
+     "sat": 0.1,
+     "sugar": 0.0,
+     "fibre": 0.4,
+     "sodium": -34.0
+    },
+    "price": 0
+   },
+   {
+    "key": "s:bun-gluten-free",
+    "id": "swap-to-gluten-free-bun",
+    "kind": "s",
+    "name": "Swap to Gluten Free Bun",
+    "kj": 350,
+    "p": -2.2,
+    "c": 11.4,
+    "f": 3.9,
+    "nut": {
+     "sat": 4.2,
+     "sugar": 2.0,
+     "fibre": 5.9,
+     "sodium": 8.0
+    },
+    "price": 0
+   },
+   {
+    "key": "s:bun-no-bun",
+    "id": "no-bun",
+    "kind": "s",
+    "name": "No Bun",
+    "kj": -740,
+    "p": -5.7,
+    "c": -23.5,
+    "f": -5.1,
+    "nut": {
+     "sat": -0.5,
+     "sugar": -1.0,
+     "fibre": -7.0,
+     "sodium": -262.0
+    },
+    "price": 0
+   }
   ]
  },
  "rows": {
   "grilld:protein-pro": "1004082",
-  "grilld:cluck-norris": "1004083",
-  "grilld:big-dill-energy": "1004084",
+  "grilld:barbeque-powerhouse": "1004083",
+  "grilld:protein-pickle": "1004084",
   "grilld:oscar-piastri-chicken-burger": "1004035",
   "grilld:original-oscar-piastri-wagyu-burger": "1003897",
   "grilld:simply-grill-d": "100",

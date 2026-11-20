@@ -106,17 +106,17 @@ def mcd_cat(name, groups):
     if re.search(r'hash brown|hashbrown', low):
         return 'side'
     if (re.search(DRINK, low) or drink_group and not re.search(SWEET, low)) and \
-            not re.search(r'muffin|cookie(?! butter)|cake|sundae|mcflurry|loaf|pie\b|croissant|wrap|burger|bagel|porridge|sauce|dip\b', low):
+            not re.search(r'muffin|cookie(?! butter)|cake|sundae|mcflurry|loaf|pie\b|croissant|wrap|burger|bagel|porridge|sauce|dip\b|fries', low):
         return 'drink'
     if re.search(r'condiment|sauces', g) and not re.search(r'sandwich|donut|hotcake|mcdip', low) or re.search(SAUCE, low) and \
             not re.search(r'burger|mcmuffin|wrap|chicken|nugget|fries|bagel|pancake|hotcake|porridge|muffin|sandwich|donut|doughnut|mcdip|cone', low):
         return 'extra'
-    if re.search(SWEET, low) and not re.search(r'english muffin|mcmuffin|muffin &|muffin with', low) or re.search(r'dessert', g):
+    if re.search(SWEET, low) and not re.search(r'english muffin|mcmuffin|muffin &|muffin with|pizza', low) or re.search(r'dessert', g):
         return 'sweet'
     if (re.search(r'breakfast', g) or re.search(r'breakfast|brekkie|mcmuffin|hotcake|pancake|bagel|bacon roll|porridge|oatmeal|oats\b', low)) \
             and not re.search(r'salad|apple slices|carrot|fruit bag', low):
         return 'breakfast'
-    if re.search(r'fries|wedges|salad\b|side|carrot|corn|poutine|apple|grapes|onion rings|cheese bites|mozzarella|hash', low) and \
+    if re.search(r'fries|wedges|salad\b|side|carrot|corn|poutine|apple|grapes|onion rings|cheese bites|mozzarella|hash|dippers|pizza pie', low) and \
             not re.search(r'chicken|burger|wrap|deluxe|mcmuffin', low):
         return 'side'
     return 'main'

@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-13",
+ "checked": "2026-11-20",
  "url": "https://www.chick-fil-a.com/nutrition-allergens",
  "items": [
   {
@@ -1007,7 +1007,6 @@
     "Protein (g)": 4
    },
    "subs": [
-    36528,
     10214,
     10215,
     10216
@@ -1016,36 +1015,6 @@
    "a": {
     "milk": "1",
     "egg": "",
-    "soy": "1",
-    "wheat": "1",
-    "sesame": "",
-    "tree-nuts": "",
-    "peanut": "",
-    "fish": ""
-   }
-  },
-  {
-   "menu": "Breakfast",
-   "title": "Breakfast Waffle",
-   "parent": "Breakfast Breads",
-   "n": {
-    "Serving Size": "68g",
-    "Calories": 320,
-    "Fat (g)": 15,
-    "Sat. Fat (g)": 6,
-    "Trans Fat (g)": 0,
-    "Cholesterol (mg)": 15,
-    "Sodium (mg)": 270,
-    "Carbohydrates (g)": 46,
-    "Fiber (g)": 4,
-    "Sugar (g)": 24,
-    "Protein (g)": 4
-   },
-   "subs": [],
-   "id": 36528,
-   "a": {
-    "milk": "1",
-    "egg": "1",
     "soy": "1",
     "wheat": "1",
     "sesame": "",
@@ -1361,64 +1330,6 @@
   },
   {
    "menu": "Breakfast",
-   "title": "Chicken & Waffles Breakfast Sandwich w/ Chick-fil-A® Filet",
-   "n": {
-    "Serving Size": "150g",
-    "Calories": 530,
-    "Fat (g)": 26,
-    "Sat. Fat (g)": 9,
-    "Trans Fat (g)": 0,
-    "Cholesterol (mg)": 65,
-    "Sodium (mg)": 1160,
-    "Carbohydrates (g)": 55,
-    "Fiber (g)": 4,
-    "Sugar (g)": 27,
-    "Protein (g)": 22
-   },
-   "subs": [],
-   "id": 53033,
-   "a": {
-    "milk": "1",
-    "egg": "1",
-    "soy": "1",
-    "wheat": "1",
-    "sesame": "",
-    "tree-nuts": "",
-    "peanut": "",
-    "fish": ""
-   }
-  },
-  {
-   "menu": "Breakfast",
-   "title": "Chicken & Waffles Breakfast Sandwich w/ Spicy Filet",
-   "n": {
-    "Serving Size": "150g",
-    "Calories": 530,
-    "Fat (g)": 25,
-    "Sat. Fat (g)": 9,
-    "Trans Fat (g)": 0,
-    "Cholesterol (mg)": 65,
-    "Sodium (mg)": 1220,
-    "Carbohydrates (g)": 54,
-    "Fiber (g)": 5,
-    "Sugar (g)": 26,
-    "Protein (g)": 23
-   },
-   "subs": [],
-   "id": 53052,
-   "a": {
-    "milk": "1",
-    "egg": "1",
-    "soy": "1",
-    "wheat": "1",
-    "sesame": "",
-    "tree-nuts": "",
-    "peanut": "",
-    "fish": ""
-   }
-  },
-  {
-   "menu": "Breakfast",
    "title": "Chick-fil-A® Chicken Biscuit",
    "n": {
     "Serving Size": "153g",
@@ -1667,35 +1578,6 @@
    },
    "subs": [],
    "id": 10150,
-   "a": {
-    "milk": "1",
-    "egg": "1",
-    "soy": "1",
-    "wheat": "1",
-    "sesame": "",
-    "tree-nuts": "",
-    "peanut": "",
-    "fish": ""
-   }
-  },
-  {
-   "menu": "Breakfast",
-   "title": "Chicken & Waffles Breakfast Sandwich w/ Grilled Filet",
-   "n": {
-    "Serving Size": "129g",
-    "Calories": 440,
-    "Fat (g)": 19,
-    "Sat. Fat (g)": 8,
-    "Trans Fat (g)": 0,
-    "Cholesterol (mg)": 65,
-    "Sodium (mg)": 830,
-    "Carbohydrates (g)": 47,
-    "Fiber (g)": 4,
-    "Sugar (g)": 25,
-    "Protein (g)": 20
-   },
-   "subs": [],
-   "id": 53054,
    "a": {
     "milk": "1",
     "egg": "1",
@@ -2657,64 +2539,6 @@
   },
   {
    "menu": "Entrées",
-   "title": "Chicken & Waffles Sandwich w/ Chick-fil-A® Filet",
-   "n": {
-    "Serving Size": "210g",
-    "Calories": 690,
-    "Fat (g)": 34,
-    "Sat. Fat (g)": 11,
-    "Trans Fat (g)": 0,
-    "Cholesterol (mg)": 100,
-    "Sodium (mg)": 1600,
-    "Carbohydrates (g)": 66,
-    "Fiber (g)": 5,
-    "Sugar (g)": 29,
-    "Protein (g)": 32
-   },
-   "subs": [],
-   "id": 53056,
-   "a": {
-    "milk": "1",
-    "egg": "1",
-    "soy": "1",
-    "wheat": "1",
-    "sesame": "",
-    "tree-nuts": "",
-    "peanut": "",
-    "fish": ""
-   }
-  },
-  {
-   "menu": "Entrées",
-   "title": "Chicken & Waffles Sandwich w/ Spicy Filet",
-   "n": {
-    "Serving Size": "215g",
-    "Calories": 710,
-    "Fat (g)": 35,
-    "Sat. Fat (g)": 12,
-    "Trans Fat (g)": 0,
-    "Cholesterol (mg)": 95,
-    "Sodium (mg)": 1860,
-    "Carbohydrates (g)": 70,
-    "Fiber (g)": 6,
-    "Sugar (g)": 29,
-    "Protein (g)": 31
-   },
-   "subs": [],
-   "id": 53058,
-   "a": {
-    "milk": "1",
-    "egg": "1",
-    "soy": "1",
-    "wheat": "1",
-    "sesame": "",
-    "tree-nuts": "",
-    "peanut": "",
-    "fish": ""
-   }
-  },
-  {
-   "menu": "Entrées",
    "title": "Grilled Chicken Sandwich",
    "n": {
     "Serving Size": "206g",
@@ -2735,35 +2559,6 @@
     "milk": "",
     "egg": "1",
     "soy": "",
-    "wheat": "1",
-    "sesame": "",
-    "tree-nuts": "",
-    "peanut": "",
-    "fish": ""
-   }
-  },
-  {
-   "menu": "Entrées",
-   "title": "Chicken & Waffles Sandwich w/ Grilled Filet",
-   "n": {
-    "Serving Size": "179g",
-    "Calories": 540,
-    "Fat (g)": 24,
-    "Sat. Fat (g)": 9,
-    "Trans Fat (g)": 0,
-    "Cholesterol (mg)": 100,
-    "Sodium (mg)": 850,
-    "Carbohydrates (g)": 55,
-    "Fiber (g)": 5,
-    "Sugar (g)": 28,
-    "Protein (g)": 29
-   },
-   "subs": [],
-   "id": 53060,
-   "a": {
-    "milk": "1",
-    "egg": "1",
-    "soy": "1",
     "wheat": "1",
     "sesame": "",
     "tree-nuts": "",
@@ -5188,96 +4983,6 @@
   },
   {
    "menu": "Treats",
-   "title": "S’mores Frosted Coffee",
-   "n": {
-    "Serving Size": "382g",
-    "Calories": 400,
-    "Fat (g)": 8,
-    "Sat. Fat (g)": 5,
-    "Trans Fat (g)": 0,
-    "Cholesterol (mg)": 25,
-    "Sodium (mg)": 220,
-    "Carbohydrates (g)": 77,
-    "Fiber (g)": 1,
-    "Sugar (g)": 69,
-    "Protein (g)": 7
-   },
-   "subs": [],
-   "id": 53042,
-   "a": {
-    "milk": "1",
-    "egg": "",
-    "soy": "1",
-    "wheat": "1",
-    "sesame": "",
-    "tree-nuts": "",
-    "peanut": "",
-    "fish": ""
-   }
-  },
-  {
-   "menu": "Treats",
-   "title": "S’mores Milkshake",
-   "n": {
-    "Serving Size": "411g",
-    "Calories": 640,
-    "Fat (g)": 19,
-    "Sat. Fat (g)": 12,
-    "Trans Fat (g)": 0.5,
-    "Cholesterol (mg)": 70,
-    "Sodium (mg)": 400,
-    "Carbohydrates (g)": 109,
-    "Fiber (g)": 1,
-    "Sugar (g)": 100,
-    "Protein (g)": 12
-   },
-   "subs": [
-    53038
-   ],
-   "id": 53036,
-   "a": {
-    "milk": "1",
-    "egg": "",
-    "soy": "1",
-    "wheat": "1",
-    "sesame": "",
-    "tree-nuts": "",
-    "peanut": "",
-    "fish": ""
-   }
-  },
-  {
-   "menu": "Treats",
-   "title": "Toasted Marshmallow Whipped Topping",
-   "parent": "S’mores Milkshake",
-   "n": {
-    "Serving Size": "23g",
-    "Calories": 60,
-    "Fat (g)": 3,
-    "Sat. Fat (g)": 2,
-    "Trans Fat (g)": 0,
-    "Cholesterol (mg)": 10,
-    "Sodium (mg)": 10,
-    "Carbohydrates (g)": 7,
-    "Fiber (g)": 0,
-    "Sugar (g)": 7,
-    "Protein (g)": 1
-   },
-   "subs": [],
-   "id": 53038,
-   "a": {
-    "milk": "1",
-    "egg": "",
-    "soy": "",
-    "wheat": "",
-    "sesame": "",
-    "tree-nuts": "",
-    "peanut": "",
-    "fish": ""
-   }
-  },
-  {
-   "menu": "Treats",
    "title": "Dr Pepper® Float",
    "n": {
     "Serving Size": "369g",
@@ -5593,6 +5298,64 @@
     "egg": "",
     "soy": "1",
     "wheat": "1",
+    "sesame": "",
+    "tree-nuts": "",
+    "peanut": "",
+    "fish": ""
+   }
+  },
+  {
+   "menu": "Treats",
+   "title": "Peppermint Chip Milkshake",
+   "n": {
+    "Serving Size": "405g",
+    "Calories": 650,
+    "Fat (g)": 22,
+    "Sat. Fat (g)": 14,
+    "Trans Fat (g)": 0.5,
+    "Cholesterol (mg)": 80,
+    "Sodium (mg)": 340,
+    "Carbohydrates (g)": 105,
+    "Fiber (g)": 1,
+    "Sugar (g)": 92,
+    "Protein (g)": 11
+   },
+   "subs": [],
+   "id": 555,
+   "a": {
+    "milk": "1",
+    "egg": "",
+    "soy": "1",
+    "wheat": "",
+    "sesame": "",
+    "tree-nuts": "",
+    "peanut": "",
+    "fish": ""
+   }
+  },
+  {
+   "menu": "Treats",
+   "title": "Peppermint Chip Frosted Coffee",
+   "n": {
+    "Serving Size": "369g",
+    "Calories": 410,
+    "Fat (g)": 9,
+    "Sat. Fat (g)": 6,
+    "Trans Fat (g)": 0,
+    "Cholesterol (mg)": 25,
+    "Sodium (mg)": 170,
+    "Carbohydrates (g)": 78,
+    "Fiber (g)": 1,
+    "Sugar (g)": 66,
+    "Protein (g)": 7
+   },
+   "subs": [],
+   "id": 36491,
+   "a": {
+    "milk": "1",
+    "egg": "",
+    "soy": "1",
+    "wheat": "",
     "sesame": "",
     "tree-nuts": "",
     "peanut": "",
@@ -7809,35 +7572,6 @@
   },
   {
    "menu": "Drinks",
-   "title": "Toasted Marshmallow Hot Coffee",
-   "n": {
-    "Serving Size": "380g",
-    "Calories": 110,
-    "Fat (g)": 0,
-    "Sat. Fat (g)": 0,
-    "Trans Fat (g)": 0,
-    "Cholesterol (mg)": 0,
-    "Sodium (mg)": 65,
-    "Carbohydrates (g)": 26,
-    "Fiber (g)": 0,
-    "Sugar (g)": 22,
-    "Protein (g)": 0
-   },
-   "subs": [],
-   "id": 53050,
-   "a": {
-    "milk": "",
-    "egg": "",
-    "soy": "",
-    "wheat": "",
-    "sesame": "",
-    "tree-nuts": "",
-    "peanut": "",
-    "fish": ""
-   }
-  },
-  {
-   "menu": "Drinks",
    "title": "Iced Coffee",
    "n": {
     "Serving Size": "661g",
@@ -8041,66 +7775,6 @@
   },
   {
    "menu": "Drinks",
-   "title": "Toasted Marshmallow Cream Cold Brew",
-   "parent": "Cream Cold Brew",
-   "n": {
-    "Serving Size": "712g",
-    "Calories": 530,
-    "Fat (g)": 17,
-    "Sat. Fat (g)": 10,
-    "Trans Fat (g)": 0.5,
-    "Cholesterol (mg)": 65,
-    "Sodium (mg)": 440,
-    "Carbohydrates (g)": 87,
-    "Fiber (g)": 0,
-    "Sugar (g)": 80,
-    "Protein (g)": 8
-   },
-   "subs": [],
-   "id": 53048,
-   "a": {
-    "milk": "1",
-    "egg": "",
-    "soy": "",
-    "wheat": "",
-    "sesame": "",
-    "tree-nuts": "",
-    "peanut": "",
-    "fish": ""
-   }
-  },
-  {
-   "menu": "Drinks",
-   "title": "Toasted Marshmallow Iced Coffee",
-   "parent": "Iced Coffee",
-   "n": {
-    "Serving Size": "683g",
-    "Calories": 270,
-    "Fat (g)": 4,
-    "Sat. Fat (g)": 3,
-    "Trans Fat (g)": 0,
-    "Cholesterol (mg)": 15,
-    "Sodium (mg)": 200,
-    "Carbohydrates (g)": 50,
-    "Fiber (g)": 0,
-    "Sugar (g)": 43,
-    "Protein (g)": 7
-   },
-   "subs": [],
-   "id": 53044,
-   "a": {
-    "milk": "1",
-    "egg": "",
-    "soy": "",
-    "wheat": "",
-    "sesame": "",
-    "tree-nuts": "",
-    "peanut": "",
-    "fish": ""
-   }
-  },
-  {
-   "menu": "Drinks",
    "title": "Simply Orange®",
    "n": {
     "Serving Size": "326g",
@@ -8274,26 +7948,83 @@
    }
   },
   {
+   "menu": "Drinks",
+   "title": "Peppermint Hot Coffee",
+   "n": {
+    "Serving Size": "369g",
+    "Calories": 80,
+    "Fat (g)": 0,
+    "Sat. Fat (g)": 0,
+    "Trans Fat (g)": 0,
+    "Cholesterol (mg)": 0,
+    "Sodium (mg)": 30,
+    "Carbohydrates (g)": 19,
+    "Fiber (g)": 0,
+    "Sugar (g)": 11,
+    "Protein (g)": 0
+   },
+   "subs": [],
+   "id": 36495,
+   "a": {
+    "milk": "",
+    "egg": "",
+    "soy": "",
+    "wheat": "",
+    "sesame": "",
+    "tree-nuts": "",
+    "peanut": "",
+    "fish": ""
+   }
+  },
+  {
+   "menu": "Drinks",
+   "title": "Peppermint Iced Coffee",
+   "n": {
+    "Serving Size": "695g",
+    "Calories": 240,
+    "Fat (g)": 4.5,
+    "Sat. Fat (g)": 3.5,
+    "Trans Fat (g)": 0.5,
+    "Cholesterol (mg)": 20,
+    "Sodium (mg)": 160,
+    "Carbohydrates (g)": 41,
+    "Fiber (g)": 0,
+    "Sugar (g)": 29,
+    "Protein (g)": 8
+   },
+   "subs": [],
+   "id": 36493,
+   "a": {
+    "milk": "1",
+    "egg": "",
+    "soy": "",
+    "wheat": "",
+    "sesame": "",
+    "tree-nuts": "",
+    "peanut": "",
+    "fish": ""
+   }
+  },
+  {
    "menu": "Coffee",
    "title": "Cream Cold Brew",
    "n": {
-    "Serving Size": "700g",
-    "Calories": 520,
-    "Fat (g)": 22,
-    "Sat. Fat (g)": 14,
-    "Trans Fat (g)": 1,
-    "Cholesterol (mg)": 80,
-    "Sodium (mg)": 440,
-    "Carbohydrates (g)": 75,
+    "Serving Size": "695g",
+    "Calories": 480,
+    "Fat (g)": 17,
+    "Sat. Fat (g)": 11,
+    "Trans Fat (g)": 0.5,
+    "Cholesterol (mg)": 65,
+    "Sodium (mg)": 390,
+    "Carbohydrates (g)": 77,
     "Fiber (g)": 0,
-    "Sugar (g)": 71,
-    "Protein (g)": 9
+    "Sugar (g)": 64,
+    "Protein (g)": 8
    },
    "subs": [
     51460,
     51464,
     51467,
-    53048,
     51469
    ],
    "id": 51458,
@@ -8400,36 +8131,6 @@
   },
   {
    "menu": "Coffee",
-   "title": "Toasted Marshmallow Cream Cold Brew",
-   "parent": "Cream Cold Brew",
-   "n": {
-    "Serving Size": "712g",
-    "Calories": 530,
-    "Fat (g)": 17,
-    "Sat. Fat (g)": 10,
-    "Trans Fat (g)": 0.5,
-    "Cholesterol (mg)": 65,
-    "Sodium (mg)": 440,
-    "Carbohydrates (g)": 87,
-    "Fiber (g)": 0,
-    "Sugar (g)": 80,
-    "Protein (g)": 8
-   },
-   "subs": [],
-   "id": 53048,
-   "a": {
-    "milk": "1",
-    "egg": "",
-    "soy": "",
-    "wheat": "",
-    "sesame": "",
-    "tree-nuts": "",
-    "peanut": "",
-    "fish": ""
-   }
-  },
-  {
-   "menu": "Coffee",
    "title": "Cream Cold Brew",
    "parent": "Cream Cold Brew",
    "n": {
@@ -8462,23 +8163,22 @@
    "menu": "Coffee",
    "title": "Iced Coffee",
    "n": {
-    "Serving Size": "672g",
-    "Calories": 260,
-    "Fat (g)": 9,
-    "Sat. Fat (g)": 6,
+    "Serving Size": "695g",
+    "Calories": 240,
+    "Fat (g)": 4.5,
+    "Sat. Fat (g)": 3.5,
     "Trans Fat (g)": 0.5,
-    "Cholesterol (mg)": 35,
-    "Sodium (mg)": 190,
-    "Carbohydrates (g)": 38,
+    "Cholesterol (mg)": 20,
+    "Sodium (mg)": 160,
+    "Carbohydrates (g)": 41,
     "Fiber (g)": 0,
-    "Sugar (g)": 34,
+    "Sugar (g)": 29,
     "Protein (g)": 8
    },
    "subs": [
     51472,
     51474,
     10403,
-    53044,
     51476
    ],
    "id": 51470,
@@ -8585,36 +8285,6 @@
   },
   {
    "menu": "Coffee",
-   "title": "Toasted Marshmallow Iced Coffee",
-   "parent": "Iced Coffee",
-   "n": {
-    "Serving Size": "683g",
-    "Calories": 270,
-    "Fat (g)": 4,
-    "Sat. Fat (g)": 3,
-    "Trans Fat (g)": 0,
-    "Cholesterol (mg)": 15,
-    "Sodium (mg)": 200,
-    "Carbohydrates (g)": 50,
-    "Fiber (g)": 0,
-    "Sugar (g)": 43,
-    "Protein (g)": 7
-   },
-   "subs": [],
-   "id": 53044,
-   "a": {
-    "milk": "1",
-    "egg": "",
-    "soy": "",
-    "wheat": "",
-    "sesame": "",
-    "tree-nuts": "",
-    "peanut": "",
-    "fish": ""
-   }
-  },
-  {
-   "menu": "Coffee",
    "title": "Iced Coffee",
    "parent": "Iced Coffee",
    "n": {
@@ -8676,16 +8346,16 @@
    "menu": "Coffee",
    "title": "Frosted Coffee",
    "n": {
-    "Serving Size": "374g",
-    "Calories": 260,
-    "Fat (g)": 7,
-    "Sat. Fat (g)": 4.5,
+    "Serving Size": "369g",
+    "Calories": 410,
+    "Fat (g)": 9,
+    "Sat. Fat (g)": 6,
     "Trans Fat (g)": 0,
     "Cholesterol (mg)": 25,
-    "Sodium (mg)": 140,
-    "Carbohydrates (g)": 45,
-    "Fiber (g)": 0,
-    "Sugar (g)": 44,
+    "Sodium (mg)": 170,
+    "Carbohydrates (g)": 78,
+    "Fiber (g)": 1,
+    "Sugar (g)": 66,
     "Protein (g)": 7
    },
    "subs": [
@@ -8698,7 +8368,7 @@
    "a": {
     "milk": "1",
     "egg": "",
-    "soy": "",
+    "soy": "1",
     "wheat": "",
     "sesame": "",
     "tree-nuts": "",
@@ -8827,57 +8497,28 @@
    }
   },
   {
-   "menu": "Coffee",
-   "title": "Toasted Marshmallow Hot Coffee",
+   "menu": "Dipping Sauces",
+   "title": "Spicy Chick-fil-A® Sauce",
    "n": {
-    "Serving Size": "380g",
-    "Calories": 110,
-    "Fat (g)": 0,
-    "Sat. Fat (g)": 0,
+    "Serving Size": "28g",
+    "Calories": 130,
+    "Fat (g)": 12,
+    "Sat. Fat (g)": 2,
     "Trans Fat (g)": 0,
-    "Cholesterol (mg)": 0,
-    "Sodium (mg)": 65,
-    "Carbohydrates (g)": 26,
+    "Cholesterol (mg)": 10,
+    "Sodium (mg)": 210,
+    "Carbohydrates (g)": 6,
     "Fiber (g)": 0,
-    "Sugar (g)": 22,
+    "Sugar (g)": 6,
     "Protein (g)": 0
    },
    "subs": [],
-   "id": 53050,
+   "id": 58560,
    "a": {
     "milk": "",
-    "egg": "",
-    "soy": "",
-    "wheat": "",
-    "sesame": "",
-    "tree-nuts": "",
-    "peanut": "",
-    "fish": ""
-   }
-  },
-  {
-   "menu": "Coffee",
-   "title": "S’mores Frosted Coffee",
-   "n": {
-    "Serving Size": "382g",
-    "Calories": 400,
-    "Fat (g)": 8,
-    "Sat. Fat (g)": 5,
-    "Trans Fat (g)": 0,
-    "Cholesterol (mg)": 25,
-    "Sodium (mg)": 220,
-    "Carbohydrates (g)": 77,
-    "Fiber (g)": 1,
-    "Sugar (g)": 69,
-    "Protein (g)": 7
-   },
-   "subs": [],
-   "id": 53042,
-   "a": {
-    "milk": "1",
-    "egg": "",
+    "egg": "1",
     "soy": "1",
-    "wheat": "1",
+    "wheat": "",
     "sesame": "",
     "tree-nuts": "",
     "peanut": "",
@@ -9342,35 +8983,6 @@
     "egg": "",
     "soy": "",
     "wheat": "",
-    "sesame": "",
-    "tree-nuts": "",
-    "peanut": "",
-    "fish": ""
-   }
-  },
-  {
-   "menu": "Buns",
-   "title": "Waffle",
-   "n": {
-    "Serving Size": "83g",
-    "Calories": 380,
-    "Fat (g)": 18,
-    "Sat. Fat (g)": 7,
-    "Trans Fat (g)": 0,
-    "Cholesterol (mg)": 20,
-    "Sodium (mg)": 330,
-    "Carbohydrates (g)": 52,
-    "Fiber (g)": 5,
-    "Sugar (g)": 27,
-    "Protein (g)": 5
-   },
-   "subs": [],
-   "id": 36541,
-   "a": {
-    "milk": "1",
-    "egg": "1",
-    "soy": "1",
-    "wheat": "1",
     "sesame": "",
     "tree-nuts": "",
     "peanut": "",
