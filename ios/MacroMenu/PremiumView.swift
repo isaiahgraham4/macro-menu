@@ -67,7 +67,9 @@ struct PremiumView: View {
         .subscriptionStorePolicyDestination(for: .privacyPolicy) { NavigationStack { LegalDocumentView(document: .privacy) } }
         .subscriptionStorePolicyDestination(for: .termsOfService) { NavigationStack { LegalDocumentView(document: .terms) } }
         .onInAppPurchaseCompletion { _, result in
-            if case .success(.success) = result { await purchases.refresh() }
+            guard case .success(let outcome) = result else { return }
+            await RevenueCatLink.record(outcome)
+            if case .success = outcome { await purchases.refresh() }
         }
     }
 

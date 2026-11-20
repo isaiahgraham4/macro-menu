@@ -23,6 +23,7 @@ import UserNotifications
         // Premium turning on or off changes the app colour, the widgets and which reminders are booked.
         if Premium.subscriptionsEnabled {
             Purchases.shared.onChange = { store.refreshWidgets(); rebookReminders() }
+            RevenueCatLink.start()
             Purchases.shared.start()
         }
         UNUserNotificationCenter.current().delegate = router

@@ -253,7 +253,7 @@ struct SettingsView: View {
                 Button("OK", role: .cancel) {}
             } message: { Text("Your restaurant menus haven’t changed.") }
             .sheet(isPresented: $showPremium) { PremiumView() }
-            .offerCodeRedemption(isPresented: $redeeming) { _ in Task { await Purchases.shared.refresh() } }
+            .offerCodeRedemption(isPresented: $redeeming) { _ in Task { await Purchases.shared.refresh(); await RevenueCatLink.sync() } }
             .sheet(isPresented: $estimating) {
                 NavigationStack {
                     TargetCalculator { values in

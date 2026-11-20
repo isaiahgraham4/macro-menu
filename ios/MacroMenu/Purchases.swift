@@ -55,6 +55,7 @@ final class Purchases {
     func restore() async throws {
         try await StoreKit.AppStore.sync()
         await refresh()
+        await RevenueCatLink.sync()
     }
 
     private func willRenew(_ productID: String) async -> Bool? {

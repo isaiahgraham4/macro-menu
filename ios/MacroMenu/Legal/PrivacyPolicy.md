@@ -1,12 +1,12 @@
 # Leanrrr privacy policy
 
-Effective 16 November 2026
+Effective 20 November 2026
 
 Leanrrr is made by Isaiah Graham, an independent developer in Victoria, Australia ("I", "me"). This policy explains what happens to your information when you use Leanrrr. You can reach me at {{CONTACT}}.
 
 ## The short version
 
-- Leanrrr has no account, no ads, no analytics and no tracking. It doesn't use cookies.
+- Leanrrr has no account, no ads, no analytics and no tracking. It doesn't use cookies. If you buy Even Leanrrr, a record of that purchase goes to RevenueCat, which manages subscriptions for me (see Purchases).
 - Everything you enter stays on your device and, if you choose, in your own iCloud and Apple Health. I never receive it.
 - The one exception is a food you choose to share with other Leanrrr users. Only that food's name, serving, nutrition and barcode are shared, without your name.
 - A few features ask other services for information. They are told only what they need: a barcode number, the words you search for packaged foods, your position for an Apple Maps search, or the address of a recipe page you ask Leanrrr to load.
@@ -100,9 +100,13 @@ Apart from foods you chose to share, I don't hold any of your data, so there's n
 
 Even Leanrrr is bought through Apple. Apple handles your payment, including the free trial, and tells Leanrrr, on your device, whether your subscription or trial is active. I don't receive your name, your Apple Account or any payment details, and there's no Leanrrr account.
 
+To keep track of subscriptions, Leanrrr sends a record of each Even Leanrrr purchase, renewal, trial and restore to RevenueCat. The record holds the plan, price, currency, dates, Apple's transaction ID, your country or region as the App Store reports it, your device model and iOS version, and a random ID Leanrrr makes up for this purpose. It contains nothing you log in Leanrrr and nothing that names you. RevenueCat doesn't use it for advertising. If you never buy or restore Even Leanrrr, RevenueCat receives nothing beyond that random ID and your device details when the app starts.
+
 ## Other services
 
 Leanrrr doesn't sell or share your personal data, and it uses no analytics, advertising or tracking services. The only outside services it contacts are:
+
+- **RevenueCat** (United States): receives the purchase records described under Purchases, and handles them under RevenueCat's privacy policy.
 
 - **Apple** (United States and elsewhere): Maps, iCloud (including the public database that holds shared foods), Health, Siri, Visual Intelligence and the App Store (for Even Leanrrr), which are part of your device and your Apple Account and are covered by Apple's privacy policy.
 - **Open Food Facts** (France): receives only a product's barcode number or the words you search for packaged foods. Neither is linked to you.
