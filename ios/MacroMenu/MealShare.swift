@@ -388,6 +388,11 @@ struct StoryImagePreview: View {
     @State private var camera = false
     @State private var pickerItem: PhotosPickerItem?
     @State private var photoProblem = false
+    /// Where the card and photo sit, once moved in the editor; nil is the design's standard place.
+    @State private var layout: PhotoLayout?
+    /// The card on its own, for the editor to place.
+    @State private var card: UIImage?
+    @State private var editing = false
 
     init(name: String, designs: [ShareDesign] = ShareDesign.allCases, make: @escaping @MainActor (ShareDesign) -> UIImage?) {
         self.name = name; self.designs = designs; self.make = make
@@ -409,7 +414,7 @@ struct StoryImagePreview: View {
     private var transparent: Bool { design.isTransparent && photo == nil }
 
     private var hint: String {
-        if photo != nil { return "Your photo with the card on it. Share it to a story or save it." }
+        if photo != nil { return "Your photo with the card on it. Tap Edit to move the macros or frame the photo." }
         return design.hint ?? ShareCardActions.standardHint
     }
 
@@ -420,6 +425,9 @@ struct StoryImagePreview: View {
                     .background { if transparent { Checkerboard() } }
                     .clipShape(RoundedRectangle(cornerRadius: 18))
                     .accessibilityLabel("Share image: \(name), \(design.name) design\(photo == nil ? "" : ", on your photo")")
+                    .onTapGesture { if photo != nil { editing = true } }
+                    .accessibilityAddTraits(photo == nil ? [] : .isButton)
+                    .accessibilityHint(photo == nil ? "" : "Opens the editor to move the macros or frame the photo.")
             } else {
                 ShareCardSkeleton()
             }
@@ -430,11 +438,21 @@ struct StoryImagePreview: View {
         .padding()
         .navigationTitle("Share image").navigationBarTitleDisplayMode(.inline)
         .toolbar { ToolbarItem(placement: .cancellationAction) { Button("Done") { dismiss() } } }
-        .task(id: Render(design: design, photo: photo.map(ObjectIdentifier.init))) { render() }
+        .task(id: Render(design: design, photo: photo.map(ObjectIdentifier.init), layout: layout)) { render() }
+        // A new photo starts in the standard place (see `setPhoto`); so does switching between the Clear card and a solid one.
+        .onChange(of: design.isTransparent) { layout = nil }
+        .fullScreenCover(isPresented: $editing) {
+            if let photo, let card {
+                PhotoStoryEditor(photo: photo, card: card, design: design, layout: layout ?? .standard(for: design)) { edited, turned in
+                    if turned !== photo { self.photo = turned }
+                    layout = edited
+                }
+            }
+        }
         .onChange(of: pickerItem) {
             guard let item = pickerItem else { return }
             Task {
-                if let data = try? await item.loadTransferable(type: Data.self), let picked = UIImage(data: data) { photo = picked }
+                if let data = try? await item.loadTransferable(type: Data.self), let picked = UIImage(data: data) { setPhoto(picked) }
                 else { photoProblem = true }
                 pickerItem = nil
             }
@@ -442,7 +460,7 @@ struct StoryImagePreview: View {
         .fullScreenCover(isPresented: $camera) {
             ProgressCameraPicker { taken in
                 camera = false
-                if let taken { photo = taken }
+                if let taken { setPhoto(taken) }
             }.ignoresSafeArea()
         }
         .alert("That photo couldn't be opened.", isPresented: $photoProblem) { Button("OK", role: .cancel) {} }
@@ -451,63 +469,105 @@ struct StoryImagePreview: View {
         .onAppear {
             let args = CommandLine.arguments
             if photo == nil, let i = args.firstIndex(of: "-demoSharePhoto"), i + 1 < args.count { photo = UIImage(contentsOfFile: args[i + 1]) }
+            // `-demoSharePhotoEdit` opens the editor straight away.
+            if photo != nil, args.contains("-demoSharePhotoEdit") {
+                Task { try? await Task.sleep(for: .milliseconds(600)); editing = true }
+            }
         }
         #endif
     }
 
-    /// Take a photo of the food or pick one, to put the card on; or take the photo off again.
+    /// Take a photo of the food or pick one, to put the card on; once there's a photo, edit it, swap it or take it off.
+    /// With a photo on, the swap buttons go to icons so Edit keeps its word and nothing wraps.
     private var photoButtons: some View {
         HStack(spacing: 10) {
-            if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                Button { camera = true } label: {
-                    Label(photo == nil ? "Take photo" : "Retake", systemImage: "camera").frame(maxWidth: .infinity)
+            Group {
+                if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                    Button { camera = true } label: {
+                        Label(photo == nil ? "Take photo" : "Retake", systemImage: "camera").frame(maxWidth: .infinity)
+                    }
+                }
+                PhotosPicker(selection: $pickerItem, matching: .images) {
+                    Label(photo == nil ? "Choose photo" : "Change photo", systemImage: "photo.on.rectangle").frame(maxWidth: .infinity)
+                }
+                if photo != nil {
+                    Button { setPhoto(nil) } label: { Label("Remove photo", systemImage: "xmark").frame(maxWidth: .infinity) }
                 }
             }
-            PhotosPicker(selection: $pickerItem, matching: .images) {
-                Label(photo == nil ? "Choose photo" : "Change", systemImage: "photo.on.rectangle").frame(maxWidth: .infinity)
-            }
+            .labelStyle(PhotoButtonLabel(iconOnly: photo != nil))
             if photo != nil {
-                Button { photo = nil } label: { Label("No photo", systemImage: "xmark").frame(maxWidth: .infinity) }
+                Button { editing = true } label: {
+                    Label("Edit", systemImage: "crop.rotate").frame(maxWidth: .infinity)
+                }
+                .layoutPriority(1)
             }
         }
-        .buttonStyle(.bordered).controlSize(.small).labelStyle(.titleAndIcon)
+        .buttonStyle(.bordered).controlSize(.small).lineLimit(1)
         .font(.roboto(.subheadline))
+    }
+
+    /// Words and icon, or the icon alone (VoiceOver still reads the words).
+    private struct PhotoButtonLabel: LabelStyle {
+        var iconOnly: Bool
+        func makeBody(configuration: Configuration) -> some View {
+            if iconOnly { Label(configuration).labelStyle(.iconOnly) } else { Label(configuration).labelStyle(.titleAndIcon) }
+        }
+    }
+
+    /// A new photo, or none, starting with the card in its standard place.
+    private func setPhoto(_ new: UIImage?) {
+        photo = new
+        layout = nil
     }
 
     /// What the picture depends on, so a new design or photo draws it again.
     private struct Render: Equatable {
         var design: ShareDesign
         var photo: ObjectIdentifier?
+        var layout: PhotoLayout?
     }
 
     private func render() {
-        guard let card = make(design) else { image = nil; return }
-        image = photo.flatMap { PhotoStory.image(photo: $0, card: card, design: design) } ?? card
+        guard let card = make(design) else { image = nil; self.card = nil; return }
+        self.card = card
+        image = photo.flatMap { PhotoStory.image(photo: $0, card: card, design: design, layout: layout) } ?? card
     }
 }
 
-/// Your photo filling a story with the card on it: the Clear card's words straight across the photo, any other design as a
-/// small card in the bottom corner so the food stays in view.
+/// Your photo filling a story with the card on it, placed by `layout`: by default the Clear card's words straight across
+/// the photo and any other design as a small card in the bottom corner, so the food stays in view.
 struct PhotoStory: View {
     var photo: UIImage
     var card: UIImage
     var design: ShareDesign
+    var layout: PhotoLayout
+
+    init(photo: UIImage, card: UIImage, design: ShareDesign, layout: PhotoLayout? = nil) {
+        self.photo = photo; self.card = card; self.design = design
+        self.layout = layout ?? .standard(for: design)
+    }
 
     var body: some View {
         let size = MealShareCard.size
-        ZStack(alignment: .bottomLeading) {
+        ZStack(alignment: .topLeading) {
             Image(uiImage: photo).resizable().scaledToFill()
-                .frame(width: size.width, height: size.height).clipped()
+                .frame(width: size.width, height: size.height)
+                .scaleEffect(layout.zoom)
+                .offset(layout.pan)
             if design.isTransparent {
                 // A flat dim, so white words read over a bright plate.
                 Color.black.opacity(0.3)
-                Image(uiImage: card).resizable().frame(width: size.width, height: size.height)
+                Image(uiImage: card).resizable()
+                    .frame(width: layout.cardWidth, height: layout.cardHeight)
+                    .position(layout.cardCentre)
             } else {
-                Image(uiImage: card).resizable().aspectRatio(contentMode: .fit)
-                    .frame(width: size.width * 0.5)
-                    .clipShape(RoundedRectangle(cornerRadius: 12))
-                    .shadow(color: .black.opacity(0.35), radius: 10, y: 4)
-                    .padding(18)
+                // Corners and shadow keep their look at any size: 12 and 10 points on the half-width card.
+                let k = layout.cardWidth / (size.width * 0.5)
+                Image(uiImage: card).resizable()
+                    .frame(width: layout.cardWidth, height: layout.cardHeight)
+                    .clipShape(RoundedRectangle(cornerRadius: 12 * k))
+                    .shadow(color: .black.opacity(0.35), radius: 10 * k, y: 4 * k)
+                    .position(layout.cardCentre)
             }
         }
         .frame(width: size.width, height: size.height)
@@ -515,8 +575,8 @@ struct PhotoStory: View {
     }
 
     /// Drawn at three times its size, 1080 × 1920 like the card.
-    @MainActor static func image(photo: UIImage, card: UIImage, design: ShareDesign) -> UIImage? {
-        let renderer = ImageRenderer(content: PhotoStory(photo: photo, card: card, design: design))
+    @MainActor static func image(photo: UIImage, card: UIImage, design: ShareDesign, layout: PhotoLayout? = nil) -> UIImage? {
+        let renderer = ImageRenderer(content: PhotoStory(photo: photo, card: card, design: design, layout: layout))
         renderer.scale = 3
         renderer.isOpaque = true
         return renderer.uiImage
