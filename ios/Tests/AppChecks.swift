@@ -1376,12 +1376,17 @@ import UniformTypeIdentifiers
 
         // The policies ship with a contact placeholder the app fills in, and the font licences ship beside them.
         let legal = URL(fileURLWithPath: CommandLine.arguments[1]).deletingLastPathComponent().appending(path: "Legal")
-        for name in ["PrivacyPolicy.md", "Terms.md"] {
+        for name in ["PrivacyPolicy.md", "Terms.md", "ConsumerHealthData.md"] {
             let text = try String(contentsOf: legal.appending(path: name), encoding: .utf8)
             assert(text.contains("{{CONTACT}}") && text.contains("Effective "), "\(name) has its contact and date")
             // The device is a placeholder too, so an iPad isn't called an iPhone. Only the Apple Watch section names the iPhone.
-            assert(text.contains("{{DEVICE}}") && text.components(separatedBy: "iPhone").count - 1 == (name == "Terms.md" ? 0 : 3), "\(name) names the device through its placeholder")
+            assert(text.contains("{{DEVICE}}") && text.components(separatedBy: "iPhone").count - 1 == (name == "PrivacyPolicy.md" ? 3 : 0), "\(name) names the device through its placeholder")
+            // The in-app viewer shows headings, paragraphs and bullets only, so no tables.
+            assert(!text.contains("| --- |"), "\(name) has no tables")
         }
+        // The health data policy names the rights Washington's My Health My Data Act requires and promises no selling.
+        let health = try String(contentsOf: legal.appending(path: "ConsumerHealthData.md"), encoding: .utf8)
+        assert(["45 days", "Appeal", "deleted", "Withdraw", "never sells"].allSatisfy(health.contains))
         for name in ["Apache-2.0.txt", "OFL-BebasNeue.txt"] { assert(FileManager.default.fileExists(atPath: legal.appending(path: name).path)) }
 
         // Everyday foods (USDA) are searchable and loggable, but never treated as a restaurant.

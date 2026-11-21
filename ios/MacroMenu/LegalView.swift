@@ -15,10 +15,16 @@ enum AppInfo {
 
 /// The privacy policy or terms, read from the Markdown files in `Legal/` (the same text to host for the App Store).
 struct LegalDocumentView: View {
-    enum Document: String { case privacy = "PrivacyPolicy", terms = "Terms" }
+    enum Document: String { case privacy = "PrivacyPolicy", terms = "Terms", healthData = "ConsumerHealthData" }
     let document: Document
 
-    private var title: String { document == .privacy ? "Privacy policy" : "Terms of use" }
+    private var title: String {
+        switch document {
+        case .privacy: "Privacy policy"
+        case .terms: "Terms of use"
+        case .healthData: "Consumer health data"
+        }
+    }
 
     private var blocks: [Block] {
         guard let url = Bundle.main.url(forResource: document.rawValue, withExtension: "md"),

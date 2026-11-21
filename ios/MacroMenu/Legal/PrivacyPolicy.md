@@ -1,6 +1,6 @@
 # Leanrrr privacy policy
 
-Effective 20 November 2026
+Effective 22 November 2026
 
 Leanrrr is made by Isaiah Graham, an independent developer in Victoria, Australia ("I", "me"). This policy explains what happens to your information when you use Leanrrr. You can reach me at {{CONTACT}}.
 
@@ -114,6 +114,10 @@ Leanrrr doesn't sell or share your personal data, and it uses no analytics, adve
 - **Supabase** (United States company; the data is stored in Sydney, Australia): hosts Leanrrr's food data (restaurant menus, everyday foods and supermarket foods). A few times a day Leanrrr asks it whether that data has changed and, if it has, downloads the new copy. The request contains nothing about you or your data. As with any website, Supabase sees your device's IP address and handles it under Supabase's privacy policy.
 
 Any service that receives data from Leanrrr must protect it at least as well as this policy does. If that ever changes, this policy will be updated before the app sends anything new.
+
+## Consumer health data
+
+Leanrrr has a separate consumer health data privacy policy for Washington's My Health My Data Act and similar US state laws. It's in Settings → Privacy and legal → Consumer health data, and it covers the same data as this policy.
 
 ## Security
 

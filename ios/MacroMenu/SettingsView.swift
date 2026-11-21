@@ -235,6 +235,8 @@ struct SettingsView: View {
             }
             Section("Privacy and legal") {
                 NavigationLink { LegalDocumentView(document: .privacy) } label: { Label("Privacy policy", systemImage: "hand.raised") }
+                // Washington's My Health My Data Act wants its own policy, linked from the app's settings and the App Store page.
+                NavigationLink { LegalDocumentView(document: .healthData) } label: { Label("Consumer health data", systemImage: "heart.text.square") }
                 NavigationLink { LegalDocumentView(document: .terms) } label: { Label("Terms of use", systemImage: "doc.text") }
                 NavigationLink { AcknowledgementsView() } label: { Label("Acknowledgements", systemImage: "text.book.closed") }
                 NavigationLink { DeleteDataView() } label: { Label("Delete all my data", systemImage: "trash").foregroundStyle(.red) }
