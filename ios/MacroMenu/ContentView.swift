@@ -146,6 +146,8 @@ struct ContentView: View {
         .environment(health)
         .environment(cloud)
         .preferredColorScheme(appearance.colorScheme)
+        // Where the law requires it (Texas), the App Store's age category keeps people under 13 out.
+        .ageCheck(enabled: onboardingCompleted)
         .fullScreenCover(isPresented: Binding(get: { !onboardingCompleted }, set: { if !$0 { finishOnboarding() } })) {
             LeanrOnboarding { finishOnboarding() }
                 .environment(store).environment(location).environment(health).tint(accent)

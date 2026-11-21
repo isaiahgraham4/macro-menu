@@ -28,6 +28,15 @@ Before each new upload, raise the build number (`CURRENT_PROJECT_VERSION`) in th
   "Consumer health data" section, which keeps the older-version notes); update both when `ConsumerHealthData.md` changes.
   Both files also carry a `{{DEVICE}}` placeholder: the app shows iPhone or iPad, and the hosted copies say
   "iPhone or iPad". Fill both placeholders before updating a gist.
+- **App store age laws (Texas SB 2420, in force for new Texas Apple Accounts since 4 June 2026; Utah 6 May 2027,
+  Louisiana 1 July 2027).** `AgeCheck.swift` asks the App Store for the age category (Declared Age Range API, gates 13/16/18)
+  only where `requiredRegulatoryFeatures` (iOS 26.4+) or `isEligibleForAgeFeatures` (26.2–26.3) says the law applies, and
+  blocks anyone under 13 (the terms' minimum age). The category stays on the device. Needs the
+  `com.apple.developer.declared-age-range` entitlement (added 22 Nov 2026, Build 124). Keep the age rating for the app and
+  every in-app purchase current in App Store Connect. **Don't change Leanrrr's age rating** without first building the
+  significant-change flow: Texas treats a new rating as a significant change needing a parent's consent for under-18s
+  (`AppStore.ageRatingCode` to notice it, PermissionKit `SignificantAppUpdateTopic` to ask). Apple blocks the app itself
+  when a parent withdraws consent (`RESCIND_CONSENT` server notification), so no server is needed for that.
 - `AppInfo.contactEmail` in `MacroMenu/LegalView.swift` is isaiahgraham.app@gmail.com (set 16 Nov 2026). It shows in the policies
   and as the Contact row in Settings, and both hosted gists carry it. Use the same address for support in App Store Connect.
 - `MacroMenu/PrivacyInfo.xcprivacy` declares no tracking and two collected data types for shared foods (Other User Content and User ID, not linked, App Functionality only). `LeanrWidgets/PrivacyInfo.xcprivacy` declares no tracking and no collected data. The app's only required-reason API is UserDefaults,

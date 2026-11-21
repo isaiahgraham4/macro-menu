@@ -63,7 +63,7 @@ Anyone can complain about a shared food, including people who don't use Leanrrr.
 
 ## Age
 
-You need to be at least 13 to use Leanrrr. If you're under 18, use it with a parent's or doctor's guidance. The target estimate is only for adults.
+You need to be at least 13 to use Leanrrr. Where the law requires apps to check age, such as for new Apple Accounts in Texas, Leanrrr asks the App Store for your age range and can't be used if it's under 13. If you're under 18, use it with a parent's or doctor's guidance. The target estimate is only for adults.
 
 ## Liability
 

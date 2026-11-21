@@ -1384,6 +1384,11 @@ import UniformTypeIdentifiers
             // The in-app viewer shows headings, paragraphs and bullets only, so no tables.
             assert(!text.contains("| --- |"), "\(name) has no tables")
         }
+        // Age categories from the App Store (Texas SB 2420): each range lands in one category, and only under 13 is kept out.
+        assert(AgeCategory(lower: nil, upper: 12) == .under13 && AgeCategory(lower: 13, upper: 15) == .from13to15)
+        assert(AgeCategory(lower: 16, upper: 17) == .from16to17 && AgeCategory(lower: 18, upper: nil) == .adult && AgeCategory(lower: nil, upper: nil) == nil)
+        assert(AgeCategory(lower: 0, upper: 12) == .under13 && AgeCategory(lower: 21, upper: 25) == .adult)
+        assert(AgeCategory.allCases.filter { !$0.meetsMinimumAge } == [.under13] && AgeCategory.gates == (13, 16, 18) && AgeCategory.gates.0 == AgeCategory.minimumAge)
         // The health data policy names the rights Washington's My Health My Data Act requires and promises no selling.
         let health = try String(contentsOf: legal.appending(path: "ConsumerHealthData.md"), encoding: .utf8)
         assert(["45 days", "Appeal", "deleted", "Withdraw", "never sells"].allSatisfy(health.contains))

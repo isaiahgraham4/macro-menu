@@ -88,6 +88,10 @@ Reminders are scheduled on your device and only check your log on your device. T
 
 Leanrrr isn't designed for children under 13, and the target estimate is only for adults 18 and over. The only thing Leanrrr collects from anyone is a food they choose to share, as described under Foods you share. If you're under 18, use Leanrrr with a parent's or doctor's guidance.
 
+## Age range
+
+Where the law requires apps to check age, such as for new Apple Accounts in Texas, Leanrrr asks the App Store for your age range: under 13, 13 to 15, 16 to 17, or 18 and over. Apple decides what to share, and you can see it in your Apple Account settings. Leanrrr keeps the range only on this {{DEVICE}}, uses it only to apply its minimum age of 13, and never sends it anywhere. Nowhere else does Leanrrr ask.
+
 ## Deleting your data
 
 - To delete one item, swipe it or tap it and choose Delete.
