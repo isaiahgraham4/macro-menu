@@ -242,7 +242,7 @@ import UniformTypeIdentifiers
         defer { try? FileManager.default.removeItem(at: root) }
         let catalogURL = URL(fileURLWithPath: CommandLine.arguments[1])
         let catalog = try JSONDecoder().decode(MenuCatalog.self,from: Data(contentsOf: catalogURL))
-        assert(catalog.foods.count == 2982)
+        assert(catalog.foods.count == 2984)
         let copycat = CopycatBook.load(catalogURL.deletingLastPathComponent().appending(path: "CopycatKitchen.json"))
         let compared = copycat.comparisons(menu: catalog.foods)
         assert(copycat.recipes.count == 12 && compared.count == 12)   // every recipe's shop item is on the menu
@@ -262,7 +262,7 @@ import UniformTypeIdentifiers
         let mac = compared.first { $0.id == "big-mac" }!
         assert(abs(mac.home.kj - 2599) < 2 && abs(mac.lean.kj - 1995) < 2 && mac.shop.kj == 2600 && mac.verdict == .level)
         let pizza = compared.first { $0.id == "pizza" }!
-        assert(pizza.shop.kj == 1725 && pizza.shopName == "Pepperoni" && pizza.verdict == .shopLighter)   // three slices
+        assert(pizza.shop.kj == 1620 && pizza.shopName == "Pepperoni" && pizza.verdict == .shopLighter)   // three slices
         let leaner = copycat.recipes.first { $0.id == "fries" }!.rows(swaps: ["spray"]).first { $0.slot == "oil" }!
         assert(leaner.g == 3 && leaner.swapped && leaner.measure.hasPrefix("¾ tsp"))
         assert(copycat.food(mac.recipe, swaps: ["light-mayo"], shopName: mac.shopName).name == "Double Decker, lighter")

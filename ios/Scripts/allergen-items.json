@@ -13584,6 +13584,28 @@
    ],
    "src": "guide"
   },
+  "dominos:wagyu-pepperoni-1-slice-": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
+  "dominos:new-yorker-wagyu-pepperoni-1-slice-": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": [],
+   "src": "guide"
+  },
   "dominos:double-bacon-cheeseburger-1-slice-": {
    "al": [
     "gluten",

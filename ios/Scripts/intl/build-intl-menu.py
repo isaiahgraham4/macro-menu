@@ -218,7 +218,7 @@ GREGGS_CATS = {1: 'breakfast', 2: 'main', 3: 'drink', 4: 'main', 5: 'sweet', 6: 
 
 def greggs():
     data = json.loads((HERE / 'greggs-uk-source.json').read_text())
-    CHECKED['uk-greggs'] = '2026-11-14'                   # when greggs-uk-source.json was saved from the site
+    CHECKED['uk-greggs'] = '2026-11-21'                   # when greggs-uk-source.json was saved from the site
     rows = []
     for o in data:
         if o.get('isCustomisation') or o.get('isMealDeal'):

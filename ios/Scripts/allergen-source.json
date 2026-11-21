@@ -769,6 +769,26 @@
     "egg"
    ],
    "vg": "vegetarian"
+  },
+  "Wagyu Pepperoni": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": []
+  },
+  "New Yorker Wagyu Pepperoni": {
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": []
   }
  },
  "boost": {

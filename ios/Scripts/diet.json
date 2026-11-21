@@ -17550,6 +17550,34 @@
     "shellfish"
    ]
   },
+  "dominos:wagyu-pepperoni-1-slice-": {
+   "meat": [
+    "beef",
+    "pork"
+   ],
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
+  },
+  "dominos:new-yorker-wagyu-pepperoni-1-slice-": {
+   "meat": [
+    "beef",
+    "pork"
+   ],
+   "src": "description",
+   "al": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ]
+  },
   "dominos:double-bacon-cheeseburger-1-slice-": {
    "meat": [
     "beef",

@@ -14472,6 +14472,139 @@
     "sortOrder": 90
   },
   {
+    "articleCode": "1002030",
+    "articleName": "Christmas Bun",
+    "isPublished": true,
+    "isMealDeal": false,
+    "isCustomisation": false,
+    "isSourceOfProtein": false,
+    "isTaggedForProtein": false,
+    "dayParts": null,
+    "internalDescription": "Christmas Bun",
+    "customerDescription": "If there’s one thing that will propel you back to childhood Christmases and memories of simpler times - it’s unwrapping one of our Christmas Buns.\n\nSpongey vanilla flavour fairy bun, dipped in fondant icing and topped with sprinkles and a festive sugar paste decoration.\n\nIt really doesn’t get much better.",
+    "menuDescription": "A sweet vanilla flavour fairy bun, dipped in fondant icing and topped with sprinkles and a festive sugar paste decoration. It really doesn’t get much better than unwrapping one of our Christmas Buns.",
+    "articleCategoryId": 5,
+    "articleSubcategoryId": 0,
+    "articleKmsCategoryId": 7,
+    "availableModificationCount": 3,
+    "articleSize": {
+      "size": 55.1,
+      "unitOfMeasure": "g"
+    },
+    "nutritionalValues": [
+      {
+        "name": "Calories",
+        "value": 218,
+        "unitOfMeasure": "kcal",
+        "percentageOfDailyIntake": 11,
+        "detailedPercentageOfDailyIntake": 11,
+        "valuePerHundredArticleSizeUnit": 396
+      },
+      {
+        "name": "Carbohydrates",
+        "value": 31,
+        "unitOfMeasure": "g",
+        "percentageOfDailyIntake": 12,
+        "detailedPercentageOfDailyIntake": 12,
+        "valuePerHundredArticleSizeUnit": 56
+      },
+      {
+        "name": "EnergyKj",
+        "value": 914,
+        "unitOfMeasure": "kJ",
+        "percentageOfDailyIntake": 0,
+        "detailedPercentageOfDailyIntake": 0,
+        "valuePerHundredArticleSizeUnit": 1659
+      },
+      {
+        "name": "Fat",
+        "value": 9.4,
+        "unitOfMeasure": "g",
+        "percentageOfDailyIntake": 13,
+        "detailedPercentageOfDailyIntake": 13,
+        "valuePerHundredArticleSizeUnit": 17
+      },
+      {
+        "name": "Protein",
+        "value": 1.6,
+        "unitOfMeasure": "g",
+        "percentageOfDailyIntake": 3,
+        "detailedPercentageOfDailyIntake": 3,
+        "valuePerHundredArticleSizeUnit": 2.9
+      },
+      {
+        "name": "Salt",
+        "value": 0.36,
+        "unitOfMeasure": "g",
+        "percentageOfDailyIntake": 6,
+        "detailedPercentageOfDailyIntake": 6,
+        "valuePerHundredArticleSizeUnit": 0.65
+      },
+      {
+        "name": "Saturates",
+        "value": 2.5,
+        "unitOfMeasure": "g",
+        "percentageOfDailyIntake": 13,
+        "detailedPercentageOfDailyIntake": 13,
+        "valuePerHundredArticleSizeUnit": 4.6
+      },
+      {
+        "name": "Sugar",
+        "value": 23,
+        "unitOfMeasure": "g",
+        "percentageOfDailyIntake": 26,
+        "detailedPercentageOfDailyIntake": 26,
+        "valuePerHundredArticleSizeUnit": 42
+      }
+    ],
+    "ingredients": [
+      {
+        "name": "Eggs",
+        "percentageOfTotalMakeup": 0,
+        "isAllergen": true,
+        "constituentIngredients": []
+      },
+      {
+        "name": "Wheat",
+        "percentageOfTotalMakeup": 0,
+        "isAllergen": true,
+        "constituentIngredients": []
+      },
+      {
+        "name": "Oats",
+        "percentageOfTotalMakeup": 0,
+        "isAllergen": true,
+        "constituentIngredients": []
+      },
+      {
+        "name": "Milk",
+        "percentageOfTotalMakeup": 0,
+        "isAllergen": true,
+        "constituentIngredients": []
+      }
+    ],
+    "modificationGroups": [],
+    "fulfillmentService": "Counter Service",
+    "multiPartQuantity": 1,
+    "makeupGuide": {
+      "steps": [],
+      "utensils": []
+    },
+    "decanterShelfLifeDays": 0,
+    "imageUri": "https://articles.greggs.co.uk/images/1002030.png?1794587412026",
+    "thumbnailUri": "https://articles.greggs.co.uk/images/1002030-thumb.png?1794587412026",
+    "finishedProductImageUri": null,
+    "secondaryImageUri": "https://articles.greggs.co.uk/images/1002030-secondary.png",
+    "gtinCode": "2244",
+    "relatedArticleCode": null,
+    "isBranded": false,
+    "isHiddenInMenu": false,
+    "labelRequired": true,
+    "numberOfShelfLifeDays": 0,
+    "numberOfServings": 1,
+    "sortOrder": 96
+  },
+  {
     "articleCode": "1000298",
     "articleName": "BBC Children in Need Novelty Bun",
     "isPublished": true,
