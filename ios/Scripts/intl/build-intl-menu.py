@@ -251,6 +251,331 @@ def greggs():
     return dedupe(rows)
 
 
+# ---------- McDonald's Singapore ----------
+def mcd_sg():
+    """mcdonalds.com.sg/nutrition-calculator: every item its search lists, with the figures on the item's card (saved as
+    mcd-sg-source.json). Calories, no sugar. Meals, Happy Meals, bundles and sharing boxes are left out (their parts are listed).
+    McDonald's Singapore is halal: its sausage, ham and bacon are chicken. Its allergen list has no sesame or shellfish, so
+    its allergens aren't used (they'd mark the Big Mac sesame-free)."""
+    data = json.loads((HERE / 'mcd-sg-source.json').read_text())
+    CHECKED['sg-mcd'] = data['checked']
+    rows = []
+    for o in data['items']:
+        name = us.clean(o['name'])
+        if re.search(r'\bmeal\b|bundle|sharing box|family', name, re.I) or float(o['calorie'] or 0) == 0 and float(o['protein'] or 0) == 0 \
+                and not re.search(r'coca|water|tea|americano|zero', name, re.I):
+            continue
+        name = re.sub(r'\((\d+) ?pc\)', r'(\1 pc)', name).replace('McCafé ', '').replace('McCafe ', '')
+        name = re.sub(r'\((Small|Medium|Large|Jr)\)', lambda m: f'({m.group(1).lower()})', name).replace('(jr)', '(junior)')
+        cat = mcd_cat(name, [])
+        if cat == 'extra' and re.search(r'sauce|dressing', name, re.I):
+            name = 'Dipping Sauce: ' + re.sub(r'\s*Sauce$', '', name) if 'Sauce' in name else name
+        low = name.lower()
+        if re.search(r'^corn\b', low):
+            cat = 'side'
+        elif re.search(r'buttermilk|burger|mcwrap', low):
+            cat = 'main'
+        elif re.search(r'milo|milk\b|oatmilk', low):
+            cat = 'drink'
+        elif re.search(r'muffin|hotcake(?! syrup)|big breakfast|breakfast deluxe|breakfast wrap', low):
+            cat = 'breakfast'
+        elif 'syrup' in low:
+            cat = 'extra'
+        if 'salad' in low and 'chicken' in low:
+            cat = 'main'
+        f = lambda k: num(round(float(o[k]), 1)) if o.get(k) not in (None, '') else None
+        nut = {'sat': f('sfat'), 'fibre': f('fibres'), 'sodium': f('sodium')}
+        r = row('sg-mcd', name, cat, f('protein'), f('carbohydrates'), f('tfat'), '', nut, cal=round(float(o['calorie'])), src='name')
+        meat = r.get('diet', {}).get('meat')
+        if meat is not None and 'beef' in meat and re.search(r'scrambled egg burger', low):
+            meat.remove('beef')                              # chicken or (chicken) sausage on egg, no beef patty
+        if re.search(r'big breakfast|breakfast deluxe|hotcakes with sausage', low):
+            r.setdefault('diet', {'src': 'name'})['meat'] = meat = ['chicken']
+        if meat is not None and 'pork' in meat:
+            meat.remove('pork')
+            if 'chicken' not in meat:
+                meat.append('chicken')
+        rows.append(r)
+    return dedupe(rows)
+
+
+# ---------- KFC Singapore ----------
+KFC_SG_DRINK = r'coca|fanta|sprite|tea\b|juice|coffee|milo|milk|water|red bull|cappuccino|latte|mocha|sjora|minute maid|pokka|creamer'
+
+
+def kfc_sg():
+    """kfc.com.sg/nutrition: the table the page script carries (jsonData), saved as kfc-sg-source.json. Per serving, Calories.
+    Left out: per-100 ml and 1.5 L bottle rows, the older Pepsi drinks list (the "Drinks…" groups), "Riser with Egg" (it repeats
+    the Pancakes Deluxe Platter's figures). KFC Singapore is halal, so its bacon and ham are chicken. Its allergen list has no
+    sesame (Singapore's labelling list doesn't include it), so allergens aren't used."""
+    data = json.loads((HERE / 'kfc-sg-source.json').read_text())
+    CHECKED['sg-kfc'] = data['checked']
+    rows = []
+    for group, items in data['groups'].items():
+        if group.startswith('NutritionDrinks'):
+            continue
+        for o in items:
+            name = us.clean(o['ItemName']).replace('Portugese', 'Portuguese')
+            serving = str(o['Servings']).strip()
+            low0 = name.lower()
+            drink = re.search(KFC_SG_DRINK, low0) and not re.search(r'soup|platter', low0)
+            if drink and serving == '100' or re.search(r'^1\.5 ?L', name) or name == 'Riser with Egg':
+                continue
+            if group.endswith('SaladBowlBlackVinegarOnionDressing'):
+                name = name.replace('Salad Cup', 'Salad Bowl')
+            name = re.sub(r'\s*\[HCS\]|\s*\(\d+ ?g\)|\s*\(1 ?pc\)', '', name)
+            name = re.sub(r'\((\d+) ?pcs?\)', r'(\1 pc)', name)
+            name = name.replace('(reg)', '(regular)').replace('(med)', '(medium)').replace('(per can)', '(can)')
+            name = re.sub(r'^Apple Juice$', 'Apple Juice (200 ml)', name) if serving == '200' else name
+            name = re.sub(r'^Magnolia Low Fat High Calcium Fresh Milk$', 'Magnolia Low Fat High Calcium Fresh Milk (200 ml)', name)
+            low = name.lower()
+            if drink:
+                cat = 'drink'
+            elif 'sauce' in low:
+                cat, name = 'extra', 'Dipping Sauce: ' + re.sub(r'\s*Sauce$', '', name)
+            elif re.search(r'froyo|egg tart', low):
+                cat = 'sweet'
+            elif group.startswith('NutritionAM') or re.search(r'riser|pancake|porridge|brekkie|hash brown', low):
+                cat = 'breakfast'
+            elif re.search(r'fries|coleslaw|potato|corn cup|mac n cheese \(|salad cup|youtiao|chicken bacon', low):
+                cat = 'side'
+            else:
+                cat = 'main'
+            f = lambda k: num(float(str(o[k]).replace(',', ''))) if o.get(k) not in (None, '', '-', 'NA', 'N/A') else None
+            if f('Energy') is None or f('Protein') is None:
+                continue
+            nut = {'sat': f('SaturatedFat'), 'sugar': f('TotalSugar'), 'sodium': f('Sodium')}
+            unit = 'ml' if cat == 'drink' else 'g'
+            r = row('sg-kfc', name, cat, f('Protein'), f('Carbohydrate'), f('TotalFat'), f'{serving} {unit}' if serving else '', nut,
+                    cal=round(f('Energy')), src='name')
+            if cat in ('main', 'side', 'breakfast'):
+                if re.search(r'chicken|zinger|tender|twister|burger|stacker|riser|bites|nuggets|keel|rib\b|thigh|wing|drumstick|bowl|bacon|pockett|ham\b|'
+                             r'or platter|original recipe platter|waffle & chicken|original recipe porridge', low) and not re.search(r'mushroom platter|salad cup|mac n cheese \(|potato|fries', low):
+                    r.setdefault('diet', {'src': 'name'})['meat'] = ['chicken']
+                elif 'diet' in r and 'meat' in r['diet']:
+                    r['diet']['meat'] = [m for m in r['diet']['meat'] if m != 'pork']
+            rows.append(r)
+    return dedupe(rows)
+
+
+# ---------- KFC UK ----------
+# The allergen columns kfc.co.uk/nutrition-allergens shows, mapped to the app's keys. Mustard and celery have no filter in the app.
+KFC_UK_ALLERGENS = {'Spelt Gluten': ['gluten'], 'Barley Gluten': ['gluten'], 'Oat Gluten': ['gluten'], 'Rye Gluten': ['gluten'],
+                    'Wheat Gluten': ['wheat', 'gluten'], 'Crustaceans': ['shellfish'], 'Molluscs': ['shellfish'], 'Egg': ['egg'],
+                    'Fish': ['fish'], 'Lupin': ['lupin'], 'Milk': ['milk'], 'Peanut': ['peanut'], 'Sesame': ['sesame'], 'Soya': ['soy'],
+                    'Sulphites': ['sulphites'], 'Almonds': ['treenut'], 'Brazil Nuts': ['treenut'], 'Cashews': ['treenut'],
+                    'Hazelnuts': ['treenut'], 'Macadamia': ['treenut'], 'Pecan Nuts': ['treenut'], 'Pistachio': ['treenut'],
+                    'Walnuts': ['treenut'], 'Mustard': [], 'Celery': []}
+
+
+def kfc_uk():
+    """kfc.co.uk/nutrition-allergens: the page's own product list (__NEXT_DATA__), saved as kfc-uk-source.json. Each product is one
+    serve; "primary" allergens are contained, "secondary" may be present. Bottles are the whole bottle. Rows given per 100 ml are left out."""
+    data = json.loads((HERE / 'kfc-uk-source.json').read_text())
+    CHECKED['uk-kfc'] = data['checked']
+    rows = []
+    for o in data['products']:
+        n, serving = o['nutrition'], (o['nutrition'].get('serving_size') or '').strip().lower()
+        if n.get('kcal') is None or n.get('protein') in (None, '') or '100' in serving or re.search(r'\bROI\b', o['name']):
+            continue                                         # per-100 ml rows, and items sold only in the Republic of Ireland
+        p, c, f = num(n['protein']), num(n.get('carbohydrates')), num(n.get('fat'))
+        if p and p == c == f:
+            print(f"KFC UK: left out {o['name']}: protein, carbs and fat all published as {p} g")
+            continue
+        name = us.clean(o['name']).replace('’', "'")
+        name = re.sub(r'^([\d.]+) ?L (.+?) Bottle$', r'\2 (\1 L bottle)', name, flags=re.I)
+        name = re.sub(r'\s*\((per piece,? average|per slice average|per piece average)\)$', '', name, flags=re.I)
+        name = menu_feeds.sized(name)
+        cats, low = ' '.join(o['categories']).lower(), name.lower()
+        wrapped = re.search(r'twister|burger|wrap|bowl|stacker|roll\b', low)
+        if re.search(r'krushem|shake', low) or 'drinks' in cats and not re.search(r'sundae', low):
+            cat = 'drink'
+        elif re.search(r'dip pot|sachet|ketchup|mayo|sauce|dust\b|dip\b', low) and not wrapped and not re.search(r'popcorn|fries|chicken|wings', low):
+            cat = 'extra'
+            name = 'Dipping Sauce: ' + re.sub(r'\s*(Dip Pot|Sachet|Dip)$', '', name)
+        elif re.search(r'dessert|sundae|cookie|cake|doughnut|donut|brownie|yoyo', low) or 'dessert' in cats:
+            cat = 'sweet'
+        elif 'sides' in cats and not re.search(r'chicken|wings?\b|popcorn|strips|bites', low):
+            cat = 'side'
+        else:
+            cat = 'main'
+        al = sorted({k for a, v in o['allergens'].items() if v.get('type') == 'primary' for k in KFC_UK_ALLERGENS[a]})
+        may = sorted({k for a, v in o['allergens'].items() if v.get('type') == 'secondary' for k in KFC_UK_ALLERGENS[a]})
+        vg = 'vegan' if o.get('vegan') else 'vegetarian' if o.get('vegetarian') and cat in ('main', 'side') else None
+        salt = num(n.get('salt'))
+        nut = {'sat': num(n.get('saturated_fat')), 'sugar': num(n.get('sugars')), 'sodium': round(salt * 400) if salt is not None else None}
+        serve = '1 bottle' if 'bottle' in serving else '1 piece' if 'piece' in serving else '1 slice' if 'slice' in serving else ''
+        r = row('uk-kfc', name, cat, p, c, f, serve, nut, al, may or None, cal=n['kcal'], kj=n.get('kj'), vg=vg)
+        # Every KFC UK burger, wrap, bowl and piece is chicken unless it's the vegan or veggie one ("burger" alone reads as beef).
+        if cat == 'main' and not vg and not re.search(r'vegan|veggie', low):
+            r.setdefault('diet', {'src': 'allergen table'})['meat'] = ['chicken']
+        rows.append(r)
+    return dedupe(rows)
+
+
+# ---------- Nando's UK ----------
+NANDOS_UK_ALLERGENS = {'CRUSTACEAN': ['shellfish'], 'MOLLUSC': ['shellfish'], 'EGG': ['egg'], 'FISH': ['fish'], 'GLUTEN': ['gluten'],
+                       'GLUTEN_BARLEY': ['gluten'], 'GLUTEN_OATS': ['gluten'], 'GLUTEN_RYE': ['gluten'], 'GLUTEN_SPELT': ['gluten'],
+                       'GLUTEN_WHEAT': ['wheat', 'gluten'], 'LUPIN': ['lupin'], 'MILK': ['milk'], 'NUT': ['treenut'], 'PEANUT': ['peanut'],
+                       'SESAME': ['sesame'], 'SOYA': ['soy'], 'SULPHITE': ['sulphites'], 'CELERY': [], 'MUSTARD': []}
+NANDOS_UK_CATS = {'Starters': 'side', 'PERi-PERi Chicken': 'main', 'Burgers, Pittas, Wraps': 'main', 'Salads': 'main', 'Veggie': 'main',
+                  'Nandinos (Kids)': 'main', 'Sharing Platters': 'main', 'Sides': 'side', 'Extras': 'side', 'Desserts': 'sweet', 'Drinks': 'drink'}
+NANDOS_UK_ALCOHOL = r'wine|\bale\b|pils|sagres|cider|xpa|beer|sauvignon|chardonnay|merlot|\brose\b|creative block|cara viva|sxollie|lager'
+
+
+def nandos_uk():
+    """The menu data nandos.co.uk/food/menu loads (page-data.json), trimmed to nandos-uk-source.json. Figures are per portion; sides
+    have a regular and a large portion in the order of their size choice. Left out: alcohol (wine portions are listed out of order),
+    sharing platters (their figures are the chicken alone), Northern Ireland-only items and items with no figures."""
+    data = json.loads((HERE / 'nandos-uk-source.json').read_text())
+    CHECKED['uk-nandos'] = data['checked']
+    rows, taken = [], set()
+    for sec in data['sections']:
+        cat0 = NANDOS_UK_CATS[sec['name']]
+        kids = 'Kids' in sec['name']
+        for o in sec['items']:
+            name = us.clean(o['name']).replace('Kid\'s ', '')
+            name = re.sub(r'\s*\((sugar levy applied|Boneless Chicken Thighs)\)', lambda m: ' (Boneless Thighs)' if 'Thigh' in m.group(1) else '', name)
+            if not o['portions'] or 'Platter' in sec['name'] or re.search(r'northern ireland only', name, re.I) or \
+                    cat0 == 'drink' and re.search(NANDOS_UK_ALCOHOL, name, re.I) or (sec['name'], name) in taken:
+                continue
+            taken.add((sec['name'], name))                  # the same item listed twice in one section (two Coleslaws: the first is kept)
+            cat = cat0
+            if kids and re.search(r'yoghurt|gelado|lolly', name, re.I):
+                cat = 'sweet'
+            elif kids and re.search(r'cawston|cordial', name, re.I):
+                cat = 'drink'
+            elif kids and re.search(r'rice|corn|chips|broccoli|tomatoes|garlic bread|grains', name, re.I):
+                cat = 'side'
+            if sec['name'] == 'Extras' and re.search(r'sauce|perinaise|mayonnaise|chilli jam|peri-bbq|drizzle|gravy', name, re.I):
+                cat, name = 'extra', 'Dipping Sauce: ' + re.sub(r'\s*Sauce$', '', name)
+            al = sorted({k for a, v in o['allergens'].items() if v == 'YES' for k in NANDOS_UK_ALLERGENS[a]})
+            may = sorted({k for a, v in o['allergens'].items() if v.startswith('MAYBE') for k in NANDOS_UK_ALLERGENS[a]})
+            vg = 'vegan' if 'VEGAN' in o['diets'] else 'vegetarian' if 'VEGETARIAN' in o['diets'] and cat in ('main', 'side') else None
+            labels = o['sizes'] if len(o['sizes']) == len(o['portions']) and len(o['portions']) > 1 else [None]
+            for label, n in zip(labels, o['portions']):
+                full = f'{name} ({label.lower()})' if label else name
+                if kids:
+                    full = f'{full} (kids)' if not full.endswith(')') else full[:-1] + ', kids)'
+                g = lambda k: num(round(n[k] / 1000, 1)) if n.get(k) is not None else None
+                salt = g('saltMg')
+                nut = {'sat': g('saturatesMg'), 'sugar': g('sugarsMg'), 'fibre': g('fibreMg'), 'sodium': round(salt * 400) if salt is not None else None}
+                r = row('uk-nandos', full, cat, g('proteinMg'), g('totalCarbsMg'), g('fatMg'), '', nut, al, may or None,
+                        cal=n['energyKcal'], kj=n.get('energyKj'), vg=vg)
+                if cat == 'main' and not vg:
+                    r.setdefault('diet', {'src': 'allergen table'})['meat'] = ['chicken']   # every non-veggie Nando's UK main is chicken
+                rows.append(r)
+    return dedupe(rows)
+
+
+# ---------- Pret A Manger UK ----------
+PRET_ALLERGENS = {'Milk': ['milk'], 'Wheat': ['wheat', 'gluten'], 'Egg': ['egg'], 'Soya': ['soy'], 'Sesame': ['sesame'], 'Barley': ['gluten'],
+                  'Fish': ['fish'], 'Oats': ['gluten'], 'Rye': ['gluten'], 'Spelt': ['gluten'], 'Sulphites': ['sulphites'], 'Crustacean': ['shellfish'],
+                  'Molluscs': ['shellfish'], 'Peanuts': ['peanut'], 'Lupin': ['lupin'], 'Mustard': [], 'Celery': []}
+
+
+def pret_uk():
+    """Pret's own product pages (pret.co.uk/en-GB/products/categories/<category>, the __NEXT_DATA__ each loads), one row per product
+    as sold, saved as pret-uk-source.json. Drinks are Pret's standard build (the milk it lists for each)."""
+    data = json.loads((HERE / 'pret-uk-source.json').read_text())
+    CHECKED['uk-pret'] = data['checked']
+    rows = []
+    for o in data['products']:
+        n = o['nutrition']
+        if n.get('Energy (KCal)') in (None, '') or n.get('Protein') in (None, ''):
+            continue
+        name = us.clean(o['name']).replace('’', "'").rstrip('.')
+        sec, sub, low = o['category'].lower(), (o['subcategory'] or '').lower(), name.lower()
+        if 'drinks' in sec:
+            cat = 'drink'
+        elif re.search(r'crisps|potato bites|side soup|side salad|baguette with butter', low) or 'soup' in sub and not re.search(r'macaroni', low):
+            cat = 'side'
+        elif re.search(r'cookie|cake|bar\b|bites|brownie|croissant|pain au|muffin|tart|flapjack|bun\b|fruit|popcorn|nuts|chocolate|loaf|danish|nata|godfrey|'
+                       r'apple|banana|mango|cranberries', sub + ' ' + low) and not re.search(r'savoury|sausage|ham\b|cheese|bacon|egg|mozzarella|pastry', low) \
+                and 'breakfast rolls' not in sub and not re.search(r'bowl|porridge|juice|smoothie', low):
+            cat = 'sweet'
+        elif sec == 'breakfast':
+            cat = 'breakfast'
+        else:
+            cat = 'main'
+        al = sorted({k for a in o['allergens'] for k in (PRET_ALLERGENS.get(a) if a in PRET_ALLERGENS else ['treenut'] if re.search(r'nut|almond', a, re.I) else [None])})
+        assert None not in al, (name, o['allergens'])
+        vg = 'vegan' if o.get('vegan') else 'vegetarian' if o.get('vegetarian') and cat in ('main', 'side', 'breakfast') else None
+        f = lambda k: num(float(n[k])) if n.get(k) not in (None, '') else None
+        salt = f('Salt')
+        nut = {'sat': f('Saturates'), 'sugar': f('Sugars'), 'fibre': f('Dietary Fibre'), 'sodium': round(salt * 400) if salt is not None else None}
+        serve = f"{round(o['weight'])} g" if o.get('weight') and cat != 'drink' else ''
+        r = row('uk-pret', name, cat, f('Protein'), f('Carbohydrates'), f('Fat'), serve, nut, al, cal=f('Energy (KCal)'), kj=f('Energy (KJ)'), vg=vg)
+        if cat in ('main', 'side', 'breakfast') and not vg:
+            extra = [m for m, pat in (('fish', r'tuna|salmon'), ('seafood', r'lobster'), ('pork', r'prosciutto|pigs in blanket|super club'),
+                                      ('chicken', r'super club')) if re.search(pat, low)]
+            if extra:
+                meat = r.setdefault('diet', {'src': 'name'}).setdefault('meat', [])
+                meat += [m for m in extra if m not in meat]
+        rows.append(r)
+    return dedupe(rows)
+
+
+# ---------- Subway New Zealand ----------
+SUBWAY_NZ_SKIP = {'Breads', 'Meat, Poultry, Egg, Seafood & Vegetarian Items', 'Cheeses', 'Vegetables', 'Seasonings', 'Sauces & Dressings'}
+
+
+def subway_nz():
+    """Subway NZ Nutritional Summary (extract-pdf-tables.py subway-nz), per serve. Named the way the Australian Subway menu is:
+    6" and Footlong subs (Subway says a Footlong is double the 6"), wraps, regular and large salads. Single ingredients
+    (breads, meats, cheeses, vegetables, sauces) are left out."""
+    data = json.loads((HERE / 'subway-nz-source.json').read_text())
+    CHECKED['nz-sub'] = data['checked']
+    rows = []
+    for o in data['rows']:
+        sec = o['section']
+        if sec in SUBWAY_NZ_SKIP or sec == 'New' and not re.search(r'sub\b|wrap|snack', o['name'], re.I):
+            continue
+        base = us.clean(o['name'])
+        base = re.sub(r'\s*previo\w* .*$', '', base)                  # "… previously Avocado Toastie" (once spelt "previoulsy")
+        base = re.sub(r'\s*\((?!no sauce|with)[^()]*(\([^()]*\))?[^()]*\)', '', base).strip()   # the description in brackets
+        base = base.replace('B.M.T. ', 'B.M.T.').strip()
+        footlong = False
+        if sec == 'Subway 6-Inch® Subs' or sec == 'New' and re.search(r'6-Inch', base) or sec == 'Breakfast Subs':
+            core = re.sub(r'\s*Subway 6-Inch Sub$', '', base)
+            name, cat, footlong = f'6" {core}', 'breakfast' if sec == 'Breakfast Subs' else 'main', True
+        elif sec.startswith('Wraps') or sec == 'Breakfast Wraps' or sec == 'New' and 'Wrap' in base:
+            core = re.sub(r'\s*Wrap( \(Regular\))?$', '', base)
+            name, cat = f'{core} Wrap', 'breakfast' if sec == 'Breakfast Wraps' else 'main'
+        elif sec.startswith('Salads'):
+            core = base
+            name, cat = f"{base} Salad ({'large' if 'large' in sec else 'regular'})", 'main'
+        elif sec == 'Mini Subs':
+            core = base
+            name, cat = f'Mini Sub {base}', 'main'
+        else:
+            core = base
+            name = base
+            cat = {'Cookies': 'sweet', 'Baked Goods': 'sweet', 'Smoothies': 'drink'}.get(sec, 'side')
+            if sec == 'Smoothies':
+                name = f'{base} Smoothie'
+        desc = o['desc'].strip('() ')
+        g = lambda k: num(o[k]) if o.get(k) is not None else None
+        nut = {'sat': g('sat'), 'sugar': g('sugar'), 'fibre': g('fibre'), 'sodium': g('sodium')}
+        unit = 'ml' if cat == 'drink' else 'g'
+        serve = f"{num(o['g'])} {unit}" + (f' · {desc}' if desc else '')
+        vg = 'vegetarian' if re.search(r'veggie|falafel|spinach & egg|avo on toast|garlic|quesadilla', core, re.I) else None
+        r = row('nz-sub', name, cat, g('p'), g('c'), g('f'), serve, nut, kj=g('kj'), vg=vg)
+        if cat in ('main', 'side', 'breakfast') and not vg:
+            # The fillings are in the description: "salami, pepperoni, leg ham", "beef meatball", "tuna in mayonnaise".
+            meat = us.meats(core, desc) + (['fish'] if re.search(r'tuna', core + ' ' + desc, re.I) else [])
+            r.setdefault('diet', {'src': 'name'})['meat'] = sorted(set(meat))
+        rows.append(r)
+        if footlong:
+            dbl = lambda x: num(round(x * 2, 1)) if x is not None else None
+            r2 = row('nz-sub', f'Footlong {core}', cat, dbl(g('p')), dbl(g('c')), dbl(g('f')), 'Subway: double the 6"',
+                     {k: dbl(v) for k, v in nut.items()}, kj=g('kj') * 2, vg=vg)
+            if 'meat' in r.get('diet', {}):
+                r2.setdefault('diet', {'src': 'name'})['meat'] = list(r['diet']['meat'])
+            rows.append(r2)
+    return dedupe(rows)
+
+
 # ---------- Domino's New Zealand ----------
 def dominos_nz():
     data = json.loads((HERE / 'dominos-nz-source.json').read_text())
@@ -721,6 +1046,15 @@ COUNTRIES = {
         ({'id': 'uk-greggs', 'name': 'Greggs', 'how': 'Official menu nutrition', 'url': 'https://www.greggs.com/menu',
           'src': "Greggs menu nutrition and allergens ({checked}). Sodium is worked out from the salt Greggs lists. Pizza boxes are the whole box"},
          greggs),
+        ({'id': 'uk-kfc', 'name': 'KFC', 'how': 'Official nutrition & allergens page', 'url': 'https://www.kfc.co.uk/nutrition-allergens',
+          'src': "KFC UK Nutrition & Allergens ({checked}), one serve of each item. Sodium is worked out from the salt KFC lists. May-contain is KFC's own list"},
+         kfc_uk),
+        ({'id': 'uk-nandos', 'name': "Nando's", 'how': 'Official online menu', 'url': 'https://www.nandos.co.uk/food/menu',
+          'src': "Nando's UK online menu nutrition and allergens ({checked}), per portion as served. Sodium is worked out from the salt Nando's lists. Alcohol and sharing platters are left out"},
+         nandos_uk),
+        ({'id': 'uk-pret', 'name': 'Pret A Manger', 'how': 'Official product pages', 'url': 'https://www.pret.co.uk/en-GB',
+          'src': "Pret A Manger UK product nutrition and allergens ({checked}), per item as sold. Sodium is worked out from the salt Pret lists. Hot drinks are Pret's standard recipe"},
+         pret_uk),
     ],
     'NZ': [
         ({'id': 'nz-mcd', 'name': "McDonald's", 'how': 'Official website item pages', 'url': 'https://www.mcdonalds.com/nz/en-nz/menu.html',
@@ -729,6 +1063,9 @@ COUNTRIES = {
         ({'id': 'nz-dominos', 'name': "Domino's", 'how': 'Official nutrition page', 'url': 'https://www.dominos.co.nz/menu/nutritional-information/',
           'src': "Domino's New Zealand Nutritional Information ({checked}). Pizzas are per slice, one row per crust"},
          dominos_nz),
+        ({'id': 'nz-sub', 'name': 'Subway', 'how': 'Official nutrition guide', 'url': 'https://www.subway.com/en-nz/menunutrition/nutrition',
+          'src': "Subway New Zealand Nutritional Summary, October 2025 ({checked}), per serve as listed. Footlongs are double the 6\", as Subway says"},
+         subway_nz),
     ],
     'ZA': [
         ({'id': 'za-mcd', 'name': "McDonald's", 'how': 'Official website item pages', 'url': 'https://www.mcdonalds.co.za/menu',
@@ -758,6 +1095,14 @@ COUNTRIES = {
           'src': "Pizza Hut India Nutrition & Allergen Information Booklet ({checked}). Pizzas are the whole pizza, one row per size and crust. Calories as published; kilojoules are worked out"},
          pizzahut_in),
     ],
+    'SG': [
+        ({'id': 'sg-mcd', 'name': "McDonald's", 'how': 'Official nutrition calculator', 'url': 'https://www.mcdonalds.com.sg/nutrition-calculator',
+          'src': "McDonald's Singapore Nutrition Calculator ({checked}; McDonald's dates the figures December 2023). Calories as published; kilojoules are worked out. No sugar figures. No allergens: McDonald's Singapore's list leaves out sesame and shellfish. Sausage, ham and bacon are chicken (halal)"},
+         mcd_sg),
+        ({'id': 'sg-kfc', 'name': 'KFC', 'how': 'Official nutrition page', 'url': 'https://www.kfc.com.sg/nutrition',
+          'src': "KFC Singapore Nutrition Information ({checked}), per serving. Calories as published; kilojoules are worked out. No allergens: KFC Singapore's list leaves out sesame. Bacon and ham are chicken (halal)"},
+         kfc_sg),
+    ],
 }
 
 
@@ -765,6 +1110,8 @@ def misprinted(f):
     """Published energy over a third away from its own macros (4/4/9), or kJ and Calories that disagree: the same rule the
     Australian menus use. Small items (under 60 Cal) are let through, since rounding swamps them."""
     est = 4 * f['p'] + 4 * (f['c'] or 0) + 9 * (f['f'] or 0)
+    if f['p'] >= 1 and f['p'] == f['c'] == f['f']:
+        return f"protein, carbs and fat all published as {f['p']} g"
     if f['cal'] >= 60 and abs(est - f['cal']) / f['cal'] > 1 / 3:
         return f"{f['cal']} Cal but its macros add up to {round(est)}"
     if f['cal'] >= 20 and abs(f['kj'] / 4.184 - f['cal']) / f['cal'] > 0.15:

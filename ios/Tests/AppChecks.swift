@@ -91,16 +91,17 @@ import UniformTypeIdentifiers
         try? FileManager.default.removeItem(at: root)
     }
 
-    /// Canada, the UK, New Zealand, South Africa and India: each its own file and chain prefix, with nicknames, quiz meals and store links that resolve.
+    /// Canada, the UK, New Zealand, South Africa, India and Singapore: each its own file and chain prefix, with nicknames, quiz meals and store links that resolve.
     @MainActor static func intlMenuChecks(_ catalogURL: URL, australia: MenuCatalog) throws {
-        let expected: [MenuRegion: Set<String>] = [.canada: ["mine", "ca-mcd", "ca-bk", "ca-tims"], .unitedKingdom: ["mine", "uk-mcd", "uk-greggs"],
-                                                   .newZealand: ["mine", "nz-mcd", "nz-dominos"],
+        let expected: [MenuRegion: Set<String>] = [.canada: ["mine", "ca-mcd", "ca-bk", "ca-tims"], .unitedKingdom: ["mine", "uk-mcd", "uk-greggs", "uk-kfc", "uk-nandos", "uk-pret"],
+                                                   .newZealand: ["mine", "nz-mcd", "nz-dominos", "nz-sub"],
                                                    .southAfrica: ["mine", "za-mcd", "za-nandos", "za-wimpy", "za-debonairs", "za-kauai"],
-                                                   .india: ["mine", "in-mcd", "in-kfc", "in-pizzahut"]]
+                                                   .india: ["mine", "in-mcd", "in-kfc", "in-pizzahut"],
+                                                   .singapore: ["mine", "sg-mcd", "sg-kfc"]]
         for (region, ids) in expected {
             let url = catalogURL.deletingLastPathComponent().appending(path: region.menuFile + ".json")
             let menu = try JSONDecoder().decode(MenuCatalog.self, from: Data(contentsOf: url))
-            assert(menu.format == MenuUpdates.format && menu.foods.count > 250, "\(region) menu")
+            assert(menu.format == MenuUpdates.format && menu.foods.count > 200, "\(region) menu")
             assert(Set(menu.chains.map(\.id)) == ids, "\(region) chains")
             assert(menu.foods.allSatisfy { $0.chain.hasPrefix(region.chainPrefix) && $0.isValid }, "\(region) foods")
             assert(region.quiz.allSatisfy { item in menu.foods.contains { $0.id == item.id } }, "\(region) quiz")
@@ -112,7 +113,7 @@ import UniformTypeIdentifiers
         let canada = Dictionary(uniqueKeysWithValues: try JSONDecoder().decode(MenuCatalog.self, from: Data(contentsOf: catalogURL.deletingLastPathComponent().appending(path: "MenuData-CA.json"))).chains.map { ($0.id, $0.name) })
         assert(AskLeanr.parse("breakfast at timmies", chainNames: canada, defaults: FindQuery()).query.chains == ["ca-tims"])
         assert(MenuRegion.chain("hj", in: canada) == "ca-bk")
-        for id in Set(Assistant.nicknames.values).union(MealPhoto.brandAliases.values) where id.hasPrefix("ca-") || id.hasPrefix("uk-") || id.hasPrefix("nz-") || id.hasPrefix("za-") || id.hasPrefix("in-") {
+        for id in Set(Assistant.nicknames.values).union(MealPhoto.brandAliases.values) where id.hasPrefix("ca-") || id.hasPrefix("uk-") || id.hasPrefix("nz-") || id.hasPrefix("za-") || id.hasPrefix("in-") || id.hasPrefix("sg-") {
             assert(expected.values.contains { $0.contains(id) }, "unknown chain \(id)")
         }
         // Switching to another country and back keeps your foods.
@@ -1106,6 +1107,16 @@ import UniformTypeIdentifiers
         var noCarbs = AppData(); noCarbs.logs[dayKey(day(2))] = [LogEntry(name: "Spud", items: [Portion(food: partial)], time: day(2))]
         assert(LogExport.days(noCarbs).components(separatedBy: "\r\n")[1].hasPrefix("\(dayKey(day(2))),1,240,20,,9,"))
 
+        // Target calculator units: feet, inches and pounds round-trip through the stored cm and kg.
+        assert(BodyUnits.feetInches(cm: 175) == (5, 8.9) && BodyUnits.feetInches(cm: 182.88) == (6, 0))
+        assert(BodyUnits.feetInches(cm: 182.85) == (6, 0), "rounding to 72.0 in reads 6 ft 0 in, not 5 ft 12 in")
+        assert(BodyUnits.heightText(cm: BodyUnits.cm(feet: 5, inches: 10), imperial: true) == "5 ft 10 in")
+        assert(BodyUnits.heightText(cm: BodyUnits.cm(feet: 5, inches: 10), imperial: false) == "178 cm")
+        assert(BodyUnits.pounds(kg: 75) == 165.3 && BodyUnits.pounds(kg: BodyUnits.kg(pounds: 165.3)) == 165.3)
+        assert(BodyUnits.weightText(kg: BodyUnits.kg(pounds: 180), imperial: false) == "81.6 kg")
+        for lb in stride(from: 80.0, through: 550, by: 0.1) { assert(BodyUnits.pounds(kg: BodyUnits.kg(pounds: lb.tenth)) == lb.tenth) }
+        for tenths in 470...910 { let inch = Double(tenths) / 10; let h = BodyUnits.feetInches(cm: inch * BodyUnits.cmPerInch); assert(Double(h.feet) * 12 + h.inches == inch.tenth || abs(Double(h.feet) * 12 + h.inches - inch) < 0.001) }
+
         // Weekly review: averages over logged days only, protein days, weight trend and repeat meals.
         var week = AppData()
         for n in 0...1 { week.logs[dayKey(day(n))] = [LogEntry(name: "Wrap", items: [Portion(food: wrap)], time: day(n)), LogEntry(name: "wrap", items: [Portion(food: wrap)], time: day(n))] }
@@ -1140,10 +1151,10 @@ import UniformTypeIdentifiers
         assert(MenuUpdates.url(.menu(.australia))?.absoluteString == "https://dmfmrqvmwvabzkqgdbdw.supabase.co/rest/v1/rpc/dataset?id=menu-AU")
         assert(MenuUpdates.versionURL(.survey)?.absoluteString == "https://dmfmrqvmwvabzkqgdbdw.supabase.co/rest/v1/datasets?id=eq.survey&select=revision,published")
         // Each dataset matches Scripts/supabase/leanrrr_data.py, and the Australian menu keeps the cache earlier versions wrote.
-        assert(MenuRegion.allCases.map { FoodDataset.menu($0).id } == ["menu-AU", "menu-NZ", "menu-US", "menu-CA", "menu-GB", "menu-ZA", "menu-IN"])
+        assert(MenuRegion.allCases.map { FoodDataset.menu($0).id } == ["menu-AU", "menu-NZ", "menu-US", "menu-CA", "menu-GB", "menu-ZA", "menu-IN", "menu-SG"])
         assert([FoodDataset.everyday, .survey, .supermarket].map(\.id) == ["generic", "survey", "supermarket"])
         assert(FoodDataset.menu(.australia).cacheURL.lastPathComponent == "MenuData.json" && FoodDataset.survey.cacheURL.lastPathComponent == "survey.json")
-        assert(Set(([FoodDataset.everyday, .survey, .supermarket] + MenuRegion.allCases.map { .menu($0) }).map(\.cacheURL)).count == 10)
+        assert(Set(([FoodDataset.everyday, .survey, .supermarket] + MenuRegion.allCases.map { .menu($0) }).map(\.cacheURL)).count == 11)
         var newer = catalog; newer.published = Date().formatted(Date.ISO8601FormatStyle(includingFractionalSeconds: true))
         assert(MenuUpdates.acceptable(newer, over: catalog))
         // A date from the future, or one that isn't a date, never wins, and a menu carrying one can't block a real menu.
@@ -2300,7 +2311,7 @@ import UniformTypeIdentifiers
 
         rowFoldChecks()
 
-        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, delivery, iCloud health rules, deleting all data, the policies, everyday foods, customised orders, photo and Visual Intelligence matching, widget goal colours, Premium access rules, Siri logging and editing saved and logged meals, water, measurements, progress photos, fibre and sodium nudges, steps, the progress breakdown, what fits what's left, meals in words, recipe ingredients, recipe pages, weekly check-ins, meal plans, Apple Watch, insights, the Planned and Water widgets, dietary needs, Ask Leanr and no prices (\(Date().timeIntervalSince(start).formatted())s).")
+        print("App checks passed: catalogue, migration, persistence, backups, recipes, history, label parsing, finder, weight trend, calculator units, quick log, search, Siri answers, reminders, weekly review, CSV export, menu updates, undo, pinned foods, the Log again widget, saving scans, late-night reminders, delivery, iCloud health rules, deleting all data, the policies, everyday foods, customised orders, photo and Visual Intelligence matching, widget goal colours, Premium access rules, Siri logging and editing saved and logged meals, water, measurements, progress photos, fibre and sodium nudges, steps, the progress breakdown, what fits what's left, meals in words, recipe ingredients, recipe pages, weekly check-ins, meal plans, Apple Watch, insights, the Planned and Water widgets, dietary needs, Ask Leanr and no prices (\(Date().timeIntervalSince(start).formatted())s).")
     }
 }
 

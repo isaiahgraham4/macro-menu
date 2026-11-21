@@ -21,9 +21,14 @@ struct NumberField: View {
     var places = 1
     /// What VoiceOver reads when the visible title alone is ambiguous, e.g. several "Servings" fields on one screen.
     var spokenTitle: String? = nil
+    /// A small line under the title, e.g. the same figure in the other unit system.
+    var note: String? = nil
     var body: some View {
         HStack {
-            Text(title).accessibilityHidden(spokenTitle != nil)
+            VStack(alignment: .leading, spacing: 2) {
+                Text(title)
+                if let note { Text(note).font(.roboto(.caption)).foregroundStyle(.secondary).monospacedDigit() }
+            }.accessibilityHidden(spokenTitle != nil)
             Spacer()
             TextField(title, value: $value, format: decimalFormat(places)).keyboardType(.decimalPad).multilineTextAlignment(.trailing).frame(maxWidth: 120)
                 .accessibilityLabel(spokenTitle ?? title)

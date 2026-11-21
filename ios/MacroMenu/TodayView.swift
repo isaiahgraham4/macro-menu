@@ -760,6 +760,8 @@ struct TargetCalculator: View {
     @AppStorage("calc.adjustment") private var adjustment = 0.0
     @AppStorage("calc.proteinPerKG") private var proteinPerKG = 1.6
     @AppStorage("calc.fatPercent") private var fatPercent = 25.0
+    /// Feet, inches and pounds instead of cm and kg. Starts on imperial where the phone's region uses it.
+    @AppStorage("calc.imperial") private var imperial = Locale.current.measurementSystem == .us
     @State private var useMeasured = true
     private var points: [WeightTrend.Point] { WeightTrend.points(store.data.weightLog) }
     private var measured: WeightTrend.Maintenance? { WeightTrend.maintenance(logs: store.data.logs, points: points) }
@@ -772,13 +774,23 @@ struct TargetCalculator: View {
     var protein: Double { weight * proteinPerKG }
     var fat: Double { calories * fatPercent / 100 / 9 }
     var carbs: Double { max(0,(calories - protein * 4 - fat * 9) / 4) }
+    // Imperial views of the stored cm and kg; typing into them writes back in metric.
+    private var feet: Binding<Double> {
+        Binding { Double(BodyUnits.feetInches(cm: height).feet) } set: { height = BodyUnits.cm(feet: $0, inches: BodyUnits.feetInches(cm: height).inches) }
+    }
+    private var inches: Binding<Double> {
+        Binding { BodyUnits.feetInches(cm: height).inches } set: { height = BodyUnits.cm(feet: Double(BodyUnits.feetInches(cm: height).feet), inches: $0) }
+    }
+    private var pounds: Binding<Double> {
+        Binding { BodyUnits.pounds(kg: weight) } set: { weight = BodyUnits.kg(pounds: $0) }
+    }
     var valid: Bool { (18...100).contains(age) && (120...230).contains(height) && (35...250).contains(weight) && (0.8...3.3).contains(proteinPerKG) && (15...45).contains(fatPercent) && calories > 0 && protein * 4 + fat * 9 <= calories }
     var body: some View {
         LeanrForm {
             if points.last != nil || measured != nil || health.averageActiveEnergy != nil {
                 Section {
                     if let last = points.last {
-                        LabeledContent("Trend weight", value: "\(last.trend.number) kg")
+                        LabeledContent("Trend weight", value: BodyUnits.weightText(kg: last.trend, imperial: imperial))
                         if abs(last.trend - weight) >= 0.1 { Button("Use my trend weight") { weight = last.trend.tenth } }
                     }
                     if let measured {
@@ -806,13 +818,36 @@ struct TargetCalculator: View {
             Section("Body measurements") {
                 Picker("Sex used in equation", selection: $female) { Text("Male").tag(false); Text("Female").tag(true) }
                 NumberField(title: "Age (18–100)", value: $age)
-                NumberField(title: "Height (cm)", value: $height)
-                NumberField(title: "Weight (kg)", value: $weight)
+                Picker("Units", selection: $imperial) { Text("cm · kg").tag(false); Text("ft · lb").tag(true) }
+                if imperial {
+                    HStack {
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("Height")
+                            Text(BodyUnits.heightText(cm: height, imperial: false)).font(.roboto(.caption)).foregroundStyle(.secondary).monospacedDigit()
+                        }
+                        Spacer()
+                        TextField("Feet", value: feet, format: decimalFormat(0)).keyboardType(.numberPad).multilineTextAlignment(.trailing).frame(maxWidth: 44)
+                            .accessibilityLabel("Height, feet")
+                        Text("ft").foregroundStyle(.secondary).accessibilityHidden(true)
+                        TextField("Inches", value: inches, format: decimalFormat(1)).keyboardType(.decimalPad).multilineTextAlignment(.trailing).frame(maxWidth: 56)
+                            .accessibilityLabel("Height, inches")
+                        Text("in").foregroundStyle(.secondary).accessibilityHidden(true)
+                    }
+                    NumberField(title: "Weight (lb)", value: pounds, note: BodyUnits.weightText(kg: weight, imperial: false))
+                } else {
+                    NumberField(title: "Height (cm)", value: $height, note: BodyUnits.heightText(cm: height, imperial: true))
+                    NumberField(title: "Weight (kg)", value: $weight, note: BodyUnits.weightText(kg: weight, imperial: true))
+                }
                 Picker("Activity", selection: $activity) {
                     Text("Mostly sitting").tag(1.2); Text("Light · 1–3 days/week").tag(1.375)
                     Text("Moderate · 3–5 days/week").tag(1.55); Text("Hard · 6–7 days/week").tag(1.725); Text("Very hard / physical job").tag(1.9)
                 }
-                Picker("Goal", selection: $adjustment) { Text("Maintain").tag(0.0); Text("Lose ~0.25 kg/week").tag(-275.0); Text("Lose ~0.5 kg/week").tag(-550.0); Text("Gain ~0.25 kg/week").tag(275.0) }
+                Picker("Goal", selection: $adjustment) {
+                    Text("Maintain").tag(0.0)
+                    Text(imperial ? "Lose ~0.5 lb/week" : "Lose ~0.25 kg/week").tag(-275.0)
+                    Text(imperial ? "Lose ~1 lb/week" : "Lose ~0.5 kg/week").tag(-550.0)
+                    Text(imperial ? "Gain ~0.5 lb/week" : "Gain ~0.25 kg/week").tag(275.0)
+                }
                 NumberField(title: "Protein (g/kg)", value: $proteinPerKG)
                 NumberField(title: "Fat share (%)", value: $fatPercent)
             }

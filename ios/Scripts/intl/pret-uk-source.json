@@ -1,0 +1,5934 @@
+{
+"checked": "2026-11-21",
+"url": "https://www.pret.co.uk/en-GB/products/categories",
+"products": [
+{
+"sku": "UK021468",
+"name": "Banana Cinnamon Porridge",
+"category": "Breakfast",
+"subcategory": "Breakfast porridge",
+"allergens": [
+"Oats",
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 334.75,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1188",
+"Energy (KCal)": "283",
+"Fat": "8.8",
+"Saturates": "4.8",
+"Carbohydrates": "39.3",
+"Sugars": "20.4",
+"Dietary Fibre": "5.1",
+"Protein": "9",
+"Salt": "0.19"
+}
+},
+{
+"sku": "UK020515",
+"name": "Coconut & Quinoa Porridge",
+"category": "Breakfast",
+"subcategory": "Breakfast porridge",
+"allergens": [
+"Oats"
+],
+"vegetarian": true,
+"vegan": true,
+"weight": 300,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1152",
+"Energy (KCal)": "275",
+"Fat": "12.2",
+"Saturates": "8.8",
+"Carbohydrates": "34.4",
+"Sugars": "3.2",
+"Dietary Fibre": "1.5",
+"Protein": "6.1",
+"Salt": "0.34"
+}
+},
+{
+"sku": "UK004209",
+"name": "Pret's Proper Porridge",
+"category": "Breakfast",
+"subcategory": "Breakfast porridge",
+"allergens": [
+"Oats",
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 300,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "906",
+"Energy (KCal)": "216",
+"Fat": "8.7",
+"Saturates": "4.8",
+"Carbohydrates": "23.7",
+"Sugars": "6.9",
+"Dietary Fibre": "4.2",
+"Protein": "8.7",
+"Salt": "0.18"
+}
+},
+{
+"sku": "UK021469",
+"name": "Side Porridge",
+"category": "Breakfast",
+"subcategory": "Breakfast porridge",
+"allergens": [
+"Oats",
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 200,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "604",
+"Energy (KCal)": "144",
+"Fat": "5.8",
+"Saturates": "3.2",
+"Carbohydrates": "15.8",
+"Sugars": "4.6",
+"Dietary Fibre": "2.8",
+"Protein": "5.8",
+"Salt": "0.12"
+}
+},
+{
+"sku": "UK000765",
+"name": "All Butter Croissant",
+"category": "Breakfast",
+"subcategory": "Breakfast pastries",
+"allergens": [
+"Wheat",
+"Egg",
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 71,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1213",
+"Energy (KCal)": "291",
+"Fat": "16.8",
+"Saturates": "11.5",
+"Carbohydrates": "27.5",
+"Sugars": "4.5",
+"Dietary Fibre": "1.6",
+"Protein": "6.5",
+"Salt": "0.68"
+}
+},
+{
+"sku": "UK005667",
+"name": "Almond Croissant ",
+"category": "Breakfast",
+"subcategory": "Breakfast pastries",
+"allergens": [
+"Almonds",
+"Wheat",
+"Egg",
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 90,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1596",
+"Energy (KCal)": "382",
+"Fat": "21.1",
+"Saturates": "10.7",
+"Carbohydrates": "38.9",
+"Sugars": "14.3",
+"Dietary Fibre": "2.6",
+"Protein": "7.8",
+"Salt": "0.53"
+}
+},
+{
+"sku": "UK005671",
+"name": "Chocolate Croissant",
+"category": "Breakfast",
+"subcategory": "Breakfast pastries",
+"allergens": [
+"Wheat",
+"Egg",
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 86,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1461",
+"Energy (KCal)": "350",
+"Fat": "20.6",
+"Saturates": "12.3",
+"Carbohydrates": "33.4",
+"Sugars": "15.6",
+"Dietary Fibre": "3.7",
+"Protein": "5.9",
+"Salt": "0.41"
+}
+},
+{
+"sku": "UK021556",
+"name": "Chocolate Pistachio Croissant Roll",
+"category": "Breakfast",
+"subcategory": "Breakfast pastries",
+"allergens": [
+"Pistachio Nuts",
+"Wheat",
+"Egg",
+"Milk",
+"Soya"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 91,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1926",
+"Energy (KCal)": "462",
+"Fat": "29.6",
+"Saturates": "16.6",
+"Carbohydrates": "41.3",
+"Sugars": "19.9",
+"Dietary Fibre": "1.7",
+"Protein": "6.9",
+"Salt": "0.59"
+}
+},
+{
+"sku": "UK006927",
+"name": "Cinnamon Danish",
+"category": "Breakfast",
+"subcategory": "Breakfast pastries",
+"allergens": [
+"Wheat",
+"Egg",
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 111,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1728",
+"Energy (KCal)": "413",
+"Fat": "20.9",
+"Saturates": "13.2",
+"Carbohydrates": "48.3",
+"Sugars": "24.1",
+"Dietary Fibre": "2.5",
+"Protein": "6.7",
+"Salt": "1.01"
+}
+},
+{
+"sku": "UK004468",
+"name": "Ham & Cheese Croissant",
+"category": "Breakfast",
+"subcategory": "Breakfast pastries",
+"allergens": [
+"Wheat",
+"Egg",
+"Milk"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 98,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1300",
+"Energy (KCal)": "312",
+"Fat": "19.4",
+"Saturates": "9.8",
+"Carbohydrates": "19.9",
+"Sugars": "3.2",
+"Dietary Fibre": "1.9",
+"Protein": "13.5",
+"Salt": "1.19"
+}
+},
+{
+"sku": "UK004469",
+"name": "Mozzarella & Tomato Croissant ",
+"category": "Breakfast",
+"subcategory": "Breakfast pastries",
+"allergens": [
+"Wheat",
+"Egg",
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 108.62,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1316",
+"Energy (KCal)": "316",
+"Fat": "20.6",
+"Saturates": "10.8",
+"Carbohydrates": "19.9",
+"Sugars": "2.9",
+"Dietary Fibre": "1.7",
+"Protein": "11.8",
+"Salt": "0.95"
+}
+},
+{
+"sku": "UK005705",
+"name": "Pain aux Raisins",
+"category": "Breakfast",
+"subcategory": "Breakfast pastries",
+"allergens": [
+"Wheat",
+"Egg",
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 121,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1504",
+"Energy (KCal)": "358",
+"Fat": "14.4",
+"Saturates": "9.1",
+"Carbohydrates": "49",
+"Sugars": "21.4",
+"Dietary Fibre": "2.5",
+"Protein": "7",
+"Salt": "0.85"
+}
+},
+{
+"sku": "UK007692",
+"name": "Very Berry Croissant",
+"category": "Breakfast",
+"subcategory": "Breakfast pastries",
+"allergens": [
+"Wheat"
+],
+"vegetarian": true,
+"vegan": true,
+"weight": 88,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1255",
+"Energy (KCal)": "299",
+"Fat": "12.2",
+"Saturates": "7.4",
+"Carbohydrates": "41.7",
+"Sugars": "21.9",
+"Dietary Fibre": "2.3",
+"Protein": "4.4",
+"Salt": "0.56"
+}
+},
+{
+"sku": "UK006825",
+"name": "Bacon & Egg Mayo Breakfast Baguette",
+"category": "Breakfast",
+"subcategory": "Breakfast baguettes",
+"allergens": [
+"Wheat",
+"Egg"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 139,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1463",
+"Energy (KCal)": "348",
+"Fat": "13.7",
+"Saturates": "3.4",
+"Carbohydrates": "38.7",
+"Sugars": "1.5",
+"Dietary Fibre": "2",
+"Protein": "16.6",
+"Salt": "1.89"
+}
+},
+{
+"sku": "UK007489",
+"name": "Free-Range Egg & Avo Breakfast Baguette",
+"category": "Breakfast",
+"subcategory": "Breakfast baguettes",
+"allergens": [
+"Wheat",
+"Egg"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 151.79,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1454",
+"Energy (KCal)": "347",
+"Fat": "15",
+"Saturates": "3.2",
+"Carbohydrates": "39",
+"Sugars": "1.7",
+"Dietary Fibre": "3.2",
+"Protein": "12.3",
+"Salt": "2.09"
+}
+},
+{
+"sku": "UK001044",
+"name": "Roasted Tomato & Egg Mayo Breakfast Baguette",
+"category": "Breakfast",
+"subcategory": "Breakfast baguettes",
+"allergens": [
+"Wheat",
+"Egg"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 153.5,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1515",
+"Energy (KCal)": "361",
+"Fat": "14.3",
+"Saturates": "2.3",
+"Carbohydrates": "42.3",
+"Sugars": "5.2",
+"Dietary Fibre": "3.2",
+"Protein": "14.1",
+"Salt": "1.88"
+}
+},
+{
+"sku": "UK001341",
+"name": "Smoked Salmon & Egg Mayo Breakfast Baguette",
+"category": "Breakfast",
+"subcategory": "Breakfast baguettes",
+"allergens": [
+"Wheat",
+"Egg",
+"Fish"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 149,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1476",
+"Energy (KCal)": "352",
+"Fat": "13.7",
+"Saturates": "2.6",
+"Carbohydrates": "38.7",
+"Sugars": "1.5",
+"Dietary Fibre": "1.9",
+"Protein": "17.5",
+"Salt": "2.14"
+}
+},
+{
+"sku": "UK020054",
+"name": "Pigs in Blanket Roll",
+"category": "Breakfast",
+"subcategory": "Breakfast rolls",
+"allergens": [
+"Rye",
+"Wheat",
+"Egg",
+"Mustard"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 171,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2148",
+"Energy (KCal)": "514",
+"Fat": "28.4",
+"Saturates": "7.2",
+"Carbohydrates": "41.7",
+"Sugars": "7.3",
+"Dietary Fibre": "3.7",
+"Protein": "21.1",
+"Salt": "2.37"
+}
+},
+{
+"sku": "UK020438",
+"name": "Pret's Veggie Breakfast Ciabatta",
+"category": "Breakfast",
+"subcategory": "Breakfast rolls",
+"allergens": [
+"Rye",
+"Wheat",
+"Egg",
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 205.6,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1561",
+"Energy (KCal)": "372",
+"Fat": "14.9",
+"Saturates": "4.5",
+"Carbohydrates": "40.4",
+"Sugars": "6.4",
+"Dietary Fibre": "4.2",
+"Protein": "17.1",
+"Salt": "2.12"
+}
+},
+{
+"sku": "UK020921",
+"name": "Sausage & Bacon Ciabatta",
+"category": "Breakfast",
+"subcategory": "Breakfast rolls",
+"allergens": [
+"Rye",
+"Wheat",
+"Milk"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 153,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1952",
+"Energy (KCal)": "467",
+"Fat": "24.5",
+"Saturates": "10",
+"Carbohydrates": "37.1",
+"Sugars": "3.3",
+"Dietary Fibre": "2.8",
+"Protein": "23.2",
+"Salt": "1.97"
+}
+},
+{
+"sku": "UK020439",
+"name": "Triple Bacon Ciabatta",
+"category": "Breakfast",
+"subcategory": "Breakfast rolls",
+"allergens": [
+"Rye",
+"Wheat",
+"Milk"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 118,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1353",
+"Energy (KCal)": "322",
+"Fat": "11.3",
+"Saturates": "4.7",
+"Carbohydrates": "35.7",
+"Sugars": "2.5",
+"Dietary Fibre": "2.2",
+"Protein": "18.1",
+"Salt": "1.36"
+}
+},
+{
+"sku": "UK020442",
+"name": "Triple Sausage Ciabatta",
+"category": "Breakfast",
+"subcategory": "Breakfast rolls",
+"allergens": [
+"Rye",
+"Wheat",
+"Milk"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 148,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1960",
+"Energy (KCal)": "469",
+"Fat": "25.9",
+"Saturates": "10.1",
+"Carbohydrates": "37.8",
+"Sugars": "3.7",
+"Dietary Fibre": "3",
+"Protein": "19.8",
+"Salt": "1.94"
+}
+},
+{
+"sku": "UK020440",
+"name": "Ultimate Breakfast Ciabatta",
+"category": "Breakfast",
+"subcategory": "Breakfast rolls",
+"allergens": [
+"Rye",
+"Wheat",
+"Egg",
+"Milk"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 216.6,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2103",
+"Energy (KCal)": "503",
+"Fat": "25.4",
+"Saturates": "7.8",
+"Carbohydrates": "40.9",
+"Sugars": "7.1",
+"Dietary Fibre": "3.8",
+"Protein": "25.7",
+"Salt": "2.56"
+}
+},
+{
+"sku": "UK006718",
+"name": "Acai & Almond Butter Bowl",
+"category": "Breakfast",
+"subcategory": "Birchers and yoghurt bowls",
+"allergens": [
+"Almonds",
+"Oats"
+],
+"vegetarian": true,
+"vegan": true,
+"weight": 186.64,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1416",
+"Energy (KCal)": "338",
+"Fat": "12.9",
+"Saturates": "1.6",
+"Carbohydrates": "43.7",
+"Sugars": "25.6",
+"Dietary Fibre": "7.4",
+"Protein": "8.1",
+"Salt": "0.2"
+}
+},
+{
+"sku": "UK006210",
+"name": "Bircher Muesli",
+"category": "Breakfast",
+"subcategory": "Birchers and yoghurt bowls",
+"allergens": [
+"Pistachio Nuts",
+"Oats",
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 213.8,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1413",
+"Energy (KCal)": "336",
+"Fat": "11",
+"Saturates": "4.1",
+"Carbohydrates": "43.5",
+"Sugars": "32.7",
+"Dietary Fibre": "3.8",
+"Protein": "14",
+"Salt": "0.27"
+}
+},
+{
+"sku": "UK020510",
+"name": "Blueberry Balance Bowl",
+"category": "Breakfast",
+"subcategory": "Birchers and yoghurt bowls",
+"allergens": [
+"Oats",
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 218,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1331",
+"Energy (KCal)": "318",
+"Fat": "13.6",
+"Saturates": "9.3",
+"Carbohydrates": "33.8",
+"Sugars": "20",
+"Dietary Fibre": "4.2",
+"Protein": "12.9",
+"Salt": "0.2"
+}
+},
+{
+"sku": "UK005773",
+"name": "Five Berry Bowl",
+"category": "Breakfast",
+"subcategory": "Birchers and yoghurt bowls",
+"allergens": [
+"Oats",
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 206.6,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1403",
+"Energy (KCal)": "334",
+"Fat": "9.8",
+"Saturates": "3.6",
+"Carbohydrates": "45.7",
+"Sugars": "26.1",
+"Dietary Fibre": "5.7",
+"Protein": "12.9",
+"Salt": "0.32"
+}
+},
+{
+"sku": "UK020129",
+"name": "Mango & Banana Sunshine Bowl",
+"category": "Breakfast",
+"subcategory": "Birchers and yoghurt bowls",
+"allergens": [
+"Oats"
+],
+"vegetarian": true,
+"vegan": true,
+"weight": 166.42,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1432",
+"Energy (KCal)": "342",
+"Fat": "13.4",
+"Saturates": "8.1",
+"Carbohydrates": "45.9",
+"Sugars": "24.2",
+"Dietary Fibre": "5.7",
+"Protein": "6.4",
+"Salt": "0.06"
+}
+},
+{
+"sku": "UK020376",
+"name": "The Big Apple Bowl",
+"category": "Breakfast",
+"subcategory": "Birchers and yoghurt bowls",
+"allergens": [
+"Oats",
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 193.93,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1278",
+"Energy (KCal)": "304",
+"Fat": "8.4",
+"Saturates": "3.4",
+"Carbohydrates": "43.2",
+"Sugars": "29.3",
+"Dietary Fibre": "4.2",
+"Protein": "11.7",
+"Salt": "0.24"
+}
+},
+{
+"sku": "UK020513",
+"name": "British Sausages, Pret's Baked Beans & Egg Pot",
+"category": "Breakfast",
+"subcategory": "Breakfast protein pot",
+"allergens": [
+"Egg"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 246,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1421",
+"Energy (KCal)": "342",
+"Fat": "19.5",
+"Saturates": "6.6",
+"Carbohydrates": "12",
+"Sugars": "6.4",
+"Dietary Fibre": "14.9",
+"Protein": "22.1",
+"Salt": "1.7"
+}
+},
+{
+"sku": "UK020514",
+"name": "Roasted Mushroom, Pret's Baked Beans & Egg Pot",
+"category": "Breakfast",
+"subcategory": "Breakfast protein pot",
+"allergens": [
+"Egg"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 227,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "797",
+"Energy (KCal)": "191",
+"Fat": "6.6",
+"Saturates": "1.5",
+"Carbohydrates": "11.2",
+"Sugars": "5.7",
+"Dietary Fibre": "15.1",
+"Protein": "14.1",
+"Salt": "1.06"
+}
+},
+{
+"sku": "UK020114",
+"name": "Iced Chai Latte",
+"category": "Cold drinks",
+"subcategory": "Iced favourites",
+"allergens": [
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 400,
+"type": "barista_beverage",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "683",
+"Energy (KCal)": "162",
+"Fat": "4",
+"Saturates": "2.6",
+"Carbohydrates": "23.3",
+"Sugars": "23.2",
+"Dietary Fibre": "0",
+"Protein": "8.2",
+"Salt": "0.01"
+}
+},
+{
+"sku": "UK007724",
+"name": "Iced Hot Chocolate",
+"category": "Cold drinks",
+"subcategory": "Iced favourites",
+"allergens": [
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 376,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "831",
+"Energy (KCal)": "197",
+"Fat": "3.7",
+"Saturates": "2.3",
+"Carbohydrates": "30.5",
+"Sugars": "29.1",
+"Dietary Fibre": "5.3",
+"Protein": "7.9",
+"Salt": "0.03"
+}
+},
+{
+"sku": "UK006892",
+"name": "Iced Matcha Latte",
+"category": "Cold drinks",
+"subcategory": "Iced favourites",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 402,
+"type": "barista_beverage",
+"bottled": false,
+"variants": true,
+"nutrition": {
+"Energy (KJ)": "266",
+"Energy (KCal)": "63",
+"Fat": "1.5",
+"Saturates": "1.4",
+"Carbohydrates": "11.2",
+"Sugars": "8.4",
+"Dietary Fibre": "0.4",
+"Protein": "1",
+"Salt": "0.2"
+}
+},
+{
+"sku": "UK000602",
+"name": "Caramel Frappé",
+"category": "Cold drinks",
+"subcategory": "Iced coffee",
+"allergens": [
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 506,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1772",
+"Energy (KCal)": "423",
+"Fat": "21.7",
+"Saturates": "7.9",
+"Carbohydrates": "43",
+"Sugars": "33.6",
+"Dietary Fibre": "0.4",
+"Protein": "13.9",
+"Salt": "0.17"
+}
+},
+{
+"sku": "UK005078",
+"name": "Classic Frappe",
+"category": "Cold drinks",
+"subcategory": "Iced coffee",
+"allergens": [
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 399,
+"type": "barista_beverage",
+"bottled": false,
+"variants": true,
+"nutrition": {
+"Energy (KJ)": "1522",
+"Energy (KCal)": "365",
+"Fat": "23.9",
+"Saturates": "7.4",
+"Carbohydrates": "26.7",
+"Sugars": "17.3",
+"Dietary Fibre": "0.4",
+"Protein": "10.6",
+"Salt": "0.15"
+}
+},
+{
+"sku": "UK005804",
+"name": "Frozen Hot Chocolate",
+"category": "Cold drinks",
+"subcategory": "Iced coffee",
+"allergens": [
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 509,
+"type": "barista_beverage",
+"bottled": false,
+"variants": true,
+"nutrition": {
+"Energy (KJ)": "2105",
+"Energy (KCal)": "503",
+"Fat": "22.8",
+"Saturates": "8.7",
+"Carbohydrates": "54.8",
+"Sugars": "44.1",
+"Dietary Fibre": "5.7",
+"Protein": "16.8",
+"Salt": "0.04"
+}
+},
+{
+"sku": "UK000601",
+"name": "Hazelnut Frappé",
+"category": "Cold drinks",
+"subcategory": "Iced coffee",
+"allergens": [
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 506,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1769",
+"Energy (KCal)": "423",
+"Fat": "21.7",
+"Saturates": "7.9",
+"Carbohydrates": "42.8",
+"Sugars": "33.4",
+"Dietary Fibre": "0.4",
+"Protein": "13.9",
+"Salt": "0.17"
+}
+},
+{
+"sku": "UK005978",
+"name": "Iced Black Americano",
+"category": "Cold drinks",
+"subcategory": "Iced coffee",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 380,
+"type": "barista_beverage",
+"bottled": false,
+"variants": true,
+"nutrition": {
+"Energy (KJ)": "7",
+"Energy (KCal)": "2",
+"Fat": "0.2",
+"Saturates": "0",
+"Carbohydrates": "0",
+"Sugars": "0",
+"Dietary Fibre": "0",
+"Protein": "0",
+"Salt": "0.15"
+}
+},
+{
+"sku": "UK004106",
+"name": "Iced Latte",
+"category": "Cold drinks",
+"subcategory": "Iced coffee",
+"allergens": [
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 394,
+"type": "barista_beverage",
+"bottled": false,
+"variants": true,
+"nutrition": {
+"Energy (KJ)": "411",
+"Energy (KCal)": "98",
+"Fat": "3.4",
+"Saturates": "2",
+"Carbohydrates": "10",
+"Sugars": "10",
+"Dietary Fibre": "0",
+"Protein": "6.8",
+"Salt": "0.15"
+}
+},
+{
+"sku": "UK007725",
+"name": "Iced Mocha",
+"category": "Cold drinks",
+"subcategory": "Iced coffee",
+"allergens": [
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 417,
+"type": "barista_beverage",
+"bottled": false,
+"variants": true,
+"nutrition": {
+"Energy (KJ)": "669",
+"Energy (KCal)": "159",
+"Fat": "4",
+"Saturates": "2.4",
+"Carbohydrates": "21.4",
+"Sugars": "20.6",
+"Dietary Fibre": "2.8",
+"Protein": "8",
+"Salt": "0.17"
+}
+},
+{
+"sku": "UK008423",
+"name": "Mocha Frappé",
+"category": "Cold drinks",
+"subcategory": "Iced coffee",
+"allergens": [
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 508,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1842",
+"Energy (KCal)": "440",
+"Fat": "22.3",
+"Saturates": "8.3",
+"Carbohydrates": "43",
+"Sugars": "32.9",
+"Dietary Fibre": "3.1",
+"Protein": "15.3",
+"Salt": "0.19"
+}
+},
+{
+"sku": "UK000600",
+"name": "Vanilla Frappé",
+"category": "Cold drinks",
+"subcategory": "Iced coffee",
+"allergens": [
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 506,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1784",
+"Energy (KCal)": "426",
+"Fat": "21.7",
+"Saturates": "7.9",
+"Carbohydrates": "43.7",
+"Sugars": "34.3",
+"Dietary Fibre": "0.4",
+"Protein": "13.9",
+"Salt": "0.17"
+}
+},
+{
+"sku": "UK021250",
+"name": "Vanilla Matcha Frappe",
+"category": "Cold drinks",
+"subcategory": "Iced coffee",
+"allergens": [
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 492,
+"type": "barista_beverage",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1803",
+"Energy (KCal)": "431",
+"Fat": "21.6",
+"Saturates": "7.9",
+"Carbohydrates": "44.4",
+"Sugars": "34.2",
+"Dietary Fibre": "0.4",
+"Protein": "14.5",
+"Salt": "0"
+}
+},
+{
+"sku": "UK005781",
+"name": "Apple Juice",
+"category": "Cold drinks",
+"subcategory": "Juices and smoothies",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 250,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "536",
+"Energy (KCal)": "126",
+"Fat": "0.2",
+"Saturates": "0.1",
+"Carbohydrates": "30.7",
+"Sugars": "28.2",
+"Dietary Fibre": "0",
+"Protein": "0.3",
+"Salt": "0"
+}
+},
+{
+"sku": "UK008511",
+"name": "Berries & Banana Smoothie",
+"category": "Cold drinks",
+"subcategory": "Juices and smoothies",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 450,
+"type": "barista_beverage",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "849",
+"Energy (KCal)": "200",
+"Fat": "0.6",
+"Saturates": "0.1",
+"Carbohydrates": "45.1",
+"Sugars": "43.8",
+"Dietary Fibre": "3.9",
+"Protein": "1.7",
+"Salt": "0"
+}
+},
+{
+"sku": "UK008509",
+"name": "Easy Greens",
+"category": "Cold drinks",
+"subcategory": "Juices and smoothies",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 200,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "150",
+"Energy (KCal)": "35",
+"Fat": "0",
+"Saturates": "0",
+"Carbohydrates": "8.8",
+"Sugars": "7",
+"Dietary Fibre": "0",
+"Protein": "0",
+"Salt": "0.11"
+}
+},
+{
+"sku": "UK005840",
+"name": "Ginger Shot",
+"category": "Cold drinks",
+"subcategory": "Juices and smoothies",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 110,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "234",
+"Energy (KCal)": "55",
+"Fat": "0.3",
+"Saturates": "0.1",
+"Carbohydrates": "11.4",
+"Sugars": "9.7",
+"Dietary Fibre": "1.8",
+"Protein": "0.8",
+"Salt": "0.11"
+}
+},
+{
+"sku": "UK006608",
+"name": "Hot Shot",
+"category": "Cold drinks",
+"subcategory": "Juices and smoothies",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 110,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "115",
+"Energy (KCal)": "27",
+"Fat": "0.2",
+"Saturates": "0",
+"Carbohydrates": "5.2",
+"Sugars": "3.7",
+"Dietary Fibre": "1.4",
+"Protein": "0.4",
+"Salt": "0.02"
+}
+},
+{
+"sku": "UK008512",
+"name": "Mango & Peach Smoothie",
+"category": "Cold drinks",
+"subcategory": "Juices and smoothies",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 450,
+"type": "barista_beverage",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "807",
+"Energy (KCal)": "190",
+"Fat": "0.4",
+"Saturates": "0.1",
+"Carbohydrates": "43.6",
+"Sugars": "42.4",
+"Dietary Fibre": "2.2",
+"Protein": "1.8",
+"Salt": "0.01"
+}
+},
+{
+"sku": "UK005786",
+"name": "Mango Smoothie",
+"category": "Cold drinks",
+"subcategory": "Juices and smoothies",
+"allergens": [],
+"vegetarian": true,
+"vegan": false,
+"weight": 250,
+"type": "barista_beverage",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "602",
+"Energy (KCal)": "142",
+"Fat": "0.7",
+"Saturates": "0.2",
+"Carbohydrates": "31.7",
+"Sugars": "29.7",
+"Dietary Fibre": "1.6",
+"Protein": "1.2",
+"Salt": "0"
+}
+},
+{
+"sku": "UK005783",
+"name": "Orange Juice",
+"category": "Cold drinks",
+"subcategory": "Juices and smoothies",
+"allergens": [],
+"vegetarian": true,
+"vegan": false,
+"weight": 150,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "267",
+"Energy (KCal)": "63",
+"Fat": "0.3",
+"Saturates": "0",
+"Carbohydrates": "13.5",
+"Sugars": "12.6",
+"Dietary Fibre": "0.7",
+"Protein": "1.2",
+"Salt": "0.01"
+}
+},
+{
+"sku": "UK005788",
+"name": "Vitamin Volcano",
+"category": "Cold drinks",
+"subcategory": "Juices and smoothies",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 250,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "487",
+"Energy (KCal)": "115",
+"Fat": "0",
+"Saturates": "0",
+"Carbohydrates": "27.5",
+"Sugars": "24.5",
+"Dietary Fibre": "1.2",
+"Protein": "1.2",
+"Salt": "0.18"
+}
+},
+{
+"sku": "UK001022",
+"name": "Coke Bottle",
+"category": "Cold drinks",
+"subcategory": "Water and soft drinks",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 500,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "901",
+"Energy (KCal)": "212",
+"Fat": "0",
+"Saturates": "0",
+"Carbohydrates": "53",
+"Sugars": "53",
+"Dietary Fibre": "0",
+"Protein": "0",
+"Salt": "0"
+}
+},
+{
+"sku": "UK000823",
+"name": "Coke Can",
+"category": "Cold drinks",
+"subcategory": "Water and soft drinks",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 330,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "595",
+"Energy (KCal)": "140",
+"Fat": "0",
+"Saturates": "0",
+"Carbohydrates": "35",
+"Sugars": "35",
+"Dietary Fibre": "0",
+"Protein": "0",
+"Salt": "0"
+}
+},
+{
+"sku": "UK006710",
+"name": "Coke Zero Bottle",
+"category": "Cold drinks",
+"subcategory": "Water and soft drinks",
+"allergens": [],
+"vegetarian": false,
+"vegan": false,
+"weight": 500,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "0",
+"Energy (KCal)": "0",
+"Fat": "0",
+"Saturates": "0",
+"Carbohydrates": "0",
+"Sugars": "0",
+"Dietary Fibre": "0",
+"Protein": "0",
+"Salt": "0"
+}
+},
+{
+"sku": "UK006676",
+"name": "Coke Zero Can",
+"category": "Cold drinks",
+"subcategory": "Water and soft drinks",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 330,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "0",
+"Energy (KCal)": "0",
+"Fat": "0",
+"Saturates": "0",
+"Carbohydrates": "0",
+"Sugars": "0",
+"Dietary Fibre": "0",
+"Protein": "0",
+"Salt": "0"
+}
+},
+{
+"sku": "UK006363",
+"name": "Cranberry, Raspberry & Pomegranate Pret Still",
+"category": "Cold drinks",
+"subcategory": "Water and soft drinks",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 511,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "486",
+"Energy (KCal)": "115",
+"Fat": "1.1",
+"Saturates": "0.3",
+"Carbohydrates": "24.5",
+"Sugars": "24.5",
+"Dietary Fibre": "2.6",
+"Protein": "0.5",
+"Salt": "0"
+}
+},
+{
+"sku": "UK008422",
+"name": "Cucumber & Mint Seltzer",
+"category": "Cold drinks",
+"subcategory": "Water and soft drinks",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 330,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "0",
+"Energy (KCal)": "0",
+"Fat": "0",
+"Saturates": "0",
+"Carbohydrates": "0",
+"Sugars": "0",
+"Dietary Fibre": "0",
+"Protein": "0",
+"Salt": "0"
+}
+},
+{
+"sku": "UK001286",
+"name": "Diet Coke Bottle",
+"category": "Cold drinks",
+"subcategory": "Water and soft drinks",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 500,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "0",
+"Energy (KCal)": "0",
+"Fat": "0",
+"Saturates": "0",
+"Carbohydrates": "0",
+"Sugars": "0",
+"Dietary Fibre": "0",
+"Protein": "0",
+"Salt": "0"
+}
+},
+{
+"sku": "UK000783",
+"name": "Diet Coke Can",
+"category": "Cold drinks",
+"subcategory": "Water and soft drinks",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 330,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "0",
+"Energy (KCal)": "0",
+"Fat": "0",
+"Saturates": "0",
+"Carbohydrates": "0",
+"Sugars": "0",
+"Dietary Fibre": "0",
+"Protein": "0",
+"Salt": "0"
+}
+},
+{
+"sku": "UK007681",
+"name": "Ginger Kombucha",
+"category": "Cold drinks",
+"subcategory": "Water and soft drinks",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 250,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "191",
+"Energy (KCal)": "45",
+"Fat": "0",
+"Saturates": "0",
+"Carbohydrates": "11.2",
+"Sugars": "11.2",
+"Dietary Fibre": "0",
+"Protein": "0",
+"Salt": "0"
+}
+},
+{
+"sku": "UK005416",
+"name": "Green Tea & Peach Pret Still",
+"category": "Cold drinks",
+"subcategory": "Water and soft drinks",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 500,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "438",
+"Energy (KCal)": "104",
+"Fat": "1.2",
+"Saturates": "0.5",
+"Carbohydrates": "21.5",
+"Sugars": "21.5",
+"Dietary Fibre": "2.5",
+"Protein": "0.5",
+"Salt": "0"
+}
+},
+{
+"sku": "UK005413",
+"name": "Lemon & Ginger Pret Still",
+"category": "Cold drinks",
+"subcategory": "Water and soft drinks",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 500,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "397",
+"Energy (KCal)": "94",
+"Fat": "1",
+"Saturates": "0.2",
+"Carbohydrates": "19.5",
+"Sugars": "19.5",
+"Dietary Fibre": "2.5",
+"Protein": "0.5",
+"Salt": "0"
+}
+},
+{
+"sku": "UK008421",
+"name": "Lime & Raspberry Seltzer",
+"category": "Cold drinks",
+"subcategory": "Water and soft drinks",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 330,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "0",
+"Energy (KCal)": "0",
+"Fat": "0",
+"Saturates": "0",
+"Carbohydrates": "0",
+"Sugars": "0",
+"Dietary Fibre": "0",
+"Protein": "0",
+"Salt": "0"
+}
+},
+{
+"sku": "UK006364",
+"name": "Mango & Passion Fruit Pret Still",
+"category": "Cold drinks",
+"subcategory": "Water and soft drinks",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 500,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "474",
+"Energy (KCal)": "112",
+"Fat": "1.2",
+"Saturates": "0.3",
+"Carbohydrates": "23.5",
+"Sugars": "23.5",
+"Dietary Fibre": "2.5",
+"Protein": "0.5",
+"Salt": "0"
+}
+},
+{
+"sku": "UK020350",
+"name": "Pret Sparkling Water 500ml",
+"category": "Cold drinks",
+"subcategory": "Water and soft drinks",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 500,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "0",
+"Energy (KCal)": "0",
+"Fat": "0",
+"Saturates": "0",
+"Carbohydrates": "0",
+"Sugars": "0",
+"Dietary Fibre": "0",
+"Protein": "0",
+"Salt": "0"
+}
+},
+{
+"sku": "UK020347",
+"name": "Pret Still Water 500ml",
+"category": "Cold drinks",
+"subcategory": "Water and soft drinks",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 500,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "0",
+"Energy (KCal)": "0",
+"Fat": "0",
+"Saturates": "0",
+"Carbohydrates": "0",
+"Sugars": "0",
+"Dietary Fibre": "0",
+"Protein": "0",
+"Salt": "0.07"
+}
+},
+{
+"sku": "UK020348",
+"name": "Pret Still Water 750ml",
+"category": "Cold drinks",
+"subcategory": "Water and soft drinks",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 750,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "0",
+"Energy (KCal)": "0",
+"Fat": "0",
+"Saturates": "0",
+"Carbohydrates": "0",
+"Sugars": "0",
+"Dietary Fibre": "0",
+"Protein": "0",
+"Salt": "0.1"
+}
+},
+{
+"sku": "UK007676",
+"name": "Pret's Rhubarb Lemonade",
+"category": "Cold drinks",
+"subcategory": "Water and soft drinks",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 330,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "454",
+"Energy (KCal)": "107",
+"Fat": "0",
+"Saturates": "0",
+"Carbohydrates": "26.7",
+"Sugars": "26.7",
+"Dietary Fibre": "0",
+"Protein": "0",
+"Salt": "0.03"
+}
+},
+{
+"sku": "UK007673",
+"name": "Pret's Sparkling Apple Fizz",
+"category": "Cold drinks",
+"subcategory": "Water and soft drinks",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 330,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "443",
+"Energy (KCal)": "104",
+"Fat": "0",
+"Saturates": "0",
+"Carbohydrates": "26.1",
+"Sugars": "25.1",
+"Dietary Fibre": "0",
+"Protein": "0",
+"Salt": "0.13"
+}
+},
+{
+"sku": "UK007674",
+"name": "Pret's Sparkling Ginger Beer",
+"category": "Cold drinks",
+"subcategory": "Water and soft drinks",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 330,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "505",
+"Energy (KCal)": "119",
+"Fat": "0",
+"Saturates": "0",
+"Carbohydrates": "29.7",
+"Sugars": "29.4",
+"Dietary Fibre": "0",
+"Protein": "0",
+"Salt": "0"
+}
+},
+{
+"sku": "UK007675",
+"name": "Pret's Sparkling Grape & Elderflower",
+"category": "Cold drinks",
+"subcategory": "Water and soft drinks",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 330,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "415",
+"Energy (KCal)": "98",
+"Fat": "0",
+"Saturates": "0",
+"Carbohydrates": "24.4",
+"Sugars": "24.4",
+"Dietary Fibre": "0",
+"Protein": "0",
+"Salt": "0"
+}
+},
+{
+"sku": "UK021555",
+"name": "poppi Cranberry Fizz",
+"category": "Cold drinks",
+"subcategory": "Water and soft drinks",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 330,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "139",
+"Energy (KCal)": "33",
+"Fat": "0",
+"Saturates": "0",
+"Carbohydrates": "6.6",
+"Sugars": "3.3",
+"Dietary Fibre": "3.3",
+"Protein": "0",
+"Salt": "0"
+}
+},
+{
+"sku": "UK020923",
+"name": "poppi Lemon Lime",
+"category": "Cold drinks",
+"subcategory": "Water and soft drinks",
+"allergens": [],
+"vegetarian": false,
+"vegan": false,
+"weight": 330,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "108",
+"Energy (KCal)": "26",
+"Fat": "0",
+"Saturates": "0",
+"Carbohydrates": "4.9",
+"Sugars": "4.6",
+"Dietary Fibre": "3",
+"Protein": "0",
+"Salt": "0"
+}
+},
+{
+"sku": "UK020925",
+"name": "poppi Orange",
+"category": "Cold drinks",
+"subcategory": "Water and soft drinks",
+"allergens": [],
+"vegetarian": false,
+"vegan": false,
+"weight": 330,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "108",
+"Energy (KCal)": "26",
+"Fat": "0",
+"Saturates": "0",
+"Carbohydrates": "4.9",
+"Sugars": "4.3",
+"Dietary Fibre": "3",
+"Protein": "0",
+"Salt": "0"
+}
+},
+{
+"sku": "UK020924",
+"name": "poppi Raspberry Rose",
+"category": "Cold drinks",
+"subcategory": "Water and soft drinks",
+"allergens": [],
+"vegetarian": false,
+"vegan": false,
+"weight": 330,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "113",
+"Energy (KCal)": "27",
+"Fat": "0",
+"Saturates": "0",
+"Carbohydrates": "4.9",
+"Sugars": "3.6",
+"Dietary Fibre": "3.6",
+"Protein": "0",
+"Salt": "0"
+}
+},
+{
+"sku": "UK020909",
+"name": "poppi Strawberry & Lemon",
+"category": "Cold drinks",
+"subcategory": "Water and soft drinks",
+"allergens": [],
+"vegetarian": false,
+"vegan": false,
+"weight": 330,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "114",
+"Energy (KCal)": "27",
+"Fat": "0",
+"Saturates": "0",
+"Carbohydrates": "5.3",
+"Sugars": "4.3",
+"Dietary Fibre": "3",
+"Protein": "0",
+"Salt": "0"
+}
+},
+{
+"sku": "UK020922",
+"name": "poppi Wild Berry",
+"category": "Cold drinks",
+"subcategory": "Water and soft drinks",
+"allergens": [],
+"vegetarian": false,
+"vegan": false,
+"weight": 330,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "102",
+"Energy (KCal)": "24",
+"Fat": "0",
+"Saturates": "0",
+"Carbohydrates": "4.6",
+"Sugars": "4.3",
+"Dietary Fibre": "3",
+"Protein": "0",
+"Salt": "0"
+}
+},
+{
+"sku": "UK001528",
+"name": "Apple",
+"category": "Fruit and fruit pots",
+"subcategory": "Fresh fruit",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 160,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "360",
+"Energy (KCal)": "85",
+"Fat": "0.2",
+"Saturates": "0",
+"Carbohydrates": "18.9",
+"Sugars": "18.9",
+"Dietary Fibre": "2.9",
+"Protein": "0.6",
+"Salt": "0.02"
+}
+},
+{
+"sku": "UK000831",
+"name": "Banana",
+"category": "Fruit and fruit pots",
+"subcategory": "Fresh fruit",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 74,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "323",
+"Energy (KCal)": "76",
+"Fat": "0.2",
+"Saturates": "0.1",
+"Carbohydrates": "17.2",
+"Sugars": "13.4",
+"Dietary Fibre": "1",
+"Protein": "0.9",
+"Salt": "0"
+}
+},
+{
+"sku": "UK020164",
+"name": "Fruit Salad",
+"category": "Fruit and fruit pots",
+"subcategory": "Fruit pots",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 225,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "451",
+"Energy (KCal)": "107",
+"Fat": "0.4",
+"Saturates": "0",
+"Carbohydrates": "22.7",
+"Sugars": "22.7",
+"Dietary Fibre": "3.1",
+"Protein": "1.3",
+"Salt": "0.02"
+}
+},
+{
+"sku": "UK005229",
+"name": "Mango & Lime",
+"category": "Fruit and fruit pots",
+"subcategory": "Fruit pots",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 150,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "303",
+"Energy (KCal)": "72",
+"Fat": "0.9",
+"Saturates": "0.1",
+"Carbohydrates": "14.1",
+"Sugars": "13.8",
+"Dietary Fibre": "1.5",
+"Protein": "1",
+"Salt": "0.01"
+}
+},
+{
+"sku": "UK020165",
+"name": "Super Fruit",
+"category": "Fruit and fruit pots",
+"subcategory": "Fruit pots",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 170,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "370",
+"Energy (KCal)": "88",
+"Fat": "1",
+"Saturates": "0.2",
+"Carbohydrates": "17",
+"Sugars": "16.7",
+"Dietary Fibre": "2.5",
+"Protein": "1.4",
+"Salt": "0.01"
+}
+},
+{
+"sku": "UK006642",
+"name": "Americano",
+"category": "Hot drinks",
+"subcategory": "Coffee",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 334,
+"type": "barista_beverage",
+"bottled": false,
+"variants": true,
+"nutrition": {
+"Energy (KJ)": "7",
+"Energy (KCal)": "2",
+"Fat": "0.2",
+"Saturates": "0",
+"Carbohydrates": "0",
+"Sugars": "0",
+"Dietary Fibre": "0",
+"Protein": "0",
+"Salt": "0.15"
+}
+},
+{
+"sku": "UK006555",
+"name": "Cappuccino",
+"category": "Hot drinks",
+"subcategory": "Coffee",
+"allergens": [
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 295,
+"type": "barista_beverage",
+"bottled": false,
+"variants": true,
+"nutrition": {
+"Energy (KJ)": "488",
+"Energy (KCal)": "116",
+"Fat": "4.1",
+"Saturates": "2.6",
+"Carbohydrates": "11.6",
+"Sugars": "11.5",
+"Dietary Fibre": "0.2",
+"Protein": "8.2",
+"Salt": "0.15"
+}
+},
+{
+"sku": "UK021582",
+"name": "Chocolate Orange Latte",
+"category": "Hot drinks",
+"subcategory": "Coffee",
+"allergens": [
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 399,
+"type": "barista_beverage",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1478",
+"Energy (KCal)": "352",
+"Fat": "14.5",
+"Saturates": "4.6",
+"Carbohydrates": "42.5",
+"Sugars": "41.7",
+"Dietary Fibre": "3.1",
+"Protein": "11.5",
+"Salt": "0.19"
+}
+},
+{
+"sku": "UK006643",
+"name": "Espresso",
+"category": "Hot drinks",
+"subcategory": "Coffee",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 64,
+"type": "barista_beverage",
+"bottled": false,
+"variants": true,
+"nutrition": {
+"Energy (KJ)": "7",
+"Energy (KCal)": "2",
+"Fat": "0.2",
+"Saturates": "0",
+"Carbohydrates": "0",
+"Sugars": "0",
+"Dietary Fibre": "0",
+"Protein": "0",
+"Salt": "0.15"
+}
+},
+{
+"sku": "UK001256",
+"name": "Filter Coffee",
+"category": "Hot drinks",
+"subcategory": "Coffee",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 335.62,
+"type": "barista_beverage",
+"bottled": false,
+"variants": true,
+"nutrition": {
+"Energy (KJ)": "8",
+"Energy (KCal)": "2",
+"Fat": "0.2",
+"Saturates": "0",
+"Carbohydrates": "0",
+"Sugars": "0",
+"Dietary Fibre": "0",
+"Protein": "0",
+"Salt": "0.16"
+}
+},
+{
+"sku": "UK006647",
+"name": "Flat White ",
+"category": "Hot drinks",
+"subcategory": "Coffee",
+"allergens": [
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 264,
+"type": "barista_beverage",
+"bottled": false,
+"variants": true,
+"nutrition": {
+"Energy (KJ)": "411",
+"Energy (KCal)": "98",
+"Fat": "3.4",
+"Saturates": "2",
+"Carbohydrates": "10",
+"Sugars": "10",
+"Dietary Fibre": "0",
+"Protein": "6.8",
+"Salt": "0.15"
+}
+},
+{
+"sku": "UK007284",
+"name": "Gingerbread Latte",
+"category": "Hot drinks",
+"subcategory": "Coffee",
+"allergens": [
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 347,
+"type": "barista_beverage",
+"bottled": false,
+"variants": true,
+"nutrition": {
+"Energy (KJ)": "777",
+"Energy (KCal)": "184",
+"Fat": "4.7",
+"Saturates": "2.9",
+"Carbohydrates": "25.9",
+"Sugars": "25",
+"Dietary Fibre": "0.5",
+"Protein": "9.3",
+"Salt": "0.17"
+}
+},
+{
+"sku": "UK006780",
+"name": "Latte",
+"category": "Hot drinks",
+"subcategory": "Coffee",
+"allergens": [
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 344,
+"type": "barista_beverage",
+"bottled": false,
+"variants": true,
+"nutrition": {
+"Energy (KJ)": "573",
+"Energy (KCal)": "136",
+"Fat": "4.6",
+"Saturates": "2.8",
+"Carbohydrates": "14",
+"Sugars": "14",
+"Dietary Fibre": "0",
+"Protein": "9.5",
+"Salt": "0.15"
+}
+},
+{
+"sku": "UK006712",
+"name": "Macchiato",
+"category": "Hot drinks",
+"subcategory": "Coffee",
+"allergens": [
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 75,
+"type": "barista_beverage",
+"bottled": false,
+"variants": true,
+"nutrition": {
+"Energy (KJ)": "29",
+"Energy (KCal)": "7",
+"Fat": "0.3",
+"Saturates": "0.1",
+"Carbohydrates": "0.6",
+"Sugars": "0.6",
+"Dietary Fibre": "0",
+"Protein": "0.4",
+"Salt": "0.15"
+}
+},
+{
+"sku": "UK006553",
+"name": "Mocha",
+"category": "Hot drinks",
+"subcategory": "Coffee",
+"allergens": [
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 344,
+"type": "barista_beverage",
+"bottled": false,
+"variants": true,
+"nutrition": {
+"Energy (KJ)": "825",
+"Energy (KCal)": "196",
+"Fat": "5.3",
+"Saturates": "3.3",
+"Carbohydrates": "25",
+"Sugars": "24.2",
+"Dietary Fibre": "2.8",
+"Protein": "10.7",
+"Salt": "0.17"
+}
+},
+{
+"sku": "UK003567",
+"name": "Babyccino",
+"category": "Hot drinks",
+"subcategory": "Tea and other hot drinks",
+"allergens": [
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 31,
+"type": "barista_beverage",
+"bottled": false,
+"variants": true,
+"nutrition": {
+"Energy (KJ)": "77",
+"Energy (KCal)": "18",
+"Fat": "0.5",
+"Saturates": "0.4",
+"Carbohydrates": "2.1",
+"Sugars": "2.1",
+"Dietary Fibre": "0.2",
+"Protein": "1.1",
+"Salt": "0"
+}
+},
+{
+"sku": "UK003463",
+"name": "Breakfast Tea",
+"category": "Hot drinks",
+"subcategory": "Tea and other hot drinks",
+"allergens": [
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 323,
+"type": "barista_beverage",
+"bottled": false,
+"variants": true,
+"nutrition": {
+"Energy (KJ)": "61",
+"Energy (KCal)": "15",
+"Fat": "0.5",
+"Saturates": "0.3",
+"Carbohydrates": "1.5",
+"Sugars": "1.6",
+"Dietary Fibre": "0",
+"Protein": "1",
+"Salt": "0"
+}
+},
+{
+"sku": "UK020102",
+"name": "Chai Latte ",
+"category": "Hot drinks",
+"subcategory": "Tea and other hot drinks",
+"allergens": [
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 336,
+"type": "barista_beverage",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "874",
+"Energy (KCal)": "207",
+"Fat": "5.5",
+"Saturates": "3.5",
+"Carbohydrates": "28.1",
+"Sugars": "27.2",
+"Dietary Fibre": "0.5",
+"Protein": "11.2",
+"Salt": "0.01"
+}
+},
+{
+"sku": "UK003464",
+"name": "Earl Grey Tea",
+"category": "Hot drinks",
+"subcategory": "Tea and other hot drinks",
+"allergens": [
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 323,
+"type": "barista_beverage",
+"bottled": false,
+"variants": true,
+"nutrition": {
+"Energy (KJ)": "61",
+"Energy (KCal)": "15",
+"Fat": "0.5",
+"Saturates": "0.3",
+"Carbohydrates": "1.5",
+"Sugars": "1.5",
+"Dietary Fibre": "0",
+"Protein": "1",
+"Salt": "0"
+}
+},
+{
+"sku": "UK004550",
+"name": "Hot Chocolate",
+"category": "Hot drinks",
+"subcategory": "Tea and other hot drinks",
+"allergens": [
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 319,
+"type": "barista_beverage",
+"bottled": false,
+"variants": true,
+"nutrition": {
+"Energy (KJ)": "1039",
+"Energy (KCal)": "247",
+"Fat": "5.4",
+"Saturates": "3.4",
+"Carbohydrates": "35.3",
+"Sugars": "34",
+"Dietary Fibre": "5.3",
+"Protein": "11.5",
+"Salt": "0.04"
+}
+},
+{
+"sku": "UK006758",
+"name": "Matcha Latte",
+"category": "Hot drinks",
+"subcategory": "Tea and other hot drinks",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 332,
+"type": "barista_beverage",
+"bottled": false,
+"variants": true,
+"nutrition": {
+"Energy (KJ)": "361",
+"Energy (KCal)": "86",
+"Fat": "2.1",
+"Saturates": "2",
+"Carbohydrates": "15.3",
+"Sugars": "11.8",
+"Dietary Fibre": "0.6",
+"Protein": "1.2",
+"Salt": "0.28"
+}
+},
+{
+"sku": "UK021557",
+"name": "Orange Hot Chocolate",
+"category": "Hot drinks",
+"subcategory": "Tea and other hot drinks",
+"allergens": [
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 384,
+"type": "barista_beverage",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1486",
+"Energy (KCal)": "354",
+"Fat": "14.4",
+"Saturates": "4.6",
+"Carbohydrates": "43.1",
+"Sugars": "42.3",
+"Dietary Fibre": "3.2",
+"Protein": "11.5",
+"Salt": "0.03"
+}
+},
+{
+"sku": "UK003465",
+"name": "Peppermint Tea",
+"category": "Hot drinks",
+"subcategory": "Tea and other hot drinks",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 322,
+"type": "barista_beverage",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "0",
+"Energy (KCal)": "0",
+"Fat": "0",
+"Saturates": "0",
+"Carbohydrates": "0",
+"Sugars": "0",
+"Dietary Fibre": "0",
+"Protein": "0",
+"Salt": "0"
+}
+},
+{
+"sku": "UK003466",
+"name": "Tropical Green Tea",
+"category": "Hot drinks",
+"subcategory": "Tea and other hot drinks",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 322,
+"type": "barista_beverage",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "0",
+"Energy (KCal)": "0",
+"Fat": "0",
+"Saturates": "0",
+"Carbohydrates": "0",
+"Sugars": "0",
+"Dietary Fibre": "0",
+"Protein": "0",
+"Salt": "0"
+}
+},
+{
+"sku": "UK020603",
+"name": "Crispy Potato Bites",
+"category": "Hot food",
+"subcategory": "Hot food boxes",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 150,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "780",
+"Energy (KCal)": "185",
+"Fat": "4.8",
+"Saturates": "0.3",
+"Carbohydrates": "30",
+"Sugars": "1.5",
+"Dietary Fibre": "3.9",
+"Protein": "3.6",
+"Salt": "1.19"
+}
+},
+{
+"sku": "UK005764",
+"name": "Kale & Cauli Macaroni Cheese",
+"category": "Hot food",
+"subcategory": "Hot food boxes",
+"allergens": [
+"Wheat",
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 360,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2237",
+"Energy (KCal)": "535",
+"Fat": "26.7",
+"Saturates": "16.9",
+"Carbohydrates": "45.5",
+"Sugars": "6.2",
+"Dietary Fibre": "5.1",
+"Protein": "25.5",
+"Salt": "1.72"
+}
+},
+{
+"sku": "UK021541",
+"name": "Butter Chicken Side Soup",
+"category": "Hot food",
+"subcategory": "Soup and breads",
+"allergens": [
+"Milk"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 182.5,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "748",
+"Energy (KCal)": "179",
+"Fat": "9.9",
+"Saturates": "6.1",
+"Carbohydrates": "12.4",
+"Sugars": "6.3",
+"Dietary Fibre": "4",
+"Protein": "8.1",
+"Salt": "0.93"
+}
+},
+{
+"sku": "UK021467",
+"name": "Butter Chicken Soup ",
+"category": "Hot food",
+"subcategory": "Soup and breads",
+"allergens": [
+"Milk"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 365,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1496",
+"Energy (KCal)": "359",
+"Fat": "19.8",
+"Saturates": "12.2",
+"Carbohydrates": "24.9",
+"Sugars": "12.5",
+"Dietary Fibre": "7.9",
+"Protein": "16.2",
+"Salt": "1.86"
+}
+},
+{
+"sku": "UK008242",
+"name": "Chicken Laksa Side Soup",
+"category": "Hot food",
+"subcategory": "Soup and breads",
+"allergens": [
+"Mustard",
+"Soya"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 182.5,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "616",
+"Energy (KCal)": "148",
+"Fat": "9.1",
+"Saturates": "7.6",
+"Carbohydrates": "11.3",
+"Sugars": "3.5",
+"Dietary Fibre": "2",
+"Protein": "4.3",
+"Salt": "1.1"
+}
+},
+{
+"sku": "UK008241",
+"name": "Chicken Laksa Soup",
+"category": "Hot food",
+"subcategory": "Soup and breads",
+"allergens": [
+"Mustard",
+"Soya"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 365,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1232",
+"Energy (KCal)": "296",
+"Fat": "18.1",
+"Saturates": "15.2",
+"Carbohydrates": "22.5",
+"Sugars": "6.9",
+"Dietary Fibre": "3.9",
+"Protein": "8.7",
+"Salt": "2.2"
+}
+},
+{
+"sku": "UK021551",
+"name": "Christmas Ham Hock Side Soup",
+"category": "Hot food",
+"subcategory": "Soup and breads",
+"allergens": [],
+"vegetarian": false,
+"vegan": false,
+"weight": 182.5,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "506",
+"Energy (KCal)": "121",
+"Fat": "3.6",
+"Saturates": "0.4",
+"Carbohydrates": "11.7",
+"Sugars": "1.8",
+"Dietary Fibre": "4.6",
+"Protein": "7.9",
+"Salt": "0.99"
+}
+},
+{
+"sku": "UK021550",
+"name": "Christmas Ham Hock Soup",
+"category": "Hot food",
+"subcategory": "Soup and breads",
+"allergens": [],
+"vegetarian": false,
+"vegan": false,
+"weight": 365,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1011",
+"Energy (KCal)": "241",
+"Fat": "7.3",
+"Saturates": "0.9",
+"Carbohydrates": "23.4",
+"Sugars": "3.6",
+"Dietary Fibre": "9.2",
+"Protein": "15.9",
+"Salt": "1.99"
+}
+},
+{
+"sku": "UK021540",
+"name": "Creamy Roast Chicken Side Soup",
+"category": "Hot food",
+"subcategory": "Soup and breads",
+"allergens": [
+"Milk"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 182.5,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "478",
+"Energy (KCal)": "114",
+"Fat": "6.2",
+"Saturates": "3.5",
+"Carbohydrates": "8.9",
+"Sugars": "1.9",
+"Dietary Fibre": "1.1",
+"Protein": "5.1",
+"Salt": "1.06"
+}
+},
+{
+"sku": "UK021465",
+"name": "Creamy Roast Chicken Soup",
+"category": "Hot food",
+"subcategory": "Soup and breads",
+"allergens": [
+"Milk"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 365,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "955",
+"Energy (KCal)": "229",
+"Fat": "12.5",
+"Saturates": "7",
+"Carbohydrates": "17.8",
+"Sugars": "3.8",
+"Dietary Fibre": "2.1",
+"Protein": "10.2",
+"Salt": "2.12"
+}
+},
+{
+"sku": "UK020249",
+"name": "Pret's Lasagne Soup",
+"category": "Hot food",
+"subcategory": "Soup and breads",
+"allergens": [
+"Wheat"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 360,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1260",
+"Energy (KCal)": "302",
+"Fat": "15.8",
+"Saturates": "4.3",
+"Carbohydrates": "24.1",
+"Sugars": "9.7",
+"Dietary Fibre": "4",
+"Protein": "13.7",
+"Salt": "2.43"
+}
+},
+{
+"sku": "UK007758",
+"name": "Pret's Mushroom Risotto",
+"category": "Hot food",
+"subcategory": "Soup and breads",
+"allergens": [
+"Soya"
+],
+"vegetarian": true,
+"vegan": true,
+"weight": 365,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "934",
+"Energy (KCal)": "222",
+"Fat": "7.8",
+"Saturates": "4.6",
+"Carbohydrates": "29.5",
+"Sugars": "2.7",
+"Dietary Fibre": "3",
+"Protein": "7.1",
+"Salt": "2.16"
+}
+},
+{
+"sku": "UK007757",
+"name": "Pret's Mushroom Risotto Side Soup",
+"category": "Hot food",
+"subcategory": "Soup and breads",
+"allergens": [
+"Soya"
+],
+"vegetarian": true,
+"vegan": true,
+"weight": 182.5,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "467",
+"Energy (KCal)": "111",
+"Fat": "3.9",
+"Saturates": "2.3",
+"Carbohydrates": "14.7",
+"Sugars": "1.4",
+"Dietary Fibre": "1.5",
+"Protein": "3.6",
+"Salt": "1.08"
+}
+},
+{
+"sku": "UK020267",
+"name": "Soup White Baguette with Butter",
+"category": "Hot food",
+"subcategory": "Soup and breads",
+"allergens": [
+"Wheat",
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 74,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1015",
+"Energy (KCal)": "241",
+"Fat": "7.3",
+"Saturates": "4.7",
+"Carbohydrates": "36.6",
+"Sugars": "1.5",
+"Dietary Fibre": "1.6",
+"Protein": "6.5",
+"Salt": "1.01"
+}
+},
+{
+"sku": "UK006220",
+"name": "Souper Tomato",
+"category": "Hot food",
+"subcategory": "Soup and breads",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 365,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "590",
+"Energy (KCal)": "141",
+"Fat": "5.2",
+"Saturates": "0.4",
+"Carbohydrates": "15.1",
+"Sugars": "14.7",
+"Dietary Fibre": "5",
+"Protein": "6",
+"Salt": "1.62"
+}
+},
+{
+"sku": "UK006550",
+"name": "Souper Tomato Side Soup",
+"category": "Hot food",
+"subcategory": "Soup and breads",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 182.5,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "295",
+"Energy (KCal)": "71",
+"Fat": "2.6",
+"Saturates": "0.2",
+"Carbohydrates": "7.5",
+"Sugars": "7.4",
+"Dietary Fibre": "2.5",
+"Protein": "3",
+"Salt": "0.81"
+}
+},
+{
+"sku": "UK021546",
+"name": "Beef Birria & Jalapeño Hot Ciabatta",
+"category": "Hot food",
+"subcategory": "Toasted sandwiches, wraps and baguettes",
+"allergens": [
+"Wheat",
+"Milk",
+"Soya"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 264.02,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2088",
+"Energy (KCal)": "496",
+"Fat": "15.4",
+"Saturates": "6.8",
+"Carbohydrates": "59.1",
+"Sugars": "5.8",
+"Dietary Fibre": "5",
+"Protein": "27.9",
+"Salt": "2.48"
+}
+},
+{
+"sku": "UK020056",
+"name": "Boxing Day Toastie",
+"category": "Hot food",
+"subcategory": "Toasted sandwiches, wraps and baguettes",
+"allergens": [
+"Barley",
+"Oats",
+"Rye",
+"Wheat",
+"Egg",
+"Milk",
+"Sulphites"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 242.3,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2751",
+"Energy (KCal)": "656",
+"Fat": "28.8",
+"Saturates": "11",
+"Carbohydrates": "61.3",
+"Sugars": "8.4",
+"Dietary Fibre": "6.1",
+"Protein": "35",
+"Salt": "3.74"
+}
+},
+{
+"sku": "UK021538",
+"name": "Chicken Caesar Bacon Hot Ciabatta",
+"category": "Hot food",
+"subcategory": "Toasted sandwiches, wraps and baguettes",
+"allergens": [
+"Wheat",
+"Egg",
+"Fish",
+"Milk",
+"Soya"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 268,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "3304",
+"Energy (KCal)": "791",
+"Fat": "45.2",
+"Saturates": "10.2",
+"Carbohydrates": "54.4",
+"Sugars": "3",
+"Dietary Fibre": "3.5",
+"Protein": "39.9",
+"Salt": "3.71"
+}
+},
+{
+"sku": "UK021618",
+"name": "Christmas Hot Baguette",
+"category": "Hot food",
+"subcategory": "Toasted sandwiches, wraps and baguettes",
+"allergens": [
+"Sesame",
+"Wheat",
+"Egg",
+"Milk",
+"Sulphites"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 257.9,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2654",
+"Energy (KCal)": "632",
+"Fat": "23.3",
+"Saturates": "6.6",
+"Carbohydrates": "65.8",
+"Sugars": "11.4",
+"Dietary Fibre": "5.6",
+"Protein": "37",
+"Salt": "2.88"
+}
+},
+{
+"sku": "UK020168",
+"name": "Classic Cheese Bloomer Toastie",
+"category": "Hot food",
+"subcategory": "Toasted sandwiches, wraps and baguettes",
+"allergens": [
+"Barley",
+"Oats",
+"Rye",
+"Wheat",
+"Egg",
+"Milk",
+"Mustard"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 198.5,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2702",
+"Energy (KCal)": "647",
+"Fat": "34.8",
+"Saturates": "14.3",
+"Carbohydrates": "54",
+"Sugars": "2.9",
+"Dietary Fibre": "4.9",
+"Protein": "26.9",
+"Salt": "2.17"
+}
+},
+{
+"sku": "UK006060",
+"name": "Falafel & Halloumi Hot Wrap",
+"category": "Hot food",
+"subcategory": "Toasted sandwiches, wraps and baguettes",
+"allergens": [
+"Rye",
+"Wheat",
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 265.08,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2609",
+"Energy (KCal)": "623",
+"Fat": "29.5",
+"Saturates": "10.9",
+"Carbohydrates": "63.1",
+"Sugars": "15",
+"Dietary Fibre": "8.2",
+"Protein": "22.3",
+"Salt": "3.59"
+}
+},
+{
+"sku": "UK020169",
+"name": "Ham & Cheese Bloomer Toastie",
+"category": "Hot food",
+"subcategory": "Toasted sandwiches, wraps and baguettes",
+"allergens": [
+"Barley",
+"Oats",
+"Rye",
+"Wheat",
+"Egg",
+"Milk",
+"Mustard"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 212,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2515",
+"Energy (KCal)": "601",
+"Fat": "27.7",
+"Saturates": "10.8",
+"Carbohydrates": "53.4",
+"Sugars": "2.6",
+"Dietary Fibre": "5.2",
+"Protein": "31.9",
+"Salt": "3.79"
+}
+},
+{
+"sku": "UK006491",
+"name": "Swedish Meatball Hot Wrap",
+"category": "Hot food",
+"subcategory": "Toasted sandwiches, wraps and baguettes",
+"allergens": [
+"Rye",
+"Wheat",
+"Milk"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 238.62,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2554",
+"Energy (KCal)": "611",
+"Fat": "30.7",
+"Saturates": "12.2",
+"Carbohydrates": "52.4",
+"Sugars": "8.7",
+"Dietary Fibre": "5.7",
+"Protein": "28.3",
+"Salt": "2.99"
+}
+},
+{
+"sku": "UK021470",
+"name": "Three Cheese & Tomato Hot Ciabatta",
+"category": "Hot food",
+"subcategory": "Toasted sandwiches, wraps and baguettes",
+"allergens": [
+"Wheat",
+"Milk",
+"Soya"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 223.52,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2387",
+"Energy (KCal)": "570",
+"Fat": "25",
+"Saturates": "10.9",
+"Carbohydrates": "59.2",
+"Sugars": "8",
+"Dietary Fibre": "5.1",
+"Protein": "24.5",
+"Salt": "2.83"
+}
+},
+{
+"sku": "UK020170",
+"name": "Tuna Melt Bloomer Toastie",
+"category": "Hot food",
+"subcategory": "Toasted sandwiches, wraps and baguettes",
+"allergens": [
+"Barley",
+"Oats",
+"Rye",
+"Wheat",
+"Egg",
+"Fish",
+"Milk"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 218.12,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2349",
+"Energy (KCal)": "560",
+"Fat": "22.7",
+"Saturates": "7.3",
+"Carbohydrates": "52.8",
+"Sugars": "2.5",
+"Dietary Fibre": "5.2",
+"Protein": "33.5",
+"Salt": "2.53"
+}
+},
+{
+"sku": "UK021472",
+"name": "Bacon, Cheese & Jalapeño Pastry",
+"category": "Hot food",
+"subcategory": "Hot pastries",
+"allergens": [
+"Wheat",
+"Egg",
+"Milk"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 175,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2466",
+"Energy (KCal)": "591",
+"Fat": "36.4",
+"Saturates": "21.9",
+"Carbohydrates": "48.6",
+"Sugars": "5.8",
+"Dietary Fibre": "2.3",
+"Protein": "16.1",
+"Salt": "2.23"
+}
+},
+{
+"sku": "UK008246",
+"name": "Pret's Sausage Roll",
+"category": "Hot food",
+"subcategory": "Hot pastries",
+"allergens": [
+"Wheat",
+"Egg",
+"Milk"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 110,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1600",
+"Energy (KCal)": "384",
+"Fat": "26",
+"Saturates": "13.4",
+"Carbohydrates": "22.4",
+"Sugars": "2.7",
+"Dietary Fibre": "3",
+"Protein": "13.7",
+"Salt": "1.24"
+}
+},
+{
+"sku": "UK021471",
+"name": "Spinach & Feta Pastry ",
+"category": "Hot food",
+"subcategory": "Hot pastries",
+"allergens": [
+"Wheat",
+"Egg",
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 175,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2296",
+"Energy (KCal)": "551",
+"Fat": "34.5",
+"Saturates": "20.8",
+"Carbohydrates": "45",
+"Sugars": "4.7",
+"Dietary Fibre": "5.2",
+"Protein": "12.6",
+"Salt": "1.92"
+}
+},
+{
+"sku": "UK020107",
+"name": "Chicken Salad",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Sandwiches",
+"allergens": [
+"Barley",
+"Wheat",
+"Egg",
+"Milk"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 207.72,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2157",
+"Energy (KCal)": "517",
+"Fat": "30.6",
+"Saturates": "8.3",
+"Carbohydrates": "35.1",
+"Sugars": "2.9",
+"Dietary Fibre": "5",
+"Protein": "22.9",
+"Salt": "2.16"
+}
+},
+{
+"sku": "UK000809",
+"name": "Chicken, Avocado & Basil",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Sandwiches",
+"allergens": [
+"Barley",
+"Wheat",
+"Egg",
+"Milk"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 233.62,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1988",
+"Energy (KCal)": "476",
+"Fat": "24.5",
+"Saturates": "5.1",
+"Carbohydrates": "35.9",
+"Sugars": "3.2",
+"Dietary Fibre": "7.3",
+"Protein": "24.3",
+"Salt": "2.01"
+}
+},
+{
+"sku": "UK020354",
+"name": "Chicken, Avocado & Basil Half Sandwich.",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Sandwiches",
+"allergens": [
+"Barley",
+"Wheat",
+"Egg",
+"Milk"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 116.81,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "994",
+"Energy (KCal)": "238",
+"Fat": "12.2",
+"Saturates": "2.6",
+"Carbohydrates": "17.9",
+"Sugars": "1.6",
+"Dietary Fibre": "3.6",
+"Protein": "12.1",
+"Salt": "1"
+}
+},
+{
+"sku": "UK006827",
+"name": "Classic Super Club",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Sandwiches",
+"allergens": [
+"Barley",
+"Wheat",
+"Egg"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 227.1,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2154",
+"Energy (KCal)": "516",
+"Fat": "27.8",
+"Saturates": "4.7",
+"Carbohydrates": "35.9",
+"Sugars": "3.7",
+"Dietary Fibre": "5.4",
+"Protein": "27.9",
+"Salt": "2.69"
+}
+},
+{
+"sku": "UK020365",
+"name": "Classic Super Club Half Sandwich",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Sandwiches",
+"allergens": [
+"Barley",
+"Wheat",
+"Egg"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 113.55,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1077",
+"Energy (KCal)": "258",
+"Fat": "13.9",
+"Saturates": "2.4",
+"Carbohydrates": "17.9",
+"Sugars": "1.8",
+"Dietary Fibre": "2.7",
+"Protein": "13.9",
+"Salt": "1.35"
+}
+},
+{
+"sku": "UK021286",
+"name": "Coronation Chicken",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Sandwiches",
+"allergens": [
+"Barley",
+"Wheat",
+"Egg",
+"Milk"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 208.6,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1983",
+"Energy (KCal)": "474",
+"Fat": "23.2",
+"Saturates": "6",
+"Carbohydrates": "40.1",
+"Sugars": "5.1",
+"Dietary Fibre": "5.8",
+"Protein": "23.4",
+"Salt": "2.41"
+}
+},
+{
+"sku": "UK020781",
+"name": "Egg Florentine",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Sandwiches",
+"allergens": [
+"Barley",
+"Wheat",
+"Egg",
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 236.48,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1872",
+"Energy (KCal)": "447",
+"Fat": "20.5",
+"Saturates": "6.3",
+"Carbohydrates": "37.9",
+"Sugars": "3.4",
+"Dietary Fibre": "6",
+"Protein": "24.8",
+"Salt": "1.77"
+}
+},
+{
+"sku": "UK000698",
+"name": "Free-Range Egg Mayo",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Sandwiches",
+"allergens": [
+"Barley",
+"Wheat",
+"Egg"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 169,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1537",
+"Energy (KCal)": "367",
+"Fat": "15.6",
+"Saturates": "3.2",
+"Carbohydrates": "35.7",
+"Sugars": "1.9",
+"Dietary Fibre": "5.1",
+"Protein": "18.4",
+"Salt": "1.46"
+}
+},
+{
+"sku": "UK006440",
+"name": "Ham & Cheese",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Sandwiches",
+"allergens": [
+"Barley",
+"Wheat",
+"Milk"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 188.62,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2169",
+"Energy (KCal)": "519",
+"Fat": "27.1",
+"Saturates": "16.2",
+"Carbohydrates": "35.1",
+"Sugars": "2.3",
+"Dietary Fibre": "5.2",
+"Protein": "31.1",
+"Salt": "3.55"
+}
+},
+{
+"sku": "UK001531",
+"name": "Mature Cheddar & Pret Pickle",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Sandwiches",
+"allergens": [
+"Barley",
+"Wheat",
+"Egg",
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 218.1,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2074",
+"Energy (KCal)": "496",
+"Fat": "24.2",
+"Saturates": "9.8",
+"Carbohydrates": "47.1",
+"Sugars": "12.7",
+"Dietary Fibre": "6",
+"Protein": "19.3",
+"Salt": "2.09"
+}
+},
+{
+"sku": "UK021619",
+"name": "Pret's Christmas Half Sandwich",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Sandwiches",
+"allergens": [
+"Barley",
+"Wheat",
+"Egg",
+"Sulphites"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 115.685,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1152",
+"Energy (KCal)": "275",
+"Fat": "10.8",
+"Saturates": "2.6",
+"Carbohydrates": "26.1",
+"Sugars": "7",
+"Dietary Fibre": "3.5",
+"Protein": "16.5",
+"Salt": "1.23"
+}
+},
+{
+"sku": "UK001783",
+"name": "Pret's Christmas Sandwich",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Sandwiches",
+"allergens": [
+"Barley",
+"Wheat",
+"Egg",
+"Sulphites"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 231.37,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2305",
+"Energy (KCal)": "549",
+"Fat": "21.7",
+"Saturates": "5.3",
+"Carbohydrates": "52.2",
+"Sugars": "14",
+"Dietary Fibre": "6.9",
+"Protein": "33",
+"Salt": "2.46"
+}
+},
+{
+"sku": "UK000716",
+"name": "Scottish Smoked Salmon",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Sandwiches",
+"allergens": [
+"Barley",
+"Wheat",
+"Fish",
+"Milk"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 151.72,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1690",
+"Energy (KCal)": "404",
+"Fat": "18.7",
+"Saturates": "5.7",
+"Carbohydrates": "33.2",
+"Sugars": "2.1",
+"Dietary Fibre": "4.6",
+"Protein": "23.3",
+"Salt": "3.12"
+}
+},
+{
+"sku": "UK006783",
+"name": "Tuna & Cucumber",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Sandwiches",
+"allergens": [
+"Barley",
+"Wheat",
+"Egg",
+"Fish"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 174.1,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1538",
+"Energy (KCal)": "367",
+"Fat": "15.1",
+"Saturates": "2",
+"Carbohydrates": "35.7",
+"Sugars": "3.2",
+"Dietary Fibre": "4.7",
+"Protein": "19.6",
+"Salt": "1.36"
+}
+},
+{
+"sku": "UK007829",
+"name": " Pret's Christmas Baguette",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Baguettes",
+"allergens": [
+"Wheat",
+"Egg",
+"Sulphites"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 257.37,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2955",
+"Energy (KCal)": "704",
+"Fat": "29.5",
+"Saturates": "5.5",
+"Carbohydrates": "75",
+"Sugars": "14.6",
+"Dietary Fibre": "4.6",
+"Protein": "32.4",
+"Salt": "3.33"
+}
+},
+{
+"sku": "UK006207",
+"name": "Avo, Olive & Toms Baguette",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Baguettes",
+"allergens": [
+"Sesame",
+"Wheat",
+"Pine Nuts"
+],
+"vegetarian": true,
+"vegan": true,
+"weight": 236.75,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2355",
+"Energy (KCal)": "564",
+"Fat": "29.6",
+"Saturates": "4.9",
+"Carbohydrates": "57.1",
+"Sugars": "5.9",
+"Dietary Fibre": "8.5",
+"Protein": "13",
+"Salt": "1.64"
+}
+},
+{
+"sku": "UK020333",
+"name": "Avo, Olive & Toms Half Baguette",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Baguettes",
+"allergens": [
+"Sesame",
+"Wheat",
+"Pine Nuts"
+],
+"vegetarian": true,
+"vegan": true,
+"weight": 118.38,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1178",
+"Energy (KCal)": "282",
+"Fat": "14.8",
+"Saturates": "2.4",
+"Carbohydrates": "28.6",
+"Sugars": "2.9",
+"Dietary Fibre": "4.2",
+"Protein": "6.5",
+"Salt": "0.82"
+}
+},
+{
+"sku": "UK005409",
+"name": "Brie, Pistachio & Cranberry Baguette",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Baguettes",
+"allergens": [
+"Pistachio Nuts",
+"Sesame",
+"Wheat",
+"Egg",
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 202.82,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2474",
+"Energy (KCal)": "591",
+"Fat": "29",
+"Saturates": "11.4",
+"Carbohydrates": "60",
+"Sugars": "8.3",
+"Dietary Fibre": "5.8",
+"Protein": "19.7",
+"Salt": "2.13"
+}
+},
+{
+"sku": "UK020341",
+"name": "Brie, Pistachio & Cranberry Half Baguette",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Baguettes",
+"allergens": [
+"Pistachio Nuts",
+"Sesame",
+"Wheat",
+"Egg",
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 101.41,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1237",
+"Energy (KCal)": "296",
+"Fat": "14.5",
+"Saturates": "5.7",
+"Carbohydrates": "30",
+"Sugars": "4.2",
+"Dietary Fibre": "2.9",
+"Protein": "9.9",
+"Salt": "1.06"
+}
+},
+{
+"sku": "UK001040",
+"name": "Brie, Tomato & Basil Baguette",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Baguettes",
+"allergens": [
+"Wheat",
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 188.48,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1844",
+"Energy (KCal)": "439",
+"Fat": "15.2",
+"Saturates": "10.1",
+"Carbohydrates": "56.2",
+"Sugars": "3.6",
+"Dietary Fibre": "3.3",
+"Protein": "17.6",
+"Salt": "2.14"
+}
+},
+{
+"sku": "UK020342",
+"name": "Chicken Caesar & Bacon Half Baguette",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Baguettes",
+"allergens": [
+"Sesame",
+"Wheat",
+"Egg",
+"Fish",
+"Milk"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 109,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1247",
+"Energy (KCal)": "298",
+"Fat": "13.8",
+"Saturates": "2.5",
+"Carbohydrates": "27.2",
+"Sugars": "1.6",
+"Dietary Fibre": "2.2",
+"Protein": "15.1",
+"Salt": "1.31"
+}
+},
+{
+"sku": "UK006823",
+"name": "Chicken Caesar Bacon Baguette",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Baguettes",
+"allergens": [
+"Sesame",
+"Wheat",
+"Egg",
+"Fish",
+"Milk"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 218,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2494",
+"Energy (KCal)": "596",
+"Fat": "27.6",
+"Saturates": "4.9",
+"Carbohydrates": "54.3",
+"Sugars": "3.2",
+"Dietary Fibre": "4.4",
+"Protein": "30.3",
+"Salt": "2.62"
+}
+},
+{
+"sku": "UK020023",
+"name": "Chicken Salad Baguette",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Baguettes",
+"allergens": [
+"Wheat",
+"Egg",
+"Milk"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 224.5,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2491",
+"Energy (KCal)": "595",
+"Fat": "29.5",
+"Saturates": "7.9",
+"Carbohydrates": "57",
+"Sugars": "3.2",
+"Dietary Fibre": "2.8",
+"Protein": "24",
+"Salt": "2.98"
+}
+},
+{
+"sku": "UK021423",
+"name": "Coronation Chicken Baguette",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Baguettes",
+"allergens": [
+"Sesame",
+"Wheat",
+"Egg",
+"Milk"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 227.38,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2272",
+"Energy (KCal)": "542",
+"Fat": "21.7",
+"Saturates": "3.1",
+"Carbohydrates": "59.1",
+"Sugars": "5.3",
+"Dietary Fibre": "5",
+"Protein": "25",
+"Salt": "2.74"
+}
+},
+{
+"sku": "UK021446",
+"name": "Coronation Chicken Half Baguette",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Baguettes",
+"allergens": [
+"Sesame",
+"Wheat",
+"Egg",
+"Milk"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 113.69,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1136",
+"Energy (KCal)": "271",
+"Fat": "10.8",
+"Saturates": "1.5",
+"Carbohydrates": "29.6",
+"Sugars": "2.7",
+"Dietary Fibre": "2.5",
+"Protein": "12.5",
+"Salt": "1.37"
+}
+},
+{
+"sku": "UK003546",
+"name": "Italian Prosciutto Baguette",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Baguettes",
+"allergens": [
+"Sesame",
+"Wheat",
+"Egg",
+"Milk"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 220,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2287",
+"Energy (KCal)": "546",
+"Fat": "24.7",
+"Saturates": "5.9",
+"Carbohydrates": "54.3",
+"Sugars": "3.8",
+"Dietary Fibre": "4.8",
+"Protein": "24.1",
+"Salt": "3.59"
+}
+},
+{
+"sku": "UK020335",
+"name": "Italian Prosciutto Half Baguette",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Baguettes",
+"allergens": [
+"Sesame",
+"Wheat",
+"Egg",
+"Milk"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 110.24,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1146",
+"Energy (KCal)": "274",
+"Fat": "12.4",
+"Saturates": "3",
+"Carbohydrates": "27.2",
+"Sugars": "1.9",
+"Dietary Fibre": "2.4",
+"Protein": "12.1",
+"Salt": "1.8"
+}
+},
+{
+"sku": "UK000962",
+"name": "Pole & Line Caught Tuna Baguette",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Baguettes",
+"allergens": [
+"Wheat",
+"Egg",
+"Fish"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 230.32,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2161",
+"Energy (KCal)": "515",
+"Fat": "19.3",
+"Saturates": "2.2",
+"Carbohydrates": "58.8",
+"Sugars": "4.1",
+"Dietary Fibre": "2.6",
+"Protein": "25.2",
+"Salt": "2.46"
+}
+},
+{
+"sku": "UK003816",
+"name": "Pole & Line Caught Tuna Half Baguette",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Baguettes",
+"allergens": [
+"Wheat",
+"Egg",
+"Fish"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 115.16,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1081",
+"Energy (KCal)": "257",
+"Fat": "9.6",
+"Saturates": "1.1",
+"Carbohydrates": "29.4",
+"Sugars": "2",
+"Dietary Fibre": "1.3",
+"Protein": "12.6",
+"Salt": "1.23"
+}
+},
+{
+"sku": "UK001921",
+"name": "Posh Cheddar & Pickle Baguette",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Baguettes",
+"allergens": [
+"Sesame",
+"Wheat",
+"Egg",
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 231.62,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2695",
+"Energy (KCal)": "643",
+"Fat": "28.5",
+"Saturates": "9.8",
+"Carbohydrates": "71.9",
+"Sugars": "18.6",
+"Dietary Fibre": "6.6",
+"Protein": "21.4",
+"Salt": "2.82"
+}
+},
+{
+"sku": "UK003824",
+"name": "Posh Cheddar & Pickle Half Baguette ",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Baguettes",
+"allergens": [
+"Sesame",
+"Wheat",
+"Egg",
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 116.7,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1348",
+"Energy (KCal)": "322",
+"Fat": "14.3",
+"Saturates": "4.9",
+"Carbohydrates": "36",
+"Sugars": "9.3",
+"Dietary Fibre": "3.3",
+"Protein": "10.7",
+"Salt": "1.41"
+}
+},
+{
+"sku": "UK021549",
+"name": "Pret's Christmas Half Baguette",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Baguettes",
+"allergens": [
+"Wheat",
+"Egg",
+"Sulphites"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 128.685,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1477",
+"Energy (KCal)": "352",
+"Fat": "14.8",
+"Saturates": "2.8",
+"Carbohydrates": "37.5",
+"Sugars": "7.3",
+"Dietary Fibre": "2.3",
+"Protein": "16.2",
+"Salt": "1.67"
+}
+},
+{
+"sku": "UK020379",
+"name": "Smoked Salmon, Egg Mayo & Avo Baguette",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Baguettes",
+"allergens": [
+"Sesame",
+"Wheat",
+"Egg",
+"Fish"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 239.62,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2314",
+"Energy (KCal)": "552",
+"Fat": "24.9",
+"Saturates": "4.9",
+"Carbohydrates": "54.6",
+"Sugars": "2.4",
+"Dietary Fibre": "5.7",
+"Protein": "24.6",
+"Salt": "2.86"
+}
+},
+{
+"sku": "UK020214",
+"name": "Smoked Salmon, Soft Cheese & Dill Baguette",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Baguettes",
+"allergens": [
+"Sesame",
+"Wheat",
+"Fish",
+"Milk"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 207.72,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2104",
+"Energy (KCal)": "501",
+"Fat": "19",
+"Saturates": "4.9",
+"Carbohydrates": "53.4",
+"Sugars": "3.4",
+"Dietary Fibre": "4.2",
+"Protein": "27",
+"Salt": "3.61"
+}
+},
+{
+"sku": "UK020798",
+"name": "The Pret Lobster Roll",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Baguettes",
+"allergens": [
+"Wheat",
+"Crustacean",
+"Egg",
+"Milk"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 174.66,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1429",
+"Energy (KCal)": "340",
+"Fat": "11.5",
+"Saturates": "1.4",
+"Carbohydrates": "39.6",
+"Sugars": "3",
+"Dietary Fibre": "2.2",
+"Protein": "18.4",
+"Salt": "2.1"
+}
+},
+{
+"sku": "UK000682",
+"name": "Wiltshire Cured Ham & Grevé Baguette",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Baguettes",
+"allergens": [
+"Wheat",
+"Egg",
+"Milk",
+"Mustard"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 222.5,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2498",
+"Energy (KCal)": "596",
+"Fat": "25.9",
+"Saturates": "8.3",
+"Carbohydrates": "57.4",
+"Sugars": "3.2",
+"Dietary Fibre": "3.4",
+"Protein": "31.5",
+"Salt": "3.85"
+}
+},
+{
+"sku": "UK001501",
+"name": "Avo & Herb Wrap",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Wraps and flatbreads",
+"allergens": [
+"Rye",
+"Wheat",
+"Egg",
+"Milk",
+"Pine Nuts"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 247.36,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2091",
+"Energy (KCal)": "502",
+"Fat": "31.1",
+"Saturates": "6.2",
+"Carbohydrates": "40",
+"Sugars": "4.3",
+"Dietary Fibre": "6",
+"Protein": "12.5",
+"Salt": "1.29"
+}
+},
+{
+"sku": "UK020002",
+"name": "Chicken Pesto & Rocket Wrap",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Wraps and flatbreads",
+"allergens": [
+"Rye",
+"Wheat",
+"Egg",
+"Milk",
+"Pine Nuts"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 213.11,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2154",
+"Energy (KCal)": "516",
+"Fat": "29.7",
+"Saturates": "3.4",
+"Carbohydrates": "38.4",
+"Sugars": "3.4",
+"Dietary Fibre": "3.2",
+"Protein": "22.1",
+"Salt": "2"
+}
+},
+{
+"sku": "UK020422",
+"name": "Falafel, Avo & Chipotle Flatbread",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Wraps and flatbreads",
+"allergens": [
+"Wheat",
+"Sulphites"
+],
+"vegetarian": true,
+"vegan": true,
+"weight": 265.53,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2094",
+"Energy (KCal)": "499",
+"Fat": "19.2",
+"Saturates": "4.1",
+"Carbohydrates": "65.5",
+"Sugars": "16.2",
+"Dietary Fibre": "8.3",
+"Protein": "11.9",
+"Salt": "0.79"
+}
+},
+{
+"sku": "UK020919",
+"name": "Falafel, Avo & Chipotle Half Flatbread",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Wraps and flatbreads",
+"allergens": [
+"Wheat",
+"Sulphites"
+],
+"vegetarian": true,
+"vegan": true,
+"weight": 132.76,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1047",
+"Energy (KCal)": "250",
+"Fat": "9.6",
+"Saturates": "2",
+"Carbohydrates": "32.8",
+"Sugars": "8.1",
+"Dietary Fibre": "4.1",
+"Protein": "5.9",
+"Salt": "0.39"
+}
+},
+{
+"sku": "UK007579",
+"name": "Hoisin Duck Wrap",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Wraps and flatbreads",
+"allergens": [
+"Rye",
+"Wheat",
+"Egg",
+"Soya"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 222.7,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1856",
+"Energy (KCal)": "442",
+"Fat": "17.5",
+"Saturates": "2.7",
+"Carbohydrates": "48.2",
+"Sugars": "12.5",
+"Dietary Fibre": "3.8",
+"Protein": "21",
+"Salt": "2.61"
+}
+},
+{
+"sku": "UK007506",
+"name": "Humous & Chipotle Wrap",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Wraps and flatbreads",
+"allergens": [
+"Sesame",
+"Rye",
+"Wheat"
+],
+"vegetarian": true,
+"vegan": true,
+"weight": 246.03,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1736",
+"Energy (KCal)": "414",
+"Fat": "16",
+"Saturates": "2",
+"Carbohydrates": "49.2",
+"Sugars": "11.5",
+"Dietary Fibre": "11.3",
+"Protein": "12.7",
+"Salt": "1.61"
+}
+},
+{
+"sku": "UK020421",
+"name": "Mediterranean Style Tuna Flatbread",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Wraps and flatbreads",
+"allergens": [
+"Wheat",
+"Egg",
+"Fish"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 264.51,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2105",
+"Energy (KCal)": "502",
+"Fat": "22.2",
+"Saturates": "2.5",
+"Carbohydrates": "49.7",
+"Sugars": "8.7",
+"Dietary Fibre": "3.2",
+"Protein": "24.3",
+"Salt": "1.52"
+}
+},
+{
+"sku": "UK021502",
+"name": "Mediterranean Style Tuna Half Flatbread",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Wraps and flatbreads",
+"allergens": [
+"Wheat",
+"Egg",
+"Fish"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 132.25,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1052",
+"Energy (KCal)": "251",
+"Fat": "11.1",
+"Saturates": "1.3",
+"Carbohydrates": "24.9",
+"Sugars": "4.3",
+"Dietary Fibre": "1.6",
+"Protein": "12.1",
+"Salt": "0.76"
+}
+},
+{
+"sku": "UK020424",
+"name": "Shawarma Spiced Chicken Flatbread",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Wraps and flatbreads",
+"allergens": [
+"Sesame",
+"Wheat"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 254.88,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1906",
+"Energy (KCal)": "453",
+"Fat": "10.7",
+"Saturates": "1.6",
+"Carbohydrates": "56.7",
+"Sugars": "15",
+"Dietary Fibre": "7.8",
+"Protein": "28.5",
+"Salt": "2.14"
+}
+},
+{
+"sku": "UK020918",
+"name": "Shawarma Spiced Chicken Half Flatbread",
+"category": "Sandwiches, baguettes, wraps and flatbreads",
+"subcategory": "Wraps and flatbreads",
+"allergens": [
+"Sesame",
+"Wheat"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 127.44,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "953",
+"Energy (KCal)": "226",
+"Fat": "5.3",
+"Saturates": "0.8",
+"Carbohydrates": "28.4",
+"Sugars": "7.5",
+"Dietary Fibre": "3.9",
+"Protein": "14.2",
+"Salt": "1.07"
+}
+},
+{
+"sku": "UK020779",
+"name": "Chipotle Chicken",
+"category": "Super Plates, salads and protein pots",
+"subcategory": "Super Plates ",
+"allergens": [
+"Milk",
+"Sulphites"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 533.1,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2968",
+"Energy (KCal)": "709",
+"Fat": "32",
+"Saturates": "8.9",
+"Carbohydrates": "48.4",
+"Sugars": "13.6",
+"Dietary Fibre": "13.9",
+"Protein": "50.1",
+"Salt": "2.53"
+}
+},
+{
+"sku": "UK020980",
+"name": "Korean BBQ Tofu",
+"category": "Super Plates, salads and protein pots",
+"subcategory": "Super Plates ",
+"allergens": [
+"Soya"
+],
+"vegetarian": true,
+"vegan": true,
+"weight": 451,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1886",
+"Energy (KCal)": "449",
+"Fat": "15.4",
+"Saturates": "10",
+"Carbohydrates": "51",
+"Sugars": "21",
+"Dietary Fibre": "10.4",
+"Protein": "21.5",
+"Salt": "3.27"
+}
+},
+{
+"sku": "UK020776",
+"name": "Miso Salmon",
+"category": "Super Plates, salads and protein pots",
+"subcategory": "Super Plates ",
+"allergens": [
+"Fish",
+"Soya"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 510.4,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "3167",
+"Energy (KCal)": "761",
+"Fat": "47.1",
+"Saturates": "7.1",
+"Carbohydrates": "43.4",
+"Sugars": "16.5",
+"Dietary Fibre": "12.8",
+"Protein": "36",
+"Salt": "3.16"
+}
+},
+{
+"sku": "UK020778",
+"name": "Shawarma Chicken",
+"category": "Super Plates, salads and protein pots",
+"subcategory": "Super Plates ",
+"allergens": [
+"Pistachio Nuts",
+"Sesame",
+"Milk"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 447.35,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2624",
+"Energy (KCal)": "628",
+"Fat": "30.3",
+"Saturates": "4",
+"Carbohydrates": "31.1",
+"Sugars": "14.3",
+"Dietary Fibre": "14.9",
+"Protein": "50.3",
+"Salt": "2.82"
+}
+},
+{
+"sku": "UK020900",
+"name": "Butternut & Humous Mezze Bowl",
+"category": "Super Plates, salads and protein pots",
+"subcategory": "Salads",
+"allergens": [
+"Sesame"
+],
+"vegetarian": true,
+"vegan": true,
+"weight": 330.75,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1650",
+"Energy (KCal)": "395",
+"Fat": "17",
+"Saturates": "2.2",
+"Carbohydrates": "40.4",
+"Sugars": "12.1",
+"Dietary Fibre": "13.5",
+"Protein": "13.2",
+"Salt": "1.62"
+}
+},
+{
+"sku": "UK021539",
+"name": "Butternut & Humous Side Salad",
+"category": "Super Plates, salads and protein pots",
+"subcategory": "Salads",
+"allergens": [
+"Sesame"
+],
+"vegetarian": true,
+"vegan": true,
+"weight": 139,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "623",
+"Energy (KCal)": "149",
+"Fat": "7.2",
+"Saturates": "0.8",
+"Carbohydrates": "12.7",
+"Sugars": "6.5",
+"Dietary Fibre": "6",
+"Protein": "5.5",
+"Salt": "0.76"
+}
+},
+{
+"sku": "UK006282",
+"name": "Chef's Italian Chicken Salad",
+"category": "Super Plates, salads and protein pots",
+"subcategory": "Salads",
+"allergens": [
+"Pistachio Nuts",
+"Egg",
+"Fish",
+"Milk"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 312.7,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2184",
+"Energy (KCal)": "526",
+"Fat": "41.2",
+"Saturates": "5.9",
+"Carbohydrates": "12",
+"Sugars": "10.3",
+"Dietary Fibre": "3.2",
+"Protein": "25.3",
+"Salt": "2.3"
+}
+},
+{
+"sku": "UK021061",
+"name": "Chicken & Greens Protein Plate",
+"category": "Super Plates, salads and protein pots",
+"subcategory": "Salads",
+"allergens": [
+"Egg",
+"Soya"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 272.45,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1198",
+"Energy (KCal)": "285",
+"Fat": "9",
+"Saturates": "2.1",
+"Carbohydrates": "14.6",
+"Sugars": "9.2",
+"Dietary Fibre": "4.3",
+"Protein": "34.2",
+"Salt": "2.85"
+}
+},
+{
+"sku": "UK021280",
+"name": "Classic Green Side Salad",
+"category": "Super Plates, salads and protein pots",
+"subcategory": "Salads",
+"allergens": [
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 138.54,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "748",
+"Energy (KCal)": "180",
+"Fat": "13.9",
+"Saturates": "3.3",
+"Carbohydrates": "6.2",
+"Sugars": "5.1",
+"Dietary Fibre": "1.5",
+"Protein": "6.8",
+"Salt": "0.44"
+}
+},
+{
+"sku": "UK020977",
+"name": "Miso Chicken Rice Bowl",
+"category": "Super Plates, salads and protein pots",
+"subcategory": "Salads",
+"allergens": [
+"Soya"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 321.65,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1613",
+"Energy (KCal)": "385",
+"Fat": "14.5",
+"Saturates": "1.8",
+"Carbohydrates": "34.3",
+"Sugars": "17.5",
+"Dietary Fibre": "7.1",
+"Protein": "26.6",
+"Salt": "2.98"
+}
+},
+{
+"sku": "UK021060",
+"name": "Smoked Salmon & Egg Protein Plate",
+"category": "Super Plates, salads and protein pots",
+"subcategory": "Salads",
+"allergens": [
+"Egg",
+"Fish",
+"Soya"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 290,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1718",
+"Energy (KCal)": "413",
+"Fat": "27.3",
+"Saturates": "5.6",
+"Carbohydrates": "7.7",
+"Sugars": "1.9",
+"Dietary Fibre": "3.9",
+"Protein": "32",
+"Salt": "3.09"
+}
+},
+{
+"sku": "UK006483",
+"name": "Tuna Nicoise Salad",
+"category": "Super Plates, salads and protein pots",
+"subcategory": "Salads",
+"allergens": [
+"Egg",
+"Fish"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 299.14,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1490",
+"Energy (KCal)": "357",
+"Fat": "22.4",
+"Saturates": "3.4",
+"Carbohydrates": "8.5",
+"Sugars": "7",
+"Dietary Fibre": "1.5",
+"Protein": "29.6",
+"Salt": "1.97"
+}
+},
+{
+"sku": "UK020979",
+"name": "Chicken & Edamame Protein Pot",
+"category": "Super Plates, salads and protein pots",
+"subcategory": "Protein pots",
+"allergens": [
+"Soya"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 129.65,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "820",
+"Energy (KCal)": "195",
+"Fat": "6.1",
+"Saturates": "1.2",
+"Carbohydrates": "7",
+"Sugars": "0.8",
+"Dietary Fibre": "3",
+"Protein": "26.6",
+"Salt": "1.22"
+}
+},
+{
+"sku": "UK005381",
+"name": "Egg & Spinach Protein Pot",
+"category": "Super Plates, salads and protein pots",
+"subcategory": "Protein pots",
+"allergens": [
+"Egg"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 98.6,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "432",
+"Energy (KCal)": "103",
+"Fat": "5.3",
+"Saturates": "1.5",
+"Carbohydrates": "2.3",
+"Sugars": "0.2",
+"Dietary Fibre": "0.3",
+"Protein": "11.4",
+"Salt": "0.57"
+}
+},
+{
+"sku": "UK007084",
+"name": "Smoked Salmon & Egg Protein Pot",
+"category": "Super Plates, salads and protein pots",
+"subcategory": "Protein pots",
+"allergens": [
+"Egg",
+"Fish"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 104.12,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "565",
+"Energy (KCal)": "136",
+"Fat": "8.4",
+"Saturates": "1.7",
+"Carbohydrates": "1.9",
+"Sugars": "0.7",
+"Dietary Fibre": "0.5",
+"Protein": "12.9",
+"Salt": "1.61"
+}
+},
+{
+"sku": "UK003038",
+"name": " Salt & Cider Vinegar Crisps",
+"category": "Sweet and savoury snacks",
+"subcategory": "Crisps and popcorn",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 40,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "859",
+"Energy (KCal)": "206",
+"Fat": "12.2",
+"Saturates": "0.9",
+"Carbohydrates": "21.3",
+"Sugars": "0.4",
+"Dietary Fibre": "1.7",
+"Protein": "1.9",
+"Salt": "0.65"
+}
+},
+{
+"sku": "UK003039",
+"name": "Mature Cheddar & Red Onion Crisps",
+"category": "Sweet and savoury snacks",
+"subcategory": "Crisps and popcorn",
+"allergens": [
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 40,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "874",
+"Energy (KCal)": "210",
+"Fat": "12.7",
+"Saturates": "1",
+"Carbohydrates": "20.5",
+"Sugars": "1",
+"Dietary Fibre": "1.8",
+"Protein": "2.6",
+"Salt": "0.53"
+}
+},
+{
+"sku": "UK004019",
+"name": "Salted Popcorn",
+"category": "Sweet and savoury snacks",
+"subcategory": "Crisps and popcorn",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 29,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "567",
+"Energy (KCal)": "136",
+"Fat": "6.9",
+"Saturates": "0.5",
+"Carbohydrates": "14.2",
+"Sugars": "0.1",
+"Dietary Fibre": "3.5",
+"Protein": "2.5",
+"Salt": "0.44"
+}
+},
+{
+"sku": "UK003037",
+"name": "Sea Salt Crisps",
+"category": "Sweet and savoury snacks",
+"subcategory": "Crisps and popcorn",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 40,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "888",
+"Energy (KCal)": "213",
+"Fat": "12.4",
+"Saturates": "1.4",
+"Carbohydrates": "22",
+"Sugars": "0.2",
+"Dietary Fibre": "1.7",
+"Protein": "2.4",
+"Salt": "0.36"
+}
+},
+{
+"sku": "UK006813",
+"name": "Smoky Chipotle Crisps",
+"category": "Sweet and savoury snacks",
+"subcategory": "Crisps and popcorn",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 40,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "867",
+"Energy (KCal)": "208",
+"Fat": "12.4",
+"Saturates": "0.9",
+"Carbohydrates": "21",
+"Sugars": "0.9",
+"Dietary Fibre": "1.9",
+"Protein": "2.2",
+"Salt": "0.39"
+}
+},
+{
+"sku": "UK004255",
+"name": "Sweet & Salt Popcorn",
+"category": "Sweet and savoury snacks",
+"subcategory": "Crisps and popcorn",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 30,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "653",
+"Energy (KCal)": "157",
+"Fat": "9.3",
+"Saturates": "0.7",
+"Carbohydrates": "15.2",
+"Sugars": "5.4",
+"Dietary Fibre": "2.4",
+"Protein": "1.7",
+"Salt": "0.24"
+}
+},
+{
+"sku": "UK020016",
+"name": "Pastel De Nata ",
+"category": "Sweet and savoury snacks",
+"subcategory": "Pastries",
+"allergens": [
+"Wheat",
+"Egg",
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 60,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "659",
+"Energy (KCal)": "157",
+"Fat": "6.2",
+"Saturates": "4",
+"Carbohydrates": "21.2",
+"Sugars": "11.8",
+"Dietary Fibre": "2.2",
+"Protein": "2.9",
+"Salt": "0.33"
+}
+},
+{
+"sku": "UK003339",
+"name": "Choc Bar",
+"category": "Sweet and savoury snacks",
+"subcategory": "Bars and bites",
+"allergens": [
+"Wheat",
+"Milk",
+"Soya"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 70,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1583",
+"Energy (KCal)": "380",
+"Fat": "23.5",
+"Saturates": "14.1",
+"Carbohydrates": "37.3",
+"Sugars": "22.7",
+"Dietary Fibre": "3.1",
+"Protein": "3.1",
+"Salt": "0.32"
+}
+},
+{
+"sku": "UK004206",
+"name": "Chocolate Brownie Bar",
+"category": "Sweet and savoury snacks",
+"subcategory": "Bars and bites",
+"allergens": [
+"Wheat",
+"Egg",
+"Milk",
+"Soya"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 65,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1336",
+"Energy (KCal)": "321",
+"Fat": "19.9",
+"Saturates": "12.4",
+"Carbohydrates": "30",
+"Sugars": "25.3",
+"Dietary Fibre": "2.8",
+"Protein": "4",
+"Salt": "0.1"
+}
+},
+{
+"sku": "UK005993",
+"name": "Dark Chocolate Corn Cakes",
+"category": "Sweet and savoury snacks",
+"subcategory": "Bars and bites",
+"allergens": [
+"Soya"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 17,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "341",
+"Energy (KCal)": "82",
+"Fat": "3.7",
+"Saturates": "2.2",
+"Carbohydrates": "10.4",
+"Sugars": "4.4",
+"Dietary Fibre": "0.8",
+"Protein": "1.2",
+"Salt": "0.01"
+}
+},
+{
+"sku": "UK020420",
+"name": "Dark Chocolate with Sea Salt",
+"category": "Sweet and savoury snacks",
+"subcategory": "Bars and bites",
+"allergens": [
+"Soya"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 30,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "715",
+"Energy (KCal)": "172",
+"Fat": "12.9",
+"Saturates": "7.8",
+"Carbohydrates": "9.5",
+"Sugars": "8.3",
+"Dietary Fibre": "3.9",
+"Protein": "2.7",
+"Salt": "0"
+}
+},
+{
+"sku": "UK005864",
+"name": "Jolly Good Tiffin",
+"category": "Sweet and savoury snacks",
+"subcategory": "Bars and bites",
+"allergens": [
+"Pistachio Nuts",
+"Wheat",
+"Milk",
+"Soya"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 75,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1713",
+"Energy (KCal)": "411",
+"Fat": "26.2",
+"Saturates": "15",
+"Carbohydrates": "39.7",
+"Sugars": "26.2",
+"Dietary Fibre": "0.6",
+"Protein": "3.6",
+"Salt": "0.23"
+}
+},
+{
+"sku": "UK001813",
+"name": "Love Bar",
+"category": "Sweet and savoury snacks",
+"subcategory": "Bars and bites",
+"allergens": [
+"Almonds",
+"Pistachio Nuts",
+"Oats",
+"Milk",
+"Soya"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 70,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1454",
+"Energy (KCal)": "348",
+"Fat": "18",
+"Saturates": "9",
+"Carbohydrates": "41.2",
+"Sugars": "20.8",
+"Dietary Fibre": "3",
+"Protein": "3.8",
+"Salt": "0.4"
+}
+},
+{
+"sku": "UK020419",
+"name": "Milk Chocolate Bar",
+"category": "Sweet and savoury snacks",
+"subcategory": "Bars and bites",
+"allergens": [
+"Milk",
+"Soya"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 30,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "717",
+"Energy (KCal)": "172",
+"Fat": "11.8",
+"Saturates": "7.2",
+"Carbohydrates": "13.3",
+"Sugars": "13",
+"Dietary Fibre": "1.6",
+"Protein": "2.3",
+"Salt": "0"
+}
+},
+{
+"sku": "UK005559",
+"name": "Popcorn Bar",
+"category": "Sweet and savoury snacks",
+"subcategory": "Bars and bites",
+"allergens": [
+"Milk",
+"Soya"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 34,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "737",
+"Energy (KCal)": "176",
+"Fat": "8.9",
+"Saturates": "5.1",
+"Carbohydrates": "21.8",
+"Sugars": "12.5",
+"Dietary Fibre": "0.8",
+"Protein": "1.7",
+"Salt": "0.13"
+}
+},
+{
+"sku": "UK001653",
+"name": "Pret Bar",
+"category": "Sweet and savoury snacks",
+"subcategory": "Bars and bites",
+"allergens": [
+"Oats",
+"Wheat",
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 64,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1169",
+"Energy (KCal)": "279",
+"Fat": "13.4",
+"Saturates": "7",
+"Carbohydrates": "34.6",
+"Sugars": "22.4",
+"Dietary Fibre": "2.6",
+"Protein": "4",
+"Salt": "0.11"
+}
+},
+{
+"sku": "UK004735",
+"name": "Cranberries in Coats",
+"category": "Sweet and savoury snacks",
+"subcategory": "Nuts and dried fruit snacks",
+"allergens": [
+"Milk"
+],
+"vegetarian": false,
+"vegan": false,
+"weight": 50,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "988",
+"Energy (KCal)": "235",
+"Fat": "9.5",
+"Saturates": "5.5",
+"Carbohydrates": "36.5",
+"Sugars": "31",
+"Dietary Fibre": "0.8",
+"Protein": "0.5",
+"Salt": "0.1"
+}
+},
+{
+"sku": "UK007204",
+"name": "Dark Chocolate Salted Almonds",
+"category": "Sweet and savoury snacks",
+"subcategory": "Nuts and dried fruit snacks",
+"allergens": [
+"Almonds",
+"Soya"
+],
+"vegetarian": true,
+"vegan": true,
+"weight": 38,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "892",
+"Energy (KCal)": "215",
+"Fat": "15.1",
+"Saturates": "5.3",
+"Carbohydrates": "12.4",
+"Sugars": "7.9",
+"Dietary Fibre": "3.5",
+"Protein": "5.5",
+"Salt": "0.2"
+}
+},
+{
+"sku": "UK006936",
+"name": "Nuts, Fruit, Chocolate",
+"category": "Sweet and savoury snacks",
+"subcategory": "Nuts and dried fruit snacks",
+"allergens": [
+"Almonds",
+"Milk",
+"Soya"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 35,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "815",
+"Energy (KCal)": "196",
+"Fat": "12.8",
+"Saturates": "2",
+"Carbohydrates": "13.4",
+"Sugars": "10.1",
+"Dietary Fibre": "2.2",
+"Protein": "5.7",
+"Salt": "0.01"
+}
+},
+{
+"sku": "UK005296",
+"name": "Pret A Mango",
+"category": "Sweet and savoury snacks",
+"subcategory": "Nuts and dried fruit snacks",
+"allergens": [],
+"vegetarian": true,
+"vegan": true,
+"weight": 35,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "500",
+"Energy (KCal)": "118",
+"Fat": "0.4",
+"Saturates": "0.1",
+"Carbohydrates": "26.9",
+"Sugars": "17.5",
+"Dietary Fibre": "1.8",
+"Protein": "0.7",
+"Salt": "0"
+}
+},
+{
+"sku": "UK021547",
+"name": "Chocolate Chunk Cookie",
+"category": "Sweet and savoury snacks",
+"subcategory": "Cookies and Cakes",
+"allergens": [
+"Wheat",
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 90,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1773",
+"Energy (KCal)": "424",
+"Fat": "20.7",
+"Saturates": "12.7",
+"Carbohydrates": "53.2",
+"Sugars": "30.7",
+"Dietary Fibre": "2.2",
+"Protein": "4.9",
+"Salt": "0.25"
+}
+},
+{
+"sku": "UK021545",
+"name": "Chocolate Hazelnut Praline Cookie",
+"category": "Sweet and savoury snacks",
+"subcategory": "Cookies and Cakes",
+"allergens": [
+"Hazelnuts",
+"Wheat",
+"Milk",
+"Soya"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 90,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1775",
+"Energy (KCal)": "424",
+"Fat": "21.8",
+"Saturates": "11.4",
+"Carbohydrates": "50.4",
+"Sugars": "31",
+"Dietary Fibre": "2.2",
+"Protein": "5.5",
+"Salt": "0.39"
+}
+},
+{
+"sku": "UK001755",
+"name": "Double Berry Muffin",
+"category": "Sweet and savoury snacks",
+"subcategory": "Cookies and Cakes",
+"allergens": [
+"Wheat",
+"Egg",
+"Milk"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 124,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1846",
+"Energy (KCal)": "441",
+"Fat": "21.6",
+"Saturates": "2.5",
+"Carbohydrates": "53.4",
+"Sugars": "30.5",
+"Dietary Fibre": "3.5",
+"Protein": "6.6",
+"Salt": "0.72"
+}
+},
+{
+"sku": "UK021554",
+"name": "Jaffa Cake",
+"category": "Sweet and savoury snacks",
+"subcategory": "Cookies and Cakes",
+"allergens": [
+"Barley",
+"Wheat",
+"Egg",
+"Milk",
+"Soya"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 130,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2369",
+"Energy (KCal)": "567",
+"Fat": "33.7",
+"Saturates": "14.2",
+"Carbohydrates": "59.4",
+"Sugars": "42.2",
+"Dietary Fibre": "1.9",
+"Protein": "5.7",
+"Salt": "0.83"
+}
+},
+{
+"sku": "UK021473",
+"name": "Loaded Chocolate Chunk Banana Bread",
+"category": "Sweet and savoury snacks",
+"subcategory": "Cookies and Cakes",
+"allergens": [
+"Almonds",
+"Wheat",
+"Egg",
+"Milk",
+"Soya"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 130,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "2338",
+"Energy (KCal)": "560",
+"Fat": "31.7",
+"Saturates": "7.8",
+"Carbohydrates": "59.3",
+"Sugars": "37.4",
+"Dietary Fibre": "3.5",
+"Protein": "7.5",
+"Salt": "0.86"
+}
+},
+{
+"sku": "UK004165",
+"name": "Pret's Gingerbread Biscuit Godfrey",
+"category": "Sweet and savoury snacks",
+"subcategory": "Cookies and Cakes",
+"allergens": [
+"Wheat",
+"Egg"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 43,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "840",
+"Energy (KCal)": "200",
+"Fat": "6.3",
+"Saturates": "2.8",
+"Carbohydrates": "33.2",
+"Sugars": "17.5",
+"Dietary Fibre": "0.7",
+"Protein": "2.1",
+"Salt": "0.34"
+}
+},
+{
+"sku": "UK021543",
+"name": "Raspberry & White Chocolate Cookie",
+"category": "Sweet and savoury snacks",
+"subcategory": "Cookies and Cakes",
+"allergens": [
+"Wheat",
+"Milk",
+"Soya"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 90,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1728",
+"Energy (KCal)": "412",
+"Fat": "18.6",
+"Saturates": "11.9",
+"Carbohydrates": "55.8",
+"Sugars": "35.6",
+"Dietary Fibre": "1.6",
+"Protein": "4.5",
+"Salt": "0.54"
+}
+},
+{
+"sku": "UK021544",
+"name": "Triple Chocolate Cookie",
+"category": "Sweet and savoury snacks",
+"subcategory": "Cookies and Cakes",
+"allergens": [
+"Wheat",
+"Milk",
+"Soya"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 90,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1733",
+"Energy (KCal)": "414",
+"Fat": "20",
+"Saturates": "12.7",
+"Carbohydrates": "51.8",
+"Sugars": "34.4",
+"Dietary Fibre": "2.2",
+"Protein": "5.5",
+"Salt": "0.21"
+}
+},
+{
+"sku": "UK021553",
+"name": "Triple Chocolate Crunch Loaf Cake",
+"category": "Sweet and savoury snacks",
+"subcategory": "Cookies and Cakes",
+"allergens": [
+"Barley",
+"Wheat",
+"Egg",
+"Milk",
+"Soya"
+],
+"vegetarian": true,
+"vegan": false,
+"weight": 110,
+"type": "food",
+"bottled": false,
+"variants": false,
+"nutrition": {
+"Energy (KJ)": "1838",
+"Energy (KCal)": "441",
+"Fat": "27.6",
+"Saturates": "10",
+"Carbohydrates": "40.6",
+"Sugars": "32.9",
+"Dietary Fibre": "2.4",
+"Protein": "6.3",
+"Salt": "0.82"
+}
+}
+]
+}

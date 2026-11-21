@@ -1,0 +1,2155 @@
+{
+"checked": "2026-11-21",
+"url": "https://www.kfc.com.sg/nutrition (jsonData in the page script, chunk 6504)",
+"groups": {
+"NutritionChickenOriginal": [
+{
+"ItemName": "Original Recipe Chicken Drumstick",
+"Servings": "67",
+"Energy": "168",
+"Protein": "14.1",
+"TotalFat": "9.8",
+"SaturatedFat": "3.2",
+"Carbohydrate": "6.0",
+"Sodium": "399",
+"Allergen": [
+"Cereals Contain Gluten",
+"Eggs",
+"Milk"
+]
+},
+{
+"ItemName": "Original Recipe Chicken Keel",
+"Servings": "143",
+"Energy": "359",
+"Protein": "30",
+"TotalFat": "21",
+"SaturatedFat": "6.9",
+"Carbohydrate": "12.9",
+"Sodium": "851",
+"Allergen": [
+"Cereals Contain Gluten",
+"Eggs",
+"Milk"
+]
+},
+{
+"ItemName": "Original Recipe Chicken Rib",
+"Servings": "156",
+"Energy": "390",
+"Protein": "32.7",
+"TotalFat": "22.9",
+"SaturatedFat": "7.5",
+"Carbohydrate": "14",
+"Sodium": "925",
+"Allergen": [
+"Cereals Contain Gluten",
+"Eggs",
+"Milk"
+]
+},
+{
+"ItemName": "Original Recipe Chicken Thigh",
+"Servings": "123",
+"Energy": "309",
+"Protein": "25.8",
+"TotalFat": "18.1",
+"SaturatedFat": "5.9",
+"Carbohydrate": "11.1",
+"Sodium": "732",
+"Allergen": [
+"Cereals Contain Gluten",
+"Eggs",
+"Milk"
+]
+},
+{
+"ItemName": "Original Recipe Chicken Wing",
+"Servings": "74",
+"Energy": "186",
+"Protein": "15.6",
+"TotalFat": "10.9",
+"SaturatedFat": "3.6",
+"Carbohydrate": "6.7",
+"Sodium": "441",
+"Allergen": [
+"Cereals Contain Gluten",
+"Eggs",
+"Milk"
+]
+}
+],
+"NutritionChickenHotCrispy": [
+{
+"ItemName": "Hot & Crispy Chicken Drumstick",
+"Servings": "77",
+"Energy": "213",
+"Protein": "15.5",
+"TotalFat": "12.9",
+"SaturatedFat": "4.4",
+"Carbohydrate": "8.4",
+"Sodium": "535",
+"Allergen": [
+"Cereals Contain Gluten"
+]
+},
+{
+"ItemName": "Hot & Crispy Chicken Keel",
+"Servings": "147",
+"Energy": "411",
+"Protein": "29.7",
+"TotalFat": "24.9",
+"SaturatedFat": "8.4",
+"Carbohydrate": "16.2",
+"Sodium": "1029",
+"Allergen": [
+"Cereals Contain Gluten"
+]
+},
+{
+"ItemName": "Hot & Crispy Chicken Rib",
+"Servings": "184",
+"Energy": "513",
+"Protein": "37.2",
+"TotalFat": "31.1",
+"SaturatedFat": "10.5",
+"Carbohydrate": "20.2",
+"Sodium": "1286",
+"Allergen": [
+"Cereals Contain Gluten"
+]
+},
+{
+"ItemName": "Hot & Crispy Chicken Thigh",
+"Servings": "146",
+"Energy": "407",
+"Protein": "29.5",
+"TotalFat": "24.7",
+"SaturatedFat": "8.3",
+"Carbohydrate": "16.1",
+"Sodium": "1021",
+"Allergen": [
+"Cereals Contain Gluten"
+]
+},
+{
+"ItemName": "Hot & Crispy Chicken Wing",
+"Servings": "81",
+"Energy": "225",
+"Protein": "16.3",
+"TotalFat": "13.6",
+"SaturatedFat": "4.6",
+"Carbohydrate": "8.9",
+"Sodium": "563",
+"Allergen": [
+"Cereals Contain Gluten"
+]
+}
+],
+"NutritionChickenBacon": [
+{
+"ItemName": "Chicken Bacon (1pc)",
+"Servings": "11",
+"Energy": "32",
+"Protein": "2.6",
+"TotalFat": "2.2",
+"SaturatedFat": "0.7",
+"Carbohydrate": "0.6",
+"Sodium": "167",
+"Allergen": [
+"Cereals Contain Gluten",
+"Wheat"
+]
+}
+],
+"NutritionFriedYoutiao": [
+{
+"ItemName": "Fried Youtiao (4pcs)",
+"Servings": "48",
+"Energy": "180",
+"Protein": "5.3",
+"TotalFat": "5.4",
+"SaturatedFat": "2.3",
+"Carbohydrate": "27.7",
+"Sodium": "59",
+"Allergen": [
+"Cereals Contain Gluten",
+"Soy"
+]
+}
+],
+"NutritionETCBurger": [
+{
+"ItemName": "ETC Burger",
+"Servings": "278",
+"Energy": "658",
+"Protein": "32.4",
+"TotalFat": "28.8",
+"SaturatedFat": "11.3",
+"Carbohydrate": "65.8",
+"Sodium": "1276",
+"Allergen": [
+"Eggs",
+"Milk",
+"Soy",
+"Wheat",
+"Gluten"
+]
+}
+],
+"NutritionETCStacker": [
+{
+"ItemName": "ETC Stacker",
+"Servings": "450",
+"Energy": "1133",
+"Protein": "57.7",
+"TotalFat": "56",
+"SaturatedFat": "22.1",
+"Carbohydrate": "97.5",
+"Sodium": "2377",
+"Allergen": [
+"Eggs",
+"Milk",
+"Soy",
+"Wheat",
+"Gluten"
+]
+}
+],
+"NutritionSmokeyHotZingerBurger": [
+{
+"ItemName": "Smokey Hot Zinger Burger ",
+"Servings": "217",
+"Energy": "526",
+"Protein": "29.8",
+"TotalFat": "22.5",
+"SaturatedFat": "9.2",
+"Carbohydrate": "50.2",
+"Sodium": "1241",
+"Allergen": [
+"Eggs",
+"Milk",
+"Soy",
+"Wheat",
+"Gluten"
+]
+}
+],
+"NutritionOCBurger": [
+{
+"ItemName": "Original Recipe Burger",
+"Servings": "195",
+"Energy": "474",
+"Protein": "21.9",
+"TotalFat": "23.3",
+"SaturatedFat": "7.1",
+"Carbohydrate": "43.9",
+"Sodium": "962",
+"Allergen": [
+"Cereals Contain Gluten",
+"Egg",
+"Milk",
+"Soy",
+"Wheat"
+]
+}
+],
+"NutritionOCStacker": [
+{
+"ItemName": "Original Recipe Stacker",
+"Servings": "313",
+"Energy": "788",
+"Protein": "37.9",
+"TotalFat": "45.1",
+"SaturatedFat": "13.7",
+"Carbohydrate": "57.4",
+"Sodium": "1654",
+"Allergen": [
+"Cereals Contain Gluten",
+"Egg",
+"Milk",
+"Soy",
+"Wheat"
+]
+}
+],
+"NutritionUltimateSmokeyZinger": [
+{
+"ItemName": "The Ultimate Smokey Zinger",
+"Servings": "223",
+"Energy": "588",
+"Protein": "30.2",
+"TotalFat": "32.4",
+"SaturatedFat": "11",
+"Carbohydrate": "43.8",
+"Sodium": "1850",
+"Allergen": [
+"Cereals Contain Gluten",
+"Egg",
+"Milk",
+"Soy",
+"Wheat"
+]
+}
+],
+"NutritionBBQTenderBurger": [
+{
+"ItemName": "BBQ Tender Burger ",
+"Servings": "209",
+"Energy": "455",
+"Protein": "30.2",
+"TotalFat": "16.8",
+"SaturatedFat": "5.4",
+"Carbohydrate": "45.6",
+"Sodium": "1272",
+"Allergen": [
+"Cereals Contain Gluten",
+"Egg",
+"Milk",
+"Soy",
+"Wheat"
+]
+}
+],
+"NutritionZingerStacker": [
+{
+"ItemName": "Zinger Stacker ",
+"Servings": "351",
+"Energy": "938",
+"Protein": "49.8",
+"TotalFat": "57.3",
+"SaturatedFat": "20.3",
+"Carbohydrate": "55.4",
+"Sodium": "3017",
+"Allergen": [
+"Cereals Contain Gluten",
+"Egg",
+"Milk",
+"Soy",
+"Wheat"
+]
+}
+],
+"NutritionZinger": [
+{
+"ItemName": "Zinger ",
+"Servings": "202",
+"Energy": "509",
+"Protein": "25.6",
+"TotalFat": "26.1",
+"SaturatedFat": "8.1",
+"Carbohydrate": "42.6",
+"Sodium": "1437",
+"Allergen": [
+"Cereals Contain Gluten",
+"Egg",
+"Soy",
+"Wheat"
+]
+}
+],
+"NutritionPockettBandito": [
+{
+"ItemName": "BBQ Pockett",
+"Servings": "213",
+"Energy": "505",
+"Protein": "24.5",
+"TotalFat": "24.7",
+"SaturatedFat": "8.7",
+"Carbohydrate": "45.1",
+"Sodium": "1607",
+"Allergen": [
+"Cereals Contain Gluten",
+"Egg",
+"Soy",
+"Wheat"
+]
+}
+],
+"NutritionCheesyTendersTwister": [
+{
+"ItemName": "Cheesy Tenders Twister",
+"Servings": "215",
+"Energy": "457",
+"Protein": "29.1",
+"TotalFat": "20.3",
+"SaturatedFat": "6.9",
+"Carbohydrate": "38.5",
+"Sodium": "1201",
+"Allergen": [
+"Cereals Contain Gluten",
+"Egg",
+"Milk",
+"Soy",
+"Wheat"
+]
+}
+],
+"NutritionMiniTenderTwister": [
+{
+"ItemName": "Mini Tender Twister",
+"Servings": "131",
+"Energy": "317",
+"Protein": "16.6",
+"TotalFat": "12.9",
+"SaturatedFat": "4.7",
+"Carbohydrate": "32.5",
+"Sodium": "731",
+"Allergen": [
+"Cereals Contain Gluten",
+"Egg",
+"Milk",
+"Soy",
+"Wheat"
+]
+}
+],
+"NutritionHeartyORPlatter": [
+{
+"ItemName": "Hearty OR Platter",
+"Servings": "280",
+"Energy": "609",
+"Protein": "38.5",
+"TotalFat": "31.8",
+"SaturatedFat": "11.6",
+"Carbohydrate": "41.8",
+"Sodium": "1492",
+"Allergen": [
+"Cereals Contain Gluten",
+"Egg",
+"Milk",
+"Soy",
+"Wheat"
+]
+}
+],
+"NutritionBowlsOriginalReceipe": [
+{
+"ItemName": "Original Recipe Rice Bowl",
+"Servings": "270",
+"Energy": "440",
+"Protein": "13",
+"TotalFat": "16",
+"SaturatedFat": "7",
+"Carbohydrate": "62",
+"Sodium": "1,139",
+"Allergen": [
+"Eggs",
+"Milk",
+"Soy",
+"Wheat",
+"Gluten",
+"MSG"
+]
+}
+],
+"NutritionBowlsCurryRice": [
+{
+"ItemName": "Curry Rice Bowl",
+"Servings": "294",
+"Energy": "515",
+"Protein": "14",
+"TotalFat": "19",
+"SaturatedFat": "10",
+"Carbohydrate": "72",
+"Sodium": "1,511",
+"Allergen": [
+"Eggs",
+"Milk",
+"Soy",
+"Wheat",
+"Gluten",
+"MSG"
+]
+}
+],
+"NutritionBowls": [
+{
+"ItemName": "Famous Bowl",
+"Servings": "538",
+"Energy": "386",
+"Protein": "15.3",
+"TotalFat": "11.5",
+"SaturatedFat": "3.2",
+"Carbohydrate": "55.5",
+"Sodium": "1591",
+"Allergen": [
+"Cereals Contain Gluten",
+"Milk",
+"Wheat",
+"Soy"
+]
+}
+],
+"NutritionMacNCheeseBowl": [
+{
+"ItemName": "Mac N Cheese Bowl",
+"Servings": "306",
+"Energy": "606",
+"Protein": "23.0",
+"TotalFat": "41.7",
+"SaturatedFat": "18.1",
+"Carbohydrate": "84.4",
+"Sodium": "1272",
+"Allergen": [
+"Cereals Contain Gluten",
+"Milk"
+]
+}
+],
+"NutritionSaladBowlBlackVinegarOnionDressing": [
+{
+"ItemName": "Salad Cup with Black Vinegar & Onion Dressing",
+"Servings": "246",
+"Energy": "309",
+"Protein": "18.7",
+"TotalFat": "16.4",
+"SaturatedFat": "4.4",
+"Carbohydrate": "22.6",
+"Sodium": "1035",
+"Allergen": [
+"Cereals Contain Gluten",
+"Soy",
+"Wheat"
+]
+}
+],
+"NutritionSaladBowlCaesarDressing": [
+{
+"ItemName": "Salad Bowl with Caesar Dressing",
+"Servings": "246",
+"Energy": "364",
+"Protein": "18.9",
+"TotalFat": "22.7",
+"SaturatedFat": "4.4",
+"Carbohydrate": "21.6",
+"Sodium": "911",
+"Allergen": [
+"Cereals Contain Gluten",
+"Egg",
+"Fish",
+"Milk",
+"Soy"
+]
+}
+],
+"NutritionDessertHotCrispy": [
+{
+"ItemName": "Original Recipe Tenders (3pcs)",
+"Servings": "162",
+"Energy": "353",
+"Protein": "36.1",
+"TotalFat": "17.8",
+"SaturatedFat": "6.2",
+"Carbohydrate": "11.3",
+"Sodium": "1168",
+"Allergen": [
+"Cereals Contain Gluten",
+"Egg",
+"Milk"
+]
+},
+{
+"ItemName": "Original Recipe Tenders (5pcs)",
+"Servings": "270",
+"Energy": "589",
+"Protein": "60.2",
+"TotalFat": "29.7",
+"SaturatedFat": "10.3",
+"Carbohydrate": "18.9",
+"Sodium": "1947",
+"Allergen": [
+"Cereals Contain Gluten",
+"Egg",
+"Milk"
+]
+}
+],
+"NutritionHotCrispyChickenBites": [
+{
+"ItemName": "Hot & Crispy Chicken Bites (6pcs)",
+"Servings": "114",
+"Energy": "269",
+"Protein": "20",
+"TotalFat": "15.3",
+"SaturatedFat": "5.1",
+"Carbohydrate": "12.5",
+"Sodium": "651",
+"Allergen": [
+"Cereals Contain Gluten"
+]
+},
+{
+"ItemName": "Hot & Crispy Chicken Bites (9pcs)",
+"Servings": "171",
+"Energy": "404",
+"Protein": "29.9",
+"TotalFat": "22.9",
+"SaturatedFat": "7.7",
+"Carbohydrate": "18.8",
+"Sodium": "976",
+"Allergen": [
+"Cereals Contain Gluten"
+]
+},
+{
+"ItemName": "Hot & Crispy Chicken Bites (20pcs)",
+"Servings": "380",
+"Energy": "897",
+"Protein": "66.5",
+"TotalFat": "50.9",
+"SaturatedFat": "17.1",
+"Carbohydrate": "41.8",
+"Sodium": "2170",
+"Allergen": [
+"Cereals Contain Gluten"
+]
+}
+],
+"NutritionDessertNuggets": [
+{
+"ItemName": "Nuggets (6 pcs)",
+"Servings": "98",
+"Energy": "239",
+"Protein": "14",
+"TotalFat": "14",
+"SaturatedFat": "6",
+"Carbohydrate": "14",
+"Sodium": "269",
+"Allergen": [
+"Wheat",
+"Gluten"
+]
+},
+{
+"ItemName": "Nuggets (20 pcs)",
+"Servings": "328",
+"Energy": "796",
+"Protein": "48",
+"TotalFat": "47",
+"SaturatedFat": "21",
+"Carbohydrate": "45",
+"Sodium": "896",
+"Allergen": [
+"Wheat",
+"Gluten"
+]
+}
+],
+"NutritionDessertPotato": [
+{
+"ItemName": "Whipped Potato (reg)",
+"Servings": "95",
+"Energy": "48",
+"Protein": "1.4",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "10",
+"Sodium": "332",
+"Allergen": [
+"Cereals Containing Gluten",
+"Milk",
+"Soy"
+]
+},
+{
+"ItemName": "Whipped Potato (med)",
+"Servings": "190",
+"Energy": "102",
+"Protein": "4",
+"TotalFat": "1",
+"SaturatedFat": "0",
+"Carbohydrate": "21",
+"Sodium": "664",
+"Allergen": [
+"Cereals Containing Gluten",
+"Milk",
+"Soy"
+]
+}
+],
+"NutritionDessertPopcornChicken": [
+{
+"ItemName": "Popcorn Chicken",
+"Servings": "150",
+"Energy": "446",
+"Protein": "21",
+"TotalFat": "28",
+"SaturatedFat": "11",
+"Carbohydrate": "27",
+"Sodium": "1169",
+"Allergen": [
+"Eggs",
+"Dairy",
+"Soy Beans",
+"Wheat",
+"Gluten",
+"MSG"
+]
+}
+],
+"NutritionDessertColeslaw": [
+{
+"ItemName": "Coleslaw (reg)",
+"Servings": "80",
+"Energy": "92",
+"Protein": "0.8",
+"TotalFat": "7",
+"SaturatedFat": "1",
+"Carbohydrate": "8",
+"Sodium": "39",
+"Allergen": [
+"Eggs",
+"Soy"
+]
+},
+{
+"ItemName": "Coleslaw (med)",
+"Servings": "160",
+"Energy": "197",
+"Protein": "2",
+"TotalFat": "14",
+"SaturatedFat": "3",
+"Carbohydrate": "15",
+"Sodium": "78",
+"Allergen": [
+"Eggs",
+"Soy"
+]
+}
+],
+"NutritionDessertFrenchFries": [
+{
+"ItemName": "French Fries (reg)",
+"Servings": "95",
+"Energy": "237",
+"Protein": "3.8",
+"TotalFat": "9.8",
+"SaturatedFat": "3.8",
+"Carbohydrate": "33.3",
+"Sodium": "281",
+"Allergen": []
+},
+{
+"ItemName": "French Fries (med)",
+"Servings": "125",
+"Energy": "311",
+"Protein": "5",
+"TotalFat": "12.9",
+"SaturatedFat": "5",
+"Carbohydrate": "43.8",
+"Sodium": "370",
+"Allergen": []
+}
+],
+"NutritionSideMacNCheese": [
+{
+"ItemName": "Mac N Cheese (med)",
+"Servings": "135",
+"Energy": "132",
+"Protein": "3.9",
+"TotalFat": "4.4",
+"SaturatedFat": "2",
+"Carbohydrate": "19.2",
+"Sodium": "550",
+"Allergen": [
+"Cereals Contain Gluten",
+"Milk"
+]
+}
+],
+"NutritionDessertCheeseFries": [
+{
+"ItemName": "Cheese Fries",
+"Servings": "204",
+"Energy": "462",
+"Protein": "6.4",
+"TotalFat": "25.4",
+"SaturatedFat": "7.2",
+"Carbohydrate": "52.1",
+"Sodium": "747",
+"Allergen": [
+"Cereals Containing Gluten",
+"Milk",
+"Wheat"
+]
+}
+],
+"NutritionDessertKFCFroyo": [
+{
+"ItemName": "KFC Froyo - Natural Cone",
+"Servings": "95",
+"Energy": "107",
+"Protein": "0.7",
+"TotalFat": "1",
+"SaturatedFat": "0.7",
+"Carbohydrate": "24",
+"Sodium": "77",
+"Allergen": [
+"Milk",
+"Soy",
+"Wheat",
+"Gluten"
+]
+},
+{
+"ItemName": "KFC Froyo - Natural Cup",
+"Servings": "120",
+"Energy": "118",
+"Protein": "0.5",
+"TotalFat": "1",
+"SaturatedFat": "0.8",
+"Carbohydrate": "27",
+"Sodium": "89",
+"Allergen": [
+"Milk",
+"Soy"
+]
+}
+],
+"NutritionDessertPortugueseEggTart": [
+{
+"ItemName": "Portugese Egg Tart (1pc)",
+"Servings": "61",
+"Energy": "208",
+"Protein": "2.8",
+"TotalFat": "15.8",
+"SaturatedFat": "4.4",
+"Carbohydrate": "13.4",
+"Sodium": "61",
+"Allergen": [
+"Cereals Containing Gluten",
+"Egg",
+"Milk",
+"Soy"
+]
+}
+],
+"NutritionSaladCupBlackVinegarOnionDressing": [
+{
+"ItemName": "Salad Cup with Black Vinegar & Onion Dressing",
+"Servings": "108",
+"Energy": "77",
+"Protein": "1.6",
+"TotalFat": "3.6",
+"SaturatedFat": "0.1",
+"Carbohydrate": "10.0",
+"Sodium": "490",
+"Allergen": [
+"Cereals Containing Gluten",
+"Soy",
+"Wheat"
+]
+}
+],
+"NutritionSaladCupCaesarDressing": [
+{
+"ItemName": "Salad Cup with Caesar Dressing",
+"Servings": "108",
+"Energy": "148",
+"Protein": "1.9",
+"TotalFat": "12.5",
+"SaturatedFat": "0.1",
+"Carbohydrate": "7.1",
+"Sodium": "334",
+"Allergen": [
+"Egg",
+"Fish",
+"Milk",
+"Soy"
+]
+}
+],
+"NutritionCornCup": [
+{
+"ItemName": "Corn Cup (reg)",
+"Servings": "65",
+"Energy": "48",
+"Protein": "1.4",
+"TotalFat": "0.9",
+"SaturatedFat": "0.2",
+"Carbohydrate": "8.3",
+"Sodium": "127",
+"Allergen": []
+}
+],
+"NutritionMushroomTwister": [
+{
+"ItemName": "Mushroom O.R. Twister",
+"Servings": "198",
+"Energy": "412",
+"Protein": "21.5",
+"TotalFat": "18.3",
+"SaturatedFat": "4.1",
+"Carbohydrate": "40.2",
+"Sodium": "1542",
+"Allergen": [
+"Eggs",
+"Milk",
+"Soy",
+"Wheat",
+"Gluten"
+]
+}
+],
+"NutritionWaffleChickenPlatter": [
+{
+"ItemName": "Waffle & Chicken Platter",
+"Servings": "378",
+"Energy": "798",
+"Protein": "37.5",
+"TotalFat": "43.7",
+"SaturatedFat": "15.3",
+"Carbohydrate": "22.1",
+"Sodium": "973",
+"Allergen": [
+"Cereals Contain Gluten",
+"Egg",
+"Milk",
+"Soy",
+"Wheat"
+]
+}
+],
+"NutritionChickenMacaroniSoup": [
+{
+"ItemName": "Chicken Macaroni Soup (14 oz)",
+"Servings": "421",
+"Energy": "393",
+"Protein": "15.2",
+"TotalFat": "11.0",
+"SaturatedFat": "2.4",
+"Carbohydrate": "60.5",
+"Sodium": "833",
+"Allergen": [
+"Cereals Contain Gluten",
+"Egg",
+"Milk",
+"Soy",
+"Wheat"
+]
+}
+],
+"NutritionMiniEggyTwister": [
+{
+"ItemName": "Mini Eggy Twister",
+"Servings": "130",
+"Energy": "249",
+"Protein": "10.8",
+"TotalFat": "14.3",
+"SaturatedFat": "5.1",
+"Carbohydrate": "18.6",
+"Sodium": "321",
+"Allergen": [
+"Cereals Contain Gluten",
+"Egg",
+"Milk",
+"Soy",
+"Wheat"
+]
+}
+],
+"NutritionLilChickenMacaroniSoup": [
+{
+"ItemName": "Lil’ Chicken Macaroni Soup",
+"Servings": "280",
+"Energy": "259",
+"Protein": "10.2",
+"TotalFat": "7.3",
+"SaturatedFat": "1.6",
+"Carbohydrate": "39.6",
+"Sodium": "562",
+"Allergen": [
+"Cereals Contain Gluten",
+"Egg",
+"Milk",
+"Soy",
+"Wheat"
+]
+}
+],
+"NutritionWaffleSauteMushroomPlatter": [
+{
+"ItemName": "Waffle & Saute Mushroom Platter",
+"Servings": "265",
+"Energy": "468",
+"Protein": "32.5",
+"TotalFat": "19.9",
+"SaturatedFat": "7.3",
+"Carbohydrate": "39.8",
+"Sodium": "1111",
+"Allergen": [
+"Eggs",
+"Milk",
+"Soy",
+"Wheat",
+"Gluten"
+]
+}
+],
+"NutritionOriginalRecipeRiserEggBurger": [
+{
+"ItemName": "Original Recipe Riser & Egg Burger",
+"Servings": "194",
+"Energy": "478",
+"Protein": "25.3",
+"TotalFat": "23.5",
+"SaturatedFat": "9.4",
+"Carbohydrate": "41.1",
+"Sodium": "1194",
+"Allergen": [
+"Cereals Contain Gluten",
+"Egg",
+"Milk",
+"Soy",
+"Wheat"
+]
+}
+],
+"NutritionOriginalRecipeRiserBurger": [
+{
+"ItemName": "Original Recipe Riser Burger",
+"Servings": "144",
+"Energy": "380",
+"Protein": "19.5",
+"TotalFat": "15.5",
+"SaturatedFat": "6.4",
+"Carbohydrate": "40.6",
+"Sodium": "1139",
+"Allergen": [
+"Cereals Contain Gluten",
+"Egg",
+"Milk",
+"Soy",
+"Wheat"
+]
+}
+],
+"NutritionAMOriginalRecipePorridge": [
+{
+"ItemName": "Original Recipe Porridge",
+"Servings": "561",
+"Energy": "263",
+"Protein": "10.4",
+"TotalFat": "5.5",
+"SaturatedFat": "2.1",
+"Carbohydrate": "42.9",
+"Sodium": "387",
+"Allergen": [
+"Cereals Contain Gluten",
+"Egg",
+"Milk",
+"Soy",
+"Wheat"
+]
+}
+],
+"NutritionLilTenderTwister": [
+{
+"ItemName": "Lil’ Tender Twister",
+"Servings": "108",
+"Energy": "235",
+"Protein": "14.2",
+"TotalFat": "11.7",
+"SaturatedFat": "4.1",
+"Carbohydrate": "17.7",
+"Sodium": "630",
+"Allergen": [
+"Cereals Contain Gluten",
+"Egg",
+"Milk",
+"Soy",
+"Wheat"
+]
+}
+],
+"NutritionWhiteCurrySauce": [
+{
+"ItemName": "White Curry Syiok! Sauce (25g)",
+"Servings": "25",
+"Energy": "88",
+"Protein": "0.9",
+"TotalFat": "6.8",
+"SaturatedFat": "2.0",
+"Carbohydrate": "5.9",
+"Sodium": "359",
+"Allergen": [
+"Crustacean",
+"Egg",
+"Fish",
+"Milk",
+"Soy"
+]
+}
+],
+"NutritionSecretGrillSauce": [
+{
+"ItemName": "Shhh Secret Grill Sauce (25g)",
+"Servings": "25",
+"Energy": "41",
+"Protein": "0.4",
+"TotalFat": "1.6",
+"SaturatedFat": "0.3",
+"Carbohydrate": "6.1",
+"Sodium": "220",
+"Allergen": [
+"Egg",
+"Milk",
+"Soy"
+]
+}
+],
+"NutritionCheezyOnionSauce": [
+{
+"ItemName": "Cheezy Onion Sauce (25g)",
+"Servings": "25",
+"Energy": "104",
+"Protein": "0.4",
+"TotalFat": "10.3",
+"SaturatedFat": "1.8",
+"Carbohydrate": "2.6",
+"Sodium": "233",
+"Allergen": [
+"Egg",
+"Milk",
+"Soy"
+]
+}
+],
+"NutritionMalaManiaSauce": [
+{
+"ItemName": "Mala Mania Sauce (25g)",
+"Servings": "25",
+"Energy": "97",
+"Protein": "0.4",
+"TotalFat": "9.1",
+"SaturatedFat": "1.5",
+"Carbohydrate": "3.5",
+"Sodium": "301",
+"Allergen": [
+"Egg",
+"Soy",
+"Wheat"
+]
+}
+],
+"NutritionAMOriginalRecipePlatter": [
+{
+"ItemName": "Original Recipe Platter",
+"Servings": "290",
+"Energy": "556",
+"Protein": "26",
+"TotalFat": "24",
+"SaturatedFat": "10",
+"Carbohydrate": "55",
+"Sodium": "1518",
+"Allergen": [
+"Eggs",
+"Dairy",
+"Soy",
+"Wheat",
+"Gluten",
+"MSG"
+]
+}
+],
+"NutritionAMPancakeDeluxe": [
+{
+"ItemName": "Pancakes Deluxe Platter",
+"Servings": "250",
+"Energy": "884",
+"Protein": "38",
+"TotalFat": "47",
+"SaturatedFat": "20",
+"Carbohydrate": "71",
+"Sodium": "1646",
+"Allergen": [
+"Wheat",
+"Eggs",
+"Soy",
+"Milk",
+"Gluten",
+"MSG"
+]
+}
+],
+"NutritionAMPancakePlatterDeluxe": [
+{
+"ItemName": "Pancakes Platter",
+"Servings": "250",
+"Energy": "588",
+"Protein": "21.0",
+"TotalFat": "23.5",
+"SaturatedFat": "9.6",
+"Carbohydrate": "67.5",
+"Sodium": "1253",
+"Allergen": [
+"Wheat",
+"Eggs",
+"Soybean",
+"Milk",
+"Gluten",
+"MSG"
+]
+}
+],
+"NutritionAMORTwister": [
+{
+"ItemName": "Original Recipe Twister",
+"Servings": "265",
+"Energy": "590",
+"Protein": "31.1",
+"TotalFat": "33.1",
+"SaturatedFat": "13.1",
+"Carbohydrate": "64.1",
+"Sodium": "1184",
+"Allergen": [
+"Cereals Contain Gluten",
+"Egg",
+"Milk",
+"Soy",
+"Wheat"
+]
+}
+],
+"NutritionAMCHETwister": [
+{
+"ItemName": "Chicken Ham & Egg Twister",
+"Servings": "236",
+"Energy": "508",
+"Protein": "25.2",
+"TotalFat": "30.5",
+"SaturatedFat": "11.8",
+"Carbohydrate": "55.1",
+"Sodium": "896",
+"Allergen": [
+"Cereals Contain Gluten",
+"Egg",
+"Milk",
+"Soy",
+"Wheat"
+]
+}
+],
+"NutritionAMAmericanTwister": [
+{
+"ItemName": "American Twister",
+"Servings": "236",
+"Energy": "533",
+"Protein": "20.4",
+"TotalFat": "30.7",
+"SaturatedFat": "11.2",
+"Carbohydrate": "66.1",
+"Sodium": "867",
+"Allergen": [
+"Cereals Contain Gluten",
+"Egg",
+"Milk",
+"Soy",
+"Wheat"
+]
+}
+],
+"NutritionAMRiser": [
+{
+"ItemName": "Riser",
+"Servings": "143",
+"Energy": "442",
+"Protein": "22",
+"TotalFat": "19",
+"SaturatedFat": "8",
+"Carbohydrate": "45",
+"Sodium": "1201",
+"Allergen": [
+"Eggs",
+"Dairy",
+"Soy Beans",
+"Wheat",
+"Gluten",
+"MSG"
+]
+},
+{
+"ItemName": "Riser with Egg",
+"Servings": "250",
+"Energy": "884",
+"Protein": "38",
+"TotalFat": "47",
+"SaturatedFat": "20",
+"Carbohydrate": "71",
+"Sodium": "1646",
+"Allergen": [
+"Eggs",
+"Dairy",
+"Soy Beans",
+"Wheat",
+"Gluten",
+"MSG"
+]
+}
+],
+"NutritionAMBrekkie": [
+{
+"ItemName": "Brekkie Burger",
+"Servings": "165",
+"Energy": "347",
+"Protein": "17",
+"TotalFat": "17",
+"SaturatedFat": "6",
+"Carbohydrate": "35",
+"Sodium": "739",
+"Allergen": [
+"Eggs",
+"Milk",
+"Soy",
+"Wheat",
+"Gluten"
+]
+}
+],
+"NutritionAMHashbrown": [
+{
+"ItemName": "Hash Brown (1pc)",
+"Servings": "43.9",
+"Energy": "102",
+"Protein": "1.3",
+"TotalFat": "6.1",
+"SaturatedFat": "2.3",
+"Carbohydrate": "10.5",
+"Sodium": "153",
+"Allergen": []
+}
+],
+"NutritionCocaColaOriginalTasteLessSugar": [
+{
+"ItemName": "1.5L Coca-Cola Less Sugar",
+"Servings": "100",
+"Energy": "19",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "4.6",
+"TotalSugar": "4.6",
+"Lactose": "-",
+"Sodium": "2",
+"Allergen": []
+},
+{
+"ItemName": "Coca-Cola Less Sugar",
+"Servings": "100",
+"Energy": "30",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "7.5",
+"TotalSugar": "7.5",
+"Lactose": "0",
+"Sodium": "2",
+"Allergen": []
+},
+{
+"ItemName": "Coca-Cola Less Sugar (med)",
+"Servings": "510",
+"Energy": "153",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "38.3",
+"TotalSugar": "38.3",
+"Lactose": "0",
+"Sodium": "10",
+"Allergen": []
+},
+{
+"ItemName": "Coca-Cola Less Sugar (reg)",
+"Servings": "350",
+"Energy": "105",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "26.3",
+"TotalSugar": "26.3",
+"Lactose": "0",
+"Sodium": "7",
+"Allergen": []
+}
+],
+"NutritionCocaColaZeroSugar": [
+{
+"ItemName": "1.5L Coca-Cola Zero Sugar",
+"Servings": "100",
+"Energy": "0",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "0",
+"TotalSugar": "0",
+"Lactose": "-",
+"Sodium": "6",
+"Allergen": []
+},
+{
+"ItemName": "Coca-Cola Zero Sugar",
+"Servings": "100",
+"Energy": "0",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "0",
+"TotalSugar": "0",
+"Lactose": "-",
+"Sodium": "6",
+"Allergen": []
+},
+{
+"ItemName": "Coca-Cola Zero Sugar (med)",
+"Servings": "510",
+"Energy": "0",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "0",
+"TotalSugar": "0",
+"Lactose": "0",
+"Sodium": "31",
+"Allergen": []
+},
+{
+"ItemName": "Coca-Cola Zero Sugar (reg)",
+"Servings": "350",
+"Energy": "0",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "0",
+"TotalSugar": "0",
+"Lactose": "0",
+"Sodium": "21",
+"Allergen": []
+}
+],
+"NutritionFantaGrape": [
+{
+"ItemName": "Fanta Grape",
+"Servings": "100",
+"Energy": "19",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "4.6",
+"TotalSugar": "4.6",
+"Lactose": "-",
+"Sodium": "4",
+"Allergen": []
+},
+{
+"ItemName": "Fanta Grape (reg)",
+"Servings": "350",
+"Energy": "67",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "16.1",
+"TotalSugar": "16.1",
+"Lactose": "-",
+"Sodium": "14",
+"Allergen": []
+},
+{
+"ItemName": "Fanta Grape (med)",
+"Servings": "510",
+"Energy": "97",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "23.5",
+"TotalSugar": "23.5",
+"Lactose": "-",
+"Sodium": "20",
+"Allergen": []
+}
+],
+"NutritionHeavenEarthIcedLemonTea": [
+{
+"ItemName": "Fuze Tea Ice Lemon Tea",
+"Servings": "100",
+"Energy": "19",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "4.7",
+"TotalSugar": "4.4",
+"Lactose": "-",
+"Sodium": "6",
+"Allergen": []
+},
+{
+"ItemName": "Fuze Tea Ice Lemon Tea (med)",
+"Servings": "510",
+"Energy": "97",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "24.0",
+"TotalSugar": "22.4",
+"Lactose": "-",
+"Sodium": "31",
+"Allergen": []
+},
+{
+"ItemName": "Fuze Tea Ice Lemon Tea (reg)",
+"Servings": "350",
+"Energy": "67",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "16.5",
+"TotalSugar": "15.4",
+"Lactose": "-",
+"Sodium": "21",
+"Allergen": []
+}
+],
+"NutritionSprite": [
+{
+"ItemName": "Sprite",
+"Servings": "100",
+"Energy": "19",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "4.6",
+"TotalSugar": "4.6",
+"Lactose": "-",
+"Sodium": "11",
+"Allergen": []
+},
+{
+"ItemName": "Sprite (reg)",
+"Servings": "350",
+"Energy": "67",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "16.1",
+"TotalSugar": "16.1",
+"Lactose": "-",
+"Sodium": "39",
+"Allergen": []
+},
+{
+"ItemName": "Sprite (med)",
+"Servings": "510",
+"Energy": "97",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "23.5",
+"TotalSugar": "23.5",
+"Lactose": "-",
+"Sodium": "56",
+"Allergen": []
+}
+],
+"NutritionAppleJuice": [
+{
+"ItemName": "Apple Juice",
+"Servings": "100",
+"Energy": "20",
+"Protein": "0.1",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "5",
+"TotalSugar": "4.8",
+"Lactose": "-",
+"AddedSugar": "0",
+"Sodium": "13",
+"Allergen": [
+"Sulphites"
+]
+},
+{
+"ItemName": "Apple Juice",
+"Servings": "200",
+"Energy": "40",
+"Protein": "0.2",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "10",
+"TotalSugar": "9.6",
+"Lactose": "-",
+"AddedSugar": "0",
+"Sodium": "26",
+"Allergen": [
+"Sulphites"
+]
+}
+],
+"NutritionBlackCoffee": [
+{
+"ItemName": "Black Coffee",
+"Servings": "203",
+"Energy": "9",
+"Protein": "0.8",
+"TotalFat": "0.2",
+"SaturatedFat": "0.2",
+"Carbohydrate": "1.8",
+"TotalSugar": "0.2",
+"Lactose": "0",
+"Sodium": "2",
+"Allergen": []
+}
+],
+"NutritionCappuccino": [
+{
+"ItemName": "Cappuccino",
+"Servings": "201",
+"Energy": "51",
+"Protein": "0.8",
+"TotalFat": "2.8",
+"SaturatedFat": "2.8",
+"Carbohydrate": "5.8",
+"TotalSugar": "0.6",
+"Lactose": "0",
+"Sodium": "22",
+"Allergen": [
+"Milk"
+]
+}
+],
+"NutritionCoffeewithCreamer": [
+{
+"ItemName": "Coffee with Creamer",
+"Servings": "199",
+"Energy": "38",
+"Protein": "0.8",
+"TotalFat": "2.0",
+"SaturatedFat": "2.0",
+"Carbohydrate": "4.6",
+"TotalSugar": "0.4",
+"Lactose": "0",
+"Sodium": "16",
+"Allergen": [
+"Milk"
+]
+}
+],
+"NutritionDasaniDrinkingWater": [
+{
+"ItemName": "Dasani Drinking Water",
+"Servings": "600",
+"Energy": "0",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "0",
+"TotalSugar": "0",
+"Lactose": "0",
+"Sodium": "0",
+"Allergen": []
+}
+],
+"NutritionHotMilo": [
+{
+"ItemName": "Hot Milo [HCS]",
+"Servings": "204",
+"Energy": "97",
+"Protein": "2.4",
+"TotalFat": "2.0",
+"SaturatedFat": "1.2",
+"Carbohydrate": "17.1",
+"TotalSugar": "11.8",
+"Lactose": "2.7",
+"Sodium": "77",
+"Allergen": [
+"Milk",
+"Gluten"
+]
+}
+],
+"NutritionLatte": [
+{
+"ItemName": "Latte",
+"Servings": "203",
+"Energy": "61",
+"Protein": "0.8",
+"TotalFat": "3.7",
+"SaturatedFat": "3.5",
+"Carbohydrate": "6.9",
+"TotalSugar": "0.6",
+"Lactose": "0",
+"Sodium": "27",
+"Allergen": [
+"Milk"
+]
+}
+],
+"NutritionMocha": [
+{
+"ItemName": "Mocha",
+"Servings": "206",
+"Energy": "101",
+"Protein": "2.7",
+"TotalFat": "2.1",
+"SaturatedFat": "1.2",
+"Carbohydrate": "17.9",
+"TotalSugar": "11.9",
+"Lactose": "2.7",
+"Sodium": "78",
+"Allergen": [
+"Milk",
+"Gluten"
+]
+}
+],
+"NutritionSjoraMangoPeach": [
+{
+"ItemName": "Sjora Mango Peach",
+"Servings": "100",
+"Energy": "20",
+"Protein": "0.3",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "4.8",
+"TotalSugar": "4.7",
+"Lactose": "0",
+"Sodium": "5",
+"Allergen": [
+"Milk"
+]
+},
+{
+"ItemName": "Sjora Mango Peach (med)",
+"Servings": "510",
+"Energy": "104",
+"Protein": "1.4",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "24.7",
+"TotalSugar": "23.8",
+"Lactose": "0",
+"Sodium": "26",
+"Allergen": [
+"Milk"
+]
+},
+{
+"ItemName": "Sjora Mango Peach (reg)",
+"Servings": "350",
+"Energy": "71",
+"Protein": "0.9",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "16.9",
+"TotalSugar": "16.3",
+"Lactose": "0",
+"Sodium": "18",
+"Allergen": [
+"Milk"
+]
+}
+],
+"NutritionRedBullEnergyDrink": [
+{
+"ItemName": "Red Bull Energy Drink (per can)",
+"Servings": "250",
+"Energy": "113",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "27",
+"TotalSugar": "27",
+"Lactose": "NA",
+"Sodium": "NA",
+"Allergen": []
+}
+],
+"NutritionRedBullSugarFree": [
+{
+"ItemName": "Red Bull Sugar Free (per can)",
+"Servings": "250",
+"Energy": "7",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "0",
+"TotalSugar": "0",
+"Lactose": "NA",
+"Sodium": "NA",
+"Allergen": []
+}
+],
+"NutritionMineralWater": [
+{
+"ItemName": "Mineral Water",
+"Servings": "100",
+"Energy": "0",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "0",
+"TotalSugar": "0",
+"Lactose": "0",
+"Sodium": "0",
+"Allergen": []
+}
+],
+"NutritionMagnoliaLoFatHiCalMilk": [
+{
+"ItemName": "Magnolia Low Fat High Calcium Fresh Milk",
+"Servings": "100",
+"Energy": "48",
+"Protein": "3.7",
+"TotalFat": "1.5",
+"SaturatedFat": "0.9",
+"Carbohydrate": "5",
+"TotalSugar": "4.7",
+"Lactose": "NA",
+"Sodium": "49",
+"Allergen": [
+"Milk"
+]
+},
+{
+"ItemName": "Magnolia Low Fat High Calcium Fresh Milk",
+"Servings": "200",
+"Energy": "96",
+"Protein": "7.4",
+"TotalFat": "3",
+"SaturatedFat": "1.8",
+"Carbohydrate": "10",
+"TotalSugar": "9.4",
+"Lactose": "NA",
+"Sodium": "98",
+"Allergen": [
+"Milk"
+]
+}
+],
+"NutritionMinuteMaidOrangeFruitDrink": [
+{
+"ItemName": "Minute Maid Orange (med)",
+"Servings": "510",
+"Energy": "153",
+"Protein": "0.0",
+"TotalFat": "0.0",
+"SaturatedFat": "0.0",
+"Carbohydrate": "36.7",
+"TotalSugar": "34.7",
+"Lactose": "0.0",
+"Sodium": "71",
+"Allergen": [
+"NA"
+]
+},
+{
+"ItemName": "Minute Maid Orange (reg)",
+"Servings": "350",
+"Energy": "105",
+"Protein": "0.0",
+"TotalFat": "0.0",
+"SaturatedFat": "0.0",
+"Carbohydrate": "25.2",
+"TotalSugar": "23.8",
+"Lactose": "0.0",
+"Sodium": "49",
+"Allergen": [
+"NA"
+]
+}
+],
+"NutritionPokkaKiyoKyohoGrapeJuiceDrink": [
+{
+"ItemName": "Pokka Kiyo Kyoho Grape",
+"Servings": "250",
+"Energy": "100",
+"Protein": "0.0",
+"TotalFat": "0.0",
+"SaturatedFat": "0.0",
+"Carbohydrate": "25.0",
+"TotalSugar": "24.3",
+"Lactose": "0.0",
+"Sodium": "25",
+"Allergen": [
+"NA"
+]
+}
+],
+"NutritionHotTea": [
+{
+"ItemName": "Hot Tea",
+"Servings": "100",
+"Energy": "1",
+"Protein": "0",
+"TotalFat": "-",
+"SaturatedFat": "-",
+"Carbohydrate": "0",
+"TotalSugar": "0",
+"Lactose": "0",
+"Sodium": "3",
+"Allergen": [
+"NA"
+]
+},
+{
+"ItemName": "Hot Tea with Milk",
+"Servings": "100",
+"Energy": "9",
+"Protein": "0.3",
+"TotalFat": "0.3",
+"SaturatedFat": "0.2",
+"Carbohydrate": "0.6",
+"TotalSugar": "0.5",
+"Lactose": "0",
+"Sodium": "12",
+"Allergen": [
+"Milk"
+]
+}
+],
+"NutritionDrinksPepsiBlack": [
+{
+"ItemName": "Pepsi Black (reg)",
+"Servings": "330ml",
+"Energy": "0",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "0",
+"Sodium": "26",
+"Allergen": []
+},
+{
+"ItemName": "Pepsi Black (med)",
+"Servings": "470ml",
+"Energy": "0",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "0",
+"Sodium": "38",
+"Allergen": []
+}
+],
+"NutritionDrinks7Up": [
+{
+"ItemName": "7 Up (reg)",
+"Servings": "330ml",
+"Energy": "143",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "37",
+"Sodium": "3",
+"Allergen": []
+},
+{
+"ItemName": "7 Up (med)",
+"Servings": "470ml",
+"Energy": "203",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "53",
+"Sodium": "4",
+"Allergen": []
+}
+],
+"NutritionDrinksMountainDew": [
+{
+"ItemName": "Mountain Dew (reg)",
+"Servings": "330ml",
+"Energy": "152",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "43",
+"Sodium": "55",
+"Allergen": []
+},
+{
+"ItemName": "Mountain Dew (med)",
+"Servings": "470ml",
+"Energy": "216",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "61",
+"Sodium": "79",
+"Allergen": []
+}
+],
+"NutritionDrinksMugRootBeer": [
+{
+"ItemName": "Mug Root Beer (reg)",
+"Servings": "330ml",
+"Energy": "145",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "37",
+"Sodium": "39",
+"Allergen": []
+},
+{
+"ItemName": "Mug Root Beer (med)",
+"Servings": "470ml",
+"Energy": "207",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "53",
+"Sodium": "56",
+"Allergen": []
+}
+],
+"NutritionDrinksLiptonIcedLemonTea": [
+{
+"ItemName": "Lipton Iced Lemon Tea (reg)",
+"Servings": "303ml",
+"Energy": "109",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "27",
+"Sodium": "0",
+"Allergen": []
+},
+{
+"ItemName": "Lipton Iced Lemon Tea (med)",
+"Servings": "446ml",
+"Energy": "161",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "40",
+"Sodium": "0",
+"Allergen": []
+}
+],
+"NutritionDrinksSJORA": [
+{
+"ItemName": "SJORA Mango Peach",
+"Servings": "300ml",
+"Energy": "113",
+"Protein": "0.9",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "27",
+"Sodium": "21",
+"Allergen": [
+"Milk"
+]
+},
+{
+"ItemName": "SJORA Mango Peach (med)",
+"Servings": "410ml",
+"Energy": "154",
+"Protein": "1",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "37",
+"Sodium": "29",
+"Allergen": [
+"Milk"
+]
+}
+],
+"NutritionDrinksIcedMilo": [
+{
+"ItemName": "Iced Milo (reg)",
+"Servings": "310ml",
+"Energy": "188",
+"Protein": "5",
+"TotalFat": "5",
+"SaturatedFat": "2",
+"Carbohydrate": "31",
+"Sodium": "93",
+"Allergen": [
+"Milk",
+"Soy"
+]
+},
+{
+"ItemName": "Iced Milo (med)",
+"Servings": "420ml",
+"Energy": "254",
+"Protein": "7",
+"TotalFat": "6",
+"SaturatedFat": "3",
+"Carbohydrate": "42",
+"Sodium": "126",
+"Allergen": [
+"Milk",
+"Soy"
+]
+}
+],
+"NutritionDrinksMineralWater": [
+{
+"ItemName": "Mineral Water",
+"Servings": "600ml",
+"Energy": "0",
+"Protein": "0",
+"TotalFat": "0",
+"SaturatedFat": "0",
+"Carbohydrate": "0",
+"Sodium": "3",
+"Allergen": []
+}
+],
+"NutritionDrinksFreshMilk": [
+{
+"ItemName": "Magnolia Fresh Milk",
+"Servings": "200ml",
+"Energy": "132",
+"Protein": "6",
+"TotalFat": "8",
+"SaturatedFat": "4",
+"Carbohydrate": "10",
+"Sodium": "88",
+"Allergen": [
+"Milk"
+]
+}
+],
+"NutritionIcedMilo": [
+{
+"ItemName": "Iced Milo (reg)",
+"Servings": "350",
+"Energy": "226",
+"Protein": "7.0",
+"TotalFat": "6.0",
+"SaturatedFat": "2.5",
+"Carbohydrate": "35.0",
+"TotalSugar": "28.0",
+"Lactose": "0.0",
+"AddedSugar": "17.5",
+"Sodium": "130",
+"Allergen": [
+"Milk",
+"Soy",
+"Gluten"
+]
+},
+{
+"ItemName": "Iced Milo (med)",
+"Servings": "510",
+"Energy": "329",
+"Protein": "10.2",
+"TotalFat": "8.7",
+"SaturatedFat": "3.6",
+"Carbohydrate": "51",
+"TotalSugar": "40.8",
+"Lactose": "0.0",
+"AddedSugar": "25.5",
+"Sodium": "189",
+"Allergen": [
+"Milk",
+"Soy",
+"Gluten"
+]
+}
+]
+}
+}

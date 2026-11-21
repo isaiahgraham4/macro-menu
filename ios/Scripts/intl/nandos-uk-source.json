@@ -1,0 +1,9135 @@
+{
+"checked": "2026-11-21",
+"url": "https://www.nandos.co.uk/food/menu/page-data/index/page-data.json",
+"sections": [
+{
+"name": "Starters",
+"items": [
+{
+"id": "take-your-pick:starters",
+"name": "Dare to share",
+"description": "Choose any three starters and get sharing.",
+"allergens": {},
+"diets": [],
+"sizes": [],
+"portions": []
+},
+{
+"id": "halloumi-sticks-dip:starters",
+"name": "Halloumi Sticks & Dip",
+"description": "Five chunky sticks of grilled halloumi with chilli jam for dipping.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 452,
+"energyKj": 1881,
+"fatMg": 32000,
+"fibreMg": 200,
+"proteinMg": 27100,
+"saltMg": 2300,
+"saturatesMg": 16600,
+"sugarsMg": 12700,
+"totalCarbsMg": 14800
+}
+]
+},
+{
+"id": "halloumi-sticks-dip:starters",
+"name": "Halloumi Sticks & Dip",
+"description": "Five chunky sticks of grilled halloumi with chilli jam for dipping.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 452,
+"energyKj": 1881,
+"fatMg": 32000,
+"fibreMg": 200,
+"proteinMg": 27100,
+"saltMg": 2300,
+"saturatesMg": 16600,
+"sugarsMg": 12700,
+"totalCarbsMg": 14800
+}
+]
+},
+{
+"id": "houmous-with-pe-ri-pe-ri-drizzle:starters",
+"name": "Houmous with PERi-PERi Drizzle",
+"description": "With warm pitta triangles. Great to share.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "MAYBE_FROM_MANUFACTURING",
+"PEANUT": "NO",
+"SESAME": "YES",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 815,
+"energyKj": 3426,
+"fatMg": 32600,
+"fibreMg": 5000,
+"proteinMg": 25000,
+"saltMg": 2900,
+"saturatesMg": 4500,
+"sugarsMg": 5400,
+"totalCarbsMg": 103800
+}
+]
+},
+{
+"id": "sweet-potato-wedges-with-garlic-pe-rinaise:starters",
+"name": "Sweet Potato Wedges with Garlic PERinaise",
+"description": "Crispy wedges served with our creamy plant-based Garlic PERinaise dip. Perfect for sharing! 10p from each one goes directly towards fighting malaria in our Southern African homeland.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 440,
+"energyKj": 1833,
+"fatMg": 24100,
+"fibreMg": 7100,
+"proteinMg": 8100,
+"saltMg": 1600,
+"saturatesMg": 10200,
+"sugarsMg": 28300,
+"totalCarbsMg": 51000
+}
+]
+},
+{
+"id": "spicy-mixed-olives:starters",
+"name": "Spicy Mixed Olives",
+"description": "Spicy mixed olives co-starring mushrooms, garlic and red pepper.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 138,
+"energyKj": 564,
+"fatMg": 13500,
+"fibreMg": 3900,
+"proteinMg": 1200,
+"saltMg": 4600,
+"saturatesMg": 1400,
+"sugarsMg": 0,
+"totalCarbsMg": 4700
+}
+]
+},
+{
+"id": "pe-ri-pe-ri-nuts:starters",
+"name": "PERi-PERi Nuts",
+"description": "Crunchy almonds, cashews and macadamia nuts in a fiery PERi-PERi seasoning.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_BARLEY": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_MANUFACTURING",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_MANUFACTURING",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "YES",
+"PEANUT": "MAYBE_FROM_MANUFACTURING",
+"SESAME": "NO",
+"SOYA": "MAYBE_FROM_MANUFACTURING",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 793,
+"energyKj": 3278,
+"fatMg": 67400,
+"fibreMg": 9000,
+"proteinMg": 27300,
+"saltMg": 1200,
+"saturatesMg": 8800,
+"sugarsMg": 5900,
+"totalCarbsMg": 14800
+}
+]
+},
+{
+"id": "halloumi-and-dip:starters",
+"name": "Halloumi & Dip",
+"description": "Grilled halloumi cheese with a chilli jam dip.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 519,
+"energyKj": 2160,
+"fatMg": 38200,
+"fibreMg": 200,
+"proteinMg": 28900,
+"saltMg": 2800,
+"saturatesMg": 20800,
+"sugarsMg": 13200,
+"totalCarbsMg": 15300
+}
+]
+}
+]
+},
+{
+"name": "PERi-PERi Chicken",
+"items": [
+{
+"id": "chicken-butterfly:pe-ri-pe-ri-chicken",
+"name": "Chicken Butterfly",
+"description": "Two chicken breasts, flame-grilled with crispy skin. Infused with PERi-PERi and served in your choice of spice.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 332,
+"energyKj": 1394,
+"fatMg": 10100,
+"fibreMg": 1500,
+"proteinMg": 59400,
+"saltMg": 1300,
+"saturatesMg": 2300,
+"sugarsMg": 200,
+"totalCarbsMg": 200
+}
+]
+},
+{
+"id": "4-boneless-chicken-thighs:pe-ri-pe-ri-chicken",
+"name": "4 Boneless Chicken Thighs",
+"description": "Flame-grilled with crispy skin. Infused with PERi-PERi and served in your choice of spice.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 578,
+"energyKj": 2320,
+"fatMg": 30400,
+"fibreMg": 1200,
+"proteinMg": 70100,
+"saltMg": 1700,
+"saturatesMg": 7800,
+"sugarsMg": 200,
+"totalCarbsMg": 200
+}
+]
+},
+{
+"id": "1-2-chicken:pe-ri-pe-ri-chicken",
+"name": "1/2 Chicken",
+"description": "One breast and one leg, flame-grilled and infused with PERi-PERi. Served on the bone with crispy skin, in your choice of spice.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 568,
+"energyKj": 2378,
+"fatMg": 27200,
+"fibreMg": 1000,
+"proteinMg": 80000,
+"saltMg": 1700,
+"saturatesMg": 7600,
+"sugarsMg": 300,
+"totalCarbsMg": 500
+}
+]
+},
+{
+"id": "1-4-chicken:pe-ri-pe-ri-chicken",
+"name": "1/4 Chicken",
+"description": "Flame-grilled, infused with PERi-PERi and perfect for pairing with sides. Served on the bone with crispy skin, in your choice of spice.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 284,
+"energyKj": 1189,
+"fatMg": 13600,
+"fibreMg": 500,
+"proteinMg": 40000,
+"saltMg": 800,
+"saturatesMg": 3800,
+"sugarsMg": 100,
+"totalCarbsMg": 300
+}
+]
+},
+{
+"id": "whole-chicken:pe-ri-pe-ri-chicken",
+"name": "Whole Chicken",
+"description": "Flame-grilled, infused with PERi-PERi and served in your choice of spice. Cut into quarters and perfect with sides, it's great for sharing!",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 1136,
+"energyKj": 4757,
+"fatMg": 54400,
+"fibreMg": 1900,
+"proteinMg": 160100,
+"saltMg": 3400,
+"saturatesMg": 15200,
+"sugarsMg": 600,
+"totalCarbsMg": 1000
+}
+]
+},
+{
+"id": "3-chicken-wings:pe-ri-pe-ri-chicken",
+"name": "3 Chicken Wings",
+"description": "Flame-grilled, infused with PERi-PERi and perfect for pairing with sides. Served in your choice of spice.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 236,
+"energyKj": 987,
+"fatMg": 11800,
+"fibreMg": 700,
+"proteinMg": 31900,
+"saltMg": 1300,
+"saturatesMg": 2800,
+"sugarsMg": 100,
+"totalCarbsMg": 300
+}
+]
+},
+{
+"id": "5-chicken-wings:pe-ri-pe-ri-chicken",
+"name": "5 Chicken Wings",
+"description": "Flame-grilled, infused with PERi-PERi and perfect for pairing with sides. Served in your choice of spice.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 393,
+"energyKj": 1645,
+"fatMg": 19700,
+"fibreMg": 1200,
+"proteinMg": 53200,
+"saltMg": 2200,
+"saturatesMg": 4700,
+"sugarsMg": 200,
+"totalCarbsMg": 400
+}
+]
+},
+{
+"id": "10-chicken-wings:pe-ri-pe-ri-chicken",
+"name": "10 Chicken Wings",
+"description": "Flame-grilled with crispy skin and great for sharing!",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 786,
+"energyKj": 3290,
+"fatMg": 39400,
+"fibreMg": 2500,
+"proteinMg": 106400,
+"saltMg": 4400,
+"saturatesMg": 9400,
+"sugarsMg": 400,
+"totalCarbsMg": 900
+}
+]
+},
+{
+"id": "15-chicken-wings:pe-ri-pe-ri-chicken",
+"name": "15 Chicken Wings",
+"description": "Bigger is always better. A feast that’s great for sharing!",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 1179,
+"energyKj": 4935,
+"fatMg": 59100,
+"fibreMg": 3700,
+"proteinMg": 159600,
+"saltMg": 6700,
+"saturatesMg": 14100,
+"sugarsMg": 500,
+"totalCarbsMg": 1300
+}
+]
+},
+{
+"id": "10-wing-roulette:pe-ri-pe-ri-chicken",
+"name": "10 Wing Roulette",
+"description": "Can't decide on your spice? Tuck in to 10 wings with various heat levels (it's not for the faint-hearted!).",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": []
+},
+{
+"id": "1-4-chicken-breast:pe-ri-pe-ri-chicken",
+"name": "1/4 Chicken Breast",
+"description": "Flame-grilled, infused with PERi-PERi and perfect for pairing with sides. Served on the bone with crispy skin, in your choice of spice.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 323,
+"energyKj": 1353,
+"fatMg": 12800,
+"fibreMg": 1000,
+"proteinMg": 51500,
+"saltMg": 900,
+"saturatesMg": 3600,
+"sugarsMg": 200,
+"totalCarbsMg": 200
+}
+]
+},
+{
+"id": "1-4-chicken-leg:pe-ri-pe-ri-chicken",
+"name": "1/4 Chicken Leg",
+"description": "Flame-grilled, infused with PERi-PERi and perfect for pairing with sides. Served on the bone with crispy skin, in your choice of spice.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 245,
+"energyKj": 1026,
+"fatMg": 14400,
+"fibreMg": 0,
+"proteinMg": 28500,
+"saltMg": 700,
+"saturatesMg": 4100,
+"sugarsMg": 100,
+"totalCarbsMg": 300
+}
+]
+},
+{
+"id": "chicken-livers-portuguese-roll:pe-ri-pe-ri-chicken",
+"name": "Chicken Livers & Portuguese Roll",
+"description": "Try something different! Chicken livers cooked in our special sauce, served with a Portuguese roll.",
+"allergens": {},
+"diets": [],
+"sizes": [],
+"portions": []
+}
+]
+},
+{
+"name": "Burgers, Pittas, Wraps",
+"items": [
+{
+"id": "fino-pitta:burgers-pittas-wraps",
+"name": "Fino Pitta",
+"description": "Indulge in a toasted pitta filled with two flame-grilled PERi-PERi chicken thighs, grilled halloumi cheese, caramelised red onion relish and wild garlic aioli, topped with lettuce.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "YES",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 763,
+"energyKj": 3151,
+"fatMg": 32400,
+"fibreMg": 3700,
+"proteinMg": 54900,
+"saltMg": 3100,
+"saturatesMg": 12700,
+"sugarsMg": 16200,
+"totalCarbsMg": 58100
+}
+]
+},
+{
+"id": "butterfly-burger:burgers-pittas-wraps",
+"name": "Butterfly Burger",
+"description": "Two succulent chicken breasts with crispy skin, packed in a Portuguese roll with Lemon & Herb mayo, lettuce, tomato and PERi-Ketchup. It’s big...",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_OATS": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_RYE": "YES",
+"GLUTEN_SPELT": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "MAYBE_FROM_MANUFACTURING",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 632,
+"energyKj": 2664,
+"fatMg": 16400,
+"fibreMg": 4200,
+"proteinMg": 66600,
+"saltMg": 2800,
+"saturatesMg": 4000,
+"sugarsMg": 4700,
+"totalCarbsMg": 53000
+}
+]
+},
+{
+"id": "sunset-burger:burgers-pittas-wraps",
+"name": "Sunset Burger",
+"description": "Two chicken thighs, melting cheddar cheese, smoky red pepper chutney with lettuce and mayo in a bolo do caco – a soft, sweet roll. Deliciously messy.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "MAYBE_FROM_MANUFACTURING",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "MAYBE_FROM_MANUFACTURING",
+"PEANUT": "NO",
+"SESAME": "MAYBE_FROM_MANUFACTURING",
+"SOYA": "MAYBE_FROM_MANUFACTURING",
+"SULPHITE": "NO"
+},
+"diets": [],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 619,
+"energyKj": 2541,
+"fatMg": 27700,
+"fibreMg": 3300,
+"proteinMg": 46100,
+"saltMg": 2200,
+"saturatesMg": 9400,
+"sugarsMg": 9600,
+"totalCarbsMg": 42100
+}
+]
+},
+{
+"id": "grilled-chicken-wrap:burgers-pittas-wraps",
+"name": "Grilled Chicken Wrap",
+"description": "Chicken breast infused with PERi-PERi and grilled to your favourite spice. Served in a wrap with lettuce, lightly spiced yoghurt mayo and chilli jam.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "YES",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "YES",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 537,
+"energyKj": 2259,
+"fatMg": 14800,
+"fibreMg": 3600,
+"proteinMg": 37300,
+"saltMg": 2200,
+"saturatesMg": 2800,
+"sugarsMg": 19000,
+"totalCarbsMg": 61500
+}
+]
+},
+{
+"id": "double-chicken-wrap:burgers-pittas-wraps",
+"name": "Double Chicken Wrap",
+"description": "Two chicken breasts infused with PERi-PERi and grilled to your favourite spice. Served in a wrap with lettuce, lightly spiced yoghurt mayo and chilli jam.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "YES",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "YES",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 674,
+"energyKj": 2840,
+"fatMg": 17300,
+"fibreMg": 4000,
+"proteinMg": 65900,
+"saltMg": 3000,
+"saturatesMg": 3400,
+"sugarsMg": 19100,
+"totalCarbsMg": 61600
+}
+]
+},
+{
+"id": "fino-pitta:burgers-pittas-wraps",
+"name": "Fino Pitta (Boneless Chicken Thighs)",
+"description": "Indulge in a toasted pitta filled with two flame-grilled PERi-PERi chicken thighs, grilled halloumi cheese, caramelised red onion relish and wild garlic aioli, topped with lettuce.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "YES",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 763,
+"energyKj": 3151,
+"fatMg": 32400,
+"fibreMg": 3700,
+"proteinMg": 54900,
+"saltMg": 3100,
+"saturatesMg": 12700,
+"sugarsMg": 16200,
+"totalCarbsMg": 58100
+}
+]
+},
+{
+"id": "grilled-chicken-burger:burgers-pittas-wraps",
+"name": "Grilled Chicken Burger",
+"description": "Chicken breast infused with PERi-PERi and grilled to your favourite spice. Served in a Portuguese Roll with Lemon & Herb mayo, lettuce, tomato and PERi-Ketchup.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_OATS": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_RYE": "YES",
+"GLUTEN_SPELT": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "MAYBE_FROM_MANUFACTURING",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 438,
+"energyKj": 1852,
+"fatMg": 8900,
+"fibreMg": 3100,
+"proteinMg": 35800,
+"saltMg": 2200,
+"saturatesMg": 2200,
+"sugarsMg": 4600,
+"totalCarbsMg": 52900
+}
+]
+},
+{
+"id": "double-chicken-burger:burgers-pittas-wraps",
+"name": "Double Chicken Burger",
+"description": "Two chicken breasts infused with PERi-PERi and grilled to your favourite spice. Served in a Portuguese Roll with Lemon & Herb mayo, lettuce, tomato and PERi-Ketchup.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_OATS": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_RYE": "YES",
+"GLUTEN_SPELT": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "MAYBE_FROM_MANUFACTURING",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 576,
+"energyKj": 2433,
+"fatMg": 11500,
+"fibreMg": 3600,
+"proteinMg": 64400,
+"saltMg": 2900,
+"saturatesMg": 2700,
+"sugarsMg": 4700,
+"totalCarbsMg": 53000
+}
+]
+},
+{
+"id": "grilled-chicken-pitta:burgers-pittas-wraps",
+"name": "Grilled Chicken Pitta",
+"description": "Sliced chicken breast infused with PERi-PERi and grilled to your favourite spice. Served in a toasted pitta with Lemon & Herb mayo and crunchy slaw in a tangy mustard dressing.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "YES",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 485,
+"energyKj": 2040,
+"fatMg": 14900,
+"fibreMg": 4100,
+"proteinMg": 36600,
+"saltMg": 1700,
+"saturatesMg": 3100,
+"sugarsMg": 7000,
+"totalCarbsMg": 51300
+}
+]
+},
+{
+"id": "double-chicken-pitta:burgers-pittas-wraps",
+"name": "Double Chicken Pitta",
+"description": "Two sliced chicken breasts infused with PERi-PERi and grilled to your favourite spice. Served in a toasted pitta with Lemon & Herb mayo and crunchy slaw in a tangy mustard dressing.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "YES",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 623,
+"energyKj": 2621,
+"fatMg": 17400,
+"fibreMg": 4600,
+"proteinMg": 65200,
+"saltMg": 2500,
+"saturatesMg": 3600,
+"sugarsMg": 7100,
+"totalCarbsMg": 51400
+}
+]
+}
+]
+},
+{
+"name": "Salads",
+"items": [
+{
+"id": "rainbow-bowl:salads",
+"name": "Rainbow Bowl",
+"description": "Warmed spiced grains and long-stem broccoli with houmous, rainbow slaw, pickled golden carrot and a sprinkle of seeds.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "YES",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "YES",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "YES",
+"SOYA": "MAYBE_FROM_MANUFACTURING",
+"SULPHITE": "YES"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 528,
+"energyKj": 2207,
+"fatMg": 28500,
+"fibreMg": 12300,
+"proteinMg": 16200,
+"saltMg": 1900,
+"saturatesMg": 3100,
+"sugarsMg": 13500,
+"totalCarbsMg": 49800
+}
+]
+},
+{
+"id": "rainbow-bowl:salads",
+"name": "Rainbow Bowl (Northern Ireland Only)",
+"description": "Warmed spiced grains and long-stem broccoli with houmous, rainbow slaw, pickled golden carrot and a sprinkle of seeds.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "YES",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "YES",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "YES",
+"SOYA": "MAYBE_FROM_MANUFACTURING",
+"SULPHITE": "YES"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 528,
+"energyKj": 2207,
+"fatMg": 28500,
+"fibreMg": 12300,
+"proteinMg": 16200,
+"saltMg": 1900,
+"saturatesMg": 3100,
+"sugarsMg": 13500,
+"totalCarbsMg": 49800
+}
+]
+}
+]
+},
+{
+"name": "Sharing Platters",
+"items": [
+{
+"id": "full-platter:sharing-platters",
+"name": "Full Platter",
+"description": "A Whole Chicken with 2 large or 4 regular sides. Great for two people.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 1136,
+"energyKj": 4757,
+"fatMg": 54400,
+"fibreMg": 1900,
+"proteinMg": 160100,
+"saltMg": 3400,
+"saturatesMg": 15200,
+"sugarsMg": 600,
+"totalCarbsMg": 1000
+}
+]
+},
+{
+"id": "boneless-platter:sharing-platters",
+"name": "Boneless Platter",
+"description": "A Chicken Butterfly and 4 Boneless Chicken Thighs, served with either 2 large or 4 regular sides. A perfect meal for two!",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 910,
+"energyKj": 3714,
+"fatMg": 40500,
+"fibreMg": 2700,
+"proteinMg": 129500,
+"saltMg": 3100,
+"saturatesMg": 10200,
+"sugarsMg": 400,
+"totalCarbsMg": 400
+}
+]
+},
+{
+"id": "family-platter:sharing-platters",
+"name": "Family Platter",
+"description": "2 Whole Chickens and 5 large sides. Perfect for 4-6 people.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 2272,
+"energyKj": 9514,
+"fatMg": 109000,
+"fibreMg": 4000,
+"proteinMg": 320000,
+"saltMg": 7000,
+"saturatesMg": 30000,
+"sugarsMg": 1000,
+"totalCarbsMg": 2000
+}
+]
+},
+{
+"id": "wing-platter:sharing-platters",
+"name": "Wing Platter",
+"description": "10 Chicken Wings with either 2 large or 4 regular sides. Great for two people.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 786,
+"energyKj": 3290,
+"fatMg": 39400,
+"fibreMg": 2500,
+"proteinMg": 106400,
+"saltMg": 4400,
+"saturatesMg": 9400,
+"sugarsMg": 400,
+"totalCarbsMg": 900
+}
+]
+}
+]
+},
+{
+"name": "Veggie",
+"items": [
+{
+"id": "portobello-mushroom-halloumi-pitta:veggie",
+"name": "Portobello Mushroom & Halloumi Pitta",
+"description": "Portobello mushroom, grilled halloumi and wild garlic aioli. The mushroom & halloumi you know and love, with an epic upgrade.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "YES",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": []
+},
+{
+"id": "chickpea-burger:veggie",
+"name": "Spiced Chickpea Burger",
+"description": "A chickpea and spinach patty with hints of cumin, coriander and turmeric, loaded with houmous, red pepper chutney and topped with red pickled onions. Served in a bolo do caco - our soft, sweet roll.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "MAYBE_FROM_MANUFACTURING",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_OATS": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_RYE": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_SPELT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_MANUFACTURING",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "MAYBE_FROM_MANUFACTURING",
+"PEANUT": "NO",
+"SESAME": "YES",
+"SOYA": "MAYBE_FROM_MANUFACTURING",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 534,
+"energyKj": 2237,
+"fatMg": 19900,
+"fibreMg": 11300,
+"proteinMg": 15600,
+"saltMg": 1800,
+"saturatesMg": 2700,
+"sugarsMg": 19400,
+"totalCarbsMg": 75800
+}
+]
+},
+{
+"id": "the-great-imitator-wrap:veggie",
+"name": "The Great Imitator Wrap",
+"description": "Our PERi-Plant strips are made from pea-protein but taste just like our famous PERi-PERi chicken. Served with plant-based Garlic PERinaise, lettuce and chilli jam.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 560,
+"energyKj": 2347,
+"fatMg": 22700,
+"fibreMg": 4900,
+"proteinMg": 24700,
+"saltMg": 2600,
+"saturatesMg": 2600,
+"sugarsMg": 14500,
+"totalCarbsMg": 63800
+}
+]
+},
+{
+"id": "the-great-imitator-burger:veggie",
+"name": "The Great Imitator Burger",
+"description": "Our PERi-Plant strips are made from pea-protein but taste just like our famous PERi-PERi chicken. Served in a Portuguese Roll with Lemon & Herb mayo, lettuce, tomato and PERi-Ketchup.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_OATS": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_RYE": "YES",
+"GLUTEN_SPELT": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "MAYBE_FROM_MANUFACTURING",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 502,
+"energyKj": 2111,
+"fatMg": 17800,
+"fibreMg": 4700,
+"proteinMg": 23700,
+"saltMg": 2300,
+"saturatesMg": 2400,
+"sugarsMg": 5700,
+"totalCarbsMg": 61900
+}
+]
+},
+{
+"id": "the-great-imitator-pitta:veggie",
+"name": "The Great Imitator Pitta",
+"description": "Our PERi-Plant strips are made from pea-protein but taste just like our famous PERi-PERi chicken. Served in a toasted pitta with Lemon & Herb mayo and crunchy slaw in a tangy mustard dressing.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "YES",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 585,
+"energyKj": 2448,
+"fatMg": 25200,
+"fibreMg": 6100,
+"proteinMg": 28300,
+"saltMg": 2000,
+"saturatesMg": 3300,
+"sugarsMg": 8400,
+"totalCarbsMg": 62300
+}
+]
+},
+{
+"id": "beanie-wrap:veggie",
+"name": "Beanie Wrap",
+"description": "A beanie patty made with cheddar cheese, chickpeas, sweetcorn, lentils, peas and pumpkin seeds. Served in a wrap with lettuce, lightly spiced yoghurt mayo and chilli jam.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "YES",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "YES",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "YES",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 660,
+"energyKj": 2769,
+"fatMg": 24900,
+"fibreMg": 11000,
+"proteinMg": 22000,
+"saltMg": 3000,
+"saturatesMg": 5900,
+"sugarsMg": 20100,
+"totalCarbsMg": 81000
+}
+]
+},
+{
+"id": "beanie-burger:veggie",
+"name": "Beanie Burger",
+"description": "A beanie patty made with cheddar cheese, chickpeas, sweetcorn, lentils, peas and pumpkin seeds.. Served in a Portuguese Roll with Lemon & Herb mayo, lettuce, tomato and PERi-Ketchup.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "YES",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_OATS": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_RYE": "YES",
+"GLUTEN_SPELT": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "YES",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 562,
+"energyKj": 2362,
+"fatMg": 19000,
+"fibreMg": 10600,
+"proteinMg": 20500,
+"saltMg": 2900,
+"saturatesMg": 5200,
+"sugarsMg": 5700,
+"totalCarbsMg": 72400
+}
+]
+},
+{
+"id": "beanie-pitta:veggie",
+"name": "Beanie Pitta",
+"description": "A beanie patty made with cheddar cheese, chickpeas, sweetcorn, lentils, peas and pumpkin seeds. Served in a toasted pitta with plant-based Lemon & Herb mayo and crunchy slaw in tangy mustard dressing.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "YES",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "YES",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "YES",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 609,
+"energyKj": 2550,
+"fatMg": 25000,
+"fibreMg": 11600,
+"proteinMg": 21400,
+"saltMg": 2500,
+"saturatesMg": 6100,
+"sugarsMg": 8100,
+"totalCarbsMg": 70700
+}
+]
+}
+]
+},
+{
+"name": "Nandinos (Kids)",
+"items": [
+{
+"id": "chicken-burger:nandinos-kids",
+"name": "Chicken Burger",
+"description": "Chicken breast infused with PERi-PERi.  Served in a brioche bun with Lemon & Herb mayo, lettuce, tomato and PERi-Ketchup.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "YES",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "YES",
+"SULPHITE": "NO"
+},
+"diets": [],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 288,
+"energyKj": 1215,
+"fatMg": 7100,
+"fibreMg": 2000,
+"proteinMg": 32800,
+"saltMg": 1300,
+"saturatesMg": 3000,
+"sugarsMg": 4300,
+"totalCarbsMg": 23300
+}
+]
+},
+{
+"id": "chicken-breast-fillet:nandinos-kids",
+"name": "Chicken Breast Fillet",
+"description": "Chicken breast infused with PERi-PERi.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 138,
+"energyKj": 581,
+"fatMg": 2600,
+"fibreMg": 500,
+"proteinMg": 28600,
+"saltMg": 700,
+"saturatesMg": 600,
+"sugarsMg": 100,
+"totalCarbsMg": 100
+}
+]
+},
+{
+"id": "3-chicken-wings:nandinos-kids",
+"name": "3 Chicken Wings",
+"description": "Flame-grilled, infused with PERi-PERi and perfect for pairing with sides.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 236,
+"energyKj": 987,
+"fatMg": 11800,
+"fibreMg": 700,
+"proteinMg": 31900,
+"saltMg": 1300,
+"saturatesMg": 2800,
+"sugarsMg": 100,
+"totalCarbsMg": 300
+}
+]
+},
+{
+"id": "beanie-burger:nandinos-kids",
+"name": "Beanie Burger",
+"description": "A beanie patty made with cheddar cheese, chickpeas, sweetcorn, lentils, peas and pumpkin seeds. Served in a brioche bun with Lemon & Herb mayo, lettuce, tomato and PERi-ketchup.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "YES",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "YES",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 432,
+"energyKj": 1809,
+"fatMg": 19300,
+"fibreMg": 9500,
+"proteinMg": 18000,
+"saltMg": 2100,
+"saturatesMg": 6600,
+"sugarsMg": 5600,
+"totalCarbsMg": 43200
+}
+]
+},
+{
+"id": "beanie-patty:nandinos-kids",
+"name": "Beanie Patty",
+"description": "A beanie patty made with cheddar cheese, chickpeas, sweetcorn, lentils, peas and pumpkin seeds.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "YES",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "YES",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 216,
+"energyKj": 906,
+"fatMg": 7700,
+"fibreMg": 7900,
+"proteinMg": 13300,
+"saltMg": 1500,
+"saturatesMg": 3200,
+"sugarsMg": 1200,
+"totalCarbsMg": 19600
+}
+]
+},
+{
+"id": "spiced-grains-butternut-squash:nandinos-kids",
+"name": "Spiced Grains & Butternut Squash",
+"description": "Served warm with green beans and dried fruit.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "YES",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "YES"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 95,
+"energyKj": 396,
+"fatMg": 3900,
+"fibreMg": 3600,
+"proteinMg": 3000,
+"saltMg": 200,
+"saturatesMg": 300,
+"sugarsMg": 1800,
+"totalCarbsMg": 10100
+}
+]
+},
+{
+"id": "spicy-rice:nandinos-kids",
+"name": "Spicy Rice",
+"description": "Lightly spiced rice. One of our signature sides!",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "MAYBE_FROM_MANUFACTURING",
+"PEANUT": "MAYBE_FROM_MANUFACTURING",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 246,
+"energyKj": 1034,
+"fatMg": 6000,
+"fibreMg": 3900,
+"proteinMg": 3800,
+"saltMg": 1700,
+"saturatesMg": 500,
+"sugarsMg": 1200,
+"totalCarbsMg": 42200
+}
+]
+},
+{
+"id": "corn-on-the-cob:nandinos-kids",
+"name": "Corn on the Cob",
+"description": "Flamed-grilled. Crunchy, crisp and sweet.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 72,
+"energyKj": 304,
+"fatMg": 1400,
+"fibreMg": 2300,
+"proteinMg": 2900,
+"saltMg": 0,
+"saturatesMg": 300,
+"sugarsMg": 6300,
+"totalCarbsMg": 11000
+}
+]
+},
+{
+"id": "chips:nandinos-kids",
+"name": "Chips",
+"description": "Crispy and delicious!",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 225,
+"energyKj": 942,
+"fatMg": 9700,
+"fibreMg": 2300,
+"proteinMg": 3200,
+"saltMg": 300,
+"saturatesMg": 900,
+"sugarsMg": 400,
+"totalCarbsMg": 32300
+}
+]
+},
+{
+"id": "long-stem-broccoli:nandinos-kids",
+"name": "Long Stem Broccoli",
+"description": "Served in a garlic and lemon oil.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 16,
+"energyKj": 68,
+"fatMg": 800,
+"fibreMg": 1100,
+"proteinMg": 1100,
+"saltMg": 300,
+"saturatesMg": 0,
+"sugarsMg": 100,
+"totalCarbsMg": 1800
+}
+]
+},
+{
+"id": "little-tomatoes:nandinos-kids",
+"name": "Little Tomatoes",
+"description": "Small, red and sweet. Cut into halves for small hands.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 13,
+"energyKj": 56,
+"fatMg": 300,
+"fibreMg": 800,
+"proteinMg": 700,
+"saltMg": 0,
+"saturatesMg": 100,
+"sugarsMg": 2200,
+"totalCarbsMg": 2200
+}
+]
+},
+{
+"id": "garlic-bread:nandinos-kids",
+"name": "Garlic Bread",
+"description": "With a touch of chilli.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "YES",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "YES",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 219,
+"energyKj": 913,
+"fatMg": 13600,
+"fibreMg": 1100,
+"proteinMg": 4000,
+"saltMg": 500,
+"saturatesMg": 5300,
+"sugarsMg": 1500,
+"totalCarbsMg": 20400
+}
+]
+},
+{
+"id": "chilly-billy-lolly:nandinos-kids",
+"name": "Chilly Billy Lolly",
+"description": "Apple & blackcurrant flavour.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 30,
+"energyKj": 127,
+"fatMg": 100,
+"fibreMg": 300,
+"proteinMg": 200,
+"saltMg": 0,
+"saturatesMg": 100,
+"sugarsMg": 7600,
+"totalCarbsMg": 7600
+}
+]
+},
+{
+"id": "vanilla-frozen-yogurt:nandinos-kids",
+"name": "Bottomless Vanilla Frozen Yoghurt",
+"description": "Go bottomless with cool and creamy frozen yoghurt. The perfect end to a spicy feast! Available in vanilla.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 88,
+"energyKj": 376,
+"fatMg": 100,
+"fibreMg": 100,
+"proteinMg": 3200,
+"saltMg": 0,
+"saturatesMg": 100,
+"sugarsMg": 16000,
+"totalCarbsMg": 19000
+}
+]
+},
+{
+"id": "strawberry-frozen-yoghurt:nandinos-kids",
+"name": "Bottomless Strawberry Frozen Yoghurt",
+"description": "Go bottomless with cool and creamy frozen yoghurt. The perfect end to a spicy feast! Available in strawberry.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 86,
+"energyKj": 367,
+"fatMg": 100,
+"fibreMg": 200,
+"proteinMg": 3100,
+"saltMg": 0,
+"saturatesMg": 100,
+"sugarsMg": 16000,
+"totalCarbsMg": 18000
+}
+]
+},
+{
+"id": "chocolate-frozen-yoghurt:nandinos-kids",
+"name": "Bottomless Chocolate Frozen Yoghurt",
+"description": "Go bottomless with cool and creamy frozen yoghurt. The perfect end to a spicy feast! Available in chocolate.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 96,
+"energyKj": 407,
+"fatMg": 300,
+"fibreMg": 800,
+"proteinMg": 4000,
+"saltMg": 200,
+"saturatesMg": 200,
+"sugarsMg": 16000,
+"totalCarbsMg": 19000
+}
+]
+},
+{
+"id": "mango-frozen-yoghurt:nandinos-kids",
+"name": "Bottomless Mango Frozen Yoghurt",
+"description": "Go bottomless with cool and creamy frozen yoghurt. The perfect end to a spicy feast! Available in mango.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 87,
+"energyKj": 371,
+"fatMg": 100,
+"fibreMg": 200,
+"proteinMg": 3100,
+"saltMg": 0,
+"saturatesMg": 100,
+"sugarsMg": 16000,
+"totalCarbsMg": 18000
+}
+]
+},
+{
+"id": "scoop-of-vanilla-gelado:nandinos-kids",
+"name": "Scoop of Vanilla Gelado",
+"description": "Classic and creamy.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "MAYBE_FROM_MANUFACTURING",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "MAYBE_FROM_MANUFACTURING",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 153,
+"energyKj": 644,
+"fatMg": 8700,
+"fibreMg": 100,
+"proteinMg": 2300,
+"saltMg": 200,
+"saturatesMg": 6700,
+"sugarsMg": 15400,
+"totalCarbsMg": 16800
+}
+]
+},
+{
+"id": "kid-s-cawston-press-apple-pear:nandinos-kids",
+"name": "Kid's Cawston Press Apple & Pear",
+"description": "200ml. Pressed apples and pears shaken up with water. No added sugar, 60% juice and not from concentrate.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 54,
+"energyKj": 234,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 200,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 12800,
+"totalCarbsMg": 12800
+}
+]
+},
+{
+"id": "kid-s-cawston-press-summer-berry:nandinos-kids",
+"name": "Kid's Cawston Press Summer Berry",
+"description": "200ml. Pressed apples, strawberries and raspberries shaken up with water. No added sugar, 60% juice and not from concentrate.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 50,
+"energyKj": 214,
+"fatMg": 200,
+"fibreMg": 0,
+"proteinMg": 600,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 11000,
+"totalCarbsMg": 11600
+}
+]
+},
+{
+"id": "bottle-green-apple-cordial:nandinos-kids",
+"name": "Bottle Green Apple Cordial",
+"description": "50ml. Apple and plum cordial. Mix with water to taste.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "YES"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 25,
+"energyKj": 108,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 4700,
+"totalCarbsMg": 6300
+}
+]
+},
+{
+"id": "bottle-green-strawberry-cordial:nandinos-kids",
+"name": "Bottle Green Strawberry Cordial",
+"description": "50ml. Strawberry cordial. Mix with water to taste.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "YES"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 25,
+"energyKj": 108,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 4700,
+"totalCarbsMg": 6300
+}
+]
+}
+]
+},
+{
+"name": "Sides",
+"items": [
+{
+"id": "pe-ri-salted-chips:sides",
+"name": "PERi-Salted Chips",
+"description": "Crispy and sprinkled with PERi-PERi salt.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [
+"Regular",
+"Large"
+],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 452,
+"energyKj": 1891,
+"fatMg": 19400,
+"fibreMg": 4700,
+"proteinMg": 6400,
+"saltMg": 1200,
+"saturatesMg": 1700,
+"sugarsMg": 900,
+"totalCarbsMg": 64900
+},
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 1128,
+"energyKj": 4724,
+"fatMg": 48600,
+"fibreMg": 11600,
+"proteinMg": 15900,
+"saltMg": 2600,
+"saturatesMg": 4300,
+"sugarsMg": 2300,
+"totalCarbsMg": 162100
+}
+]
+},
+{
+"id": "garlic-bread:sides",
+"name": "Garlic Bread",
+"description": "Grilled for the perfect crunch!",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_OATS": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_RYE": "YES",
+"GLUTEN_SPELT": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "MAYBE_FROM_MANUFACTURING",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [
+"Regular",
+"Large"
+],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 362,
+"energyKj": 1518,
+"fatMg": 15500,
+"fibreMg": 2100,
+"proteinMg": 6900,
+"saltMg": 1300,
+"saturatesMg": 4800,
+"sugarsMg": 400,
+"totalCarbsMg": 47900
+},
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 723,
+"energyKj": 3036,
+"fatMg": 30900,
+"fibreMg": 4300,
+"proteinMg": 13800,
+"saltMg": 2500,
+"saturatesMg": 9500,
+"sugarsMg": 800,
+"totalCarbsMg": 95900
+}
+]
+},
+{
+"id": "chips:sides",
+"name": "Chips",
+"description": "Crispy and delicious!",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [
+"Regular",
+"Large"
+],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 450,
+"energyKj": 1884,
+"fatMg": 19400,
+"fibreMg": 4600,
+"proteinMg": 6300,
+"saltMg": 600,
+"saturatesMg": 1700,
+"sugarsMg": 800,
+"totalCarbsMg": 64600
+},
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 1125,
+"energyKj": 4710,
+"fatMg": 48500,
+"fibreMg": 11500,
+"proteinMg": 15800,
+"saltMg": 1600,
+"saturatesMg": 4300,
+"sugarsMg": 2000,
+"totalCarbsMg": 161500
+}
+]
+},
+{
+"id": "spicy-rice:sides",
+"name": "Spicy Rice",
+"description": "Lightly spiced rice. One of our signature sides!",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "MAYBE_FROM_MANUFACTURING",
+"PEANUT": "MAYBE_FROM_MANUFACTURING",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [
+"Regular",
+"Large"
+],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 246,
+"energyKj": 1034,
+"fatMg": 6000,
+"fibreMg": 3900,
+"proteinMg": 3800,
+"saltMg": 1700,
+"saturatesMg": 500,
+"sugarsMg": 1200,
+"totalCarbsMg": 42200
+},
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 492,
+"energyKj": 2067,
+"fatMg": 12000,
+"fibreMg": 7800,
+"proteinMg": 7500,
+"saltMg": 3300,
+"saturatesMg": 900,
+"sugarsMg": 2400,
+"totalCarbsMg": 84300
+}
+]
+},
+{
+"id": "corn-on-the-cob:sides",
+"name": "Corn on the Cob",
+"description": "Crunchy, crisp and sweet. Flame-grilled and served with butter.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [
+"Regular",
+"Large"
+],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 144,
+"energyKj": 608,
+"fatMg": 2700,
+"fibreMg": 4600,
+"proteinMg": 5700,
+"saltMg": 0,
+"saturatesMg": 500,
+"sugarsMg": 12500,
+"totalCarbsMg": 22000
+},
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 288,
+"energyKj": 1216,
+"fatMg": 5400,
+"fibreMg": 9200,
+"proteinMg": 11400,
+"saltMg": 100,
+"saturatesMg": 1000,
+"sugarsMg": 25000,
+"totalCarbsMg": 44000
+}
+]
+},
+{
+"id": "rainbow-slaw:sides",
+"name": "Rainbow Slaw",
+"description": "A fresh mix of crunchy veg in a tangy mustard dressing. Topped with seeds.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "YES",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "MAYBE_FROM_MANUFACTURING",
+"SOYA": "MAYBE_FROM_MANUFACTURING",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [
+"Regular",
+"Large"
+],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 99,
+"energyKj": 411,
+"fatMg": 5800,
+"fibreMg": 2400,
+"proteinMg": 1900,
+"saltMg": 200,
+"saturatesMg": 700,
+"sugarsMg": 5300,
+"totalCarbsMg": 11300
+},
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 177,
+"energyKj": 735,
+"fatMg": 10000,
+"fibreMg": 4400,
+"proteinMg": 2900,
+"saltMg": 400,
+"saturatesMg": 1100,
+"sugarsMg": 10500,
+"totalCarbsMg": 21700
+}
+]
+},
+{
+"id": "spiced-grains-butternut-squash:sides",
+"name": "Spiced Grains & Butternut Squash",
+"description": "Served warm with green beans, dried fruit and a sprinkle of feta.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "YES",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "YES"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [
+"Regular",
+"Large"
+],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 232,
+"energyKj": 972,
+"fatMg": 11400,
+"fibreMg": 7200,
+"proteinMg": 8400,
+"saltMg": 800,
+"saturatesMg": 3000,
+"sugarsMg": 3600,
+"totalCarbsMg": 20500
+},
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 421,
+"energyKj": 1764,
+"fatMg": 19200,
+"fibreMg": 14400,
+"proteinMg": 14500,
+"saltMg": 1200,
+"saturatesMg": 3500,
+"sugarsMg": 7100,
+"totalCarbsMg": 40700
+}
+]
+},
+{
+"id": "creamy-mash:sides",
+"name": "Creamy Mash",
+"description": "Creamy and comforting.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [
+"Regular",
+"Large"
+],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 276,
+"energyKj": 1154,
+"fatMg": 15200,
+"fibreMg": 2200,
+"proteinMg": 3200,
+"saltMg": 1200,
+"saturatesMg": 9600,
+"sugarsMg": 1800,
+"totalCarbsMg": 32800
+},
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 552,
+"energyKj": 2308,
+"fatMg": 30400,
+"fibreMg": 4400,
+"proteinMg": 6400,
+"saltMg": 2400,
+"saturatesMg": 19200,
+"sugarsMg": 3600,
+"totalCarbsMg": 65600
+}
+]
+},
+{
+"id": "coleslaw:sides",
+"name": "Coleslaw",
+"description": "Packed full of crunchy chopped vegetables in a lightly spiced mayo.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "YES",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "YES",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGETARIAN"
+],
+"sizes": [
+"Regular",
+"Large"
+],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 263,
+"energyKj": 1088,
+"fatMg": 23700,
+"fibreMg": 800,
+"proteinMg": 1300,
+"saltMg": 500,
+"saturatesMg": 1700,
+"sugarsMg": 7500,
+"totalCarbsMg": 11400
+},
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 526,
+"energyKj": 2177,
+"fatMg": 47400,
+"fibreMg": 1500,
+"proteinMg": 2700,
+"saltMg": 1000,
+"saturatesMg": 3300,
+"sugarsMg": 15000,
+"totalCarbsMg": 22900
+}
+]
+},
+{
+"id": "coleslaw:sides",
+"name": "Coleslaw",
+"description": "Packed full of crunchy chopped vegetables in a lightly spiced mayo.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "YES",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGETARIAN"
+],
+"sizes": [
+"Regular",
+"Large"
+],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 240,
+"energyKj": 1005,
+"fatMg": 18200,
+"fibreMg": 2300,
+"proteinMg": 1500,
+"saltMg": 800,
+"saturatesMg": 1400,
+"sugarsMg": 10600,
+"totalCarbsMg": 11600
+},
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 480,
+"energyKj": 2009,
+"fatMg": 36500,
+"fibreMg": 4600,
+"proteinMg": 3000,
+"saltMg": 1500,
+"saturatesMg": 2700,
+"sugarsMg": 21300,
+"totalCarbsMg": 23100
+}
+]
+},
+{
+"id": "macho-peas:sides",
+"name": "Macho Peas",
+"description": "Whole peas drenched in pea mash, parsley, mint and chilli.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_MANUFACTURING",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [
+"Regular",
+"Large"
+],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 141,
+"energyKj": 589,
+"fatMg": 6400,
+"fibreMg": 8500,
+"proteinMg": 7700,
+"saltMg": 400,
+"saturatesMg": 1800,
+"sugarsMg": 800,
+"totalCarbsMg": 17500
+},
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 283,
+"energyKj": 1179,
+"fatMg": 12900,
+"fibreMg": 17100,
+"proteinMg": 15400,
+"saltMg": 700,
+"saturatesMg": 3600,
+"sugarsMg": 1700,
+"totalCarbsMg": 35000
+}
+]
+},
+{
+"id": "long-stem-broccoli:sides",
+"name": "Long Stem Broccoli",
+"description": "Served in a garlic and lemon oil.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [
+"Regular",
+"Large"
+],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 32,
+"energyKj": 135,
+"fatMg": 1500,
+"fibreMg": 2200,
+"proteinMg": 2100,
+"saltMg": 600,
+"saturatesMg": 100,
+"sugarsMg": 300,
+"totalCarbsMg": 3700
+},
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 65,
+"energyKj": 270,
+"fatMg": 3100,
+"fibreMg": 4400,
+"proteinMg": 4300,
+"saltMg": 1200,
+"saturatesMg": 200,
+"sugarsMg": 500,
+"totalCarbsMg": 7300
+}
+]
+},
+{
+"id": "mixed-leaf-salad:sides",
+"name": "Mixed Leaf Salad",
+"description": "A mix of four leaves, sweet baby plum tomatoes and cucumber. Served with Balsamic dressing.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "YES"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [
+"Regular",
+"Large"
+],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 13,
+"energyKj": 56,
+"fatMg": 200,
+"fibreMg": 1000,
+"proteinMg": 900,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 1200,
+"totalCarbsMg": 1600
+},
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 27,
+"energyKj": 111,
+"fatMg": 400,
+"fibreMg": 2100,
+"proteinMg": 1800,
+"saltMg": 100,
+"saturatesMg": 100,
+"sugarsMg": 2400,
+"totalCarbsMg": 3200
+}
+]
+}
+]
+},
+{
+"name": "Extras",
+"items": [
+{
+"id": "peri-peri-chicken-gravy:extras",
+"name": "PERi-PERi Chicken Gravy",
+"description": "Gravy, levelled up. Packed with PERi-PERi and chicken-y goodness.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 54,
+"energyKj": 225,
+"fatMg": 2400,
+"fibreMg": 600,
+"proteinMg": 3200,
+"saltMg": 1200,
+"saturatesMg": 500,
+"sugarsMg": 1000,
+"totalCarbsMg": 4500
+}
+]
+},
+{
+"id": "grilled-halloumi-cheese:extras",
+"name": "Grilled Halloumi Cheese",
+"description": "Salty, savoury and grilled to pure perfection.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 177,
+"energyKj": 734,
+"fatMg": 13800,
+"fibreMg": 0,
+"proteinMg": 11900,
+"saltMg": 1100,
+"saturatesMg": 8500,
+"sugarsMg": 1300,
+"totalCarbsMg": 1300
+}
+]
+},
+{
+"id": "per-plant-strips-extra:extras",
+"name": "PERi-Plant Strips",
+"description": "Our PERi-Plant strips are made from pea-protein but taste just like our famous PERi-PERi chicken.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 202,
+"energyKj": 841,
+"fatMg": 11500,
+"fibreMg": 2000,
+"proteinMg": 16500,
+"saltMg": 800,
+"saturatesMg": 800,
+"sugarsMg": 1200,
+"totalCarbsMg": 9100
+}
+]
+},
+{
+"id": "chicken-breast-extra:extras",
+"name": "Grilled Chicken Breast",
+"description": "Infused with PERi-PERi and grilled in your favourite spice.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 138,
+"energyKj": 581,
+"fatMg": 2600,
+"fibreMg": 500,
+"proteinMg": 28600,
+"saltMg": 700,
+"saturatesMg": 600,
+"sugarsMg": 100,
+"totalCarbsMg": 100
+}
+]
+},
+{
+"id": "beanie-patty-extra:extras",
+"name": "Beanie Patty",
+"description": "Made with cheddar cheese, chickpeas, sweetcorn, lentils, peas and pumpkin seeds.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "YES",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "YES",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 261,
+"energyKj": 1091,
+"fatMg": 12700,
+"fibreMg": 7900,
+"proteinMg": 13300,
+"saltMg": 1500,
+"saturatesMg": 3600,
+"sugarsMg": 1200,
+"totalCarbsMg": 19600
+}
+]
+},
+{
+"id": "2-chicken-thighs-extra:extras",
+"name": "2 Boneless Chicken Thighs",
+"description": "Flame-grilled in your favourite spice.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 289,
+"energyKj": 1160,
+"fatMg": 15200,
+"fibreMg": 600,
+"proteinMg": 35000,
+"saltMg": 900,
+"saturatesMg": 3900,
+"sugarsMg": 100,
+"totalCarbsMg": 100
+}
+]
+},
+{
+"id": "pe-rinaise:extras",
+"name": "PERinaise",
+"description": "Creamy mayo infused with PERi-PERi. (Please note: PERinaise pots in our restaurants have slightly different ingredients to those sold in shops, so please check allergens before ordering).",
+"allergens": {
+"CELERY": "YES",
+"CRUSTACEAN": "NO",
+"EGG": "YES",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 159,
+"energyKj": 656,
+"fatMg": 14300,
+"fibreMg": 100,
+"proteinMg": 300,
+"saltMg": 1300,
+"saturatesMg": 1100,
+"sugarsMg": 5100,
+"totalCarbsMg": 7000
+}
+]
+},
+{
+"id": "garlic-pe-rinaise:extras",
+"name": "Garlic PERinaise",
+"description": "Our famous PERinaise, but plant-based and packed with a garlicky punch.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 176,
+"energyKj": 726,
+"fatMg": 15800,
+"fibreMg": 300,
+"proteinMg": 4200,
+"saltMg": 1100,
+"saturatesMg": 9100,
+"sugarsMg": 4100,
+"totalCarbsMg": 4400
+}
+]
+},
+{
+"id": "chilli-jam:extras",
+"name": "Chilli Jam",
+"description": "Sweet and sticky with just a hint of spice. Great for dunking!",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 164,
+"energyKj": 695,
+"fatMg": 100,
+"fibreMg": 800,
+"proteinMg": 500,
+"saltMg": 500,
+"saturatesMg": 100,
+"sugarsMg": 33600,
+"totalCarbsMg": 40700
+}
+]
+},
+{
+"id": "pe-ri-bbq:extras",
+"name": "PERi-BBQ",
+"description": "Sweet and smoky with PERi-PERi spice.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 61,
+"energyKj": 255,
+"fatMg": 1400,
+"fibreMg": 800,
+"proteinMg": 600,
+"saltMg": 500,
+"saturatesMg": 300,
+"sugarsMg": 11100,
+"totalCarbsMg": 11900
+}
+]
+},
+{
+"id": "mayonnaise:extras",
+"name": "Mayonnaise",
+"description": "Dip, dip.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "YES",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "YES",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 73,
+"energyKj": 303,
+"fatMg": 6000,
+"fibreMg": 100,
+"proteinMg": 200,
+"saltMg": 600,
+"saturatesMg": 500,
+"sugarsMg": 3000,
+"totalCarbsMg": 4500
+}
+]
+},
+{
+"id": "pe-rinaise-mild:extras",
+"name": "PERinaise Mild",
+"description": "265g. Our famous PERi-PERi infused mayo. Creamy, smooth, and incredibly delicious. (Please note: Our PERinaise bottles have slightly different ingredients to our pots in restaurants, so please check allergens before ordering).",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "YES",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "YES",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 46,
+"energyKj": 192,
+"fatMg": 4200,
+"fibreMg": 100,
+"proteinMg": 0,
+"saltMg": 400,
+"saturatesMg": 300,
+"sugarsMg": 1500,
+"totalCarbsMg": 2000
+}
+]
+},
+{
+"id": "medium-pe-ri-pe-ri-sauce:extras",
+"name": "Medium PERi-PERi Sauce",
+"description": "125g. Packed with flavour and a flicker of PERi-PERi heat, our Medium PERi-PERi sauce brings the warmth of Southern Africa right to your plate.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 9,
+"energyKj": 37,
+"fatMg": 700,
+"fibreMg": 700,
+"proteinMg": 100,
+"saltMg": 1200,
+"saturatesMg": 100,
+"sugarsMg": 200,
+"totalCarbsMg": 200
+}
+]
+},
+{
+"id": "garlic-pe-ri-pe-ri-sauce:extras",
+"name": "Garlic PERi-PERi Sauce",
+"description": "125g. Packed with punchy garlic, zesty lemon and a kick of PERi-PERi heat, our Garlic PERi-PERi sauce is one that packs a punch with a bit of bite!",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 10,
+"energyKj": 41,
+"fatMg": 600,
+"fibreMg": 300,
+"proteinMg": 200,
+"saltMg": 1000,
+"saturatesMg": 100,
+"sugarsMg": 800,
+"totalCarbsMg": 800
+}
+]
+},
+{
+"id": "lemon-herb-pe-ri-pe-ri-sauce:extras",
+"name": "Lemon & Herb PERi-PERi Sauce",
+"description": "125g. Filled with zesty sun-ripened lemons, our Lemon & Herb PERi-PERi sauce is packed with flavour and just a dash of heat.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 8,
+"energyKj": 35,
+"fatMg": 700,
+"fibreMg": 400,
+"proteinMg": 100,
+"saltMg": 500,
+"saturatesMg": 100,
+"sugarsMg": 200,
+"totalCarbsMg": 200
+}
+]
+},
+{
+"id": "hot-pe-ri-pe-ri-sauce:extras",
+"name": "Hot PERi-PERi Sauce",
+"description": "125g. Packed with flavour and fiery PERi-PERi heat, our Hot PERi-PERi sauce is the perfect way to turn any meal into a tasty treat.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 9,
+"energyKj": 36,
+"fatMg": 600,
+"fibreMg": 500,
+"proteinMg": 200,
+"saltMg": 1200,
+"saturatesMg": 100,
+"sugarsMg": 400,
+"totalCarbsMg": 500
+}
+]
+},
+{
+"id": "vusa-pe-ri-pe-ri-sauce:extras",
+"name": "Vusa PERi-PERi Sauce",
+"description": "125g. Our hottest sauce yet! In Zulu, VUSA means excitement and fire and this sauce packs an eternity of both. A combination of African Bird's Eye Chilli, lemon and garlic, in an age old recipe that will blow your socks off. Intense flavour. Intense heat. African spirit.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "YES"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 35,
+"energyKj": 145,
+"fatMg": 3100,
+"fibreMg": 900,
+"proteinMg": 400,
+"saltMg": 500,
+"saturatesMg": 300,
+"sugarsMg": 300,
+"totalCarbsMg": 1000
+}
+]
+},
+{
+"id": "extra-hot-pe-ri-pe-ri-sauce:extras",
+"name": "Extra Hot PERi-PERi Sauce",
+"description": "125g. Our Extra Extra Hot PERi-PERi is for serious heat seekers, not the faint-hearted. Beware and be brave!",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 9,
+"energyKj": 36,
+"fatMg": 200,
+"fibreMg": 700,
+"proteinMg": 300,
+"saltMg": 900,
+"saturatesMg": 0,
+"sugarsMg": 900,
+"totalCarbsMg": 1100
+}
+]
+},
+{
+"id": "pe-ri-salt:extras",
+"name": "PERi-PERi Salt",
+"description": "70g. Add a fiery kick to just about anything with this blend of salt, spices and our very own African Bird’s Eye Chilli. Perfect for chips, meats and veggies! Medium heat.",
+"allergens": {},
+"diets": [],
+"sizes": [],
+"portions": []
+},
+{
+"id": "pe-ri-pe-ri-drizzle:extras",
+"name": "PERi-PERi Drizzle",
+"description": "20ml. A smoky, spicy PERi-PERi infused oil. Perfect for drizzling!",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "MAYBE_FROM_MANUFACTURING",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 97,
+"energyKj": 399,
+"fatMg": 10300,
+"fibreMg": 300,
+"proteinMg": 300,
+"saltMg": 800,
+"saturatesMg": 1500,
+"sugarsMg": 300,
+"totalCarbsMg": 900
+}
+]
+},
+{
+"id": "cheddar-cheese:extras",
+"name": "Cheddar Cheese",
+"description": "A mild slice of cheddar cheese, smoother than Drake. Add it to everything for that melty, gooey goodness.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 78,
+"energyKj": 326,
+"fatMg": 6400,
+"fibreMg": 0,
+"proteinMg": 5200,
+"saltMg": 400,
+"saturatesMg": 4000,
+"sugarsMg": 0,
+"totalCarbsMg": 0
+}
+]
+},
+{
+"id": "pineapple:extras",
+"name": "Grilled Pineapple",
+"description": "A slice of sweet pineapple. Add it to a burger, pitta or wrap for some extra juicy, juicy.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 37,
+"energyKj": 159,
+"fatMg": 0,
+"fibreMg": 500,
+"proteinMg": 200,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 7400,
+"totalCarbsMg": 8900
+}
+]
+},
+{
+"id": "portuguese-roll:extras",
+"name": "Portuguese Roll",
+"description": "Your burger roll, riding solo. Portuguese-inspired but baked in the UK and served with a side of butter.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_OATS": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_RYE": "YES",
+"GLUTEN_SPELT": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "MAYBE_FROM_MANUFACTURING",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 275,
+"energyKj": 1162,
+"fatMg": 6300,
+"fibreMg": 2000,
+"proteinMg": 6700,
+"saltMg": 1200,
+"saturatesMg": 3600,
+"sugarsMg": 400,
+"totalCarbsMg": 47100
+}
+]
+},
+{
+"id": "lemon-herb-wrap:extras",
+"name": "Tortilla Wrap",
+"description": "12” of pure carb heaven. Fill it, stuff it, eat it.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 247,
+"energyKj": 1040,
+"fatMg": 4800,
+"fibreMg": 2200,
+"proteinMg": 7400,
+"saltMg": 1000,
+"saturatesMg": 1400,
+"sugarsMg": 4000,
+"totalCarbsMg": 42400
+}
+]
+},
+{
+"id": "toasted-pitta-bread-with-butter:extras",
+"name": "Toasted Pitta",
+"description": "A soft pitta bread. Served with a side of butter.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 246,
+"energyKj": 1039,
+"fatMg": 5600,
+"fibreMg": 1900,
+"proteinMg": 7100,
+"saltMg": 700,
+"saturatesMg": 3400,
+"sugarsMg": 1900,
+"totalCarbsMg": 40800
+}
+]
+},
+{
+"id": "portobello-mushroom:extras",
+"name": "Portobello Mushroom",
+"description": "",
+"allergens": {},
+"diets": [],
+"sizes": [],
+"portions": []
+},
+{
+"id": "houmous:extras",
+"name": "Houmous",
+"description": "",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "YES",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 202,
+"energyKj": 842,
+"fatMg": 13400,
+"fibreMg": 600,
+"proteinMg": 6700,
+"saltMg": 600,
+"saturatesMg": 1800,
+"sugarsMg": 800,
+"totalCarbsMg": 13600
+}
+]
+}
+]
+},
+{
+"name": "Desserts",
+"items": [
+{
+"id": "choc-a-lot-cake:desserts",
+"name": "Choc-A-Lot Cake",
+"description": "Rich and indulgent chocolate between moist chocolate sponge drenched in rich chocolate. Served with cream to pour on.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "YES",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_OATS": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "MAYBE_FROM_MANUFACTURING",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "YES",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 582,
+"energyKj": 2428,
+"fatMg": 31700,
+"fibreMg": 3300,
+"proteinMg": 8100,
+"saltMg": 1300,
+"saturatesMg": 14700,
+"sugarsMg": 42800,
+"totalCarbsMg": 67400
+}
+]
+},
+{
+"id": "gooey-caramel-cheesecake:desserts",
+"name": "Gooey Caramel Cheesecake",
+"description": "Rich and creamy caramel cheesecake on a crumbly biscuit base. Served with cream to pour on.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "YES",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_OATS": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "MAYBE_FROM_MANUFACTURING",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "YES",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 415,
+"energyKj": 1729,
+"fatMg": 25300,
+"fibreMg": 600,
+"proteinMg": 7800,
+"saltMg": 500,
+"saturatesMg": 16500,
+"sugarsMg": 25100,
+"totalCarbsMg": 38900
+}
+]
+},
+{
+"id": "salted-caramel-brownie:desserts",
+"name": "Salted Caramel Brownie",
+"description": "Rich chocolate brownie with a delicious hint of salted caramel.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "YES",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_OATS": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_RYE": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_SPELT": "MAYBE_FROM_MANUFACTURING",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "MAYBE_FROM_MANUFACTURING",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "YES",
+"SULPHITE": "MAYBE_FROM_MANUFACTURING"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 389,
+"energyKj": 1623,
+"fatMg": 21700,
+"fibreMg": 2100,
+"proteinMg": 4200,
+"saltMg": 400,
+"saturatesMg": 14900,
+"sugarsMg": 29000,
+"totalCarbsMg": 42900
+}
+]
+},
+{
+"id": "naughty-nata:desserts",
+"name": "Naughty Nata",
+"description": "A traditional Portuguese custard tart. Crispy and baked to perfection!",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "YES",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "MAYBE_FROM_MANUFACTURING",
+"PEANUT": "NO",
+"SESAME": "MAYBE_FROM_MANUFACTURING",
+"SOYA": "MAYBE_FROM_MANUFACTURING",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 169,
+"energyKj": 707,
+"fatMg": 7200,
+"fibreMg": 1100,
+"proteinMg": 2800,
+"saltMg": 200,
+"saturatesMg": 3700,
+"sugarsMg": 13200,
+"totalCarbsMg": 22600
+}
+]
+},
+{
+"id": "vanilla-gelado:desserts",
+"name": "Vanilla Gelado",
+"description": "Classic and creamy.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "MAYBE_FROM_MANUFACTURING",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "MAYBE_FROM_MANUFACTURING",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 161,
+"energyKj": 674,
+"fatMg": 8300,
+"fibreMg": 200,
+"proteinMg": 2500,
+"saltMg": 200,
+"saturatesMg": 6200,
+"sugarsMg": 17300,
+"totalCarbsMg": 19500
+}
+]
+},
+{
+"id": "vanilla-gelado:desserts",
+"name": "Vanilla Gelado",
+"description": "Classic and creamy.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "MAYBE_FROM_MANUFACTURING",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "MAYBE_FROM_MANUFACTURING",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 161,
+"energyKj": 674,
+"fatMg": 8300,
+"fibreMg": 200,
+"proteinMg": 2500,
+"saltMg": 200,
+"saturatesMg": 6200,
+"sugarsMg": 17300,
+"totalCarbsMg": 19500
+}
+]
+},
+{
+"id": "mango-gelado:desserts",
+"name": "Mango Gelado",
+"description": "Fruity and refreshing.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "MAYBE_FROM_MANUFACTURING",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_MANUFACTURING",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "MAYBE_FROM_MANUFACTURING",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 99,
+"energyKj": 416,
+"fatMg": 400,
+"fibreMg": 1700,
+"proteinMg": 400,
+"saltMg": 200,
+"saturatesMg": 100,
+"sugarsMg": 20300,
+"totalCarbsMg": 24000
+}
+]
+},
+{
+"id": "chocolate-gelado:desserts",
+"name": "Chocolate Gelado",
+"description": "Rich, sweet and smooth (made without lactose).",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "YES",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "MAYBE_FROM_MANUFACTURING",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "MAYBE_FROM_MANUFACTURING",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 145,
+"energyKj": 608,
+"fatMg": 7500,
+"fibreMg": 2600,
+"proteinMg": 1600,
+"saltMg": 100,
+"saturatesMg": 5600,
+"sugarsMg": 17300,
+"totalCarbsMg": 18000
+}
+]
+},
+{
+"id": "coconut-gelado:desserts",
+"name": "Coconut Gelado",
+"description": "Creamy, coconutty and deliciously sweet.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "MAYBE_FROM_MANUFACTURING",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "MAYBE_FROM_MANUFACTURING",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 157,
+"energyKj": 660,
+"fatMg": 7500,
+"fibreMg": 1000,
+"proteinMg": 2000,
+"saltMg": 100,
+"saturatesMg": 7000,
+"sugarsMg": 19500,
+"totalCarbsMg": 20300
+}
+]
+},
+{
+"id": "coconut-gelado:desserts",
+"name": "Coconut Gelado",
+"description": "Creamy, coconutty and deliciously sweet.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "MAYBE_FROM_MANUFACTURING",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "MAYBE_FROM_MANUFACTURING",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 157,
+"energyKj": 660,
+"fatMg": 7500,
+"fibreMg": 1000,
+"proteinMg": 2000,
+"saltMg": 100,
+"saturatesMg": 7000,
+"sugarsMg": 19500,
+"totalCarbsMg": 20300
+}
+]
+},
+{
+"id": "vanilla-frozen-yogurt:desserts",
+"name": "Bottomless Vanilla Frozen Yoghurt",
+"description": "Go bottomless with cool and creamy frozen yoghurt. The perfect end to a spicy feast! Available in vanilla.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 88,
+"energyKj": 376,
+"fatMg": 100,
+"fibreMg": 100,
+"proteinMg": 3200,
+"saltMg": 0,
+"saturatesMg": 100,
+"sugarsMg": 16000,
+"totalCarbsMg": 19000
+}
+]
+},
+{
+"id": "strawberry-frozen-yoghurt:desserts",
+"name": "Bottomless Strawberry Frozen Yoghurt",
+"description": "Go bottomless with cool and creamy frozen yoghurt. The perfect end to a spicy feast! Available in strawberry.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 86,
+"energyKj": 367,
+"fatMg": 100,
+"fibreMg": 200,
+"proteinMg": 3100,
+"saltMg": 0,
+"saturatesMg": 100,
+"sugarsMg": 16000,
+"totalCarbsMg": 18000
+}
+]
+},
+{
+"id": "chocolate-frozen-yoghurt:desserts",
+"name": "Bottomless Chocolate Frozen Yoghurt",
+"description": "Go bottomless with cool and creamy frozen yoghurt. The perfect end to a spicy feast! Available in chocolate.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 96,
+"energyKj": 407,
+"fatMg": 300,
+"fibreMg": 800,
+"proteinMg": 4000,
+"saltMg": 200,
+"saturatesMg": 200,
+"sugarsMg": 16000,
+"totalCarbsMg": 19000
+}
+]
+},
+{
+"id": "mango-frozen-yoghurt:desserts",
+"name": "Bottomless Mango Frozen Yoghurt",
+"description": "Go bottomless with cool and creamy frozen yoghurt. The perfect end to a spicy feast! Available in mango.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 87,
+"energyKj": 371,
+"fatMg": 100,
+"fibreMg": 200,
+"proteinMg": 3100,
+"saltMg": 0,
+"saturatesMg": 100,
+"sugarsMg": 16000,
+"totalCarbsMg": 18000
+}
+]
+}
+]
+},
+{
+"name": "Drinks",
+"items": [
+{
+"id": "irn-bru:drinks",
+"name": "Irn Bru",
+"description": "A Nando’s exclusive, only in Scotland.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 138,
+"energyKj": 588,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 34000,
+"totalCarbsMg": 34000
+}
+]
+},
+{
+"id": "bottomless-coca-cola:drinks",
+"name": "Bottomless Coca-Cola",
+"description": "Fill up your fizzy drink again and again with our Bottomless Coca-Cola Classic.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 126,
+"energyKj": 540,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 31800,
+"totalCarbsMg": 31800
+}
+]
+},
+{
+"id": "bottomless-coca-cola:drinks",
+"name": "Bottomless Coca-Cola",
+"description": "Fill up your fizzy drink again and again with our Bottomless Coca-Cola Classic.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 126,
+"energyKj": 540,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 31800,
+"totalCarbsMg": 31800
+}
+]
+},
+{
+"id": "bottomless-coke-zero:drinks",
+"name": "Bottomless Coke Zero",
+"description": "Fill up your fizzy drink again and again with our Bottomless Coca-Cola Zero Sugar.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 2,
+"energyKj": 4,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 0
+}
+]
+},
+{
+"id": "bottomless-diet-coke:drinks",
+"name": "Bottomless Diet Coke",
+"description": "Fill up your fizzy drink again and again with our Bottomless Diet Coke.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 1,
+"energyKj": 4,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 0
+}
+]
+},
+{
+"id": "bottomless-fanta:drinks",
+"name": "Bottomless Fanta",
+"description": "Fill up your fizzy drink again and again with our Bottomless Fanta.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 57,
+"energyKj": 240,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 13500,
+"totalCarbsMg": 13500
+}
+]
+},
+{
+"id": "bottomless-dr-pepper-zero:drinks",
+"name": "Bottomless Dr Pepper Zero",
+"description": "Fill up your fizzy drink again and again with our Bottomless Softs. Just ask one of the team and they will let you know what to do.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": []
+},
+{
+"id": "bottomless-oasis:drinks",
+"name": "Bottomless Oasis Summer Fruits",
+"description": "Enjoy endless refills of refreshing still Oasis Summer Fruits.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": []
+},
+{
+"id": "bottomless-sprite-zero:drinks",
+"name": "Bottomless Sprite Zero",
+"description": "Fill up your fizzy drink again and again with our Bottomless Sprite Zero.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 3,
+"energyKj": 15,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 0
+}
+]
+},
+{
+"id": "coca-cola:drinks",
+"name": "Coca-Cola",
+"description": "330ml. A classic!",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 139,
+"energyKj": 594,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 35000,
+"totalCarbsMg": 35000
+}
+]
+},
+{
+"id": "coca-cola:drinks",
+"name": "Coca-Cola",
+"description": "330ml. A classic!",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 139,
+"energyKj": 594,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 35000,
+"totalCarbsMg": 35000
+}
+]
+},
+{
+"id": "coke-zero:drinks",
+"name": "Coke Zero",
+"description": "330ml. Perfect over ice or straight from the can!",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 1,
+"energyKj": 5,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 0
+}
+]
+},
+{
+"id": "diet-coke:drinks",
+"name": "Diet Coke",
+"description": "330ml. Perfect over ice or straight from the can!",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 1,
+"energyKj": 5,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 0
+}
+]
+},
+{
+"id": "fanta:drinks",
+"name": "Fanta",
+"description": "330ml. Fruity fizz. Need we say more?",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 63,
+"energyKj": 264,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 14900,
+"totalCarbsMg": 14900
+}
+]
+},
+{
+"id": "sprite-zero:drinks",
+"name": "Sprite Zero",
+"description": "330ml. Refreshing and fizzy.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 3,
+"energyKj": 17,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 0
+}
+]
+},
+{
+"id": "still-water:drinks",
+"name": "Still Water",
+"description": "500ml. The perfect way to hydrate.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 0,
+"energyKj": 0,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 0
+}
+]
+},
+{
+"id": "sparkling-water:drinks",
+"name": "Sparkling Water",
+"description": "500ml. The perfect way to hydrate.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 0,
+"energyKj": 0,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 0
+}
+]
+},
+{
+"id": "bottle-green-apple-cordial:drinks",
+"name": "Bottle Green Apple Cordial",
+"description": "50ml. Apple and plum cordial. Mix with water to taste.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "YES"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 25,
+"energyKj": 108,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 4700,
+"totalCarbsMg": 6300
+}
+]
+},
+{
+"id": "bottle-green-strawberry-cordial:drinks",
+"name": "Bottle Green Strawberry Cordial",
+"description": "50ml. Strawberry cordial. Mix with water to taste.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "YES"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 25,
+"energyKj": 108,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 4700,
+"totalCarbsMg": 6300
+}
+]
+},
+{
+"id": "bottomless-peach-rubro:drinks",
+"name": "Bottomless Peach RUBRO",
+"description": "Peach flavoured iced tea infused with South African Rooibos. All natural flavours and caffeine free.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 57,
+"energyKj": 249,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 14700,
+"totalCarbsMg": 14700
+}
+]
+},
+{
+"id": "rubro-new-countertop-bottomless:drinks",
+"name": "RUBRO Peach Iced Tea",
+"description": "Peach flavoured iced tea infused with South African Rooibos. All natural flavours and caffeine free.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 57,
+"energyKj": 249,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 14700,
+"totalCarbsMg": 14700
+}
+]
+},
+{
+"id": "rubro-peach:drinks",
+"name": "RUBRO Peach",
+"description": "Cool and refreshing! Peach flavoured iced tea infused with South African Rooibos. All natural flavours and caffeine free.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": []
+},
+{
+"id": "rubro-berry:drinks",
+"name": "RUBRO Berry",
+"description": "Cool and refreshing! Berry flavoured iced tea infused with South African Rooibos. All natural flavours and caffeine free.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": []
+},
+{
+"id": "rubro-lemon:drinks",
+"name": "RUBRO Lemon",
+"description": "Cool and refreshing! Lemon flavoured iced tea infused with South African Rooibos. All natural flavours and caffeine free.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": []
+},
+{
+"id": "karma-drinks-gingerella:drinks",
+"name": "Karma Drinks Gingerella",
+"description": "300ml. Clean, crisp and sparkling with organic Fairtrade ginger.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 105,
+"energyKj": 441,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 900,
+"saturatesMg": 0,
+"sugarsMg": 23700,
+"totalCarbsMg": 24000
+}
+]
+},
+{
+"id": "nix-and-kix-cucumber-mint:drinks",
+"name": "NIX and KIX Cucumber Mint",
+"description": "330ml. Lightly sparking soft drink with a little cayenne for a happy pick me up!",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 59,
+"energyKj": 248,
+"fatMg": 1700,
+"fibreMg": 0,
+"proteinMg": 1700,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 12900,
+"totalCarbsMg": 13200
+}
+]
+},
+{
+"id": "real-kombucha-royal-flush:drinks",
+"name": "REAL Kombucha Royal Flush",
+"description": "275ml. Sophisticated fizz with hints of rhubarb & white peach.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 44,
+"energyKj": 184,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 8300,
+"totalCarbsMg": 8300
+}
+]
+},
+{
+"id": "bottomless-pepsi-max:drinks",
+"name": "Bottomless Pepsi Max",
+"description": "Fill up your fizzy drink again and again with our Bottomless Pepsi Max, Diet Pepsi, Pepsi Max Cherry, Tango Orange, 7UP Free, 7UP Free Lime & Mint",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 2,
+"energyKj": 6,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 0
+}
+]
+},
+{
+"id": "bottomless-tango-orange:drinks",
+"name": "Bottomless Tango Orange",
+"description": "Fill up your fizzy drink again and again with our Bottomless Pepsi Max, Diet Pepsi, Pepsi Max Cherry, Tango Orange, 7UP Free, 7UP Free Lime & Mint",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 3,
+"energyKj": 15,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 0
+}
+]
+},
+{
+"id": "bottomless-pepsi-max-cherry:drinks",
+"name": "Bottomless Pepsi Max Cherry",
+"description": "Fill up your fizzy drink again and again with our Bottomless Pepsi Max, Diet Pepsi, Pepsi Max Cherry, Tango Orange, 7UP Free, 7UP Free Lime & Mint",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 2,
+"energyKj": 6,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 0
+}
+]
+},
+{
+"id": "bottomless-7-up-free:drinks",
+"name": "Bottomless 7UP Free",
+"description": "Fill up your fizzy drink again and again with our Bottomless Pepsi Max, Diet Pepsi, Pepsi Max Cherry, Tango Orange, 7UP Free, 7UP Free Lime & Mint",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 6,
+"energyKj": 24,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 0
+}
+]
+},
+{
+"id": "bottomless-diet-pepsi:drinks",
+"name": "Bottomless Diet Pepsi",
+"description": "Fill up your fizzy drink again and again with our Bottomless Pepsi Max, Diet Pepsi, Pepsi Max Cherry, Tango Orange, 7UP Free, 7UP Free Lime & Mint",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 2,
+"energyKj": 9,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 0
+}
+]
+},
+{
+"id": "bottomless-7-up-free-lime-and-mint:drinks",
+"name": "Bottomless 7UP Free Lime & Mint",
+"description": "Fill up your fizzy drink again and again with our Bottomless Pepsi Max, Diet Pepsi, Pepsi Max Cherry, Tango Orange, 7UP Free, 7UP Free Lime & Mint",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 5,
+"energyKj": 23,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 200,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 0
+}
+]
+},
+{
+"id": "pepsi:drinks",
+"name": "Pepsi Blue can (sugar levy applied)",
+"description": "330ml. Perfect over ice or straight from the can!",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 145,
+"energyKj": 620,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 36300,
+"totalCarbsMg": 36300
+}
+]
+},
+{
+"id": "diet-pepsi:drinks",
+"name": "Diet Pepsi can",
+"description": "330ml. Perfect over ice or straight from the can!",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 2,
+"energyKj": 10,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 0
+}
+]
+},
+{
+"id": "pepsi-max:drinks",
+"name": "Pepsi Max can",
+"description": "330ml. Perfect over ice or straight from the can!",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 2,
+"energyKj": 7,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 0
+}
+]
+},
+{
+"id": "tango-orange:drinks",
+"name": "Tango Orange can",
+"description": "330ml. Perfect over ice or straight from the can!",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 63,
+"energyKj": 261,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 14200,
+"totalCarbsMg": 14200
+}
+]
+},
+{
+"id": "7-up-free:drinks",
+"name": "7UP Free can",
+"description": "330ml. Perfect over ice or straight from the can!",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 7,
+"energyKj": 26,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 0
+}
+]
+},
+{
+"id": "tap-water:drinks",
+"name": "Glass of Water",
+"description": "Cold, filtered water. As simple as it gets.",
+"allergens": {},
+"diets": [],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 0,
+"energyKj": 0,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 0
+}
+]
+},
+{
+"id": "big-drop-brewing-co-pale-ale:drinks",
+"name": "Big Drop Brewing Co. Pale Ale",
+"description": "ABV 0.5%, 330ml. With a light and limey citrus bite.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "YES",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": 0.5,
+"energyKcal": 63,
+"energyKj": 261,
+"fatMg": 700,
+"fibreMg": 0,
+"proteinMg": 1000,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 5000,
+"totalCarbsMg": 11900
+}
+]
+},
+{
+"id": "sagres:drinks",
+"name": "Sagres",
+"description": "ABV 5%, 330ml. Portugal's favourite golden lager.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "YES",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": 5,
+"energyKcal": 129,
+"energyKj": 541,
+"fatMg": 300,
+"fibreMg": 1000,
+"proteinMg": 700,
+"saltMg": 0,
+"saturatesMg": 300,
+"sugarsMg": 700,
+"totalCarbsMg": 10200
+}
+]
+},
+{
+"id": "sagres:drinks",
+"name": "Sagres",
+"description": "ABV 5%, 330ml. Portugal's favourite golden lager.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "YES",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": 5,
+"energyKcal": 129,
+"energyKj": 541,
+"fatMg": 300,
+"fibreMg": 1000,
+"proteinMg": 700,
+"saltMg": 0,
+"saturatesMg": 300,
+"sugarsMg": 700,
+"totalCarbsMg": 10200
+}
+]
+},
+{
+"id": "sxollie-cider:drinks",
+"name": "Sxollie",
+"description": "ABV 4.5%, 500ml. Fresh out of Western Cape, South Africa. It’s sweet and sour with a hint of toffee apple. No added sugar or concentrates, made with 100% Golden Delicious apples.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "YES"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": 4.5,
+"energyKcal": 289,
+"energyKj": 1214,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 22000,
+"totalCarbsMg": 30300
+}
+]
+},
+{
+"id": "sxollie-cider:drinks",
+"name": "Sxollie",
+"description": "ABV 4.5%, 500ml. Fresh out of Western Cape, South Africa. It’s sweet and sour with a hint of toffee apple. No added sugar or concentrates, made with 100% Golden Delicious apples.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "YES"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": 4.5,
+"energyKcal": 289,
+"energyKj": 1214,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 22000,
+"totalCarbsMg": 30300
+}
+]
+},
+{
+"id": "sxollie-cider:drinks",
+"name": "Sxollie",
+"description": "ABV 4.5%, 500ml. Fresh out of Western Cape, South Africa. It’s sweet and sour with a hint of toffee apple. No added sugar or concentrates, made with 100% Golden Delicious apples.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "YES"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": 4.5,
+"energyKcal": 289,
+"energyKj": 1214,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 22000,
+"totalCarbsMg": 30300
+}
+]
+},
+{
+"id": "freedom-pils:drinks",
+"name": "Freedom Pils",
+"description": "ABV 4.4%, 330ml. A pilsner with an up-to-date twist.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "YES",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": 4.4,
+"energyKcal": 119,
+"energyKj": 495,
+"fatMg": 300,
+"fibreMg": 1700,
+"proteinMg": 1300,
+"saltMg": 0,
+"saturatesMg": 300,
+"sugarsMg": 300,
+"totalCarbsMg": 8600
+}
+]
+},
+{
+"id": "freedom-pils:drinks",
+"name": "Freedom Pils",
+"description": "ABV 4.4%, 330ml. A pilsner with an up-to-date twist.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "YES",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": 4.4,
+"energyKcal": 119,
+"energyKj": 495,
+"fatMg": 300,
+"fibreMg": 1700,
+"proteinMg": 1300,
+"saltMg": 0,
+"saturatesMg": 300,
+"sugarsMg": 300,
+"totalCarbsMg": 8600
+}
+]
+},
+{
+"id": "five-points-xpa:drinks",
+"name": "Five Points XPA",
+"description": "ABV 4%, 330ml. A light and tropical extra pale ale.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "YES",
+"GLUTEN_OATS": "YES",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": 4,
+"energyKcal": 56,
+"energyKj": 231,
+"fatMg": 300,
+"fibreMg": 300,
+"proteinMg": 1000,
+"saltMg": 200,
+"saturatesMg": 300,
+"sugarsMg": 300,
+"totalCarbsMg": 11900
+}
+]
+},
+{
+"id": "five-points-xpa:drinks",
+"name": "Five Points XPA",
+"description": "ABV 4%, 330ml. A light and tropical extra pale ale.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "YES",
+"GLUTEN_OATS": "YES",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "YES",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": 4,
+"energyKcal": 56,
+"energyKj": 231,
+"fatMg": 300,
+"fibreMg": 300,
+"proteinMg": 1000,
+"saltMg": 200,
+"saturatesMg": 300,
+"sugarsMg": 300,
+"totalCarbsMg": 11900
+}
+]
+},
+{
+"id": "black-s-kinsale-pale-ale:drinks",
+"name": "Black’s Kinsale Pale Ale",
+"description": "ABV 5%, 330ml. A malty sweet ale with a tropical twist.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "YES",
+"GLUTEN_BARLEY": "YES",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 112,
+"energyKj": 479,
+"fatMg": 300,
+"fibreMg": 0,
+"proteinMg": 1000,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 1700,
+"totalCarbsMg": 11900
+}
+]
+},
+{
+"id": "tempted-medium-dry-cider:drinks",
+"name": "Tempted Medium Dry Cider",
+"description": "ABV 5.4%, 500ml.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "YES"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 155,
+"energyKj": 650,
+"fatMg": 500,
+"fibreMg": 0,
+"proteinMg": 500,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 800,
+"totalCarbsMg": 800
+}
+]
+},
+{
+"id": "draught-beer:drinks",
+"name": "Draught Beer",
+"description": "",
+"allergens": {},
+"diets": [],
+"sizes": [],
+"portions": []
+},
+{
+"id": "spier-sauvignon-blanc:drinks",
+"name": "Spier Sauvignon Blanc (South Africa)",
+"description": "ABV 13%. Fresh gooseberry, green fig and passion fruit flavours. 250ml.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "YES"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": 13,
+"energyKcal": 195,
+"energyKj": 815,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 800,
+"totalCarbsMg": 800
+}
+]
+},
+{
+"id": "spier-sauvignon-blanc:drinks",
+"name": "Spier Sauvignon Blanc (South Africa)",
+"description": "ABV 13%. Fresh gooseberry, green fig and passion fruit flavours. 250ml.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "YES"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": 13,
+"energyKcal": 195,
+"energyKj": 815,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 800,
+"totalCarbsMg": 800
+}
+]
+},
+{
+"id": "spier-chardonnay:drinks",
+"name": "Spier Chardonnay (South Africa)",
+"description": "ABV 13.64%. Creamy citrus and tropical notes with a mouthwatering finish.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "YES"
+},
+"diets": [
+"LOW_LACTOSE"
+],
+"sizes": [
+"125ml",
+"175ml",
+"250ml",
+"Bottle"
+],
+"portions": [
+{
+"alcoholByVolumePercent": 13.64,
+"energyKcal": 585,
+"energyKj": 2445,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 1500
+},
+{
+"alcoholByVolumePercent": 13.64,
+"energyKcal": 98,
+"energyKj": 408,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 300
+},
+{
+"alcoholByVolumePercent": 13.64,
+"energyKcal": 137,
+"energyKj": 571,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 400
+},
+{
+"alcoholByVolumePercent": 13.64,
+"energyKcal": 195,
+"energyKj": 815,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 500
+}
+]
+},
+{
+"id": "spier-chardonnay:drinks",
+"name": "Spier Chardonnay (South Africa)",
+"description": "ABV 13.64%. Creamy citrus and tropical notes with a mouthwatering finish.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "YES"
+},
+"diets": [
+"LOW_LACTOSE"
+],
+"sizes": [
+"125ml",
+"175ml",
+"250ml",
+"Bottle"
+],
+"portions": [
+{
+"alcoholByVolumePercent": 13.64,
+"energyKcal": 585,
+"energyKj": 2445,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 1500
+},
+{
+"alcoholByVolumePercent": 13.64,
+"energyKcal": 98,
+"energyKj": 408,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 300
+},
+{
+"alcoholByVolumePercent": 13.64,
+"energyKcal": 137,
+"energyKj": 571,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 400
+},
+{
+"alcoholByVolumePercent": 13.64,
+"energyKcal": 195,
+"energyKj": 815,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 500
+}
+]
+},
+{
+"id": "creative-block-2:drinks",
+"name": "Creative Block 2 (South Africa)",
+"description": "ABV 13.42%. A crisp Sauvignon Blanc blend with classic gooseberry and lime flavours.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "YES"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": 13.42,
+"energyKcal": 585,
+"energyKj": 2438,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 1500
+}
+]
+},
+{
+"id": "creative-block-2:drinks",
+"name": "Creative Block 2 (South Africa)",
+"description": "ABV 13.42%. A crisp Sauvignon Blanc blend with classic gooseberry and lime flavours.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "YES"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": 13.42,
+"energyKcal": 585,
+"energyKj": 2438,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 1500
+}
+]
+},
+{
+"id": "spier-merlot:drinks",
+"name": "Spier Merlot (South Africa)",
+"description": "ABV 13.9%. Dark and luscious with ripe red and black berries. 250ml.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "YES"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": 13.9,
+"energyKcal": 205,
+"energyKj": 854,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 900,
+"totalCarbsMg": 900
+}
+]
+},
+{
+"id": "spier-merlot:drinks",
+"name": "Spier Merlot (South Africa)",
+"description": "ABV 13.9%. Dark and luscious with ripe red and black berries. 250ml.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "YES"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": 13.9,
+"energyKcal": 205,
+"energyKj": 854,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 900,
+"totalCarbsMg": 900
+}
+]
+},
+{
+"id": "spier-cabernet-sauvignon:drinks",
+"name": "Spier Cabernet Sauvignon (South Africa)",
+"description": "ABV 13.52%. Bright berries and dark chocolate. Rich and refreshing.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "YES"
+},
+"diets": [
+"LOW_LACTOSE"
+],
+"sizes": [
+"125ml",
+"175ml",
+"250ml",
+"Bottle"
+],
+"portions": [
+{
+"alcoholByVolumePercent": 13.52,
+"energyKcal": 600,
+"energyKj": 2513,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 2000,
+"totalCarbsMg": 2000
+},
+{
+"alcoholByVolumePercent": 13.52,
+"energyKcal": 200,
+"energyKj": 838,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 700,
+"totalCarbsMg": 700
+},
+{
+"alcoholByVolumePercent": 13.52,
+"energyKcal": 100,
+"energyKj": 419,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 300,
+"totalCarbsMg": 300
+}
+]
+},
+{
+"id": "spier-cabernet-sauvignon:drinks",
+"name": "Spier Cabernet Sauvignon (South Africa)",
+"description": "ABV 13.52%. Bright berries and dark chocolate. Rich and refreshing.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "YES"
+},
+"diets": [
+"LOW_LACTOSE"
+],
+"sizes": [
+"125ml",
+"175ml",
+"250ml",
+"Bottle"
+],
+"portions": [
+{
+"alcoholByVolumePercent": 13.52,
+"energyKcal": 600,
+"energyKj": 2513,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 2000,
+"totalCarbsMg": 2000
+},
+{
+"alcoholByVolumePercent": 13.52,
+"energyKcal": 200,
+"energyKj": 838,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 700,
+"totalCarbsMg": 700
+},
+{
+"alcoholByVolumePercent": 13.52,
+"energyKcal": 100,
+"energyKj": 419,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 300,
+"totalCarbsMg": 300
+}
+]
+},
+{
+"id": "creative-block-5:drinks",
+"name": "Creative Block 5 (South Africa)",
+"description": "ABV 13.52%. Full bodied Cabernet Sauvignon and Merlot blend with blackberry, cassis and spicy oak flavours.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "YES"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": 13.52,
+"energyKcal": 638,
+"energyKj": 2670,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 1500
+}
+]
+},
+{
+"id": "creative-block-5:drinks",
+"name": "Creative Block 5 (South Africa)",
+"description": "ABV 13.52%. Full bodied Cabernet Sauvignon and Merlot blend with blackberry, cassis and spicy oak flavours.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "YES"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": 13.52,
+"energyKcal": 638,
+"energyKj": 2670,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 1500
+}
+]
+},
+{
+"id": "spier-rose:drinks",
+"name": "Spier Rose (South Africa)",
+"description": "ABV 13.15%. Strawberries, grapefruit and ripe peach with a crisp finish. 250ml.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "YES"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": 13.15,
+"energyKcal": 188,
+"energyKj": 785,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 500
+}
+]
+},
+{
+"id": "spier-rose:drinks",
+"name": "Spier Rose (South Africa)",
+"description": "ABV 13.15%. Strawberries, grapefruit and ripe peach with a crisp finish. 250ml.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "YES"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": 13.15,
+"energyKcal": 188,
+"energyKj": 785,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 500
+}
+]
+},
+{
+"id": "cara-viva-medium-dry-portugal:drinks",
+"name": "Cara Viva Medium Dry (Portugal)",
+"description": "ABV 11.5%. An off-dry gem. Suits PERi-PERi spice.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "YES"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [
+"125ml",
+"175ml",
+"250ml",
+"Bottle"
+],
+"portions": [
+{
+"alcoholByVolumePercent": 11.5,
+"energyKcal": 525,
+"energyKj": 2210,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 800,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 11200,
+"totalCarbsMg": 11200
+},
+{
+"alcoholByVolumePercent": 11.5,
+"energyKcal": 175,
+"energyKj": 737,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 300,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 3700,
+"totalCarbsMg": 3700
+},
+{
+"alcoholByVolumePercent": 11.5,
+"energyKcal": 123,
+"energyKj": 516,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 200,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 2600,
+"totalCarbsMg": 2600
+},
+{
+"alcoholByVolumePercent": 11.5,
+"energyKcal": 88,
+"energyKj": 368,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 100,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 1900,
+"totalCarbsMg": 1900
+}
+]
+},
+{
+"id": "cara-viva-medium-dry-portugal:drinks",
+"name": "Cara Viva Medium Dry (Portugal)",
+"description": "ABV 11.5%. An off-dry gem. Suits PERi-PERi spice.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "YES"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [
+"125ml",
+"175ml",
+"250ml",
+"Bottle"
+],
+"portions": [
+{
+"alcoholByVolumePercent": 11.5,
+"energyKcal": 525,
+"energyKj": 2210,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 800,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 11200,
+"totalCarbsMg": 11200
+},
+{
+"alcoholByVolumePercent": 11.5,
+"energyKcal": 175,
+"energyKj": 737,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 300,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 3700,
+"totalCarbsMg": 3700
+},
+{
+"alcoholByVolumePercent": 11.5,
+"energyKcal": 123,
+"energyKj": 516,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 200,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 2600,
+"totalCarbsMg": 2600
+},
+{
+"alcoholByVolumePercent": 11.5,
+"energyKcal": 88,
+"energyKj": 368,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 100,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 1900,
+"totalCarbsMg": 1900
+}
+]
+},
+{
+"id": "cara-viva-summer-fruit-portugal:drinks",
+"name": "Cara Viva Summer Fruit (Portugal)",
+"description": "ABV 11.5%. A burst of summer fruitiness.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "YES"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [
+"125ml",
+"175ml",
+"250ml",
+"Bottle"
+],
+"portions": [
+{
+"alcoholByVolumePercent": 11.5,
+"energyKcal": 540,
+"energyKj": 2273,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 800,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 15000,
+"totalCarbsMg": 15000
+},
+{
+"alcoholByVolumePercent": 11.5,
+"energyKcal": 180,
+"energyKj": 758,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 300,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 5000,
+"totalCarbsMg": 5000
+},
+{
+"alcoholByVolumePercent": 11.5,
+"energyKcal": 126,
+"energyKj": 530,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 200,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 3500,
+"totalCarbsMg": 3500
+},
+{
+"alcoholByVolumePercent": 11.5,
+"energyKcal": 90,
+"energyKj": 379,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 100,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 2500,
+"totalCarbsMg": 2500
+}
+]
+},
+{
+"id": "cara-viva-summer-fruit-portugal:drinks",
+"name": "Cara Viva Summer Fruit (Portugal)",
+"description": "ABV 11.5%. A burst of summer fruitiness.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "YES"
+},
+"diets": [
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [
+"125ml",
+"175ml",
+"250ml",
+"Bottle"
+],
+"portions": [
+{
+"alcoholByVolumePercent": 11.5,
+"energyKcal": 540,
+"energyKj": 2273,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 800,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 15000,
+"totalCarbsMg": 15000
+},
+{
+"alcoholByVolumePercent": 11.5,
+"energyKcal": 180,
+"energyKj": 758,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 300,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 5000,
+"totalCarbsMg": 5000
+},
+{
+"alcoholByVolumePercent": 11.5,
+"energyKcal": 90,
+"energyKj": 379,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 100,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 2500,
+"totalCarbsMg": 2500
+}
+]
+},
+{
+"id": "cappuccino:drinks",
+"name": "Cappuccino",
+"description": "Frothy and topped with sprinkles.",
+"allergens": {},
+"diets": [],
+"sizes": [],
+"portions": []
+},
+{
+"id": "gal-ão:drinks",
+"name": "Galão",
+"description": "Portuguese for latté.",
+"allergens": {},
+"diets": [],
+"sizes": [],
+"portions": []
+},
+{
+"id": "espresso:drinks",
+"name": "Espresso",
+"description": "Small and strong.",
+"allergens": {},
+"diets": [],
+"sizes": [],
+"portions": []
+},
+{
+"id": "espresso-espresso:drinks",
+"name": "Espresso Espresso",
+"description": "For a longer lasting coffee hit.",
+"allergens": {},
+"diets": [],
+"sizes": [],
+"portions": []
+},
+{
+"id": "americano:drinks",
+"name": "Americano",
+"description": "Classic, no-frills black coffee.",
+"allergens": {},
+"diets": [],
+"sizes": [],
+"portions": []
+},
+{
+"id": "hot-chocolate:drinks",
+"name": "Hot Chocolate",
+"description": "Soothing relief for chocoholics.",
+"allergens": {},
+"diets": [],
+"sizes": [],
+"portions": []
+},
+{
+"id": "organic-everyday-tea:drinks",
+"name": "Organic Everyday Tea",
+"description": "A really great Fairtrade cuppa.",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "MAYBE_FROM_KITCHEN_CROSS_CONTAMINATION",
+"LUPIN": "NO",
+"MILK": "YES",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 23,
+"energyKj": 95,
+"fatMg": 800,
+"fibreMg": 0,
+"proteinMg": 1700,
+"saltMg": 100,
+"saturatesMg": 500,
+"sugarsMg": 2300,
+"totalCarbsMg": 2300
+}
+]
+},
+{
+"id": "chamomile-citrus-tea-infusion:drinks",
+"name": "Chamomile & Citrus Tea Infusion",
+"description": "",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 0,
+"energyKj": 0,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 0
+}
+]
+},
+{
+"id": "organic-mint-tea-infusion:drinks",
+"name": "Organic Mint Tea Infusion",
+"description": "",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 0,
+"energyKj": 0,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 0
+}
+]
+},
+{
+"id": "african-nectar-rooibos-tea-infusion:drinks",
+"name": "African Nectar Rooibos Tea Infusion",
+"description": "",
+"allergens": {
+"CELERY": "NO",
+"CRUSTACEAN": "NO",
+"EGG": "NO",
+"FISH": "NO",
+"GLUTEN": "NO",
+"GLUTEN_BARLEY": "NO",
+"GLUTEN_OATS": "NO",
+"GLUTEN_RYE": "NO",
+"GLUTEN_SPELT": "NO",
+"GLUTEN_WHEAT": "NO",
+"LUPIN": "NO",
+"MILK": "NO",
+"MOLLUSC": "NO",
+"MUSTARD": "NO",
+"NUT": "NO",
+"PEANUT": "NO",
+"SESAME": "NO",
+"SOYA": "NO",
+"SULPHITE": "NO"
+},
+"diets": [
+"GLUTEN_FREE",
+"LOW_LACTOSE",
+"VEGAN",
+"VEGETARIAN"
+],
+"sizes": [],
+"portions": [
+{
+"alcoholByVolumePercent": null,
+"energyKcal": 0,
+"energyKj": 0,
+"fatMg": 0,
+"fibreMg": 0,
+"proteinMg": 0,
+"saltMg": 0,
+"saturatesMg": 0,
+"sugarsMg": 0,
+"totalCarbsMg": 0
+}
+]
+}
+]
+}
+]
+}

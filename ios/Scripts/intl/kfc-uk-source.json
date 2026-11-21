@@ -1,0 +1,12903 @@
+{
+"checked": "2026-11-21",
+"url": "https://www.kfc.co.uk/nutrition-allergens",
+"allergens": [
+"Spelt Gluten",
+"Crustaceans",
+"Egg",
+"Fish",
+"Barley Gluten",
+"Oat Gluten",
+"Rye Gluten",
+"Wheat Gluten",
+"Lupin",
+"Milk",
+"Molluscs",
+"Mustard",
+"Almonds",
+"Brazil Nuts",
+"Cashews",
+"Hazelnuts",
+"Macadamia",
+"Peanut",
+"Pecan Nuts",
+"Pistachio",
+"Walnuts",
+"Sesame",
+"Soya",
+"Sulphites",
+"Celery"
+],
+"products": [
+{
+"name": "Original Recipe Chicken Keel",
+"categories": [
+"Just Chicken"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 921,
+"kcal": 220,
+"fat": "11.00",
+"saturated_fat": "1.90",
+"carbohydrates": "6.80",
+"sugars": "0.50",
+"protein": "23.00",
+"salt": "0.94"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Original Recipe Chicken Drumstick",
+"categories": [
+"Just Chicken"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 750,
+"kcal": 179,
+"fat": "10.00",
+"saturated_fat": "1.50",
+"carbohydrates": "8.00",
+"sugars": "0.50",
+"protein": "14.00",
+"salt": "0.74"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Original Recipe Chicken Thigh",
+"categories": [
+"Just Chicken"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 1116,
+"kcal": 268,
+"fat": "17.00",
+"saturated_fat": "3.40",
+"carbohydrates": "8.20",
+"sugars": "0.20",
+"protein": "20.00",
+"salt": "1.00"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Original Recipe Chicken Rib",
+"categories": [
+"Just Chicken"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 1296,
+"kcal": 310,
+"fat": "15.00",
+"saturated_fat": "2.50",
+"carbohydrates": "11.00",
+"sugars": "0.50",
+"protein": "33.10",
+"salt": "1.31"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Original Recipe Chicken Wing",
+"categories": [
+"Just Chicken"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 762,
+"kcal": 182,
+"fat": "10.30",
+"saturated_fat": "1.70",
+"carbohydrates": "6.80",
+"sugars": "0.50",
+"protein": "16.00",
+"salt": "0.67"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Small Popcorn Chicken",
+"categories": [
+"Just Chicken"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "secondary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "secondary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "primary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 592,
+"kcal": 142,
+"fat": "8.30",
+"saturated_fat": "0.80",
+"carbohydrates": "8.30",
+"sugars": "0.20",
+"protein": "8.30",
+"salt": "0.64"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Regular Popcorn Chicken",
+"categories": [
+"Just Chicken"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "secondary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "secondary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "primary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 1283,
+"kcal": 307,
+"fat": "18.00",
+"saturated_fat": "1.80",
+"carbohydrates": "18.00",
+"sugars": "0.50",
+"protein": "18.00",
+"salt": "1.30"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Large Popcorn Chicken",
+"categories": [
+"Just Chicken"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "secondary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "secondary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "primary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 1996,
+"kcal": 478,
+"fat": "28.00",
+"saturated_fat": "2.80",
+"carbohydrates": "28.00",
+"sugars": "0.60",
+"protein": "28.00",
+"salt": "2.20"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Hot Wing (per piece, average)",
+"categories": [
+"Just Chicken"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "secondary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "secondary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 380,
+"kcal": 91,
+"fat": "6.20",
+"saturated_fat": "0.90",
+"carbohydrates": "3.80",
+"sugars": "0.50",
+"protein": "4.90",
+"salt": "0.35"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Tender (per piece, average)",
+"categories": [
+"Just Chicken"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 524,
+"kcal": 125,
+"fat": "5.40",
+"saturated_fat": "0.60",
+"carbohydrates": "5.80",
+"sugars": "0.50",
+"protein": "13.10",
+"salt": "0.87"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Kansas BBQ Drip'd Bites",
+"categories": [
+"Just Chicken"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "secondary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": "primary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 1267,
+"kcal": 301,
+"fat": "10.80",
+"saturated_fat": "1.20",
+"carbohydrates": "34.70",
+"sugars": "18.00",
+"protein": "15.80",
+"salt": "1.50"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Sweet Chilli Drip'd Bites",
+"categories": [
+"Just Chicken"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "secondary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": "primary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 1462,
+"kcal": 348,
+"fat": "13.50",
+"saturated_fat": "1.50",
+"carbohydrates": "36.80",
+"sugars": "21.00",
+"protein": "19.10",
+"salt": "1.50"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Fillet Burger",
+"categories": [
+"Burgers"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": "secondary"
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": "secondary"
+},
+"Oat Gluten": {
+"type": "secondary"
+},
+"Rye Gluten": {
+"type": "secondary"
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": "primary"
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "primary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 1942,
+"kcal": 463,
+"fat": "18.70",
+"saturated_fat": "2.20",
+"carbohydrates": "43.00",
+"sugars": "6.50",
+"protein": "28.80",
+"salt": "2.20"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Zinger Burger",
+"categories": [
+"Burgers"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": "secondary"
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": "secondary"
+},
+"Oat Gluten": {
+"type": "secondary"
+},
+"Rye Gluten": {
+"type": "secondary"
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "secondary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": "primary"
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "primary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 1962,
+"kcal": 468,
+"fat": "22.00",
+"saturated_fat": "2.20",
+"carbohydrates": "43.00",
+"sugars": "6.50",
+"protein": "23.00",
+"salt": "2.00"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Fillet Tower Burger",
+"categories": [
+"Burgers"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": "secondary"
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": "secondary"
+},
+"Oat Gluten": {
+"type": "secondary"
+},
+"Rye Gluten": {
+"type": "secondary"
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": "primary"
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "primary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "primary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 2531,
+"kcal": 604,
+"fat": "27.00",
+"saturated_fat": "4.30",
+"carbohydrates": "55.50",
+"sugars": "11.00",
+"protein": "32.10",
+"salt": "3.30"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Zinger Supercharger Tower Burger",
+"categories": [
+"Burgers"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": "secondary"
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": "secondary"
+},
+"Oat Gluten": {
+"type": "secondary"
+},
+"Rye Gluten": {
+"type": "secondary"
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": "primary"
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "primary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 2723,
+"kcal": 652,
+"fat": "35.90",
+"saturated_fat": "5.00",
+"carbohydrates": "53.50",
+"sugars": "8.70",
+"protein": "26.20",
+"salt": "3.00"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Mini Burger",
+"categories": [
+"Burgers"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": "secondary"
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": "secondary"
+},
+"Oat Gluten": {
+"type": "secondary"
+},
+"Rye Gluten": {
+"type": "secondary"
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": "primary"
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "primary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 1164,
+"kcal": 277,
+"fat": "10.00",
+"saturated_fat": "1.10",
+"carbohydrates": "28.00",
+"sugars": "2.60",
+"protein": "18.00",
+"salt": "1.40"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Kids Burger",
+"categories": [
+"Burgers"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": "secondary"
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": "secondary"
+},
+"Oat Gluten": {
+"type": "secondary"
+},
+"Rye Gluten": {
+"type": "secondary"
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": "secondary"
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "primary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "primary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 1087,
+"kcal": 258,
+"fat": "7.00",
+"saturated_fat": "0.90",
+"carbohydrates": "30.00",
+"sugars": "4.80",
+"protein": "18.00",
+"salt": "1.40"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Zinger Stacker",
+"categories": [
+"Burgers"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": "secondary"
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": "secondary"
+},
+"Oat Gluten": {
+"type": "secondary"
+},
+"Rye Gluten": {
+"type": "secondary"
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": "secondary"
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "primary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 3399,
+"kcal": 813,
+"fat": "42.30",
+"saturated_fat": "7.70",
+"carbohydrates": "60.90",
+"sugars": "13.00",
+"protein": "45.10",
+"salt": "3.70"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Chicken Fillet Roll (ROI only)",
+"categories": [
+"Burgers"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": "secondary"
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": "secondary"
+},
+"Oat Gluten": {
+"type": "secondary"
+},
+"Rye Gluten": {
+"type": "secondary"
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": "primary"
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 2779,
+"kcal": 662,
+"fat": "24.50",
+"saturated_fat": "5.20",
+"carbohydrates": "78.70",
+"sugars": "7.50",
+"protein": "28.60",
+"salt": "3.20"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Zinger Fillet Roll (ROI only)",
+"categories": [
+"Burgers"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": "secondary"
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": "secondary"
+},
+"Oat Gluten": {
+"type": "secondary"
+},
+"Rye Gluten": {
+"type": "secondary"
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": "primary"
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 3146,
+"kcal": 751,
+"fat": "36.00",
+"saturated_fat": "6.00",
+"carbohydrates": "81.00",
+"sugars": "9.00",
+"protein": "23.00",
+"salt": "3.30"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Vegan Burger ",
+"categories": [
+"Burgers"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": "secondary"
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "secondary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": "secondary"
+},
+"Oat Gluten": {
+"type": "secondary"
+},
+"Rye Gluten": {
+"type": "secondary"
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "secondary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": "primary"
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "primary"
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 1659,
+"kcal": 396,
+"fat": "17.00",
+"saturated_fat": "1.40",
+"carbohydrates": "41.00",
+"sugars": "7.70",
+"protein": "15.00",
+"salt": "2.50"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Kentucky Mayo Twister",
+"categories": [
+"Wraps"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": "secondary"
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": "secondary"
+},
+"Oat Gluten": {
+"type": "secondary"
+},
+"Rye Gluten": {
+"type": "secondary"
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": "primary"
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 2179,
+"kcal": 520,
+"fat": "24.00",
+"saturated_fat": "4.00",
+"carbohydrates": "46.10",
+"sugars": "5.10",
+"protein": "28.40",
+"salt": "2.60"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Sweet Chilli Twister",
+"categories": [
+"Wraps"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": "secondary"
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": "secondary"
+},
+"Oat Gluten": {
+"type": "secondary"
+},
+"Rye Gluten": {
+"type": "secondary"
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": "secondary"
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 2068,
+"kcal": 492,
+"fat": "17.60",
+"saturated_fat": "3.30",
+"carbohydrates": "53.10",
+"sugars": "11.00",
+"protein": "28.70",
+"salt": "2.60"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Smokey BBQ Twister ",
+"categories": [
+"Wraps"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": "secondary"
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": "secondary"
+},
+"Oat Gluten": {
+"type": "secondary"
+},
+"Rye Gluten": {
+"type": "secondary"
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": "secondary"
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 2027,
+"kcal": 482,
+"fat": "17.40",
+"saturated_fat": "3.30",
+"carbohydrates": "51.20",
+"sugars": "9.00",
+"protein": "28.70",
+"salt": "2.60"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Flamin' Mini Wrap",
+"categories": [
+"Wraps"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": "secondary"
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": "secondary"
+},
+"Oat Gluten": {
+"type": "secondary"
+},
+"Rye Gluten": {
+"type": "secondary"
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": "secondary"
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 1360,
+"kcal": 325,
+"fat": "15.30",
+"saturated_fat": "2.50",
+"carbohydrates": "28.50",
+"sugars": "2.90",
+"protein": "17.60",
+"salt": "1.10"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "BBQ Fillet Stacker Burger",
+"categories": [
+"Burgers"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": "secondary"
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": "secondary"
+},
+"Oat Gluten": {
+"type": "secondary"
+},
+"Rye Gluten": {
+"type": "secondary"
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": "primary"
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "primary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 3408,
+"kcal": 814,
+"fat": "37.90",
+"saturated_fat": "7.80",
+"carbohydrates": "59.20",
+"sugars": "10.00",
+"protein": "56.60",
+"salt": "4.60"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "BBQ Fillet Tower Burger",
+"categories": [
+"Burgers"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": "secondary"
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": "secondary"
+},
+"Oat Gluten": {
+"type": "secondary"
+},
+"Rye Gluten": {
+"type": "secondary"
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": "primary"
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "primary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 2564,
+"kcal": 612,
+"fat": "27.20",
+"saturated_fat": "4.30",
+"carbohydrates": "57.00",
+"sugars": "11.00",
+"protein": "32.10",
+"salt": "3.30"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Supercharger Twister",
+"categories": [
+"Wraps"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": "secondary"
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": "secondary"
+},
+"Oat Gluten": {
+"type": "secondary"
+},
+"Rye Gluten": {
+"type": "secondary"
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": "secondary"
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 2296,
+"kcal": 548,
+"fat": "26.00",
+"saturated_fat": "4.20",
+"carbohydrates": "47.80",
+"sugars": "6.20",
+"protein": "29.10",
+"salt": "2.60"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "BBQ Mini Wrap",
+"categories": [
+"Wraps"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": "secondary"
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": "secondary"
+},
+"Oat Gluten": {
+"type": "secondary"
+},
+"Rye Gluten": {
+"type": "secondary"
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": "secondary"
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 1235,
+"kcal": 294,
+"fat": "10.80",
+"saturated_fat": "2.20",
+"carbohydrates": "30.90",
+"sugars": "4.50",
+"protein": "17.60",
+"salt": "1.10"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Original Ranch Rice Bowl ",
+"categories": [
+"Salad Boxes & Riceboxes"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 2342,
+"kcal": 558,
+"fat": "19.70",
+"saturated_fat": "2.50",
+"carbohydrates": "62.80",
+"sugars": "7.40",
+"protein": "28.80",
+"salt": "2.90"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Zinger Ranch Rice Bowl ",
+"categories": [
+"Salad Boxes & Riceboxes"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 2278,
+"kcal": 543,
+"fat": "21.30",
+"saturated_fat": "2.40",
+"carbohydrates": "61.60",
+"sugars": "6.50",
+"protein": "23.00",
+"salt": "2.60"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Veggie Ranch Rice Bowl ",
+"categories": [
+"Salad Boxes & Riceboxes"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "secondary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "secondary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "secondary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 1560,
+"kcal": 371,
+"fat": "9.50",
+"saturated_fat": "1.30",
+"carbohydrates": "59.70",
+"sugars": "8.80",
+"protein": "7.50",
+"salt": "1.20"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Regular Fries",
+"categories": [
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "secondary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "secondary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 1096,
+"kcal": 261,
+"fat": "9.80",
+"saturated_fat": "0.80",
+"carbohydrates": "38.00",
+"sugars": "0.50",
+"protein": "3.10",
+"salt": "0.74"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Apple Tango - Large",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 68,
+"kcal": 18,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "2.30",
+"sugars": "2.30",
+"protein": "0.00",
+"salt": "0.45"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Dirty Loaded Fries",
+"categories": [
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "primary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 2031,
+"kcal": 485,
+"fat": "24.00",
+"saturated_fat": "2.00",
+"carbohydrates": "53.00",
+"sugars": "5.50",
+"protein": "12.00",
+"salt": "1.70"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Apple Tango - Regular",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 30,
+"kcal": 12,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "1.50",
+"sugars": "1.50",
+"protein": "0.00",
+"salt": "0.30"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Texas BBQ Dip Pot",
+"categories": [
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 297,
+"kcal": 70,
+"fat": "0.50",
+"saturated_fat": "0.10",
+"carbohydrates": "16.60",
+"sugars": "15.00",
+"protein": "0.50",
+"salt": "0.52"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Festive Loaded Fries",
+"categories": [
+"Limited Time Offer",
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": "primary"
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "primary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 2086,
+"kcal": 499,
+"fat": "27.10",
+"saturated_fat": "2.40",
+"carbohydrates": "49.60",
+"sugars": "1.70",
+"protein": "11.80",
+"salt": "2.10"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Doom Mint Shake",
+"categories": [
+"Drinks",
+"Limited Time Offer"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "secondary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 2092,
+"kcal": 496,
+"fat": "13.60",
+"saturated_fat": "8.70",
+"carbohydrates": "86.00",
+"sugars": "69.00",
+"protein": "6.90",
+"salt": "0.84"
+},
+"vegan": false,
+"vegetarian": true
+},
+{
+"name": "Gravymus Burger",
+"categories": [
+"Burgers",
+"Limited Time Offer"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": "secondary"
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": "primary"
+},
+"Oat Gluten": {
+"type": "secondary"
+},
+"Rye Gluten": {
+"type": "secondary"
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": "primary"
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "primary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "primary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 2869,
+"kcal": 685,
+"fat": "33.00",
+"saturated_fat": "5.20",
+"carbohydrates": "60.50",
+"sugars": "7.20",
+"protein": "33.70",
+"salt": "4.10"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Doom Dust Sachet",
+"categories": [
+"Limited Time Offer",
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 73,
+"kcal": 17,
+"fat": "0.50",
+"saturated_fat": "0.10",
+"carbohydrates": "3.80",
+"sugars": "2.30",
+"protein": "0.50",
+"salt": "1.30"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Doom Drip'd Wings",
+"categories": [
+"Just Chicken",
+"Limited Time Offer"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "secondary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "secondary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 1536,
+"kcal": 367,
+"fat": "19.00",
+"saturated_fat": "2.70",
+"carbohydrates": "33.00",
+"sugars": "18.00",
+"protein": "15.20",
+"salt": "1.60"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Doom Burger",
+"categories": [
+"Burgers",
+"Limited Time Offer"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": "secondary"
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": "secondary"
+},
+"Oat Gluten": {
+"type": "secondary"
+},
+"Rye Gluten": {
+"type": "secondary"
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": "primary"
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "primary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 2158,
+"kcal": 514,
+"fat": "20.60",
+"saturated_fat": "4.50",
+"carbohydrates": "46.10",
+"sugars": "12.00",
+"protein": "34.00",
+"salt": "2.60"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Sweet Teriyaki Dip Pot",
+"categories": [
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "primary"
+},
+"Soya": {
+"type": "primary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 222,
+"kcal": 52,
+"fat": "0.50",
+"saturated_fat": "0.10",
+"carbohydrates": "11.40",
+"sugars": "9.20",
+"protein": "0.60",
+"salt": "0.52"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Kentucky Original Wrap",
+"categories": [
+"Wraps"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": "secondary"
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": "secondary"
+},
+"Oat Gluten": {
+"type": "secondary"
+},
+"Rye Gluten": {
+"type": "secondary"
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": "primary"
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 2162,
+"kcal": 516,
+"fat": "23.30",
+"saturated_fat": "3.50",
+"carbohydrates": "44.30",
+"sugars": "3.10",
+"protein": "31.20",
+"salt": "2.40"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "3 Mega Mozza Sticks",
+"categories": [
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "secondary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 1391,
+"kcal": 333,
+"fat": "17.70",
+"saturated_fat": "5.60",
+"carbohydrates": "27.60",
+"sugars": "2.10",
+"protein": "14.90",
+"salt": "0.70"
+},
+"vegan": false,
+"vegetarian": true
+},
+{
+"name": "Dirty Millionaire Shake",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "secondary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 2571,
+"kcal": 611,
+"fat": "17.90",
+"saturated_fat": "11.00",
+"carbohydrates": "103.20",
+"sugars": "83.00",
+"protein": "8.30",
+"salt": "0.99"
+},
+"vegan": false,
+"vegetarian": true
+},
+{
+"name": "Supercharger Dip Pot",
+"categories": [
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 781,
+"kcal": 189,
+"fat": "19.00",
+"saturated_fat": "1.40",
+"carbohydrates": "3.90",
+"sugars": "2.90",
+"protein": "0.60",
+"salt": "0.72"
+},
+"vegan": false,
+"vegetarian": true
+},
+{
+"name": "Original Sauce Dip Pot",
+"categories": [
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": "primary"
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": "primary"
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 652,
+"kcal": 158,
+"fat": "15.60",
+"saturated_fat": "1.10",
+"carbohydrates": "3.30",
+"sugars": "3.00",
+"protein": "0.70",
+"salt": "0.60"
+},
+"vegan": false,
+"vegetarian": true
+},
+{
+"name": "Mango Masala Dip Pot",
+"categories": [
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": "primary"
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 266,
+"kcal": 63,
+"fat": "0.50",
+"saturated_fat": "0.10",
+"carbohydrates": "15.00",
+"sugars": "14.00",
+"protein": "0.50",
+"salt": "0.48"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Jalapeno Ranch Dip Pot",
+"categories": [
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": "primary"
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": "primary"
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 639,
+"kcal": 155,
+"fat": "15.40",
+"saturated_fat": "1.10",
+"carbohydrates": "3.40",
+"sugars": "1.80",
+"protein": "0.60",
+"salt": "0.48"
+},
+"vegan": false,
+"vegetarian": true
+},
+{
+"name": "Hot Honey Habanero Dip Pot",
+"categories": [
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 391,
+"kcal": 92,
+"fat": "0.50",
+"saturated_fat": "0.10",
+"carbohydrates": "22.40",
+"sugars": "19.00",
+"protein": "0.50",
+"salt": "0.31"
+},
+"vegan": false,
+"vegetarian": true
+},
+{
+"name": "Honey Mustard Dip Pot",
+"categories": [
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": "primary"
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": "primary"
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 804,
+"kcal": 194,
+"fat": "17.10",
+"saturated_fat": "1.20",
+"carbohydrates": "9.30",
+"sugars": "8.40",
+"protein": "0.70",
+"salt": "0.38"
+},
+"vegan": false,
+"vegetarian": true
+},
+{
+"name": "Garlic Parm Dip Pot",
+"categories": [
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": "primary"
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 793,
+"kcal": 193,
+"fat": "19.70",
+"saturated_fat": "1.60",
+"carbohydrates": "3.20",
+"sugars": "2.00",
+"protein": "0.50",
+"salt": "0.36"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Large Fries",
+"categories": [
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "secondary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "secondary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 1559,
+"kcal": 372,
+"fat": "14.00",
+"saturated_fat": "1.10",
+"carbohydrates": "54.00",
+"sugars": "0.50",
+"protein": "4.40",
+"salt": "1.00"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Regular BBQ Beans",
+"categories": [
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": "primary"
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": "primary"
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "primary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 393,
+"kcal": 93,
+"fat": "0.60",
+"saturated_fat": "0.09",
+"carbohydrates": "15.00",
+"sugars": "5.90",
+"protein": "4.70",
+"salt": "0.63"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Large BBQ Beans",
+"categories": [
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": "primary"
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": "primary"
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "primary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 841,
+"kcal": 199,
+"fat": "1.40",
+"saturated_fat": "0.20",
+"carbohydrates": "31.00",
+"sugars": "13.00",
+"protein": "10.00",
+"salt": "1.40"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Regular Coleslaw",
+"categories": [
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 619,
+"kcal": 150,
+"fat": "13.00",
+"saturated_fat": "1.00",
+"carbohydrates": "6.10",
+"sugars": "5.30",
+"protein": "1.10",
+"salt": "0.57"
+},
+"vegan": false,
+"vegetarian": true
+},
+{
+"name": "Large Coleslaw",
+"categories": [
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 1235,
+"kcal": 299,
+"fat": "26.00",
+"saturated_fat": "2.00",
+"carbohydrates": "12.00",
+"sugars": "11.00",
+"protein": "2.20",
+"salt": "1.10"
+},
+"vegan": false,
+"vegetarian": true
+},
+{
+"name": "Corn Cobette",
+"categories": [
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 240,
+"kcal": 57,
+"fat": "1.30",
+"saturated_fat": "0.20",
+"carbohydrates": "8.10",
+"sugars": "1.90",
+"protein": "2.20",
+"salt": "0.01"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Hashbrown (per piece average)",
+"categories": [
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "secondary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "secondary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "secondary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "per piece average",
+"kj": 381,
+"kcal": 92,
+"fat": "5.50",
+"saturated_fat": "0.20",
+"carbohydrates": "8.80",
+"sugars": "0.70",
+"protein": "0.90",
+"salt": "0.55"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Cheese Slice (per slice average)",
+"categories": [
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "secondary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "secondary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "per slice ",
+"kj": 159,
+"kcal": 38,
+"fat": "3.10",
+"saturated_fat": "2.00",
+"carbohydrates": "0.50",
+"sugars": "0.50",
+"protein": "2.20",
+"salt": "0.16"
+},
+"vegan": false,
+"vegetarian": true
+},
+{
+"name": "Large Signature Fries",
+"categories": [
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "secondary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "secondary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 1559,
+"kcal": 372,
+"fat": "14.00",
+"saturated_fat": "1.10",
+"carbohydrates": "54.00",
+"sugars": "0.50",
+"protein": "4.40",
+"salt": "1.00"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Regular Signature Fries",
+"categories": [
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "secondary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "secondary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 1069,
+"kcal": 261,
+"fat": "9.80",
+"saturated_fat": "0.80",
+"carbohydrates": "38.00",
+"sugars": "0.50",
+"protein": "3.10",
+"salt": "0.74"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "2 Corn Cobettes (Large)",
+"categories": [
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 481,
+"kcal": 115,
+"fat": "2.70",
+"saturated_fat": "0.40",
+"carbohydrates": "16.00",
+"sugars": "3.80",
+"protein": "4.40",
+"salt": "0.01"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Regular Gravy",
+"categories": [
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": "primary"
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "primary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 306,
+"kcal": 73,
+"fat": "3.50",
+"saturated_fat": "0.30",
+"carbohydrates": "8.40",
+"sugars": "0.50",
+"protein": "1.70",
+"salt": "1.20"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Large Gravy",
+"categories": [
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": "primary"
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "primary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 696,
+"kcal": 166,
+"fat": "8.00",
+"saturated_fat": "0.80",
+"carbohydrates": "19.00",
+"sugars": "0.80",
+"protein": "3.90",
+"salt": "2.80"
+},
+"vegan": false,
+"vegetarian": false
+},
+{
+"name": "Regular Creamy Mash",
+"categories": [
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 523,
+"kcal": 124,
+"fat": "3.40",
+"saturated_fat": "2.10",
+"carbohydrates": "20.00",
+"sugars": "1.00",
+"protein": "2.40",
+"salt": "0.88"
+},
+"vegan": false,
+"vegetarian": true
+},
+{
+"name": "Cajun Dirty Rice",
+"categories": [
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "secondary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "secondary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "secondary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 917,
+"kcal": 217,
+"fat": "2.60",
+"saturated_fat": "0.50",
+"carbohydrates": "43.00",
+"sugars": "2.40",
+"protein": "3.80",
+"salt": "0.66"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Side Salad",
+"categories": [
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "secondary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "secondary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "secondary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": "secondary"
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "secondary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 232,
+"kcal": 56,
+"fat": "3.60",
+"saturated_fat": "0.30",
+"carbohydrates": "4.70",
+"sugars": "2.09",
+"protein": "0.80",
+"salt": "0.20"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Large Creamy Mash",
+"categories": [
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 1045,
+"kcal": 248,
+"fat": "6.80",
+"saturated_fat": "4.30",
+"carbohydrates": "40.00",
+"sugars": "2.00",
+"protein": "4.80",
+"salt": "1.80"
+},
+"vegan": false,
+"vegetarian": true
+},
+{
+"name": "Heinz Tomato Ketchup Sachet",
+"categories": [
+"Sides & Dips"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": "primary"
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 42,
+"kcal": 10,
+"fat": "0.50",
+"saturated_fat": "0.10",
+"carbohydrates": "2.30",
+"sugars": "2.30",
+"protein": "0.50",
+"salt": "0.18"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Mini Chocolate Sundae",
+"categories": [
+"Krushems & Desserts"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 580,
+"kcal": 138,
+"fat": "5.30",
+"saturated_fat": "3.40",
+"carbohydrates": "20.00",
+"sugars": "16.00",
+"protein": "2.50",
+"salt": "0.20"
+},
+"vegan": false,
+"vegetarian": true
+},
+{
+"name": "Milk Chocolate Cookie",
+"categories": [
+"Krushems & Desserts"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": "primary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 1250,
+"kcal": 300,
+"fat": "14.40",
+"saturated_fat": "6.40",
+"carbohydrates": "40.10",
+"sugars": "20.50",
+"protein": "3.00",
+"salt": "0.39"
+},
+"vegan": false,
+"vegetarian": true
+},
+{
+"name": "White Chocolate Cookie",
+"categories": [
+"Krushems & Desserts"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "primary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": "primary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 1186,
+"kcal": 283,
+"fat": "14.00",
+"saturated_fat": "5.90",
+"carbohydrates": "36.00",
+"sugars": "21.00",
+"protein": "2.70",
+"salt": "0.36"
+},
+"vegan": false,
+"vegetarian": true
+},
+{
+"name": "Bottle of Still Water",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 0,
+"kcal": 0,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "0.00",
+"sugars": "0.00",
+"protein": "0.00",
+"salt": "0.00"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": " Fruit Shoot Robinsons Blackcurrant & Apple ",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 40,
+"kcal": 10,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "1.60",
+"sugars": "1.40",
+"protein": "0.00",
+"salt": "0.06"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": " Fruit Shoot Robinsons Orange ",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 50,
+"kcal": 10,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "1.60",
+"sugars": "1.40",
+"protein": "0.00",
+"salt": "0.06"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Pepsi - Regular",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 561,
+"kcal": 130,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "32.10",
+"sugars": "31.80",
+"protein": "0.00",
+"salt": "0.00"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Pepsi - Large",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 782,
+"kcal": 180,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "44.90",
+"sugars": "44.50",
+"protein": "0.00",
+"salt": "0.00"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Pepsi Max - Regular",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 8,
+"kcal": 2,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "0.00",
+"sugars": "0.00",
+"protein": "0.30",
+"salt": "0.00"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Pepsi Max - Large",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 10,
+"kcal": 2,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "0.00",
+"sugars": "0.00",
+"protein": "0.40",
+"salt": "0.00"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Diet Pepsi - Regular",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 8,
+"kcal": 2,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "0.00",
+"sugars": "0.00",
+"protein": "0.00",
+"salt": "0.00"
+},
+"vegan": false,
+"vegetarian": true
+},
+{
+"name": "Diet Pepsi - Large",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 10,
+"kcal": 2,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "0.00",
+"sugars": "0.00",
+"protein": "0.00",
+"salt": "0.00"
+},
+"vegan": false,
+"vegetarian": true
+},
+{
+"name": "Pepsi Max Cherry - Regular ",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 6,
+"kcal": 2,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "0.00",
+"sugars": "0.00",
+"protein": "0.00",
+"salt": "0.01"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Yoyo Bear (Strawberry)",
+"categories": [
+"Krushems & Desserts"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 243,
+"kcal": 58,
+"fat": "0.50",
+"saturated_fat": "0.10",
+"carbohydrates": "13.00",
+"sugars": "8.40",
+"protein": "0.50",
+"salt": "0.01"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Pepsi Max Cherry - Large ",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 6,
+"kcal": 2,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "0.00",
+"sugars": "0.00",
+"protein": "0.00",
+"salt": "0.01"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "7Up Free - Regular ",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 27,
+"kcal": 6,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "0.30",
+"sugars": "0.00",
+"protein": "0.30",
+"salt": "0.00"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "7Up Free- Large",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 38,
+"kcal": 9,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "0.30",
+"sugars": "0.00",
+"protein": "0.40",
+"salt": "0.00"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Robinsons Apple & Blackcurrant- Regular",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": "primary"
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 20,
+"kcal": 5,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "0.00",
+"sugars": "0.00",
+"protein": "0.00",
+"salt": "0.02"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Robinsons Apple & Blackcurrant- Large ",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": "primary"
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 27,
+"kcal": 6,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "0.00",
+"sugars": "0.00",
+"protein": "0.00",
+"salt": "0.02"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "1.25L Pepsi Max Bottle ",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "per 100ml",
+"kj": 25,
+"kcal": 5,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "1.50",
+"sugars": "0.00",
+"protein": "1.50",
+"salt": "0.00"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "1.25L Diet Pepsi Bottle",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "per bottle",
+"kj": 40,
+"kcal": 10,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "0.00",
+"sugars": "0.00",
+"protein": "0.00",
+"salt": "0.00"
+},
+"vegan": false,
+"vegetarian": true
+},
+{
+"name": "Oreo Sundae",
+"categories": [
+"Krushems & Desserts"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": "primary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 1077,
+"kcal": 256,
+"fat": "9.60",
+"saturated_fat": "5.60",
+"carbohydrates": "38.00",
+"sugars": "29.00",
+"protein": "4.10",
+"salt": "0.38"
+},
+"vegan": false,
+"vegetarian": true
+},
+{
+"name": "1.25L Tango Bottle",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "per bottle",
+"kj": 1190,
+"kcal": 285,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "63.00",
+"sugars": "63.00",
+"protein": "1.50",
+"salt": "0.00"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "1.25L 7up Free Bottle",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "per bottle",
+"kj": 120,
+"kcal": 30,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "1.50",
+"sugars": "0.00",
+"protein": "1.50",
+"salt": "0.00"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "1.25L Pepsi Bottle",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "per bottle",
+"kj": 940,
+"kcal": 225,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "57.50",
+"sugars": "57.50",
+"protein": "0.00",
+"salt": "0.00"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Tango Orange Sugar Free - Regular",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 15,
+"kcal": 3,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "0.00",
+"sugars": "0.00",
+"protein": "0.00",
+"salt": "0.03"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Tango Orange Sugar Free - Large ",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 21,
+"kcal": 4,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "0.00",
+"sugars": "0.00",
+"protein": "0.00",
+"salt": "0.05"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Lipton Ice Tea - Regular ",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 240,
+"kcal": 55,
+"fat": "1.50",
+"saturated_fat": "0.30",
+"carbohydrates": "13.80",
+"sugars": "13.50",
+"protein": "1.50",
+"salt": "0.00"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Lipton Ice Tea - Large",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 335,
+"kcal": 80,
+"fat": "2.10",
+"saturated_fat": "0.40",
+"carbohydrates": "19.30",
+"sugars": "18.90",
+"protein": "2.10",
+"salt": "0.00"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Club Orange - Regular  (NI & ROI only)",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": "primary"
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 680,
+"kcal": 160,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "39.00",
+"sugars": "39.00",
+"protein": "0.00",
+"salt": "0.15"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Club Orange - Large (NI & ROI only)",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": "primary"
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 950,
+"kcal": 225,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "54.60",
+"sugars": "54.60",
+"protein": "0.00",
+"salt": "0.21"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Club Orange Zero - Regular",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 40,
+"kcal": 10,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "0.00",
+"sugars": "0.00",
+"protein": "0.00",
+"salt": "0.23"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Club Orange Zero - Large ",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 55,
+"kcal": 13,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "0.00",
+"sugars": "0.00",
+"protein": "0.00",
+"salt": "0.13"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Tropicana Orange Juice",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 430,
+"kcal": 105,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "23.30",
+"sugars": "21.70",
+"protein": "2.00",
+"salt": "0.00"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "7UP Free Watermelon - Large",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 38,
+"kcal": 9,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "0.00",
+"sugars": "0.00",
+"protein": "0.00",
+"salt": "0.38"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "7UP Free Watermelon - Regular",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 27,
+"kcal": 6,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "0.00",
+"sugars": "0.00",
+"protein": "0.00",
+"salt": "0.27"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Pepsi Max Vanilla - Large",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 10,
+"kcal": 2,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "0.00",
+"sugars": "0.00",
+"protein": "0.00",
+"salt": "0.21"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Pepsi Max Vanilla - Regular",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 8,
+"kcal": 2,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "0.00",
+"sugars": "0.00",
+"protein": "0.00",
+"salt": "0.18"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Pepsi Max Blueberry - Large",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 10,
+"kcal": 2,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "0.00",
+"sugars": "0.00",
+"protein": "0.00",
+"salt": "0.21"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Pepsi Max Blueberry - Regular",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 8,
+"kcal": 2,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "0.00",
+"sugars": "0.00",
+"protein": "0.00",
+"salt": "0.18"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "1.25L Club Orange (ROI only)",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": "primary"
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": null,
+"kj": 3450,
+"kcal": 810,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "195.00",
+"sugars": "195.00",
+"protein": "0.00",
+"salt": "0.00"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "1.25L Club Orange Zero (ROI only)",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": "primary"
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": null,
+"kj": 210,
+"kcal": 45,
+"fat": "0.00",
+"saturated_fat": "0.00",
+"carbohydrates": "0.00",
+"sugars": "0.00",
+"protein": "0.00",
+"salt": "0.45"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Iced Latte",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 428,
+"kcal": 102,
+"fat": "3.10",
+"saturated_fat": "1.70",
+"carbohydrates": "11.80",
+"sugars": "11.00",
+"protein": "6.60",
+"salt": "0.22"
+},
+"vegan": false,
+"vegetarian": true
+},
+{
+"name": "Oatly Strawberry Shortcake Iced Matcha",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": "secondary"
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": "secondary"
+},
+"Oat Gluten": {
+"type": "primary"
+},
+"Rye Gluten": {
+"type": "secondary"
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 1191,
+"kcal": 283,
+"fat": "8.40",
+"saturated_fat": "2.50",
+"carbohydrates": "47.50",
+"sugars": "33.00",
+"protein": "3.50",
+"salt": "0.30"
+},
+"vegan": false,
+"vegetarian": true
+},
+{
+"name": "Oatly Iced Vanilla Latte",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": "secondary"
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": "secondary"
+},
+"Oat Gluten": {
+"type": "primary"
+},
+"Rye Gluten": {
+"type": "secondary"
+},
+"Wheat Gluten": {
+"type": "secondary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 562,
+"kcal": 134,
+"fat": "5.50",
+"saturated_fat": "0.50",
+"carbohydrates": "18.30",
+"sugars": "8.20",
+"protein": "2.10",
+"salt": "0.23"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Iced Vanilla Latte",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 469,
+"kcal": 111,
+"fat": "3.20",
+"saturated_fat": "1.80",
+"carbohydrates": "14.20",
+"sugars": "11.00",
+"protein": "6.40",
+"salt": "0.27"
+},
+"vegan": false,
+"vegetarian": true
+},
+{
+"name": "Oatly Vanilla Iced Matcha",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": "secondary"
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": "secondary"
+},
+"Oat Gluten": {
+"type": "primary"
+},
+"Rye Gluten": {
+"type": "secondary"
+},
+"Wheat Gluten": {
+"type": "secondary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 467,
+"kcal": 112,
+"fat": "4.90",
+"saturated_fat": "0.40",
+"carbohydrates": "13.50",
+"sugars": "5.40",
+"protein": "2.70",
+"salt": "0.18"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Strawberry Shortcake Iced Matcha",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "secondary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 1114,
+"kcal": 264,
+"fat": "6.40",
+"saturated_fat": "3.50",
+"carbohydrates": "44.00",
+"sugars": "35.00",
+"protein": "7.40",
+"salt": "0.30"
+},
+"vegan": false,
+"vegetarian": true
+},
+{
+"name": "Vanilla Iced Matcha",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 367,
+"kcal": 87,
+"fat": "2.70",
+"saturated_fat": "1.80",
+"carbohydrates": "9.40",
+"sugars": "7.60",
+"protein": "6.30",
+"salt": "0.18"
+},
+"vegan": false,
+"vegetarian": true
+},
+{
+"name": "Caramel Krunch Shake ",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "secondary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 2965,
+"kcal": 490,
+"fat": "14.30",
+"saturated_fat": "9.10",
+"carbohydrates": "82.90",
+"sugars": "69.00",
+"protein": "6.90",
+"salt": "0.86"
+},
+"vegan": false,
+"vegetarian": true
+},
+{
+"name": "Chocolate Krunch Shake",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "secondary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 2038,
+"kcal": 484,
+"fat": "13.80",
+"saturated_fat": "8.90",
+"carbohydrates": "82.40",
+"sugars": "71.00",
+"protein": "6.90",
+"salt": "0.84"
+},
+"vegan": false,
+"vegetarian": true
+},
+{
+"name": "Cherry Boba Refresher",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 486,
+"kcal": 114,
+"fat": "0.50",
+"saturated_fat": "0.10",
+"carbohydrates": "27.30",
+"sugars": "27.00",
+"protein": "0.50",
+"salt": "0.30"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Sparkling Raspberry Lemonade",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 421,
+"kcal": 99,
+"fat": "0.50",
+"saturated_fat": "0.10",
+"carbohydrates": "21.90",
+"sugars": "22.00",
+"protein": "0.50",
+"salt": "0.24"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Strawberry Boba Refresher",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 628,
+"kcal": 148,
+"fat": "0.50",
+"saturated_fat": "0.10",
+"carbohydrates": "35.30",
+"sugars": "34.00",
+"protein": "0.50",
+"salt": "0.30"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Sparkling Cloudy Lemonade",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": "primary"
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 103,
+"kcal": 24,
+"fat": "0.50",
+"saturated_fat": "0.10",
+"carbohydrates": "4.30",
+"sugars": "3.80",
+"protein": "0.50",
+"salt": "0.24"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Iced Tiramisu Latte",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 909,
+"kcal": 215,
+"fat": "3.30",
+"saturated_fat": "1.90",
+"carbohydrates": "39.20",
+"sugars": "38.00",
+"protein": "7.10",
+"salt": "0.24"
+},
+"vegan": false,
+"vegetarian": true
+},
+{
+"name": "Iced Caramel Latte",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": false
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 702,
+"kcal": 166,
+"fat": "3.20",
+"saturated_fat": "1.80",
+"carbohydrates": "27.90",
+"sugars": "27.00",
+"protein": "6.40",
+"salt": "0.23"
+},
+"vegan": false,
+"vegetarian": true
+},
+{
+"name": "Oatly Iced Latte",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": "secondary"
+},
+"Oat Gluten": {
+"type": "primary"
+},
+"Rye Gluten": {
+"type": "secondary"
+},
+"Wheat Gluten": {
+"type": "secondary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 510,
+"kcal": 122,
+"fat": "5.50",
+"saturated_fat": "0.50",
+"carbohydrates": "15.30",
+"sugars": "5.10",
+"protein": "2.80",
+"salt": "0.20"
+},
+"vegan": true,
+"vegetarian": true
+},
+{
+"name": "Oatly Iced Caramel Latte",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": "secondary"
+},
+"Oat Gluten": {
+"type": "primary"
+},
+"Rye Gluten": {
+"type": "secondary"
+},
+"Wheat Gluten": {
+"type": "secondary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 1030,
+"kcal": 244,
+"fat": "6.30",
+"saturated_fat": "1.00",
+"carbohydrates": "43.80",
+"sugars": "35.00",
+"protein": "2.40",
+"salt": "0.24"
+},
+"vegan": false,
+"vegetarian": true
+},
+{
+"name": "Strawberry Shortcake Krunch Shake",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": "secondary"
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": false
+},
+"Oat Gluten": {
+"type": false
+},
+"Rye Gluten": {
+"type": false
+},
+"Wheat Gluten": {
+"type": "primary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": "primary"
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": "secondary"
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 2026,
+"kcal": 481,
+"fat": "13.30",
+"saturated_fat": "8.90",
+"carbohydrates": "83.10",
+"sugars": "69.00",
+"protein": "6.60",
+"salt": "0.79"
+},
+"vegan": false,
+"vegetarian": true
+},
+{
+"name": "Oatly Iced Tiramisu Latte",
+"categories": [
+"Drinks"
+],
+"allergens": {
+"Spelt Gluten": {
+"type": false
+},
+"Crustaceans": {
+"type": false
+},
+"Egg": {
+"type": false
+},
+"Fish": {
+"type": false
+},
+"Barley Gluten": {
+"type": "secondary"
+},
+"Oat Gluten": {
+"type": "primary"
+},
+"Rye Gluten": {
+"type": "secondary"
+},
+"Wheat Gluten": {
+"type": "secondary"
+},
+"Lupin": {
+"type": false
+},
+"Milk": {
+"type": false
+},
+"Molluscs": {
+"type": false
+},
+"Mustard": {
+"type": false
+},
+"Almonds": {
+"type": false
+},
+"Brazil Nuts": {
+"type": false
+},
+"Cashews": {
+"type": false
+},
+"Hazelnuts": {
+"type": false
+},
+"Macadamia": {
+"type": false
+},
+"Peanut": {
+"type": false
+},
+"Pecan Nuts": {
+"type": false
+},
+"Pistachio": {
+"type": false
+},
+"Walnuts": {
+"type": false
+},
+"Sesame": {
+"type": false
+},
+"Soya": {
+"type": false
+},
+"Sulphites": {
+"type": false
+},
+"Celery": {
+"type": false
+}
+},
+"nutrition": {
+"serving_size": "1",
+"kj": 736,
+"kcal": 175,
+"fat": "5.70",
+"saturated_fat": "0.90",
+"carbohydrates": "27.40",
+"sugars": "19.00",
+"protein": "2.80",
+"salt": "0.24"
+},
+"vegan": true,
+"vegetarian": true
+}
+]
+}

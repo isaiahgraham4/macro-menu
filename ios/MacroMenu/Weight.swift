@@ -225,3 +225,28 @@ extension AppData {
         return copy
     }
 }
+
+/// Height and weight in the other unit system, for the target calculator. Leanr stores centimetres and kilograms;
+/// imperial is only how they're shown and typed.
+enum BodyUnits {
+    static let cmPerInch = 2.54
+    static let lbPerKG = 2.204_622_621_8
+
+    /// Feet and inches to the nearest tenth of an inch, never "5 ft 12 in".
+    static func feetInches(cm: Double) -> (feet: Int, inches: Double) {
+        let total = (cm / cmPerInch).tenth
+        let feet = Int((total / 12).rounded(.down))
+        return (feet, (total - Double(feet) * 12).tenth)
+    }
+    static func cm(feet: Double, inches: Double) -> Double { (feet * 12 + inches) * cmPerInch }
+    static func pounds(kg: Double) -> Double { (kg * lbPerKG).tenth }
+    static func kg(pounds: Double) -> Double { pounds / lbPerKG }
+
+    static func heightText(cm: Double, imperial: Bool) -> String {
+        if imperial { let h = feetInches(cm: cm); return "\(h.feet) ft \(h.inches.number) in" }
+        return "\(cm.rounded().number) cm"
+    }
+    static func weightText(kg: Double, imperial: Bool) -> String {
+        imperial ? "\(pounds(kg: kg).number) lb" : "\(kg.tenth.number) kg"
+    }
+}

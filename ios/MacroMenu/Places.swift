@@ -68,8 +68,12 @@ struct ChainPlace: Sendable {
         "ca-tims": ChainPlace(query: "Tim Hortons", match: ["tim hortons", "tim horton"], appName: "Tim Hortons", appStoreID: 1143883086, appLink: nil, store: "ca"),
         "uk-mcd": ChainPlace(query: "McDonald's", match: ["mcdonald"], appName: "McDonald's", appStoreID: 1082476620, appLink: nil, store: "gb"),
         "uk-greggs": ChainPlace(query: "Greggs", match: ["greggs"], appName: "Greggs", appStoreID: 1098233626, appLink: nil, store: "gb"),
+        "uk-kfc": ChainPlace(query: "KFC", match: ["kfc"], appName: "KFC", appStoreID: 933130307, appLink: nil, store: "gb"),
+        "uk-nandos": ChainPlace(query: "Nando's", match: ["nando"], appName: "Nando's", appStoreID: 488574854, appLink: nil, store: "gb"),
+        "uk-pret": ChainPlace(query: "Pret A Manger", match: ["pret"], appName: "Pret A Manger", appStoreID: 1530370563, appLink: nil, store: "gb"),
         "nz-mcd": ChainPlace(query: "McDonald's", match: ["mcdonald"], appName: "McDonald's", appStoreID: 1217507712, appLink: nil, store: "nz"),
         "nz-dominos": ChainPlace(query: "Domino's Pizza", match: ["domino"], appName: "Domino's", appStoreID: 415419062, appLink: nil, store: "nz"),
+        "nz-sub": ChainPlace(query: "Subway", match: ["subway"], appName: "Subway", appStoreID: 1615002546, appLink: nil, store: "nz"),
         // South African menu. App Store ids from the ZA store (checked 20 Nov 2026); no universal links yet.
         "za-mcd": ChainPlace(query: "McDonald's", match: ["mcdonald"], appName: "McDonald's", appStoreID: 1217507712, appLink: nil, store: "za"),
         "za-nandos": ChainPlace(query: "Nando's", match: ["nando"], appName: "Nando's", appStoreID: 1316416867, appLink: nil, store: "za"),
@@ -78,6 +82,9 @@ struct ChainPlace: Sendable {
         "za-kauai": ChainPlace(query: "Kauai", match: ["kauai"], appName: "Kauai", appStoreID: 1585206786, appLink: nil, store: "za"),
         // Indian menu. App Store ids from the IN store (checked 20 Nov 2026); no universal links yet.
         "in-mcd": ChainPlace(query: "McDonald's", match: ["mcdonald"], appName: "McDonald's", appStoreID: 1217507712, appLink: nil, store: "in"),
+        // Singapore menu. App Store ids from the SG store (checked 21 Nov 2026); no universal links yet.
+        "sg-mcd": ChainPlace(query: "McDonald's", match: ["mcdonald"], appName: "McDonald's", appStoreID: 1217507712, appLink: nil, store: "sg"),
+        "sg-kfc": ChainPlace(query: "KFC", match: ["kfc"], appName: "KFC Singapore", appStoreID: 876799229, appLink: nil, store: "sg"),
         "in-kfc": ChainPlace(query: "KFC", match: ["kfc"], appName: "KFC India", appStoreID: 915824379, appLink: nil, store: "in"),
         "in-pizzahut": ChainPlace(query: "Pizza Hut", match: ["pizza hut"], appName: "Pizza Hut India", appStoreID: 1597873835, appLink: nil, store: "in"),
     ]

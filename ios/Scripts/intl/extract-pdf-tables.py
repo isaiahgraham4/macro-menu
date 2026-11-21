@@ -4,12 +4,14 @@ from the chain's own nutrition page and pass the paths.
 
   Tim Hortons Canada  timhortons.ca/nutrition-and-allergens, "Nutrition Information" PDF  -> intl/th-ca-source.json
   Popeyes US          popeyes.com/nutritional-information, PLK_Nutrition.pdf             -> us/plk-us-source.json
+  Subway New Zealand  subway.com/en-nz/media/new_zealand/documents/nutritionals/nz-nutritional-summary.pdf -> intl/subway-nz-source.json
 
 Tim Hortons' text layer lists names and figures in different orders, so rows are matched by their position on the page
 (each figures row goes with the name printed level with it). Popeyes' text layer keeps each row on one line.
 
 Run: python3 -I ios/Scripts/intl/extract-pdf-tables.py th <tim-hortons.pdf>
      python3 -I ios/Scripts/intl/extract-pdf-tables.py plk <popeyes.pdf>
+     python3 -I ios/Scripts/intl/extract-pdf-tables.py subway-nz <nz-nutritional-summary.pdf>
 """
 import json
 import pathlib
@@ -83,14 +85,73 @@ def popeyes(path):
     return {'edition': re.sub(r'\s+', ' ', edition.group(1)) if edition else None, 'rows': rows}
 
 
+SUBWAY_FIELDS = ['g', 'kj', 'cal', 'p', 'f', 'sat', 'c', 'sugar', 'fibre', 'sodium']
+SUBWAY_HEAD = {'AVG QTY Per Serve', 'Serving Size (g)', 'Energy (kJ)', 'Energy (kCal)', 'Protein (g)', 'Fat, Total (g)', 'Sat. Fat (g)',
+               'Carb. (g)', 'Sugars (g)', 'Dietary Fiber (g)', 'Sodium (mg)'}
+SUBWAY_SECTIONS = ['Subway 6-Inch® Subs', 'Wraps (on regular flour wrap)', 'Mini Subs', 'Breakfast', 'BreakfastWraps', 'Breakfast Wraps',
+                   'Sides & Snacks', 'Cookies', 'Baked Goods', 'Smoothies', 'Breads', 'Meat, Poultry, Egg, Seafood & Vegetarian Items',
+                   'Sauces & Dressings', 'Cheeses', 'Vegetables', 'Seasonings', 'New']
+
+
+def subway_nz(path):
+    """Subway NZ's Nutritional Summary. Its text layer lists each item as name, description in brackets, then ten figures. Only
+    the per-serve pages are read (the rest repeat everything per 100 g). The two salad sections have their headings drawn, not
+    written, so they're found where the item names start over after the wraps: regular salads, then large."""
+    import pymupdf
+    doc = pymupdf.open(path)
+    order = ['Subway 6-Inch® Subs', 'Wraps (on regular flour wrap)', 'Salads (regular)', 'Salads (large)']
+    rows, section, seen, pending = [], '', set(), []
+    for page in doc:
+        text = page.get_text()
+        if 'Per 100g' in text:
+            break
+        lines = [l.strip() for l in text.split('\n') if l.strip()]
+        i, pending = 0, []                                   # headings drawn at a page's foot belong to nothing on the next page
+        while i < len(lines):
+            line = lines[i]
+            if line.startswith(('*', 'Amount on', 'Nutrition information compiled')):
+                break
+            if line in SUBWAY_HEAD or line.startswith(('Double values', 'Salads (')):
+                i += 1
+                continue
+            if NUM.match(line):
+                nums = []
+                while i < len(lines) and NUM.match(lines[i]) and len(nums) < 10:
+                    nums.append(float(lines[i]))
+                    i += 1
+                heads = [l for l in pending if l in SUBWAY_SECTIONS]
+                if heads:
+                    section = heads[-1] if heads[-1] not in ('Breakfast',) else 'Breakfast Subs'
+                    section = {'BreakfastWraps': 'Breakfast Wraps', 'Subway 6-Inch® Subs': 'Breakfast Subs' if 'Breakfast' in heads else section}.get(section, section)
+                    seen = set()
+                words = [l for l in pending if l not in SUBWAY_SECTIONS]
+                name, desc = [], []
+                for l in words:
+                    (desc if desc or l.startswith('(') else name).append(l)
+                name = ' '.join(name)
+                if name in seen and section in order[:-1]:
+                    section, seen = order[order.index(section) + 1], set()
+                seen.add(name)
+                if len(nums) == 10:
+                    rows.append({'section': section, 'name': name, 'desc': ' '.join(desc), **dict(zip(SUBWAY_FIELDS, nums))})
+                pending = []
+                continue
+            pending.append(line)
+            i += 1
+    edition = re.search(r'(January|February|March|April|May|June|July|August|September|October|November|December) \d{4}', ' '.join(p.get_text() for p in doc))
+    return {'edition': edition.group(0) if edition else None, 'rows': rows}
+
+
 if __name__ == '__main__':
     kind, path = sys.argv[1], sys.argv[2]
     if kind == 'th':
         data, out = tim_hortons(path), HERE / 'th-ca-source.json'
     elif kind == 'plk':
         data, out = popeyes(path), HERE.parent / 'us' / 'plk-us-source.json'
+    elif kind == 'subway-nz':
+        data, out = subway_nz(path), HERE / 'subway-nz-source.json'
     else:
-        raise SystemExit('kind is th or plk')
+        raise SystemExit('kind is th, plk or subway-nz')
     data['checked'] = date.today().isoformat()
     out.write_text(json.dumps(data, ensure_ascii=False, indent=0))
     print(f'{len(data["rows"])} rows ({data["edition"]}) -> {out}')

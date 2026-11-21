@@ -15,7 +15,7 @@ PUBLISHABLE_KEY = "sb_publishable_rV4qINsqDY5CRsh88QzcGQ_2KFiIuJE"
 APP = Path(__file__).resolve().parent.parent.parent / "MacroMenu"
 # Revisions and publish times for the bundled files that don't carry their own (the app reads this too).
 FOOD_LISTS = APP / "FoodLists.json"
-COUNTRIES = ["AU", "NZ", "US", "CA", "GB", "ZA", "IN"]
+COUNTRIES = ["AU", "NZ", "US", "CA", "GB", "ZA", "IN", "SG"]
 
 # dataset id -> bundled file name
 DATASETS = {**{f"menu-{c}": ("MenuData.json" if c == "AU" else f"MenuData-{c}.json") for c in COUNTRIES},
