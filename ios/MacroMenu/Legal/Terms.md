@@ -1,6 +1,6 @@
 # Leanrrr terms of use
 
-Effective 16 November 2026
+Effective 22 November 2026
 
 These terms apply when you use Leanrrr, an app made by Isaiah Graham, an independent developer in Victoria, Australia. Apple's standard Licensed Application End User License Agreement also applies. Contact me at {{CONTACT}}.
 
@@ -50,11 +50,16 @@ You can choose to share foods you've added with other Leanrrr users. When you sh
 
 - Only share figures from the product's label, the restaurant or another source you trust, and only for a real food.
 - Don't put offensive, abusive, sexual or hateful words, advertising, links or contact details in a shared food.
+- Don't share anything illegal, or anything that promotes eating disorders, self-harm or risky weight-loss products.
 - You let Leanrrr show that food to other users, for free and for as long as it's shared. It stays yours, and you can take it down at any time.
 
-There's no tolerance for objectionable content or abusive users. Any food can be reported from its page, and anyone's shared foods can be hidden. Foods reported by several people are hidden for everyone until they're checked. I may remove any shared food, or stop someone sharing, without notice. Reports are looked at within 24 hours.
+There's no tolerance for objectionable content or abusive users. Any food can be reported from its page, and anyone's shared foods can be hidden. Foods reported by several people are hidden for everyone until they're checked. I may remove any shared food, or stop someone sharing, without notice. Reports are looked at within 24 hours. Illegal content is removed, and may be reported to the police.
 
 Foods other people share haven't been checked by me. Compare them with the label before relying on them.
+
+## Complaints and appeals
+
+Anyone can complain about a shared food, including people who don't use Leanrrr. Email {{CONTACT}} with the food's name and what's wrong with it. If a food you shared was removed or you were stopped from sharing, you can appeal the same way. I'll reply within 2 working days to say I've received it, and decide within 14 days. You can also complain about how I handle reports or keep users safe.
 
 ## Age
 

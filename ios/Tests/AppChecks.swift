@@ -212,6 +212,19 @@ import UniformTypeIdentifiers
             assert(ContentFilter.isAcceptable(fine), fine)
         }
         assert(ContentFilter.flags(["Chicken", "150 g", "f*cking"]) && !ContentFilter.flags(["Chicken", "150 g"]))
+        // Shared foods can't promote eating disorders, self-harm or risky weight-loss products; real foods with near names pass.
+        for bad in ["Ana safe snack", "pro ana bar", "Thinspo shake", "Purge friendly soup", "Laxative tea", "DNP capsule", "Diet pills",
+                    "Self harm", "an4 cookie", "Starvation soup", "Clen stack"] {
+            var food = bar; food.name = bad
+            assert(SharingRules.problem(food)?.contains("eating disorders") == true, bad)
+        }
+        for fine in ["Anna's Thins ginger", "Banana bread", "Mild salsa", "Diet Coke", "Purple carrot", "Analogue cafe muffin", "Cleanse juice",
+                     "Cutting meal prep", "Kumquat jam"] {
+            var food = bar; food.name = fine
+            assert(SharingRules.problem(food) == nil, fine)
+        }
+        // Private food names aren't checked for these words, only shared ones.
+        assert(ContentFilter.isAcceptable("Ana safe snack"))
         // Extra nutrients, the barcode and the kind of food are bounded too, since anyone can write a shared record.
         var salty = bar; salty.nut = ["sodium": 1_000_000]
         assert(SharingRules.problem(salty) != nil)
@@ -1202,7 +1215,8 @@ import UniformTypeIdentifiers
         // and a list can't stand in for a menu or the other way round.
         let appFolder = catalogURL.deletingLastPathComponent()
         let lists = FoodListVersion.bundled(appFolder.appending(path: "FoodLists.json"))
-        assert(Set(lists.keys) == ["generic", "survey", "supermarket"] && lists.values.allSatisfy { $0.revision?.count == 16 && MenuUpdates.publishedDate($0.published) != nil })
+        assert(Set(lists.keys).isSuperset(of: ["generic", "survey", "supermarket"])
+               && lists.keys.allSatisfy { ["generic", "survey", "supermarket"].contains($0) || $0.hasPrefix("supermarket-") } && lists.values.allSatisfy { $0.revision?.count == 16 && MenuUpdates.publishedDate($0.published) != nil })
         let listStore = AppStore(url: root.appending(path: "lists.json"), region: .australia, catalogURL: catalogURL, legacyURL: nil,
                                  everydayURL: appFolder.appending(path: "GenericFoods.json"), surveyURL: appFolder.appending(path: "SurveyFoods.json"),
                                  supermarketURL: appFolder.appending(path: "SupermarketFoods.json"), foodListsURL: appFolder.appending(path: "FoodLists.json"))

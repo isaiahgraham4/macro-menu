@@ -35,6 +35,9 @@ nonisolated enum SharingRules {
         if serve.isEmpty || serve.count > 40 { return "Add a serving size, like 150 g or 1 bar." }
         if !ContentFilter.isAcceptable(name + " " + serve) { return "Take out the strong language before sharing." }
         if ContentFilter.hasContactDetails(name + " " + serve) { return "Leave links and contact details out of the name and serving." }
+        if ContentFilter.promotesHarm(name + " " + serve) {
+            return "Foods that mention eating disorders, self-harm or risky weight-loss products can't be shared. If food feels hard right now, a doctor or an eating disorder helpline can help."
+        }
         guard food.isValid, food.cal > 0 else { return "Add the energy first." }
         guard let c = food.c, let f = food.f else { return "Add carbs and fat too, so others can see the numbers add up." }
         if food.cal > 3000 || food.p > 250 || c > 500 || f > 300 || (food.nut ?? [:]).contains(where: { $0.value > (nutrientLimits[$0.key] ?? .infinity) }) {
@@ -142,6 +145,23 @@ nonisolated enum ContentFilter {
         return words.contains { word in
             word.count == chars.count && zip(word, chars).allSatisfy { $0 == $1 || $1 == "*" }
         }
+    }
+
+    /// Pro-eating-disorder, self-harm and dangerous weight-loss words. Only shared foods are checked, since other users see them
+    /// (UK Online Safety Act: content promoting eating disorders or self-harm is harmful to children). Exact whole words, with no
+    /// shortening of repeated letters, so "Anna's Thins" or "Mia's pizza" spelt with two letters still pass.
+    private static let harmWords: Set<String> = [
+        "ana", "mia", "proana", "promia", "proed", "thinspo", "thinspiration", "bonespo", "meanspo", "sweetspo", "edtwt",
+        "purge", "purges", "purged", "purging", "laxative", "laxatives", "dnp", "clen", "clenbuterol", "dietpills", "dietpill",
+        "starve", "starving", "starvation", "selfharm", "selfharming", "suicide", "suicidal", "killmyself", "kms",
+    ]
+
+    /// Whether a shared food's text promotes eating disorders, self-harm or dangerous dieting.
+    static func promotesHarm(_ text: String) -> Bool {
+        let tokens = pieces(text).map(unmasked)
+        let pairs = tokens.indices.dropLast().map { tokens[$0] + tokens[$0 + 1] }
+        let triples = tokens.indices.dropLast(2).map { tokens[$0] + tokens[$0 + 1] + tokens[$0 + 2] }
+        return (tokens + pairs + triples).contains { harmWords.contains($0) }
     }
 
     static func hasContactDetails(_ text: String) -> Bool {

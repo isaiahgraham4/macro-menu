@@ -124,6 +124,8 @@ final class NotificationRouter: NSObject, UNUserNotificationCenterDelegate {
         }
     }
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification) async -> UNNotificationPresentationOptions {
-        notification.request.identifier.hasPrefix("reminder.weekly.") ? [.banner, .list, .sound] : []
+        // iCloud's report alerts (moderator only) carry a "ck" payload and show even while Leanrrr is open.
+        let report = notification.request.content.userInfo["ck"] != nil
+        return notification.request.identifier.hasPrefix("reminder.weekly.") || report ? [.banner, .list, .sound] : []
     }
 }

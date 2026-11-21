@@ -1,5 +1,9 @@
 import CloudKit
 import Foundation
+import UserNotifications
+#if canImport(UIKit)
+import UIKit
+#endif
 
 // Foods people choose to share go to the public CloudKit database in iCloud.com.isaiahgraham.MacroMenu,
 // and everyone else sees them in search and barcode scans as "Community" foods.
@@ -23,6 +27,8 @@ struct SharedFoodReport: Codable, Sendable, Hashable {
 enum ShareReportReason: String, CaseIterable, Identifiable, Sendable {
     case wrongNumbers = "The numbers are wrong"
     case offensive = "Offensive or abusive"
+    case harmful = "Promotes eating disorders or self-harm"
+    case illegal = "Illegal content"
     case spam = "Spam or advertising"
     case other = "Something else"
     var id: String { rawValue }
@@ -51,6 +57,16 @@ protocol SharedFoodBackend: Sendable {
     func save(_ food: Food) async throws
     func delete(recordName: String) async throws
     func report(recordName: String, reason: ShareReportReason) async throws
+    /// Asks iCloud to send this device a notification for every new report. Only the moderator's phone does this.
+    func watchReports() async throws
+}
+
+/// The moderator: the iCloud user with the Moderator role in the public database (same user record in Development and Production).
+/// Their phone gets a notification for every report, so reports are looked at within the 24 hours the Terms promise.
+nonisolated enum Moderation {
+    static let moderatorID = "_d08d3c20c6b8a5196c36bbfa9ec833d8"
+    static let subscriptionID = "moderator-new-reports"
+    static func isModerator(_ userRecordName: String?) -> Bool { userRecordName == moderatorID }
 }
 
 /// The public database. Anyone can read; only a record's creator can change or delete it;
@@ -159,6 +175,18 @@ actor CloudKitSharedFoods: SharedFoodBackend {
         _ = try await db.modifyRecords(saving: [record], deleting: [], savePolicy: .allKeys).saveResults[id]?.get()
     }
 
+    func watchReports() async throws {
+        let subscription = CKQuerySubscription(recordType: "SharedFoodReport", predicate: NSPredicate(value: true),
+                                               subscriptionID: Moderation.subscriptionID, options: [.firesOnRecordCreation, .firesOnRecordUpdate])
+        let info = CKSubscription.NotificationInfo()
+        info.title = "A shared food was reported"
+        info.alertBody = "Look at it in CloudKit Console: Production, public database, SharedFoodReport."
+        info.soundName = "default"
+        subscription.notificationInfo = info
+        // Saving again with the same ID replaces it, so this is safe to repeat.
+        _ = try await db.save(subscription)
+    }
+
     nonisolated static func food(from record: CKRecord) -> SharedFood? {
         guard let name = record["name"] as? String, let cal = record["cal"] as? Double, let p = record["p"] as? Double,
               let creator = record.creatorUserRecordID?.recordName, isSharedRecordName(record.recordID.recordName) else { return nil }
@@ -215,6 +243,7 @@ actor DemoSharedFoods: SharedFoodBackend {
     }
     func delete(recordName: String) async throws { foods.removeAll { $0.recordName == recordName } }
     func report(recordName: String, reason: ShareReportReason) async throws { reports.append(.init(recordName: recordName, reporter: "demo-me")) }
+    func watchReports() async throws {}
 }
 #endif
 
@@ -229,6 +258,7 @@ final class CommunityFoods {
     private static let reportedKey = "community.reported"
     private static let uploadKey = "community.pendingUpload"
     private static let deleteKey = "community.pendingDelete"
+    private static let watchingKey = "community.moderatorWatching"
     /// How often the list is fetched again while the app is used.
     static let refreshEvery: TimeInterval = 6 * 3600
 
@@ -306,6 +336,24 @@ final class CommunityFoods {
             lastRefreshed = .now; problem = nil
             saveCache()
             publish()
+        } catch {
+            problem = Self.describe(error)
+        }
+        await watchReportsIfModerator()
+    }
+
+    /// On the moderator's phone only: turns on notifications and subscribes to new reports, once per install.
+    /// Registering for remote notifications is repeated each launch, as Apple recommends.
+    private func watchReportsIfModerator() async {
+        guard Moderation.isModerator(myID) else { return }
+        #if canImport(UIKit)
+        UIApplication.shared.registerForRemoteNotifications()
+        #endif
+        guard !UserDefaults.standard.bool(forKey: Self.watchingKey) else { return }
+        guard (try? await UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge])) == true else { return }
+        do {
+            try await backend.watchReports()
+            UserDefaults.standard.set(true, forKey: Self.watchingKey)
         } catch {
             problem = Self.describe(error)
         }

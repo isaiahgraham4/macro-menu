@@ -15,10 +15,12 @@ People can share a food they've added so everyone else finds it in search (marke
 | Requirement | What the app does |
 |---|---|
 | Filter objectionable content | `SharingRules.problem`: a whole-word strong-language and slur filter (`ContentFilter`, which also catches look-alike spellings such as "sh1t", "f*ck", "f u c k" and "fuuuck"; the same filter flags every food, custom order and meal name as it is typed and keeps Save off until it is changed), no links or phone numbers, name 3–80 characters, serving required, carbs and fat required, energy within 15% (or 25 Cal) of 4/4/9 from the macros (alcohol excepted), macros no heavier than the serving, sane maximums, only known extra nutrients within per-serving limits, a 6 to 14 digit barcode and a one-word category. Oversized text fields are dropped before decoding, and downloads are converted a page at a time. The same check runs on every record the app reads back, so a record written outside the app is ignored. |
-| Report | Food page → Report this food (reason picker). The food is hidden for the reporter immediately. **3 different reporters hide it for everyone.** Barcode scans that fall back to a live query check the food's reports live too. One report per person per food (`report-<food>-<user>`). |
+| Report | Food page → Report this food (reason picker: wrong numbers, offensive or abusive, promotes eating disorders or self-harm, illegal content, spam, something else). The food is hidden for the reporter immediately. **3 different reporters hide it for everyone.** Barcode scans that fall back to a live query check the food's reports live too. One report per person per food (`report-<food>-<user>`). |
+| Harmful to children | `ContentFilter.promotesHarm` (shared foods only, not private names): pro-eating-disorder words (ana, mia, thinspo, purge…), self-harm and suicide words, and risky weight-loss products (laxatives, DNP, clenbuterol, diet pills). Exact whole words with look-alike digits unmasked, but no shortening of repeated letters, so "Anna's Thins" passes. Added 22 Nov 2026 from the UK Online Safety Act risk assessment. |
+| Moderator alert | On the moderator's phone only (`Moderation.moderatorID`, his user record), the app asks for notification permission, registers for remote notifications and saves a `CKQuerySubscription` (`moderator-new-reports`) on `SharedFoodReport` creations and updates. iCloud then sends a push for every report. Needs the `aps-environment` entitlement (added 22 Nov 2026). |
 | Block | Food page → Hide foods from this person. It's kept on the device; Settings → Shared foods brings them back. |
 | Remove | A `SharedFoodRemoved` record with `foodRecord` = the food's record name hides it for everyone. Only the Moderator role can write these. |
-| Terms agreed | One-time alert before the first share. Terms.md has a "Foods you share" section with zero tolerance and a 24-hour review promise. |
+| Terms agreed | One-time alert before the first share. Terms.md has a "Foods you share" section with zero tolerance, no illegal or eating-disorder content and a 24-hour review promise, plus "Complaints and appeals" (anyone can email; acknowledged within 2 working days, decided within 14). |
 | Contact | `AppInfo.contactEmail` (isaiahgraham.app@gmail.com), shown in the policies and Settings. |
 
 ## Setup status and steps
@@ -38,6 +40,8 @@ Still to do (App Store Connect, needs Isaiah):
 - Try sharing a food from a TestFlight build on a phone signed in to iCloud, then find it from a second Apple Account.
 
 ## Reviewing reports
+
+A push notification arrives on the moderator's phone for each report. Log every decision in the Moderation log section of the private Online Safety Act risk assessment doc (date, food record, reason, decision). The assessment is reviewed by 22 Nov 2027 or before shared foods gain images, comments, profiles or messaging.
 
 CloudKit Console → Production → Public database → query `SharedFoodReport` sorted by modification date. Look up the `foodRecord` in `SharedFood`. To take one down, create a `SharedFoodRemoved` record with `foodRecord` set to that record name and an optional `note`, acting as your own iCloud account (the one with the Moderator role). Every phone hides it the next time it refreshes, at most 6 hours later.
 
