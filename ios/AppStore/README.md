@@ -23,8 +23,9 @@ Before each new upload, raise the build number (`CURRENT_PROJECT_VERSION`) in th
   listing, so it's at the end of the description below; update that gist whenever `Terms.md` changes.
   The consumer health data privacy policy (`ConsumerHealthData.md`, added 22 Nov 2026 for Washington's My Health My
   Data Act and Nevada's similar law) shows in Settings → Privacy and legal. The Act also wants it linked from the App Store
-  page, so host it as a gist like the others and add its link at the end of the description next to the terms link.
-  The privacy policy points to it, so update the privacy gist at the same time.
+  page. Hosted 22 Nov 2026: https://gist.github.com/isaiahgraham4/736ca5bc1111b2d52fc67b60f1c804b8 — add its link at the
+  end of the description next to the terms link on the next editable version. The privacy gist links to it (its own
+  "Consumer health data" section, which keeps the older-version notes); update both when `ConsumerHealthData.md` changes.
   Both files also carry a `{{DEVICE}}` placeholder: the app shows iPhone or iPad, and the hosted copies say
   "iPhone or iPad". Fill both placeholders before updating a gist.
 - `AppInfo.contactEmail` in `MacroMenu/LegalView.swift` is isaiahgraham.app@gmail.com (set 16 Nov 2026). It shows in the policies
