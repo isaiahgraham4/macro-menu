@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Static app shortcuts. Pinned foods are added as dynamic shortcuts by feature/widgets/AppShortcuts.kt. -->
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- ScanBarcodeIntent: opens Today with the barcode scanner. -->
+    <shortcut
+        android:shortcutId="scan"
+        android:enabled="true"
+        android:icon="@drawable/shortcuts_ic_scan"
+        android:shortcutShortLabel="@string/shortcuts_scan_short"
+        android:shortcutLongLabel="@string/shortcuts_scan_long"
+        android:shortcutDisabledMessage="@string/shortcuts_disabled">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="leanr://scan"
+            android:targetPackage="com.isaiahgraham.leanrrr"
+            android:targetClass="com.isaiahgraham.leanrrr.MainActivity" />
+    </shortcut>
+    <shortcut
+        android:shortcutId="today"
+        android:enabled="true"
+        android:icon="@drawable/shortcuts_ic_today"
+        android:shortcutShortLabel="@string/shortcuts_today_short"
+        android:shortcutLongLabel="@string/shortcuts_today_long"
+        android:shortcutDisabledMessage="@string/shortcuts_disabled">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="leanr://today"
+            android:targetPackage="com.isaiahgraham.leanrrr"
+            android:targetClass="com.isaiahgraham.leanrrr.MainActivity" />
+    </shortcut>
+    <!-- LogUsualMealIntent: logs the meal you've had most often at this meal time, without opening the app. -->
+    <shortcut
+        android:shortcutId="usual"
+        android:enabled="true"
+        android:icon="@drawable/shortcuts_ic_usual"
+        android:shortcutShortLabel="@string/shortcuts_usual_short"
+        android:shortcutLongLabel="@string/shortcuts_usual_long"
+        android:shortcutDisabledMessage="@string/shortcuts_disabled">
+        <intent
+            android:action="com.isaiahgraham.leanrrr.LOG_USUAL"
+            android:targetPackage="com.isaiahgraham.leanrrr"
+            android:targetClass="com.isaiahgraham.leanrrr.feature.widgets.ShortcutActivity" />
+    </shortcut>
+</shortcuts>

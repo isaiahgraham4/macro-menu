@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Progress's FileProvider (authority ${applicationId}.progress.files): share images and the camera's progress photo. -->
+<paths>
+    <cache-path name="progress_share" path="progress_share/" />
+    <cache-path name="progress_camera" path="progress_camera/" />
+</paths>

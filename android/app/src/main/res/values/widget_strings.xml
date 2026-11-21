@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Names and descriptions in the widget picker (configurationDisplayName / description in LeanrWidgets). -->
+<resources>
+    <string name="widget_calories_name">Calories left</string>
+    <string name="widget_calories_description">See today’s calories remaining against your Leanrrr target.</string>
+    <string name="widget_targets_name">All targets</string>
+    <string name="widget_targets_description">Calories and every nutrient target you track.</string>
+    <string name="widget_macros_name">Calories &amp; macros</string>
+    <string name="widget_macros_description">Calories remaining with protein, carbs and fat against your targets.</string>
+    <string name="widget_macro_summary_name">Macros at a glance</string>
+    <string name="widget_macro_summary_description">Calories left, with protein, carbs and fat. Green when protein is reached, orange when carbs or fat go over.</string>
+    <string name="widget_streak_name">Tracking streak</string>
+    <string name="widget_streak_description">Counts the days in a row you’ve logged food.</string>
+    <string name="widget_log_again_name">Log again</string>
+    <string name="widget_log_again_description">Log your usual meal or a pinned food with one tap, without opening Leanrrr.</string>
+    <string name="widget_steps_name">Steps</string>
+    <string name="widget_steps_description">Today’s steps from Health Connect against your goal.</string>
+    <string name="widget_burnt_name">Calories burnt</string>
+    <string name="widget_burnt_description">Today’s active calories from Health Connect, against your recent days.</string>
+    <string name="widget_water_name">Water</string>
+    <string name="widget_water_description">Today’s water against your target. Tap + to add water.</string>
+</resources>

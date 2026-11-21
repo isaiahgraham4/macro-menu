@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- App shortcut icon: a white Material glyph on the standard green circle. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp" android:height="48dp" android:viewportWidth="48" android:viewportHeight="48">
+    <path android:fillColor="#FF01714C" android:pathData="M24,0A24,24 0,1 1,24 48A24,24 0,1 1,24 0z" />
+    <group android:translateX="12" android:translateY="12">
+        <path android:fillColor="#FFFFFFFF" android:pathData="M12,2c-5.33,4.55 -8,8.48 -8,11.8c0,4.98 3.8,8.2 8,8.2s8,-3.22 8,-8.2C20,10.48 17.33,6.55 12,2z" />
+    </group>
+</vector>

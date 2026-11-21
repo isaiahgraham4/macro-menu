@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android's own backup to the person's Google account stands in for iCloud sync: app-state.json and settings, not downloaded menus. -->
+<full-backup-content>
+    <include domain="file" path="MacroMenu/app-state.json" />
+    <include domain="sharedpref" path="leanr.xml" />
+</full-backup-content>

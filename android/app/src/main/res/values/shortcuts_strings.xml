@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- App shortcuts (LeanrIntents.swift and ScanBarcodeIntent.swift on iOS). -->
+<resources>
+    <string name="shortcuts_scan_short">Scan a barcode</string>
+    <string name="shortcuts_scan_long">Scan a barcode to log a packaged food</string>
+    <string name="shortcuts_today_short">Today</string>
+    <string name="shortcuts_today_long">Today’s log</string>
+    <string name="shortcuts_usual_short">Log usual meal</string>
+    <string name="shortcuts_usual_long">Log my usual meal</string>
+    <string name="shortcuts_disabled">This shortcut is no longer available</string>
+</resources>
