@@ -16,13 +16,16 @@ APP = Path(__file__).resolve().parent.parent.parent / "MacroMenu"
 # Revisions and publish times for the bundled files that don't carry their own (the app reads this too).
 FOOD_LISTS = APP / "FoodLists.json"
 COUNTRIES = ["AU", "NZ", "US", "CA", "GB", "ZA", "IN", "SG"]
+# Countries with a supermarket shelf file (MenuRegion.supermarketIDs); Australia's dataset keeps the id "supermarket".
+SHOP_COUNTRIES = ["NZ", "US", "CA", "GB", "ZA"]
 
 # dataset id -> bundled file name
 DATASETS = {**{f"menu-{c}": ("MenuData.json" if c == "AU" else f"MenuData-{c}.json") for c in COUNTRIES},
-            "generic": "GenericFoods.json", "survey": "SurveyFoods.json", "supermarket": "SupermarketFoods.json"}
+            "generic": "GenericFoods.json", "survey": "SurveyFoods.json", "supermarket": "SupermarketFoods.json",
+            **{f"supermarket-{c}": f"SupermarketFoods-{c}.json" for c in SHOP_COUNTRIES}}
 # Datasets whose bundled file is a bare list of foods, or has no revision of its own.
 LISTS = {"generic", "survey"}
-SIDECAR = {"generic", "survey", "supermarket"}
+SIDECAR = {"generic", "survey", "supermarket", *(f"supermarket-{c}" for c in SHOP_COUNTRIES)}
 
 
 def fingerprint(chains, foods):

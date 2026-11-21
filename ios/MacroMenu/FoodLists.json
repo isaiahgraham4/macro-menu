@@ -7,6 +7,26 @@
     "published": "2026-11-01T16:32:14Z",
     "revision": "1a39f7a127a85cea"
   },
+  "supermarket-CA": {
+    "published": "2026-11-21T15:31:51Z",
+    "revision": "870dc47d5f0ebf66"
+  },
+  "supermarket-GB": {
+    "published": "2026-11-21T15:31:46Z",
+    "revision": "59e3840e2b40f13d"
+  },
+  "supermarket-NZ": {
+    "published": "2026-11-21T15:31:36Z",
+    "revision": "892326c1f6dfd757"
+  },
+  "supermarket-US": {
+    "published": "2026-11-21T15:32:04Z",
+    "revision": "d9efa690f9607b9e"
+  },
+  "supermarket-ZA": {
+    "published": "2026-11-21T15:31:40Z",
+    "revision": "eb96df5d2fe725fc"
+  },
   "survey": {
     "published": "2026-11-20T04:40:30.974Z",
     "revision": "f37260822a9c8d38"

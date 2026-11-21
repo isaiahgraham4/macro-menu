@@ -6,7 +6,7 @@ enum FoodDataset: Hashable, Sendable {
     case menu(MenuRegion)
     case everyday
     case survey
-    case supermarket
+    case supermarket(MenuRegion)
 
     /// The dataset's id on Supabase (`public.datasets`), as `Scripts/supabase/upload.py` names it.
     var id: String {
@@ -14,7 +14,8 @@ enum FoodDataset: Hashable, Sendable {
         case .menu(let region): "menu-\(region.rawValue)"
         case .everyday: "generic"
         case .survey: "survey"
-        case .supermarket: "supermarket"
+        // Australia keeps the id earlier versions read.
+        case .supermarket(let region): region == .australia ? "supermarket" : "supermarket-\(region.rawValue)"
         }
     }
 

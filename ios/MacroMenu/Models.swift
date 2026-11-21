@@ -69,8 +69,9 @@ struct Food: Codable, Identifiable, Hashable, Sendable {
         guard isEveryday, id.hasPrefix("usda-") else { return nil }
         return URL(string: "https://fdc.nal.usda.gov/food-details/\(id.dropFirst(5))/nutrients")
     }
-    /// Ready meals and snacks from `SupermarketFoods.json`. Searchable and part of Find's supermarket mode, but not a restaurant.
-    static let supermarkets: Set<String> = ["coles", "woolworths"]
+    /// Ready meals and snacks from the supermarket files (`MenuRegion.supermarketIDs`). Searchable, part of Find's supermarket mode
+    /// and found by barcode, but not a restaurant.
+    static let supermarkets: Set<String> = Set(MenuRegion.allCases.flatMap(\.supermarketIDs))
     var isSupermarket: Bool { Food.supermarkets.contains(chain) }
     /// Foods other Leanrrr users shared, from iCloud. Searchable and found by barcode, but never suggested or matched from photos.
     static let community = "community"

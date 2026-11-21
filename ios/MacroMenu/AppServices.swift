@@ -53,9 +53,9 @@ import UserNotifications
         await checkMenu()
     }
 
-    /// Every dataset the chosen country uses: its menu, everyday and survey foods, and supermarket foods in Australia.
+    /// Every dataset the chosen country uses: its menu, everyday and survey foods, and its supermarket foods where it has them.
     private static var onlineDatasets: [FoodDataset] {
-        [.menu(store.region), .everyday, .survey] + (store.region.hasSupermarkets ? [.supermarket] : [])
+        [.menu(store.region), .everyday, .survey] + (store.region.hasSupermarkets ? [.supermarket(store.region)] : [])
     }
 
     /// Switches every menu to another country's, from setup or Settings.

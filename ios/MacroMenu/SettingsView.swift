@@ -176,7 +176,7 @@ struct SettingsView: View {
                     ForEach(MenuRegion.allCases) { Text($0.name).tag($0) }
                 } label: { Label("Country", systemImage: "globe") }
             } header: { Text("Restaurant menus") } footer: {
-                Text("Changes which restaurants Leanrrr shows. Foods you’ve logged or saved keep their numbers. Supermarket ready meals and Copycat Kitchen are only in Australia.")
+                Text("Changes which restaurants Leanrrr shows. Foods you’ve logged or saved keep their numbers. Supermarket ready meals and snacks are in Australia, New Zealand, the US, Canada, the UK and South Africa. Copycat Kitchen is only in Australia.")
             }
             Section("Targets") {
                 NavigationLink { TargetsView() } label: { Label("Targets & target sets", systemImage: "target") }

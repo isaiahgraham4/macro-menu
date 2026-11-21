@@ -1027,6 +1027,125 @@ def pizzahut_in():
     return dedupe(rows)
 
 
+# ---------- Chains saved in the shared format (SOURCE-FORMAT.md) ----------
+SAUCE = re.compile(r'sauce|dip\b|dressing|ketchup|mayo|aioli|gravy|syrup|salsa|relish|mustard|vinaigrette|seasoning|sprinkle', re.I)
+MEAT_KEYS = {'chicken', 'beef', 'pork', 'lamb', 'fish', 'seafood', 'turkey'}
+# Meats the US name patterns don't know, for the chains in the shared format.
+MORE_MEATS = [('pork', r'pepperoni|salami|chorizo|pancetta|prosciutto|nduja|pigs? in blankets?|spicy italian|\bb\.?m\.?t\b|pork|carnitas|pulled pork'),
+              ('beef', r'pepperoni|salami|spicy italian|meatball|brisket|bulgogi|barbacoa'),
+              ('fish', r'salmon|tuna|cod\b|haddock|mackerel|sea bass|anchov'),
+              ('seafood', r'prawn|shrimp|lobster|crab|squid|calamari|katsu prawn'),
+              ('lamb', r'\blamb\b'), ('turkey', r'turkey'), ('chicken', r'chicken|chick\'n(?! )|gfc\b')]
+
+
+def combined(name, cat, parts, serve):
+    """One item made of published parts (a shake base plus its mix-in): figures added up, allergens joined."""
+    out = {'name': name, 'cat': cat, 'serve': serve}
+    for k in ('cal', 'kj', 'p', 'c', 'f', 'sat', 'sugar', 'fibre', 'sodium', 'salt'):
+        vals = [o.get(k) for o in parts]
+        out[k] = None if any(v is None for v in vals) else round(sum(vals), 1)
+    for k in ('contains', 'may'):
+        lists = [o.get(k) for o in parts]
+        out[k] = None if all(v is None for v in lists) else sorted({a for v in lists for a in v or []})
+    return out
+
+
+FIVE_GUYS_UK_TOPPINGS = {'Bacon (add-on)': 'Add Bacon', 'Beef Patty (add-on)': 'Add Patty', 'Cheese (1 slice)': 'Add Cheese', 'Crispy Onions': 'Crispy Onions',
+                         'Grilled Mushrooms': 'Grilled Mushrooms', 'Grilled Onions': 'Grilled Onions', 'Fresh Onions': 'Fresh Onions', 'Green Peppers': 'Green Peppers',
+                         'Jalapeño Peppers': 'Jalapeño Peppers', 'Lettuce': 'Lettuce', 'Pickles': 'Pickles', 'Tomatoes': 'Tomatoes', 'Mayonnaise': 'Mayonnaise',
+                         'Tomato Ketchup': 'Tomato Ketchup', 'Mustard': 'Mustard', 'Relish': 'Relish', 'BBQ Sauce': 'BBQ Sauce', 'HP Brown Sauce': 'HP Brown Sauce',
+                         'Hot Sauce': 'Hot Sauce'}
+
+
+def five_guys_uk(items):
+    """Like the Australian menu: one row per shake flavour (base plus mix-in), toppings as add-ons, loose parts (buns, sausage, mix-ins) left out."""
+    by = {o['name']: o for o in items}
+    out = [o for o in items if o['cat'] in ('main', 'breakfast') or o['cat'] == 'side' or o['cat'] == 'drink' and 'Milkshake base' not in o['name']]
+    for size, label in (('regular', ''), ('little', ' (little)')):
+        base = by[f'Milkshake base ({size})']
+        out.append(combined(f'Vanilla Milkshake{label}', 'drink', [base], size))
+        for o in items:
+            m = re.match(rf"(.+?) mix-in \({size} shake\)$", o['name'])
+            if m:
+                out.append(combined(f"{m.group(1)} Milkshake{label}", 'drink', [base, o], size))
+    for part, name in FIVE_GUYS_UK_TOPPINGS.items():
+        out.append(dict(by[part], name=name, cat='extra', keep_extra=True))
+    return out
+
+
+def subway_uk(items):
+    """Subs, wraps, salads and sides as listed; meat and cheese add-ons as "Extra …" like the Australian Subway. Breads, salad fillings,
+    sauces and side pots are left out: they're parts of a sub, not something to add to one."""
+    out = [o for o in items if o['cat'] != 'extra']
+    for o in items:
+        if o['cat'] == 'extra' and re.search(r'add-on', o['name']) and not re.search(r'egg|bread', o['name'], re.I):
+            name = re.sub(r',? ?add-on\)', ')', o['name']).replace(' ()', '')
+            out.append(dict(o, name='Extra ' + name, keep_extra=True))
+    return out
+
+
+def toppings_as_extras(items):
+    """Build-your-own toppings and dressings (SaladStop!, The Daily Cut) as "Extra …" add-ons."""
+    return [dict(o, name='Extra ' + re.sub(r' \((topping|dressing)\)$', r' (\1)', o['name']), keep_extra=True) if o['cat'] == 'extra' else o for o in items]
+
+
+def no_per_100(items):
+    """Drinks listed per 100 ml (Burger King Singapore) aren't a serve anyone orders."""
+    return [o for o in items if not re.search(r'\b100 ?ml\b', o.get('serve') or '', re.I)]
+
+
+# Chains whose published list needs putting together first.
+PREPARE = {'uk-fiveguys': five_guys_uk, 'uk-sub': subway_uk, 'sg-saladstop': toppings_as_extras, 'sg-dailycut': toppings_as_extras, 'sg-bk': no_per_100}
+
+
+def generic(chain):
+    """A chain saved by its `<chain>-fetch.py` in the shared format: one row per item as the chain publishes it."""
+    data = json.loads((HERE / f'{chain}-source.json').read_text())
+    CHECKED[chain] = data['checked']
+    rows = []
+    for o in PREPARE.get(chain, lambda items: items)(data['items']):
+        p, c, f = num(o.get('p')), num(o.get('c')), num(o.get('f'))
+        if p is None or c is None or f is None or (o.get('cal') is None and o.get('kj') is None):
+            continue
+        if p >= 1 and p == c == f:
+            print(f"  {chain}: left out {o['name']}: protein, carbs and fat all published as {p} g")
+            continue
+        name, cat = us.clean(o['name']).replace('’', "'"), o['cat']
+        if cat == 'extra' and not o.get('keep_extra'):
+            # An add-on without a known prefix would be offered on every item (extraFits), so sauces say what they are.
+            name = name if name.lower().startswith('dipping sauce:') else f'Dipping Sauce: {name}' if SAUCE.search(name) else name
+            if not name.startswith('Dipping Sauce:'):
+                cat = 'side'
+        salt, sodium = num(o.get('salt')), num(o.get('sodium'))
+        nut = {'sat': num(o.get('sat')), 'sugar': num(o.get('sugar')), 'fibre': num(o.get('fibre')),
+               'sodium': sodium if sodium is not None else round(salt * 400) if salt is not None else None}
+        r = row(chain, name, cat, p, c, f, o.get('serve') or '', nut, o.get('contains'), o.get('may') or None,
+                cal=o.get('cal'), kj=o.get('kj'), vg=o.get('vg'), src='allergen table' if o.get('contains') is not None else 'name')
+        low = name.lower()
+        if cat in ('main', 'breakfast', 'side') and not o.get('vg') and not re.search(us.NO_MEAT + r'|vegan|vegetarian|plant|chick\'n|cheeze', low):
+            more = [m for m, pat in MORE_MEATS if re.search(pat, low)]
+            if more:
+                r.setdefault('diet', {'src': 'name'})
+                r['diet']['meat'] = sorted(set(r['diet'].get('meat') or []) | set(more))
+        meat = r.get('diet', {}).get('meat')
+        if o.get('meat') and not o.get('vg'):
+            r.setdefault('diet', {'src': 'name'})['meat'] = sorted(set(o['meat']) & MEAT_KEYS)
+        elif data.get('halal') and meat and 'pork' in meat:
+            # Halal chains: bacon, ham and sausage are chicken or beef.
+            meat.remove('pork')
+            if not meat:
+                meat.append('chicken')
+        rows.append(r)
+    return dedupe(rows)
+
+
+def generic_chain(chain):
+    """The chain's entry for COUNTRIES, from its source file's own name, link and description."""
+    data = json.loads((HERE / f'{chain}-source.json').read_text())
+    return ({'id': chain, 'name': data['name'], 'how': data['how'], 'url': data['url'], 'src': data['src'].replace('{', '(').replace('}', ')') + ' ({checked})'},
+            lambda: generic(chain))
+
+
 COUNTRIES = {
     'CA': [
         ({'id': 'ca-mcd', 'name': "McDonald's", 'how': 'Official website item pages', 'url': 'https://www.mcdonalds.com/ca/en-ca/full-menu.html',
@@ -1038,6 +1157,7 @@ COUNTRIES = {
         ({'id': 'ca-tims', 'name': 'Tim Hortons', 'how': 'Official nutrition guide', 'url': 'https://www.timhortons.ca/nutrition-and-allergens',
           'src': "Tim Hortons Nutrition Information, Canadian edition ({checked}). Iced Capps, Chai Latte and London Fog are left out: their rows couldn't be read reliably from the guide. No allergens yet: they're in a separate chart"},
          tims),
+        generic_chain('ca-aw'), generic_chain('ca-popeyes'), generic_chain('ca-sub'), generic_chain('ca-marybrowns'),
     ],
     'GB': [
         ({'id': 'uk-mcd', 'name': "McDonald's", 'how': 'Official website item pages', 'url': 'https://www.mcdonalds.com/gb/en-gb/menu.html',
@@ -1055,6 +1175,7 @@ COUNTRIES = {
         ({'id': 'uk-pret', 'name': 'Pret A Manger', 'how': 'Official product pages', 'url': 'https://www.pret.co.uk/en-GB',
           'src': "Pret A Manger UK product nutrition and allergens ({checked}), per item as sold. Sodium is worked out from the salt Pret lists. Hot drinks are Pret's standard recipe"},
          pret_uk),
+        generic_chain('uk-sub'), generic_chain('uk-fiveguys'), generic_chain('uk-leon'), generic_chain('uk-costa'), generic_chain('uk-itsu'),
     ],
     'NZ': [
         ({'id': 'nz-mcd', 'name': "McDonald's", 'how': 'Official website item pages', 'url': 'https://www.mcdonalds.com/nz/en-nz/menu.html',
@@ -1066,6 +1187,7 @@ COUNTRIES = {
         ({'id': 'nz-sub', 'name': 'Subway', 'how': 'Official nutrition guide', 'url': 'https://www.subway.com/en-nz/menunutrition/nutrition',
           'src': "Subway New Zealand Nutritional Summary, October 2025 ({checked}), per serve as listed. Footlongs are double the 6\", as Subway says"},
          subway_nz),
+        generic_chain('nz-bk'), generic_chain('nz-burgerfuel'), generic_chain('nz-stpierres'),
     ],
     'ZA': [
         ({'id': 'za-mcd', 'name': "McDonald's", 'how': 'Official website item pages', 'url': 'https://www.mcdonalds.co.za/menu',
@@ -1083,6 +1205,7 @@ COUNTRIES = {
         ({'id': 'za-kauai', 'name': 'Kauai', 'how': 'Official menu nutrition', 'url': 'https://kauai.co.za/menu/',
           'src': "Kauai menu nutrition and allergens ({checked}), per serving as ready to eat. Smoothies are listed at 350 ml and 500 ml"},
          kauai),
+        generic_chain('za-simplyasia'),
     ],
     'IN': [
         ({'id': 'in-mcd', 'name': "McDonald's", 'how': 'Official menu booklet', 'url': 'https://mcdindia.com/',
@@ -1094,6 +1217,7 @@ COUNTRIES = {
         ({'id': 'in-pizzahut', 'name': 'Pizza Hut', 'how': 'Official nutrition booklet', 'url': 'https://www.pizzahut.co.in/nutrition/',
           'src': "Pizza Hut India Nutrition & Allergen Information Booklet ({checked}). Pizzas are the whole pizza, one row per size and crust. Calories as published; kilojoules are worked out"},
          pizzahut_in),
+        generic_chain('in-bbqnation'),
     ],
     'SG': [
         ({'id': 'sg-mcd', 'name': "McDonald's", 'how': 'Official nutrition calculator', 'url': 'https://www.mcdonalds.com.sg/nutrition-calculator',
@@ -1102,6 +1226,7 @@ COUNTRIES = {
         ({'id': 'sg-kfc', 'name': 'KFC', 'how': 'Official nutrition page', 'url': 'https://www.kfc.com.sg/nutrition',
           'src': "KFC Singapore Nutrition Information ({checked}), per serving. Calories as published; kilojoules are worked out. No allergens: KFC Singapore's list leaves out sesame. Bacon and ham are chicken (halal)"},
          kfc_sg),
+        generic_chain('sg-bk'), generic_chain('sg-saladstop'), generic_chain('sg-dailycut'),
     ],
 }
 
@@ -1132,7 +1257,7 @@ def build(country, chains):
                 est = 4 * r['p'] + 4 * (r['c'] or 0) + 9 * (r['f'] or 0)
                 if not why and est >= 30 and r['cal'] < est / 2:
                     why = f"{r['cal']} Cal but its macros add up to {round(est)}"
-                if country == 'IN' and 'diet' in r and 'meat' in r['diet']:
+                if country == 'IN' and r['chain'] != 'in-bbqnation' and 'diet' in r and 'meat' in r['diet']:
                     # These chains sell no beef or pork in India: burgers are chicken, fish or vegetarian, and sausage, pepperoni and keema are chicken.
                     low = r['name'].lower()
                     kept = [m for m in r['diet']['meat'] if m in ('chicken', 'fish')]

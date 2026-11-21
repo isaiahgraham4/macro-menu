@@ -1,0 +1,2808 @@
+{
+ "chain": "uk-itsu",
+ "name": "itsu",
+ "how": "Official product pages",
+ "url": "https://www.itsu.com/menu/",
+ "src": "itsu.com product pages, UK menu (2026-11-22), per item as sold; itsu publishes kcal only. Sushi figures leave out the bottle of soy sauce, as itsu says. Left out 22: 2 alcoholic drinks, 0 with no figures, 19 milk coffees and matcha lattes that itsu lists without the milk, 1 of 60 kcal or more whose kcal is over a third away from their macros (Miso with Benefits (83 kcal, macros 136)). Allergens and may-contain are itsu's own lists.",
+ "checked": "2026-11-22",
+ "energy": "cal",
+ "halal": false,
+ "items": [
+  {
+   "name": "Little Sausages Egg'pot",
+   "cat": "breakfast",
+   "serve": "1 serving",
+   "cal": 318,
+   "kj": null,
+   "p": 15.3,
+   "c": 27.3,
+   "f": 16.6,
+   "sat": 5.1,
+   "sugar": 4.9,
+   "fibre": 2.9,
+   "sodium": null,
+   "salt": 1.59,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg",
+    "soy",
+    "sulphites"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Mango Yoghurt Pot",
+   "cat": "breakfast",
+   "serve": "1 serving",
+   "cal": 327,
+   "kj": null,
+   "p": 10.5,
+   "c": 30.8,
+   "f": 17.6,
+   "sat": 12.1,
+   "sugar": 20.6,
+   "fibre": 3.4,
+   "sodium": null,
+   "salt": 0.35,
+   "contains": [
+    "gluten",
+    "milk",
+    "treenut"
+   ],
+   "may": [
+    "egg",
+    "soy",
+    "sesame",
+    "peanut",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Pineapple & Coconut Twist",
+   "cat": "breakfast",
+   "serve": "1 serving",
+   "cal": 314,
+   "kj": null,
+   "p": 5.6,
+   "c": 37,
+   "f": 16,
+   "sat": 11,
+   "sugar": 14,
+   "fibre": 2.1,
+   "sodium": null,
+   "salt": 0.68,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "sesame",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Porridge with Agave",
+   "cat": "breakfast",
+   "serve": "1 serving",
+   "cal": 185,
+   "kj": null,
+   "p": 7.8,
+   "c": 22.7,
+   "f": 6.2,
+   "sat": 3.4,
+   "sugar": 6.1,
+   "fibre": 2.5,
+   "sodium": null,
+   "salt": 0.12,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Porridge with Fresh Blueberries",
+   "cat": "breakfast",
+   "serve": "1 serving",
+   "cal": 215,
+   "kj": null,
+   "p": 8.1,
+   "c": 29.4,
+   "f": 6.3,
+   "sat": 3.4,
+   "sugar": 11.4,
+   "fibre": 3.1,
+   "sodium": null,
+   "salt": 0.13,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Porridge with Fresh Blueberries & Superseeds",
+   "cat": "breakfast",
+   "serve": "1 serving",
+   "cal": 323,
+   "kj": null,
+   "p": 11.4,
+   "c": 36.1,
+   "f": 14.1,
+   "sat": 5.1,
+   "sugar": 14.7,
+   "fibre": 4.9,
+   "sodium": null,
+   "salt": 0.14,
+   "contains": [
+    "milk",
+    "soy",
+    "sesame"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Raspberry Yoghurt Pot",
+   "cat": "breakfast",
+   "serve": "1 serving",
+   "cal": 323,
+   "kj": null,
+   "p": 10.4,
+   "c": 30.4,
+   "f": 17.3,
+   "sat": 12.2,
+   "sugar": 21.1,
+   "fibre": 3.6,
+   "sodium": null,
+   "salt": 0.35,
+   "contains": [
+    "gluten",
+    "milk",
+    "treenut"
+   ],
+   "may": [
+    "egg",
+    "soy",
+    "sesame",
+    "peanut",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Roasted Bacon Egg'pot",
+   "cat": "breakfast",
+   "serve": "1 serving",
+   "cal": 217,
+   "kj": null,
+   "p": 12.3,
+   "c": 22.5,
+   "f": 8.8,
+   "sat": 2.4,
+   "sugar": 3.5,
+   "fibre": 2,
+   "sodium": null,
+   "salt": 1.0,
+   "contains": [
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Smoked Salmon & Avo Egg'pot",
+   "cat": "breakfast",
+   "serve": "1 serving",
+   "cal": 215,
+   "kj": null,
+   "p": 15.9,
+   "c": 6.4,
+   "f": 15.5,
+   "sat": 3.7,
+   "sugar": 0.8,
+   "fibre": 2.8,
+   "sodium": null,
+   "salt": 0.15,
+   "contains": [
+    "egg",
+    "soy",
+    "fish"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Smoked Salmon & Egg Bun",
+   "cat": "breakfast",
+   "serve": "1 serving",
+   "cal": 332,
+   "kj": null,
+   "p": 15.9,
+   "c": 27.4,
+   "f": 17.3,
+   "sat": 4,
+   "sugar": 4.8,
+   "fibre": 1.3,
+   "sodium": null,
+   "salt": 0.34,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "fish"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Soy Roasted Seeds Egg'pot",
+   "cat": "breakfast",
+   "serve": "1 serving",
+   "cal": 88,
+   "kj": null,
+   "p": 7.6,
+   "c": 2.8,
+   "f": 5.9,
+   "sat": 1.4,
+   "sugar": 0.5,
+   "fibre": 0.8,
+   "sodium": null,
+   "salt": 0.28,
+   "contains": [
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Spinach & Avo Egg'pot",
+   "cat": "breakfast",
+   "serve": "1 serving",
+   "cal": 204,
+   "kj": null,
+   "p": 11,
+   "c": 9.6,
+   "f": 16.9,
+   "sat": 3.7,
+   "sugar": 2.3,
+   "fibre": 3.4,
+   "sodium": null,
+   "salt": 0.57,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Spinach & Seeds Egg'pot",
+   "cat": "breakfast",
+   "serve": "1 serving",
+   "cal": 207,
+   "kj": null,
+   "p": 11.4,
+   "c": 25.9,
+   "f": 8.4,
+   "sat": 1.8,
+   "sugar": 5.1,
+   "fibre": 2.9,
+   "sodium": null,
+   "salt": 1.25,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "The Bacon & Egg Bun",
+   "cat": "breakfast",
+   "serve": "1 serving",
+   "cal": 318,
+   "kj": null,
+   "p": 12.6,
+   "c": 27.3,
+   "f": 17.3,
+   "sat": 4.5,
+   "sugar": 4.7,
+   "fibre": 1.2,
+   "sodium": null,
+   "salt": 1.22,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "The Egg Bun",
+   "cat": "breakfast",
+   "serve": "1 serving",
+   "cal": 286,
+   "kj": null,
+   "p": 10.1,
+   "c": 27.4,
+   "f": 14.9,
+   "sat": 3.6,
+   "sugar": 4.7,
+   "fibre": 1.2,
+   "sodium": null,
+   "salt": 0.83,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Wild Berry Knot",
+   "cat": "breakfast",
+   "serve": "1 serving",
+   "cal": 330,
+   "kj": null,
+   "p": 5.8,
+   "c": 45.6,
+   "f": 13.3,
+   "sat": 6.2,
+   "sugar": 16.2,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.65,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Chicken & Spring Onion Gyoza",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 251,
+   "kj": null,
+   "p": 13.2,
+   "c": 32.6,
+   "f": 7,
+   "sat": 1.9,
+   "sugar": 4,
+   "fibre": 2.1,
+   "sodium": null,
+   "salt": 1.3,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "egg",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Chicken Gyoza Noodle'bowl",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 553,
+   "kj": null,
+   "p": 21.9,
+   "c": 75.7,
+   "f": 13.7,
+   "sat": 2.8,
+   "sugar": 8.8,
+   "fibre": 8.4,
+   "sodium": null,
+   "salt": 2.07,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Chicken Noodle Soup",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 316,
+   "kj": null,
+   "p": 18.7,
+   "c": 36.8,
+   "f": 9.8,
+   "sat": 1.7,
+   "sugar": 4.2,
+   "fibre": 2.6,
+   "sodium": null,
+   "salt": 1.28,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Chicken Teriyaki",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 569,
+   "kj": null,
+   "p": 32.7,
+   "c": 81.2,
+   "f": 12.3,
+   "sat": 1.6,
+   "sugar": 17.1,
+   "fibre": 2.9,
+   "sodium": null,
+   "salt": 1.86,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "milk",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Chilli Chicken Gyoza Noodle'bowl",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 593,
+   "kj": null,
+   "p": 23.8,
+   "c": 82.7,
+   "f": 18.9,
+   "sat": 2.8,
+   "sugar": 12.6,
+   "fibre": 9.2,
+   "sodium": null,
+   "salt": 2.27,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Detox Miso Noodle Soup",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 190,
+   "kj": null,
+   "p": 6.9,
+   "c": 31.5,
+   "f": 3.1,
+   "sat": 0.4,
+   "sugar": 3.5,
+   "fibre": 4.3,
+   "sodium": null,
+   "salt": 3.23,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "shellfish"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Double Chicken Teriyaki",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 667,
+   "kj": null,
+   "p": 51,
+   "c": 82,
+   "f": 14.7,
+   "sat": 2.3,
+   "sugar": 17.9,
+   "fibre": 2.9,
+   "sodium": null,
+   "salt": 2.14,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "milk",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Famous Coconut Chicken Soup",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 469,
+   "kj": null,
+   "p": 20.1,
+   "c": 37.1,
+   "f": 23.6,
+   "sat": 17.1,
+   "sugar": 9,
+   "fibre": 3.3,
+   "sodium": null,
+   "salt": 1.64,
+   "contains": [
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "gluten",
+    "milk",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Grilled Katsu Chicken Curry",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 630,
+   "kj": null,
+   "p": 33.4,
+   "c": 75.6,
+   "f": 21.3,
+   "sat": 6.8,
+   "sugar": 5.9,
+   "fibre": 3.2,
+   "sodium": null,
+   "salt": 2.55,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame",
+    "fish"
+   ],
+   "may": [
+    "milk",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Katsu Curry Noodles",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 552,
+   "kj": null,
+   "p": 17,
+   "c": 73.9,
+   "f": 20,
+   "sat": 7.6,
+   "sugar": 8.6,
+   "fibre": 9.6,
+   "sodium": null,
+   "salt": 1.76,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame",
+    "fish"
+   ],
+   "may": [
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "King Prawn Gyoza",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 267,
+   "kj": null,
+   "p": 12.3,
+   "c": 39,
+   "f": 6.4,
+   "sat": 2,
+   "sugar": 2.8,
+   "fibre": 3,
+   "sodium": null,
+   "salt": 0.62,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame",
+    "shellfish"
+   ],
+   "may": [
+    "egg",
+    "fish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "King Prawn Miso Soup",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 101,
+   "kj": null,
+   "p": 18,
+   "c": 4.7,
+   "f": 1.8,
+   "sat": 0.3,
+   "sugar": 1.4,
+   "fibre": 1.8,
+   "sodium": null,
+   "salt": 3.62,
+   "contains": [
+    "soy",
+    "shellfish"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Korean BBQ Chicken",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 577,
+   "kj": null,
+   "p": 33.9,
+   "c": 60.1,
+   "f": 13.7,
+   "sat": 1.3,
+   "sugar": 15.9,
+   "fibre": 8.7,
+   "sodium": null,
+   "salt": 1.34,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "milk",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Korean Spicy Noodles",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 631,
+   "kj": null,
+   "p": 21.2,
+   "c": 79.6,
+   "f": 21.2,
+   "sat": 12.2,
+   "sugar": 15.6,
+   "fibre": 12.2,
+   "sodium": null,
+   "salt": 1.33,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Little Chicken Teriyaki",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 401,
+   "kj": null,
+   "p": 21.1,
+   "c": 60.1,
+   "f": 8.3,
+   "sat": 1,
+   "sugar": 9.5,
+   "fibre": 2.1,
+   "sodium": null,
+   "salt": 1.06,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "milk",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Little Grilled Katsu Chicken Curry",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 428,
+   "kj": null,
+   "p": 21.6,
+   "c": 56.3,
+   "f": 12.7,
+   "sat": 3.6,
+   "sugar": 3.2,
+   "fibre": 2.4,
+   "sodium": null,
+   "salt": 1.5,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame",
+    "fish"
+   ],
+   "may": [
+    "milk",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Little Korean BBQ Chicken",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 415,
+   "kj": null,
+   "p": 22.5,
+   "c": 48.7,
+   "f": 9.2,
+   "sat": 0.8,
+   "sugar": 10,
+   "fibre": 6,
+   "sodium": null,
+   "salt": 1.15,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "milk",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Little Rice & Greens",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 225,
+   "kj": null,
+   "p": 7.4,
+   "c": 37.5,
+   "f": 4.4,
+   "sat": 0.7,
+   "sugar": 0.2,
+   "fibre": 3.2,
+   "sodium": null,
+   "salt": 0.08,
+   "contains": [
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "gluten",
+    "milk",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Little Spicy Chicken Teriyaki",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 430,
+   "kj": null,
+   "p": 22.5,
+   "c": 65,
+   "f": 11.7,
+   "sat": 1,
+   "sugar": 12.7,
+   "fibre": 2.8,
+   "sodium": null,
+   "salt": 1.32,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "milk",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Little Thai Chicken Curry",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 468,
+   "kj": null,
+   "p": 22.5,
+   "c": 53.4,
+   "f": 17.7,
+   "sat": 9.1,
+   "sugar": 3.6,
+   "fibre": 2.6,
+   "sodium": null,
+   "salt": 0.91,
+   "contains": [
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "gluten",
+    "milk",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Little Thai Veggie'balls Curry",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 350,
+   "kj": null,
+   "p": 10.4,
+   "c": 35.9,
+   "f": 14.2,
+   "sat": 6.2,
+   "sugar": 4.6,
+   "fibre": 6.1,
+   "sodium": null,
+   "salt": 0.5,
+   "contains": [
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "gluten",
+    "milk",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Little Veggie'balls Teriyaki",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 397,
+   "kj": null,
+   "p": 12.9,
+   "c": 67.7,
+   "f": 7.8,
+   "sat": 0.7,
+   "sugar": 13.4,
+   "fibre": 6,
+   "sodium": null,
+   "salt": 1.56,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "milk",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Loaded Chicken Miso Soup",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 137,
+   "kj": null,
+   "p": 22.9,
+   "c": 3.7,
+   "f": 3.9,
+   "sat": 1,
+   "sugar": 1.1,
+   "fibre": 1.2,
+   "sodium": null,
+   "salt": 2.98,
+   "contains": [
+    "soy"
+   ],
+   "may": [
+    "sesame",
+    "shellfish"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Miso Soup",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 32,
+   "kj": null,
+   "p": 2.8,
+   "c": 3.7,
+   "f": 1.2,
+   "sat": 0.2,
+   "sugar": 1.1,
+   "fibre": 1.2,
+   "sodium": null,
+   "salt": 1.8,
+   "contains": [
+    "soy"
+   ],
+   "may": [
+    "sesame",
+    "shellfish"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Spicy Chicken Teriyaki",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 609,
+   "kj": null,
+   "p": 34.4,
+   "c": 88.2,
+   "f": 17.4,
+   "sat": 1.7,
+   "sugar": 21.2,
+   "fibre": 3.7,
+   "sodium": null,
+   "salt": 2.06,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "milk",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Thai Chicken Curry",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 710,
+   "kj": null,
+   "p": 35.3,
+   "c": 66.5,
+   "f": 31.8,
+   "sat": 17.4,
+   "sugar": 9,
+   "fibre": 7.8,
+   "sodium": null,
+   "salt": 0.75,
+   "contains": [
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "gluten",
+    "milk",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Thai King Prawn Curry",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 635,
+   "kj": null,
+   "p": 28.3,
+   "c": 64.3,
+   "f": 28.3,
+   "sat": 17.2,
+   "sugar": 5.1,
+   "fibre": 3.2,
+   "sodium": null,
+   "salt": 0.89,
+   "contains": [
+    "soy",
+    "sesame",
+    "shellfish"
+   ],
+   "may": [
+    "gluten",
+    "milk",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Thai Noodles",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 648,
+   "kj": null,
+   "p": 18.5,
+   "c": 73.6,
+   "f": 30,
+   "sat": 19.4,
+   "sugar": 9.2,
+   "fibre": 5.9,
+   "sodium": null,
+   "salt": 2.21,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Thai Salmon Curry",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 780,
+   "kj": null,
+   "p": 30.2,
+   "c": 72.8,
+   "f": 39.5,
+   "sat": 19.4,
+   "sugar": 8,
+   "fibre": 4.4,
+   "sodium": null,
+   "salt": 2.18,
+   "contains": [
+    "soy",
+    "sesame",
+    "fish"
+   ],
+   "may": [
+    "gluten",
+    "milk",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Thai Veggie'balls Curry",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 790,
+   "kj": null,
+   "p": 23.8,
+   "c": 71.4,
+   "f": 36,
+   "sat": 18.3,
+   "sugar": 11.3,
+   "fibre": 10.1,
+   "sodium": null,
+   "salt": 2.65,
+   "contains": [
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "gluten",
+    "milk",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "The Avo Baby Rolls",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 335,
+   "kj": null,
+   "p": 5.1,
+   "c": 53.3,
+   "f": 9.2,
+   "sat": 2.3,
+   "sugar": 8.2,
+   "fibre": 5.1,
+   "sodium": null,
+   "salt": 1.84,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "The Best of itsu",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 575,
+   "kj": null,
+   "p": 22.3,
+   "c": 75.8,
+   "f": 16.9,
+   "sat": 2.8,
+   "sugar": 12.6,
+   "fibre": 6.5,
+   "sodium": null,
+   "salt": 1.76,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg",
+    "soy",
+    "sesame",
+    "fish",
+    "shellfish"
+   ],
+   "may": [
+    "milk",
+    "peanut",
+    "treenut",
+    "lupin"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "The California Rolls",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 317,
+   "kj": null,
+   "p": 5.6,
+   "c": 37,
+   "f": 14.2,
+   "sat": 2.1,
+   "sugar": 6.9,
+   "fibre": 4,
+   "sodium": null,
+   "salt": 1.29,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg",
+    "soy",
+    "sesame",
+    "fish",
+    "shellfish"
+   ],
+   "may": [
+    "milk",
+    "peanut",
+    "treenut",
+    "lupin"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "The Chicken Bento Salad",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 640,
+   "kj": null,
+   "p": 26.6,
+   "c": 97.2,
+   "f": 14.8,
+   "sat": 3.2,
+   "sugar": 19.1,
+   "fibre": 4.3,
+   "sodium": null,
+   "salt": 2.25,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "peanut",
+    "treenut",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "The Festive Bento",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 542,
+   "kj": null,
+   "p": 26.6,
+   "c": 67,
+   "f": 15.6,
+   "sat": 3.2,
+   "sugar": 11.1,
+   "fibre": 6.8,
+   "sodium": null,
+   "salt": 1.64,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg",
+    "soy",
+    "sesame",
+    "fish",
+    "shellfish"
+   ],
+   "may": [
+    "milk",
+    "peanut",
+    "treenut",
+    "lupin"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "The Salmon & Avo Rolls",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 303,
+   "kj": null,
+   "p": 10.4,
+   "c": 38.2,
+   "f": 11,
+   "sat": 1.9,
+   "sugar": 6.1,
+   "fibre": 4.3,
+   "sodium": null,
+   "salt": 2.41,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame",
+    "fish"
+   ],
+   "may": [
+    "peanut",
+    "treenut",
+    "shellfish"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "The Salmon Baby Rolls",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 395,
+   "kj": null,
+   "p": 17.6,
+   "c": 53.1,
+   "f": 10.8,
+   "sat": 1.9,
+   "sugar": 8.1,
+   "fibre": 3.9,
+   "sodium": null,
+   "salt": 2.01,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "fish"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "The Salmon Bento Salad",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 649,
+   "kj": null,
+   "p": 24.3,
+   "c": 83.1,
+   "f": 23.1,
+   "sat": 4.2,
+   "sugar": 6,
+   "fibre": 4.6,
+   "sodium": null,
+   "salt": 1.6,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame",
+    "fish"
+   ],
+   "may": [
+    "peanut",
+    "treenut",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "The Salmon Dragon",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 514,
+   "kj": null,
+   "p": 13.5,
+   "c": 54.6,
+   "f": 24.1,
+   "sat": 5.7,
+   "sugar": 14.5,
+   "fibre": 5.5,
+   "sodium": null,
+   "salt": 2.88,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame",
+    "fish"
+   ],
+   "may": [
+    "peanut",
+    "treenut",
+    "shellfish"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "The Salmon Full House",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 549,
+   "kj": null,
+   "p": 22.4,
+   "c": 68.4,
+   "f": 17.8,
+   "sat": 3.1,
+   "sugar": 11.1,
+   "fibre": 5.8,
+   "sodium": null,
+   "salt": 2.86,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame",
+    "fish"
+   ],
+   "may": [
+    "peanut",
+    "treenut",
+    "shellfish"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "The Spicy Tuna Dragon",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 401,
+   "kj": null,
+   "p": 13.3,
+   "c": 46.9,
+   "f": 13.1,
+   "sat": 4.4,
+   "sugar": 15.5,
+   "fibre": 5,
+   "sodium": null,
+   "salt": 1.11,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame",
+    "fish"
+   ],
+   "may": [
+    "egg",
+    "peanut",
+    "treenut",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "The Super Salmon Light",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 421,
+   "kj": null,
+   "p": 17.4,
+   "c": 54.3,
+   "f": 17.4,
+   "sat": 2.3,
+   "sugar": 8.5,
+   "fibre": 4.6,
+   "sodium": null,
+   "salt": 2.91,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame",
+    "fish"
+   ],
+   "may": [
+    "peanut",
+    "treenut",
+    "shellfish"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "The Sushi Festival",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 564,
+   "kj": null,
+   "p": 21.3,
+   "c": 77.6,
+   "f": 16.1,
+   "sat": 3,
+   "sugar": 12,
+   "fibre": 5.8,
+   "sodium": null,
+   "salt": 2.88,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "fish"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "The Tuna & Salmon Sashimi",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 212,
+   "kj": null,
+   "p": 23.6,
+   "c": 3.7,
+   "f": 10.4,
+   "sat": 1.6,
+   "sugar": 1.7,
+   "fibre": 5.4,
+   "sodium": null,
+   "salt": 1.55,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "fish"
+   ],
+   "may": [
+    "sesame",
+    "shellfish"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "The Tuna & Salmon Sushi",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 269,
+   "kj": null,
+   "p": 14.9,
+   "c": 38.7,
+   "f": 4.7,
+   "sat": 0.9,
+   "sugar": 5.9,
+   "fibre": 2.7,
+   "sodium": null,
+   "salt": 2.14,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "fish"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "The Veggie Selection",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 655,
+   "kj": null,
+   "p": 12.1,
+   "c": 98,
+   "f": 20.4,
+   "sat": 5.3,
+   "sugar": 34.9,
+   "fibre": 8.1,
+   "sodium": null,
+   "salt": 7.15,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "peanut",
+    "treenut",
+    "fish",
+    "shellfish"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Tuna'salmon Bento Salad",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 604,
+   "kj": null,
+   "p": 25,
+   "c": 83.2,
+   "f": 17.7,
+   "sat": 3.4,
+   "sugar": 6,
+   "fibre": 4.7,
+   "sodium": null,
+   "salt": 1.57,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame",
+    "fish"
+   ],
+   "may": [
+    "peanut",
+    "treenut",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Vegetable Fusion Gyoza",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 234,
+   "kj": null,
+   "p": 7.7,
+   "c": 39.5,
+   "f": 4.1,
+   "sat": 0.6,
+   "sugar": 5.1,
+   "fibre": 4.4,
+   "sodium": null,
+   "salt": 2.42,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "egg",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Veggie Gyoza Noodle'bowl",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 593,
+   "kj": null,
+   "p": 19.5,
+   "c": 82.2,
+   "f": 16,
+   "sat": 2,
+   "sugar": 8.6,
+   "fibre": 9.6,
+   "sodium": null,
+   "salt": 2.57,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Veggie'balls & Coconut Soup",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 515,
+   "kj": null,
+   "p": 12.8,
+   "c": 37.1,
+   "f": 27.2,
+   "sat": 17.3,
+   "sugar": 10.4,
+   "fibre": 7,
+   "sodium": null,
+   "salt": 1.73,
+   "contains": [
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "gluten",
+    "milk",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Veggie'balls Teriyaki",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 623,
+   "kj": null,
+   "p": 20.3,
+   "c": 80.4,
+   "f": 16.2,
+   "sat": 1.7,
+   "sugar": 19.4,
+   "fibre": 8.8,
+   "sodium": null,
+   "salt": 2.0,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "milk",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Vitality Glass Noodle'bowl",
+   "cat": "main",
+   "serve": "1 serving",
+   "cal": 481,
+   "kj": null,
+   "p": 15.5,
+   "c": 56.8,
+   "f": 16.6,
+   "sat": 2.7,
+   "sugar": 6.6,
+   "fibre": 4.4,
+   "sodium": null,
+   "salt": 2.1,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Angelic Almonds",
+   "cat": "side",
+   "serve": "1 serving",
+   "cal": 261,
+   "kj": null,
+   "p": 5.4,
+   "c": 15,
+   "f": 19,
+   "sat": 6.8,
+   "sugar": 15,
+   "fibre": 2.1,
+   "sodium": null,
+   "salt": 0.13,
+   "contains": [
+    "milk",
+    "soy",
+    "treenut"
+   ],
+   "may": [
+    "sesame",
+    "peanut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Chinese Prawn Crackers",
+   "cat": "side",
+   "serve": "1 serving",
+   "cal": 97,
+   "kj": null,
+   "p": 0.2,
+   "c": 12,
+   "f": 5.3,
+   "sat": 0.4,
+   "sugar": 1.8,
+   "fibre": 0.2,
+   "sodium": null,
+   "salt": 0.46,
+   "contains": [
+    "shellfish"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Chocolate Edamame",
+   "cat": "side",
+   "serve": "1 serving",
+   "cal": 167,
+   "kj": null,
+   "p": 7.4,
+   "c": 14,
+   "f": 8.4,
+   "sat": 4.2,
+   "sugar": 9.8,
+   "fibre": 3.5,
+   "sodium": null,
+   "salt": 0.18,
+   "contains": [
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "milk",
+    "sesame",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Crispy Seaweed Thins Sea Salt",
+   "cat": "side",
+   "serve": "1 serving",
+   "cal": 23,
+   "kj": null,
+   "p": 1.4,
+   "c": 0.4,
+   "f": 1.5,
+   "sat": 0.2,
+   "sugar": 0.1,
+   "fibre": 1.2,
+   "sodium": null,
+   "salt": 0.24,
+   "contains": [],
+   "may": [
+    "soy",
+    "sesame"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Crispy Seaweed Thins Sweet Soy",
+   "cat": "side",
+   "serve": "1 serving",
+   "cal": 24,
+   "kj": null,
+   "p": 1.3,
+   "c": 0.5,
+   "f": 1.6,
+   "sat": 0.3,
+   "sugar": 0.1,
+   "fibre": 1.1,
+   "sodium": null,
+   "salt": 0.14,
+   "contains": [
+    "soy",
+    "sesame"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Crispy Seaweed Thins Wasabi",
+   "cat": "side",
+   "serve": "1 serving",
+   "cal": 22,
+   "kj": null,
+   "p": 1.6,
+   "c": 0.6,
+   "f": 1.4,
+   "sat": 0.2,
+   "sugar": 0,
+   "fibre": 0.7,
+   "sodium": null,
+   "salt": 0.33,
+   "contains": [
+    "sesame"
+   ],
+   "may": [
+    "soy"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Edamame",
+   "cat": "side",
+   "serve": "1 serving",
+   "cal": 132,
+   "kj": null,
+   "p": 10,
+   "c": 3.4,
+   "f": 4.9,
+   "sat": 0.6,
+   "sugar": 0.2,
+   "fibre": 17.4,
+   "sodium": null,
+   "salt": 2.35,
+   "contains": [
+    "soy"
+   ],
+   "may": [
+    "sesame"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Japanese Prawn Crackers",
+   "cat": "side",
+   "serve": "1 serving",
+   "cal": 97,
+   "kj": null,
+   "p": 0.5,
+   "c": 12,
+   "f": 5.3,
+   "sat": 0.4,
+   "sugar": 1.9,
+   "fibre": 0.5,
+   "sodium": null,
+   "salt": 0.58,
+   "contains": [
+    "milk",
+    "shellfish"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Lemon Baked Pistachios",
+   "cat": "side",
+   "serve": "1 serving",
+   "cal": 233,
+   "kj": null,
+   "p": 10,
+   "c": 2.2,
+   "f": 19,
+   "sat": 2.4,
+   "sugar": 2.2,
+   "fibre": 6.8,
+   "sodium": null,
+   "salt": 1.35,
+   "contains": [
+    "treenut"
+   ],
+   "may": [
+    "sesame",
+    "peanut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Original Prawn Crackers",
+   "cat": "side",
+   "serve": "1 serving",
+   "cal": 96,
+   "kj": null,
+   "p": 0.2,
+   "c": 12,
+   "f": 5,
+   "sat": 0.4,
+   "sugar": 1.3,
+   "fibre": 0.1,
+   "sodium": null,
+   "salt": 0.47,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "shellfish"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Sushi Style Nori'crunch",
+   "cat": "side",
+   "serve": "1 serving",
+   "cal": 80,
+   "kj": null,
+   "p": 1.4,
+   "c": 18,
+   "f": 0.1,
+   "sat": 0.1,
+   "sugar": 0.9,
+   "fibre": 0.2,
+   "sodium": null,
+   "salt": 0.38,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy"
+   ],
+   "may": [
+    "milk",
+    "egg",
+    "sesame",
+    "peanut",
+    "treenut",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Sweet Chilli Toasted Cashews",
+   "cat": "side",
+   "serve": "1 serving",
+   "cal": 236,
+   "kj": null,
+   "p": 7.2,
+   "c": 12,
+   "f": 17,
+   "sat": 3.4,
+   "sugar": 2.9,
+   "fibre": 1.2,
+   "sodium": null,
+   "salt": 0.71,
+   "contains": [
+    "treenut"
+   ],
+   "may": [
+    "sesame",
+    "peanut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Thai Prawn Crackers",
+   "cat": "side",
+   "serve": "1 serving",
+   "cal": 97,
+   "kj": null,
+   "p": 0.2,
+   "c": 12,
+   "f": 5.2,
+   "sat": 0.4,
+   "sugar": 1.7,
+   "fibre": 0.1,
+   "sodium": null,
+   "salt": 0.4,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy",
+    "shellfish"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Umami Roasted Almonds",
+   "cat": "side",
+   "serve": "1 serving",
+   "cal": 247,
+   "kj": null,
+   "p": 11,
+   "c": 3,
+   "f": 20,
+   "sat": 1.6,
+   "sugar": 1.9,
+   "fibre": 4.4,
+   "sodium": null,
+   "salt": 0.82,
+   "contains": [
+    "treenut"
+   ],
+   "may": [
+    "sesame",
+    "peanut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "60% Dark Chocolate Moons",
+   "cat": "sweet",
+   "serve": "1 serving",
+   "cal": 214,
+   "kj": null,
+   "p": 3,
+   "c": 17,
+   "f": 14,
+   "sat": 8.8,
+   "sugar": 15,
+   "fibre": 3.9,
+   "sodium": null,
+   "salt": 0,
+   "contains": [
+    "soy"
+   ],
+   "may": [
+    "sesame",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "About Half a Mango",
+   "cat": "sweet",
+   "serve": "1 serving",
+   "cal": 140,
+   "kj": null,
+   "p": 1.2,
+   "c": 31,
+   "f": 0.4,
+   "sat": 0.2,
+   "sugar": 24,
+   "fibre": 3.9,
+   "sodium": null,
+   "salt": 0,
+   "contains": [],
+   "may": [
+    "sesame",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Dark Chocolate Corn Cakes",
+   "cat": "sweet",
+   "serve": "1 serving",
+   "cal": 168,
+   "kj": null,
+   "p": 2.2,
+   "c": 22,
+   "f": 7.9,
+   "sat": 4.8,
+   "sugar": 10.6,
+   "fibre": 1.4,
+   "sodium": null,
+   "salt": 0.04,
+   "contains": [
+    "soy"
+   ],
+   "may": [
+    "milk",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Milk Chocolate Corn Cakes",
+   "cat": "sweet",
+   "serve": "1 serving",
+   "cal": 166,
+   "kj": null,
+   "p": 2.4,
+   "c": 22,
+   "f": 7.2,
+   "sat": 4.4,
+   "sugar": 10.4,
+   "fibre": 0.6,
+   "sodium": null,
+   "salt": 0.06,
+   "contains": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Salted Caramel Corn Cakes",
+   "cat": "sweet",
+   "serve": "1 serving",
+   "cal": 166,
+   "kj": null,
+   "p": 2.2,
+   "c": 22,
+   "f": 7.4,
+   "sat": 4.4,
+   "sugar": 10.4,
+   "fibre": 0.6,
+   "sodium": null,
+   "salt": 0.36,
+   "contains": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Salted Caramel Protein'balls",
+   "cat": "sweet",
+   "serve": "1 serving",
+   "cal": 182,
+   "kj": null,
+   "p": 10.4,
+   "c": 19,
+   "f": 7.8,
+   "sat": 1.2,
+   "sugar": 13.3,
+   "fibre": 2.8,
+   "sodium": null,
+   "salt": 0.1,
+   "contains": [
+    "treenut"
+   ],
+   "may": [
+    "milk",
+    "egg",
+    "peanut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Strawberry & Matcha Mochi",
+   "cat": "sweet",
+   "serve": "1 serving",
+   "cal": 194,
+   "kj": null,
+   "p": 1.8,
+   "c": 32,
+   "f": 6.2,
+   "sat": 4,
+   "sugar": 15.6,
+   "fibre": 0.4,
+   "sodium": null,
+   "salt": 0.05,
+   "contains": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Yuzu Cheesecake Mochi",
+   "cat": "sweet",
+   "serve": "1 serving",
+   "cal": 194,
+   "kj": null,
+   "p": 1.6,
+   "c": 32,
+   "f": 6.2,
+   "sat": 4,
+   "sugar": 18.4,
+   "fibre": 0.8,
+   "sodium": null,
+   "salt": 0.18,
+   "contains": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Americano",
+   "cat": "drink",
+   "serve": "1 serving",
+   "cal": 2,
+   "kj": null,
+   "p": 0.2,
+   "c": 0.6,
+   "f": 0.1,
+   "sat": 0.1,
+   "sugar": 0.6,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0,
+   "contains": [
+    "gluten",
+    "milk"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Coca Cola Zero Sugar",
+   "cat": "drink",
+   "serve": "1 serving",
+   "cal": 1,
+   "kj": null,
+   "p": 0,
+   "c": 0,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.66,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Cucumber & Mint Zen'water Can",
+   "cat": "drink",
+   "serve": "1 serving",
+   "cal": 3,
+   "kj": null,
+   "p": 0.5,
+   "c": 0.5,
+   "f": 0.5,
+   "sat": 0.1,
+   "sugar": 0.5,
+   "fibre": 0.5,
+   "sodium": null,
+   "salt": 0.01,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "English Breakfast Tea",
+   "cat": "drink",
+   "serve": "1 serving",
+   "cal": 3,
+   "kj": null,
+   "p": 0,
+   "c": 0.5,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0,
+   "contains": [
+    "gluten",
+    "milk"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Espresso",
+   "cat": "drink",
+   "serve": "1 serving",
+   "cal": 2,
+   "kj": null,
+   "p": 0.2,
+   "c": 0.6,
+   "f": 0.1,
+   "sat": 0.1,
+   "sugar": 0.6,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0,
+   "contains": [
+    "gluten",
+    "milk"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Fiery Ginger Kombucha",
+   "cat": "drink",
+   "serve": "1 serving",
+   "cal": 17,
+   "kj": null,
+   "p": 0,
+   "c": 3.3,
+   "f": 0,
+   "sat": 0,
+   "sugar": 3.3,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Ginger & Lime Zen'water Can",
+   "cat": "drink",
+   "serve": "1 serving",
+   "cal": 7,
+   "kj": null,
+   "p": 0.5,
+   "c": 0.5,
+   "f": 0.5,
+   "sat": 0.1,
+   "sugar": 0.5,
+   "fibre": 0.5,
+   "sodium": null,
+   "salt": 0.01,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Ginger Shot",
+   "cat": "drink",
+   "serve": "1 serving",
+   "cal": 28,
+   "kj": null,
+   "p": 0.5,
+   "c": 5.9,
+   "f": 0,
+   "sat": 0,
+   "sugar": 5.2,
+   "fibre": 0.8,
+   "sodium": null,
+   "salt": 0.01,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Green Tea",
+   "cat": "drink",
+   "serve": "1 serving",
+   "cal": 2,
+   "kj": null,
+   "p": 0.1,
+   "c": 0.5,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0.2,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Hot Mango Shot",
+   "cat": "drink",
+   "serve": "1 serving",
+   "cal": 29,
+   "kj": null,
+   "p": 0,
+   "c": 6,
+   "f": 0,
+   "sat": 0,
+   "sugar": 6,
+   "fibre": 1,
+   "sodium": null,
+   "salt": 0.01,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Iced Americano",
+   "cat": "drink",
+   "serve": "1 serving",
+   "cal": 1,
+   "kj": null,
+   "p": 0.1,
+   "c": 0.2,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0.2,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0,
+   "contains": [
+    "gluten",
+    "milk"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Jasmine Green Tea",
+   "cat": "drink",
+   "serve": "1 serving",
+   "cal": 2,
+   "kj": null,
+   "p": 0.1,
+   "c": 0.5,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0.1,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Lemon & Yuzu Zen'water Can",
+   "cat": "drink",
+   "serve": "1 serving",
+   "cal": 6,
+   "kj": null,
+   "p": 0.5,
+   "c": 0.5,
+   "f": 0.5,
+   "sat": 0.1,
+   "sugar": 0.5,
+   "fibre": 0.5,
+   "sodium": null,
+   "salt": 0.01,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Lemon Bubble Tea",
+   "cat": "drink",
+   "serve": "1 serving",
+   "cal": 16,
+   "kj": null,
+   "p": 0,
+   "c": 4.5,
+   "f": 0,
+   "sat": 0,
+   "sugar": 3,
+   "fibre": 0.15,
+   "sodium": null,
+   "salt": 0,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Lychee Rose Bubble Tea",
+   "cat": "drink",
+   "serve": "1 serving",
+   "cal": 17,
+   "kj": null,
+   "p": 0,
+   "c": 7,
+   "f": 0,
+   "sat": 0,
+   "sugar": 5,
+   "fibre": 0.15,
+   "sodium": null,
+   "salt": 0,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Mango Passionfruit Bubble Tea",
+   "cat": "drink",
+   "serve": "1 serving",
+   "cal": 22.3,
+   "kj": null,
+   "p": 0,
+   "c": 5.3,
+   "f": 0,
+   "sat": 0,
+   "sugar": 4.8,
+   "fibre": 0.18,
+   "sodium": null,
+   "salt": 0,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Peach & Lychee Zen'water Can",
+   "cat": "drink",
+   "serve": "1 serving",
+   "cal": 9,
+   "kj": null,
+   "p": 0.5,
+   "c": 0.5,
+   "f": 0.5,
+   "sat": 0.1,
+   "sugar": 0.5,
+   "fibre": 0.5,
+   "sodium": null,
+   "salt": 0.01,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Peppermint Tea",
+   "cat": "drink",
+   "serve": "1 serving",
+   "cal": 3,
+   "kj": null,
+   "p": 0.08,
+   "c": 0.72,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0.06,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.06,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Raspberry & Dragon Fruit Zen'water Can",
+   "cat": "drink",
+   "serve": "1 serving",
+   "cal": 10,
+   "kj": null,
+   "p": 0.5,
+   "c": 0.5,
+   "f": 0.5,
+   "sat": 0.1,
+   "sugar": 0.5,
+   "fibre": 0.5,
+   "sodium": null,
+   "salt": 0.01,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Raspberry & Elderflower Kombucha",
+   "cat": "drink",
+   "serve": "1 serving",
+   "cal": 18,
+   "kj": null,
+   "p": 0,
+   "c": 3.5,
+   "f": 0,
+   "sat": 0,
+   "sugar": 3.4,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Sparkling Refill Flask",
+   "cat": "drink",
+   "serve": "1 serving",
+   "cal": 0,
+   "kj": null,
+   "p": 0,
+   "c": 0,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "itsu Sparkling Water",
+   "cat": "drink",
+   "serve": "1 serving",
+   "cal": 0,
+   "kj": null,
+   "p": 0,
+   "c": 0,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  }
+ ]
+}

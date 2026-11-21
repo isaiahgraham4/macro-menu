@@ -17,6 +17,7 @@ Allergens use the app's keys (Diet.swift); meats come from the item's name, and 
 Run: python3 ios/Scripts/us/build-us-menu.py
 """
 import hashlib
+import importlib.util
 import math
 import json
 import pathlib
@@ -494,6 +495,78 @@ def popeyes():
 
 
 CHAIN_EXTRA = {}
+# Chains saved in the shared format (intl/SOURCE-FORMAT.md) by their own intl/<id>-fetch.py, read by intl/build-intl-menu.py's generic().
+SHARED = ['us-arbys', 'us-fiveguys', 'us-deltaco', 'us-epl', 'us-jitb']
+
+
+FG_TOPPINGS = {'Bacon (2 pieces)': 'Add Bacon', 'Cheese (1 slice)': 'Add Cheese', 'Hamburger Patty': 'Add Patty', 'Grilled Mushrooms': 'Grilled Mushrooms',
+               'Onions / Grilled Onions': 'Grilled Onions', 'Green Peppers': 'Green Peppers', 'Jalapeño Peppers': 'Jalapeño Peppers', 'Lettuce': 'Lettuce',
+               'Pickles': 'Pickles', 'Tomatoes': 'Tomatoes', 'Mayonnaise': 'Mayonnaise', 'Ketchup': 'Ketchup', 'Mustard': 'Mustard', 'Relish': 'Relish',
+               'BBQ Sauce': 'BBQ Sauce', 'A.1. Sauce': 'A.1. Sauce', 'Hot Sauce': 'Hot Sauce'}
+FG_SHAKES = {'Chocolate': 'Chocolate', 'Coffee': 'Coffee', 'Strawberry': 'Strawberry', 'Banana Marinade': 'Banana', 'Salted Caramel': 'Salted Caramel',
+             'Peanut Butter': 'Peanut Butter', 'Oreo Cookie Pieces': 'Oreo', 'Blackberry Sauce': 'Blackberry', 'Bacon (2 pieces)': 'Bacon'}
+
+
+def fiveguys(intl, rows):
+    """Five Guys US publishes parts. Like the Australian menu: burgers and dogs as ordered (bun, patties, cheese, bacon), one row per milkshake
+    flavour (vanilla base plus the mix-in), toppings as add-ons, and the loose parts (buns, sausage, mix-ins) left out."""
+    by = {r['name'].removeprefix('Dipping Sauce: '): r for r in rows}
+
+    def made(name, cat, parts, serve):
+        rs = [by[n] for n in parts]
+        total = lambda k: round(sum(r[k] for r in rs), 1)
+        nut = {k: round(sum(r.get('nut', {}).get(k) or 0 for r in rs), 1) for k in ('sat', 'sugar', 'fibre', 'sodium')}
+        al = sorted({a for r in rs for a in r.get('diet', {}).get('al', [])})
+        may = sorted({a for r in rs for a in r.get('diet', {}).get('may', [])} - set(al))
+        out = intl.row('us-fiveguys', name, cat, total('p'), total('c'), total('f'), serve, nut, al, may or None, cal=total('cal'), kj=total('kj'))
+        meat = sorted({m for r in rs for m in r.get('diet', {}).get('meat') or []})
+        out.setdefault('diet', {'src': 'allergen table'})['meat'] = meat
+        return out
+
+    # Kept as listed: the three plain mains, fries, peanuts, eggs and the drinks other than shakes. The rest are parts.
+    out = [r for r in rows if r['cat'] in ('main', 'breakfast') or r['cat'] == 'side' and re.search(r'Fries|Peanuts', r['name'])
+           or r['cat'] == 'drink' and 'Milkshake' not in r['name']]
+    for (name, base) in (('Hamburger', 'Hamburger'), ('Little Hamburger', 'Little Hamburger'), ('Hot Dog', 'Hot Dog')):
+        double = name == 'Hamburger'
+        cheese = ['Cheese (1 slice)'] * (2 if double else 1)
+        little = 'Little ' if name.startswith('Little') else ''
+        kind = 'Dog' if 'Dog' in name else 'Burger'
+        noun = 'Cheese Dog' if kind == 'Dog' else f'{little}Cheeseburger'
+        out += [made(noun, 'main', [base] + cheese, 'no toppings'),
+                made(f'{little}Bacon {kind}', 'main', [base, 'Bacon (2 pieces)'], 'no toppings'),
+                made(noun.replace('Cheese', 'Bacon Cheese', 1) if kind == 'Dog' else f'{little}Bacon Cheeseburger', 'main', [base, 'Bacon (2 pieces)'] + cheese, 'no toppings')]
+    for size, base, on in (('', 'Vanilla Milkshake (regular, no mix-ins)', 'on a shake'), (' (mini)', 'Vanilla Milkshake (mini, no mix-ins)', 'on a mini shake')):
+        by[f'Vanilla Milkshake{size}'] = dict(by[base])
+        out.append(made(f'Vanilla Milkshake{size}', 'drink', [base], 'mini' if size else 'regular'))
+        for mix, flavour in FG_SHAKES.items():
+            out.append(made(f'{flavour} Milkshake{size}', 'drink', [base, f'{mix} ({on})'], 'mini' if size else 'regular'))
+    for part, name in FG_TOPPINGS.items():
+        r = dict(by[part], cat='extra', name=name)
+        r['id'] = f"us-fiveguys:{slug('add ' + name if not name.startswith('Add') else name)}"
+        out.append(r)
+    out += [r for r in rows if r['name'].startswith('Dipping Sauce:') and re.search(r'Cheese Sauce|Five Guys Sauce|Fry Sauce', r['name'])]
+    return out
+
+
+def shared_chains():
+    """(chain entry, rows, checked) for each SHARED chain, less rows the international build would leave out as misprinted."""
+    spec = importlib.util.spec_from_file_location('intlmenu', HERE.parent / 'intl' / 'build-intl-menu.py')
+    intl = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(intl)
+    out = []
+    for chain in SHARED:
+        meta, read = intl.generic_chain(chain)
+        rows = []
+        for r in read():
+            why = intl.misprinted(r)
+            if why:
+                print(f'  {chain}: left out {r["name"]}: {why}')
+            else:
+                rows.append(r)
+        if chain == 'us-fiveguys':
+            rows = fiveguys(intl, rows)
+        out.append((meta, rows, intl.CHECKED[chain]))
+    return out
 
 
 def main():
@@ -503,6 +576,10 @@ def main():
         rows, when = fn()
         foods += rows
         checked[chain] = datetime.strptime(when, '%Y-%m-%d').strftime('%-d %b %Y')
+    shared = shared_chains()
+    for meta, rows, when in shared:
+        foods += rows
+        checked[meta['id']] = datetime.strptime(when, '%Y-%m-%d').strftime('%-d %b %Y')
     ids = [f['id'] for f in foods]
     dupes = {i for i in ids if ids.count(i) > 1}
     if dupes:
@@ -510,7 +587,8 @@ def main():
     for f in foods:
         for k in f.get('diet', {}).get('al', []) + f.get('diet', {}).get('may', []):
             assert k in ALLERGENS, (f['id'], k)
-    chains = [dict(c, src=c['src'].format(checked=checked[c['id']], **CHAIN_EXTRA.get(c['id'], {}))) if 'src' in c else c for c in CHAINS]
+    chains = [dict(c, src=c['src'].format(checked=checked[c['id']], **CHAIN_EXTRA.get(c['id'], {}))) if 'src' in c else c
+              for c in CHAINS + [meta for meta, _, _ in shared]]
     revision = hashlib.sha256(json.dumps({'chains': chains, 'foods': foods}, sort_keys=True).encode()).hexdigest()[:16]
     published = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%S.000Z')
     try:

@@ -1,0 +1,5049 @@
+{
+ "chain": "ca-aw",
+ "name": "A&W",
+ "how": "Official menu nutrition feed",
+ "url": "https://web.aw.ca/en/our-menu",
+ "src": "A&W Canada menu and nutrition pages (feed behind web.aw.ca/en/our-menu), per item and per size as listed. Kids' packs are split into their parts (burger or strips, apple slices, MadeGood bar, Milk2Go). Left out: 7 rows with no nutrition figures (plush toys, table spreads) or whose energy does not add up (A&W Root Beer Shake (small) (energy does not add up); Rodeo Rooty (no figures); Paddling Rooty (no figures); Hiking Rooty (no figures); Poutine Rooty (no figures); Fishing Rooty (no figures); Kraft Table Spreads (no figures)). Allergens from A&W's per-ingredient allergen table.",
+ "checked": "2026-11-22",
+ "energy": "cal",
+ "halal": false,
+ "items": [
+  {
+   "name": "Bacon & Egger",
+   "cat": "breakfast",
+   "serve": "1 serving (139 g)",
+   "cal": 400,
+   "kj": null,
+   "p": 18,
+   "c": 30,
+   "f": 30,
+   "sat": 9,
+   "sugar": 2,
+   "fibre": 1,
+   "sodium": 600,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "Bacon & Egger (English Muffin)",
+   "cat": "breakfast",
+   "serve": "1 serving (144 g)",
+   "cal": 380,
+   "kj": null,
+   "p": 18,
+   "c": 29,
+   "f": 21,
+   "sat": 8,
+   "sugar": 1,
+   "fibre": 1,
+   "sodium": 550,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "Sausage & Egger",
+   "cat": "breakfast",
+   "serve": "1 serving (185 g)",
+   "cal": 530,
+   "kj": null,
+   "p": 24,
+   "c": 34,
+   "f": 34,
+   "sat": 12,
+   "sugar": 5,
+   "fibre": 1,
+   "sodium": 760,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "Sausage & Egger (English Muffin)",
+   "cat": "breakfast",
+   "serve": "1 serving (190 g)",
+   "cal": 510,
+   "kj": null,
+   "p": 24,
+   "c": 31,
+   "f": 32,
+   "sat": 12,
+   "sugar": 2,
+   "fibre": 1,
+   "sodium": 710,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "Cheese & Egger",
+   "cat": "breakfast",
+   "serve": "1 serving (130 g)",
+   "cal": 360,
+   "kj": null,
+   "p": 14,
+   "c": 30,
+   "f": 25,
+   "sat": 7,
+   "sugar": 2,
+   "fibre": 1,
+   "sodium": 520,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Cheese & Egger (English Muffin)",
+   "cat": "breakfast",
+   "serve": "1 serving (135 g)",
+   "cal": 340,
+   "kj": null,
+   "p": 15,
+   "c": 29,
+   "f": 18,
+   "sat": 6,
+   "sugar": 1,
+   "fibre": 1,
+   "sodium": 470,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Sausage & Cheddar",
+   "cat": "breakfast",
+   "serve": "1 serving (138 g)",
+   "cal": 460,
+   "kj": null,
+   "p": 17,
+   "c": 33,
+   "f": 29,
+   "sat": 11,
+   "sugar": 5,
+   "fibre": 1,
+   "sodium": 700,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "Sausage & Cheddar (English Muffin)",
+   "cat": "breakfast",
+   "serve": "1 serving (138 g)",
+   "cal": 440,
+   "kj": null,
+   "p": 17,
+   "c": 30,
+   "f": 27,
+   "sat": 10,
+   "sugar": 2,
+   "fibre": 1,
+   "sodium": 670,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "Chicken & Cheddar",
+   "cat": "breakfast",
+   "serve": "1 serving (140 g)",
+   "cal": 410,
+   "kj": null,
+   "p": 14,
+   "c": 35,
+   "f": 30,
+   "sat": 4,
+   "sugar": 3,
+   "fibre": 2,
+   "sodium": 660,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "chicken"
+   ]
+  },
+  {
+   "name": "Spicy Chipotle Chicken & Cheddar",
+   "cat": "breakfast",
+   "serve": "1 serving (140 g)",
+   "cal": 410,
+   "kj": null,
+   "p": 14,
+   "c": 35,
+   "f": 25,
+   "sat": 5,
+   "sugar": 4,
+   "fibre": 2,
+   "sodium": 630,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "sesame",
+    "fish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "chicken"
+   ]
+  },
+  {
+   "name": "Classic Bacon & Eggs",
+   "cat": "breakfast",
+   "serve": "1 serving (217 g)",
+   "cal": 550,
+   "kj": null,
+   "p": 30,
+   "c": 43,
+   "f": 27,
+   "sat": 9,
+   "sugar": 2,
+   "fibre": 4,
+   "sodium": 820,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg",
+    "soy",
+    "peanut"
+   ],
+   "may": [
+    "milk",
+    "sesame",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "All-Canadian Special",
+   "cat": "breakfast",
+   "serve": "1 serving (347 g)",
+   "cal": 860,
+   "kj": null,
+   "p": 34,
+   "c": 55,
+   "f": 56,
+   "sat": 15,
+   "sugar": 5,
+   "fibre": 4,
+   "sodium": 1250,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "Breakfast Wrap",
+   "cat": "breakfast",
+   "serve": "1 serving (95 g)",
+   "cal": 230,
+   "kj": null,
+   "p": 13,
+   "c": 18,
+   "f": 12,
+   "sat": 5,
+   "sugar": 2,
+   "fibre": 1,
+   "sodium": 400,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "fish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "Pancakes with Syrup (3 pieces)",
+   "cat": "breakfast",
+   "serve": "1 serving (202 g)",
+   "cal": 590,
+   "kj": null,
+   "p": 9,
+   "c": 90,
+   "f": 17,
+   "sat": 3,
+   "sugar": 51,
+   "fibre": 2,
+   "sodium": 720,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Hash Brown",
+   "cat": "breakfast",
+   "serve": "1 serving (70 g)",
+   "cal": 180,
+   "kj": null,
+   "p": 2,
+   "c": 18,
+   "f": 11,
+   "sat": 0.5,
+   "sugar": 0,
+   "fibre": 2,
+   "sodium": 270,
+   "salt": null,
+   "contains": [],
+   "may": [
+    "gluten",
+    "wheat",
+    "milk",
+    "soy"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Teen Burger",
+   "cat": "main",
+   "serve": "1 serving (250 g)",
+   "cal": 500,
+   "kj": null,
+   "p": 27,
+   "c": 36,
+   "f": 30,
+   "sat": 11,
+   "sugar": 8,
+   "fibre": 2,
+   "sodium": 910,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef",
+    "pork"
+   ]
+  },
+  {
+   "name": "Teen Burger (lettuce-wrapped)",
+   "cat": "main",
+   "serve": "1 serving (200 g)",
+   "cal": 340,
+   "kj": null,
+   "p": 20,
+   "c": 9,
+   "f": 22,
+   "sat": 10,
+   "sugar": 6,
+   "fibre": 0,
+   "sodium": 680,
+   "salt": null,
+   "contains": [
+    "milk",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "wheat",
+    "sesame",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef",
+    "pork"
+   ]
+  },
+  {
+   "name": "Mozza Burger",
+   "cat": "main",
+   "serve": "1 serving (218 g)",
+   "cal": 620,
+   "kj": null,
+   "p": 27,
+   "c": 37,
+   "f": 39,
+   "sat": 13,
+   "sugar": 9,
+   "fibre": 1,
+   "sodium": 900,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "peanut",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef",
+    "pork"
+   ]
+  },
+  {
+   "name": "Mozza Burger (lettuce-wrapped)",
+   "cat": "main",
+   "serve": "1 serving (188 g)",
+   "cal": 460,
+   "kj": null,
+   "p": 22,
+   "c": 7,
+   "f": 36,
+   "sat": 12.5,
+   "sugar": 5,
+   "fibre": 0,
+   "sodium": 570,
+   "salt": null,
+   "contains": [
+    "milk",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "wheat",
+    "sesame",
+    "peanut",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef",
+    "pork"
+   ]
+  },
+  {
+   "name": "Double Teen Burger",
+   "cat": "main",
+   "serve": "1 serving (340 g)",
+   "cal": 680,
+   "kj": null,
+   "p": 43,
+   "c": 36,
+   "f": 48,
+   "sat": 19,
+   "sugar": 8,
+   "fibre": 2,
+   "sodium": 990,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef",
+    "pork"
+   ]
+  },
+  {
+   "name": "Double Teen Burger (lettuce-wrapped)",
+   "cat": "main",
+   "serve": "1 serving (260 g)",
+   "cal": 520,
+   "kj": null,
+   "p": 34,
+   "c": 9,
+   "f": 35,
+   "sat": 16,
+   "sugar": 6,
+   "fibre": 0,
+   "sodium": 860,
+   "salt": null,
+   "contains": [
+    "milk",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "wheat",
+    "sesame",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef",
+    "pork"
+   ]
+  },
+  {
+   "name": "Double Mozza Burger",
+   "cat": "main",
+   "serve": "1 serving (278 g)",
+   "cal": 800,
+   "kj": null,
+   "p": 41,
+   "c": 37,
+   "f": 52,
+   "sat": 19,
+   "sugar": 8,
+   "fibre": 1,
+   "sodium": 950,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "peanut",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef",
+    "pork"
+   ]
+  },
+  {
+   "name": "Double Mozza Burger (lettuce-wrapped)",
+   "cat": "main",
+   "serve": "1 serving (248 g)",
+   "cal": 640,
+   "kj": null,
+   "p": 36,
+   "c": 7,
+   "f": 49,
+   "sat": 18.5,
+   "sugar": 5,
+   "fibre": 0,
+   "sodium": 750,
+   "salt": null,
+   "contains": [
+    "milk",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "wheat",
+    "sesame",
+    "peanut",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef",
+    "pork"
+   ]
+  },
+  {
+   "name": "Double Buddy Burger",
+   "cat": "main",
+   "serve": "1 serving (176 g)",
+   "cal": 435,
+   "kj": null,
+   "p": 21,
+   "c": 35,
+   "f": 22,
+   "sat": 9,
+   "sugar": 7,
+   "fibre": 1,
+   "sodium": 730,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "milk",
+    "sesame",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Double Buddy Burger (lettuce-wrapped)",
+   "cat": "main",
+   "serve": "1 serving (166 g)",
+   "cal": 270,
+   "kj": null,
+   "p": 17,
+   "c": 11,
+   "f": 17,
+   "sat": 7,
+   "sugar": 7,
+   "fibre": 1,
+   "sodium": 610,
+   "salt": null,
+   "contains": [
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "wheat",
+    "milk",
+    "sesame",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Double Buddy Burger (with cheese)",
+   "cat": "main",
+   "serve": "1 serving (190 g)",
+   "cal": 460,
+   "kj": null,
+   "p": 24,
+   "c": 35,
+   "f": 22,
+   "sat": 10,
+   "sugar": 9,
+   "fibre": 2,
+   "sodium": 900,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "sesame",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Double Buddy Burger (with cheese, lettuce-wrapped)",
+   "cat": "main",
+   "serve": "1 serving (180 g)",
+   "cal": 330,
+   "kj": null,
+   "p": 20,
+   "c": 11,
+   "f": 20,
+   "sat": 9.5,
+   "sugar": 7,
+   "fibre": 1,
+   "sodium": 710,
+   "salt": null,
+   "contains": [
+    "milk",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "wheat",
+    "sesame",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Mama Burger",
+   "cat": "main",
+   "serve": "1 serving (170 g)",
+   "cal": 400,
+   "kj": null,
+   "p": 20,
+   "c": 35,
+   "f": 24,
+   "sat": 8,
+   "sugar": 7,
+   "fibre": 1,
+   "sodium": 870,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "milk",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Mama Burger (with cheese)",
+   "cat": "main",
+   "serve": "1 serving (184 g)",
+   "cal": 460,
+   "kj": null,
+   "p": 24,
+   "c": 34,
+   "f": 29,
+   "sat": 10,
+   "sugar": 6,
+   "fibre": 2,
+   "sodium": 940,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Mama Burger (lettuce-wrapped)",
+   "cat": "main",
+   "serve": "1 serving (155 g)",
+   "cal": 250,
+   "kj": null,
+   "p": 15,
+   "c": 8,
+   "f": 17,
+   "sat": 6.5,
+   "sugar": 5,
+   "fibre": 0,
+   "sodium": 500,
+   "salt": null,
+   "contains": [
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "wheat",
+    "milk",
+    "sesame",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Papa Burger",
+   "cat": "main",
+   "serve": "1 serving (230 g)",
+   "cal": 580,
+   "kj": null,
+   "p": 40,
+   "c": 35,
+   "f": 40,
+   "sat": 13,
+   "sugar": 7,
+   "fibre": 1,
+   "sodium": 950,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "milk",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Papa Burger (with cheese)",
+   "cat": "main",
+   "serve": "1 serving (244 g)",
+   "cal": 640,
+   "kj": null,
+   "p": 40,
+   "c": 34,
+   "f": 42,
+   "sat": 16,
+   "sugar": 6,
+   "fibre": 2,
+   "sodium": 960,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Papa Burger (lettuce-wrapped)",
+   "cat": "main",
+   "serve": "1 serving (215 g)",
+   "cal": 430,
+   "kj": null,
+   "p": 29,
+   "c": 8,
+   "f": 30,
+   "sat": 12.5,
+   "sugar": 5,
+   "fibre": 0,
+   "sodium": 680,
+   "salt": null,
+   "contains": [
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "wheat",
+    "milk",
+    "sesame",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Papa Burger (with cheese, lettuce-wrapped)",
+   "cat": "main",
+   "serve": "1 serving (229 g)",
+   "cal": 490,
+   "kj": null,
+   "p": 32,
+   "c": 8,
+   "f": 33,
+   "sat": 15,
+   "sugar": 5,
+   "fibre": 0,
+   "sodium": 780,
+   "salt": null,
+   "contains": [
+    "milk",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "wheat",
+    "sesame",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Grandpa Burger",
+   "cat": "main",
+   "serve": "1 serving (290 g)",
+   "cal": 760,
+   "kj": null,
+   "p": 53,
+   "c": 35,
+   "f": 58,
+   "sat": 21,
+   "sugar": 7,
+   "fibre": 2,
+   "sodium": 1000,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "milk",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Grandpa Burger (with cheese)",
+   "cat": "main",
+   "serve": "1 serving (304 g)",
+   "cal": 820,
+   "kj": null,
+   "p": 56,
+   "c": 34,
+   "f": 54,
+   "sat": 22,
+   "sugar": 6,
+   "fibre": 2,
+   "sodium": 1010,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Grandpa Burger (lettuce-wrapped)",
+   "cat": "main",
+   "serve": "1 serving (275 g)",
+   "cal": 610,
+   "kj": null,
+   "p": 43,
+   "c": 8,
+   "f": 43,
+   "sat": 18.5,
+   "sugar": 5,
+   "fibre": 0,
+   "sodium": 860,
+   "salt": null,
+   "contains": [
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "wheat",
+    "milk",
+    "sesame",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Grandpa Burger (with cheese, lettuce-wrapped)",
+   "cat": "main",
+   "serve": "1 serving (289 g)",
+   "cal": 670,
+   "kj": null,
+   "p": 46,
+   "c": 8,
+   "f": 46,
+   "sat": 21,
+   "sugar": 5,
+   "fibre": 0,
+   "sodium": 960,
+   "salt": null,
+   "contains": [
+    "milk",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "wheat",
+    "sesame",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Cheddar Bacon Uncle Burger",
+   "cat": "main",
+   "serve": "1 serving (287 g)",
+   "cal": 740,
+   "kj": null,
+   "p": 38,
+   "c": 38,
+   "f": 53,
+   "sat": 20,
+   "sugar": 7,
+   "fibre": 3,
+   "sodium": 1095,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef",
+    "pork"
+   ]
+  },
+  {
+   "name": "Baby Burger",
+   "cat": "main",
+   "serve": "1 serving (96 g)",
+   "cal": 240,
+   "kj": null,
+   "p": 12,
+   "c": 29,
+   "f": 11,
+   "sat": 4,
+   "sugar": 4,
+   "fibre": 1,
+   "sodium": 540,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy"
+   ],
+   "may": [
+    "milk",
+    "egg",
+    "sesame",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Baby Burger (with cheese)",
+   "cat": "main",
+   "serve": "1 serving (110 g)",
+   "cal": 298,
+   "kj": null,
+   "p": 13,
+   "c": 29,
+   "f": 16,
+   "sat": 7,
+   "sugar": 4,
+   "fibre": 1,
+   "sodium": 635,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Baby Burger (lettuce-wrapped)",
+   "cat": "main",
+   "serve": "1 serving (86 g)",
+   "cal": 110,
+   "kj": null,
+   "p": 8,
+   "c": 4,
+   "f": 6,
+   "sat": 3,
+   "sugar": 3,
+   "fibre": 0,
+   "sodium": 230,
+   "salt": null,
+   "contains": [
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "sesame",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Baby Burger (with cheese, lettuce-wrapped)",
+   "cat": "main",
+   "serve": "1 serving (100 g)",
+   "cal": 170,
+   "kj": null,
+   "p": 11,
+   "c": 4,
+   "f": 9,
+   "sat": 5.5,
+   "sugar": 3,
+   "fibre": 0,
+   "sodium": 330,
+   "salt": null,
+   "contains": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "wheat",
+    "egg",
+    "sesame",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Chubby Chicken Cruncher",
+   "cat": "main",
+   "serve": "1 serving (224 g)",
+   "cal": 630,
+   "kj": null,
+   "p": 26,
+   "c": 60,
+   "f": 29,
+   "sat": 3,
+   "sugar": 6,
+   "fibre": 2,
+   "sodium": 1430,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "milk",
+    "sesame",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "chicken"
+   ]
+  },
+  {
+   "name": "Nashville Hot Chicken Cruncher",
+   "cat": "main",
+   "serve": "1 serving (260 g)",
+   "cal": 720,
+   "kj": null,
+   "p": 26,
+   "c": 60,
+   "f": 41,
+   "sat": 5,
+   "sugar": 6,
+   "fibre": 2,
+   "sodium": 1700,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "milk",
+    "sesame",
+    "treenut",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "chicken"
+   ]
+  },
+  {
+   "name": "Nashville Hot Chicken Cruncher (lettuce-wrapped)",
+   "cat": "main",
+   "serve": "1 serving (190 g)",
+   "cal": 550,
+   "kj": null,
+   "p": 20,
+   "c": 30,
+   "f": 41,
+   "sat": 5,
+   "sugar": 1,
+   "fibre": 2,
+   "sodium": 1440,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "milk",
+    "sesame",
+    "treenut",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "chicken"
+   ]
+  },
+  {
+   "name": "BLT Chicken Cruncher",
+   "cat": "main",
+   "serve": "1 serving (246 g)",
+   "cal": 690,
+   "kj": null,
+   "p": 30,
+   "c": 60,
+   "f": 33,
+   "sat": 5,
+   "sugar": 7,
+   "fibre": 2,
+   "sodium": 1630,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "milk",
+    "sesame",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "chicken",
+    "pork"
+   ]
+  },
+  {
+   "name": "Chubby Chicken Burger",
+   "cat": "main",
+   "serve": "1 serving (190 g)",
+   "cal": 490,
+   "kj": null,
+   "p": 21,
+   "c": 44,
+   "f": 27,
+   "sat": 3,
+   "sugar": 4,
+   "fibre": 2,
+   "sodium": 1100,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "milk",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "chicken"
+   ]
+  },
+  {
+   "name": "Chubby Chicken Burger (lettuce-wrapped)",
+   "cat": "main",
+   "serve": "1 serving (195 g)",
+   "cal": 370,
+   "kj": null,
+   "p": 17,
+   "c": 17,
+   "f": 27,
+   "sat": 2,
+   "sugar": 3,
+   "fibre": 1,
+   "sodium": 760,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg"
+   ],
+   "may": [
+    "milk",
+    "soy",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "chicken"
+   ]
+  },
+  {
+   "name": "Spicy Chipotle Chicken Burger",
+   "cat": "main",
+   "serve": "1 serving (225 g)",
+   "cal": 550,
+   "kj": null,
+   "p": 20,
+   "c": 47,
+   "f": 26,
+   "sat": 2,
+   "sugar": 6,
+   "fibre": 3,
+   "sodium": 870,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "milk",
+    "fish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "chicken"
+   ]
+  },
+  {
+   "name": "BLT Chicken Burger",
+   "cat": "main",
+   "serve": "1 serving (246 g)",
+   "cal": 600,
+   "kj": null,
+   "p": 25,
+   "c": 50,
+   "f": 35,
+   "sat": 4,
+   "sugar": 6,
+   "fibre": 3,
+   "sodium": 1050,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "milk",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "chicken",
+    "pork"
+   ]
+  },
+  {
+   "name": "Double Chicken Buddy Burger",
+   "cat": "main",
+   "serve": "1 serving (184 g)",
+   "cal": 480,
+   "kj": null,
+   "p": 18,
+   "c": 44,
+   "f": 25,
+   "sat": 4,
+   "sugar": 5,
+   "fibre": 3,
+   "sodium": 970,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "chicken"
+   ]
+  },
+  {
+   "name": "Spicy Habanero Chicken Burger",
+   "cat": "main",
+   "serve": "1 serving (225 g)",
+   "cal": 550,
+   "kj": null,
+   "p": 20,
+   "c": 47,
+   "f": 26,
+   "sat": 2,
+   "sugar": 6,
+   "fibre": 3,
+   "sodium": 870,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "milk",
+    "treenut",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "chicken"
+   ]
+  },
+  {
+   "name": "Spicy Habanero Chicken Burger (lettuce-wrapped)",
+   "cat": "main",
+   "serve": "1 serving (195 g)",
+   "cal": 370,
+   "kj": null,
+   "p": 17,
+   "c": 17,
+   "f": 27,
+   "sat": 2,
+   "sugar": 3,
+   "fibre": 1,
+   "sodium": 760,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "milk",
+    "sesame",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "chicken"
+   ]
+  },
+  {
+   "name": "Chicken Strips (1 piece)",
+   "cat": "main",
+   "serve": "1 serving (43 g)",
+   "cal": 100,
+   "kj": null,
+   "p": 6,
+   "c": 8,
+   "f": 5,
+   "sat": 0,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": 235,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ],
+   "vg": null,
+   "meat": [
+    "chicken"
+   ]
+  },
+  {
+   "name": "Chicken Strips (3 pieces)",
+   "cat": "main",
+   "serve": "1 serving (150 g)",
+   "cal": 300,
+   "kj": null,
+   "p": 19.5,
+   "c": 21,
+   "f": 15,
+   "sat": 1,
+   "sugar": 1.5,
+   "fibre": 2,
+   "sodium": 705,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ],
+   "vg": null,
+   "meat": [
+    "chicken"
+   ]
+  },
+  {
+   "name": "Chicken Strips (5 pieces)",
+   "cat": "main",
+   "serve": "1 serving (250 g)",
+   "cal": 500,
+   "kj": null,
+   "p": 32.5,
+   "c": 35,
+   "f": 25,
+   "sat": 2.5,
+   "sugar": 2.5,
+   "fibre": 3,
+   "sodium": 1175,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ],
+   "vg": null,
+   "meat": [
+    "chicken"
+   ]
+  },
+  {
+   "name": "Masala Veggie Burger",
+   "cat": "main",
+   "serve": "1 serving (240 g)",
+   "cal": 490,
+   "kj": null,
+   "p": 15,
+   "c": 60,
+   "f": 19,
+   "sat": 7,
+   "sugar": 6,
+   "fibre": 5,
+   "sodium": 890,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "egg",
+    "treenut",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Crispy Veggie Burger",
+   "cat": "main",
+   "serve": "1 serving (240 g)",
+   "cal": 570,
+   "kj": null,
+   "p": 15,
+   "c": 60,
+   "f": 28,
+   "sat": 8,
+   "sugar": 6,
+   "fibre": 5,
+   "sodium": 830,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "treenut",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "A&W Plant-Based Burger",
+   "cat": "main",
+   "serve": "1 serving (231 g)",
+   "cal": 500,
+   "kj": null,
+   "p": 21,
+   "c": 36,
+   "f": 30,
+   "sat": 5,
+   "sugar": 16,
+   "fibre": 3,
+   "sodium": 1260,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "milk",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Fish Sandwich",
+   "cat": "main",
+   "serve": "1 serving (220 g)",
+   "cal": 600,
+   "kj": null,
+   "p": 17,
+   "c": 56,
+   "f": 33,
+   "sat": 4,
+   "sugar": 9,
+   "fibre": 2,
+   "sodium": 933,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg",
+    "soy",
+    "fish"
+   ],
+   "may": [
+    "milk",
+    "sesame",
+    "peanut",
+    "treenut",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "fish"
+   ]
+  },
+  {
+   "name": "A&W Root Beer (small)",
+   "cat": "drink",
+   "serve": "1 serving (355 ml)",
+   "cal": 160,
+   "kj": null,
+   "p": 0,
+   "c": 39,
+   "f": 0,
+   "sat": 0,
+   "sugar": 38,
+   "fibre": 0,
+   "sodium": 75,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "A&W Root Beer (regular)",
+   "cat": "drink",
+   "serve": "1 serving (591 ml)",
+   "cal": 270,
+   "kj": null,
+   "p": 0,
+   "c": 65,
+   "f": 0,
+   "sat": 0,
+   "sugar": 63,
+   "fibre": 0,
+   "sodium": 120,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Frozen A&W Root Beer (small)",
+   "cat": "drink",
+   "serve": "1 serving (355 ml)",
+   "cal": 200,
+   "kj": null,
+   "p": 0,
+   "c": 48,
+   "f": 0,
+   "sat": 0,
+   "sugar": 48,
+   "fibre": 0,
+   "sodium": 90,
+   "salt": null,
+   "contains": [],
+   "may": [
+    "gluten",
+    "wheat",
+    "milk",
+    "soy",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Frozen A&W Root Beer (regular)",
+   "cat": "drink",
+   "serve": "1 serving (591 ml)",
+   "cal": 340,
+   "kj": null,
+   "p": 0,
+   "c": 84,
+   "f": 0,
+   "sat": 0,
+   "sugar": 84,
+   "fibre": 0,
+   "sodium": 120,
+   "salt": null,
+   "contains": [],
+   "may": [
+    "gluten",
+    "wheat",
+    "milk",
+    "soy",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "A&W Root Beer Zero Sugar (small)",
+   "cat": "drink",
+   "serve": "1 serving (355 ml)",
+   "cal": 1,
+   "kj": null,
+   "p": 0,
+   "c": 0,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": 100,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "A&W Root Beer Zero Sugar (regular)",
+   "cat": "drink",
+   "serve": "1 serving (591 ml)",
+   "cal": 1,
+   "kj": null,
+   "p": 0,
+   "c": 0,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": 170,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "A&W Root Beer Shake (regular)",
+   "cat": "drink",
+   "serve": "1 serving (591 ml)",
+   "cal": 350,
+   "kj": null,
+   "p": 2,
+   "c": 67,
+   "f": 15,
+   "sat": 9,
+   "sugar": 67,
+   "fibre": 0,
+   "sodium": 170,
+   "salt": null,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "wheat",
+    "soy",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Mango Passionfruit Shake (small)",
+   "cat": "drink",
+   "serve": "1 serving (355 ml)",
+   "cal": 270,
+   "kj": null,
+   "p": 2,
+   "c": 56,
+   "f": 10,
+   "sat": 6,
+   "sugar": 57,
+   "fibre": 0,
+   "sodium": 60,
+   "salt": null,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Mango Passionfruit Shake (regular)",
+   "cat": "drink",
+   "serve": "1 serving (591 ml)",
+   "cal": 420,
+   "kj": null,
+   "p": 2,
+   "c": 91,
+   "f": 15,
+   "sat": 9,
+   "sugar": 94,
+   "fibre": 0,
+   "sodium": 80,
+   "salt": null,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Mango Passionfruit Smoothie (small)",
+   "cat": "drink",
+   "serve": "1 serving (355 ml)",
+   "cal": 240,
+   "kj": null,
+   "p": 0,
+   "c": 59,
+   "f": 0,
+   "sat": 0,
+   "sugar": 57,
+   "fibre": 0,
+   "sodium": 3,
+   "salt": null,
+   "contains": [],
+   "may": [
+    "milk",
+    "egg",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Mango Passionfruit Smoothie (regular)",
+   "cat": "drink",
+   "serve": "1 serving (591 ml)",
+   "cal": 340,
+   "kj": null,
+   "p": 0,
+   "c": 84,
+   "f": 0,
+   "sat": 0,
+   "sugar": 82,
+   "fibre": 0,
+   "sodium": 5,
+   "salt": null,
+   "contains": [],
+   "may": [
+    "milk",
+    "egg",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Mango Passionfruit Icer (small)",
+   "cat": "drink",
+   "serve": "1 serving (355 ml)",
+   "cal": 120,
+   "kj": null,
+   "p": 0,
+   "c": 25,
+   "f": 0,
+   "sat": 0,
+   "sugar": 25,
+   "fibre": 0,
+   "sodium": 1,
+   "salt": null,
+   "contains": [],
+   "may": [
+    "milk",
+    "egg",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Mango Passionfruit Icer (regular)",
+   "cat": "drink",
+   "serve": "1 serving (591 ml)",
+   "cal": 190,
+   "kj": null,
+   "p": 0,
+   "c": 48,
+   "f": 0,
+   "sat": 0,
+   "sugar": 47,
+   "fibre": 0,
+   "sodium": 2,
+   "salt": null,
+   "contains": [],
+   "may": [
+    "milk",
+    "egg",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Mixed Berry with Acai Icer (small)",
+   "cat": "drink",
+   "serve": "1 serving (355 ml)",
+   "cal": 120,
+   "kj": null,
+   "p": 0,
+   "c": 28,
+   "f": 0,
+   "sat": 0,
+   "sugar": 26,
+   "fibre": 0,
+   "sodium": 0,
+   "salt": null,
+   "contains": [],
+   "may": [
+    "milk",
+    "egg",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Mixed Berry with Acai Icer (regular)",
+   "cat": "drink",
+   "serve": "1 serving (591 ml)",
+   "cal": 180,
+   "kj": null,
+   "p": 0,
+   "c": 45,
+   "f": 0,
+   "sat": 0,
+   "sugar": 42,
+   "fibre": 1,
+   "sodium": 0,
+   "salt": null,
+   "contains": [],
+   "may": [
+    "milk",
+    "egg",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Strawberry Icer (small)",
+   "cat": "drink",
+   "serve": "1 serving (355 ml)",
+   "cal": 110,
+   "kj": null,
+   "p": 0,
+   "c": 28,
+   "f": 0,
+   "sat": 0,
+   "sugar": 26,
+   "fibre": 0,
+   "sodium": 0,
+   "salt": null,
+   "contains": [],
+   "may": [
+    "milk",
+    "egg",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Strawberry Icer (regular)",
+   "cat": "drink",
+   "serve": "1 serving (591 ml)",
+   "cal": 190,
+   "kj": null,
+   "p": 0,
+   "c": 45,
+   "f": 0,
+   "sat": 0,
+   "sugar": 42,
+   "fibre": 0,
+   "sodium": 0,
+   "salt": null,
+   "contains": [],
+   "may": [
+    "milk",
+    "egg",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Coca-Cola (small)",
+   "cat": "drink",
+   "serve": "1 serving (355 ml)",
+   "cal": 140,
+   "kj": null,
+   "p": 0,
+   "c": 39,
+   "f": 0,
+   "sat": 0,
+   "sugar": 39,
+   "fibre": 0,
+   "sodium": 27,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Coca-Cola (regular)",
+   "cat": "drink",
+   "serve": "1 serving (591 ml)",
+   "cal": 240,
+   "kj": null,
+   "p": 0,
+   "c": 65,
+   "f": 0,
+   "sat": 0,
+   "sugar": 65,
+   "fibre": 0,
+   "sodium": 45,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Diet Coke (small)",
+   "cat": "drink",
+   "serve": "1 serving (355 ml)",
+   "cal": 0,
+   "kj": null,
+   "p": 0,
+   "c": 0,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": 50,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Diet Coke (regular)",
+   "cat": "drink",
+   "serve": "1 serving (591 ml)",
+   "cal": 0,
+   "kj": null,
+   "p": 0,
+   "c": 0,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": 100,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Mixed Berry with Acai Smoothie (small)",
+   "cat": "drink",
+   "serve": "1 serving (355 ml)",
+   "cal": 220,
+   "kj": null,
+   "p": 0,
+   "c": 53,
+   "f": 0,
+   "sat": 0,
+   "sugar": 50,
+   "fibre": 1,
+   "sodium": 0,
+   "salt": null,
+   "contains": [],
+   "may": [
+    "gluten",
+    "wheat",
+    "milk",
+    "soy",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Mixed Berry with Acai Smoothie (regular)",
+   "cat": "drink",
+   "serve": "1 serving (591 ml)",
+   "cal": 320,
+   "kj": null,
+   "p": 0,
+   "c": 73,
+   "f": 0,
+   "sat": 0,
+   "sugar": 69,
+   "fibre": 2,
+   "sodium": 0,
+   "salt": null,
+   "contains": [],
+   "may": [
+    "gluten",
+    "wheat",
+    "milk",
+    "soy",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Coke Zero (12 oz)",
+   "cat": "drink",
+   "serve": "1 serving (355 ml)",
+   "cal": 0,
+   "kj": null,
+   "p": 0,
+   "c": 0,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": 40,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Coke Zero (20 oz)",
+   "cat": "drink",
+   "serve": "1 serving (591 ml)",
+   "cal": 0,
+   "kj": null,
+   "p": 0,
+   "c": 0,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": 65,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Strawberry Smoothie (small)",
+   "cat": "drink",
+   "serve": "1 serving (355 ml)",
+   "cal": 220,
+   "kj": null,
+   "p": 1,
+   "c": 48,
+   "f": 0,
+   "sat": 0,
+   "sugar": 46,
+   "fibre": 2,
+   "sodium": 0,
+   "salt": null,
+   "contains": [],
+   "may": [
+    "gluten",
+    "wheat",
+    "milk",
+    "soy",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Strawberry Smoothie (regular)",
+   "cat": "drink",
+   "serve": "1 serving (591 ml)",
+   "cal": 340,
+   "kj": null,
+   "p": 1,
+   "c": 72,
+   "f": 0,
+   "sat": 0,
+   "sugar": 69,
+   "fibre": 3,
+   "sodium": 0,
+   "salt": null,
+   "contains": [],
+   "may": [
+    "gluten",
+    "wheat",
+    "milk",
+    "soy",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Sprite (small)",
+   "cat": "drink",
+   "serve": "1 serving (355 ml)",
+   "cal": 140,
+   "kj": null,
+   "p": 0,
+   "c": 38,
+   "f": 0,
+   "sat": 0,
+   "sugar": 38,
+   "fibre": 0,
+   "sodium": 65,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Sprite (regular)",
+   "cat": "drink",
+   "serve": "1 serving (591 ml)",
+   "cal": 240,
+   "kj": null,
+   "p": 0,
+   "c": 64,
+   "f": 0,
+   "sat": 0,
+   "sugar": 64,
+   "fibre": 0,
+   "sodium": 110,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Mixed Berry with Acai Shake (small)",
+   "cat": "drink",
+   "serve": "1 serving (355 ml)",
+   "cal": 270,
+   "kj": null,
+   "p": 2,
+   "c": 56,
+   "f": 10,
+   "sat": 6,
+   "sugar": 53,
+   "fibre": 1,
+   "sodium": 60,
+   "salt": null,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "wheat",
+    "soy",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Mixed Berry with Acai Shake (regular)",
+   "cat": "drink",
+   "serve": "1 serving (591 ml)",
+   "cal": 410,
+   "kj": null,
+   "p": 2,
+   "c": 80,
+   "f": 15,
+   "sat": 9,
+   "sugar": 76,
+   "fibre": 2,
+   "sodium": 80,
+   "salt": null,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "wheat",
+    "soy",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Iced Tea (small)",
+   "cat": "drink",
+   "serve": "1 serving (355 ml)",
+   "cal": 110,
+   "kj": null,
+   "p": 0,
+   "c": 29,
+   "f": 0,
+   "sat": 0,
+   "sugar": 29,
+   "fibre": 0,
+   "sodium": 35,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Iced Tea (regular)",
+   "cat": "drink",
+   "serve": "1 serving (591 ml)",
+   "cal": 190,
+   "kj": null,
+   "p": 0,
+   "c": 50,
+   "f": 0,
+   "sat": 0,
+   "sugar": 50,
+   "fibre": 0,
+   "sodium": 60,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Strawberry Shake (small)",
+   "cat": "drink",
+   "serve": "1 serving (355 ml)",
+   "cal": 260,
+   "kj": null,
+   "p": 2,
+   "c": 56,
+   "f": 12,
+   "sat": 6,
+   "sugar": 52,
+   "fibre": 0,
+   "sodium": 60,
+   "salt": null,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "wheat",
+    "soy",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Strawberry Shake (regular)",
+   "cat": "drink",
+   "serve": "1 serving (591 ml)",
+   "cal": 400,
+   "kj": null,
+   "p": 2,
+   "c": 85,
+   "f": 19,
+   "sat": 9,
+   "sugar": 75,
+   "fibre": 0,
+   "sodium": 80,
+   "salt": null,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "wheat",
+    "soy",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Orange Juice (small)",
+   "cat": "drink",
+   "serve": "1 serving (355 ml)",
+   "cal": 160,
+   "kj": null,
+   "p": 0,
+   "c": 40,
+   "f": 0,
+   "sat": 0,
+   "sugar": 36,
+   "fibre": 0,
+   "sodium": 0,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Orange Juice (regular)",
+   "cat": "drink",
+   "serve": "1 serving (591 ml)",
+   "cal": 270,
+   "kj": null,
+   "p": 0,
+   "c": 68,
+   "f": 0,
+   "sat": 0,
+   "sugar": 60,
+   "fibre": 0,
+   "sodium": 0,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Apple Juice (small)",
+   "cat": "drink",
+   "serve": "1 serving (355 ml)",
+   "cal": 180,
+   "kj": null,
+   "p": 0,
+   "c": 44,
+   "f": 0,
+   "sat": 0,
+   "sugar": 40,
+   "fibre": 0,
+   "sodium": 15,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Apple Juice (regular)",
+   "cat": "drink",
+   "serve": "1 serving (591 ml)",
+   "cal": 300,
+   "kj": null,
+   "p": 0,
+   "c": 73,
+   "f": 0,
+   "sat": 0,
+   "sugar": 73,
+   "fibre": 0,
+   "sodium": 25,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "2% Milk (237ml)",
+   "cat": "drink",
+   "serve": "1 serving (237 ml)",
+   "cal": 130,
+   "kj": null,
+   "p": 8,
+   "c": 12,
+   "f": 5,
+   "sat": 3,
+   "sugar": 12,
+   "fibre": 0,
+   "sodium": 120,
+   "salt": null,
+   "contains": [
+    "milk"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "1% Chocolate Milk (237ml)",
+   "cat": "drink",
+   "serve": "1 serving (237 ml)",
+   "cal": 150,
+   "kj": null,
+   "p": 8,
+   "c": 26,
+   "f": 2.5,
+   "sat": 1.5,
+   "sugar": 25,
+   "fibre": 0,
+   "sodium": 170,
+   "salt": null,
+   "contains": [
+    "milk"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Lemonade (small)",
+   "cat": "drink",
+   "serve": "1 serving (355 ml)",
+   "cal": 140,
+   "kj": null,
+   "p": 0,
+   "c": 33,
+   "f": 0,
+   "sat": 0,
+   "sugar": 33,
+   "fibre": 0,
+   "sodium": 0,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Lemonade (regular)",
+   "cat": "drink",
+   "serve": "1 serving (591 ml)",
+   "cal": 240,
+   "kj": null,
+   "p": 0,
+   "c": 55,
+   "f": 0,
+   "sat": 0,
+   "sugar": 55,
+   "fibre": 0,
+   "sodium": 0,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Iced Latte (small, 2% milk)",
+   "cat": "drink",
+   "serve": "1 serving (295 ml)",
+   "cal": 90,
+   "kj": null,
+   "p": 6,
+   "c": 10,
+   "f": 4,
+   "sat": 2,
+   "sugar": 9,
+   "fibre": 0,
+   "sodium": 90,
+   "salt": null,
+   "contains": [
+    "milk"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Iced Latte (small, oat beverage)",
+   "cat": "drink",
+   "serve": "1 serving (295 ml)",
+   "cal": 110,
+   "kj": null,
+   "p": 2,
+   "c": 14,
+   "f": 5,
+   "sat": 0,
+   "sugar": 4,
+   "fibre": 1,
+   "sodium": 80,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Iced Latte (regular, 2% milk)",
+   "cat": "drink",
+   "serve": "1 serving (415 ml)",
+   "cal": 120,
+   "kj": null,
+   "p": 9,
+   "c": 13,
+   "f": 5,
+   "sat": 3,
+   "sugar": 12,
+   "fibre": 0,
+   "sodium": 120,
+   "salt": null,
+   "contains": [
+    "milk"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Iced Latte (regular, oat beverage)",
+   "cat": "drink",
+   "serve": "1 serving (415 ml)",
+   "cal": 150,
+   "kj": null,
+   "p": 3,
+   "c": 19,
+   "f": 7,
+   "sat": 0,
+   "sugar": 6,
+   "fibre": 2,
+   "sodium": 100,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Iced Vanilla Latte (small, 2% milk)",
+   "cat": "drink",
+   "serve": "1 serving (295 ml)",
+   "cal": 110,
+   "kj": null,
+   "p": 6,
+   "c": 12,
+   "f": 4,
+   "sat": 2,
+   "sugar": 10,
+   "fibre": 0,
+   "sodium": 90,
+   "salt": null,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "peanut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Iced Vanilla Latte (small, oat beverage)",
+   "cat": "drink",
+   "serve": "1 serving (295 ml)",
+   "cal": 130,
+   "kj": null,
+   "p": 2,
+   "c": 16,
+   "f": 5,
+   "sat": 0,
+   "sugar": 6,
+   "fibre": 1,
+   "sodium": 80,
+   "salt": null,
+   "contains": [],
+   "may": [
+    "peanut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Iced Vanilla Latte (regular, 2% milk)",
+   "cat": "drink",
+   "serve": "1 serving (415 ml)",
+   "cal": 160,
+   "kj": null,
+   "p": 9,
+   "c": 17,
+   "f": 5,
+   "sat": 3,
+   "sugar": 15,
+   "fibre": 0,
+   "sodium": 120,
+   "salt": null,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "peanut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Iced Vanilla Latte (regular, oat beverage)",
+   "cat": "drink",
+   "serve": "1 serving (415 ml)",
+   "cal": 190,
+   "kj": null,
+   "p": 3,
+   "c": 22,
+   "f": 7,
+   "sat": 0,
+   "sugar": 9,
+   "fibre": 2,
+   "sodium": 100,
+   "salt": null,
+   "contains": [],
+   "may": [
+    "peanut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Iced Caramel Latte (small, 2% milk)",
+   "cat": "drink",
+   "serve": "1 serving (295 ml)",
+   "cal": 110,
+   "kj": null,
+   "p": 6,
+   "c": 12,
+   "f": 4,
+   "sat": 2,
+   "sugar": 10,
+   "fibre": 0,
+   "sodium": 90,
+   "salt": null,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "peanut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Iced Caramel Latte (small, oat beverage)",
+   "cat": "drink",
+   "serve": "1 serving (295 ml)",
+   "cal": 130,
+   "kj": null,
+   "p": 2,
+   "c": 16,
+   "f": 5,
+   "sat": 0,
+   "sugar": 6,
+   "fibre": 1,
+   "sodium": 80,
+   "salt": null,
+   "contains": [],
+   "may": [
+    "peanut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Iced Caramel Latte (regular, 2% milk)",
+   "cat": "drink",
+   "serve": "1 serving (415 ml)",
+   "cal": 160,
+   "kj": null,
+   "p": 9,
+   "c": 17,
+   "f": 5,
+   "sat": 3,
+   "sugar": 15,
+   "fibre": 0,
+   "sodium": 120,
+   "salt": null,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "peanut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Iced Caramel Latte (regular, oat beverage)",
+   "cat": "drink",
+   "serve": "1 serving (415 ml)",
+   "cal": 190,
+   "kj": null,
+   "p": 3,
+   "c": 22,
+   "f": 7,
+   "sat": 0,
+   "sugar": 9,
+   "fibre": 2,
+   "sodium": 100,
+   "salt": null,
+   "contains": [],
+   "may": [
+    "peanut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Iced Espresso Coffee (small)",
+   "cat": "drink",
+   "serve": "1 serving (295 ml)",
+   "cal": 5,
+   "kj": null,
+   "p": 0,
+   "c": 1,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": 5,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Iced Espresso Coffee (regular)",
+   "cat": "drink",
+   "serve": "1 serving (415 ml)",
+   "cal": 5,
+   "kj": null,
+   "p": 0,
+   "c": 1,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": 5,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "A&W Double Smash Burger",
+   "cat": "main",
+   "serve": "1 serving (310 g)",
+   "cal": 950,
+   "kj": null,
+   "p": 50,
+   "c": 31,
+   "f": 65,
+   "sat": 23,
+   "sugar": 6,
+   "fibre": 6,
+   "sodium": 1155,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg"
+   ],
+   "may": [
+    "soy",
+    "sesame",
+    "peanut",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "A&W Smash Burger",
+   "cat": "main",
+   "serve": "1 serving (220 g)",
+   "cal": 670,
+   "kj": null,
+   "p": 30,
+   "c": 31,
+   "f": 43,
+   "sat": 13,
+   "sugar": 6,
+   "fibre": 6,
+   "sodium": 900,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg"
+   ],
+   "may": [
+    "soy",
+    "sesame",
+    "peanut",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "A&W Root Beer Float",
+   "cat": "drink",
+   "serve": "1 serving (485 ml)",
+   "cal": 370,
+   "kj": null,
+   "p": 3,
+   "c": 83,
+   "f": 14,
+   "sat": 9,
+   "sugar": 67,
+   "fibre": 2,
+   "sodium": 228,
+   "salt": null,
+   "contains": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "wheat",
+    "egg",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "A&W Root Beer Float (zero sugar)",
+   "cat": "drink",
+   "serve": "1 serving (485 ml)",
+   "cal": 310,
+   "kj": null,
+   "p": 3,
+   "c": 44,
+   "f": 14,
+   "sat": 9,
+   "sugar": 29,
+   "fibre": 2,
+   "sodium": 253,
+   "salt": null,
+   "contains": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "wheat",
+    "egg",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Latte (small, 2% milk)",
+   "cat": "drink",
+   "serve": "1 serving (295 ml)",
+   "cal": 130,
+   "kj": null,
+   "p": 10,
+   "c": 13,
+   "f": 6,
+   "sat": 3,
+   "sugar": 13,
+   "fibre": 0,
+   "sodium": 130,
+   "salt": null,
+   "contains": [
+    "milk"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Latte (small, oat beverage)",
+   "cat": "drink",
+   "serve": "1 serving (295 ml)",
+   "cal": 170,
+   "kj": null,
+   "p": 3,
+   "c": 20,
+   "f": 8,
+   "sat": 1,
+   "sugar": 7,
+   "fibre": 2,
+   "sodium": 120,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Latte (regular, 2% milk)",
+   "cat": "drink",
+   "serve": "1 serving (415 ml)",
+   "cal": 160,
+   "kj": null,
+   "p": 12,
+   "c": 17,
+   "f": 6,
+   "sat": 4,
+   "sugar": 15,
+   "fibre": 0,
+   "sodium": 150,
+   "salt": null,
+   "contains": [
+    "milk"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Latte (large, 2% milk)",
+   "cat": "drink",
+   "serve": "1 serving (535 ml)",
+   "cal": 180,
+   "kj": null,
+   "p": 13,
+   "c": 19,
+   "f": 7,
+   "sat": 4,
+   "sugar": 17,
+   "fibre": 0,
+   "sodium": 170,
+   "salt": null,
+   "contains": [
+    "milk"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Latte (regular, oat beverage)",
+   "cat": "drink",
+   "serve": "1 serving (415 ml)",
+   "cal": 200,
+   "kj": null,
+   "p": 4,
+   "c": 24,
+   "f": 9,
+   "sat": 1,
+   "sugar": 8,
+   "fibre": 3,
+   "sodium": 130,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Latte (large, oat beverage)",
+   "cat": "drink",
+   "serve": "1 serving (535 ml)",
+   "cal": 220,
+   "kj": null,
+   "p": 4,
+   "c": 27,
+   "f": 10,
+   "sat": 1,
+   "sugar": 9,
+   "fibre": 3,
+   "sodium": 150,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Flat White",
+   "cat": "drink",
+   "serve": "1 serving (295 ml)",
+   "cal": 140,
+   "kj": null,
+   "p": 12,
+   "c": 18,
+   "f": 0,
+   "sat": 0,
+   "sugar": 15,
+   "fibre": 0,
+   "sodium": 170,
+   "salt": null,
+   "contains": [
+    "milk"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Vanilla Latte (small, 2% milk)",
+   "cat": "drink",
+   "serve": "1 serving (295 ml)",
+   "cal": 150,
+   "kj": null,
+   "p": 10,
+   "c": 15,
+   "f": 6,
+   "sat": 3,
+   "sugar": 15,
+   "fibre": 0,
+   "sodium": 130,
+   "salt": null,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "peanut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Vanilla Latte (small, oat beverage)",
+   "cat": "drink",
+   "serve": "1 serving (295 ml)",
+   "cal": 190,
+   "kj": null,
+   "p": 3,
+   "c": 22,
+   "f": 8,
+   "sat": 1,
+   "sugar": 9,
+   "fibre": 2,
+   "sodium": 120,
+   "salt": null,
+   "contains": [],
+   "may": [
+    "peanut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Vanilla Latte (regular, 2% milk)",
+   "cat": "drink",
+   "serve": "1 serving (415 ml)",
+   "cal": 200,
+   "kj": null,
+   "p": 12,
+   "c": 20,
+   "f": 6,
+   "sat": 4,
+   "sugar": 19,
+   "fibre": 0,
+   "sodium": 150,
+   "salt": null,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "peanut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Vanilla Latte (regular, oat beverage)",
+   "cat": "drink",
+   "serve": "1 serving (415 ml)",
+   "cal": 240,
+   "kj": null,
+   "p": 4,
+   "c": 28,
+   "f": 9,
+   "sat": 1,
+   "sugar": 11,
+   "fibre": 3,
+   "sodium": 130,
+   "salt": null,
+   "contains": [],
+   "may": [
+    "peanut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Vanilla Latte (large, 2% milk)",
+   "cat": "drink",
+   "serve": "1 serving (535 ml)",
+   "cal": 220,
+   "kj": null,
+   "p": 13,
+   "c": 23,
+   "f": 7,
+   "sat": 4,
+   "sugar": 21,
+   "fibre": 0,
+   "sodium": 170,
+   "salt": null,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "peanut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Vanilla Latte (large, oat beverage)",
+   "cat": "drink",
+   "serve": "1 serving (535 ml)",
+   "cal": 260,
+   "kj": null,
+   "p": 4,
+   "c": 31,
+   "f": 10,
+   "sat": 1,
+   "sugar": 12,
+   "fibre": 3,
+   "sodium": 150,
+   "salt": null,
+   "contains": [],
+   "may": [
+    "peanut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Caramel Latte (small, 2% milk)",
+   "cat": "drink",
+   "serve": "1 serving (295 ml)",
+   "cal": 150,
+   "kj": null,
+   "p": 10,
+   "c": 18,
+   "f": 6,
+   "sat": 3,
+   "sugar": 18,
+   "fibre": 0,
+   "sodium": 130,
+   "salt": null,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "peanut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Caramel Latte (small, oat beverage)",
+   "cat": "drink",
+   "serve": "1 serving (295 ml)",
+   "cal": 190,
+   "kj": null,
+   "p": 3,
+   "c": 25,
+   "f": 8,
+   "sat": 1,
+   "sugar": 12,
+   "fibre": 2,
+   "sodium": 120,
+   "salt": null,
+   "contains": [],
+   "may": [
+    "peanut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Caramel Latte (regular, 2% milk)",
+   "cat": "drink",
+   "serve": "1 serving (415 ml)",
+   "cal": 200,
+   "kj": null,
+   "p": 12,
+   "c": 26,
+   "f": 6,
+   "sat": 4,
+   "sugar": 25,
+   "fibre": 0,
+   "sodium": 150,
+   "salt": null,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "peanut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Caramel Latte (regular, oat beverage)",
+   "cat": "drink",
+   "serve": "1 serving (415 ml)",
+   "cal": 240,
+   "kj": null,
+   "p": 4,
+   "c": 34,
+   "f": 9,
+   "sat": 1,
+   "sugar": 17,
+   "fibre": 3,
+   "sodium": 130,
+   "salt": null,
+   "contains": [],
+   "may": [
+    "peanut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Caramel Latte (large, 2% milk)",
+   "cat": "drink",
+   "serve": "1 serving (535 ml)",
+   "cal": 220,
+   "kj": null,
+   "p": 13,
+   "c": 29,
+   "f": 7,
+   "sat": 4,
+   "sugar": 27,
+   "fibre": 0,
+   "sodium": 170,
+   "salt": null,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "peanut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Caramel Latte (large, oat beverage)",
+   "cat": "drink",
+   "serve": "1 serving (535 ml)",
+   "cal": 260,
+   "kj": null,
+   "p": 4,
+   "c": 37,
+   "f": 10,
+   "sat": 1,
+   "sugar": 18,
+   "fibre": 3,
+   "sodium": 150,
+   "salt": null,
+   "contains": [],
+   "may": [
+    "peanut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Brewed Coffee",
+   "cat": "drink",
+   "serve": "1 serving (296 ml)",
+   "cal": 5,
+   "kj": null,
+   "p": 0,
+   "c": 1,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": 5,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Cappuccino (small)",
+   "cat": "drink",
+   "serve": "1 serving (295 ml)",
+   "cal": 140,
+   "kj": null,
+   "p": 10,
+   "c": 14,
+   "f": 6,
+   "sat": 3,
+   "sugar": 13,
+   "fibre": 0,
+   "sodium": 130,
+   "salt": null,
+   "contains": [
+    "milk"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Cappuccino (regular)",
+   "cat": "drink",
+   "serve": "1 serving (415 ml)",
+   "cal": 200,
+   "kj": null,
+   "p": 14,
+   "c": 20,
+   "f": 8,
+   "sat": 4,
+   "sugar": 18,
+   "fibre": 0,
+   "sodium": 180,
+   "salt": null,
+   "contains": [
+    "milk"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Cappuccino (large)",
+   "cat": "drink",
+   "serve": "1 serving (535 ml)",
+   "cal": 250,
+   "kj": null,
+   "p": 18,
+   "c": 25,
+   "f": 11,
+   "sat": 5,
+   "sugar": 24,
+   "fibre": 0,
+   "sodium": 240,
+   "salt": null,
+   "contains": [
+    "milk"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Hot Chocolate",
+   "cat": "drink",
+   "serve": "1 serving (250 ml)",
+   "cal": 160,
+   "kj": null,
+   "p": 1,
+   "c": 26,
+   "f": 0.5,
+   "sat": 0.5,
+   "sugar": 21,
+   "fibre": 1,
+   "sodium": 210,
+   "salt": null,
+   "contains": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "wheat"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Americano (small)",
+   "cat": "drink",
+   "serve": "1 serving (295 ml)",
+   "cal": 5,
+   "kj": null,
+   "p": 0,
+   "c": 1,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": 5,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Americano (regular)",
+   "cat": "drink",
+   "serve": "1 serving (415 ml)",
+   "cal": 5,
+   "kj": null,
+   "p": 0,
+   "c": 1,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": 5,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Americano (large)",
+   "cat": "drink",
+   "serve": "1 serving (535 ml)",
+   "cal": 5,
+   "kj": null,
+   "p": 0,
+   "c": 1,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": 5,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Mocha (small)",
+   "cat": "drink",
+   "serve": "1 serving (295 ml)",
+   "cal": 250,
+   "kj": null,
+   "p": 9,
+   "c": 35,
+   "f": 9,
+   "sat": 6,
+   "sugar": 28,
+   "fibre": 2,
+   "sodium": 250,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Mocha (regular)",
+   "cat": "drink",
+   "serve": "1 serving (415 ml)",
+   "cal": 350,
+   "kj": null,
+   "p": 13,
+   "c": 49,
+   "f": 13,
+   "sat": 8,
+   "sugar": 40,
+   "fibre": 3,
+   "sodium": 350,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Mocha (large)",
+   "cat": "drink",
+   "serve": "1 serving (535 ml)",
+   "cal": 450,
+   "kj": null,
+   "p": 16,
+   "c": 63,
+   "f": 16,
+   "sat": 11,
+   "sugar": 51,
+   "fibre": 4,
+   "sodium": 450,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Chai Latte (small)",
+   "cat": "drink",
+   "serve": "1 serving (295 ml)",
+   "cal": 240,
+   "kj": null,
+   "p": 6,
+   "c": 37,
+   "f": 7,
+   "sat": 4,
+   "sugar": 33,
+   "fibre": 0,
+   "sodium": 100,
+   "salt": null,
+   "contains": [
+    "milk",
+    "soy"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Chai Latte (regular)",
+   "cat": "drink",
+   "serve": "1 serving (415 ml)",
+   "cal": 340,
+   "kj": null,
+   "p": 8,
+   "c": 52,
+   "f": 10,
+   "sat": 6,
+   "sugar": 46,
+   "fibre": 0,
+   "sodium": 140,
+   "salt": null,
+   "contains": [
+    "milk",
+    "soy"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Chai Latte (large)",
+   "cat": "drink",
+   "serve": "1 serving (535 ml)",
+   "cal": 440,
+   "kj": null,
+   "p": 11,
+   "c": 67,
+   "f": 13,
+   "sat": 7,
+   "sugar": 60,
+   "fibre": 0,
+   "sodium": 180,
+   "salt": null,
+   "contains": [
+    "milk",
+    "soy"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Hot Chocolate Brew Bar (small)",
+   "cat": "drink",
+   "serve": "1 serving (295 ml)",
+   "cal": 280,
+   "kj": null,
+   "p": 10,
+   "c": 39,
+   "f": 10,
+   "sat": 7,
+   "sugar": 32,
+   "fibre": 2,
+   "sodium": 290,
+   "salt": null,
+   "contains": [
+    "milk",
+    "soy"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Hot Chocolate Brew Bar (regular)",
+   "cat": "drink",
+   "serve": "1 serving (415 ml)",
+   "cal": 390,
+   "kj": null,
+   "p": 14,
+   "c": 55,
+   "f": 14,
+   "sat": 10,
+   "sugar": 45,
+   "fibre": 3,
+   "sodium": 410,
+   "salt": null,
+   "contains": [
+    "milk",
+    "soy"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Hot Chocolate Brew Bar (large)",
+   "cat": "drink",
+   "serve": "1 serving (535 ml)",
+   "cal": 510,
+   "kj": null,
+   "p": 18,
+   "c": 71,
+   "f": 18,
+   "sat": 13,
+   "sugar": 58,
+   "fibre": 4,
+   "sodium": 530,
+   "salt": null,
+   "contains": [
+    "milk",
+    "soy"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Espresso (single)",
+   "cat": "drink",
+   "serve": "1 serving (30 ml)",
+   "cal": 5,
+   "kj": null,
+   "p": 0,
+   "c": 1,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": 5,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Espresso (double)",
+   "cat": "drink",
+   "serve": "1 serving (60 ml)",
+   "cal": 10,
+   "kj": null,
+   "p": 0,
+   "c": 2,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": 10,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Tea",
+   "cat": "drink",
+   "serve": "1 serving (295 ml)",
+   "cal": 5,
+   "kj": null,
+   "p": 0,
+   "c": 0,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": 0,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Kids' Buddy Burger",
+   "cat": "main",
+   "serve": "1 serving (95 g)",
+   "cal": 280,
+   "kj": null,
+   "p": 12,
+   "c": 29,
+   "f": 11,
+   "sat": 4,
+   "sugar": 4,
+   "fibre": 1,
+   "sodium": 510,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy"
+   ],
+   "may": [
+    "milk",
+    "egg",
+    "sesame",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Apple Slices",
+   "cat": "side",
+   "serve": "1 serving (57 g)",
+   "cal": 30,
+   "kj": null,
+   "p": 0,
+   "c": 8,
+   "f": 0,
+   "sat": 0,
+   "sugar": 6,
+   "fibre": 1,
+   "sodium": 0,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "MadeGood Bar",
+   "cat": "sweet",
+   "serve": "1 serving (12 g)",
+   "cal": 50,
+   "kj": null,
+   "p": 1,
+   "c": 9,
+   "f": 1.5,
+   "sat": 0.5,
+   "sugar": 3,
+   "fibre": 1,
+   "sodium": 5,
+   "salt": null,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Milk2Go",
+   "cat": "drink",
+   "serve": "1 serving (200 ml)",
+   "cal": 100,
+   "kj": null,
+   "p": 7,
+   "c": 10,
+   "f": 4,
+   "sat": 2.5,
+   "sugar": 10,
+   "fibre": 0,
+   "sodium": 95,
+   "salt": null,
+   "contains": [
+    "milk"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Kids' Buddy Burger with Cheese",
+   "cat": "main",
+   "serve": "1 serving (110 g)",
+   "cal": 340,
+   "kj": null,
+   "p": 20,
+   "c": 30,
+   "f": 16,
+   "sat": 7,
+   "sugar": 8,
+   "fibre": 1,
+   "sodium": 600,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "egg",
+    "sesame",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Kids' Chicken Strips (2 pieces)",
+   "cat": "main",
+   "serve": "1 serving (100 g)",
+   "cal": 200,
+   "kj": null,
+   "p": 13,
+   "c": 14,
+   "f": 10,
+   "sat": 1,
+   "sugar": 1,
+   "fibre": 1,
+   "sodium": 470,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg"
+   ],
+   "may": [
+    "milk",
+    "soy"
+   ],
+   "vg": null,
+   "meat": [
+    "chicken"
+   ]
+  },
+  {
+   "name": "Kids' Chicken Buddy Burger",
+   "cat": "main",
+   "serve": "1 serving (134 g)",
+   "cal": 360,
+   "kj": null,
+   "p": 10,
+   "c": 36,
+   "f": 19,
+   "sat": 2,
+   "sugar": 5,
+   "fibre": 2,
+   "sodium": 780,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "chicken"
+   ]
+  },
+  {
+   "name": "Russet Thick-Cut Fries (regular)",
+   "cat": "side",
+   "serve": "1 serving (155 g)",
+   "cal": 340,
+   "kj": null,
+   "p": 5,
+   "c": 54,
+   "f": 18,
+   "sat": 1.5,
+   "sugar": 0,
+   "fibre": 5,
+   "sodium": 320,
+   "salt": null,
+   "contains": [],
+   "may": [
+    "gluten",
+    "wheat",
+    "soy"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Russet Thick-Cut Fries (kids' size)",
+   "cat": "side",
+   "serve": "1 serving (100 g)",
+   "cal": 250,
+   "kj": null,
+   "p": 3,
+   "c": 35,
+   "f": 12,
+   "sat": 1,
+   "sugar": 0,
+   "fibre": 3,
+   "sodium": 260,
+   "salt": null,
+   "contains": [],
+   "may": [
+    "gluten",
+    "wheat",
+    "soy"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Onion Rings",
+   "cat": "side",
+   "serve": "1 serving (150 g)",
+   "cal": 520,
+   "kj": null,
+   "p": 7,
+   "c": 50,
+   "f": 32,
+   "sat": 2.5,
+   "sugar": 6,
+   "fibre": 4,
+   "sodium": 630,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy"
+   ],
+   "may": [
+    "milk",
+    "egg",
+    "sesame",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Sweet Potato Fries",
+   "cat": "side",
+   "serve": "1 serving (135 g)",
+   "cal": 360,
+   "kj": null,
+   "p": 4,
+   "c": 47,
+   "f": 18,
+   "sat": 1.5,
+   "sugar": 17,
+   "fibre": 6,
+   "sodium": 115,
+   "salt": null,
+   "contains": [
+    "egg"
+   ],
+   "may": [
+    "gluten",
+    "wheat",
+    "milk",
+    "soy",
+    "sesame",
+    "fish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Poutine (English Canada)",
+   "cat": "side",
+   "serve": "1 serving (333 g)",
+   "cal": 610,
+   "kj": null,
+   "p": 23,
+   "c": 58,
+   "f": 33,
+   "sat": 13,
+   "sugar": 1,
+   "fibre": 8,
+   "sodium": 1240,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk"
+   ],
+   "may": [
+    "egg",
+    "soy",
+    "sesame",
+    "treenut",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Poutine (Quebec)",
+   "cat": "side",
+   "serve": "1 serving (333 g)",
+   "cal": 600,
+   "kj": null,
+   "p": 20,
+   "c": 64,
+   "f": 31,
+   "sat": 12,
+   "sugar": 2,
+   "fibre": 6,
+   "sodium": 1210,
+   "salt": null,
+   "contains": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "wheat",
+    "egg",
+    "sesame",
+    "treenut",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Chipotle Mayonnaise (60ml)",
+   "cat": "extra",
+   "serve": "1 serving (60 g)",
+   "cal": 320,
+   "kj": null,
+   "p": 1,
+   "c": 4,
+   "f": 40,
+   "sat": 4,
+   "sugar": 4,
+   "fibre": 0,
+   "sodium": 240,
+   "salt": null,
+   "contains": [
+    "egg"
+   ],
+   "may": [
+    "gluten",
+    "wheat",
+    "milk",
+    "soy",
+    "sesame",
+    "fish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Gravy (regular)",
+   "cat": "extra",
+   "serve": "1 serving (236 g)",
+   "cal": 100,
+   "kj": null,
+   "p": 2,
+   "c": 20,
+   "f": 2,
+   "sat": 0.5,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": 1390,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "egg",
+    "soy",
+    "sesame",
+    "treenut",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Gravy (small)",
+   "cat": "extra",
+   "serve": "1 serving (118 g)",
+   "cal": 50,
+   "kj": null,
+   "p": 1,
+   "c": 10,
+   "f": 1,
+   "sat": 0.3,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": 700,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat"
+   ],
+   "may": [
+    "milk",
+    "egg",
+    "soy",
+    "sesame",
+    "treenut",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Apple Turnover",
+   "cat": "sweet",
+   "serve": "1 serving (90 g)",
+   "cal": 280,
+   "kj": null,
+   "p": 3,
+   "c": 38,
+   "f": 15,
+   "sat": 3.5,
+   "sugar": 14,
+   "fibre": 1,
+   "sodium": 190,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "sesame",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Root Beer Lollipops",
+   "cat": "sweet",
+   "serve": "1 serving (9 g)",
+   "cal": 35,
+   "kj": null,
+   "p": 0,
+   "c": 9,
+   "f": 0,
+   "sat": 0,
+   "sugar": 6,
+   "fibre": 0,
+   "sodium": 0,
+   "salt": null,
+   "contains": [
+    "soy"
+   ],
+   "may": [
+    "milk",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Dipping Sauce (Sweet & Sour)",
+   "cat": "extra",
+   "serve": "1 serving (32 g)",
+   "cal": 60,
+   "kj": null,
+   "p": 0,
+   "c": 14,
+   "f": 0,
+   "sat": 0,
+   "sugar": 11,
+   "fibre": 0,
+   "sodium": 140,
+   "salt": null,
+   "contains": [],
+   "may": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "sesame",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Dipping Sauce (Jalapeño Ranch)",
+   "cat": "extra",
+   "serve": "1 serving (28 g)",
+   "cal": 110,
+   "kj": null,
+   "p": 1,
+   "c": 2,
+   "f": 11,
+   "sat": 0.8,
+   "sugar": 1,
+   "fibre": 0,
+   "sodium": 250,
+   "salt": null,
+   "contains": [
+    "milk",
+    "egg"
+   ],
+   "may": [
+    "gluten",
+    "wheat",
+    "soy",
+    "sesame",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Dipping Sauce (Honey Mustard)",
+   "cat": "extra",
+   "serve": "1 serving (28 g)",
+   "cal": 100,
+   "kj": null,
+   "p": 0,
+   "c": 8,
+   "f": 8,
+   "sat": 0.5,
+   "sugar": 6,
+   "fibre": 0,
+   "sodium": 200,
+   "salt": null,
+   "contains": [
+    "egg"
+   ],
+   "may": [
+    "gluten",
+    "wheat",
+    "milk",
+    "soy",
+    "sesame",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Dipping Sauce (Barbecue)",
+   "cat": "extra",
+   "serve": "1 serving (32 g)",
+   "cal": 60,
+   "kj": null,
+   "p": 0,
+   "c": 13,
+   "f": 0.5,
+   "sat": 0.4,
+   "sugar": 12,
+   "fibre": 0,
+   "sodium": 220,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy"
+   ],
+   "may": [
+    "milk",
+    "egg",
+    "sesame",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Buddy Burger",
+   "cat": "main",
+   "serve": "1 serving (145 g)",
+   "cal": 310,
+   "kj": null,
+   "p": 13,
+   "c": 36,
+   "f": 15,
+   "sat": 5,
+   "sugar": 8,
+   "fibre": 1,
+   "sodium": 700,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "milk",
+    "sesame",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Buddy Burger (lettuce-wrapped)",
+   "cat": "main",
+   "serve": "1 serving (135 g)",
+   "cal": 180,
+   "kj": null,
+   "p": 9,
+   "c": 11,
+   "f": 11,
+   "sat": 4,
+   "sugar": 7,
+   "fibre": 1,
+   "sodium": 480,
+   "salt": null,
+   "contains": [
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "wheat",
+    "milk",
+    "sesame",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Buddy Burger (with cheese, lettuce-wrapped)",
+   "cat": "main",
+   "serve": "1 serving (149 g)",
+   "cal": 240,
+   "kj": null,
+   "p": 12,
+   "c": 11,
+   "f": 14,
+   "sat": 6.5,
+   "sugar": 7,
+   "fibre": 1,
+   "sodium": 580,
+   "salt": null,
+   "contains": [
+    "milk",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "wheat",
+    "sesame",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Buddy Cheeseburger",
+   "cat": "main",
+   "serve": "1 serving (159 g)",
+   "cal": 370,
+   "kj": null,
+   "p": 16,
+   "c": 35,
+   "f": 16,
+   "sat": 7,
+   "sugar": 9,
+   "fibre": 2,
+   "sodium": 770,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "sesame",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Chicken Buddy Burger",
+   "cat": "main",
+   "serve": "1 serving (134 g)",
+   "cal": 360,
+   "kj": null,
+   "p": 11,
+   "c": 35,
+   "f": 19,
+   "sat": 3,
+   "sugar": 4,
+   "fibre": 2,
+   "sodium": 730,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "sesame",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "chicken"
+   ]
+  },
+  {
+   "name": "Chicken Buddy Burger (lettuce-wrapped)",
+   "cat": "main",
+   "serve": "1 serving (124 g)",
+   "cal": 230,
+   "kj": null,
+   "p": 8,
+   "c": 10,
+   "f": 17,
+   "sat": 2,
+   "sugar": 1,
+   "fibre": 1,
+   "sodium": 570,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "chicken"
+   ]
+  },
+  {
+   "name": "Spicy Chipotle Chicken Wrap",
+   "cat": "main",
+   "serve": "1 serving (105 g)",
+   "cal": 290,
+   "kj": null,
+   "p": 11,
+   "c": 28,
+   "f": 15,
+   "sat": 4,
+   "sugar": 12,
+   "fibre": 2,
+   "sodium": 640,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg"
+   ],
+   "may": [
+    "soy",
+    "sesame",
+    "fish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "chicken"
+   ]
+  },
+  {
+   "name": "Bacon Chicken Wrap",
+   "cat": "main",
+   "serve": "1 serving (106 g)",
+   "cal": 290,
+   "kj": null,
+   "p": 11,
+   "c": 28,
+   "f": 14,
+   "sat": 2,
+   "sugar": 1,
+   "fibre": 2,
+   "sodium": 680,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "egg"
+   ],
+   "may": [
+    "milk",
+    "soy",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "chicken",
+    "pork"
+   ]
+  },
+  {
+   "name": "Spicy Piri-Piri Beef Buddy",
+   "cat": "main",
+   "serve": "1 serving (170 g)",
+   "cal": 330,
+   "kj": null,
+   "p": 14,
+   "c": 30,
+   "f": 17,
+   "sat": 5,
+   "sugar": 3,
+   "fibre": 2,
+   "sodium": 640,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy"
+   ],
+   "may": [
+    "milk",
+    "egg",
+    "sesame",
+    "treenut",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Spicy Piri-Piri Potato Buddy",
+   "cat": "main",
+   "serve": "1 serving (200 g)",
+   "cal": 320,
+   "kj": null,
+   "p": 7,
+   "c": 43,
+   "f": 14,
+   "sat": 2,
+   "sugar": 4,
+   "fibre": 3,
+   "sodium": 640,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy"
+   ],
+   "may": [
+    "milk",
+    "egg",
+    "sesame",
+    "treenut",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Spicy Piri-Piri Chicken Buddy",
+   "cat": "main",
+   "serve": "1 serving (180 g)",
+   "cal": 320,
+   "kj": null,
+   "p": 12,
+   "c": 42,
+   "f": 14,
+   "sat": 1,
+   "sugar": 6,
+   "fibre": 3,
+   "sodium": 620,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat",
+    "soy"
+   ],
+   "may": [
+    "milk",
+    "egg",
+    "sesame",
+    "treenut",
+    "fish",
+    "shellfish",
+    "sulphites"
+   ],
+   "vg": null,
+   "meat": [
+    "chicken"
+   ]
+  }
+ ]
+}

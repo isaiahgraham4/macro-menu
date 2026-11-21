@@ -1,7 +1,7 @@
 import Foundation
 
 /// The country whose restaurant menus Leanr shows, chosen in setup and in Settings. Each has its own bundled menu file;
-/// supermarket ready meals (Coles and Woolworths) and Copycat Kitchen exist only for Australia.
+/// supermarket ready meals and snacks have a file per country (`Scripts/supermarket-foods.py`), and Copycat Kitchen exists only for Australia.
 /// Logged meals, saved meals and your own foods are copies, so they're kept whichever country is chosen.
 enum MenuRegion: String, CaseIterable, Identifiable, Sendable {
     case australia = "AU"
@@ -56,8 +56,23 @@ enum MenuRegion: String, CaseIterable, Identifiable, Sendable {
     /// `MenuData-CA.json`, `-GB`, `-NZ`, `-ZA`, `-IN` and `-SG` (`Scripts/intl/build-intl-menu.py`).
     var menuFile: String { self == .australia ? "MenuData" : "MenuData-\(rawValue)" }
     var menuURL: URL? { Bundle.main.url(forResource: menuFile, withExtension: "json") }
-    var hasSupermarkets: Bool { self == .australia }
-    var supermarketURL: URL? { hasSupermarkets ? Bundle.main.url(forResource: "SupermarketFoods", withExtension: "json") : nil }
+    /// Chain ids of the supermarkets in this country's shelf file. They must match `SHOPS` in `Scripts/supermarket-foods.py`.
+    var supermarketIDs: [String] {
+        switch self {
+        case .australia: ["coles", "woolworths"]
+        case .newZealand: ["nz-woolworths", "nz-newworld", "nz-paknsave"]
+        case .unitedStates: ["us-walmart", "us-target", "us-kroger", "us-costco", "us-traderjoes", "us-wholefoods", "us-aldi", "us-meijer", "us-heb"]
+        case .canada: ["ca-loblaws", "ca-sobeys", "ca-metro", "ca-walmart", "ca-costco"]
+        case .unitedKingdom: ["uk-tesco", "uk-sainsburys", "uk-asda", "uk-morrisons", "uk-waitrose", "uk-ms", "uk-aldi", "uk-lidl", "uk-coop"]
+        case .southAfrica: ["za-woolworths", "za-pnp", "za-checkers", "za-spar"]
+        case .india: []
+        case .singapore: []
+        }
+    }
+    var hasSupermarkets: Bool { !supermarketIDs.isEmpty }
+    /// `SupermarketFoods.json` for Australia, which earlier versions shipped, and `SupermarketFoods-XX.json` for the rest.
+    var supermarketFile: String { self == .australia ? "SupermarketFoods" : "SupermarketFoods-\(rawValue)" }
+    var supermarketURL: URL? { hasSupermarkets ? Bundle.main.url(forResource: supermarketFile, withExtension: "json") : nil }
     /// Copycat Kitchen compares home recipes with Australian menu items.
     var hasCopycatKitchen: Bool { self == .australia }
     /// Open Food Facts' tag for products sold here, searched before the rest of the world.
@@ -79,11 +94,11 @@ enum MenuRegion: String, CaseIterable, Identifiable, Sendable {
     var menuNote: String {
         switch self {
         case .australia: "Bundled Australian menu snapshot from 24 September 2026."
-        case .unitedStates: "Bundled US menu snapshot from 12–14 November 2026, from each chain’s own published nutrition."
-        case .newZealand, .canada: "Bundled \(menuLabel) menu snapshot from 14 November 2026, from each chain’s own published nutrition."
-        case .unitedKingdom: "Bundled UK menu snapshot from 14–21 November 2026, from each chain’s own published nutrition."
-        case .singapore: "Bundled Singapore menu snapshot from 21 November 2026, from each chain’s own published nutrition."
-        case .southAfrica, .india: "Bundled \(menuLabel) menu snapshot from 20 November 2026, from each chain’s own published nutrition."
+        case .unitedStates: "Bundled US menu snapshot from 12–22 November 2026, from each chain’s own published nutrition."
+        case .newZealand, .canada: "Bundled \(menuLabel) menu snapshot from 14–22 November 2026, from each chain’s own published nutrition."
+        case .unitedKingdom: "Bundled UK menu snapshot from 14–22 November 2026, from each chain’s own published nutrition."
+        case .singapore: "Bundled Singapore menu snapshot from 21–22 November 2026, from each chain’s own published nutrition."
+        case .southAfrica, .india: "Bundled \(menuLabel) menu snapshot from 20–22 November 2026, from each chain’s own published nutrition."
         }
     }
     /// The example under Find's Ask box.

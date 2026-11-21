@@ -73,7 +73,7 @@ def main(args):
         foods = ordered(remote["foods"], local["foods"])
         if name in LISTS:
             out = foods
-        elif name == "supermarket":
+        elif name.startswith("supermarket"):
             out = {"format": remote.get("format", 1), "published": remote["published"], "chains": chains, "foods": foods}
         else:
             out = {"format": remote.get("format", 1), **({"country": remote["country"]} if remote.get("country") else {}),

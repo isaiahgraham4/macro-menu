@@ -52,6 +52,16 @@ enum BarcodeLookup {
         return foods.first { food in food.barcode.map { $0.drop { $0 == "0" } == key } ?? false }
     }
 
+    /// The product on the country's supermarket list (`Scripts/supermarket-foods.py`) with this barcode, ready to log without going
+    /// online. Those foods' ids end in the barcode; leading zeros are ignored, as in `match`.
+    static func shelf(_ code: String, in foods: [Food]) -> BarcodeProduct? {
+        let key = code.drop { $0 == "0" }
+        guard var food = foods.first(where: { $0.isSupermarket && $0.id.split(separator: ":").last.map { $0.drop { $0 == "0" } == key } ?? false }),
+              let source = food.productSource else { return nil }
+        food.barcode = code
+        return BarcodeProduct(food: food, per100: false, unit: food.servingWeight?.1 ?? "g", sourceURL: source)
+    }
+
     static func fetch(_ input: String) async throws -> BarcodeProduct {
         try await fetch(code: validatedCode(input))
     }

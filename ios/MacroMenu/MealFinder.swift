@@ -13,7 +13,7 @@ struct FindQuery: Equatable, Sendable {
     var customise = true
     /// Dietary needs: only items the restaurant's words show fit are used.
     var diet = DietFilter()
-    /// Coles and Woolworths products instead of restaurant menus; `chains` then picks between the two.
+    /// Supermarket products (Coles and Woolworths, Tesco…) instead of restaurant menus; `chains` then picks between the two.
     var supermarket = false
     /// Also true when a question named a supermarket.
     var usesSupermarkets: Bool { supermarket || !chains.isDisjoint(with: Food.supermarkets) }

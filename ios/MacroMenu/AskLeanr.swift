@@ -120,7 +120,11 @@ enum AskLeanr {
         if let fat = q.fat { parts.append("Fat up to \(fat.number) g") }
         if request.said.contains(.items) { parts.append(q.maxItems == 1 ? "One item" : "Up to \(q.maxItems) items") }
         parts += q.chains.compactMap { chainNames[$0] }.sorted()
-        if q.supermarket && q.chains.isEmpty { parts.append("Coles and Woolworths") }
+        if q.supermarket && q.chains.isEmpty {
+            // "Coles and Woolworths"; a country with more shops just says supermarkets.
+            let shops = chainNames.filter { Food.supermarkets.contains($0.key) }.map(\.value).sorted()
+            parts.append(shops.count == 2 ? shops.joined(separator: " and ") : shops.count == 1 ? shops[0] : "Supermarkets")
+        }
         if !q.diet.isEmpty { parts.append(q.diet.summary) }
         return parts
     }

@@ -140,7 +140,7 @@ struct BarcodeScanView: View {
                             if let manualEntry { manualEntry(nil) } else { dismiss() }
                         }
                     } footer: {
-                        Text("Product data by Open Food Facts (ODbL). Internet required. Only the barcode is sent for lookup; camera images stay on your device. Product coverage and nutrition completeness vary.")
+                        Text("Product data by Open Food Facts (ODbL). Internet required, except for products on Leanrrr's supermarket list. Only the barcode is sent for lookup; camera images stay on your device. Product coverage and nutrition completeness vary.")
                     }
                 }
             }
@@ -183,8 +183,11 @@ struct BarcodeScanView: View {
         do {
             let code = try BarcodeLookup.validatedCode(input)
             digits = code; message = nil; missing = nil
-            // Barcodes you've added to your own foods win over the online database.
-            if let food = BarcodeLookup.match(code, in: store.data.foods) { saved = (code, food) } else { pending = code }
+            // Barcodes you've added to your own foods win over the online database. Products on the country's supermarket list
+            // come up straight away, even offline; anything else is looked up online.
+            if let food = BarcodeLookup.match(code, in: store.data.foods) { saved = (code, food) }
+            else if let found = BarcodeLookup.shelf(code, in: store.supermarket) { product = found; recentData = RecentBarcodes.recording(found, in: recentData) }
+            else { pending = code }
         } catch { message = error.localizedDescription }
     }
     private func reset() { product = nil; saved = nil; message = nil; missing = nil; pending = nil; digits = "" }

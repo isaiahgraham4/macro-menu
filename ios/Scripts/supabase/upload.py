@@ -2,7 +2,7 @@
 """Uploads the bundled food files to Supabase, where the app checks for newer data a few times a day.
 
     python3 ios/Scripts/supabase/upload.py              # every dataset that changed
-    python3 ios/Scripts/supabase/upload.py menu-AU      # just these (menu-AU, menu-US ... generic, survey, supermarket)
+    python3 ios/Scripts/supabase/upload.py menu-AU      # just these (menu-AU, menu-US ... generic, survey, supermarket, supermarket-GB ...)
     python3 ios/Scripts/supabase/upload.py --force ...  # even if Supabase already has this revision
 
 Run it after rebuilding a file (export-menu.cjs, build-intl-menu.py, generic-foods.py ...) and running the checks.

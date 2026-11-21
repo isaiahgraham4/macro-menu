@@ -1,0 +1,2514 @@
+{
+ "chain": "uk-fiveguys",
+ "name": "Five Guys",
+ "how": "Official nutrition guide",
+ "url": "https://www.fiveguys.co.uk/nutritional-allergy-information/",
+ "src": "Five Guys UK Allergen, Ingredient & Nutrition Guide, UK locations only (dated 13 October 2026; checked 2026-11-22), per serving as listed; serving weights are worked out from the per-100 g column. Milkshakes are the base plus whipped cream and mix-ins, each listed on its own. Breakfast items are Heathrow only. Left out 3: Flake (43 kcal, macros add up to 184); Little Bacon Burger (537 kcal, macros add up to 1823); Americano White (no figures). Allergens from the guide's grid; 'may' is Five Guys' 'not suitable due to manufacturing and preparation' mark.",
+ "checked": "2026-11-22",
+ "energy": "cal",
+ "halal": false,
+ "items": [
+  {
+   "name": "Bacon (add-on)",
+   "cat": "extra",
+   "serve": "1 serving (14 g)",
+   "cal": 78,
+   "kj": 323,
+   "p": 6.4,
+   "c": 0.7,
+   "f": 5.5,
+   "sat": 2.2,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.92,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "Beef Patty (add-on)",
+   "cat": "extra",
+   "serve": "1 serving (67 g)",
+   "cal": 195,
+   "kj": 812,
+   "p": 18,
+   "c": 0,
+   "f": 14,
+   "sat": 5.6,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.13,
+   "contains": [],
+   "may": [
+    "milk",
+    "egg",
+    "soy"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Hot Dog Sausage (add-on)",
+   "cat": "extra",
+   "serve": "1 serving (76 g)",
+   "cal": 192,
+   "kj": 793,
+   "p": 11,
+   "c": 2.1,
+   "f": 15,
+   "sat": 6.4,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 1.9,
+   "contains": [
+    "soy"
+   ],
+   "may": [
+    "milk",
+    "egg"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Burger Bun",
+   "cat": "extra",
+   "serve": "1 serving (77 g)",
+   "cal": 238,
+   "kj": 1001,
+   "p": 6,
+   "c": 38,
+   "f": 7.5,
+   "sat": 2.6,
+   "sugar": 6.2,
+   "fibre": 1.4,
+   "sodium": null,
+   "salt": 0.49,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Hot Dog Bun",
+   "cat": "extra",
+   "serve": "1 serving (70 g)",
+   "cal": 215,
+   "kj": 909,
+   "p": 5.3,
+   "c": 34,
+   "f": 6.7,
+   "sat": 2.3,
+   "sugar": 5.9,
+   "fibre": 1.2,
+   "sodium": null,
+   "salt": 0.47,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "sesame",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Fries (mini)",
+   "cat": "side",
+   "serve": "1 serving (129 g)",
+   "cal": 350,
+   "kj": 1455,
+   "p": 5,
+   "c": 37,
+   "f": 21,
+   "sat": 2.84,
+   "sugar": 0.5,
+   "fibre": 3.4,
+   "sodium": null,
+   "salt": 0.56,
+   "contains": [
+    "peanut"
+   ],
+   "may": [
+    "milk"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Fries (little)",
+   "cat": "side",
+   "serve": "1 serving (243 g)",
+   "cal": 659,
+   "kj": 2741,
+   "p": 10,
+   "c": 70,
+   "f": 39,
+   "sat": 5.4,
+   "sugar": 1,
+   "fibre": 6.3,
+   "sodium": null,
+   "salt": 1.1,
+   "contains": [
+    "peanut"
+   ],
+   "may": [
+    "milk"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Fries (regular)",
+   "cat": "side",
+   "serve": "1 serving (396 g)",
+   "cal": 1073,
+   "kj": 4467,
+   "p": 16,
+   "c": 115,
+   "f": 63,
+   "sat": 8.7,
+   "sugar": 1.6,
+   "fibre": 10,
+   "sodium": null,
+   "salt": 1.7,
+   "contains": [
+    "peanut"
+   ],
+   "may": [
+    "milk"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Fries (large)",
+   "cat": "side",
+   "serve": "1 serving (557 g)",
+   "cal": 1509,
+   "kj": 6283,
+   "p": 23,
+   "c": 162,
+   "f": 89,
+   "sat": 12,
+   "sugar": 2.2,
+   "fibre": 14,
+   "sodium": null,
+   "salt": 2.4,
+   "contains": [
+    "peanut"
+   ],
+   "may": [
+    "milk"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Loaded Fries",
+   "cat": "side",
+   "serve": "1 serving (331 g)",
+   "cal": 751,
+   "kj": 3135,
+   "p": 14,
+   "c": 77,
+   "f": 41,
+   "sat": 8.9,
+   "sugar": 4.3,
+   "fibre": 8.9,
+   "sodium": null,
+   "salt": 3.97,
+   "contains": [
+    "milk",
+    "egg",
+    "peanut"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Loaded Cajun Fries",
+   "cat": "side",
+   "serve": "1 serving (331 g)",
+   "cal": 771,
+   "kj": 3227,
+   "p": 15,
+   "c": 79,
+   "f": 42,
+   "sat": 9.1,
+   "sugar": 4,
+   "fibre": 9,
+   "sodium": null,
+   "salt": 3.81,
+   "contains": [
+    "milk",
+    "egg",
+    "peanut"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Diced Green Peppers (loaded fries topping)",
+   "cat": "extra",
+   "serve": "1 serving (15 g)",
+   "cal": 3,
+   "kj": 15,
+   "p": 0.2,
+   "c": 0.8,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0.4,
+   "fibre": 0.3,
+   "sodium": null,
+   "salt": 0,
+   "contains": [],
+   "may": [
+    "gluten",
+    "milk",
+    "egg",
+    "soy",
+    "sesame",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Diced Onions (loaded fries topping)",
+   "cat": "extra",
+   "serve": "1 serving (25 g)",
+   "cal": 8,
+   "kj": 33,
+   "p": 0.2,
+   "c": 1.1,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0.6,
+   "fibre": 0.3,
+   "sodium": null,
+   "salt": 0,
+   "contains": [],
+   "may": [
+    "gluten",
+    "milk",
+    "egg",
+    "soy",
+    "sesame",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Diced Jalapeño Peppers (loaded fries topping)",
+   "cat": "extra",
+   "serve": "1 serving",
+   "cal": 1,
+   "kj": 5,
+   "p": 0.1,
+   "c": 0.6,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0.4,
+   "fibre": 1,
+   "sodium": null,
+   "salt": 0.02,
+   "contains": [],
+   "may": [
+    "gluten",
+    "milk",
+    "egg",
+    "soy",
+    "sesame",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Diced Tomatoes (loaded fries topping)",
+   "cat": "extra",
+   "serve": "1 serving",
+   "cal": 3,
+   "kj": 11,
+   "p": 0,
+   "c": 0.5,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0.5,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0,
+   "contains": [],
+   "may": [
+    "gluten",
+    "milk",
+    "egg",
+    "soy",
+    "sesame",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "BBQ Sauce",
+   "cat": "extra",
+   "serve": "1 serving (12 g)",
+   "cal": 16,
+   "kj": 69,
+   "p": 0,
+   "c": 3.3,
+   "f": 0,
+   "sat": 0,
+   "sugar": 3.2,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.28,
+   "contains": [],
+   "may": [
+    "gluten"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Cheese (1 slice)",
+   "cat": "extra",
+   "serve": "1 serving (19 g)",
+   "cal": 64,
+   "kj": 266,
+   "p": 3.6,
+   "c": 1.1,
+   "f": 4.9,
+   "sat": 3.2,
+   "sugar": 0.8,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.76,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "soy"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Green Peppers",
+   "cat": "extra",
+   "serve": "1 serving (10 g)",
+   "cal": 2,
+   "kj": 7,
+   "p": 0,
+   "c": 0,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0,
+   "contains": [],
+   "may": [
+    "gluten",
+    "milk",
+    "egg",
+    "soy",
+    "sesame",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Grilled Mushrooms",
+   "cat": "extra",
+   "serve": "1 serving (32 g)",
+   "cal": 12,
+   "kj": 51,
+   "p": 1,
+   "c": 2,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0,
+   "fibre": 0.7,
+   "sodium": null,
+   "salt": 0.23,
+   "contains": [],
+   "may": [
+    "gluten",
+    "milk",
+    "egg",
+    "soy",
+    "sesame",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Hot Sauce",
+   "cat": "extra",
+   "serve": "1 serving (8 g)",
+   "cal": 2,
+   "kj": 9,
+   "p": 0,
+   "c": 0,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.67,
+   "contains": [],
+   "may": [
+    "gluten"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "HP Brown Sauce",
+   "cat": "extra",
+   "serve": "1 serving (7 g)",
+   "cal": 7,
+   "kj": 36,
+   "p": 0,
+   "c": 2,
+   "f": 0,
+   "sat": 0,
+   "sugar": 1.6,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.09,
+   "contains": [
+    "gluten"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Jalapeño Peppers",
+   "cat": "extra",
+   "serve": "1 serving",
+   "cal": 1,
+   "kj": 4,
+   "p": 0,
+   "c": 0,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.02,
+   "contains": [],
+   "may": [
+    "gluten",
+    "milk",
+    "egg",
+    "soy",
+    "sesame",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Tomato Ketchup",
+   "cat": "extra",
+   "serve": "1 serving (14 g)",
+   "cal": 14,
+   "kj": 61,
+   "p": 0,
+   "c": 3.2,
+   "f": 0,
+   "sat": 0,
+   "sugar": 3.2,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.25,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Lettuce",
+   "cat": "extra",
+   "serve": "1 serving",
+   "cal": 4,
+   "kj": 12,
+   "p": 0,
+   "c": 0,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0,
+   "contains": [],
+   "may": [
+    "gluten",
+    "milk",
+    "egg",
+    "soy",
+    "sesame",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Mayonnaise",
+   "cat": "extra",
+   "serve": "1 serving (15 g)",
+   "cal": 113,
+   "kj": 466,
+   "p": 0,
+   "c": 0,
+   "f": 12,
+   "sat": 2,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.2,
+   "contains": [
+    "egg"
+   ],
+   "may": [
+    "gluten",
+    "milk",
+    "soy",
+    "sesame",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Mustard",
+   "cat": "extra",
+   "serve": "1 serving (7 g)",
+   "cal": 5,
+   "kj": 19,
+   "p": 0,
+   "c": 0,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.17,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Fresh Onions",
+   "cat": "extra",
+   "serve": "1 serving (25 g)",
+   "cal": 8,
+   "kj": 33,
+   "p": 0,
+   "c": 1.8,
+   "f": 0,
+   "sat": 0,
+   "sugar": 1,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0,
+   "contains": [],
+   "may": [
+    "gluten",
+    "milk",
+    "egg",
+    "soy",
+    "sesame",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Grilled Onions",
+   "cat": "extra",
+   "serve": "1 serving (32 g)",
+   "cal": 12,
+   "kj": 52,
+   "p": 0,
+   "c": 2.8,
+   "f": 0,
+   "sat": 0,
+   "sugar": 1.8,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0,
+   "contains": [],
+   "may": [
+    "gluten",
+    "milk",
+    "egg",
+    "soy",
+    "sesame",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Pickles",
+   "cat": "extra",
+   "serve": "1 serving",
+   "cal": 3,
+   "kj": 11,
+   "p": 0,
+   "c": 0,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.46,
+   "contains": [],
+   "may": [
+    "gluten",
+    "milk",
+    "egg",
+    "soy",
+    "sesame",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Relish",
+   "cat": "extra",
+   "serve": "1 serving (13 g)",
+   "cal": 20,
+   "kj": 85,
+   "p": 0,
+   "c": 4.6,
+   "f": 0,
+   "sat": 0,
+   "sugar": 3.8,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.18,
+   "contains": [],
+   "may": [
+    "gluten",
+    "milk",
+    "egg",
+    "soy",
+    "sesame",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Tomatoes",
+   "cat": "extra",
+   "serve": "1 serving",
+   "cal": 6,
+   "kj": 26,
+   "p": 0,
+   "c": 1.3,
+   "f": 0,
+   "sat": 0,
+   "sugar": 1.3,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0,
+   "contains": [],
+   "may": [
+    "gluten",
+    "milk",
+    "egg",
+    "soy",
+    "sesame",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Crispy Onions",
+   "cat": "extra",
+   "serve": "1 serving (8 g)",
+   "cal": 47,
+   "kj": 196,
+   "p": 0.5,
+   "c": 3.2,
+   "f": 3.5,
+   "sat": 1.7,
+   "sugar": 0.7,
+   "fibre": 0.4,
+   "sodium": null,
+   "salt": 0.1,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Milkshake base (regular)",
+   "cat": "drink",
+   "serve": "1 serving (355 g)",
+   "cal": 625,
+   "kj": 2616,
+   "p": 7.8,
+   "c": 75,
+   "f": 33,
+   "sat": 22,
+   "sugar": 69,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.71,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "sesame",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Whipped Cream (regular shake)",
+   "cat": "extra",
+   "serve": "1 serving (20 g)",
+   "cal": 68,
+   "kj": 284,
+   "p": 0,
+   "c": 0.6,
+   "f": 7,
+   "sat": 5.2,
+   "sugar": 0.6,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.02,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "sesame",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Banana mix-in (regular shake)",
+   "cat": "extra",
+   "serve": "1 serving (90 g)",
+   "cal": 194,
+   "kj": 814,
+   "p": 0,
+   "c": 36,
+   "f": 0,
+   "sat": 0,
+   "sugar": 36,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.14,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "sesame",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Chocolate mix-in (regular shake)",
+   "cat": "extra",
+   "serve": "1 serving (69 g)",
+   "cal": 217,
+   "kj": 922,
+   "p": 1.3,
+   "c": 48,
+   "f": 2,
+   "sat": 1.2,
+   "sugar": 30,
+   "fibre": 1.9,
+   "sodium": null,
+   "salt": 0,
+   "contains": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "sesame",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Biscoff Crumb mix-in (regular shake)",
+   "cat": "extra",
+   "serve": "1 serving (23 g)",
+   "cal": 111,
+   "kj": 467,
+   "p": 1.1,
+   "c": 17,
+   "f": 4.4,
+   "sat": 1.8,
+   "sugar": 9,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.05,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "sesame",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Oreo Cookie Pieces mix-in (regular shake)",
+   "cat": "extra",
+   "serve": "1 serving (24 g)",
+   "cal": 115,
+   "kj": 482,
+   "p": 1.2,
+   "c": 17,
+   "f": 4.8,
+   "sat": 1.4,
+   "sugar": 9.1,
+   "fibre": 0.6,
+   "sodium": null,
+   "salt": 0.55,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "sesame",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Jimmy's Iced Coffee mix-in (regular shake)",
+   "cat": "extra",
+   "serve": "1 serving (30 g)",
+   "cal": 8,
+   "kj": 34,
+   "p": 0.4,
+   "c": 1.6,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0.2,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "sesame",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Pistachio mix-in (regular shake)",
+   "cat": "extra",
+   "serve": "1 serving (30 g)",
+   "cal": 194,
+   "kj": 803,
+   "p": 7.8,
+   "c": 2.1,
+   "f": 17,
+   "sat": 2.1,
+   "sugar": 1.5,
+   "fibre": 2.1,
+   "sodium": null,
+   "salt": 0,
+   "contains": [
+    "milk",
+    "treenut"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "sesame",
+    "peanut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Reese's Peanut Butter Cups mix-in (regular shake)",
+   "cat": "extra",
+   "serve": "1 serving (33 g)",
+   "cal": 173,
+   "kj": 722,
+   "p": 3.1,
+   "c": 20,
+   "f": 8.9,
+   "sat": 3.2,
+   "sugar": 19,
+   "fibre": 1.1,
+   "sodium": null,
+   "salt": 0.24,
+   "contains": [
+    "milk",
+    "soy",
+    "peanut"
+   ],
+   "may": [
+    "gluten",
+    "sesame",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Peanut Butter mix-in (regular shake)",
+   "cat": "extra",
+   "serve": "1 serving (46 g)",
+   "cal": 286,
+   "kj": 1186,
+   "p": 12,
+   "c": 6.4,
+   "f": 23,
+   "sat": 3.5,
+   "sugar": 3,
+   "fibre": 1.7,
+   "sodium": null,
+   "salt": 0.74,
+   "contains": [
+    "milk",
+    "peanut"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "sesame",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Salted Caramel mix-in (regular shake)",
+   "cat": "extra",
+   "serve": "1 serving (59 g)",
+   "cal": 181,
+   "kj": 768,
+   "p": 0,
+   "c": 42,
+   "f": 1.1,
+   "sat": 0.6,
+   "sugar": 33,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.53,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "sesame",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Strawberry mix-in (regular shake)",
+   "cat": "extra",
+   "serve": "1 serving (80 g)",
+   "cal": 115,
+   "kj": 489,
+   "p": 0,
+   "c": 28,
+   "f": 0,
+   "sat": 0,
+   "sugar": 27,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.02,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "sesame",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Watermelon mix-in (regular shake)",
+   "cat": "extra",
+   "serve": "1 serving (78 g)",
+   "cal": 176,
+   "kj": 748,
+   "p": 0,
+   "c": 44,
+   "f": 0,
+   "sat": 0,
+   "sugar": 43,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.02,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "sesame",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Myprotein mix-in (12 g, regular shake)",
+   "cat": "extra",
+   "serve": "1 serving (15 g)",
+   "cal": 54,
+   "kj": 230,
+   "p": 12,
+   "c": 0.7,
+   "f": 0.1,
+   "sat": 0.1,
+   "sugar": 0.3,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.1,
+   "contains": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "sesame",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "M&Ms mix-in (regular shake)",
+   "cat": "extra",
+   "serve": "1 serving (78 g)",
+   "cal": 251,
+   "kj": 1059,
+   "p": 2.1,
+   "c": 49,
+   "f": 4.9,
+   "sat": 2.9,
+   "sugar": 50,
+   "fibre": 1.2,
+   "sodium": null,
+   "salt": 0.38,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "sesame",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Milkshake base (little)",
+   "cat": "drink",
+   "serve": "1 serving (178 g)",
+   "cal": 313,
+   "kj": 1312,
+   "p": 3.9,
+   "c": 37,
+   "f": 17,
+   "sat": 11,
+   "sugar": 35,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.36,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "sesame",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Whipped Cream (little shake)",
+   "cat": "extra",
+   "serve": "1 serving (10 g)",
+   "cal": 34,
+   "kj": 142,
+   "p": 0,
+   "c": 0,
+   "f": 3.5,
+   "sat": 2.6,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "sesame",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Banana mix-in (little shake)",
+   "cat": "extra",
+   "serve": "1 serving (45 g)",
+   "cal": 97,
+   "kj": 407,
+   "p": 0,
+   "c": 18,
+   "f": 2.5,
+   "sat": 1,
+   "sugar": 18,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.07,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "sesame",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Chocolate mix-in (little shake)",
+   "cat": "extra",
+   "serve": "1 serving (35 g)",
+   "cal": 109,
+   "kj": 461,
+   "p": 0.7,
+   "c": 24,
+   "f": 1,
+   "sat": 0.6,
+   "sugar": 15,
+   "fibre": 1,
+   "sodium": null,
+   "salt": 0,
+   "contains": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "sesame",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Biscoff Crumb mix-in (little shake)",
+   "cat": "extra",
+   "serve": "1 serving (12 g)",
+   "cal": 56,
+   "kj": 234,
+   "p": 0.6,
+   "c": 8,
+   "f": 2.2,
+   "sat": 0.9,
+   "sugar": 4.4,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.02,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "sesame",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Oreo Cookie Pieces mix-in (little shake)",
+   "cat": "extra",
+   "serve": "1 serving (12 g)",
+   "cal": 58,
+   "kj": 241,
+   "p": 0.6,
+   "c": 8,
+   "f": 2.4,
+   "sat": 1.2,
+   "sugar": 4.6,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.28,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "sesame",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Jimmy's Iced Coffee mix-in (little shake)",
+   "cat": "extra",
+   "serve": "1 serving (15 g)",
+   "cal": 4,
+   "kj": 17,
+   "p": 0.2,
+   "c": 0.8,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0.1,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "sesame",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Pistachio mix-in (little shake)",
+   "cat": "extra",
+   "serve": "1 serving (15 g)",
+   "cal": 97,
+   "kj": 401,
+   "p": 3.9,
+   "c": 1.1,
+   "f": 8.3,
+   "sat": 1.1,
+   "sugar": 0.8,
+   "fibre": 1.1,
+   "sodium": null,
+   "salt": 0,
+   "contains": [
+    "milk",
+    "treenut"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "sesame",
+    "peanut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Reese's Peanut Butter Cups mix-in (little shake)",
+   "cat": "extra",
+   "serve": "1 serving (16 g)",
+   "cal": 86,
+   "kj": 361,
+   "p": 1.6,
+   "c": 10,
+   "f": 4.5,
+   "sat": 1.6,
+   "sugar": 9.4,
+   "fibre": 0.6,
+   "sodium": null,
+   "salt": 0.12,
+   "contains": [
+    "milk",
+    "soy",
+    "peanut"
+   ],
+   "may": [
+    "gluten",
+    "sesame",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Peanut Butter mix-in (little shake)",
+   "cat": "extra",
+   "serve": "1 serving (23 g)",
+   "cal": 143,
+   "kj": 593,
+   "p": 6,
+   "c": 3.2,
+   "f": 12,
+   "sat": 1.8,
+   "sugar": 1.5,
+   "fibre": 0.8,
+   "sodium": null,
+   "salt": 0.37,
+   "contains": [
+    "milk",
+    "peanut"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "sesame",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Salted Caramel mix-in (little shake)",
+   "cat": "extra",
+   "serve": "1 serving (30 g)",
+   "cal": 91,
+   "kj": 388,
+   "p": 0,
+   "c": 21,
+   "f": 0.6,
+   "sat": 0.3,
+   "sugar": 17,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.27,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "sesame",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Strawberry mix-in (little shake)",
+   "cat": "extra",
+   "serve": "1 serving (40 g)",
+   "cal": 58,
+   "kj": 244,
+   "p": 0,
+   "c": 14,
+   "f": 0,
+   "sat": 0,
+   "sugar": 14,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "sesame",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Watermelon mix-in (little shake)",
+   "cat": "extra",
+   "serve": "1 serving (39 g)",
+   "cal": 88,
+   "kj": 374,
+   "p": 0,
+   "c": 22,
+   "f": 0,
+   "sat": 0,
+   "sugar": 22,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "sesame",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Myprotein mix-in (6 g, little shake)",
+   "cat": "extra",
+   "serve": "1 serving (7 g)",
+   "cal": 27,
+   "kj": 115,
+   "p": 6.2,
+   "c": 0.4,
+   "f": 0.1,
+   "sat": 0,
+   "sugar": 0.1,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.05,
+   "contains": [
+    "milk",
+    "soy"
+   ],
+   "may": [
+    "gluten",
+    "sesame",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "M&Ms mix-in (little shake)",
+   "cat": "extra",
+   "serve": "1 serving (39 g)",
+   "cal": 126,
+   "kj": 530,
+   "p": 1,
+   "c": 24,
+   "f": 2.5,
+   "sat": 1.5,
+   "sugar": 25,
+   "fibre": 0.6,
+   "sodium": null,
+   "salt": 0.19,
+   "contains": [
+    "milk"
+   ],
+   "may": [
+    "gluten",
+    "soy",
+    "sesame",
+    "peanut",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Hamburger",
+   "cat": "main",
+   "serve": "1 serving (216 g)",
+   "cal": 678,
+   "kj": 2837,
+   "p": 42,
+   "c": 35,
+   "f": 39,
+   "sat": 16,
+   "sugar": 6.8,
+   "fibre": 3.4,
+   "sodium": null,
+   "salt": 1.14,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "treenut"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Little Hamburger",
+   "cat": "main",
+   "serve": "1 serving (147 g)",
+   "cal": 464,
+   "kj": 1941,
+   "p": 24,
+   "c": 35,
+   "f": 24,
+   "sat": 9.4,
+   "sugar": 6.2,
+   "fibre": 2,
+   "sodium": null,
+   "salt": 0.99,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "treenut"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Cheeseburger",
+   "cat": "main",
+   "serve": "1 serving (255 g)",
+   "cal": 811,
+   "kj": 3393,
+   "p": 50,
+   "c": 39,
+   "f": 49,
+   "sat": 22,
+   "sugar": 8.6,
+   "fibre": 2.8,
+   "sodium": null,
+   "salt": 3.01,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "treenut"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Little Cheeseburger",
+   "cat": "main",
+   "serve": "1 serving (161 g)",
+   "cal": 512,
+   "kj": 2142,
+   "p": 27,
+   "c": 39,
+   "f": 27,
+   "sat": 12,
+   "sugar": 7,
+   "fibre": 2.7,
+   "sodium": null,
+   "salt": 1.72,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "treenut"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Bacon Burger",
+   "cat": "main",
+   "serve": "1 serving (233 g)",
+   "cal": 761,
+   "kj": 3184,
+   "p": 49,
+   "c": 36,
+   "f": 43,
+   "sat": 17,
+   "sugar": 7.2,
+   "fibre": 3.2,
+   "sodium": null,
+   "salt": 2.23,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "treenut"
+   ],
+   "vg": null,
+   "meat": [
+    "beef",
+    "pork"
+   ]
+  },
+  {
+   "name": "Bacon Cheeseburger",
+   "cat": "main",
+   "serve": "1 serving (276 g)",
+   "cal": 904,
+   "kj": 3782,
+   "p": 56,
+   "c": 37,
+   "f": 55,
+   "sat": 24,
+   "sugar": 8.8,
+   "fibre": 3.5,
+   "sodium": null,
+   "salt": 4.07,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "treenut"
+   ],
+   "vg": null,
+   "meat": [
+    "beef",
+    "pork"
+   ]
+  },
+  {
+   "name": "Little Bacon Cheeseburger",
+   "cat": "main",
+   "serve": "1 serving (180 g)",
+   "cal": 588,
+   "kj": 2460,
+   "p": 32,
+   "c": 36,
+   "f": 32,
+   "sat": 13,
+   "sugar": 7.3,
+   "fibre": 2.4,
+   "sodium": null,
+   "salt": 2.44,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "treenut"
+   ],
+   "vg": null,
+   "meat": [
+    "beef",
+    "pork"
+   ]
+  },
+  {
+   "name": "Hot Dog",
+   "cat": "main",
+   "serve": "1 serving (153 g)",
+   "cal": 483,
+   "kj": 2021,
+   "p": 18,
+   "c": 35,
+   "f": 29,
+   "sat": 12,
+   "sugar": 6.6,
+   "fibre": 2.3,
+   "sodium": null,
+   "salt": 2.78,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "sesame",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Cheese Dog",
+   "cat": "main",
+   "serve": "1 serving (162 g)",
+   "cal": 531,
+   "kj": 2222,
+   "p": 22,
+   "c": 39,
+   "f": 34,
+   "sat": 15,
+   "sugar": 7.6,
+   "fibre": 1.8,
+   "sodium": null,
+   "salt": 3.54,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "sesame",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Bacon Dog",
+   "cat": "main",
+   "serve": "1 serving (169 g)",
+   "cal": 574,
+   "kj": 2402,
+   "p": 23,
+   "c": 38,
+   "f": 35,
+   "sat": 14,
+   "sugar": 7.1,
+   "fibre": 2.1,
+   "sodium": null,
+   "salt": 3.68,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "sesame",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": [
+    "beef",
+    "pork"
+   ]
+  },
+  {
+   "name": "Bacon Cheese Dog",
+   "cat": "main",
+   "serve": "1 serving (182 g)",
+   "cal": 606,
+   "kj": 2536,
+   "p": 28,
+   "c": 36,
+   "f": 38,
+   "sat": 16,
+   "sugar": 7.6,
+   "fibre": 3.1,
+   "sodium": null,
+   "salt": 4.36,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy"
+   ],
+   "may": [
+    "sesame",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": [
+    "beef",
+    "pork"
+   ]
+  },
+  {
+   "name": "Veggie Sandwich",
+   "cat": "main",
+   "serve": "1 serving (256 g)",
+   "cal": 330,
+   "kj": 1381,
+   "p": 10,
+   "c": 52,
+   "f": 7.4,
+   "sat": 2.4,
+   "sugar": 13,
+   "fibre": 5.4,
+   "sodium": null,
+   "salt": 1.2,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Cheese Veggie Sandwich",
+   "cat": "main",
+   "serve": "1 serving (293 g)",
+   "cal": 428,
+   "kj": 1791,
+   "p": 14,
+   "c": 57,
+   "f": 14,
+   "sat": 5.9,
+   "sugar": 15,
+   "fibre": 5.9,
+   "sodium": null,
+   "salt": 2.5,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Grilled Cheese",
+   "cat": "main",
+   "serve": "1 serving (118 g)",
+   "cal": 434,
+   "kj": 1816,
+   "p": 12,
+   "c": 42,
+   "f": 24,
+   "sat": 7.6,
+   "sugar": 7.3,
+   "fibre": 2.2,
+   "sodium": null,
+   "salt": 2.2,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "BLT",
+   "cat": "main",
+   "serve": "1 serving (200 g)",
+   "cal": 652,
+   "kj": 2728,
+   "p": 22,
+   "c": 45,
+   "f": 41,
+   "sat": 9.9,
+   "sugar": 8.8,
+   "fibre": 3.6,
+   "sodium": null,
+   "salt": 2.67,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "treenut"
+   ],
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "Lettuce Wrap (patty with tomatoes, pickles, grilled onions, green peppers, mushrooms)",
+   "cat": "main",
+   "serve": "1 serving (262 g)",
+   "cal": 246,
+   "kj": 1030,
+   "p": 24,
+   "c": 5,
+   "f": 14,
+   "sat": 6,
+   "sugar": 3.7,
+   "fibre": 1.8,
+   "sodium": null,
+   "salt": 0.76,
+   "contains": [],
+   "may": [
+    "gluten",
+    "milk",
+    "egg",
+    "soy",
+    "sesame",
+    "treenut"
+   ],
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Peanuts (shelled)",
+   "cat": "side",
+   "serve": "1 serving",
+   "cal": 594,
+   "kj": 2462,
+   "p": 25,
+   "c": 25,
+   "f": 43,
+   "sat": 7,
+   "sugar": 5,
+   "fibre": 11,
+   "sodium": null,
+   "salt": 1.9,
+   "contains": [
+    "peanut"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Sausage, Egg & Cheese Sandwich",
+   "cat": "breakfast",
+   "serve": "1 serving (275 g)",
+   "cal": 775,
+   "kj": 3235,
+   "p": 42,
+   "c": 46,
+   "f": 47,
+   "sat": 20,
+   "sugar": 13,
+   "fibre": 2.2,
+   "sodium": null,
+   "salt": 4.01,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "treenut"
+   ],
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "Bacon, Egg & Cheese Sandwich",
+   "cat": "breakfast",
+   "serve": "1 serving (236 g)",
+   "cal": 681,
+   "kj": 2852,
+   "p": 40,
+   "c": 42,
+   "f": 39,
+   "sat": 17,
+   "sugar": 7.7,
+   "fibre": 2,
+   "sodium": null,
+   "salt": 3.8,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "treenut"
+   ],
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "Little Sausage, Egg and Cheese Sandwich",
+   "cat": "breakfast",
+   "serve": "1 serving (201 g)",
+   "cal": 560,
+   "kj": 2341,
+   "p": 28,
+   "c": 42,
+   "f": 31,
+   "sat": 12,
+   "sugar": 9.3,
+   "fibre": 1.9,
+   "sodium": null,
+   "salt": 2.32,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "treenut"
+   ],
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "Little Bacon, Egg & Cheese Sandwich",
+   "cat": "breakfast",
+   "serve": "1 serving (167 g)",
+   "cal": 518,
+   "kj": 2169,
+   "p": 27.7,
+   "c": 40,
+   "f": 27.5,
+   "sat": 11.4,
+   "sugar": 7,
+   "fibre": 1.7,
+   "sodium": null,
+   "salt": 3,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "treenut"
+   ],
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "Latte",
+   "cat": "drink",
+   "serve": "1 serving (287 g)",
+   "cal": 129,
+   "kj": 540,
+   "p": 5.8,
+   "c": 9.6,
+   "f": 5.8,
+   "sat": 3.5,
+   "sugar": 7.1,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.15,
+   "contains": [
+    "milk"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Cappuccino",
+   "cat": "drink",
+   "serve": "1 serving (242 g)",
+   "cal": 97,
+   "kj": 406,
+   "p": 4.1,
+   "c": 7.5,
+   "f": 3.9,
+   "sat": 2.5,
+   "sugar": 4.3,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.1,
+   "contains": [
+    "milk"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Flat White",
+   "cat": "drink",
+   "serve": "1 serving (194 g)",
+   "cal": 95,
+   "kj": 397,
+   "p": 4.7,
+   "c": 7.8,
+   "f": 5,
+   "sat": 3,
+   "sugar": 5.6,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.12,
+   "contains": [
+    "milk"
+   ],
+   "may": [],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Americano Black",
+   "cat": "drink",
+   "serve": "1 serving",
+   "cal": 17,
+   "kj": 71,
+   "p": 0.6,
+   "c": 0.8,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0,
+   "contains": [],
+   "may": [
+    "milk"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Double Espresso",
+   "cat": "drink",
+   "serve": "1 serving",
+   "cal": 11,
+   "kj": 46,
+   "p": 0,
+   "c": 0.6,
+   "f": 0.1,
+   "sat": 0,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0.02,
+   "contains": [],
+   "may": [
+    "milk"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Breakfast Tea",
+   "cat": "drink",
+   "serve": "1 serving",
+   "cal": 6,
+   "kj": 25,
+   "p": 0.2,
+   "c": 0,
+   "f": 0,
+   "sat": 0,
+   "sugar": 0,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 0,
+   "contains": [],
+   "may": [
+    "milk"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Little Egg Sandwich",
+   "cat": "breakfast",
+   "serve": "1 serving (127 g)",
+   "cal": 331,
+   "kj": 1390,
+   "p": 14,
+   "c": 39,
+   "f": 14,
+   "sat": 4.4,
+   "sugar": 6.3,
+   "fibre": 1.7,
+   "sodium": null,
+   "salt": 0.75,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "treenut"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Little Sausage Sandwich",
+   "cat": "breakfast",
+   "serve": "1 serving (131 g)",
+   "cal": 396,
+   "kj": 1658,
+   "p": 16,
+   "c": 40,
+   "f": 19,
+   "sat": 6.9,
+   "sugar": 8.6,
+   "fibre": 1.7,
+   "sodium": null,
+   "salt": 1.36,
+   "contains": [
+    "gluten",
+    "wheat",
+    "milk",
+    "egg",
+    "soy",
+    "sesame"
+   ],
+   "may": [
+    "treenut"
+   ],
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "Bacon (breakfast add-on)",
+   "cat": "extra",
+   "serve": "1 serving (21 g)",
+   "cal": 116,
+   "kj": 484,
+   "p": 10,
+   "c": 1,
+   "f": 8,
+   "sat": 3.4,
+   "sugar": 0.1,
+   "fibre": 0.1,
+   "sodium": null,
+   "salt": 1.39,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "Sausage Patty (breakfast add-on)",
+   "cat": "extra",
+   "serve": "1 serving (55 g)",
+   "cal": 158,
+   "kj": 657,
+   "p": 10,
+   "c": 2.6,
+   "f": 12,
+   "sat": 4.4,
+   "sugar": 2.4,
+   "fibre": 0.3,
+   "sodium": null,
+   "salt": 0.87,
+   "contains": [],
+   "may": [
+    "milk",
+    "egg",
+    "soy"
+   ],
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "Hash Browns",
+   "cat": "breakfast",
+   "serve": "1 serving (99 g)",
+   "cal": 197,
+   "kj": 824,
+   "p": 2,
+   "c": 20,
+   "f": 12,
+   "sat": 1.9,
+   "sugar": 1.1,
+   "fibre": 1.9,
+   "sodium": null,
+   "salt": 0.8,
+   "contains": [
+    "peanut"
+   ],
+   "may": [
+    "milk"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Egg (breakfast add-on)",
+   "cat": "extra",
+   "serve": "1 serving (51 g)",
+   "cal": 93,
+   "kj": 389,
+   "p": 8.4,
+   "c": 1.3,
+   "f": 6.1,
+   "sat": 1.9,
+   "sugar": 0,
+   "fibre": 0.3,
+   "sodium": null,
+   "salt": 0.26,
+   "contains": [
+    "milk",
+    "egg"
+   ],
+   "may": [
+    "soy"
+   ],
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Cajun Seasoning",
+   "cat": "extra",
+   "serve": "1 serving (7 g)",
+   "cal": 20,
+   "kj": 84,
+   "p": 0.8,
+   "c": 2.9,
+   "f": 0,
+   "sat": 0,
+   "sugar": 1.1,
+   "fibre": 0,
+   "sodium": null,
+   "salt": 1.2,
+   "contains": [],
+   "may": [],
+   "vg": null,
+   "meat": null
+  }
+ ]
+}

@@ -62,22 +62,40 @@ struct ChainPlace: Sendable {
         "us-panda": ChainPlace(query: "Panda Express", match: ["panda express"], appName: "Panda Express", appStoreID: 903990394, appLink: nil, store: "us"),
         "us-bk": ChainPlace(query: "Burger King", match: ["burger king"], appName: "Burger King", appStoreID: 638323895, appLink: nil, store: "us"),
         "us-popeyes": ChainPlace(query: "Popeyes", match: ["popeyes"], appName: "Popeyes", appStoreID: 1386566985, appLink: nil, store: "us"),
+        // Added 22 Nov 2026 (US store ids checked that day).
+        "us-arbys": ChainPlace(query: "Arby's", match: ["arby"], appName: "Arby's", appStoreID: 1348507359, appLink: nil, store: "us"),
+        "us-fiveguys": ChainPlace(query: "Five Guys", match: ["five guys"], appName: "Five Guys", appStoreID: 457494327, appLink: nil, store: "us"),
+        "us-deltaco": ChainPlace(query: "Del Taco", match: ["del taco"], appName: "Del Taco", appStoreID: 1114398020, appLink: nil, store: "us"),
+        "us-epl": ChainPlace(query: "El Pollo Loco", match: ["el pollo loco"], appName: "El Pollo Loco", appStoreID: 1138437085, appLink: nil, store: "us"),
+        "us-jitb": ChainPlace(query: "Jack in the Box", match: ["jack in the box"], appName: "Jack in the Box", appStoreID: 1283768751, appLink: nil, store: "us"),
         // Canada, UK and New Zealand menus. App Store ids from each country's store (checked 14 Nov 2026); no universal links yet.
         "ca-mcd": ChainPlace(query: "McDonald's", match: ["mcdonald"], appName: "McDonald's", appStoreID: 375695000, appLink: nil, store: "ca"),
         "ca-bk": ChainPlace(query: "Burger King", match: ["burger king"], appName: "Burger King", appStoreID: 1422864779, appLink: nil, store: "ca"),
         "ca-tims": ChainPlace(query: "Tim Hortons", match: ["tim hortons", "tim horton"], appName: "Tim Hortons", appStoreID: 1143883086, appLink: nil, store: "ca"),
+        "ca-aw": ChainPlace(query: "A&W", match: ["a&w", "a & w"], appName: "A&W", appStoreID: 1236416092, appLink: nil, store: "ca"),
+        "ca-popeyes": ChainPlace(query: "Popeyes", match: ["popeyes"], appName: "Popeyes Canada", appStoreID: 1536154976, appLink: nil, store: "ca"),
+        "ca-sub": ChainPlace(query: "Subway", match: ["subway"], appName: "Subway", appStoreID: 901941015, appLink: nil, store: "ca"),
+        "ca-marybrowns": ChainPlace(query: "Mary Brown's Chicken", match: ["mary brown"], appName: "Mary Brown's", appStoreID: 1471545209, appLink: nil, store: "ca"),
         "uk-mcd": ChainPlace(query: "McDonald's", match: ["mcdonald"], appName: "McDonald's", appStoreID: 1082476620, appLink: nil, store: "gb"),
         "uk-greggs": ChainPlace(query: "Greggs", match: ["greggs"], appName: "Greggs", appStoreID: 1098233626, appLink: nil, store: "gb"),
         "uk-kfc": ChainPlace(query: "KFC", match: ["kfc"], appName: "KFC", appStoreID: 933130307, appLink: nil, store: "gb"),
         "uk-nandos": ChainPlace(query: "Nando's", match: ["nando"], appName: "Nando's", appStoreID: 488574854, appLink: nil, store: "gb"),
         "uk-pret": ChainPlace(query: "Pret A Manger", match: ["pret"], appName: "Pret A Manger", appStoreID: 1530370563, appLink: nil, store: "gb"),
+        "uk-sub": ChainPlace(query: "Subway", match: ["subway"], appName: "Subway", appStoreID: 6479604296, appLink: nil, store: "gb"),
+        "uk-fiveguys": ChainPlace(query: "Five Guys", match: ["five guys"], appName: "Five Guys", appStoreID: 683336616, appLink: nil, store: "gb"),
+        "uk-leon": ChainPlace(query: "LEON", match: ["leon"], appName: "LEON Club", appStoreID: 1600714344, appLink: nil, store: "gb"),
+        "uk-costa": ChainPlace(query: "Costa Coffee", match: ["costa"], appName: "Costa Coffee Club", appStoreID: 578627826, appLink: nil, store: "gb"),
+        "uk-itsu": ChainPlace(query: "itsu", match: ["itsu"], appName: "itsu rewards", appStoreID: 1494506910, appLink: nil, store: "gb"),
         "nz-mcd": ChainPlace(query: "McDonald's", match: ["mcdonald"], appName: "McDonald's", appStoreID: 1217507712, appLink: nil, store: "nz"),
         "nz-dominos": ChainPlace(query: "Domino's Pizza", match: ["domino"], appName: "Domino's", appStoreID: 415419062, appLink: nil, store: "nz"),
         "nz-sub": ChainPlace(query: "Subway", match: ["subway"], appName: "Subway", appStoreID: 1615002546, appLink: nil, store: "nz"),
+        "nz-bk": ChainPlace(query: "Burger King", match: ["burger king"], appName: "Burger King NZ", appStoreID: 1011001920, appLink: nil, store: "nz"),
+        "nz-burgerfuel": ChainPlace(query: "BurgerFuel", match: ["burgerfuel", "burger fuel"], appName: "BurgerFuel", appStoreID: 6462438428, appLink: nil, store: "nz"),
         // South African menu. App Store ids from the ZA store (checked 20 Nov 2026); no universal links yet.
         "za-mcd": ChainPlace(query: "McDonald's", match: ["mcdonald"], appName: "McDonald's", appStoreID: 1217507712, appLink: nil, store: "za"),
         "za-nandos": ChainPlace(query: "Nando's", match: ["nando"], appName: "Nando's", appStoreID: 1316416867, appLink: nil, store: "za"),
         "za-wimpy": ChainPlace(query: "Wimpy", match: ["wimpy"], appName: "Wimpy Rewards", appStoreID: 1514418099, appLink: nil, store: "za"),
+        "za-simplyasia": ChainPlace(query: "Simply Asia", match: ["simply asia"], appName: "Simply Asia", appStoreID: 1454641846, appLink: nil, store: "za"),
         "za-debonairs": ChainPlace(query: "Debonairs Pizza", match: ["debonairs"], appName: "Debonairs Pizza", appStoreID: 1048945719, appLink: nil, store: "za"),
         "za-kauai": ChainPlace(query: "Kauai", match: ["kauai"], appName: "Kauai", appStoreID: 1585206786, appLink: nil, store: "za"),
         // Indian menu. App Store ids from the IN store (checked 20 Nov 2026); no universal links yet.
@@ -85,8 +103,10 @@ struct ChainPlace: Sendable {
         // Singapore menu. App Store ids from the SG store (checked 21 Nov 2026); no universal links yet.
         "sg-mcd": ChainPlace(query: "McDonald's", match: ["mcdonald"], appName: "McDonald's", appStoreID: 1217507712, appLink: nil, store: "sg"),
         "sg-kfc": ChainPlace(query: "KFC", match: ["kfc"], appName: "KFC Singapore", appStoreID: 876799229, appLink: nil, store: "sg"),
+        "sg-bk": ChainPlace(query: "Burger King", match: ["burger king"], appName: "Burger King SG", appStoreID: 6752974058, appLink: nil, store: "sg"),
         "in-kfc": ChainPlace(query: "KFC", match: ["kfc"], appName: "KFC India", appStoreID: 915824379, appLink: nil, store: "in"),
         "in-pizzahut": ChainPlace(query: "Pizza Hut", match: ["pizza hut"], appName: "Pizza Hut India", appStoreID: 1597873835, appLink: nil, store: "in"),
+        "in-bbqnation": ChainPlace(query: "Barbeque Nation", match: ["barbeque nation", "barbecue nation"], appName: "Barbeque Nation", appStoreID: 1080269411, appLink: nil, store: "in"),
     ]
 }
 

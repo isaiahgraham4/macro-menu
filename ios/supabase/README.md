@@ -13,6 +13,7 @@ and if the project is paused.
 | `generic` | `GenericFoods.json` | `Scripts/generic-foods.py` |
 | `survey` | `SurveyFoods.json` | `Scripts/survey-foods.py` |
 | `supermarket` | `SupermarketFoods.json` | `Scripts/supermarket-foods.py` |
+| `supermarket-NZ`, `-US`, `-CA`, `-GB`, `-ZA` | `SupermarketFoods-NZ.json` … | `Scripts/supermarket-foods.py <rows> NZ` (migration 003) |
 
 ## Tables
 

@@ -8,13 +8,30 @@ import UniformTypeIdentifiers
     @MainActor static func supermarketChecks(_ catalogURL: URL) throws {
         let url = catalogURL.deletingLastPathComponent().appending(path: "SupermarketFoods.json")
         let shops = try JSONDecoder().decode(MenuCatalog.self, from: Data(contentsOf: url))
-        assert(Set(shops.chains.map(\.id)) == Food.supermarkets && shops.foods.count > 500)
+        assert(Set(shops.chains.map(\.id)) == Set(MenuRegion.australia.supermarketIDs) && shops.foods.count > 500)
         assert(shops.foods.allSatisfy { $0.isValid && $0.isSupermarket && ["main", "snack"].contains($0.cat) && !$0.mismatch })
         assert(Set(shops.foods.map(\.id)).count == shops.foods.count)
         assert(shops.foods.allSatisfy { $0.diet == nil && $0.productSource != nil })   // unknown stays unknown
-        for chain in Food.supermarkets {
+        for chain in MenuRegion.australia.supermarketIDs {
             assert(shops.foods.contains { $0.chain == chain && $0.cat == "main" } && shops.foods.contains { $0.chain == chain && $0.cat == "snack" })
         }
+        // Every other country's shelf file: its own shops only, the same checks as Australia's, and its barcodes found by a scan.
+        for region in MenuRegion.allCases where region != .australia && region.hasSupermarkets {
+            let file = catalogURL.deletingLastPathComponent().appending(path: region.supermarketFile + ".json")
+            let list = try JSONDecoder().decode(MenuCatalog.self, from: Data(contentsOf: file))
+            assert(Set(list.chains.map(\.id)).isSubset(of: region.supermarketIDs) && list.foods.count > 150, "\(region)")
+            assert(list.foods.allSatisfy { $0.isValid && $0.isSupermarket && list.chains.map(\.id).contains($0.chain) && ["main", "snack"].contains($0.cat) && !$0.mismatch && $0.diet == nil && $0.productSource != nil }, "\(region)")
+            assert(Set(list.foods.map(\.id)).count == list.foods.count && list.foods.allSatisfy { $0.chain.hasPrefix(region.chainPrefix) })
+            let item = list.foods[list.foods.count / 2]
+            assert(BarcodeLookup.shelf(String(item.id.split(separator: ":").last!), in: list.foods)?.food.chain.hasPrefix(region.chainPrefix) == true)
+        }
+        // Scanning a listed product's barcode finds it without going online, keeping the barcode; a 12-digit UPC matches its EAN.
+        let listed = shops.foods[0]
+        let code = String(listed.id.split(separator: ":").last!)
+        let scanned = BarcodeLookup.shelf(code, in: shops.foods)!
+        assert(scanned.food.id == listed.id && scanned.food.barcode == code && !scanned.per100 && scanned.sourceURL == listed.productSource)
+        assert(BarcodeLookup.shelf("0" + code, in: shops.foods)?.food.id == listed.id && BarcodeLookup.shelf("9300000000000", in: shops.foods) == nil)
+        assert(BarcodeLookup.shelf(code, in: shops.foods.map { var f = $0; f.chain = "kfc"; return f }) == nil)
         let started = ContinuousClock.now
         let meals = MealFinder.find(shops.foods, query: FindQuery(chains: ["woolworths"], calories: 600, protein: 30, supermarket: true))
         assert(ContinuousClock.now - started < .seconds(4))
@@ -57,7 +74,7 @@ import UniformTypeIdentifiers
         let us = try JSONDecoder().decode(MenuCatalog.self, from: Data(contentsOf: usURL))
         assert(us.format == MenuUpdates.format && us.foods.count > 700)
         let chains = Set(us.chains.map(\.id))
-        assert(chains == ["mine", "us-mcd", "us-cfa", "us-wendys", "us-tacobell", "us-panda", "us-bk", "us-popeyes"])
+        assert(chains == ["mine", "us-mcd", "us-cfa", "us-wendys", "us-tacobell", "us-panda", "us-bk", "us-popeyes", "us-arbys", "us-fiveguys", "us-deltaco", "us-epl", "us-jitb"])
         assert(us.foods.allSatisfy { $0.isValid && chains.contains($0.chain) } && Set(us.foods.map(\.id)).count == us.foods.count)
         assert(Set(us.foods.map(\.id)).isDisjoint(with: australia.foods.map(\.id)))   // logs from either menu never collide
         for region in [MenuRegion.australia, .unitedStates] {
@@ -93,11 +110,11 @@ import UniformTypeIdentifiers
 
     /// Canada, the UK, New Zealand, South Africa, India and Singapore: each its own file and chain prefix, with nicknames, quiz meals and store links that resolve.
     @MainActor static func intlMenuChecks(_ catalogURL: URL, australia: MenuCatalog) throws {
-        let expected: [MenuRegion: Set<String>] = [.canada: ["mine", "ca-mcd", "ca-bk", "ca-tims"], .unitedKingdom: ["mine", "uk-mcd", "uk-greggs", "uk-kfc", "uk-nandos", "uk-pret"],
-                                                   .newZealand: ["mine", "nz-mcd", "nz-dominos", "nz-sub"],
-                                                   .southAfrica: ["mine", "za-mcd", "za-nandos", "za-wimpy", "za-debonairs", "za-kauai"],
-                                                   .india: ["mine", "in-mcd", "in-kfc", "in-pizzahut"],
-                                                   .singapore: ["mine", "sg-mcd", "sg-kfc"]]
+        let expected: [MenuRegion: Set<String>] = [.canada: ["mine", "ca-mcd", "ca-bk", "ca-tims", "ca-aw", "ca-popeyes", "ca-sub", "ca-marybrowns"], .unitedKingdom: ["mine", "uk-mcd", "uk-greggs", "uk-kfc", "uk-nandos", "uk-pret", "uk-sub", "uk-fiveguys", "uk-leon", "uk-costa", "uk-itsu"],
+                                                   .newZealand: ["mine", "nz-mcd", "nz-dominos", "nz-sub", "nz-bk", "nz-burgerfuel", "nz-stpierres"],
+                                                   .southAfrica: ["mine", "za-mcd", "za-nandos", "za-wimpy", "za-debonairs", "za-kauai", "za-simplyasia"],
+                                                   .india: ["mine", "in-mcd", "in-kfc", "in-pizzahut", "in-bbqnation"],
+                                                   .singapore: ["mine", "sg-mcd", "sg-kfc", "sg-bk", "sg-saladstop", "sg-dailycut"]]
         for (region, ids) in expected {
             let url = catalogURL.deletingLastPathComponent().appending(path: region.menuFile + ".json")
             let menu = try JSONDecoder().decode(MenuCatalog.self, from: Data(contentsOf: url))
@@ -1152,9 +1169,9 @@ import UniformTypeIdentifiers
         assert(MenuUpdates.versionURL(.survey)?.absoluteString == "https://dmfmrqvmwvabzkqgdbdw.supabase.co/rest/v1/datasets?id=eq.survey&select=revision,published")
         // Each dataset matches Scripts/supabase/leanrrr_data.py, and the Australian menu keeps the cache earlier versions wrote.
         assert(MenuRegion.allCases.map { FoodDataset.menu($0).id } == ["menu-AU", "menu-NZ", "menu-US", "menu-CA", "menu-GB", "menu-ZA", "menu-IN", "menu-SG"])
-        assert([FoodDataset.everyday, .survey, .supermarket].map(\.id) == ["generic", "survey", "supermarket"])
+        assert([FoodDataset.everyday, .survey, .supermarket(.australia), .supermarket(.unitedKingdom)].map(\.id) == ["generic", "survey", "supermarket", "supermarket-GB"])
         assert(FoodDataset.menu(.australia).cacheURL.lastPathComponent == "MenuData.json" && FoodDataset.survey.cacheURL.lastPathComponent == "survey.json")
-        assert(Set(([FoodDataset.everyday, .survey, .supermarket] + MenuRegion.allCases.map { .menu($0) }).map(\.cacheURL)).count == 11)
+        assert(Set(([FoodDataset.everyday, .survey] + MenuRegion.allCases.flatMap { [.menu($0), .supermarket($0)] }).map(\.cacheURL)).count == 2 + 2 * MenuRegion.allCases.count)
         var newer = catalog; newer.published = Date().formatted(Date.ISO8601FormatStyle(includingFractionalSeconds: true))
         assert(MenuUpdates.acceptable(newer, over: catalog))
         // A date from the future, or one that isn't a date, never wins, and a menu carrying one can't block a real menu.
@@ -1189,7 +1206,7 @@ import UniformTypeIdentifiers
         let listStore = AppStore(url: root.appending(path: "lists.json"), region: .australia, catalogURL: catalogURL, legacyURL: nil,
                                  everydayURL: appFolder.appending(path: "GenericFoods.json"), surveyURL: appFolder.appending(path: "SurveyFoods.json"),
                                  supermarketURL: appFolder.appending(path: "SupermarketFoods.json"), foodListsURL: appFolder.appending(path: "FoodLists.json"))
-        guard let everydayInUse = listStore.foodsInUse(.everyday), let shopsInUse = listStore.foodsInUse(.supermarket),
+        guard let everydayInUse = listStore.foodsInUse(.everyday), let shopsInUse = listStore.foodsInUse(.supermarket(.australia)),
               listStore.foodsInUse(.survey) != nil, listStore.foodsInUse(.menu(.unitedStates)) == nil,
               listStore.foodsInUse(.menu(.australia))?.revision == catalog.revision else { fatalError("food lists in use") }
         assert(everydayInUse.chains.isEmpty && everydayInUse.revision == lists["generic"]?.revision && everydayInUse.published == lists["generic"]?.published)
@@ -1206,8 +1223,8 @@ import UniformTypeIdentifiers
         var usMenu = newer; usMenu.revision = "us"
         listStore.useFoods(usMenu, for: .menu(.unitedStates)); assert(listStore.catalog.revision == catalog.revision)
         assert(listStore.useRegion(.unitedKingdom, menuURL: appFolder.appending(path: "MenuData-GB.json")))
-        assert(listStore.foodsInUse(.supermarket) == nil && listStore.foodsInUse(.menu(.unitedKingdom)) != nil)
-        listStore.useFoods(shopsInUse, for: .supermarket); assert(listStore.supermarket.isEmpty)
+        assert(listStore.foodsInUse(.supermarket(.australia)) == nil && listStore.foodsInUse(.menu(.unitedKingdom)) != nil)
+        listStore.useFoods(shopsInUse, for: .supermarket(.australia)); assert(listStore.supermarket.isEmpty)
         UserDefaults.standard.removeObject(forKey: MenuRegion.key)
         let cachedList = root.appending(path: "cached-list.json")
         try JSONEncoder().encode(newerEveryday).write(to: cachedList)

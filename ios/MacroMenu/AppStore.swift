@@ -10,7 +10,7 @@ final class AppStore {
     /// Thousands more foods as people eat them, from USDA's survey foods (`Scripts/survey-foods.py`). Searchable and
     /// matched from photos, but never suggested, and their meats and allergens are unknown, so dietary needs leave them out.
     private(set) var survey: [Food] = []
-    /// Coles and Woolworths ready meals and snacks (`Scripts/supermarket-foods.py`). Kept apart from the restaurant menus, so search
+    /// The country's supermarket ready meals and snacks (`Scripts/supermarket-foods.py`), e.g. Coles and Woolworths. Kept apart from the restaurant menus, so search
     /// and Find's supermarket mode see them but the Map, roulette, suggestions and restaurant lists don't.
     private(set) var supermarket: [Food] = []
     private(set) var supermarketChains: [Chain] = []
@@ -86,7 +86,8 @@ final class AppStore {
         if let supermarketURL, let shops = try? JSONDecoder().decode(MenuCatalog.self, from: Data(contentsOf: supermarketURL)) {
             supermarket = shops.foods.filter { $0.isValid && $0.isSupermarket }
             supermarketChains = shops.chains
-            if listVersions["supermarket"]?.published == nil { listVersions["supermarket", default: FoodListVersion()].published = shops.published }
+            let id = FoodDataset.supermarket(region).id
+            if listVersions[id]?.published == nil { listVersions[id, default: FoodListVersion()].published = shops.published }
         }
         if let catalogURL {
             do { catalog = try JSONDecoder().decode(MenuCatalog.self, from: Data(contentsOf: catalogURL)) }
@@ -128,8 +129,8 @@ final class AppStore {
             return
         case .everyday: everyday = list.foods.filter { $0.isValid && $0.isEveryday }
         case .survey: survey = list.foods.filter { $0.isValid && $0.isEveryday }
-        case .supermarket:
-            guard region.hasSupermarkets else { return }
+        case .supermarket(let shopsRegion):
+            guard shopsRegion == region else { return }
             supermarket = list.foods.filter { $0.isValid && $0.isSupermarket }
             supermarketChains = list.chains
         }
@@ -142,8 +143,8 @@ final class AppStore {
         case .menu(let menuRegion): return menuRegion == region ? catalog : nil
         case .everyday: return MenuCatalog(format: MenuUpdates.format, revision: version?.revision, published: version?.published, chains: [], foods: everyday)
         case .survey: return MenuCatalog(format: MenuUpdates.format, revision: version?.revision, published: version?.published, chains: [], foods: survey)
-        case .supermarket:
-            guard region.hasSupermarkets, !supermarketChains.isEmpty else { return nil }
+        case .supermarket(let shopsRegion):
+            guard shopsRegion == region, !supermarketChains.isEmpty else { return nil }
             return MenuCatalog(format: MenuUpdates.format, revision: version?.revision, published: version?.published, chains: supermarketChains, foods: supermarket)
         }
     }
@@ -160,7 +161,8 @@ final class AppStore {
         catalog = menu
         supermarket = shops?.foods.filter { $0.isValid && $0.isSupermarket } ?? []
         supermarketChains = shops?.chains ?? []
-        listVersions["supermarket"] = shops.map { FoodListVersion(revision: bundledListVersions["supermarket"]?.revision, published: bundledListVersions["supermarket"]?.published ?? $0.published) }
+        let id = FoodDataset.supermarket(new).id
+        listVersions[id] = shops.map { FoodListVersion(revision: bundledListVersions[id]?.revision, published: bundledListVersions[id]?.published ?? $0.published) }
         return true
     }
     var goals: Goals { data.goalSets.first { $0.id == data.activeGoal } ?? data.goalSets[0] }
