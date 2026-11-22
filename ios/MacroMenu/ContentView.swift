@@ -244,6 +244,9 @@ struct ContentView: View {
                 }
             }
         }
+        // Menu pickers ("Log to") keep the tint they were made with, so a new colour pack rebuilds each tab.
+        // The accent only changes in Settings, which sits over the tabs, so nothing on screen is lost.
+        .id(accentRaw)
     }
 }
 #Preview { ContentView() }

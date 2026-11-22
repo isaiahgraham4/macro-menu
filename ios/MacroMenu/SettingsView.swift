@@ -17,6 +17,8 @@ struct SettingsView: View {
     @AppStorage(LiveDay.storageKey) private var liveDay = false
     @AppStorage(FeatureTips.enabledKey) private var featureTips = true
     @AppStorage(AppAccent.storageKey) private var accentRaw = AppAccent.standard.rawValue
+    /// Bumped a moment after the accent changes, once this sheet's own tint has caught up, to rebuild its menu pickers.
+    @State private var pickerRefresh = 0
     @AppStorage(AppIconTheme.storageKey) private var iconRaw = AppIconTheme.standard.rawValue
     private var current: AppAccent { AppAccent.resolved(accentRaw) }
     private var isCustomAccent: Bool { Premium.isUnlocked && ThemeColour.isCustom(accentRaw) }
@@ -56,6 +58,8 @@ struct SettingsView: View {
                         Text(option.name).tag(option)
                     }
                 }
+                // A menu picker keeps the tint it was made with; rebuild it when a colour pack changes the accent.
+                .id(pickerRefresh)
                 Text("System follows your device’s appearance and changes automatically with it.")
                     .font(.roboto(.caption)).foregroundStyle(.secondary)
             }
@@ -175,6 +179,7 @@ struct SettingsView: View {
                 Picker(selection: Binding(get: { store.region }, set: { if !AppServices.useRegion($0) { countryFailed = true } })) {
                     ForEach(MenuRegion.allCases) { Text($0.name).tag($0) }
                 } label: { Label("Country", systemImage: "globe") }
+                .id(pickerRefresh)
             } header: { Text("Restaurant menus") } footer: {
                 Text("Changes which restaurants Leanrrr shows. Foods you’ve logged or saved keep their numbers. Supermarket ready meals and snacks are in Australia, New Zealand, the US, Canada, the UK and South Africa. Copycat Kitchen is only in Australia.")
             }
@@ -250,6 +255,8 @@ struct SettingsView: View {
                 }
             }
         }.navigationTitle("Settings")
+            // Rebuilt in the same update, a picker still picks up the old tint, so wait a turn of the run loop.
+            .onChange(of: accentRaw) { DispatchQueue.main.async { pickerRefresh += 1 } }
             .sheet(isPresented: $showQuiz) { LeanrOnboarding(askCountry: false) { showQuiz = false } }
             .alert("Couldn’t load that menu", isPresented: $countryFailed) {
                 Button("OK", role: .cancel) {}
