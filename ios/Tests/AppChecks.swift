@@ -273,7 +273,11 @@ import UniformTypeIdentifiers
         defer { try? FileManager.default.removeItem(at: root) }
         let catalogURL = URL(fileURLWithPath: CommandLine.arguments[1])
         let catalog = try JSONDecoder().decode(MenuCatalog.self,from: Data(contentsOf: catalogURL))
-        assert(catalog.foods.count == 2984)
+        assert(catalog.foods.count == 3036)
+        // Single pieces (single-pieces.py): one wing is the 3-pack divided by 3; KFC's own single piece isn't doubled up.
+        let oneWing = catalog.foods.first { $0.id == "kfc:1-wicked-wing" }!, threeWings = catalog.foods.first { $0.id == "kfc:3-wicked-wings" }!
+        assert(oneWing.kj == (threeWings.kj / 3).rounded() && oneWing.p == 7.5 && oneWing.serve == "1 piece · 41 g · 3 Wicked Wings ÷ 3")
+        assert(catalog.foods.filter { $0.chain == "kfc" && $0.name.hasPrefix("1 Piece") && $0.name.hasSuffix("of Chicken") }.count == 1)
         let copycat = CopycatBook.load(catalogURL.deletingLastPathComponent().appending(path: "CopycatKitchen.json"))
         let compared = copycat.comparisons(menu: catalog.foods)
         assert(copycat.recipes.count == 12 && compared.count == 12)   // every recipe's shop item is on the menu
@@ -361,7 +365,7 @@ import UniformTypeIdentifiers
         assert(Roulette.limits(dinnerDay, goals: dinnerDay.goalSets[0], now: dinnerTime) == nil)
         // Grill'd: every burger on its default bun, with bun and patty swaps that are differences between Grill'd's own panels.
         let grilld = catalog.foods.filter { $0.chain == "grilld" }
-        assert(grilld.count == 80 && grilld.allSatisfy { $0.c != nil && $0.f != nil })
+        assert(grilld.count == 82 && grilld.allSatisfy { $0.c != nil && $0.f != nil })
         // The lunchtime wraps (Nov 2026): Grill'd names them without "Wrap", so the build adds it.
         let classicWrap = grilld.first { $0.id == "grilld:the-classic-wrap" }!
         assert(classicWrap.name == "The Classic Wrap" && classicWrap.kj == 2170 && classicWrap.p == 24.2 && classicWrap.serve == "1 wrap · 270 g")
@@ -386,7 +390,7 @@ import UniformTypeIdentifiers
         assert(MealPhoto.chain(for: "Grill'd", chainNames: Dictionary(uniqueKeysWithValues: catalog.chains.map { ($0.id, $0.name) })) == "grilld")
         // Nando's: every protein, style, extra and removal is a Nando's panel, so none are estimates.
         let nandos = catalog.foods.filter { $0.chain == "nandos" }
-        assert(nandos.count == 56 && nandos.allSatisfy { $0.c != nil && $0.f != nil })
+        assert(nandos.count == 61 && nandos.allSatisfy { $0.c != nil && $0.f != nil })
         let classic = nandos.first { $0.name == "PERinaise Classic" }!
         assert(classic.kj == 2300 && classic.serve.hasPrefix("Chicken Leg Fillets · Portuguese Roll"))
         let toBreast = classic.modifiers!.first { $0.name == "Swap to Chicken Breast" }!
@@ -538,7 +542,7 @@ import UniformTypeIdentifiers
         assert(AskLeanr.parse("under 700 at guzman", chainNames: chainNames, defaults: FindQuery()).query.calories == 700)
         // Schnitz: official panels only, so every item has protein, carbs and fat, and an order can be found there.
         let schnitz = catalog.foods.filter { $0.chain == "schnitz" }
-        assert(schnitz.count == 62 && schnitz.allSatisfy { $0.c != nil && $0.f != nil && !$0.mismatch })
+        assert(schnitz.count == 64 && schnitz.allSatisfy { $0.c != nil && $0.f != nil && !$0.mismatch })
         let schnitzOrder = MealFinder.find(catalog.foods, query: FindQuery(chains: ["schnitz"], calories: 900, protein: 45, maxItems: 2))
         assert(!schnitzOrder.isEmpty && schnitzOrder.allSatisfy { $0.items.allSatisfy { $0.food.chain == "schnitz" } && $0.total.cal <= 900 })
         assert(MealPhoto.chain(for: "Schnitz", chainNames: Dictionary(uniqueKeysWithValues: catalog.chains.map { ($0.id, $0.name) })) == "schnitz")

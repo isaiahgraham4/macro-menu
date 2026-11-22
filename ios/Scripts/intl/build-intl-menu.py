@@ -39,6 +39,9 @@ _spec = importlib.util.spec_from_file_location('usmenu', HERE.parent / 'us' / 'b
 us = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(us)
 import menu_feeds  # noqa: E402  (us-menu put this folder on sys.path)
+_pieces_spec = importlib.util.spec_from_file_location('single_pieces', HERE.parent / 'single-pieces.py')
+single_pieces = importlib.util.module_from_spec(_pieces_spec)
+_pieces_spec.loader.exec_module(single_pieces)
 
 # Meats from names, for these menus' own words. First pattern per meat; names that say "vegan" or "plant based" have none.
 us.MEATS[:] = [
@@ -1277,6 +1280,7 @@ def build(country, chains):
             else:
                 rows.append(r)
         foods += rows
+    foods, split, _ = single_pieces.add_single_pieces(foods, log=lambda line: print(f'  {country}' + line[1:]))
     ids = [f['id'] for f in foods]
     dupes = {i for i in ids if ids.count(i) > 1}
     if dupes:
@@ -1286,6 +1290,7 @@ def build(country, chains):
             assert k in menu_feeds.APP_KEYS, (f['id'], k)
     when = lambda c: datetime.strptime(CHECKED[c], '%Y-%m-%d').strftime('%-d %b %Y')
     meta = [{'id': 'mine', 'name': 'My foods'}] + [dict(c, src=c['src'].format(checked=when(c['id']))) for c, _ in chains]
+    meta = [dict(c, src=single_pieces.noted(c['src'])) if c['id'] in split else c for c in meta]
     out = APP / f'MenuData-{country}.json'
     revision = hashlib.sha256(json.dumps({'chains': meta, 'foods': foods}, sort_keys=True).encode()).hexdigest()[:16]
     published = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%S.000Z')

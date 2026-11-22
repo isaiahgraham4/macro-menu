@@ -569,6 +569,11 @@ def shared_chains():
     return out
 
 
+_pieces_spec = importlib.util.spec_from_file_location('single_pieces', pathlib.Path(__file__).resolve().parent.parent / 'single-pieces.py')
+single_pieces = importlib.util.module_from_spec(_pieces_spec)
+_pieces_spec.loader.exec_module(single_pieces)
+
+
 def main():
     foods, checked = [], {}
     for chain, fn in (('us-mcd', mcd), ('us-cfa', cfa), ('us-wendys', wendys), ('us-tacobell', tacobell), ('us-panda', panda), ('us-bk', bk),
@@ -580,6 +585,7 @@ def main():
     for meta, rows, when in shared:
         foods += rows
         checked[meta['id']] = datetime.strptime(when, '%Y-%m-%d').strftime('%-d %b %Y')
+    foods, split, _ = single_pieces.add_single_pieces(foods)
     ids = [f['id'] for f in foods]
     dupes = {i for i in ids if ids.count(i) > 1}
     if dupes:
@@ -589,6 +595,7 @@ def main():
             assert k in ALLERGENS, (f['id'], k)
     chains = [dict(c, src=c['src'].format(checked=checked[c['id']], **CHAIN_EXTRA.get(c['id'], {}))) if 'src' in c else c
               for c in CHAINS + [meta for meta, _, _ in shared]]
+    chains = [dict(c, src=single_pieces.noted(c['src'])) if c['id'] in split else c for c in chains]
     revision = hashlib.sha256(json.dumps({'chains': chains, 'foods': foods}, sort_keys=True).encode()).hexdigest()[:16]
     published = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%S.000Z')
     try:

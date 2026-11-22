@@ -316,6 +316,13 @@ if (!SHOW_PRICES) {
   for (const food of data.foods) { delete food.price; delete food.pf; for (const mod of food.modifiers || []) delete mod.price; }
   for (const chain of data.chains) delete chain.psrc;
 }
+// Single pieces (1 wing, 1 nugget...) for packs, from single-pieces.py, which the other countries' menus use too.
+{
+  const split = JSON.parse(require('child_process').execFileSync('python3', [path.join(__dirname, 'single-pieces.py')],
+    {input: JSON.stringify({chains: data.chains, foods: data.foods}), stdio: ['pipe', 'pipe', 'inherit'], maxBuffer: 1 << 28}));
+  data.chains = split.chains;
+  data.foods = split.foods;
+}
 const crypto = require('crypto');
 const bundledPath = path.join(root, 'ios/MacroMenu/MenuData.json');
 const revision = crypto.createHash('sha256').update(JSON.stringify({chains: data.chains, foods: data.foods})).digest('hex').slice(0, 16);
