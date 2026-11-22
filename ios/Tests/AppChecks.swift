@@ -569,6 +569,12 @@ import UniformTypeIdentifiers
         assert(MealSwaps.options(for: Portion(food: original, quantity: 2), foods: swapFoods).map(\.id) == ["retained", "low"])
         assert(MealSwaps.options(for: Portion(food: original, quantity: 0), foods: swapFoods).isEmpty)
         assert(MealSwaps.options(for: Portion(food: original, quantity: 0.01), foods: swapFoods).isEmpty)
+        // A swap is a serving, not a seasoning sachet or one nugget from a box.
+        func catalogFood(_ name: String) -> Food { catalog.foods.first { $0.chain == "mcd" && $0.name == name }! }
+        let friesSwaps = MealSwaps.options(for: Portion(food: catalogFood("Fries (medium)")), foods: catalog.foods).map(\.name)
+        assert(!friesSwaps.contains("Nashville Shaker Seasoning") && friesSwaps.contains("Fries (small)") && friesSwaps.contains("Apple Slices"))
+        let bigMacSwaps = MealSwaps.options(for: Portion(food: catalogFood("Big Mac")), foods: catalog.foods).map(\.name)
+        assert(bigMacSwaps.contains("Double Cheeseburger") && !bigMacSwaps.contains { $0.contains("(1 pc)") })
         // Widgets mirror today's active target and logged portions, never the unlogged tray.
         let widgetNow = Date()
         var widgetState = AppData()
@@ -2115,6 +2121,23 @@ import UniformTypeIdentifiers
             let rice = Food(name: "Rice", kj: 900, cal: 205, p: 4, serve: "1 cup (158 g)")
             assert(weighed[1].servings(of: rice) == (1.5, true))
             assert(FoodPhrase(name: "x", amount: 100, unit: .gram, original: "").servings(of: Food(name: "Bar", kj: 1, cal: 1, p: 0)).sure == false)
+            // A count of pieces picks the item sold as that many, not that many boxes of the first size found.
+            assert(FoodPhrase.pieces(in: "10 Wicked Wings") == 10 && FoodPhrase.pieces(in: "Chicken McNuggets (6 pc)") == 6)
+            assert(FoodPhrase.pieces(in: "3 Pieces of Chicken") == 3 && FoodPhrase.pieces(in: "BK Chicken Nuggets (9 pack)") == 9)
+            assert(FoodPhrase.pieces(in: "3 Layer Queso Nachos") == nil && FoodPhrase.pieces(in: "1889 Margherita (Large)") == nil)
+            assert(FoodPhrase.pieces(in: "Go Bucket 2 Wicked Wings") == nil && FoodPhrase.pieces(in: "Big Mac") == nil)
+            func wings(_ n: String) -> Food { Food(chain: "kfc", name: "\(n) Wicked Wings", kj: 1, cal: 1, p: 0) }
+            let boxes = [wings("10"), wings("6"), wings("3"), Food(chain: "kfc", name: "Go Bucket 2 Wicked Wings", kj: 1, cal: 1, p: 0)]
+            let kfcNames = ["kfc": "KFC"]
+            let three = FoodPhrase.meal("3 wicked wings from KFC")[0]
+            assert(three.pieceMatch(in: boxes, chainNames: kfcNames)?.name == "3 Wicked Wings")
+            assert(three.servings(of: wings("3")) == (1, true) && three.servings(of: wings("10")) == (0.3, false))
+            assert(FoodPhrase.meal("12 wicked wings from KFC")[0].pieceMatch(in: boxes, chainNames: kfcNames)?.name == "6 Wicked Wings")
+            assert(FoodPhrase.meal("12 wicked wings from KFC")[0].servings(of: wings("6")) == (2, true))
+            // Not pieces: one box, servings, a number in the name, or an item not sold by the piece.
+            assert(FoodPhrase.meal("wicked wings from KFC")[0].pieceMatch(in: boxes, chainNames: kfcNames) == nil)
+            assert(FoodPhrase.meal("2 serves of wicked wings")[0].servings(of: wings("10")) == (2, true))
+            assert(FoodPhrase.meal("2 big macs")[0].servings(of: Food(chain: "mcd", name: "Big Mac", kj: 1, cal: 1, p: 0)).servings == 2)
         }
 
         // Recipes from a web page's schema.org block.

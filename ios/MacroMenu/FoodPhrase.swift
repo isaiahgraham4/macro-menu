@@ -24,6 +24,10 @@ struct FoodPhrase: Equatable, Sendable {
     /// couldn't relate to the food's serving, which the screen asks to be checked).
     func servings(of food: Food) -> (servings: Double, sure: Bool) {
         let amount = self.amount ?? 1
+        // "3 wicked wings" counts wings, not boxes: of "10 Wicked Wings" that's 0.3 of a serving.
+        if let count = pieceCount, let pieces = FoodPhrase.pieces(in: food.name) {
+            return (FoodPhrase.rounded(count / pieces), count.truncatingRemainder(dividingBy: pieces) == 0)
+        }
         guard let unit, amount > 0 else { return (max(amount, 0.25), self.amount != nil || unit == nil) }
         let serve = food.serve.lowercased()
         switch unit {
@@ -38,6 +42,33 @@ struct FoodPhrase: Equatable, Sendable {
             guard let weight = food.servingWeight?.0, weight > 0 else { return (1, false) }
             return (FoodPhrase.rounded(grams / weight), unit == .gram || unit == .millilitre)
         }
+    }
+
+    /// A bare count of two or more ("3 wicked wings", "ten nuggets"), which may be pieces of an item sold by the piece.
+    /// Nil with a unit ("2 serves of …") or a number in the name, where the count isn't pieces.
+    var pieceCount: Double? {
+        guard unit == nil, let amount, amount >= 2, amount == amount.rounded(), !name.contains(where: \.isNumber) else { return nil }
+        return amount
+    }
+
+    /// How many pieces one serving of a menu item is, when its name says: "10 Wicked Wings", "Chicken McNuggets (6 pc)",
+    /// "3 Pieces of Chicken". Not "3 Layer Queso Nachos", "3 Meats (mini slice)" or "1889 Margherita".
+    static func pieces(in name: String) -> Double? {
+        let lower = name.lowercased()
+        if let match = lower.firstMatch(of: /\b(\d{1,2})\s?(?:pc|pcs|piece|pieces|pack)\b/), let value = Double(match.1), value >= 1 { return value }
+        if let match = lower.firstMatch(of: /^(\d{1,2})\s+([a-z']+)/), let value = Double(match.1), value >= 1,
+           !["layer", "meat", "meats", "cheese", "bean", "way"].contains(String(match.2)) { return value }
+        return nil
+    }
+
+    /// For a count of pieces, the matching item from the same place sold as that many ("3 wicked wings": "3 Wicked Wings"),
+    /// or else the biggest one that adds up to it ("12 wicked wings": two "6 Wicked Wings"). Nil when the count isn't pieces.
+    func pieceMatch(in matches: [Food], chainNames: [String: String]) -> Food? {
+        guard let count = pieceCount else { return nil }
+        let place = MealPhoto.chain(for: brand, chainNames: chainNames) ?? matches.first?.chain
+        let sold = matches.filter { $0.chain == place }.compactMap { food in Self.pieces(in: food.name).map { (food, $0) } }
+        if let exact = sold.first(where: { $0.1 == count }) { return exact.0 }
+        return sold.filter { $0.1 < count && count.truncatingRemainder(dividingBy: $0.1) == 0 }.max { $0.1 < $1.1 }?.0
     }
 
     /// Servings to a sensible step: quarters, or tenths for small amounts.

@@ -21,8 +21,12 @@ struct FoodMatchRow: Identifiable {
     /// A row for typed words or a recipe line, with the likely match ticked and its amount worked out.
     /// With `raw`, an uncooked version comes first, since recipes weigh meat and vegetables before cooking.
     static func make(_ phrase: FoodPhrase, title: String, in foods: [Food], chainNames: [String: String], preselect: Bool = true, raw: Bool = false) -> FoodMatchRow {
-        var matches = MealPhoto.matches(for: phrase.seen, in: foods, chainNames: chainNames, limit: raw ? 6 : 4)
+        // A wider look than the four shown, so "3 wicked wings" can find "3 Wicked Wings" behind the other sizes.
+        var matches = MealPhoto.matches(for: phrase.seen, in: foods, chainNames: chainNames, limit: raw ? 6 : 8)
         if raw, let index = matches.firstIndex(where: { FoodSearch.tokens($0.name).contains("raw") }) {
+            matches.insert(matches.remove(at: index), at: 0)
+        }
+        if let sized = phrase.pieceMatch(in: matches, chainNames: chainNames), let index = matches.firstIndex(where: { $0.id == sized.id }) {
             matches.insert(matches.remove(at: index), at: 0)
         }
         matches = Array(matches.prefix(4))
