@@ -9452,6 +9452,84 @@
 "src": "labels",
 "vg": "vegetarian"
 },
+"soul:banh-mi-salad-large-": {
+"al": [
+"egg",
+"gluten",
+"sesame",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"brazil",
+"cashew",
+"fish",
+"hazelnut",
+"macadamia",
+"milk",
+"peanut",
+"pecan",
+"pinenut",
+"pistachio",
+"shellfish",
+"treenut",
+"walnut"
+],
+"src": "labels"
+},
+"soul:banh-mi-salad-regular-": {
+"al": [
+"egg",
+"gluten",
+"sesame",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"brazil",
+"cashew",
+"fish",
+"hazelnut",
+"macadamia",
+"milk",
+"peanut",
+"pecan",
+"pinenut",
+"pistachio",
+"shellfish",
+"treenut",
+"walnut"
+],
+"src": "labels"
+},
+"soul:banh-mi-salad-small-": {
+"al": [
+"egg",
+"gluten",
+"sesame",
+"soy",
+"wheat"
+],
+"may": [
+"almond",
+"brazil",
+"cashew",
+"fish",
+"hazelnut",
+"macadamia",
+"milk",
+"peanut",
+"pecan",
+"pinenut",
+"pistachio",
+"shellfish",
+"treenut",
+"walnut"
+],
+"src": "labels"
+},
 "soul:bbq-steak-so-bun": {
 "al": [
 "cashew",
@@ -9552,6 +9630,7 @@
 },
 "soul:blt-schnitzel-baguette": {
 "al": [
+"egg",
 "gluten",
 "soy",
 "sulphites",
@@ -9559,7 +9638,6 @@
 ],
 "may": [
 "almond",
-"egg",
 "hazelnut",
 "lupin",
 "milk",
@@ -9570,6 +9648,7 @@
 },
 "soul:blt-schnitzel-baguette-halal-": {
 "al": [
+"egg",
 "gluten",
 "milk",
 "soy",
@@ -9580,7 +9659,6 @@
 "almond",
 "brazil",
 "cashew",
-"egg",
 "hazelnut",
 "lupin",
 "macadamia",
@@ -9642,24 +9720,102 @@
 },
 "soul:buffalo-schnitzel-slaw-salad-large-": {
 "al": [
+"egg",
 "gluten",
 "sulphites",
 "wheat"
+],
+"may": [
+"milk",
+"peanut"
 ],
 "src": "labels"
 },
 "soul:buffalo-schnitzel-slaw-salad-regular-": {
 "al": [
+"egg",
 "gluten",
 "sulphites",
 "wheat"
+],
+"may": [
+"milk",
+"peanut"
 ],
 "src": "labels"
 },
 "soul:buffalo-schnitzel-slaw-salad-small-": {
 "al": [
+"egg",
 "gluten",
 "sulphites",
+"wheat"
+],
+"may": [
+"milk",
+"peanut"
+],
+"src": "labels"
+},
+"soul:burger-salad-large-": {
+"al": [
+"egg",
+"milk",
+"sulphites"
+],
+"src": "labels"
+},
+"soul:burger-salad-regular-": {
+"al": [
+"egg",
+"milk",
+"sulphites"
+],
+"src": "labels"
+},
+"soul:burger-salad-small-": {
+"al": [
+"egg",
+"milk",
+"sulphites"
+],
+"src": "labels"
+},
+"soul:burrito-salad-large-": {
+"al": [
+"egg",
+"sulphites"
+],
+"may": [
+"gluten",
+"peanut",
+"soy",
+"wheat"
+],
+"src": "labels"
+},
+"soul:burrito-salad-regular-": {
+"al": [
+"egg",
+"sulphites"
+],
+"may": [
+"gluten",
+"peanut",
+"soy",
+"wheat"
+],
+"src": "labels"
+},
+"soul:burrito-salad-small-": {
+"al": [
+"egg",
+"sulphites"
+],
+"may": [
+"gluten",
+"peanut",
+"soy",
 "wheat"
 ],
 "src": "labels"
@@ -11685,6 +11841,32 @@
 "meat": [],
 "src": "labels",
 "vg": "vegetarian"
+},
+"soul:ube-berry-cloud-12oz-": {
+"al": [
+"milk",
+"soy"
+],
+"src": "labels"
+},
+"soul:ube-berry-cloud-16oz-": {
+"al": [
+"milk",
+"soy"
+],
+"src": "labels"
+},
+"soul:ube-matcha-cloud-12oz-": {
+"al": [
+"milk"
+],
+"src": "labels"
+},
+"soul:ube-matcha-cloud-16oz-": {
+"al": [
+"milk"
+],
+"src": "labels"
 },
 "soul:vegan-aioli": {
 "al": [],

@@ -1,5 +1,5 @@
 {
-  "checked": "2026-11-14",
+  "checked": "2026-11-23",
   "rows": [
     {
       "name": "Simply Cheese",
@@ -1040,6 +1040,42 @@
       "text": "Chicken Bacon and Aioli\nClassic Crust Extra Large Deep Pan Thin N Crispy Gluten Free Mini\nServing Size\n65g\nEnergy (Calories)\n154cal\nEnergy (kilojoules)\n645kj\nProtein\n6.8g\nFat - Total\n7.0g\nFat - Sat\n2.1g\nCarbohydrate\n15.1g\nSugars\n1.4g\nSodium\n335mg\n4 Servings per pizza\nALLERGEN(S)\nContains: Milk, Soy, Gluten (Wheat) ,\n"
     },
     {
+      "name": "Wagyu Pepperoni",
+      "group": "",
+      "serving": "Classic Crust",
+      "text": "Wagyu Pepperoni\nClassic Crust Extra Large Deep Pan Thin N Crispy Gluten Free Mini\nServing Size\n63g\nEnergy (Calories)\n184cal\nEnergy (kilojoules)\n768kj\nProtein\n7.0g\nFat - Total\n10.0g\nFat - Sat\n3.6g\nCarbohydrate\n15.5g\nSugars\n1.3g\nSodium\n399mg\n8 Servings per pizza\nALLERGEN(S)\nContains: Egg, Milk, Soy, Gluten (Wheat) ,\n"
+    },
+    {
+      "name": "Wagyu Pepperoni",
+      "group": "",
+      "serving": "Extra Large",
+      "text": "Wagyu Pepperoni\nClassic Crust Extra Large Deep Pan Thin N Crispy Gluten Free Mini\nServing Size\n96g\nEnergy (Calories)\n278cal\nEnergy (kilojoules)\n1160kj\nProtein\n10.6g\nFat - Total\n15.3g\nFat - Sat\n5.4g\nCarbohydrate\n23.2g\nSugars\n2.0g\nSodium\n606mg\n8 Servings per pizza\nALLERGEN(S)\nContains: Egg, Milk, Soy, Gluten (Wheat) ,\n"
+    },
+    {
+      "name": "Wagyu Pepperoni",
+      "group": "",
+      "serving": "Deep Pan",
+      "text": "Wagyu Pepperoni\nClassic Crust Extra Large Deep Pan Thin N Crispy Gluten Free Mini\nServing Size\n74g\nEnergy (Calories)\n220cal\nEnergy (kilojoules)\n919kj\nProtein\n7.8g\nFat - Total\n11.4g\nFat - Sat\n3.8g\nCarbohydrate\n20.5g\nSugars\n1.5g\nSodium\n437mg\n8 Servings per pizza\nALLERGEN(S)\nContains: Egg, Milk, Soy, Gluten (Wheat) ,\n"
+    },
+    {
+      "name": "Wagyu Pepperoni",
+      "group": "",
+      "serving": "Thin N Crispy",
+      "text": "Wagyu Pepperoni\nClassic Crust Extra Large Deep Pan Thin N Crispy Gluten Free Mini\nServing Size\n49g\nEnergy (Calories)\n165cal\nEnergy (kilojoules)\n689kj\nProtein\n6.1g\nFat - Total\n10.9g\nFat - Sat\n4.2g\nCarbohydrate\n10.4g\nSugars\n1.3g\nSodium\n332mg\n8 Servings per pizza\nALLERGEN(S)\nContains: Egg, Milk, Soy, Gluten (Wheat) ,\n"
+    },
+    {
+      "name": "Wagyu Pepperoni",
+      "group": "",
+      "serving": "Gluten Free",
+      "text": "Wagyu Pepperoni\nClassic Crust Extra Large Deep Pan Thin N Crispy Gluten Free Mini\nServing Size\n59g\nEnergy (Calories)\n184cal\nEnergy (kilojoules)\n769kj\nProtein\n6.3g\nFat - Total\n10.8g\nFat - Sat\n3.6g\nCarbohydrate\n14.3g\nSugars\n1.1g\nSodium\n412mg\n8 Servings per pizza\nALLERGEN(S)\nContains: Egg, Milk, Soy,\nMay Contain: Egg, Sesame, Almond,"
+    },
+    {
+      "name": "Wagyu Pepperoni",
+      "group": "",
+      "serving": "Mini",
+      "text": "Wagyu Pepperoni\nClassic Crust Extra Large Deep Pan Thin N Crispy Gluten Free Mini\nServing Size\n63g\nEnergy (Calories)\n196cal\nEnergy (kilojoules)\n819kj\nProtein\n6.8g\nFat - Total\n11.9g\nFat - Sat\n3.8g\nCarbohydrate\n14.6g\nSugars\n1.3g\nSodium\n388mg\n4 Servings per pizza\nALLERGEN(S)\nContains: Egg, Milk, Soy, Gluten (Wheat) ,\n"
+    },
+    {
       "name": "Butter Chicken",
       "group": "",
       "serving": "Classic Crust",
@@ -1310,10 +1346,22 @@
       "text": "BBQ Meats\nServing Size\n130g\nEnergy (Calories)\n308cal\nEnergy (kilojoules)\n1290kj\nProtein\n15.1g\nFat - Total\n11.9g\nFat - Sat\n5.4g\nCarbohydrate\n32.5g\nSugars\n3.1g\nSodium\n728mg\n6 Servings per pizza\nALLERGEN(S)\nContains: Milk, Soy, Gluten (Wheat) ,\n"
     },
     {
+      "name": "Wagyu Pepperoni",
+      "group": "",
+      "serving": "New Yorker",
+      "text": "Wagyu Pepperoni\nServing Size\n150g\nEnergy (Calories)\n423cal\nEnergy (kilojoules)\n1770kj\nProtein\n17.4g\nFat - Total\n24.2g\nFat - Sat\n9.2g\nCarbohydrate\n31.8g\nSugars\n3.2g\nSodium\n954mg\n6 Servings per pizza\nALLERGEN(S)\nContains: Milk, Soy, Gluten (Wheat) , Egg,\n"
+    },
+    {
       "name": "Cheesy Garlic Scrolls 4 Pack",
       "group": "",
       "serving": "4 pack",
       "text": "Cheesy Garlic Scrolls 4 Pack\nServing Size\n212g\nEnergy (Calories)\n949cal\nEnergy (kilojoules)\nkj\nProtein\n26g\nFat - Total\n35.9g\nFat - Sat\n11.7g\nCarbohydrate\n129g\nSugars\n10g\nSodium\n1240mg\n1 Servings per sides\nSuitable for Vegetarians\nFIND MORE\nALLERGEN(S)\nContains: Soy, Milk, Gluten (Wheat) ,\n"
+    },
+    {
+      "name": "Cheese and Garlic Scrolls 4 Pack",
+      "group": "",
+      "serving": "4 pack",
+      "text": "Cheese and Garlic Scrolls 4 Pack\nServing Size\n201g\nEnergy (Calories)\n602cal\nEnergy (kilojoules)\n2520kj\nProtein\n20.4g\nFat - Total\n21.2g\nFat - Sat\n7.5g\nCarbohydrate\n78.3g\nSugars\n3.0g\nSodium\n763mg\n1 Servings per sides\nSuitable for Vegetarians\nFIND MORE\nALLERGEN(S)\nContains: Milk, Soy, Gluten,\n"
     },
     {
       "name": "Southern Fried Chicken Bites - 20 Pack",
@@ -1331,7 +1379,7 @@
       "name": "Sweet Chilli Dipping Sauce",
       "group": "",
       "serving": "Sides",
-      "text": "Sweet Chilli Dipping Sauce\nServing Size\n30g\nEnergy (Calories)\n44cal\nEnergy (kilojoules)\n182kj\nProtein\n<1g\nFat - Total\n<1g\nFat - Sat\n<1g\nCarbohydrate\n10.6g\nSugars\n9.7g\nSodium\n179mg\n1 Servings per sides\nSuitable for Vegetarians Suitable for Vegans\nFIND MORE\nALLERGEN(S)\nContains:\n"
+      "text": "Sweet Chilli Dipping Sauce\nServing Size\n30g\nEnergy (Calories)\n44cal\nEnergy (kilojoules)\n184kj\nProtein\n<1g\nFat - Total\n<1g\nFat - Sat\n<1g\nCarbohydrate\n10.6g\nSugars\n9.7g\nSodium\n174mg\n1 Servings per sides\nSuitable for Vegetarians Suitable for Vegans\nFIND MORE\nALLERGEN(S)\nContains:\n"
     },
     {
       "name": "Potato Wedges",
@@ -1470,6 +1518,30 @@
       "group": "",
       "serving": "Sides",
       "text": "Mozarella Cheese Twists\nServing Size\n49g\nEnergy (Calories)\n150cal\nEnergy (kilojoules)\n628kj\nProtein\n5.8g\nFat - Total\n6.8g\nFat - Sat\n3.3g\nCarbohydrate\n15.7g\nSugars\n0.6g\nSodium\n381mg\n4 Servings per sides\nSuitable for Vegetarians\nFIND MORE\nALLERGEN(S)\nContains: Milk, Soy, Gluten (Wheat) , Sesame,\n"
+    },
+    {
+      "name": "Aioli Saucy Wings",
+      "group": "",
+      "serving": "5 pack",
+      "text": "Aioli Saucy Wings\n5 pack 10 pack\nServing Size\n242g\nEnergy (Calories)\n520cal\nEnergy (kilojoules)\n2180kj\nProtein\n38.6g\nFat - Total\n37.3g\nFat - Sat\n9.8g\nCarbohydrate\n7.8g\nSugars\n1.4g\nSodium\n1490mg\n1 Servings per sides\nALLERGEN(S)\nContains: Milk,\n"
+    },
+    {
+      "name": "Aioli Saucy Wings",
+      "group": "",
+      "serving": "10 pack",
+      "text": "Aioli Saucy Wings\n5 pack 10 pack\nServing Size\n485g\nEnergy (Calories)\n1040cal\nEnergy (kilojoules)\n4350kj\nProtein\n77.1g\nFat - Total\n74.7g\nFat - Sat\n19.6g\nCarbohydrate\n15.5g\nSugars\n2.9g\nSodium\n2970mg\n1 Servings per sides\nALLERGEN(S)\nContains: Milk,\n"
+    },
+    {
+      "name": "Saucy Wings Truffle Mayo",
+      "group": "",
+      "serving": "5 pack",
+      "text": "Saucy Wings Truffle Mayo\n5 pack 10 pack\nServing Size\n242g\nEnergy (Calories)\n621cal\nEnergy (kilojoules)\n2600kj\nProtein\n38.8g\nFat - Total\n49.6g\nFat - Sat\n9.9g\nCarbohydrate\n6.1g\nSugars\n0.6g\nSodium\n1440mg\n1 Servings per sides\nALLERGEN(S)\nContains: Egg,\n"
+    },
+    {
+      "name": "Saucy Wings Truffle Mayo",
+      "group": "",
+      "serving": "10 pack",
+      "text": "Saucy Wings Truffle Mayo\n5 pack 10 pack\nServing Size\n485g\nEnergy (Calories)\n1240cal\nEnergy (kilojoules)\n5200kj\nProtein\n77.6g\nFat - Total\n99.2g\nFat - Sat\n19.9g\nCarbohydrate\n12.2g\nSugars\n1.1g\nSodium\n2880mg\n1 Servings per sides\nALLERGEN(S)\nContains: Egg,\n"
     },
     {
       "name": "Chocolate Lava Cake",

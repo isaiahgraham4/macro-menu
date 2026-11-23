@@ -24580,6 +24580,42 @@
    "meat": null,
    "src": null
   },
+  "soul:banh-mi-salad-small-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:banh-mi-salad-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:banh-mi-salad-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:burrito-salad-small-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:burrito-salad-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:burrito-salad-large-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:burger-salad-small-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:burger-salad-regular-": {
+   "meat": null,
+   "src": null
+  },
+  "soul:burger-salad-large-": {
+   "meat": null,
+   "src": null
+  },
   "soul:blt-schnitzel-baguette": {
    "meat": null,
    "src": null
@@ -25324,6 +25360,26 @@
    "vg": "vegetarian"
   },
   "soul:strawberry-matcha-regular-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:ube-berry-cloud-16oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:ube-berry-cloud-12oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:ube-matcha-cloud-16oz-": {
+   "meat": [],
+   "src": "name",
+   "vg": "vegetarian"
+  },
+  "soul:ube-matcha-cloud-12oz-": {
    "meat": [],
    "src": "name",
    "vg": "vegetarian"
