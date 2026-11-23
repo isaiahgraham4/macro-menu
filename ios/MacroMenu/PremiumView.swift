@@ -6,6 +6,7 @@ enum PremiumFeatures {
     static let all: [(symbol: String, title: String, detail: String)] = [
         ("menucard", "Scan a menu", "Photograph any menu and see estimated calories and macros for each dish, then log it."),
         ("calendar.badge.plus", "Plan ahead", "Plan tomorrow's meals now and tick them off with one tap when you eat them."),
+        ("link", "Import recipes", "Paste a recipe's link and save it with the site's nutrition per serving, or build it from its ingredients."),
         ("paintpalette", "App colours", "Pick a preset or any colour you like for buttons, tabs and progress bars."),
         ("swatchpalette", "Colour packs", "Matching sets of app icon, app colour, macro colours and background tint, from Warm to Ocean."),
         ("app.badge", "App icons", "More icon packs for your Home Screen."),

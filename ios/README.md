@@ -118,7 +118,7 @@ The app uses SwiftUI and requires no third-party packages or API keys.
   "Plan for …"), a description, a saved meal or your usual. Plans (`AppData.plans`, by day) count for nothing until logged; on the day they appear on Today under
   Planned, and a tick logs each one. Past days are pruned. The Planned widget's snapshot holds tomorrow's plan too, so it
   isn't empty after midnight.
-- Import a recipe (My foods): paste a link; the page's schema.org Recipe is read (`RecipeImport`). Save it with the site's
+- Import a recipe (My foods, Even Leanrrr only since 23 Nov 2026; the row shows a lock and opens `PremiumView` without it): paste a link; the page's schema.org Recipe is read (`RecipeImport`). Save it with the site's
   per-serving nutrition, or match the ingredient lines (`FoodPhrase.ingredient`, raw foods first) and open the recipe
   editor filled in.
 - Progress sections can be reordered and hidden (the arrows button; `ProgressPart`, stored in UserDefaults).

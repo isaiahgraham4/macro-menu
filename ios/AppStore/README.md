@@ -195,7 +195,7 @@ rather than guessing. Custom orders and recipes are estimates. Leanrrr isn't med
 any restaurant.
 
 Leanrrr is free to use. Even Leanrrr is an optional subscription that adds menu scanning (photograph any restaurant's menu
-for estimated calories and macros), meal planning, app colours, colour packs and icons, two more widgets, and your choice of
+for estimated calories and macros), meal planning, recipe import from a link, app colours, colour packs and icons, two more widgets, and your choice of
 meal and water reminders. It's A$35 a year, A$10 a month or A$5 a week in Australia, with a 7-day free trial for new
 subscribers. Payment is charged to your Apple Account, and it renews automatically unless you cancel at least 24 hours
 before the end of the period, in your Apple Account settings.

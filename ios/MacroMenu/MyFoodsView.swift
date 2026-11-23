@@ -14,6 +14,7 @@ struct MyFoodsView: View {
     @State private var recipe = false
     @State private var customising = false
     @State private var importing = false
+    @State private var showPremium = false
     @State private var editing: Food?
     @State private var editingRecipe: Food?
     @State private var search = ""
@@ -36,7 +37,16 @@ struct MyFoodsView: View {
             // Its own group: sharing the tile row's section broke the cell's rounded shape.
             Section {
                 Button { barcode = true } label: { Label("Scan product barcode", systemImage: "barcode.viewfinder") }
-                Button { importing = true } label: { Label("Import a recipe from a link", systemImage: "link") }
+                // Part of Even Leanrrr: without it, the row opens the Even Leanrrr screen instead.
+                Button { if Premium.isUnlocked { importing = true } else { showPremium = true } } label: {
+                    HStack {
+                        Label("Import a recipe from a link", systemImage: "link")
+                        if !Premium.isUnlocked {
+                            Spacer()
+                            Image(systemName: "lock.fill").font(.footnote).foregroundStyle(Color(.secondaryLabel)).accessibilityLabel("Even Leanrrr")
+                        }
+                    }
+                }
                 if store.region.hasCopycatKitchen {
                     NavigationLink { CopycatKitchenView() } label: { Label("Copycat Kitchen", systemImage: "frying.pan") }
                 }
@@ -66,6 +76,7 @@ struct MyFoodsView: View {
             .sheet(item: $editing) { food in NavigationStack { FoodEditor(food: food) { store.saveFood($0) } } }
             .sheet(isPresented: $recipe) { NavigationStack { RecipeEditor() } }
             .sheet(isPresented: $importing) { NavigationStack { RecipeImportView() } }
+            .sheet(isPresented: $showPremium) { PremiumView() }
             .sheet(item: $editingRecipe) { food in NavigationStack { RecipeEditor(food: food) } }
     }
 }
