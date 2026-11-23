@@ -220,7 +220,7 @@ final class AppStore {
     /// Saves a change. With `undo`, the banner offers to reverse it; any other change clears that offer.
     @discardableResult func change(undo label: String? = nil, _ action: (inout AppData) -> Void) -> Bool {
         var updated = data; action(&updated)
-        let earned = updated.earnMoments(comparedTo: data)
+        let earned = updated.earnMoments(comparedTo: data, chainNames: searchChainNames)
         let old = data
         do { try write(updated) } catch { errorMessage = "Couldn’t save: \(error.localizedDescription)"; return false }
         data = updated

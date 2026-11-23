@@ -55,7 +55,7 @@ struct MomentsOverlay: ViewModifier {
                 guard CommandLine.arguments.contains("-demoMoments") else { return }
                 try? await Task.sleep(for: .seconds(2))
                 store.moments = [.targets([Moment.Hit(name: "Protein", value: 152, target: 150, unit: "g")]), .allTargets(4), .streak(7),
-                                 .streakSaved(12), .meals(100), .steps(10240, goal: 8000), .week(logged: 5, onTarget: 4, protein: 3), .year(2026),
+                                 .streakSaved(12), .meals(100), .restaurants(10), .menuItems(50), .regular(name: "KFC", visits: 25), .steps(10240, goal: 8000), .week(logged: 5, onTarget: 4, protein: 3), .year(2026),
                                  .weighIn(moved: 4.2, losing: true, progress: 0.6, remaining: 2.8, goal: 75),
                                  .goalReached(WeightGoal(kg: 75, startKg: 82, set: Date()))]
             }

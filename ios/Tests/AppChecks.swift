@@ -1726,6 +1726,26 @@ import UniformTypeIdentifiers
             assert(shelf.contains { $0.moment == .streak(3) && $0.earned } && shelf.contains { $0.moment == .streak(7) && !$0.earned && $0.left == "4 days to go" })
             assert(shelf.contains { $0.moment == .meals(1) && $0.earned } && shelf.contains { $0.moment == .meals(10) && !$0.earned })
             assert(!shelf.contains { $0.moment == .streak(14) })
+            // Restaurants: different brands and items tried, and days at each, counted from the logs; one brand across countries is one.
+            let names = ["kfc": "KFC", "mcd": "McDonald's", "us-mcd": "McDonald's", "hj": "Hungry Jack's"]
+            let zinger = Food(chain: "kfc", name: "Zinger", kj: 0, cal: 500, p: 30), bigMac = Food(chain: "mcd", name: "Big Mac", kj: 0, cal: 550, p: 25)
+            let usBigMac = Food(chain: "us-mcd", name: "Big Mac", kj: 0, cal: 590, p: 25), whopper = Food(chain: "hj", name: "Whopper", kj: 0, cal: 650, p: 28)
+            var eatingOut = AppData()
+            for back in 0..<5 { eatingOut.logs[dayKey(today.addingTimeInterval(Double(-back - 1) * 86400))] = [LogEntry(name: "Z", items: [Portion(food: zinger), Portion(food: food)])] }
+            eatingOut.logs[dayKey(today.addingTimeInterval(-86400)), default: []].append(LogEntry(name: "B", items: [Portion(food: bigMac), Portion(food: usBigMac)]))
+            let places = eatingOut.restaurantLog(chainNames: names)
+            assert(places.tried == 2 && places.menuItems == 2 && places.visits == ["KFC": 5, "McDonald's": 1])
+            var eatingMore = eatingOut; eatingMore.logs[dayKey(today), default: []].append(LogEntry(name: "W", items: [Portion(food: whopper)]))
+            let placesEarned = eatingMore.earnMoments(comparedTo: eatingOut, now: today, chainNames: names)
+            assert(placesEarned.contains(.restaurants(3)) && !placesEarned.contains(.regular(name: "KFC", visits: 5)))
+            var kfcAgain = eatingMore; kfcAgain.logs[dayKey(today), default: []].append(LogEntry(name: "Z", items: [Portion(food: zinger)]))
+            assert(kfcAgain.earnMoments(comparedTo: eatingMore, now: today, chainNames: names).isEmpty)
+            let placeShelf = eatingMore.achievements(now: today, chainNames: names)
+            assert(placeShelf.contains { $0.moment == .restaurants(3) && $0.earned } && placeShelf.contains { $0.moment == .restaurants(5) && $0.left == "2 restaurants to go" })
+            assert(placeShelf.contains { $0.moment == .regular(name: "KFC", visits: 5) && $0.earned }
+                   && placeShelf.contains { $0.moment == .regular(name: "KFC", visits: 10) && !$0.earned && $0.left == "5 more visits to go" })
+            assert(placeShelf.contains { $0.moment == .menuItems(10) && $0.left == "7 items to go" })
+            assert(!AppData().achievements(now: today, chainNames: names).contains { $0.group == .restaurants || $0.group == .regulars })
             // The year's review: restaurants only for the favourite, the weight only towards the goal, December and January only.
             var yearData = AppData()
             let chicken = Food(chain: "kfc", name: "Chicken", kj: 0, cal: 400, p: 160)

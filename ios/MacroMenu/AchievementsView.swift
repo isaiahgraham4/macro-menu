@@ -6,7 +6,7 @@ struct AchievementsView: View {
     @State private var sharing: Moment?
 
     var body: some View {
-        let shelf = store.data.achievements()
+        let shelf = store.data.achievements(chainNames: store.searchChainNames)
         LeanrList {
             ForEach(Achievement.Group.allCases, id: \.self) { group in
                 let rows = shelf.filter { $0.group == group }

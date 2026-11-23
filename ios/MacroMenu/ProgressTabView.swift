@@ -14,6 +14,7 @@ struct ProgressTabView: View {
     @AppStorage(ProgressPart.hiddenKey) private var hiddenText = ""
     @State private var arranging = false
     @State private var yearReview: YearReview?
+    @State private var shelfOpen = false
 
     /// The year whose review is open now, when enough of it was logged.
     private var reviewYear: Int? {
@@ -59,6 +60,11 @@ struct ProgressTabView: View {
         }
         .sheet(isPresented: $arranging) { NavigationStack { ProgressArrangeView(orderText: $orderText, hiddenText: $hiddenText) } }
         .sheet(item: $yearReview) { review in NavigationStack { YearReviewView(review: review) } }
+        .navigationDestination(isPresented: $shelfOpen) { AchievementsView() }
+        #if DEBUG
+        // `-demoAchievements` opens the achievements shelf at launch, to check it without tapping through.
+        .task { if CommandLine.arguments.contains("-demoAchievements") { shelfOpen = true } }
+        #endif
     }
 
     @ViewBuilder private func section(_ part: ProgressPart, _ breakdown: ProgressBreakdown) -> some View {
@@ -105,7 +111,7 @@ struct ProgressTabView: View {
 
     /// This week at a glance, whatever range is chosen. The full review has earlier weeks and a card to share.
     @ViewBuilder private var achievementsSection: some View {
-        let shelf = store.data.achievements(), earned = shelf.filter(\.earned).count
+        let shelf = store.data.achievements(chainNames: store.searchChainNames), earned = shelf.filter(\.earned).count
         Section {
             NavigationLink { AchievementsView() } label: {
                 HStack(spacing: 14) {

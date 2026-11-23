@@ -76,6 +76,8 @@ struct Food: Codable, Identifiable, Hashable, Sendable {
     /// Foods other Leanrrr users shared, from iCloud. Searchable and found by barcode, but never suggested or matched from photos.
     static let community = "community"
     var isCommunity: Bool { chain == Food.community }
+    /// From a restaurant menu: not your own, everyday, supermarket or community food.
+    var isRestaurant: Bool { chain != "mine" && !isEveryday && !isSupermarket && !isCommunity }
     /// The Open Food Facts page for a supermarket product; its ID ends in the barcode.
     var productSource: URL? {
         guard isSupermarket, let code = id.split(separator: ":").last else { return nil }

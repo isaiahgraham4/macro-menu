@@ -15,6 +15,12 @@ enum Moment: Hashable, Sendable {
     /// A missed day that didn't end the streak, now that logging has picked up again.
     case streakSaved(Int)
     case meals(Int)
+    /// Different restaurants with something logged.
+    case restaurants(Int)
+    /// Different restaurant menu items logged.
+    case menuItems(Int)
+    /// Separate days with something from one restaurant logged.
+    case regular(name: String, visits: Int)
     case steps(Double, goal: Double)
     /// How far the trend has moved towards a goal weight since it was set.
     case weighIn(moved: Double, losing: Bool, progress: Double, remaining: Double, goal: Double)
@@ -57,6 +63,15 @@ extension Moment {
         case .meals(let count):
             Copy(icon: "fork.knife", title: count == 1 ? "First meal logged" : "\(count.formatted()) meals logged",
                  detail: count == 1 ? "That's the hard part done." : "It all adds up.", shareable: count > 1)
+        case .restaurants(let count):
+            Copy(icon: "storefront.fill", title: "\(count) restaurants tried", detail: "Every menu in one place, and you're working through them.",
+                 shareable: true)
+        case .menuItems(let count):
+            Copy(icon: "menucard.fill", title: "\(count.formatted()) menu items tried", detail: "Different restaurant items logged. Plenty still to try.",
+                 shareable: true)
+        case .regular(let name, let visits):
+            Copy(icon: "fork.knife.circle.fill", title: "\(visits) visits to \(name)",
+                 detail: visits >= 25 ? "They should know your order by now." : "Logged on \(visits) different days. A regular.", shareable: true)
         case .steps(let steps, let goal):
             Copy(icon: "figure.walk", title: "Step goal hit", detail: "\(Steps.text(steps)) steps today, past your \(Steps.text(goal)).", shareable: true)
         case .weighIn(let moved, let losing, let progress, let remaining, let goal):
@@ -87,6 +102,12 @@ extension Moment {
     static let streaks = [3, 7, 14, 30, 60, 100, 180, 365]
     /// Meals logged in all that are worth marking.
     static let mealCounts = [1, 10, 25, 50, 100, 250, 500, 1000, 2500]
+    /// Different restaurants tried that are worth marking.
+    static let restaurantCounts = [3, 5, 10, 15, 25, 40]
+    /// Different restaurant menu items tried that are worth marking.
+    static let menuItemCounts = [10, 25, 50, 100, 250]
+    /// Days at one restaurant that are worth marking.
+    static let visitCounts = [5, 10, 25, 50, 100]
     /// More new entries than this at once is a restored backup, not a meal.
     static let mostNewEntries = 12
     /// An at-most target counts as hit from this share of it, up to the target itself.
@@ -110,8 +131,29 @@ extension Moment {
 extension AppData {
     var mealsLogged: Int { logs.values.reduce(0) { $0 + $1.count } }
 
+    /// What's been logged from restaurants: the different ones tried, the different menu items, and the days at each.
+    /// `chainNames` puts one brand's menus together (McDonald's in Australia and the US), and names the regulars;
+    /// a restaurant without a name still counts as tried.
+    struct RestaurantLog: Equatable {
+        var tried = 0
+        var menuItems = 0
+        var visits: [String: Int] = [:]
+    }
+    func restaurantLog(chainNames: [String: String]) -> RestaurantLog {
+        var brands = Set<String>(), items = Set<String>(), days: [String: Set<String>] = [:]
+        for (day, entries) in logs {
+            for item in entries.flatMap(\.items) where item.food.isRestaurant {
+                let name = chainNames[item.food.chain]
+                brands.insert(name ?? item.food.chain)
+                items.insert("\(name ?? item.food.chain)|\(item.food.name.lowercased())")
+                if let name { days[name, default: []].insert(day) }
+            }
+        }
+        return RestaurantLog(tried: brands.count, menuItems: items.count, visits: days.mapValues(\.count))
+    }
+
     /// What this change has just earned, biggest first. Each is marked in `celebrated`, so nothing is earned twice.
-    mutating func earnMoments(comparedTo old: AppData, now: Date = Date()) -> [Moment] {
+    mutating func earnMoments(comparedTo old: AppData, now: Date = Date(), chainNames: [String: String] = [:]) -> [Moment] {
         var earned: [Moment] = []
         if markGoalReached(comparedTo: old), let goal = weightGoal { earned.append(.goalReached(goal)) }
         var marked = celebrated ?? []
@@ -137,6 +179,19 @@ extension AppData {
             }
             if let count = Moment.mealCounts.last(where: { before < $0 && after >= $0 }), marked.insert("meals:\(count)").inserted {
                 earned.append(.meals(count))
+            }
+            let places = restaurantLog(chainNames: chainNames), placesBefore = old.restaurantLog(chainNames: chainNames)
+            if let count = Moment.restaurantCounts.last(where: { placesBefore.tried < $0 && places.tried >= $0 }), marked.insert("restaurants:\(count)").inserted {
+                earned.append(.restaurants(count))
+            }
+            if let count = Moment.menuItemCounts.last(where: { placesBefore.menuItems < $0 && places.menuItems >= $0 }), marked.insert("items:\(count)").inserted {
+                earned.append(.menuItems(count))
+            }
+            for (name, visits) in places.visits.sorted(by: { $0.key < $1.key }) {
+                let before = placesBefore.visits[name] ?? 0
+                if let count = Moment.visitCounts.last(where: { before < $0 && visits >= $0 }), marked.insert("regular:\(name):\(count)").inserted {
+                    earned.append(.regular(name: name, visits: count))
+                }
             }
         }
         // Yesterday's targets no longer matter, so only milestones are kept for good.
@@ -216,7 +271,7 @@ extension AppData {
 /// A milestone on the achievements shelf: earned, or the next one to reach.
 struct Achievement: Identifiable, Equatable, Sendable {
     enum Group: String, CaseIterable, Sendable {
-        case streaks = "Streaks", meals = "Meals logged", weight = "Weight"
+        case streaks = "Streaks", meals = "Meals logged", restaurants = "Restaurants", regulars = "Regulars", weight = "Weight"
     }
     var group: Group
     var moment: Moment
@@ -230,19 +285,36 @@ struct Achievement: Identifiable, Equatable, Sendable {
 extension AppData {
     /// Everything earned so far and the next of each kind, worked out from what's logged so that it covers milestones
     /// reached before the shelf existed.
-    func achievements(now: Date = Date()) -> [Achievement] {
+    func achievements(now: Date = Date(), chainNames: [String: String] = [:]) -> [Achievement] {
         let snapshot = widgetCalories
         let best = TrackingStreak.best(days: snapshot.trackingDays), current = snapshot.streak(on: now), meals = mealsLogged
         func ladder(_ group: Achievement.Group, _ steps: [Int], reached: Int, towards: Int, unit: String, moment: (Int) -> Moment) -> [Achievement] {
             var shelf = steps.filter { reached >= $0 }.map { Achievement(group: group, moment: moment($0), earned: true) }
             if let next = steps.first(where: { reached < $0 && towards < $0 }) {
-                shelf.append(Achievement(group: group, moment: moment(next), earned: false, left: "\((next - towards).formatted()) \(unit) to go",
+                let gap = next - towards
+                shelf.append(Achievement(group: group, moment: moment(next), earned: false, left: "\(gap.formatted()) \(gap == 1 ? String(unit.dropLast()) : unit) to go",
                                          progress: Double(towards) / Double(next)))
             }
             return shelf
         }
         var all = ladder(.streaks, Moment.streaks, reached: best, towards: current, unit: "days", moment: Moment.streak)
             + ladder(.meals, Moment.mealCounts, reached: meals, towards: meals, unit: "meals", moment: Moment.meals)
+        let places = restaurantLog(chainNames: chainNames)
+        if places.tried > 0 {
+            all += ladder(.restaurants, Moment.restaurantCounts, reached: places.tried, towards: places.tried, unit: "restaurants", moment: Moment.restaurants)
+                + ladder(.restaurants, Moment.menuItemCounts, reached: places.menuItems, towards: places.menuItems, unit: "items", moment: Moment.menuItems)
+        }
+        // The highest each restaurant has reached, most visited first, and the next one up at the favourite.
+        let regulars = places.visits.sorted { ($0.value, $1.key) > ($1.value, $0.key) }
+        for (name, visits) in regulars {
+            if let top = Moment.visitCounts.last(where: { visits >= $0 }) {
+                all.append(Achievement(group: .regulars, moment: .regular(name: name, visits: top), earned: true))
+            }
+        }
+        if let (name, visits) = regulars.first, let next = Moment.visitCounts.first(where: { visits < $0 }) {
+            all.append(Achievement(group: .regulars, moment: .regular(name: name, visits: next), earned: false,
+                                   left: "\(next - visits) more \(next - visits == 1 ? "visit" : "visits") to go", progress: Double(visits) / Double(next)))
+        }
         if let goal = weightGoal, let status = WeightTrend.goalStatus(goal, points: WeightTrend.points(weightLog)) {
             let reached = goal.reached != nil || status.direction == .reached
             all.append(Achievement(group: .weight, moment: .goalReached(goal), earned: reached,

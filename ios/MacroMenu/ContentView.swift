@@ -102,6 +102,8 @@ struct ContentView: View {
             try? await Task.sleep(for: .seconds(3))
             tourStep = .today
         }
+        // `-demoAchievements` goes to Progress, which then opens the achievements shelf.
+        .task { if CommandLine.arguments.contains("-demoAchievements") { nav.tab = .progress } }
         #endif
         .task {
             FeatureTips.noteLaunch(onboardingCompleted: onboardingCompleted)
