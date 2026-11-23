@@ -183,7 +183,7 @@ more than ten other Australian restaurants for combinations from one restaurant.
 - Ask in plain words: "40 g protein under 600 Cal at Nando's".
 - Vegetarian, no beef, no pork and allergen filters, using each restaurant's own ingredient and allergen information.
 - Weight trend that smooths out day-to-day swings, and a measured maintenance estimate from your own data.
-- Type or say what you ate, plan tomorrow's meals, and import recipes from a link.
+- Type or say what you ate and Leanrrr logs it.
 - A weekly check-in that adjusts your calorie target to the pace you want, from your own log and weight trend.
 - Apple Watch: calories left, calories burnt, and your usual meals, pinned foods and water in a tap.
 - Siri: "Log my usual lunch in Leanrrr", "What fits at KFC in Leanrrr" or "Log a glass of water in Leanrrr".
