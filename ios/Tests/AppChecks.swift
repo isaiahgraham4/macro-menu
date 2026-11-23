@@ -273,7 +273,7 @@ import UniformTypeIdentifiers
         defer { try? FileManager.default.removeItem(at: root) }
         let catalogURL = URL(fileURLWithPath: CommandLine.arguments[1])
         let catalog = try JSONDecoder().decode(MenuCatalog.self,from: Data(contentsOf: catalogURL))
-        assert(catalog.foods.count == 3049)
+        assert(catalog.foods.count == 3138)
         // Single pieces (single-pieces.py): one wing is the 3-pack divided by 3; KFC's own single piece isn't doubled up.
         let oneWing = catalog.foods.first { $0.id == "kfc:1-wicked-wing" }!, threeWings = catalog.foods.first { $0.id == "kfc:3-wicked-wings" }!
         assert(oneWing.kj == (threeWings.kj / 3).rounded() && oneWing.p == 7.5 && oneWing.serve == "1 piece · 41 g · 3 Wicked Wings ÷ 3")

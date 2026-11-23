@@ -241,7 +241,7 @@ enum Assistant {
                                                "boost": "boost", "boost juice": "boost", "schnitz": "schnitz", "grilld": "grilld", "grill'd": "grilld", "grill’d": "grilld",
                                                "bettys": "betty", "betty's": "betty", "betty’s": "betty", "five guys": "fiveguys", "crust": "crust", "donut king": "donutking",
                                                "michels": "michels", "michel's": "michels", "michel’s": "michels", "brumbys": "brumbys", "brumby's": "brumbys", "brumby’s": "brumbys",
-                                               "soul origin": "soul", "rolld": "rolld", "roll'd": "rolld", "roll’d": "rolld", "fishbowl": "thisbowl", "this bowl": "thisbowl", "woolies": "woolworths", "woolis": "woolworths",
+                                               "soul origin": "soul", "rolld": "rolld", "roll'd": "rolld", "roll’d": "rolld", "fishbowl": "thisbowl", "this bowl": "thisbowl", "green streat": "greenstreat", "green street": "greenstreat", "greenstreet": "greenstreat", "woolies": "woolworths", "woolis": "woolworths",
                                                // US menu (`MenuRegion`): only used when that menu is loaded.
                                                "chickfila": "us-cfa", "chick fil a": "us-cfa", "chick-fil-a": "us-cfa", "wendys": "us-wendys", "wendy's": "us-wendys", "wendy’s": "us-wendys",
                                                "taco bell": "us-tacobell", "tacobell": "us-tacobell", "panda": "us-panda", "panda express": "us-panda",

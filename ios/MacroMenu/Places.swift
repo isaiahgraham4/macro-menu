@@ -51,6 +51,7 @@ struct ChainPlace: Sendable {
         "soul": ChainPlace(query: "Soul Origin", match: ["soul origin"], appName: "Soul Origin", appStoreID: 1536086153, appLink: nil),
         "rolld": ChainPlace(query: "Roll'd", match: ["roll'd", "rolld", "roll’d"], appName: "Roll'd", appStoreID: 1411683955, appLink: nil),
         "thisbowl": ChainPlace(query: "THISBOWL", match: ["thisbowl", "this bowl", "fishbowl"], appName: "THISBOWL", appStoreID: 6465208456, appLink: nil),
+        "greenstreat": ChainPlace(query: "Greenstreat", match: ["greenstreat", "green streat"], appName: "Greenstreat", appStoreID: 6739724043, appLink: URL(string: "https://www.greenstreat.com.au/menu")),
         "coles": ChainPlace(query: "Coles Supermarket", match: ["coles"], appName: "Coles", appStoreID: 529118855, appLink: nil),
         "woolworths": ChainPlace(query: "Woolworths", match: ["woolworths"], appName: "Woolworths", appStoreID: 975089690, appLink: nil),
         // US menu (`MenuRegion.unitedStates`). App Store ids are from the US store (checked 13 Nov 2026). No universal links yet,

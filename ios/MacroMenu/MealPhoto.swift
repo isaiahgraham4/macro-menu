@@ -210,7 +210,7 @@ enum MealPhoto {
         "schnitz": "schnitz", "grilld": "grilld",
         "bettys": "betty", "bettys burgers": "betty", "betty's burgers": "betty", "fiveguys": "fiveguys", "five guys": "fiveguys", "crust": "crust", "crust pizza": "crust",
         "donutking": "donutking", "donut king": "donutking", "michels": "michels", "michel's": "michels", "michels patisserie": "michels",
-        "brumbys": "brumbys", "brumby's": "brumbys", "soulorigin": "soul", "soul origin": "soul", "rolld": "rolld", "roll'd": "rolld", "thisbowl": "thisbowl", "fishbowl": "thisbowl",
+        "brumbys": "brumbys", "brumby's": "brumbys", "soulorigin": "soul", "soul origin": "soul", "rolld": "rolld", "roll'd": "rolld", "thisbowl": "thisbowl", "fishbowl": "thisbowl", "greenstreat": "greenstreat", "green streat": "greenstreat",
         "chickfila": "us-cfa", "chick fil a": "us-cfa", "wendys": "us-wendys", "taco bell": "us-tacobell", "tacobell": "us-tacobell",
         "panda express": "us-panda", "pandaexpress": "us-panda", "popeyes": "us-popeyes",
         "tim hortons": "ca-tims", "timhortons": "ca-tims", "tims": "ca-tims", "greggs": "uk-greggs",

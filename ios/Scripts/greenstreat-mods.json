@@ -1,0 +1,5015 @@
+{
+ "fetched": "2026-11-24",
+ "modifiers": {
+  "greenstreat:noosa-salad": [
+   {
+    "key": "r:roasted-chicken",
+    "id": "no-roasted-chicken",
+    "kind": "r",
+    "name": "No Roasted Chicken",
+    "kj": -776,
+    "p": -35,
+    "c": -1,
+    "f": -5
+   },
+   {
+    "key": "r:crispy-bacon",
+    "id": "no-crispy-bacon",
+    "kind": "r",
+    "name": "No Crispy Bacon",
+    "kj": -172,
+    "p": -6,
+    "c": 0,
+    "f": -2
+   },
+   {
+    "key": "r:chopped-cos",
+    "id": "no-chopped-cos",
+    "kind": "r",
+    "name": "No Chopped Cos",
+    "kj": -88,
+    "p": -2,
+    "c": -2,
+    "f": 0
+   },
+   {
+    "key": "r:mixed-leaf",
+    "id": "no-mixed-leaf",
+    "kind": "r",
+    "name": "No Mixed Leaf",
+    "kj": -11,
+    "p": 0,
+    "c": 0,
+    "f": 0
+   },
+   {
+    "key": "r:coriander",
+    "id": "no-coriander",
+    "kind": "r",
+    "name": "No Coriander",
+    "kj": -4,
+    "p": 0,
+    "c": 0,
+    "f": 0
+   },
+   {
+    "key": "s:blackened-chicken",
+    "id": "swap-blackened-chicken",
+    "kind": "s",
+    "name": "Swap to Blackened Chicken",
+    "kj": 115,
+    "p": -6,
+    "c": -1,
+    "f": 6
+   },
+   {
+    "key": "s:tofu",
+    "id": "swap-tofu",
+    "kind": "s",
+    "name": "Swap to Tofu",
+    "kj": -521,
+    "p": -30,
+    "c": 1,
+    "f": -2
+   },
+   {
+    "key": "s:pulled-pork",
+    "id": "swap-pulled-pork",
+    "kind": "s",
+    "name": "Swap to Pulled Pork",
+    "kj": 165,
+    "p": -12,
+    "c": 1,
+    "f": 9
+   },
+   {
+    "key": "s:beef-brisket",
+    "id": "swap-beef-brisket",
+    "kind": "s",
+    "name": "Swap to Beef Brisket",
+    "kj": 0,
+    "p": -6,
+    "c": 2,
+    "f": -1
+   },
+   {
+    "key": "s:plant-based-chilli",
+    "id": "swap-plant-based-chilli",
+    "kind": "s",
+    "name": "Swap to Plant-Based Chilli",
+    "kj": -385,
+    "p": -30,
+    "c": 13,
+    "f": -4
+   },
+   {
+    "key": "a:poppyseed-dressing-light-15-g",
+    "id": "extra-poppyseed-dressing-light-15-g",
+    "kind": "a",
+    "name": "Add Poppyseed Dressing (light, 15 g)",
+    "kj": 310,
+    "p": 0,
+    "c": 3,
+    "f": 7
+   },
+   {
+    "key": "a:poppyseed-dressing-heavy-60-g",
+    "id": "extra-poppyseed-dressing-heavy-60-g",
+    "kind": "a",
+    "name": "Add Poppyseed Dressing (heavy, 60 g)",
+    "kj": 1242,
+    "p": 0,
+    "c": 12,
+    "f": 28
+   }
+  ],
+  "greenstreat:cowboy-burrito": [
+   {
+    "key": "r:tortilla-as-a-bowl",
+    "id": "no-tortilla-as-a-bowl",
+    "kind": "r",
+    "name": "No Tortilla (as a bowl)",
+    "kj": -1168,
+    "p": -7,
+    "c": -43,
+    "f": -8,
+    "nut": {
+     "sodium": -694
+    }
+   },
+   {
+    "key": "r:blackened-chicken",
+    "id": "no-blackened-chicken",
+    "kind": "r",
+    "name": "No Blackened Chicken",
+    "kj": -891,
+    "p": -29,
+    "c": 0,
+    "f": -11,
+    "nut": {
+     "sodium": -357
+    }
+   },
+   {
+    "key": "r:avocado",
+    "id": "no-avocado",
+    "kind": "r",
+    "name": "No Avocado",
+    "kj": -334,
+    "p": -1,
+    "c": 0,
+    "f": -8,
+    "nut": {
+     "sodium": -4
+    }
+   },
+   {
+    "key": "r:tomato-onion",
+    "id": "no-tomato-onion",
+    "kind": "r",
+    "name": "No Tomato & Onion",
+    "kj": -52,
+    "p": 0,
+    "c": -2,
+    "f": 0,
+    "nut": {
+     "sodium": -3
+    }
+   },
+   {
+    "key": "r:cheddar-cheese",
+    "id": "no-cheddar-cheese",
+    "kind": "r",
+    "name": "No Cheddar Cheese",
+    "kj": -507,
+    "p": -7,
+    "c": 0,
+    "f": -10,
+    "nut": {
+     "sodium": -206
+    }
+   },
+   {
+    "key": "r:white-rice",
+    "id": "no-white-rice",
+    "kind": "r",
+    "name": "No White Rice",
+    "kj": -717,
+    "p": -3,
+    "c": -36,
+    "f": -1,
+    "nut": {
+     "sodium": -128
+    }
+   },
+   {
+    "key": "s:roasted-chicken",
+    "id": "swap-roasted-chicken",
+    "kind": "s",
+    "name": "Swap to Roasted Chicken",
+    "kj": -115,
+    "p": 6,
+    "c": 1,
+    "f": -6,
+    "nut": {
+     "sodium": -77
+    }
+   },
+   {
+    "key": "s:tofu",
+    "id": "swap-tofu",
+    "kind": "s",
+    "name": "Swap to Tofu",
+    "kj": -636,
+    "p": -24,
+    "c": 2,
+    "f": -8,
+    "nut": {
+     "sodium": -250
+    }
+   },
+   {
+    "key": "s:pulled-pork",
+    "id": "swap-pulled-pork",
+    "kind": "s",
+    "name": "Swap to Pulled Pork",
+    "kj": 50,
+    "p": -6,
+    "c": 2,
+    "f": 3,
+    "nut": {
+     "sodium": 23
+    }
+   },
+   {
+    "key": "s:beef-brisket",
+    "id": "swap-beef-brisket",
+    "kind": "s",
+    "name": "Swap to Beef Brisket",
+    "kj": -115,
+    "p": 0,
+    "c": 3,
+    "f": -7,
+    "nut": {
+     "sodium": -47
+    }
+   },
+   {
+    "key": "s:plant-based-chilli",
+    "id": "swap-plant-based-chilli",
+    "kind": "s",
+    "name": "Swap to Plant-Based Chilli",
+    "kj": -500,
+    "p": -24,
+    "c": 14,
+    "f": -10,
+    "nut": {
+     "sodium": 372
+    }
+   },
+   {
+    "key": "s:brown-rice",
+    "id": "swap-brown-rice",
+    "kind": "s",
+    "name": "Swap to Brown Rice",
+    "kj": 115,
+    "p": 2,
+    "c": 4,
+    "f": 0,
+    "nut": {
+     "sodium": -126
+    }
+   },
+   {
+    "key": "a:chipotle-ranch-dressing-light-15-g",
+    "id": "extra-chipotle-ranch-dressing-light-15-g",
+    "kind": "a",
+    "name": "Add Chipotle Ranch Dressing (light, 15 g)",
+    "kj": 185,
+    "p": 0.5,
+    "c": 1.5,
+    "f": 4,
+    "nut": {
+     "sodium": 79
+    }
+   },
+   {
+    "key": "a:chipotle-ranch-dressing-heavy-60-g",
+    "id": "extra-chipotle-ranch-dressing-heavy-60-g",
+    "kind": "a",
+    "name": "Add Chipotle Ranch Dressing (heavy, 60 g)",
+    "kj": 740,
+    "p": 2,
+    "c": 6,
+    "f": 16,
+    "nut": {
+     "sodium": 316
+    }
+   }
+  ],
+  "greenstreat:thai-me-up-burrito": [
+   {
+    "key": "r:tortilla-as-a-bowl",
+    "id": "no-tortilla-as-a-bowl",
+    "kind": "r",
+    "name": "No Tortilla (as a bowl)",
+    "kj": -1168,
+    "p": -7,
+    "c": -43,
+    "f": -8,
+    "nut": {
+     "sodium": -694
+    }
+   },
+   {
+    "key": "r:roasted-chicken",
+    "id": "no-roasted-chicken",
+    "kind": "r",
+    "name": "No Roasted Chicken",
+    "kj": -776,
+    "p": -35,
+    "c": -1,
+    "f": -5,
+    "nut": {
+     "sodium": -280
+    }
+   },
+   {
+    "key": "r:avocado",
+    "id": "no-avocado",
+    "kind": "r",
+    "name": "No Avocado",
+    "kj": -334,
+    "p": -1,
+    "c": 0,
+    "f": -8,
+    "nut": {
+     "sodium": -4
+    }
+   },
+   {
+    "key": "r:spicy-broccoli",
+    "id": "no-spicy-broccoli",
+    "kind": "r",
+    "name": "No Spicy Broccoli",
+    "kj": -102,
+    "p": -2,
+    "c": 0,
+    "f": -1,
+    "nut": {
+     "sodium": -50
+    }
+   },
+   {
+    "key": "r:bean-shoots",
+    "id": "no-bean-shoots",
+    "kind": "r",
+    "name": "No Bean Shoots",
+    "kj": -24,
+    "p": -1,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sodium": 0
+    }
+   },
+   {
+    "key": "r:coriander",
+    "id": "no-coriander",
+    "kind": "r",
+    "name": "No Coriander",
+    "kj": -4,
+    "p": 0,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sodium": -1
+    }
+   },
+   {
+    "key": "r:cucumber",
+    "id": "no-cucumber",
+    "kind": "r",
+    "name": "No Cucumber",
+    "kj": -20,
+    "p": 0,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sodium": -6
+    }
+   },
+   {
+    "key": "r:baby-spinach",
+    "id": "no-baby-spinach",
+    "kind": "r",
+    "name": "No Baby Spinach",
+    "kj": -20,
+    "p": -1,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sodium": -27
+    }
+   },
+   {
+    "key": "r:rainbow-slaw",
+    "id": "no-rainbow-slaw",
+    "kind": "r",
+    "name": "No Rainbow Slaw",
+    "kj": -83,
+    "p": -1,
+    "c": -3,
+    "f": 0,
+    "nut": {
+     "sodium": -18
+    }
+   },
+   {
+    "key": "s:blackened-chicken",
+    "id": "swap-blackened-chicken",
+    "kind": "s",
+    "name": "Swap to Blackened Chicken",
+    "kj": 115,
+    "p": -6,
+    "c": -1,
+    "f": 6,
+    "nut": {
+     "sodium": 77
+    }
+   },
+   {
+    "key": "s:tofu",
+    "id": "swap-tofu",
+    "kind": "s",
+    "name": "Swap to Tofu",
+    "kj": -521,
+    "p": -30,
+    "c": 1,
+    "f": -2,
+    "nut": {
+     "sodium": -173
+    }
+   },
+   {
+    "key": "s:pulled-pork",
+    "id": "swap-pulled-pork",
+    "kind": "s",
+    "name": "Swap to Pulled Pork",
+    "kj": 165,
+    "p": -12,
+    "c": 1,
+    "f": 9,
+    "nut": {
+     "sodium": 100
+    }
+   },
+   {
+    "key": "s:beef-brisket",
+    "id": "swap-beef-brisket",
+    "kind": "s",
+    "name": "Swap to Beef Brisket",
+    "kj": 0,
+    "p": -6,
+    "c": 2,
+    "f": -1,
+    "nut": {
+     "sodium": 30
+    }
+   },
+   {
+    "key": "s:plant-based-chilli",
+    "id": "swap-plant-based-chilli",
+    "kind": "s",
+    "name": "Swap to Plant-Based Chilli",
+    "kj": -385,
+    "p": -30,
+    "c": 13,
+    "f": -4,
+    "nut": {
+     "sodium": 449
+    }
+   },
+   {
+    "key": "a:thai-streat-vinaigrette-light-15-g",
+    "id": "extra-thai-streat-vinaigrette-light-15-g",
+    "kind": "a",
+    "name": "Add Thai Streat Vinaigrette (light, 15 g)",
+    "kj": 259,
+    "p": 0,
+    "c": 3.5,
+    "f": 5.5,
+    "nut": {
+     "sodium": 92
+    }
+   },
+   {
+    "key": "a:thai-streat-vinaigrette-heavy-60-g",
+    "id": "extra-thai-streat-vinaigrette-heavy-60-g",
+    "kind": "a",
+    "name": "Add Thai Streat Vinaigrette (heavy, 60 g)",
+    "kj": 1036,
+    "p": 0,
+    "c": 14,
+    "f": 22,
+    "nut": {
+     "sodium": 368
+    }
+   }
+  ],
+  "greenstreat:satay-brisket-bowl": [
+   {
+    "key": "r:beef-brisket",
+    "id": "no-beef-brisket",
+    "kind": "r",
+    "name": "No Beef Brisket",
+    "kj": -776,
+    "p": -29,
+    "c": -3,
+    "f": -4,
+    "nut": {
+     "sodium": -310
+    }
+   },
+   {
+    "key": "r:avocado",
+    "id": "no-avocado",
+    "kind": "r",
+    "name": "No Avocado",
+    "kj": -334,
+    "p": -1,
+    "c": 0,
+    "f": -8,
+    "nut": {
+     "sodium": -4
+    }
+   },
+   {
+    "key": "r:roasted-sweet-potato",
+    "id": "no-roasted-sweet-potato",
+    "kind": "r",
+    "name": "No Roasted Sweet Potato",
+    "kj": -205,
+    "p": -1,
+    "c": -6,
+    "f": -2,
+    "nut": {
+     "sodium": -422
+    }
+   },
+   {
+    "key": "r:cucumber",
+    "id": "no-cucumber",
+    "kind": "r",
+    "name": "No Cucumber",
+    "kj": -20,
+    "p": 0,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sodium": -6
+    }
+   },
+   {
+    "key": "r:coriander",
+    "id": "no-coriander",
+    "kind": "r",
+    "name": "No Coriander",
+    "kj": -4,
+    "p": 0,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sodium": -1
+    }
+   },
+   {
+    "key": "r:rainbow-slaw",
+    "id": "no-rainbow-slaw",
+    "kind": "r",
+    "name": "No Rainbow Slaw",
+    "kj": -83,
+    "p": -1,
+    "c": -3,
+    "f": 0,
+    "nut": {
+     "sodium": -18
+    }
+   },
+   {
+    "key": "r:baby-spinach",
+    "id": "no-baby-spinach",
+    "kind": "r",
+    "name": "No Baby Spinach",
+    "kj": -20,
+    "p": -1,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sodium": -27
+    }
+   },
+   {
+    "key": "r:white-rice",
+    "id": "no-white-rice",
+    "kind": "r",
+    "name": "No White Rice",
+    "kj": -717,
+    "p": -3,
+    "c": -36,
+    "f": -1,
+    "nut": {
+     "sodium": -128
+    }
+   },
+   {
+    "key": "s:roasted-chicken",
+    "id": "swap-roasted-chicken",
+    "kind": "s",
+    "name": "Swap to Roasted Chicken",
+    "kj": 0,
+    "p": 6,
+    "c": -2,
+    "f": 1,
+    "nut": {
+     "sodium": -30
+    }
+   },
+   {
+    "key": "s:blackened-chicken",
+    "id": "swap-blackened-chicken",
+    "kind": "s",
+    "name": "Swap to Blackened Chicken",
+    "kj": 115,
+    "p": 0,
+    "c": -3,
+    "f": 7,
+    "nut": {
+     "sodium": 47
+    }
+   },
+   {
+    "key": "s:tofu",
+    "id": "swap-tofu",
+    "kind": "s",
+    "name": "Swap to Tofu",
+    "kj": -521,
+    "p": -24,
+    "c": -1,
+    "f": -1,
+    "nut": {
+     "sodium": -203
+    }
+   },
+   {
+    "key": "s:pulled-pork",
+    "id": "swap-pulled-pork",
+    "kind": "s",
+    "name": "Swap to Pulled Pork",
+    "kj": 165,
+    "p": -6,
+    "c": -1,
+    "f": 10,
+    "nut": {
+     "sodium": 70
+    }
+   },
+   {
+    "key": "s:plant-based-chilli",
+    "id": "swap-plant-based-chilli",
+    "kind": "s",
+    "name": "Swap to Plant-Based Chilli",
+    "kj": -385,
+    "p": -24,
+    "c": 11,
+    "f": -3,
+    "nut": {
+     "sodium": 419
+    }
+   },
+   {
+    "key": "s:brown-rice",
+    "id": "swap-brown-rice",
+    "kind": "s",
+    "name": "Swap to Brown Rice",
+    "kj": 115,
+    "p": 2,
+    "c": 4,
+    "f": 0,
+    "nut": {
+     "sodium": -126
+    }
+   },
+   {
+    "key": "a:warm-peanut-satay-sauce-light-15-g",
+    "id": "extra-warm-peanut-satay-sauce-light-15-g",
+    "kind": "a",
+    "name": "Add Warm Peanut Satay Sauce (light, 15 g)",
+    "kj": 191,
+    "p": 1.2,
+    "c": 3.8,
+    "f": 2.8,
+    "nut": {
+     "sodium": 107
+    }
+   },
+   {
+    "key": "a:warm-peanut-satay-sauce-heavy-60-g",
+    "id": "extra-warm-peanut-satay-sauce-heavy-60-g",
+    "kind": "a",
+    "name": "Add Warm Peanut Satay Sauce (heavy, 60 g)",
+    "kj": 764,
+    "p": 4.8,
+    "c": 15.2,
+    "f": 11.2,
+    "nut": {
+     "sodium": 428
+    }
+   }
+  ],
+  "greenstreat:pesto-plate": [
+   {
+    "key": "r:roasted-chicken",
+    "id": "no-roasted-chicken",
+    "kind": "r",
+    "name": "No Roasted Chicken",
+    "kj": -776,
+    "p": -35,
+    "c": -1,
+    "f": -5,
+    "nut": {
+     "sugar": 0,
+     "sodium": -280
+    }
+   },
+   {
+    "key": "r:brown-rice",
+    "id": "no-brown-rice",
+    "kind": "r",
+    "name": "No Brown Rice",
+    "kj": -832,
+    "p": -5,
+    "c": -40,
+    "f": -1,
+    "nut": {
+     "sugar": 0,
+     "sodium": -2
+    }
+   },
+   {
+    "key": "r:roasted-sweet-potato",
+    "id": "no-roasted-sweet-potato",
+    "kind": "r",
+    "name": "No Roasted Sweet Potato",
+    "kj": -205,
+    "p": -1,
+    "c": -6,
+    "f": -2,
+    "nut": {
+     "sugar": -2,
+     "sodium": -422
+    }
+   },
+   {
+    "key": "r:tomato-onion",
+    "id": "no-tomato-onion",
+    "kind": "r",
+    "name": "No Tomato & Onion",
+    "kj": -52,
+    "p": 0,
+    "c": -2,
+    "f": 0,
+    "nut": {
+     "sugar": -2,
+     "sodium": -3
+    }
+   },
+   {
+    "key": "r:crumbled-feta",
+    "id": "no-crumbled-feta",
+    "kind": "r",
+    "name": "No Crumbled Feta",
+    "kj": -170,
+    "p": -2,
+    "c": 0,
+    "f": -3,
+    "nut": {
+     "sugar": 0,
+     "sodium": -165
+    }
+   },
+   {
+    "key": "s:blackened-chicken",
+    "id": "swap-blackened-chicken",
+    "kind": "s",
+    "name": "Swap to Blackened Chicken",
+    "kj": 115,
+    "p": -6,
+    "c": -1,
+    "f": 6,
+    "nut": {
+     "sodium": 77,
+     "sugar": 0
+    }
+   },
+   {
+    "key": "s:tofu",
+    "id": "swap-tofu",
+    "kind": "s",
+    "name": "Swap to Tofu",
+    "kj": -521,
+    "p": -30,
+    "c": 1,
+    "f": -2,
+    "nut": {
+     "sodium": -173,
+     "sugar": 0
+    }
+   },
+   {
+    "key": "s:pulled-pork",
+    "id": "swap-pulled-pork",
+    "kind": "s",
+    "name": "Swap to Pulled Pork",
+    "kj": 165,
+    "p": -12,
+    "c": 1,
+    "f": 9,
+    "nut": {
+     "sodium": 100,
+     "sugar": 2
+    }
+   },
+   {
+    "key": "s:beef-brisket",
+    "id": "swap-beef-brisket",
+    "kind": "s",
+    "name": "Swap to Beef Brisket",
+    "kj": 0,
+    "p": -6,
+    "c": 2,
+    "f": -1,
+    "nut": {
+     "sodium": 30,
+     "sugar": 2
+    }
+   },
+   {
+    "key": "s:plant-based-chilli",
+    "id": "swap-plant-based-chilli",
+    "kind": "s",
+    "name": "Swap to Plant-Based Chilli",
+    "kj": -385,
+    "p": -30,
+    "c": 13,
+    "f": -4,
+    "nut": {
+     "sodium": 449,
+     "sugar": 5
+    }
+   },
+   {
+    "key": "s:white-rice",
+    "id": "swap-white-rice",
+    "kind": "s",
+    "name": "Swap to White Rice",
+    "kj": -115,
+    "p": -2,
+    "c": -4,
+    "f": 0,
+    "nut": {
+     "sodium": 126,
+     "sugar": 1
+    }
+   },
+   {
+    "key": "a:pesto-vinaigrette-light-15-g",
+    "id": "extra-pesto-vinaigrette-light-15-g",
+    "kind": "a",
+    "name": "Add Pesto Vinaigrette (light, 15 g)",
+    "kj": 197,
+    "p": 0,
+    "c": 2,
+    "f": 4,
+    "nut": {
+     "sugar": 2,
+     "sodium": 78
+    }
+   },
+   {
+    "key": "a:pesto-vinaigrette-heavy-60-g",
+    "id": "extra-pesto-vinaigrette-heavy-60-g",
+    "kind": "a",
+    "name": "Add Pesto Vinaigrette (heavy, 60 g)",
+    "kj": 788,
+    "p": 0,
+    "c": 8,
+    "f": 16,
+    "nut": {
+     "sugar": 8,
+     "sodium": 312
+    }
+   }
+  ],
+  "greenstreat:protein2-bowl": [
+   {
+    "key": "r:roasted-sweet-potato",
+    "id": "no-roasted-sweet-potato",
+    "kind": "r",
+    "name": "No Roasted Sweet Potato",
+    "kj": -205,
+    "p": -1,
+    "c": -6,
+    "f": -2,
+    "nut": {
+     "sugar": -2,
+     "sodium": -422
+    }
+   },
+   {
+    "key": "r:black-beans",
+    "id": "no-black-beans",
+    "kind": "r",
+    "name": "No Black Beans",
+    "kj": -276,
+    "p": -5,
+    "c": -12,
+    "f": 0,
+    "nut": {
+     "sugar": 0,
+     "sodium": -1
+    }
+   },
+   {
+    "key": "r:chopped-cos",
+    "id": "no-chopped-cos",
+    "kind": "r",
+    "name": "No Chopped Cos",
+    "kj": -88,
+    "p": -2,
+    "c": -2,
+    "f": 0,
+    "nut": {
+     "sugar": -2,
+     "sodium": -20
+    }
+   },
+   {
+    "key": "r:white-rice",
+    "id": "no-white-rice",
+    "kind": "r",
+    "name": "No White Rice",
+    "kj": -717,
+    "p": -3,
+    "c": -36,
+    "f": -1,
+    "nut": {
+     "sugar": -1,
+     "sodium": -128
+    }
+   },
+   {
+    "key": "r:single-blackened-chicken",
+    "id": "no-single-blackened-chicken",
+    "kind": "r",
+    "name": "Single Blackened Chicken",
+    "kj": -891,
+    "p": -29,
+    "c": 0,
+    "f": -11,
+    "nut": {
+     "sugar": 0,
+     "sodium": -357
+    }
+   },
+   {
+    "key": "s:brown-rice",
+    "id": "swap-brown-rice",
+    "kind": "s",
+    "name": "Swap to Brown Rice",
+    "kj": 115,
+    "p": 2,
+    "c": 4,
+    "f": 0,
+    "nut": {
+     "sodium": -126,
+     "sugar": -1
+    }
+   },
+   {
+    "key": "a:caesars-ranch-dressing-light-15-g",
+    "id": "extra-caesars-ranch-dressing-light-15-g",
+    "kind": "a",
+    "name": "Add Caesars Ranch Dressing (light, 15 g)",
+    "kj": 193,
+    "p": 0.5,
+    "c": 1.5,
+    "f": 4,
+    "nut": {
+     "sugar": 1.5,
+     "sodium": 78
+    }
+   },
+   {
+    "key": "a:caesars-ranch-dressing-heavy-60-g",
+    "id": "extra-caesars-ranch-dressing-heavy-60-g",
+    "kind": "a",
+    "name": "Add Caesars Ranch Dressing (heavy, 60 g)",
+    "kj": 772,
+    "p": 2,
+    "c": 6,
+    "f": 16,
+    "nut": {
+     "sugar": 6,
+     "sodium": 312
+    }
+   }
+  ],
+  "greenstreat:beef-pickle-bowl": [
+   {
+    "key": "r:beef-brisket",
+    "id": "no-beef-brisket",
+    "kind": "r",
+    "name": "No Beef Brisket",
+    "kj": -776,
+    "p": -29,
+    "c": -3,
+    "f": -4,
+    "nut": {
+     "sugar": -2,
+     "sodium": -310
+    }
+   },
+   {
+    "key": "r:avocado",
+    "id": "no-avocado",
+    "kind": "r",
+    "name": "No Avocado",
+    "kj": -334,
+    "p": -1,
+    "c": 0,
+    "f": -8,
+    "nut": {
+     "sugar": 0,
+     "sodium": -4
+    }
+   },
+   {
+    "key": "r:pickles",
+    "id": "no-pickles",
+    "kind": "r",
+    "name": "No Pickles",
+    "kj": -132,
+    "p": 0,
+    "c": -7,
+    "f": 0,
+    "nut": {
+     "sugar": -7,
+     "sodium": -156
+    }
+   },
+   {
+    "key": "r:tomato-onion",
+    "id": "no-tomato-onion",
+    "kind": "r",
+    "name": "No Tomato & Onion",
+    "kj": -52,
+    "p": 0,
+    "c": -2,
+    "f": 0,
+    "nut": {
+     "sugar": -2,
+     "sodium": -3
+    }
+   },
+   {
+    "key": "r:cheddar-cheese",
+    "id": "no-cheddar-cheese",
+    "kind": "r",
+    "name": "No Cheddar Cheese",
+    "kj": -507,
+    "p": -7,
+    "c": 0,
+    "f": -10,
+    "nut": {
+     "sugar": 0,
+     "sodium": -206
+    }
+   },
+   {
+    "key": "r:raw-slaw",
+    "id": "no-raw-slaw",
+    "kind": "r",
+    "name": "No Raw Slaw",
+    "kj": -194,
+    "p": -2,
+    "c": -3,
+    "f": -3,
+    "nut": {
+     "sugar": -2,
+     "sodium": -70
+    }
+   },
+   {
+    "key": "r:chopped-cos",
+    "id": "no-chopped-cos",
+    "kind": "r",
+    "name": "No Chopped Cos",
+    "kj": -88,
+    "p": -2,
+    "c": -2,
+    "f": 0,
+    "nut": {
+     "sugar": -2,
+     "sodium": -20
+    }
+   },
+   {
+    "key": "r:white-rice",
+    "id": "no-white-rice",
+    "kind": "r",
+    "name": "No White Rice",
+    "kj": -717,
+    "p": -3,
+    "c": -36,
+    "f": -1,
+    "nut": {
+     "sugar": -1,
+     "sodium": -128
+    }
+   },
+   {
+    "key": "s:roasted-chicken",
+    "id": "swap-roasted-chicken",
+    "kind": "s",
+    "name": "Swap to Roasted Chicken",
+    "kj": 0,
+    "p": 6,
+    "c": -2,
+    "f": 1,
+    "nut": {
+     "sodium": -30,
+     "sugar": -2
+    }
+   },
+   {
+    "key": "s:blackened-chicken",
+    "id": "swap-blackened-chicken",
+    "kind": "s",
+    "name": "Swap to Blackened Chicken",
+    "kj": 115,
+    "p": 0,
+    "c": -3,
+    "f": 7,
+    "nut": {
+     "sodium": 47,
+     "sugar": -2
+    }
+   },
+   {
+    "key": "s:tofu",
+    "id": "swap-tofu",
+    "kind": "s",
+    "name": "Swap to Tofu",
+    "kj": -521,
+    "p": -24,
+    "c": -1,
+    "f": -1,
+    "nut": {
+     "sodium": -203,
+     "sugar": -2
+    }
+   },
+   {
+    "key": "s:pulled-pork",
+    "id": "swap-pulled-pork",
+    "kind": "s",
+    "name": "Swap to Pulled Pork",
+    "kj": 165,
+    "p": -6,
+    "c": -1,
+    "f": 10,
+    "nut": {
+     "sodium": 70,
+     "sugar": 0
+    }
+   },
+   {
+    "key": "s:plant-based-chilli",
+    "id": "swap-plant-based-chilli",
+    "kind": "s",
+    "name": "Swap to Plant-Based Chilli",
+    "kj": -385,
+    "p": -24,
+    "c": 11,
+    "f": -3,
+    "nut": {
+     "sodium": 419,
+     "sugar": 3
+    }
+   },
+   {
+    "key": "s:brown-rice",
+    "id": "swap-brown-rice",
+    "kind": "s",
+    "name": "Swap to Brown Rice",
+    "kj": 115,
+    "p": 2,
+    "c": 4,
+    "f": 0,
+    "nut": {
+     "sodium": -126,
+     "sugar": -1
+    }
+   },
+   {
+    "key": "a:burger-dressing-light-15-g",
+    "id": "extra-burger-dressing-light-15-g",
+    "kind": "a",
+    "name": "Add Burger Dressing (light, 15 g)",
+    "kj": 310,
+    "p": 0.5,
+    "c": 3.5,
+    "f": 6.5,
+    "nut": {
+     "sugar": 3.5,
+     "sodium": 150
+    }
+   },
+   {
+    "key": "a:burger-dressing-heavy-60-g",
+    "id": "extra-burger-dressing-heavy-60-g",
+    "kind": "a",
+    "name": "Add Burger Dressing (heavy, 60 g)",
+    "kj": 1238,
+    "p": 2,
+    "c": 14,
+    "f": 26,
+    "nut": {
+     "sugar": 14,
+     "sodium": 600
+    }
+   }
+  ],
+  "greenstreat:shake-n-bake-salad": [
+   {
+    "key": "r:chopped-cos",
+    "id": "no-chopped-cos",
+    "kind": "r",
+    "name": "No Chopped Cos",
+    "kj": -88,
+    "p": -2,
+    "c": -2,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -2,
+     "fibre": -1,
+     "sodium": -20
+    }
+   },
+   {
+    "key": "r:mixed-leaf",
+    "id": "no-mixed-leaf",
+    "kind": "r",
+    "name": "No Mixed Leaf",
+    "kj": -11,
+    "p": 0,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -18
+    }
+   },
+   {
+    "key": "r:rocket",
+    "id": "no-rocket",
+    "kind": "r",
+    "name": "No Rocket",
+    "kj": -36,
+    "p": -1,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": -2,
+     "sodium": -19
+    }
+   },
+   {
+    "key": "r:blackened-chicken",
+    "id": "no-blackened-chicken",
+    "kind": "r",
+    "name": "No Blackened Chicken",
+    "kj": -891,
+    "p": -29,
+    "c": 0,
+    "f": -11,
+    "nut": {
+     "sat": -3,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -357
+    }
+   },
+   {
+    "key": "r:crispy-bacon",
+    "id": "no-crispy-bacon",
+    "kind": "r",
+    "name": "No Crispy Bacon",
+    "kj": -172,
+    "p": -6,
+    "c": 0,
+    "f": -2,
+    "nut": {
+     "sat": -1,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -440
+    }
+   },
+   {
+    "key": "r:cherry-tomatoes",
+    "id": "no-cherry-tomatoes",
+    "kind": "r",
+    "name": "No Cherry Tomatoes",
+    "kj": -41,
+    "p": 0,
+    "c": -2,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -2,
+     "fibre": -1,
+     "sodium": -3
+    }
+   },
+   {
+    "key": "r:red-onion",
+    "id": "no-red-onion",
+    "kind": "r",
+    "name": "No Red Onion",
+    "kj": -23,
+    "p": 0,
+    "c": -1,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -1,
+     "fibre": 0,
+     "sodium": -1
+    }
+   },
+   {
+    "key": "r:cheddar-cheese",
+    "id": "no-cheddar-cheese",
+    "kind": "r",
+    "name": "No Cheddar Cheese",
+    "kj": -507,
+    "p": -7,
+    "c": 0,
+    "f": -10,
+    "nut": {
+     "sat": -7,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -206
+    }
+   },
+   {
+    "key": "r:parsley",
+    "id": "no-parsley",
+    "kind": "r",
+    "name": "No Parsley",
+    "kj": -5,
+    "p": 0,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -5
+    }
+   },
+   {
+    "key": "s:roasted-chicken",
+    "id": "swap-roasted-chicken",
+    "kind": "s",
+    "name": "Swap to Roasted Chicken",
+    "kj": -115,
+    "p": 6,
+    "c": 1,
+    "f": -6,
+    "nut": {
+     "fibre": 0,
+     "sat": -2,
+     "sodium": -77,
+     "sugar": 0
+    }
+   },
+   {
+    "key": "s:tofu",
+    "id": "swap-tofu",
+    "kind": "s",
+    "name": "Swap to Tofu",
+    "kj": -636,
+    "p": -24,
+    "c": 2,
+    "f": -8,
+    "nut": {
+     "fibre": 0,
+     "sat": -2,
+     "sodium": -250,
+     "sugar": 0
+    }
+   },
+   {
+    "key": "s:pulled-pork",
+    "id": "swap-pulled-pork",
+    "kind": "s",
+    "name": "Swap to Pulled Pork",
+    "kj": 50,
+    "p": -6,
+    "c": 2,
+    "f": 3,
+    "nut": {
+     "fibre": 0,
+     "sat": 2,
+     "sodium": 23,
+     "sugar": 2
+    }
+   },
+   {
+    "key": "s:beef-brisket",
+    "id": "swap-beef-brisket",
+    "kind": "s",
+    "name": "Swap to Beef Brisket",
+    "kj": -115,
+    "p": 0,
+    "c": 3,
+    "f": -7,
+    "nut": {
+     "fibre": 0,
+     "sat": -3,
+     "sodium": -47,
+     "sugar": 2
+    }
+   },
+   {
+    "key": "s:plant-based-chilli",
+    "id": "swap-plant-based-chilli",
+    "kind": "s",
+    "name": "Swap to Plant-Based Chilli",
+    "kj": -500,
+    "p": -24,
+    "c": 14,
+    "f": -10,
+    "nut": {
+     "fibre": 4,
+     "sat": -3,
+     "sodium": 372,
+     "sugar": 5
+    }
+   },
+   {
+    "key": "a:burger-dressing-light-15-g",
+    "id": "extra-burger-dressing-light-15-g",
+    "kind": "a",
+    "name": "Add Burger Dressing (light, 15 g)",
+    "kj": 310,
+    "p": 0.5,
+    "c": 3.5,
+    "f": 6.5,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 3.5,
+     "fibre": 0,
+     "sodium": 150
+    }
+   },
+   {
+    "key": "a:burger-dressing-heavy-60-g",
+    "id": "extra-burger-dressing-heavy-60-g",
+    "kind": "a",
+    "name": "Add Burger Dressing (heavy, 60 g)",
+    "kj": 1238,
+    "p": 2,
+    "c": 14,
+    "f": 26,
+    "nut": {
+     "sat": 2,
+     "sugar": 14,
+     "fibre": 0,
+     "sodium": 600
+    }
+   }
+  ],
+  "greenstreat:thai-hard-salad": [
+   {
+    "key": "r:roasted-chicken",
+    "id": "no-roasted-chicken",
+    "kind": "r",
+    "name": "No Roasted Chicken",
+    "kj": -776,
+    "p": -35,
+    "c": -1,
+    "f": -5,
+    "nut": {
+     "sat": -1,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -280
+    }
+   },
+   {
+    "key": "r:edamame",
+    "id": "no-edamame",
+    "kind": "r",
+    "name": "No Edamame",
+    "kj": -139,
+    "p": -3,
+    "c": -2,
+    "f": -2,
+    "nut": {
+     "sat": 0,
+     "sugar": -1,
+     "fibre": -1,
+     "sodium": -2
+    }
+   },
+   {
+    "key": "r:vermicelli-noodles",
+    "id": "no-vermicelli-noodles",
+    "kind": "r",
+    "name": "No Vermicelli Noodles",
+    "kj": -615,
+    "p": -3,
+    "c": -29,
+    "f": -2,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": -1,
+     "sodium": 0
+    }
+   },
+   {
+    "key": "r:broccoli",
+    "id": "no-broccoli",
+    "kind": "r",
+    "name": "No Broccoli",
+    "kj": -35,
+    "p": -1,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": -1,
+     "sodium": -5
+    }
+   },
+   {
+    "key": "r:bean-shoots",
+    "id": "no-bean-shoots",
+    "kind": "r",
+    "name": "No Bean Shoots",
+    "kj": -24,
+    "p": -1,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": 0
+    }
+   },
+   {
+    "key": "r:coriander",
+    "id": "no-coriander",
+    "kind": "r",
+    "name": "No Coriander",
+    "kj": -4,
+    "p": 0,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -1
+    }
+   },
+   {
+    "key": "r:spring-onion",
+    "id": "no-spring-onion",
+    "kind": "r",
+    "name": "No Spring Onion",
+    "kj": -6,
+    "p": 0,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -1
+    }
+   },
+   {
+    "key": "r:toasted-almonds",
+    "id": "no-toasted-almonds",
+    "kind": "r",
+    "name": "No Toasted Almonds",
+    "kj": -369,
+    "p": -3,
+    "c": -1,
+    "f": -8,
+    "nut": {
+     "sat": -1,
+     "sugar": -1,
+     "fibre": -2,
+     "sodium": 0
+    }
+   },
+   {
+    "key": "r:rainbow-slaw",
+    "id": "no-rainbow-slaw",
+    "kind": "r",
+    "name": "No Rainbow Slaw",
+    "kj": -83,
+    "p": -1,
+    "c": -3,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -3,
+     "fibre": -2,
+     "sodium": -18
+    }
+   },
+   {
+    "key": "r:baby-spinach",
+    "id": "no-baby-spinach",
+    "kind": "r",
+    "name": "No Baby Spinach",
+    "kj": -20,
+    "p": -1,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": -1,
+     "sodium": -27
+    }
+   },
+   {
+    "key": "s:blackened-chicken",
+    "id": "swap-blackened-chicken",
+    "kind": "s",
+    "name": "Swap to Blackened Chicken",
+    "kj": 115,
+    "p": -6,
+    "c": -1,
+    "f": 6,
+    "nut": {
+     "fibre": 0,
+     "sat": 2,
+     "sodium": 77,
+     "sugar": 0
+    }
+   },
+   {
+    "key": "s:tofu",
+    "id": "swap-tofu",
+    "kind": "s",
+    "name": "Swap to Tofu",
+    "kj": -521,
+    "p": -30,
+    "c": 1,
+    "f": -2,
+    "nut": {
+     "fibre": 0,
+     "sat": 0,
+     "sodium": -173,
+     "sugar": 0
+    }
+   },
+   {
+    "key": "s:pulled-pork",
+    "id": "swap-pulled-pork",
+    "kind": "s",
+    "name": "Swap to Pulled Pork",
+    "kj": 165,
+    "p": -12,
+    "c": 1,
+    "f": 9,
+    "nut": {
+     "fibre": 0,
+     "sat": 4,
+     "sodium": 100,
+     "sugar": 2
+    }
+   },
+   {
+    "key": "s:beef-brisket",
+    "id": "swap-beef-brisket",
+    "kind": "s",
+    "name": "Swap to Beef Brisket",
+    "kj": 0,
+    "p": -6,
+    "c": 2,
+    "f": -1,
+    "nut": {
+     "fibre": 0,
+     "sat": -1,
+     "sodium": 30,
+     "sugar": 2
+    }
+   },
+   {
+    "key": "s:plant-based-chilli",
+    "id": "swap-plant-based-chilli",
+    "kind": "s",
+    "name": "Swap to Plant-Based Chilli",
+    "kj": -385,
+    "p": -30,
+    "c": 13,
+    "f": -4,
+    "nut": {
+     "fibre": 4,
+     "sat": -1,
+     "sodium": 449,
+     "sugar": 5
+    }
+   },
+   {
+    "key": "a:thai-streat-vinaigrette-light-15-g",
+    "id": "extra-thai-streat-vinaigrette-light-15-g",
+    "kind": "a",
+    "name": "Add Thai Streat Vinaigrette (light, 15 g)",
+    "kj": 259,
+    "p": 0,
+    "c": 3.5,
+    "f": 5.5,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 3.5,
+     "fibre": 0,
+     "sodium": 92
+    }
+   },
+   {
+    "key": "a:thai-streat-vinaigrette-heavy-60-g",
+    "id": "extra-thai-streat-vinaigrette-heavy-60-g",
+    "kind": "a",
+    "name": "Add Thai Streat Vinaigrette (heavy, 60 g)",
+    "kj": 1036,
+    "p": 0,
+    "c": 14,
+    "f": 22,
+    "nut": {
+     "sat": 2,
+     "sugar": 14,
+     "fibre": 0,
+     "sodium": 368
+    }
+   }
+  ],
+  "greenstreat:mexicado-greens-salad": [
+   {
+    "key": "r:avocado",
+    "id": "no-avocado",
+    "kind": "r",
+    "name": "No Avocado",
+    "kj": -334,
+    "p": -1,
+    "c": 0,
+    "f": -8,
+    "nut": {
+     "sat": -1,
+     "sugar": 0,
+     "fibre": -4,
+     "sodium": -4
+    }
+   },
+   {
+    "key": "r:black-beans",
+    "id": "no-black-beans",
+    "kind": "r",
+    "name": "No Black Beans",
+    "kj": -276,
+    "p": -5,
+    "c": -12,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": -5,
+     "sodium": -1
+    }
+   },
+   {
+    "key": "r:cheddar-cheese",
+    "id": "no-cheddar-cheese",
+    "kind": "r",
+    "name": "No Cheddar Cheese",
+    "kj": -507,
+    "p": -7,
+    "c": 0,
+    "f": -10,
+    "nut": {
+     "sat": -7,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -206
+    }
+   },
+   {
+    "key": "r:jalapenos",
+    "id": "no-jalapenos",
+    "kind": "r",
+    "name": "No Jalapenos",
+    "kj": -12,
+    "p": 0,
+    "c": -1,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": -1,
+     "sodium": -153
+    }
+   },
+   {
+    "key": "r:cherry-tomatoes",
+    "id": "no-cherry-tomatoes",
+    "kind": "r",
+    "name": "No Cherry Tomatoes",
+    "kj": -41,
+    "p": 0,
+    "c": -2,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -2,
+     "fibre": -1,
+     "sodium": -3
+    }
+   },
+   {
+    "key": "r:coriander",
+    "id": "no-coriander",
+    "kind": "r",
+    "name": "No Coriander",
+    "kj": -4,
+    "p": 0,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -1
+    }
+   },
+   {
+    "key": "r:rocket",
+    "id": "no-rocket",
+    "kind": "r",
+    "name": "No Rocket",
+    "kj": -36,
+    "p": -1,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": -2,
+     "sodium": -19
+    }
+   },
+   {
+    "key": "r:chopped-cos",
+    "id": "no-chopped-cos",
+    "kind": "r",
+    "name": "No Chopped Cos",
+    "kj": -88,
+    "p": -2,
+    "c": -2,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -2,
+     "fibre": -1,
+     "sodium": -20
+    }
+   },
+   {
+    "key": "a:jalapeno-lime-vinaigrette-light-15-g",
+    "id": "extra-jalapeno-lime-vinaigrette-light-15-g",
+    "kind": "a",
+    "name": "Add Jalapeno Lime Vinaigrette (light, 15 g)",
+    "kj": 232,
+    "p": 0,
+    "c": 3,
+    "f": 5,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 2.5,
+     "fibre": 0.5,
+     "sodium": 93
+    }
+   },
+   {
+    "key": "a:jalapeno-lime-vinaigrette-heavy-60-g",
+    "id": "extra-jalapeno-lime-vinaigrette-heavy-60-g",
+    "kind": "a",
+    "name": "Add Jalapeno Lime Vinaigrette (heavy, 60 g)",
+    "kj": 926,
+    "p": 0,
+    "c": 12,
+    "f": 20,
+    "nut": {
+     "sat": 2,
+     "sugar": 10,
+     "fibre": 2,
+     "sodium": 372
+    }
+   }
+  ],
+  "greenstreat:the-o-g-salad": [
+   {
+    "key": "r:roasted-chicken",
+    "id": "no-roasted-chicken",
+    "kind": "r",
+    "name": "No Roasted Chicken",
+    "kj": -776,
+    "p": -35,
+    "c": -1,
+    "f": -5,
+    "nut": {
+     "sat": -1,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -280
+    }
+   },
+   {
+    "key": "r:crispy-bacon",
+    "id": "no-crispy-bacon",
+    "kind": "r",
+    "name": "No Crispy Bacon",
+    "kj": -172,
+    "p": -6,
+    "c": 0,
+    "f": -2,
+    "nut": {
+     "sat": -1,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -440
+    }
+   },
+   {
+    "key": "r:cheddar-cheese",
+    "id": "no-cheddar-cheese",
+    "kind": "r",
+    "name": "No Cheddar Cheese",
+    "kj": -507,
+    "p": -7,
+    "c": 0,
+    "f": -10,
+    "nut": {
+     "sat": -7,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -206
+    }
+   },
+   {
+    "key": "r:cherry-tomatoes",
+    "id": "no-cherry-tomatoes",
+    "kind": "r",
+    "name": "No Cherry Tomatoes",
+    "kj": -41,
+    "p": 0,
+    "c": -2,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -2,
+     "fibre": -1,
+     "sodium": -3
+    }
+   },
+   {
+    "key": "r:red-onion",
+    "id": "no-red-onion",
+    "kind": "r",
+    "name": "No Red Onion",
+    "kj": -23,
+    "p": 0,
+    "c": -1,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -1,
+     "fibre": 0,
+     "sodium": -1
+    }
+   },
+   {
+    "key": "r:rocket",
+    "id": "no-rocket",
+    "kind": "r",
+    "name": "No Rocket",
+    "kj": -36,
+    "p": -1,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": -2,
+     "sodium": -19
+    }
+   },
+   {
+    "key": "r:mixed-leaf",
+    "id": "no-mixed-leaf",
+    "kind": "r",
+    "name": "No Mixed Leaf",
+    "kj": -11,
+    "p": 0,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -18
+    }
+   },
+   {
+    "key": "r:chopped-cos",
+    "id": "no-chopped-cos",
+    "kind": "r",
+    "name": "No Chopped Cos",
+    "kj": -88,
+    "p": -2,
+    "c": -2,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -2,
+     "fibre": -1,
+     "sodium": -20
+    }
+   },
+   {
+    "key": "s:blackened-chicken",
+    "id": "swap-blackened-chicken",
+    "kind": "s",
+    "name": "Swap to Blackened Chicken",
+    "kj": 115,
+    "p": -6,
+    "c": -1,
+    "f": 6,
+    "nut": {
+     "fibre": 0,
+     "sat": 2,
+     "sodium": 77,
+     "sugar": 0
+    }
+   },
+   {
+    "key": "s:tofu",
+    "id": "swap-tofu",
+    "kind": "s",
+    "name": "Swap to Tofu",
+    "kj": -521,
+    "p": -30,
+    "c": 1,
+    "f": -2,
+    "nut": {
+     "fibre": 0,
+     "sat": 0,
+     "sodium": -173,
+     "sugar": 0
+    }
+   },
+   {
+    "key": "s:pulled-pork",
+    "id": "swap-pulled-pork",
+    "kind": "s",
+    "name": "Swap to Pulled Pork",
+    "kj": 165,
+    "p": -12,
+    "c": 1,
+    "f": 9,
+    "nut": {
+     "fibre": 0,
+     "sat": 4,
+     "sodium": 100,
+     "sugar": 2
+    }
+   },
+   {
+    "key": "s:beef-brisket",
+    "id": "swap-beef-brisket",
+    "kind": "s",
+    "name": "Swap to Beef Brisket",
+    "kj": 0,
+    "p": -6,
+    "c": 2,
+    "f": -1,
+    "nut": {
+     "fibre": 0,
+     "sat": -1,
+     "sodium": 30,
+     "sugar": 2
+    }
+   },
+   {
+    "key": "s:plant-based-chilli",
+    "id": "swap-plant-based-chilli",
+    "kind": "s",
+    "name": "Swap to Plant-Based Chilli",
+    "kj": -385,
+    "p": -30,
+    "c": 13,
+    "f": -4,
+    "nut": {
+     "fibre": 4,
+     "sat": -1,
+     "sodium": 449,
+     "sugar": 5
+    }
+   },
+   {
+    "key": "a:sweet-curry-mango-dressing-light-15-g",
+    "id": "extra-sweet-curry-mango-dressing-light-15-g",
+    "kind": "a",
+    "name": "Add Sweet Curry Mango Dressing (light, 15 g)",
+    "kj": 270,
+    "p": 0,
+    "c": 4,
+    "f": 5.5,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 4,
+     "fibre": 0,
+     "sodium": 110.5
+    }
+   },
+   {
+    "key": "a:sweet-curry-mango-dressing-heavy-60-g",
+    "id": "extra-sweet-curry-mango-dressing-heavy-60-g",
+    "kind": "a",
+    "name": "Add Sweet Curry Mango Dressing (heavy, 60 g)",
+    "kj": 1082,
+    "p": 0,
+    "c": 16,
+    "f": 22,
+    "nut": {
+     "sat": 2,
+     "sugar": 16,
+     "fibre": 0,
+     "sodium": 442
+    }
+   }
+  ],
+  "greenstreat:kale-caesar-salad": [
+   {
+    "key": "r:roasted-chicken",
+    "id": "no-roasted-chicken",
+    "kind": "r",
+    "name": "No Roasted Chicken",
+    "kj": -776,
+    "p": -35,
+    "c": -1,
+    "f": -5,
+    "nut": {
+     "sat": -1,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -280
+    }
+   },
+   {
+    "key": "r:boiled-egg",
+    "id": "no-boiled-egg",
+    "kind": "r",
+    "name": "No Boiled Egg",
+    "kj": -287,
+    "p": -6,
+    "c": 0,
+    "f": -5,
+    "nut": {
+     "sat": -1,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -64
+    }
+   },
+   {
+    "key": "r:kale-mix",
+    "id": "no-kale-mix",
+    "kind": "r",
+    "name": "No Kale Mix",
+    "kj": -79,
+    "p": -2,
+    "c": -1,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -1,
+     "fibre": -3,
+     "sodium": -68
+    }
+   },
+   {
+    "key": "r:parmi-crisps",
+    "id": "no-parmi-crisps",
+    "kind": "r",
+    "name": "No Parmi Crisps",
+    "kj": -398,
+    "p": -8,
+    "c": 0,
+    "f": -7,
+    "nut": {
+     "sat": -5,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -242
+    }
+   },
+   {
+    "key": "r:cherry-tomatoes",
+    "id": "no-cherry-tomatoes",
+    "kind": "r",
+    "name": "No Cherry Tomatoes",
+    "kj": -41,
+    "p": 0,
+    "c": -2,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -2,
+     "fibre": -1,
+     "sodium": -3
+    }
+   },
+   {
+    "key": "r:shaved-parmesan",
+    "id": "no-shaved-parmesan",
+    "kind": "r",
+    "name": "No Shaved Parmesan",
+    "kj": -313,
+    "p": -6,
+    "c": 0,
+    "f": -5,
+    "nut": {
+     "sat": -4,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -200
+    }
+   },
+   {
+    "key": "r:rocket",
+    "id": "no-rocket",
+    "kind": "r",
+    "name": "No Rocket",
+    "kj": -36,
+    "p": -1,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": -2,
+     "sodium": -19
+    }
+   },
+   {
+    "key": "r:chopped-cos",
+    "id": "no-chopped-cos",
+    "kind": "r",
+    "name": "No Chopped Cos",
+    "kj": -88,
+    "p": -2,
+    "c": -2,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -2,
+     "fibre": -1,
+     "sodium": -20
+    }
+   },
+   {
+    "key": "r:lime-wedge",
+    "id": "no-lime-wedge",
+    "kind": "r",
+    "name": "No Lime Wedge",
+    "kj": -31,
+    "p": 0,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": -1,
+     "sodium": -1
+    }
+   },
+   {
+    "key": "r:cracked-pepper",
+    "id": "no-cracked-pepper",
+    "kind": "r",
+    "name": "No Cracked Pepper",
+    "kj": -35,
+    "p": 0,
+    "c": -1,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": -1,
+     "sodium": -1
+    }
+   },
+   {
+    "key": "s:blackened-chicken",
+    "id": "swap-blackened-chicken",
+    "kind": "s",
+    "name": "Swap to Blackened Chicken",
+    "kj": 115,
+    "p": -6,
+    "c": -1,
+    "f": 6,
+    "nut": {
+     "fibre": 0,
+     "sat": 2,
+     "sodium": 77,
+     "sugar": 0
+    }
+   },
+   {
+    "key": "s:tofu",
+    "id": "swap-tofu",
+    "kind": "s",
+    "name": "Swap to Tofu",
+    "kj": -521,
+    "p": -30,
+    "c": 1,
+    "f": -2,
+    "nut": {
+     "fibre": 0,
+     "sat": 0,
+     "sodium": -173,
+     "sugar": 0
+    }
+   },
+   {
+    "key": "s:pulled-pork",
+    "id": "swap-pulled-pork",
+    "kind": "s",
+    "name": "Swap to Pulled Pork",
+    "kj": 165,
+    "p": -12,
+    "c": 1,
+    "f": 9,
+    "nut": {
+     "fibre": 0,
+     "sat": 4,
+     "sodium": 100,
+     "sugar": 2
+    }
+   },
+   {
+    "key": "s:beef-brisket",
+    "id": "swap-beef-brisket",
+    "kind": "s",
+    "name": "Swap to Beef Brisket",
+    "kj": 0,
+    "p": -6,
+    "c": 2,
+    "f": -1,
+    "nut": {
+     "fibre": 0,
+     "sat": -1,
+     "sodium": 30,
+     "sugar": 2
+    }
+   },
+   {
+    "key": "s:plant-based-chilli",
+    "id": "swap-plant-based-chilli",
+    "kind": "s",
+    "name": "Swap to Plant-Based Chilli",
+    "kj": -385,
+    "p": -30,
+    "c": 13,
+    "f": -4,
+    "nut": {
+     "fibre": 4,
+     "sat": -1,
+     "sodium": 449,
+     "sugar": 5
+    }
+   },
+   {
+    "key": "a:caesars-ranch-dressing-light-15-g",
+    "id": "extra-caesars-ranch-dressing-light-15-g",
+    "kind": "a",
+    "name": "Add Caesars Ranch Dressing (light, 15 g)",
+    "kj": 193,
+    "p": 0.5,
+    "c": 1.5,
+    "f": 4,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 1.5,
+     "fibre": 0,
+     "sodium": 78
+    }
+   },
+   {
+    "key": "a:caesars-ranch-dressing-heavy-60-g",
+    "id": "extra-caesars-ranch-dressing-heavy-60-g",
+    "kind": "a",
+    "name": "Add Caesars Ranch Dressing (heavy, 60 g)",
+    "kj": 772,
+    "p": 2,
+    "c": 6,
+    "f": 16,
+    "nut": {
+     "sat": 2,
+     "sugar": 6,
+     "fibre": 0,
+     "sodium": 312
+    }
+   }
+  ],
+  "greenstreat:farmers-harvest-salad": [
+   {
+    "key": "r:roasted-sweet-potato",
+    "id": "no-roasted-sweet-potato",
+    "kind": "r",
+    "name": "No Roasted Sweet Potato",
+    "kj": -205,
+    "p": -1,
+    "c": -6,
+    "f": -2,
+    "nut": {
+     "sat": 0,
+     "sugar": -2,
+     "fibre": -1,
+     "sodium": -422
+    }
+   },
+   {
+    "key": "r:broccoli",
+    "id": "no-broccoli",
+    "kind": "r",
+    "name": "No Broccoli",
+    "kj": -35,
+    "p": -1,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": -1,
+     "sodium": -5
+    }
+   },
+   {
+    "key": "r:cucumber",
+    "id": "no-cucumber",
+    "kind": "r",
+    "name": "No Cucumber",
+    "kj": -20,
+    "p": 0,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -6
+    }
+   },
+   {
+    "key": "r:red-onion",
+    "id": "no-red-onion",
+    "kind": "r",
+    "name": "No Red Onion",
+    "kj": -23,
+    "p": 0,
+    "c": -1,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -1,
+     "fibre": 0,
+     "sodium": -1
+    }
+   },
+   {
+    "key": "r:crumbled-feta",
+    "id": "no-crumbled-feta",
+    "kind": "r",
+    "name": "No Crumbled Feta",
+    "kj": -170,
+    "p": -2,
+    "c": 0,
+    "f": -3,
+    "nut": {
+     "sat": -2,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -165
+    }
+   },
+   {
+    "key": "r:rocket",
+    "id": "no-rocket",
+    "kind": "r",
+    "name": "No Rocket",
+    "kj": -36,
+    "p": -1,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": -2,
+     "sodium": -19
+    }
+   },
+   {
+    "key": "r:baby-spinach",
+    "id": "no-baby-spinach",
+    "kind": "r",
+    "name": "No Baby Spinach",
+    "kj": -20,
+    "p": -1,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": -1,
+     "sodium": -27
+    }
+   },
+   {
+    "key": "r:rainbow-slaw",
+    "id": "no-rainbow-slaw",
+    "kind": "r",
+    "name": "No Rainbow Slaw",
+    "kj": -83,
+    "p": -1,
+    "c": -3,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -3,
+     "fibre": -2,
+     "sodium": -18
+    }
+   },
+   {
+    "key": "a:pesto-vinaigrette-light-15-g",
+    "id": "extra-pesto-vinaigrette-light-15-g",
+    "kind": "a",
+    "name": "Add Pesto Vinaigrette (light, 15 g)",
+    "kj": 197,
+    "p": 0,
+    "c": 2,
+    "f": 4,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 2,
+     "fibre": 0,
+     "sodium": 78
+    }
+   },
+   {
+    "key": "a:pesto-vinaigrette-heavy-60-g",
+    "id": "extra-pesto-vinaigrette-heavy-60-g",
+    "kind": "a",
+    "name": "Add Pesto Vinaigrette (heavy, 60 g)",
+    "kj": 788,
+    "p": 0,
+    "c": 8,
+    "f": 16,
+    "nut": {
+     "sat": 2,
+     "sugar": 8,
+     "fibre": 0,
+     "sodium": 312
+    }
+   }
+  ],
+  "greenstreat:santa-fe-bowl": [
+   {
+    "key": "r:pulled-pork",
+    "id": "no-pulled-pork",
+    "kind": "r",
+    "name": "No Pulled Pork",
+    "kj": -941,
+    "p": -23,
+    "c": -2,
+    "f": -14,
+    "nut": {
+     "sat": -5,
+     "sugar": -2,
+     "fibre": 0,
+     "sodium": -380
+    }
+   },
+   {
+    "key": "r:sour-cream",
+    "id": "no-sour-cream",
+    "kind": "r",
+    "name": "No Sour Cream",
+    "kj": -456,
+    "p": -2,
+    "c": -2,
+    "f": -10,
+    "nut": {
+     "sat": -7,
+     "sugar": -2,
+     "fibre": 0,
+     "sodium": -10
+    }
+   },
+   {
+    "key": "r:tomato-onion",
+    "id": "no-tomato-onion",
+    "kind": "r",
+    "name": "No Tomato & Onion",
+    "kj": -52,
+    "p": 0,
+    "c": -2,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -2,
+     "fibre": -1,
+     "sodium": -3
+    }
+   },
+   {
+    "key": "r:coriander",
+    "id": "no-coriander",
+    "kind": "r",
+    "name": "No Coriander",
+    "kj": -4,
+    "p": 0,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -1
+    }
+   },
+   {
+    "key": "r:black-beans",
+    "id": "no-black-beans",
+    "kind": "r",
+    "name": "No Black Beans",
+    "kj": -276,
+    "p": -5,
+    "c": -12,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": -5,
+     "sodium": -1
+    }
+   },
+   {
+    "key": "r:chopped-cos",
+    "id": "no-chopped-cos",
+    "kind": "r",
+    "name": "No Chopped Cos",
+    "kj": -88,
+    "p": -2,
+    "c": -2,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -2,
+     "fibre": -1,
+     "sodium": -20
+    }
+   },
+   {
+    "key": "r:brown-rice",
+    "id": "no-brown-rice",
+    "kind": "r",
+    "name": "No Brown Rice",
+    "kj": -832,
+    "p": -5,
+    "c": -40,
+    "f": -1,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": -2,
+     "sodium": -2
+    }
+   },
+   {
+    "key": "s:roasted-chicken",
+    "id": "swap-roasted-chicken",
+    "kind": "s",
+    "name": "Swap to Roasted Chicken",
+    "kj": -165,
+    "p": 12,
+    "c": -1,
+    "f": -9,
+    "nut": {
+     "fibre": 0,
+     "sat": -4,
+     "sodium": -100,
+     "sugar": -2
+    }
+   },
+   {
+    "key": "s:blackened-chicken",
+    "id": "swap-blackened-chicken",
+    "kind": "s",
+    "name": "Swap to Blackened Chicken",
+    "kj": -50,
+    "p": 6,
+    "c": -2,
+    "f": -3,
+    "nut": {
+     "fibre": 0,
+     "sat": -2,
+     "sodium": -23,
+     "sugar": -2
+    }
+   },
+   {
+    "key": "s:tofu",
+    "id": "swap-tofu",
+    "kind": "s",
+    "name": "Swap to Tofu",
+    "kj": -686,
+    "p": -18,
+    "c": 0,
+    "f": -11,
+    "nut": {
+     "fibre": 0,
+     "sat": -4,
+     "sodium": -273,
+     "sugar": -2
+    }
+   },
+   {
+    "key": "s:beef-brisket",
+    "id": "swap-beef-brisket",
+    "kind": "s",
+    "name": "Swap to Beef Brisket",
+    "kj": -165,
+    "p": 6,
+    "c": 1,
+    "f": -10,
+    "nut": {
+     "fibre": 0,
+     "sat": -5,
+     "sodium": -70,
+     "sugar": 0
+    }
+   },
+   {
+    "key": "s:plant-based-chilli",
+    "id": "swap-plant-based-chilli",
+    "kind": "s",
+    "name": "Swap to Plant-Based Chilli",
+    "kj": -550,
+    "p": -18,
+    "c": 12,
+    "f": -13,
+    "nut": {
+     "fibre": 4,
+     "sat": -5,
+     "sodium": 349,
+     "sugar": 3
+    }
+   },
+   {
+    "key": "s:white-rice",
+    "id": "swap-white-rice",
+    "kind": "s",
+    "name": "Swap to White Rice",
+    "kj": -115,
+    "p": -2,
+    "c": -4,
+    "f": 0,
+    "nut": {
+     "fibre": -1,
+     "sat": 0,
+     "sodium": 126,
+     "sugar": 1
+    }
+   },
+   {
+    "key": "a:chipotle-ranch-dressing-light-15-g",
+    "id": "extra-chipotle-ranch-dressing-light-15-g",
+    "kind": "a",
+    "name": "Add Chipotle Ranch Dressing (light, 15 g)",
+    "kj": 185,
+    "p": 0.5,
+    "c": 1.5,
+    "f": 4,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 1.5,
+     "fibre": 0,
+     "sodium": 79
+    }
+   },
+   {
+    "key": "a:chipotle-ranch-dressing-heavy-60-g",
+    "id": "extra-chipotle-ranch-dressing-heavy-60-g",
+    "kind": "a",
+    "name": "Add Chipotle Ranch Dressing (heavy, 60 g)",
+    "kj": 740,
+    "p": 2,
+    "c": 6,
+    "f": 16,
+    "nut": {
+     "sat": 2,
+     "sugar": 6,
+     "fibre": 0,
+     "sodium": 316
+    }
+   }
+  ],
+  "greenstreat:blackened-chicken-burger-bowl": [
+   {
+    "key": "r:blackened-chicken",
+    "id": "no-blackened-chicken",
+    "kind": "r",
+    "name": "No Blackened Chicken",
+    "kj": -891,
+    "p": -29,
+    "c": 0,
+    "f": -11,
+    "nut": {
+     "sat": -3,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -357
+    }
+   },
+   {
+    "key": "r:avocado",
+    "id": "no-avocado",
+    "kind": "r",
+    "name": "No Avocado",
+    "kj": -334,
+    "p": -1,
+    "c": 0,
+    "f": -8,
+    "nut": {
+     "sat": -1,
+     "sugar": 0,
+     "fibre": -4,
+     "sodium": -4
+    }
+   },
+   {
+    "key": "r:cheddar-cheese",
+    "id": "no-cheddar-cheese",
+    "kind": "r",
+    "name": "No Cheddar Cheese",
+    "kj": -507,
+    "p": -7,
+    "c": 0,
+    "f": -10,
+    "nut": {
+     "sat": -7,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -206
+    }
+   },
+   {
+    "key": "r:pickles",
+    "id": "no-pickles",
+    "kind": "r",
+    "name": "No Pickles",
+    "kj": -132,
+    "p": 0,
+    "c": -7,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -7,
+     "fibre": 0,
+     "sodium": -156
+    }
+   },
+   {
+    "key": "r:raw-slaw",
+    "id": "no-raw-slaw",
+    "kind": "r",
+    "name": "No Raw Slaw",
+    "kj": -194,
+    "p": -2,
+    "c": -3,
+    "f": -3,
+    "nut": {
+     "sat": 0,
+     "sugar": -2,
+     "fibre": -2,
+     "sodium": -70
+    }
+   },
+   {
+    "key": "r:chopped-cos",
+    "id": "no-chopped-cos",
+    "kind": "r",
+    "name": "No Chopped Cos",
+    "kj": -88,
+    "p": -2,
+    "c": -2,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -2,
+     "fibre": -1,
+     "sodium": -20
+    }
+   },
+   {
+    "key": "r:brown-rice",
+    "id": "no-brown-rice",
+    "kind": "r",
+    "name": "No Brown Rice",
+    "kj": -832,
+    "p": -5,
+    "c": -40,
+    "f": -1,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": -2,
+     "sodium": -2
+    }
+   },
+   {
+    "key": "s:roasted-chicken",
+    "id": "swap-roasted-chicken",
+    "kind": "s",
+    "name": "Swap to Roasted Chicken",
+    "kj": -115,
+    "p": 6,
+    "c": 1,
+    "f": -6,
+    "nut": {
+     "fibre": 0,
+     "sat": -2,
+     "sodium": -77,
+     "sugar": 0
+    }
+   },
+   {
+    "key": "s:tofu",
+    "id": "swap-tofu",
+    "kind": "s",
+    "name": "Swap to Tofu",
+    "kj": -636,
+    "p": -24,
+    "c": 2,
+    "f": -8,
+    "nut": {
+     "fibre": 0,
+     "sat": -2,
+     "sodium": -250,
+     "sugar": 0
+    }
+   },
+   {
+    "key": "s:pulled-pork",
+    "id": "swap-pulled-pork",
+    "kind": "s",
+    "name": "Swap to Pulled Pork",
+    "kj": 50,
+    "p": -6,
+    "c": 2,
+    "f": 3,
+    "nut": {
+     "fibre": 0,
+     "sat": 2,
+     "sodium": 23,
+     "sugar": 2
+    }
+   },
+   {
+    "key": "s:beef-brisket",
+    "id": "swap-beef-brisket",
+    "kind": "s",
+    "name": "Swap to Beef Brisket",
+    "kj": -115,
+    "p": 0,
+    "c": 3,
+    "f": -7,
+    "nut": {
+     "fibre": 0,
+     "sat": -3,
+     "sodium": -47,
+     "sugar": 2
+    }
+   },
+   {
+    "key": "s:plant-based-chilli",
+    "id": "swap-plant-based-chilli",
+    "kind": "s",
+    "name": "Swap to Plant-Based Chilli",
+    "kj": -500,
+    "p": -24,
+    "c": 14,
+    "f": -10,
+    "nut": {
+     "fibre": 4,
+     "sat": -3,
+     "sodium": 372,
+     "sugar": 5
+    }
+   },
+   {
+    "key": "s:white-rice",
+    "id": "swap-white-rice",
+    "kind": "s",
+    "name": "Swap to White Rice",
+    "kj": -115,
+    "p": -2,
+    "c": -4,
+    "f": 0,
+    "nut": {
+     "fibre": -1,
+     "sat": 0,
+     "sodium": 126,
+     "sugar": 1
+    }
+   },
+   {
+    "key": "a:burger-dressing-light-15-g",
+    "id": "extra-burger-dressing-light-15-g",
+    "kind": "a",
+    "name": "Add Burger Dressing (light, 15 g)",
+    "kj": 310,
+    "p": 0.5,
+    "c": 3.5,
+    "f": 6.5,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 3.5,
+     "fibre": 0,
+     "sodium": 150
+    }
+   },
+   {
+    "key": "a:burger-dressing-heavy-60-g",
+    "id": "extra-burger-dressing-heavy-60-g",
+    "kind": "a",
+    "name": "Add Burger Dressing (heavy, 60 g)",
+    "kj": 1238,
+    "p": 2,
+    "c": 14,
+    "f": 26,
+    "nut": {
+     "sat": 2,
+     "sugar": 14,
+     "fibre": 0,
+     "sodium": 600
+    }
+   }
+  ],
+  "greenstreat:spicy-harvest-bowl": [
+   {
+    "key": "r:tofu",
+    "id": "no-tofu",
+    "kind": "r",
+    "name": "No Tofu",
+    "kj": -255,
+    "p": -5,
+    "c": -2,
+    "f": -3,
+    "nut": {
+     "sat": -1,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -107
+    }
+   },
+   {
+    "key": "r:warm-shrooms",
+    "id": "no-warm-shrooms",
+    "kind": "r",
+    "name": "No Warm Shrooms",
+    "kj": -186,
+    "p": -3,
+    "c": -3,
+    "f": -1,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": -2,
+     "sodium": -252
+    }
+   },
+   {
+    "key": "r:baby-spinach",
+    "id": "no-baby-spinach",
+    "kind": "r",
+    "name": "No Baby Spinach",
+    "kj": -20,
+    "p": -1,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": -1,
+     "sodium": -27
+    }
+   },
+   {
+    "key": "r:rainbow-slaw",
+    "id": "no-rainbow-slaw",
+    "kind": "r",
+    "name": "No Rainbow Slaw",
+    "kj": -83,
+    "p": -1,
+    "c": -3,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -3,
+     "fibre": -2,
+     "sodium": -18
+    }
+   },
+   {
+    "key": "r:roasted-sweet-potato",
+    "id": "no-roasted-sweet-potato",
+    "kind": "r",
+    "name": "No Roasted Sweet Potato",
+    "kj": -205,
+    "p": -1,
+    "c": -6,
+    "f": -2,
+    "nut": {
+     "sat": 0,
+     "sugar": -2,
+     "fibre": -1,
+     "sodium": -422
+    }
+   },
+   {
+    "key": "r:avocado",
+    "id": "no-avocado",
+    "kind": "r",
+    "name": "No Avocado",
+    "kj": -334,
+    "p": -1,
+    "c": 0,
+    "f": -8,
+    "nut": {
+     "sat": -1,
+     "sugar": 0,
+     "fibre": -4,
+     "sodium": -4
+    }
+   },
+   {
+    "key": "r:brown-rice",
+    "id": "no-brown-rice",
+    "kind": "r",
+    "name": "No Brown Rice",
+    "kj": -832,
+    "p": -5,
+    "c": -40,
+    "f": -1,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": -2,
+     "sodium": -2
+    }
+   },
+   {
+    "key": "r:spicy-broccoli",
+    "id": "no-spicy-broccoli",
+    "kind": "r",
+    "name": "No Spicy Broccoli",
+    "kj": -102,
+    "p": -2,
+    "c": 0,
+    "f": -1,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": -2,
+     "sodium": -50
+    }
+   },
+   {
+    "key": "s:roasted-chicken",
+    "id": "swap-roasted-chicken",
+    "kind": "s",
+    "name": "Swap to Roasted Chicken",
+    "kj": 521,
+    "p": 30,
+    "c": -1,
+    "f": 2,
+    "nut": {
+     "fibre": 0,
+     "sat": 0,
+     "sodium": 173,
+     "sugar": 0
+    }
+   },
+   {
+    "key": "s:blackened-chicken",
+    "id": "swap-blackened-chicken",
+    "kind": "s",
+    "name": "Swap to Blackened Chicken",
+    "kj": 636,
+    "p": 24,
+    "c": -2,
+    "f": 8,
+    "nut": {
+     "fibre": 0,
+     "sat": 2,
+     "sodium": 250,
+     "sugar": 0
+    }
+   },
+   {
+    "key": "s:pulled-pork",
+    "id": "swap-pulled-pork",
+    "kind": "s",
+    "name": "Swap to Pulled Pork",
+    "kj": 686,
+    "p": 18,
+    "c": 0,
+    "f": 11,
+    "nut": {
+     "fibre": 0,
+     "sat": 4,
+     "sodium": 273,
+     "sugar": 2
+    }
+   },
+   {
+    "key": "s:beef-brisket",
+    "id": "swap-beef-brisket",
+    "kind": "s",
+    "name": "Swap to Beef Brisket",
+    "kj": 521,
+    "p": 24,
+    "c": 1,
+    "f": 1,
+    "nut": {
+     "fibre": 0,
+     "sat": -1,
+     "sodium": 203,
+     "sugar": 2
+    }
+   },
+   {
+    "key": "s:plant-based-chilli",
+    "id": "swap-plant-based-chilli",
+    "kind": "s",
+    "name": "Swap to Plant-Based Chilli",
+    "kj": 136,
+    "p": 0,
+    "c": 12,
+    "f": -2,
+    "nut": {
+     "fibre": 4,
+     "sat": -1,
+     "sodium": 622,
+     "sugar": 5
+    }
+   },
+   {
+    "key": "s:white-rice",
+    "id": "swap-white-rice",
+    "kind": "s",
+    "name": "Swap to White Rice",
+    "kj": -115,
+    "p": -2,
+    "c": -4,
+    "f": 0,
+    "nut": {
+     "fibre": -1,
+     "sat": 0,
+     "sodium": 126,
+     "sugar": 1
+    }
+   },
+   {
+    "key": "a:spicy-peanut-dressing-light-15-g",
+    "id": "extra-spicy-peanut-dressing-light-15-g",
+    "kind": "a",
+    "name": "Add Spicy Peanut Dressing (light, 15 g)",
+    "kj": 159,
+    "p": 1,
+    "c": 2,
+    "f": 3,
+    "nut": {
+     "sat": 1.5,
+     "sugar": 2,
+     "fibre": 0,
+     "sodium": 62.5
+    }
+   },
+   {
+    "key": "a:spicy-peanut-dressing-heavy-60-g",
+    "id": "extra-spicy-peanut-dressing-heavy-60-g",
+    "kind": "a",
+    "name": "Add Spicy Peanut Dressing (heavy, 60 g)",
+    "kj": 636,
+    "p": 4,
+    "c": 8,
+    "f": 12,
+    "nut": {
+     "sat": 6,
+     "sugar": 8,
+     "fibre": 0,
+     "sodium": 250
+    }
+   }
+  ],
+  "greenstreat:the-taco-bowl": [
+   {
+    "key": "r:plant-based-chilli",
+    "id": "no-plant-based-chilli",
+    "kind": "r",
+    "name": "No Plant-Based Chilli",
+    "kj": -391,
+    "p": -5,
+    "c": -14,
+    "f": -1,
+    "nut": {
+     "sat": 0,
+     "sugar": -5,
+     "fibre": -4,
+     "sodium": -729
+    }
+   },
+   {
+    "key": "r:sour-cream",
+    "id": "no-sour-cream",
+    "kind": "r",
+    "name": "No Sour Cream",
+    "kj": -456,
+    "p": -2,
+    "c": -2,
+    "f": -10,
+    "nut": {
+     "sat": -7,
+     "sugar": -2,
+     "fibre": 0,
+     "sodium": -10
+    }
+   },
+   {
+    "key": "r:avocado",
+    "id": "no-avocado",
+    "kind": "r",
+    "name": "No Avocado",
+    "kj": -334,
+    "p": -1,
+    "c": 0,
+    "f": -8,
+    "nut": {
+     "sat": -1,
+     "sugar": 0,
+     "fibre": -4,
+     "sodium": -4
+    }
+   },
+   {
+    "key": "r:cheddar-cheese",
+    "id": "no-cheddar-cheese",
+    "kind": "r",
+    "name": "No Cheddar Cheese",
+    "kj": -507,
+    "p": -7,
+    "c": 0,
+    "f": -10,
+    "nut": {
+     "sat": -7,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -206
+    }
+   },
+   {
+    "key": "r:tomato-onion",
+    "id": "no-tomato-onion",
+    "kind": "r",
+    "name": "No Tomato & Onion",
+    "kj": -52,
+    "p": 0,
+    "c": -2,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -2,
+     "fibre": -1,
+     "sodium": -3
+    }
+   },
+   {
+    "key": "r:white-rice",
+    "id": "no-white-rice",
+    "kind": "r",
+    "name": "No White Rice",
+    "kj": -717,
+    "p": -3,
+    "c": -36,
+    "f": -1,
+    "nut": {
+     "sat": 0,
+     "sugar": -1,
+     "fibre": -1,
+     "sodium": -128
+    }
+   },
+   {
+    "key": "r:chopped-cos",
+    "id": "no-chopped-cos",
+    "kind": "r",
+    "name": "No Chopped Cos",
+    "kj": -88,
+    "p": -2,
+    "c": -2,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -2,
+     "fibre": -1,
+     "sodium": -20
+    }
+   },
+   {
+    "key": "s:roasted-chicken",
+    "id": "swap-roasted-chicken",
+    "kind": "s",
+    "name": "Swap to Roasted Chicken",
+    "kj": 385,
+    "p": 30,
+    "c": -13,
+    "f": 4,
+    "nut": {
+     "fibre": -4,
+     "sat": 1,
+     "sodium": -449,
+     "sugar": -5
+    }
+   },
+   {
+    "key": "s:blackened-chicken",
+    "id": "swap-blackened-chicken",
+    "kind": "s",
+    "name": "Swap to Blackened Chicken",
+    "kj": 500,
+    "p": 24,
+    "c": -14,
+    "f": 10,
+    "nut": {
+     "fibre": -4,
+     "sat": 3,
+     "sodium": -372,
+     "sugar": -5
+    }
+   },
+   {
+    "key": "s:tofu",
+    "id": "swap-tofu",
+    "kind": "s",
+    "name": "Swap to Tofu",
+    "kj": -136,
+    "p": 0,
+    "c": -12,
+    "f": 2,
+    "nut": {
+     "fibre": -4,
+     "sat": 1,
+     "sodium": -622,
+     "sugar": -5
+    }
+   },
+   {
+    "key": "s:pulled-pork",
+    "id": "swap-pulled-pork",
+    "kind": "s",
+    "name": "Swap to Pulled Pork",
+    "kj": 550,
+    "p": 18,
+    "c": -12,
+    "f": 13,
+    "nut": {
+     "fibre": -4,
+     "sat": 5,
+     "sodium": -349,
+     "sugar": -3
+    }
+   },
+   {
+    "key": "s:beef-brisket",
+    "id": "swap-beef-brisket",
+    "kind": "s",
+    "name": "Swap to Beef Brisket",
+    "kj": 385,
+    "p": 24,
+    "c": -11,
+    "f": 3,
+    "nut": {
+     "fibre": -4,
+     "sat": 0,
+     "sodium": -419,
+     "sugar": -3
+    }
+   },
+   {
+    "key": "s:brown-rice",
+    "id": "swap-brown-rice",
+    "kind": "s",
+    "name": "Swap to Brown Rice",
+    "kj": 115,
+    "p": 2,
+    "c": 4,
+    "f": 0,
+    "nut": {
+     "fibre": 1,
+     "sat": 0,
+     "sodium": -126,
+     "sugar": -1
+    }
+   },
+   {
+    "key": "a:jalapeno-lime-vinaigrette-light-15-g",
+    "id": "extra-jalapeno-lime-vinaigrette-light-15-g",
+    "kind": "a",
+    "name": "Add Jalapeno Lime Vinaigrette (light, 15 g)",
+    "kj": 232,
+    "p": 0,
+    "c": 3,
+    "f": 5,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 2.5,
+     "fibre": 0.5,
+     "sodium": 93
+    }
+   },
+   {
+    "key": "a:jalapeno-lime-vinaigrette-heavy-60-g",
+    "id": "extra-jalapeno-lime-vinaigrette-heavy-60-g",
+    "kind": "a",
+    "name": "Add Jalapeno Lime Vinaigrette (heavy, 60 g)",
+    "kj": 926,
+    "p": 0,
+    "c": 12,
+    "f": 20,
+    "nut": {
+     "sat": 2,
+     "sugar": 10,
+     "fibre": 2,
+     "sodium": 372
+    }
+   }
+  ],
+  "greenstreat:chicken-caesar-burrito": [
+   {
+    "key": "r:tortilla-as-a-bowl",
+    "id": "no-tortilla-as-a-bowl",
+    "kind": "r",
+    "name": "No Tortilla (as a bowl)",
+    "kj": -1168,
+    "p": -7,
+    "c": -43,
+    "f": -8,
+    "nut": {
+     "sat": -4,
+     "sugar": -4,
+     "fibre": -2,
+     "sodium": -694
+    }
+   },
+   {
+    "key": "r:roasted-chicken",
+    "id": "no-roasted-chicken",
+    "kind": "r",
+    "name": "No Roasted Chicken",
+    "kj": -776,
+    "p": -35,
+    "c": -1,
+    "f": -5,
+    "nut": {
+     "sat": -1,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -280
+    }
+   },
+   {
+    "key": "r:boiled-egg",
+    "id": "no-boiled-egg",
+    "kind": "r",
+    "name": "No Boiled Egg",
+    "kj": -287,
+    "p": -6,
+    "c": 0,
+    "f": -5,
+    "nut": {
+     "sat": -1,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -64
+    }
+   },
+   {
+    "key": "r:parmi-crisps",
+    "id": "no-parmi-crisps",
+    "kind": "r",
+    "name": "No Parmi Crisps",
+    "kj": -398,
+    "p": -8,
+    "c": 0,
+    "f": -7,
+    "nut": {
+     "sat": -5,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -242
+    }
+   },
+   {
+    "key": "r:cherry-tomatoes",
+    "id": "no-cherry-tomatoes",
+    "kind": "r",
+    "name": "No Cherry Tomatoes",
+    "kj": -41,
+    "p": 0,
+    "c": -2,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -2,
+     "fibre": -1,
+     "sodium": -3
+    }
+   },
+   {
+    "key": "r:shaved-parmesan",
+    "id": "no-shaved-parmesan",
+    "kind": "r",
+    "name": "No Shaved Parmesan",
+    "kj": -313,
+    "p": -6,
+    "c": 0,
+    "f": -5,
+    "nut": {
+     "sat": -4,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -200
+    }
+   },
+   {
+    "key": "r:rocket",
+    "id": "no-rocket",
+    "kind": "r",
+    "name": "No Rocket",
+    "kj": -36,
+    "p": -1,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": -2,
+     "sodium": -19
+    }
+   },
+   {
+    "key": "r:chopped-cos",
+    "id": "no-chopped-cos",
+    "kind": "r",
+    "name": "No Chopped Cos",
+    "kj": -88,
+    "p": -2,
+    "c": -2,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -2,
+     "fibre": -1,
+     "sodium": -20
+    }
+   },
+   {
+    "key": "r:cracked-pepper",
+    "id": "no-cracked-pepper",
+    "kind": "r",
+    "name": "No Cracked Pepper",
+    "kj": -35,
+    "p": 0,
+    "c": -1,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": -1,
+     "sodium": -1
+    }
+   },
+   {
+    "key": "s:blackened-chicken",
+    "id": "swap-blackened-chicken",
+    "kind": "s",
+    "name": "Swap to Blackened Chicken",
+    "kj": 115,
+    "p": -6,
+    "c": -1,
+    "f": 6,
+    "nut": {
+     "fibre": 0,
+     "sat": 2,
+     "sodium": 77,
+     "sugar": 0
+    }
+   },
+   {
+    "key": "s:tofu",
+    "id": "swap-tofu",
+    "kind": "s",
+    "name": "Swap to Tofu",
+    "kj": -521,
+    "p": -30,
+    "c": 1,
+    "f": -2,
+    "nut": {
+     "fibre": 0,
+     "sat": 0,
+     "sodium": -173,
+     "sugar": 0
+    }
+   },
+   {
+    "key": "s:pulled-pork",
+    "id": "swap-pulled-pork",
+    "kind": "s",
+    "name": "Swap to Pulled Pork",
+    "kj": 165,
+    "p": -12,
+    "c": 1,
+    "f": 9,
+    "nut": {
+     "fibre": 0,
+     "sat": 4,
+     "sodium": 100,
+     "sugar": 2
+    }
+   },
+   {
+    "key": "s:beef-brisket",
+    "id": "swap-beef-brisket",
+    "kind": "s",
+    "name": "Swap to Beef Brisket",
+    "kj": 0,
+    "p": -6,
+    "c": 2,
+    "f": -1,
+    "nut": {
+     "fibre": 0,
+     "sat": -1,
+     "sodium": 30,
+     "sugar": 2
+    }
+   },
+   {
+    "key": "s:plant-based-chilli",
+    "id": "swap-plant-based-chilli",
+    "kind": "s",
+    "name": "Swap to Plant-Based Chilli",
+    "kj": -385,
+    "p": -30,
+    "c": 13,
+    "f": -4,
+    "nut": {
+     "fibre": 4,
+     "sat": -1,
+     "sodium": 449,
+     "sugar": 5
+    }
+   },
+   {
+    "key": "a:caesars-ranch-dressing-light-15-g",
+    "id": "extra-caesars-ranch-dressing-light-15-g",
+    "kind": "a",
+    "name": "Add Caesars Ranch Dressing (light, 15 g)",
+    "kj": 193,
+    "p": 0.5,
+    "c": 1.5,
+    "f": 4,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 1.5,
+     "fibre": 0,
+     "sodium": 78
+    }
+   },
+   {
+    "key": "a:caesars-ranch-dressing-heavy-60-g",
+    "id": "extra-caesars-ranch-dressing-heavy-60-g",
+    "kind": "a",
+    "name": "Add Caesars Ranch Dressing (heavy, 60 g)",
+    "kj": 772,
+    "p": 2,
+    "c": 6,
+    "f": 16,
+    "nut": {
+     "sat": 2,
+     "sugar": 6,
+     "fibre": 0,
+     "sodium": 312
+    }
+   }
+  ],
+  "greenstreat:blackened-chicken-burger-burrito": [
+   {
+    "key": "r:tortilla-as-a-bowl",
+    "id": "no-tortilla-as-a-bowl",
+    "kind": "r",
+    "name": "No Tortilla (as a bowl)",
+    "kj": -1168,
+    "p": -7,
+    "c": -43,
+    "f": -8,
+    "nut": {
+     "sat": -4,
+     "sugar": -4,
+     "fibre": -2,
+     "sodium": -694
+    }
+   },
+   {
+    "key": "r:blackened-chicken",
+    "id": "no-blackened-chicken",
+    "kind": "r",
+    "name": "No Blackened Chicken",
+    "kj": -891,
+    "p": -29,
+    "c": 0,
+    "f": -11,
+    "nut": {
+     "sat": -3,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -357
+    }
+   },
+   {
+    "key": "r:avocado",
+    "id": "no-avocado",
+    "kind": "r",
+    "name": "No Avocado",
+    "kj": -334,
+    "p": -1,
+    "c": 0,
+    "f": -8,
+    "nut": {
+     "sat": -1,
+     "sugar": 0,
+     "fibre": -4,
+     "sodium": -4
+    }
+   },
+   {
+    "key": "r:cheddar-cheese",
+    "id": "no-cheddar-cheese",
+    "kind": "r",
+    "name": "No Cheddar Cheese",
+    "kj": -507,
+    "p": -7,
+    "c": 0,
+    "f": -10,
+    "nut": {
+     "sat": -7,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -206
+    }
+   },
+   {
+    "key": "r:pickles",
+    "id": "no-pickles",
+    "kind": "r",
+    "name": "No Pickles",
+    "kj": -132,
+    "p": 0,
+    "c": -7,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -7,
+     "fibre": 0,
+     "sodium": -156
+    }
+   },
+   {
+    "key": "r:raw-slaw",
+    "id": "no-raw-slaw",
+    "kind": "r",
+    "name": "No Raw Slaw",
+    "kj": -194,
+    "p": -2,
+    "c": -3,
+    "f": -3,
+    "nut": {
+     "sat": 0,
+     "sugar": -2,
+     "fibre": -2,
+     "sodium": -70
+    }
+   },
+   {
+    "key": "r:chopped-cos",
+    "id": "no-chopped-cos",
+    "kind": "r",
+    "name": "No Chopped Cos",
+    "kj": -88,
+    "p": -2,
+    "c": -2,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -2,
+     "fibre": -1,
+     "sodium": -20
+    }
+   },
+   {
+    "key": "r:brown-rice",
+    "id": "no-brown-rice",
+    "kind": "r",
+    "name": "No Brown Rice",
+    "kj": -832,
+    "p": -5,
+    "c": -40,
+    "f": -1,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": -2,
+     "sodium": -2
+    }
+   },
+   {
+    "key": "s:roasted-chicken",
+    "id": "swap-roasted-chicken",
+    "kind": "s",
+    "name": "Swap to Roasted Chicken",
+    "kj": -115,
+    "p": 6,
+    "c": 1,
+    "f": -6,
+    "nut": {
+     "fibre": 0,
+     "sat": -2,
+     "sodium": -77,
+     "sugar": 0
+    }
+   },
+   {
+    "key": "s:tofu",
+    "id": "swap-tofu",
+    "kind": "s",
+    "name": "Swap to Tofu",
+    "kj": -636,
+    "p": -24,
+    "c": 2,
+    "f": -8,
+    "nut": {
+     "fibre": 0,
+     "sat": -2,
+     "sodium": -250,
+     "sugar": 0
+    }
+   },
+   {
+    "key": "s:pulled-pork",
+    "id": "swap-pulled-pork",
+    "kind": "s",
+    "name": "Swap to Pulled Pork",
+    "kj": 50,
+    "p": -6,
+    "c": 2,
+    "f": 3,
+    "nut": {
+     "fibre": 0,
+     "sat": 2,
+     "sodium": 23,
+     "sugar": 2
+    }
+   },
+   {
+    "key": "s:beef-brisket",
+    "id": "swap-beef-brisket",
+    "kind": "s",
+    "name": "Swap to Beef Brisket",
+    "kj": -115,
+    "p": 0,
+    "c": 3,
+    "f": -7,
+    "nut": {
+     "fibre": 0,
+     "sat": -3,
+     "sodium": -47,
+     "sugar": 2
+    }
+   },
+   {
+    "key": "s:plant-based-chilli",
+    "id": "swap-plant-based-chilli",
+    "kind": "s",
+    "name": "Swap to Plant-Based Chilli",
+    "kj": -500,
+    "p": -24,
+    "c": 14,
+    "f": -10,
+    "nut": {
+     "fibre": 4,
+     "sat": -3,
+     "sodium": 372,
+     "sugar": 5
+    }
+   },
+   {
+    "key": "s:white-rice",
+    "id": "swap-white-rice",
+    "kind": "s",
+    "name": "Swap to White Rice",
+    "kj": -115,
+    "p": -2,
+    "c": -4,
+    "f": 0,
+    "nut": {
+     "fibre": -1,
+     "sat": 0,
+     "sodium": 126,
+     "sugar": 1
+    }
+   },
+   {
+    "key": "a:burger-dressing-light-15-g",
+    "id": "extra-burger-dressing-light-15-g",
+    "kind": "a",
+    "name": "Add Burger Dressing (light, 15 g)",
+    "kj": 310,
+    "p": 0.5,
+    "c": 3.5,
+    "f": 6.5,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 3.5,
+     "fibre": 0,
+     "sodium": 150
+    }
+   },
+   {
+    "key": "a:burger-dressing-heavy-60-g",
+    "id": "extra-burger-dressing-heavy-60-g",
+    "kind": "a",
+    "name": "Add Burger Dressing (heavy, 60 g)",
+    "kj": 1238,
+    "p": 2,
+    "c": 14,
+    "f": 26,
+    "nut": {
+     "sat": 2,
+     "sugar": 14,
+     "fibre": 0,
+     "sodium": 600
+    }
+   }
+  ],
+  "greenstreat:shake-n-bake-burrito": [
+   {
+    "key": "r:tortilla-as-a-bowl",
+    "id": "no-tortilla-as-a-bowl",
+    "kind": "r",
+    "name": "No Tortilla (as a bowl)",
+    "kj": -1168,
+    "p": -7,
+    "c": -43,
+    "f": -8,
+    "nut": {
+     "sat": -4,
+     "sugar": -4,
+     "fibre": -2,
+     "sodium": -694
+    }
+   },
+   {
+    "key": "r:blackened-chicken",
+    "id": "no-blackened-chicken",
+    "kind": "r",
+    "name": "No Blackened Chicken",
+    "kj": -891,
+    "p": -29,
+    "c": 0,
+    "f": -11,
+    "nut": {
+     "sat": -3,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -357
+    }
+   },
+   {
+    "key": "r:cheddar-cheese",
+    "id": "no-cheddar-cheese",
+    "kind": "r",
+    "name": "No Cheddar Cheese",
+    "kj": -507,
+    "p": -7,
+    "c": 0,
+    "f": -10,
+    "nut": {
+     "sat": -7,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -206
+    }
+   },
+   {
+    "key": "r:crispy-bacon",
+    "id": "no-crispy-bacon",
+    "kind": "r",
+    "name": "No Crispy Bacon",
+    "kj": -172,
+    "p": -6,
+    "c": 0,
+    "f": -2,
+    "nut": {
+     "sat": -1,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -440
+    }
+   },
+   {
+    "key": "r:tomato-onion",
+    "id": "no-tomato-onion",
+    "kind": "r",
+    "name": "No Tomato & Onion",
+    "kj": -52,
+    "p": 0,
+    "c": -2,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -2,
+     "fibre": -1,
+     "sodium": -3
+    }
+   },
+   {
+    "key": "r:red-onion",
+    "id": "no-red-onion",
+    "kind": "r",
+    "name": "No Red Onion",
+    "kj": -23,
+    "p": 0,
+    "c": -1,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -1,
+     "fibre": 0,
+     "sodium": -1
+    }
+   },
+   {
+    "key": "r:parsley",
+    "id": "no-parsley",
+    "kind": "r",
+    "name": "No Parsley",
+    "kj": -5,
+    "p": 0,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -5
+    }
+   },
+   {
+    "key": "r:rocket",
+    "id": "no-rocket",
+    "kind": "r",
+    "name": "No Rocket",
+    "kj": -36,
+    "p": -1,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": -2,
+     "sodium": -19
+    }
+   },
+   {
+    "key": "r:mixed-leaf",
+    "id": "no-mixed-leaf",
+    "kind": "r",
+    "name": "No Mixed Leaf",
+    "kj": -11,
+    "p": 0,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -18
+    }
+   },
+   {
+    "key": "r:chopped-cos",
+    "id": "no-chopped-cos",
+    "kind": "r",
+    "name": "No Chopped Cos",
+    "kj": -88,
+    "p": -2,
+    "c": -2,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -2,
+     "fibre": -1,
+     "sodium": -20
+    }
+   },
+   {
+    "key": "s:roasted-chicken",
+    "id": "swap-roasted-chicken",
+    "kind": "s",
+    "name": "Swap to Roasted Chicken",
+    "kj": -115,
+    "p": 6,
+    "c": 1,
+    "f": -6,
+    "nut": {
+     "fibre": 0,
+     "sat": -2,
+     "sodium": -77,
+     "sugar": 0
+    }
+   },
+   {
+    "key": "s:tofu",
+    "id": "swap-tofu",
+    "kind": "s",
+    "name": "Swap to Tofu",
+    "kj": -636,
+    "p": -24,
+    "c": 2,
+    "f": -8,
+    "nut": {
+     "fibre": 0,
+     "sat": -2,
+     "sodium": -250,
+     "sugar": 0
+    }
+   },
+   {
+    "key": "s:pulled-pork",
+    "id": "swap-pulled-pork",
+    "kind": "s",
+    "name": "Swap to Pulled Pork",
+    "kj": 50,
+    "p": -6,
+    "c": 2,
+    "f": 3,
+    "nut": {
+     "fibre": 0,
+     "sat": 2,
+     "sodium": 23,
+     "sugar": 2
+    }
+   },
+   {
+    "key": "s:beef-brisket",
+    "id": "swap-beef-brisket",
+    "kind": "s",
+    "name": "Swap to Beef Brisket",
+    "kj": -115,
+    "p": 0,
+    "c": 3,
+    "f": -7,
+    "nut": {
+     "fibre": 0,
+     "sat": -3,
+     "sodium": -47,
+     "sugar": 2
+    }
+   },
+   {
+    "key": "s:plant-based-chilli",
+    "id": "swap-plant-based-chilli",
+    "kind": "s",
+    "name": "Swap to Plant-Based Chilli",
+    "kj": -500,
+    "p": -24,
+    "c": 14,
+    "f": -10,
+    "nut": {
+     "fibre": 4,
+     "sat": -3,
+     "sodium": 372,
+     "sugar": 5
+    }
+   },
+   {
+    "key": "a:burger-dressing-light-15-g",
+    "id": "extra-burger-dressing-light-15-g",
+    "kind": "a",
+    "name": "Add Burger Dressing (light, 15 g)",
+    "kj": 310,
+    "p": 0.5,
+    "c": 3.5,
+    "f": 6.5,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 3.5,
+     "fibre": 0,
+     "sodium": 150
+    }
+   },
+   {
+    "key": "a:burger-dressing-heavy-60-g",
+    "id": "extra-burger-dressing-heavy-60-g",
+    "kind": "a",
+    "name": "Add Burger Dressing (heavy, 60 g)",
+    "kj": 1238,
+    "p": 2,
+    "c": 14,
+    "f": 26,
+    "nut": {
+     "sat": 2,
+     "sugar": 14,
+     "fibre": 0,
+     "sodium": 600
+    }
+   }
+  ],
+  "greenstreat:chicken-satay-power-plate": [
+   {
+    "key": "r:roasted-chicken",
+    "id": "no-roasted-chicken",
+    "kind": "r",
+    "name": "No Roasted Chicken",
+    "kj": -776,
+    "p": -35,
+    "c": -1,
+    "f": -5,
+    "nut": {
+     "sat": -1,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -280
+    }
+   },
+   {
+    "key": "r:edamame",
+    "id": "no-edamame",
+    "kind": "r",
+    "name": "No Edamame",
+    "kj": -139,
+    "p": -3,
+    "c": -2,
+    "f": -2,
+    "nut": {
+     "sat": 0,
+     "sugar": -1,
+     "fibre": -1,
+     "sodium": -2
+    }
+   },
+   {
+    "key": "r:broccoli",
+    "id": "no-broccoli",
+    "kind": "r",
+    "name": "No Broccoli",
+    "kj": -35,
+    "p": -1,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": -1,
+     "sodium": -5
+    }
+   },
+   {
+    "key": "r:brown-rice",
+    "id": "no-brown-rice",
+    "kind": "r",
+    "name": "No Brown Rice",
+    "kj": -832,
+    "p": -5,
+    "c": -40,
+    "f": -1,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": -2,
+     "sodium": -2
+    }
+   },
+   {
+    "key": "r:rainbow-slaw",
+    "id": "no-rainbow-slaw",
+    "kind": "r",
+    "name": "No Rainbow Slaw",
+    "kj": -83,
+    "p": -1,
+    "c": -3,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -3,
+     "fibre": -2,
+     "sodium": -18
+    }
+   },
+   {
+    "key": "s:blackened-chicken",
+    "id": "swap-blackened-chicken",
+    "kind": "s",
+    "name": "Swap to Blackened Chicken",
+    "kj": 115,
+    "p": -6,
+    "c": -1,
+    "f": 6,
+    "nut": {
+     "fibre": 0,
+     "sat": 2,
+     "sodium": 77,
+     "sugar": 0
+    }
+   },
+   {
+    "key": "s:tofu",
+    "id": "swap-tofu",
+    "kind": "s",
+    "name": "Swap to Tofu",
+    "kj": -521,
+    "p": -30,
+    "c": 1,
+    "f": -2,
+    "nut": {
+     "fibre": 0,
+     "sat": 0,
+     "sodium": -173,
+     "sugar": 0
+    }
+   },
+   {
+    "key": "s:pulled-pork",
+    "id": "swap-pulled-pork",
+    "kind": "s",
+    "name": "Swap to Pulled Pork",
+    "kj": 165,
+    "p": -12,
+    "c": 1,
+    "f": 9,
+    "nut": {
+     "fibre": 0,
+     "sat": 4,
+     "sodium": 100,
+     "sugar": 2
+    }
+   },
+   {
+    "key": "s:beef-brisket",
+    "id": "swap-beef-brisket",
+    "kind": "s",
+    "name": "Swap to Beef Brisket",
+    "kj": 0,
+    "p": -6,
+    "c": 2,
+    "f": -1,
+    "nut": {
+     "fibre": 0,
+     "sat": -1,
+     "sodium": 30,
+     "sugar": 2
+    }
+   },
+   {
+    "key": "s:plant-based-chilli",
+    "id": "swap-plant-based-chilli",
+    "kind": "s",
+    "name": "Swap to Plant-Based Chilli",
+    "kj": -385,
+    "p": -30,
+    "c": 13,
+    "f": -4,
+    "nut": {
+     "fibre": 4,
+     "sat": -1,
+     "sodium": 449,
+     "sugar": 5
+    }
+   },
+   {
+    "key": "s:white-rice",
+    "id": "swap-white-rice",
+    "kind": "s",
+    "name": "Swap to White Rice",
+    "kj": -115,
+    "p": -2,
+    "c": -4,
+    "f": 0,
+    "nut": {
+     "fibre": -1,
+     "sat": 0,
+     "sodium": 126,
+     "sugar": 1
+    }
+   },
+   {
+    "key": "a:warm-peanut-satay-sauce-light-15-g",
+    "id": "extra-warm-peanut-satay-sauce-light-15-g",
+    "kind": "a",
+    "name": "Add Warm Peanut Satay Sauce (light, 15 g)",
+    "kj": 191,
+    "p": 1.2,
+    "c": 3.8,
+    "f": 2.8,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 3.5,
+     "fibre": 0.5,
+     "sodium": 107
+    }
+   },
+   {
+    "key": "a:warm-peanut-satay-sauce-heavy-60-g",
+    "id": "extra-warm-peanut-satay-sauce-heavy-60-g",
+    "kind": "a",
+    "name": "Add Warm Peanut Satay Sauce (heavy, 60 g)",
+    "kj": 764,
+    "p": 4.8,
+    "c": 15.2,
+    "f": 11.2,
+    "nut": {
+     "sat": 2,
+     "sugar": 14,
+     "fibre": 2,
+     "sodium": 428
+    }
+   }
+  ],
+  "greenstreat:satay-plant-power-plate": [
+   {
+    "key": "r:tofu",
+    "id": "no-tofu",
+    "kind": "r",
+    "name": "No Tofu",
+    "kj": -255,
+    "p": -5,
+    "c": -2,
+    "f": -3,
+    "nut": {
+     "sat": -1,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -107
+    }
+   },
+   {
+    "key": "r:brown-rice",
+    "id": "no-brown-rice",
+    "kind": "r",
+    "name": "No Brown Rice",
+    "kj": -832,
+    "p": -5,
+    "c": -40,
+    "f": -1,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": -2,
+     "sodium": -2
+    }
+   },
+   {
+    "key": "r:broccoli",
+    "id": "no-broccoli",
+    "kind": "r",
+    "name": "No Broccoli",
+    "kj": -35,
+    "p": -1,
+    "c": 0,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": -1,
+     "sodium": -5
+    }
+   },
+   {
+    "key": "r:edamame",
+    "id": "no-edamame",
+    "kind": "r",
+    "name": "No Edamame",
+    "kj": -139,
+    "p": -3,
+    "c": -2,
+    "f": -2,
+    "nut": {
+     "sat": 0,
+     "sugar": -1,
+     "fibre": -1,
+     "sodium": -2
+    }
+   },
+   {
+    "key": "r:rainbow-slaw",
+    "id": "no-rainbow-slaw",
+    "kind": "r",
+    "name": "No Rainbow Slaw",
+    "kj": -83,
+    "p": -1,
+    "c": -3,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": -3,
+     "fibre": -2,
+     "sodium": -18
+    }
+   },
+   {
+    "key": "s:roasted-chicken",
+    "id": "swap-roasted-chicken",
+    "kind": "s",
+    "name": "Swap to Roasted Chicken",
+    "kj": 521,
+    "p": 30,
+    "c": -1,
+    "f": 2,
+    "nut": {
+     "fibre": 0,
+     "sat": 0,
+     "sodium": 173,
+     "sugar": 0
+    }
+   },
+   {
+    "key": "s:blackened-chicken",
+    "id": "swap-blackened-chicken",
+    "kind": "s",
+    "name": "Swap to Blackened Chicken",
+    "kj": 636,
+    "p": 24,
+    "c": -2,
+    "f": 8,
+    "nut": {
+     "fibre": 0,
+     "sat": 2,
+     "sodium": 250,
+     "sugar": 0
+    }
+   },
+   {
+    "key": "s:pulled-pork",
+    "id": "swap-pulled-pork",
+    "kind": "s",
+    "name": "Swap to Pulled Pork",
+    "kj": 686,
+    "p": 18,
+    "c": 0,
+    "f": 11,
+    "nut": {
+     "fibre": 0,
+     "sat": 4,
+     "sodium": 273,
+     "sugar": 2
+    }
+   },
+   {
+    "key": "s:beef-brisket",
+    "id": "swap-beef-brisket",
+    "kind": "s",
+    "name": "Swap to Beef Brisket",
+    "kj": 521,
+    "p": 24,
+    "c": 1,
+    "f": 1,
+    "nut": {
+     "fibre": 0,
+     "sat": -1,
+     "sodium": 203,
+     "sugar": 2
+    }
+   },
+   {
+    "key": "s:plant-based-chilli",
+    "id": "swap-plant-based-chilli",
+    "kind": "s",
+    "name": "Swap to Plant-Based Chilli",
+    "kj": 136,
+    "p": 0,
+    "c": 12,
+    "f": -2,
+    "nut": {
+     "fibre": 4,
+     "sat": -1,
+     "sodium": 622,
+     "sugar": 5
+    }
+   },
+   {
+    "key": "s:white-rice",
+    "id": "swap-white-rice",
+    "kind": "s",
+    "name": "Swap to White Rice",
+    "kj": -115,
+    "p": -2,
+    "c": -4,
+    "f": 0,
+    "nut": {
+     "fibre": -1,
+     "sat": 0,
+     "sodium": 126,
+     "sugar": 1
+    }
+   },
+   {
+    "key": "a:warm-peanut-satay-sauce-light-15-g",
+    "id": "extra-warm-peanut-satay-sauce-light-15-g",
+    "kind": "a",
+    "name": "Add Warm Peanut Satay Sauce (light, 15 g)",
+    "kj": 191,
+    "p": 1.2,
+    "c": 3.8,
+    "f": 2.8,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 3.5,
+     "fibre": 0.5,
+     "sodium": 107
+    }
+   },
+   {
+    "key": "a:warm-peanut-satay-sauce-heavy-60-g",
+    "id": "extra-warm-peanut-satay-sauce-heavy-60-g",
+    "kind": "a",
+    "name": "Add Warm Peanut Satay Sauce (heavy, 60 g)",
+    "kj": 764,
+    "p": 4.8,
+    "c": 15.2,
+    "f": 11.2,
+    "nut": {
+     "sat": 2,
+     "sugar": 14,
+     "fibre": 2,
+     "sodium": 428
+    }
+   }
+  ],
+  "greenstreat:texan-plate": [
+   {
+    "key": "r:blackened-chicken",
+    "id": "no-blackened-chicken",
+    "kind": "r",
+    "name": "No Blackened Chicken",
+    "kj": -891,
+    "p": -29,
+    "c": 0,
+    "f": -11,
+    "nut": {
+     "sat": -3,
+     "sugar": 0,
+     "fibre": 0,
+     "sodium": -357
+    }
+   },
+   {
+    "key": "r:white-rice",
+    "id": "no-white-rice",
+    "kind": "r",
+    "name": "No White Rice",
+    "kj": -717,
+    "p": -3,
+    "c": -36,
+    "f": -1,
+    "nut": {
+     "sat": 0,
+     "sugar": -1,
+     "fibre": -1,
+     "sodium": -128
+    }
+   },
+   {
+    "key": "r:raw-slaw",
+    "id": "no-raw-slaw",
+    "kind": "r",
+    "name": "No Raw Slaw",
+    "kj": -194,
+    "p": -2,
+    "c": -3,
+    "f": -3,
+    "nut": {
+     "sat": 0,
+     "sugar": -2,
+     "fibre": -2,
+     "sodium": -70
+    }
+   },
+   {
+    "key": "r:black-beans",
+    "id": "no-black-beans",
+    "kind": "r",
+    "name": "No Black Beans",
+    "kj": -276,
+    "p": -5,
+    "c": -12,
+    "f": 0,
+    "nut": {
+     "sat": 0,
+     "sugar": 0,
+     "fibre": -5,
+     "sodium": -1
+    }
+   },
+   {
+    "key": "s:roasted-chicken",
+    "id": "swap-roasted-chicken",
+    "kind": "s",
+    "name": "Swap to Roasted Chicken",
+    "kj": -115,
+    "p": 6,
+    "c": 1,
+    "f": -6,
+    "nut": {
+     "fibre": 0,
+     "sat": -2,
+     "sodium": -77,
+     "sugar": 0
+    }
+   },
+   {
+    "key": "s:tofu",
+    "id": "swap-tofu",
+    "kind": "s",
+    "name": "Swap to Tofu",
+    "kj": -636,
+    "p": -24,
+    "c": 2,
+    "f": -8,
+    "nut": {
+     "fibre": 0,
+     "sat": -2,
+     "sodium": -250,
+     "sugar": 0
+    }
+   },
+   {
+    "key": "s:pulled-pork",
+    "id": "swap-pulled-pork",
+    "kind": "s",
+    "name": "Swap to Pulled Pork",
+    "kj": 50,
+    "p": -6,
+    "c": 2,
+    "f": 3,
+    "nut": {
+     "fibre": 0,
+     "sat": 2,
+     "sodium": 23,
+     "sugar": 2
+    }
+   },
+   {
+    "key": "s:beef-brisket",
+    "id": "swap-beef-brisket",
+    "kind": "s",
+    "name": "Swap to Beef Brisket",
+    "kj": -115,
+    "p": 0,
+    "c": 3,
+    "f": -7,
+    "nut": {
+     "fibre": 0,
+     "sat": -3,
+     "sodium": -47,
+     "sugar": 2
+    }
+   },
+   {
+    "key": "s:plant-based-chilli",
+    "id": "swap-plant-based-chilli",
+    "kind": "s",
+    "name": "Swap to Plant-Based Chilli",
+    "kj": -500,
+    "p": -24,
+    "c": 14,
+    "f": -10,
+    "nut": {
+     "fibre": 4,
+     "sat": -3,
+     "sodium": 372,
+     "sugar": 5
+    }
+   },
+   {
+    "key": "s:brown-rice",
+    "id": "swap-brown-rice",
+    "kind": "s",
+    "name": "Swap to Brown Rice",
+    "kj": 115,
+    "p": 2,
+    "c": 4,
+    "f": 0,
+    "nut": {
+     "fibre": 1,
+     "sat": 0,
+     "sodium": -126,
+     "sugar": -1
+    }
+   },
+   {
+    "key": "a:chipotle-ranch-dressing-light-15-g",
+    "id": "extra-chipotle-ranch-dressing-light-15-g",
+    "kind": "a",
+    "name": "Add Chipotle Ranch Dressing (light, 15 g)",
+    "kj": 185,
+    "p": 0.5,
+    "c": 1.5,
+    "f": 4,
+    "nut": {
+     "sat": 0.5,
+     "sugar": 1.5,
+     "fibre": 0,
+     "sodium": 79
+    }
+   },
+   {
+    "key": "a:chipotle-ranch-dressing-heavy-60-g",
+    "id": "extra-chipotle-ranch-dressing-heavy-60-g",
+    "kind": "a",
+    "name": "Add Chipotle Ranch Dressing (heavy, 60 g)",
+    "kj": 740,
+    "p": 2,
+    "c": 6,
+    "f": 16,
+    "nut": {
+     "sat": 2,
+     "sugar": 6,
+     "fibre": 0,
+     "sodium": 316
+    }
+   }
+  ]
+ }
+}

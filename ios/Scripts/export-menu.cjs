@@ -237,7 +237,7 @@ console.log(`Added ${paired} extras and removals worked out from pairs of items 
 // protein and style swaps, extras and removals (nandos-menu.py), and Hungry Jack's and Oporto add-ons and removals
 // (ordering-options.py). An option for something the item can already add or take off (from a published pair) is left out.
 const core = name => { const n = name.toLowerCase().replace(/^(add|extra|no|make it an?)\s+/, '').replace(/\s+(slice|piece)s?$/, '').trim(); return /patty/.test(n) ? 'patty' : n; };
-for (const [file, chain] of [['./grilld-mods.json', "Grill'd"], ['./nandos-mods.json', "Nando's"], ['./hj-mods.json', "Hungry Jack's"], ['./oporto-mods.json', 'Oporto'], ['./more-chains-mods.json', 'Crust Pizza']]) {
+for (const [file, chain] of [['./grilld-mods.json', "Grill'd"], ['./nandos-mods.json', "Nando's"], ['./hj-mods.json', "Hungry Jack's"], ['./oporto-mods.json', 'Oporto'], ['./more-chains-mods.json', 'Crust Pizza'], ['./greenstreat-mods.json', 'Greenstreat']]) {
   let added = 0;
   for (const [id, mods] of Object.entries(require(file).modifiers)) {
     const food = byId[id];

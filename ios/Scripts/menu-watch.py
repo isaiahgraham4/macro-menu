@@ -4,7 +4,7 @@
 Each week this lists every chain's current menu from its own website or ordering site, and compares that with the list it
 kept last time (menu-watch/seen.json) and with the app's menu (MenuData.json).
 
-- Plain requests: Nando's, Grill'd, Hungry Jack's, Oporto, Red Rooster, Domino's, Spud Bar, Schnitz. No keys are needed:
+- Plain requests: Nando's, Grill'd, Hungry Jack's, Oporto, Red Rooster, Domino's, Spud Bar, Schnitz, Greenstreat. No keys are needed:
   Oporto's and Red Rooster's menu files are linked from their public menu pages.
 - A real browser: McDonald's, KFC and Subway refuse plain requests, and Crust, Donut King, Michel's, Brumby's and THISBOWL
   build their nutrition pages in the browser. These lists are read there and saved as menu-watch/browser.json
@@ -148,8 +148,19 @@ def guide_lines(url):
     return sorted(lines)
 
 
+def greenstreat():
+    """Greenstreat's menu page carries its whole menu as data; greenstreat-menu.py reads it."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("greenstreat_menu", HERE / "greenstreat-menu.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return [{"name": i["name"], "cat": i.get("category"), "kj": (i.get("nutritional") or {}).get("Kilojoules (kJ)")}
+            for i in module.read_items()]
+
+
 LISTS = {"nandos": nandos, "grilld": grilld, "hj": hungry_jacks, "oporto": lambda: craveable("oporto", "melbourne-central"),
-         "rr": lambda: craveable("redrooster", "carlton"), "dominos": dominos, "spud": spud, "schnitz": schnitz}
+         "rr": lambda: craveable("redrooster", "carlton"), "dominos": dominos, "spud": spud, "schnitz": schnitz,
+         "greenstreat": greenstreat}
 GUIDES = {"gyg": lambda: [link("https://www.guzmanygomez.com.au/nutrition/", r"NUTRITION_ALLERGEN_GUIDE")],
           "zam": lambda: [link("https://www.zambrero.com.au/allergens", r"Zambrero-Nutritional-Information")],
           "boost": lambda: [link("https://www.boostjuice.com.au/", r"Nutritional")],

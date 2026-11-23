@@ -253,6 +253,11 @@ publish allergens in a form not read here, so only their meats are filled in and
 energy is more than a third away from their own macros were left out as misprints (nine Roll'd rows, three Betty's rows). Gloria Jean's
 shares that nutrition site but its page wasn't loading, and Mad Mex only publishes ingredients, not menu items.
 
+Greenstreat joined on 24 November 2026. Its menu page carries the whole menu as data (each meal's panel, allergens and vegan or
+vegetarian flag, and the same for every build-your-own part), so `Scripts/greenstreat-menu.py fetch` reads it with one request and
+`build` writes the rows into `menu-source.js` and the allergens and meats into `more-chains-diet.json`. Meals are without dressing;
+dressings, proteins and premiums are add-ons, and bases and standards are sides.
+
 Prices are switched off for now because they vary too much between stores. `Scripts/menu-source.js` keeps them, and
 `SHOW_PRICES` in `Scripts/export-menu.cjs` leaves them out of `MenuData.json`. The price fields stay in the data model
 so older backups still open, and the finder's budget and price sorts are kept for when prices return.
