@@ -268,6 +268,8 @@ final class CommunityFoods {
     }
     private(set) var lastRefreshed: Date?
     private(set) var problem: String?
+    /// Moderator only: why report alerts couldn't be turned on. Kept apart from `problem`, since the shared list itself is fine.
+    private(set) var alertProblem: String?
     private(set) var refreshing = false
     /// People whose foods you've hidden.
     private(set) var blocked: Set<String>
@@ -354,8 +356,10 @@ final class CommunityFoods {
         do {
             try await backend.watchReports()
             UserDefaults.standard.set(true, forKey: Self.watchingKey)
+            alertProblem = nil
         } catch {
-            problem = Self.describe(error)
+            // Not marked as done, so the next refresh tries again.
+            alertProblem = "Report alerts aren't on yet. \(error.localizedDescription)"
         }
     }
 

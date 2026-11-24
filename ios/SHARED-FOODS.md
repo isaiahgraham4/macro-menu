@@ -33,6 +33,8 @@ Done in Development on 15 Nov 2026 through CloudKit Console (no management token
 
 Done in Production on 15 Nov 2026: Deploy Schema Changes (it only added the three types, their indexes and the Moderator role), Moderator ticked on the same user record in Production, and a SharedFood query there returns without errors.
 
+Moderator alert subscription (found 24 Nov 2026): Production refused `moderator-new-reports` with "attempting to create a subscription in a production container". Production won't take a subscription type that isn't in its schema, and this one was added on 22 Nov, after the 15 Nov deploy, without ever being saved in Development. To fix: run a Debug build from Xcode on the moderator's iPhone (Debug uses Development), open Settings so shared foods refresh, then CloudKit Console → Development → Deploy Schema Changes (it should list the subscription type). The App Store build retries on its next refresh. From the next build on, the failure shows as a grey "Report alerts aren't on yet" line instead of the shared-foods error.
+
 Still to do (App Store Connect, needs Isaiah):
 - App Privacy → add **User Content → Other User Content**, used for App Functionality, not linked to identity, not used for tracking.
 - Update the hosted privacy policy gist from `MacroMenu/Legal/PrivacyPolicy.md`.

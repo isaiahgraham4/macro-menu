@@ -619,6 +619,9 @@ struct SharedFoodsSection: View {
                 }
                 Button("Update now") { Task { await community.refresh(force: true) } }.disabled(community.refreshing)
             }
+            if let alertProblem = community.alertProblem {
+                Text(alertProblem).font(.roboto(.caption)).foregroundStyle(.secondary)
+            }
             let hidden = community.blocked.count + community.reported.count
             if hidden > 0 {
                 Button("Show hidden people and reported foods again (\(hidden))") { community.unblockEveryone() }
