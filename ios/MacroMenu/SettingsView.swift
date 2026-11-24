@@ -246,12 +246,13 @@ struct SettingsView: View {
                 NavigationLink { AcknowledgementsView() } label: { Label("Acknowledgements", systemImage: "text.book.closed") }
                 NavigationLink { DeleteDataView() } label: { Label("Delete all my data", systemImage: "trash").foregroundStyle(.red) }
             }
-            if Premium.subscriptionsEnabled && !Premium.isUnlocked {
-                // Last in Settings. Apple's own sheet for offer codes made in App Store Connect (App Review rule 3.1.1 allows no other kind).
+            if Premium.subscriptionsEnabled {
+                // Last in Settings, shown with or without Even Leanrrr so a code can still be used.
+                // Apple's own sheet for offer codes made in App Store Connect (App Review rule 3.1.1 allows no other kind).
                 Section {
                     Button { redeeming = true } label: { Label("Redeem a code", systemImage: "ticket") }
                 } footer: {
-                    Text("Got a code for Even Leanrrr? Enter it here to start it free.")
+                    Text(Premium.isUnlocked ? "Got a code for Even Leanrrr? You can still enter it here." : "Got a code for Even Leanrrr? Enter it here to start it free.")
                 }
             }
         }.navigationTitle("Settings")
