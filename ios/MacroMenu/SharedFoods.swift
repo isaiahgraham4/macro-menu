@@ -176,6 +176,9 @@ actor CloudKitSharedFoods: SharedFoodBackend {
     }
 
     func watchReports() async throws {
+        // Already there: nothing to do. Only a missing subscription is saved again.
+        do { _ = try await db.subscription(for: Moderation.subscriptionID); return }
+        catch let error as CKError where error.code == .unknownItem { }
         let subscription = CKQuerySubscription(recordType: "SharedFoodReport", predicate: NSPredicate(value: true),
                                                subscriptionID: Moderation.subscriptionID, options: [.firesOnRecordCreation, .firesOnRecordUpdate])
         let info = CKSubscription.NotificationInfo()
@@ -258,7 +261,6 @@ final class CommunityFoods {
     private static let reportedKey = "community.reported"
     private static let uploadKey = "community.pendingUpload"
     private static let deleteKey = "community.pendingDelete"
-    private static let watchingKey = "community.moderatorWatching"
     /// How often the list is fetched again while the app is used.
     static let refreshEvery: TimeInterval = 6 * 3600
 
@@ -344,21 +346,21 @@ final class CommunityFoods {
         await watchReportsIfModerator()
     }
 
-    /// On the moderator's phone only: turns on notifications and subscribes to new reports, once per install.
+    /// On the moderator's phone only: turns on notifications and makes sure iCloud has the report subscription.
+    /// Runs with each refresh (every 6 hours at most) and asks iCloud rather than trusting a flag on the phone,
+    /// since a Debug build saves the subscription to Development and the same install can later run against Production.
     /// Registering for remote notifications is repeated each launch, as Apple recommends.
     private func watchReportsIfModerator() async {
         guard Moderation.isModerator(myID) else { return }
         #if canImport(UIKit)
         UIApplication.shared.registerForRemoteNotifications()
         #endif
-        guard !UserDefaults.standard.bool(forKey: Self.watchingKey) else { return }
         guard (try? await UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge])) == true else { return }
         do {
             try await backend.watchReports()
-            UserDefaults.standard.set(true, forKey: Self.watchingKey)
             alertProblem = nil
         } catch {
-            // Not marked as done, so the next refresh tries again.
+            // The next refresh tries again.
             alertProblem = "Report alerts aren't on yet. \(error.localizedDescription)"
         }
     }
