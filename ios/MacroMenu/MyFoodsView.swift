@@ -291,7 +291,7 @@ struct FoodEditor: View {
             Section("Find a packaged food") {
                 Button { barcodeLookup = true } label: { Label("Scan product barcode", systemImage: "barcode.viewfinder") }
                     .disabled(scanning)
-                if let note = draft.note, note.hasPrefix("Source: Open Food Facts") {
+                if let note = draft.note, note.hasPrefix("Source: Open Food Facts") || note.hasPrefix("Source: USDA FoodData Central") {
                     Text(note).font(.roboto(.caption)).foregroundStyle(.secondary)
                     Text("Confirm the nutrition basis and serving amount below before saving.").font(.roboto(.caption)).foregroundStyle(.secondary)
                 }

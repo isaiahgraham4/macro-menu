@@ -90,7 +90,7 @@ struct BarcodeScanView: View {
                         if product.food.isCommunity {
                             Text("Shared by a Leanrrr user. Leanrrr hasn't checked these figures.").font(.roboto(.caption)).foregroundStyle(.secondary)
                         } else {
-                            Link("Source: Open Food Facts · ODbL", destination: product.sourceURL)
+                            Link(product.sourceLabel, destination: product.sourceURL)
                         }
                         Button("Scan another product") { reset() }
                     }
@@ -140,7 +140,7 @@ struct BarcodeScanView: View {
                             if let manualEntry { manualEntry(nil) } else { dismiss() }
                         }
                     } footer: {
-                        Text("Product data by Open Food Facts (ODbL). Internet required, except for products on Leanrrr's supermarket list. Only the barcode is sent for lookup; camera images stay on your device. Product coverage and nutrition completeness vary.")
+                        Text("Product data by Open Food Facts (ODbL) and, for US products, USDA FoodData Central. Internet required, except for products on Leanrrr's supermarket list. Only the barcode is sent for lookup; camera images stay on your device. Product coverage and nutrition completeness vary.")
                     }
                 }
             }
@@ -153,13 +153,13 @@ struct BarcodeScanView: View {
             .task(id: pending) {
                 guard let code = pending else { return }
                 do {
-                    let found = try await BarcodeLookup.fetch(code)
+                    let found = try await BarcodeLookup.online(code)
                     guard !Task.isCancelled, pending == code else { return }
                     product = found; pending = nil
                     recentData = RecentBarcodes.recording(found, in: recentData)
                 } catch {
                     guard !Task.isCancelled, pending == code else { return }
-                    // Not in Open Food Facts (or offline): someone may have shared this product.
+                    // Not in Open Food Facts or USDA FoodData Central (or offline): someone may have shared this product.
                     if let shared = await AppServices.community.food(barcode: code), !Task.isCancelled, pending == code {
                         product = BarcodeProduct(food: shared, per100: false, unit: shared.servingWeight?.1 ?? "g",
                                                  sourceURL: URL(string: "leanr://community/\(code)")!)
@@ -404,7 +404,7 @@ private struct BarcodeCamera: UIViewControllerRepresentable {
     func makeCoordinator() -> Coordinator { Coordinator(found: found, failed: failed) }
     func makeUIViewController(context: Context) -> DataScannerViewController {
         let controller = DataScannerViewController(
-            recognizedDataTypes: [.barcode(symbologies: [.ean13, .ean8, .itf14])],
+            recognizedDataTypes: [.barcode(symbologies: [.ean13, .ean8, .upce, .itf14])],
             qualityLevel: .balanced, recognizesMultipleItems: false,
             isHighFrameRateTrackingEnabled: false, isPinchToZoomEnabled: true,
             isGuidanceEnabled: true, isHighlightingEnabled: true)
@@ -439,7 +439,9 @@ private struct BarcodeCamera: UIViewControllerRepresentable {
         private func accept(_ items: [RecognizedItem], scanner: DataScannerViewController) {
             guard !stopped else { return }
             for case .barcode(let barcode) in items {
-                if let code = barcode.payloadStringValue, (try? BarcodeLookup.validatedCode(code)) != nil {
+                // UPC-A arrives as EAN-13 with a leading zero; UPC-E is expanded to the UPC-A it stands for.
+                if let payload = barcode.payloadStringValue,
+                   let code = try? BarcodeLookup.validatedCode(payload, upcE: barcode.observation.symbology == .upce) {
                     stopped = true; scanner.stopScanning(); found(code); break
                 }
             }

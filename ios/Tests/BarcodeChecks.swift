@@ -7,6 +7,14 @@ func barcodeChecks() throws {
     assert((try? BarcodeLookup.validatedCode("3017620422004")) == nil)
     assert((try? BarcodeLookup.validatedCode("00000000")) == nil)
     assert((try? BarcodeLookup.validatedCode("abc3017620422003")) == nil)
+    // UPC-E (small US packs) expands to the UPC-A that product databases store: a Coke can and a textbook example.
+    assert(BarcodeLookup.expandedUPCE("04963406") == "049000006346")
+    assert(BarcodeLookup.expandedUPCE("04252614") == "042100005264")
+    assert(BarcodeLookup.expandedUPCE("496340") == "049000006346")
+    assert(BarcodeLookup.expandedUPCE("04963407") == nil && BarcodeLookup.expandedUPCE("24963406") == nil)
+    assert((try? BarcodeLookup.validatedCode("04963406")) == "049000006346")
+    assert((try? BarcodeLookup.validatedCode("496340", upcE: true)) == "049000006346")
+    assert((try? BarcodeLookup.validatedCode("96385074")) == "96385074")
     func parse(_ json: String) throws -> BarcodeProduct {
         try BarcodeLookup.parse(Data(json.utf8), code: "3017620422003")
     }
@@ -44,6 +52,24 @@ func barcodeChecks() throws {
     assert(abs(LabelParser.servingSuggestions(label, column: 1)["cal"]! - 200) < 0.001)
     assert(abs(LabelParser.servingSuggestions(label, column: 0)["cal"]! - 200) < 0.001)
     assert(LabelParser.servingSuggestions(label, column: 0)["sodium"] == 100)
+    // A US Nutrition Facts panel: no per-100 column, calories rather than kilojoules, "Total Sugars", %DV on most rows.
+    let usLabel = "Nutrition Facts\n8 servings per container\nServing size 2/3 cup (55g)\nAmount per serving\nCalories\n230\n% Daily Value*\nTotal Fat 8g 10%\nSaturated Fat 1g 5%\nTrans Fat 0g\nCholesterol 0mg 0%\nSodium 160mg 7%\nTotal Carbohydrate 37g 13%\nDietary Fiber 4g 14%\nTotal Sugars 12g\nIncludes 10g Added Sugars 20%\nProtein 3g"
+    let usLayout = LabelParser.layout(usLabel)
+    assert(usLayout.amount == 55 && usLayout.unit == "g" && usLayout.per100Column == nil)
+    let us = LabelParser.servingSuggestions(usLabel, column: 0)
+    assert(us["cal"] == 230 && us["f"] == 8 && us["sat"] == 1 && us["sodium"] == 160 && us["c"] == 37)
+    assert(us["fibre"] == 4 && us["sugar"] == 12 && us["p"] == 3)
+    let oldUS = LabelParser.suggestions("Calories 250\nCalories from Fat 110\nSat. Fat 3g 15%\nTotal Carb. 31g 10%\nProtein 5g", column: 0)
+    assert(oldUS["cal"] == 250 && oldUS["sat"] == 3 && oldUS["c"] == 31 && oldUS["p"] == 5)
+    // USDA Branded Foods rows from Supabase (null when the barcode isn't there).
+    let usda = try USDABarcodes.parse(Data(#"{"code":"49000006346","name":"Coca-Cola Can, 12 fl oz","brand":"Coca-Cola","serve":"1 Can (355 mL)","amount":355,"unit":"mL","cal":138,"p":0,"c":39,"f":0,"sugar":39,"sodium":46,"date":"2025-09-18","source":"usda"}"#.utf8), code: "049000006346")
+    assert(usda.isUSDA && !usda.per100 && usda.unit == "mL" && usda.food.name == "Coca-Cola Can, 12 fl oz")
+    assert(usda.food.cal == 138 && usda.food.c == 39 && usda.food.nut?["sodium"] == 46 && usda.food.barcode == "049000006346")
+    assert(usda.food.servingWeight?.0 == 355 && usda.sourceLabel.contains("USDA"))
+    let chips = try USDABarcodes.parse(Data(#"{"name":"Classic Potato Chips","brand":"Lay's","serve":"15 chips","amount":28,"unit":"g","cal":160,"p":2,"c":15,"f":10}"#.utf8), code: "028400090858")
+    assert(chips.food.name == "Classic Potato Chips · Lay's" && chips.food.serve == "15 chips (28 g)" && chips.food.servingWeight?.0 == 28)
+    assert((try? USDABarcodes.parse(Data("null".utf8), code: "1")) == nil)
+    assert((try? USDABarcodes.parse(Data(#"{"name":"No protein","serve":"1 bar","cal":200}"#.utf8), code: "1")) == nil)
     let reversed = "Serving size 250 mL\nPer serving Per 100 mL\nEnergy 523 kJ 209.2 kJ\nProtein 7.5 g 3 g"
     assert(LabelParser.layout(reversed).servingColumn == 0)
     assert(LabelParser.layout(reversed).unit == "mL")

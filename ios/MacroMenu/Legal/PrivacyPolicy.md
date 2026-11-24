@@ -1,6 +1,6 @@
 # Leanrrr privacy policy
 
-Effective 22 November 2026
+Effective 24 November 2026
 
 Leanrrr is made by Isaiah Graham, an independent developer in Victoria, Australia ("I", "me"). This policy explains what happens to your information when you use Leanrrr. You can reach me at {{CONTACT}}.
 
@@ -72,7 +72,7 @@ If you report a shared food, the report records which food it was, the reason yo
 
 ## Product lookups
 
-When you scan a product, its barcode number is sent to Open Food Facts (a non-profit in France) to look up its nutrition.
+When you scan a product, its barcode number is sent to Open Food Facts (a non-profit in France) and to Leanrrr's food database on Supabase, which holds the US government's (USDA) list of packaged-food labels, to look up its nutrition. Nothing else is sent with it.
 
 When you tap "Search packaged foods", the words you typed are sent to Open Food Facts to find matching products, and opening a result sends that product's barcode number. Nothing is sent while you type, and nothing else is sent with your search.
 
@@ -115,7 +115,7 @@ Leanrrr doesn't sell or share your personal data, and it uses no analytics, adve
 - **Apple** (United States and elsewhere): Maps, iCloud (including the public database that holds shared foods), Health, Siri, Visual Intelligence and the App Store (for Even Leanrrr), which are part of your device and your Apple Account and are covered by Apple's privacy policy.
 - **Open Food Facts** (France): receives only a product's barcode number or the words you search for packaged foods. Neither is linked to you.
 - **Recipe websites you choose**: when you import a recipe from a link, that website receives the request for the page and nothing else.
-- **Supabase** (United States company; the data is stored in Sydney, Australia): hosts Leanrrr's food data (restaurant menus, everyday foods and supermarket foods). A few times a day Leanrrr asks it whether that data has changed and, if it has, downloads the new copy. The request contains nothing about you or your data. As with any website, Supabase sees your device's IP address and handles it under Supabase's privacy policy.
+- **Supabase** (United States company; the data is stored in Sydney, Australia): hosts Leanrrr's food data (restaurant menus, everyday foods, supermarket foods and US packaged foods by barcode). A few times a day Leanrrr asks it whether that data has changed and, if it has, downloads the new copy; when you scan a barcode, that number is looked up there. The requests contain nothing about you or your data. As with any website, Supabase sees your device's IP address and handles it under Supabase's privacy policy.
 
 Any service that receives data from Leanrrr must protect it at least as well as this policy does. If that ever changes, this policy will be updated before the app sends anything new.
 

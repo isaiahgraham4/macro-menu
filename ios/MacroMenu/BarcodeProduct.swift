@@ -6,6 +6,10 @@ struct BarcodeProduct: Codable, Sendable {
     var per100: Bool
     var unit: String
     var sourceURL: URL
+    /// From USDA FoodData Central's Branded Foods: the manufacturer's own US Nutrition Facts label.
+    var isUSDA: Bool { sourceURL.host == "fdc.nal.usda.gov" }
+    /// The credit shown under a scanned product.
+    var sourceLabel: String { isUSDA ? "Source: USDA FoodData Central · Branded Foods" : "Source: Open Food Facts · ODbL" }
 }
 
 enum RecentBarcodes {
@@ -27,7 +31,7 @@ enum BarcodeLookupError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .invalidCode: "Check the barcode digits and try again. Enter an 8, 12, 13 or 14 digit product barcode."
-        case .notFound: "This product isn't in Open Food Facts yet. Add its barcode to a food you enter yourself, and scanning it next time will find that food."
+        case .notFound: "This product isn't in Open Food Facts or USDA FoodData Central yet. Add its barcode to a food you enter yourself, and scanning it next time will find that food."
         case .incomplete: "This product doesn't have complete energy and protein data. Add its barcode to a food you enter yourself, and scanning it next time will find that food."
         case .unavailable: "The food database is unavailable right now. Try again shortly, or scan the nutrition label."
         }
@@ -35,15 +39,48 @@ enum BarcodeLookupError: LocalizedError {
 }
 
 enum BarcodeLookup {
-    static func validatedCode(_ input: String) throws -> String {
+    /// `upcE` is true when the camera read the code as UPC-E, the short barcode on small US and Canadian packs (soda cans, gum,
+    /// candy). Those come back as the full 12-digit UPC-A, which is how product databases store them. A typed 8-digit code is
+    /// read as EAN-8 when its check digit fits, otherwise as UPC-E.
+    static func validatedCode(_ input: String, upcE: Bool = false) throws -> String {
         let code = input.filter { !$0.isWhitespace && $0 != "-" }
+        if upcE, let expanded = expandedUPCE(code) { return expanded }
         guard [8, 12, 13, 14].contains(code.count), code.utf8.allSatisfy({ (48...57).contains($0) }) else {
             throw BarcodeLookupError.invalidCode
         }
         let digits = code.utf8.map { Int($0 - 48) }
-        let sum = digits.dropLast().reversed().enumerated().reduce(0) { $0 + $1.element * ($1.offset.isMultiple(of: 2) ? 3 : 1) }
-        guard (10 - sum % 10) % 10 == digits.last!, Set(digits) != [0] else { throw BarcodeLookupError.invalidCode }
+        guard Set(digits) != [0] else { throw BarcodeLookupError.invalidCode }
+        guard checkDigit(digits.dropLast()) == digits.last! else {
+            if code.count == 8, let expanded = expandedUPCE(code) { return expanded }
+            throw BarcodeLookupError.invalidCode
+        }
         return code
+    }
+
+    /// The GS1 check digit for these digits (EAN-8, UPC-A, EAN-13 and ITF-14 all use it).
+    static func checkDigit<S: Collection>(_ digits: S) -> Int where S.Element == Int {
+        let sum = digits.reversed().enumerated().reduce(0) { $0 + $1.element * ($1.offset.isMultiple(of: 2) ? 3 : 1) }
+        return (10 - sum % 10) % 10
+    }
+
+    /// The 12-digit UPC-A a UPC-E code stands for, or nil if it isn't a valid UPC-E. Takes the 8-digit form (number system,
+    /// six digits, check digit) or the bare six digits some scanners report, which are number system 0.
+    static func expandedUPCE(_ input: String) -> String? {
+        guard input.utf8.allSatisfy({ (48...57).contains($0) }) else { return nil }
+        var digits = input.utf8.map { Int($0 - 48) }
+        if digits.count == 6 { digits.insert(0, at: 0) }
+        guard digits.count == 7 || digits.count == 8, digits[0] <= 1 else { return nil }
+        let d = Array(digits[1...6])
+        let body: [Int] = switch d[5] {
+        case 0...2: [d[0], d[1], d[5], 0, 0, 0, 0, d[2], d[3], d[4]]
+        case 3: [d[0], d[1], d[2], 0, 0, 0, 0, 0, d[3], d[4]]
+        case 4: [d[0], d[1], d[2], d[3], 0, 0, 0, 0, 0, d[4]]
+        default: [d[0], d[1], d[2], d[3], d[4], 0, 0, 0, 0, d[5]]
+        }
+        let upcA = [digits[0]] + body
+        let check = checkDigit(upcA)
+        guard digits.count == 7 || digits[7] == check, Set(upcA) != [0] else { return nil }
+        return (upcA + [check]).map(String.init).joined()
     }
 
     /// The first saved food with this barcode. Leading zeros are ignored, so a 12-digit UPC matches its 13-digit EAN.
@@ -64,6 +101,22 @@ enum BarcodeLookup {
 
     static func fetch(_ input: String) async throws -> BarcodeProduct {
         try await fetch(code: validatedCode(input))
+    }
+
+    /// Looks a scanned code up online. In the United States the manufacturer's own label from USDA FoodData Central comes first
+    /// and Open Food Facts fills the gaps; elsewhere Open Food Facts comes first, since US labels can differ from local ones.
+    static func online(_ code: String, region: MenuRegion = .saved) async throws -> BarcodeProduct {
+        let sources: [@Sendable (String) async throws -> BarcodeProduct] = region == .unitedStates
+            ? [USDABarcodes.fetch(code:), fetch(code:)] : [fetch(code:), USDABarcodes.fetch(code:)]
+        var failure: Error = BarcodeLookupError.notFound
+        for source in sources {
+            do { return try await source(code) } catch {
+                try Task.checkCancellation()
+                // "Not found" from one source shouldn't hide that the other couldn't be reached, or had partial data.
+                if (failure as? BarcodeLookupError) == .notFound { failure = error }
+            }
+        }
+        throw failure
     }
 
     /// Looks up a code Open Food Facts already uses, such as one from a search, without the check-digit test.
@@ -208,5 +261,57 @@ enum ProductSearch {
             if results.count == limit { break }
         }
         return results
+    }
+}
+
+/// US packaged foods by barcode: USDA FoodData Central's Branded Foods, the Nutrition Facts that manufacturers send the USDA
+/// (public domain). About 400,000 products live in Leanrrr's Supabase project (`Scripts/usda-barcodes.py`), looked up one
+/// barcode at a time; only the barcode is sent.
+enum USDABarcodes {
+    static func url(_ code: String) -> URL? {
+        MenuUpdates.server?.appending(path: "rpc/barcode").appending(queryItems: [URLQueryItem(name: "code", value: code)])
+    }
+
+    static func fetch(code: String) async throws -> BarcodeProduct {
+        guard let url = url(code) else { throw BarcodeLookupError.unavailable }
+        var request = URLRequest(url: url, timeoutInterval: 15)
+        request.setValue(MenuUpdates.publishableKey, forHTTPHeaderField: "apikey")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpShouldHandleCookies = false
+        let (data, response) = try await URLSession.shared.data(for: request)
+        try Task.checkCancellation()
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw BarcodeLookupError.unavailable }
+        return try parse(data, code: code)
+    }
+
+    /// The RPC answers with the row, or `null` when the barcode isn't there.
+    static func parse(_ data: Data, code: String) throws -> BarcodeProduct {
+        guard let row = (try? JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)) as? [String: Any] else {
+            throw BarcodeLookupError.notFound
+        }
+        func number(_ key: String) -> Double? {
+            guard let n = row[key] as? NSNumber, CFGetTypeID(n) != CFBooleanGetTypeID() else { return nil }
+            return n.doubleValue.isFinite && n.doubleValue >= 0 ? n.doubleValue : nil
+        }
+        let name = (row["name"] as? String ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+        let brand = (row["brand"] as? String ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+        let serve = (row["serve"] as? String ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !name.isEmpty, !serve.isEmpty, let cal = number("cal"), let protein = number("p") else { throw BarcodeLookupError.incomplete }
+        var extras: [String: Double] = [:]
+        for key in ["sat", "sugar", "fibre", "sodium"] { extras[key] = number(key) }
+        let source = URL(string: "https://fdc.nal.usda.gov/food-search?query=\(code)&type=Branded")!
+        // Brand names often lead the description already ("Lay's Classic"); don't say it twice.
+        let showBrand = !brand.isEmpty && !name.localizedCaseInsensitiveContains(brand)
+        var food = Food(name: showBrand ? "\(name) · \(brand)" : name, kj: cal * 4.184, cal: cal, p: protein, c: number("c"), f: number("f"),
+                        serve: serve, nut: extras.isEmpty ? nil : extras,
+                        note: "Source: USDA FoodData Central, Branded Foods (the manufacturer's Nutrition Facts, public domain)\((row["date"] as? String).map { " · \($0)" } ?? ""). Check against the package label.")
+        food.barcode = code
+        guard food.isValid else { throw BarcodeLookupError.incomplete }
+        let unit = (row["unit"] as? String) == "mL" ? "mL" : "g"
+        // Keep the gram amount on the serving so portions can be weighed: "1 can (355 mL)", "15 chips (28 g)".
+        if food.servingWeight == nil, let amount = number("amount"), amount > 0 {
+            food.serve = "\(serve) (\(amount.formatted(.number.precision(.fractionLength(0...1)))) \(unit))"
+        }
+        return BarcodeProduct(food: food, per100: false, unit: unit, sourceURL: source)
     }
 }

@@ -15,6 +15,8 @@ and if the project is paused.
 | `supermarket` | `SupermarketFoods.json` | `Scripts/supermarket-foods.py` |
 | `supermarket-NZ`, `-US`, `-CA`, `-GB`, `-ZA` | `SupermarketFoods-NZ.json` … | `Scripts/supermarket-foods.py <rows> NZ` (migration 003) |
 
+US packaged foods by barcode are a table of their own, not a dataset: `public.barcodes` (about 400,000 rows from USDA FoodData Central Branded Foods), read one barcode at a time through `rpc/barcode?code=`. Rebuild with `Scripts/usda-barcodes.py <branded json zip> <out.jsonl>`, then `--upload <out.jsonl>` (stage_barcodes in 2,000-row parts, then commit_barcodes swaps them in; migration 004). USDA publishes Branded Foods in April and December.
+
 ## Tables
 
 - `public.datasets`: one row per dataset with its `revision` and `published` date. Phones only take a dataset whose date is later than the one they have.

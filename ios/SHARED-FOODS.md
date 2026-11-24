@@ -7,7 +7,7 @@ People can share a food they've added so everyone else finds it in search (marke
 - Storage is the **public database** of the existing container `iCloud.com.isaiahgraham.MacroMenu`. There's no server or account to run. People need to be signed in to iCloud to share, but not to see shared foods.
 - Each shared food is one `SharedFood` record named `food-<the sharer's food ID>`, so editing the food replaces the record. Turning sharing off or deleting the food deletes the record. Changes go through a small queue in UserDefaults, so they still upload later if the phone was offline.
 - The app downloads every shared food, report and removal (newest first, up to 5,000 of each) at launch and on foreground, at most every 6 hours, and caches them in `community-foods.json`. Search works offline. Barcode scans fall back to a live query on `barcodeKey`, the barcode without leading zeros, once the list is past the cap.
-- Barcode order is: your own foods, then Open Food Facts, then shared foods.
+- Barcode order is: your own foods, the supermarket list, then Open Food Facts and USDA FoodData Central (USDA first in the US), then shared foods.
 - Shared foods rank after published figures that match a search equally well. They never feed suggestions, photo or text matching, Siri or orders.
 
 ## Keeping it clean (App Store guideline 1.2)

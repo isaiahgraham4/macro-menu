@@ -55,9 +55,10 @@ enum LabelParser {
 
     static func suggestions(_ text: String, column: Int) -> [String: Double] {
         let aliases: [(String,[String])] = [
-            ("sat",["saturated"]),("trans",["trans fat"]),("sugar",["sugars","sugar"]),("fibre",["dietary fibre","dietary fiber","fibre","fiber"]),
+            // US Nutrition Facts say "Total Sugars", and small packs shorten to "Sat. Fat" and "Total Carb.".
+            ("sat",["saturated","sat. fat","sat fat"]),("trans",["trans fat"]),("sugar",["total sugars","total sugar","sugars","sugar"]),("fibre",["dietary fibre","dietary fiber","fibre","fiber"]),
             ("sodium",["sodium"]),("potassium",["potassium"]),("calcium",["calcium"]),("iron",["iron"]),
-            ("chol",["cholesterol"]),("caffeine",["caffeine"]),("p",["protein"]),("c",["total carbohydrate","carbohydrate","carbs"]),("f",["total fat","fat"])]
+            ("chol",["cholesterol"]),("caffeine",["caffeine"]),("p",["protein"]),("c",["total carbohydrate","total carb","carbohydrate","carbs"]),("f",["total fat","fat"])]
         let regex = try! NSRegularExpression(pattern: #"(\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+(?:[.,]\d+)?)\s*(kcal|kj|cal|mg|µg|g|%)?"#, options: .caseInsensitive)
         var result: [String: Double] = [:]
         var statedCalories: Double?
@@ -76,6 +77,8 @@ enum LabelParser {
             pendingEnergyLabel = nil
             let isEnergyLabel = ["energy", "calories", "kilojoules", "kj", "kcal"].contains(where: { lower.hasPrefix($0) })
             if isEnergyLabel && !lower.contains(where: \.isNumber) { pendingEnergyLabel = lower; continue }
+            // Older US labels print "Calories from Fat 70" under the real calories; it isn't the food's energy.
+            if lower.contains("from fat") { continue }
             // Values preceded by less-than signs are bounds, not measured values.
             if lower.contains("<") || lower.contains("less than") { continue }
             let tokens: [(Double,String)] = regex.matches(in: lower, range: NSRange(lower.startIndex...,in: lower)).compactMap { match in
