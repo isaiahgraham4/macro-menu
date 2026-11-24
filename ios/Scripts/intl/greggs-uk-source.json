@@ -13087,6 +13087,127 @@
     "sortOrder": 50
   },
   {
+    "articleCode": "1003614",
+    "articleName": "Sweet Mince Pie Roll",
+    "isPublished": true,
+    "isMealDeal": false,
+    "isCustomisation": false,
+    "isSourceOfProtein": false,
+    "isTaggedForProtein": false,
+    "dayParts": null,
+    "internalDescription": "Sweet Mince Pie Roll",
+    "customerDescription": "The classic Sweet Mince Pie taught us a lot about baking an exceptionally delicious festive sweet treat. So much so that we’ve whipped up something new for Christmas this year – introducing: the Sweet Mince Pie Roll.\n\nPuff pastry filled with a sweet mincemeat, made from vine fruits, Bramley apples and candied orange and lemon peel, lightly dusted with icing sugar.\n\nPlus, they’re freshly baked in shops every day and chances are there’s a few coming out of the oven as we speak. So, make like Rudolph and run to get your hands on one.",
+    "menuDescription": "Puff pastry filled with a sweet mincemeat, made from vine fruits, Bramley apples and candied orange and lemon peel, lightly dusted with icing sugar. Make like Rudolph and run to get your hands on one.",
+    "articleCategoryId": 5,
+    "articleSubcategoryId": 0,
+    "articleKmsCategoryId": 7,
+    "availableModificationCount": 0,
+    "articleSize": {
+      "size": 93.5,
+      "unitOfMeasure": "g"
+    },
+    "nutritionalValues": [
+      {
+        "name": "Calories",
+        "value": 354,
+        "unitOfMeasure": "kcal",
+        "percentageOfDailyIntake": 18,
+        "detailedPercentageOfDailyIntake": 18,
+        "valuePerHundredArticleSizeUnit": 379
+      },
+      {
+        "name": "Carbohydrates",
+        "value": 49,
+        "unitOfMeasure": "g",
+        "percentageOfDailyIntake": 19,
+        "detailedPercentageOfDailyIntake": 19,
+        "valuePerHundredArticleSizeUnit": 52
+      },
+      {
+        "name": "EnergyKj",
+        "value": 1484,
+        "unitOfMeasure": "kJ",
+        "percentageOfDailyIntake": 0,
+        "detailedPercentageOfDailyIntake": 0,
+        "valuePerHundredArticleSizeUnit": 1587
+      },
+      {
+        "name": "Fat",
+        "value": 16,
+        "unitOfMeasure": "g",
+        "percentageOfDailyIntake": 23,
+        "detailedPercentageOfDailyIntake": 23,
+        "valuePerHundredArticleSizeUnit": 17
+      },
+      {
+        "name": "Protein",
+        "value": 3.4,
+        "unitOfMeasure": "g",
+        "percentageOfDailyIntake": 7,
+        "detailedPercentageOfDailyIntake": 7,
+        "valuePerHundredArticleSizeUnit": 3.6
+      },
+      {
+        "name": "Salt",
+        "value": 0.45,
+        "unitOfMeasure": "g",
+        "percentageOfDailyIntake": 8,
+        "detailedPercentageOfDailyIntake": 8,
+        "valuePerHundredArticleSizeUnit": 0.48
+      },
+      {
+        "name": "Saturates",
+        "value": 7.9,
+        "unitOfMeasure": "g",
+        "percentageOfDailyIntake": 40,
+        "detailedPercentageOfDailyIntake": 40,
+        "valuePerHundredArticleSizeUnit": 8.5
+      },
+      {
+        "name": "Sugar",
+        "value": 27,
+        "unitOfMeasure": "g",
+        "percentageOfDailyIntake": 30,
+        "detailedPercentageOfDailyIntake": 30,
+        "valuePerHundredArticleSizeUnit": 29
+      }
+    ],
+    "ingredients": [
+      {
+        "name": "Wheat",
+        "percentageOfTotalMakeup": 0,
+        "isAllergen": true,
+        "constituentIngredients": []
+      },
+      {
+        "name": "Milk",
+        "percentageOfTotalMakeup": 0,
+        "isAllergen": true,
+        "constituentIngredients": []
+      }
+    ],
+    "modificationGroups": [],
+    "fulfillmentService": "Counter Service",
+    "multiPartQuantity": 0,
+    "makeupGuide": {
+      "steps": [],
+      "utensils": []
+    },
+    "decanterShelfLifeDays": 0,
+    "imageUri": "https://articles.greggs.co.uk/images/1003614.png?1795420856962",
+    "thumbnailUri": "https://articles.greggs.co.uk/images/1003614-thumb.png?1795420856962",
+    "finishedProductImageUri": null,
+    "secondaryImageUri": "https://articles.greggs.co.uk/images/1003614-secondary.png",
+    "gtinCode": null,
+    "relatedArticleCode": null,
+    "isBranded": false,
+    "isHiddenInMenu": false,
+    "labelRequired": true,
+    "numberOfShelfLifeDays": 0,
+    "numberOfServings": 0,
+    "sortOrder": 52
+  },
+  {
     "articleCode": "1001841",
     "articleName": "Gingerbread Man",
     "isPublished": true,

@@ -1,5 +1,5 @@
 {
- "fetched": "2026-11-11",
+ "fetched": "2026-11-24",
  "store": "150",
  "categories": [
   {
@@ -1169,6 +1169,10 @@
        "defaultSelectedOptions": [],
        "options": [
         {
+         "plu": "1001090",
+         "name": "Fresh Avocado"
+        },
+        {
          "plu": "1001085",
          "name": "PERi-PERi Chicken Tenders x2"
         },
@@ -1177,12 +1181,12 @@
          "name": "Grilled Halloumi Cheese"
         },
         {
-         "plu": "1001090",
-         "name": "Fresh Avocado"
-        },
-        {
          "plu": "1001088",
          "name": "Crispy Bacon"
+        },
+        {
+         "plu": "1001091",
+         "name": "Grilled Pineapple"
         },
         {
          "plu": "1001538",
@@ -2201,6 +2205,301 @@
       }
      ],
      "plu": "1001236"
+    },
+    {
+     "name": "Whole PERi-PERi Chicken + 3 Large Sides",
+     "description": "The Whole Chicken, basted and flame grilled, plus your choice of three large serves from our sides menu.",
+     "choices": [
+      {
+       "name": "Whole Chicken Basting",
+       "type": "basting",
+       "minimumOptionLimit": 1,
+       "defaultSelectedOptions": [],
+       "options": [
+        {
+         "plu": "13005",
+         "name": "Extra Hot"
+        },
+        {
+         "plu": "13004",
+         "name": "Hot"
+        },
+        {
+         "plu": "13003",
+         "name": "Mild"
+        },
+        {
+         "plu": "13002",
+         "name": "Lemon & Herb"
+        },
+        {
+         "plu": "13001",
+         "name": "BBQ"
+        },
+        {
+         "plu": "13036",
+         "name": "Plain-ish"
+        }
+       ]
+      },
+      {
+       "name": "Side 1",
+       "type": "radio",
+       "minimumOptionLimit": 1,
+       "defaultSelectedOptions": [],
+       "options": [
+        {
+         "plu": "1001153",
+         "name": "Chips (Large)"
+        },
+        {
+         "plu": "1001146",
+         "name": "PERi-PERi Chips (Large)"
+        },
+        {
+         "plu": "1001331",
+         "name": "Roasted Broccoli with PERi-crackle"
+        },
+        {
+         "plu": "1001141",
+         "name": "Sweet Potato Chips (Large)"
+        },
+        {
+         "plu": "1001143",
+         "name": "PERi-PERi Sweet Potato Chips (Large)"
+        },
+        {
+         "plu": "1001339",
+         "name": "Garden Salad (Large)"
+        },
+        {
+         "plu": "1001148",
+         "name": "Garlic Bread (Large)"
+        },
+        {
+         "plu": "1001151",
+         "name": "Coleslaw (Large)"
+        },
+        {
+         "plu": "1001140",
+         "name": "Spicy Rice (Large)"
+        },
+        {
+         "plu": "1001158",
+         "name": "Corn on the Cob (Large)"
+        },
+        {
+         "plu": "1001129",
+         "name": "Chips (Seriously Large)"
+        },
+        {
+         "plu": "1001130",
+         "name": "PERi-PERi Chips (Seriously Large)"
+        }
+       ]
+      },
+      {
+       "name": "Side 2",
+       "type": "radio",
+       "minimumOptionLimit": 1,
+       "defaultSelectedOptions": [],
+       "options": [
+        {
+         "plu": "1001153",
+         "name": "Chips (Large)"
+        },
+        {
+         "plu": "1001146",
+         "name": "PERi-PERi Chips (Large)"
+        },
+        {
+         "plu": "1001331",
+         "name": "Roasted Broccoli with PERi-crackle"
+        },
+        {
+         "plu": "1001141",
+         "name": "Sweet Potato Chips (Large)"
+        },
+        {
+         "plu": "1001143",
+         "name": "PERi-PERi Sweet Potato Chips (Large)"
+        },
+        {
+         "plu": "1001339",
+         "name": "Garden Salad (Large)"
+        },
+        {
+         "plu": "1001148",
+         "name": "Garlic Bread (Large)"
+        },
+        {
+         "plu": "1001151",
+         "name": "Coleslaw (Large)"
+        },
+        {
+         "plu": "1001140",
+         "name": "Spicy Rice (Large)"
+        },
+        {
+         "plu": "1001158",
+         "name": "Corn on the Cob (Large)"
+        },
+        {
+         "plu": "1001129",
+         "name": "Chips (Seriously Large)"
+        },
+        {
+         "plu": "1001130",
+         "name": "PERi-PERi Chips (Seriously Large)"
+        }
+       ]
+      },
+      {
+       "name": "Side 3",
+       "type": "radio",
+       "minimumOptionLimit": 1,
+       "defaultSelectedOptions": [],
+       "options": [
+        {
+         "plu": "1001153",
+         "name": "Chips (Large)"
+        },
+        {
+         "plu": "1001146",
+         "name": "PERi-PERi Chips (Large)"
+        },
+        {
+         "plu": "1001331",
+         "name": "Roasted Broccoli with PERi-crackle"
+        },
+        {
+         "plu": "1001141",
+         "name": "Sweet Potato Chips (Large)"
+        },
+        {
+         "plu": "1001143",
+         "name": "PERi-PERi Sweet Potato Chips (Large)"
+        },
+        {
+         "plu": "1001339",
+         "name": "Garden Salad (Large)"
+        },
+        {
+         "plu": "1001148",
+         "name": "Garlic Bread (Large)"
+        },
+        {
+         "plu": "1001151",
+         "name": "Coleslaw (Large)"
+        },
+        {
+         "plu": "1001140",
+         "name": "Spicy Rice (Large)"
+        },
+        {
+         "plu": "1001158",
+         "name": "Corn on the Cob (Large)"
+        },
+        {
+         "plu": "1001129",
+         "name": "Chips (Seriously Large)"
+        },
+        {
+         "plu": "1001130",
+         "name": "PERi-PERi Chips (Seriously Large)"
+        }
+       ]
+      },
+      {
+       "name": "Share something else",
+       "type": "checkbox",
+       "minimumOptionLimit": 0,
+       "defaultSelectedOptions": [],
+       "options": [
+        {
+         "plu": "3408",
+         "name": "Creamy Hummus with PERi-PERi Drizzle & Pita"
+        },
+        {
+         "plu": "3412",
+         "name": "Cheesy Garlic Mini Pita"
+        },
+        {
+         "plu": "1001631",
+         "name": "Naughty Natas 2 pack"
+        },
+        {
+         "plu": "1001632",
+         "name": "Naughty Natas 4 pack"
+        }
+       ]
+      },
+      {
+       "name": "Pick a drink",
+       "type": "radio",
+       "minimumOptionLimit": 0,
+       "defaultSelectedOptions": [],
+       "options": [
+        {
+         "plu": "4001",
+         "name": "Coke (390ml)"
+        },
+        {
+         "plu": "1000219",
+         "name": "Coke Zero Sugar (390ml)"
+        },
+        {
+         "plu": "4007",
+         "name": "Sprite (390ml)"
+        },
+        {
+         "plu": "4005",
+         "name": "Fanta (390ml)"
+        },
+        {
+         "plu": "4051",
+         "name": "Mount Franklin Still"
+        },
+        {
+         "plu": "4052",
+         "name": "Mount Franklin Sparkling"
+        },
+        {
+         "plu": "1000958",
+         "name": "RUBRO Iced Tea - Lemon"
+        },
+        {
+         "plu": "1000959",
+         "name": "RUBRO Iced Tea - Peach"
+        },
+        {
+         "plu": "1000960",
+         "name": "RUBRO Iced Tea - Berry"
+        },
+        {
+         "plu": "60000",
+         "name": "Bundaberg Ginger Beer"
+        },
+        {
+         "plu": "1000189",
+         "name": "Charlie's Juice - Orange"
+        },
+        {
+         "plu": "1000187",
+         "name": "Charlie's Juice - Cloudy Apple"
+        },
+        {
+         "plu": "1001724",
+         "name": "Remedy Sodaly Yuzu Lemon "
+        },
+        {
+         "plu": "1001725",
+         "name": "Remedy Sodaly Pineapple "
+        }
+       ]
+      }
+     ],
+     "plu": "1001566"
     },
     {
      "name": "2 Whole PERi-PERi Chickens + 2 Large Sides",
@@ -4844,6 +5143,325 @@
       }
      ],
      "plu": "1001779"
+    },
+    {
+     "name": "Classic Feast For One",
+     "description": "A PERinaise Classic, tailored to your tastes, plus two juicy, flame-grilled PERi-PERi Tenders, and a regular chips.",
+     "choices": [
+      {
+       "name": "First, choose your flavour",
+       "type": "radio",
+       "minimumOptionLimit": 1,
+       "defaultSelectedOptions": [],
+       "options": [
+        {
+         "plu": "1000548",
+         "name": "PERinaise Classic"
+        }
+       ]
+      },
+      {
+       "name": "Then, choose your protein",
+       "type": "radio",
+       "minimumOptionLimit": 1,
+       "defaultSelectedOptions": [],
+       "options": [
+        {
+         "plu": "1001643",
+         "name": "Chicken Leg Fillets"
+        },
+        {
+         "plu": "1000530",
+         "name": "Chicken Breast"
+        },
+        {
+         "plu": "1000529",
+         "name": "Superfood Veggie Patty"
+        },
+        {
+         "plu": "1000610",
+         "name": "Great Pretender Protein"
+        }
+       ]
+      },
+      {
+       "name": "Then choose your style",
+       "type": "radio",
+       "minimumOptionLimit": 1,
+       "defaultSelectedOptions": [],
+       "options": [
+        {
+         "plu": "1000076",
+         "name": "Portuguese Roll"
+        },
+        {
+         "plu": "1001404",
+         "name": "Wrap"
+        },
+        {
+         "plu": "1001403",
+         "name": "Toasted Pita"
+        }
+       ]
+      },
+      {
+       "name": "Then, pick your heat",
+       "type": "basting",
+       "minimumOptionLimit": 1,
+       "defaultSelectedOptions": [],
+       "options": [
+        {
+         "plu": "26055",
+         "name": "Extra Hot"
+        },
+        {
+         "plu": "26054",
+         "name": "Hot"
+        },
+        {
+         "plu": "26053",
+         "name": "Mild"
+        },
+        {
+         "plu": "26052",
+         "name": "Lemon & Herb"
+        },
+        {
+         "plu": "26051",
+         "name": "BBQ"
+        },
+        {
+         "plu": "26056",
+         "name": "Plain-ish"
+        }
+       ]
+      },
+      {
+       "name": "Lastly, make it yours",
+       "type": "checkbox",
+       "minimumOptionLimit": 0,
+       "defaultSelectedOptions": [],
+       "options": [
+        {
+         "plu": "1001093",
+         "name": "Cheddar Cheese"
+        },
+        {
+         "plu": "1001088",
+         "name": "Crispy Bacon"
+        },
+        {
+         "plu": "1001091",
+         "name": "Grilled Pineapple"
+        },
+        {
+         "plu": "1001086",
+         "name": "PERi-PERi Chicken Breast"
+        },
+        {
+         "plu": "1001090",
+         "name": "Fresh Avocado"
+        },
+        {
+         "plu": "1001087",
+         "name": "Grilled Halloumi Cheese"
+        },
+        {
+         "plu": "1001085",
+         "name": "PERi-PERi Chicken Tenders x2"
+        },
+        {
+         "plu": "1001094",
+         "name": "Extra Vegan PERinaise"
+        }
+       ]
+      },
+      {
+       "name": "Remove items",
+       "type": "checkbox",
+       "minimumOptionLimit": 0,
+       "defaultSelectedOptions": [],
+       "options": [
+        {
+         "plu": "1000728",
+         "name": "No Mayo"
+        },
+        {
+         "plu": "1001262",
+         "name": "No Mild PERinaise"
+        },
+        {
+         "plu": "12509",
+         "name": "No Lettuce"
+        },
+        {
+         "plu": "12508",
+         "name": "No Tomato"
+        },
+        {
+         "plu": "1001419",
+         "name": "No Diced Cucumber"
+        }
+       ]
+      },
+      {
+       "name": "2 Tenders Basting",
+       "type": "basting",
+       "minimumOptionLimit": 1,
+       "defaultSelectedOptions": [],
+       "options": [
+        {
+         "plu": "1000259",
+         "name": "Extra Hot"
+        },
+        {
+         "plu": "1000260",
+         "name": "Hot"
+        },
+        {
+         "plu": "1000263",
+         "name": "Mild"
+        },
+        {
+         "plu": "1000261",
+         "name": "Lemon & Herb"
+        },
+        {
+         "plu": "1000258",
+         "name": "BBQ"
+        },
+        {
+         "plu": "1000257",
+         "name": "Plain-ish"
+        }
+       ]
+      },
+      {
+       "name": "Pick a side",
+       "type": "radio",
+       "minimumOptionLimit": 1,
+       "defaultSelectedOptions": [],
+       "options": [
+        {
+         "plu": "1001139",
+         "name": "Chips (Regular)"
+        },
+        {
+         "plu": "1001135",
+         "name": "PERi-PERi Chips (Regular)"
+        },
+        {
+         "plu": "1001133",
+         "name": "Sweet Potato Chips (Regular)"
+        },
+        {
+         "plu": "1001134",
+         "name": "PERi-PERi Sweet Potato Chips (Regular)"
+        },
+        {
+         "plu": "1001336",
+         "name": "Garden Salad (Regular)"
+        },
+        {
+         "plu": "1001138",
+         "name": "Coleslaw (Regular)"
+        },
+        {
+         "plu": "1001132",
+         "name": "Spicy Rice (Regular)"
+        },
+        {
+         "plu": "1001136",
+         "name": "Garlic Bread (Regular)"
+        },
+        {
+         "plu": "1001160",
+         "name": "Corn on the Cob (Regular)"
+        }
+       ]
+      },
+      {
+       "name": "Pick a drink",
+       "type": "radio",
+       "minimumOptionLimit": 0,
+       "defaultSelectedOptions": [],
+       "options": [
+        {
+         "plu": "4001",
+         "name": "Coke (390ml)"
+        },
+        {
+         "plu": "1000219",
+         "name": "Coke Zero Sugar (390ml)"
+        },
+        {
+         "plu": "4007",
+         "name": "Sprite (390ml)"
+        },
+        {
+         "plu": "4005",
+         "name": "Fanta (390ml)"
+        },
+        {
+         "plu": "4051",
+         "name": "Mount Franklin Still"
+        },
+        {
+         "plu": "4052",
+         "name": "Mount Franklin Sparkling"
+        },
+        {
+         "plu": "4011",
+         "name": "Coke (600ml)"
+        },
+        {
+         "plu": "1000222",
+         "name": "Coke Zero Sugar (600ml)"
+        },
+        {
+         "plu": "4015",
+         "name": "Fanta (600ml)"
+        },
+        {
+         "plu": "4017",
+         "name": "Sprite (600ml)"
+        },
+        {
+         "plu": "1000939",
+         "name": "Sprite No Sugar (600ml)"
+        },
+        {
+         "plu": "1000959",
+         "name": "RUBRO Iced Tea - Peach"
+        },
+        {
+         "plu": "1000958",
+         "name": "RUBRO Iced Tea - Lemon"
+        },
+        {
+         "plu": "1000960",
+         "name": "RUBRO Iced Tea - Berry"
+        },
+        {
+         "plu": "60000",
+         "name": "Bundaberg Ginger Beer"
+        },
+        {
+         "plu": "60005",
+         "name": "Bundaberg Guava"
+        },
+        {
+         "plu": "1000189",
+         "name": "Charlie's Juice - Orange"
+        },
+        {
+         "plu": "1000187",
+         "name": "Charlie's Juice - Cloudy Apple"
+        }
+       ]
+      }
+     ],
+     "plu": "1000555"
     },
     {
      "name": "Smoky Churrasco Burger",
@@ -9285,6 +9903,205 @@
    "name": "Chicken for one",
    "products": [
     {
+     "name": "Chicken Feast For One - 1/2",
+     "description": "The deluxe feast for real players. Half a flame-grilled PERi-PERi chicken with a cheesy garlic mini pita, plus chip dip and your choice of regular side.",
+     "choices": [
+      {
+       "name": "1/2 Chicken Basting",
+       "type": "basting",
+       "minimumOptionLimit": 1,
+       "defaultSelectedOptions": [],
+       "options": [
+        {
+         "plu": "27025",
+         "name": "Extra Hot"
+        },
+        {
+         "plu": "27024",
+         "name": "Hot"
+        },
+        {
+         "plu": "27023",
+         "name": "Mild"
+        },
+        {
+         "plu": "27022",
+         "name": "Lemon & Herb"
+        },
+        {
+         "plu": "27021",
+         "name": "BBQ"
+        },
+        {
+         "plu": "27026",
+         "name": "Plain-ish"
+        }
+       ]
+      },
+      {
+       "name": "Pick a side",
+       "type": "radio",
+       "minimumOptionLimit": 1,
+       "defaultSelectedOptions": [],
+       "options": [
+        {
+         "plu": "1001139",
+         "name": "Chips (Regular)"
+        },
+        {
+         "plu": "1001135",
+         "name": "PERi-PERi Chips (Regular)"
+        },
+        {
+         "plu": "1001133",
+         "name": "Sweet Potato Chips (Regular)"
+        },
+        {
+         "plu": "1001134",
+         "name": "PERi-PERi Sweet Potato Chips (Regular)"
+        },
+        {
+         "plu": "1001336",
+         "name": "Garden Salad (Regular)"
+        },
+        {
+         "plu": "1001138",
+         "name": "Coleslaw (Regular)"
+        },
+        {
+         "plu": "1001132",
+         "name": "Spicy Rice (Regular)"
+        },
+        {
+         "plu": "1001136",
+         "name": "Garlic Bread (Regular)"
+        },
+        {
+         "plu": "1001160",
+         "name": "Corn on the Cob (Regular)"
+        }
+       ]
+      },
+      {
+       "name": "Chip Dip",
+       "type": "radio",
+       "minimumOptionLimit": 1,
+       "defaultSelectedOptions": [],
+       "options": [
+        {
+         "plu": "1000789",
+         "name": "PERinaise Chip Dip"
+        },
+        {
+         "plu": "1001609",
+         "name": "Mayo Chip Dip"
+        }
+       ]
+      },
+      {
+       "name": "Starter",
+       "type": "radio",
+       "minimumOptionLimit": 1,
+       "defaultSelectedOptions": [],
+       "options": [
+        {
+         "plu": "1000556",
+         "name": "Cheesy Garlic Mini Pita"
+        }
+       ]
+      },
+      {
+       "name": "Add a drink",
+       "type": "radio",
+       "minimumOptionLimit": 0,
+       "defaultSelectedOptions": [],
+       "options": [
+        {
+         "plu": "4001",
+         "name": "Coke (390ml)"
+        },
+        {
+         "plu": "1000219",
+         "name": "Coke Zero Sugar (390ml)"
+        },
+        {
+         "plu": "4007",
+         "name": "Sprite (390ml)"
+        },
+        {
+         "plu": "4005",
+         "name": "Fanta (390ml)"
+        },
+        {
+         "plu": "4051",
+         "name": "Mount Franklin Still"
+        },
+        {
+         "plu": "4052",
+         "name": "Mount Franklin Sparkling"
+        },
+        {
+         "plu": "4011",
+         "name": "Coke (600ml)"
+        },
+        {
+         "plu": "1000222",
+         "name": "Coke Zero Sugar (600ml)"
+        },
+        {
+         "plu": "4015",
+         "name": "Fanta (600ml)"
+        },
+        {
+         "plu": "4017",
+         "name": "Sprite (600ml)"
+        },
+        {
+         "plu": "1000939",
+         "name": "Sprite No Sugar (600ml)"
+        },
+        {
+         "plu": "1000958",
+         "name": "RUBRO Iced Tea - Lemon"
+        },
+        {
+         "plu": "1000959",
+         "name": "RUBRO Iced Tea - Peach"
+        },
+        {
+         "plu": "1000960",
+         "name": "RUBRO Iced Tea - Berry"
+        },
+        {
+         "plu": "60000",
+         "name": "Bundaberg Ginger Beer"
+        },
+        {
+         "plu": "60005",
+         "name": "Bundaberg Guava"
+        },
+        {
+         "plu": "1000189",
+         "name": "Charlie's Juice - Orange"
+        },
+        {
+         "plu": "1000187",
+         "name": "Charlie's Juice - Cloudy Apple"
+        },
+        {
+         "plu": "1001724",
+         "name": "Remedy Sodaly Yuzu Lemon "
+        },
+        {
+         "plu": "1001725",
+         "name": "Remedy Sodaly Pineapple "
+        }
+       ]
+      }
+     ],
+     "plu": "1000560"
+    },
+    {
      "name": "1/4 PERi-PERi Chicken",
      "description": "Flame-grilled, generously basted with PERi-PERi and perfect for pairing with sides. Served on the bone.",
      "choices": [
@@ -9329,6 +10146,10 @@
         {
          "plu": "1001085",
          "name": "PERi-PERi Chicken Tenders x2"
+        },
+        {
+         "plu": "1002032",
+         "name": "2 Extra Mini Drums"
         }
        ]
       },
@@ -9560,6 +10381,10 @@
         {
          "plu": "1001085",
          "name": "PERi-PERi Chicken Tenders x2"
+        },
+        {
+         "plu": "1002032",
+         "name": "2 Extra Mini Drums"
         }
        ]
       },
@@ -9787,6 +10612,10 @@
         {
          "plu": "1001085",
          "name": "PERi-PERi Chicken Tenders x2"
+        },
+        {
+         "plu": "1002032",
+         "name": "2 Extra Mini Drums"
         }
        ]
       },
@@ -10018,6 +10847,10 @@
         {
          "plu": "1001085",
          "name": "PERi-PERi Chicken Tenders x2"
+        },
+        {
+         "plu": "1002032",
+         "name": "2 Extra Mini Drums"
         }
        ]
       },
@@ -10249,6 +11082,10 @@
         {
          "plu": "1001750",
          "name": "Extra Chicken Tender"
+        },
+        {
+         "plu": "1002032",
+         "name": "2 Extra Mini Drums"
         }
        ]
       },
@@ -10258,6 +11095,10 @@
        "minimumOptionLimit": 0,
        "defaultSelectedOptions": [],
        "options": [
+        {
+         "plu": "1001865",
+         "name": "PERi-Chicken Gravy and Creamy Mash (Regular)"
+        },
         {
          "plu": "3003",
          "name": "Chips (Regular)"
@@ -10476,6 +11317,10 @@
         {
          "plu": "1001750",
          "name": "Extra Chicken Tender"
+        },
+        {
+         "plu": "1002032",
+         "name": "2 Extra Mini Drums"
         }
        ]
       },
@@ -10699,6 +11544,18 @@
        ]
       },
       {
+       "name": "Extra",
+       "type": "checkbox",
+       "minimumOptionLimit": 0,
+       "defaultSelectedOptions": [],
+       "options": [
+        {
+         "plu": "1002032",
+         "name": "2 Extra Mini Drums"
+        }
+       ]
+      },
+      {
        "name": "Pick a side",
        "type": "radio",
        "minimumOptionLimit": 0,
@@ -10914,6 +11771,18 @@
         {
          "plu": "26036",
          "name": "Plain-ish"
+        }
+       ]
+      },
+      {
+       "name": "Extra",
+       "type": "checkbox",
+       "minimumOptionLimit": 0,
+       "defaultSelectedOptions": [],
+       "options": [
+        {
+         "plu": "1002032",
+         "name": "2 Extra Mini Drums"
         }
        ]
       },
@@ -11554,12 +12423,12 @@
        "defaultSelectedOptions": [],
        "options": [
         {
-         "plu": "1001087",
-         "name": "Grilled Halloumi Cheese"
-        },
-        {
          "plu": "1001090",
          "name": "Fresh Avocado"
+        },
+        {
+         "plu": "1001087",
+         "name": "Grilled Halloumi Cheese"
         },
         {
          "plu": "1001088",
@@ -11831,50 +12700,18 @@
      "description": "Hit refresh on a classic. Your choice of protein with creamy whipped fetta, juicy cherry toms, olives, pickled red onions and cucumber chillin' with a zesty lemon & Dijon vinaigrette.\r\nOlives may contain pits.(do not include side or drink choices",
      "choices": [
       {
-       "name": "Remove items",
-       "type": "checkbox",
-       "minimumOptionLimit": 0,
-       "defaultSelectedOptions": [],
-       "options": [
-        {
-         "plu": "1001402",
-         "name": "No Whipped Fetta"
-        },
-        {
-         "plu": "1000526",
-         "name": "No Cherry Tomatoes"
-        },
-        {
-         "plu": "12520",
-         "name": "No Olives"
-        },
-        {
-         "plu": "1001392",
-         "name": "No Pickled Red Onions"
-        },
-        {
-         "plu": "12510",
-         "name": "No Cucumber"
-        },
-        {
-         "plu": "1001347",
-         "name": "No Lemon & Dijon Vinaigrette"
-        }
-       ]
-      },
-      {
        "name": "Make it yours",
        "type": "checkbox",
        "minimumOptionLimit": 0,
        "defaultSelectedOptions": [],
        "options": [
         {
-         "plu": "1001087",
-         "name": "Grilled Halloumi Cheese"
-        },
-        {
          "plu": "1001090",
          "name": "Fresh Avocado"
+        },
+        {
+         "plu": "1001087",
+         "name": "Grilled Halloumi Cheese"
         },
         {
          "plu": "1001088",
@@ -11931,6 +12768,38 @@
         {
          "plu": "1001550",
          "name": "Extra PERi-PERi Seeds"
+        }
+       ]
+      },
+      {
+       "name": "Remove items",
+       "type": "checkbox",
+       "minimumOptionLimit": 0,
+       "defaultSelectedOptions": [],
+       "options": [
+        {
+         "plu": "1001402",
+         "name": "No Whipped Fetta"
+        },
+        {
+         "plu": "1000526",
+         "name": "No Cherry Tomatoes"
+        },
+        {
+         "plu": "12520",
+         "name": "No Olives"
+        },
+        {
+         "plu": "1001392",
+         "name": "No Pickled Red Onions"
+        },
+        {
+         "plu": "12510",
+         "name": "No Cucumber"
+        },
+        {
+         "plu": "1001347",
+         "name": "No Lemon & Dijon Vinaigrette"
         }
        ]
       },
@@ -12182,16 +13051,16 @@
        "defaultSelectedOptions": [],
        "options": [
         {
+         "plu": "1001090",
+         "name": "Fresh Avocado"
+        },
+        {
          "plu": "1001085",
          "name": "PERi-PERi Chicken Tenders x2"
         },
         {
          "plu": "1001087",
          "name": "Grilled Halloumi Cheese"
-        },
-        {
-         "plu": "1001090",
-         "name": "Fresh Avocado"
         },
         {
          "plu": "1001088",
@@ -12535,16 +13404,16 @@
        "defaultSelectedOptions": [],
        "options": [
         {
+         "plu": "1001090",
+         "name": "Fresh Avocado"
+        },
+        {
          "plu": "1001085",
          "name": "PERi-PERi Chicken Tenders x2"
         },
         {
          "plu": "1001087",
          "name": "Grilled Halloumi Cheese"
-        },
-        {
-         "plu": "1001090",
-         "name": "Fresh Avocado"
         },
         {
          "plu": "1001088",
@@ -12834,6 +13703,10 @@
        "defaultSelectedOptions": [],
        "options": [
         {
+         "plu": "1001541",
+         "name": "Extra Roasted Broccoli"
+        },
+        {
          "plu": "1001087",
          "name": "Grilled Halloumi Cheese"
         },
@@ -12856,10 +13729,6 @@
         {
          "plu": "1001540",
          "name": "Extra PERi-Crackle"
-        },
-        {
-         "plu": "1001541",
-         "name": "Extra Roasted Broccoli"
         },
         {
          "plu": "1001542",
@@ -13121,6 +13990,10 @@
        "defaultSelectedOptions": [],
        "options": [
         {
+         "plu": "1001541",
+         "name": "Extra Roasted Broccoli"
+        },
+        {
          "plu": "1001087",
          "name": "Grilled Halloumi Cheese"
         },
@@ -13143,10 +14016,6 @@
         {
          "plu": "1001540",
          "name": "Extra PERi-Crackle"
-        },
-        {
-         "plu": "1001541",
-         "name": "Extra Roasted Broccoli"
         },
         {
          "plu": "1001542",
@@ -13474,6 +14343,10 @@
        "defaultSelectedOptions": [],
        "options": [
         {
+         "plu": "1001541",
+         "name": "Extra Roasted Broccoli"
+        },
+        {
          "plu": "1001085",
          "name": "PERi-PERi Chicken Tenders x2"
         },
@@ -13508,10 +14381,6 @@
         {
          "plu": "1001540",
          "name": "Extra PERi-Crackle"
-        },
-        {
-         "plu": "1001541",
-         "name": "Extra Roasted Broccoli"
         },
         {
          "plu": "1001542",
@@ -13831,6 +14700,10 @@
        "defaultSelectedOptions": [],
        "options": [
         {
+         "plu": "1001541",
+         "name": "Extra Roasted Broccoli"
+        },
+        {
          "plu": "1001085",
          "name": "PERi-PERi Chicken Tenders x2"
         },
@@ -13865,10 +14738,6 @@
         {
          "plu": "1001540",
          "name": "Extra PERi-Crackle"
-        },
-        {
-         "plu": "1001541",
-         "name": "Extra Roasted Broccoli"
         },
         {
          "plu": "1001542",
@@ -14134,16 +15003,16 @@
        "defaultSelectedOptions": [],
        "options": [
         {
+         "plu": "1001088",
+         "name": "Crispy Bacon"
+        },
+        {
          "plu": "1001087",
          "name": "Grilled Halloumi Cheese"
         },
         {
          "plu": "1001090",
          "name": "Fresh Avocado"
-        },
-        {
-         "plu": "1001088",
-         "name": "Crispy Bacon"
         },
         {
          "plu": "1001091",
@@ -14417,16 +15286,16 @@
        "defaultSelectedOptions": [],
        "options": [
         {
+         "plu": "1001088",
+         "name": "Crispy Bacon"
+        },
+        {
          "plu": "1001087",
          "name": "Grilled Halloumi Cheese"
         },
         {
          "plu": "1001090",
          "name": "Fresh Avocado"
-        },
-        {
-         "plu": "1001088",
-         "name": "Crispy Bacon"
         },
         {
          "plu": "1001091",
@@ -14766,6 +15635,10 @@
        "defaultSelectedOptions": [],
        "options": [
         {
+         "plu": "1001088",
+         "name": "Crispy Bacon"
+        },
+        {
          "plu": "1001085",
          "name": "PERi-PERi Chicken Tenders x2"
         },
@@ -14776,10 +15649,6 @@
         {
          "plu": "1001090",
          "name": "Fresh Avocado"
-        },
-        {
-         "plu": "1001088",
-         "name": "Crispy Bacon"
         },
         {
          "plu": "1001091",
@@ -15151,6 +16020,10 @@
        "defaultSelectedOptions": [],
        "options": [
         {
+         "plu": "1001088",
+         "name": "Crispy Bacon"
+        },
+        {
          "plu": "1001085",
          "name": "PERi-PERi Chicken Tenders x2"
         },
@@ -15161,10 +16034,6 @@
         {
          "plu": "1001090",
          "name": "Fresh Avocado"
-        },
-        {
-         "plu": "1001088",
-         "name": "Crispy Bacon"
         },
         {
          "plu": "1001091",
@@ -15476,6 +16345,10 @@
        "defaultSelectedOptions": [],
        "options": [
         {
+         "plu": "1001091",
+         "name": "Grilled Pineapple"
+        },
+        {
          "plu": "1001086",
          "name": "PERi-PERi Chicken Breast"
         },
@@ -15494,10 +16367,6 @@
         {
          "plu": "1001088",
          "name": "Crispy Bacon"
-        },
-        {
-         "plu": "1001091",
-         "name": "Grilled Pineapple"
         }
        ]
       },
@@ -15745,6 +16614,10 @@
        "defaultSelectedOptions": [],
        "options": [
         {
+         "plu": "1001091",
+         "name": "Grilled Pineapple"
+        },
+        {
          "plu": "1001086",
          "name": "PERi-PERi Chicken Breast"
         },
@@ -15755,10 +16628,6 @@
         {
          "plu": "1001088",
          "name": "Crispy Bacon"
-        },
-        {
-         "plu": "1001091",
-         "name": "Grilled Pineapple"
         },
         {
          "plu": "1001084",
@@ -16351,10 +17220,6 @@
          "name": "Mount Franklin Sparkling"
         },
         {
-         "plu": "1001232",
-         "name": "Coke (390ml)"
-        },
-        {
          "plu": "1001231",
          "name": "Coke Zero Sugar(390ml)"
         },
@@ -16464,10 +17329,6 @@
         {
          "plu": "1001198",
          "name": "Mount Franklin Sparkling"
-        },
-        {
-         "plu": "1001232",
-         "name": "Coke (390ml)"
         },
         {
          "plu": "1001231",
@@ -16599,10 +17460,6 @@
         {
          "plu": "1001198",
          "name": "Mount Franklin Sparkling"
-        },
-        {
-         "plu": "1001232",
-         "name": "Coke (390ml)"
         },
         {
          "plu": "1001231",
@@ -36267,6 +37124,204 @@
    "suitability": {
     "Vegetarian": 1
    }
+  },
+  "1002020:1000529:1000076": {
+   "kj": 2970,
+   "p": 39.1,
+   "sat": 3.1,
+   "sodium": 1540,
+   "sugar": 8.8,
+   "c": 73.6,
+   "f": 24.6,
+   "g": 354,
+   "contains": {
+    "Egg": 1,
+    "Milk": 0.5,
+    "Sesame": 0.5,
+    "Soy": 1,
+    "Wheat": 1
+   },
+   "suitability": {}
+  },
+  "1002020:1000529:1001403": {
+   "kj": 3060,
+   "p": 38.9,
+   "sat": 2.5,
+   "sodium": 1680,
+   "sugar": 12,
+   "c": 78.8,
+   "f": 24.7,
+   "g": 391,
+   "contains": {
+    "Egg": 1,
+    "Milk": 0.5,
+    "Wheat": 1
+   },
+   "suitability": {
+    "Vegetarian": 1
+   }
+  },
+  "1002020:1000529:1001404": {
+   "kj": 3280,
+   "p": 38,
+   "sat": 6.4,
+   "sodium": 1730,
+   "sugar": 9.1,
+   "c": 76.6,
+   "f": 32.3,
+   "g": 389,
+   "contains": {
+    "Egg": 1,
+    "Milk": 0.5,
+    "Soy": 0.5,
+    "Wheat": 1
+   },
+   "suitability": {
+    "Vegetarian": 1
+   }
+  },
+  "1002020:1000530:1000076": {
+   "kj": 2370,
+   "p": 50.2,
+   "sat": 2.8,
+   "sodium": 1540,
+   "sugar": 6,
+   "c": 43.8,
+   "f": 20.3,
+   "g": 319,
+   "contains": {
+    "Egg": 1,
+    "Milk": 0.5,
+    "Sesame": 0.5,
+    "Soy": 1,
+    "Wheat": 1
+   },
+   "suitability": {}
+  },
+  "1002020:1000530:1001403": {
+   "kj": 2460,
+   "p": 50,
+   "sat": 2.2,
+   "sodium": 1670,
+   "sugar": 9.2,
+   "c": 49,
+   "f": 20.4,
+   "g": 356,
+   "contains": {
+    "Egg": 1,
+    "Milk": 0.5,
+    "Wheat": 1
+   },
+   "suitability": {}
+  },
+  "1002020:1000530:1001404": {
+   "kj": 2860,
+   "p": 57.5,
+   "sat": 6.3,
+   "sodium": 1860,
+   "sugar": 6.3,
+   "c": 46.8,
+   "f": 28.6,
+   "g": 383,
+   "contains": {
+    "Egg": 1,
+    "Milk": 0.5,
+    "Soy": 0.5,
+    "Wheat": 1
+   },
+   "suitability": {}
+  },
+  "1002020:1001643:1000076": {
+   "kj": 2760,
+   "p": 60,
+   "sat": 4.8,
+   "sodium": 1320,
+   "sugar": 5.9,
+   "c": 43.5,
+   "f": 26.2,
+   "g": 352,
+   "contains": {
+    "Egg": 1,
+    "Milk": 0.5,
+    "Sesame": 0.5,
+    "Soy": 1,
+    "Wheat": 1
+   },
+   "suitability": {}
+  },
+  "1002020:1001643:1001403": {
+   "kj": 2850,
+   "p": 59.8,
+   "sat": 4.3,
+   "sodium": 1540,
+   "sugar": 9.1,
+   "c": 48.8,
+   "f": 26.3,
+   "g": 389,
+   "contains": {
+    "Egg": 1,
+    "Milk": 0.5,
+    "Wheat": 1
+   },
+   "suitability": {}
+  },
+  "1002020:1001643:1001404": {
+   "kj": 3070,
+   "p": 58.9,
+   "sat": 8.2,
+   "sodium": 1500,
+   "sugar": 6.2,
+   "c": 46.6,
+   "f": 33.9,
+   "g": 387,
+   "contains": {
+    "Egg": 1,
+    "Milk": 0.5,
+    "Soy": 0.5,
+    "Wheat": 1
+   },
+   "suitability": {}
+  },
+  "1002021": {
+   "kj": 4720,
+   "p": 114,
+   "sat": 16.7,
+   "sodium": 3050,
+   "sugar": 10.6,
+   "c": 37.2,
+   "f": 57.9,
+   "g": 578,
+   "contains": {
+    "Egg": 1,
+    "Milk": 1,
+    "Soy": 1,
+    "Wheat": 1
+   },
+   "suitability": {}
+  },
+  "1002022": {
+   "kj": 5780,
+   "p": 208,
+   "sat": 15,
+   "sodium": 3890,
+   "sugar": 1,
+   "c": 2.2,
+   "f": 59.7,
+   "g": 889,
+   "contains": {},
+   "suitability": {}
+  },
+  "1002032": {
+   "kj": 1520,
+   "p": 32.6,
+   "sat": 5.3,
+   "sodium": 456,
+   "sugar": 2.2,
+   "c": 2.8,
+   "f": 23.5,
+   "g": 146,
+   "contains": {},
+   "suitability": {}
   },
   "100222": {
    "kj": 0,
