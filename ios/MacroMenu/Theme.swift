@@ -20,7 +20,7 @@ enum AppIconTheme: String, CaseIterable, Identifiable {
     /// The icon that follows the person's own appearance: white in light mode, black in dark mode.
     /// The raw value stays "black" so a choice saved by an earlier version still matches.
     case standard = "black"
-    case berry, cream, crimson, forest, latte, midnight, ocean, plum, sage, slate, terracotta, warm
+    case anytime, berry, cream, crimson, forest, latte, midnight, ocean, plum, revved, sage, slate, sunshine, terracotta, warm
 
     static let storageKey = "appIcon"
     var id: Self { self }
@@ -55,6 +55,9 @@ struct ColourPack: Identifiable, Equatable {
         ColourPack(id: "sage", name: "Sage", detail: "Soft mint, clay and stone", icon: .sage, accent: .mint, protein: .indigo, carbs: .brown, fat: .graphite, paper: .sage),
         ColourPack(id: "latte", name: "Latte", detail: "Coffee, caramel and steel", icon: .latte, accent: .brown, protein: .brown, carbs: .orange, fat: .graphite, paper: .oat),
         ColourPack(id: "slate", name: "Slate", detail: "Quiet grey with the classic macro colours", icon: .slate, accent: .graphite, protein: .blue, carbs: .orange, fat: .red, paper: .fog),
+        ColourPack(id: "sunshine", name: "Sunshine", detail: "Black, white and bright orange", icon: .sunshine, accent: .sunshine, protein: .sunshine, carbs: .graphite, fat: .brown, paper: .chalk),
+        ColourPack(id: "revved", name: "Revved", detail: "Red, charcoal and cream", icon: .revved, accent: .revved, protein: .revved, carbs: .graphite, fat: .orange, paper: .linen),
+        ColourPack(id: "anytime", name: "Anytime", detail: "Purple, charcoal and white", icon: .anytime, accent: .anytime, protein: .anytime, carbs: .graphite, fat: .teal, paper: .frost),
     ]
 
     /// The pack whose settings all match what's stored, or nil when the person has mixed their own.
@@ -71,7 +74,7 @@ struct ColourPack: Identifiable, Equatable {
 /// Flat colours only (no gradients), each checked so every preset and custom colour still reads at 4.5:1 on it.
 /// Oat is the darkest light tint, so `ThemeColour.lightBackground` uses it as the reference.
 enum PaperTint: String, CaseIterable, Identifiable {
-    case cream, peach, blush, lilac, moss, mist, sage, oat, fog
+    case cream, peach, blush, lilac, moss, mist, sage, oat, fog, chalk, linen, frost
 
     static let storageKey = "paperTint"
     var id: Self { self }
@@ -88,6 +91,9 @@ enum PaperTint: String, CaseIterable, Identifiable {
         case .sage: (0xEEF1EA, 0x121612)
         case .oat: (0xF3ECE2, 0x17130F)
         case .fog: (0xEDEFF1, 0x121418)
+        case .chalk: (0xF5F5F3, 0x0D0D0D)
+        case .linen: (0xFFFAF3, 0x1A171B)
+        case .frost: (0xF6F5FB, 0x14131B)
         }
     }
 

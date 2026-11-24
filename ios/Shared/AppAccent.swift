@@ -119,7 +119,7 @@ enum ThemeColour {
 
 /// One palette for both the app and its widget extension.
 enum AppAccent: String, CaseIterable, Identifiable {
-    case green, mint, teal, cyan, blue, indigo, purple, pink, red, orange, brown, graphite
+    case green, mint, teal, cyan, blue, indigo, purple, pink, red, orange, brown, graphite, sunshine, revved, anytime
 
     static let storageKey = "accent"
     static let standard = AppAccent.green
@@ -150,6 +150,12 @@ enum AppAccent: String, CaseIterable, Identifiable {
         case .orange: Self.readable(0x9D4900, dark: .systemOrange)
         case .brown: Self.readable(0x7A5634, dark: .systemBrown)
         case .graphite: Self.readable(0x5E5E63, dark: .systemGray)
+        // Sunshine pack: orange #FF8800 in dark mode; #B64A00 is the brightest orange that still reads at 4.5:1 in light mode.
+        // Anytime pack: purple #5E56A3 (reads as is in light mode, lightened to 4.5:1 in dark mode).
+        case .anytime: Self.readable(0x5E56A3, dark: UIColor(red: 0x5E / 255, green: 0x56 / 255, blue: 0xA3 / 255, alpha: 1))
+        // Revved pack: red #DD2B32 (lightened in dark mode to 4.5:1); #CC282E is the closest red that reads in light mode.
+        case .revved: Self.readable(0xCC282E, dark: UIColor(red: 0xDD / 255, green: 0x2B / 255, blue: 0x32 / 255, alpha: 1))
+        case .sunshine: Self.readable(0xB64A00, dark: UIColor(red: 1, green: 0x88 / 255, blue: 0, alpha: 1))
         }
         #else
         switch self {
@@ -165,6 +171,9 @@ enum AppAccent: String, CaseIterable, Identifiable {
         case .orange: .orange
         case .brown: .brown
         case .graphite: .gray
+        case .sunshine: Color(red: 1, green: 0x88 / 255, blue: 0)
+        case .revved: Color(red: 0xDD / 255, green: 0x2B / 255, blue: 0x32 / 255)
+        case .anytime: Color(red: 0x5E / 255, green: 0x56 / 255, blue: 0xA3 / 255)
         }
         #endif
     }
