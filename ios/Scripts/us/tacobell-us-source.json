@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-22",
+ "checked": "2026-11-25",
  "items": [
   {
    "code": "30179",
@@ -3143,6 +3143,57 @@
     "Shellfish": "free",
     "Tree Nuts": "free",
     "Peanuts": "free",
+    "MSG": "free",
+    "Sesame": "free"
+   }
+  },
+  {
+   "code": "3843",
+   "name": "Flamin' Hot Fritos (0.5 oz)",
+   "category": "snacks-sweets",
+   "type": "Standard",
+   "url": "/food/sides/fritos-flamin-hot",
+   "size": null,
+   "variant": "Fritos® Flamin' Hot®",
+   "label_url": "https://www.nutritionix.com/label/popup/item/10197/438506",
+   "unit": "oz",
+   "values": {
+    "ServingPerContainer": 0.0,
+    "ServingUnitQuantity": 0.5,
+    "Calories": 80.9983,
+    "FatCalories": 0.0,
+    "TotalFat": 5.0624,
+    "SatFat": 0.7594,
+    "TransFat": 0.0,
+    "PolyFat": 0.0,
+    "MonoFat": 0.0,
+    "Cholesterol": 0.0,
+    "Sodium": 86.0607,
+    "TotalCarb": 8.0998,
+    "Fibers": 0.5062,
+    "Sugars": 0.0,
+    "SugarAlcohol": 0.0,
+    "Proteins": 1.0125,
+    "VitaminA": 0.2835,
+    "VitaminC": 0.0,
+    "Calcium": 30.3744,
+    "Iron": 0.1012,
+    "Potassium_2018": 25.312,
+    "Caffeine": 0.0,
+    "VitaminD": 0.0,
+    "AddedSugars": 0.0,
+    "ServingWeightGrams": 14.1747
+   },
+   "allergens": {
+    "Milk": "warning",
+    "Gluten": "free",
+    "Eggs": "free",
+    "Fish": "free",
+    "Shellfish": "free",
+    "Tree Nuts": "free",
+    "Peanuts": "free",
+    "Wheat": "free",
+    "Soy": "free",
     "MSG": "free",
     "Sesame": "free"
    }

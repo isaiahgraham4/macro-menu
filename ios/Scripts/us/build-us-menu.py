@@ -356,6 +356,8 @@ def tacobell():
         drink = o['category'] == 'drinks' or o.get('type') == 'Drink' or bool(o.get('size'))
         if drink:
             cat = 'drink'
+        elif 'Fritos' in name:
+            cat = 'side'                                    # a bag of chips, sold by the ounce like the sauces
         elif re.search(r'Packet|\(\d+(\.\d+)? oz\)', name):
             cat = 'extra'                                   # sauces, salsas, sour cream, guacamole and chili by the portion
         elif re.search(r'Cinnabon|Cinnamon|Churro|Twists|Cookie|Brownie', name):
