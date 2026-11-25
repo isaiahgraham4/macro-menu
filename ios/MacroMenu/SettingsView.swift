@@ -66,7 +66,8 @@ struct SettingsView: View {
                     .font(.roboto(.caption)).foregroundStyle(.secondary)
             }
             Section {
-                ForEach(ColourPack.all) { pack in
+                // Gym packs stay out of sight until their code is redeemed (or the pack is bought): Redeem a code, at the bottom, is the way in.
+                ForEach(ColourPack.all.filter { Premium.shows(pack: $0.partner?.pack) }) { pack in
                     let locked = pack.isLocked
                     // A pack still saved from before (a gym pack, or Even Leanrrr that has ended) isn't what's drawn, so no tick.
                     let chosen = !locked && pack == currentPack
@@ -83,9 +84,9 @@ struct SettingsView: View {
                 Text("Colour packs")
             } footer: {
                 if Premium.isUnlocked {
-                    Text("\(currentPack?.name ?? "Your own mix") · Sets the app icon, app colour, macro colours and background together. You can still change any of them below. Sunshine, Revved and Anytime come with a code from Sunshine Fitness, Revo Fitness or Anytime Fitness.")
+                    Text("\(currentPack?.name ?? "Your own mix") · Sets the app icon, app colour, macro colours and background together. You can still change any of them below.")
                 } else {
-                    Label("Colour packs come with Even Leanrrr. Sunshine, Revved and Anytime come with a code from Sunshine Fitness, Revo Fitness or Anytime Fitness instead.", systemImage: "lock.fill")
+                    Label("Colour packs come with Even Leanrrr.", systemImage: "lock.fill")
                 }
             }
             Section {
@@ -257,7 +258,7 @@ struct SettingsView: View {
                 Section {
                     Button { redeeming = true } label: { Label("Redeem a code", systemImage: "ticket") }
                 } footer: {
-                    Text(Premium.isUnlocked ? "Got a code for Even Leanrrr? You can still enter it here." : "Got a code for Even Leanrrr? Enter it here to start it free.")
+                    Text(Premium.isUnlocked ? "Got a code for Even Leanrrr or from your gym? You can still enter it here." : "Got a code for Even Leanrrr or from your gym? Enter it here.")
                 }
             }
         }.navigationTitle("Settings")

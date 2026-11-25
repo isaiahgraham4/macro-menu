@@ -166,8 +166,8 @@ enum Premium {
         pack.map { owns(pack: $0) } ?? isUnlocked
     }
 
-    /// Whether a gym look should be offered at all: the gym's colours, icon and background stay out of the pickers until the
-    /// pack is owned (the pack rows are still there, as the way to redeem or buy it).
+    /// Whether a gym look should be offered at all: the gym's pack, colours, icon and background stay out of Settings until the
+    /// pack is owned. Redeeming the gym's code (Settings > Redeem a code, or the gym's QR link) is the way in.
     @MainActor static func shows(pack: String?) -> Bool {
         pack.map { owns(pack: $0) } ?? true
     }
