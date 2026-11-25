@@ -8,11 +8,9 @@ import SwiftUI
 @MainActor func nutrientStyle(_ key: String) -> AnyShapeStyle {
     guard ["p", "c", "f"].contains(key) else { return AnyShapeStyle(.tint) }
     let defaults = UserDefaults.standard
-    let choices = Premium.isUnlocked ? [
-        "p": defaults.string(forKey: MacroColours.proteinKey),
-        "c": defaults.string(forKey: MacroColours.carbsKey),
-        "f": defaults.string(forKey: MacroColours.fatKey)
-    ].compactMapValues { $0 } : [:]
+    let choices = Premium.macroChoices(defaults.string(forKey: MacroColours.proteinKey),
+                                       defaults.string(forKey: MacroColours.carbsKey),
+                                       defaults.string(forKey: MacroColours.fatKey))
     return AnyShapeStyle(MacroColours.colour(key, choices: choices))
 }
 

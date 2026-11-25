@@ -24,7 +24,7 @@ import UIKit
         guard let store, WCSession.isSupported(), session.activationState == .activated, session.isPaired, session.isWatchAppInstalled else { return }
         var snapshot = store.watchSnapshot()
         snapshot.accent = Self.watchHex(AppAccent.resolvedColor(UserDefaults.standard.string(forKey: AppAccent.storageKey) ?? AppAccent.standard.rawValue))
-        let protein = Premium.isUnlocked ? UserDefaults.standard.string(forKey: MacroColours.proteinKey) : nil
+        let protein = UserDefaults.standard.string(forKey: MacroColours.proteinKey).flatMap { Premium.allows(colour: $0) ? $0 : nil }
         snapshot.proteinColour = Self.watchHex(ThemeColour.color(protein, fallback: .blue))
         guard snapshot != lastSent else { return }
         // A Leanr complication on the watch face gets a priority update (about 50 a day), which wakes the watch app to

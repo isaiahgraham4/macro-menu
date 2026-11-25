@@ -150,11 +150,10 @@ extension AppStore {
             let week = (0..<7).compactMap { Calendar.current.date(byAdding: .day, value: -$0, to: Date()) }.map(dayKey)
             snapshot.water = Dictionary(uniqueKeysWithValues: week.compactMap { day in data.water?[day].map { (day, $0) } })
             snapshot.waterTarget = Water.target(data)
-            snapshot.macroColours = Premium.isUnlocked ? [
-                "p": UserDefaults.standard.string(forKey: MacroColours.proteinKey) ?? "blue",
-                "c": UserDefaults.standard.string(forKey: MacroColours.carbsKey) ?? "orange",
-                "f": UserDefaults.standard.string(forKey: MacroColours.fatKey) ?? "red"
-            ] : [:]
+            snapshot.macroColours = Premium.macroChoices(
+                UserDefaults.standard.string(forKey: MacroColours.proteinKey) ?? "blue",
+                UserDefaults.standard.string(forKey: MacroColours.carbsKey) ?? "orange",
+                UserDefaults.standard.string(forKey: MacroColours.fatKey) ?? "red")
             let previous = WidgetCalories.read()
             guard snapshot.isValid, snapshot != previous else { return }
             try JSONEncoder().encode(snapshot).write(to: url, options: [.atomic, .completeFileProtectionUntilFirstUserAuthentication])

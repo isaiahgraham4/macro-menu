@@ -104,7 +104,8 @@ enum PaperTint: String, CaseIterable, Identifiable {
 
     /// The tint to draw for a stored choice; cream when Premium is locked or the value is unknown.
     @MainActor static func resolved(_ raw: String) -> PaperTint {
-        Premium.isUnlocked ? PaperTint(rawValue: raw) ?? .cream : .cream
+        guard let tint = PaperTint(rawValue: raw), Premium.allows(pack: tint.partnerPack) else { return .cream }
+        return tint
     }
 }
 
@@ -148,24 +149,87 @@ enum Premium {
         #endif
         return Purchases.shared.isUnlocked
     }
+
+    /// Whether this Apple Account owns a gym colour pack (Sunshine, Revved, Anytime). Owning it is enough: no Even Leanrrr needed.
+    @MainActor static func owns(pack: String) -> Bool {
+        guard subscriptionsEnabled else { return true }
+        #if DEBUG
+        // -LeanrForcePacks unlocks every gym pack for testing. Not compiled into releases.
+        if ProcessInfo.processInfo.arguments.contains("-LeanrForcePacks") { return true }
+        #endif
+        return Purchases.shared.packs.contains(pack)
+    }
+
+    /// Whether a look that belongs to `pack` (nil for the everyday ones) can be used: a gym's look needs only that gym's pack,
+    /// everything else needs Even Leanrrr.
+    @MainActor static func allows(pack: String?) -> Bool {
+        pack.map { owns(pack: $0) } ?? isUnlocked
+    }
+
+    /// Whether a gym look should be offered at all: the gym's colours, icon and background stay out of the pickers until the
+    /// pack is owned (the pack rows are still there, as the way to redeem or buy it).
+    @MainActor static func shows(pack: String?) -> Bool {
+        pack.map { owns(pack: $0) } ?? true
+    }
+
+    /// Whether a stored colour choice (preset or custom "#RRGGBB") can be drawn.
+    @MainActor static func allows(colour raw: String?) -> Bool {
+        guard let raw else { return false }
+        return allows(pack: AppAccent(rawValue: raw)?.partnerPack)
+    }
+
+    /// The macro colours to draw with: the chosen ones this person can use, the defaults for the rest.
+    /// An owned gym pack's own three macro colours count as usable together, even the everyday ones in it, so the pack
+    /// works in full without Even Leanrrr.
+    @MainActor static func macroChoices(_ protein: String?, _ carbs: String?, _ fat: String?) -> [String: String] {
+        let chosen = ["p": protein, "c": carbs, "f": fat].compactMapValues { $0 }
+        if let pack = ColourPack.all.first(where: { $0.partner != nil && $0.protein.rawValue == protein && $0.carbs.rawValue == carbs && $0.fat.rawValue == fat }),
+           let partner = pack.partner, owns(pack: partner.pack) {
+            return chosen
+        }
+        return chosen.filter { allows(colour: $0.value) }
+    }
+}
+
+/// Which gym pack a colour, icon or background belongs to, so it stays locked without that pack.
+extension AppAccent {
+    var partnerPack: String? { PartnerPacks.partner(pack: rawValue)?.pack }
+}
+extension AppIconTheme {
+    var partnerPack: String? { PartnerPacks.partner(pack: rawValue)?.pack }
+}
+extension PaperTint {
+    var partnerPack: String? {
+        switch self {
+        case .chalk: "sunshine"
+        case .linen: "revved"
+        case .frost: "anytime"
+        default: nil
+        }
+    }
+}
+extension ColourPack {
+    var partner: PartnerPacks.Partner? { PartnerPacks.partner(pack: id) }
+    /// Locked packs open Even Leanrrr; a gym pack opens its own screen (its code or its own purchase unlocks it).
+    @MainActor var isLocked: Bool { !isFree && !Premium.allows(pack: partner?.pack) }
 }
 
 /// The app's primary colour, chosen in Settings. Stored under the "accent" key.
 extension AppAccent {
     /// The colour to use for a stored choice, honouring the Premium lock.
     @MainActor static func resolved(_ raw: String) -> AppAccent {
-        guard Premium.isUnlocked else { return standard }
+        guard Premium.allows(colour: raw) else { return standard }
         return AppAccent(rawValue: raw) ?? standard
     }
 
     /// The colour to draw with, including a custom "#RRGGBB" choice, honouring the Premium lock.
     @MainActor static func resolvedColor(_ raw: String) -> Color {
-        Premium.isUnlocked ? ThemeColour.color(raw, fallback: standard) : standard.color
+        Premium.allows(colour: raw) ? ThemeColour.color(raw, fallback: standard) : standard.color
     }
 
     /// The stored value to hand to widgets and the Live Activity: the choice itself, or green when locked or unreadable.
     @MainActor static func resolvedRaw(_ raw: String) -> String {
-        Premium.isUnlocked && ThemeColour.isValid(raw) ? raw : standard.rawValue
+        Premium.allows(colour: raw) && ThemeColour.isValid(raw) ? raw : standard.rawValue
     }
 }
 

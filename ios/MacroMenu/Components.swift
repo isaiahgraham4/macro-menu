@@ -48,7 +48,7 @@ struct NutritionView: View {
     @AppStorage(MacroColours.carbsKey) private var carbsColour = "orange"
     @AppStorage(MacroColours.fatKey) private var fatColour = "red"
     private func colour(_ key: String) -> Color {
-        MacroColours.colour(key, choices: Premium.isUnlocked ? ["p": proteinColour, "c": carbsColour, "f": fatColour] : [:])
+        MacroColours.colour(key, choices: Premium.macroChoices(proteinColour, carbsColour, fatColour))
     }
     var total: Nutrition
     var details = true

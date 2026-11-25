@@ -101,7 +101,7 @@ struct MealShareCard: View {
     private var isRecipe: Bool { items.contains { $0.ingredientPortions != nil } }
     private var palette: SharePalette { design.palette(accent: AppAccent.resolvedColor(accentRaw)) }
     private func colour(_ key: String) -> Color {
-        MacroColours.colour(key, choices: Premium.isUnlocked ? ["p": proteinColour, "c": carbsColour, "f": fatColour] : [:])
+        MacroColours.colour(key, choices: Premium.macroChoices(proteinColour, carbsColour, fatColour))
     }
 
     var body: some View {

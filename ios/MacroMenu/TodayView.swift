@@ -430,7 +430,7 @@ struct TodayView: View {
     }
     private func bar(_ key: String) -> some View {
         let n = nutrientNames.first { $0.key == key }!
-        let choices = Premium.isUnlocked ? ["p": proteinColour, "c": carbsColour, "f": fatColour] : [:]
+        let choices = Premium.macroChoices(proteinColour, carbsColour, fatColour)
         let style = ["p", "c", "f"].contains(key) ? AnyShapeStyle(MacroColours.colour(key, choices: choices)) : nutrientStyle(key)
         return TargetBar(label: n.label, value: shown.value(key), target: goals.values[key] ?? 0, unit: n.unit, minimum: goals.minimums.contains(key), style: style)
     }

@@ -115,7 +115,7 @@ struct PlanView: View {
     private static let macros: [(key: String, label: String)] = [("p", "Protein"), ("c", "Carbs"), ("f", "Fat")]
 
     private func colour(_ key: String) -> Color {
-        MacroColours.colour(key, choices: Premium.isUnlocked ? ["p": proteinColour, "c": carbsColour, "f": fatColour] : [:])
+        MacroColours.colour(key, choices: Premium.macroChoices(proteinColour, carbsColour, fatColour))
     }
 
     /// What the day leaves after the plan, counting anything already logged.

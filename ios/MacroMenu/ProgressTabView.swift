@@ -268,7 +268,7 @@ struct ProgressTabView: View {
     }
 
     private func macroSection(_ share: ProgressBreakdown.MacroShare, complete: Bool) -> some View {
-        let choices = Premium.isUnlocked ? ["p": proteinColour, "c": carbsColour, "f": fatColour] : [:]
+        let choices = Premium.macroChoices(proteinColour, carbsColour, fatColour)
         let parts: [(name: String, key: String, value: Double)] = [("Protein", "p", share.protein), ("Carbs", "c", share.carbs), ("Fat", "f", share.fat)]
         return Section {
             Chart(parts, id: \.key) { part in

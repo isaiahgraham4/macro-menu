@@ -11,6 +11,8 @@ struct SettingsView: View {
     @State private var showQuiz = false
     @State private var showPremium = false
     @State private var redeeming = false
+    /// A gym pack opened from a locked swatch, once Even Leanrrr is on.
+    @State private var partnerSheet: PartnerPacks.Partner?
     @State private var estimating = false
     @State private var countryFailed = false
     @AppStorage(TodaySuggestions.storageKey) private var suggestFoods = true
@@ -65,31 +67,34 @@ struct SettingsView: View {
             }
             Section {
                 ForEach(ColourPack.all) { pack in
-                    let locked = !Premium.isUnlocked && !pack.isFree
-                    Button { if locked { showPremium = true } else { applyPack(pack) } } label: {
-                        ColourPackRow(pack: pack, selected: pack == currentPack, locked: locked)
+                    let locked = pack.isLocked
+                    // A pack still saved from before (a gym pack, or Even Leanrrr that has ended) isn't what's drawn, so no tick.
+                    let chosen = !locked && pack == currentPack
+                    Button { if locked { openLocked(pack.partner?.pack) } else { applyPack(pack) } } label: {
+                        ColourPackRow(pack: pack, selected: chosen, locked: locked,
+                                      note: locked ? pack.partner.map { "Free with \($0.aCode)" } : nil)
                     }
                     .buttonStyle(.plain)
-                    .accessibilityLabel(locked ? "\(pack.name) colour pack, needs Even Leanrrr" : "\(pack.name) colour pack")
+                    .accessibilityLabel(locked ? "\(pack.name) colour pack, \(lockReason(pack.partner?.pack))" : "\(pack.name) colour pack")
                     .accessibilityHint(pack.detail)
-                    .accessibilityAddTraits(pack == currentPack ? .isSelected : [])
+                    .accessibilityAddTraits(chosen ? .isSelected : [])
                 }
             } header: {
                 Text("Colour packs")
             } footer: {
                 if Premium.isUnlocked {
-                    Text("\(currentPack?.name ?? "Your own mix") · Sets the app icon, app colour, macro colours and background together. You can still change any of them below.")
+                    Text("\(currentPack?.name ?? "Your own mix") · Sets the app icon, app colour, macro colours and background together. You can still change any of them below. Sunshine, Revved and Anytime come with a code from Sunshine Fitness, Revo Fitness or Anytime Fitness.")
                 } else {
-                    Label("Colour packs come with Even Leanrrr.", systemImage: "lock.fill")
+                    Label("Colour packs come with Even Leanrrr. Sunshine, Revved and Anytime come with a code from Sunshine Fitness, Revo Fitness or Anytime Fitness instead.", systemImage: "lock.fill")
                 }
             }
             Section {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 6), spacing: 16) {
-                    ForEach(AppAccent.allCases) { accent in
-                        let locked = !Premium.isUnlocked && accent != AppAccent.standard
+                    ForEach(AppAccent.allCases.filter { Premium.shows(pack: $0.partnerPack) }) { accent in
+                        let locked = accent != AppAccent.standard && !Premium.allows(pack: accent.partnerPack)
                         let chosen = !isCustomAccent && accent == current
-                        // A locked colour opens Premium instead of doing nothing.
-                        Button { if locked { showPremium = true } else { accentRaw = accent.rawValue } } label: {
+                        // A locked colour opens Premium (or its gym pack) instead of doing nothing.
+                        Button { if locked { openLocked(accent.partnerPack) } else { accentRaw = accent.rawValue } } label: {
                             Circle().fill(accent.color).frame(width: 36, height: 36)
                                 .overlay {
                                     if chosen { Image(systemName: "checkmark").fontWeight(.bold).foregroundStyle(.white) }
@@ -98,7 +103,7 @@ struct SettingsView: View {
                                 .background { Circle().strokeBorder(accent.color, lineWidth: 2).padding(-5).opacity(chosen ? 1 : 0) }
                         }
                         .buttonStyle(.plain)
-                        .accessibilityLabel(locked ? "\(accent.name), needs Even Leanrrr" : accent.name)
+                        .accessibilityLabel(locked ? "\(accent.name), \(lockReason(accent.partnerPack))" : accent.name)
                         .accessibilityAddTraits(chosen ? .isSelected : [])
                     }
                 }.padding(.vertical, 8)
@@ -113,10 +118,10 @@ struct SettingsView: View {
             }
             Section {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 3), spacing: 14) {
-                    ForEach(PaperTint.allCases) { tint in
-                        let locked = !Premium.isUnlocked && tint != .cream
+                    ForEach(PaperTint.allCases.filter { Premium.shows(pack: $0.partnerPack) }) { tint in
+                        let locked = tint != .cream && !Premium.allows(pack: tint.partnerPack)
                         let chosen = tint == currentPaper
-                        Button { if locked { showPremium = true } else { paperRaw = tint.rawValue } } label: {
+                        Button { if locked { openLocked(tint.partnerPack) } else { paperRaw = tint.rawValue } } label: {
                             VStack(spacing: 6) {
                                 PaperSwatch(tint: tint)
                                     .frame(width: 74, height: 52)
@@ -135,7 +140,7 @@ struct SettingsView: View {
                             }
                         }
                         .buttonStyle(.plain)
-                        .accessibilityLabel(locked ? "\(tint.name) background, needs Even Leanrrr" : "\(tint.name) background")
+                        .accessibilityLabel(locked ? "\(tint.name) background, \(lockReason(tint.partnerPack))" : "\(tint.name) background")
                         .accessibilityAddTraits(chosen ? .isSelected : [])
                     }
                 }.padding(.vertical, 8)
@@ -147,9 +152,9 @@ struct SettingsView: View {
             }
             Section {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 3), spacing: 14) {
-                    ForEach(AppIconTheme.allCases) { icon in
-                        let locked = !Premium.isUnlocked && icon != .standard
-                        Button { if locked { showPremium = true } else { selectIcon(icon) } } label: {
+                    ForEach(AppIconTheme.allCases.filter { Premium.shows(pack: $0.partnerPack) }) { icon in
+                        let locked = icon != .standard && !Premium.allows(pack: icon.partnerPack)
+                        Button { if locked { openLocked(icon.partnerPack) } else { selectIcon(icon) } } label: {
                             VStack(spacing: 6) {
                                 Image(icon.previewAsset)
                                     .resizable().scaledToFill().frame(width: 66, height: 66)
@@ -166,7 +171,7 @@ struct SettingsView: View {
                             }
                         }
                         .buttonStyle(.plain)
-                        .accessibilityLabel(locked ? "\(icon.name) app icon, needs Even Leanrrr" : "\(icon.name) app icon")
+                        .accessibilityLabel(locked ? "\(icon.name) app icon, \(lockReason(icon.partnerPack))" : "\(icon.name) app icon")
                         .accessibilityAddTraits(icon == currentIcon ? .isSelected : [])
                     }
                 }.padding(.vertical, 8)
@@ -263,6 +268,11 @@ struct SettingsView: View {
                 Button("OK", role: .cancel) {}
             } message: { Text("Your restaurant menus haven’t changed.") }
             .sheet(isPresented: $showPremium) { PremiumView() }
+            .sheet(item: $partnerSheet) { partner in
+                PartnerPackView(partner: partner) {
+                    if let pack = ColourPack.all.first(where: { $0.id == partner.pack }) { applyPack(pack) }
+                }
+            }
             .offerCodeRedemption(isPresented: $redeeming) { _ in Task { await Purchases.shared.refresh(); await RevenueCatLink.sync() } }
             .sheet(isPresented: $estimating) {
                 NavigationStack {
@@ -275,6 +285,17 @@ struct SettingsView: View {
                 Text(health.lastError ?? "Check that Health is set up on this device, then try again.")
             }
             .toolbar { ToolbarItem(placement: .confirmationAction) { Button("Done") { dismiss() } } }
+    }
+
+    /// A locked swatch or pack: a gym pack's own screen, Even Leanrrr for everything else.
+    private func openLocked(_ partnerPack: String?) {
+        if let partner = partnerPack.flatMap(PartnerPacks.partner(pack:)) { partnerSheet = partner }
+        else { showPremium = true }
+    }
+
+    private func lockReason(_ partnerPack: String?) -> String {
+        if let partner = partnerPack.flatMap(PartnerPacks.partner(pack:)) { return "needs \(partner.aCode)" }
+        return "needs Even Leanrrr"
     }
 
     private func selectIcon(_ icon: AppIconTheme) {
@@ -298,6 +319,8 @@ private struct ColourPackRow: View {
     let pack: ColourPack
     let selected: Bool
     let locked: Bool
+    /// A line under the detail, such as how to get a gym pack.
+    var note: String? = nil
 
     var body: some View {
         HStack(spacing: 12) {
@@ -309,6 +332,7 @@ private struct ColourPackRow: View {
             VStack(alignment: .leading, spacing: 2) {
                 Text(pack.name).font(.roboto(.body, weight: .medium)).foregroundStyle(.primary)
                 Text(pack.detail).font(.roboto(.caption)).foregroundStyle(.secondary).lineLimit(2)
+                if let note { Text(note).font(.roboto(.caption, weight: .medium)).foregroundStyle(.tint) }
                 HStack(spacing: 5) {
                     swatch(pack.accent, wide: true)
                     swatch(pack.protein)
@@ -467,7 +491,8 @@ struct MacroColourSettings: View {
         let fallback: AppAccent = key == "p" ? .blue : key == "c" ? .orange : .red
         return Section {
             LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 6), spacing: 16) {
-                ForEach(AppAccent.allCases) { colour in
+                // Gym pack colours only show once the pack is owned.
+                ForEach(AppAccent.allCases.filter { $0.partnerPack.map { Premium.owns(pack: $0) } ?? true }) { colour in
                     let chosen = colour.rawValue == selection.wrappedValue
                     Button { selection.wrappedValue = colour.rawValue } label: {
                         Circle().fill(colour.color).frame(width: 36, height: 36)

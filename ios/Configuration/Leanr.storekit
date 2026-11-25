@@ -16,6 +16,51 @@
       "productID": "com.isaiahgraham.MacroMenu.premium.lifetime",
       "referenceName": "Even Leanrrr lifetime",
       "type": "NonConsumable"
+    },
+    {
+      "displayPrice": "2.99",
+      "familyShareable": false,
+      "internalID": "6760000400",
+      "localizations": [
+        {
+          "description": "The Sunshine colour pack, made with Sunshine Fitness",
+          "displayName": "Sunshine colour pack",
+          "locale": "en_AU"
+        }
+      ],
+      "productID": "com.isaiahgraham.MacroMenu.pack.sunshine",
+      "referenceName": "Sunshine colour pack",
+      "type": "NonConsumable"
+    },
+    {
+      "displayPrice": "2.99",
+      "familyShareable": false,
+      "internalID": "6760000401",
+      "localizations": [
+        {
+          "description": "The Revved colour pack, made with Revo Fitness",
+          "displayName": "Revved colour pack",
+          "locale": "en_AU"
+        }
+      ],
+      "productID": "com.isaiahgraham.MacroMenu.pack.revved",
+      "referenceName": "Revved colour pack",
+      "type": "NonConsumable"
+    },
+    {
+      "displayPrice": "2.99",
+      "familyShareable": false,
+      "internalID": "6760000402",
+      "localizations": [
+        {
+          "description": "The Anytime colour pack, made with Anytime Fitness",
+          "displayName": "Anytime colour pack",
+          "locale": "en_AU"
+        }
+      ],
+      "productID": "com.isaiahgraham.MacroMenu.pack.anytime",
+      "referenceName": "Anytime colour pack",
+      "type": "NonConsumable"
     }
   ],
   "settings": {

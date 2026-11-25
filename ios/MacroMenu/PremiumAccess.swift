@@ -63,3 +63,54 @@ enum PremiumAccess {
         return (entitlement.renews ?? true) ? "Renews \(date)" : "Ends \(date)"
     }
 }
+
+/// The gym colour packs (Sunshine, Revved, Anytime). Unlike the other packs they don't come with Even Leanrrr alone:
+/// each one also needs its gym's code, or the pack bought on its own. Kept free of StoreKit so it can be checked on its own.
+///
+/// A pack is owned when this Apple Account has either
+/// - bought or redeemed the pack's own product (people who already had Even Leanrrr get a free Apple code for it), or
+/// - any Even Leanrrr purchase made with that gym's Apple offer code (SUNSHINE50, REVO50, ANYTIME50 on Lifetime).
+/// Apple reports an offer code purchase with the offer's reference name ("Sunshine Fitness 50%"), so the gym is
+/// recognised by a word in that name. Both routes are Apple's own codes: App Review rule 3.1.1 allows no other kind.
+enum PartnerPacks {
+    struct Partner: Identifiable, Equatable, Sendable {
+        /// The `ColourPack` id, also the partner colour, icon and the key in `owned`.
+        let pack: String
+        let gym: String
+        /// The non-consumable that unlocks the pack by itself. Must match App Store Connect and `Configuration/Leanr.storekit`.
+        let productID: String
+        /// Lower-case word that appears in the gym's offer code reference name in App Store Connect.
+        let offerWord: String
+        var id: String { pack }
+        /// "a Sunshine Fitness code", "an Anytime Fitness code".
+        var aCode: String { "\("AEIOU".contains(gym.prefix(1)) ? "an" : "a") \(gym) code" }
+    }
+
+    static let all: [Partner] = [
+        Partner(pack: "sunshine", gym: "Sunshine Fitness", productID: "com.isaiahgraham.MacroMenu.pack.sunshine", offerWord: "sunshine"),
+        Partner(pack: "revved", gym: "Revo Fitness", productID: "com.isaiahgraham.MacroMenu.pack.revved", offerWord: "revo"),
+        Partner(pack: "anytime", gym: "Anytime Fitness", productID: "com.isaiahgraham.MacroMenu.pack.anytime", offerWord: "anytime"),
+    ]
+    static var productIDs: [String] { all.map(\.productID) }
+
+    static func partner(pack: String) -> Partner? { all.first { $0.pack == pack } }
+
+    /// The pack a transaction gives, if any. `codeOffer` is the offer's id when it was bought with an offer code.
+    static func pack(productID: String, codeOffer: String?, revoked: Bool) -> String? {
+        guard !revoked else { return nil }
+        if let partner = all.first(where: { $0.productID == productID }) { return partner.pack }
+        guard PremiumAccess.productIDs.contains(productID), let offer = codeOffer?.lowercased() else { return nil }
+        return all.first { offer.contains($0.offerWord) }?.pack
+    }
+
+    static let cacheKey = "leanr.partnerPacks"
+
+    /// The packs owned as of the last time StoreKit was asked, so they don't flicker off at launch.
+    static func load(from defaults: UserDefaults = .standard) -> Set<String> {
+        Set(defaults.stringArray(forKey: cacheKey) ?? [])
+    }
+
+    static func save(_ packs: Set<String>, to defaults: UserDefaults = .standard) {
+        defaults.set(packs.sorted(), forKey: cacheKey)
+    }
+}
