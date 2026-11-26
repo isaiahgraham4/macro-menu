@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-25",
+ "checked": "2026-11-26",
  "items": [
   {
    "code": "30179",
@@ -2480,57 +2480,6 @@
    "type": "Standard",
    "url": "/food/quesadillas/cheese-quesadilla",
    "err": "no nutrition label"
-  },
-  {
-   "code": "22502",
-   "name": "Nachos BellGrande®",
-   "category": "nachos",
-   "type": "Standard",
-   "url": "/food/nachos/nachos-bellgrande",
-   "size": null,
-   "variant": "Nachos BellGrande®",
-   "label_url": "https://www.nutritionix.com/label/popup/item/10197/166812",
-   "unit": "Order",
-   "values": {
-    "ServingPerContainer": 0.0,
-    "ServingUnitQuantity": 1.0,
-    "Calories": 734.565,
-    "FatCalories": 341.3909,
-    "TotalFat": 38.3351,
-    "SatFat": 6.2786,
-    "TransFat": 0.1949,
-    "PolyFat": 10.0637,
-    "MonoFat": 21.8232,
-    "Cholesterol": 21.5343,
-    "Sodium": 1184.0721,
-    "TotalCarb": 80.9342,
-    "Fibers": 13.3321,
-    "Sugars": 3.9497,
-    "SugarAlcohol": 0.0,
-    "Proteins": 16.7654,
-    "VitaminA": 8.5235,
-    "VitaminC": 3.4062,
-    "Calcium": 194.3644,
-    "Iron": 2.6365,
-    "Potassium_2018": 986.1224,
-    "Caffeine": 0.0,
-    "VitaminD": 3.134,
-    "AddedSugars": 0.7272,
-    "ServingWeightGrams": 300.5043
-   },
-   "allergens": {
-    "Gluten": "warning",
-    "Milk": "warning",
-    "Soy": "warning",
-    "Eggs": "free",
-    "Fish": "free",
-    "Shellfish": "free",
-    "Tree Nuts": "free",
-    "Peanuts": "free",
-    "Wheat": "free",
-    "MSG": "free",
-    "Sesame": "free"
-   }
   },
   {
    "code": "23318",

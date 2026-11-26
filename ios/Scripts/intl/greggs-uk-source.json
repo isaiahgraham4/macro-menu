@@ -13748,7 +13748,7 @@
         "unitOfMeasure": "kcal",
         "percentageOfDailyIntake": 17,
         "detailedPercentageOfDailyIntake": 17,
-        "valuePerHundredArticleSizeUnit": 476
+        "valuePerHundredArticleSizeUnit": 475
       },
       {
         "name": "Carbohydrates",
@@ -13760,11 +13760,11 @@
       },
       {
         "name": "EnergyKj",
-        "value": 1392,
+        "value": 1387,
         "unitOfMeasure": "kJ",
         "percentageOfDailyIntake": 0,
         "detailedPercentageOfDailyIntake": 0,
-        "valuePerHundredArticleSizeUnit": 1988
+        "valuePerHundredArticleSizeUnit": 1981
       },
       {
         "name": "Fat",
@@ -13776,27 +13776,27 @@
       },
       {
         "name": "Protein",
-        "value": 4.1,
+        "value": 3.9,
         "unitOfMeasure": "g",
         "percentageOfDailyIntake": 8,
         "detailedPercentageOfDailyIntake": 8,
-        "valuePerHundredArticleSizeUnit": 5.9
+        "valuePerHundredArticleSizeUnit": 5.5
       },
       {
         "name": "Salt",
-        "value": 0.39,
+        "value": 0.37,
         "unitOfMeasure": "g",
-        "percentageOfDailyIntake": 7,
-        "detailedPercentageOfDailyIntake": 7,
-        "valuePerHundredArticleSizeUnit": 0.55
+        "percentageOfDailyIntake": 6,
+        "detailedPercentageOfDailyIntake": 6,
+        "valuePerHundredArticleSizeUnit": 0.53
       },
       {
         "name": "Saturates",
-        "value": 7,
+        "value": 6.9,
         "unitOfMeasure": "g",
         "percentageOfDailyIntake": 35,
         "detailedPercentageOfDailyIntake": 35,
-        "valuePerHundredArticleSizeUnit": 10
+        "valuePerHundredArticleSizeUnit": 9.9
       },
       {
         "name": "Sugar",
