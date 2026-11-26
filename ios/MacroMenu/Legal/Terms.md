@@ -1,6 +1,6 @@
 # Leanrrr terms of use
 
-Effective 22 November 2026
+Effective 26 November 2026
 
 These terms apply when you use Leanrrr, an app made by Isaiah Graham, an independent developer in Victoria, Australia. Apple's standard Licensed Application End User License Agreement also applies. Contact me at {{CONTACT}}.
 
