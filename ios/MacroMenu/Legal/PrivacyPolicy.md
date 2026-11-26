@@ -1,6 +1,6 @@
 # Leanrrr privacy policy
 
-Effective 24 November 2026
+Effective 26 November 2026
 
 Leanrrr is made by Isaiah Graham, an independent developer in Victoria, Australia ("I", "me"). This policy explains what happens to your information when you use Leanrrr. You can reach me at {{CONTACT}}.
 
@@ -8,7 +8,7 @@ Leanrrr is made by Isaiah Graham, an independent developer in Victoria, Australi
 
 - Leanrrr has no account, no ads, no analytics and no tracking. It doesn't use cookies. If you buy Even Leanrrr, a record of that purchase goes to RevenueCat, which manages subscriptions for me (see Purchases).
 - Everything you enter stays on your device and, if you choose, in your own iCloud and Apple Health. I never receive it.
-- The one exception is a food you choose to share with other Leanrrr users. Only that food's name, serving, nutrition and barcode are shared, without your name.
+- The exceptions are a food you choose to share with other Leanrrr users, and a suggestion you choose to send me. Only that food's name, serving, nutrition and barcode are shared, and only the suggestion you type is sent, without your name.
 - A few features ask other services for information. They are told only what they need: a barcode number, the words you search for packaged foods, your position for an Apple Maps search, or the address of a recipe page you ask Leanrrr to load.
 
 ## What Leanrrr keeps on your device
@@ -70,6 +70,10 @@ Turning sharing off for a food, or deleting the food, takes the shared copy down
 
 If you report a shared food, the report records which food it was, the reason you chose and your anonymous ID, so each person's report counts once. Foods other people shared are downloaded to your {{DEVICE}} so search works offline. Turn them off in Settings → Shared foods.
 
+## Suggestions
+
+When you send a suggestion from Settings → Suggestions, I receive what you typed, the kind of suggestion you picked, your app version and which country's restaurant menus you use. It's stored in Leanrrr's database on Supabase (see Other services) with the time it was sent. It doesn't include your name, an account, a device ID or anything you log, so I can't reply to it or tell who sent it. Please don't put personal details in a suggestion. I keep suggestions while they're useful for improving Leanrrr and delete them after that.
+
 ## Product lookups
 
 When you scan a product, its barcode number is sent to Open Food Facts (a non-profit in France) and to Leanrrr's food database on Supabase, which holds the US government's (USDA) list of packaged-food labels, to look up its nutrition. Nothing else is sent with it.
@@ -98,7 +102,7 @@ Where the law requires apps to check age, such as for new Apple Accounts in Texa
 - Settings → Delete all my data removes everything Leanrrr keeps on this device and its iCloud copy, and takes down any foods you shared. It can also remove the food, water and weights Leanrrr saved to Apple Health.
 - Deleting the app removes what's on the device.
 
-Apart from foods you chose to share, I don't hold any of your data, so there's nothing for me to delete on my side. If a food you shared can't be taken down from the app, contact me and I'll remove it. If you have a question, contact me and I'll answer within 30 days.
+Apart from foods you chose to share and suggestions you sent (which aren't linked to you), I don't hold any of your data, so there's nothing for me to delete on my side. If a food you shared can't be taken down from the app, contact me and I'll remove it. If you have a question, contact me and I'll answer within 30 days.
 
 ## Purchases
 
@@ -115,7 +119,7 @@ Leanrrr doesn't sell or share your personal data, and it uses no analytics, adve
 - **Apple** (United States and elsewhere): Maps, iCloud (including the public database that holds shared foods), Health, Siri, Visual Intelligence and the App Store (for Even Leanrrr), which are part of your device and your Apple Account and are covered by Apple's privacy policy.
 - **Open Food Facts** (France): receives only a product's barcode number or the words you search for packaged foods. Neither is linked to you.
 - **Recipe websites you choose**: when you import a recipe from a link, that website receives the request for the page and nothing else.
-- **Supabase** (United States company; the data is stored in Sydney, Australia): hosts Leanrrr's food data (restaurant menus, everyday foods, supermarket foods and US packaged foods by barcode). A few times a day Leanrrr asks it whether that data has changed and, if it has, downloads the new copy; when you scan a barcode, that number is looked up there. The requests contain nothing about you or your data. As with any website, Supabase sees your device's IP address and handles it under Supabase's privacy policy.
+- **Supabase** (United States company; the data is stored in Sydney, Australia): hosts Leanrrr's food data (restaurant menus, everyday foods, supermarket foods and US packaged foods by barcode). A few times a day Leanrrr asks it whether that data has changed and, if it has, downloads the new copy; when you scan a barcode, that number is looked up there; suggestions you send are stored there. The requests contain nothing about you or your data beyond the suggestion itself. As with any website, Supabase sees your device's IP address and handles it under Supabase's privacy policy.
 
 Any service that receives data from Leanrrr must protect it at least as well as this policy does. If that ever changes, this policy will be updated before the app sends anything new.
 

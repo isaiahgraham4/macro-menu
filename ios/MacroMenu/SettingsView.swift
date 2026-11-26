@@ -232,6 +232,11 @@ struct SettingsView: View {
             }
             SharedFoodsSection()
             BackupSection()
+            Section {
+                NavigationLink { SuggestionsView() } label: { Label("Suggest something", systemImage: "lightbulb.max") }
+            } header: { Text("Suggestions") } footer: {
+                Text("A restaurant you'd like added, a feature idea or a food that looks wrong.")
+            }
             Section("About") {
                 LabeledContent("App", value: "Leanrrr")
                 LabeledContent("Developer", value: AppInfo.developer)
