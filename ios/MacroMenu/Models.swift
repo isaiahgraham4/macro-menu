@@ -154,10 +154,24 @@ extension Food {
     }
 }
 
+/// How a portion was set up on the food screen, so tapping it in a meal reopens it with the same choices.
+struct PortionSetup: Codable, Hashable, Sendable {
+    /// The menu item it was customised from. A custom order gets an ID of its own.
+    var baseID: String
+    var changes: [String: Double] = [:]
+    var own: Food?
+    var subtract = false
+    var name = ""
+    /// Measured in grams or mL rather than servings.
+    var byWeight = false
+}
+
 struct Portion: Codable, Identifiable, Hashable, Sendable {
     var id = UUID()
     var food: Food
     var quantity: Double = 1
+    /// Nil for a portion added straight from a list, or one saved before this was kept.
+    var setup: PortionSetup?
     var isValid: Bool { food.isValid && quantity.isFinite && quantity > 0 && quantity <= 10000 }
 
     /// For a recipe, its ingredients scaled to this portion: half a serving of a recipe that makes two is a quarter of each.

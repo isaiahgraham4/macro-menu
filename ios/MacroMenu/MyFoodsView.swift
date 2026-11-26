@@ -664,6 +664,7 @@ struct RecipeEditor: View {
     @State private var ingredients: [Portion] = []
     @State private var picking = false
     @State private var own = false
+    @State private var editingItem: Portion?
     var recipe: Food {
         var value = Nutrition(ingredients).food(name: name, servings: max(servings,0.001), ingredients: ingredients)
         value.id = food?.id ?? value.id; value.serve = "1 of \(servings.number) servings"; value.note = food?.note
@@ -672,10 +673,17 @@ struct RecipeEditor: View {
     var body: some View {
         LeanrForm {
             Section { TextField("Recipe name", text: $name); NumberField(title: "Recipe makes (servings)", value: $servings, places: 2) }
-            Section("Ingredients") {
+            Section {
                 ForEach(ingredients) { item in
                     VStack(alignment: .leading) {
-                        Text(item.food.name).font(.roboto(.headline))
+                        Button { editingItem = item } label: {
+                            HStack {
+                                Text(item.food.name).font(.roboto(.headline))
+                                Spacer(minLength: 0)
+                            }.contentShape(Rectangle())
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityHint("Opens it to change the amount or options")
                         NumberField(title: "Servings of ingredient", value: Binding(get: { ingredients.first { $0.id == item.id }?.quantity ?? 1 }, set: { quantity in
                             if let i = ingredients.firstIndex(where: { $0.id == item.id }) { ingredients[i].quantity = quantity }
                         }), places: 2)
@@ -683,6 +691,8 @@ struct RecipeEditor: View {
                 }.onDelete { ingredients.remove(atOffsets: $0) }
                 Button("Choose a food") { picking = true }
                 Button("Enter ingredient nutrition") { own = true }
+            } header: { Text("Ingredients") } footer: {
+                if !ingredients.isEmpty { Text("Tap an ingredient to change it. Swipe to remove it.") }
             }
             if !ingredients.isEmpty {
                 Section("Whole recipe") { NutritionView(total: Nutrition(ingredients), details: false) }
@@ -696,5 +706,12 @@ struct RecipeEditor: View {
             .onAppear { if let food, ingredients.isEmpty { name = food.name; servings = food.recipeYield ?? 1; ingredients = recipesBrokenUp(food.ingredients ?? []) } }
             .sheet(isPresented: $picking) { NavigationStack { BrowseView(pick: { portion in ingredients = recipesBrokenUp(ingredients + [portion]); picking = false }, pickTitle: "Add to recipe", quickAddLabel: "Add").toolbar { Button("Done") { picking = false } } } }
             .sheet(isPresented: $own) { NavigationStack { FoodEditor(food: nil) { ingredients.append(Portion(food: $0)); own = false; return true } } }
+            .sheet(item: $editingItem) { item in
+                PortionEditSheet(item: item, title: "Update ingredient") { changed in
+                    guard let i = ingredients.firstIndex(where: { $0.id == item.id }) else { return }
+                    ingredients[i] = changed
+                    ingredients = recipesBrokenUp(ingredients)
+                }
+            }
     }
 }

@@ -16,8 +16,23 @@ struct FoodDetailView: View {
     @State private var reporting = false
     @State private var confirmingHide = false
 
-    init(food: Food, pick: ((Portion) -> Void)? = nil, pickTitle: String = "Use this portion", logYesterday: Bool = false, logMeal: MealTime? = nil) {
+    /// `editing` reopens a portion already in a meal or recipe, with its amount and options as they were.
+    /// Pass the food from `AppStore.baseFood(for:)`, so a custom order shows its menu item's options.
+    init(food: Food, editing: Portion? = nil, pick: ((Portion) -> Void)? = nil, pickTitle: String = "Use this portion", logYesterday: Bool = false, logMeal: MealTime? = nil) {
         initial = food; self.pick = pick; self.pickTitle = pickTitle; self.logYesterday = logYesterday; self.logMeal = logMeal
+        guard let editing else { return }
+        _quantity = State(initialValue: editing.quantity)
+        if editing.setup?.byWeight == true, let serving = food.servingWeight {
+            _useWeight = State(initialValue: true)
+            _weight = State(initialValue: (serving.0 * editing.quantity).tenth)
+        }
+        // Options only make sense on the menu item they came from; if it couldn't be found, the food already has them in.
+        if let setup = editing.setup, setup.baseID == food.id, food.id != editing.food.id {
+            _changes = State(initialValue: setup.changes)
+            _ownAdjustment = State(initialValue: setup.own)
+            _subtract = State(initialValue: setup.subtract)
+            _customName = State(initialValue: setup.name)
+        }
     }
     /// True for a food or recipe you made yourself and can still change.
     private var editable: Bool { food.chain == "mine" && store.data.foods.contains { $0.id == food.id } }
@@ -278,19 +293,35 @@ struct FoodDetailView: View {
             changes[mod.key] = enabled ? 1 : 0
         })
     }
-    private func addPortion() {
+    /// The portion as it goes into a meal or log, with how it was set up so it can be opened again.
+    private var finished: Portion {
         var value = portion
         if customized { value.food.id = UUID().uuidString }
+        if customized || useWeight {
+            value.setup = PortionSetup(baseID: food.id, changes: changes.filter { $0.value > 0 }, own: ownAdjustment, subtract: subtract, name: customName, byWeight: useWeight)
+        }
+        return value
+    }
+    private func addPortion() {
+        let value = finished
         if let pick { pick(value) } else { store.add([value]); dismiss() }
     }
     private func logPortion(_ mealTime: MealTime, yesterday: Bool) {
-        var value = portion
-        if customized { value.food.id = UUID().uuidString }
+        let value = finished
         if store.logNow([value], name: value.food.name, mealTime: mealTime, yesterday: yesterday) { dismiss() }
     }
     private func saveCustom() {
         var value = adjusted; value.id = UUID().uuidString; value.chain = "mine"
         if store.saveFood(value) { store.notice = "Custom order saved" }
+    }
+}
+
+extension AppStore {
+    /// The food to open when changing a portion: the menu item a custom order was made from, if it's still on the menu.
+    func baseFood(for portion: Portion) -> Food {
+        guard let setup = portion.setup, setup.baseID != portion.food.id, !setup.changes.isEmpty || setup.own != nil,
+              let base = foods.first(where: { $0.id == setup.baseID }) else { return portion.food }
+        return base
     }
 }
 

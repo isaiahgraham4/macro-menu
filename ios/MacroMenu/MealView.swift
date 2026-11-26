@@ -9,6 +9,7 @@ struct MealView: View {
     @State private var mealTime = MealTime.suggested()
     @State private var clear = false
     @State private var makingImage = false
+    @State private var editingItem: Portion?
     @State private var left = LeftTodayModel()
     @AppStorage(TodaySuggestions.storageKey) private var suggestionsOn = true
     /// "Log again" cards widen with the text size.
@@ -44,11 +45,17 @@ struct MealView: View {
                 ForEach(store.data.tray) { item in
                     VStack(alignment: .leading, spacing: 8) {
                       HStack(spacing: 12) {
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text(item.food.name).font(.roboto(.headline))
-                            Text("\((item.food.cal * item.quantity).number) Cal · \((item.food.p * item.quantity).number) g protein").font(.roboto(.caption)).foregroundStyle(.secondary)
+                        Button { editingItem = item } label: {
+                            HStack {
+                                VStack(alignment: .leading, spacing: 4) {
+                                    Text(item.food.name).font(.roboto(.headline))
+                                    Text("\((item.food.cal * item.quantity).number) Cal · \((item.food.p * item.quantity).number) g protein").font(.roboto(.caption)).foregroundStyle(.secondary)
+                                }
+                                Spacer(minLength: 0)
+                            }.contentShape(Rectangle())
                         }
-                        Spacer()
+                        .buttonStyle(.plain)
+                        .accessibilityHint("Opens it to change the amount or options")
                         Stepper(value: quantity(item), in: 0.5...50, step: 0.5) {
                             Text("× \(item.quantity.number)").font(.roboto(.subheadline, weight: .medium)).monospacedDigit()
                         }.fixedSize()
@@ -65,6 +72,8 @@ struct MealView: View {
                 }.onDelete { offsets in store.change(undo: "Removed from your meal") { $0.tray.remove(atOffsets: offsets) } }
                 Button { picking = true } label: { Label("Add food", systemImage: "plus.circle.fill") }
                 Button { scanning = true } label: { Label("Scan barcode", systemImage: "barcode.viewfinder") }
+            } footer: {
+                if !store.data.tray.isEmpty { Text("Tap a food to change it. Swipe to remove it.") }
             }
             if !store.data.tray.isEmpty {
                 Section("Meal totals") { NutritionView(total: Nutrition(store.data.tray)) }
@@ -123,6 +132,15 @@ struct MealView: View {
             // A packet's barcode goes straight into the meal; the editor is there if the serving needs changing.
             .sheet(isPresented: $scanning) {
                 BarcodeFoodFlow(savePortion: { store.add([$0]) }, actionTitle: "Add to meal") { store.add([Portion(food: $0)]) }
+            }
+            .sheet(item: $editingItem) { item in
+                PortionEditSheet(item: item, title: "Update meal") { changed in
+                    store.change(undo: "Changed \(item.food.name)") { state in
+                        guard let i = state.tray.firstIndex(where: { $0.id == item.id }) else { return }
+                        state.tray[i] = changed
+                        state.tray = combined(state.tray)
+                    }
+                }
             }
             .sheet(isPresented: $makingImage) { NavigationStack { MealSharePreview(name: title, items: store.data.tray) } }
     }
@@ -197,6 +215,7 @@ struct SavedMealEditor: View {
     @State private var draft: SavedMeal
     @State private var picking = false
     @State private var confirmingDelete = false
+    @State private var editingItem: Portion?
     @State private var original: SavedMeal
 
     init(meal: SavedMeal) {
@@ -222,12 +241,18 @@ struct SavedMealEditor: View {
                 }
                 ForEach($draft.items) { $item in
                     HStack(spacing: 12) {
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text(item.food.name).font(.roboto(.headline))
-                            Text("\((item.food.cal * item.quantity).number) Cal · \((item.food.p * item.quantity).number) g protein")
-                                .font(.roboto(.caption)).foregroundStyle(.secondary)
+                        Button { editingItem = item } label: {
+                            HStack {
+                                VStack(alignment: .leading, spacing: 4) {
+                                    Text(item.food.name).font(.roboto(.headline))
+                                    Text("\((item.food.cal * item.quantity).number) Cal · \((item.food.p * item.quantity).number) g protein")
+                                        .font(.roboto(.caption)).foregroundStyle(.secondary)
+                                }
+                                Spacer(minLength: 0)
+                            }.contentShape(Rectangle())
                         }
-                        Spacer()
+                        .buttonStyle(.plain)
+                        .accessibilityHint("Opens it to change the amount or options")
                         Stepper(value: $item.quantity, in: 0.5...50, step: 0.5) {
                             Text("× \(item.quantity.number)").font(.roboto(.subheadline, weight: .medium)).monospacedDigit()
                         }
@@ -238,7 +263,7 @@ struct SavedMealEditor: View {
                 }
                 .onDelete { draft.items.remove(atOffsets: $0) }
                 Button { picking = true } label: { Label("Add food", systemImage: "plus.circle.fill") }
-            } header: { Text("Items") } footer: { Text("Swipe an item to remove it.") }
+            } header: { Text("Items") } footer: { Text("Tap an item to change it. Swipe to remove it.") }
             if !draft.items.isEmpty {
                 Section("Totals") { NutritionView(total: Nutrition(draft.items)) }
             }
@@ -269,10 +294,36 @@ struct SavedMealEditor: View {
                 .toolbar { Button("Done") { picking = false } }
             }
         }
+        .sheet(item: $editingItem) { item in
+            PortionEditSheet(item: item, title: "Update item") { changed in
+                guard let i = draft.items.firstIndex(where: { $0.id == item.id }) else { return }
+                draft.items[i] = changed
+                draft.items = combined(draft.items)
+            }
+        }
         .confirmationDialog("Delete \(original.name)?", isPresented: $confirmingDelete, titleVisibility: .visible) {
             Button("Delete saved meal", role: .destructive) {
                 if store.change(undo: "Deleted saved meal", { $0.meals.removeAll { $0.id == original.id } }) { dismiss() }
             }
+        }
+    }
+}
+
+/// Reopens a food already in a meal or recipe on its food screen, with its amount and options as they were.
+/// `save` gets the changed portion under the same ID, so it takes the old one's place.
+struct PortionEditSheet: View {
+    @Environment(AppStore.self) private var store
+    @Environment(\.dismiss) private var dismiss
+    let item: Portion
+    let title: String
+    let save: (Portion) -> Void
+    var body: some View {
+        NavigationStack {
+            FoodDetailView(food: store.baseFood(for: item), editing: item, pick: { portion in
+                var changed = portion; changed.id = item.id
+                save(changed); dismiss()
+            }, pickTitle: title)
+            .toolbar { ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } } }
         }
     }
 }
