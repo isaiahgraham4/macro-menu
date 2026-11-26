@@ -88,9 +88,10 @@ struct AcknowledgementsView: View {
             } header: { Text("Restaurants") }
             Section {
                 credit("Restaurant nutrition", "Each chain's published nutrition information. See Settings → Menu sources.")
-                credit("Product data", "Open Food Facts, available under the Open Database License (ODbL).",
-                       link: "https://world.openfoodfacts.org/terms-of-use")
-                credit("US packaged foods", "U.S. Department of Agriculture, Agricultural Research Service. FoodData Central (Branded Foods), public domain. Used for barcode scans.",
+                credit("Product data", "Contains information from Open Food Facts (openfoodfacts.org), made available under the Open Database License (ODbL). Leanrrr's supermarket list is built from it and is available under the ODbL on GitHub.",
+                       links: [("Open Food Facts", "https://world.openfoodfacts.org"), ("ODbL", "https://opendatacommons.org/licenses/odbl/1-0/"),
+                               ("Supermarket list", "https://github.com/isaiahgraham4/macro-menu/blob/leanr-logging-and-menus/DATA-LICENSE.md")])
+                credit("US packaged foods", "FoodData Central: USDA Global Branded Food Products Database (April 2026 release). U.S. Department of Agriculture, Agricultural Research Service. Public domain (CC0). Used for barcode scans; figures are the manufacturers' own, not checked or endorsed by USDA.",
                        link: "https://fdc.nal.usda.gov")
                 credit("Everyday foods", "U.S. Department of Agriculture, Agricultural Research Service. FoodData Central (SR Legacy), public domain.",
                        link: "https://fdc.nal.usda.gov")
@@ -107,11 +108,18 @@ struct AcknowledgementsView: View {
         .navigationTitle("Acknowledgements")
     }
 
-    private func credit(_ title: String, _ detail: String, link: String? = nil) -> some View {
+    private func credit(_ title: String, _ detail: String, link: String? = nil, links: [(String, String)] = []) -> some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(title).font(.roboto(.subheadline, weight: .semibold))
             Text(detail).font(.roboto(.subheadline)).foregroundStyle(.secondary)
             if let link, let url = URL(string: link) { Link("Licence", destination: url).font(.roboto(.subheadline)) }
+            if !links.isEmpty {
+                HStack(spacing: 16) {
+                    ForEach(links, id: \.1) { name, address in
+                        if let url = URL(string: address) { Link(name, destination: url).font(.roboto(.subheadline)) }
+                    }
+                }
+            }
         }
     }
 

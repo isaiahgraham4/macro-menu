@@ -13,7 +13,7 @@ Leanrrr gives general nutrition information to help you choose and log food. It 
 - Restaurant figures come from each chain's own published nutrition information on the date shown in Settings → Menu sources. Chains change recipes, and figures vary between stores and serves. Leanrrr downloads updated menus without an app update, and the date shown is the menu in use.
 - Custom orders (with ingredients taken off) and recipes are estimates.
 - Everyday foods (such as bananas and chicken breast) are average figures from the U.S. Department of Agriculture's FoodData Central. Brands, varieties and cooking change them.
-- Scanned and searched packaged products, and the supermarket products in Find, come from Open Food Facts, which is edited by volunteers. Check them against the package.
+- Scanned and searched packaged products, and the supermarket products in Find, come from Open Food Facts, which is edited by volunteers, and, for US products, from USDA FoodData Central, which publishes the manufacturers' own figures. Check them against the package.
 - When you log from a photo, your {{DEVICE}} only names the foods, and it can't count them or read portions. The figures are Leanrrr's own, but the match and the amount are up to you, so check both before logging.
 - Leanrrr isn't an allergen guide. Always check allergens with the restaurant.
 
