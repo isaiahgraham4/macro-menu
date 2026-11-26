@@ -498,7 +498,7 @@ def popeyes():
 
 CHAIN_EXTRA = {}
 # Chains saved in the shared format (intl/SOURCE-FORMAT.md) by their own intl/<id>-fetch.py, read by intl/build-intl-menu.py's generic().
-SHARED = ['us-arbys', 'us-fiveguys', 'us-deltaco', 'us-epl', 'us-jitb']
+SHARED = ['us-arbys', 'us-fiveguys', 'us-deltaco', 'us-epl', 'us-jitb', 'us-innout', 'us-hardees', 'us-carlsjr', 'us-chipotle', 'us-jimmyjohns', 'us-firehouse', 'us-krispykreme', 'us-jacks']
 
 
 FG_TOPPINGS = {'Bacon (2 pieces)': 'Add Bacon', 'Cheese (1 slice)': 'Add Cheese', 'Hamburger Patty': 'Add Patty', 'Grilled Mushrooms': 'Grilled Mushrooms',

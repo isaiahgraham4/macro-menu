@@ -18,6 +18,8 @@ struct ChainPlace: Sendable {
     /// The App Store country the app id is from.
     var store = "au"
 
+    /// False for a chain with no app of its own (appStoreID 0, such as In-N-Out): no app button is shown.
+    var hasApp: Bool { appStoreID != 0 }
     var launchTitle: String { appLink == nil ? "\(appName) on App Store" : "Open \(appName)" }
 
     var storeURL: URL { URL(string: "https://apps.apple.com/\(store)/app/id\(appStoreID)")! }
@@ -69,6 +71,15 @@ struct ChainPlace: Sendable {
         "us-deltaco": ChainPlace(query: "Del Taco", match: ["del taco"], appName: "Del Taco", appStoreID: 1114398020, appLink: nil, store: "us"),
         "us-epl": ChainPlace(query: "El Pollo Loco", match: ["el pollo loco"], appName: "El Pollo Loco", appStoreID: 1138437085, appLink: nil, store: "us"),
         "us-jitb": ChainPlace(query: "Jack in the Box", match: ["jack in the box"], appName: "Jack in the Box", appStoreID: 1283768751, appLink: nil, store: "us"),
+        // Added 26 Nov 2026 (US store ids checked that day). In-N-Out has no app.
+        "us-innout": ChainPlace(query: "In-N-Out Burger", match: ["in-n-out", "in n out"], appName: "In-N-Out", appStoreID: 0, appLink: nil, store: "us"),
+        "us-hardees": ChainPlace(query: "Hardee's", match: ["hardee"], appName: "Hardee's", appStoreID: 1577790947, appLink: nil, store: "us"),
+        "us-carlsjr": ChainPlace(query: "Carl's Jr.", match: ["carl's jr", "carls jr", "carl’s jr"], appName: "Carl's Jr.", appStoreID: 1577790958, appLink: nil, store: "us"),
+        "us-chipotle": ChainPlace(query: "Chipotle Mexican Grill", match: ["chipotle"], appName: "Chipotle", appStoreID: 327228455, appLink: nil, store: "us"),
+        "us-jimmyjohns": ChainPlace(query: "Jimmy John's", match: ["jimmy john"], appName: "Jimmy John's", appStoreID: 409366411, appLink: nil, store: "us"),
+        "us-firehouse": ChainPlace(query: "Firehouse Subs", match: ["firehouse subs"], appName: "Firehouse Subs", appStoreID: 894658475, appLink: nil, store: "us"),
+        "us-krispykreme": ChainPlace(query: "Krispy Kreme", match: ["krispy kreme"], appName: "Krispy Kreme", appStoreID: 482752836, appLink: nil, store: "us"),
+        "us-jacks": ChainPlace(query: "Jack's Family Restaurants", match: ["jack's", "jacks", "jack’s"], appName: "Jack's", appStoreID: 1468067588, appLink: nil, store: "us"),
         // Canada, UK and New Zealand menus. App Store ids from each country's store (checked 14 Nov 2026); no universal links yet.
         "ca-mcd": ChainPlace(query: "McDonald's", match: ["mcdonald"], appName: "McDonald's", appStoreID: 375695000, appLink: nil, store: "ca"),
         "ca-bk": ChainPlace(query: "Burger King", match: ["burger king"], appName: "Burger King", appStoreID: 1422864779, appLink: nil, store: "ca"),

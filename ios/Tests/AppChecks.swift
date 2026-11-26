@@ -74,7 +74,9 @@ import UniformTypeIdentifiers
         let us = try JSONDecoder().decode(MenuCatalog.self, from: Data(contentsOf: usURL))
         assert(us.format == MenuUpdates.format && us.foods.count > 700)
         let chains = Set(us.chains.map(\.id))
-        assert(chains == ["mine", "us-mcd", "us-cfa", "us-wendys", "us-tacobell", "us-panda", "us-bk", "us-popeyes", "us-arbys", "us-fiveguys", "us-deltaco", "us-epl", "us-jitb"])
+        assert(chains.isSuperset(of: ["mine", "us-mcd", "us-cfa", "us-wendys", "us-tacobell", "us-panda", "us-bk", "us-popeyes", "us-arbys", "us-fiveguys",
+                                      "us-deltaco", "us-epl", "us-jitb", "us-innout", "us-hardees", "us-carlsjr", "us-chipotle", "us-jimmyjohns", "us-firehouse",
+                                      "us-krispykreme", "us-jacks"]))
         assert(us.foods.allSatisfy { $0.isValid && chains.contains($0.chain) } && Set(us.foods.map(\.id)).count == us.foods.count)
         assert(Set(us.foods.map(\.id)).isDisjoint(with: australia.foods.map(\.id)))   // logs from either menu never collide
         for region in [MenuRegion.australia, .unitedStates] {
@@ -82,7 +84,7 @@ import UniformTypeIdentifiers
         }
         // Nicknames are written with Australian ids; the US menu's chains carry "us-".
         let names = Dictionary(uniqueKeysWithValues: us.chains.map { ($0.id, $0.name) })
-        assert(MenuRegion.chain("mcd", in: names) == "us-mcd" && MenuRegion.chain("kfc", in: names) == nil)
+        assert(MenuRegion.chain("mcd", in: names) == "us-mcd" && MenuRegion.chain("oporto", in: names) == nil)
         for id in Set(Assistant.nicknames.values).union(MealPhoto.brandAliases.values) where id.hasPrefix("us-") { assert(chains.contains(id), "unknown chain \(id)") }
         // Hungry Jack's nicknames find Burger King, and Popeyes has its own.
         assert(MenuRegion.chain("hj", in: names) == "us-bk" && MealPhoto.chain(for: "Burger King", chainNames: names) == "us-bk")

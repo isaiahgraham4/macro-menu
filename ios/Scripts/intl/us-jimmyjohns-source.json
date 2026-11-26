@@ -1,0 +1,2170 @@
+{
+ "chain": "us-jimmyjohns",
+ "name": "Jimmy John's",
+ "how": "Official nutrition and allergen guide (Nutritionix data)",
+ "url": "https://restaurant.nutritionix.com/jimmy-johns/landing",
+ "src": "Jimmy John's Nutrition & Allergen Guide (US), the Nutritionix-hosted guide jimmyjohns.com links, menu last updated 2026-11-18. Figures are the guide's per-item values with FDA label rounding; allergens are its Contains flags for the nine US majors (no may-contain list is published). Left out: Preview items, fountain and bottled drinks (no figures) and items in no menu category; 1 row(s) whose calories don't match their macros (Jimmy Pickle).",
+ "checked": "2026-11-26",
+ "energy": "cal",
+ "halal": false,
+ "items": [
+  {
+   "name": "Ellen Griswold Stuffing Flavored Chips",
+   "cat": "side",
+   "serve": "1 bag (56 g)",
+   "cal": 290,
+   "kj": null,
+   "p": 3,
+   "c": 34,
+   "f": 16,
+   "sat": 2.5,
+   "sugar": 3,
+   "fibre": 2,
+   "sodium": 400,
+   "salt": null,
+   "contains": [],
+   "may": null,
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Griswold Family Chaos Cookie",
+   "cat": "sweet",
+   "serve": "1 each (85 g)",
+   "cal": 400,
+   "kj": null,
+   "p": 4,
+   "c": 59,
+   "f": 16,
+   "sat": 10,
+   "sugar": 33,
+   "fibre": 1,
+   "sodium": 350,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Jelly of the Month (16\")",
+   "cat": "main",
+   "serve": "1 sandwich (663 g)",
+   "cal": 1600,
+   "kj": null,
+   "p": 86,
+   "c": 163,
+   "f": 65,
+   "sat": 26,
+   "sugar": 27,
+   "fibre": 7,
+   "sodium": 3640,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork",
+    "turkey"
+   ]
+  },
+  {
+   "name": "Jelly of the Month (8\")",
+   "cat": "main",
+   "serve": "1 sandwich (331 g)",
+   "cal": 800,
+   "kj": null,
+   "p": 43,
+   "c": 82,
+   "f": 33,
+   "sat": 13,
+   "sugar": 13,
+   "fibre": 3,
+   "sodium": 1820,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork",
+    "turkey"
+   ]
+  },
+  {
+   "name": "Chicken Bacon Ranch (16\")",
+   "cat": "main",
+   "serve": "1 sandwich (827 g)",
+   "cal": 1840,
+   "kj": null,
+   "p": 92,
+   "c": 146,
+   "f": 96,
+   "sat": 28,
+   "sugar": 10,
+   "fibre": 8,
+   "sodium": 4330,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork",
+    "chicken"
+   ]
+  },
+  {
+   "name": "Chicken Bacon Ranch (8\")",
+   "cat": "main",
+   "serve": "1 sandwich (414 g)",
+   "cal": 920,
+   "kj": null,
+   "p": 46,
+   "c": 73,
+   "f": 48,
+   "sat": 14,
+   "sugar": 5,
+   "fibre": 4,
+   "sodium": 2160,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork",
+    "chicken"
+   ]
+  },
+  {
+   "name": "Ham & Three Cheese Melt (16\")",
+   "cat": "main",
+   "serve": "1 sandwich (730 g)",
+   "cal": 1990,
+   "kj": null,
+   "p": 119,
+   "c": 145,
+   "f": 102,
+   "sat": 44,
+   "sugar": 7,
+   "fibre": 6,
+   "sodium": 5750,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "Ham & Three Cheese Melt (8\")",
+   "cat": "main",
+   "serve": "1 sandwich (365 g)",
+   "cal": 990,
+   "kj": null,
+   "p": 59,
+   "c": 73,
+   "f": 51,
+   "sat": 22,
+   "sugar": 4,
+   "fibre": 3,
+   "sodium": 2870,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "Roast Beef & Cheddar (16\")",
+   "cat": "main",
+   "serve": "1 sandwich (985 g)",
+   "cal": 2280,
+   "kj": null,
+   "p": 117,
+   "c": 177,
+   "f": 121,
+   "sat": 30,
+   "sugar": 14,
+   "fibre": 10,
+   "sodium": 4850,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Roast Beef & Cheddar (8\")",
+   "cat": "main",
+   "serve": "1 sandwich (493 g)",
+   "cal": 1140,
+   "kj": null,
+   "p": 59,
+   "c": 88,
+   "f": 61,
+   "sat": 15,
+   "sugar": 7,
+   "fibre": 5,
+   "sodium": 2420,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Ultimate Italian (16\")",
+   "cat": "main",
+   "serve": "1 sandwich (1039 g)",
+   "cal": 2200,
+   "kj": null,
+   "p": 138,
+   "c": 162,
+   "f": 110,
+   "sat": 38,
+   "sugar": 16,
+   "fibre": 9,
+   "sodium": 7890,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "Ultimate Italian (8\")",
+   "cat": "main",
+   "serve": "1 sandwich (519 g)",
+   "cal": 1100,
+   "kj": null,
+   "p": 69,
+   "c": 81,
+   "f": 55,
+   "sat": 19,
+   "sugar": 8,
+   "fibre": 5,
+   "sodium": 3940,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "Chicken Caesar Wrap",
+   "cat": "main",
+   "serve": "1 wrap (373 g)",
+   "cal": 890,
+   "kj": null,
+   "p": 36,
+   "c": 74,
+   "f": 50,
+   "sat": 12,
+   "sugar": 9,
+   "fibre": 3,
+   "sodium": 2380,
+   "salt": null,
+   "contains": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "chicken"
+   ]
+  },
+  {
+   "name": "Kickin' Ranch Chicken Wrap",
+   "cat": "main",
+   "serve": "1 wrap (388 g)",
+   "cal": 810,
+   "kj": null,
+   "p": 36,
+   "c": 56,
+   "f": 49,
+   "sat": 16,
+   "sugar": 5,
+   "fibre": 4,
+   "sodium": 1990,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "chicken"
+   ]
+  },
+  {
+   "name": "Tuscan Italian Wrap",
+   "cat": "main",
+   "serve": "1 wrap (403 g)",
+   "cal": 860,
+   "kj": null,
+   "p": 44,
+   "c": 60,
+   "f": 50,
+   "sat": 16,
+   "sugar": 8,
+   "fibre": 4,
+   "sodium": 3040,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "#10 Hunter's Club (16\")",
+   "cat": "main",
+   "serve": "1 sandwich (834 g)",
+   "cal": 1650,
+   "kj": null,
+   "p": 109,
+   "c": 139,
+   "f": 71,
+   "sat": 22,
+   "sugar": 7,
+   "fibre": 7,
+   "sodium": 4250,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "#10 Hunter's Club (8\")",
+   "cat": "main",
+   "serve": "1 sandwich (417 g)",
+   "cal": 820,
+   "kj": null,
+   "p": 55,
+   "c": 70,
+   "f": 36,
+   "sat": 11,
+   "sugar": 3,
+   "fibre": 4,
+   "sodium": 2120,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "#11 Country Club (16\")",
+   "cat": "main",
+   "serve": "1 sandwich (822 g)",
+   "cal": 1550,
+   "kj": null,
+   "p": 96,
+   "c": 145,
+   "f": 64,
+   "sat": 19,
+   "sugar": 10,
+   "fibre": 7,
+   "sodium": 4690,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork",
+    "turkey"
+   ]
+  },
+  {
+   "name": "#11 Country Club (8\")",
+   "cat": "main",
+   "serve": "1 sandwich (411 g)",
+   "cal": 780,
+   "kj": null,
+   "p": 48,
+   "c": 73,
+   "f": 32,
+   "sat": 10,
+   "sugar": 5,
+   "fibre": 4,
+   "sodium": 2340,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork",
+    "turkey"
+   ]
+  },
+  {
+   "name": "#12 Beach Club (16\")",
+   "cat": "main",
+   "serve": "1 sandwich (822 g)",
+   "cal": 1700,
+   "kj": null,
+   "p": 91,
+   "c": 145,
+   "f": 82,
+   "sat": 30,
+   "sugar": 9,
+   "fibre": 10,
+   "sodium": 4060,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "turkey"
+   ]
+  },
+  {
+   "name": "#12 Beach Club (8\")",
+   "cat": "main",
+   "serve": "1 sandwich (411 g)",
+   "cal": 850,
+   "kj": null,
+   "p": 46,
+   "c": 72,
+   "f": 41,
+   "sat": 15,
+   "sugar": 4,
+   "fibre": 5,
+   "sodium": 2030,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "turkey"
+   ]
+  },
+  {
+   "name": "#13 Jimmy Cubano (16\")",
+   "cat": "main",
+   "serve": "1 sandwich (634 g)",
+   "cal": 1660,
+   "kj": null,
+   "p": 85,
+   "c": 142,
+   "f": 81,
+   "sat": 26,
+   "sugar": 7,
+   "fibre": 6,
+   "sodium": 4850,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "#13 Jimmy Cubano (8\")",
+   "cat": "main",
+   "serve": "1 sandwich (356 g)",
+   "cal": 840,
+   "kj": null,
+   "p": 43,
+   "c": 71,
+   "f": 40,
+   "sat": 13,
+   "sugar": 3,
+   "fibre": 3,
+   "sodium": 2530,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "#14 Bootlegger Club (16\")",
+   "cat": "main",
+   "serve": "1 sandwich (768 g)",
+   "cal": 1370,
+   "kj": null,
+   "p": 89,
+   "c": 139,
+   "f": 49,
+   "sat": 9,
+   "sugar": 8,
+   "fibre": 7,
+   "sodium": 3760,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "turkey",
+    "beef"
+   ]
+  },
+  {
+   "name": "#14 Bootlegger Club (8\")",
+   "cat": "main",
+   "serve": "1 sandwich (384 g)",
+   "cal": 680,
+   "kj": null,
+   "p": 44,
+   "c": 69,
+   "f": 25,
+   "sat": 4.5,
+   "sugar": 4,
+   "fibre": 4,
+   "sodium": 1880,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "turkey",
+    "beef"
+   ]
+  },
+  {
+   "name": "#15 Club Tuna (16\")",
+   "cat": "main",
+   "serve": "1 sandwich (866 g)",
+   "cal": 1690,
+   "kj": null,
+   "p": 83,
+   "c": 148,
+   "f": 84,
+   "sat": 30,
+   "sugar": 11,
+   "fibre": 9,
+   "sodium": 3960,
+   "salt": null,
+   "contains": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "fish"
+   ]
+  },
+  {
+   "name": "#15 Club Tuna (8\")",
+   "cat": "main",
+   "serve": "1 sandwich (433 g)",
+   "cal": 840,
+   "kj": null,
+   "p": 42,
+   "c": 74,
+   "f": 42,
+   "sat": 15,
+   "sugar": 5,
+   "fibre": 5,
+   "sodium": 1980,
+   "salt": null,
+   "contains": [
+    "egg",
+    "fish",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "fish"
+   ]
+  },
+  {
+   "name": "#16 Club Lulu (16\")",
+   "cat": "main",
+   "serve": "1 sandwich (664 g)",
+   "cal": 1370,
+   "kj": null,
+   "p": 70,
+   "c": 141,
+   "f": 57,
+   "sat": 12,
+   "sugar": 9,
+   "fibre": 7,
+   "sodium": 3390,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork",
+    "turkey"
+   ]
+  },
+  {
+   "name": "#16 Club Lulu (8\")",
+   "cat": "main",
+   "serve": "1 sandwich (332 g)",
+   "cal": 690,
+   "kj": null,
+   "p": 35,
+   "c": 71,
+   "f": 28,
+   "sat": 6,
+   "sugar": 4,
+   "fibre": 4,
+   "sodium": 1690,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork",
+    "turkey"
+   ]
+  },
+  {
+   "name": "#17 Ultimate Porker (16\")",
+   "cat": "main",
+   "serve": "1 sandwich (652 g)",
+   "cal": 1380,
+   "kj": null,
+   "p": 65,
+   "c": 145,
+   "f": 58,
+   "sat": 13,
+   "sugar": 10,
+   "fibre": 7,
+   "sodium": 3640,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "#17 Ultimate Porker (8\")",
+   "cat": "main",
+   "serve": "1 sandwich (326 g)",
+   "cal": 690,
+   "kj": null,
+   "p": 33,
+   "c": 73,
+   "f": 29,
+   "sat": 6,
+   "sugar": 5,
+   "fibre": 4,
+   "sodium": 1820,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "#7 Spicy East Coast Italian (16\")",
+   "cat": "main",
+   "serve": "1 sandwich (891 g)",
+   "cal": 1970,
+   "kj": null,
+   "p": 103,
+   "c": 154,
+   "f": 104,
+   "sat": 35,
+   "sugar": 13,
+   "fibre": 10,
+   "sodium": 7060,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "#7 Spicy East Coast Italian (8\")",
+   "cat": "main",
+   "serve": "1 sandwich (445 g)",
+   "cal": 990,
+   "kj": null,
+   "p": 52,
+   "c": 77,
+   "f": 52,
+   "sat": 18,
+   "sugar": 7,
+   "fibre": 5,
+   "sodium": 3530,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "#8 Billy Club (16\")",
+   "cat": "main",
+   "serve": "1 sandwich (842 g)",
+   "cal": 1620,
+   "kj": null,
+   "p": 101,
+   "c": 145,
+   "f": 69,
+   "sat": 21,
+   "sugar": 9,
+   "fibre": 8,
+   "sodium": 4820,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork",
+    "beef"
+   ]
+  },
+  {
+   "name": "#8 Billy Club (8\")",
+   "cat": "main",
+   "serve": "1 sandwich (416 g)",
+   "cal": 810,
+   "kj": null,
+   "p": 50,
+   "c": 72,
+   "f": 34,
+   "sat": 10,
+   "sugar": 5,
+   "fibre": 4,
+   "sodium": 2350,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork",
+    "beef"
+   ]
+  },
+  {
+   "name": "#9 Italian Night Club (16\")",
+   "cat": "main",
+   "serve": "1 sandwich (859 g)",
+   "cal": 1810,
+   "kj": null,
+   "p": 97,
+   "c": 153,
+   "f": 89,
+   "sat": 28,
+   "sugar": 13,
+   "fibre": 9,
+   "sodium": 5860,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "#9 Italian Night Club (8\")",
+   "cat": "main",
+   "serve": "1 sandwich (429 g)",
+   "cal": 910,
+   "kj": null,
+   "p": 49,
+   "c": 77,
+   "f": 44,
+   "sat": 14,
+   "sugar": 6,
+   "fibre": 4,
+   "sodium": 2930,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "J.J.B.L.T. (16\")",
+   "cat": "main",
+   "serve": "1 sandwich (560 g)",
+   "cal": 1420,
+   "kj": null,
+   "p": 56,
+   "c": 142,
+   "f": 68,
+   "sat": 16,
+   "sugar": 9,
+   "fibre": 7,
+   "sodium": 2920,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "J.J.B.L.T. (8\")",
+   "cat": "main",
+   "serve": "1 sandwich (280 g)",
+   "cal": 710,
+   "kj": null,
+   "p": 28,
+   "c": 71,
+   "f": 34,
+   "sat": 8,
+   "sugar": 5,
+   "fibre": 4,
+   "sodium": 1460,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "#1 The Pepe (16\")",
+   "cat": "main",
+   "serve": "1 sandwich (596 g)",
+   "cal": 1180,
+   "kj": null,
+   "p": 59,
+   "c": 99,
+   "f": 60,
+   "sat": 19,
+   "sugar": 9,
+   "fibre": 6,
+   "sodium": 3140,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "#1 The Pepe (8\")",
+   "cat": "main",
+   "serve": "1 sandwich (298 g)",
+   "cal": 590,
+   "kj": null,
+   "p": 30,
+   "c": 50,
+   "f": 30,
+   "sat": 9,
+   "sugar": 4,
+   "fibre": 3,
+   "sodium": 1570,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "#2 Big John (16\")",
+   "cat": "main",
+   "serve": "1 sandwich (542 g)",
+   "cal": 990,
+   "kj": null,
+   "p": 51,
+   "c": 93,
+   "f": 45,
+   "sat": 8,
+   "sugar": 6,
+   "fibre": 6,
+   "sodium": 2210,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "#2 Big John (8\")",
+   "cat": "main",
+   "serve": "1 sandwich (271 g)",
+   "cal": 500,
+   "kj": null,
+   "p": 26,
+   "c": 46,
+   "f": 23,
+   "sat": 4,
+   "sugar": 3,
+   "fibre": 3,
+   "sodium": 1110,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "#3 Totally Tuna (8\")",
+   "cat": "main",
+   "serve": "1 sandwich (325 g)",
+   "cal": 490,
+   "kj": null,
+   "p": 20,
+   "c": 50,
+   "f": 23,
+   "sat": 3.5,
+   "sugar": 5,
+   "fibre": 4,
+   "sodium": 1170,
+   "salt": null,
+   "contains": [
+    "egg",
+    "fish",
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "fish"
+   ]
+  },
+  {
+   "name": "#3 Totally Tuna (16\")",
+   "cat": "main",
+   "serve": "1 sandwich (649 g)",
+   "cal": 990,
+   "kj": null,
+   "p": 40,
+   "c": 101,
+   "f": 46,
+   "sat": 7,
+   "sugar": 10,
+   "fibre": 8,
+   "sodium": 2330,
+   "salt": null,
+   "contains": [
+    "egg",
+    "fish",
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "fish"
+   ]
+  },
+  {
+   "name": "#4 Turkey Tom (16\")",
+   "cat": "main",
+   "serve": "1 sandwich (542 g)",
+   "cal": 940,
+   "kj": null,
+   "p": 48,
+   "c": 94,
+   "f": 41,
+   "sat": 6,
+   "sugar": 7,
+   "fibre": 6,
+   "sodium": 2310,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "turkey"
+   ]
+  },
+  {
+   "name": "#4 Turkey Tom (8\")",
+   "cat": "main",
+   "serve": "1 sandwich (271 g)",
+   "cal": 470,
+   "kj": null,
+   "p": 24,
+   "c": 47,
+   "f": 20,
+   "sat": 3,
+   "sugar": 4,
+   "fibre": 3,
+   "sodium": 1160,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "turkey"
+   ]
+  },
+  {
+   "name": "#5 Vito (16\")",
+   "cat": "main",
+   "serve": "1 sandwich (599 g)",
+   "cal": 1110,
+   "kj": null,
+   "p": 65,
+   "c": 103,
+   "f": 48,
+   "sat": 21,
+   "sugar": 10,
+   "fibre": 7,
+   "sodium": 3750,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "#5 Vito (8\")",
+   "cat": "main",
+   "serve": "1 sandwich (300 g)",
+   "cal": 550,
+   "kj": null,
+   "p": 33,
+   "c": 51,
+   "f": 24,
+   "sat": 11,
+   "sugar": 5,
+   "fibre": 4,
+   "sodium": 1880,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "#6 The Veggie (16\")",
+   "cat": "main",
+   "serve": "1 sandwich (597 g)",
+   "cal": 1330,
+   "kj": null,
+   "p": 54,
+   "c": 99,
+   "f": 79,
+   "sat": 29,
+   "sugar": 7,
+   "fibre": 8,
+   "sodium": 2510,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "#6 The Veggie (8\")",
+   "cat": "main",
+   "serve": "1 sandwich (299 g)",
+   "cal": 660,
+   "kj": null,
+   "p": 27,
+   "c": 49,
+   "f": 39,
+   "sat": 15,
+   "sugar": 4,
+   "fibre": 4,
+   "sodium": 1250,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "#1 The Pepe (Little John, 6.5\")",
+   "cat": "main",
+   "serve": "1 sandwich (150 g)",
+   "cal": 300,
+   "kj": null,
+   "p": 15,
+   "c": 25,
+   "f": 15,
+   "sat": 4.5,
+   "sugar": 2,
+   "fibre": 1,
+   "sodium": 790,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "#2 Big John (Little John, 6.5\")",
+   "cat": "main",
+   "serve": "1 sandwich (137 g)",
+   "cal": 250,
+   "kj": null,
+   "p": 13,
+   "c": 23,
+   "f": 12,
+   "sat": 2,
+   "sugar": 1,
+   "fibre": 1,
+   "sodium": 560,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "#3 Totally Tuna (Little John, 6.5\")",
+   "cat": "main",
+   "serve": "1 sandwich (163 g)",
+   "cal": 250,
+   "kj": null,
+   "p": 10,
+   "c": 25,
+   "f": 12,
+   "sat": 2,
+   "sugar": 2,
+   "fibre": 2,
+   "sodium": 590,
+   "salt": null,
+   "contains": [
+    "egg",
+    "fish",
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "fish"
+   ]
+  },
+  {
+   "name": "#4 Turkey Tom (Little John, 6.5\")",
+   "cat": "main",
+   "serve": "1 sandwich (137 g)",
+   "cal": 240,
+   "kj": null,
+   "p": 12,
+   "c": 24,
+   "f": 11,
+   "sat": 1.5,
+   "sugar": 2,
+   "fibre": 1,
+   "sodium": 580,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "turkey"
+   ]
+  },
+  {
+   "name": "#5 Vito (Little John, 6.5\")",
+   "cat": "main",
+   "serve": "1 sandwich (150 g)",
+   "cal": 280,
+   "kj": null,
+   "p": 16,
+   "c": 26,
+   "f": 12,
+   "sat": 5,
+   "sugar": 2,
+   "fibre": 2,
+   "sodium": 940,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "#6 The Veggie (Little John, 6.5\")",
+   "cat": "main",
+   "serve": "1 sandwich (150 g)",
+   "cal": 340,
+   "kj": null,
+   "p": 14,
+   "c": 25,
+   "f": 20,
+   "sat": 7,
+   "sugar": 2,
+   "fibre": 2,
+   "sodium": 630,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "The J.J. Gargantuan (16\")",
+   "cat": "main",
+   "serve": "1 sandwich (1139 g)",
+   "cal": 2130,
+   "kj": null,
+   "p": 158,
+   "c": 156,
+   "f": 97,
+   "sat": 30,
+   "sugar": 14,
+   "fibre": 9,
+   "sodium": 7920,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork",
+    "turkey",
+    "beef"
+   ]
+  },
+  {
+   "name": "The J.J. Gargantuan (8\")",
+   "cat": "main",
+   "serve": "1 sandwich (569 g)",
+   "cal": 1070,
+   "kj": null,
+   "p": 79,
+   "c": 78,
+   "f": 48,
+   "sat": 15,
+   "sugar": 7,
+   "fibre": 4,
+   "sodium": 3960,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork",
+    "turkey",
+    "beef"
+   ]
+  },
+  {
+   "name": "Slim 1 - Ham & Provolone (16\")",
+   "cat": "main",
+   "serve": "1 sandwich (442 g)",
+   "cal": 1060,
+   "kj": null,
+   "p": 66,
+   "c": 136,
+   "f": 26,
+   "sat": 13,
+   "sugar": 4,
+   "fibre": 5,
+   "sodium": 3290,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "Slim 1 - Ham & Provolone (8\")",
+   "cat": "main",
+   "serve": "1 sandwich (221 g)",
+   "cal": 530,
+   "kj": null,
+   "p": 33,
+   "c": 68,
+   "f": 13,
+   "sat": 7,
+   "sugar": 2,
+   "fibre": 3,
+   "sodium": 1640,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "Slim 2 - Roast Beef (16\")",
+   "cat": "main",
+   "serve": "1 sandwich (388 g)",
+   "cal": 870,
+   "kj": null,
+   "p": 58,
+   "c": 130,
+   "f": 12,
+   "sat": 3,
+   "sugar": 1,
+   "fibre": 5,
+   "sodium": 2360,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Slim 2 - Roast Beef (8\")",
+   "cat": "main",
+   "serve": "1 sandwich (194 g)",
+   "cal": 440,
+   "kj": null,
+   "p": 29,
+   "c": 65,
+   "f": 6,
+   "sat": 1.5,
+   "sugar": 1,
+   "fibre": 3,
+   "sodium": 1180,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "beef"
+   ]
+  },
+  {
+   "name": "Slim 3 - Tuna Salad (16\")",
+   "cat": "main",
+   "serve": "1 sandwich (508 g)",
+   "cal": 1190,
+   "kj": null,
+   "p": 47,
+   "c": 138,
+   "f": 48,
+   "sat": 7,
+   "sugar": 5,
+   "fibre": 7,
+   "sodium": 2790,
+   "salt": null,
+   "contains": [
+    "egg",
+    "fish",
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "fish"
+   ]
+  },
+  {
+   "name": "Slim 3 - Tuna Salad (8\")",
+   "cat": "main",
+   "serve": "1 sandwich (254 g)",
+   "cal": 590,
+   "kj": null,
+   "p": 24,
+   "c": 69,
+   "f": 24,
+   "sat": 3.5,
+   "sugar": 3,
+   "fibre": 3,
+   "sodium": 1400,
+   "salt": null,
+   "contains": [
+    "egg",
+    "fish",
+    "gluten",
+    "soy",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "fish"
+   ]
+  },
+  {
+   "name": "Slim 4 - Turkey (16\")",
+   "cat": "main",
+   "serve": "1 sandwich (388 g)",
+   "cal": 820,
+   "kj": null,
+   "p": 55,
+   "c": 131,
+   "f": 7,
+   "sat": 1,
+   "sugar": 2,
+   "fibre": 5,
+   "sodium": 2460,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "turkey"
+   ]
+  },
+  {
+   "name": "Slim 4 - Turkey (8\")",
+   "cat": "main",
+   "serve": "1 sandwich (194 g)",
+   "cal": 410,
+   "kj": null,
+   "p": 27,
+   "c": 65,
+   "f": 3.5,
+   "sat": 0.5,
+   "sugar": 1,
+   "fibre": 3,
+   "sodium": 1230,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "turkey"
+   ]
+  },
+  {
+   "name": "Slim 5 - Salami, Capocollo & Provolone (16\")",
+   "cat": "main",
+   "serve": "1 sandwich (442 g)",
+   "cal": 1220,
+   "kj": null,
+   "p": 72,
+   "c": 136,
+   "f": 41,
+   "sat": 21,
+   "sugar": 4,
+   "fibre": 5,
+   "sodium": 4140,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "Slim 5 - Salami, Capocollo & Provolone (8\")",
+   "cat": "main",
+   "serve": "1 sandwich (221 g)",
+   "cal": 610,
+   "kj": null,
+   "p": 36,
+   "c": 68,
+   "f": 21,
+   "sat": 10,
+   "sugar": 2,
+   "fibre": 3,
+   "sodium": 2070,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": [
+    "pork"
+   ]
+  },
+  {
+   "name": "Slim 6 - Provolone (16\")",
+   "cat": "main",
+   "serve": "1 sandwich (380 g)",
+   "cal": 1150,
+   "kj": null,
+   "p": 60,
+   "c": 132,
+   "f": 41,
+   "sat": 23,
+   "sugar": 2,
+   "fibre": 5,
+   "sodium": 2540,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Slim 6 - Provolone (8\")",
+   "cat": "main",
+   "serve": "1 sandwich (190 g)",
+   "cal": 580,
+   "kj": null,
+   "p": 30,
+   "c": 66,
+   "f": 20,
+   "sat": 12,
+   "sugar": 1,
+   "fibre": 3,
+   "sodium": 1270,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Chocolate Chip Cookie",
+   "cat": "sweet",
+   "serve": "1 each (85 g)",
+   "cal": 410,
+   "kj": null,
+   "p": 4,
+   "c": 56,
+   "f": 19,
+   "sat": 12,
+   "sugar": 33,
+   "fibre": 1,
+   "sodium": 310,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Fudge Chocolate Brownie",
+   "cat": "sweet",
+   "serve": "1 each (71 g)",
+   "cal": 350,
+   "kj": null,
+   "p": 4,
+   "c": 46,
+   "f": 19,
+   "sat": 6,
+   "sugar": 33,
+   "fibre": 2,
+   "sodium": 135,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Oatmeal Raisin Cookie",
+   "cat": "sweet",
+   "serve": "1 each (85 g)",
+   "cal": 370,
+   "kj": null,
+   "p": 5,
+   "c": 58,
+   "f": 13,
+   "sat": 7,
+   "sugar": 30,
+   "fibre": 3,
+   "sodium": 420,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "soy",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Avocado Spread",
+   "cat": "extra",
+   "serve": "1 side (45 g)",
+   "cal": 80,
+   "kj": null,
+   "p": 1,
+   "c": 4,
+   "f": 7,
+   "sat": 1,
+   "sugar": 0,
+   "fibre": 3,
+   "sodium": 180,
+   "salt": null,
+   "contains": [],
+   "may": null,
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "BBQ Chips",
+   "cat": "side",
+   "serve": "1 bag (56 g)",
+   "cal": 290,
+   "kj": null,
+   "p": 3,
+   "c": 34,
+   "f": 16,
+   "sat": 3,
+   "sugar": 5,
+   "fibre": 2,
+   "sodium": 230,
+   "salt": null,
+   "contains": [
+    "gluten"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "French Bread",
+   "cat": "side",
+   "serve": "1 loaf (248 g)",
+   "cal": 690,
+   "kj": null,
+   "p": 26,
+   "c": 129,
+   "f": 6,
+   "sat": 1,
+   "sugar": 1,
+   "fibre": 5,
+   "sodium": 1380,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Homestyle Potato Salad",
+   "cat": "side",
+   "serve": "1 side (142 g)",
+   "cal": 250,
+   "kj": null,
+   "p": 3,
+   "c": 30,
+   "f": 12,
+   "sat": 2,
+   "sugar": 8,
+   "fibre": 2,
+   "sodium": 600,
+   "salt": null,
+   "contains": [
+    "egg"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Homestyle Ranch (large)",
+   "cat": "extra",
+   "serve": "1 each (167 g)",
+   "cal": 590,
+   "kj": null,
+   "p": 2,
+   "c": 4,
+   "f": 63,
+   "sat": 10,
+   "sugar": 3,
+   "fibre": 0,
+   "sodium": 1450,
+   "salt": null,
+   "contains": [
+    "egg",
+    "milk"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Homestyle Ranch (small)",
+   "cat": "extra",
+   "serve": "1 each (44 g)",
+   "cal": 160,
+   "kj": null,
+   "p": 1,
+   "c": 1,
+   "f": 17,
+   "sat": 2.5,
+   "sugar": 1,
+   "fibre": 0,
+   "sodium": 380,
+   "salt": null,
+   "contains": [
+    "egg",
+    "milk"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Jalapeño Chips",
+   "cat": "side",
+   "serve": "1 bag (56 g)",
+   "cal": 290,
+   "kj": null,
+   "p": 3,
+   "c": 33,
+   "f": 17,
+   "sat": 3,
+   "sugar": 3,
+   "fibre": 2,
+   "sodium": 320,
+   "salt": null,
+   "contains": [],
+   "may": null,
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Kickin' Ranch (large)",
+   "cat": "extra",
+   "serve": "1 each (167 g)",
+   "cal": 690,
+   "kj": null,
+   "p": 3,
+   "c": 7,
+   "f": 72,
+   "sat": 12,
+   "sugar": 4,
+   "fibre": 1,
+   "sodium": 1490,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Kickin' Ranch (small)",
+   "cat": "extra",
+   "serve": "1 each (44 g)",
+   "cal": 180,
+   "kj": null,
+   "p": 1,
+   "c": 2,
+   "f": 19,
+   "sat": 3,
+   "sugar": 1,
+   "fibre": 0,
+   "sodium": 390,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Pesto Bowtie Pasta Salad",
+   "cat": "side",
+   "serve": "1 side (113 g)",
+   "cal": 250,
+   "kj": null,
+   "p": 6,
+   "c": 19,
+   "f": 17,
+   "sat": 3,
+   "sugar": 2,
+   "fibre": 1,
+   "sodium": 500,
+   "salt": null,
+   "contains": [
+    "egg",
+    "gluten",
+    "milk",
+    "wheat"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Regular Chips",
+   "cat": "side",
+   "serve": "1 bag (56 g)",
+   "cal": 300,
+   "kj": null,
+   "p": 3,
+   "c": 33,
+   "f": 18,
+   "sat": 3,
+   "sugar": 3,
+   "fibre": 2,
+   "sodium": 180,
+   "salt": null,
+   "contains": [],
+   "may": null,
+   "vg": null,
+   "meat": null
+  },
+  {
+   "name": "Salt & Vinegar Chips",
+   "cat": "side",
+   "serve": "1 bag (56 g)",
+   "cal": 290,
+   "kj": null,
+   "p": 3,
+   "c": 33,
+   "f": 17,
+   "sat": 3,
+   "sugar": 3,
+   "fibre": 2,
+   "sodium": 360,
+   "salt": null,
+   "contains": [
+    "gluten",
+    "milk"
+   ],
+   "may": null,
+   "vg": null,
+   "meat": null
+  }
+ ]
+}

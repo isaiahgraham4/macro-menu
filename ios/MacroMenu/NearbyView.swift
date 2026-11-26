@@ -323,7 +323,7 @@ struct NearbyRow: View {
     }
 
     @ViewBuilder private func appButton(iconOnly: Bool) -> some View {
-        if let app = ChainPlace.all[place.chain] {
+        if let app = ChainPlace.all[place.chain], app.hasApp {
             Button { Task { await location.openApp(app) } } label: {
                 if iconOnly { Image(systemName: "arrow.up.forward.app").frame(minWidth: 24, minHeight: 22) }
                 else { IconText(app.launchTitle, systemImage: "arrow.up.forward.app").frame(maxWidth: .infinity, alignment: .leading) }
@@ -379,7 +379,7 @@ struct DeliveryLine: View {
                 ForEach(DeliveryApp.all) { app in
                     Button(app.name, systemImage: "bag") { if let url = app.search(name) { openURL(url) } }
                 }
-                if let own = ChainPlace.all[place.chain] {
+                if let own = ChainPlace.all[place.chain], own.hasApp {
                     Button("\(own.appName) app", systemImage: "arrow.up.forward.app") { Task { await location.openApp(own) } }
                 }
             }
@@ -461,7 +461,7 @@ struct NearestPlaceSection: View {
                     else if location.places[chain] == nil { RowSkeleton().skeleton("Finding the nearest \(name)") }
                     else {
                         Text("No \(name) found within 15 km.").foregroundStyle(.secondary)
-                        Button { Task { await location.openApp(app) } } label: { Label(app.launchTitle, systemImage: "arrow.up.forward.app") }
+                        if app.hasApp { Button { Task { await location.openApp(app) } } label: { Label(app.launchTitle, systemImage: "arrow.up.forward.app") } }
                     }
                 }
                 .task(id: location.location?.timestamp) { await location.load([chain]) }
@@ -470,7 +470,7 @@ struct NearestPlaceSection: View {
             } else {
                 Section("Nearest \(name)") {
                     Button { location.request() } label: { Label("Find the nearest \(name)", systemImage: "location") }
-                    Button { Task { await location.openApp(app) } } label: { Label(app.launchTitle, systemImage: "arrow.up.forward.app") }
+                    if app.hasApp { Button { Task { await location.openApp(app) } } label: { Label(app.launchTitle, systemImage: "arrow.up.forward.app") } }
                     Text("Your location is only used while you're using the app.").font(.roboto(.caption)).foregroundStyle(.secondary)
                 }
             }
